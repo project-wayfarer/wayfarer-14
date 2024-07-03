@@ -1,3 +1,4 @@
+using Content.Client.Consent.UI;
 using Content.Client.UserInterface.Systems.Actions;
 using Content.Client.UserInterface.Systems.Admin;
 using Content.Client.UserInterface.Systems.Bwoink;
@@ -23,7 +24,8 @@ public sealed class GameTopMenuBarUIController : UIController
     [Dependency] private readonly ActionUIController _action = default!;
     [Dependency] private readonly SandboxUIController _sandbox = default!;
     [Dependency] private readonly GuidebookUIController _guidebook = default!;
-    [Dependency] private readonly EmotesUIController _emotes = default!;
+    [Dependency] private readonly LanguageMenuUIController _language = default!;
+    [Dependency] private readonly ConsentUiController _consent = default!;
 
     private GameTopMenuBar? GameTopMenuBar => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>();
 
@@ -46,7 +48,8 @@ public sealed class GameTopMenuBarUIController : UIController
         _ahelp.UnloadButton();
         _action.UnloadButton();
         _sandbox.UnloadButton();
-        _emotes.UnloadButton();
+        _language.UnloadButton();
+        _consent.UnloadButton();
     }
 
     public void LoadButtons()
@@ -59,6 +62,7 @@ public sealed class GameTopMenuBarUIController : UIController
         _ahelp.LoadButton();
         _action.LoadButton();
         _sandbox.LoadButton();
-        _emotes.LoadButton();
+        _language.LoadButton();
+        _consent.LoadButton();
     }
 }

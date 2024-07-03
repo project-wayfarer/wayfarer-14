@@ -1,5 +1,7 @@
-﻿using System.Threading;
+using System.Threading;
 using System.Threading.Tasks;
+using Content.Server.Players.PlayTimeTracking;
+using Content.Server.Consent;
 using Content.Server.Preferences.Managers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -17,7 +19,9 @@ namespace Content.Server.Database;
 /// </remarks>
 public sealed class UserDbDataManager : IPostInjectInit
 {
-    [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private readonly IServerPreferencesManager _prefs = default!;
+    [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
+    [Dependency] private readonly IServerConsentManager _consent = default!;
 
     private readonly Dictionary<NetUserId, UserData> _users = new();
     private readonly List<OnLoadPlayer> _onLoadPlayer = [];
@@ -54,68 +58,19 @@ public sealed class UserDbDataManager : IPostInjectInit
         data.Cancel.Cancel();
         data.Cancel.Dispose();
 
-        foreach (var onDisconnect in _onPlayerDisconnect)
-        {
-            onDisconnect(session);
-        }
+        _prefs.OnClientDisconnected(session);
+        _playTimeTracking.ClientDisconnected(session);
+        _consent.OnClientDisconnected(session); //TODO: use new AddOnPlayerDisconnect in consent manager instead?
     }
 
     private async Task Load(ICommonSession session, CancellationToken cancel)
     {
-        // The task returned by this function is only ever observed by callers of WaitLoadComplete,
-        // which doesn't even happen currently if the lobby is enabled.
-        // As such, this task must NOT throw a non-cancellation error!
-        try
-        {
-            var tasks = new List<Task>();
-            foreach (var action in _onLoadPlayer)
-            {
-                tasks.Add(action(session, cancel));
-            }
-
-            await Task.WhenAll(tasks);
-
-            cancel.ThrowIfCancellationRequested();
-
-            foreach (var action in _onFinishLoad)
-            {
-                action(session);
-            }
-
-            _sawmill.Verbose($"Load complete for user {session}");
-        }
-        catch (OperationCanceledException)
-        {
-            _sawmill.Debug($"Load cancelled for user {session}");
-
-            // We can rethrow the cancellation.
-            // This will make the task returned by WaitLoadComplete() also return a cancellation.
-            throw;
-        }
-        catch (Exception e)
-        {
-            // Must catch all exceptions here, otherwise task may go unobserved.
-            _sawmill.Error($"Load of user data failed: {e}");
-
-            // Kick them from server, since something is hosed. Let them try again I guess.
-            session.Channel.Disconnect("Loading of server user data failed, this is a bug.");
-
-            // We throw a OperationCanceledException so users of WaitLoadComplete() always see cancellation here.
-            throw new OperationCanceledException("Load of user data cancelled due to unknown error");
-        }
+        await Task.WhenAll(
+            _prefs.LoadData(session, cancel),
+            _playTimeTracking.LoadData(session, cancel),
+            _consent.LoadData(session, cancel)); // TODO: use the new AddOnLoadPlayer instead, that was added in #28085
     }
 
-    /// <summary>
-    /// Wait for all on-database data for a user to be loaded.
-    /// </summary>
-    /// <remarks>
-    /// The task returned by this function may end up in a cancelled state
-    /// (throwing <see cref="OperationCanceledException"/>) if the user disconnects while loading or an error occurs.
-    /// </remarks>
-    /// <param name="session"></param>
-    /// <returns>
-    /// A task that completes when all on-database data for a user has finished loading.
-    /// </returns>
     public Task WaitLoadComplete(ICommonSession session)
     {
         return _users[session.UserId].Task;

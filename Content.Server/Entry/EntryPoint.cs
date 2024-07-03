@@ -5,6 +5,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
+using Content.Server.Consent;
 using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Server.Discord.DiscordLink;
@@ -107,6 +108,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IAdminLogManager>().Initialize();
                 IoCManager.Resolve<IConnectionManager>().Initialize();
                 _dbManager.Init();
+                IoCManager.Resolve<IServerConsentManager>().Initialize();
                 IoCManager.Resolve<IServerPreferencesManager>().Init();
                 IoCManager.Resolve<INodeGroupFactory>().Initialize();
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();

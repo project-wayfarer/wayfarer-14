@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
-using Content.Shared.Construction.Prototypes;
+using Content.Shared.Consent;
 using Content.Shared.Database;
 using Content.Shared.Preferences;
 using Content.Shared.Ghost.Roles; // Frontier: ghost role whitelists
@@ -252,6 +252,13 @@ namespace Content.Server.Database
         IAsyncEnumerable<SharedAdminLog> GetAdminLogs(LogFilter? filter = null);
         IAsyncEnumerable<JsonDocument> GetAdminLogsJson(LogFilter? filter = null);
         Task<int> CountAdminLogs(int round);
+
+        #endregion
+
+        #region Consent Settings
+
+        Task SavePlayerConsentSettingsAsync(NetUserId userId, PlayerConsentSettings consentSettings);
+        Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId);
 
         #endregion
 
@@ -1014,95 +1021,16 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.MarkMessageAsSeen(id, dismissedToo));
         }
-
-        public Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job)
+        public Task SavePlayerConsentSettingsAsync(NetUserId userId, PlayerConsentSettings consentSettings)
         {
             DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddJobWhitelist(player, job));
+            return RunDbCommand(() => _db.SavePlayerConsentSettingsAsync(userId, consentSettings));
         }
 
-        public Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default)
+        public Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId)
         {
             DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetJobWhitelists(player, cancel));
-        }
-
-        public Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.IsJobWhitelisted(player, job));
-        }
-
-        public Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
-        }
-
-        // Frontier: ghost role DB ops
-        public Task AddGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddGhostRoleWhitelist(player, ghostRole));
-        }
-
-        public Task<bool> IsGhostRoleWhitelisted(Guid player, ProtoId<GhostRolePrototype> ghostRole)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.IsGhostRoleWhitelisted(player, ghostRole));
-        }
-        public Task<bool> RemoveGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveGhostRoleWhitelist(player, ghostRole));
-        }
-        // End Frontier
-
-        public Task<bool> UpsertIPIntelCache(DateTime time, IPAddress ip, float score)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpsertIPIntelCache(time, ip, score));
-        }
-
-        public Task<IPIntelCache?> GetIPIntelCache(IPAddress ip)
-        {
-            return RunDbCommand(() => _db.GetIPIntelCache(ip));
-        }
-
-        public Task<bool> CleanIPIntelCache(TimeSpan range)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.CleanIPIntelCache(range));
-        }
-
-        public void SubscribeToNotifications(Action<DatabaseNotification> handler)
-        {
-            lock (_notificationHandlers)
-            {
-                _notificationHandlers.Add(handler);
-            }
-        }
-
-        public void InjectTestNotification(DatabaseNotification notification)
-        {
-            HandleDatabaseNotification(notification);
-        }
-
-        public Task SendNotification(DatabaseNotification notification)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SendNotification(notification));
-        }
-
-        private async void HandleDatabaseNotification(DatabaseNotification notification)
-        {
-            lock (_notificationHandlers)
-            {
-                foreach (var handler in _notificationHandlers)
-                {
-                    handler(notification);
-                }
-            }
+            return RunDbCommand(() => _db.GetPlayerConsentSettingsAsync(userId));
         }
 
         // Wrapper functions to run DB commands from the thread pool.
