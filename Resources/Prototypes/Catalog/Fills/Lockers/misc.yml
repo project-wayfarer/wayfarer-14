@@ -183,6 +183,12 @@
     # Recursive
 #    - id: ClosetMaintenanceFilledRandom # Frontier: don't trust this
 #      prob: 0.01 # Frontier: don't trust this
+    # Lewd - Floof
+    # - !type:NestedSelector
+    #   tableId: LewdMaintLoot
+    #   prob: 0.15
+    #   rolls: !type:RangeNumberSelector
+    #     range: 1, 2
 
 - type: entity
   id: ClosetMaintenanceFilledRandom
