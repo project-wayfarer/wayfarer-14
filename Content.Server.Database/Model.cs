@@ -21,6 +21,7 @@ namespace Content.Server.Database
 
         public DbSet<Preference> Preference { get; set; } = null!;
         public DbSet<Profile> Profile { get; set; } = null!;
+        public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!; // Floofstation
         public DbSet<AssignedUserId> AssignedUserId { get; set; } = null!;
         public DbSet<Player> Player { get; set; } = default!;
         public DbSet<Admin> Admin { get; set; } = null!;
@@ -56,6 +57,16 @@ namespace Content.Server.Database
             modelBuilder.Entity<Profile>()
                 .HasIndex(p => new {p.Slot, PrefsId = p.PreferenceId})
                 .IsUnique();
+
+            // Floofstation start
+            modelBuilder.Entity<ConsentSettings>()
+                .HasIndex(c => c.UserId)
+                .IsUnique();
+
+            modelBuilder.Entity<ConsentToggle>()
+                .HasIndex(c => new { c.ConsentSettingsId, c.ToggleProtoId })
+                .IsUnique();
+            // Floofstation end
 
             modelBuilder.Entity<Antag>()
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
@@ -425,6 +436,25 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+    }
+    public class ConsentSettings // Floofstation
+    {
+        public int Id { get; set; }
+        public Guid UserId { get; set; }
+
+        public string ConsentFreetext { get; set; } = null!;
+        public List<ConsentToggle> ConsentToggles { get; set; } = null!;
+    }
+
+    public class ConsentToggle // Floofstation
+    {
+        public int Id { get; set; }
+
+        public int ConsentSettingsId { get; set; }
+        public ConsentSettings ConsentSettings { get; set; } = null!;
+
+        public string ToggleProtoId { get; set; } = null!;
+        public string ToggleProtoState { get; set; } = null!;
     }
 
     public class Job
