@@ -1,3 +1,6 @@
+// Assmos - /tg/ gases
+// Essentially the exact same as a tritium fire but without the still TODO radioactivity of a tritium burn. 
+
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Reactions;
@@ -7,46 +10,43 @@ namespace Content.Server.Atmos.Reactions
 {
     [UsedImplicitly]
     [DataDefinition]
-    public sealed partial class TritiumFireReaction : IGasReactionEffect
+    public sealed partial class HydrogenFireReaction : IGasReactionEffect
     {
         public ReactionResult React(GasMixture mixture, IGasMixtureHolder? holder, AtmosphereSystem atmosphereSystem, float heatScale)
         {
             if (mixture.Temperature > 20f && mixture.GetMoles(Gas.HyperNoblium) >= 5f)
                 return ReactionResult.NoReaction;
-                
+
             var energyReleased = 0f;
             var oldHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
             var temperature = mixture.Temperature;
             var location = holder as TileAtmosphere;
             mixture.ReactionResults[(byte)GasReaction.Fire] = 0f;
             var burnedFuel = 0f;
-            var initialTrit = mixture.GetMoles(Gas.Tritium);
+            var initialH2 = mixture.GetMoles(Gas.Hydrogen);
 
-            if (mixture.GetMoles(Gas.Oxygen) < initialTrit ||
-                Atmospherics.MinimumTritiumOxyburnEnergy > (temperature * oldHeatCapacity * heatScale))
+            if (mixture.GetMoles(Gas.Oxygen) < initialH2 ||
+                Atmospherics.MinimumHydrogenOxyburnEnergy > (temperature * oldHeatCapacity * heatScale))
             {
-                burnedFuel = mixture.GetMoles(Gas.Oxygen) / Atmospherics.TritiumBurnOxyFactor;
-                if (burnedFuel > initialTrit)
-                    burnedFuel = initialTrit;
+                burnedFuel = mixture.GetMoles(Gas.Oxygen) / Atmospherics.HydrogenBurnOxyFactor;
+                if (burnedFuel > initialH2)
+                    burnedFuel = initialH2;
 
-                mixture.AdjustMoles(Gas.Tritium, -burnedFuel);
+                mixture.AdjustMoles(Gas.Hydrogen, -burnedFuel);
             }
             else
             {
-                burnedFuel = initialTrit;
-                mixture.SetMoles(Gas.Tritium, mixture.GetMoles(Gas.Tritium ) * (1 - 1 / Atmospherics.TritiumBurnTritFactor));
-                mixture.AdjustMoles(Gas.Oxygen, -mixture.GetMoles(Gas.Tritium));
-                energyReleased += (Atmospherics.FireHydrogenEnergyReleased * burnedFuel * (Atmospherics.TritiumBurnTritFactor - 1));
+                burnedFuel = initialH2;
+                mixture.SetMoles(Gas.Hydrogen, mixture.GetMoles(Gas.Hydrogen) * (1 - 1 / Atmospherics.HydrogenBurnH2Factor));
+                mixture.AdjustMoles(Gas.Oxygen, -mixture.GetMoles(Gas.Hydrogen));
+                energyReleased += (Atmospherics.FireHydrogenEnergyReleased * burnedFuel * (Atmospherics.HydrogenBurnH2Factor - 1));
             }
 
             if (burnedFuel > 0)
             {
                 energyReleased += (Atmospherics.FireHydrogenEnergyReleased * burnedFuel);
 
-                // TODO ATMOS Radiation pulse here!
-
-                // Conservation of mass is important.
-                mixture.AdjustMoles(Gas.WaterVapor, burnedFuel);
+                mixture.AdjustMoles(Gas.WaterVapor, burnedFuel * 0.5f);
 
                 mixture.ReactionResults[(byte)GasReaction.Fire] += burnedFuel;
             }
