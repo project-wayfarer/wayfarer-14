@@ -76,6 +76,9 @@
     activated: true
     onActivate: false
   - type: Armable
+  - type: Sprite
+    layers:
+    - state: landmine
 
 - type: entity
   name: modular mine
@@ -97,6 +100,9 @@
     activated: true
     onActivate: false
   - type: Armable
+  - type: Sprite
+    layers:
+    - state: landmine
 
 - type: entity
   name: explosive mine
@@ -120,3 +126,6 @@
     activated: true
     onActivate: false
   - type: Armable
+  - type: Sprite
+    layers:
+    - state: landmine
