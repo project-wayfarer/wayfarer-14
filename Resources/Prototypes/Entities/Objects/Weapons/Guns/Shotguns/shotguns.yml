@@ -108,7 +108,7 @@
   name: double-barreled shotgun
   parent: [BaseWeaponShotgun, BaseGunWieldable] # Frontier: BaseSecurityBartenderZookeeperContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponShotgunDoubleBarreled
-  description: An immortal classic. A civilian grade shotgun. Uses .50 shotgun shells.
+  description: An immortal classic. Uses .50 shotgun shells.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
@@ -187,6 +187,8 @@
   - type: Tag
     tags:
     - WeaponShotgunKammerer
+  - type: BallisticAmmoProvider # Goobstation
+    autoCycle: false
 
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
