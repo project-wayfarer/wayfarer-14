@@ -1,0 +1,37 @@
+- type: microwaveMealRecipe
+  id: RecipeFriedResomiBucket
+  name: bucket of fried resomi recipe
+  result: FoodMeatResomiBucket
+  time: 5
+  group: Savory
+  solids:
+    FoodMeatResomiFried: 5
+    BucketPaper: 1
+  recipeType:
+  - Assembler
+
+- type: microwaveMealRecipe
+  id: RecipeBatteredResomi
+  name: battered resomi recipe
+  result: FoodMeatResomiBattered
+  time: 5
+  group: Savory
+  reagents:
+    Flour: 5
+    Egg: 6
+  solids:
+    FoodMeatResomi: 1
+  recipeType:
+  - Assembler
+
+- type: microwaveMealRecipe
+  id: RecipeFriedChickenBucket
+  name: bucket of fried chicken recipe
+  result: FoodMeatChickenBucket
+  time: 5
+  group: Savory
+  solids:
+    FoodMeatChickenFried: 5
+    BucketPaper: 1
+  recipeType:
+  - Assembler

@@ -26,6 +26,12 @@
   - Male
   - Female
 
+- type: Butcherable # Mono - MEAT
+  butcheringType: Spike
+  spawned:
+  - id: FoodMeatResomi
+    amount: 5
+
 - type: speciesBaseSprites
   id: MobResomiSprites
   sprites:
