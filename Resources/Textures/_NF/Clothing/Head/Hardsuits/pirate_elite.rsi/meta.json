@@ -1,6 +1,6 @@
 {
-    "license": "CC-BY-NC-SA-4.0",
-    "copyright": "Content created by Bing Guss for Frontier Server",
+    "license": "CC-BY-NC-SA-4.0, CC0-1.0",
+    "copyright": "Content created by Bing Guss for Frontier Server, Feroxi variants based off original work by TJohnson",
     "size": {
         "x": 32,
         "y": 32
@@ -35,6 +35,14 @@
         {
             "name": "on-equipped-HELMET-reptilian",
             "directions": 4
+        },
+        {
+          "name": "off-equipped-HELMET-feroxi",
+          "directions": 4
+        },
+        {
+          "name": "on-equipped-HELMET-feroxi",
+          "directions": 4
         }
     ],
     "version": 1

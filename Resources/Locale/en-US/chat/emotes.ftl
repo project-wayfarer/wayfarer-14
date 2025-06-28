@@ -73,3 +73,6 @@ chat-emote-name-yap = Yaps
 chat-emote-name-gekker = Gekkers
 chat-emote-msg-gurgle = gurgles.
 chat-emote-msg-coo = coos.
+
+# Floof - Feroxi Port
+chat-emote-msg-gnash = gnashes {POSS-ADJ($entity)} teeth.
