@@ -7,6 +7,7 @@
 // SPDX-FileCopyrightText: 2023 deltanedas
 // SPDX-FileCopyrightText: 2023 metalgearsloth
 // SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2025 Ark
 // SPDX-FileCopyrightText: 2025 ark1368
 // SPDX-FileCopyrightText: 2025 point2
 //
@@ -16,6 +17,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Emp;
 using Content.Server.Radio.Components;
+using Content.Shared._Mono.Radio;
 using Content.Shared.Chat;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
@@ -201,20 +203,13 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             RaiseLocalEvent(parent, ref relayEvent);
         }
 
-        if (TryComp(parent, out ActorComponent? actor))
+        if (TryComp(Transform(uid).ParentUid, out ActorComponent? actor))
+        {
             _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
 
-        switch (args.Channel.ID)
-        {
-            case "Common": // Broadband
-                _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Crescent/Radio/radio_broadband.ogg"), uid, AudioParams.Default.WithMaxDistance(1));
-                break;
-            case "Traffic": // Shortband
-                _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Crescent/Radio/radio_shortband.ogg"), uid, AudioParams.Default.WithMaxDistance(1));
-                break;
-            default: // Special
-                _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Crescent/Radio/radio_other.ogg"), uid, AudioParams.Default.WithMaxDistance(1));
-                break;
+            // Send radio noise event to client
+            var radioNoiseEvent = new RadioNoiseEvent(GetNetEntity(uid), args.Channel.ID);
+            RaiseNetworkEvent(radioNoiseEvent, actor.PlayerSession);
         }
     }
 
