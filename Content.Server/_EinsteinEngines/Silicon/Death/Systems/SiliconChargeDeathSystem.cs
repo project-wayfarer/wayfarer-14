@@ -49,11 +49,11 @@ public sealed class SiliconDeathSystem : EntitySystem
         EntityManager.EnsureComponent<SleepingComponent>(uid);
         EntityManager.EnsureComponent<ForcedSleepingComponent>(uid);
 
-        if (TryComp(uid, out HumanoidAppearanceComponent? humanoidAppearanceComponent))
-        {
-            var layers = HumanoidVisualLayersExtension.Sublayers(HumanoidVisualLayers.HeadSide);
-            _humanoidAppearanceSystem.SetLayersVisibility(uid, layers, false, true, humanoidAppearanceComponent);
-        }
+        // if (TryComp(uid, out HumanoidAppearanceComponent? humanoidAppearanceComponent))
+        // {
+        //     var layers = HumanoidVisualLayersExtension.Sublayers(HumanoidVisualLayers.HeadSide);
+        //     _humanoidAppearanceSystem.SetLayersVisibility(uid, layers, false, true, humanoidAppearanceComponent);
+        // }
 
         siliconDeadComp.Dead = true;
 
