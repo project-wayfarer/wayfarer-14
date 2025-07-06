@@ -26,7 +26,6 @@ using Robust.Shared.Physics.Components;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Silicon.Charge;
 using Content.Shared.PowerCell.Components;
 using System.Linq;
 using Content.Shared.Forensics;
@@ -177,9 +176,8 @@ public sealed class VoreSystem : EntitySystem
 
         _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, length, new VoreDoAfterEvent(), uid, target: target)
         {
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
-            BreakOnUserMove = true,
             RequireCanInteract = true
         });
     }
@@ -204,7 +202,7 @@ public sealed class VoreSystem : EntitySystem
         var vored = EnsureComp<VoredComponent>(target);
         vored.Pred = uid;
         EnsureComp<PressureImmunityComponent>(target);
-        EnsureComp<RespiratorImmuneComponent>(target);
+        // EnsureComp<RespiratorImmuneComponent>(target);
         _blindableSystem.UpdateIsBlind(target);
         if (TryComp<TemperatureComponent>(target, out var temp))
             temp.AtmosTemperatureTransferEfficiency = 0;
@@ -246,7 +244,7 @@ public sealed class VoreSystem : EntitySystem
 
         RemComp<VoredComponent>(uid);
         RemComp<PressureImmunityComponent>(uid);
-        RemComp<RespiratorImmuneComponent>(uid);
+        // RemComp<RespiratorImmuneComponent>(uid);
         _blindableSystem.UpdateIsBlind(uid);
         if (TryComp<TemperatureComponent>(uid, out var temp))
             temp.AtmosTemperatureTransferEfficiency = 0.1f;
@@ -378,12 +376,12 @@ public sealed class VoreSystem : EntitySystem
             {
                 if (_inventorySystem.TryGetSlotEntity(prey, slot.Name, out var item, inventoryComponent))
                 {
-                    if (TryComp<DnaComponent>(uid, out var dna))
-                    {
-                        var partComp = EnsureComp<ForensicsComponent>(item.Value);
-                        partComp.DNAs.Add(dna.DNA);
-                        Dirty(item.Value, partComp);
-                    }
+                    // if (TryComp<DnaComponent>(uid, out var dna))
+                    // {
+                    //     var partComp = EnsureComp<ForensicsComponent>(item.Value);
+                    //     partComp.DNAs.Add(dna.DNA);
+                    //     Dirty(item.Value, partComp);
+                    // }
                     _transform.AttachToGridOrMap(item.Value);
                 }
             }
