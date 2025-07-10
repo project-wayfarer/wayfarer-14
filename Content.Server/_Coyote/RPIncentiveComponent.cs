@@ -1,6 +1,3 @@
-using Content.Shared._Coyote;
-using Robust.Shared.GameStates;
-
 namespace Content.Server._Coyote;
 
 /// <summary>
@@ -8,7 +5,7 @@ namespace Content.Server._Coyote;
 /// This will track the actions a player does, and adjust some paywards
 /// for them once if they do those things, sometimes!
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent]
 public sealed partial class RoleplayIncentiveComponent : Component
 {
     /// <summary>
@@ -33,18 +30,12 @@ public sealed partial class RoleplayIncentiveComponent : Component
     /// Interval between paywards.
     /// </summary>
     [DataField]
-    public TimeSpan PaywardInterval = TimeSpan.FromSeconds(5); // TimeSpan.FromMinutes(60);
+    public TimeSpan PaywardInterval = TimeSpan.FromMinutes(20); // TimeSpan.FromMinutes(15);
 
     /// <summary>
     /// Interval between paywards when offline.
     /// </summary>
     [DataField]
-    public TimeSpan PaywardIntervalOffline = TimeSpan.FromSeconds(10); // TimeSpan.FromMinutes(15);
-
-    /// <summary>
-    /// The amount of payward to give for each action.
-    /// </summary>
-    [DataField]
-    public float PaywardScalar = 0.001f;
+    public TimeSpan PaywardIntervalOffline = TimeSpan.FromMinutes(30); // TimeSpan.FromMinutes(15);
 
 }

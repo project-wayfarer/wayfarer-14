@@ -36,5 +36,16 @@ public enum RoleplayActs : byte
     /// <summary>
     /// The player has used the radio.
     /// </summary>
-    Radio
+    Radio,
+
+    /// <summary>
+    /// Its an emote OR a quick emote, so more dickery is needed to figure it
+    /// out.
+    /// </summary>
+    EmotingOrQuickEmoting,
+
+    /// <summary>
+    /// null but not really
+    /// </summary>
+    None,
 }

@@ -8,7 +8,7 @@ namespace Content.Server._Coyote
     /// </summary>
     public sealed class RoleplayAction(
         RoleplayActs action,
-        DateTime timeTaken,
+        TimeSpan timeTaken,
         string? message = null,
         int peoplePresent = 0,
         float judgement = 0
@@ -17,12 +17,12 @@ namespace Content.Server._Coyote
         /// <summary>
         /// The action that was taken.
         /// </summary>
-        public readonly RoleplayActs Action = action;
+        public RoleplayActs Action = action;
 
         /// <summary>
         /// The time the action was taken.
         /// </summary>
-        public DateTime TimeTaken = timeTaken;
+        public TimeSpan TimeTaken = timeTaken;
 
         /// <summary>
         /// The message of the action, if applicable.
