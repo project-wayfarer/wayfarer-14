@@ -747,7 +747,6 @@ public sealed partial class ChatSystem : SharedChatSystem
                      SubtleRange,
                      blockedByOcclusion: !SubtleGoesThroughWalls))
         {
-            numHeareded++;
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
             if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed)
