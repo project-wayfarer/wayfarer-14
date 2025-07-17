@@ -1,5 +1,7 @@
+using System.Linq;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 
 namespace Content.Server._DV.Feroxi;
@@ -7,42 +9,61 @@ namespace Content.Server._DV.Feroxi;
 public sealed class FeroxiDehydrateSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _body = default!;
-
-    public override void Update(float frameTime)
+    public override void Initialize()
     {
-        var query = EntityQueryEnumerator<FeroxiDehydrateComponent, ThirstComponent>();
+        base.Initialize();
 
-        while (query.MoveNext(out var uid, out var feroxiDehydrate, out var thirst))
-        {
-            var currentThirst = thirst.CurrentThirst;
-            var shouldBeDehydrated = currentThirst <= feroxiDehydrate.DehydrationThreshold;
-
-            if (feroxiDehydrate.Dehydrated != shouldBeDehydrated)
-            {
-                UpdateDehydrationStatus((uid, feroxiDehydrate), shouldBeDehydrated);
-            }
-        }
+        SubscribeLocalEvent<FeroxiDehydrateComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
     }
 
-    /// <summary>
-    /// Checks and changes the lungs when meeting the threshold for a swap of metabolizer
-    /// </summary>
-    /// <param name="ent"></param>
-    /// <param name="shouldBeDehydrated"></param>
-    private void UpdateDehydrationStatus(Entity<FeroxiDehydrateComponent> ent, bool shouldBeDehydrated)
+    private void OnRefreshMovespeed(EntityUid uid, FeroxiDehydrateComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        ent.Comp.Dehydrated = shouldBeDehydrated;
-
-        foreach (var entity in _body.GetBodyOrganEntityComps<LungComponent>(ent.Owner))
+        if (!TryComp<ThirstComponent>(uid, out var thirst))
         {
-            if (!TryComp<MetabolizerComponent>(entity, out var metabolizer) || metabolizer.MetabolizerTypes == null)
-            {
-                continue;
-            }
-            //Changing the metabolizer to the appropriate value based
-            var newMetabolizer = shouldBeDehydrated ? ent.Comp.DehydratedMetabolizer : ent.Comp.HydratedMetabolizer;
-            metabolizer.MetabolizerTypes!.Clear();
-            metabolizer.MetabolizerTypes.Add(newMetabolizer);
+            return;
         }
+        // OverHydrated: 600
+        // Okay: 450
+        // Thirsty: 300
+        // Parched: 150
+        // else: 0
+        float speedMod;
+        if (thirst.CurrentThirst >= thirst.ThirstThresholds[ThirstThreshold.OverHydrated])
+        {
+            speedMod = component.OverhydratedModifier;
+        }
+        else if (thirst.CurrentThirst >= thirst.ThirstThresholds[ThirstThreshold.Okay])
+        {
+            speedMod = component.OkayModifier;
+        }
+        else if (thirst.CurrentThirst >= thirst.ThirstThresholds[ThirstThreshold.Thirsty])
+        {
+            speedMod = component.ThirstyModifier;
+        }
+        else if (thirst.CurrentThirst >= thirst.ThirstThresholds[ThirstThreshold.Parched])
+        {
+            speedMod = component.ParchedModifier;
+        }
+        else
+        {
+            speedMod = component.DehydratedModifier;
+        }
+        args.ModifySpeed(speedMod, speedMod);
     }
 }
+
+    // public override void Update(float frameTime)
+    // {
+    //     var query = EntityQueryEnumerator<FeroxiDehydrateComponent, ThirstComponent>();
+    //
+    //     while (query.MoveNext(out var uid, out var feroxiDehydrate, out var thirst))
+    //     {
+    //         var currentThirst = thirst.CurrentThirst;
+    //         var shouldBeDehydrated = currentThirst <= feroxiDehydrate.DehydrationThreshold;
+    //
+    //         if (feroxiDehydrate.Dehydrated != shouldBeDehydrated)
+    //         {
+    //             UpdateDehydrationStatus((uid, feroxiDehydrate), shouldBeDehydrated);
+    //         }
+    //     }
+    // }

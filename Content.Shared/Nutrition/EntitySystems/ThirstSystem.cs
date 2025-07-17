@@ -97,9 +97,9 @@ public sealed class ThirstSystem : EntitySystem
 
     public void SetThirst(EntityUid uid, ThirstComponent component, float amount)
     {
-        component.CurrentThirst = Math.Clamp(amount,
+        component.CurrentThirst = (float) Math.Clamp(amount,
             component.ThirstThresholds[ThirstThreshold.Dead],
-            component.ThirstThresholds[ThirstThreshold.OverHydrated]
+            component.ThirstThresholds[ThirstThreshold.OverHydrated] * 1.1 // Allow for overhydration
         );
 
         DirtyField(uid, component, nameof(ThirstComponent.CurrentThirst));
@@ -107,18 +107,15 @@ public sealed class ThirstSystem : EntitySystem
 
     private bool IsMovementThreshold(ThirstThreshold threshold)
     {
-        switch (threshold)
+        return threshold switch
         {
-            case ThirstThreshold.Dead:
-            case ThirstThreshold.Parched:
-                return true;
-            case ThirstThreshold.Thirsty:
-            case ThirstThreshold.Okay:
-            case ThirstThreshold.OverHydrated:
-                return false;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(threshold), threshold, null);
-        }
+            ThirstThreshold.Dead => true,
+            ThirstThreshold.Parched => true,
+            ThirstThreshold.Thirsty => true,
+            ThirstThreshold.Okay => true,
+            ThirstThreshold.OverHydrated => true,
+            _ => throw new ArgumentOutOfRangeException(nameof(threshold), threshold, null)
+        };
     }
 
     public bool TryGetStatusIconPrototype(ThirstComponent component, [NotNullWhen(true)] out SatiationIconPrototype? prototype)
@@ -147,8 +144,12 @@ public sealed class ThirstSystem : EntitySystem
 
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
-        if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
-                TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
+        // if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
+        //         TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
+        // {
+        //     _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
+        // }
+        if (TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {
             _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
         }

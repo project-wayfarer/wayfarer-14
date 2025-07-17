@@ -9,24 +9,20 @@ namespace Content.Server._DV.Feroxi;
 [RegisterComponent, Access(typeof(FeroxiDehydrateSystem))]
 public sealed partial class FeroxiDehydrateComponent : Component
 {
-    /// <summary>
-    /// Defines which <see cref="MetabolizerTypePrototype"> to use when over the <see cref="DehydrationThreshold"/>
-    /// </summary>
-    [DataField(required: true)]
-    public ProtoId<MetabolizerTypePrototype> HydratedMetabolizer;
+    [DataField("overhydrated", required: true)]
+    public float OverhydratedModifier = 1f;
 
-    /// <summary>
-    /// Defines which <see cref="MetabolizerTypePrototype"=> to use when below the <see cref="DehydrationThreshold"/>
-    /// </summary>
-    [DataField(required: true)]
-    public ProtoId<MetabolizerTypePrototype> DehydratedMetabolizer;
+    [DataField("okay", required: true)]
+    public float OkayModifier = 0.9f;
 
-    [DataField]
-    public bool Dehydrated;
+    [DataField("thirsty", required: true)]
+    public float ThirstyModifier = 0.8f;
 
-    /// <summary>
-    /// Gives the threshold on when to flip between <see cref="HydratedMetabolizer"/> and <see cref="DehydratedMetabolizer"/>
-    /// </summary>
-    [DataField(required: true)]
-    public float DehydrationThreshold;
+    [DataField("parched", required: true)]
+    public float ParchedModifier = 0.7f;
+
+    [DataField("dehydrated", required: true)]
+    public float DehydratedModifier = 0.5f;
+
+
 }

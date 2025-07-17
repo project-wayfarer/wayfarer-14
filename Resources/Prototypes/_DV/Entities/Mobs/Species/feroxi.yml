@@ -99,10 +99,12 @@
     damageModifierSet: Feroxi
   - type: TypingIndicator
     proto: feroxi
-#  - type: FeroxiDehydrate # hey bby, the CPAP stays on while we make out
-#    hydratedMetabolizer: Feroxi
-#    dehydratedMetabolizer: FeroxiDehydrated
-#    dehydrationThreshold: 150
+  - type: FeroxiDehydrate # hey bby, the CPAP stays on while we make out
+    overhydrated: 1.05
+    okay: 1
+    thirsty: 0.75
+    parched: 0.25
+    dehydrated: 0.1
 
 - type: entity
   parent: MobHumanDummy
