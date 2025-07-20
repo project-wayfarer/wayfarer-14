@@ -37,10 +37,11 @@
           density: 185
           restitution: 0.0
           mask:
-            - MobMask
+          - MobMask
           layer:
-            - MobLayer
+          - MobLayer
     - type: DamageVisuals
+      thresholds: [ 10, 30, 50, 70 ]
       damageOverlayGroups:
         Brute:
           sprite: Floof/Mobs/Effects/Resomi/brute_damage.rsi
