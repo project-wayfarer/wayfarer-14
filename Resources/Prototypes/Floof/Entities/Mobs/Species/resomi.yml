@@ -67,7 +67,7 @@
             sprite: Floof/Mobs/Species/Resomi/displacement.rsi
             state: inHand
     - type: Inventory
-      speciesId: Resomi
+      speciesId: resomi
       displacements:
         jumpsuit:
           sizeMaps:
@@ -124,19 +124,216 @@
             32:
               sprite: Floof/Mobs/Species/Resomi/displacement.rsi
               state: belt
-
-- type: entity
-  parent: BaseSpeciesDummy
-  id: MobResomiDummy
-  description: A dummy resomi meant to be used in character setup.
-  components:
-    - type: HumanoidAppearance
-      species: Resomi
-    - type: Inventory
-      speciesId: Resomi
-      displacements:
+      femaleDisplacements: # Goobstation - splitting up the genders broke displacements, apparently it won't just apply the same displacement to both genders :|
         jumpsuit:
           sizeMaps:
             32:
               sprite: Floof/Mobs/Species/Resomi/displacement.rsi
               state: jumpsuit
+        eyes:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: eyes
+        gloves:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: hands
+        head:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: head
+        back:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: back
+        ears:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: ears
+        shoes:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: feet
+        neck:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: neck
+        mask:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: mask
+        suitstorage:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: suitStorage
+        belt:
+          sizeMaps:
+            32:
+              sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+              state: belt
+    - type: ShortWhitelist
+      scale: 0.8
+      density: 140
+      pseudoItem: true
+      cosmeticOnly: false
+    - type: TallWhitelist
+      scale: 1.2
+    - type: Bloodstream # Goobstation - lore stuff
+      bloodReagent: AmmoniaBlood
+    - type: Damageable # Goobstation - resomi damage modifiers
+      damageModifierSet: Resomi
+    - type: Temperature
+      coldDamageThreshold: 195.4 # Goobstation - freezing point of ammonia is -77.75°C
+      heatDamageThreshold: 320.15 # Goobstation - space chickens can't tolerate reasonable temperatures, but requiring them to stay icy would be cringe, so instead make their heat damage threshold dangerously close to standard atmos, at 47°C
+      coldDamage:
+        types:
+          Cold : 0.05 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat : 3 #per second, scales with temperature & other constants
+    - type: MovementSpeedModifier
+      weightlessAcceleration: 2.5 # Goobstation - Birb move fast in zero-g
+    - type: PseudoItem # Goobstation - Baggable; certified smol ops
+      storedOffset: -10,0
+      shape:
+      - 0, 0, 3, 2
+      - 0, 2, 5, 4
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobResomiDummy
+  noSpawn: true
+  description: A dummy resomi meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Resomi
+  - type: Hands
+    handDisplacement:
+      sizeMaps:
+        32:
+          sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+          state: inHand
+  - type: Inventory
+    speciesId: resomi
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: jumpsuit
+      eyes:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: eyes
+      gloves:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: hands
+      head:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: head
+      back:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: back
+      ears:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: ears
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: feet
+      neck:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: neck
+      mask:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: suitStorage
+      belt:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: belt
+    femaleDisplacements: # Goobstation - splitting up the genders broke displacements, apparently it won't just apply the same displacement to both genders :|
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: jumpsuit
+      eyes:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: eyes
+      gloves:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: hands
+      head:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: head
+      back:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: back
+      ears:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: ears
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: feet
+      neck:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: neck
+      mask:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: suitStorage
+      belt:
+        sizeMaps:
+          32:
+            sprite: Floof/Mobs/Species/Resomi/displacement.rsi
+            state: belt
+
