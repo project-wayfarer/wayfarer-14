@@ -228,6 +228,7 @@ namespace Content.Server.Atmos.EntitySystems
                 component.Integrity++;
         }
 
+        // COYOTE START: Added pressure beep warning system thing
         /// <summary>
         /// Play some kind of beep if the pressure is low enough.
         /// Runs off a system of thresholds, which are defined in the GasTankComponent.
@@ -310,6 +311,7 @@ namespace Content.Server.Atmos.EntitySystems
             };
             args.Verbs.Add(verb);
         }
+        // COYOTE END
 
         /// <summary>
         /// Returns the gas mixture for the gas analyzer
