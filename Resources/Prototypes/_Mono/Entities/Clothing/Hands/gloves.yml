@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2025 Avalon
+# SPDX-FileCopyrightText: 2025 core-mene
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsConcussiveGauntlets
+  name: concussive gauntlets
+  description: A pair of gauntlets designed for mining usage, delivering shocks to shatter anyhting in their path. Rare and powerful
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Hands/Gloves/concussive_gauntlets.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Mono/Clothing/Hands/Gloves/concussive_gauntlets.rsi
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 2.5
+    damage:
+      types:
+        Blunt: 15
+        Structural: 100
+    soundHit:
+      collection: ExplosionSmall
+    heavyStaminaCost: 0
+  - type: Tag
+    tags:
+    - Pickaxe
+  - type: MiningGatheringHard
+  - type: StaticPrice
+    price: 15000
+    vendPrice: 30000
