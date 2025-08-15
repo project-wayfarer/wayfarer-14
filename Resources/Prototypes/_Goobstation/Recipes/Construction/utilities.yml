@@ -46,7 +46,8 @@
 
 - type: construction
   id: HeatExchangerInlineBend
-  name: construction-recipe-heat-exchanger-bend
+  name: inline radiator bend
+  description: Transfers heat between the pipe and its surroundings. Doesn't need gas flow.
   graph: GasBinary
   startNode: start
   targetNode: bendinlineradiator
