@@ -271,24 +271,30 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool hideChat,
         IConsoleShell? shell = null,
         ICommonSession? player = null
-        )
+    )
     {
-        if (!CanSendInGame(message, shell, player))
+        if (!CanSendInGame(
+                message,
+                shell,
+                player))
             return;
 
-        if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
+        if (player != null
+            && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
         // It doesn't make any sense for a non-player to send in-game OOC messages, whereas non-players may be sending
         // in-game IC messages.
-        if (player?.AttachedEntity is not { Valid: true } entity || source != entity)
+        if (player?.AttachedEntity is not { Valid: true } entity
+            || source != entity)
             return;
 
         message = SanitizeInGameOOCMessage(message);
 
         var sendType = type;
         // If dead player LOOC is disabled, unless you are an admin with Moderator perms, send dead messages to dead chat
-        if ((_adminManager.IsAdmin(player) && _adminManager.HasAdminFlag(player, AdminFlags.Moderator)) // Override if admin
+        if ((_adminManager.IsAdmin(player)
+             && _adminManager.HasAdminFlag(player, AdminFlags.Moderator)) // Override if admin
             || _deadLoocEnabled
             || (!HasComp<GhostComponent>(source) && !_mobStateSystem.IsDead(source))) // Check that player is not dead
         {
@@ -303,10 +309,25 @@ public sealed partial class ChatSystem : SharedChatSystem
         switch (sendType)
         {
             case InGameOOCChatType.Dead:
-                SendDeadChat(source, player, message, hideChat);
+                SendDeadChat(
+                    source,
+                    player,
+                    message,
+                    hideChat);
+                break;
+            case InGameOOCChatType.SubtleLooc:
+                SendSubtleLOOC(
+                    source,
+                    player,
+                    message,
+                    hideChat);
                 break;
             case InGameOOCChatType.Looc:
-                SendLOOC(source, player, message, hideChat);
+                SendLOOC(
+                    source,
+                    player,
+                    message,
+                    hideChat);
                 break;
         }
     }
@@ -542,7 +563,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-            if (data.Range <= WhisperClearRange || data.Observer)
+            if (data.Range <= WhisperClearRange
+                || data.Observer)
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, false, session.Channel);
             //If listener is too far, they only hear fragments of the message
             else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange))
@@ -616,14 +638,59 @@ public sealed partial class ChatSystem : SharedChatSystem
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {ToPrettyString(source):user}: {action}");
     }
 
+        private void SendEntitySubtle(
+        EntityUid source,
+        string action,
+        ChatTransmitRange range,
+        string? nameOverride,
+        bool hideLog = false,
+        bool ignoreActionBlocker = false,
+        NetUserId? author = null,
+        string? chatColor = null // COYOTESTATION ADD - makes the your name color right
+        )
+    {
+        if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
+            return;
+        // get the entity's apparent name (if no override provided).
+        var ent = Identity.Entity(source, EntityManager);
+        string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
+        // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
+        var wrappedMessage = Loc.GetString("chat-manager-entity-subtle-wrap-message",
+            ("entityName", name),
+            ("entity", ent),
+            ("message", FormattedMessage.RemoveMarkupOrThrow(action)),
+            ("chatColor", chatColor ?? Color.White.ToHex())); // COYOTESTATION ADD - makes the your name color right
+        var numHeareded = 0;
+        foreach (var (session, data) in GetRecipients(
+                     source,
+                     SubtleRange,
+                     blockedByOcclusion: !SubtleGoesThroughWalls))
+        {
+            if (session.AttachedEntity is not { Valid: true } listener)
+                continue;
+            if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed)
+                continue;
+            numHeareded++;
+            _chatManager.ChatMessageToOne(ChatChannel.Emotes, action, wrappedMessage, source, false, session.Channel);
+        }
+        SendRPIncentive(source, ChatChannel.Subtle, action, numHeareded);
+
+        if (!hideLog)
+            if (name != Name(source))
+                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Subtle from {ToPrettyString(source):user} as {name}: {action}");
+            else
+                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Subtle from {ToPrettyString(source):user}: {action}");
+    }
+
     // ReSharper disable once InconsistentNaming
-    private void SendLOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
+    private void SendSubtleLOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
     {
         var name = FormattedMessage.EscapeText(Identity.Name(source, EntityManager));
 
         if (_adminManager.IsAdmin(player))
         {
-            if (!_adminLoocEnabled) return;
+            if (!_adminLoocEnabled)
+                return;
         }
         else if (!_loocEnabled) return;
 
@@ -633,6 +700,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var wrappedMessage = Loc.GetString("chat-manager-entity-looc-wrap-message",
             ("entityName", name),
+            ("chatColor", nameColorString), // COYOTESTATION ADD - makes the your name color right
             ("message", FormattedMessage.EscapeText(message)));
 
         SendInVoiceRange(ChatChannel.LOOC, message, wrappedMessage, source, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, player.UserId);
@@ -676,10 +744,52 @@ public sealed partial class ChatSystem : SharedChatSystem
                 ? ChatTransmitRange.HideChat
                 : ChatTransmitRange.Normal,
             player.UserId,
+            voiceRange: LOOCRange, // COYOTESTATION ADD - LOOC goes further
+            blockedByOcclusion: !LOOCGoesThroughWalls, // COYOTESTATION ADD - some things dont do thru walls
+            ensmallenedByOcclusion: false); // COYOTESTATION ADD - LOOC dont get ensmallened by occlusion
+        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"LOOC from {player:Player}: {message}");
+    }
+
+    // ReSharper disable once InconsistentNaming
+    private void SendSubtleLOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
+    {
+        var name = FormattedMessage.EscapeText(Identity.Name(source, EntityManager));
+
+        if (_adminManager.IsAdmin(player))
+        {
+            if (!_adminLoocEnabled)
+                return;
+        }
+        else if (!_loocEnabled)
+            return;
+        var entityName = Identity.Name(source, EntityManager);
+        if (string.IsNullOrEmpty(entityName))
+        {
+            // If no name override is provided, we use the entity's name.
+            entityName = "bingles";
+        }
+        var nameHashColor = ColorExtensions.ConsistentRandomSeededColorFromString(entityName);
+        var nameHashColorAdjusted = ColorExtensions.PreventColorFromBeingTooCloseToTheBackgroundColor(nameHashColor); // pastilla loses
+        var nameColorString = nameHashColorAdjusted.ToHex();
+
+        var wrappedMessage = Loc.GetString(
+            "chat-manager-entity-subtle-looc-wrap-message",
+            ("entityName", name),
+            ("chatColor", nameColorString), // COYOTESTATION ADD - makes the your name color right
+            ("message", FormattedMessage.EscapeText(message)));
+
+        SendInVoiceRange(
+            ChatChannel.SubtleLOOC,
+            message,
+            wrappedMessage,
+            source,
+            hideChat
+                ? ChatTransmitRange.HideChat
+                : ChatTransmitRange.Normal,
+            player.UserId,
             voiceRange: SubtleLOOCRange,
             blockedByOcclusion: !SubtleLOOCGoesThroughWalls,
-            ensmallenedByOcclusion: false,
-            noGhosts: true); // COYOTESTATION ADD - Subtle LOOC does not go to ghosts, so we set noGhosts to true
+            ensmallenedByOcclusion: false);
         _adminLogger.Add(
             LogType.Chat,
             LogImpact.Low,
@@ -786,17 +896,43 @@ public sealed partial class ChatSystem : SharedChatSystem
                      source,
                      voiceRange,
                      blockedByOcclusion,
-                     ensmallenedByOcclusion,
-                     noGhosts: noGhosts))
+                     ensmallenedByOcclusion))
         {
-            var entRange = MessageRangeCheck(session, data, range);
+            numHeareded++;
+            var entRange = MessageRangeCheck(
+                session,
+                data,
+                range);
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
-            _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
+            var text2Send = ensmallenedByOcclusion && data.Occluded
+                ? occludedMessage ?? wrappedMessage
+                : wrappedMessage;
+            _chatManager.ChatMessageToOne(
+                channel,
+                message,
+                text2Send,
+                source,
+                entHideChat,
+                session.Channel,
+                author: author);
         }
 
-        _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
+        SendRPIncentive(
+            source,
+            channel,
+            message,
+            numHeareded);
+
+        _replay.RecordServerMessage(
+            new ChatMessage(
+                channel,
+                message,
+                wrappedMessage,
+                GetNetEntity(source),
+                null,
+                MessageRangeHideChatForReplay(range)));
     }
 
     /// <summary>
@@ -1097,6 +1233,7 @@ public enum InGameICChatType : byte
 public enum InGameOOCChatType : byte
 {
     Looc,
+    SubtleLooc,
     Dead
 }
 

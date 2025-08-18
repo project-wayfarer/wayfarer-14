@@ -210,6 +210,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.FocusWhisperChat);
             AddButton(ContentKeyFunctions.FocusRadio);
             AddButton(ContentKeyFunctions.FocusLOOC);
+            AddButton(ContentKeyFunctions.FocusSubtleLOOC);
             AddButton(ContentKeyFunctions.FocusOOC);
             AddButton(ContentKeyFunctions.FocusAdminChat);
             AddButton(ContentKeyFunctions.FocusDeadChat);

@@ -11,6 +11,7 @@ hud-chatbox-select-channel-Emotes = Emotes
 hud-chatbox-select-channel-Local = Local
 hud-chatbox-select-channel-Whisper = Whisper
 hud-chatbox-select-channel-LOOC = LOOC
+hud-chatbox-select-channel-SubtleLOOC = Subtle LOOC
 hud-chatbox-select-channel-OOC = OOC
 hud-chatbox-select-channel-Damage = Damage
 hud-chatbox-select-channel-Visual = Actions

@@ -45,6 +45,10 @@ internal sealed class ChatManager : IChatManager
                 _consoleHost.ExecuteCommand($"looc \"{CommandParsing.Escape(str)}\"");
                 break;
 
+            case ChatSelectChannel.SubtleLOOC:
+                _consoleHost.ExecuteCommand($"subtlelooc \"{CommandParsing.Escape(str)}\"");
+                break;
+
             case ChatSelectChannel.OOC:
                 _consoleHost.ExecuteCommand($"ooc \"{CommandParsing.Escape(str)}\"");
                 break;

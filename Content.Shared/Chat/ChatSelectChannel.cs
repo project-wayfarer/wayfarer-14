@@ -32,6 +32,11 @@
         LOOC = ChatChannel.LOOC,
 
         /// <summary>
+        ///     Local out-of-character channel
+        /// </summary>
+        SubtleLOOC = ChatChannel.SubtleLOOC,
+
+        /// <summary>
         ///     Out-of-character channel
         /// </summary>
         OOC = ChatChannel.OOC,
