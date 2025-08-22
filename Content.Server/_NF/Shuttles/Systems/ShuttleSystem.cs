@@ -282,11 +282,16 @@ public sealed partial class ShuttleSystem
                     shuttle,
                     cronsoles,
                     quietly); // no need to emergency brake, people are on it
-                return;
+                continue;
             }
             // find all the shuttle consoles on this shuttle
             if (cronsoles.Count == 0)
             {
+                EngageEmergencyBrake(
+                    uid,
+                    shuttle,
+                    cronsoles,
+                    quietly); // no powered consoles, emergency brake
                 continue;
             }
             // check if any of the shuttle consoles are powered
@@ -306,7 +311,7 @@ public sealed partial class ShuttleSystem
                     shuttle,
                     cronsoles,
                     quietly); // no powered consoles, emergency brake
-                return;
+                continue;
             }
         }
     }
