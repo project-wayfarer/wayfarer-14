@@ -12,6 +12,15 @@
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
+  # Wayfarer: Donk
+      params:
+        variation: 0.06
+  - type: EmitSoundOnLand
+    sound:
+      collection: ShellEject
+      params:
+        variation: 0.06
+  # End Wayfarer
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:
