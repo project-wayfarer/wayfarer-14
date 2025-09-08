@@ -1,7 +1,9 @@
 using System.Numerics;
+using Content.Server.Storage.Components;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 
@@ -16,7 +18,7 @@ public sealed class SpaceJanitorSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
-    private const int MinutesBetweenChecks = 5;
+    private const int MinutesBetweenChecks = 15;
     private const int MinutesBeforeCleanup = 720; // 12 hours
     private TimeSpan _nextCheck = TimeSpan.Zero;
 
@@ -37,14 +39,21 @@ public sealed class SpaceJanitorSystem : EntitySystem
         var query = EntityQueryEnumerator<SpaceJanitorComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (!NakedAndInSpace(uid))
+            if (!NakedAndInSpace(uid, comp))
             {
                 // its not in space, so reset the timer.
                 ResetNakedSpaceTime(uid, comp);
                 continue;
             }
-            UpdateNakedSpaceTime(uid, comp, curTime);
-            DeleteIfNeeded(uid, comp, curTime);
+
+            UpdateNakedSpaceTime(
+                uid,
+                comp,
+                curTime);
+            DeleteIfNeeded(
+                uid,
+                comp,
+                curTime);
         }
     }
 
@@ -52,12 +61,18 @@ public sealed class SpaceJanitorSystem : EntitySystem
     /// Checks if:
     /// The entity has null grid
     /// The entity is not inside something (has actual local coordinates)
-    private bool NakedAndInSpace(EntityUid uid)
+    /// </summary>
+    private bool NakedAndInSpace(EntityUid uid, SpaceJanitorComponent comp)
     {
         var xform = Transform(uid);
-        if (xform.GridUid != null)
-            return false;
         if (xform.LocalPosition == Vector2.Zero)
+            return false;
+        // clean up empty casings, whether in space or not, but only while not carried by something.
+        if (comp.IsCasing
+            && TryComp<CartridgeAmmoComponent>(uid, out var cartridge)
+            && cartridge.Spent)
+            return true; // naked, and in 'space' (on the floor)
+        if (xform.GridUid != null)
             return false;
         return true;
     }
@@ -82,7 +97,7 @@ public sealed class SpaceJanitorSystem : EntitySystem
         if (curTime - comp.FoundInSpaceTime < TimeSpan.FromMinutes(MinutesBeforeCleanup))
             return;
         // delete the entity.
-        if (TryComp<SharedEntityStorageComponent>(uid, out var storage)
+        if (TryComp<EntityStorageComponent>(uid, out var storage)
             && !storage.DeleteContentsOnDestruction)
         {
             var sess = IoCManager.Resolve<SharedEntityStorageSystem>();
