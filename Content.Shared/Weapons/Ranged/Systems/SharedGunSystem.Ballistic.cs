@@ -59,6 +59,7 @@ public abstract partial class SharedGunSystem
         Audio.PlayPredicted(component.SoundInsert, uid, args.User);
         args.Handled = true;
         UpdateBallisticAppearance(uid, component);
+        UpdateAmmoCount(args.Target);
         DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
     }
 
@@ -187,7 +188,9 @@ public abstract partial class SharedGunSystem
                 Del(ent.Value);
         }
 
-        // repeat if there is more space in the target and more ammo to fill it
+        UpdateBallisticAppearance(args.Target.Value, component);
+        UpdateAmmoCount(args.Target.Value);
+        // repeat if there is more space in the target and more ammo to fill
         // Frontier: better revolver reloading
         var moreSpace = false;
         if (ballisticTarget is not null)
