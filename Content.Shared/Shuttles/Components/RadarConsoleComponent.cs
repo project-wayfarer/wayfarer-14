@@ -5,7 +5,6 @@ using System.Numerics; // Frontier
 namespace Content.Shared.Shuttles.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedRadarConsoleSystem))]
 public sealed partial class RadarConsoleComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)]
