@@ -141,6 +141,10 @@ public sealed class DeviceLinkSystem : SharedDeviceLinkSystem
         if (args.Source != ent.Owner)
             return;
 
+        // Don't automatically send signals if the source has NoSignalOnLinkComponent
+        if (HasComp<NoSignalOnLinkComponent>(ent))
+            return;
+
         // only do anything if a signal is being sent from a port
         if (!ent.Comp.LastSignals.TryGetValue(args.SourcePort, out var signal))
             return;
