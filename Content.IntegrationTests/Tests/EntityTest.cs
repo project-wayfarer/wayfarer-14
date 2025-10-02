@@ -396,6 +396,7 @@ namespace Content.IntegrationTests.Tests
                 "ActivatableUI", // Frontier: Requires enum key
                 "AlertLevel", // Frontier: requires alert set
                 "BluespaceErrorRule", // Frontier
+                "RadarConsoleComponent", // idfk
             };
 
             await using var pair = await PoolManager.GetServerClient();
