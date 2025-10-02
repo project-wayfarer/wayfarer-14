@@ -397,6 +397,7 @@ namespace Content.IntegrationTests.Tests
                 "AlertLevel", // Frontier: requires alert set
                 "BluespaceErrorRule", // Frontier
                 "RadarConsoleComponent", // idfk
+                "ShuttleConsoleComponent", // idfk
             };
 
             await using var pair = await PoolManager.GetServerClient();
