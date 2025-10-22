@@ -2,10 +2,10 @@
   name: size manipulator
   parent: BaseWeaponBattery
   id: WeaponSizeManipulator
-  description: A specialized energy weapon that can grow or shrink targets. Toggle modes by activating it in-hand or clicking on it in the world.
+  description: Zap zap. A specialized energy weapon that can grow or shrink targets.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/taser.rsi  # Replace with custom sprite if available
+    sprite: Objects/Weapons/Guns/Battery/taser.rsi  # Replace with custom sprite
     layers:
     - state: icon
       map: ["enum.GunVisualLayers.Base"]
@@ -42,4 +42,4 @@
   - type: StaticPrice
     price: 500
   - type: UseDelay
-    delay: 0.5
+    delay: 1.0
