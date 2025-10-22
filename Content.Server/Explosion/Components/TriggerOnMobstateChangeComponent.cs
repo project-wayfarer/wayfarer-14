@@ -21,4 +21,18 @@ public sealed partial class TriggerOnMobstateChangeComponent : Component
     [ViewVariables]
     [DataField("preventSuicide")]
     public bool PreventSuicide = false;
+
+    /// <summary>
+    /// If true, it will not do its thing if the owner has been vored, owo.
+    /// </summary>
+    [ViewVariables]
+    [DataField("preventVore")]
+    public bool PreventVore = false;
+
+    /// <summary>
+    /// If false, this component will not trigger / is not allowed to work.
+    /// </summary>
+    [ViewVariables]
+    [DataField("enabled")]
+    public bool Enabled = true;
 }
