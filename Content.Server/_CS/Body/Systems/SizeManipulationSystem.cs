@@ -3,6 +3,7 @@ using Content.Server.Consent;
 using Content.Shared.Body.Components;
 using Content.Shared.Consent;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Log;
@@ -23,7 +24,14 @@ public sealed class SizeManipulationSystem : EntitySystem
     /// </summary>
     public bool TryChangeSize(EntityUid target, SizeManipulatorMode mode, EntityUid? user = null)
     {
-        // Check consent first
+        // Only allow size manipulation on mobs (living entities)
+        if (!HasComp<MobStateComponent>(target))
+        {
+            Logger.Debug($"SizeManipulation: Target {ToPrettyString(target)} is not a mob, ignoring");
+            return false;
+        }
+
+        // Check consent
         if (!_consent.HasConsent(target, SizeManipulationConsent))
         {
             if (user != null)
