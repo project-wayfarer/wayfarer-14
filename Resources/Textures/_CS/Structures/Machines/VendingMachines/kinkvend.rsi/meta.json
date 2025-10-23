@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "kink",
+      "delays": [
+        [
+          0.1,
+          1,
+          0.1,
+          1,
+          0.1,
+          1,
+          0.1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "kink-off"
+    },
+    {
+      "name": "kink-deny",
+      "delays": [
+        [
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.1,
+          0.3,
+          0.3
+        ]
+      ]
+    }
+  ]
+}

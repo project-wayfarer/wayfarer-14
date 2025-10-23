@@ -1,0 +1,35 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineKink
+  name: Horny Hawker
+  description: A vending machine stocked with various adult-themed items for those with... unique tastes.
+  components:
+  - type: VendingMachine
+    pack: HornyHawkerInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: kink-off
+    brokenState: kink-off
+    normalState: kink
+    denyState: kink-deny
+    loopDeny: false
+    ejectDelay: 1.9
+    initialStockQuality: 0.33
+  - type: Advertise
+    pack: HornyHawkerAds
+  - type: SpeakOnUIClosed
+    pack: HornyHawkerGoodbyes
+  - type: Sprite
+    sprite: _CS/Structures/Machines/VendingMachines/kinkvend.rsi
+    layers:
+    - state: "kink-off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "kink-off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - texture: Structures/Machines/VendingMachines/maintenance_panel.png
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#B53C9D"

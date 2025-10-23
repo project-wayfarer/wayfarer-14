@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockHornyHawker
+  name: Horny Hawker restock box
+  description: A discreet pink box for restocking the Horny Hawker vending machine. A label reads "ADULT CONTENT - HANDLE WITH DISCRETION. THE BOX IS TAMPER-PROOF AND WILL DESTROY ITS CONTENT ON HARM."
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - HornyHawkerInventory
+  - type: Sprite
+    layers:
+    - state: base
+    - state: green_bit
+      shader: unshaded
+      color: "#ff69b4"
+    - state: refill_costume
