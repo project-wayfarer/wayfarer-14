@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Client.DisplacementMap;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid;
@@ -45,13 +46,22 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
     private void UpdateSprite(Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
     {
+        var component = entity.Comp1;
+        var sprite = entity.Comp2;
+
         UpdateLayers(entity);
         ApplyMarkingSet(entity);
 
-        var humanoidAppearance = entity.Comp1;
-        var sprite = entity.Comp2;
+        // Don't clamp height/width on client - the server already handles limits
+        // Clamping here prevents temporary size effects (size gun, clothing, buffs) from displaying properly
+        var height = component.Height;
+        var width = component.Width;
 
-        sprite[_sprite.LayerMapReserve((entity.Owner, sprite), HumanoidVisualLayers.Eyes)].Color = humanoidAppearance.EyeColor;
+        // Directly set sprite scale - this is the original approach that worked
+        // Using SpriteSystem.SetScale() was causing issues with outline shader rendering
+        sprite.Scale = new Vector2(width, height);
+
+        sprite[_sprite.LayerMapReserve((entity.Owner, sprite), HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
     }
 
     private static bool IsHidden(HumanoidAppearanceComponent humanoid, HumanoidVisualLayers layer)

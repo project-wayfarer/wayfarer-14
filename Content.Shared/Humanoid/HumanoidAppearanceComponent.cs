@@ -2,6 +2,7 @@ using Content.Shared.DisplacementMap;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
+using Content.Shared.Preferences;
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -109,6 +110,41 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new();
+
+    /// <summary>
+    /// DeltaV - let paradox anomaly be cloned
+    /// TODO: paradox clones
+    /// </summary>
+    [ViewVariables]
+    public HumanoidCharacterProfile? LastProfileLoaded;
+
+    /// <summary>
+    ///     The base height of this humanoid from character customization.
+    ///     This is the value set in the lobby before any modifiers are applied.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float BaseHeight = 1f;
+
+    /// <summary>
+    ///     The base width of this humanoid from character customization.
+    ///     This is the value set in the lobby before any modifiers are applied.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float BaseWidth = 1f;
+
+    /// <summary>
+    ///     The current height of this humanoid (base height * modifiers).
+    ///     This is the actual visual height after all size modifications.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Height = 1f;
+
+    /// <summary>
+    ///     The current width of this humanoid (base width * modifiers).
+    ///     This is the actual visual width after all size modifications.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Width = 1f;
 }
 
 [DataDefinition]
