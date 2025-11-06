@@ -68,6 +68,12 @@
   materials:
     Steel: 1200
 
+- type: latheRecipe # Coyote
+  id: WeaponCaseHeavyAmmo
+  parent: WeaponCaseHeavy
+  result: WeaponCaseHeavyAmmo
+  name: lathe-recipe-WeaponCaseHeavyAmmo-name
+
 - type: latheRecipe
   id: WeaponCaseShortAmmo
   parent: NFBaseToolboxRecipe

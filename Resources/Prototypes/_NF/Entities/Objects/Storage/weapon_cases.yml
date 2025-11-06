@@ -83,6 +83,22 @@
     sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
   - type: Item
     sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
+  - type: Storage # Coyote Additions Below
+    maxItemSize: Normal
+    grid:
+    - 0,0,2,1
+    - 4,0,6,1
+    whitelist:
+      components:
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      tags:
+      - Cartridge
+    blacklist:
+      components:
+      - Gun
 
 - type: entity
   name: explosives case
@@ -151,3 +167,37 @@
       - Armor
       tags:
       - Cartridge
+
+#region Coyote
+- type: entity
+  name: ammo case
+  parent: WeaponCaseLong
+  id: WeaponCaseHeavyAmmo
+  suffix: Heavy
+  description: A reinforced casing for storing large amounts of magazines and ammo.
+  components:
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _CS/Objects/Storage/Cases/ammocaseheavy.rsi
+  - type: Item
+    sprite: _CS/Objects/Storage/Cases/ammocaseheavy.rsi
+    size: Ginormous
+    shape:
+    - 0,0,8,3
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,1,1,6
+    - 3,0,8,7
+    - 10,1,11,6
+    whitelist:
+      components:
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      tags:
+      - Cartridge
+    blacklist:
+      components:
+      - Gun
