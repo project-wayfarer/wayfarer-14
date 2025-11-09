@@ -188,8 +188,6 @@ public abstract partial class SharedGunSystem
                 Del(ent.Value);
         }
 
-        UpdateBallisticAppearance(args.Target.Value, component);
-        UpdateAmmoCount(args.Target.Value);
         // repeat if there is more space in the target and more ammo to fill
         // Frontier: better revolver reloading
         var moreSpace = false;
