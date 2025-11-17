@@ -123,11 +123,6 @@
 
 - type: quickPhrase
   parent: BaseScienceJobPhrase
-  id: ChaplainPhrase
-  text: job-name-chaplain
-
-- type: quickPhrase
-  parent: BaseScienceJobPhrase
   id: BorgPhrase
   text: job-name-borg
 
@@ -147,16 +142,6 @@
   parent: BaseLogisticsJobPhrase
   id: SalvageSpecialistPhrase
   text: job-name-salvagespec
-
-- type: quickPhrase
-  parent: BaseLogisticsJobPhrase
-  id: CourierPhrase
-  text: job-name-courier
-
-- type: quickPhrase
-  parent: BaseLogisticsJobPhrase
-  id: CargoAssistantPhrase
-  text: job-name-cargo-assistant
 
 # Medical
 
@@ -272,11 +257,6 @@
 # Wildcard
 
 - type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: BoxerPhrase
-  text: job-name-boxer
-
-- type: quickPhrase
   parent: BaseMedicalJobPhrase
   id: PsychologistPhrase
   text: job-name-psychologist
@@ -290,21 +270,6 @@
   parent: BaseServiceJobPhrase
   id: ZookeeperPhrase
   text: job-name-zookeeper
-
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: MartialArtistPhease
-  text: job-name-martialartist
-
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: PrisonerPhrase
-  text: job-name-prisoner
-
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: GladiatorPhrase
-  text: job-name-gladiator
 
 - type: quickPhrase
   parent: BaseSecurityJobPhrase

@@ -131,11 +131,6 @@
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
-  id: LocationConferenceRoomPhrase
-  text: station-beacon-conference-room
-
-- type: quickPhrase
-  parent: BaseCommandLocationPhrase
   id: LocationAICorePhrase
   text: station-beacon-ai-core
 
@@ -206,7 +201,7 @@
 - type: quickPhrase
   parent: BaseScienceLocationPhrase
   id: LocationSciencePhrase
-  text: station-beacon-Science
+  text: station-beacon-science
 
 - type: quickPhrase
   parent: BaseScienceLocationPhrase
@@ -250,32 +245,7 @@
   id: LocationLawOfficePhrase
   text: station-beacon-law
 
-- type: quickPhrase
-  parent: BaseJusticeLocationPhrase
-  id: LocationProsecutorPhrase
-  text: station-beacon-prosecutor
-
-- type: quickPhrase
-  parent: BaseJusticeLocationPhrase
-  id: LocationChiefJusticePhrase
-  text: station-beacon-chiefjustice
-
-- type: quickPhrase
-  parent: BaseJusticeLocationPhrase
-  id: LocationClerkPhrase
-  text: station-beacon-clerk
-
 # Logistics
-
-- type: quickPhrase
-  parent: BaseLogisticsLocationPhrase
-  id: LocationLogisticsPhrase
-  text: station-beacon-logistics
-
-- type: quickPhrase
-  parent: BaseLogisticsLocationPhrase
-  id: LocationLoPhrase
-  text: station-beacon-lo
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
@@ -286,11 +256,6 @@
   parent: BaseLogisticsLocationPhrase
   id: LocationSalvagePhrase
   text: station-beacon-salvage
-
-- type: quickPhrase
-  parent: BaseLogisticsLocationPhrase
-  id: LocationMailPhrase
-  text: station-beacon-mailroom
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
@@ -410,16 +375,6 @@
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
-  id: LocationJaniOfficePhrase
-  text: station-beacon-janitor-office
-
-- type: quickPhrase
-  parent: BaseServiceLocationPhrase
-  id: LocationJaniClosetPhrase
-  text: station-beacon-janitor-closet
-
-- type: quickPhrase
-  parent: BaseServiceLocationPhrase
   id: LocationReporterPhrase
   text: station-beacon-reporter
 
@@ -439,11 +394,6 @@
   parent: BaseCivilianLocationPhrase
   id: LocationLibraryPhrase
   text: station-beacon-library
-
-- type: quickPhrase
-  parent: BaseCivilianLocationPhrase
-  id: LocationParkPhrase
-  text: station-beacon-park
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
@@ -494,11 +444,6 @@
   parent: BaseCivilianLocationPhrase
   id: LocationOutpostPhrase
   text: phrase-location-outpost
-
-- type: quickPhrase
-  parent: BaseCivilianLocationPhrase
-  id: LocationCamerasPhrase
-  text: station-beacon-camera-servers
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
