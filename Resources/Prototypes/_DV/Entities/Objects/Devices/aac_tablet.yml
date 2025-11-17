@@ -41,4 +41,8 @@
   - type: Speech
     speechSounds: Alto
   - type: AACTablet
+  - type: IntrinsicRadioTransmitter
+  - type: Grammar # starcup
+    attributes:
+      proper: True
   - type: VoiceMask
