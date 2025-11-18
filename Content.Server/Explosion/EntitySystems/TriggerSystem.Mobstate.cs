@@ -4,6 +4,8 @@ using Content.Shared.Explosion.Components;
 using Content.Shared.FloofStation;
 using Content.Shared.Implants;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Verbs;
@@ -79,6 +81,14 @@ public sealed partial class TriggerSystem
             };
             Trigger(uid, extras: extraData);
         }
+
+        // but only repeat if their mind has a people behind it
+        if (!TryComp<MindContainerComponent>(changedStateMobUid, out var mindContainer))
+            return;
+        var mind = CompOrNull<MindComponent>(mindContainer.Mind);
+        var hasUserId = mind?.UserId;
+        if (hasUserId == null)
+            return;
 
         // then do it AGAIN
         component.RattleCancelToken.Cancel();
