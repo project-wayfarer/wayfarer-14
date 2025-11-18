@@ -16,9 +16,16 @@ using Robust.Shared.Map; // Frontier
 using Content.Server.GameTicking; // Frontier
 using Content.Server._NF.Salvage.Expeditions.Structure; // Frontier
 using Content.Server._NF.Salvage.Expeditions;
+using Content.Server.Body.Components;
 using Content.Server.Buckle.Systems;
+using Content.Server.Temperature.Components;
+using Content.Server.Temperature.Systems;
 using Content.Shared._Coyote;
+using Content.Shared.Atmos;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.EntityEffects;
 using Content.Shared.Mind.Components;
 using Content.Shared.Salvage;
 using Content.Shared.Warps;
@@ -39,6 +46,8 @@ public sealed partial class SalvageSystem
     [Dependency] private readonly GameTicker _gameTicker = default!; // Frontier
     [Dependency] private readonly BuckleSystem _buckle = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly TemperatureSystem _temperature = default!;
 
     private void InitializeRunner()
     {
@@ -385,6 +394,7 @@ public sealed partial class SalvageSystem
         DestinationPriority possibleDestinations,
         EntityUid shuttleGrid)
     {
+        TendToDork(mobUid);
         Spawn("EffectGravityPulse", Transform(mobUid).Coordinates);
         Spawn("EffectSparks", Transform(mobUid).Coordinates);
         // unbuckle them if they are buckled
@@ -470,6 +480,79 @@ public sealed partial class SalvageSystem
     }
 
     /// <summary>
+    /// Beats the heck out of the dork if they arent dead
+    /// Then extinguishes them and caps their Heat to 300ish if above that.
+    /// </summary>
+    private void TendToDork(EntityUid mobUid)
+    {
+        if (_mobState.IsAlive(mobUid))
+        {
+            // hey you're alive! stop that!
+            var hurtEmThisMuch = new DamageSpecifier()
+            {
+                DamageDict = { ["Slash"] = 150, ["Heat"] = 150, ["Poison"] = 100 }
+            };
+            _damageable.TryChangeDamage(
+                mobUid,
+                hurtEmThisMuch,
+                true);
+        }
+        else if (_mobState.IsCritical(mobUid))
+        {
+            // I saw that, you're still alive! stop that!
+            var hurtEmThisMuch = new DamageSpecifier()
+            {
+                DamageDict = { ["Slash"] = 50, ["Heat"] = 50, ["Poison"] = 25 }
+            };
+            _damageable.TryChangeDamage(
+                mobUid,
+                hurtEmThisMuch,
+                true);
+        }
+
+        // okay, extinguish them, and clamp their burn damages to a max of 300
+        // fire sucks, i hate this game
+        var ev = new ExtinguishEvent
+        {
+            FireStacksAdjustment = 1000,
+        };
+        RaiseLocalEvent(mobUid, ref ev);
+        if (TryComp<DamageableComponent>(mobUid, out var damageable)
+            && damageable.Damage.DamageDict.TryGetValue("Heat", out var burnAmount)
+            && burnAmount > 300)
+        {
+            var reduceBy = burnAmount - 300;
+            var burnDamageSpecifier = new DamageSpecifier()
+            {
+                DamageDict = { ["Heat"] = -reduceBy }
+            };
+            _damageable.TryChangeDamage(
+                mobUid,
+                burnDamageSpecifier,
+                true);
+        }
+        if (!TryComp<TemperatureComponent>(mobUid, out var comp))
+            return;
+        if (TryComp<ThermalRegulatorComponent>(
+                mobUid,
+                out var regulator)) // Frontier: Look for normal body temperature and use it
+        {
+            _temperature.ForceChangeTemperature(
+                mobUid,
+                regulator.NormalBodyTemperature,
+                comp);
+        }
+        else
+        {
+            _temperature.ForceChangeTemperature(
+                mobUid,
+                Atmospherics.T20C,
+                comp);
+        }
+        // FIRE SUCKSSSSSSSSSS
+    }
+
+    /// <summary>
     /// Tries to teleport the mob to the strap and buckle them in.
     /// Returns true on success.
     /// </summary>
@@ -545,6 +628,18 @@ public sealed partial class SalvageSystem
             return;
         component.NextAutoAbortCheck = _timing.CurTime + TimeSpan.FromSeconds(15);
 
+        // okay first look for aghosts, whatever
+        var aghostQuery =
+            EntityQueryEnumerator<AdminGhostComponent, TransformComponent>();
+        while (aghostQuery.MoveNext(
+                   out var _,
+                   out _,
+                   out var xform))
+        {
+            if (xform.MapUid == mapUid)
+                return; // aghost found, dont abort
+        }
+
         var query =
             EntityQueryEnumerator<
                 HumanoidAppearanceComponent,
@@ -563,8 +658,6 @@ public sealed partial class SalvageSystem
         {
             if (xform.MapUid != mapUid)
                 continue;
-            if (HasComp<AdminGhostComponent>(uid))
-                return; // aghosts present
             // unidentified humans (loot) dont count
             if (!mindC.HasHadMind)
                 continue;
