@@ -1,10 +1,13 @@
-﻿using Content.Server.Explosion.Components;
+﻿using System.Threading;
+using Content.Server.Explosion.Components;
 using Content.Shared.Explosion.Components;
 using Content.Shared.FloofStation;
 using Content.Shared.Implants;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Verbs;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Explosion.EntitySystems;
 
@@ -22,9 +25,27 @@ public sealed partial class TriggerSystem
 
     private void OnMobStateChanged(EntityUid uid, TriggerOnMobstateChangeComponent component, MobStateChangedEvent args)
     {
+        component.RattleCancelToken.Cancel();
+        component.RattleCancelToken = new CancellationTokenSource();
         if (!component.MobState.Contains(args.NewMobState))
             return;
 
+        TryRunTrigger(
+            uid,
+            component,
+            args.Target,
+            args.NewMobState,
+            args.Origin);
+    }
+
+    private void TryRunTrigger(
+        EntityUid uid,
+        TriggerOnMobstateChangeComponent component,
+        EntityUid changedStateMobUid,
+        MobState coolState,
+        EntityUid? stateChangerUid = null,
+        bool retry = false)
+    {
         if (!component.Enabled)
             return;
 
@@ -51,7 +72,49 @@ public sealed partial class TriggerSystem
                 timerTrigger.BeepSound);
         }
         else
-            Trigger(uid);
+        {
+            Dictionary<string, object> extraData = new()
+            {
+                { "isRetry", retry }
+            };
+            Trigger(uid, extras: extraData);
+        }
+
+        // then do it AGAIN
+        component.RattleCancelToken.Cancel();
+        component.RattleCancelToken = new CancellationTokenSource();
+        Robust.Shared.Timing.Timer.Spawn(component.RattleRefireDelay, () => CheckAndTryRefire(uid, component, changedStateMobUid), component.RattleCancelToken.Token);
+    }
+
+    /// <summary>
+    /// Check if the trigger can be retriggered and does so if possible
+    /// </summary>
+    private void CheckAndTryRefire(
+        EntityUid uid,
+        TriggerOnMobstateChangeComponent component,
+        EntityUid changedStateMobUid)
+    {
+        if (!Exists(uid)
+            || !Exists(changedStateMobUid))
+            return;
+        if (Deleted(uid)
+            || Deleted(changedStateMobUid))
+            return;
+        if (!HasComp<MobStateComponent>(changedStateMobUid))
+            return;
+        if (!component.Enabled)
+            return;
+        var stat = Comp<MobStateComponent>(changedStateMobUid).CurrentState;
+        if (component.MobState.Contains(stat))
+        {
+            TryRunTrigger(
+                uid,
+                component,
+                changedStateMobUid,
+                stat,
+                null,
+                true);
+        }
     }
 
     /// <summary>

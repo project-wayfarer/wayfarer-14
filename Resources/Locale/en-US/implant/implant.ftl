@@ -34,3 +34,6 @@ scramble-implant-activated-popup = Your appearance shifts and changes!
 
 deathrattle-implant-dead-message = {$user}{$specie} has died at {$grid}{$position}.
 deathrattle-implant-critical-message = {$user}{$specie} life signs critical, immediate assistance required at {$grid}{$position}.
+
+deathrattle-implant-dead-message-still = {$user}{$specie} is STILL dead at {$grid}{$position}!
+deathrattle-implant-critical-message-still = {$user}{$specie} life signs are still critical, immediate assistance is STILL required at {$grid}{$position}.

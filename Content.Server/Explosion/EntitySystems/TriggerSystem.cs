@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Threading;
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Explosion.Components;
@@ -35,6 +37,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Body.Components; // Frontier: Gib organs
 
@@ -47,11 +50,17 @@ namespace Content.Server.Explosion.EntitySystems
     {
         public EntityUid Triggered { get; }
         public EntityUid? User { get; }
+        public Dictionary<string, object> Extras { get; } = new();
 
         public TriggerEvent(EntityUid triggered, EntityUid? user = null)
         {
             Triggered = triggered;
             User = user;
+        }
+
+        public void AddExtra(string extra, object value)
+        {
+            Extras[extra] = value;
         }
     }
 
@@ -261,12 +270,16 @@ namespace Content.Server.Explosion.EntitySystems
 
             if (implanted.ImplantedEntity == null)
                 return;
+            if (!TryComp<MobStateComponent>(implanted.ImplantedEntity, out var mobstate)
+                || mobstate.CurrentState == MobState.Alive)
+                return;
+
 
             // Gets location of the implant
             var ownerXform = Transform(uid);
             var pos = ownerXform.MapPosition;
-            var x = (int) pos.X;
-            var y = (int) pos.Y;
+            var x = (int)pos.X;
+            var y = (int)pos.Y;
             var posText = $"({x}, {y})";
 
             // Frontier: Gets station location of the implant
@@ -281,20 +294,31 @@ namespace Content.Server.Explosion.EntitySystems
             if (TryComp<HumanoidAppearanceComponent>(implanted.ImplantedEntity, out var species))
                 speciesText = $" ({species!.Species})";
 
-            var critMessage = Loc.GetString(component.CritMessage, ("user", implanted.ImplantedEntity.Value), ("specie", speciesText), ("grid", stationText!), ("position", posText));
-            var deathMessage = Loc.GetString(component.DeathMessage, ("user", implanted.ImplantedEntity.Value), ("specie", speciesText), ("grid", stationText!), ("position", posText));
+            string localeKey;
 
-            if (!TryComp<MobStateComponent>(implanted.ImplantedEntity, out var mobstate))
-                return;
-
-            if (mobstate.CurrentState != MobState.Alive)
+            if (args.Extras.TryGetValue("isRetry", out var retryObj)
+                && retryObj is bool obj
+                && obj == true)
             {
-                // Sends a message to the radio channel specified by the implant
-                if (mobstate.CurrentState == MobState.Critical)
-                    _radioSystem.SendRadioMessage(uid, critMessage, _prototypeManager.Index<RadioChannelPrototype>(component.RadioChannel), uid);
-                if (mobstate.CurrentState == MobState.Dead)
-                    _radioSystem.SendRadioMessage(uid, deathMessage, _prototypeManager.Index<RadioChannelPrototype>(component.RadioChannel), uid);
+                localeKey = mobstate.CurrentState == MobState.Critical ? component.CritRetryMessage : component.DeathRetryMessage;
             }
+            else
+            {
+                localeKey = mobstate.CurrentState == MobState.Critical ? component.CritMessage : component.DeathMessage;
+            }
+
+            var message = Loc.GetString(
+                localeKey,
+                ("user", implanted.ImplantedEntity.Value),
+                ("specie", speciesText),
+                ("grid", stationText!),
+                ("position", posText));
+
+            _radioSystem.SendRadioMessage(
+                uid,
+                message,
+                _prototypeManager.Index<RadioChannelPrototype>(component.RadioChannel),
+                uid);
 
             args.Handled = true;
         }
@@ -354,7 +378,7 @@ namespace Content.Server.Explosion.EntitySystems
             ent.Comp.NextTrigger = _timing.CurTime + ent.Comp.Delay;
         }
 
-        public bool Trigger(EntityUid trigger, EntityUid? user = null)
+        public bool Trigger(EntityUid trigger, EntityUid? user = null, Dictionary<string, object>? extras = null)
         {
             var beforeTriggerEvent = new BeforeTriggerEvent(trigger, user);
             RaiseLocalEvent(trigger, ref beforeTriggerEvent);
@@ -362,6 +386,13 @@ namespace Content.Server.Explosion.EntitySystems
                 return false;
 
             var triggerEvent = new TriggerEvent(trigger, user);
+            if (extras != null)
+            {
+                foreach (var (key, value) in extras)
+                {
+                    triggerEvent.AddExtra(key, value);
+                }
+            }
             EntityManager.EventBus.RaiseLocalEvent(trigger, triggerEvent, true);
             return triggerEvent.Handled;
         }

@@ -1,3 +1,4 @@
+using System.Threading;
 using Content.Shared.Radio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -18,4 +19,12 @@ public sealed partial class RattleComponent : Component
     // The message that the implant will send when dead
     [DataField]
     public LocId DeathMessage = "deathrattle-implant-dead-message";
+
+    // The message that the implant will send when crit still
+    [DataField]
+    public LocId CritRetryMessage = "deathrattle-implant-critical-message-still";
+
+    // The message that the implant will send when dead still
+    [DataField]
+    public LocId DeathRetryMessage = "deathrattle-implant-dead-message-still";
 }
