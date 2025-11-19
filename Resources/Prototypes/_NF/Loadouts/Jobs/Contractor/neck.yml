@@ -281,6 +281,15 @@
   groupBy: "flagCloaks"
 
 - type: loadout
+  id: ContractorClothingNeckCloakPoly
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 1000
+  equipment:
+    neck: ClothingNeckCloakPoly
+
+- type: loadout
   id: ContractorBedsheetRainbow
   effects:
   - !type:GroupLoadoutEffect
