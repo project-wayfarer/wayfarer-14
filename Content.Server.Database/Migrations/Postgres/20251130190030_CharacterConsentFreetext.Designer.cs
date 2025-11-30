@@ -6,6 +6,7 @@ using System.Text.Json;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using NpgsqlTypes;
@@ -15,9 +16,11 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    partial class PostgresServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251130190030_CharacterConsentFreetext")]
+    partial class CharacterConsentFreetext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -944,9 +947,9 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("hair_name");
 
-                    b.Property<bool>("HideFromPlayerlist")
-                        .HasColumnType("boolean")
-                        .HasColumnName("hide_from_playerlist");
+                    b.Property<float>("Height")
+                        .HasColumnType("real")
+                        .HasColumnName("height");
 
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
@@ -982,6 +985,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("species");
+
+                    b.Property<float>("Width")
+                        .HasColumnType("real")
+                        .HasColumnName("width");
 
                     b.HasKey("Id")
                         .HasName("PK_profile");
@@ -1484,126 +1491,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasName("PK_uploaded_resource_log");
 
                     b.ToTable("uploaded_resource_log", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerRoundSummary", b =>
-                {
-                    b.Property<int>("RoundNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("round_number");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RoundNumber"));
-
-                    b.Property<JsonDocument>("PlayerManifest")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("player_manifest");
-
-                    b.Property<JsonDocument>("PlayerStories")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("player_stories");
-
-                    b.Property<JsonDocument>("ProfitLossData")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("profit_loss_data");
-
-                    b.Property<DateTime>("RoundEndTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("round_end_time");
-
-                    b.Property<DateTime>("RoundStartTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("round_start_time");
-
-                    b.HasKey("RoundNumber")
-                        .HasName("PK_wayfarer_round_summaries");
-
-                    b.ToTable("wayfarer_round_summaries", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("wayfarer_safety_deposit_box_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid>("BoxId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("box_id");
-
-                    b.Property<string>("BoxSize")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("box_size");
-
-                    b.Property<int>("CharacterIndex")
-                        .HasColumnType("integer")
-                        .HasColumnName("character_index");
-
-                    b.Property<DateTime?>("LastWithdrawn")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("last_withdrawn");
-
-                    b.Property<string>("Nickname")
-                        .HasColumnType("text")
-                        .HasColumnName("nickname");
-
-                    b.Property<string>("OwnerName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("owner_name");
-
-                    b.Property<Guid>("OwnerUserId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("owner_user_id");
-
-                    b.Property<DateTime>("PurchaseDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("purchase_date");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_safety_deposit_box");
-
-                    b.HasIndex("BoxId")
-                        .IsUnique();
-
-                    b.HasIndex("OwnerUserId");
-
-                    b.ToTable("wayfarer_safety_deposit_box", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBoxItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("wayfarer_safety_deposit_box_item_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BoxId")
-                        .HasColumnType("integer")
-                        .HasColumnName("box_id");
-
-                    b.Property<DateTime>("DepositDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("deposit_date");
-
-                    b.Property<string>("EntityData")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("entity_data");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_safety_deposit_box_item");
-
-                    b.HasIndex("BoxId")
-                        .HasDatabaseName("IX_wayfarer_safety_deposit_box_item_box_id");
-
-                    b.ToTable("wayfarer_safety_deposit_box_item", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Whitelist", b =>
@@ -2194,18 +2081,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Profile");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBoxItem", b =>
-                {
-                    b.HasOne("Content.Server.Database.WayfarerSafetyDepositBox", "Box")
-                        .WithMany("Items")
-                        .HasForeignKey("BoxId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_wayfarer_safety_deposit_box_item_wayfarer_safety_deposit_bo~");
-
-                    b.Navigation("Box");
-                });
-
             modelBuilder.Entity("PlayerRound", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", null)
@@ -2337,11 +2212,6 @@ namespace Content.Server.Database.Migrations.Postgres
             modelBuilder.Entity("Content.Server.Database.ServerRoleBan", b =>
                 {
                     b.Navigation("Unban");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
-                {
-                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

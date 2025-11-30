@@ -18,4 +18,9 @@ public interface IServerConsentManager
     /// Get player consent settings
     /// </summary>
     PlayerConsentSettings GetPlayerConsentSettings(NetUserId userId);
+
+    /// <summary>
+    /// Reload consent settings for a player when they change characters
+    /// </summary>
+    Task ReloadCharacterConsent(NetUserId userId, int characterSlot);
 }

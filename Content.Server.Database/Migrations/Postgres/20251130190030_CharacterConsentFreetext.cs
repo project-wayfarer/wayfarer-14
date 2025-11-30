@@ -1,8 +1,8 @@
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Content.Server.Database.Migrations.Sqlite
+namespace Content.Server.Database.Migrations.Postgres
 {
     /// <inheritdoc />
     public partial class CharacterConsentFreetext : Migration
@@ -13,7 +13,7 @@ namespace Content.Server.Database.Migrations.Sqlite
             migrationBuilder.AddColumn<string>(
                 name: "character_consent_freetext",
                 table: "profile",
-                type: "TEXT",
+                type: "text",
                 nullable: false,
                 defaultValue: "");
         }

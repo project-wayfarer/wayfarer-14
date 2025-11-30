@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server.Consent;
 using Content.Server.Database;
 using Content.Shared._NF.CCVar;
 using Content.Shared.CCVar;
@@ -28,6 +29,7 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IDependencyCollection _dependencies = default!;
         [Dependency] private readonly ILogManager _log = default!;
+        [Dependency] private readonly IServerConsentManager _consentManager = default!;
         [Dependency] private readonly UserDbDataManager _userDb = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!; // Frontier
@@ -79,6 +81,9 @@ namespace Content.Server.Preferences.Managers
             if (ShouldStorePrefs(message.MsgChannel.AuthType))
             {
                 await _db.SaveSelectedCharacterIndexAsync(message.MsgChannel.UserId, message.SelectedCharacterIndex);
+                
+                // Reload consent settings for the new character
+                await _consentManager.ReloadCharacterConsent(userId, index);
             }
         }
 

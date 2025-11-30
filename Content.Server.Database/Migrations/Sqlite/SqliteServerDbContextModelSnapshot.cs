@@ -841,15 +841,15 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("bank_balance");
 
-                    b.Property<string>("CharacterName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("char_name");
-
                     b.Property<string>("CharacterConsentFreetext")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("character_consent_freetext");
+
+                    b.Property<string>("CharacterName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("char_name");
 
                     b.Property<string>("Customspeciesname")
                         .IsRequired()

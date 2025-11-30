@@ -106,6 +106,25 @@ public sealed class ServerConsentManager : IServerConsentManager
         return new PlayerConsentSettings();
     }
 
+    /// <inheritdoc />
+    public async Task ReloadCharacterConsent(NetUserId userId, int characterSlot)
+    {
+        if (!_playerManager.TryGetSessionById(userId, out var session))
+            return;
+
+        if (!ShouldStoreInDb(session.AuthType))
+            return;
+
+        // Load consent with the new character slot
+        var consent = await _db.GetPlayerConsentSettingsAsync(userId, characterSlot);
+        consent.EnsureValid(_configManager, _prototypeManager);
+        _consent[userId] = consent;
+
+        // Send updated consent to client
+        var message = new MsgUpdateConsent() { Consent = consent };
+        _netManager.ServerSendMessage(message, session.Channel);
+    }
+
     private static bool ShouldStoreInDb(LoginType loginType)
     {
         return loginType.HasStaticUserId();
