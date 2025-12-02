@@ -1,21 +1,21 @@
 # Ship locations
-phrase-location-ship = ship
-phrase-location-dock = dock
-phrase-location-fore = fore
-phrase-location-aft = aft
-phrase-location-port = port
-phrase-location-starboard = starboard
-phrase-location-amidships = amidships
-phrase-location-bridge = bridge
-phrase-location-engine-room = engine room
-phrase-location-crew-quarters = crew quarters
-phrase-location-med-bay = medbay
-phrase-location-cargo-bay = cargo bay
+phrase-location-nautical-ship = ship
+phrase-location-nautical-dock = dock
+phrase-location-nautical-fore = fore
+phrase-location-nautical-aft = aft
+phrase-location-nautical-port = port
+phrase-location-nautical-starboard = starboard
+phrase-location-nautical-amidships = amidships
+phrase-location-nautical-bridge = bridge
+phrase-location-nautical-engine-room = engine room
+phrase-location-nautical-crew-quarters = crew quarters
+phrase-location-nautical-med-bay = medbay
+phrase-location-nautical-cargo-bay = cargo bay
 
 # Station names
 phrase-location-nash = nash
-phrase-location-outpost = NFSD outpost
-phrase-location-frontier-station = frontier station
+phrase-location-nfsd-outpost = NFSD outpost
+phrase-location-frontier-outpost = frontier outpost
 phrase-location-power-plant = power plant
 phrase-location-barrier = barrier station
 phrase-location-hospital = saint michael's hospital

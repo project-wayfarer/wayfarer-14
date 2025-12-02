@@ -6,63 +6,63 @@
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationShipPhrase
-  text: phrase-location-ship
+  id: LocationNauticalShipPhrase
+  text: phrase-location-nautical-ship
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationDockPhrase
-  text: phrase-location-dock
+  id: LocationNauticalDockPhrase
+  text: phrase-location-nautical-dock
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationForePhrase
-  text: phrase-location-fore
+  id: LocationNauticalForePhrase
+  text: phrase-location-nautical-fore
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationAftPhrase
-  text: phrase-location-aft
+  id: LocationNauticalAftPhrase
+  text: phrase-location-nautical-aft
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationPortPhrase
-  text: phrase-location-port
+  id: LocationNauticalPortPhrase
+  text: phrase-location-nautical-port
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationStarboardPhrase
-  text: phrase-location-starboard
+  id: LocationNauticalStarboardPhrase
+  text: phrase-location-nautical-starboard
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationAdmidshipsPhrase
-  text: phrase-location-amidships
+  id: LocationNauticalAdmidshipsPhrase
+  text: phrase-location-nautical-amidships
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationBridgePhrase
-  text: phrase-location-bridge
+  id: LocationNauticalBridgePhrase
+  text: phrase-location-nautical-bridge
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationEngineRoomPhrase
-  text: phrase-location-engine-room
+  id: LocationNauticalEngineRoomPhrase
+  text: phrase-location-nautical-engine-room
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationCrewQuartersPhrase
-  text: phrase-location-crew-quarters
+  id: LocationNauticalCrewQuartersPhrase
+  text: phrase-location-nautical-crew-quarters
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationMedBayPhrase
-  text: phrase-location-med-bay
+  id: LocationNauticalMedBayPhrase
+  text: phrase-location-nautical-med-bay
 
 - type: quickPhrase
   parent: BaseNauticalLocationPhrase
-  id: LocationCargoBayPhrase
-  text: phrase-location-cargo-bay
+  id: LocationNauticalCargoBayPhrase
+  text: phrase-location-nautical-cargo-bay
 
 # Stations
 - type: quickPhrase
@@ -77,8 +77,13 @@
 
 - type: quickPhrase
   parent: BaseStationLocationPhrase
-  id: LocationOutpostPhrase
-  text: phrase-location-outpost
+  id: LocationNFSDOutpostPhrase
+  text: phrase-location-nfsd-outpost
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationFrontierOutpostPhrase
+  text: phrase-location-frontier-outpost
 
 - type: quickPhrase
   parent: BaseStationLocationPhrase
