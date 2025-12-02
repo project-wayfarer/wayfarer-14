@@ -1,6 +1,6 @@
-# Nautical Locations
+# # Nautical Locations
 - type: quickPhrase
-  parent: [BaseStationPhrase, BaseLocationPhrase]
+  parent: [BaseNauticalPhrase, BaseLocationPhrase]
   id: BaseNauticalLocationPhrase
   abstract: true
 
@@ -64,9 +64,9 @@
   id: LocationNauticalCargoBayPhrase
   text: phrase-location-nautical-cargo-bay
 
-# Stations
+# # Stations
 - type: quickPhrase
-  parent: [BaseStationPhrase, BaseStationPhrase]
+  parent: [BaseStationPhrase, BaseLocationPhrase]
   id: BaseStationLocationPhrase
   abstract: true
 

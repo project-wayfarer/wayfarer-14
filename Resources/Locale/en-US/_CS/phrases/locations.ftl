@@ -13,13 +13,13 @@ phrase-location-nautical-med-bay = medbay
 phrase-location-nautical-cargo-bay = cargo bay
 
 # Station names
-phrase-location-nash = nash
-phrase-location-nfsd-outpost = NFSD outpost
-phrase-location-frontier-outpost = frontier outpost
-phrase-location-power-plant = power plant
-phrase-location-barrier = barrier station
-phrase-location-hospital = saint michael's hospital
-phrase-location-casino = casino
-phrase-location-grifty = grifty's gas & grub
-phrase-location-lodge = expeditionary lodge
-phrase-location-cove = the den
+phrase-location-nash = Nash
+phrase-location-nfsd-outpost = NFSD Outpost
+phrase-location-frontier-outpost = Frontier outpost
+phrase-location-power-plant = Power Plant
+phrase-location-barrier = Barrier Station
+phrase-location-hospital = Saint michael's hospital
+phrase-location-casino = Crazy Caseys' Casino
+phrase-location-grifty = Grifty's Gas & Grub
+phrase-location-lodge = Expeditionary Lodge
+phrase-location-cove = the Den
