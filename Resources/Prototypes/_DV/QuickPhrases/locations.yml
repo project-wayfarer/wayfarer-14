@@ -114,10 +114,12 @@
   id: LocationCommandPhrase
   text: station-beacon-command
 
-- type: quickPhrase
-  parent: BaseCommandLocationPhrase
-  id: LocationBridgePhrase
-  text: station-beacon-bridge
+# CS - start
+# - type: quickPhrase
+#   parent: BaseCommandLocationPhrase
+#   id: LocationBridgePhrase
+#   text: station-beacon-bridge
+# CS - end
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
@@ -247,10 +249,12 @@
 
 # Logistics
 
-- type: quickPhrase
-  parent: BaseLogisticsLocationPhrase
-  id: LocationCargoBayPhrase
-  text: station-beacon-cargo-bay
+# CS - start
+# - type: quickPhrase
+#   parent: BaseLogisticsLocationPhrase
+#   id: LocationCargoBayPhrase
+#   text: station-beacon-cargo-bay
+# CS - end
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
@@ -444,10 +448,12 @@
   id: LocationArrivalsPhrase
   text: station-beacon-arrivals
 
-- type: quickPhrase
-  parent: BaseCivilianLocationPhrase
-  id: LocationOutpostPhrase
-  text: phrase-location-outpost
+#CS - start
+# - type: quickPhrase
+#   parent: BaseCivilianLocationPhrase
+#   id: LocationOutpostPhrase
+#   text: phrase-location-outpost
+# CS - end
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
