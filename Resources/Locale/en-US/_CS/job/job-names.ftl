@@ -1,1 +1,1 @@
-# job-name-ripper = Ripper
+job-name-ripper = Ripper
