@@ -82,41 +82,47 @@
   id: ChaplainPhrase
   text: job-name-chaplain
 
-# Security / Sheriff's Dept Jobs
+# Sheriff's Dept Jobs
 - type: quickPhrase
-  parent: BaseSecurityJobPhrase
+  parent: BaseNFSDPhrase
   id: BailiffPhrase
   text: job-name-bailiff
 
 - type: quickPhrase
-  parent: BaseSecurityJobPhrase
+  parent: BaseNFSDPhrase
   id: DeputyPhrase
   text: job-name-deputy
 
 - type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: SecurityGuardPhrase
-  text: job-name-security-guard
-
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
+  parent: BaseNFSDPhrase
   id: SeargentPhrase
   text: JobSeniorOfficer
 
 - type: quickPhrase
-  parent: BaseSecurityJobPhrase
+  parent: BaseNFSDPhrase
   id: NFCadetPhrase
   text: job-name-cadet-nf
 
 - type: quickPhrase
-  parent: BaseSecurityJobPhrase
+  parent: BaseNFSDPhrase
   id: PublicAffairsLiasonPhrase
   text: job-name-pal
 
 - type: quickPhrase
-  parent: BaseSecurityJobPhrase
+  parent: BaseNFSDPhrase
   id: NFDetectivePhrase
   text: job-name-nf-detective
+
+- type: quickPhrase
+  parent: BaseNFSDPhrase
+  id: NFCorpsmanPhrase
+  text: job-name-brigmedic
+
+  # Security Jobs
+- type: quickPhrase
+  parent: BaseSecurityJobPhrase
+  id: SecurityGuardPhrase
+  text: job-name-security-guard
 
 # Engineering Jobs
 - type: quickPhrase
@@ -132,31 +138,36 @@
 
 # Criminal Jobs
 - type: quickPhrase
-  parent: BaseThreatPhrase
+  parent: BasePiratePhrase
   id: SmugglerPhrase
   text: job-name-smuggler
 
 - type: quickPhrase
-  parent: BaseThreatPhrase
+  parent: BasePiratePhrase
   id: NFPiratePhrase
   text: job-name-nf-pirate
 
 - type: quickPhrase
-  parent: BaseThreatPhrase
+  parent: BasePiratePhrase
   id: NFPirateCaptainPhrase
   text: job-name-nf-pirate-captain
 
 - type: quickPhrase
-  parent: BaseThreatPhrase
+  parent: BasePiratePhrase
   id: NFPirateFirstMatePhrase
   text: job-name-nf-pirate-first-mate
 
 - type: quickPhrase
-  parent: BaseThreatPhrase
+  parent: BasePiratePhrase
   id: PrisonerPhrase
   text: job-name-prisoner
 
 - type: quickPhrase
-  parent: BaseThreatPhrase
+  parent: BasePiratePhrase
   id: EscortPhrase
   text: job-name-escort
+
+- type: quickPhrase
+  parent: BasePiratePhrase
+  id: RipperPhrase
+  text: job-name-ripper

@@ -167,35 +167,37 @@
 
 # Security
 
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: HeadOfSecurityPhrase
-  text: job-name-hos
+# CS - start
+# - type: quickPhrase
+#   parent: BaseSecurityJobPhrase
+#   id: HeadOfSecurityPhrase
+#   text: job-name-hos
 
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: WardenPhrase
-  text: job-name-warden
+# - type: quickPhrase
+#   parent: BaseSecurityJobPhrase
+#   id: WardenPhrase
+#   text: job-name-warden
 
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: SecurityOfficerPhrase
-  text: job-name-security
+# - type: quickPhrase
+#   parent: BaseSecurityJobPhrase
+#   id: SecurityOfficerPhrase
+#   text: job-name-security
 
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: SecurityCadetPhrase
-  text: job-name-cadet
+# - type: quickPhrase
+#   parent: BaseSecurityJobPhrase
+#   id: SecurityCadetPhrase
+#   text: job-name-cadet
 
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: PrisonGuardPhrase
-  text: job-name-guard
+# - type: quickPhrase
+#   parent: BaseSecurityJobPhrase
+#   id: PrisonGuardPhrase
+#   text: job-name-guard
 
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: DetectivePhrase
-  text: job-name-detective
+# - type: quickPhrase
+#   parent: BaseSecurityJobPhrase
+#   id: DetectivePhrase
+#   text: job-name-detective
+# CS - end
 
 # Service
 
@@ -244,10 +246,12 @@
   id: MimePhrase
   text: job-name-mime
 
-- type: quickPhrase
-  parent: BaseServiceJobPhrase
-  id: HeadOfPersonnelPhrase
-  text: job-name-hop
+# CS - start
+# - type: quickPhrase
+#   parent: BaseServiceJobPhrase
+#   id: HeadOfPersonnelPhrase
+#   text: job-name-hop
+# CS - end
 
 # Wildcard
 
@@ -266,7 +270,9 @@
   id: ZookeeperPhrase
   text: job-name-zookeeper
 
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: CorpsmanPhrase
-  text: job-name-brigmedic
+# CS - start
+# - type: quickPhrase
+#   parent: BaseSecurityJobPhrase
+#   id: CorpsmanPhrase
+#   text: job-name-brigmedic
+# CS - end

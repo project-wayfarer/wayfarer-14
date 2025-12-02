@@ -171,6 +171,10 @@ namespace Content.Client.Stylesheets
         public static readonly string SecurityButtonClass = "SecurityButton";
         public static readonly string ServiceButtonClass = "ServiceButton";
 
+        // CS - AAC button variables
+        public static readonly string NFSDButtonClass = "NFSDButton";
+        public static readonly string PirateButtonClass = "PirateButton";
+
         // DeltaV - AAC button colors
         public static readonly Color CommandButtonColorDefault = Color.FromHex("#404A58");
         public static readonly Color CommandColorHovered = Color.FromHex("#4F587B");
@@ -189,6 +193,13 @@ namespace Content.Client.Stylesheets
         public static readonly Color ServiceButtonColorDefault = Color.FromHex("#607952");
         public static readonly Color ServiceColorHovered = Color.FromHex("#667A76");
         // End DeltaV
+
+        // Coyote Frontier - AAC button colors
+        public static readonly Color NFSDButttonColorDefault = Color.FromHex("#4b653e");
+        public static readonly Color NFSDButtonColorHovered = Color.FromHex("#667A76");
+        public static readonly Color PirateButtonColorDefault = Color.FromHex("#61503A");
+        public static readonly Color PirateButtonColorHovered = Color.FromHex("#675C64");
+        // end Coyote Frontier
 
         //Bwoink
         public const string StyleClassPinButtonPinned = "pinButtonPinned";
@@ -1924,6 +1935,28 @@ namespace Content.Client.Stylesheets
                     .Pseudo(ContainerButton.StylePseudoClassHover)
                     .Prop(Control.StylePropertyModulateSelf, JusticeColorHovered),
                 // End DeltaV
+
+                // Start CS
+                Element<ContainerButton>()
+                    .Class(NFSDButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, NFSDButttonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(NFSDButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, NFSDButtonColorHovered),
+
+                Element<ContainerButton>()
+                    .Class(PirateButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, PirateButtonColorDefault),
+
+                Element<ContainerButton>()
+                    .Class(PirateButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, PirateButtonColorHovered),
+                // End CS
 
                 // Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)

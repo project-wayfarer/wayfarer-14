@@ -1,0 +1,116 @@
+# Nautical Locations
+- type: quickPhrase
+  parent: [BaseStationPhrase, BaseLocationPhrase]
+  id: BaseNauticalLocationPhrase
+  abstract: true
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationShipPhrase
+  text: phrase-location-ship
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationDockPhrase
+  text: phrase-location-dock
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationForePhrase
+  text: phrase-location-fore
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationAftPhrase
+  text: phrase-location-aft
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationPortPhrase
+  text: phrase-location-port
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationStarboardPhrase
+  text: phrase-location-starboard
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationAdmidshipsPhrase
+  text: phrase-location-amidships
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationBridgePhrase
+  text: phrase-location-bridge
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationEngineRoomPhrase
+  text: phrase-location-engine-room
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationCrewQuartersPhrase
+  text: phrase-location-crew-quarters
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationMedBayPhrase
+  text: phrase-location-med-bay
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationCargoBayPhrase
+  text: phrase-location-cargo-bay
+
+# Stations
+- type: quickPhrase
+  parent: [BaseStationPhrase, BaseStationPhrase]
+  id: BaseStationLocationPhrase
+  abstract: true
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationNashPhrase
+  text: phrase-location-nash
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationOutpostPhrase
+  text: phrase-location-outpost
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationPowerPlantPhrase
+  text: phrase-location-power-plant
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationBarrierPhrase
+  text: phrase-location-barrier
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationHospitalPhrase
+  text: phrase-location-hospital
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationCasinoPhrase
+  text: phrase-location-casino
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationGriftyPhrase
+  text: phrase-location-grifty
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationLodgePhrase
+  text: phrase-location-lodge
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationCovePhrase
+  text: phrase-location-cove

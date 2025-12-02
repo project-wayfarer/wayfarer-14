@@ -316,35 +316,39 @@
   id: LocationBrigPhrase
   text: station-beacon-brig
 
-- type: quickPhrase
-  parent: BaseSecurityLocationPhrase
-  id: LocationWardenPhrase
-  text: station-beacon-warden
+# CS - start
+# - type: quickPhrase
+#   parent: BaseSecurityLocationPhrase
+#   id: LocationWardenPhrase
+#   text: station-beacon-warden
 
-- type: quickPhrase
-  parent: BaseSecurityLocationPhrase
-  id: LocationHosPhrase
-  text: station-beacon-hos
+# - type: quickPhrase
+#   parent: BaseSecurityLocationPhrase
+#   id: LocationHosPhrase
+#   text: station-beacon-hos
+# CS - end
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationArmoryPhrase
   text: station-beacon-armory
 
-- type: quickPhrase
-  parent: BaseSecurityLocationPhrase
-  id: LocationPermaPhrase
-  text: station-beacon-perma-brig
+# CS - start
+# - type: quickPhrase
+#   parent: BaseSecurityLocationPhrase
+#   id: LocationPermaPhrase
+#   text: station-beacon-perma-brig
 
-- type: quickPhrase
-  parent: BaseSecurityLocationPhrase
-  id: LocationDetectivePhrase
-  text: station-beacon-detective
+# - type: quickPhrase
+#   parent: BaseSecurityLocationPhrase
+#   id: LocationDetectivePhrase
+#   text: station-beacon-detective
 
-- type: quickPhrase
-  parent: BaseSecurityLocationPhrase
-  id: LocationSecCheckpointPhrase
-  text: station-beacon-security-checkpoint
+# - type: quickPhrase
+#   parent: BaseSecurityLocationPhrase
+#   id: LocationSecCheckpointPhrase
+#   text: station-beacon-security-checkpoint
+# CS - end
 
 # Service
 

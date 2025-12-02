@@ -1,0 +1,25 @@
+- type: quickPhrase
+  parent: BaseJobPhrase
+  id: BasePiratePhrase
+  group: Pirate
+  styleClass: PirateButton
+  abstract: true
+
+- type: quickPhrase
+  parent: BaseJobPhrase
+  id: BaseNFSDPhrase
+  group: NFSD
+  styleClass: NFSDButton
+  abstract: true
+
+- type: quickPhrase
+  id: BaseStationPhrase
+  group: Station
+  styleClass: ServiceButton
+  abstract: true
+
+- type: quickPhrase
+  id: BaseNauticalPhrase
+  group: Nautical
+  styleClass: CommandButton
+  abstract: true

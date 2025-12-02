@@ -3,10 +3,12 @@
   parent: [ BaseSubjectPhrase, BaseSciencePhrase ]
   abstract: true
 
-- type: quickPhrase
-  id: AnomalyPhrase
-  parent: BaseScienceSubjectPhrase
-  text: phrase-anomaly
+# CS - start
+# - type: quickPhrase
+#   id: AnomalyPhrase
+#   parent: BaseScienceSubjectPhrase
+#   text: phrase-anomaly
+# CS - end
 
 - type: quickPhrase
   id: APEPhrase
@@ -48,35 +50,37 @@
   parent: BaseScienceSubjectPhrase
   text: phrase-research-console
 
-- type: quickPhrase
-  id: OraclePhrase
-  parent: BaseScienceSubjectPhrase
-  text: phrase-oracle
+# CS - start
+# - type: quickPhrase
+#   id: OraclePhrase
+#   parent: BaseScienceSubjectPhrase
+#   text: phrase-oracle
 
-- type: quickPhrase
-  id: SophiePhrase
-  parent: BaseScienceSubjectPhrase
-  text: phrase-sophie
+# - type: quickPhrase
+#   id: SophiePhrase
+#   parent: BaseScienceSubjectPhrase
+#   text: phrase-sophie
 
-- type: quickPhrase
-  id: GlimmerPhrase
-  parent: BaseScienceSubjectPhrase
-  text: phrase-glimmer
+# - type: quickPhrase
+#   id: GlimmerPhrase
+#   parent: BaseScienceSubjectPhrase
+#   text: phrase-glimmer
 
-- type: quickPhrase
-  id: PsionicsPhrase
-  parent: BaseScienceSubjectPhrase
-  text: phrase-psionic
+# - type: quickPhrase
+#   id: PsionicsPhrase
+#   parent: BaseScienceSubjectPhrase
+#   text: phrase-psionic
 
-- type: quickPhrase
-  id: LotophagolOilPhrase
-  parent: BaseScienceSubjectPhrase
-  text: phrase-lotophagol-oil
+# - type: quickPhrase
+#   id: LotophagolOilPhrase
+#   parent: BaseScienceSubjectPhrase
+#   text: phrase-lotophagol-oil
 
-- type: quickPhrase
-  id: MindbreakPhase
-  parent: BaseScienceSubjectPhrase
-  text: phrase-mindbreak-phase
+# - type: quickPhrase
+#   id: MindbreakPhase
+#   parent: BaseScienceSubjectPhrase
+#   text: phrase-mindbreak-phase
+# CS - end
 
 - type: quickPhrase
   id: ProtolathePhrase
