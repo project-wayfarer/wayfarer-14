@@ -12,7 +12,7 @@
   text: job-name-stc
 
 - type: quickPhrase
-  parent: [BaseCommandJobPhrase, BaseSecurityJobPhrase]
+  parent: [BaseCommandJobPhrase, BaseNFSDPhrase]
   id: SheriffPhrase
   text: job-name-sheriff
 
