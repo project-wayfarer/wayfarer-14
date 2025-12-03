@@ -417,7 +417,11 @@
   - type: Envelope
   - type: ContainerContainer
     containers:
-      letter_slot: !type:ContainerSlot
+      storagebase: !type:Container
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,1,1
   - type: ItemSlots
     slots:
       letter_slot:
