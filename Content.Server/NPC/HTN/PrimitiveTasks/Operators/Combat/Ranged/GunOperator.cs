@@ -1,9 +1,17 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2025 Ilya246
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Physics;
 using Robust.Shared.Audio;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat.Ranged;
@@ -33,11 +41,13 @@ public sealed partial class GunOperator : HTNOperator, IHtnConditionalShutdown
     [DataField("requireLOS")]
     public bool RequireLOS = false;
 
-    /// <summary>
-    /// If true, only opaque objects will block line of sight.
-    /// </summary>
-    [DataField("opaqueKey")]
-    public bool UseOpaqueForLOSChecks = false;
+    // Mono
+    [DataField]
+    public CollisionGroup ObstructedMask = CollisionGroup.Opaque;
+
+    // Mono
+    [DataField]
+    public CollisionGroup BulletMask = CollisionGroup.Impassable | CollisionGroup.BulletImpassable;
 
     // Like movement we add a component and pass it off to the dedicated system.
 
@@ -65,7 +75,8 @@ public sealed partial class GunOperator : HTNOperator, IHtnConditionalShutdown
 
         var ranged = _entManager.EnsureComponent<NPCRangedCombatComponent>(blackboard.GetValue<EntityUid>(NPCBlackboard.Owner));
         ranged.Target = blackboard.GetValue<EntityUid>(TargetKey);
-        ranged.UseOpaqueForLOSChecks = UseOpaqueForLOSChecks;
+        ranged.ObstructedMask = ObstructedMask; // Mono
+        ranged.BulletMask = BulletMask; // Mono
 
         if (blackboard.TryGetValue<float>(NPCBlackboard.RotateSpeed, out var rotSpeed, _entManager))
         {

@@ -1,4 +1,5 @@
 using Content.Server.NPC.Systems;
+using Content.Shared.Physics; // Mono
 using Robust.Shared.Audio;
 
 namespace Content.Server.NPC.Components;
@@ -69,4 +70,18 @@ public sealed partial class NPCRangedCombatComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public float MissChance = 0.25f;
     // End Frontier
+
+    // Mono
+    /// <summary>
+    /// Use this collision group to check if target is in line of sight.
+    /// </summary>
+    [ViewVariables]
+    public CollisionGroup ObstructedMask;
+
+    // Mono
+    /// <summary>
+    /// Ignore entities that don't collide with this mask for LOS check purposes.
+    /// </summary>
+    [ViewVariables]
+    public CollisionGroup BulletMask;
 }

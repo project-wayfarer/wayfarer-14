@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Ilya246
+# SPDX-FileCopyrightText: 2025 chromiumboy
+# SPDX-FileCopyrightText: 2025 core-mene
+# SPDX-FileCopyrightText: 2025 starch
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseStructure
   id: BaseWeaponTurret
@@ -65,12 +72,12 @@
       task: N14TurretCompound # Wayfarer: TurretCompount<N14TurretCompound
     blackboard:
       RotateSpeed: !type:Single
-        3.141
+        1.57 # Mono
       SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
   - type: MouseRotator
     angleTolerance: 5
-    rotationSpeed: 180
+    rotationSpeed: 90 # Mono
     simple4DirMode: false
   - type: NoRotateOnInteract
   - type: NoRotateOnMove
@@ -89,6 +96,11 @@
       ballistic-ammo: !type:Container
   - type: Gun
     fireRate: 6
+    projectileSpeed: 55 # Mono
+    maxAngle: 15 # Mono
+    minAngle: 4 # Mono
+    angleIncrease: -1.2 # Mono
+    angleDecay: -4 # Mono
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -116,8 +128,12 @@
     - state: lethal
       shader: unshaded
   - type: Gun
-    projectileSpeed: 15
+    projectileSpeed: 15 # COYOTE: 55 -> 30
     fireRate: 1.5
+    maxAngle: 15 # Mono
+    minAngle: 4 # Mono
+    angleIncrease: -1.2 # Mono
+    angleDecay: -4 # Mono
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: ProjectileBatteryAmmoProvider
