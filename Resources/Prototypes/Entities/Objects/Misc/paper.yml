@@ -460,6 +460,18 @@
             - Cash
           tags:
             - Paper
+    whitelist:
+      tags:
+      - Envelope
+ # - type: ItemSlots
+ #   slots:
+ #     letter_slot:
+ #       name: envelope-letter-slot
+ #       insertSound: /Audio/Effects/packetrip.ogg
+ #       ejectSound: /Audio/Effects/packetrip.ogg
+ #       whitelist:
+ #         tags:
+ #           - Paper
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
     requiresComplex: false
@@ -467,12 +479,15 @@
     interfaces:
       enum.PaperUiKey.Key:
         type: PaperBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: Item
     size: Tiny
     shape: # Wayfarer-14
     - 0,0,0,0 # Wayfarer-14
   - type: Tag
     tags:
+    - Envelope
     - Trash
     - Document
   #- type: Appearance, hide stamp marks until we have some kind of displacement
