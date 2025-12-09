@@ -421,21 +421,7 @@
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,1,1
-  - type: ItemSlots
-    slots:
-      letter_slot:
-        name: envelope-letter-slot
-        insertSound: /Audio/Effects/packetrip.ogg
-        ejectSound: /Audio/Effects/packetrip.ogg
-        whitelist:
-          components:
-            - Cash
-          tags:
-            - Paper
-    whitelist:
-      tags:
-      - Envelope
+    - 0,0,2,0
  # - type: ItemSlots
  #   slots:
  #     letter_slot:
