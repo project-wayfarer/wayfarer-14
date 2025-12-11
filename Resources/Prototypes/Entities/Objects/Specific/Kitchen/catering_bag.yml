@@ -1,0 +1,62 @@
+- type: entity
+  name: catering bag
+  id: CateringBag
+  parent: NFBaseClothingBeltStorageBag # Frontier: BaseStorageItem<NFBaseClothingBeltStorageBag
+  description: A bag for storing foods, beverages, and the dishes for them.
+  components:
+  # Frontier: layered sprite
+  - type: Sprite
+    sprite: Objects/Specific/Kitchen/catering_bag.rsi
+    layers:
+    - state: icon
+    - state: icon-on
+      visible: false
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  # End Frontier: layered sprite
+  - type: Clothing
+    sprite: Objects/Specific/Kitchen/catering_bag.rsi
+    quickEquip: false
+    slots:
+    - belt
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal # allow up to 5 large beakers / 10 beakers / 10 pill canisters | <- Original comment from chem_bag.yml
+    grid:
+    - 0,0,4,3
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      components:
+      - Food
+      - Drink
+      - NFCookware
+      - Utensil
+      tags:
+      - DrinkCup
+      - DrinkGlass
+  - type: Dumpable
+  - type: MagnetPickup # Frontier
+    magnetEnabled: false # Frontier
+    magnetCanBeEnabled: false # Frontier
+  # Frontier: toggle magnet from White Dream
+  - type: ItemToggle
+    soundActivate: &soundActivate
+      collection: sparks
+      params:
+        variation: 0.25
+    soundDeactivate: *soundActivate
+    onUse: false
+    onAltUse: true
+    onActivate: false
+  - type: ItemToggleExamine
+    on: item-toggle-examine-magnet-on
+    off: item-toggle-examine-magnet-off
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: True }
+          False: { visible: False }
+  # End Frontier
