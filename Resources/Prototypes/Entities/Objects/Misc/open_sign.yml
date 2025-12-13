@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseItem
+  id: BrbSign
+  name: brb sign
+  description: Lets others know you are away.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/opensign.rsi
+    layers:
+      - state: icon
+        visible: true
+      - state: closed
+        map: ["closed_sign"]
+        visible: false
+  - type: StaticPrice # Frontier
+    price: 10 # Frontier
+  - type: ItemMapper
+    mapLayers:
+      closed_sign:

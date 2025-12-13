@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "license": "CC BY-NC-SA 4.0",
+    "copyright": "Created by Roy Aster, @RoY7x (github) for ss14 and Coyote Sector",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "closed"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left-closed",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-closed",
+            "directions": 4
+        }
+    ]
+}
