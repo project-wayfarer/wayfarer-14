@@ -1,19 +1,26 @@
 - type: entity
   parent: BaseItem
-  id: BrbSign
-  name: brb sign
-  description: Lets others know you are away.
+  id: OpenSign
+  name: open sign
+  description: Lets others know you the service is open or closed.
   components:
   - type: Sprite
     sprite: Objects/Misc/opensign.rsi
     layers:
-      - state: icon
-        visible: true
-      - state: closed
-        map: ["closed_sign"]
-        visible: false
+    - state: icon
+      map: ["enum.ToggleableVisuals.Layer"]
   - type: StaticPrice # Frontier
     price: 10 # Frontier
-  - type: ItemMapper
-    mapLayers:
-      closed_sign:
+  - type: ItemToggle
+    onUse: false
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Blunt: 0
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: icon }
+          False: { state: closed }
