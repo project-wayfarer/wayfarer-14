@@ -233,6 +233,12 @@
     - ClothingNeckGenderfluidPin
   groupBy: "pin"
 
+- type: loadout
+  id: ClothingNeckPolyamoryPin
+  storage:
+    back:
+    - ClothingNeckPolyamoryPin
+
 # Towels
 - type: loadout
   id: TowelColorWhite

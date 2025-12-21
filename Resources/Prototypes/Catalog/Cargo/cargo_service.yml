@@ -40,6 +40,16 @@
   group: market
 
 - type: cargoProduct
+  id: ServiceLightsNavigation
+  icon:
+    sprite: Objects/Power/light_bulb.rsi
+    state: normal
+  product: CrateServiceNavigationLights
+  cost: 800
+  category: cargoproduct-category-name-service
+  group: market
+
+- type: cargoProduct
   id: ServiceLightsColorful
   abstract: true # Frontier
   icon:
