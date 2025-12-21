@@ -32,6 +32,7 @@ The table below lists all Namespaces (along with the Nyanotrasen subdirectory) i
 
 | Subdirectory | Fork Name | Source Repository | Original License |
 |--------------|-----------|-------------------|------------------|
+| `_WF` | Wayfarer | https://github.com/drraccoony/wayfarer-14 | AGPL 3.0 |
 | `_NF` | Frontier Station | https://github.com/new-frontiers-14/frontier-station-14 | AGPL 3.0 |
 | `_CD` | Cosmatic Drift | https://github.com/cosmatic-drift-14/cosmatic-drift | MIT |
 | `_Corvax` | Corvax | https://github.com/space-syndicate/space-station-14 | MIT |
