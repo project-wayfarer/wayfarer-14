@@ -953,3 +953,12 @@
   parent: BaseNeckClothingRecipe
   id: ClothingNeckScarfStripedPurple
   result: ClothingNeckScarfStripedPurple
+
+# Floofstation - Collars
+- type: latheRecipe
+  id: ClothingNeckCollarCmd
+  result: ClothingNeckCollarCmd
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
