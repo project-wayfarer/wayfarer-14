@@ -13,9 +13,6 @@
     layers:
     - state: paper-lantern #lantern-big
       color: "#decb8e"
-    - state: paper-lantern-writing
-      map: ["enum.PaperVisualLayers.Writing"]
-      visible: false
   - type: Item
     size: Small
   - type: Appearance
@@ -107,9 +104,6 @@
     layers:
     - state: paper-lantern
       color: "#a12349"
-    - state: paper-lantern-writing
-      map: ["enum.PaperVisualLayers.Writing"]
-      visible: false
   - type: Item
     inhandVisuals:
       left:
@@ -131,9 +125,6 @@
     layers:
     - state: paper-lantern
       color: "#425d7d"
-    - state: paper-lantern-writing
-      map: ["enum.PaperVisualLayers.Writing"]
-      visible: false
   - type: Item
     inhandVisuals:
       left:
@@ -176,9 +167,6 @@
     layers:
     - state: paper-lantern
       color: "#5d997e"
-    - state: paper-lantern-writing
-      map: ["enum.PaperVisualLayers.Writing"]
-      visible: false
   - type: Item
     inhandVisuals:
       left:
@@ -200,9 +188,6 @@
     layers:
     - state: paper-lantern
       color: "#984aa1"
-    - state: paper-lantern-writing
-      map: ["enum.PaperVisualLayers.Writing"]
-      visible: false
   - type: Item
     inhandVisuals:
       left:

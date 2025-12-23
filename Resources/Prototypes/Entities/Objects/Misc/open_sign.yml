@@ -2,25 +2,27 @@
   parent: BaseItem
   id: OpenSign
   name: open sign
-  description: Lets others know you the service is open or closed.
+  description: Lets others know if the service is open or closed.
   components:
   - type: Sprite
     sprite: Objects/Misc/opensign.rsi
     layers:
     - state: icon
       map: ["enum.ToggleableVisuals.Layer"]
-  - type: StaticPrice # Frontier
-    price: 10 # Frontier
+  - type: Item
+    size: Small
+    sprite: Objects/Misc/opensign.rsi
+    heldPrefix: open
+  - type: Appearance
   - type: ItemToggle
     onUse: false
-  - type: ItemToggleMeleeWeapon
-    activatedDamage:
-      types:
-        Blunt: 0
-  - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
-          True: { state: icon }
-          False: { state: closed }
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon}
+          False: {state: closed}
+  - type: UseDelay
+    delay: 1.0
+  - type: StaticPrice
+    price: 10
