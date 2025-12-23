@@ -3,6 +3,7 @@ using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
+using Content.Client.Consent; // Floofstation
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
 using Content.Client.GameTicking.Managers;
@@ -60,6 +61,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly ChangelogManager _changelogManager = default!;
         [Dependency] private readonly ViewportManager _viewportManager = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
+        [Dependency] private readonly IClientConsentManager _clientConsentManager = default!; // Floofstation
         [Dependency] private readonly IInputManager _inputManager = default!;
         [Dependency] private readonly IOverlayManager _overlayManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
@@ -183,6 +185,7 @@ namespace Content.Client.Entry
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
             _overlayManager.AddOverlay(new EmpBlastOverlay()); // Frontier
             _chatManager.Initialize();
+            _clientConsentManager.Initialize(); // Floofstation
             _clientPreferencesManager.Initialize();
             _euiManager.Initialize();
             _voteManager.Initialize();

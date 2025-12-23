@@ -9,6 +9,7 @@ public static class ChatChannelExtensions
             ChatChannel.Server => Color.Orange,
             ChatChannel.Radio => Color.LimeGreen,
             ChatChannel.LOOC => Color.MediumTurquoise,
+            ChatChannel.SubtleLOOC => Color.LightPink,
             ChatChannel.OOC => Color.LightSkyBlue,
             ChatChannel.Dead => Color.MediumPurple,
             ChatChannel.Admin => Color.Red,

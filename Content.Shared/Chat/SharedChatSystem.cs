@@ -17,11 +17,14 @@ public abstract class SharedChatSystem : EntitySystem
     public const char ConsolePrefix = '/';
     public const char DeadPrefix = '\\';
     public const char LOOCPrefix = '(';
+    public const char SubtleLOOCPrefix = '=';
     public const char OOCPrefix = '[';
     public const char EmotesPrefix = '@';
     public const char EmotesAltPrefix = '*';
+    public const char SubtlePrefix = '-';
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';
+    public const char TelepathicPrefix = '='; //Nyano - Summary: Adds the telepathic channel's prefix.
     public const char DefaultChannelKey = 'h';
 
     public static readonly ProtoId<RadioChannelPrototype> CommonChannel = "Common";

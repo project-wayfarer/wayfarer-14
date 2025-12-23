@@ -18,6 +18,7 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.FocusWhisperChat);
             common.AddFunction(ContentKeyFunctions.FocusRadio);
             common.AddFunction(ContentKeyFunctions.FocusLOOC);
+            common.AddFunction(ContentKeyFunctions.FocusSubtleLOOC);
             common.AddFunction(ContentKeyFunctions.FocusOOC);
             common.AddFunction(ContentKeyFunctions.FocusAdminChat);
             common.AddFunction(ContentKeyFunctions.FocusConsoleChat);
@@ -126,6 +127,7 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.OpenSandboxWindow);
             common.AddFunction(ContentKeyFunctions.OpenTileSpawnWindow);
             common.AddFunction(ContentKeyFunctions.OpenDecalSpawnWindow);
+            common.AddFunction(ContentKeyFunctions.OpenConsentWindow); // Floofstation
             common.AddFunction(ContentKeyFunctions.OpenAdminMenu);
             common.AddFunction(ContentKeyFunctions.OpenGuidebook);
         }

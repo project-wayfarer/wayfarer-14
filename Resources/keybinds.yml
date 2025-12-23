@@ -1,4 +1,4 @@
-﻿version: 1 # Not used right now, whatever.
+version: 1 # Not used right now, whatever.
 binds:
 - function: UIClick
   type: State
@@ -120,6 +120,9 @@ binds:
   type: State
   mod1: Shift
   key: Num9
+- function: FocusSubtleLOOCWindow
+  type: State
+  key: Equal
 - function: FocusOOCWindow
   type: State
   key: LBracket

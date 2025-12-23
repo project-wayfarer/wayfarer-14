@@ -18,6 +18,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction FocusWhisperChat = "FocusWhisperChatWindow";
         public static readonly BoundKeyFunction FocusRadio = "FocusRadioWindow";
         public static readonly BoundKeyFunction FocusLOOC = "FocusLOOCWindow";
+        public static readonly BoundKeyFunction FocusSubtleLOOC = "FocusSubtleLOOCWindow";
         public static readonly BoundKeyFunction FocusOOC = "FocusOOCWindow";
         public static readonly BoundKeyFunction FocusAdminChat = "FocusAdminChatWindow";
         public static readonly BoundKeyFunction FocusDeadChat = "FocusDeadChatWindow";
@@ -51,6 +52,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction RotateObjectCounterclockwise = "RotateObjectCounterclockwise";
         public static readonly BoundKeyFunction FlipObject = "FlipObject";
         public static readonly BoundKeyFunction ToggleRoundEndSummaryWindow = "ToggleRoundEndSummaryWindow";
+        public static readonly BoundKeyFunction OpenConsentWindow = "OpenConsentWindow"; // Floofstation
         public static readonly BoundKeyFunction OpenEntitySpawnWindow = "OpenEntitySpawnWindow";
         public static readonly BoundKeyFunction OpenSandboxWindow = "OpenSandboxWindow";
         public static readonly BoundKeyFunction OpenTileSpawnWindow = "OpenTileSpawnWindow";

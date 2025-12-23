@@ -210,6 +210,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.FocusWhisperChat);
             AddButton(ContentKeyFunctions.FocusRadio);
             AddButton(ContentKeyFunctions.FocusLOOC);
+            AddButton(ContentKeyFunctions.FocusSubtleLOOC);
             AddButton(ContentKeyFunctions.FocusOOC);
             AddButton(ContentKeyFunctions.FocusAdminChat);
             AddButton(ContentKeyFunctions.FocusDeadChat);
@@ -228,6 +229,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.OpenSandboxWindow);
             AddButton(ContentKeyFunctions.OpenTileSpawnWindow);
             AddButton(ContentKeyFunctions.OpenDecalSpawnWindow);
+            AddButton(ContentKeyFunctions.OpenConsentWindow); // Floofstation
             AddButton(ContentKeyFunctions.OpenAdminMenu);
             AddButton(EngineKeyFunctions.WindowCloseAll);
             AddButton(EngineKeyFunctions.WindowCloseRecent);
