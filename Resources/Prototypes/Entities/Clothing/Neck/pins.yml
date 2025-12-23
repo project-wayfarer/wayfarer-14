@@ -209,3 +209,14 @@
     state: goldautism
   - type: Clothing
     equippedPrefix: goldautism
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckPolyamoryPin
+  name: polyamory pin
+  description: Be open, love more.
+  components:
+  - type: Sprite
+    state: poly
+  - type: Clothing
+    equippedPrefix: poly

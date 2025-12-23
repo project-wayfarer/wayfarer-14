@@ -79,6 +79,7 @@ construction-graph-tag-rubber-ducky = a rubber ducky
 construction-graph-tag-ghost = ghost soft toy
 construction-graph-tag-ectoplasm = ectoplasm
 construction-graph-tag-lizard-plushie = lizard plushie
+construction-graph-tag-candle = a candle
 
 # carpet
 construction-graph-tag-black-carpet = black carpet

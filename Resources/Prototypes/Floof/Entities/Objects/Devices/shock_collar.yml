@@ -1,0 +1,26 @@
+# Floofstation - port from EE, which got it from Delta-V, which got it from Nyanotrasen
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckShockCollar
+  name: shock collar
+  description: Shocking. # DeltaV: sprite is fine
+  components:
+    - type: Sprite
+      sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+    - type: Clothing
+      sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+      equipDelay: 1
+      unequipDelay: 10 # It's a collar meant to be used on prisoners (or not), so it probably has some sort of safety.
+    - type: ShockOnTrigger
+      damage: 1
+      duration: 2.5
+      cooldown: 3.5
+    - type: TriggerOnSignal
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: BasicDevice
+    - type: WirelessNetworkConnection
+      range: 200
+    - type: DeviceLinkSink
+      ports:
+        - Trigger

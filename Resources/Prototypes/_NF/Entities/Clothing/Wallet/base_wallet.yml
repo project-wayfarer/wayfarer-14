@@ -35,6 +35,9 @@
       - NFShipyardVoucher
       - Card # single cards
       - NFEmagPass
+      - IdCard
+      tags:
+      - Ring
     blacklist:
       tags:
       - Book
@@ -55,6 +58,7 @@
           - NFShipyardVoucher
           - Card
           - NFEmagPass
+          - IdCard
       closed-cash:
         whitelist:
           components:

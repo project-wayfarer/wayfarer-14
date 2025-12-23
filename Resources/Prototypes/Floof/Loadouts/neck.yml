@@ -16,8 +16,8 @@
   price: 100
   equipment:
     neck: ClothingNeckCollarPink
-   
-#T1   
+
+#T1
 - type: loadout
   id: FloofClothingCollarEpi # ContractorNeck
   effects:
@@ -26,7 +26,7 @@
   price: 500
   equipment:
     neck: ClothingNeckCollarEpi
-    
+
 - type: loadout
   id: FloofClothingCollarEngi # ContractorNeck
   effects:
@@ -35,7 +35,7 @@
   price: 500
   equipment:
     neck: ClothingNeckCollarEngi
-    
+
 - type: loadout
   id: FloofClothingCollarLogi # ContractorNeck
   effects:
@@ -44,10 +44,19 @@
   price: 500
   equipment:
     neck: ClothingNeckCollarLogi
-    
+
+- type: loadout
+  id: FloofClothingShockCollar # ContractorNeck
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    neck: ClothingNeckShockCollar
+
 #T2
 
-#T3    
+#T3
 - type: loadout
   id: FloofClothingCollarCmd # ContractorNeck
   effects:
@@ -62,19 +71,19 @@
   id: FloofClothingCollarMed # DocNeck TODO: additional integration - BrigmedicNeck?
   equipment:
     neck: ClothingNeckCollarMed
-    
+
 - type: loadout
   id: FloofClothingCollarSec # TODO: finish integration - potentially CadetNeck, DeputyNeck, BrigmedicNeck, NFDetectiveNeck, PalNeck(?), BaliffNeck, SeniorOfficerNeck, SheriffNeck?
   equipment:
     neck: ClothingNeckCollarSec
-    
+
 - type: loadout
   id: FloofClothingCollarCC # TODO: finish integration - StationRepNeck?
   equipment:
     neck: ClothingNeckCollarCC
-    
+
 - type: loadout
   id: FloofClothingCollarSyndi # TODO finish integration - PirateNeck? It's commented out as-is... not sure if it makes sense to go in any other loadouts.
   equipment:
     neck: ClothingNeckCollarSyndi
-   
+

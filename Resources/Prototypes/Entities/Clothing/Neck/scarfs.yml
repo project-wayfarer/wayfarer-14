@@ -266,3 +266,14 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/lesbian-long.rsi
   - type: Clothing
     sprite: Clothing/Neck/Scarfs/PrideScarfs/lesbian-long.rsi
+
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfStripedPolyLong
+  name: polyamory scarf
+  description: Perfect for matching with your polycule!
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/poly.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/PrideScarfs/poly.rsi

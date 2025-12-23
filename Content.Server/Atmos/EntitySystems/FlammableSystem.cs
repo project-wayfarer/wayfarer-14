@@ -467,7 +467,10 @@ namespace Content.Server.Atmos.EntitySystems
                     var air = _atmosphereSystem.GetContainingMixture(uid);
 
                     // If we're in an oxygenless environment, put the fire out.
-                    if (air == null || air.GetMoles(Gas.Oxygen) < 1f)
+                    // Unless the entity has AirlessFlammableComponent, which allows it to burn in space.
+                    // This was added for paper lanterns. It can safely be removed if creating problems.
+                    // Resources/Prototypes/Entities/Objects/Misc/paperlantern.yml
+                    if (!HasComp<AirlessFlammableComponent>(uid) && (air == null || air.GetMoles(Gas.Oxygen) < 1f))
                     {
                         Extinguish(uid, flammable);
                         continue;

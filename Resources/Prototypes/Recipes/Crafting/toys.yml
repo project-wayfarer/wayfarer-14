@@ -1,4 +1,4 @@
-﻿- type: construction
+- type: construction
   id: PlushieGhostRevenant
   graph: PlushieGhostRevenant
   startNode: start
@@ -11,6 +11,46 @@
   graph: ClothingOuterSuitIan
   startNode: start
   targetNode: suit
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: PaperLantern
+  graph: PaperLantern
+  startNode: start
+  targetNode: lantern
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: PaperLanternRed
+  graph: PaperLanternRed
+  startNode: start
+  targetNode: lantern-red
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: PaperLanternBlue
+  graph: PaperLanternBlue
+  startNode: start
+  targetNode: lantern-blue
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: PaperLanternGreen
+  graph: PaperLanternGreen
+  startNode: start
+  targetNode: lantern-green
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: PaperLanternPurple
+  graph: PaperLanternPurple
+  startNode: start
+  targetNode: lantern-purple
   category: construction-category-misc
   objectType: Item
 

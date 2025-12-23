@@ -116,6 +116,46 @@
       - id: LightTubeCrystalGreen
 
 - type: entity
+  name: red navigation lighttube box
+  parent: BoxLightbulb
+  id: BoxLighttubeNavRed
+  components:
+  - type: StorageFill
+    contents:
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+    - id: LightTubeCrystalRed
+
+- type: entity
+  name: green navigation lighttube box
+  parent: BoxLightbulb
+  id: BoxLighttubeNavGreen
+  components:
+  - type: StorageFill
+    contents:
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+    - id: LightTubeCrystalGreen
+
+- type: entity
   name: PDA box
   parent: BoxCardboard
   id: BoxPDA
