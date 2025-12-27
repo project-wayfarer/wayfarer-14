@@ -1,16 +1,4 @@
-﻿
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatVeil
-  name: black veil
-  description: Not exactly a white wedding, is it?
-  components:
-  - type: Sprite
-    sprite: _Impstation/Clothing/Head/Hats/blackveil.rsi
-  - type: Clothing
-    sprite: _Impstation/Clothing/Head/Hats/blackveil.rsi
-
-- type: entity
+﻿- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatDruid
   name: druid's crown
