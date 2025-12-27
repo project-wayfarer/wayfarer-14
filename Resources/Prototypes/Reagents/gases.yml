@@ -14,6 +14,10 @@
         conditions:
         - !type:OrganType
           type: Human
+      - !type:Oxygenate # Mono - Hydrakin
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -150,7 +154,15 @@
         amount: -2.0
     Gas:
       effects:
+      - !type:Oxygenate # Mono - Hydrakin
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
@@ -165,6 +177,16 @@
             min: 1.5
         clear: True
         time: 5
+      - !type:HealthChange # Mono
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
+        - !type:ReagentThreshold
+          reagent: Plasma
+          min: 0.5
+        damage:
+          types:
+            Heat: -0.5
   reactiveEffects:
     Flammable:
       methods: [ Touch ]
@@ -196,6 +218,10 @@
             Radiation: 3
     Gas:
       effects:
+      - !type:Oxygenate # Mono - Hydrakin
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: true
@@ -211,6 +237,17 @@
             min: 1.5
         clear: True
         time: 5
+      - !type:HealthChange # Mono
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
+        - !type:ReagentThreshold
+          reagent: Tritium
+          min: 0.5
+        damage:
+          types:
+            Heat: -0.5
+            Poison: -0.5
 
 - type: reagent
   id: CarbonDioxide
@@ -252,6 +289,10 @@
         conditions:
         - !type:OrganType
           type: Plant
+      - !type:Oxygenate # Mono - Hydrakin
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -259,6 +300,9 @@
           shouldHave: false
         - !type:OrganType
           type: Vox
+          shouldHave: false
+        - !type:OrganType
+          type: Hydrakin
           shouldHave: false
         # Don't want people to get toxin damage from the gas they just
         # exhaled, right?
@@ -302,6 +346,10 @@
         conditions:
         - !type:OrganType
           type: Vox
+      - !type:Oxygenate # Mono - Hydrakin
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -340,6 +388,19 @@
             Poison: 2
     Gas:
       effects:
+      - !type:Oxygenate # Mono - Hydrakin
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
+      - !type:MovespeedModifier # Mono - Hydrakin
+        walkSpeedModifier: 1.15
+        sprintSpeedModifier: 1.15
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
+        - !type:ReagentThreshold
+          reagent: NitrousOxide
+          min: 0.75
       - !type:Emote
         conditions:
         - !type:ReagentThreshold
@@ -382,6 +443,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:OrganType # Mono - Hydrakin
+          type: Hydrakin
+          shouldHave: false
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:ModifyStatusEffect
@@ -391,6 +455,9 @@
           min: 1.8
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType # Mono - Hydrakin
+          type: Hydrakin
           shouldHave: false
         effectProto: StatusEffectForcedSleeping
         time: 3
@@ -402,6 +469,9 @@
           min: 3.5
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType # Mono - Hydrakin
+          type: Hydrakin
           shouldHave: false
         ignoreResistances: true
         damage:
@@ -420,6 +490,10 @@
   metabolisms:
     Narcotic:
       effects:
+      - !type:Oxygenate # Mono - Hydrakin
+        conditions:
+        - !type:OrganType
+          type: Hydrakin
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: true
@@ -454,6 +528,9 @@
       effects:
       - !type:HealthChange
         conditions:
+        - !type:OrganType # Mono - Hydrakin
+          type: Hydrakin
+          shouldHave: false
         - !type:ReagentThreshold
           reagent: Frezon
           min: 0.5
@@ -494,3 +571,14 @@
         - !type:ReagentThreshold
           reagent: Frezon
           min: 1
+      - !type:AdjustTemperature # Mono - Hydrakin
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Frezon
+          min: 0.25
+        - !type:Temperature
+          min: 215.15
+        - !type:OrganType
+          type: Hydrakin
+        amount: -10000
+
