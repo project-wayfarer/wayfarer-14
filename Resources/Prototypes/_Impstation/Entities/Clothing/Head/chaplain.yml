@@ -32,8 +32,9 @@
       types:
         Pierce: 2
         Holy: 5
-    soundHit: /Audio/Weapons/bladeslice.ogg
-    staminaCost: 10
+    soundHit:
+      path: "/Audio/Weapons/bladeslice.ogg"
+    #staminaCost: 10       ##Don't know what this should be. Don't think MeleeStaminaCost is the right field choice
   - type: PhysicalComposition
     materialComposition:
       Silver: 10
@@ -61,8 +62,9 @@
       types:
         Heat: 2
         Holy: 5
-    soundHit: /Audio/Weapons/bladeslice.ogg
-    staminaCost: 10
+    soundHit:
+      path: "/Audio/Weapons/bladeslice.ogg"
+    #staminaCost: 10      ##Don't know what this should be. Don't think MeleeStaminaCost is the right field choice
   - type: PhysicalComposition
     materialComposition:
       Gold: 10
