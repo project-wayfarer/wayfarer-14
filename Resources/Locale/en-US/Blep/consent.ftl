@@ -29,3 +29,9 @@ consent-NoClone-desc = Turn this on to disallow Paradox clones of yourself.
 
 consent-NSFWDescriptions-name = Show NSFW Descriptions
 consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.
+
+consent-Vore-name = Vore
+consent-Vore-desc = Allow yourself to be devoured by other players.
+
+consent-Digestion-name = Vore Digestion
+consent-Digestion-desc = Allow yourself to be digested while inside another player. This WILL ROUND-END you!
