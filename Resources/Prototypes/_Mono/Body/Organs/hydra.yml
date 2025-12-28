@@ -36,7 +36,7 @@
     slotId: stomach
   - type: Metabolizer
     maxReagents: 3
-    metabolizerTypes: [ Animal ]
+    metabolizerTypes: [ Animal, Hydrakin ]
     removeEmpty: true
   - type: SolutionContainerManager
     solutions:
@@ -59,7 +59,7 @@
 
 - type: entity
   id: OrganHydrakinLiver
-  parent: BaseHydrakinOrgan
+  parent: [ BaseHydrakinOrgan ]
   name: hydrakin liver
   components:
   - type: Sprite
@@ -69,11 +69,20 @@
   - type: Item
     size: Small
     heldPrefix: liver
+  - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
+    maxReagents: 1
+    metabolizerTypes: [Human]
+    groups:
+    - id: Alcohol
+      rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
 
 - type: entity
   id: OrganHydrakinHeart
   parent: [ BaseHydrakinOrgan , OrganHumanHeart ]
   name: hydrakin heart
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Hydrakin ]
 
 - type: entity
   id: OrganHydrakinLungs
