@@ -158,6 +158,8 @@
     coughPopup: chitzite-cough
   - type: Chitinid
   - type: BlockInjection
+  # CS - Add needs management
+  - type: Needs
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -166,8 +168,3 @@
   components:
   - type: HumanoidAppearance
     species: Chitinid
-
-  - type: Needs
-    needs:
-    - type: Hunger
-      baseDecayRate: 0.0467
