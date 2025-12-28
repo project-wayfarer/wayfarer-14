@@ -10,9 +10,10 @@
     hideLayersOnEquip:
     - HeadTop
 
-  - type: Hunger
-    baseDecayRate: 0.0467 #needs to eat more to survive
-  - type: Thirst
+  # CS - We have a different system to handle this
+  # - type: Hunger
+  #   baseDecayRate: 0.0467 #needs to eat more to survive
+  # - type: Thirst
 
   - type: UnpoweredFlashlight # Frontier: https://github.com/DeltaV-Station/Delta-v/pull/2796 this was added back and need to be removed if we ever take DeltaV medical
   - type: PointLight # Frontier
@@ -136,7 +137,7 @@
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "id" ]
-      - map: [ "back" ] 
+      - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -165,3 +166,8 @@
   components:
   - type: HumanoidAppearance
     species: Chitinid
+
+  - type: Needs
+    needs:
+    - type: Hunger
+      baseDecayRate: 0.0467
