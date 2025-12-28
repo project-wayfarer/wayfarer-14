@@ -43,8 +43,11 @@
     - Silicon
     damage:
       types: # these are all split across multiple types
-        Heat: -1.66
-        Shock: -1.66
+        Heat: -7 # Coyote
+        Shock: -7 # Coyote
+        Cold: -3 # Coyote
+        Caustic: -3 # Coyote. Corrosion is far more difficult to fix if its not just an oxide layer from burning hence -3
+        Structural: -25 # Coyote
   # EE Change End
   # FIXME: Used isnt actually implemented so its still unlimited.
   # Uncomment this when its implemented, and make sure it handles StackComponent right
