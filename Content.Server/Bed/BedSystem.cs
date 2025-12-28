@@ -1,5 +1,4 @@
 using Content.Server.Actions; //Added with IPC PR
-using Content.Server.Bed.Components; //Added with IPC PR
 using Content.Server.Body.Systems; //Added with IPC PR
 using Content.Server.Construction; //Added with IPC PR
 using Content.Server.Power.Components; //Added with IPC PR
