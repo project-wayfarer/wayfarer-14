@@ -31,7 +31,7 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump', 'ReptilianHiss'] # Imp: add ReptilianHiss
+    allowedEmotes: ['Thump', 'ReptilianHiss', 'Chirp', 'Gurgle', 'Weh'] # Imp: add ReptilianHiss, Chirp, Gurgle, Weh
   - type: TypingIndicator
     proto: lizard
   - type: Vocal
@@ -85,6 +85,9 @@
     cosmeticOnly: false # Frontier
   - type: TallWhitelist # Frontier
     scale: 1.2 # Frontier
+  - type: Tag
+    tags:
+    - LizardEmotes
 
 - type: entity
   parent: BaseSpeciesDummy

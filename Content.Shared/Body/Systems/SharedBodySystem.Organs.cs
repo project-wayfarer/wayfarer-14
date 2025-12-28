@@ -74,6 +74,7 @@ public partial class SharedBodySystem
 
         Containers.EnsureContainer<ContainerSlot>(parent.Value, GetOrganContainerId(slotId));
         slot = new OrganSlot(slotId);
+
         return part.Organs.TryAdd(slotId, slot.Value);
     }
 

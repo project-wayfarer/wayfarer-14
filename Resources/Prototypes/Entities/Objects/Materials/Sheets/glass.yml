@@ -48,6 +48,10 @@
     solutions:
       glass:
         canReact: false
+  # EE - IPC Healing
+  - type: BlindHealing
+    damageContainers:
+      - Silicon
 
 - type: entity
   parent: SheetGlassBase
