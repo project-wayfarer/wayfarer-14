@@ -7,6 +7,14 @@
   defaultSkinTone: "#747474"
   markingLimits: MobRodentiaMarkingLimits
   dollPrototype: MobRodentiaDummy
+  # Coyote: Small enough to fit in a bag
+  minHeight: 0.6
+  defaultHeight: 0.8
+  maxHeight: 1.1
+  minWidth: 0.55
+  defaultWidth: 0.8
+  maxWidth: 1.15
+  # End Coyote
   skinColoration: Hues
   maleFirstNames: NamesRodentiaMale
   femaleFirstNames: NamesRodentiaFemale
