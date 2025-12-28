@@ -17,6 +17,17 @@
   cartridges:
   - MedTekCartridge
 
+# Wayfarer
+- type: loadout
+  id: ContractorCriticalImplantTrackerCartridge
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 1000
+  cartridges:
+  - CriticalImplantTrackerCartridge
+# End Wayfarer
+
 - type: loadout
   id: ContractorNetProbeCartridge
   effects:
