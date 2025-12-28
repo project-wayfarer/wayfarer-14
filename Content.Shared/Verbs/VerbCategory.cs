@@ -94,5 +94,8 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory Vore =
             new("verb-categories-vore", "/Textures/Interface/Actions/devour.rsi/icon-on.png");
+
+        // Interaction verbs system
+        public static readonly VerbCategory Interaction = new("verb-categories-interaction", null);
     }
 }

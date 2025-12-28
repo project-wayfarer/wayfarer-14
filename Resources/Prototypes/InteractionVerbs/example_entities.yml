@@ -1,0 +1,51 @@
+# Example: Enable interaction verbs on player mobs
+# Add this component to your mob species prototypes or specific mob entities
+
+# To enable interaction verbs on all human players, you would modify your base human prototype:
+# (This is just an example - you'll need to add this to your actual species prototypes)
+
+# - type: entity
+#   parent: BaseMobSpecies  # or MobHuman, or whatever your base is
+#   id: MobHumanWithInteractions
+#   components:
+#   - type: InteractionVerbs
+#     allowedVerbs:
+#     - Lick
+#     - Kiss
+#     - CheckOut
+#     - Hug
+#     - Pet
+
+# Alternatively, you can make verbs "global" by setting `global: true` in the
+# interaction_verbs.yml prototype file, which will allow them to work on ANY entity
+# without needing the InteractionVerbsComponent.
+
+# For testing, you might want to create a test entity:
+- type: entity
+  id: InteractionTestDummy
+  name: interaction test dummy
+  description: A dummy for testing interaction verbs.
+  components:
+  - type: InteractionVerbs
+    allowedVerbs:
+    - Lick
+    - Kiss
+    - CheckOut
+    - Hug
+    - Pet
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: full
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        mask:
+        - MobMask
+        layer:
+        - MobLayer

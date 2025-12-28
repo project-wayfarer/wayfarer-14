@@ -172,6 +172,13 @@
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
+  - type: InteractionVerbs
+    allowedVerbs:
+    - Lick
+    - Kiss
+    - CheckOut
+    - Hug
+    - Pet
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:

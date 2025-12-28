@@ -1,0 +1,123 @@
+# Player Interaction Verbs
+# These verbs allow players to interact with each other in roleplay ways
+
+- type: Interaction
+  id: Lick
+  action:
+    !type:NoOpAction
+  effectSuccess:
+    popup: DefaultInteraction
+    effectTarget: TargetThenUser
+    soundPerceivedByOthers: true
+    sound:
+      path: /Audio/Floof/Lewd/lick.ogg
+      params:
+        volume: -2
+        variation: 0.15
+  delay: 0
+  cooldown: 2
+  range:
+    min: 0
+    max: 1.5
+  requiresCanInteract: true
+  requiresHands: false
+  allowSelfInteract: false
+  priority: 0
+  categoryKey: interaction
+
+- type: Interaction
+  id: Kiss
+  action:
+    !type:NoOpAction
+  effectSuccess:
+    popup: DefaultInteraction
+    effectTarget: TargetThenUser
+    soundPerceivedByOthers: true
+    sound:
+      path: /Audio/Floof/Lewd/kiss.ogg
+      params:
+        volume: 0
+        variation: 0.1
+  delay: 0
+  cooldown: 2
+  range:
+    min: 0
+    max: 1.5
+  requiresCanInteract: true
+  requiresHands: false
+  allowSelfInteract: false
+  priority: 0
+  categoryKey: interaction
+
+- type: Interaction
+  id: CheckOut
+  action:
+    !type:NoOpAction
+  effectSuccess:
+    popup: DefaultInteraction
+    effectTarget: TargetThenUser
+    soundPerceivedByOthers: false
+    sound:
+      path: /Audio/Floof/Lewd/blush.ogg
+      params:
+        volume: -8
+        variation: 0.2
+        maxDistance: 3
+  delay: 0
+  cooldown: 5
+  range:
+    min: 0
+    max: 5.0  # Can check out from a distance
+  requiresCanInteract: false
+  requiresHands: false
+  allowSelfInteract: false
+  priority: 0
+  categoryKey: interaction
+
+- type: Interaction
+  id: Hug
+  action:
+    !type:NoOpAction
+  effectSuccess:
+    popup: DefaultInteraction
+    effectTarget: TargetThenUser
+    soundPerceivedByOthers: true
+    sound:
+      path: /Audio/Effects/thudswoosh.ogg
+      params:
+        volume: -2
+        variation: 0.1
+  delay: 0
+  cooldown: 2
+  range:
+    min: 0
+    max: 1.5
+  requiresCanInteract: true
+  requiresHands: false
+  allowSelfInteract: false
+  priority: 0
+  categoryKey: interaction
+
+- type: Interaction
+  id: Pet
+  action:
+    !type:NoOpAction
+  effectSuccess:
+    popup: DefaultInteraction
+    effectTarget: TargetThenUser
+    soundPerceivedByOthers: true
+    sound:
+      path: /Audio/Items/bikehorn.ogg
+      params:
+        volume: -5
+        variation: 0.2
+  delay: 0
+  cooldown: 1
+  range:
+    min: 0
+    max: 1.5
+  requiresCanInteract: true
+  requiresHands: true  # Need hands to pet
+  allowSelfInteract: false
+  priority: 0
+  categoryKey: interaction
