@@ -1,4 +1,5 @@
 #nullable enable
+using Robust.Shared.Prototypes;
 using System.Collections.Generic;
 using System.Linq;
 using Content.Server.Body.Components;
@@ -24,7 +25,7 @@ using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Prototypes;
+using Content.Shared._EinsteinEngines.Silicon.Components; // Goobstation
 
 namespace Content.IntegrationTests.Tests.GameRules;
 
@@ -235,7 +236,8 @@ public sealed class NukeOpsTest
         for (var tick = 0; tick < totalTicks; tick += increment)
         {
             await pair.RunTicksSync(increment);
-            Assert.That(resp.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
+            if (!entMan.HasComponent<SiliconComponent>(player)) // Goobstation
+                Assert.That(resp.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
             Assert.That(damage.TotalDamage, Is.EqualTo(FixedPoint2.Zero));
         }
 

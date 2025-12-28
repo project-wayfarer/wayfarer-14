@@ -1,3 +1,9 @@
+using Content.Server.Actions; //Added with IPC PR
+using Content.Server.Body.Systems; //Added with IPC PR
+using Content.Server.Construction; //Added with IPC PR
+using Content.Server.Power.Components; //Added with IPC PR
+using Content.Server.Power.EntitySystems; //Added with IPC PR
+using Content.Shared._EinsteinEngines.Silicon.Components; //Added with IPC PR
 using Content.Shared.Bed;
 using Content.Shared.Bed.Components;
 using Content.Shared.Bed.Sleep;
@@ -38,7 +44,8 @@ namespace Content.Server.Bed
 
                 foreach (var healedEntity in strapComponent.BuckledEntities)
                 {
-                    if (_mobStateSystem.IsDead(healedEntity))
+                    if (_mobStateSystem.IsDead(healedEntity)
+                        || HasComp<SiliconComponent>(healedEntity)) // Goobstation
                         continue;
 
                     var damage = bedComponent.Damage;
