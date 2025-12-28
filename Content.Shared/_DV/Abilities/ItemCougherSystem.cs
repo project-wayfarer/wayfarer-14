@@ -74,7 +74,6 @@ public sealed class ItemCougherSystem : EntitySystem
         _popup.PopupPredicted(msg, ent, ent);
         _audio.PlayPredicted(ent.Comp.Sound, ent, ent);
 
-<<<<<<< HEAD
         var path = _audio.ResolveSound(ent.Comp.Sound); // Frontier: resolve sound
         var coughing = EnsureComp<CoughingUpItemComponent>(ent);
         coughing.NextCough = _timing.CurTime + _audio.GetAudioLength(path);
@@ -99,25 +98,6 @@ public sealed class ItemCougherSystem : EntitySystem
             return;
 
         _actions.SetEnabled(action, enabled);
-=======
-        var path = _audio.GetSound(ent.Comp.Sound);
-        var coughing = EnsureComp<CoughingUpItemComponent>(ent);
-        coughing.NextCough = _timing.CurTime + _audio.GetAudioLength(path);
-        args.Handled = true;
-    }
-
-    /// <summary>
-    /// Adds a charge to the coughing action.
-    /// Other systems have to call this.
-    /// </summary>
-    public void EnableAction(Entity<ItemCougherComponent?> ent)
-    {
-        if (!_query.Resolve(ent, ref ent.Comp) || ent.Comp.ActionEntity is not {} action)
-            return;
-
-        _actions.SetCharges(action, 1);
-        _actions.SetEnabled(action, true);
->>>>>>> 7f2dfb29ca3 (Chitinid (DeltaV #2707) (#2774))
     }
 }
 
