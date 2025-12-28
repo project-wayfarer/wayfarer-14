@@ -23,6 +23,7 @@ using Content.Shared.Pinpointer;
 using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Map.Components;
 using Content.Shared._EinsteinEngines.Silicon.Components; // Goobstation
 
