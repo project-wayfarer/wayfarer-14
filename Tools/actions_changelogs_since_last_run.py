@@ -122,6 +122,13 @@ def get_last_changelog_by_sha(
         headers=headers,
         params=params,
     )
+    
+    # Handle 404 errors (e.g., after repository migration or first run)
+    if resp.status_code == 404:
+        print(f"Could not find commit {sha} in repository {github_repository}")
+        print("This is normal after a repository migration. Using empty changelog as baseline.")
+        return "Entries: []"
+    
     resp.raise_for_status()
     return resp.text
 
