@@ -14,9 +14,9 @@
     denyState: kink-deny
     loopDeny: false
     ejectDelay: 1.9
-    initialStockQuality: 0.33
-  - type: Advertise
-    pack: HornyHawkerAds
+    initialStockQuality: 0.80
+  - type: DatasetVocalizer
+    dataset: HornyHawkerAds
   - type: SpeakOnUIClosed
     pack: HornyHawkerGoodbyes
   - type: Sprite
