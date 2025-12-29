@@ -1,0 +1,19 @@
+- type: entity
+  parent: NFBasePDACartridge
+  id: CriticalImplantTrackerCartridge
+  name: crit implant tracker cartridge
+  description: A medical program for tracking critical patients and their medical implants.
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/cartridge.rsi
+      state: cart-med
+    - type: UIFragment
+      ui: !type:CriticalImplantTrackerUi
+    - type: Cartridge
+      programName: crit-implant-tracker-program-name
+      icon:
+        sprite: Objects/Specific/Medical/healthanalyzer.rsi
+        state: icon
+    - type: CriticalImplantTrackerCartridge
+    - type: StaticPrice
+      price: 1000

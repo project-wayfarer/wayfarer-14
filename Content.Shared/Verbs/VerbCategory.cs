@@ -35,6 +35,13 @@ namespace Content.Shared.Verbs
             IconsOnly = iconsOnly;
         }
 
+        public VerbCategory(string text, SpriteSpecifier? icon, bool iconsOnly = false)
+        {
+            Text = Loc.GetString(text);
+            Icon = icon;
+            IconsOnly = iconsOnly;
+        }
+
         public static readonly VerbCategory Admin =
             new("verb-categories-admin", "/Textures/Interface/character.svg.192dpi.png");
 
@@ -71,20 +78,20 @@ namespace Content.Shared.Verbs
             new("verb-categories-transfer", "/Textures/Interface/VerbIcons/spill.svg.192dpi.png");
 
         public static readonly VerbCategory Split =
-            new("verb-categories-split", null);
+            new("verb-categories-split", (string?)null);
 
         public static readonly VerbCategory InstrumentStyle =
-            new("verb-categories-instrument-style", null);
+            new("verb-categories-instrument-style", (string?)null);
 
-        public static readonly VerbCategory ChannelSelect = new("verb-categories-channel-select", null);
+        public static readonly VerbCategory ChannelSelect = new("verb-categories-channel-select", (string?)null);
 
-        public static readonly VerbCategory SetSensor = new("verb-categories-set-sensor", null);
+        public static readonly VerbCategory SetSensor = new("verb-categories-set-sensor", (string?)null);
 
-        public static readonly VerbCategory Lever = new("verb-categories-lever", null);
+        public static readonly VerbCategory Lever = new("verb-categories-lever", (string?)null);
 
-        public static readonly VerbCategory SelectType = new("verb-categories-select-type", null);
+        public static readonly VerbCategory SelectType = new("verb-categories-select-type", (string?)null);
 
-        public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
+        public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", (string?)null);
 
         public static readonly VerbCategory Adjust =
             new("verb-categories-adjust", "/Textures/Interface/VerbIcons/screwdriver.png");
@@ -92,10 +99,11 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory Pen = // Frontier
             new("verb-categories-pen", "/Textures/Interface/pencil.png"); // Frontier
 
-        public static readonly VerbCategory Vore =
-            new("verb-categories-vore", "/Textures/Interface/Actions/devour.rsi/icon-on.png");
+        public static readonly VerbCategory Vore = new VerbCategory(
+            "verb-categories-vore",
+            new SpriteSpecifier.Rsi(new("/Textures/Interface/Actions/devour.rsi"), "icon-on"));
 
         // Interaction verbs system
-        public static readonly VerbCategory Interaction = new("verb-categories-interaction", null);
+        public static readonly VerbCategory Interaction = new("verb-categories-interaction", (string?)null);
     }
 }

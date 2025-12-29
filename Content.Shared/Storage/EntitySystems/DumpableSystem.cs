@@ -127,30 +127,53 @@ public sealed class DumpableSystem : EntitySystem
 
     private void OnDoAfter(EntityUid uid, DumpableComponent component, DumpableDoAfterEvent args)
     {
-        if (args.Handled || args.Cancelled || !TryComp<StorageComponent>(uid, out var storage) || storage.Container.ContainedEntities.Count == 0 || args.Args.Target is not { } target)
+        if (args.Handled || args.Cancelled)
+            return;
+
+        DumpContents(uid, args.Args.Target, args.Args.User, component);
+    }
+
+    /// <summary>
+    /// Dumps the contents of a storage entity to a target location or entity.
+    /// </summary>
+    /// <param name="uid">The storage entity to dump from</param>
+    /// <param name="target">The target entity to dump to (can be null to dump on ground)</param>
+    /// <param name="user">The user performing the dump action</param>
+    /// <param name="component">The dumpable component (optional, will be resolved if null)</param>
+    public void DumpContents(EntityUid uid, EntityUid? target, EntityUid user, DumpableComponent? component = null)
+    {
+        if (!TryComp<StorageComponent>(uid, out var storage) || !Resolve(uid, ref component))
+            return;
+
+        if (storage.Container.ContainedEntities.Count == 0)
             return;
 
         var dumpQueue = new Queue<EntityUid>(storage.Container.ContainedEntities);
+        var dumped = false;
 
-        var evt = new DumpEvent(dumpQueue, args.Args.User, false, false);
-        RaiseLocalEvent(target, ref evt);
-
-        if (!evt.Handled)
+        if (target != null)
         {
-            var targetPos = _transformSystem.GetWorldPosition(uid);
+            var evt = new DumpEvent(dumpQueue, user, false, false);
+            RaiseLocalEvent(target.Value, ref evt);
 
-            foreach (var entity in dumpQueue)
+            if (evt.Handled)
             {
-                var transform = Transform(entity);
-                _transformSystem.SetWorldPositionRotation(entity, targetPos + _random.NextVector2Box() / 4, _random.NextAngle(), transform);
+                dumped = true;
+                if (evt.PlaySound)
+                {
+                    _audio.PlayPredicted(component.DumpSound, uid, user);
+                }
+                return;
             }
-
-            return;
         }
 
-        if (evt.PlaySound)
+        // Default behavior: dump to ground
+        var targetPos = target != null ? _transformSystem.GetWorldPosition(target.Value) : _transformSystem.GetWorldPosition(uid);
+
+        foreach (var entity in dumpQueue)
         {
-            _audio.PlayPredicted(component.DumpSound, uid, args.User);
+            var transform = Transform(entity);
+            _transformSystem.SetWorldPositionRotation(entity, targetPos + _random.NextVector2Box() / 4, _random.NextAngle(), transform);
         }
     }
 }

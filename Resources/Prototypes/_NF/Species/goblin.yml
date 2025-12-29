@@ -7,7 +7,15 @@
   sprites: MobGoblinSprites
   markingLimits: MobGoblinMarkingLimits
   dollPrototype: MobGoblinDummy
-  skinColoration: HumanToned #Possible values: TintedHues, Hues, HumanToned
+  # Coyote: Small enough to fit in a bag
+  minHeight: 0.6
+  defaultHeight: 0.8
+  maxHeight: 1.1
+  minWidth: 0.55
+  defaultWidth: 0.8
+  maxWidth: 1.15
+  # End Coyote
+  skinColoration: Hues #Possible values: TintedHues, Hues, HumanToned
   maleFirstNames: NamesGoblinFirstMale
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast
