@@ -9,7 +9,7 @@
     - PaperLantern
   - type: Sprite
     noRot: true
-    sprite: _WV/Objects/Misc/paperlantern.rsi
+    sprite: _WF/Objects/Misc/paperlantern.rsi
     layers:
     - state: paper-lantern #lantern-big
       color: "#decb8e"
@@ -53,7 +53,7 @@
         type: PaperBoundUserInterface
   - type: PaperVisuals
   - type: FireVisuals
-    sprite: _WV/Objects/Misc/paperlantern.rsi
+    sprite: _WF/Objects/Misc/paperlantern.rsi
     normalState: lit
   - type: Fixtures
     fixtures:
