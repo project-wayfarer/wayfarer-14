@@ -15,6 +15,7 @@
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
   - type: Hunger
+  - type: Thirst
   - type: Icon
     sprite: _Obelisk/Mobs/Species/Hydrakin/parts.rsi
     state: full
@@ -23,7 +24,6 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Hydrakin
-  - type: Thirst
   - type: Butcherable
     butcheringType: Spike
     spawned:
