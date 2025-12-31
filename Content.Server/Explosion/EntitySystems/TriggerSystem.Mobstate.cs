@@ -53,7 +53,7 @@ public sealed partial class TriggerSystem
 
         if (component.PreventVore)
         {
-            if (HasComp<VoredComponent>(args.Target))
+            if (HasComp<VoredComponent>(changedStateMobUid))
             {
                 // Typically, if someone is vored, they dont want people to come rush to
                 // their aid, so just block the trigger if they are vored.
@@ -67,7 +67,7 @@ public sealed partial class TriggerSystem
         {
             HandleTimerTrigger(
                 uid,
-                args.Origin,
+                stateChangerUid,
                 timerTrigger.Delay,
                 timerTrigger.BeepInterval,
                 timerTrigger.InitialBeepDelay,

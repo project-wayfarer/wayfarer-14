@@ -26,6 +26,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.EntityEffects;
+using Content.Shared.Ghost;
 using Content.Shared.Mind.Components;
 using Content.Shared.Salvage;
 using Content.Shared.Warps;
@@ -630,7 +631,7 @@ public sealed partial class SalvageSystem
 
         // okay first look for aghosts, whatever
         var aghostQuery =
-            EntityQueryEnumerator<AdminGhostComponent, TransformComponent>();
+            EntityQueryEnumerator<GhostComponent, TransformComponent>();
         while (aghostQuery.MoveNext(
                    out var _,
                    out _,
@@ -659,7 +660,7 @@ public sealed partial class SalvageSystem
             if (xform.MapUid != mapUid)
                 continue;
             // unidentified humans (loot) dont count
-            if (!mindC.HasHadMind)
+            if (!mindC.HasMind)
                 continue;
             // if anyone is alive and not in crit, we are good
             if (_mobState.IsAlive(uid, mobState))
