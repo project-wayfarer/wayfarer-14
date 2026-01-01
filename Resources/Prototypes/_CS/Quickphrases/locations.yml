@@ -1,0 +1,121 @@
+# # Nautical Locations
+- type: quickPhrase
+  parent: [BaseNauticalPhrase, BaseLocationPhrase]
+  id: BaseNauticalLocationPhrase
+  abstract: true
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalShipPhrase
+  text: phrase-location-nautical-ship
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalDockPhrase
+  text: phrase-location-nautical-dock
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalForePhrase
+  text: phrase-location-nautical-fore
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalAftPhrase
+  text: phrase-location-nautical-aft
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalPortPhrase
+  text: phrase-location-nautical-port
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalStarboardPhrase
+  text: phrase-location-nautical-starboard
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalAdmidshipsPhrase
+  text: phrase-location-nautical-amidships
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalBridgePhrase
+  text: phrase-location-nautical-bridge
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalEngineRoomPhrase
+  text: phrase-location-nautical-engine-room
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalCrewQuartersPhrase
+  text: phrase-location-nautical-crew-quarters
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalMedBayPhrase
+  text: phrase-location-nautical-med-bay
+
+- type: quickPhrase
+  parent: BaseNauticalLocationPhrase
+  id: LocationNauticalCargoBayPhrase
+  text: phrase-location-nautical-cargo-bay
+
+# # Stations
+- type: quickPhrase
+  parent: [BaseStationPhrase, BaseLocationPhrase]
+  id: BaseStationLocationPhrase
+  abstract: true
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationNashPhrase
+  text: phrase-location-nash
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationNFSDOutpostPhrase
+  text: phrase-location-nfsd-outpost
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationFrontierOutpostPhrase
+  text: phrase-location-frontier-outpost
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationPowerPlantPhrase
+  text: phrase-location-power-plant
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationBarrierPhrase
+  text: phrase-location-barrier
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationHospitalPhrase
+  text: phrase-location-hospital
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationCasinoPhrase
+  text: phrase-location-casino
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationGriftyPhrase
+  text: phrase-location-grifty
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationLodgePhrase
+  text: phrase-location-lodge
+
+- type: quickPhrase
+  parent: BaseStationLocationPhrase
+  id: LocationCovePhrase
+  text: phrase-location-cove

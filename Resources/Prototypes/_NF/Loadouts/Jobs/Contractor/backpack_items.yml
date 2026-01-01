@@ -238,6 +238,15 @@
     back:
     - UrnMortuary
 
+#Start DeltaV
+- type: loadout
+  id: ContractorAACTablet
+  price: 500
+  storage:
+    back:
+    - AACTablet
+#End DeltaV
+
 #T1
 - type: loadout
   id: ContractorBasketball
