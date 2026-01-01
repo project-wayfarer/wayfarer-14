@@ -279,9 +279,9 @@
   name: clown winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatclown.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatclown.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -368,9 +368,9 @@
   description: A sturdy, utilitarian winter coat designed to protect a head of security from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterHOS
 ##########################################################
@@ -727,9 +727,9 @@
   description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 ################################################################
@@ -790,9 +790,9 @@
   description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/syndicate/coatsyndiecaparmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/syndicate/coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/syndicate/coatsyndiecaparmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/syndicate/coat.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSyndie
 ##############################################################
@@ -828,9 +828,9 @@
   description: An oversized, plasticine space tuxedo that'll have people asking "do you know me?"
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatnomi.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatnomi.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
