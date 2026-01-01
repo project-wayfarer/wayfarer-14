@@ -66,6 +66,7 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
+    [ValidatePrototypeId<ColorPalettePrototype>]
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;

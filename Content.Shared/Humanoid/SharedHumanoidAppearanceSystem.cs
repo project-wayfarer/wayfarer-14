@@ -15,6 +15,7 @@ using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared._Floof.Shadekin;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
@@ -120,6 +121,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var identity = Identity.Entity(uid, EntityManager);
         var species = GetSpeciesRepresentation(component.Species, component.CustomSpecieName).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
+        if (HasComp<ShadekinComponent>(uid))
+        {
+            var color = component.EyeColor.Name();
+            if (color != null)
+                age = Loc.GetString("identity-eye-shadekin", ("color", color));
+        }
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
 

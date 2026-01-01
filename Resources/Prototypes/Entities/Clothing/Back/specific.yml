@@ -77,6 +77,7 @@
     solution: tank
 
 - type: entity
+<<<<<<< HEAD
   parent: ClothingBackpack
   id: ClothingBagPet
   name: pet bag
@@ -120,3 +121,22 @@
         location: Middle
       extra_hand_2:
         location: Middle
+
+  parent: Clothing
+  id: ClothingBackpackEtherealTeleporter
+  name: ethereal teleporter
+  description: Originally created while several research facilities were experimenting on Shadekin, this backpack allows the wearer to jump the gap between the "normal" dimension and The Dark.
+  components:
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+    - type: Sprite
+      sprite: Clothing/Back/etherealteleporter.rsi
+      state: icon
+    - type: Item
+      size: Ginormous
+    - type: Clothing
+      slots: BACK
+      sprite: Clothing/Back/etherealteleporter.rsi
+    - type: EtherealPhase
+

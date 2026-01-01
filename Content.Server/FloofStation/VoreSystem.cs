@@ -36,6 +36,10 @@ using Content.Shared.Standing;
 using Content.Server.Power.Components;
 using Content.Shared.PowerCell;
 using Content.Server.Nutrition.EntitySystems;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Hands.EntitySystems;
+using Content.Server.Carrying;
+using Content.Shared._Floof.Shadekin;
 
 namespace Content.Server.FloofStation;
 
@@ -390,7 +394,8 @@ public sealed class VoreSystem : EntitySystem
         if (TryComp<VoreComponent>(prey, out var preyvore))
             _containerSystem.EmptyContainer(preyvore.Stomach);
 
-        QueueDel(prey);
+        if (!TryComp<ShadekinComponent>(prey, out var shadekin) || shadekin.Blackeye)
+            QueueDel(prey);
     }
 
     private void OnExamine(EntityUid uid, ExaminedEvent args)

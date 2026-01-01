@@ -62,6 +62,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly EmpathyChatSystem _empathy = default!;
 
     public const int VoiceRange = 12; // how far voice goes in world units
     public const int ShoutRange = 30; // how far Shout goes in world units
@@ -273,6 +274,12 @@ public sealed partial class ChatSystem : SharedChatSystem
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, hideLog, ignoreActionBlocker, chatColor: nameColorString);
                 return;
             }
+        }
+
+        if (desiredType == InGameICChatType.Telepathic && language.SpeechOverride.EmpathySpeech)
+        {
+            _empathy.SendEmpathyChat(source, message, range == ChatTransmitRange.HideChat);
+            return;
         }
 
         // Otherwise, send whatever type.
@@ -940,6 +947,28 @@ public sealed partial class ChatSystem : SharedChatSystem
                 session,
                 data,
                 range);
+            if (language.SpeechOverride.RequireSpeech && channel != ChatChannel.LOOC && channel != ChatChannel.Emotes)
+            {
+                var sourceGrid = Transform(source).GridUid;
+                float transmitRange = VoiceRange;
+                if (sourceGrid == null && !isSoundTransmittable(Transform(source).MapID))
+                    transmitRange = InSpaceRange;
+
+                if (session.AttachedEntity != null
+                    && Transform(session.AttachedEntity.Value).GridUid == null
+                    && !isSoundTransmittable(Transform(session.AttachedEntity.Value).MapID))
+                    transmitRange = InSpaceRange;
+
+                if (session.AttachedEntity != null
+                    && Transform(session.AttachedEntity.Value).GridUid != sourceGrid
+                    && !isSoundTransmittable(Transform(session.AttachedEntity.Value).MapID)
+                    && !CheckAttachedGrids(source, session.AttachedEntity.Value))
+                    transmitRange = InSpaceRange;
+
+                if (session.AttachedEntity != null && Transform(source).Coordinates.TryDistance(EntityManager, Transform(session.AttachedEntity.Value).Coordinates, out var distance) && distance > transmitRange)
+                    continue;
+            }
+            var entRange = MessageRangeCheck(session, data, range);
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             
