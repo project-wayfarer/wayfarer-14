@@ -595,7 +595,7 @@ namespace Content.Shared.Preferences
             }
 
             var customspeciename = speciesPrototype.CustomName
-                ? FormattedMessage.RemoveMarkup(Customspeciesname ?? "")[..MaxNameLength]
+                ? FormattedMessage.RemoveMarkup(Customspeciesname ?? "")[..maxNameLength]
                 : "";
 
             string flavortext;

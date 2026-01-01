@@ -100,94 +100,69 @@
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
+                                <!-- Wayfarer: Hide from Playerlist -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-hide-from-playerlist-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <CheckBox Name="HideFromPlayerlistCheckbox" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- End Wayfarer -->
+                            </BoxContainer>
+                            <!-- Skin -->
+                            <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical">
+                                <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
+                                <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" />
+                                <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
+                            </BoxContainer>
+                            <!-- Hair -->
+                            <BoxContainer Margin="10" Orientation="Horizontal">
+                                <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" />
+                                <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" />
+                            </BoxContainer>
+                            <!-- Eyes -->
+                            <BoxContainer Margin="10" Orientation="Vertical">
+                                <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
+                                <humanoid:EyeColorPicker Name="EyeColorPicker" />
                             </BoxContainer>
                         </BoxContainer>
-                        <!--  Skin  -->
-                        <BoxContainer
-                            HorizontalExpand="True"
-                            Margin="10"
-                            Orientation="Vertical">
-                            <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
-                            <Slider
-                                HorizontalExpand="True"
-                                MaxValue="100"
-                                MinValue="0"
-                                Name="Skin"
-                                Value="20" />
-                            <BoxContainer
-                                HorizontalExpand="True"
-                                Name="RgbSkinColorContainer"
-                                Orientation="Vertical"
-                                Visible="False" />
-                        </BoxContainer>
-                        <!--  Hair  -->
-                        <BoxContainer Margin="10" Orientation="Horizontal">
-                            <humanoid:SingleMarkingPicker Category="Hair" Name="HairStylePicker" />
-                            <humanoid:SingleMarkingPicker Category="FacialHair" Name="FacialHairPicker" />
-                        </BoxContainer>
-                        <!--  Eyes  -->
-                        <BoxContainer Margin="10" Orientation="Vertical">
-                            <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
-                            <humanoid:EyeColorPicker Name="EyeColorPicker" />
-                        </BoxContainer>
-                    </BoxContainer>
-                </ScrollContainer>
-            </BoxContainer>
-            <BoxContainer Orientation="Vertical">
-                <!--  Jobs  -->
-                <OptionButton Name="PreferenceUnavailableButton" />
-                <ScrollContainer VerticalExpand="True">
-                    <BoxContainer Name="JobList" Orientation="Vertical" />
-                </ScrollContainer>
-            </BoxContainer>
-            <!-- Frontier: no Antags tab
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Orientation="Vertical">
+                    <!-- Jobs -->
+                    <OptionButton Name="PreferenceUnavailableButton" />
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Name="JobList" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <!-- Frontier: no Antags tab
                 <BoxContainer Orientation="Vertical" Margin="10">
                     <! - - Antags  - - >
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Name="AntagList" Orientation="Vertical" />
                     </ScrollContainer>
                 </BoxContainer>
-                End Frontier-->
-            <BoxContainer Margin="10" Orientation="Vertical">
-                <!--  Traits  -->
-                <ScrollContainer VerticalExpand="True">
-                    <BoxContainer Name="TraitsList" Orientation="Vertical" />
-                </ScrollContainer>
-            </BoxContainer>
-            <BoxContainer
-                Margin="10"
-                Name="MarkingsTab"
-                Orientation="Vertical">
-                <!--  Markings  -->
-                <ScrollContainer VerticalExpand="True">
-                    <humanoid:MarkingPicker IgnoreCategories="Hair,FacialHair" Name="Markings" />
-                </ScrollContainer>
-            </BoxContainer>
-        </TabContainer>
-    </BoxContainer>
-    <!--  Right side  -->
-    <BoxContainer
-        Orientation="Vertical"
-        VerticalAlignment="Center"
-        VerticalExpand="True">
-        <SpriteView
-            Margin="4"
-            Name="SpriteView"
-            Scale="8 8"
-            SizeFlagsStretchRatio="1" />
-        <BoxContainer
-            HorizontalAlignment="Center"
-            Margin="0,5"
-            Orientation="Horizontal">
-            <Button
-                Name="SpriteRotateLeft"
-                StyleClasses="OpenRight"
-                Text="◀" />
-            <cc:VSeparator Margin="2,0,3,0" />
-            <Button
-                Name="SpriteRotateRight"
-                StyleClasses="OpenLeft"
-                Text="▶" />
+                End Frontier -->
+                <BoxContainer Orientation="Vertical" Margin="10">
+                    <!-- Traits -->
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Name="TraitsList" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Name="MarkingsTab" Orientation="Vertical" Margin="10">
+                    <!-- Markings -->
+                    <ScrollContainer VerticalExpand="True">
+                        <humanoid:MarkingPicker Name="Markings" IgnoreCategories="Hair,FacialHair" />
+                    </ScrollContainer>
+                </BoxContainer>
+            </TabContainer>
         </BoxContainer>
-    </BoxContainer>
+        <!-- Right side -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Center">
+            <SpriteView Name="SpriteView" Scale="8 8" Margin="4" SizeFlagsStretchRatio="1" />
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5">
+                <Button Name="SpriteRotateLeft" Text="◀" StyleClasses="OpenRight" />
+                <cc:VSeparator Margin="2 0 3 0" />
+                <Button Name="SpriteRotateRight" Text="▶" StyleClasses="OpenLeft" />
+            </BoxContainer>
+        </BoxContainer>
 </BoxContainer>
