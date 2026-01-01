@@ -159,7 +159,8 @@
   - type: Chitinid
   - type: BlockInjection
   # CS - Add needs management
-  - type: Needs
+  # Commented out until ported. -Rico
+  # - type: Needs
 
 - type: entity
   parent: BaseSpeciesDummy
