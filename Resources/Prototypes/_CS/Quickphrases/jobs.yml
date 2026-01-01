@@ -67,15 +67,15 @@
   id: MercInterviewPhrase
   text: job-name-mercenary-interview
 
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: CuratorPhrase
-  text: job-name-curator
+# - type: quickPhrase
+#   parent: BaseCivilianJobPhrase
+#   id: CuratorPhrase
+#   text: job-name-curator
 
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: MassageTherapistPhrase
-  text: job-name-massage-therapist
+# - type: quickPhrase
+#   parent: BaseCivilianJobPhrase
+#   id: MassageTherapistPhrase
+#   text: job-name-massage-therapist
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
@@ -131,16 +131,16 @@
   text: job-name-plant-technician
 
 # Medical Jobs
-- type: quickPhrase
-  parent: BaseMedicalJobPhrase
-  id: MedicalNursePhrase
-  text: job-name-medical-nurse
+# - type: quickPhrase
+#   parent: BaseMedicalJobPhrase
+#   id: MedicalNursePhrase
+#   text: job-name-medical-nurse
 
 # Criminal Jobs
-- type: quickPhrase
-  parent: BasePiratePhrase
-  id: SmugglerPhrase
-  text: job-name-smuggler
+# - type: quickPhrase
+#   parent: BasePiratePhrase
+#   id: SmugglerPhrase
+#   text: job-name-smuggler
 
 - type: quickPhrase
   parent: BasePiratePhrase
@@ -162,10 +162,10 @@
   id: PrisonerPhrase
   text: job-name-prisoner
 
-- type: quickPhrase
-  parent: BasePiratePhrase
-  id: EscortPhrase
-  text: job-name-escort
+# - type: quickPhrase
+#   parent: BasePiratePhrase
+#   id: EscortPhrase
+#   text: job-name-escort
 
 - type: quickPhrase
   parent: BasePiratePhrase
