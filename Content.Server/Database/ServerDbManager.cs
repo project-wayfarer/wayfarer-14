@@ -397,6 +397,8 @@ namespace Content.Server.Database
         Task DepositSafetyDepositBoxItems(Guid boxId, List<string> entityDataList, CancellationToken cancel = default);
         Task UpdateSafetyDepositBoxNickname(Guid boxId, string? nickname, CancellationToken cancel = default);
         Task ClearSafetyDepositBoxItems(Guid boxId, CancellationToken cancel = default);
+        Task<int> DeleteStaleSafetyDepositBoxes(int daysStale, CancellationToken cancel = default);
+        Task DeleteSafetyDepositBox(Guid boxId, CancellationToken cancel = default);
 
         #endregion
     }
@@ -1198,6 +1200,18 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.ClearSafetyDepositBoxItems(boxId, cancel));
+        }
+
+        public Task<int> DeleteStaleSafetyDepositBoxes(int daysStale, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.DeleteStaleSafetyDepositBoxes(daysStale, cancel));
+        }
+
+        public Task DeleteSafetyDepositBox(Guid boxId, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.DeleteSafetyDepositBox(boxId, cancel));
         }
 
         #endregion

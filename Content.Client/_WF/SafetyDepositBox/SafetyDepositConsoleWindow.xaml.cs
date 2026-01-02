@@ -17,6 +17,7 @@ public sealed partial class SafetyDepositConsoleWindow : FancyWindow
     public event Action<SafetyDepositBoxSize>? OnPurchasePressed;
     public event Action? OnDepositPressed;
     public event Action<Guid>? OnWithdrawPressed;
+    public event Action<Guid>? OnReclaimPressed;
 
     public SafetyDepositConsoleWindow()
     {
@@ -32,13 +33,13 @@ public sealed partial class SafetyDepositConsoleWindow : FancyWindow
     {
         // Update purchase buttons with costs
         PurchaseSmallButton.Disabled = false; // Bank account check happens server-side
-        PurchaseSmallButton.Text = Loc.GetString("safety-deposit-console-purchase-small", ("cost", state.SmallBoxCost));
+        PurchaseSmallButton.Text = Loc.GetString("safety-deposit-console-purchase-small", ("cost", state.SmallBoxCost.ToString("N0")));
         
         PurchaseMediumButton.Disabled = false;
-        PurchaseMediumButton.Text = Loc.GetString("safety-deposit-console-purchase-medium", ("cost", state.MediumBoxCost));
+        PurchaseMediumButton.Text = Loc.GetString("safety-deposit-console-purchase-medium", ("cost", state.MediumBoxCost.ToString("N0")));
         
         PurchaseLargeButton.Disabled = false;
-        PurchaseLargeButton.Text = Loc.GetString("safety-deposit-console-purchase-large", ("cost", state.LargeBoxCost));
+        PurchaseLargeButton.Text = Loc.GetString("safety-deposit-console-purchase-large", ("cost", state.LargeBoxCost.ToString("N0")));
 
         // Update deposit button
         DepositButton.Disabled = !state.HasBoxInSlot || state.BoxInSlot == null;
@@ -105,35 +106,76 @@ public sealed partial class SafetyDepositConsoleWindow : FancyWindow
                 };
 
                 // Status Label - fixed width, right aligned
+                string statusText;
+                Color statusColor;
+                
+                if (box.IsDeposited)
+                {
+                    statusText = Loc.GetString("safety-deposit-console-box-deposited");
+                    statusColor = Color.LightGreen;
+                }
+                else if (box.LastWithdrawn.HasValue)
+                {
+                    // Box was withdrawn but never deposited - potentially lost
+                    var daysSinceWithdrawn = (DateTime.UtcNow - box.LastWithdrawn.Value).TotalDays;
+                    if (daysSinceWithdrawn > 7)
+                    {
+                        statusText = Loc.GetString("safety-deposit-console-box-lost");
+                        statusColor = Color.Red;
+                    }
+                    else
+                    {
+                        statusText = Loc.GetString("safety-deposit-console-box-in-world");
+                        statusColor = Color.Yellow;
+                    }
+                }
+                else
+                {
+                    // No items and never withdrawn - shouldn't happen but handle gracefully
+                    statusText = Loc.GetString("safety-deposit-console-box-not-deposited");
+                    statusColor = Color.Orange;
+                }
+                
                 var statusLabel = new Label
                 {
-                    Text = box.IsDeposited
-                        ? Loc.GetString("safety-deposit-console-box-deposited")
-                        : Loc.GetString("safety-deposit-console-box-not-deposited"),
+                    Text = statusText,
                     MinWidth = 80,
                     Align = Label.AlignMode.Right,
                     Margin = new Thickness(0, 0, 5, 0),
                     HorizontalAlignment = Control.HAlignment.Right,
                     VerticalAlignment = Control.VAlignment.Center,
-                    FontColorOverride = box.IsDeposited ? Color.LightGreen : Color.Orange
+                    FontColorOverride = statusColor
                 };
 
-                // Withdraw button - fixed width
-                var withdrawButton = new Button
+                // Determine if box is lost (withdrawn 7+ days ago with no items)
+                var isLost = !box.IsDeposited && box.LastWithdrawn.HasValue && 
+                             (DateTime.UtcNow - box.LastWithdrawn.Value).TotalDays > 7;
+
+                // Action button - either Withdraw or Reclaim depending on state
+                var actionButton = new Button
                 {
-                    Text = Loc.GetString("safety-deposit-console-withdraw-button"),
-                    Disabled = !box.IsDeposited,
+                    Text = isLost 
+                        ? Loc.GetString("safety-deposit-console-reclaim-button")
+                        : Loc.GetString("safety-deposit-console-withdraw-button"),
+                    Disabled = !box.IsDeposited && !isLost,
                     MinWidth = 100,
                     HorizontalAlignment = Control.HAlignment.Right,
                     VerticalAlignment = Control.VAlignment.Center
                 };
 
                 var boxId = box.BoxId;
-                withdrawButton.OnPressed += _ => OnWithdrawPressed?.Invoke(boxId);
+                if (isLost)
+                {
+                    actionButton.OnPressed += _ => OnReclaimPressed?.Invoke(boxId);
+                }
+                else
+                {
+                    actionButton.OnPressed += _ => OnWithdrawPressed?.Invoke(boxId);
+                }
 
                 rowContainer.AddChild(boxIdLabel);
                 rowContainer.AddChild(statusLabel);
-                rowContainer.AddChild(withdrawButton);
+                rowContainer.AddChild(actionButton);
                 rowPanel.AddChild(rowContainer);
                 OwnedBoxesContainer.AddChild(rowPanel);
                 

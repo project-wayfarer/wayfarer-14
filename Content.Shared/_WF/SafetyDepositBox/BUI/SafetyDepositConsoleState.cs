@@ -73,13 +73,15 @@ public sealed class SafetyDepositBoxInfo
     public bool IsDeposited;
     public string? Nickname;
     public string BoxSize;
+    public DateTime? LastWithdrawn;
 
-    public SafetyDepositBoxInfo(Guid boxId, string ownerName, bool isDeposited, string? nickname = null, string boxSize = "Small")
+    public SafetyDepositBoxInfo(Guid boxId, string ownerName, bool isDeposited, string? nickname = null, string boxSize = "Small", DateTime? lastWithdrawn = null)
     {
         BoxId = boxId;
         OwnerName = ownerName;
         IsDeposited = isDeposited;
         Nickname = nickname;
         BoxSize = boxSize;
+        LastWithdrawn = lastWithdrawn;
     }
 }
