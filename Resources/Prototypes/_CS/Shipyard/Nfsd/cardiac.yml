@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: archee1 (https://github.com/archee1)
+# Discord: Archee
+
+# Shuttle Notes:
+# has EMP field generator
+
+- type: vessel
+  id: Cardiac
+  parent: BaseVessel
+  name: TSF Cardiac
+  description: An NFSD medical shuttle on the larger end, while it has an EMP generator its primary purpose is to function as more public facing trauma vessel.
+  price: 73250 #45782, LL2 +60% = 73251
+  category: Medium
+  group: Security
+  access: Brigmedic
+  shuttlePath: /Maps/_CS/Shuttles/Nfsd/cardiac.yml
+  class:
+  - Pursuit
+  - Medical
+  engine:
+  - Bananium
+
+- type: gameMap
+  id: Cardiac
+  mapName: 'TSF Cardiac'
+  mapPath: /Maps/_CS/Shuttles/Nfsd/cardiac.yml
+  minPlayers: 0
+  stations:
+    Cardiac:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Cardiac {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}
