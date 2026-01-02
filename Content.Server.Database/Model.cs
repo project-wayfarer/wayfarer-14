@@ -1472,6 +1472,12 @@ namespace Content.Server.Database
         public DateTime PurchaseDate { get; set; }
 
         /// <summary>
+        /// When the box was last withdrawn from the console. Null if currently stored in database.
+        /// Used to track boxes that are "in the world" vs "safely stored".
+        /// </summary>
+        public DateTime? LastWithdrawn { get; set; }
+
+        /// <summary>
         /// Items stored in this box
         /// </summary>
         public List<WayfarerSafetyDepositBoxItem> Items { get; set; } = new();

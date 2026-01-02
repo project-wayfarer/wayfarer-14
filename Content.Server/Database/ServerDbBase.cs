@@ -2145,6 +2145,9 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 });
             }
 
+            // Clear LastWithdrawn since the box is now safely stored
+            box.LastWithdrawn = null;
+
             await db.DbContext.SaveChangesAsync(cancel);
         }
 
@@ -2179,6 +2182,50 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 return;
 
             db.DbContext.WayfarerSafetyDepositBoxItem.RemoveRange(box.Items);
+            
+            // Set LastWithdrawn to indicate the box is now in the world
+            box.LastWithdrawn = DateTime.UtcNow;
+            
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task<int> DeleteStaleSafetyDepositBoxes(
+            int daysStale,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var cutoffDate = DateTime.UtcNow.AddDays(-daysStale);
+
+            // Find boxes that have been withdrawn and have no items for longer than the cutoff period
+            var staleBoxes = await db.DbContext.WayfarerSafetyDepositBox
+                .Include(b => b.Items)
+                .Where(b => b.LastWithdrawn != null && 
+                            b.LastWithdrawn < cutoffDate && 
+                            b.Items.Count == 0)
+                .ToListAsync(cancel);
+
+            var count = staleBoxes.Count;
+            db.DbContext.WayfarerSafetyDepositBox.RemoveRange(staleBoxes);
+            await db.DbContext.SaveChangesAsync(cancel);
+
+            return count;
+        }
+
+        public async Task DeleteSafetyDepositBox(
+            Guid boxId,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var box = await db.DbContext.WayfarerSafetyDepositBox
+                .Include(b => b.Items)
+                .FirstOrDefaultAsync(b => b.BoxId == boxId, cancel);
+
+            if (box == null)
+                return;
+
+            db.DbContext.WayfarerSafetyDepositBox.Remove(box);
             await db.DbContext.SaveChangesAsync(cancel);
         }
 

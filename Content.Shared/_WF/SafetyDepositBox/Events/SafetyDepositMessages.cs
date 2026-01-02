@@ -48,3 +48,17 @@ public sealed class SafetyDepositWithdrawMessage : BoundUserInterfaceMessage
         BoxId = boxId;
     }
 }
+
+/// <summary>
+/// Message to reclaim a lost box (delete old record and spawn new empty box).
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class SafetyDepositReclaimMessage : BoundUserInterfaceMessage
+{
+    public Guid BoxId;
+
+    public SafetyDepositReclaimMessage(Guid boxId)
+    {
+        BoxId = boxId;
+    }
+}

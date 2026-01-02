@@ -58,6 +58,7 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         SubscribeLocalEvent<SafetyDepositConsoleComponent, SafetyDepositPurchaseMessage>(OnPurchase);
         SubscribeLocalEvent<SafetyDepositConsoleComponent, SafetyDepositDepositMessage>(OnDeposit);
         SubscribeLocalEvent<SafetyDepositConsoleComponent, SafetyDepositWithdrawMessage>(OnWithdraw);
+        SubscribeLocalEvent<SafetyDepositConsoleComponent, SafetyDepositReclaimMessage>(OnReclaim);
         SubscribeLocalEvent<SafetyDepositConsoleComponent, EntInsertedIntoContainerMessage>(OnSlotChanged);
         SubscribeLocalEvent<SafetyDepositConsoleComponent, EntRemovedFromContainerMessage>(OnSlotChanged);
     }
@@ -97,7 +98,8 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
                 box.OwnerName,
                 box.Items.Count > 0,
                 box.Nickname,
-                box.BoxSize
+                box.BoxSize,
+                box.LastWithdrawn
             ));
         }
 
@@ -453,6 +455,99 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         WithdrawBoxAsync(uid, component, player, userId.UserId, characterIndex, args.BoxId);
     }
 
+    private void OnReclaim(EntityUid uid, SafetyDepositConsoleComponent component, SafetyDepositReclaimMessage args)
+    {
+        if (args.Actor is not { Valid: true } player)
+            return;
+
+        if (!TryComp<ActorComponent>(player, out var actor))
+            return;
+
+        var userId = actor.PlayerSession.UserId;
+        if (!_prefsManager.TryGetCachedPreferences(userId, out var prefs))
+            return;
+
+        var characterIndex = prefs.SelectedCharacterIndex;
+
+        ReclaimBoxAsync(uid, component, player, userId.UserId, characterIndex, args.BoxId);
+    }
+
+    private async void ReclaimBoxAsync(
+        EntityUid consoleUid,
+        SafetyDepositConsoleComponent component,
+        EntityUid player,
+        Guid userId,
+        int characterIndex,
+        Guid boxId)
+    {
+        // Get box from database
+        var box = await _dbManager.GetSafetyDepositBox(boxId);
+
+        if (box == null)
+        {
+            ConsolePopup(player, "Box not found.");
+            PlayDenySound(consoleUid, component);
+            return;
+        }
+
+        // Verify ownership
+        if (box.OwnerUserId != userId || box.CharacterIndex != characterIndex)
+        {
+            ConsolePopup(player, "This box does not belong to you.");
+            PlayDenySound(consoleUid, component);
+            return;
+        }
+
+        // Verify box is actually lost (has LastWithdrawn set and no items)
+        if (!box.LastWithdrawn.HasValue || box.Items.Count > 0)
+        {
+            ConsolePopup(player, "This box is not lost and cannot be reclaimed.");
+            PlayDenySound(consoleUid, component);
+            return;
+        }
+
+        // Delete the database record
+        await _dbManager.DeleteSafetyDepositBox(boxId);
+
+        // Spawn a new empty physical box
+        string prototypeId = box.BoxSize switch
+        {
+            "Small" => "SafetyDepositBoxSmall",
+            "Medium" => "SafetyDepositBoxMedium",
+            "Large" => "SafetyDepositBoxLarge",
+            _ => "SafetyDepositBoxSmall"
+        };
+
+        var boxEntity = Spawn(prototypeId, Transform(player).Coordinates);
+        var boxComp = EnsureComp<SafetyDepositBoxComponent>(boxEntity);
+        boxComp.BoxId = box.BoxId;
+        boxComp.OwnerId = userId;
+        boxComp.CharacterIndex = characterIndex;
+        boxComp.BoxPrototypeId = prototypeId;
+        boxComp.OwnerName = MetaData(player).EntityName;
+        Dirty(boxEntity, boxComp);
+
+        // Restore nickname if one was saved
+        if (!string.IsNullOrEmpty(box.Nickname))
+        {
+            _label.Label(boxEntity, box.Nickname);
+        }
+
+        // Try to put it in player's hands
+        if (!_hands.TryPickupAnyHand(player, boxEntity))
+        {
+            _transform.SetLocalRotation(boxEntity, Angle.Zero);
+        }
+
+        ConsolePopup(player, "Lost box reclaimed! A new empty box has been issued.");
+        PlayConfirmSound(consoleUid, component);
+
+        _adminLogger.Add(LogType.Action, LogImpact.Medium,
+            $"{ToPrettyString(player):actor} reclaimed lost safety deposit box {boxId}");
+
+        UpdateUI(consoleUid, component, player);
+    }
+
     private async void WithdrawBoxAsync(
         EntityUid consoleUid,
         SafetyDepositConsoleComponent component,
@@ -665,11 +760,11 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
 
     private void OnSlotChanged(EntityUid uid, SafetyDepositConsoleComponent component, ContainerModifiedMessage args)
     {
-        // Update UI for anyone who has it open
+        // Update UI for anyone who has this specific console open
         var query = EntityQueryEnumerator<ActorComponent>();
         while (query.MoveNext(out var actorUid, out _))
         {
-            if (_uiSystem.IsUiOpen(actorUid, SafetyDepositConsoleUiKey.Key))
+            if (_uiSystem.TryGetOpenUi(actorUid, SafetyDepositConsoleUiKey.Key, out var bui) && bui.Owner == uid)
             {
                 UpdateUI(uid, component, actorUid);
             }

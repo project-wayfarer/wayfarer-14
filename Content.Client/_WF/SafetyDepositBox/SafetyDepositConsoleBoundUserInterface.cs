@@ -23,6 +23,7 @@ public sealed class SafetyDepositConsoleBoundUserInterface : BoundUserInterface
         _window.OnPurchasePressed += OnPurchasePressed;
         _window.OnDepositPressed += OnDepositPressed;
         _window.OnWithdrawPressed += OnWithdrawPressed;
+        _window.OnReclaimPressed += OnReclaimPressed;
     }
 
     private void OnPurchasePressed(SafetyDepositBoxSize boxSize)
@@ -38,6 +39,11 @@ public sealed class SafetyDepositConsoleBoundUserInterface : BoundUserInterface
     private void OnWithdrawPressed(Guid boxId)
     {
         SendMessage(new SafetyDepositWithdrawMessage(boxId));
+    }
+
+    private void OnReclaimPressed(Guid boxId)
+    {
+        SendMessage(new SafetyDepositReclaimMessage(boxId));
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
