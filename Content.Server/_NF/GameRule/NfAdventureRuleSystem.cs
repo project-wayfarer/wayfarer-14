@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Content.Server._DV.CustomObjectiveSummary;
 using Content.Server._NF.Bank;
 using Content.Server._NF.GameRule.Components;
 using Content.Server._NF.GameTicking.Events;
@@ -12,6 +13,7 @@ using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules;
+using Content.Server.Preferences.Managers;
 using Content.Server._NF.ShuttleRecords;
 using Content.Shared._NF.Bank;
 using Content.Shared._NF.Bank.Components;
@@ -43,6 +45,8 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
     [Dependency] private readonly IEntitySystemManager _entSys = default!;
     [Dependency] private readonly ShuttleRecordsSystem _shuttleRecordsSystem = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
+    [Dependency] private readonly CustomObjectiveSummarySystem _customObjectiveSummary = default!;
+    [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
 
     private readonly HttpClient _httpClient = new();
 
@@ -432,7 +436,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
 
             // Build profit/loss data with username and character name
             var profitLossData = new List<Dictionary<string, object>>();
-            var playerManifestData = new List<Dictionary<string, string>>();
+            var playerManifestData = new List<Dictionary<string, object>>();
 
             var sortedPlayers = _players.ToList();
             sortedPlayers.Sort((p1, p2) => p1.Value.Name.CompareTo(p2.Value.Name));
@@ -457,6 +461,14 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                     username = session.Name;
                 }
 
+                // Get profile ID for this character
+                int? profileId = null;
+                if (_prefsManager.TryGetCachedPreferences(playerInfo.UserId, out var prefs))
+                {
+                    var characterSlot = prefs.SelectedCharacterIndex;
+                    profileId = await _db.GetProfileIdAsync(playerInfo.UserId, characterSlot);
+                }
+
                 // Add to profit/loss data
                 profitLossData.Add(new Dictionary<string, object>
                 {
@@ -466,12 +478,19 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                 });
 
                 // Add to player manifest
-                playerManifestData.Add(new Dictionary<string, string>
+                var manifestEntry = new Dictionary<string, object>
                 {
                     { "username", username },
                     { "characterName", playerInfo.Name },
                     { "role", playerInfo.Role }
-                });
+                };
+                
+                if (profileId.HasValue)
+                {
+                    manifestEntry["profileId"] = profileId.Value;
+                }
+                
+                playerManifestData.Add(manifestEntry);
             }
 
             _sawmill.Info($"SaveRoundSummaryToDatabase: Profit/Loss entries: {profitLossData.Count}");
@@ -480,8 +499,38 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
             var profitLossJson = JsonDocument.Parse(JsonSerializer.Serialize(profitLossData));
             var playerManifestJson = JsonDocument.Parse(JsonSerializer.Serialize(playerManifestData));
             
-            // Player stories - placeholder for now, would need separate tracking system
-            var playerStoriesJson = JsonDocument.Parse("[]");
+            // Get player stories from CustomObjectiveSummarySystem
+            var playerStoriesData = new List<Dictionary<string, object>>();
+            var rawPlayerStories = _customObjectiveSummary.GetPlayerStories();
+            
+            foreach (var (userId, storyData) in rawPlayerStories)
+            {
+                // Get username from NetUserId
+                var username = userId.ToString();
+                if (_player.TryGetSessionById(userId, out var session))
+                {
+                    username = session.Name;
+                }
+                
+                var storyEntry = new Dictionary<string, object>
+                {
+                    { "username", username },
+                    { "characterName", storyData.CharacterName },
+                    { "story", storyData.Story }
+                };
+                
+                // Add profileId if available
+                if (storyData.ProfileId.HasValue)
+                {
+                    storyEntry["profileId"] = storyData.ProfileId.Value;
+                }
+                
+                playerStoriesData.Add(storyEntry);
+            }
+            
+            var playerStoriesJson = JsonDocument.Parse(JsonSerializer.Serialize(playerStoriesData));
+            
+            _sawmill.Info($"SaveRoundSummaryToDatabase: Player stories count: {playerStoriesData.Count}");
 
             _sawmill.Info($"SaveRoundSummaryToDatabase: Calling database save for round {roundId}");
 

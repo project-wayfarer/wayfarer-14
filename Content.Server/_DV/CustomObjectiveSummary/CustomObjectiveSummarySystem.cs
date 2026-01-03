@@ -1,6 +1,9 @@
+using System.Linq;
 using System.Text;
 using Content.Server.Administration.Logs;
+using Content.Server.Database;
 using Content.Server.Objectives;
+using Content.Server.Preferences.Managers;
 using Content.Shared._DV.CCVars;
 using Content.Shared._DV.CustomObjectiveSummary;
 using Content.Shared.Database;
@@ -22,6 +25,8 @@ public sealed class CustomObjectiveSummarySystem : EntitySystem
     // [Dependency] private readonly SharedFeedbackOverwatchSystem _feedback = default!; // Frontier
     [Dependency] private readonly IConfigurationManager _cfg = default!; // Frontier
     [Dependency] private readonly ObjectivesSystem _objectives = default!; // Frontier
+    [Dependency] private readonly IServerPreferencesManager _prefsManager = default!; // Wayfarer
+    [Dependency] private readonly IServerDbManager _db = default!; // Wayfarer
 
     private int _maxLengthSummaryLength; // Frontier: moved from ObjectiveSystem
     private Dictionary<NetUserId, PlayerStory> _stories = new(); // Frontier: store one story per user per round
@@ -37,7 +42,7 @@ public sealed class CustomObjectiveSummarySystem : EntitySystem
         Subs.CVar(_cfg, DCCVars.MaxObjectiveSummaryLength, len => _maxLengthSummaryLength = len, true); // Frontier: moved from ObjectiveSystem
     }
 
-    private void OnCustomObjectiveFeedback(CustomObjectiveClientSetObjective msg)
+    private async void OnCustomObjectiveFeedback(CustomObjectiveClientSetObjective msg)
     {
         if (!_mind.TryGetMind(msg.MsgChannel.UserId, out var mind) || mind is not { } mindEnt)
             return;
@@ -45,15 +50,27 @@ public sealed class CustomObjectiveSummarySystem : EntitySystem
         if (mind.Value.Comp.Objectives.Count == 0)
             return;
 
-        var characterName = _objectives.GetTitle((mindEnt, mindEnt.Comp), mindEnt.Comp.CharacterName ?? Loc.GetString("custom-objective-unknown-name"));
+        // Get plain character name without markup
+        var characterName = mind.Value.Comp.CharacterName ?? Loc.GetString("custom-objective-unknown-name");
+        
+        // Get profile ID for this character
+        int? profileId = null;
+        var prefs = _prefsManager.GetPreferences(msg.MsgChannel.UserId);
+        if (prefs != null)
+        {
+            var characterSlot = prefs.SelectedCharacterIndex;
+            profileId = await _db.GetProfileIdAsync(msg.MsgChannel.UserId, characterSlot);
+        }
+        
         if (_stories.TryGetValue(msg.MsgChannel.UserId, out var story))
         {
             story.CharacterName = characterName;
             story.Story = msg.Summary;
+            story.ProfileId = profileId;
         }
         else
         {
-            _stories[msg.MsgChannel.UserId] = new PlayerStory(characterName, msg.Summary);
+            _stories[msg.MsgChannel.UserId] = new PlayerStory(characterName, msg.Summary, profileId);
         }
 
         // Ensure that the current mind has their summary setup (so they can come back to it if disconnected)
@@ -117,15 +134,25 @@ public sealed class CustomObjectiveSummarySystem : EntitySystem
         return objectiveText.ToString();
     }
 
+    // Frontier: get raw player stories for database storage
+    public IReadOnlyDictionary<NetUserId, (string CharacterName, string Story, int? ProfileId)> GetPlayerStories()
+    {
+        return _stories.ToDictionary(
+            kvp => kvp.Key,
+            kvp => (kvp.Value.CharacterName, kvp.Value.Story, kvp.Value.ProfileId)
+        );
+    }
+
     private void OnRoundRestarted(RoundRestartCleanupEvent args)
     {
         _stories.Clear();
     }
 
-    sealed class PlayerStory(string characterName, string story)
+    sealed class PlayerStory(string characterName, string story, int? profileId = null)
     {
         public string CharacterName = characterName;
         public string Story = story;
+        public int? ProfileId = profileId;
     }
     // End Frontier
 }
