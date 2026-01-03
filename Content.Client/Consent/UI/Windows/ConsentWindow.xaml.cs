@@ -24,6 +24,11 @@ public sealed partial class ConsentWindow : FancyWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+        // Set up tab titles
+        ConsentTabContainer.SetTabTitle(0, Loc.GetString("consent-window-tab-character"));
+        ConsentTabContainer.SetTabTitle(1, Loc.GetString("consent-window-tab-account"));
+        ConsentTabContainer.SetTabTitle(2, Loc.GetString("consent-window-tab-preview"));
+
         SaveConsentSettings.OnPressed += _ =>
         {
             SaveConsentSettings.Disabled = true;
@@ -34,13 +39,20 @@ public sealed partial class ConsentWindow : FancyWindow
         if (_consentManager.HasLoaded)
             UpdateUi();
 
+        CharacterConsentFreetext.Placeholder = new Rope.Leaf(Loc.GetString("consent-window-character-freetext-placeholder"));
+        CharacterConsentFreetext.OnTextChanged += _ => { UnsavedChanges(); UpdatePreview(); };
+
         ConsentFreetext.Placeholder = new Rope.Leaf(Loc.GetString("consent-window-freetext-placeholder"));
-        ConsentFreetext.OnTextChanged += _ => UnsavedChanges();
+        ConsentFreetext.OnTextChanged += _ => { UnsavedChanges(); UpdatePreview(); };
+
+        // Update preview when switching to preview tab
+        ConsentTabContainer.OnTabChanged += _ => UpdatePreview();
     }
 
     private PlayerConsentSettings GetSettings()
     {
-        var text = Rope.Collapse(ConsentFreetext.TextRope);
+        var characterText = Rope.Collapse(CharacterConsentFreetext.TextRope);
+        var accountText = Rope.Collapse(ConsentFreetext.TextRope);
         var toggles = new Dictionary<ProtoId<ConsentTogglePrototype>, string>();
 
         foreach (var entry in _entries)
@@ -49,26 +61,72 @@ public sealed partial class ConsentWindow : FancyWindow
                 toggles[entry.Consent.ID] = "on";
         }
 
-        return new(text, toggles);
+        return new(accountText, characterText, toggles);
     }
 
     private void UnsavedChanges()
     {
         // Validate freetext length
         var maxLength = _configManager.GetCVar(FSCVars.ConsentFreetextMaxLength); // Flooftier
-        var length = Rope.Collapse(ConsentFreetext.TextRope).Length;
+        var characterLength = Rope.Collapse(CharacterConsentFreetext.TextRope).Length;
+        var accountLength = Rope.Collapse(ConsentFreetext.TextRope).Length;
 
-        if (length > maxLength)
+        if (characterLength > maxLength)
         {
-            SaveLabel.Text = Loc.GetString("consent-window-char-limit-warning", ("length", length), ("maxLength", maxLength));
+            SaveLabel.Text = Loc.GetString("consent-window-char-limit-warning", ("length", characterLength), ("maxLength", maxLength));
             SaveConsentSettings.Disabled = true;
+            return;
+        }
 
+        if (accountLength > maxLength)
+        {
+            SaveLabel.Text = Loc.GetString("consent-window-char-limit-warning", ("length", accountLength), ("maxLength", maxLength));
+            SaveConsentSettings.Disabled = true;
             return;
         }
 
         // If everything is valid, enable save button and inform user they need to save.
         SaveLabel.Text = Loc.GetString("consent-window-unsaved-changes");
         SaveConsentSettings.Disabled = false;
+    }
+
+    private void UpdatePreview()
+    {
+        if (ConsentTabContainer.CurrentTab != 2)
+            return;
+
+        var characterText = Rope.Collapse(CharacterConsentFreetext.TextRope);
+        var accountText = Rope.Collapse(ConsentFreetext.TextRope);
+
+        var previewMessage = new FormattedMessage();
+
+        // Show character-specific text first if it exists
+        if (!string.IsNullOrWhiteSpace(characterText))
+        {
+            // Parse markup in character text
+            var characterMessage = FormattedMessage.FromMarkupPermissive(characterText);
+            previewMessage.AddMessage(characterMessage);
+        }
+
+        // Show account text after if it exists
+        if (!string.IsNullOrWhiteSpace(accountText))
+        {
+            if (!string.IsNullOrWhiteSpace(characterText))
+            {
+                previewMessage.AddText("\n\n");
+            }
+            // Parse markup in account text
+            var accountMessage = FormattedMessage.FromMarkupPermissive(accountText);
+            previewMessage.AddMessage(accountMessage);
+        }
+
+        // If neither exists, show default message
+        if (string.IsNullOrWhiteSpace(characterText) && string.IsNullOrWhiteSpace(accountText))
+        {
+            previewMessage.AddText(Loc.GetString("consent-examine-not-set"));
+        }
+
+        PreviewText.SetMessage(previewMessage);
     }
 
     private void AddConsentEntry(ConsentTogglePrototype prototype)
@@ -97,8 +155,8 @@ public sealed partial class ConsentWindow : FancyWindow
         buttonOn.StyleClasses.Add("OpenLeft");
         state.Button = buttonOn;
 
-        buttonOff.OnPressed += _ => ButtonOnPress(buttonOff, buttonOn);
-        buttonOn.OnPressed += _ => ButtonOnPress(buttonOn, buttonOff);
+        buttonOff.OnPressed += _ => { ButtonOnPress(buttonOff, buttonOn); UpdatePreview(); };
+        buttonOn.OnPressed += _ => { ButtonOnPress(buttonOn, buttonOff); UpdatePreview(); };
 
         var consent = _consentManager.GetConsent();
         foreach (var toggle in consent.Toggles)
@@ -149,6 +207,7 @@ public sealed partial class ConsentWindow : FancyWindow
 
         var consent = _consentManager.GetConsent();
 
+        CharacterConsentFreetext.TextRope = new Rope.Leaf(consent.CharacterFreetext);
         ConsentFreetext.TextRope = new Rope.Leaf(consent.Freetext);
 
         if (ConsentList.ChildCount > 0)
@@ -163,6 +222,7 @@ public sealed partial class ConsentWindow : FancyWindow
 
         SaveConsentSettings.Disabled = true;
         SaveLabel.Text = "";
+        UpdatePreview();
     }
 
     private struct EntryState

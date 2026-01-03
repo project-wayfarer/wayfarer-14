@@ -15,14 +15,34 @@ public sealed class ConsentSystem : SharedConsentSystem
 
     protected override FormattedMessage GetConsentText(NetUserId userId)
     {
-        var text = _consent.GetPlayerConsentSettings(userId).Freetext;
-        if (text == string.Empty)
+        var consentSettings = _consent.GetPlayerConsentSettings(userId);
+        var characterText = consentSettings.CharacterFreetext;
+        var accountText = consentSettings.Freetext;
+
+        // If both are empty, return empty message (verb won't be shown)
+        if (string.IsNullOrWhiteSpace(characterText) && string.IsNullOrWhiteSpace(accountText))
         {
-            text = Loc.GetString("consent-examine-not-set");
+            return FormattedMessage.Empty;
         }
 
         var message = new FormattedMessage();
-        message.AddText(text);
+
+        // Show character-specific text first if it exists
+        if (!string.IsNullOrWhiteSpace(characterText))
+        {
+            message.AddText(characterText);
+        }
+
+        // Show account text after if it exists
+        if (!string.IsNullOrWhiteSpace(accountText))
+        {
+            if (!string.IsNullOrWhiteSpace(characterText))
+            {
+                message.AddText("\n\n");
+            }
+            message.AddText(accountText);
+        }
+
         return message;
     }
 

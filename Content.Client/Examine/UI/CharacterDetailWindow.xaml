@@ -1,0 +1,43 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              MinSize="400 300"
+              SetSize="550 550">
+    <BoxContainer Orientation="Vertical">
+        <!-- Header with character name and job - This area is draggable -->
+        <PanelContainer StyleClasses="AngleRect" MinHeight="60">
+            <BoxContainer Orientation="Vertical" Margin="10 10 10 10">
+                <Label Name="CharacterName" 
+                       FontColorOverride="#FFFFFF"
+                       StyleClasses="LabelHeading"/>
+                <Label Name="JobTitle" 
+                       FontColorOverride="#AAAAAA"
+                       StyleClasses="LabelSubText"/>
+            </BoxContainer>
+        </PanelContainer>
+
+        <!-- Content area - Make non-draggable -->
+        <PanelContainer StyleClasses="AngleRect" VerticalExpand="True" MouseFilter="Stop">
+            <TabContainer Name="TabContainer" VerticalExpand="True">
+                <!-- Description Tab -->
+                <BoxContainer Name="DescriptionTab" Orientation="Vertical">
+                    <ScrollContainer VerticalExpand="True">
+                        <RichTextLabel Name="DescriptionText" 
+                                      Margin="10"
+                                      MaxWidth="510"
+                                      VerticalExpand="True"/>
+                    </ScrollContainer>
+                </BoxContainer>
+
+                <!-- OOC Consent Tab -->
+                <BoxContainer Name="ConsentTab" Orientation="Vertical">
+                    <ScrollContainer VerticalExpand="True">
+                        <RichTextLabel Name="ConsentText" 
+                                      Margin="10"
+                                      MaxWidth="510"
+                                      VerticalExpand="True"/>
+                    </ScrollContainer>
+                </BoxContainer>
+            </TabContainer>
+        </PanelContainer>
+    </BoxContainer>
+</controls:FancyWindow>

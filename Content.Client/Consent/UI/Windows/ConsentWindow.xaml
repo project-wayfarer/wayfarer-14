@@ -17,24 +17,61 @@
                 Text="Save"
                 Disabled="True" />
         </BoxContainer>
-        <Label Text="{Loc consent-window-freetext-label}" />
-        <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
-            </PanelContainer.PanelOverride>
-            <TextEdit
-                Name="ConsentFreetext"
-                Access="Public"
-                MinHeight="100"
-                VerticalExpand="True" />
-        </PanelContainer>
-        <Control MinSize="0 10" />
-        <Label Text="{Loc consent-window-toggles-label}" />
-
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
-            <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
-                <!-- The rest here is generated programmatically -->
+        
+        <TabContainer Name="ConsentTabContainer" Access="Public" VerticalExpand="True" HorizontalExpand="True">
+            <!-- Character Specific Tab -->
+            <BoxContainer Name="CharacterTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                <Label Text="{Loc consent-window-character-freetext-label}" />
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                    </PanelContainer.PanelOverride>
+                    <TextEdit
+                        Name="CharacterConsentFreetext"
+                        Access="Public"
+                        MinHeight="100"
+                        VerticalExpand="True" />
+                </PanelContainer>
             </BoxContainer>
-        </ScrollContainer>
+
+            <!-- Account Specific Tab -->
+            <BoxContainer Name="AccountTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                <Label Text="{Loc consent-window-account-freetext-label}" />
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200" MinHeight="100">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                    </PanelContainer.PanelOverride>
+                    <TextEdit
+                        Name="ConsentFreetext"
+                        Access="Public"
+                        MinHeight="100"
+                        VerticalExpand="True" />
+                </PanelContainer>
+                <Control MinSize="0 10" />
+                <Label Text="{Loc consent-window-toggles-label}" />
+
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
+                    <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
+                        <!-- The rest here is generated programmatically -->
+                    </BoxContainer>
+                </ScrollContainer>
+            </BoxContainer>
+
+            <!-- Preview Tab -->
+            <BoxContainer Name="PreviewTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                <Label Text="{Loc consent-window-preview-label}" />
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                    </PanelContainer.PanelOverride>
+                    <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True">
+                        <RichTextLabel
+                            Name="PreviewText"
+                            Access="Public"
+                            Margin="5" />
+                    </ScrollContainer>
+                </PanelContainer>
+            </BoxContainer>
+        </TabContainer>
     </BoxContainer>
 </controls:FancyWindow>

@@ -13,9 +13,11 @@ public sealed class DetailExaminableSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<DetailExaminableComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
+        // Commented out - replaced by Character examine button
+        // SubscribeLocalEvent<DetailExaminableComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
     }
 
+    /* Commented out - replaced by Character examine button
     private void OnGetExamineVerbs(Entity<DetailExaminableComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
     {
         if (Identity.Name(args.Target, EntityManager) != MetaData(args.Target).EntityName)
@@ -42,4 +44,5 @@ public sealed class DetailExaminableSystem : EntitySystem
 
         args.Verbs.Add(verb);
     }
+    */
 }

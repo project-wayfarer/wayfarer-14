@@ -1270,6 +1270,73 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
+        public async Task SavePlayerConsentSettingsAsync(NetUserId userId, PlayerConsentSettings? consentSettings, int characterSlot)
+        {
+            await using var db = await GetDb();
+
+            if (consentSettings is null)
+            {
+                await DeletePlayerConsentSettings(db.DbContext, userId);
+                await db.DbContext.SaveChangesAsync();
+                return;
+            }
+
+            // Save account-level consent settings
+            var currentConsentSettings = await db.DbContext.ConsentSettings
+                .Include(c => c.ConsentToggles)
+                .AsSplitQuery()
+                .SingleOrDefaultAsync(c => c.UserId == userId);
+
+            if (currentConsentSettings is null)
+            {
+                currentConsentSettings = new ConsentSettings() { UserId = userId, ConsentToggles = new() };
+                db.DbContext.ConsentSettings.Add(currentConsentSettings);
+            }
+
+            currentConsentSettings.ConsentFreetext = consentSettings.Freetext;
+            Dictionary<ProtoId<ConsentTogglePrototype>, string> currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
+                keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
+                elementSelector: t => t.ToggleProtoState
+            );
+
+            // Remove and update toggles
+            foreach (var toggle in currentConsentToggles)
+            {
+                if (consentSettings.Toggles.TryGetValue(toggle.Key, out var toggleState))
+                {
+                    currentConsentSettings.ConsentToggles.Where(t => t.ToggleProtoId == toggle.Key).First().ToggleProtoState = toggleState;
+                }
+                else
+                {
+                    currentConsentSettings.ConsentToggles.RemoveAll(t => t.ToggleProtoId == toggle.Key);
+                }
+            }
+            // Add new toggles
+            foreach (var toggle in consentSettings.Toggles)
+            {
+                if (currentConsentToggles.ContainsKey(toggle.Key))
+                    continue;
+
+                currentConsentSettings.ConsentToggles.Add(new()
+                {
+                    ToggleProtoId = toggle.Key,
+                    ToggleProtoState = toggle.Value,
+                });
+            }
+
+            // Save character-specific consent text
+            var profile = await db.DbContext.Profile
+                .Where(p => p.Preference.UserId == userId.UserId && p.Slot == characterSlot)
+                .SingleOrDefaultAsync();
+
+            if (profile != null)
+            {
+                profile.CharacterConsentFreetext = consentSettings.CharacterFreetext;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
         public async Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId)
         {
             await using var db = await GetDb();
@@ -1284,7 +1351,31 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             if (consentSettings is null)
                 return new();
 
-            return new(consentSettings.ConsentFreetext, consentSettings.ConsentToggles.ToDictionary(
+            return new(consentSettings.ConsentFreetext, string.Empty, consentSettings.ConsentToggles.ToDictionary(
+                keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
+                elementSelector: t => t.ToggleProtoState
+            ));
+        }
+
+        public async Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId, int characterSlot)
+        {
+            await using var db = await GetDb();
+
+            var consentSettings = await db.DbContext.ConsentSettings
+                .Include(c => c.ConsentToggles)
+                .SingleOrDefaultAsync(c => c.UserId == userId);
+
+            // Get character-specific consent text from the profile
+            var profile = await db.DbContext.Profile
+                .Where(p => p.Preference.UserId == userId.UserId && p.Slot == characterSlot)
+                .SingleOrDefaultAsync();
+
+            var characterFreetext = profile?.CharacterConsentFreetext ?? string.Empty;
+
+            if (consentSettings is null)
+                return new(string.Empty, characterFreetext, new Dictionary<ProtoId<ConsentTogglePrototype>, string>());
+
+            return new(consentSettings.ConsentFreetext, characterFreetext, consentSettings.ConsentToggles.ToDictionary(
                 keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
                 elementSelector: t => t.ToggleProtoState
             ));
