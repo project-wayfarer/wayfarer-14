@@ -1,6 +1,8 @@
 using System.Numerics;
 using Content.Shared._NF.Shuttles.Events;
+using Content.Shared.DeviceLinking;
 using Content.Shared.Shuttles.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Shuttles.Components
@@ -42,5 +44,19 @@ namespace Content.Server.Shuttles.Components
         [DataField]
         public InertiaDampeningMode DampeningMode = InertiaDampeningMode.Dampen;
         // End Frontier
+
+        // Network Port Button Source Ports
+        [DataField]
+        public List<ProtoId<SourcePortPrototype>> SourcePorts = new()
+        {
+            "device-button-1",
+            "device-button-2",
+            "device-button-3",
+            "device-button-4",
+            "device-button-5",
+            "device-button-6",
+            "device-button-7",
+            "device-button-8",
+        };
     }
 }

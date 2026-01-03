@@ -188,6 +188,61 @@
                         </controls:BoxContainer>
                     </controls:BoxContainer>
                     <!-- End Frontier - Service Flags -->
+                                    <!-- Network Port Buttons -->
+                    <controls:BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                        <controls1:StripeBack
+                            MinSize="48 48"
+                            Margin="0 5 0 0">
+                            <controls:Label Text="{controls:Loc 'shuttle-console-network-ports'}"
+                                   VerticalExpand="False"
+                                   HorizontalAlignment="Center"/>
+                        </controls1:StripeBack>
 
+                        <controls:PanelContainer>
+                            <controls:ScrollContainer
+                                HorizontalExpand="True"
+                                MinHeight="150"
+                                MaxHeight="150">
+                                <controls:BoxContainer Orientation="Vertical"
+                                             HorizontalExpand="True"
+                                             Name="NetworkPortsBox">
+                                    <controls:Button Name="DeviceButton1"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-1'}"
+                                                     TextAlign="Center"
+                                                     Margin="0 2 0 2"/>
+                                    <controls:Button Name="DeviceButton2"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-2'}"
+                                                     TextAlign="Center"
+                                                     Margin="0 2 0 2"/>
+                                    <controls:Button Name="DeviceButton3"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-3'}"
+                                                     TextAlign="Center"
+                                                     Margin="0 2 0 2"/>
+                                    <controls:Button Name="DeviceButton4"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-4'}"
+                                                     TextAlign="Center"
+                                                     Margin="0 2 0 2"/>
+                                    <controls:Button Name="DeviceButton5"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-5'}"
+                                                     TextAlign="Center"
+                                                     Margin="0 2 0 2"/>
+                                    <controls:Button Name="DeviceButton6"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-6'}"
+                                                     TextAlign="Center"
+                                                     Margin="0 2 0 2"/>
+                                    <controls:Button Name="DeviceButton7"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-7'}"
+                                                     TextAlign="Center"
+                                                     Margin="0 2 0 2"/>
+                                    <controls:Button Name="DeviceButton8"
+                                                     Text="{controls:Loc 'shuttle-console-device-button-8'}"
+                                                     TextAlign="Center"
+                                                     ToolTip="{controls:Loc 'shuttle-console-network-connect-tooltip'}"
+                                                     Margin="0 2 0 2"/>
+                                </controls:BoxContainer>
+                            </controls:ScrollContainer>
+                        </controls:PanelContainer>
+                    </controls:BoxContainer>
+                    <!-- End Network Port Buttons -->
                     </controls:BoxContainer>
                 </controls:BoxContainer>
