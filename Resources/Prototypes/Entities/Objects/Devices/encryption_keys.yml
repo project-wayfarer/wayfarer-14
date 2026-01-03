@@ -17,8 +17,8 @@
 - type: entity
   parent: [EncryptionKey, RecyclableItemDeviceTiny] # Frontier: added RecyclableItemDeviceTiny
   id: EncryptionKeyCommon
-  name: common encryption key
-  description: An encryption key used by anyone.
+  name: broadband encryption key
+  description: An encryption key for the broadband channel. Limited to a 3000 meters range.
   components:
   - type: EncryptionKey
     channels:

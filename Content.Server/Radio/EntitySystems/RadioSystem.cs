@@ -170,6 +170,17 @@ public sealed class RadioSystem : EntitySystem
 
             if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive)
                 continue;
+                
+            // Check if within range for range-limited channels
+            if (channel.MaxRange.HasValue && channel.MaxRange.Value > 0)
+            {
+                var sourcePos = Transform(radioSource).WorldPosition;
+                var targetPos = transform.WorldPosition;
+                
+                // Check distance between sender and receiver
+                if ((sourcePos - targetPos).Length() > channel.MaxRange.Value)
+                    continue;
+            }
 
             // don't need telecom server for long range channels or handheld radios and intercoms
             var needServer = !channel.LongRange && !sourceServerExempt;
