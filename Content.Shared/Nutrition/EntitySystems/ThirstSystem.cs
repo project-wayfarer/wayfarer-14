@@ -99,23 +99,10 @@ public sealed class ThirstSystem : EntitySystem
     {
         component.CurrentThirst = (float) Math.Clamp(amount,
             component.ThirstThresholds[ThirstThreshold.Dead],
-            component.ThirstThresholds[ThirstThreshold.OverHydrated] * 1.1 // Allow for overhydration
+            component.ThirstThresholds[ThirstThreshold.OverHydrated]
         );
 
         DirtyField(uid, component, nameof(ThirstComponent.CurrentThirst));
-    }
-
-    private bool IsMovementThreshold(ThirstThreshold threshold)
-    {
-        return threshold switch
-        {
-            ThirstThreshold.Dead => true,
-            ThirstThreshold.Parched => true,
-            ThirstThreshold.Thirsty => true,
-            ThirstThreshold.Okay => true,
-            ThirstThreshold.OverHydrated => true,
-            _ => throw new ArgumentOutOfRangeException(nameof(threshold), threshold, null)
-        };
     }
 
     public bool TryGetStatusIconPrototype(ThirstComponent component, [NotNullWhen(true)] out SatiationIconPrototype? prototype)
@@ -144,11 +131,6 @@ public sealed class ThirstSystem : EntitySystem
 
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
-        // if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
-        //         TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
-        // {
-        //     _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
-        // }
         if (TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {
             _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
