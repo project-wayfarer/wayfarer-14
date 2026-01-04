@@ -7,6 +7,7 @@ using Content.Shared.Preferences;
 using Robust.Client.UserInterface;
 using Robust.Server.Player;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Network;
 
 namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 {
@@ -19,7 +20,7 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
         {
             await using var pair = await PoolManager.GetServerClient(new PoolSettings
             {
-                Connected = true,
+                Connected = false,
                 DummyTicker = false
             });
             var server = pair.Server;
@@ -41,6 +42,12 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
                 var humanProfile = HumanoidCharacterProfile.RandomWithSpecies("Human");
                 serverPrefManager.SetProfile(session.UserId, 0, humanProfile).Wait();
             });
+
+            // Connect the client after setting the profile
+            var netMgr = client.ResolveDependency<IClientNetManager>();
+            client.SetConnectTarget(server);
+            await client.WaitPost(() => netMgr.ClientConnect(null!, 0, null!));
+            await pair.ReallyBeIdle();
 
             await pair.RunTicksSync(5);
 
