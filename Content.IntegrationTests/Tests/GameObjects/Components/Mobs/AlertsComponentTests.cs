@@ -1,13 +1,13 @@
 using System.Linq;
 using Content.Client.UserInterface.Systems.Alerts.Controls;
 using Content.Client.UserInterface.Systems.Alerts.Widgets;
+using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Alert;
 using Content.Shared.Preferences;
 using Robust.Client.UserInterface;
 using Robust.Server.Player;
 using Robust.Shared.GameObjects;
-using Robust.Shared.Network;
 
 namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 {
@@ -20,8 +20,9 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
         {
             await using var pair = await PoolManager.GetServerClient(new PoolSettings
             {
-                Connected = false,
-                DummyTicker = false
+                Connected = true,
+                DummyTicker = false,
+                InLobby = true
             });
             var server = pair.Server;
             var client = pair.Client;
@@ -33,22 +34,20 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
             var serverPlayerManager = server.ResolveDependency<IPlayerManager>();
             var alertsSystem = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<AlertsSystem>();
             var serverPrefManager = server.ResolveDependency<IServerPreferencesManager>();
+            var ticker = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<GameTicker>();
 
             // Ensure the player spawns as a human (not a random species like IPC)
             // IPCs have BorgHealth/BorgBattery alerts instead of HumanHealth
             await server.WaitAssertion(() =>
             {
-                var session = serverPlayerManager.Sessions.Single();
+                var userId = client.User!.Value;
                 var humanProfile = HumanoidCharacterProfile.RandomWithSpecies("Human");
-                serverPrefManager.SetProfile(session.UserId, 0, humanProfile).Wait();
+                serverPrefManager.SetProfile(userId, 0, humanProfile).Wait();
             });
 
-            // Connect the client after setting the profile
-            var netMgr = client.ResolveDependency<IClientNetManager>();
-            client.SetConnectTarget(server);
-            await client.WaitPost(() => netMgr.ClientConnect(null!, 0, null!));
-            await pair.ReallyBeIdle();
-
+            // Ready up and start the round to spawn the player with the Human profile
+            await server.WaitPost(() => ticker.ToggleReadyAll(true));
+            await server.WaitPost(() => ticker.StartRound());
             await pair.RunTicksSync(5);
 
             EntityUid playerUid = default;
