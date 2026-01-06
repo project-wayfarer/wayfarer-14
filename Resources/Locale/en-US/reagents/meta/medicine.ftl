@@ -62,7 +62,7 @@ reagent-name-ambuzol = ambuzol
 reagent-desc-ambuzol = A highly engineered substance able to halt the progression of a zombie infection.
 
 reagent-name-ambuzol-plus = ambuzol plus
-reagent-desc-ambuzol-plus = Further engineered with curine, inoculates the living against the infection.
+reagent-desc-ambuzol-plus = Further engineered with omnizine, inoculates the living against the infection.
 
 reagent-name-pulped-banana-peel = pulped banana peel
 reagent-desc-pulped-banana-peel = Pulped banana peels have some effectiveness against bleeding.
@@ -85,8 +85,8 @@ reagent-desc-tricordrazine = A wide-spectrum stimulant, originally derived from 
 reagent-name-lipozine = lipozine
 reagent-desc-lipozine = A chemical that accelerates metabolism, causing the user to hunger faster.
 
-reagent-name-omnizine = curine
-reagent-desc-omnizine = A soothing milky liquid with an iridescent gleam. Used as a barter reagent with chemists to make powerful medication.
+reagent-name-omnizine = omnizine
+reagent-desc-omnizine = A soothing milky liquid with an iridescent gleam. A well known conspiracy theory says that its origins remain a mystery because revealing the secrets of its production would render most commercial pharmaceuticals obsolete.
 
 reagent-name-ultravasculine = ultravasculine
 reagent-desc-ultravasculine = A complicated anti-toxin solution that quickly flushes out toxin while causing minor stress on the body. Reacts with histamine, duplicating itself while flushing it out. Overdose causes extreme pain.
