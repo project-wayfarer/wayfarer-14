@@ -39,7 +39,7 @@
 
 - type: entity
   id: SafetyDepositBoxMedium
-  name: safety deposit box (medium)
+  name: eposit box (medium)
   description: A medium secure box for storing valuables. Can hold 2x4 items.
   parent: BaseStorageItem
   components:
@@ -76,7 +76,7 @@
 
 - type: entity
   id: SafetyDepositBoxLarge
-  name: safety deposit box (large)
+  name: eposit box (large)
   description: A large secure box for storing valuables. Can hold 2x6 items.
   parent: BaseStorageItem
   components:
@@ -113,8 +113,8 @@
 
 - type: entity
   id: SafetyDepositConsole
-  name: safety deposit box console
-  description: "A console for purchasing and managing safety deposit boxes. Small: $250,000 | Medium: $750,000 | Large: $1,250,000"
+  name: eposit box console
+  description: "A console for purchasing and managing eposit boxes. Small: $2,250,000 | Medium: $3,500,000 | Large: $4,250,000"
   parent: BaseStructure
   components:
   - type: Sprite
