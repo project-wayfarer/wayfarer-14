@@ -40,7 +40,7 @@ public sealed partial class ShuttleSystem
     private TimeSpan _nextConsoleCacheRefresh = TimeSpan.Zero;
     private readonly TimeSpan _consoleCacheRefreshInterval = TimeSpan.FromSeconds(30);
 
-    private const float SpaceFrictionStrength = 0.0000f;
+    private const float SpaceFrictionStrength = 0.0075f;
     private const float DampenDampingStrength = 0.25f;
     private const float AnchorDampingStrength = 2.5f;
     private void NfInitialize()
