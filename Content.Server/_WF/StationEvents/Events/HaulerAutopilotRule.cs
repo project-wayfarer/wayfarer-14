@@ -6,11 +6,16 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Mind.Components;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server._WF.StationEvents.Events;
@@ -29,6 +34,88 @@ public sealed class HaulerAutopilotRuleSystem : StationEventSystem<HaulerAutopil
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly MapSystem _map = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        // Check all active hauler autopilot events
+        var query = EntityQueryEnumerator<HaulerAutopilotRuleComponent, GameRuleComponent>();
+        while (query.MoveNext(out var uid, out var component, out var gameRule))
+        {
+            if (!GameTicker.IsGameRuleActive(uid, gameRule) || component.ShuttleUid == null || !Exists(component.ShuttleUid.Value))
+                continue;
+
+            UpdateProximityTracking(component);
+        }
+    }
+
+    private void UpdateProximityTracking(HaulerAutopilotRuleComponent component)
+    {
+        if (component.ShuttleUid == null || !TryComp<TransformComponent>(component.ShuttleUid.Value, out var shuttleXform))
+            return;
+
+        var shuttlePos = _transform.GetMapCoordinates(component.ShuttleUid.Value, shuttleXform);
+        var currentTime = _timing.CurTime;
+        var playersToRemove = new List<EntityUid>();
+
+        // Check all players with minds
+        var mindQuery = EntityQueryEnumerator<MindContainerComponent, TransformComponent, ActorComponent>();
+        var nearbyPlayers = new HashSet<EntityUid>();
+
+        while (mindQuery.MoveNext(out var playerUid, out _, out var playerXform, out var actor))
+        {
+            var playerPos = _transform.GetMapCoordinates(playerUid, playerXform);
+
+            // Check if on same map and within proximity distance
+            if (playerPos.MapId != shuttlePos.MapId)
+                continue;
+
+            var distance = (playerPos.Position - shuttlePos.Position).Length();
+            if (distance > component.ProximityDistance)
+                continue;
+
+            nearbyPlayers.Add(playerUid);
+
+            // Check if player has already heard the audio
+            if (component.PlayersWhoHeardAudio.Contains(playerUid))
+                continue;
+
+            // Track when player entered proximity
+            if (!component.PlayersNearShuttle.ContainsKey(playerUid))
+            {
+                component.PlayersNearShuttle[playerUid] = currentTime;
+            }
+            else
+            {
+                // Check if player has been near long enough
+                var timeNearby = (currentTime - component.PlayersNearShuttle[playerUid]).TotalSeconds;
+                if (timeNearby >= component.ProximityTimeRequired)
+                {
+                    // Play audio to this player
+                    _audio.PlayGlobal(component.ProximitySound, actor.PlayerSession, AudioParams.Default);
+                    component.PlayersWhoHeardAudio.Add(playerUid);
+                    playersToRemove.Add(playerUid);
+                }
+            }
+        }
+
+        // Remove players who are no longer nearby
+        foreach (var playerUid in component.PlayersNearShuttle.Keys)
+        {
+            if (!nearbyPlayers.Contains(playerUid))
+            {
+                playersToRemove.Add(playerUid);
+            }
+        }
+
+        foreach (var playerUid in playersToRemove)
+        {
+            component.PlayersNearShuttle.Remove(playerUid);
+        }
+    }
 
     protected override void Started(EntityUid uid, HaulerAutopilotRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {

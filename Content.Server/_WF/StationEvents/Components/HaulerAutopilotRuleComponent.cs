@@ -1,5 +1,7 @@
 using Content.Server.StationEvents.Events;
 using Content.Server._WF.StationEvents.Events;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server._WF.StationEvents.Components;
@@ -39,4 +41,32 @@ public sealed partial class HaulerAutopilotRuleComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? ShuttleUid;
+
+    /// <summary>
+    /// Tracks players near the shuttle and when they entered proximity.
+    /// </summary>
+    public Dictionary<EntityUid, TimeSpan> PlayersNearShuttle = new();
+
+    /// <summary>
+    /// Distance threshold for proximity detection (in units).
+    /// </summary>
+    [DataField]
+    public float ProximityDistance = 500f;
+
+    /// <summary>
+    /// Time required in proximity before playing audio (in seconds).
+    /// </summary>
+    [DataField]
+    public float ProximityTimeRequired = 20f;
+
+    /// <summary>
+    /// The sound to play when a player stays near the shuttle.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier ProximitySound = new SoundPathSpecifier("/Audio/_WF/Music/HaulerBreach.ogg");
+
+    /// <summary>
+    /// Tracks which players have already heard the audio (to avoid repeating).
+    /// </summary>
+    public HashSet<EntityUid> PlayersWhoHeardAudio = new();
 }
