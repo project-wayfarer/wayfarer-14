@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseComputer
   id: ComputerTechnologyDiskTerminal
-  categories: [ HideSpawnMenu ] # Frontier: no tech disks
+  # categories: [ HideSpawnMenu ] # Frontier: no tech disks     ## Wayfarer turned back on
   name: tech disk terminal
-  description: A terminal used to print out technology disks.
+  description: A terminal used to print out research point disks.
   components:
   - type: Sprite
     noRot: true
