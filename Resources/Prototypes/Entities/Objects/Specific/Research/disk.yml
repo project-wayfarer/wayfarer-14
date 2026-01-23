@@ -4,9 +4,13 @@
   name: research point disk (1000)
   description: A disk for the R&D server containing 1000 points.
   components:
+  # Begin Den additions
+  - type: Item
+    size: Tiny
   - type: Sprite
-    sprite: Objects/Specific/Research/researchdisk.rsi
-    state: icon
+    sprite: _DEN/Objects/Specific/Research/researchdisk.rsi
+    state: disk_black
+  # End Den additions
   - type: ResearchDisk
   - type: GuideHelp
     guides:
@@ -20,6 +24,11 @@
   name: research point disk (5000)
   description: A disk for the R&D server containing 5000 points.
   components:
+  # Begin Den additions
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Research/researchdisk.rsi
+    state: disk_green
+  # End Den additions
   - type: ResearchDisk
     points: 5000
   - type: StaticPrice # Frontier
@@ -31,10 +40,43 @@
   name: research point disk (10000)
   description: A disk for the R&D server containing 10000 points.
   components:
+  # Begin Den additions
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Research/researchdisk.rsi
+    state: disk_blue
+  # End Den additions
   - type: ResearchDisk
     points: 10000
   - type: StaticPrice # Frontier
     price: 2000 # Frontier
+
+- type: entity
+  parent: ResearchDisk
+  id: ResearchDisk20000
+  name: research point disk (20000)
+  description: A disk for the R&D server containing 20000 points.
+  components:
+  # Begin Den additions
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Research/researchdisk.rsi
+    state: disk_purple
+  # End Den additions
+  - type: ResearchDisk
+    points: 20000
+
+- type: entity
+  parent: ResearchDisk
+  id: ResearchDisk50000
+  name: research point disk (50000)
+  description: A disk for the R&D server containing 50000 points.
+  components:
+  # Begin Den additions
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Research/researchdisk.rsi
+    state: disk_orange
+  # End Den additions
+  - type: ResearchDisk
+    points: 50000
 
 - type: entity
   parent: ResearchDisk
@@ -54,6 +96,10 @@
   description: A disk for the R&D server containing research technology.
   categories: [ HideSpawnMenu ] # Frontier: no tech disks
   components:
+  # Begin Den additions
+  - type: Item
+    size: Tiny
+  # End Den additions
   - type: Sprite
     sprite: Objects/Misc/module.rsi
     layers:
