@@ -356,7 +356,11 @@
           nodeGroupID: Apc
     - type: PowerMonitoringDevice
       group: Generator
-      loadNode: output
+      # Wayfarer changed to allow MV output
+      loadNodes:
+      - output_mv
+      - output
+      # End Wayfarer
       sprite: Structures/Power/Generation/portable_generator.rsi
       state: portgen3
     - type: PowerSupplier

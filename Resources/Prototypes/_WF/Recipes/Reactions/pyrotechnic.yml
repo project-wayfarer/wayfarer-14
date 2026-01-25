@@ -1,0 +1,39 @@
+- type: reaction
+  id: BioFuel
+  reactants:
+    Ethanol:
+      amount: 5
+    Oil:
+      amount: 1
+  products:
+    BioFuel: 1
+
+- type: reaction
+  id: BioFuelCornoil
+  reactants:
+    Ethanol:
+      amount: 5
+    Cornoil:
+      amount: 1
+  products:
+    BioFuel: 1
+
+- type: reaction
+  id: BioFuelGheeOil
+  reactants:
+    Ethanol:
+      amount: 5
+    OilGhee:
+      amount: 1
+  products:
+    BioFuel: 1
+
+- type: reaction
+  id: BioFuelOliveOil
+  reactants:
+    Ethanol:
+      amount: 5
+    OilOlive:
+      amount: 1
+  products:
+    BioFuel: 1
