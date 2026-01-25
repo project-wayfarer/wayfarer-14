@@ -8,7 +8,7 @@
   description: hydrakin-action-description-cool-off
   categories: [ HideSpawnMenu ] # Frontier
   components:
-  - type: Action
-    icon: { sprite: Structures/Piping/Atmospherics/heatexchanger.rsi, state: heStraight }
+  - type: InstantAction
+    icon: { sprite: _Obelisk/Actions/hydrakin_cooldown.rsi, state: hydra_cooldown }
     useDelay: 5
     event: !type:HydrakinCoolOffActionEvent
