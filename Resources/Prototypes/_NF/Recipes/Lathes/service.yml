@@ -372,3 +372,10 @@
   result: CandleSmall
 
 # Paper Bucket
+- type: latheRecipe
+  id: BucketPaper
+  result: BucketPaper
+  parent: BaseServiceItemsRecipe
+  materials:
+    Paper: 50
+    Plastic: 10
