@@ -363,6 +363,18 @@
 
 # fun
 #T1
+#Start Wayfarer
+- type: loadout
+  id: WehfarerPlushie
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  storage:
+    back:
+    - WehfarerPlushie
+#End Wayfarer
+
 - type: loadout
   id: ContractorPlushieSharkGrey
   effects:

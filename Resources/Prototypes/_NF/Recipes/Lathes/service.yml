@@ -370,3 +370,13 @@
   parent: BaseServiceItemsRecipeCandleSmall
   id: CandleSmall
   result: CandleSmall
+
+#Paper Bucket - Mono
+- type: latheRecipe
+  id: BucketPaper
+  result: BucketPaper
+  categories: [KitchenNF]
+  completetime: 0.4
+  materials:
+    Paper: 50
+    Plastic: 10
