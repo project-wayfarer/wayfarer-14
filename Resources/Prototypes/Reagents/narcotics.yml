@@ -215,6 +215,14 @@
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5
+  # Very slight radiation healing effect - Wayfarer
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Radiation: -0.05
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent

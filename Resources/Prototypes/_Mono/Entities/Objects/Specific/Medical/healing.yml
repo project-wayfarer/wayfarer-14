@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2025 tonotom
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#Pills
+- type: entity
+  name: pill canister
+  parent: PillCanister
+  id: PillCanisterStrange
+  suffix: Strange, 10
+  components:
+  - type: Label
+    currentLabel: ???
+  - type: StorageFill
+    contents:
+    - id: StrangePill
+      amount: 10

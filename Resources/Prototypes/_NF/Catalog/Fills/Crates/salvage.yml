@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Dvir
+# SPDX-FileCopyrightText: 2025 tonotom
+# SPDX-FileCopyrightText: 2025 tonotom1
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: NFCrateSalvageAssortedGoodies
   suffix: Filled, Salvage Random
@@ -16,45 +22,47 @@
   table: !type:GroupSelector
     children:
     # Mats
-    - id: SheetSteelRandomReduced
-      weight: 0.15
-    - id: SheetGlassRandomReduced
-      weight: 0.15
-    - id: SheetPlasmaRandomLow
-      weight: 0.1
-    - id: IngotGoldRandomLow
-      weight: 0.1
-    - id: IngotSilverRandomLow
-      weight: 0.1
-    - id: SheetPlasticRandomLow
-      weight: 0.1
-    - id: SheetUraniumRandomLow
-      weight: 0.1
-    - id: SheetPlasteelRandomLow
-      weight: 0.1
-    - id: MaterialWoodPlankRandomLow
-      weight: 0.1
-    - id: MaterialClothRandomLow
-      weight: 0.1
-    - id: MaterialDurathreadRandomLow
-      weight: 0.01
-    - id: MaterialCardboardRandomLow
-      weight: 0.01
-    - id: SheetPaperRandomLow
-      weight: 0.01
-    - id: SheetBrassRandomLow
-      weight: 0.01
-    - id: MaterialBananiumRandomVeryLow
-      weight: 0.002
-    - id: MaterialDiamondRandomVeryLow
-      weight: 0.0001
-    - id: MaterialBluespaceRandomVeryLow
-      weight: 0.00001 # Yes I mean it
+    #MONO CHANGES (Uncommented weights *60 for digit brevity)
+    - id: SheetSteel
+      weight: 1.5
+    - id: SheetGlass
+      weight: 1.5
+    - id: SheetPlasma
+      weight: 6
+    - id: IngotGold
+      weight: 6 
+    - id: IngotSilver
+      weight: 6 
+    - id: SheetPlastic
+      weight: 6 
+    - id: SheetUranium
+      weight: 6 
+    - id: SheetPlasteel
+      weight: 6 
+    - id: MaterialWoodPlank
+      weight: 6 
+    - id: MaterialCloth
+      weight: 6
+    - id: MaterialDurathread
+      weight: 1 #0.01 >> 1
+    - id: MaterialCardboard
+      weight: 0.4
+    - id: SheetPaper
+      weight: 0.4
+    - id: SheetBrass
+      weight: 0.4
+    - id: MaterialBananium
+      weight: 0.06 #0.00001 >> 1
+    - id: MaterialDiamond1
+      weight: 0.1 #0.0000001 >> 0.3 
+    - id: MaterialBluespace
+      weight: 0.1 #0.00000001 Yes they meant it >> 0.3
       # Disk
     - id: ResearchDisk5000
-      weight: 0.001
+      weight: 0.1 #0.001 >> 0.1
     - id: ResearchDisk10000
-      weight: 0.0005
+      weight: 0.05 #0.0005 >> 0.5
+    #END MONO CHANGES
 
 - type: entity
   id: NFCrateSalvageAssortedGoodiesPlastic
