@@ -6,8 +6,9 @@ store-category-secutility = Utility
 store-category-secammo = Ammunition
 store-category-secexplosives = Explosives
 store-category-secbundles = Bundles
+
 # Pirate Uplink
-store-preset-name-pirate-uplink = Pirate Uplink Catalogue
+store-preset-name-pirate-uplink = Outlaw Black Market Uplink
 store-category-piratehardsuits = EVA Suits
 store-category-pirateweapons = Weapons
 store-category-pirateutility = Utility
