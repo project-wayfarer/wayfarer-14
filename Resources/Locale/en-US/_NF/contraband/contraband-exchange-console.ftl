@@ -10,11 +10,11 @@ contraband-pallet-sell-button = Sell
 contraband-pallet-disclaimer = Please place all contraband items directly onto the scanner. Items inside other containers are unable to be scanned properly.
 
 # Plunder Exchange Console (pirate contraband)
-pirate-contraband-pallet-console-menu-title = Plunder Exchange
-pirate-contraband-console-menu-points-amount = {$amount} DB
-pirate-contraband-pallet-menu-no-goods-text = No plunder here!
+pirate-contraband-pallet-console-menu-title = Data Exchange
+pirate-contraband-console-menu-points-amount = {$amount} DC
+pirate-contraband-pallet-menu-no-goods-text = Nothing on the pad. Try again.
 pirate-contraband-pallet-menu-appraisal-label = Estimated Value:{" "}
 pirate-contraband-pallet-menu-count-label = Number of items:{" "}
 pirate-contraband-pallet-appraise-button = Appraise
 pirate-contraband-pallet-sell-button = Sell
-pirate-contraband-pallet-disclaimer = Place yer plunder on the the scanner. Be sure it isn't in a chest, ye goon.
+pirate-contraband-pallet-disclaimer = Slot your contraband directly onto the scanner pad. No containers, no games.
