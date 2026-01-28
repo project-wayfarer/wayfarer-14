@@ -1,0 +1,8 @@
+- type: entity
+  parent: PortableGeneratorPacmanFlatpack
+  id: PortableGeneratorBioPacmanFlatpack
+  name: B.I.O.P.A.C.M.A.N. portable generator flatpack
+  description: A flatpack used for constructing a B.I.O.P.A.C.M.A.N. portable generator.
+  components:
+  - type: Flatpack
+    entity: PortableGeneratorBioPacman

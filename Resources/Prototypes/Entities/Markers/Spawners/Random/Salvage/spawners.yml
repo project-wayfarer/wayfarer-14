@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Dvir
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2025 AndresE55
+# SPDX-FileCopyrightText: 2025 tonotom
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entityTable
   id: SalvageScrapSpawnerCommon
   table: !type:GroupSelector
@@ -398,8 +405,11 @@
       children:
       - id: AirCanister
       - id: NitrogenCanister
+        weight: 0.98 # Mono
       - id: OxygenCanister
+        weight: 0.98 # Mono
       - id: CarbonDioxideCanister
+        weight: 0.98 # Mono
       - id: PlasmaCanister
         weight: 0.25
       - id: NitrousOxideCanister

@@ -282,7 +282,7 @@ namespace Content.Server.Preferences.Managers
             }
         }
 
-        public void FinishLoad(ICommonSession session)
+        public async void FinishLoad(ICommonSession session)
         {
             // This is a separate step from the actual database load.
             // Sanitizing preferences requires play time info due to loadouts.
@@ -300,6 +300,14 @@ namespace Content.Server.Preferences.Managers
                 MaxCharacterSlots = MaxCharacterSlots
             };
             _netManager.ServerSendMessage(msg, session.Channel);
+
+            // Reload character consent now that preferences are fully loaded
+            // This ensures character-specific consent freetext is loaded correctly
+            if (ShouldStorePrefs(session.Channel.AuthType))
+            {
+                var characterSlot = prefsData.Prefs.SelectedCharacterIndex;
+                await _consentManager.ReloadCharacterConsent(session.UserId, characterSlot);
+            }
 
             // Frontier: notify other entities that your player data is loaded.
             if (session.AttachedEntity != null)

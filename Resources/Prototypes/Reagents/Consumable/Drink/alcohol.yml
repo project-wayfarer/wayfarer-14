@@ -203,6 +203,11 @@
           shouldHave: false
       - !type:Drunk
         boozePower: 2
+      # Very slight radiation healing effect - Wayfarer
+      - !type:HealthChange
+          damage:
+            types:
+              Radiation: -0.05
 
 - type: reagent
   id: Gin

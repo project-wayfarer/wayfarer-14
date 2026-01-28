@@ -1,0 +1,26 @@
+- type: reagent
+  id: BioFuel
+  name: reagent-name-bio-fuel
+  parent: BasePyrotechnic
+  desc: reagent-desc-bio-fuel
+  physicalDesc: reagent-physical-desc-oily
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: Vox
+    Poison:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Vox
+          shouldHave: false
+        damage:
+          types:
+            Poison: 1
+      - !type:FlammableReaction
+        multiplier: 0.4
