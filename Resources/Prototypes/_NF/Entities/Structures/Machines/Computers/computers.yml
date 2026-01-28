@@ -245,8 +245,8 @@
 - type: entity
   id: ComputerPirateBounty
   parent: BaseComputer
-  name: pirate bounty computer
-  description: Avast, get ye pirate bounties here.
+  name: black market bounty computer
+  description: A black market terminal containing lists of goods in demand by other buyers.
   components:
   - type: Sprite
     sprite: _NF/Structures/Machines/computers.rsi
@@ -304,7 +304,7 @@
 - type: entity
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerBroken]
   id: ComputerPirateBountyBroken
-  name: broken pirate bounty computer
+  name: broken black market bounty computer
   description: This console has seen better days. Can be repaired with a repair kit.
   components:
   - type: Construction
@@ -312,10 +312,10 @@
     node: start
 
 - type: entity
-  name: plunder exchange computer
+  name: contraband computer
   parent: ComputerContrabandPalletConsole
   id: ComputerContrabandPalletConsolePirate
-  description: Fence yer ill-gotten goods here! And keep yer pile orderly.
+  description: Fence yer illegal goods or ill-gotten gains here.
   components:
   - type: Sprite
     sprite: _NF/Structures/Machines/computers.rsi
@@ -356,7 +356,7 @@
 - type: entity
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerBroken]
   id: ComputerContrabandPalletConsolePirateBroken
-  name: broken plunder exchange computer
+  name: contraband exchange computer
   description: This console has seen better days. Can be repaired with a repair kit.
   components:
   - type: Construction
@@ -364,10 +364,10 @@
     node: start
 
 - type: entity
-  name: pirate bounty redemption computer
+  name: black market redemption computer
   parent: ComputerPirateBounty
   id: ComputerPirateBountyRedemption
-  description: Back from a voyage? Redeem yer bounties here, matey.
+  description: Got something the black market wants? Sell those goods here for data chits that can be used to redeem other goods on your black market uplink.
   components:
   - type: Sprite
     sprite: _NF/Structures/Machines/computers.rsi
@@ -417,7 +417,7 @@
 - type: entity
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerBroken]
   id: ComputerPirateBountyRedemptionBroken
-  name: broken pirate bounty redemption computer
+  name: broken black market redemption computer
   description: This console has seen better days. Can be repaired with a repair kit.
   components:
   - type: Construction

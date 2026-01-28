@@ -34,4 +34,4 @@ pirate-bounty-item-hypo = Hypospray
 pirate-bounty-item-akms = AKMS
 pirate-bounty-item-enforcer = Enforcer
 
-pirate-bounty-description-generic = Go now, ye goon! Plunder me this!
+pirate-bounty-description-generic = Go now and find what the buyer wants.
