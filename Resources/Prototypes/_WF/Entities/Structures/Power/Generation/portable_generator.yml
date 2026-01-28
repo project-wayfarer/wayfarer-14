@@ -1,0 +1,102 @@
+- type: entity
+  name: B.I.O.P.A.C.M.A.N. portable generator # Frontier: no -type
+  description: |-
+    A flexible backup generator for powering a variety of equipment.
+    Runs off biofuel and is rated for up to 25 kW.
+  parent: PortableGeneratorSwitchableBase
+  id: PortableGeneratorBioPacman
+  suffix: Biofuel, 15 kW
+  components:
+  - type: Sprite
+    layers:
+    - state: portgen0
+      map: [ "enum.GeneratorVisualLayers.Body" ]
+    - state: portgen_on_unlit
+      map: [ "enum.GeneratorVisualLayers.Unlit" ]
+      shader: unshaded
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.GeneratorVisuals.Running:
+        enum.GeneratorVisualLayers.Body:
+          True: { state: portgen0on }
+          False: { state: portgen0 }
+        enum.GeneratorVisualLayers.Unlit:
+          True: { visible: true }
+          False: { visible: false }
+
+  - type: Machine
+    board: PortableGeneratorBioPacmanMachineCircuitboard
+  - type: FuelGenerator
+    minTargetPower: 1000
+    maxTargetPower: 25000
+    targetPower: 15000
+    optimalPower: 15000
+    # 90 minutes at max output (halved burn rate)
+    optimalBurnRate: 0.0055555
+    # a decent curve
+    fuelEfficiencyConstant: 0.95
+  - type: ChemicalFuelGeneratorAdapter
+    solution: tank
+    reagents:
+      BioFuel: 1
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 400 # Frontier - 50<400 (doubled)
+  - type: RefillableSolution
+    solution: tank
+  - type: PortableGenerator
+    startChance: 0.8
+  - type: UpgradePowerSupplier
+    powerSupplyMultiplier: 1.25
+    scaling: Exponential
+  - type: GeneratorExhaustGas
+    gasType: CarbonDioxide
+    # Full tank is 25 moles of gas
+    moleRatio: 0.5
+  - type: PowerMonitoringDevice
+    group: Generator
+    loadNodes:
+    - output_hv
+    - output_mv
+    sprite: Structures/Power/Generation/portable_generator.rsi
+    state: portgen0
+  - type: Explosive
+    explosionType: Default
+    tileBreakScale: 0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpillBehavior
+        solution: tank
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 75
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: tank
+  - type: PowerSupplier
+    supplyRampRate: 5000
+    supplyRampTolerance: 1500
+  # Frontier: magnet pickup
+  - type: MaterialStorageMagnetPickup
+    range: 0.30
+  # End Frontier: magnet pickup

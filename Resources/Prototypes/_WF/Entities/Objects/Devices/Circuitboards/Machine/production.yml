@@ -1,0 +1,7 @@
+- type: entity
+  id: PortableGeneratorBioPacmanMachineCircuitboard
+  parent: PortableGeneratorPacmanMachineCircuitboard
+  name: B.I.O.P.A.C.M.A.N. portable generator machine board # Frontier: no -type
+  components:
+  - type: MachineBoard
+    prototype: PortableGeneratorBioPacman
