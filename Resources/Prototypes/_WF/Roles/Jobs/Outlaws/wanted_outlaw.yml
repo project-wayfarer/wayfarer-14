@@ -1,20 +1,20 @@
 - type: job
-  id: NFPirateFirstMate
-  name: job-name-nf-pirate-first-mate
-  description: job-description-nf-pirate-first-mate
-  playTimeTracker: JobPirateFirstMate
+  id: NFPirateCaptain
+  name: job-name-nf-pirate-captain # Not really a "captain" but we're just using their IDs.
+  description: job-description-nf-pirate-captain
+  playTimeTracker: JobPirateCaptain
+  whitelisted: true
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 129600 # 36 hours
-  whitelisted: true
-  startingGear: NFPirateFirstMateGear
+      time: 388800 # 48 hours
+  startingGear: NFPirateCaptainGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
-  icon: "JobIconNFPirateFirstMate"
-  supervisors: job-supervisors-captain
-  weight: 30
-  displayWeight: 30
+  icon: "JobIconNFPirateCaptain"
+  supervisors: job-supervisors-freebooters-union
+  weight: 40
+  displayWeight: 40
   setPreference: false
   newPlayerMessage: false
   access:
@@ -24,7 +24,7 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: AutoPirateFirstMate
+    - type: AutoPirateCaptain
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
     - type: DisableSuitSensors
@@ -35,14 +35,17 @@
     prototype: FrontierBirthdayGift
 
 - type: startingGear
-  id: NFPirateFirstMateGear
+  id: NFPirateCaptainGear
   equipment:
     belt: ClothingBeltUtility
-    pocket1: BasePirateUplinkPirateCrew
+    pocket1: BasePirateUplinkRadioPirateCaptain
+    pocket2: EnergyCutlass
   storage:
     back:
     - AppraisalTool
+    - PirateTechFabFlatpack
+    - Multitool
 
 - type: chameleonOutfit
-  id: NFPirateFirstMateChameleonOutfit
-  job: NFPirateFirstMate
+  id: NFPirateCaptainChameleonOutfit
+  job: NFPirateCaptain
