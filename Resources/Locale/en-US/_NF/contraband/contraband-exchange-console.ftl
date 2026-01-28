@@ -9,7 +9,7 @@ contraband-pallet-appraise-button = Appraise
 contraband-pallet-sell-button = Sell
 contraband-pallet-disclaimer = Please place all contraband items directly onto the scanner. Items inside other containers are unable to be scanned properly.
 
-# Plunder Exchange Console (pirate contraband)
+# Black Market Exchange Console (outlaw contraband) # WF
 pirate-contraband-pallet-console-menu-title = Data Exchange
 pirate-contraband-console-menu-points-amount = {$amount} DC
 pirate-contraband-pallet-menu-no-goods-text = Nothing on the pad. Try again.
