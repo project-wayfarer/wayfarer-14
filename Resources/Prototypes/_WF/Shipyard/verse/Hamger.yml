@@ -1,0 +1,34 @@
+- type: vessel
+  id: Hamger
+  parent: BaseVessel
+  name: Hamger
+  description: A compact two-person salvaging shuttle.
+  price: 38000
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/verse/Hamger.yml
+  guidebookPage: Null
+  class:
+  - Salvage
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Hamger
+  mapName: 'Hamger'
+  mapPath: /Maps/_WF/Shuttles/verse/Hamger.yml
+  minPlayers: 0
+  stations:
+    Hamger:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Hamger {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]
