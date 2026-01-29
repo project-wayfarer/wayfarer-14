@@ -1100,3 +1100,41 @@ Entries:
   id: 6616
   time: '2026-01-28T21:58:52.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/391
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: FUC are now ZC (Zekke Credits)
+  id: 6617
+  time: '2026-01-29T17:20:55.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/393
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Hamger salvaging shuttle.
+  id: 6618
+  time: '2026-01-29T17:22:08.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/394
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: >-
+        Editing the NanoChat number on an agent ID will no longer cause the
+        server to crash and burn.
+  id: 6619
+  time: '2026-01-29T18:05:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/398
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Vaults/Caches should no longer spawn near PoIs
+    - type: Tweak
+      message: >-
+        Vaults/Caches won't spawn unless there's a Commodore on shift, they also
+        last longer
+    - type: Tweak
+      message: >-
+        Vaults/Caches have had their wording updated to no longer be
+        NT/Syndicate
+  id: 6620
+  time: '2026-01-29T18:53:09.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/396

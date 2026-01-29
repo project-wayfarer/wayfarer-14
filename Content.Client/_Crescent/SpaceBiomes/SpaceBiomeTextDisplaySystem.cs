@@ -58,7 +58,13 @@ public sealed class SpaceTextDisplaySystem : EntitySystem
 
         _overlay.Text = name;
         _overlay.TextDescription = description; // fallback is "" if no description is found.
-        _overlay.CharInterval = TimeSpan.FromSeconds(2f / _overlay.Text.Length);
+
+        // WF - I dont know why they didn't do a divide by zero check here too when they literally did it the few lines after
+        if (_overlay.Text == "")
+            _overlay.CharInterval = TimeSpan.Zero; //if this is not done it tries dividing by 0 in the "else" clause
+        else
+            _overlay.CharInterval = TimeSpan.FromSeconds(2f / _overlay.Text.Length);
+        // END WF
 
         if (_overlay.TextDescription == "")
             _overlay.CharIntervalDescription = TimeSpan.Zero; //if this is not done it tries dividing by 0 in the "else" clause

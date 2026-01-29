@@ -74,7 +74,7 @@ public static class BankSystemExtensions
 
     public static string ToFUCString(int amount, CultureInfo? culture = null)
     {
-        return ToCurrencyString(amount, culture, symbolOverride: "FUC", symbolLocation: CurrencySymbolLocation.Suffix);
+        return ToCurrencyString(amount, culture, symbolOverride: "ZC", symbolLocation: CurrencySymbolLocation.Suffix);
     }
 }
 
