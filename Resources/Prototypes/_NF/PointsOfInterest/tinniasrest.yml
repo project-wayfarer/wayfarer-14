@@ -32,6 +32,9 @@
   stations:
     Tinnia:
       stationProto: DeadDropFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "It's five o'clock somewhere."
       components:
         - type: StationNameSetup
           mapNameTemplate: "Tinnia's Rest"

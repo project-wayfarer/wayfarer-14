@@ -31,6 +31,9 @@
   stations:
     Medical:
       stationProto: RecordsFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Primum non nocere." # first, do no harm
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Medical Dispatch'

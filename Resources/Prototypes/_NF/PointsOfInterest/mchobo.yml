@@ -30,6 +30,9 @@
   stations:
     McHobo:
       stationProto: DeadDropRecordsFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Home of the McGuffin. May we take your order?"
       components:
         - type: StationNameSetup
           mapNameTemplate: "Derelict McCargo"

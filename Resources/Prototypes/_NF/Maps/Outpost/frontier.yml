@@ -1,6 +1,6 @@
 - type: gameMap
   id: Frontier
-  mapName: 'Frontier Outpost'
+  mapName: 'Wayfarer Outpost' # WF
   mapPath: /Maps/_NF/Outpost/frontier.yml
   minPlayers: 0
   maxPlayers: 100
@@ -9,9 +9,12 @@
   stations:
     Frontier:
       stationProto: StandardFrontierStation
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Welcome to Wayfarer Outpost. Enjoy your stay."
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Frontier Outpost'
+          mapNameTemplate: 'Wayfarer Outpost' # WF
 #          nameGenerator:
 #            !type:NanotrasenNameGenerator
 #            prefixCreator: '14'

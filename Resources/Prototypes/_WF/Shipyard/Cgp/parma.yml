@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: CGP Parma
   description: A CGP Prisoner Transport ship, small and not built for anything beyond moving people from A to B
-  price: 12750
+  price: 16630
   category: Small
   group: Security
   access: Security
@@ -11,6 +11,7 @@
   guidebookPage: Null
   class:
   - Patrol
+  - Detainment
   engine:
   - APU
 

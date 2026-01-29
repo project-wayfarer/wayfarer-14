@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: CGP Kite
   description: A CGP Combat Ship designed to function in Combat with an EMP generator for chasing criminals and capturing them.
-  price: 94150
+  price: 124890
   category: Medium
   group: Security
   access: Security
@@ -12,8 +12,10 @@
   class:
   - Pursuit
   - Fighter
+  - Detainment
+  - Medical
   engine:
-  - AME
+  - Uranium
 
 - type: gameMap
   id: Kite

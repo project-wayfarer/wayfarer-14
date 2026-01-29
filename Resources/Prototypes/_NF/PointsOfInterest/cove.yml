@@ -32,6 +32,9 @@
   stations:
     Cove:
       stationProto: RecordsFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "The code is more what you'd call 'guidelines' than actual rules." # pirate theme'd for now until outlaws
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Pirate Cove'

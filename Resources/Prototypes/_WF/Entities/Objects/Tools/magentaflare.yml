@@ -1,0 +1,20 @@
+
+- type: entity
+  id: BoxDispenserMagentaFlare
+  parent: BaseAmmoProvider # this is for cycling flares out and not spawning 9 entities
+  name: magenta flare dispenser
+  description: Dispenses emergency flares.
+  components:
+  - type: Sprite
+    layers:
+    - state: boxwide
+      color: "#FF00FF"
+    - state: flare
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - Flare
+    proto: Magenta_Flare
+    capacity: 12
+  - type: StaticPrice
+    price: 10

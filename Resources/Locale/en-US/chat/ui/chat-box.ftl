@@ -11,6 +11,7 @@ hud-chatbox-select-channel-Emotes = Emotes
 hud-chatbox-select-channel-Local = Local
 hud-chatbox-select-channel-Whisper = Whisper
 hud-chatbox-select-channel-LOOC = LOOC
+# Coyote Frontier: Add Subtle LOOC
 hud-chatbox-select-channel-SubtleLOOC = Subtle LOOC
 hud-chatbox-select-channel-OOC = OOC
 hud-chatbox-select-channel-Damage = Damage
@@ -25,6 +26,8 @@ hud-chatbox-channel-Emotes = Emotes
 hud-chatbox-channel-Local = Local
 hud-chatbox-channel-Whisper = Whisper
 hud-chatbox-channel-LOOC = LOOC
+# Coyote Frontier: Add Subtle LOOC
+hud-chatbox-channel-SubtleLOOC = SubtleLOOC
 hud-chatbox-channel-OOC = OOC
 hud-chatbox-channel-Radio = Radio
 hud-chatbox-channel-Notifications = Notifications

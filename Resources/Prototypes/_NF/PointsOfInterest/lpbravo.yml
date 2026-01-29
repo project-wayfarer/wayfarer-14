@@ -36,6 +36,9 @@
     LPBravo:
       # FIXME: no records despite shipyard console, could currently be gamed
       stationProto: StandardFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "There is no place they will not find you."
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Listening Point Bravo'

@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: CGP Qauata
   description: A CGP Medical Ship that serves as second line support, performing Officer recovery and assistance.
-  price: 59930
+  price: 51650
   category: Small
   group: Security
   access: Brigmedic
@@ -12,6 +12,7 @@
   class:
   - Pursuit
   - Medical
+  - Patrol
   engine:
   - APU
   - Plasma

@@ -31,6 +31,9 @@
   stations:
     Lodge:
       stationProto: RecordsFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Aut viam inveniam aut faciam." # I will either find a way or make one. (idk, I just googled 'mercenary latin phrases' :3)
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Expeditionary Lodge'

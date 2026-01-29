@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: CGP Heater
   description: A CGP Ship set for a small crew or a single Internal Affairs agent.
-  price: 30935
+  price: 38680
   category: Medium
   group: Security
   access: Security
@@ -12,6 +12,7 @@
   class:
   - Pursuit
   - Patrol
+  - Detainment
   engine:
   - Plasma
   - APU

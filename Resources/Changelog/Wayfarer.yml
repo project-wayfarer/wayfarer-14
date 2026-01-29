@@ -1055,3 +1055,48 @@ Entries:
   id: 6612
   time: '2026-01-28T00:26:31.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/373
+- author: kitbravo
+  changes:
+    - type: Add
+      message: Blue and magenta flare boxes to Autolathe an salvage vendor
+  id: 6613
+  time: '2026-01-28T00:53:56.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/370
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: Cannonballs now destroy tiles
+  id: 6614
+  time: '2026-01-28T21:54:44.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/390
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Remastered the Buckler, smaller, faster, stronger!
+    - type: Fix
+      message: Fixed prices of CGP fleet
+    - type: Fix
+      message: CGP fleet in line with mapping standards
+  id: 6615
+  time: '2026-01-28T21:55:22.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/389
+- author: ark1368, alin-but-real, ShepardToTheStars
+  changes:
+    - type: Tweak
+      message: Frontier Outpost has been renamed to Wayfarer Outpost
+    - type: Add
+      message: Stations, POIs, and ships now have their displayed upon entering.
+    - type: Add
+      message: Added area-based sound echos.
+    - type: Tweak
+      message: >-
+        Background music is more dynamic. It can change depending on how far you
+        are from Wayfarer station, if  you're in combat, if you're on a specific
+        grid, etc.
+    - type: Add
+      message: >-
+        There are new options to control ambient and combat music in the
+        options.
+  id: 6616
+  time: '2026-01-28T21:58:52.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/391
