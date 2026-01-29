@@ -10,7 +10,7 @@ nf-piratecaptain-role-greeting =
 
 nf-pirate-role-greeting-equipment = Use the consoles in the lobby to find and redeem bounties and sell loose contraband crates. Purchase a ship and head off on adventure!
 
-objective-issuer-nf-pirate = [color=#F6CE64]Outlaws[/color]
+objective-issuer-nf-pirate = [color=#821600]Outlaw[/color]
 
 nf-pirate-round-end-agent-name = outlaw
 
