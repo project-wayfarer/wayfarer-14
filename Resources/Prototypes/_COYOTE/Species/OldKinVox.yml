@@ -1,0 +1,188 @@
+- type: species
+  id: OldKinVox
+  name: species-name-oldkinvox
+  roundStart: true
+  prototype: MobOldKinVox
+  sprites: MobOldKinVoxSprites
+  markingLimits: MobOldKinVoxMarkingLimits
+  dollPrototype: MobOldKinVoxDummy
+  skinColoration: Hues # imp VoxFeathers<Hues
+  defaultSkinTone: "#6c741d"
+  maleFirstNames: NamesVox
+  femaleFirstNames: NamesVox
+  naming: First
+  sexes:
+  - Unsexed # NO WAY MY VOX SEXES ALL THE TIME
+  kind:
+  - VoxLike
+  allowDigilegDisplacement: false
+
+- type: speciesBaseSprites
+  id: MobOldKinVoxSprites
+  sprites:
+    Head: MobOldKinVoxHead
+    Snout: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
+    Chest: MobOldKinVoxTorso
+    Eyes: MobOldKinVoxEyes
+    LArm: MobOldKinVoxLArm
+    RArm: MobOldKinVoxRArm
+    LHand: MobOldKinVoxLHand
+    RHand: MobOldKinVoxRHand
+    LLeg: MobOldKinVoxLLeg
+    RLeg: MobOldKinVoxRLeg
+    LLegBehind: MobHumanoidAnyMarking
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
+    LFoot: MobOldKinVoxLFoot
+    RFoot: MobOldKinVoxRFoot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
+    UndershirtUnderclothes: MobHumanoidAnyMarking
+    UndershirtOverclothes: MobHumanoidAnyMarking
+
+- type: markingPoints
+  id: MobOldKinVoxMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Head:
+      points: 3
+      required: true
+
+
+    UndergarmentTop:
+      points: 3
+      required: false
+    UndergarmentBottom:
+      points: 3
+      required: false
+    Chest:
+      points: 2
+      required: false
+    Overlay: # imp
+      points: 4
+      required: false
+    Tail:
+      points: 3
+      required: true
+      defaultMarkings: [ OldKinVoxTail ]
+
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxEyes
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: eyes
+
+- type: marking
+  id: OldKinVoxTail
+  bodyPart: Chest
+  markingCategory: Tail
+  speciesRestriction: [OldKinVox]
+  forcedColoring: true
+  sprites:
+  - sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: tail
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxHead
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxHeadMale
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxHeadFemale
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxTorso
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxTorsoMale
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxTorsoFemale
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxGroin
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLLeg
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLArm
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLHand
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLFoot
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRLeg
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRArm
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRHand
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRFoot
+  baseSprite:
+    sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+    state: r_foot
