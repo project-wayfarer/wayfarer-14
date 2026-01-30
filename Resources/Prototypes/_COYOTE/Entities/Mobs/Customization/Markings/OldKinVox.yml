@@ -39,9 +39,16 @@
   markingCategory: Legs
   canBeDisplaced: false
   speciesRestriction: [OldKinVox]
+  colorLinks:
+    claws_feet_left_behind: claws_feet_left
+  layering:
+    claws_feet_left: LFoot
+    claws_feet_left_behind: LFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_left
+    - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_feet_left_behind
   coloring:
     default:
       type:
@@ -54,9 +61,16 @@
   markingCategory: Legs
   canBeDisplaced: false
   speciesRestriction: [OldKinVox]
+  colorLinks:
+    claws_feet_right_behind: claws_feet_right
+  layering:
+    claws_feet_right: RFoot
+    claws_feet_right_behind: RFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_right
+    - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_feet_right_behind
   coloring:
     default:
       type:
@@ -154,14 +168,19 @@
   markingCategory: Legs
   canBeDisplaced: false
   speciesRestriction: [OldKinVox]
+  colorLinks:
+    scutes_legs_left: scutes_foot_left
   layering:
     scutes_legs_left: LLeg
     scutes_foot_left: LFoot
+    r_foot_behind: RFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_legs_left
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_foot_left
+    - sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+      state: r_foot_behind
   coloring:
     default:
       type:
@@ -174,14 +193,19 @@
   markingCategory: Legs
   canBeDisplaced: false
   speciesRestriction: [OldKinVox]
+  colorLinks:
+    scutes_legs_right: scutes_foot_right
   layering:
     scutes_legs_right: RLeg
     scutes_foot_right: RFoot
+    l_foot_behind: LFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_legs_right
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_foot_right
+    - sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
+      state: l_foot_behind
   coloring:
     default:
       type:
