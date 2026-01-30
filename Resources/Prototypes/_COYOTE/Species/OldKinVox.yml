@@ -7,7 +7,7 @@
   markingLimits: MobOldKinVoxMarkingLimits
   dollPrototype: MobOldKinVoxDummy
   skinColoration: Hues # imp VoxFeathers<Hues
-  defaultSkinTone: "#6c741d"
+  defaultSkinTone: "#526d29"
   maleFirstNames: NamesVox
   femaleFirstNames: NamesVox
   naming: First
@@ -61,8 +61,15 @@
     Head:
       points: 3
       required: true
-
-
+      defaultMarkings: [ OldKinVoxBeak, OldKinVoxCrest ]
+    Arms:
+      points: 5
+      required: true
+      defaultMarkings: [ OldKinVoxClawsHandsLeft, OldKinVoxClawsHandsRight, OldKinVoxScutesArmsLeft, OldKinVoxScutesArmsRight ]
+    Legs:
+      points: 4
+      required: true
+      defaultMarkings: [ OldKinVoxClawsFeetLeft, OldKinVoxClawsFeetRight, OldKinVoxScutesLegsLeft, OldKinVoxScutesLegsRight ]
     UndergarmentTop:
       points: 3
       required: false
@@ -76,7 +83,7 @@
       points: 4
       required: false
     Tail:
-      points: 3
+      points: 1
       required: true
       defaultMarkings: [ OldKinVoxTail ]
 
@@ -89,7 +96,7 @@
 
 - type: marking
   id: OldKinVoxTail
-  bodyPart: Chest
+  bodyPart: TailOversuit
   markingCategory: Tail
   speciesRestriction: [OldKinVox]
   forcedColoring: true
