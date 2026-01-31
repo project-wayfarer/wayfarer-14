@@ -8,9 +8,9 @@
   - type: HumanoidAppearance
     species: Diona
   - type: Hunger
-    baseDecayRate: 0.005
+    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer
   - type: Thirst
-    baseDecayRate: 0.005
+    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer
   - type: Icon
     sprite: Mobs/Species/Diona/parts.rsi
     state: full
