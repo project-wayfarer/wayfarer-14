@@ -1,0 +1,11 @@
+- type: entity
+  name: poker chip case
+  parent: ToolboxBase
+  id: PokerChipCase
+  description: A sleek metal case, stocked with poker chips for gambling games.
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Storage/pokerchipcase.rsi
+    state: icon
+  - type: Item
+    sprite: _WF/Objects/Storage/pokerchipcase.rsi

@@ -1,0 +1,11 @@
+- type: entity
+  id: PokerChipCaseFilled
+  name: poker chip case
+  suffix: Filled
+  parent: PokerChipCase
+  components:
+  - type: StorageFill
+    contents:
+    - id: CrowbarOrange
+    - id: Wrench
+    - id: Welder
