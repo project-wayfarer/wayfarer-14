@@ -26,12 +26,6 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Vox
-
-- type: loadoutEffectGroup
-  id: EffectSpeciesOldKinVox
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
     - OldKinVox
 
 # Basic
@@ -200,10 +194,8 @@
 - type: loadout
   id: LoadoutSpeciesVoxNitrogen
   effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Vox
-    - OldKinVox
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
   equipment:
     suitstorage: NitrogenTankFilled
 

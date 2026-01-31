@@ -7,31 +7,39 @@
     needs:
     - NeedHungerDefault
     - NeedThirstDefault
+
   - type: Icon
     sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
     state: vox_m
+
   - type: Body
     prototype: OldKinVox
     requiredLegs: 2
     #- type: VoxAccent # Not yet coded
+
   - type: Speech
     speechVerb: Vox
     speechSounds: Vox
+
   - type: TypingIndicator
     proto: vox
+
   - type: Vocal
     sounds:
       Male: UnisexVox
       Female: UnisexVox
       Unsexed: UnisexVox
+
   - type: Butcherable
     butcheringType: Spike
     spawned:
     - id: FoodMeatChicken
       amount: 5
+
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Vox
+
   - type: PassiveDamage
     # Augment normal health regen to be able to tank some Poison damage
     # This allows Vox to take their mask off temporarily to eat something without needing a trip to medbay afterwards.
@@ -44,6 +52,40 @@
         Poison: -0.2 # needs to be less than the PendingZombieComponent does or they never become zombies by the disease.
       groups:
         Brute: -0.07
+
+  - type: PressureProtection # Soup Can
+    highPressureMultiplier: 1
+    lowPressureMultiplier: 1000
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.1 #Evolved into a crab, SMH
+        Heat: 0.5
+
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 250
+    sweatHeatRegulation: 1000
+    shiveringHeatRegulation: 2000
+    normalBodyTemperature: 146.575
+    thermalRegulationTemperatureThreshold: 2 # bottoms out at 34.5kelvin in space
+
+  - type: Temperature
+    coldDamageThreshold: 30.97 # required for math things
+    heatDamageThreshold: 308 # Very close to station temperature, don't put near a fire. Or do, I'm not your mother
+    coldDamage:
+      types:
+        Cold : 0 #Just incase
+    heatDamage:
+      types:
+        Heat : 3 #per second, scales with temperature & other constants
+  - type: TemperatureSpeed
+    thresholds:
+      85.53: 0.8
+      45.87: 0.6
+      30.97: 0.4 #Theoretically impossible, unless you start freeze raying them in space.
+
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -51,8 +93,10 @@
         color: "#7a8bf2"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
+
   - type: Bloodstream
     bloodReagent: AmmoniaBlood
+
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -60,7 +104,39 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 5 # Reduce?
+        Slash: 2
+        Bloodloss: 4 #Ribbed, for your pleasure
+
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.42
+        density: 220
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+  - type: ProtectedFromStepTriggers
+
+  - type: MobThresholds #Durable, but dies sooner
+    thresholds:
+      0: Alive
+      125: Critical
+      175: Dead
+
+  - type: Stamina
+    critThreshold: 85
+
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.75
+      80: 0.55
+      100: 0.35
+
   - type: Sprite # Need to redefine the whole order to draw the tail over their gas tank
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]

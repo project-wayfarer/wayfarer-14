@@ -171,9 +171,9 @@
   colorLinks:
     scutes_legs_left: scutes_foot_left
   layering:
+    r_foot_behind: RFootBehind
     scutes_legs_left: LLeg
     scutes_foot_left: LFoot
-    r_foot_behind: RFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_legs_left
@@ -196,9 +196,9 @@
   colorLinks:
     scutes_legs_right: scutes_foot_right
   layering:
+    l_foot_behind: LFootBehind
     scutes_legs_right: RLeg
     scutes_foot_right: RFoot
-    l_foot_behind: LFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_legs_right
