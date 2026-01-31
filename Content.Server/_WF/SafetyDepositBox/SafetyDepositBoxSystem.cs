@@ -1,5 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Database;
+using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
@@ -17,6 +18,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Paper;
 using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
+using System.Linq;
 using Content.Shared.Stacks;
 using Content.Shared.Access.Components;
 using Robust.Server.GameObjects;
@@ -48,6 +50,8 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly LabelSystem _label = default!;
     [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
+    [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     public override void Initialize()
     {
@@ -93,13 +97,35 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         var boxInfoList = new List<SafetyDepositBoxInfo>();
         foreach (var box in ownedBoxes)
         {
+            // A box is considered deposited if:
+            // - It has never been withdrawn (!LastWithdrawn.HasValue), OR
+            // - It was withdrawn in the current round and still has items
+            // A box is considered lost if it was withdrawn in a previous round and has no items
+            bool isDeposited;
+            if (!box.LastWithdrawn.HasValue)
+            {
+                // Never withdrawn, so it's deposited
+                isDeposited = true;
+            }
+            else if (box.LastWithdrawnRoundId.HasValue && box.LastWithdrawnRoundId.Value != _gameTicker.RoundId)
+            {
+                // Withdrawn in a previous round - lost regardless of items
+                isDeposited = false;
+            }
+            else
+            {
+                // Withdrawn in current round - deposited only if it has items
+                isDeposited = box.Items.Count > 0;
+            }
+            
             boxInfoList.Add(new SafetyDepositBoxInfo(
                 box.BoxId,
                 box.OwnerName,
-                box.Items.Count > 0,
+                isDeposited,
                 box.Nickname,
                 box.BoxSize,
-                box.LastWithdrawn
+                box.LastWithdrawn,
+                box.LastWithdrawnRoundId
             ));
         }
 
@@ -120,7 +146,9 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
                 boxComp.OwnerName ?? "Unknown",
                 false,
                 nickname,
-                "Unknown"
+                "Unknown",
+                null,
+                null
             );
         }
 
@@ -129,9 +157,11 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
             0, // No cash display needed anymore
             boxInSlot != null,
             boxInSlotInfo,
+            component.TrialBoxCost,
             component.SmallBoxCost,
             component.MediumBoxCost,
-            component.LargeBoxCost
+            component.LargeBoxCost,
+            _gameTicker.RoundId
         );
 
         _uiSystem.SetUiState(consoleUid, SafetyDepositConsoleUiKey.Key, state);
@@ -150,6 +180,10 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         string prototypeId;
         switch (args.BoxSize)
         {
+            case SafetyDepositBoxSize.Trial:
+                cost = component.TrialBoxCost;
+                prototypeId = "SafetyDepositBoxTrial";
+                break;
             case SafetyDepositBoxSize.Small:
                 cost = component.SmallBoxCost;
                 prototypeId = "SafetyDepositBoxSmall";
@@ -203,7 +237,37 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         var characterIndex = prefs.SelectedCharacterIndex;
         var characterName = MetaData(player).EntityName;
 
+        // Check if trying to purchase a trial box and already owns one
+        if (args.BoxSize == SafetyDepositBoxSize.Trial)
+        {
+            CheckTrialBoxLimitAsync(uid, component, player, userId.UserId, characterIndex, characterName, prototypeId, cost);
+            return;
+        }
+
         PurchaseBoxAsync(uid, component, player, userId.UserId, characterIndex, characterName, prototypeId, cost);
+    }
+
+    private async void CheckTrialBoxLimitAsync(
+        EntityUid consoleUid,
+        SafetyDepositConsoleComponent component,
+        EntityUid player,
+        Guid userId,
+        int characterIndex,
+        string characterName,
+        string prototypeId,
+        int cost)
+    {
+        var ownedBoxes = await _dbManager.GetPlayerSafetyDepositBoxes(userId, characterIndex);
+        var hasTrialBox = ownedBoxes.Any(b => b.BoxSize == "Trial");
+
+        if (hasTrialBox)
+        {
+            ConsolePopup(player, "You already own a Trial Box. Only one Trial Box per character is allowed.");
+            PlayDenySound(consoleUid, component);
+            return;
+        }
+
+        PurchaseBoxAsync(consoleUid, component, player, userId, characterIndex, characterName, prototypeId, cost);
     }
 
     private async void PurchaseBoxAsync(
@@ -219,6 +283,7 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         // Determine box size from prototype
         string boxSize = prototypeId switch
         {
+            "SafetyDepositBoxTrial" => "Trial",
             "SafetyDepositBoxSmall" => "Small",
             "SafetyDepositBoxMedium" => "Medium",
             "SafetyDepositBoxLarge" => "Large",
@@ -243,6 +308,9 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         {
             _transform.SetLocalRotation(boxEntity, Angle.Zero);
         }
+
+        // Mark the box as withdrawn so it shows "In World" in the UI
+        await _dbManager.ClearSafetyDepositBoxItems(box.BoxId, _gameTicker.RoundId);
 
         ConsolePopup(player, $"Safety deposit box purchased! Box ID: {box.BoxId.ToString()[..8]}...");
         PlayConfirmSound(consoleUid, component);
@@ -385,6 +453,31 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
                     Log.Info($"Stored label: {label.CurrentLabel}");
                 }
                 
+                // Store entity name if it differs from prototype default
+                if (TryComp<MetaDataComponent>(item, out var metadata))
+                {
+                    var entityName = metadata.EntityName;
+                    var prototypeName = metadata.EntityPrototype?.Name ?? "";
+                    
+                    // Only store if custom name differs from prototype
+                    if (!string.IsNullOrEmpty(entityName) && entityName != prototypeName)
+                    {
+                        entityData["entityName"] = entityName;
+                        Log.Info($"Stored custom entity name: {entityName}");
+                    }
+                    
+                    // Store entity description if it differs from prototype default
+                    var entityDesc = metadata.EntityDescription;
+                    var prototypeDesc = metadata.EntityPrototype?.Description ?? "";
+                    
+                    // Only store if custom description differs from prototype
+                    if (!string.IsNullOrEmpty(entityDesc) && entityDesc != prototypeDesc)
+                    {
+                        entityData["entityDescription"] = entityDesc;
+                        Log.Info($"Stored custom entity description: {entityDesc}");
+                    }
+                }
+                
                 // Store stack count if it's a stack
                 if (TryComp<StackComponent>(item, out var stack))
                 {
@@ -498,8 +591,13 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
             return;
         }
 
-        // Verify box is actually lost (has LastWithdrawn set and no items)
-        if (!box.LastWithdrawn.HasValue || box.Items.Count > 0)
+        // Verify box is actually lost (withdrawn in previous round with no items)
+        bool isLost = box.LastWithdrawn.HasValue && 
+                      box.LastWithdrawnRoundId.HasValue && 
+                      box.LastWithdrawnRoundId.Value != _gameTicker.RoundId && 
+                      box.Items.Count == 0;
+        
+        if (!isLost)
         {
             ConsolePopup(player, "This box is not lost and cannot be reclaimed.");
             PlayDenySound(consoleUid, component);
@@ -508,6 +606,14 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
 
         // Delete the database record
         await _dbManager.DeleteSafetyDepositBox(boxId);
+
+        // Create a new database record for the replacement box
+        var newBox = await _dbManager.PurchaseSafetyDepositBox(
+            userId,
+            characterIndex,
+            MetaData(player).EntityName,
+            box.BoxSize
+        );
 
         // Spawn a new empty physical box
         string prototypeId = box.BoxSize switch
@@ -520,12 +626,15 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
 
         var boxEntity = Spawn(prototypeId, Transform(player).Coordinates);
         var boxComp = EnsureComp<SafetyDepositBoxComponent>(boxEntity);
-        boxComp.BoxId = box.BoxId;
+        boxComp.BoxId = newBox.BoxId;
         boxComp.OwnerId = userId;
         boxComp.CharacterIndex = characterIndex;
         boxComp.BoxPrototypeId = prototypeId;
         boxComp.OwnerName = MetaData(player).EntityName;
         Dirty(boxEntity, boxComp);
+
+        // Mark the box as withdrawn in the current round (since we're giving them a physical box)
+        await _dbManager.ClearSafetyDepositBoxItems(newBox.BoxId, _gameTicker.RoundId);
 
         // Restore nickname if one was saved
         if (!string.IsNullOrEmpty(box.Nickname))
@@ -579,6 +688,7 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         // Spawn the physical box (use stored box size to determine prototype)
         string prototypeId = box.BoxSize switch
         {
+            "Trial" => "SafetyDepositBoxTrial",
             "Small" => "SafetyDepositBoxSmall",
             "Medium" => "SafetyDepositBoxMedium",
             "Large" => "SafetyDepositBoxLarge",
@@ -703,6 +813,34 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
                         }
                     }
                     
+                    // Restore entity name if present
+                    if (entityData.ContainsKey("entityName"))
+                    {
+                        var entityName = entityData["entityName"].GetString();
+                        if (!string.IsNullOrEmpty(entityName))
+                        {
+                            if (TryComp<MetaDataComponent>(itemEntity, out var itemMetadata))
+                            {
+                                _metaDataSystem.SetEntityName(itemEntity, entityName, itemMetadata);
+                                Log.Info($"Restored entity name: {entityName}");
+                            }
+                        }
+                    }
+                    
+                    // Restore entity description if present
+                    if (entityData.ContainsKey("entityDescription"))
+                    {
+                        var entityDescription = entityData["entityDescription"].GetString();
+                        if (!string.IsNullOrEmpty(entityDescription))
+                        {
+                            if (TryComp<MetaDataComponent>(itemEntity, out var itemMetadata))
+                            {
+                                _metaDataSystem.SetEntityDescription(itemEntity, entityDescription, itemMetadata);
+                                Log.Info($"Restored entity description: {entityDescription}");
+                            }
+                        }
+                    }
+                    
                     // Restore stack count if present
                     if (entityData.ContainsKey("stackCount") && TryComp<StackComponent>(itemEntity, out var stack))
                     {
@@ -741,7 +879,7 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
         }
 
         // Clear items from database
-        await _dbManager.ClearSafetyDepositBoxItems(boxId);
+        await _dbManager.ClearSafetyDepositBoxItems(boxId, _gameTicker.RoundId);
 
         // Try to put it in player's hands or place it near them
         if (!_hands.TryPickupAnyHand(player, boxEntity))
@@ -760,14 +898,10 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
 
     private void OnSlotChanged(EntityUid uid, SafetyDepositConsoleComponent component, ContainerModifiedMessage args)
     {
-        // Update UI for anyone who has this specific console open
-        var query = EntityQueryEnumerator<ActorComponent>();
-        while (query.MoveNext(out var actorUid, out _))
+        // Update UI for anyone who has this console's UI open
+        foreach (var actor in _uiSystem.GetActors(uid, SafetyDepositConsoleUiKey.Key))
         {
-            if (_uiSystem.TryGetOpenUi(actorUid, SafetyDepositConsoleUiKey.Key, out var bui) && bui.Owner == uid)
-            {
-                UpdateUI(uid, component, actorUid);
-            }
+            UpdateUI(uid, component, actor);
         }
     }
 

@@ -1138,3 +1138,46 @@ Entries:
   id: 6620
   time: '2026-01-29T18:53:09.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/396
+- author: kitbravo
+  changes:
+    - type: Add
+      message: Clarity
+    - type: Remove
+      message: Confusion
+    - type: Fix
+      message: >-
+        Fixed CGP and Shortband chat colors to be easily differentiated from
+        automated messages.
+  id: 6621
+  time: '2026-01-31T01:02:44.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/409
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Changed Hunger and Thirst component to match other species.
+  id: 6622
+  time: '2026-01-31T01:03:03.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/408
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Experimental Welders cannot be recycled to address exploit
+  id: 6623
+  time: '2026-01-31T01:03:47.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/406
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Interaction verbs print to chat as emote
+    - type: Tweak
+      message: '"Look at" verb now works on everything, not just mobs'
+  id: 6624
+  time: '2026-01-31T01:04:22.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/403
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added additional Round Summary Data
+  id: 6625
+  time: '2026-01-31T01:30:33.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/405

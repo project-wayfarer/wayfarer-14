@@ -579,6 +579,30 @@ namespace Content.Server.Lathe
             UpdateRunningAppearance(uid, false);
         }
 
+        /// <summary>
+        /// Refunds materials for unprinted items in a batch
+        /// </summary>
+        private void RefundMaterials(EntityUid uid, LatheComponent component, LatheRecipeBatch batch)
+        {
+            if (!_proto.TryIndex(batch.Recipe, out var recipe))
+                return;
+
+            var unprintedCount = batch.ItemsRequested - batch.ItemsPrinted;
+            if (unprintedCount <= 0)
+                return;
+
+            // Refund materials using the same calculation as consumption (but positive to add back)
+            foreach (var (mat, amount) in recipe.Materials)
+            {
+                var adjustedAmount = recipe.ApplyMaterialDiscount
+                    ? (int)(amount * component.FinalMaterialUseMultiplier)
+                    : amount;
+                adjustedAmount *= unprintedCount;
+
+                _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
+            }
+        }
+
         public void OnLatheDeleteRequestMessage(EntityUid uid, LatheComponent component, ref LatheDeleteRequestMessage args)
         {
             if (args.Index < 0 || args.Index >= component.Queue.Count)
@@ -589,6 +613,7 @@ namespace Content.Server.Lathe
                 LogImpact.Low,
                 $"{ToPrettyString(args.Actor):player} deleted a lathe job for ({batch.ItemsPrinted}/{batch.ItemsRequested}) {GetRecipeName(batch.Recipe)} at {ToPrettyString(uid):lathe}");
 
+            RefundMaterials(uid, component, batch);
             component.Queue.RemoveAt(args.Index);
             UpdateUserInterfaceState(uid, component);
         }
@@ -616,6 +641,19 @@ namespace Content.Server.Lathe
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
                 $"{ToPrettyString(args.Actor):player} aborted printing {GetRecipeName(_proto.Index(component.CurrentRecipe.GetValueOrDefault()))} at {ToPrettyString(uid):lathe}");
+
+            // Refund materials for the current recipe being aborted
+            if (_proto.TryIndex(component.CurrentRecipe.Value, out var recipe))
+            {
+                foreach (var (mat, amount) in recipe.Materials)
+                {
+                    var adjustedAmount = recipe.ApplyMaterialDiscount
+                        ? (int)(amount * component.FinalMaterialUseMultiplier)
+                        : amount;
+
+                    _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
+                }
+            }
 
             component.CurrentRecipe = null;
             FinishProducing(uid, component);
