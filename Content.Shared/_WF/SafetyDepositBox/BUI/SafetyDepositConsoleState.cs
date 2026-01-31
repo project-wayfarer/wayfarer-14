@@ -29,6 +29,11 @@ public sealed class SafetyDepositConsoleState : BoundUserInterfaceState
     public SafetyDepositBoxInfo? BoxInSlot;
 
     /// <summary>
+    /// Purchase cost for a trial box.
+    /// </summary>
+    public int TrialBoxCost;
+
+    /// <summary>
     /// Purchase cost for a small box.
     /// </summary>
     public int SmallBoxCost;
@@ -43,22 +48,31 @@ public sealed class SafetyDepositConsoleState : BoundUserInterfaceState
     /// </summary>
     public int LargeBoxCost;
 
+    /// <summary>
+    /// The current round ID, used to determine if boxes are lost.
+    /// </summary>
+    public int CurrentRoundId;
+
     public SafetyDepositConsoleState(
         List<SafetyDepositBoxInfo> ownedBoxes,
         int insertedCash,
         bool hasBoxInSlot,
         SafetyDepositBoxInfo? boxInSlot,
+        int trialBoxCost,
         int smallBoxCost,
         int mediumBoxCost,
-        int largeBoxCost)
+        int largeBoxCost,
+        int currentRoundId)
     {
         OwnedBoxes = ownedBoxes;
         InsertedCash = insertedCash;
         HasBoxInSlot = hasBoxInSlot;
         BoxInSlot = boxInSlot;
+        TrialBoxCost = trialBoxCost;
         SmallBoxCost = smallBoxCost;
         MediumBoxCost = mediumBoxCost;
         LargeBoxCost = largeBoxCost;
+        CurrentRoundId = currentRoundId;
     }
 }
 
@@ -74,8 +88,9 @@ public sealed class SafetyDepositBoxInfo
     public string? Nickname;
     public string BoxSize;
     public DateTime? LastWithdrawn;
+    public int? LastWithdrawnRoundId;
 
-    public SafetyDepositBoxInfo(Guid boxId, string ownerName, bool isDeposited, string? nickname = null, string boxSize = "Small", DateTime? lastWithdrawn = null)
+    public SafetyDepositBoxInfo(Guid boxId, string ownerName, bool isDeposited, string? nickname = null, string boxSize = "Small", DateTime? lastWithdrawn = null, int? lastWithdrawnRoundId = null)
     {
         BoxId = boxId;
         OwnerName = ownerName;
@@ -83,5 +98,6 @@ public sealed class SafetyDepositBoxInfo
         Nickname = nickname;
         BoxSize = boxSize;
         LastWithdrawn = lastWithdrawn;
+        LastWithdrawnRoundId = lastWithdrawnRoundId;
     }
 }

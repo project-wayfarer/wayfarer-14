@@ -6,6 +6,7 @@ using System.Text.Json;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using NpgsqlTypes;
@@ -15,9 +16,11 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    partial class PostgresServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260129195715_AddLastWithdrawnRoundIdToSafetyDepositBox")]
+    partial class AddLastWithdrawnRoundIdToSafetyDepositBox
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1495,10 +1498,6 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RoundNumber"));
 
-                    b.Property<JsonDocument>("MailMetricsData")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("mail_metrics_data");
-
                     b.Property<JsonDocument>("PlayerManifest")
                         .HasColumnType("jsonb")
                         .HasColumnName("player_manifest");
@@ -1518,10 +1517,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<DateTime>("RoundStartTime")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("round_start_time");
-
-                    b.Property<JsonDocument>("SpesosFlowData")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("spesos_flow_data");
 
                     b.HasKey("RoundNumber")
                         .HasName("PK_wayfarer_round_summaries");

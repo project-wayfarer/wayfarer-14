@@ -11,6 +11,12 @@ namespace Content.Shared._WF.SafetyDepositBox.Components;
 public sealed partial class SafetyDepositConsoleComponent : Component
 {
     /// <summary>
+    /// Cost to purchase a trial safety deposit box.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public int TrialBoxCost = 10000;
+
+    /// <summary>
     /// Cost to purchase a small safety deposit box.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]

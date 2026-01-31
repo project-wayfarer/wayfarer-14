@@ -366,7 +366,9 @@ namespace Content.Server.Database
             DateTime roundEndTime,
             JsonDocument? profitLossData,
             JsonDocument? playerStories,
-            JsonDocument? playerManifest);
+            JsonDocument? playerManifest,
+            JsonDocument? mailMetricsData,
+            JsonDocument? spesosFlowData);
 
         #endregion
 
@@ -398,7 +400,7 @@ namespace Content.Server.Database
         Task<WayfarerSafetyDepositBox?> GetSafetyDepositBox(Guid boxId, CancellationToken cancel = default);
         Task DepositSafetyDepositBoxItems(Guid boxId, List<string> entityDataList, CancellationToken cancel = default);
         Task UpdateSafetyDepositBoxNickname(Guid boxId, string? nickname, CancellationToken cancel = default);
-        Task ClearSafetyDepositBoxItems(Guid boxId, CancellationToken cancel = default);
+        Task ClearSafetyDepositBoxItems(Guid boxId, int roundId, CancellationToken cancel = default);
         Task<int> DeleteStaleSafetyDepositBoxes(int daysStale, CancellationToken cancel = default);
         Task DeleteSafetyDepositBox(Guid boxId, CancellationToken cancel = default);
 
@@ -1147,7 +1149,9 @@ namespace Content.Server.Database
             DateTime roundEndTime,
             JsonDocument? profitLossData,
             JsonDocument? playerStories,
-            JsonDocument? playerManifest)
+            JsonDocument? playerManifest,
+            JsonDocument? mailMetricsData,
+            JsonDocument? spesosFlowData)
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.AddWayfarerRoundSummary(
@@ -1156,7 +1160,9 @@ namespace Content.Server.Database
                 roundEndTime,
                 profitLossData,
                 playerStories,
-                playerManifest));
+                playerManifest,
+                mailMetricsData,
+                spesosFlowData));
         }
 
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
@@ -1210,10 +1216,10 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.UpdateSafetyDepositBoxNickname(boxId, nickname, cancel));
         }
 
-        public Task ClearSafetyDepositBoxItems(Guid boxId, CancellationToken cancel = default)
+        public Task ClearSafetyDepositBoxItems(Guid boxId, int roundId, CancellationToken cancel = default)
         {
             DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.ClearSafetyDepositBoxItems(boxId, cancel));
+            return RunDbCommand(() => _db.ClearSafetyDepositBoxItems(boxId, roundId, cancel));
         }
 
         public Task<int> DeleteStaleSafetyDepositBoxes(int daysStale, CancellationToken cancel = default)

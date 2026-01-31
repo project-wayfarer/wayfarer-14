@@ -22,6 +22,7 @@ public sealed class SafetyDepositPurchaseMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public enum SafetyDepositBoxSize
 {
+    Trial,
     Small,
     Medium,
     Large

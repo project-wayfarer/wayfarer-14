@@ -1412,6 +1412,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("round_number");
 
+                    b.Property<byte[]>("MailMetricsData")
+                        .HasColumnType("jsonb")
+                        .HasColumnName("mail_metrics_data");
+
                     b.Property<byte[]>("PlayerManifest")
                         .HasColumnType("jsonb")
                         .HasColumnName("player_manifest");
@@ -1431,6 +1435,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<DateTime>("RoundStartTime")
                         .HasColumnType("TEXT")
                         .HasColumnName("round_start_time");
+
+                    b.Property<byte[]>("SpesosFlowData")
+                        .HasColumnType("jsonb")
+                        .HasColumnName("spesos_flow_data");
 
                     b.HasKey("RoundNumber")
                         .HasName("PK_wayfarer_round_summaries");
@@ -1461,6 +1469,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<DateTime?>("LastWithdrawn")
                         .HasColumnType("TEXT")
                         .HasColumnName("last_withdrawn");
+
+                    b.Property<int?>("LastWithdrawnRoundId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("last_withdrawn_round_id");
 
                     b.Property<string>("Nickname")
                         .HasColumnType("TEXT")

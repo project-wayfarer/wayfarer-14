@@ -1,5 +1,7 @@
 using Content.Server.Chat.Managers;
+using Content.Server.Chat.Systems;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Chat;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -14,6 +16,7 @@ namespace Content.Server.InteractionVerbs;
 public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
@@ -117,6 +120,13 @@ public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
             {
                 var filter = Filter.PvsExcept(args.User).RemoveWhere(s => s.AttachedEntity == args.Target);
                 _popupSystem.PopupEntity(othersMessage, args.Target, filter, true, PopupType.Medium);
+            }
+
+            // Also send the message to chat as an emote
+            if (othersMessage != null)
+            {
+                _chatSystem.TrySendInGameICMessage(args.User, othersMessage, InGameICChatType.Emote, ChatTransmitRange.Normal, 
+                    nameOverride: null, ignoreActionBlocker: true);
             }
         }
 

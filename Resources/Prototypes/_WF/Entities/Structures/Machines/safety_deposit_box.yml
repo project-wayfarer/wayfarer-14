@@ -1,120 +1,111 @@
 # Safety Deposit Box Entities
 
+# Base parent for all safety deposit boxes
 - type: entity
-  id: SafetyDepositBoxSmall
-  name: safety deposit box (small)
-  description: A small secure box for storing valuables. Can hold 2x2 items.
+  id: SafetyDepositBoxBase
+  abstract: true
   parent: BaseStorageItem
   components:
-  - type: Sprite
-    sprite: _WF/Objects/Economy/depositboxsmall.rsi
-    state: icon
   - type: GenericVisualizer
     visuals:
       enum.StorageVisuals.Open:
         base:
           True: { state: icon-open }
           False: { state: icon }
+  - type: Storage
+    whitelist:
+      tags:
+      - Document
+      - Paper
+      - Write
+      components:
+      - Clothing
+    blacklist:
+      components:
+      - IdCard
+      - Currency
+      - Store
+      - Gun
+      - EncryptionKey
+      - Battery
+      - PowerCell
+      - Implant
+      - ShockOnTrigger  # Prevents shock collars
+      - AdvancedCollar  # Prevents advanced collars
+  - type: SafetyDepositBox
+  - type: Appearance
+  - type: Tag
+    tags:
+    - SafetyDepositBox
+
+- type: entity
+  id: SafetyDepositBoxTrial
+  name: safety deposit box (trial)
+  description: A trial box for storing a single item. Can hold 1x1 items. Limited to one per character.
+  parent: SafetyDepositBoxBase
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Economy/depositboxsmall.rsi
+    state: icon
+  - type: Item
+    size: Tiny
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,0,0
+
+- type: entity
+  id: SafetyDepositBoxSmall
+  name: safety deposit box (small)
+  description: A small secure box for storing valuables. Can hold 2x2 items.
+  parent: SafetyDepositBoxBase
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Economy/depositboxsmall.rsi
+    state: icon
   - type: Item
     size: Small
   - type: Storage
     maxItemSize: Small
     grid:
     - 0,0,1,1
-    blacklist:
-      components:
-      - IdCard
-      - Currency  # Prevents telecrystals and other currency items
-      - Store     # Prevents uplinks
-      - Gun       # Prevents firearms
-      - EncryptionKey  # Prevents radio encryption keys
-      - Battery   # Prevents power cell farming
-      - PowerCell # Prevents power cell farming
-      - Implant   # Prevents implant farming
-  - type: SafetyDepositBox
-  - type: Appearance
-  - type: Tag
-    tags:
-    - SafetyDepositBox
 
 - type: entity
   id: SafetyDepositBoxMedium
   name: safety deposit box (medium)
   description: A medium secure box for storing valuables. Can hold 2x4 items.
-  parent: BaseStorageItem
+  parent: SafetyDepositBoxBase
   components:
   - type: Sprite
     sprite: _WF/Objects/Economy/depositboxmedium.rsi
     state: icon
-  - type: GenericVisualizer
-    visuals:
-      enum.StorageVisuals.Open:
-        base:
-          True: { state: icon-open }
-          False: { state: icon }
   - type: Item
     size: Normal
   - type: Storage
     maxItemSize: Normal
     grid:
     - 0,0,1,3
-    blacklist:
-      components:
-      - IdCard
-      - Currency
-      - Store
-      - Gun
-      - EncryptionKey
-      - Battery
-      - PowerCell
-      - Implant
-  - type: SafetyDepositBox
-  - type: Appearance
-  - type: Tag
-    tags:
-    - SafetyDepositBox
 
 - type: entity
   id: SafetyDepositBoxLarge
   name: safety deposit box (large)
   description: A large secure box for storing valuables. Can hold 2x6 items.
-  parent: BaseStorageItem
+  parent: SafetyDepositBoxBase
   components:
   - type: Sprite
     sprite: _WF/Objects/Economy/depositboxlarge.rsi
     state: icon
-  - type: GenericVisualizer
-    visuals:
-      enum.StorageVisuals.Open:
-        base:
-          True: { state: icon-open }
-          False: { state: icon }
   - type: Item
     size: Large
   - type: Storage
     maxItemSize: Large
     grid:
     - 0,0,1,5
-    blacklist:
-      components:
-      - IdCard
-      - Currency
-      - Store
-      - Gun
-      - EncryptionKey
-      - Battery
-      - PowerCell
-      - Implant
-  - type: SafetyDepositBox
-  - type: Appearance
-  - type: Tag
-    tags:
-    - SafetyDepositBox
 
 - type: entity
   id: SafetyDepositConsole
   name: safety deposit box console
-  description: "A console for purchasing and managing safety deposit boxes. Small: $2,250,000 | Medium: $3,500,000 | Large: $4,250,000"
+  description: "A console for purchasing and managing safety deposit boxes."
   parent: BaseStructure
   components:
   - type: Sprite
