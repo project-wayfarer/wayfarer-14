@@ -51,5 +51,11 @@ public sealed partial class RottingComponent : Component
     };
 
     [DataField]
-    public float DamageCap = 350f;
+    public float DamageCap = 300f;
+
+    /// <summary>
+    /// Total blunt damage dealt by rotting so far.
+    /// </summary>
+    [DataField]
+    public float TotalBluntDamageDealt = 0f;
 }
