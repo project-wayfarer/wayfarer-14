@@ -213,17 +213,18 @@
   name: chat-emote-name-coo
   category: Vocal
   available: false
-  #icon: _Impstation/Interface/Emotes/coo.png  ##Icon references an ImpStation image, but this is an orphan. We can find something to replace this eventually. 12/27/25
+  icon: _Impstation/Interface/Emotes/coo.png
   whitelist:
-    tags:
-    - VoxEmotes
+    components:
+    - Vocal
   blacklist:
     components:
-    - BorgChassis
-  chatMessages: [ chat-emote-msg-coo ]
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-coo"]
   chatTriggers:
-  - coo
-  - coos
+   - coo
+   - coos
+   - cooed
 
 # hand emotes
 - type: emote
