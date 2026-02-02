@@ -43,7 +43,7 @@
     claws_feet_left_behind: claws_feet_left
   layering:
     claws_feet_left: LFoot
-    claws_feet_left_behind: LFootBehind
+#    claws_feet_left_behind: LFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_left
@@ -65,7 +65,7 @@
     claws_feet_right_behind: claws_feet_right
   layering:
     claws_feet_right: RFoot
-    claws_feet_right_behind: RFootBehind
+#    claws_feet_right_behind: RFootBehind
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_right
@@ -134,7 +134,7 @@
 
 - type: marking
   id: OldKinVoxScutesArmsLeft
-  bodyPart: LHand, LArm #Why? Because it's technically on the hand.
+  bodyPart: LHand #Why? Because it's technically on the hand.
   markingCategory: Arms
   canBeDisplaced: false
   speciesRestriction: [OldKinVox]
@@ -149,7 +149,7 @@
 
 - type: marking
   id: OldKinVoxScutesArmsRight
-  bodyPart: RHand, RArm #Why? Because it's technically on the hand.
+  bodyPart: RHand #Why? Because it's technically on the hand.
   markingCategory: Arms
   canBeDisplaced: false
   speciesRestriction: [OldKinVox]
@@ -171,7 +171,7 @@
   colorLinks:
     scutes_legs_left: scutes_foot_left
   layering:
-    r_foot_behind: RFootBehind
+#    r_foot_behind: RFootBehind
     scutes_legs_left: LLeg
     scutes_foot_left: LFoot
   sprites:
@@ -196,7 +196,7 @@
   colorLinks:
     scutes_legs_right: scutes_foot_right
   layering:
-    l_foot_behind: LFootBehind
+#    l_foot_behind: LFootBehind
     scutes_legs_right: RLeg
     scutes_foot_right: RFoot
   sprites:

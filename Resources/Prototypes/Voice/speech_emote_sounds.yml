@@ -266,16 +266,42 @@
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
-    MonkeyScreeches: # Frontier
-      collection: MonkeyScreeches # Frontier
+    Cough:
+      path: /Audio/Voice/Vox/vox_cough.ogg
+    Sigh:
+      path: /Audio/Voice/Vox/vox_sigh.ogg
+    Click:
+      path: /Audio/Voice/Vox/vox_click.ogg
+    #Chitter: # DeltaV - Combined upstream and impstation sounds
+    #  path: /Audio/Voice/Vox/vox_chitter.ogg
     Honk:
       collection: BikeHorn
+    Crying:
+      collection: VoxCry # DeltaV - Combined upstream and Imp sounds
+      params: # Imp
+        volume: -7
     Weh:
       collection: Weh
     Hew:
       collection: Hew
-    Belch: # Frontier
-      collection: Belch # Frontier
+    Gasp:
+      collection: VoxGasp # DeltaV - Combined upstream and our sounds
+    DefaultDeathgasp:
+      collection: VoxDeathgasp # DeltaV - Combined upstream and our sounds
+    # Begin Impstation Additions
+    Chitter:
+      collection: VoxChitter # DeltaV - Combined upstream and impstation sounds
+      params:
+        volume: -5
+    Coo:
+      collection: VoxCoo
+      params:
+        volume: -7
+    Hiss:
+      collection: VoxHiss
+      params:
+        volume: -5
+    # End Impstation Additions
   params:
     variation: 0.125
     # We need vox sounds for the other emotes
