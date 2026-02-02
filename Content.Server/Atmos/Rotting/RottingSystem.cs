@@ -119,7 +119,7 @@ public sealed class RottingSystem : SharedRottingSystem
                 else
                 {
                     // Calculate how much blunt damage we're about to deal
-                    var bluntDamage = damage.DamageDict.GetValueOrDefault("Blunt", 0);
+                    var bluntDamage = (float)damage.DamageDict.GetValueOrDefault("Blunt", 0);
                     
                     // If this would exceed the cap, reduce it
                     if (rotting.TotalBluntDamageDealt + bluntDamage > rotting.DamageCap)
