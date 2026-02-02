@@ -9,6 +9,7 @@ using Content.Shared.Wieldable;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using Robust.Shared.Timing; // WF
 
 namespace Content.Shared.Item.ItemToggle;
 /// <summary>
@@ -23,6 +24,7 @@ public sealed class ItemToggleSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IGameTiming _timing = default!; // WF
 
     private EntityQuery<ItemToggleComponent> _query;
 
@@ -345,6 +347,9 @@ public sealed class ItemToggleSystem : EntitySystem
     /// </summary>
     private void UpdateActiveSound(Entity<ItemToggleActiveSoundComponent> ent, ref ItemToggledEvent args)
     {
+        if (!_timing.IsFirstTimePredicted) // WF - prevent infinite e-sword hum
+            return;
+
         var (uid, comp) = ent;
         if (!args.Activated)
         {
