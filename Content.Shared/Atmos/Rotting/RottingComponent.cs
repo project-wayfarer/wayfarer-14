@@ -45,7 +45,7 @@ public sealed partial class RottingComponent : Component
     {
         DamageDict = new()
         {
-            { "Blunt", 0.06 },
+ //           { "Blunt", 0.06 }, #WF prevent gibbing
             { "Cellular", 0.06 }
         }
     };
