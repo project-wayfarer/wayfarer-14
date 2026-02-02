@@ -69,7 +69,7 @@
     thermalRegulationTemperatureThreshold: 2 # bottoms out at 34.5kelvin in space
 
   - type: Temperature
-    coldDamageThreshold: 30.97 # required for math things
+    coldDamageThreshold: 1.0 # required for math things
     heatDamageThreshold: 308 # Very close to station temperature, don't put near a fire. Or do, I'm not your mother
     coldDamage:
       types:
@@ -81,7 +81,7 @@
     thresholds:
       85.53: 0.8
       45.87: 0.6
-      30.97: 0.4 #Theoretically impossible, unless you start freeze raying them in space.
+      1.0: 0.4 #Theoretically impossible, unless you start freeze raying them in space.
 
   - type: DamageVisuals
     damageOverlayGroups:
