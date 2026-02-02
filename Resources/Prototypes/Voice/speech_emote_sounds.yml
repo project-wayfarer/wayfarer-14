@@ -272,12 +272,10 @@
       path: /Audio/Voice/Vox/vox_sigh.ogg
     Click:
       path: /Audio/Voice/Vox/vox_click.ogg
-    #Chitter: # DeltaV - Combined upstream and impstation sounds
-    #  path: /Audio/Voice/Vox/vox_chitter.ogg
     Honk:
       collection: BikeHorn
     Crying:
-      collection: VoxCry # DeltaV - Combined upstream and Imp sounds
+      collection: VoxCry # Imp sounds
       params: # Imp
         volume: -7
     Weh:
@@ -285,12 +283,12 @@
     Hew:
       collection: Hew
     Gasp:
-      collection: VoxGasp # DeltaV - Combined upstream and our sounds
+      collection: VoxGasp # Combined DeltaV and impstation sounds
     DefaultDeathgasp:
-      collection: VoxDeathgasp # DeltaV - Combined upstream and our sounds
+      collection: VoxDeathgasp # Combined DeltaV and impstation sounds
     # Begin Impstation Additions
     Chitter:
-      collection: VoxChitter # DeltaV - Combined upstream and impstation sounds
+      collection: VoxChitter # Combined DeltaV and impstation sounds
       params:
         volume: -5
     Coo:
