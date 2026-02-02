@@ -351,9 +351,13 @@
   whitelist:
     components:
     - MobState
+  blacklist: # Wayfarer
+    components:
+    - Silicon
+    - BorgChassis
   chatMessages: ["chat-emote-msg-deathgasp"]
-  # chatTriggers: # DeltaV - Remove from the emote wheel
-  # - deathgasp
+  chatTriggers: # Wayfarer - Added back to wheel
+  - deathgasp
 
 - type: emote
   id: MonkeyDeathgasp
