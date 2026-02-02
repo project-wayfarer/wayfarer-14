@@ -8,12 +8,12 @@
   - type: HumanoidAppearance
     species: Feroxi
   - type: Hunger
-    baseDecayRate: 0.005
+    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer - WHY WAS THIS SO LOW?
   - type: Carriable
   - type: Inventory
     speciesId: feroxi
   - type: Thirst
-    baseDecayRate: 0.005
+    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer
   - type: Icon
     sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: full

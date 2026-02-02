@@ -8,9 +8,9 @@
   - type: HumanoidAppearance
     species: Rodentia
   - type: Thirst
-    baseDecayRate: 0.005
+    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer
   - type: Hunger
-    baseDecayRate: 0.005
+    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Inventory
     speciesId: rodentia
