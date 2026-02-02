@@ -45,8 +45,11 @@ public sealed partial class RottingComponent : Component
     {
         DamageDict = new()
         {
- //           { "Blunt", 0.06 }, #WF prevent gibbing
+            { "Blunt", 0.06 },
             { "Cellular", 0.06 }
         }
     };
+
+    [DataField]
+    public float DamageCap = 350f;
 }

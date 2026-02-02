@@ -58,7 +58,7 @@ public sealed class RottingSystem : SharedRottingSystem
         {
             if (TryComp<ProRottingContainerComponent>(container.Owner, out var rotContainer))
                 return rotContainer.DecayModifier;
-            
+
             if (TryComp<SlowDecayContainerComponent>(container.Owner, out var slowContainer))
                 return slowContainer.DecayModifier;
         }
@@ -106,7 +106,7 @@ public sealed class RottingSystem : SharedRottingSystem
                 continue;
             rotting.TotalRotTime += rotting.RotUpdateRate * GetRotRate(uid);
 
-            if (rotting.DealDamage)
+            if (rotting.DealDamage && TryComp<DamageableComponent>(uid, out var damageable) && damageable.TotalDamage<=rotting.DamageCap)
             {
                 var damage = rotting.Damage * rotting.RotUpdateRate.TotalSeconds;
                 _damageable.TryChangeDamage(uid, damage, true, false);
