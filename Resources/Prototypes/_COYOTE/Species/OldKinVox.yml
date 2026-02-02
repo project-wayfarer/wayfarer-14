@@ -15,9 +15,6 @@
   - Unsexed # NO WAY MY VOX SEXES ALL THE TIME
   kind:
   - VoxLike
-  allowDigilegDisplacement: false
-
-  CustomName: false
 
   minAge: 500     # OLD-kin, for a reason.
   maxAge: 1000000 # Their age is based off their cortical stack, not the body they inhabit
@@ -30,8 +27,6 @@
   minWidth: 0.85
   #defaultWidth: 1.2 Floofstation - disabled due to upstream bug, this is broken for any value other than 1.
   maxWidth: 1.35
-  AverageHeight: 211.32
-  AverageWidth: 48
 
 - type: speciesBaseSprites
   id: MobOldKinVoxSprites
