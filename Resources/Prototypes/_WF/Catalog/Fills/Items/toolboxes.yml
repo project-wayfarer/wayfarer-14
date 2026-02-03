@@ -1,11 +1,31 @@
 - type: entity
   id: PokerChipCaseFilled
+  description: A sleek metal case, stocked with poker chips for gambling games. Includes all the chips necessary to play, and deck of cards.
   name: poker chip case
   suffix: Filled
   parent: PokerChipCase
   components:
   - type: StorageFill
     contents:
-    - id: CrowbarOrange
-    - id: Wrench
-    - id: Welder
+    - id: WhitePokerChip
+    - id: WhitePokerChip
+    - id: RedPokerChip
+    - id: GreenPokerChip
+    - id: BluePokerChip
+    - id: YellowPokerChip
+    - id: BlackPokerChip
+    - id: CardBoxBlack
+      orGroup: CardDeck
+    - id: CardBoxNanotrasen
+      orGroup: CardDeck
+      prob: 0.25
+    - id: CardBoxSyndicate
+      orGroup: CardDeck
+      prob: 0.15
+    - id: WhitePokerChip
+    - id: WhitePokerChip
+    - id: RedPokerChip
+    - id: GreenPokerChip
+    - id: BluePokerChip
+    - id: YellowPokerChip
+    - id: BlackPokerChip
