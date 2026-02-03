@@ -1,79 +1,68 @@
 - type: entity
-  name: red poker chip
+  name: white poker chip
   parent: BaseItem
+  id: PokerChip
+  description: A white poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  components:
+  - type: Tag
+    tags:
+    - PokerChip
+  - type: Sprite
+    sprite: _TheDen/Objects/Fun/poker_chips.rsi
+    state: chip
+  - type: Item
+    size: Tiny
+  - type: EmitSoundOnPickup
+    sound: /Audio/_TheDen/Items/Poker_Chips/chips_handle_large.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_TheDen/Items/Poker_Chips/chips_stack.ogg
+
+- type: entity
+  name: red poker chip
+  parent: PokerChip
   id: RedPokerChip
-  description: A red poker chip, worth 5 spesos. Gambling is fun!
+  description: A red poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
   components:
   - type: Sprite
     sprite: _TheDen/Objects/Fun/poker_chips.rsi
     state: chip_red
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_stack.ogg
 
 - type: entity
   name: green poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: GreenPokerChip
-  description: A green poker chip, worth 25 spesos. Gambling is fun!
+  description: A green poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
   components:
   - type: Sprite
     sprite: _TheDen/Objects/Fun/poker_chips.rsi
     state: chip_green
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_stack.ogg
 
 - type: entity
   name: yellow poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: YellowPokerChip
-  description: A yellow poker chip, worth 10 spesos. Gambling is fun!
+  description: A yellow poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
   components:
   - type: Sprite
     sprite: _TheDen/Objects/Fun/poker_chips.rsi
     state: chip_yellow
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_stack.ogg
 
 - type: entity
   name: blue poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: BluePokerChip
-  description: A blue poker chip, worth 50 spesos. Gambling is fun!
+  description: A blue poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
   components:
   - type: Sprite
     sprite: _TheDen/Objects/Fun/poker_chips.rsi
     state: chip_blue
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_stack.ogg
 
 - type: entity
   name: black poker chip
-  parent: BaseItem
+  parent: PokerChip
   id: BlackPokerChip
-  description: A black poker chip, worth 100 spesos. Gambling is fun!
+  description: A black poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
   components:
   - type: Sprite
     sprite: _TheDen/Objects/Fun/poker_chips.rsi
     state: chip_black
-  - type: Item
-    size: Tiny
-  - type: EmitSoundOnPickup
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_handle_large.ogg
-  - type: EmitSoundOnDrop
-    sound: /Audio/_TheDen/Items/Poker_Chips/chips_stack.ogg
