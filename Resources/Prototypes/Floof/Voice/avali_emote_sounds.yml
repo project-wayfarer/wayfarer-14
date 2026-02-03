@@ -40,6 +40,10 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Gasp: # Wayfarer
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleAvali
@@ -78,3 +82,7 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Gasp: # Wayfarer
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

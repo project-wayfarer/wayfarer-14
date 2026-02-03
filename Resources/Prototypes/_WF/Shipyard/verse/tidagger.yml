@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Maintainer Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Dagger
+  parent: BaseVesselAntag
+  name: TI Dagger
+  description: A rugged light fighter with a single coaxial cannon mounted on the front. Runs on Uranium. Manufactured by Telum Industries.
+  price: 42950
+  category: Small
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/verse/tidagger.yml
+  guidebookPage: Null
+  class:
+  - Pirate
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Dagger
+  mapName: 'Dagger'
+  mapPath: /Maps/_WF/Shuttles/verse/tidagger.yml
+  minPlayers: 0
+  stations:
+    Dagger:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Dagger {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+            NFPirate: [ 0, 0 ]

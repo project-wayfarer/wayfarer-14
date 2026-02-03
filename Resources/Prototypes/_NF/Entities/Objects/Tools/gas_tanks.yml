@@ -55,6 +55,9 @@
     air:
       volume: 20
       temperature: 293.15
+  - type: Tag # Wayfarer
+    tags: # Wayfarer
+    - DepositBlacklist # Wayfarer
 
 - type: entity
   parent: DoubleEmergencyAirTank
@@ -71,3 +74,6 @@
     air:
       volume: 10
       temperature: 293.15
+  - type: Tag # Wayfarer
+    tags: # Wayfarer
+    - DepositBlacklist # Wayfarer

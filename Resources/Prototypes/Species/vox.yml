@@ -14,6 +14,11 @@
   sexes:
   - Unsexed
 
+  minAge: 18    # 500 years is the basis of when vox began to undo their genetic modifications.
+  maxAge: 500   # Because vox are based on their mind and not body, this is a fairly new concept.
+  youngAge: 200
+  oldAge: 350
+
 - type: speciesBaseSprites
   id: MobVoxSprites
   sprites:

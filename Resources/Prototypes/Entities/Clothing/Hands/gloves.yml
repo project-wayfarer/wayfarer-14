@@ -425,6 +425,7 @@
     tags:
     - Kangaroo
     - WhitelistChameleon
+    - DepositBlacklist # Wayfarer
 
 - type: entity
   parent: [ClothingHandsBase, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
@@ -484,6 +485,7 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
+    - DepositBlacklist # Wayfarer
 
 - type: entity
   parent: [ClothingHandsKnuckleDusters, BaseC1Contraband] #Craftable version of base knuckledusters # Frontier: BaseMinorContraband
@@ -503,6 +505,7 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
+    - DepositBlacklist # Wayfarer
 
 - type: entity
   parent: [ClothingHandsBase, BaseC1Contraband] # Frontier: BaseGrandTheftContraband<BaseC1Contraband
@@ -530,6 +533,7 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
+    - DepositBlacklist # Wayfarer
   - type: StealTarget
     stealGroup: ClothingHandsKnuckleDustersQM
 
@@ -558,6 +562,7 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
+    - DepositBlacklist # Wayfarer
   - type: StaticPrice
     price: 2000
 
@@ -575,6 +580,9 @@
   - type: Clothing
     sprite: Clothing/Hands/Gloves/KnuckleDusters/electricknuckleduster.rsi
     equippedPrefix: on
+  - type: Tag # Wayfarer
+    tags: # Wayfarer
+    - DepositBlacklist # Wayfarer
   - type: Appearance
   - type: GenericVisualizer
     visuals:

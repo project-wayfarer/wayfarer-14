@@ -402,7 +402,7 @@ namespace Content.Server.Ghost
                 var jobName = _jobs.MindTryGetJobName(mind?.Mind);
                 var playerInfo = $"{Comp<MetaDataComponent>(attached).EntityName} ({jobName})";
 
-                if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
+                if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached) || _mobState.IsDead(attached))
                     yield return new GhostWarp(GetNetEntity(attached), playerInfo, false);
             }
         }

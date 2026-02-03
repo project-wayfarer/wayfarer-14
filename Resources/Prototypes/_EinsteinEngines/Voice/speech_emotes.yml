@@ -2,6 +2,9 @@
   id: SiliconDeathgasp
   name: chat-emote-name-deathgasp
   icon: Interface/Emotes/deathgasp.png
+  whitelist: # Wayfarer
+    components:
+    - Silicon
   chatMessages: ["chat-emote-msg-deathgasp-silicon"]
   chatTriggers:
   - sdeathgasp
@@ -10,6 +13,9 @@
   id: Boop
   name: chat-emote-name-boop
   category: Vocal
+  whitelist: # Wayfarer
+    components:
+    - Silicon
   chatMessages: [ boops ]
   chatTriggers:
     - boops
@@ -17,6 +23,19 @@
 - type: emote
   id: Whirr # uncategorized as it is generic
   name: chat-emote-name-whirr
+  whitelist: # Wayfarer
+    components:
+    - Silicon
   chatMessages: [ whirrs ]
   chatTriggers:
     - whirrs
+
+- type: emote # Wayfarer
+  id: SyndieBorgLaugh
+  name: chat-emote-name-laugh
+  whitelist:
+    components:
+    - Silicon
+  chatMessages: [ laughs ]
+  chatTriggers:
+  - synlaughs

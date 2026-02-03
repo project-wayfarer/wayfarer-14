@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/NebulaSS13/Nebula and modified by Yatiyaya",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "arm_markings_left",
+      "directions": 4
+    },
+    {
+        "name": "arm_markings_right",
+        "directions": 4
+      },
+    {
+      "name": "beak",
+      "directions": 4
+    },
+    {
+      "name": "claws_feet_left",
+      "directions": 4
+    },
+    {
+      "name": "claws_feet_left_behind",
+      "directions": 4
+    },
+    {
+      "name": "claws_feet_right",
+      "directions": 4
+    },
+    {
+      "name": "claws_feet_right_behind",
+      "directions": 4
+    },
+    {
+      "name": "claws_hands_left",
+      "directions": 4
+    },
+    {
+      "name": "claws_hands_right",
+      "directions": 4
+    },
+    {
+      "name": "crest",
+      "directions": 4
+    },
+    {
+      "name": "neck_markings",
+      "directions": 4
+    },
+    {
+      "name": "scutes_arms_left",
+      "directions": 4
+    },
+    {
+      "name": "scutes_arms_right",
+      "directions": 4
+    },
+    {
+      "name": "scutes_legs_left",
+      "directions": 4
+    },
+    {
+      "name": "scutes_foot_left",
+      "directions": 4
+    },
+    {
+      "name": "scutes_legs_right",
+      "directions": 4
+    },
+    {
+      "name": "scutes_foot_right",
+      "directions": 4
+    }
+  ]
+}
