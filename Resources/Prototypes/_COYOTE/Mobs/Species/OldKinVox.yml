@@ -218,6 +218,11 @@
           32:
             sprite: _COYOTE/Mobs/Species/OldKinVox/displacement.rsi
             state: back
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _COYOTE/Mobs/Species/OldKinVox/displacement.rsi
+            state: suitstorage
       ears:
         sizeMaps:
           32:
@@ -281,7 +286,16 @@
           32:
             sprite: _COYOTE/Mobs/Species/OldKinVox/displacement.rsi
             state: head
-
+      back:
+        sizeMaps:
+          32:
+            sprite: _COYOTE/Mobs/Species/OldKinVox/displacement.rsi
+            state: back
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: _COYOTE/Mobs/Species/OldKinVox/displacement.rsi
+            state: suitstorage
       ears:
         sizeMaps:
           32:

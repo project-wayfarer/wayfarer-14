@@ -211,3 +211,43 @@
       type:
         !type:SimpleColoring
         color: "#bc7d3e"
+
+- type: marking
+  id: OldKinVoxLongQuills
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _COYOTE/Mobs/Customization/OldKinVox/Hair.rsi
+      state: vox_longquills
+
+- type: marking
+  id: OldKinVoxMohawk
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _COYOTE/Mobs/Customization/OldKinVox/Hair.rsi
+      state: vox_mohawk
+
+- type: marking
+  id: OldKinVoxShortQuills
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _COYOTE/Mobs/Customization/OldKinVox/Hair.rsi
+      state: vox_shortquills
+
+- type: marking
+  id: OldKinVoxStubble
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _COYOTE/Mobs/Customization/OldKinVox/Hair.rsi
+      state: vox_stubble
