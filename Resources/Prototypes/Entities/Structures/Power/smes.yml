@@ -175,7 +175,7 @@
     state: advancedsmes-static
   # Frontier: upgradable SMES
   - type: UpgradeBattery
-    baseMaxCharge: 64000000
+    baseMaxCharge: 64000000 # WF - x4, was 16000000
   # End Frontier: upgradable SMES
 
 - type: entity
