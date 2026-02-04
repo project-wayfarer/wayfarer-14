@@ -8,12 +8,10 @@
   - type: HumanoidAppearance
     species: Feroxi
   - type: Hunger
-    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer - WHY WAS THIS SO LOW?
   - type: Carriable
   - type: Inventory
     speciesId: feroxi
   - type: Thirst
-    baseDecayRate: 0.05 # 0.005 -> 0.05 Wayfarer
   - type: Icon
     sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: full
@@ -102,11 +100,11 @@
     damageModifierSet: Feroxi
   - type: TypingIndicator
     proto: feroxi
-  - type: FeroxiDehydrate # hey bby, the CPAP stays on while we make out
-    overhydrated: 1.05
-    okay: 0.75
-    thirsty: 0.25
-    parched: 0.1
+ # - type: FeroxiDehydrate # hey bby, the CPAP stays on while we make out
+   # overhydrated: 1.05
+   # okay: 0.75
+   # thirsty: 0.25
+   # parched: 0.1
 
 - type: entity
   parent: MobHumanDummy
