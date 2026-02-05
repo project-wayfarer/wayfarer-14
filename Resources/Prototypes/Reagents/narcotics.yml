@@ -26,8 +26,8 @@
     Narcotic:
       effects:
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.35
-        sprintSpeedModifier: 1.35
+        walkSpeedModifier: 1.25 # WF reduction from 1.35
+        sprintSpeedModifier: 1.25 # WF reduction from 1.35
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -69,8 +69,8 @@
     Narcotic:
       effects:
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.25
-        sprintSpeedModifier: 1.25
+        walkSpeedModifier: 1.20 # WF reduction from 1.20
+        sprintSpeedModifier: 1.20 # WF reduction from 1.20
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
