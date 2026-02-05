@@ -99,7 +99,7 @@
     # Frontier: upgradable SMES
     - type: UpgradeBattery
       maxChargeMultiplier: 2
-      baseMaxCharge: 24000000 # WF change to support longer shifts
+      baseMaxCharge: 24000000 # WF - x3, was 8000000
     - type: UpgradePowerSupplyRamping
       scaling: Linear
       supplyRampingMultiplier: 1
@@ -126,8 +126,8 @@
   suffix: Basic, 24MJ
   components:
   - type: Battery
-    maxCharge: 24000000 # WF change to support longer shifts
-    startingCharge: 24000000 # WF change to support longer shifts
+    maxCharge: 24000000 # WF - x3, was 8000000
+    startingCharge: 24000000 # WF - x3, was 8000000
 
 - type: entity
   parent: SMESBasic
