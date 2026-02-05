@@ -63,14 +63,15 @@
   components:
   - type: Damageable
     damageContainer: Biological
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 400
-      behaviors:
-      - !type:GibBehavior { }
+#Remove destructible: WF gibbing prevention
+#  - type: Destructible
+#    thresholds:
+#    - trigger:
+#        !type:DamageTypeTrigger
+#        damageType: Blunt
+#        damage: 400
+#      behaviors:
+#      - !type:GibBehavior { }
 #    - trigger: # Frontier - Removed round remover
 #        !type:DamageTypeTrigger
 #        damageType: Heat
