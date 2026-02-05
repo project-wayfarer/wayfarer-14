@@ -69,7 +69,7 @@ public sealed partial class HungerComponent : Component
     public Dictionary<HungerThreshold, float> Thresholds = new()
     {
         { HungerThreshold.Overfed, 200.0f },
-        { HungerThreshold.Okay, 120.0f }, // Wayfarer 150 -> 120 - Should make larger meals more meaningful
+        { HungerThreshold.Okay, 150.0f },
         { HungerThreshold.Peckish, 100.0f },
         { HungerThreshold.Starving, 50.0f },
         { HungerThreshold.Dead, 0.0f }
