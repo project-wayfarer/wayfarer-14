@@ -819,6 +819,7 @@
             Heat: -0.33
             Shock: -0.33
             Cold: -0.33
+            Radiation: -0.05 # WF - Prevent annoying medibot spam when they see damage but can't heal radiation
 
 - type: reagent
   id: Lipozine
@@ -848,6 +849,12 @@
       effects:
       - !type:SatiateHunger
         factor: -1
+      #- !type:EvenHealthChange # WF - Kill Omni
+      #  damage:
+      #    Burn: -2
+      #    Toxin: -2
+      #    Airloss: -2
+      #    Brute: -2
 
 - type: reagent
   id: Ultravasculine

@@ -647,9 +647,11 @@
       pen:
         maxVol: 30
         reagents:
-        - ReagentId: Omnizine
+        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
           Quantity: 25
-        - ReagentId: TranexamicAcid
+        #- ReagentId: TranexamicAcid # WF - not needed, ichor closes wounds
+        #  Quantity: 5
+        - ReagentId: Saline
           Quantity: 5
   - type: Hypospray
     solutionName: pen

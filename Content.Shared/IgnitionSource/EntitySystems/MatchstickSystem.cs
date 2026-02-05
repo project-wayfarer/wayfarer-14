@@ -63,7 +63,8 @@ public sealed partial class MatchstickSystem : EntitySystem
 
     private void SetState(Entity<MatchstickComponent> ent, SmokableState newState)
     {
-        _lights.SetEnabled(ent, newState == SmokableState.Lit);
+        if (_lights.TryGetLight(ent, out var light))
+            _lights.SetEnabled(ent, newState == SmokableState.Lit, light);
 
         _appearance.SetData(ent, SmokingVisuals.Smoking, newState);
 

@@ -1252,3 +1252,40 @@ Entries:
   id: 6634
   time: '2026-02-02T23:15:16.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/430
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Fixed Matches casting light properly
+  id: 6635
+  time: '2026-02-04T06:29:20.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/434
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Changed character names to allow numbers
+  id: 6636
+  time: '2026-02-04T06:31:01.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/435
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: IPCs can fall down and crawl like everyone else.
+  id: 6637
+  time: '2026-02-05T04:57:40.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/438
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        Tricordrazine now heals a very small amount of radiation damage (5u =
+        1rad)
+  id: 6638
+  time: '2026-02-05T04:58:04.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/439
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: Combat medipens now heal again.
+  id: 6639
+  time: '2026-02-05T04:58:25.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/440
