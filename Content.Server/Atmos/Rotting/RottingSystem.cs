@@ -58,7 +58,7 @@ public sealed class RottingSystem : SharedRottingSystem
         {
             if (TryComp<ProRottingContainerComponent>(container.Owner, out var rotContainer))
                 return rotContainer.DecayModifier;
-            
+
             if (TryComp<SlowDecayContainerComponent>(container.Owner, out var slowContainer))
                 return slowContainer.DecayModifier;
         }
@@ -106,10 +106,36 @@ public sealed class RottingSystem : SharedRottingSystem
                 continue;
             rotting.TotalRotTime += rotting.RotUpdateRate * GetRotRate(uid);
 
-            if (rotting.DealDamage)
+            if (rotting.DealDamage && TryComp<DamageableComponent>(uid, out var damageable))
             {
                 var damage = rotting.Damage * rotting.RotUpdateRate.TotalSeconds;
-                _damageable.TryChangeDamage(uid, damage, true, false);
+                
+                // Check if we've hit the blunt damage cap
+                if (rotting.TotalBluntDamageDealt >= rotting.DamageCap)
+                {
+                    // Remove blunt damage from the damage to be dealt
+                    damage.DamageDict.Remove("Blunt");
+                }
+                else
+                {
+                    // Calculate how much blunt damage we're about to deal
+                    var bluntDamage = (float)damage.DamageDict.GetValueOrDefault("Blunt", 0);
+                    
+                    // If this would exceed the cap, reduce it
+                    if (rotting.TotalBluntDamageDealt + bluntDamage > rotting.DamageCap)
+                    {
+                        var remainingDamage = rotting.DamageCap - rotting.TotalBluntDamageDealt;
+                        damage.DamageDict["Blunt"] = remainingDamage;
+                        rotting.TotalBluntDamageDealt = rotting.DamageCap;
+                    }
+                    else
+                    {
+                        rotting.TotalBluntDamageDealt += bluntDamage;
+                    }
+                }
+                
+                if (damage.DamageDict.Count > 0)
+                    _damageable.TryChangeDamage(uid, damage, true, false);
             }
 
             if (TryComp<RotIntoComponent>(uid, out var rotInto))

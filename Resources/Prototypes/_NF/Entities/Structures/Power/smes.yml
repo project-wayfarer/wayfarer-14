@@ -30,14 +30,14 @@
         state: bles-open
   - type: UpgradeBattery
     maxChargeMultiplier: 1 # non-upgradeable
-    baseMaxCharge: 80000000
+    baseMaxCharge: 320000000 # WF - x4, was 80000000
   - type: BatteryInterface
     minChargeRate: 50000
     maxChargeRate: 1500000
     minSupply: 50000
     maxSupply: 1500000
   - type: Battery
-    maxCharge: 80000000
+    maxCharge: 320000000 # WF - x4, was 80000000
   - type: PowerNetworkBattery
     maxSupply: 1500000
     maxChargeRate: 50000

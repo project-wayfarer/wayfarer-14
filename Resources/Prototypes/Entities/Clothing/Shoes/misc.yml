@@ -159,8 +159,8 @@
   - type: ToggleClothing
     action: ActionToggleSpeedBoots
   - type: ClothingSpeedModifier
-    walkModifier: 1.7 # DeltaV
-    sprintModifier: 1.7 # DeltaV
+    walkModifier: 1.25 #  WF
+    sprintModifier: 1.25 # WF
     standing: true
   - type: Appearance
   - type: GenericVisualizer
