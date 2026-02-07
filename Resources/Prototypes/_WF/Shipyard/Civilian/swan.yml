@@ -1,0 +1,37 @@
+- type: vessel
+  id: Swan
+  parent: BaseVessel
+  name: TI Swan
+  description: A large Science vessel with it's own Medical Bay, powered by Solar energy and designed for long voyages
+  price: 44590
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/swan.yml
+  guidebookPage: Null
+  class:
+  - Science
+  - Medical
+  - Chemistry
+  engine:
+  - Plasma
+  - Solar
+
+- type: gameMap
+  id: Swan
+  mapName: 'Swan'
+  mapPath: /Maps/_WF/Shuttles/Civilian/swan.yml
+  minPlayers: 0
+  stations:
+    Swan:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Swan {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]
