@@ -1399,7 +1399,7 @@
   position: 2, 32
 
 # Wayfarer Autopilot: begin
-- type: technology 
+- type: technology
   id: WFAutopilotServer
   name: wf-research-technology-autopilot-server
   entityIcon: AutopilotServer
@@ -1924,3 +1924,19 @@
   - NFImprovedSalvageWeapons
   - NFExplosiveTechnology
   position: 4, 40
+
+# Wayfarer
+
+- type: technology
+  id: WFBlastMining
+  name: wf-research-technology-blastmining
+  entityIcon: ClothingHandsConcussiveGauntlets
+  discipline: NFSalvage
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - ClothingHandsConcussiveGauntlets
+  technologyPrerequisites:
+  - NFMassExcavation
+  - NFImprovedSalvageWeapons
+  position: 4, 39
