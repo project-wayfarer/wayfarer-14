@@ -174,7 +174,7 @@
     - 0,0,8,4
 
 - type: entity
-  parent: [ NFClothingDuffel, BaseC3Contraband ] # Frontier: ClothingBackpackDuffelSyndicate>NFClothingDuffel, BaseSyndicateContraband>BaseC3Contraband
+  parent: [ ClothingBackpackDuffelSyndicate, BaseC3Contraband ] # Frontier: BaseSyndicateContraband>BaseC3Contraband # WF - Restore ClothingBackpackDuffelSyndicate
   id: ClothingBackpackDuffelSyndicateBundle
   abstract: true
   components:

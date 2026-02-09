@@ -1,29 +1,32 @@
 - type: vessel
-  id: Hamger
+  id: Swan
   parent: BaseVessel
-  name: TI Hamger
-  description: A compact two-person salvaging shuttle. Manufactured by Telum Industries.
-  price: 44590
-  category: Small
+  name: UCA Swan
+  description: A large Science vessel with it's own Medical Bay, powered by Solar energy and designed for long voyages
+  price: 193180
+  category: Large
   group: Shipyard
-  shuttlePath: /Maps/_WF/Shuttles/verse/hamger.yml
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/swan.yml
   guidebookPage: Null
   class:
-  - Salvage
+  - Science
+  - Medical
+  - Chemistry
   engine:
-  - Uranium
+  - Plasma
+  - Solar
 
 - type: gameMap
-  id: Hamger
-  mapName: 'Hamger'
-  mapPath: /Maps/_WF/Shuttles/verse/hamger.yml
+  id: Swan
+  mapName: 'Swan'
+  mapPath: /Maps/_WF/Shuttles/Civilian/swan.yml
   minPlayers: 0
   stations:
-    Hamger:
+    Swan:
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Hamger {1}'
+        mapNameTemplate: 'Swan {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

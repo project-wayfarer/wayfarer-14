@@ -156,11 +156,11 @@
     Telecrystal: 8
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+  #conditions: # WF - Give ContraVend more choices
+  #- !type:StoreWhitelistCondition
+  #  whitelist:
+  #    tags:
+  #    - NukeOpsUplink
 
 - type: listing
   id: UplinkSniperBundle
@@ -339,18 +339,18 @@
       # components:
       # - SurplusBundle
 
-# - type: listing # Frontier
-  # id: UplinkC4
-  # name: uplink-c4-name
-  # description: uplink-c4-desc
-  # productEntity: C4
-  # discountCategory: veryRareDiscounts
-  # discountDownTo:
-    # Telecrystal: 1
-  # cost:
-    # Telecrystal: 2
-  # categories:
-  # - UplinkExplosives
+- type: listing
+  id: UplinkC4
+  name: uplink-c4-name
+  description: uplink-c4-desc
+  productEntity: C4
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkExplosives
 
 # - type: listing # Frontier
   # id: UplinkGrenadierRig
@@ -370,18 +370,18 @@
       # tags:
       # - NukeOpsUplink
 
-# - type: listing # Frontier
-  # id: UplinkC4Bundle
-  # name: uplink-c4-bundle-name
-  # description: uplink-c4-bundle-desc
-  # productEntity: ClothingBackpackDuffelSyndicateC4tBundle
-  # discountCategory: veryRareDiscounts
-  # discountDownTo:
-    # Telecrystal: 8
-  # cost:
-    # Telecrystal: 12 #you're buying bulk so its a 25% discount, so no additional random discount over it
-  # categories:
-  # - UplinkExplosives
+- type: listing # Frontier
+  id: UplinkC4Bundle
+  name: uplink-c4-bundle-name
+  description: uplink-c4-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateC4tBundle
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 12 # you're buying bulk so its a 25% discount, so no additional random discount over it
+  categories:
+  - UplinkExplosives
 
 - type: listing
   id: UplinkEmpGrenade
@@ -1412,19 +1412,19 @@
   # categories:
     # - UplinkImplants
 
-- type: listing
-  id: UplinkDnaScramblerImplant
-  name: uplink-dna-scrambler-implanter-name
-  description: uplink-dna-scrambler-implanter-desc
-  icon: { sprite: /Textures/Mobs/Species/Human/parts.rsi, state: full }
-  productEntity: DnaScramblerImplanter
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 2
-  cost:
-    Telecrystal: 5
-  categories:
-    - UplinkImplants
+#- type: listing # WF - DNA Scrambling isn't what we want
+#  id: UplinkDnaScramblerImplant
+#  name: uplink-dna-scrambler-implanter-name
+#  description: uplink-dna-scrambler-implanter-desc
+#  icon: { sprite: /Textures/Mobs/Species/Human/parts.rsi, state: full }
+#  productEntity: DnaScramblerImplanter
+#  discountCategory: usualDiscounts
+#  discountDownTo:
+#    Telecrystal: 2
+#  cost:
+#    Telecrystal: 5
+#  categories:
+#    - UplinkImplants
 
 - type: listing
   id: UplinkEmpImplanter
@@ -1744,11 +1744,11 @@
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+  # conditions: # WF - Give ContraVend more choices
+  # - !type:StoreWhitelistCondition
+  #   whitelist:
+  #     tags:
+  #     - NukeOpsUplink
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut
@@ -1757,14 +1757,14 @@
   icon: { sprite: /Textures/Structures/Storage/Crates/syndicate.rsi, state: icon }
   productEntity: CrateCybersunJuggernautBundle
   cost:
-    Telecrystal: 12
+    Telecrystal: 20
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+  #conditions: # WF - Give ContraVend more choices
+  #- !type:StoreWhitelistCondition
+  #  whitelist:
+  #    tags:
+  #    - NukeOpsUplink
 
 - type: listing
   id: UplinkClothingEyesHudSyndicate
@@ -1775,11 +1775,11 @@
     Telecrystal: 2
   categories:
     - UplinkWearables
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - NukeOpsUplink
+  #conditions: # WF - Give ContraVend more choices
+  #  - !type:StoreWhitelistCondition
+  #    whitelist:
+  #      tags:
+  #        - NukeOpsUplink
 
 - type: listing
   id: UplinkClothingConductingGloves
