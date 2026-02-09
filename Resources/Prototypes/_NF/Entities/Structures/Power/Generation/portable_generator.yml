@@ -182,3 +182,20 @@
     - type: MaterialStorage
       storage:
         FuelGradeBananium: 1000
+
+# Start Wayfarer
+- type: entity
+  parent:
+  - BaseGeneratorShuttle
+  - PortableGeneratorBioPacman
+  id: PortableGeneratorBioPacmanShuttle
+  suffix: BioFuel, 15 kW, Ship
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 400 # Frontier - 50<400 (doubled)
+        reagents:
+        - ReagentId: BioFuel
+          Quantity: 140 # Frontier - 35<140 (doubled)
+# End Wayfarer
