@@ -1,0 +1,39 @@
+
+
+
+- type: vessel
+  id: hammerhead
+  parent: BaseVessel
+  name: ZKW Hammerhead
+  description: A large medical vessel reminicent of the sphyrna mokarran. Suitable for long range rescue and recovery. Built at the ZK shipyards, while a little dated by modern standards, it holds up well.
+  price: 84150
+  category: large
+  group: Medical 
+  shuttlePath: /Maps/_WF/Shuttles/Zwergenkust/hammerhead.yml
+  guidebookPage: Null
+  class:
+  - Medical 
+  - Chemistry
+  engine:
+  - Uranium
+  - Solar
+
+- type: gameMap
+  id: hammerhead
+  mapName: 'ZKW hammerhead'
+  mapPath: /Maps/_WF/Shuttles/Zwergenkust/hammerhead.yml
+  minPlayers: 0
+  stations:
+    hammerhead:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'hammerhead {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]
