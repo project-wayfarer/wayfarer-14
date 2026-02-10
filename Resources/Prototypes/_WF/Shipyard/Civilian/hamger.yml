@@ -1,0 +1,34 @@
+- type: vessel
+  id: Hamger
+  parent: BaseVessel
+  name: TI Hamger
+  description: A compact two-person salvaging shuttle. Manufactured by Telum Industries.
+  price: 44590
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/hamger.yml
+  guidebookPage: Null
+  class:
+  - Salvage
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Hamger
+  mapName: 'Hamger'
+  mapPath: /Maps/_WF/Shuttles/Civilian/hamger.yml
+  minPlayers: 0
+  stations:
+    Hamger:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Hamger {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]

@@ -1,0 +1,44 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Maintainer Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Medivac
+  parent: BaseVessel
+  name: TI Medivac
+  description: A small, agile paramedic ship. Includes medical facilities and a small docking bay. Manufactured by Telum Industries.
+  price: 35860
+  category: Small
+  group: Medical
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/medivac.yml
+  guidebookPage: Null
+  class:
+  - Medical
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Medivac
+  mapName: 'Medivac'
+  mapPath: /Maps/_WF/Shuttles/Civilian/medivac.yml
+  minPlayers: 0
+  stations:
+    Medivac:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Medivac {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]

@@ -1,0 +1,15 @@
+
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateHardsuitMedicBundle
+  name: syndicate medic hardsuit bundle
+  description: "Contains the Syndicate blood-red hardsuit worn by nuclear operative agents."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieMedic
+      - id: ClothingMaskGasSyndicate
+      - id: ClothingHandsGlovesCombat
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled
