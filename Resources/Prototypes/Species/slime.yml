@@ -20,6 +20,8 @@
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobSlimeTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
     LArm: MobSlimeLArm
     RArm: MobSlimeRArm
@@ -34,29 +36,48 @@
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
+    Special:
+      points: 32 # WF
+      required: false
+    Head:
+      points: 32 # WF
+      required: false
+    HeadTop:
+      points: 32 # WF
+      required: false
+    HeadSide:
+      points: 32 # WF
+      required: false
+    Snout:
+      points: 32 # WF
+      required: false
     Hair:
-      points: 1
+      points: 32 # WF
       required: false
     FacialHair:
-      points: 1
+      points: 32 # WF
       required: false
     Chest:
-      points: 4 # imp 2<4
+      points: 32 # WF
       required: false
     Legs:
-      points: 8 # imp 4<8
+      points: 32 # WF
       required: false
     Arms:
-      points: 8 # imp 4<8
+      points: 32 # WF
       required: false
-    # Frontier: apparently these don't exist on Delta
+    Tail:
+      points: 32 # WF
+      required: false
     UndergarmentTop:
-      points: 3
+      points: 32 # WF
       required: false
     UndergarmentBottom:
-      points: 3
+      points: 32 # WF
       required: false
-    # End Frontier
+    Overlay:
+      points: 32 # WF
+      required: false
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin

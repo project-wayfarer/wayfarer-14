@@ -49,43 +49,50 @@
 - type: markingPoints
   id: MobRodentiaMarkingLimits
   points:
-    Hair:
-      points: 1
+    Special:
+      points: 32 # WF
       required: false
-    FacialHair:
-      points: 1
-      required: false
-    Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ RodentiaTailDefault ]
-    Legs:
-      points: 4
-      required: false
-    Arms:
-      points: 4
-      required: false
-    Snout:
-      points: 1
+    Head:
+      points: 32 # WF
       required: false
     HeadTop:
-      points: 1
-      required: true
+      points: 32 # WF
+      required: false
       defaultMarkings: [ RodentiaHeadTopEarDefault ]
     HeadSide:
-      points: 1
+      points: 32 # WF
+      required: false
+    Snout:
+      points: 32 # WF
+      required: false
+    Hair:
+      points: 32 # WF
+      required: false
+    FacialHair:
+      points: 32 # WF
       required: false
     Chest:
-      points: 2
+      points: 32 # WF
       required: false
-    # Frontier: apparently these don't exist on Delta
+    Legs:
+      points: 32 # WF
+      required: false
+    Arms:
+      points: 32 # WF
+      required: false
+    Tail:
+      points: 32 # WF
+      required: false
+      defaultMarkings: [ RodentiaTailDefault ]
     UndergarmentTop:
-      points: 3
+      points: 32 # WF
       required: false
     UndergarmentBottom:
-      points: 3
+      points: 32 # WF
       required: false
-    # End Frontier
+    Overlay:
+      points: 32 # WF
+      required: false
 
 - type: humanoidBaseSprite
   id: MobRodentiaHead
