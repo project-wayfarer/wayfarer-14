@@ -5,8 +5,8 @@
   playTimeTracker: JobWayfarer
   icon: "JobIconPilot"
   supervisors: job-supervisors-hire
-  weight: 3 # Prioritize station & department jobs
-  displayWeight: 20 # Second from the bottom
+  weight: 50 # Prioritize station & department jobs
+  displayWeight: 8 # SPrioritize station & department jobs
   access:
   - Mercenary
   accessGroups:
@@ -64,3 +64,29 @@
     neck: ClothingNeckIFFNeutral
     outerClothing: ClothingOuterVestWebMercenary
     gloves: ClothingHandsGlovesCombat
+
+
+- type: roleLoadout
+  id: JobWayfarer
+  groups:
+  - MercenaryOuterClothing
+  - MercenaryShoes
+  - MercenaryHead
+  - MercenaryEars
+  - MercenaryGloves
+  - MercenaryPDA
+  - MercenaryGlasses
+  - MercenaryFace
+  - MercenaryBelt
+  - ContractorNeck
+  - PilotJumpsuit
+  - ContractorBackpack
+  - ContractorForcedOuterClothing
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific
