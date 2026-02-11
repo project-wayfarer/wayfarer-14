@@ -103,6 +103,14 @@
   - type: NavMapBeacon
     defaultText: station-beacon-cargobay-four
 
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconFrontierCargobayFive
+  suffix: Cargobay 5
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cargobay-five
+
 # region Service
 - type: entity
   parent: DefaultStationBeaconService
