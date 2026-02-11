@@ -83,22 +83,11 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
-    components:
-    - type: MetaData
-      name: Dusk Station
-    - type: Transform
-      parent: 1
-    - type: ForceAnchor
-    - type: GridTree
-    - type: Broadphase
-    - type: OccluderTree
   - uid: 2
     components:
     - type: MetaData
       name: Dusk Station
     - type: Transform
-      pos: -3.4947255,8.733618
       parent: 1
     - type: MapGrid
       chunks:
@@ -413,15 +402,15 @@ entities:
     - type: Broadphase
     - type: Physics
       bodyStatus: InAir
+      angularDamping: 0.05
+      linearDamping: 0.05
       fixedRotation: False
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
     - type: OccluderTree
-    - type: SpreaderGrid
     - type: Shuttle
-      dampingModifier: 0.25
-    - type: ImplicitRoof
+    - type: ForceAnchor
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -14144,20 +14133,34 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - type: PreventGridAnchorChanges
-    - type: StationTransit
-      routes: {}
+    - type: BecomesStation
+      id: Dusk
+    - type: ProtectedGrid
+      hostileMobKillSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/holy.ogg
+      killHostileMobs: True
+      preventArtifactTriggers: True
+      preventExplosions: True
+      preventEmpEvents: True
+      preventRCDUse: True
+      preventFloorPlacement: False
+      preventFloorRemoval: False
+    - type: SpreaderGrid
     - type: IFF
-    - type: NavMap
-    - type: StationMember
-    - type: CargoMarketData
-      marketDataList: []
-    - type: NFStationCargoOrderDatabase
-      orders: []
+      readOnly: True
     - type: StationDeadDrop
-    - type: TradeCrateDestination
-      destinationProto: null
-    - type: StationDampening
+  - uid: 1
+    components:
+    - type: MetaData
+      name: map 1234
+    - type: Transform
+    - type: Map
+      mapPaused: True
+    - type: GridTree
+    - type: Broadphase
+    - type: Parallax
+      parallax: FrontierStation
+    - type: OccluderTree
 - proto: ActionToggleLight
   entities:
   - uid: 4
