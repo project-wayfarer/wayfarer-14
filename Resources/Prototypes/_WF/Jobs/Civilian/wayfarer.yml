@@ -25,7 +25,7 @@
 
 # Interview variant
 - type: job
-  id: MercenaryInterview
+  id: WayfarerInterview
   name: job-name-wayfarer-interview
   description: job-description-wayfarer-interview
   playTimeTracker: JobWayfarerInterview
@@ -53,6 +53,14 @@
   components:
   - type: SpawnPoint
     job_id: Wayfarer
+
+- type: entity
+  id: SpawnPointWayfarerInterview
+  parent: SpawnPointWayfarer
+  name: wayfarer applicant
+  components:
+  - type: SpawnPoint
+    job_id: WayfarerInterview
 
 - type: chameleonOutfit
   id: MercenaryChameleonOutfit
