@@ -30,18 +30,18 @@
   description: job-description-wayfarer-interview
   playTimeTracker: JobWayfarerInterview
   setPreference: false
-  startingGear: MercenaryHologramGear
+  startingGear: WayfarerHologramGear
   icon: "JobIconPilot"
   supervisors: job-supervisors-hire
   access:
   - Mercenary
   accessGroups:
   - GeneralAccess
-  jobEntity: InterviewHologramMercenary
+  jobEntity: InterviewHologramWayfarer
   newPlayerMessage: false
 
 - type: startingGear
-  id: MercenaryHologramGear
+  id: WayfarerHologramGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMercenary
     shoes: ClothingShoesBootsMercenary

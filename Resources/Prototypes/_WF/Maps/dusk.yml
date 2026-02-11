@@ -11,7 +11,7 @@
       stationProto: StandardFrontierStation
       gridComponents:
       - type: VesselInfo # WF
-        description: "Welcome to Dusk Station. Enjoy your stay."
+        description: "From the Dusk begins a new dawn."
       components:
       - type: StationNameSetup
         mapNameTemplate: 'Dusk Station' # WF
@@ -23,6 +23,11 @@
         stationSubtext: 'frontier-lobby-frontier-subtext'
         stationDescription: 'frontier-lobby-frontier-description'
         lobbySortOrder: 1
+      - type: StationTransit
+        routes:
+          SpawnPoints: 20
+      - type: StationDeadDrop
+        maxDeadDrops: 8 # big station
       - type: StationJobs
         availableJobs:
           Wayfarer: [ -1, -1 ]

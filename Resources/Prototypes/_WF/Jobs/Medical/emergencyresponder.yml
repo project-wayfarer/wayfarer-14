@@ -43,6 +43,11 @@
   storage:
     back:
     - EncryptionKeyMedical
+- type: loadout
+  id: ERParamedicPDA
+  price: 0
+  equipment:
+    id: ParamedicPDA
 
 # Food Service Role Loadout
 - type: roleLoadout
@@ -60,9 +65,9 @@
   - ContractorGlasses
   - ContractorBelt
   - ContractorEars
+  - ParamedicPDA
   - ContractorEncryptionKey
   - ContractorBoxSurvival
-  - ContractorPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
