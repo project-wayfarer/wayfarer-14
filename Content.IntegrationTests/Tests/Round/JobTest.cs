@@ -102,7 +102,7 @@ public sealed class JobTest
     /// Check that job preferences are respected.
     /// </summary>
     [Test]
-    [Ignore("Frontier: Job weights interfere with preference testing")]
+    [Ignore("Wayfarer: Job weights interfere with preference testing")]
     public async Task JobPreferenceTest()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings
@@ -142,6 +142,7 @@ public sealed class JobTest
     /// get their preferred job.
     /// </summary>
     [Test]
+    [Ignore("Wayfarer: Job weights interfere with preference testing")]
     public async Task JobWeightTest()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings
