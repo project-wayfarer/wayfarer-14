@@ -49,13 +49,19 @@
   equipment:
     id: ParamedicPDA
 
+- type: chameleonOutfit
+  id: MedicalERChameleonOutfit
+  job: MedicalER
+  equipment:
+    outerClothing: ClothingOuterCoatParamedicWB
+
 # Food Service Role Loadout
 - type: roleLoadout
   id: JobMedicalER
   groups:
   - ContractorHead
   - ContractorNeck
-  - PilotJumpsuit
+  - ParamedicJumpsuit
   - ContractorGloves
   - ContractorBackpack
   - ContractorOuterClothing
