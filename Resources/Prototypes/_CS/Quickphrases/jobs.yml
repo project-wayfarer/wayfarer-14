@@ -22,6 +22,11 @@
   text: job-name-doc
 
 - type: quickPhrase
+  parent: BaseMedicalJobPhrase
+  id: ERPhrase
+  text: job-name-medical-er
+
+- type: quickPhrase
   parent: [BaseCommandJobPhrase, BaseEngineeringJobPhrase]
   id: PlantManagerPhrase
   text: job-name-plant-manager
@@ -39,33 +44,13 @@
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
-  id: ContractorPhrase
-  text: job-name-contractor
+  id: WayfarerPhrase
+  text: job-name-wayfarer
 
 - type: quickPhrase
   parent: BaseCivilianJobPhrase
-  id: ContractorInterviewPhrase
-  text: job-name-contractor-interview
-
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: PilotPhrase
-  text: job-name-pilot
-
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: PilotInterviewPhrase
-  text: job-name-pilot-interview
-
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: MercPhrase
-  text: job-name-mercenary
-
-- type: quickPhrase
-  parent: BaseCivilianJobPhrase
-  id: MercInterviewPhrase
-  text: job-name-mercenary-interview
+  id: WayfarerInterviewPhrase
+  text: job-name-wayfarer-interview
 
 # - type: quickPhrase
 #   parent: BaseCivilianJobPhrase
@@ -119,10 +104,10 @@
   text: job-name-brigmedic
 
   # Security Jobs
-- type: quickPhrase
-  parent: BaseSecurityJobPhrase
-  id: SecurityGuardPhrase
-  text: job-name-security-guard
+#- type: quickPhrase
+#  parent: BaseSecurityJobPhrase
+#  id: SecurityGuardPhrase
+#  text: job-name-security-guard
 
 # Engineering Jobs
 - type: quickPhrase
