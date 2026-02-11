@@ -1,17 +1,17 @@
-#- type: entity
-#  parent: IDCardStandard
-#  id: MercenaryIDCard
-#  name: mercenary ID card
-#  components:
-#  - type: PresetIdCard
-#    job: Mercenary
-#  - type: Sprite
-#    sprite: _NF/Objects/Misc/id_cards.rsi
-#    layers:
-#    - state: default
-#    - state: idmercenary
-#  - type: Clothing
-#    sprite: _NF/Objects/Misc/id_cards.rsi
+- type: entity
+  parent: IDCardStandard
+  id: MercenaryIDCard
+  name: mercenary ID card
+  components:
+  - type: PresetIdCard
+    job: Mercenary
+  - type: Sprite
+    sprite: _NF/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: idmercenary
+  - type: Clothing
+    sprite: _NF/Objects/Misc/id_cards.rsi
 
 - type: entity
   parent: IDCardStandard
@@ -155,13 +155,13 @@
     - state: nfsd
     - state: idnfsddetective
 
-#- type: entity
-#  parent: SecurityIDCard
-#  id: SecurityGuardIDCard
-#  name: security guard ID card
-#  components:
-#  - type: PresetIdCard
-#    job: SecurityGuard
+- type: entity
+  parent: SecurityIDCard
+  id: SecurityGuardIDCard
+  name: security guard ID card
+  components:
+  - type: PresetIdCard
+    job: SecurityGuard
 
 - type: entity
   parent: ERTChaplainIDCard

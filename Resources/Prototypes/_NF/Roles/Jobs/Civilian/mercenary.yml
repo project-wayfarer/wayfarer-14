@@ -17,21 +17,21 @@
     prototype: FrontierBirthdayGift
 
 # Interview variant
-- type: job
-  id: MercenaryInterview
-  name: job-name-mercenary-interview
-  description: job-mercenary-pilot
-  playTimeTracker: JobMercenaryInterview
-  setPreference: false
-  startingGear: MercenaryHologramGear
-  icon: "JobIconMercenary"
-  supervisors: job-supervisors-hire
-  access:
-  - Mercenary
-  accessGroups:
-  - GeneralAccess
-  jobEntity: InterviewHologramMercenary
-  newPlayerMessage: false
+#- type: job
+#  id: MercenaryInterview
+#  name: job-name-mercenary-interview
+#  description: job-mercenary-pilot
+#  playTimeTracker: JobMercenaryInterview
+# setPreference: false
+# startingGear: MercenaryHologramGear
+#  icon: "JobIconMercenary"
+#  supervisors: job-supervisors-hire
+#  access:
+#  - Mercenary
+#  accessGroups:
+#  - GeneralAccess
+#  jobEntity: InterviewHologramMercenary
+#  newPlayerMessage: false
 
 #- type: startingGear
 #  id: MercenaryHologramGear
