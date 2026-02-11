@@ -18,14 +18,41 @@ namespace Content.IntegrationTests.Tests.Round;
 [TestFixture]
 public sealed class JobTest
 {
-    private static readonly ProtoId<JobPrototype> Passenger = "Wayfarer"; // Frontier: use job prototypes that exist
-    private static readonly ProtoId<JobPrototype> Engineer = "Prisoner"; // Frontier
-    private static readonly ProtoId<JobPrototype> Captain = "StationRepresentative"; // Frontier
+    private static readonly ProtoId<JobPrototype> Passenger = "TestWayfarer"; // Frontier: Wayfarer equivalent for testing
+    private static readonly ProtoId<JobPrototype> Engineer = "TestPrisoner"; // Frontier: Prisoner equivalent for testing
+    private static readonly ProtoId<JobPrototype> Captain = "TestStationRepresentative"; // Frontier: StationRepresentative equivalent for testing
 
     private static string _map = "JobTestMap";
 
     [TestPrototypes]
     private static readonly string JobTestMap = @$"
+- type: playTimeTracker
+  id: PlayTimeTestWayfarer
+
+- type: playTimeTracker
+  id: PlayTimeTestPrisoner
+
+- type: playTimeTracker
+  id: PlayTimeTestStationRepresentative
+
+- type: job
+  id: TestWayfarer
+  name: job-name-wayfarer
+  playTimeTracker: PlayTimeTestWayfarer
+  weight: 0
+
+- type: job
+  id: TestPrisoner
+  name: job-name-prisoner
+  playTimeTracker: PlayTimeTestPrisoner
+  weight: 0
+
+- type: job
+  id: TestStationRepresentative
+  name: job-name-stationrepresentative
+  playTimeTracker: PlayTimeTestStationRepresentative
+  weight: 10
+
 - type: gameMap
   id: {_map}
   mapName: {_map}
@@ -79,6 +106,7 @@ public sealed class JobTest
         });
 
         pair.Server.CfgMan.SetCVar(CCVars.GameMap, _map);
+        pair.Server.CfgMan.SetCVar(CCVars.GameRoleTimers, false);
         var ticker = pair.Server.System<GameTicker>();
 
         // Initially in the lobby
@@ -112,6 +140,7 @@ public sealed class JobTest
         });
 
         pair.Server.CfgMan.SetCVar(CCVars.GameMap, _map);
+        pair.Server.CfgMan.SetCVar(CCVars.GameRoleTimers, false);
         var ticker = pair.Server.System<GameTicker>();
         Assert.That(ticker.RunLevel, Is.EqualTo(GameRunLevel.PreRoundLobby));
         Assert.That(pair.Client.AttachedEntity, Is.Null);
@@ -151,6 +180,7 @@ public sealed class JobTest
         });
 
         pair.Server.CfgMan.SetCVar(CCVars.GameMap, _map);
+        pair.Server.CfgMan.SetCVar(CCVars.GameRoleTimers, false);
         var ticker = pair.Server.System<GameTicker>();
         Assert.That(ticker.RunLevel, Is.EqualTo(GameRunLevel.PreRoundLobby));
         Assert.That(pair.Client.AttachedEntity, Is.Null);
@@ -186,6 +216,7 @@ public sealed class JobTest
         });
 
         pair.Server.CfgMan.SetCVar(CCVars.GameMap, _map);
+        pair.Server.CfgMan.SetCVar(CCVars.GameRoleTimers, false);
         var ticker = pair.Server.System<GameTicker>();
         Assert.That(ticker.RunLevel, Is.EqualTo(GameRunLevel.PreRoundLobby));
         Assert.That(pair.Client.AttachedEntity, Is.Null);
