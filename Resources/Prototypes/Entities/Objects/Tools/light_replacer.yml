@@ -20,6 +20,11 @@
   - type: ContainerContainer
     containers:
       light_replacer_storage: !type:Container
+# Start Wayfarer
+  - type: Tag
+    tags:
+      - LightReplacerTool
+# End Wayfarer
 
 - type: entity
   parent: LightReplacer

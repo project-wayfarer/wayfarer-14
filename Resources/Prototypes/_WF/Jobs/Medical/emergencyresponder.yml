@@ -1,0 +1,82 @@
+- type: job
+  id: MedicalER
+  name: job-name-medical-er
+  description: job-description-medical-er
+  playTimeTracker: JobMedicalER
+  startingGear: MedicalERGear
+  icon: "JobIconParamedic"
+  supervisors: job-supervisors-medical-er
+  weight: 40
+  displayWeight: 3
+  access:
+  - Service
+  - Janitor
+  - Maintenance
+  - External
+  - Frontier
+  - Medical
+  accessGroups:
+  - GeneralAccess
+  special:
+  - !type:AddImplantSpecial
+    implants: [ TrackingImplant ]
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+# play time tracker
+- type: playTimeTracker
+  id: JobMedicalER
+
+- type: entity
+  id: SpawnPointMedicalER
+  parent: SpawnPointPassenger
+  name: er spawn point
+  components:
+  - type: SpawnPoint
+    job_id: MedicalER
+
+
+# starting gear
+- type: startingGear
+  id: MedicalERGear
+  storage:
+    back:
+    - EncryptionKeyMedical
+- type: loadout
+  id: ERParamedicPDA
+  price: 0
+  equipment:
+    id: ParamedicPDA
+
+- type: chameleonOutfit
+  id: MedicalERChameleonOutfit
+  job: MedicalER
+  equipment:
+    outerClothing: ClothingOuterCoatParamedicWB
+
+# Food Service Role Loadout
+- type: roleLoadout
+  id: JobMedicalER
+  groups:
+  - ContractorHead
+  - ContractorNeck
+  - ParamedicJumpsuit
+  - ContractorGloves
+  - ContractorBackpack
+  - ContractorOuterClothing
+  - ContractorForcedOuterClothing
+  - ContractorShoes
+  - ContractorFace
+  - ContractorGlasses
+  - ContractorBelt
+  - ContractorEars
+  - ParamedicPDA
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific

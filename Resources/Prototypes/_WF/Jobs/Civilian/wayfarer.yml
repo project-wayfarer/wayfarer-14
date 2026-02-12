@@ -1,0 +1,100 @@
+- type: job
+  id: Wayfarer
+  name: job-name-wayfarer
+  description: job-description-wayfarer
+  playTimeTracker: JobWayfarer
+  icon: "JobIconPilot"
+  supervisors: job-supervisors-hire
+  weight: 50 # Prioritize station & department jobs
+  displayWeight: 8 # SPrioritize station & department jobs
+  access:
+  - Mercenary
+  accessGroups:
+  - GeneralAccess
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+# play time tracker
+- type: playTimeTracker
+  id: JobWayfarer
+
+- type: playTimeTracker
+  id: JobWayfarerInterview
+
+# Interview variant
+- type: job
+  id: WayfarerInterview
+  name: job-name-wayfarer-interview
+  description: job-description-wayfarer-interview
+  playTimeTracker: JobWayfarerInterview
+  setPreference: false
+  startingGear: WayfarerHologramGear
+  icon: "JobIconPilot"
+  supervisors: job-supervisors-hire
+  access:
+  - Mercenary
+  accessGroups:
+  - GeneralAccess
+  jobEntity: InterviewHologramWayfarer
+  newPlayerMessage: false
+
+- type: startingGear
+  id: WayfarerHologramGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    shoes: ClothingShoesBootsMercenary
+
+- type: entity
+  id: SpawnPointWayfarer
+  parent: SpawnPointPassenger
+  name: wayfarer spawn point
+  components:
+  - type: SpawnPoint
+    job_id: Wayfarer
+
+- type: entity
+  id: SpawnPointWayfarerInterview
+  parent: SpawnPointWayfarer
+  name: wayfarer applicant
+  components:
+  - type: SpawnPoint
+    job_id: WayfarerInterview
+
+- type: chameleonOutfit
+  id: WayfarerChameleonOutfit
+  job: Wayfarer
+  equipment:
+    head: ClothingHeadHelmetMercenary
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskGasMercenary
+    neck: ClothingNeckIFFNeutral
+    outerClothing: ClothingOuterVestWebMercenary
+    gloves: ClothingHandsGlovesCombat
+
+
+- type: roleLoadout
+  id: JobWayfarer
+  groups:
+  - MercenaryOuterClothing
+  - MercenaryShoes
+  - MercenaryHead
+  - MercenaryEars
+  - MercenaryGloves
+  - PilotPDA
+  - MercenaryGlasses
+  - MercenaryFace
+  - MercenaryBelt
+  - ContractorNeck
+  - PilotJumpsuit
+  - ContractorBackpack
+  - ContractorForcedOuterClothing
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific

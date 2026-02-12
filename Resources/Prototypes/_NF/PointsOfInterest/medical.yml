@@ -45,8 +45,7 @@
         - type: StationJobs
           availableJobs:
             DirectorOfCare: [ 1, 1 ]
-            Pilot: [ -1, -1 ]
-            Mercenary: [ -1, -1 ]
+            MedicalER: [ 3, 3]
           tags:
           - HeadOfPersonnel
           - HeadOfSecurity

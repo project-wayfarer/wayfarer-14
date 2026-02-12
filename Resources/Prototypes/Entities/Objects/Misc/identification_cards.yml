@@ -179,14 +179,15 @@
 - type: entity
   parent: IDCardStandard
   id: ParamedicIDCard
-  name: paramedic ID card
+  name: emergency responder ID card
   components:
   - type: Sprite
     layers:
     - state: default
     - state: idparamedic
   - type: PresetIdCard
-    job: Paramedic
+    job: MedicalER
+
 
 - type: entity
   parent: IDCardStandard

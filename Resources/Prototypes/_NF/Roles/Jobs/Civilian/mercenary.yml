@@ -3,9 +3,6 @@
   name: job-name-mercenary
   description: job-description-mercenary
   playTimeTracker: JobMercenary
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 108000
   icon: "JobIconMercenary"
   supervisors: job-supervisors-hire
   weight: 3 # Prioritize station & department jobs
@@ -20,38 +17,34 @@
     prototype: FrontierBirthdayGift
 
 # Interview variant
-- type: job
-  id: MercenaryInterview
-  name: job-name-mercenary-interview
-  description: job-mercenary-pilot
-  playTimeTracker: JobMercenaryInterview
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 108000
-  setPreference: false
-  startingGear: MercenaryHologramGear
-  icon: "JobIconMercenary"
-  supervisors: job-supervisors-hire
-  access:
-  - Mercenary
-  accessGroups:
-  - GeneralAccess
-  jobEntity: InterviewHologramMercenary
-  newPlayerMessage: false
+#- type: job
+#  id: MercenaryInterview
+#  name: job-name-mercenary-interview
+#  description: job-mercenary-pilot
+#  playTimeTracker: JobMercenaryInterview
+# setPreference: false
+# startingGear: MercenaryHologramGear
+#  icon: "JobIconMercenary"
+#  supervisors: job-supervisors-hire
+#  access:
+#  - Mercenary
+#  accessGroups:
+#  - GeneralAccess
+#  jobEntity: InterviewHologramMercenary
+#  newPlayerMessage: false
 
-- type: startingGear
-  id: MercenaryHologramGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitMercenary
-    shoes: ClothingShoesBootsMercenary
-
-- type: chameleonOutfit
-  id: MercenaryChameleonOutfit
-  job: Mercenary
-  equipment:
-    head: ClothingHeadHelmetMercenary
-    eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskGasMercenary
-    neck: ClothingNeckIFFNeutral
-    outerClothing: ClothingOuterVestWebMercenary
-    gloves: ClothingHandsGlovesCombat
+#- type: startingGear
+#  id: MercenaryHologramGear
+#  equipment:
+#    jumpsuit: ClothingUniformJumpsuitMercenary
+#    shoes: ClothingShoesBootsMercenary
+#- type: chameleonOutfit
+#  id: MercenaryChameleonOutfit
+#  job: Mercenary
+#  equipment:
+#    head: ClothingHeadHelmetMercenary
+#    eyes: ClothingEyesGlassesCheapSunglasses
+#    mask: ClothingMaskGasMercenary
+#    neck: ClothingNeckIFFNeutral
+#    outerClothing: ClothingOuterVestWebMercenary
+#    gloves: ClothingHandsGlovesCombat

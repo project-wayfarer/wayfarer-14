@@ -31,6 +31,8 @@
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobVoxTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Eyes: MobVoxEyes
     LArm: MobVoxLArm
     RArm: MobVoxRArm
@@ -44,45 +46,54 @@
 
 - type: markingPoints
   id: MobVoxMarkingLimits
-  onlyWhitelisted: true
+  onlyWhitelisted: false
   points:
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
+    Special:
+      points: 32 # WF
       required: false
     Head:
-      points: 1
-      required: true
-    Snout:
-      points: 1
-      required: true
-      defaultMarkings: [ VoxBeak ]
-    Arms:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
-    Legs:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
-    UndergarmentTop:
-      points: 3
+      points: 32 # WF
       required: false
-    UndergarmentBottom:
-      points: 3
+    HeadTop:
+      points: 32 # WF
+      required: false
+    HeadSide:
+      points: 32 # WF
+      required: false
+    Snout:
+      points: 32 # WF
+      required: false
+      defaultMarkings: [ VoxBeak ]
+    Hair:
+      points: 32 # WF
+      required: false
+    FacialHair:
+      points: 32 # WF
       required: false
     Chest:
-      points: 2
+      points: 32 # WF
       required: false
-    Overlay: # imp
-      points: 4
+    Legs:
+      points: 32 # WF
       required: false
+      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+    Arms:
+      points: 32 # WF
+      required: false
+      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
     Tail:
-      points: 1
-      required: true
+      points: 32 # WF
+      required: false
       defaultMarkings: [ VoxTail ]
+    UndergarmentTop:
+      points: 32 # WF
+      required: false
+    UndergarmentBottom:
+      points: 32 # WF
+      required: false
+    Overlay:
+      points: 32 # WF
+      required: false
 
 - type: humanoidBaseSprite
   id: MobVoxEyes
