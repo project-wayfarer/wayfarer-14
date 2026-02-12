@@ -16290,6 +16290,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 56.5,-55.5
       parent: 2
+    - type: Docking
+      name: dock-label-main-bus
   - uid: 198
     components:
     - type: Transform
@@ -16304,6 +16306,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -47.5,-55.5
       parent: 2
+    - type: Docking
+      name: dock-label-minor-bus
   - uid: 200
     components:
     - type: Transform
@@ -16322,6 +16326,8 @@ entities:
     - type: Transform
       pos: 56.5,-61.5
       parent: 2
+    - type: Docking
+      name: dock-label-trade-bus
 - proto: AirlockExternalLocked
   entities:
   - uid: 203
@@ -16948,6 +16954,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -29.5,-130.5
       parent: 2
+    - type: Docking
+      name: dock-label-cb5
   - uid: 308
     components:
     - type: Transform
@@ -16976,6 +16984,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 38.5,-130.5
       parent: 2
+    - type: Docking
+      name: dock-label-cb1
   - uid: 313
     components:
     - type: Transform
@@ -16994,6 +17004,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -29.5,-151.5
       parent: 2
+    - type: Docking
+      name: dock-label-cb4
   - uid: 316
     components:
     - type: Transform
@@ -17012,6 +17024,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 38.5,-151.5
       parent: 2
+    - type: Docking
+      name: dock-label-cb2
   - uid: 319
     components:
     - type: Transform
@@ -17023,6 +17037,8 @@ entities:
     - type: Transform
       pos: 4.5,-179.5
       parent: 2
+    - type: Docking
+      name: dock-label-cb3
   - uid: 321
     components:
     - type: Transform
@@ -17035,6 +17051,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 141.5,-87.5
       parent: 2
+    - type: Docking
+      name: dock-label-sa5
   - uid: 323
     components:
     - type: Transform
@@ -17051,6 +17069,8 @@ entities:
     - type: Transform
       pos: 135.5,-93.5
       parent: 2
+    - type: Docking
+      name: dock-label-sa4
   - uid: 326
     components:
     - type: Transform
@@ -17068,6 +17088,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 141.5,-58.5
       parent: 2
+    - type: Docking
+      name: dock-label-s1
   - uid: 329
     components:
     - type: Transform
@@ -17086,6 +17108,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 141.5,-28.5
       parent: 2
+    - type: Docking
+      name: dock-label-sf5
   - uid: 332
     components:
     - type: Transform
@@ -17110,6 +17134,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 135.5,-22.5
       parent: 2
+    - type: Docking
+      name: dock-label-sf4
   - uid: 336
     components:
     - type: Transform
@@ -17122,6 +17148,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 116.5,-52.5
       parent: 2
+    - type: Docking
+      name: dock-label-sf3
   - uid: 338
     components:
     - type: Transform
@@ -17138,6 +17166,8 @@ entities:
     - type: Transform
       pos: 116.5,-64.5
       parent: 2
+    - type: Docking
+      name: dock-label-sa3
   - uid: 341
     components:
     - type: Transform
@@ -17170,6 +17200,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 98.5,-52.5
       parent: 2
+    - type: Docking
+      name: dock-label-sf2
   - uid: 347
     components:
     - type: Transform
@@ -17188,6 +17220,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 80.5,-52.5
       parent: 2
+    - type: Docking
+      name: dock-label-sf1
   - uid: 350
     components:
     - type: Transform
@@ -17204,6 +17238,8 @@ entities:
     - type: Transform
       pos: 80.5,-64.5
       parent: 2
+    - type: Docking
+      name: dock-label-sa1
   - uid: 353
     components:
     - type: Transform
@@ -17217,6 +17253,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -14.5,-7.5
       parent: 2
+    - type: Docking
+      name: dock-label-cgp
   - uid: 355
     components:
     - type: Transform
@@ -17745,6 +17783,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 23.5,-7.5
       parent: 2
+    - type: Docking
+      name: dock-label-medical
 - proto: AltarMail
   entities:
   - uid: 448
@@ -18718,6 +18758,8 @@ entities:
     - type: Transform
       pos: 98.5,-64.5
       parent: 2
+    - type: Docking
+      name: dock-label-sa2
   - uid: 590
     components:
     - type: Transform
