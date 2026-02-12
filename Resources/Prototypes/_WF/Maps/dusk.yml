@@ -28,6 +28,11 @@
           SpawnPoints: 20
       - type: StationDeadDrop
         maxDeadDrops: 8 # big station
+      - type: SolarPoweredGrid
+        trackOnInit: true
+        doNotCull: true
+      - type: TradeCrateDestination
+        destinationProto: Trade
       - type: StationJobs
         availableJobs:
           Wayfarer: [ -1, -1 ]
