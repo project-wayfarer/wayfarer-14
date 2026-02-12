@@ -805,3 +805,55 @@
   price: 5000
   equipment:
     head: ClothingHeadHatTophat
+
+# Start WF
+
+- type: loadout
+  id: ClothingHeadHatHoshat
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatHoshat
+
+- type: loadout
+  id: ClothingHeadHatSyndieMAA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatSyndieMAA
+
+- type: loadout
+  id: ClothingHeadHatBeretWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatBeretWarden
+
+- type: loadout
+  id: ClothingHeadHatWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatWarden
+
+# End WF
