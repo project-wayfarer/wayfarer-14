@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/12/2026 13:47:19
-  entityCount: 19496
+  time: 02/12/2026 14:08:36
+  entityCount: 19511
 maps:
 - 1
 grids:
@@ -16691,7 +16691,7 @@ entities:
       pos: -7.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -117593.52
+      secondsUntilStateChange: -117690.805
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -109650,6 +109650,86 @@ entities:
     - type: Transform
       pos: -29.5,-128.5
       parent: 2
+- proto: ShuttersWindowOpen
+  entities:
+  - uid: 19497
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-70.5
+      parent: 2
+  - uid: 19498
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-71.5
+      parent: 2
+  - uid: 19499
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-72.5
+      parent: 2
+  - uid: 19500
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-73.5
+      parent: 2
+  - uid: 19501
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-74.5
+      parent: 2
+  - uid: 19502
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-75.5
+      parent: 2
+  - uid: 19503
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.5,-70.5
+      parent: 2
+  - uid: 19504
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.5,-69.5
+      parent: 2
+  - uid: 19505
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.5,-68.5
+      parent: 2
+  - uid: 19506
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,-68.5
+      parent: 2
+  - uid: 19507
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,-67.5
+      parent: 2
+  - uid: 19508
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,-66.5
+      parent: 2
+  - uid: 19509
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,-65.5
+      parent: 2
 - proto: ShuttleConsoleCircuitboard
   entities:
   - uid: 15439
@@ -110838,6 +110918,61 @@ entities:
         8239:
         - - Pressed
           - Forward
+  - uid: 19510
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 12.5,-69.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        19503:
+        - - Pressed
+          - Toggle
+        19504:
+        - - Pressed
+          - Toggle
+        19505:
+        - - Pressed
+          - Toggle
+        19506:
+        - - Pressed
+          - Toggle
+        19507:
+        - - Pressed
+          - Toggle
+        19508:
+        - - Pressed
+          - Toggle
+        19509:
+        - - Pressed
+          - Toggle
+  - uid: 19511
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,-69.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        19497:
+        - - Pressed
+          - Toggle
+        19498:
+        - - Pressed
+          - Toggle
+        19499:
+        - - Pressed
+          - Toggle
+        19500:
+        - - Pressed
+          - Toggle
+        19501:
+        - - Pressed
+          - Toggle
+        19502:
+        - - Pressed
+          - Toggle
 - proto: SignArcade
   entities:
   - uid: 15473
