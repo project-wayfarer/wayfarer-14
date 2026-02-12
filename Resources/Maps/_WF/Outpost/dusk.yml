@@ -427,6 +427,7 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
+    - type: NavMap
     - type: WorldGenDistanceCarver
       distanceThresholds:
       - prob: 0
