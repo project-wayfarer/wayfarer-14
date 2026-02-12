@@ -4,7 +4,7 @@
   keycode: 'd'
   frequency: 1022
   color: "#c6cc33"
-  maxRange: 750
+  maxRange: 800
 
 - type: radioChannel
   id: Nfsd
@@ -12,6 +12,7 @@
   keycode: 's'
   frequency: 1023
   color: "#ffa71a"
+  maxRange: 8000
 
 - type: radioChannel
   id: Greeting
@@ -19,3 +20,4 @@
   keycode: 'r'
   frequency: 1024
   color: "#ff4fdf"
+  maxRange: 8000
