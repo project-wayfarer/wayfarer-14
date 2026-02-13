@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Maintainer Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: HaulerAntag
+  parent: BaseVesselAntag
+  name: TI Hauler
+  description: A rugged entry-level cargo freighter. This one has been retrofitted for nefarious deeds. Powered by Biofuel and Solars. Manufactured by Telum Industries.
+  price: 26000
+  category: Small
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/hauler.yml
+  guidebookPage: Null
+  class:
+  - Pirate
+  engine:
+  - Biofuel
+  - Solar
+
+- type: gameMap
+  id: HaulerAntag
+  mapName: 'Hauler'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/hauler.yml
+  minPlayers: 0
+  stations:
+    Hauler:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Hauler CIV {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+            NFPirate: [ 0, 0 ]
