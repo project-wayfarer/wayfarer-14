@@ -273,3 +273,32 @@
   price: 1500
   equipment:
     id: MusicianPDA
+
+# WF
+- type: loadout
+  id: ContractorHoSPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 2000
+  equipment:
+    id: HoSPDA
+
+- type: loadout
+  id: ContractorSecurityPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 2000
+  equipment:
+    id: SecurityPDA
+
+- type: loadout
+  id: ContractorSeniorOfficerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 2000
+  equipment:
+    id: SeniorOfficerPDA
+# WF

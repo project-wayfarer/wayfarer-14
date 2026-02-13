@@ -7,6 +7,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedBlack
+  groupBy: "scarf"
 
 - type: loadout
   id: ContractorClothingNeckScarfStripedBlue
@@ -16,6 +17,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedBlue
+  groupBy: "scarf"
 
 - type: loadout
   id: ContractorClothingNeckScarfStripedBrown
@@ -25,6 +27,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedBrown
+  groupBy: "scarf"
 
 - type: loadout
   id: ContractorClothingNeckScarfStripedGreen
@@ -34,6 +37,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedGreen
+  groupBy: "scarf"
 
 - type: loadout
   id: ContractorClothingNeckTieBH
@@ -43,6 +47,7 @@
   price: 500
   equipment:
     neck: ClothingNeckTieBH
+  groupBy: "tie"
 
 - type: loadout
   id: ContractorClothingNeckTieRed
@@ -52,6 +57,7 @@
   price: 500
   equipment:
     neck: ClothingNeckTieRed
+  groupBy: "tie"
 
 - type: loadout
   id: ContractorClothingNeckTieSci
@@ -61,6 +67,7 @@
   price: 500
   equipment:
     neck: ClothingNeckTieSci
+  groupBy: "tie"
 
 - type: loadout
   id: ContractorClothingNeckLawyerbadge
@@ -290,6 +297,45 @@
   equipment:
     neck: ClothingNeckCloakPoly
   groupBy: "flagCloaks"
+
+- type: loadout
+  id: ClothingNeckScarfStripedSyndieGreen
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 7500
+  equipment:
+    neck: ClothingNeckScarfStripedSyndieGreen
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedSyndieRed
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 7500
+  equipment:
+    neck: ClothingNeckScarfStripedSyndieRed
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckMantleHOS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 10000
+  equipment:
+    neck: ClothingNeckMantleHOS
+
+- type: loadout
+  id: ClothingNeckCloakHos
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 10000
+  equipment:
+    neck: ClothingNeckCloakHos
+
 #End Wayfarer-14
 
 - type: loadout

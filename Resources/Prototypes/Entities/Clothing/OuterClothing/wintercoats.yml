@@ -170,7 +170,7 @@
     clothingPrototype: ClothingHeadHatHoodWinterCE
 
 - type: entity
-  parent: [ ClothingOuterWinterCoatToggleable, BaseCentcommContraband ]
+  parent: [ ClothingOuterWinterCoatToggleable ] # WF Removed contraband
   id: ClothingOuterWinterCentcom
   name: CentComm winter coat
   components:
@@ -363,21 +363,32 @@
 
 ##########################################################
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, ClothingOuterArmorHoS, ClothingOuterWinterCoatToggleable] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterArmorHoS, ClothingOuterWinterCoatToggleable] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable
   id: ClothingOuterWinterHoS
   name: head of security's armored winter coat
   description: A sturdy, utilitarian winter coat designed to protect a head of security from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    layers:
+    - state: ARMHOS-icon # WF
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: ARMHOS-inhand-left # WF
+      right:
+      - state: ARMHOS-inhand-right # WF
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: ARMHOS-equipped-OUTERCLOTHING # WF
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterHOS
 ##########################################################
 
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, ClothingOuterWinterCoatToggleable] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterWinterCoatToggleable] # WF Removed contraband
   id: ClothingOuterWinterHoSUnarmored
   name: head of security's winter coat
   description: A sturdy coat, a warm coat, but not an armored coat.
@@ -437,7 +448,7 @@
       left:
       - state: JANI-inhand-left
       right:
-      - state: CHEF-inhand-right
+      - state: JANI-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
@@ -668,7 +679,7 @@
     clothingPrototype: ClothingHeadHatHoodWinterSci
 
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, ClothingOuterWinterCoatToggleable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterWinterCoatToggleable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: ClothingOuterWinterSec
   name: security winter coat
   components:
@@ -722,21 +733,32 @@
 
 ################################################################
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable] # WF Removed contraband
   id: ClothingOuterWinterWarden
   name: warden's armored winter coat
   description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    layers:
+    - state: WARDARM-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: WARDARM-inhand-right
+      right:
+      - state: WARDARM-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: WARDARM-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 ################################################################
 
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, ClothingOuterWinterCoatToggleable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterWinterCoatToggleable] # WF Removed contraband
   id: ClothingOuterWinterWardenUnarmored
   name: warden's winter coat
   description: A sturdy coat, a warm coat, but not an armored coat.
@@ -760,7 +782,7 @@
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 
 - type: entity
-  parent: [BaseC3SyndicateContraband, ClothingOuterWinterCoatToggleable, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingOuterWinterCoatToggleable] # WF Removed contraband
   id: ClothingOuterWinterSyndieCap
   name: syndicate's winter coat
   description: "The syndicate's winter coat is made of durable fabric, with gilded patterns, and coarse wool."
@@ -785,21 +807,32 @@
 
 ##############################################################
 - type: entity
-  parent: [BaseC3SyndicateContraband, ClothingOuterWinterWarden, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable] # WF Removed contraband
   id: ClothingOuterWinterSyndieCapArmored
   name: syndicate's armored winter coat
   description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    layers:
+    - state: SYNDIE-ARMORED-icon #WF
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: SYNDIECAPARM-inhand-left #WF
+      right:
+      - state: SYNDIECAPARM-inhand-right #WF
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: SYNDIECAPARM-equipped-OUTERCLOTHING # WF
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSyndie
 ##############################################################
 
 - type: entity
-  parent: [BaseC3SyndicateContraband, ClothingOuterWinterCoatToggleable, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingOuterWinterCoatToggleable]
   id: ClothingOuterWinterSyndie
   name: syndicate's winter coat
   description: Insulated winter coat, looks like a merch from "Syndieland".
