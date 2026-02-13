@@ -368,8 +368,9 @@
 
 - type: entity
   name: energy shield
-  parent: [BaseItem, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
-  id: EnergyShield
+  parent: [BaseItem] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  id: BaseEnergyShield
+  categories: [HideSpawnMenu]
   description: Exotic energy shield, when folded, can even fit in your pocket.
   components:
     - type: ItemToggle
@@ -440,30 +441,7 @@
     - type: Appearance
     - type: Damageable
       damageContainer: Shield
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 180
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-            - !type:PlaySoundBehavior
-              sound:
-                collection: GlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                BrokenEnergyShield:
-                  min: 1
-                  max: 1
-    - type: StaticPrice
-      price: 350
+
 
 - type: entity
   name: broken energy shield
@@ -480,6 +458,45 @@
       heldPrefix: eshield
     - type: StaticPrice
       price: 15
+
+- type: entity
+  name: energy shield
+  parent: [BaseEnergyShield, BaseC3SyndicateContraband]
+  description: Exotic energy shield, when folded, can even fit in your pocket.
+  components:
+#  - type: Destructible
+#    thresholds:
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 180
+#      behaviors:
+#      - !type:DoActsBehavior
+#        acts: [ "Destruction" ]
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 100
+#      behaviors:
+#      - !type:DoActsBehavior
+#        acts: [ "Destruction" ]
+#      - !type:PlaySoundBehavior
+#        sound:
+#          collection: GlassBreak
+#      - !type:SpawnEntitiesBehavior
+#        spawn:
+#          BrokenEnergyShield:
+#            min: 1
+#            max: 1
+    - type: Battery
+      maxCharge: 100
+      startingCharge: 100
+    - type: RechargeableBlocking
+      dischargedRechargeRate: 7.5
+      chargedRechargeRate: 10
+    - type: BatterySelfRecharger
+      autoRechargeRate: 10
+      autoRecharge: true
+    - type: StaticPrice
+      price: 350
 
 - type: entity
   name: telescopic shield
