@@ -9,24 +9,27 @@
 # Shuttle Notes:
 #
 - type: vessel
-  id: Dagger
-  parent: BaseVesselAntag
+  id: DaggerCGP
+  parent: BaseVessel
   name: TI Dagger
   description: A rugged light fighter with a single coaxial cannon mounted on the front. Runs on Uranium. Manufactured by Telum Industries.
   price: 42950
   category: Medium
-  group: BlackMarket
-  shuttlePath: /Maps/_WF/Shuttles/Outlaw/dagger.yml
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/dagger.yml
   guidebookPage: Null
   class:
-  - Pirate
+  - Pursuit
+  - Patrol
+  - Detainment
   engine:
   - Uranium
 
 - type: gameMap
   id: Dagger
   mapName: 'Dagger'
-  mapPath: /Maps/_WF/Shuttles/Outlaw/dagger.yml
+  mapPath: /Maps/_WF/Shuttles/Cgp/dagger.yml
   minPlayers: 0
   stations:
     Dagger:
@@ -38,5 +41,4 @@
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
       - type: StationJobs
-        availableJobs:
-            NFPirate: [ 0, 0 ]
+        availableJobs: {}
