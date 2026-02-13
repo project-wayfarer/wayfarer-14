@@ -45,8 +45,6 @@
     - StickyNoteYellow
   - type: EmbeddableProjectile
     removalTime: .2
-  - type: StaticPrice
-    price: 4000
 
 - type: entity
   parent: PaperStickyNote
@@ -175,6 +173,9 @@
   - type: ContainerContainer
     containers:
       bin-container: !type:Container {}
+  - type: StaticPrice
+    price: 400
+    vendPrice: 4000
 
 - type: entity
   parent: PaperStickyNoteStack
