@@ -269,6 +269,8 @@
       amount: 4
     - id: PaperDyedBrown
       amount: 4
+    - type: StaticPrice
+      price: 4800
 
 - type: entity
   parent: BoxReamClassic
@@ -294,3 +296,5 @@
       amount: 4
     - id: PaperDyedPurple
       amount: 4
+    - type: StaticPrice
+      price: 4800
