@@ -11,7 +11,7 @@
 - type: vessel
   id: HaulerAntag
   parent: BaseVesselAntag
-  name: TI Hauler
+  name: Looter
   description: A rugged entry-level cargo freighter. This one has been retrofitted for nefarious deeds. Powered by Biofuel and Solars. Manufactured by Telum Industries.
   price: 26000
   category: Small
@@ -30,7 +30,7 @@
   mapPath: /Maps/_WF/Shuttles/Outlaw/hauler.yml
   minPlayers: 0
   stations:
-    Hauler:
+    HaulerAntag:
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
