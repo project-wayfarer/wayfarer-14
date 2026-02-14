@@ -7,6 +7,7 @@ station-beacon-cargobay-one = Cargo Bay 1
 station-beacon-cargobay-two = Cargo Bay 2
 station-beacon-cargobay-three = Cargo Bay 3
 station-beacon-cargobay-four = Cargo Bay 4
+station-beacon-cargobay-five = Cargo Bay 5
 station-beacon-shops = Shops
 station-beacon-vending-machines = Vend
 station-beacon-transit-shuttle = Bus Stop

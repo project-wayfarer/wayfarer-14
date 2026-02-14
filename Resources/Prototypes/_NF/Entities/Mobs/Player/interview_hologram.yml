@@ -70,28 +70,12 @@
   - type: ActionsContainer
 
 - type: entity
-  id: InterviewHologramContractor
+  id: InterviewHologramWayfarer
   parent: InterviewHologram
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
   - type: InterviewHologram
-    job: Contractor
-
-- type: entity
-  id: InterviewHologramPilot
-  parent: InterviewHologram
-  categories: [ HideSpawnMenu, DoNotMap ]
-  components:
-  - type: InterviewHologram
-    job: Pilot
-
-- type: entity
-  id: InterviewHologramMercenary
-  parent: InterviewHologram
-  categories: [ HideSpawnMenu, DoNotMap ]
-  components:
-  - type: InterviewHologram
-    job: Mercenary
+    job: Wayfarer
 
 # region Actions
 

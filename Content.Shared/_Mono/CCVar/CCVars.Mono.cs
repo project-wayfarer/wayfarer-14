@@ -77,6 +77,15 @@ public sealed partial class MonoCVars
     /// <summary>
     ///     Interval between updates for every audio entity.
     /// </summary>
+    public static readonly CVarDef<float> SpaceGarbageCleanupInterval =
+        CVarDef.Create("mono.space_garbage_cleanup_interval", 1800.0f, CVar.SERVERONLY);
+
+	/// <summary>
+    ///     Whether to play radio static/noise sounds when receiving radio messages on headsets.
+    /// </summary>
+    public static readonly CVarDef<bool> RadioNoiseEnabled =
+        CVarDef.Create("mono.radio_noise_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
     /// <seealso cref="AreaEchoSystem"/>
     public static readonly CVarDef<TimeSpan> AreaEchoRecalculationInterval =
         CVarDef.Create("mono.area_echo.recalculation_interval", TimeSpan.FromSeconds(15), CVar.ARCHIVE | CVar.CLIENTONLY);

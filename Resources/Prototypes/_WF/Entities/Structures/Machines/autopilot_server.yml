@@ -5,16 +5,16 @@
   description: When powered and wrenched down onto a shuttle, it enables the autopilot functionality for automated navigation.
   components:
   - type: Sprite
-    sprite: Structures/Machines/telecomms.rsi
+    sprite: _WF/Structures/Machines/autopilot.rsi
     snapCardinals: true
     layers:
-    - state: telecom-nopower
-    - state: telecom-stripe
-    - state: telecom-on
+    - state: autopilot-nopower
+    - state: autopilot-stripe
+    - state: autopilot-on
       shader: unshaded
       visible: false
       map: ["enum.PowerDeviceVisualLayers.Powered"]
-    - state: telecom-open
+    - state: autopilot-open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Appearance
   - type: GenericVisualizer

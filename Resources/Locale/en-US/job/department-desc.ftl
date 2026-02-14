@@ -4,7 +4,7 @@ department-Command-description = Manage the crew and keep them working efficient
 department-CentralCommand-description = Manage the crew and keep them working efficiently.
 # Frontier: moved to _NF
 # department-Engineering-description = Keep the power on and the station operational.
-department-Medical-description = Keep the crew healthy.
+department-Medical-description = Healing for all, keep the sector healthy.
 department-Security-description = Keep the peace around the station.
 department-Science-description = Research artifacts and anomalies to invent new equipment for the station
 department-Silicon-description = Obey your laws and serve the crew.

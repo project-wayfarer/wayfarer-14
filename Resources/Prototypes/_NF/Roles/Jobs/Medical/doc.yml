@@ -4,8 +4,9 @@
   description: job-description-doc
   playTimeTracker: JobDirectorOfCare
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 72000 # 20 hrs
+    - !type:RoleTimeRequirement
+      role: JobMedicalER
+      time: 86400 # 24 hours (WF job roletime requirement)
   whitelisted: true
   startingGear: DocGear
   alwaysUseSpawner: true

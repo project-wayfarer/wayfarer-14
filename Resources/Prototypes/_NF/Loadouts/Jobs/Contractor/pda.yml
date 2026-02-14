@@ -102,15 +102,6 @@
     id: MedicalPDA
 
 - type: loadout
-  id: ContractorParamedicPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    id: ParamedicPDA
-
-- type: loadout
   id: ContractorPsychologistPDA
   effects:
   - !type:GroupLoadoutEffect
@@ -282,3 +273,32 @@
   price: 1500
   equipment:
     id: MusicianPDA
+
+# WF
+- type: loadout
+  id: ContractorHoSPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 2000
+  equipment:
+    id: HoSPDA
+
+- type: loadout
+  id: ContractorSecurityPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 2000
+  equipment:
+    id: SecurityPDA
+
+- type: loadout
+  id: ContractorSeniorOfficerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 2000
+  equipment:
+    id: SeniorOfficerPDA
+# WF

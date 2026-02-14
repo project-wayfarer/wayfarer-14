@@ -6,12 +6,14 @@
   weight: 50 # accounted for in jobs
   roles:
   - StationRepresentative
-  - DirectorOfCare
+#  - DirectorOfCare #WF moved to medical
   - StationTrafficController
   - Valet # nyano
   - NFJanitor
   - MailCarrier # nyano
-  - SecurityGuard
+#  - SecurityGuard
+  - Wayfarer
+  - Borg
 
 - type: department
   id: Antag

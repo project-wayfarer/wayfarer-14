@@ -1,0 +1,39 @@
+- type: gameMap
+  id: Frontier
+  mapName: 'Wayfarer Outpost' # WF
+  # mapPath: /Maps/_NF/Outpost/frontier.yml
+  mapPath: /Maps/_WF/Outpost/dusk.yml # Wayfarer: change to _WF
+  minPlayers: 0
+  maxPlayers: 100
+  randomRotation: false
+  maxRandomOffset: 0
+  stations:
+    Frontier:
+      stationProto: StandardFrontierStation
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Welcome to Wayfarer Outpost. Enjoy your stay. Orwhatever "
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Wayfarer Outpost' # WF
+#          nameGenerator:
+#            !type:NanotrasenNameGenerator
+#            prefixCreator: '14'
+        - type: ExtraStationInformation
+          iconPath: /Textures/_WF/Logo/icon/icon-256x256.png # Wayfarer: change to _WF
+          stationSubtext: 'frontier-lobby-frontier-subtext'
+          stationDescription: 'frontier-lobby-frontier-description'
+          lobbySortOrder: 1
+        - type: StationJobs
+          availableJobs:
+            Wayfarer: [ -1, -1 ]
+            Borg: [ -1, -1 ]
+            StationRepresentative: [ 1, 1 ]
+            StationTrafficController: [ 1, 1 ]
+#            SecurityGuard: [ 1, 3 ]
+            Valet: [ 1, 1 ]
+            NFJanitor: [ 1, 1 ]
+            MailCarrier: [ 2, 2 ]
+          tags:
+          - HeadOfPersonnel
+          - HeadOfSecurity
