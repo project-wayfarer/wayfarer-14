@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/13/2026 16:53:43
+  time: 02/14/2026 02:57:02
   entityCount: 314
 maps: []
 grids:
@@ -1168,8 +1168,8 @@ entities:
       pos: 4.5,-4.5
       parent: 1
     - type: GasMixer
-      inletTwoConcentration: 0.72
-      inletOneConcentration: 0.28
+      inletTwoConcentration: 0.79
+      inletOneConcentration: 0.21
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasPassiveVent
@@ -1595,7 +1595,7 @@ entities:
       pos: 5.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -19386.146
+      secondsUntilStateChange: -19812.596
       state: Opening
 - proto: PortableGeneratorBioPacmanShuttle
   entities:
