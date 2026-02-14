@@ -12,7 +12,7 @@ public sealed partial class GhostRoleSetWhitelistPanel : PanelContainer
 {
     public Action<ProtoId<GhostRolePrototype>, bool>? OnSetGhostRole;
 
-    public GhostRoleSetWhitelistPanel(List<ProtoId<GhostRolePrototype>> ghostRoleList, string ghostRoleSetName, Color ghostRoleSetColor, IPrototypeManager proto, HashSet<ProtoId<GhostRolePrototype>> whitelists, bool globalWhitelist)
+    public GhostRoleSetWhitelistPanel(List<ProtoId<GhostRolePrototype>> ghostRoleList, string ghostRoleSetName, Color ghostRoleSetColor, IPrototypeManager proto, HashSet<ProtoId<GhostRolePrototype>> whitelists) // WF: Globalwhitelist to join server =/= job whitelist
     {
         RobustXamlLoader.Load(this);
 
@@ -22,8 +22,8 @@ public sealed partial class GhostRoleSetWhitelistPanel : PanelContainer
             var thisRole = id; // closure capturing funny
             var button = new CheckBox();
             button.Text = Loc.GetString(proto.Index(id).Name);
-            button.Pressed = whitelists.Contains(id) || globalWhitelist;
-            button.OnPressed += _ => OnButtonPressed(thisRole, button, globalWhitelist);
+            button.Pressed = whitelists.Contains(id); // WF: Globalwhitelist to join server =/= job whitelist
+            button.OnPressed += _ => OnButtonPressed(thisRole, button); // WF: Globalwhitelist to join server =/= job whitelist
             RolesContainer.AddChild(button);
 
             allWhitelisted &= button.Pressed;
@@ -32,26 +32,26 @@ public sealed partial class GhostRoleSetWhitelistPanel : PanelContainer
         GhostRoleSet.Text = Loc.GetString(ghostRoleSetName);
         GhostRoleSet.Modulate = ghostRoleSetColor;
         GhostRoleSet.Pressed = allWhitelisted;
-        GhostRoleSet.OnPressed += args => OnDepartmentPressed(ghostRoleList, whitelists, globalWhitelist);
+        GhostRoleSet.OnPressed += args => OnDepartmentPressed(ghostRoleList, whitelists); // WF: Globalwhitelist to join server =/= job whitelist
     }
 
-    // Frontier: global whitelist
-    private void OnButtonPressed(ProtoId<GhostRolePrototype> thisRole, CheckBox button, bool globalWhitelist)
+    // WF: Globalwhitelist to join server =/= job whitelist
+    private void OnButtonPressed(ProtoId<GhostRolePrototype> thisRole, CheckBox button)
     {
-        if (globalWhitelist)
-            button.Pressed = true; // Force the button on.
-        else
+//        if (globalWhitelist)
+//            button.Pressed = true; // Force the button on.
+//        else
             OnSetGhostRole?.Invoke(thisRole, button.Pressed);
     }
 
-    private void OnDepartmentPressed(List<ProtoId<GhostRolePrototype>> ghostRoleList, HashSet<ProtoId<GhostRolePrototype>> whitelists, bool globalWhitelist)
+    private void OnDepartmentPressed(List<ProtoId<GhostRolePrototype>> ghostRoleList, HashSet<ProtoId<GhostRolePrototype>> whitelists) // WF: Globalwhitelist to join server =/= job whitelist
     {
-        // Frontier: global override
-        if (globalWhitelist)
-        {
-            GhostRoleSet.Pressed = true;
-            return;
-        }
+        // WF: Globalwhitelist to join server =/= job whitelist
+//        if (globalWhitelist)
+//        {
+//            GhostRoleSet.Pressed = true;
+//            return;
+//        }
         // End Frontier: global override
 
         foreach (var id in ghostRoleList)
