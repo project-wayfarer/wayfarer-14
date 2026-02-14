@@ -39,6 +39,9 @@
   - type: Wires
     boardName: wires-board-name-barsign
     layoutId: BarSign
+  - type: ApcPowerReceiver
+    powerLoad: 100
+  - type: ExtensionCableReceiver
 
 - type: entity
   parent: BaseBarSign
