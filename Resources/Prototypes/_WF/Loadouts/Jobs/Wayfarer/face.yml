@@ -1,0 +1,147 @@
+#T0
+- type: loadout
+  id: WFClothingMaskBreath
+  storage:
+    back:
+    - ClothingMaskBreath
+
+- type: loadout
+  id: WFClothingMaskBreathMedical
+  price: 200
+  storage:
+    back:
+    - ClothingMaskBreathMedical
+
+#T1
+- type: loadout
+  id: WFClothingMaskSterile
+  price: 200
+  storage:
+    back:
+    - ClothingMaskSterile
+
+- type: loadout
+  id: WFClothingMaskGas
+  price: 300
+  storage:
+    back:
+    - ClothingMaskGas
+
+- type: loadout
+  id: WFClothingMaskPunkHalf
+  name: punk halfmask (random)
+  price: 500
+  storage:
+    back:
+    - ClothingMaskPunkHalf
+
+#T2
+- type: loadout
+  id: WFClothingMaskGasExplorer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  storage:
+    back:
+    - ClothingMaskGasExplorer
+
+- type: loadout
+  id: WFClothingMaskGasCaptain
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  storage:
+    back:
+    - ClothingMaskGasCaptain
+
+- type: loadout
+  id: WFClothingMaskGasMercenary
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  storage:
+    back:
+    - ClothingMaskGasMercenary
+
+- type: loadout
+  id: WFClothingMaskGasSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  storage:
+    back:
+    - ClothingMaskGasSecurity
+
+- type: loadout
+  id: WFClothingMaskGasAtmos
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  storage:
+    back:
+    - ClothingMaskGasAtmos
+
+- type: loadout
+  id: WFClothingMaskPlague
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1500
+  storage:
+    back:
+    - ClothingMaskPlague
+
+- type: loadout
+  id: WFClothingMaskMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1500
+  storage:
+    back:
+    - ClothingMaskMime
+
+- type: loadout
+  id: WFClothingMaskScaredMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1500
+  storage:
+    back:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: WFClothingMaskSadMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1500
+  storage:
+    back:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: WFClothingMaskClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2500
+  storage:
+    back:
+    - ClothingMaskClown
+
+- type: loadout
+  id: WFClothingMaskClownBald
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2500
+  storage:
+    back:
+    - ClothingMaskClownBald

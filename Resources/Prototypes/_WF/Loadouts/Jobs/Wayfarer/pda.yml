@@ -1,275 +1,290 @@
 - type: loadout
-  id: ContractorContractorPDA
+  id: WFPDA
   price: 0
   equipment:
-    id: ContractorPDA
+    id: PilotPDA
 
 - type: loadout
-  id: ContractorClearNFPDA
+  id: WFClearNFPDA
   price: 0
   equipment:
     id: ClearNFPDA
 
 - type: loadout
-  id: ContractorSalvagePDA
+  id: WFSalvagePDA
   price: 250
   equipment:
     id: SalvagePDA
 
 - type: loadout
-  id: ContractorResearchAssistantPDA
+  id: WFResearchAssistantPDA
   price: 250
   equipment:
     id: ResearchAssistantPDA
 
 - type: loadout
-  id: ContractorCargoPDA
+  id: WFCargoPDA
   price: 250
   equipment:
     id: CargoPDA
 
 - type: loadout
-  id: ContractorMedicalInternPDA
+  id: WFMedicalInternPDA
   price: 250
   equipment:
     id: MedicalInternPDA
 
 - type: loadout
-  id: ContractorTechnicalAssistantPDA
+  id: WFTechnicalAssistantPDA
   price: 250
   equipment:
     id: TechnicalAssistantPDA
 
 - type: loadout
-  id: ContractorServiceWorkerPDA
+  id: WFServiceWorkerPDA
   price: 250
   equipment:
     id: ServiceWorkerPDA
 
 #T1
 - type: loadout
-  id: ContractorBartenderPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFBartenderPDA
   price: 500
   equipment:
     id: BartenderPDA
 
 - type: loadout
-  id: ContractorChefPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFChefPDA
   price: 500
   equipment:
     id: ChefPDA
 
 - type: loadout
-  id: ContractorBotanistPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFBotanistPDA
   price: 500
   equipment:
     id: BotanistPDA
 
 - type: loadout
-  id: ContractorChaplainPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFChaplainPDA
   price: 500
   equipment:
     id: ChaplainPDA
 
 - type: loadout
-  id: ContractorLibrarianPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFLibrarianPDA
   price: 500
   equipment:
     id: LibrarianPDA
 
 - type: loadout
-  id: ContractorMedicalPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFMedicalPDA
   price: 500
   equipment:
     id: MedicalPDA
 
 - type: loadout
-  id: ContractorPsychologistPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFPsychologistPDA
   price: 500
   equipment:
     id: PsychologistPDA
 
 - type: loadout
-  id: ContractorChemistryPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFChemistryPDA
   price: 500
   equipment:
     id: ChemistryPDA
 
 - type: loadout
-  id: ContractorSciencePDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFSciencePDA
   price: 500
   equipment:
     id: SciencePDA
 
 - type: loadout
-  id: ContractorReporterPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFReporterPDA
   price: 500
   equipment:
     id: ReporterPDA
 
 - type: loadout
-  id: ContractorZookeeperPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFZookeeperPDA
   price: 500
   equipment:
     id: ZookeeperPDA
 
 - type: loadout
-  id: ContractorEngineerPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFEngineerPDA
   price: 500
   equipment:
     id: EngineerPDA
 
 - type: loadout
-  id: ContractorAtmosPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFAtmosPDA
   price: 500
   equipment:
     id: AtmosPDA
 
 #T2
 - type: loadout
-  id: ContractorCaptainPDA
+  id: WFCaptainPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: CaptainPDA
 
 - type: loadout
-  id: ContractorQuartermasterPDA
+  id: WFQuartermasterPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: QuartermasterPDA
 
 - type: loadout
-  id: ContractorSeniorResearcherPDA
+  id: WFSeniorResearcherPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: SeniorResearcherPDA
 
 - type: loadout
-  id: ContractorRnDPDA
+  id: WFRnDPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: RnDPDA
 
 - type: loadout
-  id: ContractorSeniorPhysicianPDA
+  id: WFSeniorPhysicianPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: SeniorPhysicianPDA
 
 - type: loadout
-  id: ContractorCMOPDA
+  id: WFCMOPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: CMOPDA
 
 - type: loadout
-  id: ContractorSeniorEngineerPDA
+  id: WFSeniorEngineerPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: SeniorEngineerPDA
 
 - type: loadout
-  id: ContractorCEPDA
+  id: WFCEPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: CEPDA
 
 - type: loadout
-  id: ContractorBoxerPDA
+  id: WFBoxerPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: BoxerPDA
 
 - type: loadout
-  id: ContractorMimePDA
+  id: WFMimePDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 750
   equipment:
     id: MimePDA
 
 #T3
 - type: loadout
-  id: ContractorClownPDA
+  id: WFClownPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1500
   equipment:
     id: ClownPDA
 
 - type: loadout
-  id: ContractorMusicianPDA
+  id: WFMusicianPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1500
   equipment:
     id: MusicianPDA
+
+- type: loadout
+  id: WFHoSPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    id: HoSPDA
+
+- type: loadout
+  id: WFSecurityPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    id: SecurityPDA
+
+- type: loadout
+  id: WFSeniorOfficerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    id: SeniorOfficerPDA
+
+- type: loadout
+  id: WFBrigmedicPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    id: BrigmedicPDA
+
+- type: loadout
+  id: WFSyndiAgentPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    id: SyndiAgentPDA
+
+- type: loadout
+  id: WFSyndiPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    id: SyndiPDA

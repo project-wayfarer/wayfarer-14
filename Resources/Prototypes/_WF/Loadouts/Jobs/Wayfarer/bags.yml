@@ -1,0 +1,709 @@
+- type: loadout
+  id: WFClothingBackpack
+  price: 0
+  equipment:
+    back: NFClothingBackpack
+  groupBy: "basic"
+
+- type: loadout
+  id: WFClothingBackpackDuffel
+  price: 0
+  equipment:
+    back: NFClothingDuffel
+  groupBy: "basic"
+
+- type: loadout
+  id: WFClothingBackpackSatchel
+  price: 0
+  equipment:
+    back: ClothingBackpackSatchel
+  groupBy: "basic"
+
+- type: loadout
+  id: WFClothingBackpackMessenger
+  price: 0
+  equipment:
+    back: ClothingBackpackMessenger
+  groupBy: "basic"
+
+#T1
+- type: loadout
+  id: WFClothingBackpackCaptain
+  price: 500
+  equipment:
+    back: ClothingBackpackCaptain
+  groupBy: "captain"
+
+- type: loadout
+  id: WFClothingBackpackDuffelCaptain
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelCaptain
+  groupBy: "captain"
+
+- type: loadout
+  id: WFClothingBackpackSatchelCaptain
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelCaptain
+  groupBy: "captain"
+
+- type: loadout
+  id: WFClothingBackpackMessengerCaptain
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerCaptain
+  groupBy: "captain"
+
+- type: loadout
+  id: WFClothingBackpackSalvage
+  price: 500
+  equipment:
+    back: ClothingBackpackSalvage
+  groupBy: "salvage"
+
+- type: loadout
+  id: WFClothingBackpackDuffelSalvage
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelSalvage
+  groupBy: "salvage"
+
+- type: loadout
+  id: WFClothingBackpackSatchelSalvage
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelSalvage
+  groupBy: "salvage"
+
+- type: loadout
+  id: WFClothingBackpackMessengerSalvage
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerSalvage
+  groupBy: "salvage"
+
+- type: loadout
+  id: WFClothingBackpackCargo
+  price: 500
+  equipment:
+    back: ClothingBackpackCargo
+  groupBy: "cargo"
+
+- type: loadout
+  id: WFClothingBackpackDuffelCargo
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelCargo
+  groupBy: "cargo"
+
+- type: loadout
+  id: WFClothingBackpackSatchelCargo
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelCargo
+  groupBy: "cargo"
+
+- type: loadout
+  id: WFClothingBackpackMessengerCargo
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerCargo
+  groupBy: "cargo"
+
+- type: loadout
+  id: WFClothingBackpackHydroponics
+  price: 500
+  equipment:
+    back: ClothingBackpackHydroponics
+  groupBy: "hydro"
+
+- type: loadout
+  id: WFClothingBackpackDuffelHydroponics
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelHydroponics
+  groupBy: "hydro"
+
+- type: loadout
+  id: WFClothingBackpackSatchelHydroponics
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelHydroponics
+  groupBy: "hydro"
+
+- type: loadout
+  id: WFClothingBackpackMessengerHydroponics
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerHydroponics
+  groupBy: "hydro"
+
+- type: loadout
+  id: WFClothingBackpackScience
+  price: 500
+  equipment:
+    back: ClothingBackpackScience
+  groupBy: "science"
+
+- type: loadout
+  id: WFClothingBackpackDuffelScience
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelScience
+  groupBy: "science"
+
+- type: loadout
+  id: WFClothingBackpackSatchelScience
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelScience
+  groupBy: "science"
+
+- type: loadout
+  id: WFClothingBackpackMessengerScience
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerScience
+  groupBy: "science"
+
+- type: loadout
+  id: WFClothingBackpackMedical
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotDoc
+  price: 500
+  equipment:
+    back: ClothingBackpackMedical
+  groupBy: "medical"
+
+- type: loadout
+  id: WFClothingBackpackDuffelMedical
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotDoc
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelMedical
+  groupBy: "medical"
+
+- type: loadout
+  id: WFClothingBackpackDuffelTrauma
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotDoc
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelTrauma
+  groupBy: "medical"
+
+- type: loadout
+  id: WFClothingBackpackSatchelMedical
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotDoc
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelMedical
+  groupBy: "medical"
+
+- type: loadout
+  id: WFClothingBackpackMessengerMedical
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotDoc
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerMedical
+  groupBy: "medical"
+
+- type: loadout
+  id: WFClothingBackpackChemistry
+  price: 500
+  equipment:
+    back: ClothingBackpackChemistry
+  groupBy: "chemistry"
+
+- type: loadout
+  id: WFClothingBackpackDuffelChemistry
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelChemistry
+  groupBy: "chemistry"
+
+- type: loadout
+  id: WFClothingBackpackSatchelChemistry
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelChemistry
+  groupBy: "chemistry"
+
+- type: loadout
+  id: WFClothingBackpackMessengerChemistry
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerChemistry
+  groupBy: "chemistry"
+
+- type: loadout
+  id: WFClothingBackpackGenetics
+  price: 500
+  equipment:
+    back: ClothingBackpackGenetics
+  groupBy: "genetics"
+
+- type: loadout
+  id: WFClothingBackpackDuffelGenetics
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelGenetics
+  groupBy: "genetics"
+
+- type: loadout
+  id: WFClothingBackpackSatchelGenetics
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelGenetics
+  groupBy: "genetics"
+
+- type: loadout
+  id: WFClothingBackpackMessengerGenetics
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerGenetics
+  groupBy: "genetics"
+
+- type: loadout
+  id: WFClothingBackpackVirology
+  price: 500
+  equipment:
+    back: ClothingBackpackVirology
+  groupBy: "viro"
+
+- type: loadout
+  id: WFClothingBackpackDuffelVirology
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelVirology
+  groupBy: "viro"
+
+- type: loadout
+  id: WFClothingBackpackSatchelVirology
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelVirology
+  groupBy: "viro"
+
+- type: loadout
+  id: WFClothingBackpackMessengerVirology
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerVirology
+  groupBy: "viro"
+
+- type: loadout
+  id: WFClothingBackpackEngineering
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 500
+  equipment:
+    back: ClothingBackpackEngineering
+  groupBy: "engineering"
+
+- type: loadout
+  id: WFClothingBackpackDuffelEngineering
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelEngineering
+  groupBy: "engineering"
+
+- type: loadout
+  id: WFClothingBackpackSatchelEngineering
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelEngineering
+  groupBy: "engineering"
+
+- type: loadout
+  id: WFClothingBackpackMessengerEngineering
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerEngineering
+  groupBy: "engineering"
+
+- type: loadout
+  id: WFClothingBackpackMessengerChiefEngineer
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerChiefEngineer
+  groupBy: "engineering"
+
+- type: loadout
+  id: WFClothingBackpackAtmospherics
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 500
+  equipment:
+    back: ClothingBackpackAtmospherics
+  groupBy: "atmos"
+
+- type: loadout
+  id: WFClothingBackpackDuffelAtmospherics
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 750
+  equipment:
+    back: ClothingBackpackDuffelAtmospherics
+  groupBy: "atmos"
+
+- type: loadout
+  id: WFClothingBackpackSatchelAtmospherics
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 500
+  equipment:
+    back: ClothingBackpackSatchelAtmospherics
+  groupBy: "atmos"
+
+- type: loadout
+  id: WFClothingBackpackMessengerAtmospherics
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerAtmospherics
+  groupBy: "atmos"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelChaplain
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelChaplain
+  groupBy: "chaplain"
+
+- type: loadout
+  id: WFClothingBackpackMessengerChaplain
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerChaplain
+  groupBy: "chaplain"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorBlack
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorBlack
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorBlue
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorBlue
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorGreen
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorGreen
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorOrange
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorOrange
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorRed
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorRed
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorPurple
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorPurple
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorBrownLight
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorBrownLight
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorBrown
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorBrown
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorWhite
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorWhite
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFNFClothingBackpackDuffelColorRandom
+  price: 750
+  equipment:
+    back: NFClothingBackpackDuffelColorRandom
+  groupBy: "coloredduffel"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorBlack
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorBlack
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorWhite
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorWhite
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorBlue
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorBlue
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorGreen
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorGreen
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorOrange
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorOrange
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorRed
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorRed
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorPurple
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorPurple
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorBrownLight
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorBrownLight
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorBrown
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorBrown
+  groupBy: "coloredMessenger"
+
+- type: loadout
+  id: WFClothingBackpackMessengerColorRandom
+  price: 500
+  equipment:
+    back: ClothingBackpackMessengerColorRandom
+  groupBy: "coloredMessenger"
+
+#T2
+- type: loadout
+  id: WFClothingBackpackClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    back: ClothingBackpackClown
+  groupBy: "clown"
+
+- type: loadout
+  id: WFClothingBackpackDuffelClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2000
+  equipment:
+    back: ClothingBackpackDuffelClown
+  groupBy: "clown"
+
+- type: loadout
+  id: WFClothingBackpackSatchelClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    back: ClothingBackpackSatchelClown
+  groupBy: "clown"
+
+- type: loadout
+  id: WFClothingBackpackMessengerClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    back: ClothingBackpackMessengerClown
+  groupBy: "clown"
+
+- type: loadout
+  id: WFClothingBackpackMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    back: ClothingBackpackMime
+  groupBy: "mime"
+
+- type: loadout
+  id: WFClothingBackpackDuffelMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2000
+  equipment:
+    back: ClothingBackpackDuffelMime
+  groupBy: "mime"
+
+- type: loadout
+  id: WFClothingBackpackSatchelMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    back: ClothingBackpackSatchelMime
+  groupBy: "mime"
+
+- type: loadout
+  id: WFClothingBackpackMessengerMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    back: ClothingBackpackMessengerMime
+  groupBy: "mime"
+
+# Syndicate
+
+- type: loadout
+  id: WFClothingBackpackMessengerSyndicate
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackMessengerSyndicate
+  groupBy: "syndicate"
+
+- type: loadout
+  id: WFClothingBackpackSyndicate
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackSyndicate
+  groupBy: "syndicate"
+
+- type: loadout
+  id: WFClothingBackpackDuffelSyndicate
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackDuffelSyndicate
+  groupBy: "syndicate"
+
+- type: loadout
+  id: WFClothingBackpackDuffelSyndicateAmmo
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackDuffelSyndicateAmmo
+  groupBy: "syndicate"
+
+- type: loadout
+  id: WFClothingBackpackDuffelSyndicateMedical
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackDuffelSyndicateMedical
+  groupBy: "syndicate"
+
+- type: loadout
+  id: WFClothingBackpackSatchelBrigmedic
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackSatchelBrigmedic
+  groupBy: "brigmed"
+
+- type: loadout
+  id: WFClothingBackpackBrigmedic
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackBrigmedic
+  groupBy: "brigmed"
+
+- type: loadout
+  id: WFClothingBackpackDuffelBrigmedic
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    back: ClothingBackpackDuffelBrigmedic
+  groupBy: "brigmed"

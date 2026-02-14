@@ -1,5 +1,5 @@
 - type: loadout
-  id: ContractorForcedClothingOuterEVASuitContractor
+  id: WFForcedClothingOuterEVASuitContractor
   effects:
   - !type:GroupLoadoutEffect
     proto: NFOuterSuitRequired
@@ -8,10 +8,7 @@
     outerClothing: ClothingOuterEVASuitContractor
 
 - type: loadout
-  id: ContractorClothingOuterHardsuitVoidParamed
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterHardsuitVoidParamed
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -20,7 +17,7 @@
     outerClothing: ClothingOuterHardsuitVoidParamed
 
 - type: loadout
-  id: ContractorClothingOuterHoodieGrey
+  id: WFClothingOuterHoodieGrey
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -29,7 +26,7 @@
     outerClothing: ClothingOuterHoodieGrey
 
 - type: loadout
-  id: ContractorClothingOuterVestHazard
+  id: WFClothingOuterVestHazard
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -38,47 +35,48 @@
     outerClothing: ClothingOuterVestHazard
 
 - type: loadout
-  id: ContractorClothingOuterApron
+  id: WFClothingOuterApron
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 200
   equipment:
     outerClothing: ClothingOuterApron
+  groupBy: "apron"
 
 - type: loadout
-  id: ContractorClothingOuterApronBar
+  id: WFClothingOuterApronBar
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 200
   equipment:
     outerClothing: ClothingOuterApronBar
+  groupBy: "apron"
 
 - type: loadout
-  id: ContractorClothingOuterApronBotanist
+  id: WFClothingOuterApronBotanist
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 200
   equipment:
     outerClothing: ClothingOuterApronBotanist
+  groupBy: "apron"
 
 - type: loadout
-  id: ContractorClothingOuterApronChef
+  id: WFClothingOuterApronChef
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 200
   equipment:
     outerClothing: ClothingOuterApronChef
+  groupBy: "apron"
 
 #T1
 - type: loadout
-  id: ContractorClothingOuterHoodieBlack
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterHoodieBlack
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -87,10 +85,7 @@
     outerClothing: ClothingOuterHoodieBlack
 
 - type: loadout
-  id: ContractorClothingOuterCoatJensen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatJensen
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -99,10 +94,7 @@
     outerClothing: ClothingOuterCoatJensen
 
 - type: loadout
-  id: ContractorClothingOuterCoatGentle
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatGentle
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -111,10 +103,7 @@
     outerClothing: ClothingOuterCoatGentle
 
 - type: loadout
-  id: ContractorClothingOuterJacketChef
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterJacketChef
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -123,10 +112,7 @@
     outerClothing: ClothingOuterJacketChef
 
 - type: loadout
-  id: ContractorClothingOuterHoodieChaplain
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterHoodieChaplain
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -135,10 +121,7 @@
     outerClothing: ClothingOuterHoodieChaplain
 
 - type: loadout
-  id: ContractorClothingOuterNunRobe
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterNunRobe
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -147,10 +130,7 @@
     outerClothing: ClothingOuterNunRobe
 
 - type: loadout
-  id: ContractorClothingOuterCoatLab
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatLab
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -160,10 +140,7 @@
   groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatLabGene
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatLabGene
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -173,10 +150,7 @@
   groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatLabChem
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatLabChem
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -186,22 +160,17 @@
   groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatRobo
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatRobo
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatRobo
+  groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatLabViro
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatLabViro
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -211,22 +180,17 @@
   groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterBioScientist
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterBioScientist
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 800
   equipment:
     outerClothing: ClothingOuterBioScientist
+  groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterCoat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterCoat
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -236,10 +200,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterCoatLong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterCoatLong
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -249,10 +210,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterAtmos
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterAtmos
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -262,10 +220,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterHydro
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterHydro
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -275,10 +230,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterBar
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterBar
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -288,10 +240,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterChef
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterChef
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -301,10 +250,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterCap
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterCap
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -314,10 +260,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterMusician
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterMusician
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -327,10 +270,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterCargo
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterCargo
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -340,10 +280,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterMiner
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterMiner
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -353,10 +290,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterEngi
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterEngi
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -366,10 +300,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterMed
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterMed
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -379,10 +310,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterChem
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterChem
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -392,10 +320,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatParamedicWB
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterCoatParamedicWB
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -404,10 +329,7 @@
     outerClothing: ClothingOuterCoatParamedicWB
 
 - type: loadout
-  id: ContractorClothingOuterWinterPara
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterPara
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -417,10 +339,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterGen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterGen
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -430,10 +349,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterSci
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterSci
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -443,10 +359,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterRobo
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterRobo
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -456,10 +369,7 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterViro
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingOuterWinterViro
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -470,10 +380,10 @@
 
 #T2
 - type: loadout
-  id: ContractorClothingOuterWinterClown
+  id: WFClothingOuterWinterClown
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -483,10 +393,10 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterMime
+  id: WFClothingOuterWinterMime
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -496,10 +406,10 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterQM
+  id: WFClothingOuterWinterQM
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -509,10 +419,10 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterRD
+  id: WFClothingOuterWinterRD
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -522,10 +432,10 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterCMO
+  id: WFClothingOuterWinterCMO
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -535,10 +445,10 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterWinterCE
+  id: WFClothingOuterWinterCE
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -548,10 +458,10 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatLabCmo
+  id: WFClothingOuterCoatLabCmo
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -561,10 +471,10 @@
   groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatLabSeniorPhysician
+  id: WFClothingOuterCoatLabSeniorPhysician
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -574,22 +484,23 @@
   groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatRD
+  id: WFClothingOuterCoatRD
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatRD
+  groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatLabSeniorResearcher
+  id: WFClothingOuterCoatLabSeniorResearcher
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -599,10 +510,10 @@
   groupBy: "Labcoat"
 
 - type: loadout
-  id: ContractorClothingOuterFlannelRed
+  id: WFClothingOuterFlannelRed
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -611,10 +522,10 @@
     outerClothing: ClothingOuterFlannelRed
 
 - type: loadout
-  id: ContractorClothingOuterFlannelBlue
+  id: WFClothingOuterFlannelBlue
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -623,10 +534,10 @@
     outerClothing: ClothingOuterFlannelBlue
 
 - type: loadout
-  id: ContractorClothingOuterFlannelGreen
+  id: WFClothingOuterFlannelGreen
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -635,10 +546,10 @@
     outerClothing: ClothingOuterFlannelGreen
 
 - type: loadout
-  id: ContractorClothingOuterCoatHyenhSweater
+  id: WFClothingOuterCoatHyenhSweater
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -647,10 +558,10 @@
     outerClothing: ClothingOuterCoatHyenhSweater
 
 - type: loadout
-  id: ContractorClothingOuterCoatInspector
+  id: WFClothingOuterCoatInspector
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -659,10 +570,10 @@
     outerClothing: ClothingOuterCoatDetectiveLoadout
 
 - type: loadout
-  id: ContractorClothingOuterCoatTrench
+  id: WFClothingOuterCoatTrench
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -671,10 +582,10 @@
     outerClothing: ClothingOuterCoatTrench
 
 - type: loadout
-  id: ContractorClothingOuterDameDane
+  id: WFClothingOuterDameDane
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -683,10 +594,10 @@
     outerClothing: ClothingOuterDameDane
 
 - type: loadout
-  id: ContractorClothingOuterWinterCoatPlaid
+  id: WFClothingOuterWinterCoatPlaid
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -696,10 +607,10 @@
   groupBy: "wintercoat"
 
 - type: loadout
-  id: ContractorClothingOuterCoatBomber
+  id: WFClothingOuterCoatBomber
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -709,10 +620,10 @@
   groupBy: "bomber"
 
 - type: loadout
-  id: ContractorClothingOuterPlagueSuit
+  id: WFClothingOuterPlagueSuit
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -721,10 +632,10 @@
     outerClothing: ClothingOuterPlagueSuit
 
 - type: loadout
-  id: ContractorClothingOuterCoatBishop
+  id: WFClothingOuterCoatBishop
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -733,10 +644,10 @@
     outerClothing: ClothingOuterCoatBishop
 
 - type: loadout
-  id: ContractorClothingOuterCoatWitchHunter
+  id: WFClothingOuterCoatWitchHunter
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -745,10 +656,10 @@
     outerClothing: ClothingOuterCoatWitchHunter
 
 - type: loadout
-  id: ContractorClothingOuterCoatCardinal
+  id: WFClothingOuterCoatCardinal
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -756,12 +667,49 @@
   equipment:
     outerClothing: ClothingOuterCoatCardinal
 
-# Punk stuff
+# Merc vests
 - type: loadout
-  id: ContractorClothingOuterCoatBomberPunkRed
+  id: WFClothingOuterVestWebMercenary
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 2500
+  equipment:
+    outerClothing: ClothingOuterVestWebMercenary
+
+- type: loadout
+  id: WFClothingOuterVestWebMercenaryBlack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 2500
+  equipment:
+    outerClothing: ClothingOuterVestWebMercenaryBlack
+
+- type: loadout
+  id: WFClothingOuterArmorCaptainCarapace
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 5000
+  equipment:
+    outerClothing: ClothingOuterArmorCaptainCarapace
+
+# Punk stuff
+- type: loadout
+  id: WFClothingOuterCoatBomberPunkRed
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -771,10 +719,10 @@
   groupBy: "bomber"
 
 - type: loadout
-  id: ContractorClothingOuterCoatJacketLeather
+  id: WFClothingOuterCoatJacketLeather
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -783,10 +731,10 @@
     outerClothing: ClothingOuterCoatJacketLeather
 
 - type: loadout
-  id: ContractorClothingOuterCoatJacketBiker
+  id: WFClothingOuterCoatJacketBiker
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -795,10 +743,10 @@
     outerClothing: ClothingOuterCoatJacketBiker
 
 - type: loadout
-  id: ContractorClothingOuterCoatJacketJamrock
+  id: WFClothingOuterCoatJacketJamrock
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -807,10 +755,10 @@
     outerClothing: ClothingOuterCoatJacketJamrock
 
 - type: loadout
-  id: ContractorClothingOuterCoatBomberAerostatic
+  id: WFClothingOuterCoatBomberAerostatic
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -820,10 +768,10 @@
   groupBy: "bomber"
 
 - type: loadout
-  id: ContractorClothingOuterCoatJacketLettermanBlue
+  id: WFClothingOuterCoatJacketLettermanBlue
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -833,10 +781,10 @@
   groupBy: "letterman"
 
 - type: loadout
-  id: ContractorClothingOuterCoatJacketLettermanBrown
+  id: WFClothingOuterCoatJacketLettermanBrown
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -846,10 +794,10 @@
   groupBy: "letterman"
 
 - type: loadout
-  id: ContractorClothingOuterCoatJacketLettermanRed
+  id: WFClothingOuterCoatJacketLettermanRed
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -859,10 +807,10 @@
   groupBy: "letterman"
 
 - type: loadout
-  id: ContractorClothingOuterCoatJacketLettermanMagenta
+  id: WFClothingOuterCoatJacketLettermanMagenta
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -872,10 +820,10 @@
   groupBy: "letterman"
 
 - type: loadout
-  id: ContractorClothingOuterCoatBomberPinkSleeves
+  id: WFClothingOuterCoatBomberPinkSleeves
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -885,11 +833,11 @@
   groupBy: "bomber"
 
 - type: loadout
-  id: ContractorClothingOuterCoatBomberRandomized
+  id: WFClothingOuterCoatBomberRandomized
   name: punk jacket (random)
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -899,11 +847,11 @@
   groupBy: "bomber"
 
 - type: loadout
-  id: ContractorClothingOuterCoatRandomized
+  id: WFClothingOuterCoatRandomized
   name: punk coat (random)
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -912,10 +860,10 @@
     outerClothing: ClothingOuterCoatRandomized
 
 - type: loadout
-  id: ContractorClothingOuterCoatAcidRaincoat
+  id: WFClothingOuterCoatAcidRaincoat
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -925,10 +873,10 @@
   groupBy: "acid"
 
 - type: loadout
-  id: ContractorClothingOuterCoatAcidRaincoatBlue
+  id: WFClothingOuterCoatAcidRaincoatBlue
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -938,10 +886,10 @@
   groupBy: "acid"
 
 - type: loadout
-  id: ContractorClothingOuterCoatAcidRaincoatGreen
+  id: WFClothingOuterCoatAcidRaincoatGreen
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -951,10 +899,10 @@
   groupBy: "acid"
 
 - type: loadout
-  id: ContractorClothingOuterCoatAcidRaincoatMagenta
+  id: WFClothingOuterCoatAcidRaincoatMagenta
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -964,10 +912,10 @@
   groupBy: "acid"
 
 - type: loadout
-  id: ContractorClothingOuterCoatAcidRaincoatYellow
+  id: WFClothingOuterCoatAcidRaincoatYellow
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -979,10 +927,10 @@
 
 #T3 for lols
 - type: loadout
-  id: ContractorWetFloorSign
+  id: WFWetFloorSign
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -991,10 +939,10 @@
     outerClothing: WetFloorSign
 
 - type: loadout
-  id: ContractorClothingOuterCoatExpensive
+  id: WFClothingOuterCoatExpensive
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
@@ -1003,13 +951,143 @@
     outerClothing: ClothingOuterCoatExpensive
 
 - type: loadout
-  id: ContractorClothingOuterCoatSpaceAsshole
+  id: WFClothingOuterCoatSpaceAsshole
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
   price: 8000
   equipment:
     outerClothing: ClothingOuterCoatSpaceAsshole
+
+- type: loadout
+  id: ClothingOuterWinterHoS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterWinterHoS
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: ClothingOuterWinterHoSUnarmored
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 5000
+  equipment:
+    outerClothing: ClothingOuterWinterHoSUnarmored
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: WFClothingOuterWinterWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterWinterWarden
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: WFClothingOuterWinterWardenUnarmored
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 5000
+  equipment:
+    outerClothing: ClothingOuterWinterWardenUnarmored
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: ClothingOuterCoatWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterCoatWarden
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: ClothingOuterCoatAMG
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterCoatAMG
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: ClothingOuterCoatSyndieCapArmored
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterCoatSyndieCapArmored
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: ClothingOuterCoatSyndieCap
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 5000
+  equipment:
+    outerClothing: ClothingOuterCoatSyndieCap
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: ClothingOuterWinterSyndieCap
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 5000
+  equipment:
+    outerClothing: ClothingOuterWinterSyndieCap
+  groupBy: "specialcoats"
+
+- type: loadout
+  id: ClothingOuterWinterSyndie
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 5000
+  equipment:
+    outerClothing: ClothingOuterWinterSyndie
+  groupBy: "specialcoats"

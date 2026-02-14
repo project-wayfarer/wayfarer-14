@@ -1,28 +1,28 @@
 # Smokes:
 #T0
 - type: loadout
-  id: ContractorCigPackBlue
+  id: WFCigPackBlue
   price: 150
   storage:
     back:
     - CigPackBlue
 
 - type: loadout
-  id: ContractorCigPackRed
+  id: WFCigPackRed
   price: 150
   storage:
     back:
     - CigPackRed
 
 - type: loadout
-  id: ContractorCigPackBlack
+  id: WFCigPackBlack
   price: 150
   storage:
     back:
     - CigPackBlack
 
 - type: loadout
-  id: ContractorCigPackGreen
+  id: WFCigPackGreen
   price: 150
   storage:
     back:
@@ -30,30 +30,21 @@
 
 #T1
 - type: loadout
-  id: ContractorCigarCase
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFCigarCase
   price: 500
   storage:
     back:
     - CigarCase
 
 - type: loadout
-  id: ContractorNFAshtray
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFNFAshtray
   price: 200
   storage:
     back:
     - NFAshtray
 
 - type: loadout
-  id: ContractorTapeRecorder
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFTapeRecorder
   price: 600
   storage:
     back:
@@ -61,60 +52,60 @@
 
 #T2
 - type: loadout
-  id: ContractorSmokingPipeFilledTobacco
+  id: WFSmokingPipeFilledTobacco
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 600
   storage:
     back:
     - SmokingPipeFilledTobacco
 
 - type: loadout
-  id: ContractorTobaccoPouchBrownFilled
+  id: WFTobaccoPouchBrownFilled
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 600
   storage:
     back:
     - TobaccoPouchBrownFilled
 
 - type: loadout
-  id: ContractorTobaccoPouchBlueFilled
+  id: WFTobaccoPouchBlueFilled
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 600
   storage:
     back:
     - TobaccoPouchBlueFilled
 
 - type: loadout
-  id: ContractorTobaccoPouchRedFilled
+  id: WFTobaccoPouchRedFilled
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 800
   storage:
     back:
     - TobaccoPouchRedFilled
 
 - type: loadout
-  id: ContractorTobaccoPouchPurpleFilled
+  id: WFTobaccoPouchPurpleFilled
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 600
   storage:
     back:
     - TobaccoPouchPurpleFilled
 
 - type: loadout
-  id: ContractorVape
+  id: WFVape
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 600
   storage:
     back:
@@ -122,10 +113,10 @@
 
 #T3 for lols
 - type: loadout
-  id: ContractorCigarGoldCase
+  id: WFCigarGoldCase
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 2000
   storage:
     back:
@@ -134,7 +125,7 @@
 # Lighters:
 #T0
 - type: loadout
-  id: ContractorMatchbox
+  id: WFMatchbox
   price: 100
   storage:
     back:
@@ -142,10 +133,7 @@
 
 #T1
 - type: loadout
-  id: ContractorLighter
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFLighter
   price: 200
   storage:
     back:
@@ -153,10 +141,10 @@
 
 #T2
 - type: loadout
-  id: ContractorFlippoLighter
+  id: WFFlippoLighter
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 500
   storage:
     back:
@@ -164,10 +152,10 @@
 
 #T3 for lols
 - type: loadout
-  id: ContractorFlippoEngravedLighter
+  id: WFFlippoEngravedLighter
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 5000
   storage:
     back:
@@ -176,7 +164,7 @@
 # Flasks:
 #T0
 - type: loadout
-  id: ContractorDrinkFlaskOld
+  id: WFDrinkFlaskOld
   price: 250
   storage:
     back:
@@ -184,10 +172,7 @@
 
 #T1
 - type: loadout
-  id: ContractorDrinkShinyFlask
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFDrinkShinyFlask
   price: 500
   storage:
     back:
@@ -195,10 +180,10 @@
 
 #T2
 - type: loadout
-  id: ContractorDrinkFlask
+  id: WFDrinkFlask
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   storage:
     back:
@@ -206,10 +191,10 @@
 
 #T3 for lols
 - type: loadout
-  id: ContractorDrinkVacuumFlask
+  id: WFDrinkVacuumFlask
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 2000
   storage:
     back:
@@ -218,21 +203,21 @@
 # Misc:
 #T0
 - type: loadout
-  id: ContractorFlashlightLantern
+  id: WFFlashlightLantern
   price: 100
   storage:
     back:
     - FlashlightLantern
 
 - type: loadout
-  id: ContractorWristwatch
+  id: WFWristwatch
   price: 500
   storage:
     back:
     - Wristwatch
 
 - type: loadout
-  id: ContractorUrnMortuary
+  id: WFUrnMortuary
   price: 500
   storage:
     back:
@@ -240,7 +225,7 @@
 
 #Start DeltaV
 - type: loadout
-  id: ContractorAACTablet
+  id: WFAACTablet
   price: 500
   storage:
     back:
@@ -249,30 +234,21 @@
 
 #T1
 - type: loadout
-  id: ContractorBasketball
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFBasketball
   price: 300
   storage:
     back:
     - Basketball
 
 - type: loadout
-  id: ContractorFootball
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFFootball
   price: 300
   storage:
     back:
     - Football
 
 - type: loadout
-  id: ContractorBeachBall
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFBeachBall
   price: 300
   storage:
     back:
@@ -280,30 +256,30 @@
 
 #T2
 - type: loadout
-  id: ContractorCrayonBox
+  id: WFCrayonBox
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 600
   storage:
     back:
     - CrayonBox
 
 - type: loadout
-  id: ContractorSoapNT
+  id: WFSoapNT
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 800
   storage:
     back:
     - SoapNT
 
 - type: loadout
-  id: ContractorCardBoxBlack
+  id: WFCardBoxBlack
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 2000
   storage:
     back:
@@ -311,30 +287,30 @@
 
 #T3 for lols
 - type: loadout
-  id: ContractorWristwatchGold
+  id: WFWristwatchGold
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 2500
   storage:
     back:
     - WristwatchGold
 
 - type: loadout
-  id: ContractorSilverRing
+  id: WFSilverRing
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 2750
   storage:
     back:
     - SilverRing
 
 - type: loadout
-  id: ContractorGoldRing
+  id: WFGoldRing
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 3000
   storage:
     back:
@@ -342,20 +318,20 @@
 
 # T2
 - type: loadout
-  id: ContractorMonkeyCubeWrapped
+  id: WFMonkeyCubeWrapped
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 500
   storage:
     back:
     - MonkeyCubeWrapped
 
 - type: loadout
-  id: ContractorKoboldCubeWrapped
+  id: WFKoboldCubeWrapped
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 500
   storage:
     back:
@@ -363,61 +339,52 @@
 
 # fun
 #T1
+#Start Wayfarer
 - type: loadout
-  id: ContractorPlushieSharkGrey
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WehfarerPlushie
+  price: 500
+  storage:
+    back:
+    - WehfarerPlushie
+#End Wayfarer
+
+- type: loadout
+  id: WFPlushieSharkGrey
   price: 500
   storage:
     back:
     - PlushieSharkGrey
 
 - type: loadout
-  id: ContractorPlushieSharkBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFPlushieSharkBlue
   price: 500
   storage:
     back:
     - PlushieSharkBlue
 
 - type: loadout
-  id: ContractorPlushieSharkPink
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFPlushieSharkPink
   price: 500
   storage:
     back:
     - PlushieSharkPink
 
 - type: loadout
-  id: ContractorHarmonicaInstrument
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFHarmonicaInstrument
   price: 500
   storage:
     back:
     - HarmonicaInstrument
 
 - type: loadout
-  id: ContractorSaxophoneInstrument
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFSaxophoneInstrument
   price: 500
   storage:
     back:
     - SaxophoneInstrument
 
 - type: loadout
-  id: ContractorAcousticGuitarInstrument
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFAcousticGuitarInstrument
   price: 500
   storage:
     back:
@@ -425,10 +392,10 @@
 
 #T2
 - type: loadout
-  id: ContractorPonderingOrb
+  id: WFPonderingOrb
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 5000
   storage:
     back:
@@ -436,50 +403,50 @@
 
 #T3
 - type: loadout
-  id: ContractorPlushieRGBee
+  id: WFPlushieRGBee
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 10000
   storage:
     back:
     - PlushieRGBee
 
 - type: loadout
-  id: ContractorMysterySpaceBladeBox
+  id: WFMysterySpaceBladeBox
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 2400
   storage:
     back:
     - MysterySpaceBladeBox
 
 - type: loadout
-  id: ContractorHoloGraffitiProjector
+  id: WFHoloGraffitiProjector
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 10000
   storage:
     back:
     - HoloGraffitiProjector
 
 - type: loadout
-  id: ContractorCrayonMagic
+  id: WFCrayonMagic
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 30000
   storage:
     back:
     - CrayonMagic
 
 - type: loadout
-  id: ContractorSprayPainterMagic
+  id: WFSprayPainterMagic
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 30000
   storage:
     back:
@@ -488,28 +455,28 @@
 #bureaucracy
 #T0
 - type: loadout
-  id: ContractorBoxFolderMedicalDoctor
+  id: WFBoxFolderMedicalDoctor
   price: 500
   storage:
     back:
     - BoxFolderMedicalDoctor
 
 - type: loadout
-  id: ContractorBrbSign
+  id: WFBrbSign
   price: 500
   storage:
     back:
     - BrbSign
 
 - type: loadout
-  id: ContractorHandLabeler
+  id: WFHandLabeler
   price: 500
   storage:
     back:
     - HandLabeler
 
 - type: loadout
-  id: ContractorStampsApprovedDenied
+  id: WFStampsApprovedDenied
   price: 1000
   name: approved and denied stamps
   description: A pair of stamps used for reviewing forms.
@@ -520,63 +487,63 @@
     - RubberStampDenied
 
 - type: loadout
-  id: ContractorRubberStampClown
+  id: WFRubberStampClown
   price: 1500
   storage:
     back:
     - RubberStampClown
 
 - type: loadout
-  id: ContractorRubberStampMime
+  id: WFRubberStampMime
   price: 1500
   storage:
     back:
     - RubberStampMime
 
 - type: loadout
-  id: ContractorRubberStampTrader
+  id: WFRubberStampTrader
   price: 500
   storage:
     back:
     - RubberStampTrader
 
 - type: loadout
-  id: ContractorRubberStampChaplain
+  id: WFRubberStampChaplain
   price: 500
   storage:
     back:
     - RubberStampChaplain
 
 - type: loadout
-  id: ContractorRubberStampCaptain
+  id: WFRubberStampCaptain
   price: 500
   storage:
     back:
     - RubberStampCaptain
 
 - type: loadout
-  id: ContractorRubberStampLawyer
+  id: WFRubberStampLawyer
   price: 500
   storage:
     back:
     - RubberStampLawyer
 
 - type: loadout
-  id: ContractorRubberStampPsychologist
+  id: WFRubberStampPsychologist
   price: 500
   storage:
     back:
     - RubberStampPsychologist
 
 - type: loadout
-  id: ContractorRubberStampDoctor
+  id: WFRubberStampDoctor
   price: 500
   storage:
     back:
     - RubberStampDoctor
 
 - type: loadout
-  id: ContractorRubberStampEngineer
+  id: WFRubberStampEngineer
   price: 500
   storage:
     back:
