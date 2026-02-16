@@ -643,7 +643,7 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: BaseSecurityPDA
+  parent: BasePDA # WF adjustment
   id: LawyerPDA
   name: lawyer PDA
   description: For lawyers to poach dubious clients.
@@ -696,31 +696,31 @@
   - type: Icon
     state: pda-janitor
 
-#- type: entity
-#  parent: BasePDA
-#  id: CaptainPDA
-#  name: captain PDA
-#  description: Surprisingly no different from your PDA.
-#  components:
-# - type: Pda
-#   id: CaptainIDCard
-#   penSlot:
-#     startingItem: PenCap
-#     priority: -1
-#     whitelist:
-#       tags:
-#        - Write
-#  - type: Appearance
-#    appearanceDataInit:
-#     enum.PdaVisuals.PdaType:
-#       !type:String
-#       pda-captain
-#  - type: PdaBorderColor
-#    borderColor: "#7C5D00"
-#  - type: Icon
-#    state: pda-captain
-#  - type: BlipCartridge
-#    defaultPreset: BlipPresetCommand
+- type: entity
+  parent: BasePDA
+  id: CaptainPDA
+  name: captain PDA
+  description: Surprisingly no different from your PDA.
+  components:
+  - type: Pda
+    id: CaptainIDCard
+    penSlot:
+      startingItem: PenCap
+      priority: -1
+      whitelist:
+        tags:
+         - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-captain
+  - type: PdaBorderColor
+    borderColor: "#7C5D00"
+  - type: Icon
+    state: pda-captain
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 #- type: entity
 #  parent: BasePDA

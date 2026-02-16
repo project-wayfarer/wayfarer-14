@@ -231,7 +231,7 @@
   parent: PassengerPDA
   id: WayfarerPDA
   name: wayfarer PDA
-  description: Has the smell of adventure upon it
+  description: Has the smell of adventure upon it.
   components:
   - type: Pda
     id: ContractorIDCard
@@ -240,3 +240,309 @@
       enum.PdaVisuals.PdaType:
         !type:String
         pda-wayfarer
+  - type: Icon
+    state: pda-wayfarer
+
+- type: entity
+  parent: PassengerPDA
+  id: BakerPDA
+  name: baker PDA
+  description: Smells of freshly baked bread.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-baker
+  - type: Icon
+    state: pda-baker
+
+- type: entity
+  parent: PassengerPDA
+  id: CookPDA
+  name: cook PDA
+  description: Don't interrupt them whilst they're working!
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-cook
+  - type: Icon
+    state: pda-cook
+
+- type: entity
+  parent: PassengerPDA
+  id: DeckworkerPDA
+  name: deckworker PDA
+  description: Zug zug!
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-deckworker
+  - type: Icon
+    state: pda-deckworker
+
+- type: entity
+  parent: PassengerPDA
+  id: ExcavatorPDA
+  name: excavator PDA
+  description: Digging a hole.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-excavator
+  - type: Icon
+    state: pda-excavator
+
+- type: entity
+  parent: ClownPDA
+  id: FoolPDA
+  name: fool PDA
+  description: Weapon of a troublemaker.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-fool
+  - type: Icon
+    state: pda-fool
+
+- type: entity
+  parent: ClownPDA
+  id: JesterPDA
+  name: jester PDA
+  description: The SR isn't laughing.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-jester
+  - type: Icon
+    state: pda-jester
+
+- type: entity
+  parent: PassengerPDA
+  id: GeneticsPDA
+  name: genetics PDA
+  description: Someday genetics will return... Right?
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-genetics
+  - type: Icon
+    state: pda-genetics
+
+- type: entity
+  parent: PassengerPDA
+  id: InventoryAssociatePDA
+  name: inventory associate PDA
+  description: There's an order to the mess, I swear.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-inventoryassociate
+  - type: Icon
+    state: pda-inventoryassociate
+
+- type: entity
+  parent: PassengerPDA
+  id: LabSciPDA
+  name: laboratory scientist PDA
+  description: Smells of a too many artifact explosions.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-labsci
+  - type: Icon
+    state: pda-labsci
+
+- type: entity
+  parent: PassengerPDA
+  id: LifeSupportTechPDA
+  name: life support technician PDA
+  description: We could recycle the carbon dioxide we're breathing out into O2!
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-lifesupporttech
+  - type: Icon
+    state: pda-lifesupporttech
+
+- type: entity
+  parent: PassengerPDA
+  id: PhysPDA
+  name: physician PDA
+  description: Please state the nature of the medical emergency.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-phys
+  - type: Icon
+    state: pda-phys
+
+- type: entity
+  parent: PassengerPDA
+  id: PizzaioloPDA
+  name: pizzaiolo PDA
+  description: Don't show this PDA's owner a pineapple.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-pizzaiolo
+  - type: Icon
+    state: pda-pizzaiolo
+
+- type: entity
+  parent: PassengerPDA
+  id: PlasmaScientistPDA
+  name: plasma scientist PDA
+  description: This thing is remarkably unburned, considering.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-plasmascientist
+  - type: Icon
+    state: pda-plasmascientist
+
+- type: entity
+  parent: PassengerPDA
+  id: PracticingNursePDA
+  name: practicing nurse PDA
+  description: Show me where it hurts.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-practicingnurse
+  - type: Icon
+    state: pda-practicingnurse
+
+- type: entity
+  parent: PassengerPDA
+  id: ProsecutorPDA
+  name: prosecutor PDA
+  description: OBJECTION!
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-prosecutor
+  - type: Icon
+    state: pda-prosecutor
+
+- type: entity
+  parent: PassengerPDA
+  id: ProspectorPDA
+  name: prospector PDA
+  description: Favourite PDA of dwarves everywhere.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-prospector
+  - type: Icon
+    state: pda-prospector
+
+- type: entity
+  parent: PassengerPDA
+  id: ResidentPDA
+  name: resident PDA
+  description: The PDA of a someone who lives on Dusk.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-resident
+  - type: Icon
+    state: pda-resident
+
+- type: entity
+  parent: PassengerPDA
+  id: RoboticistPDA
+  name: roboticist PDA
+  description: No, I'm not making an evil borg army, this time.
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-roboticist
+  - type: Icon
+    state: pda-roboticist
+
+- type: entity
+  parent: PassengerPDA
+  id: TouristPDA
+  name: tourist PDA
+  description: Exploring the Zekke sector on vacation are we?
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-tourist
+  - type: Icon
+    state: pda-tourist

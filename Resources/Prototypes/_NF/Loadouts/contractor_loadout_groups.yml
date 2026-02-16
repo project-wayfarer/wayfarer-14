@@ -814,10 +814,12 @@
   id: ContractorPDA
   name: loadout-group-contractor-pda
   loadouts:
+#T0
   - ContractorWayfarerPDA
 #  - ContractorContractorPDA #WF removed
   - ContractorClearNFPDA
 #  - MercenaryMercenaryPDA #WF removed
+#T1
   - ContractorSalvagePDA
   - ContractorResearchAssistantPDA
   - ContractorCargoPDA
@@ -837,7 +839,15 @@
   - ContractorZookeeperPDA
   - ContractorEngineerPDA
   - ContractorAtmosPDA
-  #- ContractorCaptainPDA # Temp removed for SR. Will return if replaced.
+  - ContractorLabSciPDA
+  - ContractorCookPDA
+  - ContractorDeckworkerPDA
+  - ContractorPracticingNursePDA
+  - ContractorProspectorPDA
+  - ContractorResidentPDA
+  - ContractorTouristPDA
+  #T2
+  - ContractorCaptainPDA
   - ContractorQuartermasterPDA
   - ContractorSeniorResearcherPDA
   - ContractorRnDPDA
@@ -846,9 +856,27 @@
   - ContractorSeniorEngineerPDA
   - ContractorCEPDA
   - ContractorBoxerPDA
-  - ContractorMusicianPDA
-  - ContractorClownPDA
+  - ContractorLawyerPDA
+  - ContractorLifeSupportTechPDA
+  - ContractorPhysPDA
+  - ContractorPizzaioloPDA
+  - ContractorGeneticsPDA
   - ContractorMimePDA
+  - ContractorBakerPDA
+  - ContractorExcavatorPDA
+  - ContractorPlasmaScientistPDA
+  - ContractorProsecutorPDA
+  - ContractorRoboticistPDA
+#T3
+  - ContractorClownPDA
+  - ContractorFoolPDA
+  - ContractorJesterPDA
+  - ContractorMusicianPDA
+
+
+
+
+
   fallbacks:
   - WayfarerWayfarerPDA
 
