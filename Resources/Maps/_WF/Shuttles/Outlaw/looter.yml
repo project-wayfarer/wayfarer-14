@@ -48,7 +48,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Hauler
+      name: Looter
     - type: Transform
       pos: -60.760418,-0.4107771
       parent: invalid
@@ -389,7 +389,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: Hauler
+      id: Looter
 - proto: AirAlarm
   entities:
   - uid: 2

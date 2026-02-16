@@ -9,14 +9,14 @@
 # Shuttle Notes:
 #
 - type: vessel
-  id: HaulerAntag
+  id: Looter
   parent: BaseVesselAntag
   name: Looter
   description: A rugged entry-level cargo freighter. This one has been retrofitted for nefarious deeds. Powered by Biofuel and Solars. Manufactured by Telum Industries.
-  price: 26000
+  price: 33870
   category: Small
   group: BlackMarket
-  shuttlePath: /Maps/_WF/Shuttles/Outlaw/hauler.yml
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/looter.yml
   guidebookPage: Null
   class:
   - Pirate
@@ -25,16 +25,16 @@
   - Solar
 
 - type: gameMap
-  id: HaulerAntag
-  mapName: 'Hauler'
-  mapPath: /Maps/_WF/Shuttles/Outlaw/hauler.yml
+  id: Looter
+  mapName: 'Looter'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/looter.yml
   minPlayers: 0
   stations:
-    HaulerAntag:
-      stationProto: StandardFrontierVessel
+    Looter:
+      stationProto: StandardFrontierVesselAntag
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Hauler CIV {1}'
+        mapNameTemplate: 'Hauler CIV{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
