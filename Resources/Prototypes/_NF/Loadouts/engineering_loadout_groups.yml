@@ -177,9 +177,16 @@
 - type: loadoutGroup
   id: PlantTechnicianPDA
   name: loadout-group-contractor-pda
-  hidden: true
+#  hidden: true #WF lets you pick a PDA
   loadouts:
   - PlantTechnicianPlantTechnicianPDA
+  - ContractorTechnicalAssistantPDA
+  - ContractorEngineerPDA
+  - ContractorAtmosPDA
+  - ContractorSeniorEngineerPDA
+  - ContractorCEPDA
+  - ContractorLifeSupportTechPDA
+  - ContractorPlasmaScientistPDA
   fallbacks:
   - PlantTechnicianPlantTechnicianPDA
 
