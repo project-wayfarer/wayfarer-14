@@ -814,14 +814,10 @@
   id: ContractorPDA
   name: loadout-group-contractor-pda
   loadouts:
-  - ContractorContractorPDA
+  - ContractorWayfarerPDA
+#  - ContractorContractorPDA #WF removed
   - ContractorClearNFPDA
-  # WF
-  - ContractorHoSPDA
-  - ContractorSecurityPDA
-  - ContractorSeniorOfficerPDA
-  - MercenaryMercenaryPDA
-  # WF
+#  - MercenaryMercenaryPDA #WF removed
   - ContractorSalvagePDA
   - ContractorResearchAssistantPDA
   - ContractorCargoPDA
@@ -841,12 +837,12 @@
   - ContractorZookeeperPDA
   - ContractorEngineerPDA
   - ContractorAtmosPDA
-  - ContractorCaptainPDA
+  #- ContractorCaptainPDA # Temp removed for SR. Will return if replaced.
   - ContractorQuartermasterPDA
   - ContractorSeniorResearcherPDA
   - ContractorRnDPDA
   - ContractorSeniorPhysicianPDA
-  #- ContractorCMOPDA # Temp removed for DOC. Will return if replaced.
+  - ContractorCMOPDA
   - ContractorSeniorEngineerPDA
   - ContractorCEPDA
   - ContractorBoxerPDA
@@ -854,7 +850,7 @@
   - ContractorClownPDA
   - ContractorMimePDA
   fallbacks:
-  - ContractorContractorPDA
+  - WayfarerWayfarerPDA
 
 - type: loadoutGroup
   id: ContractorGlasses

@@ -1,8 +1,8 @@
 - type: loadoutGroup
-  id: ParamedicPDA
-  name: loadout-group-contractor-pda
+  id: EmergencyResponderPDA
+  name: emergency responder PDA
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
-  - ParamedicParamedicPDA
+  - EmergencyResponderEmergencyResponderPDA
   fallbacks:
-  - ParamedicParamedicPDA
+  - EmergencyResponderEmergencyResponderPDA

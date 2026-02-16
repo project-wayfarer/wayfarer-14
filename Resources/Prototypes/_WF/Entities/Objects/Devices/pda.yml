@@ -1,0 +1,242 @@
+- type: entity
+  parent: [BaseSecurityPDA, BaseCommandContraband]
+  id: CommodorePDA
+  name: commodore PDA
+  description: With great power comes great responsibility.
+  components:
+  - type: Pda
+    id: ShriffIDCard
+    bookSlot:
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+    penSlot:
+      startingItem: PenCentcom
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-commodore
+  - type: PdaBorderColor
+    borderColor: "#23262A"
+    accentHColor: "#ffa71a"
+  - type: Icon
+    state: pda-commodore
+  - type: CartridgeLoader # Extended with the ledger
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NanoChatCartridge # Wayfarer
+    - NewsReaderCartridge
+    - BountyContractsCartridge
+    - AstroNavCartridge
+    - WantedListCartridge
+    - LedgerCartridge
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: CorpsmanPDA
+  name: corpsman PDA
+  description: Healer of those who keep the Peace.
+  components:
+  - type: Pda
+    id: BrigmedicNFIDCard
+    bookSlot:
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-corpsman
+  - type: PdaBorderColor
+    borderColor: "#23262A"
+    accentHColor: "#ffa71a"
+  - type: Icon
+    state: pda-corpsman
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: InternalAffairsPDA
+  name: internal affairs agent PDA
+  description: Smells like rain... pouring down the rooftops...
+  components:
+  - type: Pda
+    id: NFDetectiveIDCard
+    penSlot:
+      startingItem: PublicAffairsPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    bookSlot:
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-internalaffairs
+  - type: PdaBorderColor
+    borderColor: "#23262A"
+  - type: Icon
+    state: pda-internalaffairs
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: SeniorPeacekeeperPDA
+  name: senior peacekeeper PDA
+  description: Well worn and seen many fights protecting others.
+  components:
+  - type: Pda
+    id: SeniorOfficerIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-seniorpeacekeeper
+  - type: PdaBorderColor
+    borderColor: "#23262A"
+    accentHColor: "#ffa71a"
+  - type: Icon
+    state: pda-seniorpeacekeeper
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: MasterAtArmsPDA
+  name: master-at-arms PDA
+  description: Cracked screens are a sign of a focused worker, right?
+  components:
+  - type: Pda
+    id: BailiffIDCard
+    bookSlot:
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-masteratarms
+  - type: PdaBorderColor
+    borderColor: "#23262A"
+    accentHColor: "#ffa71a"
+  - type: Icon
+    state: pda-masteratarms
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: PeacekeeperPDA
+  name: peacekeeper PDA
+  description: Sworn to protect those who need help.
+  components:
+  - type: Pda
+    id: DeputyIDCard
+    bookSlot:
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-peacekeeper
+  - type: PdaBorderColor
+    borderColor: "#23262A"
+    accentHColor: "#ffa71a"
+  - type: Icon
+    state: pda-peacekeeper
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: JuniorPeacekeeperPDA
+  name: junior peacekeeper PDA
+  description: Learning their duties of the oath to protect.
+  components:
+  - type: Pda
+    id: CadetIDCard
+    bookSlot: # Frontier
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-juniorpeacekeeper
+  - type: PdaBorderColor
+    borderColor: "#23262A"
+    accentHColor: "#ffa71a"
+  - type: Icon
+    state: pda-juniorpeacekeeper
+
+- type: entity
+  parent: BaseMedicalPDA
+  id: EmergencyResponderPDA
+  name: emergency responder PDA
+  description: Frozen from so many deep space rescues.
+  components:
+  - type: Pda
+    id: ParamedicIDCard
+    penSlot:
+      startingItem: PublicAffairsPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    bookSlot:
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-emergencyresponder
+  - type: PdaBorderColor
+    borderColor: "#a3a3a3"
+    accentHColor: "#447987"
+  - type: Icon
+    state: pda-emergencyresponder
+
+- type: entity
+  parent: PassengerPDA
+  id: WayfarerPDA
+  name: wayfarer PDA
+  description: Has the smell of adventure upon it
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-wayfarer

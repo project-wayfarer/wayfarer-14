@@ -7,7 +7,7 @@
   fallbacks:
   - SeniorOfficerClothingUniformJumpsuitSeniorOfficer
   - SeniorOfficerClothingUniformJumpskirtSeniorOfficer
-  
+
 - type: loadoutGroup
   id: SeniorOfficerOuterClothing
   name: loadout-group-contractor-outerclothing
@@ -32,13 +32,13 @@
   - SeniorOfficerClothingNeckBadgeSeniorOfficer
 
 - type: loadoutGroup
-  id: SeniorOfficerPDA
+  id: SeniorPeacekeeperPDA
   name: loadout-group-contractor-pda
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
-  - SeniorOfficerSeniorOfficerPDA
+  - SeniorPeacekeeperSeniorPeacekeeperPDA
   fallbacks:
-  - SeniorOfficerSeniorOfficerPDA
+  - SeniorPeacekeeperSeniorPeacekeeperPDA
 
 - type: loadoutGroup
   id: SeniorOfficerBackpackItems

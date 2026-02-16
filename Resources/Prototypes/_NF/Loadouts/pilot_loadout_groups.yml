@@ -83,15 +83,15 @@
   subgroups:
   - ContractorNeck
 
-- type: loadoutGroup
-  id: PilotPDA
-  name: loadout-group-contractor-pda
-  loadouts:
-  - PilotPilotPDA
-  subgroups:
-  - ContractorPDA
-  fallbacks:
-  - PilotPilotPDA
+#- type: loadoutGroup
+#  id: PilotPDA
+#  name: loadout-group-contractor-pda
+#  loadouts:
+#  - PilotPilotPDA
+#  subgroups:
+#  - ContractorPDA
+#  fallbacks:
+#  - PilotPilotPDA
 
 - type: loadoutGroup
   id: PilotGlasses
