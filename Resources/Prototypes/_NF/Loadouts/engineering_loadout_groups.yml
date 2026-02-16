@@ -179,14 +179,14 @@
   name: loadout-group-contractor-pda
 #  hidden: true #WF lets you pick a PDA
   loadouts:
-  - PlantTechnicianPlantTechnicianPDA
-  - ContractorTechnicalAssistantPDA
-  - ContractorEngineerPDA
-  - ContractorAtmosPDA
-  - ContractorSeniorEngineerPDA
-  - ContractorCEPDA
-  - ContractorLifeSupportTechPDA
-  - ContractorPlasmaScientistPDA
+  - PlantTechnicianPlantTechnicianPDA #WFPDA options
+  - WFTechnicalAssistantPDA #WFPDA options
+  - WFEngineerPDA #WFPDA options
+  - WFAtmosPDA #WFPDA options
+  - WFSeniorEngineerPDA #WFPDA options
+  - WFCEPDA #WFPDA options
+  - WFLifeSupportTechPDA #WFPDA options
+  - WFPlasmaScientistPDA #WFPDA options
   fallbacks:
   - PlantTechnicianPlantTechnicianPDA
 

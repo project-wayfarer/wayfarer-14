@@ -3,12 +3,12 @@
   name: PDA
   loadouts:
   - EmergencyResponderEmergencyResponderPDA
-  - ContractorMedicalInternPDA
-  - ContractorMedicalPDA
-  - ContractorPsychologistPDA
-  - ContractorChemistryPDA
-  - ContractorSeniorPhysicianPDA
-  - ContractorCMOPDA
+  - WFMedicalInternPDA
+  - WFMedicalPDA
+  - WFPsychologistPDA
+  - WFChemistryPDA
+  - WFSeniorPhysicianPDA
+  - WFCMOPDA
   fallbacks:
   - EmergencyResponderEmergencyResponderPDA
 
@@ -17,23 +17,23 @@
   name: jumpsuit
   loadouts:
   - ClothingUniformJumpsuitParamedicSyndie
-  - ContractorClothingUniformJumpsuitParamedic
-  - ContractorClothingUniformJumpskirtParamedic
-  - ContractorClothingUniformJumpsuitVirology
-  - ContractorClothingUniformJumpskirtVirology
-  - ContractorClothingUniformJumpsuitChemistry
-  - ContractorClothingUniformJumpskirtChemistry
-  - ContractorClothingUniformJumpsuitGenetics
-  - ContractorClothingUniformJumpskirtGenetics
-  - ContractorClothingUniformJumpsuitPsychologist
-  - ContractorClothingUniformJumpskirtPsychologist
-  - ContractorClothingUniformJumpsuitSeniorPhysician
-  - ContractorClothingUniformJumpskirtSeniorPhysician
-  - ContractorClothingUniformJumpsuitMilitaryMedicalDoctor
-  - ContractorClothingUniformJumpsuitMilitaryParamedic
-  - ContractorClothingUniformJumpsuitMilitaryChemistry
-  - ContractorClothingUniformJumpsuitMilitaryVirology
-  - ContractorClothingUniformJumpsuitMilitaryGenetics
+  - WFClothingUniformJumpsuitParamedic
+  - WFClothingUniformJumpskirtParamedic
+  - WFClothingUniformJumpsuitVirology
+  - WFClothingUniformJumpskirtVirology
+  - WFClothingUniformJumpsuitChemistry
+  - WFClothingUniformJumpskirtChemistry
+  - WFClothingUniformJumpsuitGenetics
+  - WFClothingUniformJumpskirtGenetics
+  - WFClothingUniformJumpsuitPsychologist
+  - WFClothingUniformJumpskirtPsychologist
+  - WFClothingUniformJumpsuitSeniorPhysician
+  - WFClothingUniformJumpskirtSeniorPhysician
+  - WFClothingUniformJumpsuitMilitaryMedicalDoctor
+  - WFClothingUniformJumpsuitMilitaryParamedic
+  - WFClothingUniformJumpsuitMilitaryChemistry
+  - WFClothingUniformJumpsuitMilitaryVirology
+  - WFClothingUniformJumpsuitMilitaryGenetics
   fallbacks:
   - EmergencyResponderEmergencyResponderPDA
 
