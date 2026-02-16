@@ -1,0 +1,179 @@
+#T1
+- type: loadout
+  id: WFClothingHandsGlovesColorYellow
+  price: 1500
+  equipment:
+    gloves: ClothingHandsGlovesColorYellow
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesLeather
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesLeather
+
+- type: loadout
+  id: WFClothingHandsGlovesFingerless
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesFingerless
+
+- type: loadout
+  id: WFClothingHandsGlovesLatex
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesLatex
+
+- type: loadout
+  id: WFClothingHandsGlovesNitrile
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+
+- type: loadout
+  id: WFClothingHandsGlovesRobohands
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesRobohands
+
+- type: loadout
+  id: WFClothingHandsGlovesColorBlack
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorBlue
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorBlue
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorGreen
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorGreen
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorGray
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorGray
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorBrown
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorBrown
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorLightBrown
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorLightBrown
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorOrange
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorPurple
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorPurple
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesColorRed
+  price: 300
+  equipment:
+    gloves: ClothingHandsGlovesColorRed
+  groupBy: "basicgloves"
+
+- type: loadout
+  id: WFClothingHandsGlovesMercFingerless
+  price: 1000
+  equipment:
+    gloves: ClothingHandsGlovesMercFingerless
+
+- type: loadout
+  id: WFClothingHandsMercenaryGlovesCombat
+  price: 2000
+  equipment:
+    gloves: ClothingHandsMercenaryGlovesCombat
+
+- type: loadout
+  id: WFClothingHandsGlovesCombat
+  price: 2000
+  equipment:
+    gloves: ClothingHandsGlovesCombat
+
+#T2
+- type: loadout
+  id: WFClothingHandsGlovesBoxingGreen
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  equipment:
+    gloves: ClothingHandsGlovesBoxingGreen
+  groupBy: "boxing"
+
+- type: loadout
+  id: WFClothingHandsGlovesBoxingBlue
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  equipment:
+    gloves: ClothingHandsGlovesBoxingBlue
+  groupBy: "boxing"
+
+- type: loadout
+  id: WFClothingHandsGlovesBoxingRed
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  equipment:
+    gloves: ClothingHandsGlovesBoxingRed
+  groupBy: "boxing"
+
+- type: loadout
+  id: WFClothingHandsGlovesBoxingYellow
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  equipment:
+    gloves: ClothingHandsGlovesBoxingYellow
+  groupBy: "boxing"
+
+- type: loadout
+  id: WFClothingHandsGlovesCaptain
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  equipment:
+    gloves: ClothingHandsGlovesCaptain
+
+#T3 for lols
+- type: loadout
+  id: WFClothingHandsGlovesColorWhite
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    gloves: ClothingHandsGlovesColorWhite
+  groupBy: "basicgloves"

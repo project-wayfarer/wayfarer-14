@@ -22,10 +22,10 @@
   minPlayers: 0
   stations:
     Buckler:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Buckler {1}'
+        mapNameTemplate: 'Buckler CGP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

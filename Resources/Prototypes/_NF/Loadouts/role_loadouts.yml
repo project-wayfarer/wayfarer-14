@@ -514,10 +514,10 @@
   id: JobNFPirate
   groups:
   - NFPirateHead
-#  - NFPirateNeck
+  - WFNeck # Wayfarer
   - NFPirateJumpsuit
-#  - NFPirateGloves
-  - ContractorBackpack
+  - WFGloves # Wayfarer
+  - WFBackpack # Wayfarer
   - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
@@ -534,10 +534,10 @@
   id: JobNFPirateFirstMate
   groups:
   - NFPirateFirstMateHead
-#  - NFPirateNeck
+  - WFNeck # Wayfarer
   - NFPirateJumpsuit
-#  - NFPirateGloves
-  - ContractorBackpack
+  - WFGloves # Wayfarer
+  - WFBackpack # Wayfarer
   - NFPirateFirstMateOuterClothing
   - NFPirateForcedOuterClothing
   - NFPirateShoes
@@ -555,10 +555,10 @@
   id: JobNFPirateCaptain
   groups:
   - NFPirateCaptainHead
-#  - NFPirateNeck
+  - WFNeck # Wayfarer
   - NFPirateJumpsuit
-#  - NFPirateGloves
-  - ContractorBackpack
+  - WFGloves # Wayfarer
+  - WFBackpack # Wayfarer
   - NFPirateCaptainOuterClothing
   - NFPirateForcedOuterClothing
   - NFPirateShoes

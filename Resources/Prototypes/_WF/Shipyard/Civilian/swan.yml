@@ -26,7 +26,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Swan {1}'
+        mapNameTemplate: 'Swan CIV{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

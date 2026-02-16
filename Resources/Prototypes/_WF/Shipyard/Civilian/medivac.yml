@@ -33,7 +33,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Medivac {1}'
+        mapNameTemplate: 'Medivac MED{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

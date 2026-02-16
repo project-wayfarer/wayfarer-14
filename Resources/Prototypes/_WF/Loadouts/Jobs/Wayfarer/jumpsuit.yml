@@ -1,1071 +1,844 @@
+# == JUMPSUITS
 - type: loadout
-  id: ContractorClothingUniformJumpsuitAtmos
+  id: WFClothingUniformJumpsuitAtmos
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
   groupBy: "jumpsuitAtmos"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtAtmos
+  id: WFClothingUniformJumpskirtAtmos
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtAtmos
   groupBy: "jumpsuitAtmos"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitBartender
+  id: WFClothingUniformJumpsuitBartender
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartender
   groupBy: "jumpsuitBartender"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtBartender
+  id: WFClothingUniformJumpskirtBartender
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtBartender
   groupBy: "jumpsuitBartender"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCargo
+  id: WFClothingUniformJumpsuitCargo
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitCargo
   groupBy: "jumpsuitCargo"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCargo
+  id: WFClothingUniformJumpskirtCargo
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtCargo
   groupBy: "jumpsuitCargo"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitSalvageSpecialist
+  id: WFClothingUniformJumpsuitSalvageSpecialist
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
   groupBy: "jumpsuitCargo"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChef
+  id: WFClothingUniformJumpsuitChef
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitChef
   groupBy: "jumpsuitChef"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtChef
+  id: WFClothingUniformJumpskirtChef
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtChef
   groupBy: "jumpsuitChef"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitEngineering
+  id: WFClothingUniformJumpsuitEngineering
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineering
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtEngineering
+  id: WFClothingUniformJumpskirtEngineering
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtEngineering
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitHydroponics
+  id: WFClothingUniformJumpsuitHydroponics
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitHydroponics
   groupBy: "jumpsuitHydro"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtHydroponics
+  id: WFClothingUniformJumpskirtHydroponics
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtHydroponics
   groupBy: "jumpsuitHydro"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMedicalDoctor
+  id: WFClothingUniformJumpsuitMedicalDoctor
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtMedicalDoctor
+  id: WFClothingUniformJumpskirtMedicalDoctor
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtMedicalDoctor
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitScientist
+  id: WFClothingUniformJumpsuitScientist
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitScientist
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtScientist
+  id: WFClothingUniformJumpskirtScientist
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtScientist
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorGrey
+  id: WFClothingUniformJumpsuitColorGrey
   price: 0
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGrey
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorGrey
+  id: WFClothingUniformJumpskirtColorGrey
   price: 0
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorGrey
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorWhite
+  id: WFClothingUniformJumpsuitColorWhite
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorWhite
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorWhite
+  id: WFClothingUniformJumpskirtColorWhite
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorWhite
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorBlack
+  id: WFClothingUniformJumpsuitColorBlack
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlack
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorBlack
+  id: WFClothingUniformJumpskirtColorBlack
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorBlack
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorBlue
+  id: WFClothingUniformJumpsuitColorBlue
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlue
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorBlue
+  id: WFClothingUniformJumpskirtColorBlue
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorBlue
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorYellow
+  id: WFClothingUniformJumpsuitColorYellow
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorYellow
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorYellow
+  id: WFClothingUniformJumpskirtColorYellow
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorYellow
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorGreen
+  id: WFClothingUniformJumpsuitColorGreen
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGreen
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorGreen
+  id: WFClothingUniformJumpskirtColorGreen
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorGreen
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorOrange
+  id: WFClothingUniformJumpsuitColorOrange
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorOrange
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorOrange
+  id: WFClothingUniformJumpskirtColorOrange
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorOrange
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorRed
+  id: WFClothingUniformJumpsuitColorRed
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorRed
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorRed
+  id: WFClothingUniformJumpskirtColorRed
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorRed
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorMaroon
+  id: WFClothingUniformJumpsuitColorMaroon
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorMaroon
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorMaroon
+  id: WFClothingUniformJumpskirtColorMaroon
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorMaroon
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorPurple
+  id: WFClothingUniformJumpsuitColorPurple
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorPurple
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorPurple
+  id: WFClothingUniformJumpskirtColorPurple
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorPurple
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorLightBrown
+  id: WFClothingUniformJumpsuitColorLightBrown
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorLightBrown
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorLightBrown
+  id: WFClothingUniformJumpskirtColorLightBrown
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorLightBrown
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorBrown
+  id: WFClothingUniformJumpsuitColorBrown
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorBrown
+  id: WFClothingUniformJumpskirtColorBrown
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorBrown
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorPink
+  id: WFClothingUniformJumpsuitColorPink
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorPink
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorPink
+  id: WFClothingUniformJumpskirtColorPink
   price: 200
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorPink
   groupBy: "basicJumpsuit"
 
-#T1
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorDarkBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitColorDarkBlue
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorDarkBlue
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorDarkBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtColorDarkBlue
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorDarkBlue
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorDarkGreen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitColorDarkGreen
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorDarkGreen
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorDarkGreen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtColorDarkGreen
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorDarkGreen
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitColorTeal
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitColorTeal
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorTeal
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorTeal
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtColorTeal
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorTeal
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformColorRainbow
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformColorRainbow
   price: 500
   equipment:
     jumpsuit: ClothingUniformColorRainbow
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtColorRainbow
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtColorRainbow
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorRainbow
   groupBy: "basicJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitHawaiBlack
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitHawaiBlack
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiBlack
   groupBy: "hawaiJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitHawaiBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitHawaiBlue
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiBlue
   groupBy: "hawaiJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitHawaiRed
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitHawaiRed
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiRed
   groupBy: "hawaiJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitHawaiYellow
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitHawaiYellow
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiYellow
   groupBy: "hawaiJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitFlannel
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitFlannel
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitFlannel
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCasualBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitCasualBlue
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitCasualBlue
   groupBy: "casualJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCasualBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtCasualBlue
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtCasualBlue
   groupBy: "casualJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCasualPurple
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitCasualPurple
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitCasualPurple
   groupBy: "casualJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCasualPurple
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtCasualPurple
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtCasualPurple
   groupBy: "casualJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCasualRed
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitCasualRed
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitCasualRed
   groupBy: "casualJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCasualRed
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtCasualRed
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtCasualRed
   groupBy: "casualJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitBartenderPurple
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitBartenderPurple
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartenderPurple
   groupBy: "jumpsuitBartender"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitEngineeringHazard
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitEngineeringHazard
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineeringHazard
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitAtmosCasual
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitAtmosCasual
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmosCasual
   groupBy: "jumpsuitAtmos"
 
 - type: loadout
-  id: ContractorClothingUniformOveralls
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformOveralls
   price: 500
   equipment:
     jumpsuit: ClothingUniformOveralls
+  groupBy: "jumpsuitHydro"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChaplain
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitChaplain
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
   groupBy: "jumpsuitChaplain"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtChaplain
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtChaplain
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtChaplain
   groupBy: "jumpsuitChaplain"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCurator
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitCurator
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitCurator
   groupBy: "jumpsuitCurator"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCurator
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtCurator
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtCurator
   groupBy: "jumpsuitCurator"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitLibrarian
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitLibrarian
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitLibrarian
   groupBy: "jumpsuitLibrarian"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtLibrarian
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtLibrarian
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtLibrarian
   groupBy: "jumpsuitLibrarian"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitReporter
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitReporter
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitReporter
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitBH
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitBH
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitBH
   groupBy: "jumpsuitBH"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtBH
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtBH
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBH
   groupBy: "jumpsuitBH"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitBHGrey
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitBHGrey
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitBHGrey
   groupBy: "jumpsuitBH"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtBHGrey
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtBHGrey
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBHGrey
   groupBy: "jumpsuitBH"
 
 - type: loadout
-  id: ContractorUniformScrubsColorGreen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFUniformScrubsColorGreen
   price: 500
   equipment:
     jumpsuit: UniformScrubsColorGreen
   groupBy: "scrubs"
 
 - type: loadout
-  id: ContractorUniformScrubsColorBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFUniformScrubsColorBlue
   price: 500
   equipment:
     jumpsuit: UniformScrubsColorBlue
   groupBy: "scrubs"
 
 - type: loadout
-  id: ContractorUniformScrubsColorPurple
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFUniformScrubsColorPurple
   price: 500
   equipment:
     jumpsuit: UniformScrubsColorPurple
   groupBy: "scrubs"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitParamedic
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitParamedic
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtParamedic
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtParamedic
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtParamedic
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitVirology
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitVirology
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitVirology
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtVirology
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtVirology
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtVirology
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChemistry
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitChemistry
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitChemistry
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtChemistry
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtChemistry
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtChemistry
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitGenetics
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitGenetics
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitGenetics
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtGenetics
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtGenetics
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtGenetics
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitPsychologist
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitPsychologist
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtPsychologist
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtPsychologist
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtPsychologist
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitScientistFormal
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitScientistFormal
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitScientistFormal
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitRoboticist
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitRoboticist
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitRoboticist
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtRoboticist
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtRoboticist
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtRoboticist
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitLawyerBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitLawyerBlue
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlue
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtLawyerBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtLawyerBlue
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtLawyerBlue
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitLawyerPurple
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitLawyerPurple
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerPurple
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtLawyerPurple
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtLawyerPurple
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtLawyerPurple
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitLawyerRed
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitLawyerRed
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerRed
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtLawyerRed
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtLawyerRed
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtLawyerRed
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitLawyerBlack
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitLawyerBlack
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlack
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtLawyerBlack
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtLawyerBlack
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtLawyerBlack
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitLawyerGood
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpsuitLawyerGood
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerGood
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtLawyerGood
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingUniformJumpskirtLawyerGood
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtLawyerGood
   groupBy: "jumpsuitLawyer"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtBlackElegantDress
+  id: WFClothingUniformJumpskirtBlackElegantDress
   name: black elegant dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlackElegantDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtRedElegantDress
+  id: WFClothingUniformJumpskirtRedElegantDress
   name: red elegant dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtRedElegantDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtGreenElegantDress
+  id: WFClothingUniformJumpskirtGreenElegantDress
   name: green elegant dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtGreenElegantDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtBlueElegantDress
+  id: WFClothingUniformJumpskirtBlueElegantDress
   name: blue elegant dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlueElegantDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtPurpleElegantDress
+  id: WFClothingUniformJumpskirtPurpleElegantDress
   name: purple elegant dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtPurpleElegantDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCyanStripedDress
+  id: WFClothingUniformJumpskirtCyanStripedDress
   name: cyan striped dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtCyanStripedDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtRedStripedDress
+  id: WFClothingUniformJumpskirtRedStripedDress
   name: red striped dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtRedStripedDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtGreenStripedDress
+  id: WFClothingUniformJumpskirtGreenStripedDress
   name: green striped dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtGreenStripedDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtPinkStripedDress
+  id: WFClothingUniformJumpskirtPinkStripedDress
   name: pink striped dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtPinkStripedDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtOrangeStripedDress
+  id: WFClothingUniformJumpskirtOrangeStripedDress
   name: orange striped dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtOrangeStripedDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtPurpleTurtleneckDress
+  id: WFClothingUniformJumpskirtPurpleTurtleneckDress
   name: purple turtleneck dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtPurpleTurtleneckDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtRedTurtleneckDress
+  id: WFClothingUniformJumpskirtRedTurtleneckDress
   name: red turtleneck dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtRedTurtleneckDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtGreenTurtleneckDress
+  id: WFClothingUniformJumpskirtGreenTurtleneckDress
   name: green turtleneck dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtGreenTurtleneckDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtBlueTurtleneckDress
+  id: WFClothingUniformJumpskirtBlueTurtleneckDress
   name: blue turtleneck dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlueTurtleneckDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtYellowTurtleneckDress
+  id: WFClothingUniformJumpskirtYellowTurtleneckDress
   name: yellow turtleneck dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtYellowTurtleneckDress
   groupBy: "dresses"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtYellowOldDress
+  id: WFClothingUniformJumpskirtYellowOldDress
   name: yellow old dress
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtYellowOldDress
@@ -1073,617 +846,647 @@
 
 # Punk stuff
 - type: loadout
-  id: ContractorClothingUniformRandomPunkCroptop
+  id: WFClothingUniformRandomPunkCroptop
   name: punk croptop jumpsuit (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkCroptop
   groupBy: "punkJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomPunkTanktop
+  id: WFClothingUniformRandomPunkTanktop
   name: punk tanktop jumpsuit (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkTanktop
   groupBy: "punkJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomPunkCroptopShorts
+  id: WFClothingUniformRandomPunkCroptopShorts
   name: punk croptop with shorts (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkCroptopShorts
   groupBy: "punkJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomPunkTanktopShorts
+  id: WFClothingUniformRandomPunkTanktopShorts
   name: punk tanktop with shorts (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkTanktopShorts
   groupBy: "punkJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomPunkPantsOnly
+  id: WFClothingUniformRandomPunkPantsOnly
   name: punk pants (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkPantsOnly
   groupBy: "punkJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomPunkShortsOnly
+  id: WFClothingUniformRandomPunkShortsOnly
   name: punk shorts (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkShortsOnly
   groupBy: "punkJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomArmlessNoSkirt
+  id: WFClothingUniformRandomArmlessNoSkirt
   name: sleeveless jumpsuit (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomArmlessNoSkirt
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomArmless
+  id: WFClothingUniformRandomArmless
   name: colorful sleeveless top and pants (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomArmless
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomStandard
+  id: WFClothingUniformRandomStandard
   name: colorful top and pants (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomStandard
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomShorts
+  id: WFClothingUniformRandomShorts
   name: colorful pants (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomShorts
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformRandomShirt
+  id: WFClothingUniformRandomShirt
   name: colorful patterned top and pants (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomShirt
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingSkirtUniformRandomArmless
+  id: WFClothingSkirtUniformRandomArmless
   name: colorful sleeveless top and skirt (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomArmless
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingSkirtUniformRandomStandard
+  id: WFClothingSkirtUniformRandomStandard
   name: colorful top and skirt (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomStandard
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingSkirtUniformRandomBra
+  id: WFClothingSkirtUniformRandomBra
   name: colorful bra and skirt (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomBra
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingSkirtUniformRandomShorts
+  id: WFClothingSkirtUniformRandomShorts
   name: colorful skirt (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomShorts
   groupBy: "colorfulJumpsuit"
 
 - type: loadout
-  id: ContractorClothingSkirtUniformRandomShirt
+  id: WFClothingSkirtUniformRandomShirt
   name: colorful patterned top and skirt (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomShirt
   groupBy: "colorfulJumpsuit"
 
+#Merc
+- type: loadout
+  id: WFClothingUniformJumpsuitMercenary
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpskirtMercenary
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtMercenary
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitPrivateSec
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrivateSec
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpskirtPrivateSec
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtPrivateSec
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitMilitaryTurtleneckMercenary
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenary
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitMilitaryTurtleneckMercenaryMedic
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenaryMedic
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitMilitaryTurtleneckMercenaryCaptain
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenaryCaptain
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitMilitaryTurtleneckBlueMercenary
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckBlueMercenary
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryMedic
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryMedic
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryCaptain
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryCaptain
+  groupBy: "mercjumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitMilitaryPilot
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryPilot
+  groupBy: "mercjumpsuit"
+
 #T2 Head and Senior drip, theater and elite service drip
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMonasticRobeDark
+  id: WFClothingUniformJumpsuitMonasticRobeDark
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitMonasticRobeDark
   groupBy: "jumpsuitChaplain"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMonasticRobeLight
+  id: WFClothingUniformJumpsuitMonasticRobeLight
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitMonasticRobeLight
   groupBy: "jumpsuitChaplain"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChaplainPilgrimVest
+  id: WFClothingUniformJumpsuitChaplainPilgrimVest
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplainPilgrimVest
   groupBy: "jumpsuitChaplain"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitQMTurtleneck
+  id: WFClothingUniformJumpsuitQMTurtleneck
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMTurtleneck
   groupBy: "jumpsuitCargo"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtQMTurtleneck
+  id: WFClothingUniformJumpskirtQMTurtleneck
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtQMTurtleneck
   groupBy: "jumpsuitCargo"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitSeniorPhysician
+  id: WFClothingUniformJumpsuitSeniorPhysician
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtSeniorPhysician
+  id: WFClothingUniformJumpskirtSeniorPhysician
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorPhysician
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCMO
+  id: WFClothingUniformJumpsuitCMO
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCMO
+  id: WFClothingUniformJumpskirtCMO
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtCMO
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformTurtleneckCMO
+  id: WFClothingUniformTurtleneckCMO
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMOTurtle
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformTurtleskirtCMO
+  id: WFClothingUniformTurtleskirtCMO
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtCMOTurtle
   groupBy: "jumpsuitMedical"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitSeniorResearcher
+  id: WFClothingUniformJumpsuitSeniorResearcher
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorResearcher
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtSeniorResearcher
+  id: WFClothingUniformJumpskirtSeniorResearcher
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorResearcher
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitResearchDirector
+  id: WFClothingUniformJumpsuitResearchDirector
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtResearchDirector
+  id: WFClothingUniformJumpskirtResearchDirector
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtResearchDirector
   groupBy: "jumpsuitSci"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitSeniorEngineer
+  id: WFClothingUniformJumpsuitSeniorEngineer
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorEngineer
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtSeniorEngineer
+  id: WFClothingUniformJumpskirtSeniorEngineer
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorEngineer
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChiefEngineerNT
+  id: WFClothingUniformJumpsuitChiefEngineerNT
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineerNT
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChiefEngineer
+  id: WFClothingUniformJumpsuitChiefEngineer
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineer
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtChiefEngineer
+  id: WFClothingUniformJumpskirtChiefEngineer
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtChiefEngineer
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChiefEngineerTurtle
+  id: WFClothingUniformJumpsuitChiefEngineerTurtle
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineerTurtle
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtChiefEngineerTurtle
+  id: WFClothingUniformJumpskirtChiefEngineerTurtle
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtChiefEngineerTurtle
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitJester
+  id: WFClothingUniformJumpsuitJester
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitJester
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitJesterAlt
+  id: WFClothingUniformJumpsuitJesterAlt
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitJesterAlt
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitKilt
+  id: WFClothingUniformJumpsuitKilt
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitKilt
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitDameDane
+  id: WFClothingUniformJumpsuitDameDane
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitDameDane
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitKimono
+  id: WFClothingUniformJumpsuitKimono
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitKimono
   groupBy: "kimono"
 
 - type: loadout
-  id: ContractorClothingKimonoPink
+  id: WFClothingKimonoPink
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingKimonoPink
   groupBy: "kimono"
 
 - type: loadout
-  id: ContractorClothingKimonoBlue
+  id: WFClothingKimonoBlue
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingKimonoBlue
   groupBy: "kimono"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitGladiator
+  id: WFClothingUniformJumpsuitGladiator
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitGladiator
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtPerformer
+  id: WFClothingUniformJumpskirtPerformer
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtPerformer
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtJanimaid
+  id: WFClothingUniformJumpskirtJanimaid
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtJanimaid
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitSafari
+  id: WFClothingUniformJumpsuitSafari
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitSafari
 
 - type: loadout
-  id: ContractorUniformShortsRed
+  id: WFUniformShortsRed
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: UniformShortsRed
   groupBy: "shortsRed"
 
 - type: loadout
-  id: ContractorUniformShortsRedWithTop
+  id: WFUniformShortsRedWithTop
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: UniformShortsRedWithTop
   groupBy: "shortsRed"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitClown
+  id: WFClothingUniformJumpsuitClown
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitClown
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMime
+  id: WFClothingUniformJumpsuitMime
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitMime
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtMime
+  id: WFClothingUniformJumpskirtMime
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtMime
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitTshirtJeans
+  id: WFClothingUniformJumpsuitTshirtJeans
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitTshirtJeans
   groupBy: "jeans"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitTshirtJeansGray
+  id: WFClothingUniformJumpsuitTshirtJeansGray
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitTshirtJeansGray
   groupBy: "jeans"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitTshirtJeansPeach
+  id: WFClothingUniformJumpsuitTshirtJeansPeach
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitTshirtJeansPeach
   groupBy: "jeans"
 
+# T3
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCaptain
+  id: WFClothingUniformJumpsuitCaptain
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT3
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
   groupBy: "jumpsuitCaptain"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCaptain
+  id: WFClothingUniformJumpskirtCaptain
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT3
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtCaptain
   groupBy: "jumpsuitCaptain"
 
-# T3
 - type: loadout
-  id: ContractorClothingUniformJumpsuitCapFormal
+  id: WFClothingUniformJumpsuitCapFormal
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1500
   equipment:
     jumpsuit: ClothingUniformJumpsuitCapFormal
   groupBy: "jumpsuitCaptain"
 
 - type: loadout
-  id: ContractorClothingUniformJumpskirtCapFormalDress
+  id: WFClothingUniformJumpskirtCapFormalDress
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1500
   equipment:
     jumpsuit: ClothingUniformJumpskirtCapFormalDress
@@ -1691,341 +1494,681 @@
 
 # T3 "Military"
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryContractor
+  id: WFClothingUniformJumpsuitMilitaryContractor
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 675
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryContractor
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryContractorTac
+  id: WFClothingUniformJumpsuitMilitaryContractorTac
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 675
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryContractorTac
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryCaptain
+  id: WFClothingUniformJumpsuitMilitaryCaptain
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryAtmospherics
+  id: WFClothingUniformJumpsuitMilitaryAtmospherics
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryAtmospherics
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryEngineering
+  id: WFClothingUniformJumpsuitMilitaryEngineering
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryEngineering
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryEngineeringChief
+  id: WFClothingUniformJumpsuitMilitaryEngineeringChief
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryEngineeringChief
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitarySalvageSpecialist
+  id: WFClothingUniformJumpsuitMilitarySalvageSpecialist
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitarySalvageSpecialist
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryCargo
+  id: WFClothingUniformJumpsuitMilitaryCargo
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryCargo
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryQM
+  id: WFClothingUniformJumpsuitMilitaryQM
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryQM
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryParamedic
+  id: WFClothingUniformJumpsuitMilitaryParamedic
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryParamedic
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryMedicalDoctor
+  id: WFClothingUniformJumpsuitMilitaryMedicalDoctor
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryMedicalDoctor
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryChemistry
+  id: WFClothingUniformJumpsuitMilitaryChemistry
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryChemistry
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryVirology
+  id: WFClothingUniformJumpsuitMilitaryVirology
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryVirology
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryGenetics
+  id: WFClothingUniformJumpsuitMilitaryGenetics
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryGenetics
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryCMO
+  id: WFClothingUniformJumpsuitMilitaryCMO
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryCMO
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryScientist
+  id: WFClothingUniformJumpsuitMilitaryScientist
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryScientist
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryResearchDirector
+  id: WFClothingUniformJumpsuitMilitaryResearchDirector
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryResearchDirector
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryService
+  id: WFClothingUniformJumpsuitMilitaryService
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryService
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryHydroponics
+  id: WFClothingUniformJumpsuitMilitaryHydroponics
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryHydroponics
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorGrey
+  id: WFClothingUniformJumpsuitMilitaryColorGrey
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorGrey
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorBlack
+  id: WFClothingUniformJumpsuitMilitaryColorBlack
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBlack
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorBlue
+  id: WFClothingUniformJumpsuitMilitaryColorBlue
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBlue
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorDarkBlue
+  id: WFClothingUniformJumpsuitMilitaryColorDarkBlue
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorDarkBlue
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorTeal
+  id: WFClothingUniformJumpsuitMilitaryColorTeal
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorTeal
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorGreen
+  id: WFClothingUniformJumpsuitMilitaryColorGreen
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorGreen
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorDarkGreen
+  id: WFClothingUniformJumpsuitMilitaryColorDarkGreen
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorDarkGreen
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorOrange
+  id: WFClothingUniformJumpsuitMilitaryColorOrange
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorOrange
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorPink
+  id: WFClothingUniformJumpsuitMilitaryColorPink
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorPink
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorRed
+  id: WFClothingUniformJumpsuitMilitaryColorRed
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorRed
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorYellow
+  id: WFClothingUniformJumpsuitMilitaryColorYellow
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorYellow
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorPurple
+  id: WFClothingUniformJumpsuitMilitaryColorPurple
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorPurple
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorLightBrown
+  id: WFClothingUniformJumpsuitMilitaryColorLightBrown
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorLightBrown
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorBrown
+  id: WFClothingUniformJumpsuitMilitaryColorBrown
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBrown
   groupBy: "militaryJumpsuit"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitMilitaryColorMaroon
+  id: WFClothingUniformJumpsuitMilitaryColorMaroon
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorMaroon
   groupBy: "militaryJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitOperative
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpskirtOperative
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtOperative
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpsuitTacticool
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTacticool
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpskirtTacticool
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtTacticool
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpsuitHoS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtHoS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoS
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitHoSAlt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSAlt
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtHoSAlt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoSAlt
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtHosFormal
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHosFormal
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitHosFormal
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHosFormal
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitHoSParadeMale
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSParadeMale
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtHoSParadeMale
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoSParadeMale
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitHoSGrey
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSGrey
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitHoSBlue
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSBlue
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitSec
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtSec
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSec
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitSeniorOfficer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtSeniorOfficer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorOfficer
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitSecGuard
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSecGuard
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtSecGuard
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSecGuard
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitSecGrey
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSecGrey
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtSecGrey
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSecGrey
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformSecurityTrooper
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformSecurityTrooper
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitPrivateSec
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrivateSec
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtPrivateSec
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtPrivateSec
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitWarden
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpskirtWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtWarden
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: ClothingUniformJumpsuitSyndieFormal
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndieFormal
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpskirtSyndieFormalDress
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSyndieFormalDress
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpsuitParamedicSyndie
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitParamedicSyndie
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpsuitRecruitSyndie
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRecruitSyndie
+  groupBy: "syndie"
+
+- type: loadout
+  id: ClothingUniformJumpsuitRepairmanSyndie
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRepairmanSyndie
+  groupBy: "syndie"
+
+- type: loadout
+  id: WFClothingUniformJumpsuitBrigmedic
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBrigmedic
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: WFClothingUniformJumpskirtBrigmedic
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 2000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBrigmedic
+  groupBy: "secJumpsuit"

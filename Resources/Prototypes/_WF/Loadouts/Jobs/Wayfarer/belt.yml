@@ -1,0 +1,243 @@
+- type: loadout
+  id: WFClothingBeltPlant
+  price: 500
+  equipment:
+    belt: ClothingBeltPlant
+
+- type: loadout
+  id: WFClothingBeltPlantFilled
+  name: botanical belt (filled)
+  price: 1500
+  equipment:
+    belt: ClothingBeltPlantFilled
+
+- type: loadout
+  id: WFClothingBeltChef
+  price: 500
+  equipment:
+    belt: ClothingBeltChef
+
+- type: loadout
+  id: WFClothingBeltChefFilled
+  name: chef belt (filled)
+  price: 1500
+  equipment:
+    belt: ClothingBeltChefFilled
+
+- type: loadout
+  id: WFClothingBeltStorageWaistbag
+  price: 500
+  equipment:
+    belt: ClothingBeltStorageWaistbag
+
+- type: loadout
+  id: WFClothingBeltMedical
+  price: 500
+  equipment:
+    belt: ClothingBeltMedical
+
+- type: loadout
+  id: WFClothingBeltMedicalFilled
+  name: medical belt (filled)
+  price: 2000
+  equipment:
+    belt: ClothingBeltMedicalFilled
+
+- type: loadout
+  id: WFClothingBeltMedicalEMT
+  price: 500
+  equipment:
+    belt: ClothingBeltMedicalEMT
+
+- type: loadout
+  id: WFClothingBeltMedicalEMTFilled
+  name: EMT belt (filled)
+  price: 2000
+  equipment:
+    belt: ClothingBeltMedicalEMTFilled
+
+- type: loadout
+  id: WFClothingBeltUtility
+  price: 500
+  equipment:
+    belt: ClothingBeltUtility
+
+- type: loadout
+  id: WFClothingBeltUtilityFilled
+  name: utility belt (filled)
+  price: 1500
+  equipment:
+    belt: ClothingBeltUtilityEngineering
+
+- type: loadout
+  id: WFClothingBeltSalvageWebbing
+  price: 500
+  equipment:
+    belt: ClothingBeltSalvageWebbing
+
+- type: loadout
+  id: WFClothingBeltSalvageWebbingFilledNF
+  name: salvage rig (filled)
+  price: 1500
+  equipment:
+    belt: ClothingBeltSalvageWebbingFilledNF
+
+#T1
+- type: loadout
+  id: WFBoxFolderClipboard
+  price: 500
+  equipment:
+    belt: BoxFolderClipboard
+
+- type: loadout
+  id: WFClothingBeltPilot
+  price: 750
+  equipment:
+    belt: ClothingBeltPilot
+
+- type: loadout
+  id: WFClothingBeltPilotFilled
+  name: pilot webbing (filled)
+  price: 1500
+  equipment:
+    belt: ClothingBeltPilotFilled
+
+- type: loadout
+  id: WFClothingBeltBandolier
+  price: 750
+  equipment:
+    belt: ClothingBeltBandolier
+
+- type: loadout
+  id: WFClothingBeltHolster
+  price: 750
+  equipment:
+    belt: ClothingBeltHolster
+
+- type: loadout
+  id: WFClothingBeltChaplainSash
+  price: 750
+  equipment:
+    belt: ClothingBeltChaplainSash
+
+- type: loadout
+  id: WFClothingBeltChaplainSashFilled
+  name: chaplain sash (filled)
+  price: 1500
+  equipment:
+    belt: ClothingBeltChaplainSashFilled
+
+- type: loadout
+  id: WFBooksBag
+  price: 750
+  equipment:
+    belt: BooksBag
+
+- type: loadout
+  id: WFChemBag
+  price: 750
+  equipment:
+    belt: ChemBag
+
+- type: loadout
+  id: WFOreBag
+  price: 750
+  equipment:
+    belt: OreBag
+
+- type: loadout
+  id: WFPlantBag
+  price: 750
+  equipment:
+    belt: PlantBag
+
+- type: loadout
+  id: WFConstructionBag
+  price: 750
+  equipment:
+    belt: ConstructionBag
+
+#T2
+- type: loadout
+  id: WFClothingBeltMartialBlack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  equipment:
+    belt: ClothingBeltMartialBlack
+
+- type: loadout
+  id: WFClothingBeltPunkRandomized
+  name: punk belt (random)
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  equipment:
+    belt: ClothingBeltPunkRandomized
+
+- type: loadout
+  id: WFClothingBeltPunkRandomizedFilled
+  name: punk belt (random, filled)
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1500
+  equipment:
+    belt: ClothingBeltPunkRandomizedFilled
+
+#T3 for lols
+- type: loadout
+  id: WFClothingBeltChampion
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 5000
+  equipment:
+    belt: ClothingBeltChampion
+
+- type: loadout
+  id: WFClothingBeltSheathFilledHilt
+  name: sabre sheath (with hilt)
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotStationRep
+  price: 2500
+  equipment:
+    belt: ClothingBeltSheathFilledHilt
+
+# Merc Gear
+- type: loadout
+  id: WFClothingBeltMercenaryWebbing
+  price: 1000
+  equipment:
+    belt: ClothingBeltMercenaryWebbing
+
+- type: loadout
+  id: WFClothingBeltMilitaryWebbing
+  price: 1000
+  equipment:
+    belt: ClothingBeltMilitaryWebbing
+
+- type: loadout
+  id: WFClothingBeltMilitaryWebbingMed
+  price: 1000
+  equipment:
+    belt: ClothingBeltMilitaryWebbingMed
+
+- type: loadout
+  id: WFClothingBeltSecurity
+  price: 1000
+  equipment:
+    belt: ClothingBeltSecurity
+
+# Dragon belt
+- type: loadout
+  id: WFClothingBeltChaplainDragon
+  price: 2000
+  equipment:
+    belt: ClothingBeltChaplainDragon

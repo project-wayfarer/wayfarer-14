@@ -1,0 +1,101 @@
+#T0
+- type: loadout
+  id: WFClothingEyesGlasses
+  price: 200
+  equipment:
+    eyes: ClothingEyesGlasses
+
+- type: loadout
+  id: WFClothingEyesGlassesCheapSunglasses
+  price: 200
+  equipment:
+    eyes: ClothingEyesGlassesCheapSunglasses
+
+- type: loadout
+  id: WFClothingEyesBlindfold
+  price: 200
+  equipment:
+    eyes: ClothingEyesBlindfold
+
+- type: loadout
+  id: WFClothingEyesEyepatch
+  price: 200
+  equipment:
+    eyes: ClothingEyesEyepatch
+
+#T1
+- type: loadout
+  id: WFClothingEyesGlassesJamjar
+  price: 500
+  equipment:
+    eyes: ClothingEyesGlassesJamjar
+
+- type: loadout
+  id: WFClothingEyesGlassesChemical
+  price: 750
+  equipment:
+    eyes: ClothingEyesGlassesChemical
+
+- type: loadout
+  id: WFClothingEyesHudDiagnostic
+  price: 750
+  equipment:
+    eyes: ClothingEyesHudDiagnostic
+
+- type: loadout
+  id: WFClothingEyesGlassesMeson
+  price: 750
+  equipment:
+    eyes: ClothingEyesGlassesMeson
+
+- type: loadout
+  id: WFClothingEyesHudMedical
+  price: 750
+  equipment:
+    eyes: ClothingEyesHudMedical
+
+- type: loadout
+  id: WFClothingEyesPunkGoggles
+  name: punk goggles (random)
+  price: 750
+  equipment:
+    eyes: ClothingEyesPunkGoggles
+
+- type: loadout
+  id: WFClothingEyesPunkInfoShades
+  name: punk infoshades (random)
+  price: 750
+  equipment:
+    eyes: ClothingEyesPunkInfoShades
+
+
+#T2
+- type: loadout
+  id: WFClothingEyesEyepatchHudDiag
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    eyes: ClothingEyesEyepatchHudDiag
+
+- type: loadout
+  id: WFClothingEyesEyepatchHudMedical
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1250
+  equipment:
+    eyes: ClothingEyesEyepatchHudMedical
+
+- type: loadout
+  id: WFClothingEyesGlassesMercenary
+  price: 1000
+  equipment:
+    eyes: ClothingEyesGlassesMercenary
+
+- type: loadout
+  id: WFClothingEyesGlassesSunglasses
+  price: 1000
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses

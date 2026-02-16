@@ -1,140 +1,155 @@
 - type: loadout
-  id: ContractorClothingHeadBandBlack
+  id: WFClothingHeadBandBlack
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadBandBlack
+  groupBy: "headbands"
 
 - type: loadout
-  id: ContractorClothingHeadBandBlue
+  id: WFClothingHeadBandBlue
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadBandBlue
+  groupBy: "headbands"
 
 - type: loadout
-  id: ContractorClothingHeadBandGreen
+  id: WFClothingHeadBandGreen
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadBandGreen
+  groupBy: "headbands"
 
 - type: loadout
-  id: ContractorClothingHeadBandRed
+  id: WFClothingHeadBandRed
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadBandRed
+  groupBy: "headbands"
 
 - type: loadout
-  id: ContractorClothingHeadBandSkull
+  id: WFClothingHeadBandSkull
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadBandSkull
+  groupBy: "headbands"
 
 - type: loadout
-  id: ContractorClothingHeadHatGreysoft
+  id: WFClothingHeadHatGreysoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatGreysoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatBluesoft
+  id: WFClothingHeadHatBluesoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatBluesoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatYellowsoft
+  id: WFClothingHeadHatYellowsoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatYellowsoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatGreensoft
+  id: WFClothingHeadHatGreensoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatGreensoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatOrangesoft
+  id: WFClothingHeadHatOrangesoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatOrangesoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatRedsoft
+  id: WFClothingHeadHatRedsoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatRedsoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatBlacksoft
+  id: WFClothingHeadHatBlacksoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatBlacksoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatPurplesoft
+  id: WFClothingHeadHatPurplesoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatPurplesoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatCorpsoft
+  id: WFClothingHeadHatCorpsoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatCorpsoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadBandGrey
+  id: WFClothingHeadBandGrey
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadBandGrey
+  groupBy: "headbands"
 
 - type: loadout
-  id: ContractorClothingHeadHatUshanka
+  id: WFClothingHeadHatUshanka
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -143,7 +158,7 @@
     head: ClothingHeadHatUshanka
 
 - type: loadout
-  id: ContractorClothingHeadHatHardhatYellow
+  id: WFClothingHeadHatHardhatYellow
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -152,7 +167,7 @@
     head: ClothingHeadHatHardhatYellow
 
 - type: loadout
-  id: ContractorClothingHeadHatChef
+  id: WFClothingHeadHatChef
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -161,29 +176,38 @@
     head: ClothingHeadHatChef
 
 - type: loadout
-  id: ContractorClothingHeadHatCargosoft
+  id: WFClothingHeadHatCargosoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadHatCargosoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadBandBotany
+  id: WFClothingHeadBandBotany
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 250
   equipment:
     head: ClothingHeadBandBotany
+  groupBy: "headbands"
+
+- type: loadout
+  id: WFClothingHeadBandMercenary
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 250
+  equipment:
+    head: ClothingHeadBandMercenary
+  groupBy: "headbands"
 
 #T1
 - type: loadout
-  id: ContractorClothingHeadHatHoodBioScientist
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatHoodBioScientist
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -192,10 +216,7 @@
     head: ClothingHeadHatHoodBioScientist
 
 - type: loadout
-  id: ContractorClothingHeadRastaHat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadRastaHat
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -204,10 +225,7 @@
     head: ClothingHeadRastaHat
 
 - type: loadout
-  id: ContractorClothingHeadHatSombrero
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatSombrero
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -216,10 +234,7 @@
     head: ClothingHeadHatSombrero
 
 - type: loadout
-  id: ContractorClothingHeadFishCap
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadFishCap
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -228,10 +243,7 @@
     head: ClothingHeadFishCap
 
 - type: loadout
-  id: ContractorClothingHeadHatTrucker
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatTrucker
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -240,10 +252,7 @@
     head: ClothingHeadHatTrucker
 
 - type: loadout
-  id: ContractorClothingHeadHatCasa
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatCasa
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -252,10 +261,7 @@
     head: ClothingHeadHatCasa
 
 - type: loadout
-  id: ContractorClothingHeadHatBowlerHat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatBowlerHat
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -264,46 +270,37 @@
     head: ClothingHeadHatBowlerHat
 
 - type: loadout
-  id: ContractorClothingHeadHatGreyFlatcap
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatGreyFlatcap
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatGreyFlatcap
+  groupBy: "flatcaps"
 
 - type: loadout
-  id: ContractorClothingHeadHatBrownFlatcap
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatBrownFlatcap
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatBrownFlatcap
+  groupBy: "flatcaps"
 
 - type: loadout
-  id: ContractorClothingHeadHatParamedicsoft
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatParamedicsoft
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatParamedicsoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadNurseHat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadNurseHat
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -312,84 +309,72 @@
     head: ClothingHeadNurseHat
 
 - type: loadout
-  id: ContractorClothingHeadHatBeretMedic
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatBeretMedic
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatBeretMedic
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatSurgcapGreen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatSurgcapGreen
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatSurgcapGreen
+  groupBy: "surgical"
 
 - type: loadout
-  id: ContractorClothingHeadHatSurgcapBlue
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatSurgcapBlue
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatSurgcapBlue
+  groupBy: "surgical"
 
 - type: loadout
-  id: ContractorClothingHeadHatSurgcapPurple
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatSurgcapPurple
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatSurgcapPurple
+  groupBy: "surgical"
 
 - type: loadout
-  id: ContractorClothingHeadHatFedoraGrey
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatFedoraGrey
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatFedoraGrey
+  groupBy: "ferdora"
 
 - type: loadout
-  id: ContractorClothingHeadHatFedoraBrown
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
+  id: WFClothingHeadHatFedoraBrown
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 650
   equipment:
     head: ClothingHeadHatFedoraBrown
+  groupBy: "ferdora"
 
 
 #T2
 - type: loadout
-  id: ContractorClothingHeadHatCaptain
+  id: WFClothingHeadHatCaptain
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -398,10 +383,10 @@
     head: ClothingHeadHatCaptain
 
 - type: loadout
-  id: ContractorClothingHeadHatCapcap
+  id: WFClothingHeadHatCapcap
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -410,10 +395,10 @@
     head: ClothingHeadHatCapcap
 
 - type: loadout
-  id: ContractorClothingHeadTinfoil
+  id: WFClothingHeadTinfoil
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -422,82 +407,108 @@
     head: ClothingHeadTinfoil
 
 - type: loadout
-  id: ContractorClothingHeadHatBeretRND
+  id: WFClothingHeadHatBeretRND
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBeretRND
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatBeretEngineering
+  id: WFClothingHeadHatBeretMercenary
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: ClothingHeadHatBeretMercenary
+  groupBy: "berets"
+
+- type: loadout
+  id: WFClothingHeadHatBeretCommander
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: ClothingHeadHatBeretCommander
+  groupBy: "berets"
+
+- type: loadout
+  id: WFClothingHeadHatBeretEngineering
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBeretEngineering
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatBeretSeniorPhysician
+  id: WFClothingHeadHatBeretSeniorPhysician
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatBeretCmo
+  id: WFClothingHeadHatBeretCmo
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBeretCmo
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatBeretQM
+  id: WFClothingHeadHatBeretQM
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBeretQM
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatQMsoft
+  id: WFClothingHeadHatQMsoft
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatQMsoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatCardinal
+  id: WFClothingHeadHatCardinal
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -506,10 +517,10 @@
     head: ClothingHeadHatCardinal
 
 - type: loadout
-  id: ContractorClothingHeadHatHoodNunHood
+  id: WFClothingHeadHatHoodNunHood
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -518,10 +529,10 @@
     head: ClothingHeadHatHoodNunHood
 
 - type: loadout
-  id: ContractorClothingHeadSafari
+  id: WFClothingHeadSafari
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -530,10 +541,10 @@
     head: ClothingHeadSafari
 
 - type: loadout
-  id: ContractorClothingHeadHatJester
+  id: WFClothingHeadHatJester
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -542,10 +553,10 @@
     head: ClothingHeadHatJester
 
 - type: loadout
-  id: ContractorClothingHeadHatJesterAlt
+  id: WFClothingHeadHatJesterAlt
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -554,46 +565,49 @@
     head: ClothingHeadHatJesterAlt
 
 - type: loadout
-  id: ContractorClothingHeadHatBeret
+  id: WFClothingHeadHatBeret
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBeret
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatBeretFrench
+  id: WFClothingHeadHatBeretFrench
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBeretFrench
+  groupBy: "berets"
 
 - type: loadout
-  id: ContractorClothingHeadHatMimesoft
+  id: WFClothingHeadHatMimesoft
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatMimesoft
+  groupBy: "caps"
 
 - type: loadout
-  id: ContractorClothingHeadHatPilgrim
+  id: WFClothingHeadHatPilgrim
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -602,10 +616,10 @@
     head: ClothingHeadHatPilgrim
 
 - type: loadout
-  id: ContractorClothingHeadHatStrawHat
+  id: WFClothingHeadHatStrawHat
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -614,94 +628,101 @@
     head: ClothingHeadHatStrawHat
 
 - type: loadout
-  id: ContractorClothingHeadHatCowboyBlack
+  id: WFClothingHeadHatCowboyBlack
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatCowboyBlack
+  groupBy: "cowboy"
 
 - type: loadout
-  id: ContractorClothingHeadHatCowboyBrown
+  id: WFClothingHeadHatCowboyBrown
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatCowboyBrown
+  groupBy: "cowboy"
 
 - type: loadout
-  id: ContractorClothingHeadHatCowboyGrey
+  id: WFClothingHeadHatCowboyGrey
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatCowboyGrey
+  groupBy: "cowboy"
 
 - type: loadout
-  id: ContractorClothingHeadHatCowboyBountyHunter
+  id: WFClothingHeadHatCowboyBountyHunter
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatCowboyBountyHunter
+  groupBy: "cowboy"
 
 - type: loadout
-  id: ContractorClothingHeadHatBH
+  id: WFClothingHeadHatBH
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatBH
+  groupBy: "cowboy"
 
 - type: loadout
-  id: ContractorClothingHeadHatCowboyRed
+  id: WFClothingHeadHatCowboyRed
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatCowboyRed
+  groupBy: "cowboy"
 
 - type: loadout
-  id: ContractorClothingHeadHatCowboyWhite
+  id: WFClothingHeadHatCowboyWhite
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 1250
   equipment:
     head: ClothingHeadHatCowboyWhite
+  groupBy: "cowboy"
 
 - type: loadout
-  id: ContractorClothingHeadHatWideBrimmed
+  id: WFClothingHeadHatWideBrimmed
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -710,10 +731,10 @@
     head: ClothingHeadHatWideBrimmed
 
 - type: loadout
-  id: ContractorClothingHeadHatWitchhunter
+  id: WFClothingHeadHatWitchhunter
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -722,10 +743,10 @@
     head: ClothingHeadHatWitchhunter
 
 - type: loadout
-  id: ContractorClothingHeadHatBishopMitre
+  id: WFClothingHeadHatBishopMitre
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -734,10 +755,10 @@
     head: ClothingHeadHatBishopMitre
 
 - type: loadout
-  id: ContractorClothingHeadHatKippah
+  id: WFClothingHeadHatKippah
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -746,10 +767,10 @@
     head: ClothingHeadHatKippah
 
 - type: loadout
-  id: ContractorClothingHeadHatPlaguedoctor
+  id: WFClothingHeadHatPlaguedoctor
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT2
+    proto: WFT2
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -759,10 +780,10 @@
 
 #T3 for lols
 - type: loadout
-  id: ContractorPlunger
+  id: WFPlunger
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -771,10 +792,10 @@
     head: Plunger
 
 - type: loadout
-  id: ContractorClothingHeadHatCone
+  id: WFClothingHeadHatCone
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
@@ -783,25 +804,178 @@
     head: ClothingHeadHatCone
 
 - type: loadout
-  id: ContractorClothingHeadBandGold
+  id: WFClothingHeadBandGold
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 2500
   equipment:
     head: ClothingHeadBandGold
+  groupBy: "headbands"
 
 - type: loadout
-  id: ContractorClothingHeadHatTophat
+  id: WFClothingHeadHatTophat
   effects:
   - !type:GroupLoadoutEffect
-    proto: ContractorT3
+    proto: WFT3
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFHeadwearCapable
   price: 5000
   equipment:
     head: ClothingHeadHatTophat
+
+- type: loadout
+  id: WFClothingHeadHelmetBasic
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHelmetBasic
+  groupBy: "helmets"
+
+- type: loadout
+  id: WFClothingHeadHelmetMercenary
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHelmetMercenary
+  groupBy: "helmets"
+
+- type: loadout
+  id: WFClothingHeadHelmetMercenaryBlack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHelmetMercenaryBlack
+  groupBy: "helmets"
+
+- type: loadout
+  id: WFClothingHeadHatSecsoft
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHatSecsoft
+  groupBy: "caps"
+
+- type: loadout
+  id: ClothingHeadHatSyndie
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHatSyndie
+  groupBy: "caps"
+
+- type: loadout
+  id: WFClothingHeadHatBeretSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+  groupBy: "berets"
+
+- type: loadout
+  id: WFClothingHeadHatSecurityTrooper
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHatSecurityTrooper
+
+- type: loadout
+  id: ClothingHeadHatHoshat
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatHoshat
+
+- type: loadout
+  id: ClothingHeadHatSyndieMAA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatSyndieMAA
+
+- type: loadout
+  id: ClothingHeadHatBeretWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatBeretWarden
+  groupBy: "berets"
+
+- type: loadout
+  id: ClothingHeadHatBeretHoS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatBeretHoS
+  groupBy: "berets"
+
+- type: loadout
+  id: ClothingHeadHatWarden
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 5000
+  equipment:
+    head: ClothingHeadHatWarden

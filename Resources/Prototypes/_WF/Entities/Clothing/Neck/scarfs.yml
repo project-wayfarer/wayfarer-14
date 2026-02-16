@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingScarfBase
+  id: ClothingNeckScarfSolidRed
+  name: solid red scarf
+  description: A red scarf, devoid of pattern.
+  components:
+  - type: Sprite
+    sprite: _WF/Clothing/Neck/Scarfs/solidred.rsi
+  - type: Clothing
+    sprite: _WF/Clothing/Neck/Scarfs/solidred.rsi

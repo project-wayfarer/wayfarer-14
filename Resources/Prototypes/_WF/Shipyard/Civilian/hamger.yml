@@ -23,7 +23,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Hamger {1}'
+        mapNameTemplate: 'Hamger CIV{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

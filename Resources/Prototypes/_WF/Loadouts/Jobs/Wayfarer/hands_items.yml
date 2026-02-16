@@ -1,0 +1,216 @@
+#T1
+- type: loadout
+  id: WFBriefcaseBrownFilled
+  name: brown briefcase (empty)
+  price: 500
+  inhand:
+  - BriefcaseBrownFilled
+
+- type: loadout
+  id: WFToolboxEmergency
+  name: emergency toolbox (empty)
+  price: 500
+  inhand:
+  - ToolboxEmergency
+
+- type: loadout
+  id: WFToolboxMechanical
+  name: mechanical toolbox (empty)
+  price: 500
+  inhand:
+  - ToolboxMechanical
+
+#T2
+- type: loadout
+  id: WFCane
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  inhand:
+  - Cane
+
+- type: loadout
+  id: WFLGBTQHandyFlag
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  inhand:
+  - LGBTQHandyFlag
+
+- type: loadout
+  id: WFNTHandyFlag
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 5000
+  inhand:
+  - NTHandyFlag
+
+- type: loadout
+  id: WFBalloonNT
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 5000
+  inhand:
+  - BalloonNT
+
+#T3 Ballin'
+- type: loadout
+  id: WFFlashlightUmbrella
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  inhand:
+  - FlashlightUmbrella
+
+- type: loadout
+  id: WFDawInstrumentFlatpack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  inhand:
+  - DawInstrumentFlatpack
+
+- type: loadout
+  id: WFHoverbikeFlatpack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 35000
+  inhand:
+  - HoverbikeFlatpack
+
+- type: loadout
+  id: WFEmotionalPetCarrier
+  name: emotional support pet
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 10000
+  inhand:
+  - PetCarrierNPCEmotionalSupportSafe
+
+# Tools
+#T1
+- type: loadout
+  id: WFAppraisalTool
+  price: 350
+  inhand:
+    - AppraisalTool
+
+- type: loadout
+  id: WFPickaxe
+  price: 350
+  inhand:
+    - Pickaxe
+
+- type: loadout
+  id: WFHandheldGPSBasic
+  price: 350
+  inhand:
+    - HandheldGPSBasic
+
+- type: loadout
+  id: WFRadioHandheld
+  price: 550
+  inhand:
+    - RadioHandheldNF
+
+- type: loadout
+  id: WFNetworkConfigurator
+  price: 350
+  inhand:
+    - NetworkConfigurator
+
+- type: loadout
+  id: WFHandheldHealthAnalyzerUnpowered
+  price: 350
+  inhand:
+    - HandheldHealthAnalyzerUnpowered
+
+- type: loadout
+  id: WFAnomalyScanner
+  price: 350
+  inhand:
+    - AnomalyScanner
+
+- type: loadout
+  id: WFBucket
+  price: 350
+  inhand:
+    - Bucket
+
+- type: loadout
+  id: WFGeigerCounter
+  price: 350
+  inhand:
+    - GeigerCounter
+
+#T2
+- type: loadout
+  id: WFWeaponProtoKineticAccelerator
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 3000
+  inhand:
+    - NFWeaponPka
+
+- type: loadout
+  id: WFPinpointerUniversal
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2000
+  inhand:
+    - PinpointerUniversal
+
+- type: loadout
+  id: WFShipyardRCD
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 5000
+  inhand:
+    - ShipyardRCD
+
+- type: loadout
+  id: WFShipyardDoorRemote
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2000
+  inhand:
+    - DoorRemoteShipyard
+
+- type: loadout
+  id: WFHandheldCrewMonitor
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2000
+  inhand:
+    - HandheldCrewMonitor
+
+- type: loadout
+  id: WFHypoMini
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 5000
+  inhand:
+    - HypoMini
+
+- type: loadout
+  id: WFBible
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 500
+  inhand:
+    - Bible

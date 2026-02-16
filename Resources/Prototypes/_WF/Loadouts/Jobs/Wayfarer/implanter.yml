@@ -1,0 +1,51 @@
+#T0
+- type: loadout
+  id: WFMedicalTrackingImplanter
+  name: medical tracking implanter
+  implants:
+  - MedicalTrackingImplanter
+
+#T1
+- type: loadout
+  id: WFLightImplanter
+  name: light implanter
+  price: 1000
+  implants:
+  - LightImplanter
+
+- type: loadout
+  id: WFBikeHornImplanter
+  name: bike horn implanter
+  price: 1000
+  implants:
+  - BikeHornImplanter
+
+- type: loadout
+  id: WFSadTromboneImplanter
+  name: sad trombone implanter
+  price: 1000
+  implants:
+  - SadTromboneImplanter
+
+#T2
+- type: loadout
+  id: WFMimePowersImplanter
+  name: mime vow implanter
+  description: For the budding mime. Take your vow today.
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 5000
+  implants:
+  - MimePowersImplanter
+
+- type: loadout
+  id: WFBibleUserImplanter
+  name: faith implanter
+  description: For the budding chaplain. Perform miracles, proselytize, and grow your flock.
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 5000
+  implants:
+  - BibleUserImplanter

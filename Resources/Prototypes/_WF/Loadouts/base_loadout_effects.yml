@@ -1,0 +1,18 @@
+# Tier 2 generic playtime
+- type: loadoutEffectGroup
+  id: WFT2
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 21600 # 6 hrs
+
+# Tier 3 generic playtime
+- type: loadoutEffectGroup
+  id: WFT3
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 43200 # 12 hrs
+
