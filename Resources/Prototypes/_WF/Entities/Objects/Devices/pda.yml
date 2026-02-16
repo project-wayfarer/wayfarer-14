@@ -546,3 +546,35 @@
         pda-tourist
   - type: Icon
     state: pda-tourist
+
+- type: entity
+  parent: PiratePDA
+  id: OutlawPDA
+  name: outlaw PDA
+  description: Somehow smells of plotting and scheming?
+  components:
+  - type: Pda
+    id: NFPirateIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-outlaw
+  - type: Icon
+    state: pda-outlaw
+
+- type: entity
+  parent: PiratePDA
+  id: WantedOutlawPDA
+  name: wanted outlaw PDA
+  description: Worn by someone who is always on the run.
+  components:
+  - type: Pda
+    id: NFPirateCaptainIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-wantedoutlaw
+  - type: Icon
+    state: pda-wantedoutlaw

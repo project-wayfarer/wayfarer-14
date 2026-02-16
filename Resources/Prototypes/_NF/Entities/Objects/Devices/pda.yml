@@ -396,49 +396,49 @@
   - type: BlipCartridge
     defaultPreset: BlipPresetCommand
 
-- type: entity
-  parent: PiratePDA
-  id: NFPiratePDA
-  name: pirate PDA
-  suffix: Frontier
-  components:
-  - type: Pda
-    id: NFPirateIDCard
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pda-pirate
-  - type: BlipCartridge
-    defaultPreset: BlipPresetPirate
+#- type: entity
+#  parent: PiratePDA
+#  id: NFPiratePDA
+#  name: pirate PDA
+#  suffix: Frontier
+#  components:
+#  - type: Pda
+#    id: NFPirateIDCard
+#  - type: Appearance
+#    appearanceDataInit:
+#      enum.PdaVisuals.PdaType:
+#        !type:String
+#        pda-pirate
+#  - type: BlipCartridge
+#    defaultPreset: BlipPresetPirate
 
-- type: entity
-  parent: PiratePDA
-  id: NFPirateCaptainPDA
-  name: pirate captain PDA
-  suffix: Frontier
-  components:
-  - type: Pda
-    id: NFPirateCaptainIDCard
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pda-pirate
+#- type: entity
+#  parent: PiratePDA
+#  id: NFPirateCaptainPDA
+#  name: pirate captain PDA
+#  suffix: Frontier
+#  components:
+#  - type: Pda
+#    id: NFPirateCaptainIDCard
+#  - type: Appearance
+#    appearanceDataInit:
+#      enum.PdaVisuals.PdaType:
+#        !type:String
+#        pda-pirate
 
-- type: entity
-  parent: PiratePDA
-  id: NFPirateFirstMatePDA
-  name: pirate first mate PDA
-  suffix: Frontier
-  components:
-  - type: Pda
-    id: NFPirateFirstMateIDCard
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pda-pirate
+#- type: entity
+#  parent: PiratePDA
+#  id: NFPirateFirstMatePDA
+#  name: pirate first mate PDA
+#  suffix: Frontier
+#  components:
+# - type: Pda
+#   id: NFPirateFirstMateIDCard
+# - type: Appearance
+#   appearanceDataInit:
+#     enum.PdaVisuals.PdaType:
+#       !type:String
+#       pda-pirate
 
 #- type: entity
 #  parent: PiratePDA
