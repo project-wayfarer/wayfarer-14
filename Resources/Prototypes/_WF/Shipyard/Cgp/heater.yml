@@ -24,10 +24,10 @@
   minPlayers: 0
   stations:
     Heater:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Heater {1}'
+        mapNameTemplate: 'Heater CGP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

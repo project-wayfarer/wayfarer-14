@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Emp;
 using Content.Shared.Emp; // Frontier: Upstream - #28984
 using Content.Server.Power.Components;
@@ -7,7 +8,8 @@ using Content.Shared.Rejuvenate;
 using JetBrains.Annotations;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
-using Content.Server._NF.Power.Components; // Frontier
+using Content.Server._NF.Power.Components;
+using Robust.Shared.Containers; // Frontier
 
 namespace Content.Server.Power.EntitySystems
 {
@@ -15,6 +17,9 @@ namespace Content.Server.Power.EntitySystems
     public sealed class BatterySystem : EntitySystem
     {
         [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private readonly SharedContainerSystem _containers = default!; // WD EDIT
+
+        private const string CellContainer = "cell_slot";
 
         public override void Initialize()
         {
@@ -277,5 +282,31 @@ namespace Content.Server.Power.EntitySystems
 
             return battery.CurrentCharge >= battery.MaxCharge;
         }
+        // WD EDIT START
+        public bool TryGetBatteryComponent(EntityUid uid, [NotNullWhen(true)] out BatteryComponent? battery,[NotNullWhen(true)] out EntityUid? batteryUid)
+        {
+            if (TryComp(uid, out battery))
+            {
+                batteryUid = uid;
+                return true;
+            }
+
+            if (!_containers.TryGetContainer(uid, CellContainer, out var container)
+                || container is not ContainerSlot slot)
+            {
+                battery = null;
+                batteryUid = null;
+                return false;
+            }
+
+            batteryUid = slot.ContainedEntity;
+
+            if (batteryUid != null)
+                return TryComp(batteryUid, out battery);
+
+            battery = null;
+            return false;
+        }
+        // WD EDIT END
     }
 }

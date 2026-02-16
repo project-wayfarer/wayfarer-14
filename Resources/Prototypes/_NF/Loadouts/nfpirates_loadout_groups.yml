@@ -8,6 +8,8 @@
   - NFPirateJumpskirt
   - NFPirateClothingUniformJumpsuitPirateSlops
   - NFPirateClothingUniformJumpsuitPirateLuffy
+  subgroups:
+  - WFJumpsuit
   fallbacks:
   - NFPirateJumpsuit
   - NFPirateJumpskirt
@@ -18,6 +20,8 @@
   loadouts:
   - NFPirateNFPiratePDA
   - NFPirateNFShantymanPDA
+  subgroups:
+  - WFPDA
   fallbacks:
   - NFPirateNFPiratePDA
 
@@ -29,6 +33,8 @@
   - ContractorClothingMaskBreath
   - ContractorClothingMaskBreathMedical
   - ContractorClothingMaskGas
+  subgroups:
+  - WFFace
   fallbacks:
   - ContractorClothingMaskBreath
 
@@ -37,6 +43,8 @@
   name: loadout-group-contractor-ears
   loadouts:
   - NFPirateEarsClothingHeadsetFreelance
+  subgroups:
+  - WFEars
   fallbacks:
   - NFPirateEarsClothingHeadsetFreelance
 
@@ -46,6 +54,8 @@
   loadouts:
   - NFPirateClothingShoesBootsLaceup
   - NFPirateClothingShoesBootsPirateLuffy
+  subgroups:
+  - WFShoes
   fallbacks:
   - NFPirateClothingShoesBootsLaceup
 
@@ -58,6 +68,8 @@
   - NFPirateClothingHeadBandBrown
   - NFPirateClothingHeadBandGrey
   - NFPirateClothingHeadBandRed
+  subgroups:
+  - WFHead
   fallbacks:
   - NFPirateClothingHeadBandBlack
 
@@ -69,7 +81,7 @@
   loadouts:
   - PirateNFPouchPirate
   subgroups:
-  - ContractorBackpackItems
+  - WFBackpackItems
 
 # Pirate Captain loadouts
 
@@ -80,6 +92,8 @@
   loadouts:
   - NFPirateClothingHeadHatPirate
   - NFPirateClothingHeadHatPirateLuffy
+  subgroups:
+  - WFHead
   fallbacks:
   - NFPirateClothingHeadHatPirate
 
@@ -90,6 +104,8 @@
   - NFPirateCaptainClothingOuterCoatPirate
   - NFPirateClothingOuterCoatVictorian
   - NFPirateClothingOuterCoatVictorianRed
+  subgroups:
+  - WFOuterClothing
   fallbacks:
   - NFPirateCaptainClothingOuterCoatPirate
 
@@ -99,6 +115,8 @@
   loadouts:
   - NFPirateCaptainNFPirateCaptainPDA
   - NFPirateCaptainNFShantymanPDA
+  subgroups:
+  - WFPDA
   fallbacks:
   - NFPirateCaptainNFPirateCaptainPDA
 
@@ -116,6 +134,8 @@
   name: loadout-group-contractor-ears
   loadouts:
   - NFPirateCaptainEarsClothingHeadsetAltFreelancer
+  subgroups:
+  - WFEars
   fallbacks:
   - NFPirateCaptainEarsClothingHeadsetAltFreelancer
 
@@ -127,7 +147,7 @@
   loadouts:
   - PirateNFPouchPirateCaptain
   subgroups:
-  - ContractorBackpackItems
+  - WFBackpackItems
 
 # Pirate First Mate loadouts
 
@@ -138,6 +158,8 @@
   loadouts:
   - NFPirateClothingHeadHatPirateTricord
   - NFPirateClothingHeadHatPirateLuffy
+  subgroups:
+  - WFHead
   fallbacks:
   - NFPirateClothingHeadHatPirateTricord
 
@@ -148,6 +170,8 @@
   - NFPirateFirstMateClothingOuterCoatGentle
   - NFPirateClothingOuterCoatVictorian
   - NFPirateClothingOuterCoatVictorianRed
+  subgroups:
+  - WFOuterClothing
   fallbacks:
   - NFPirateFirstMateClothingOuterCoatGentle
 
@@ -157,5 +181,7 @@
   loadouts:
   - NFPirateFirstMateNFPirateFirstMatePDA
   - NFPirateFirstMateNFShantymanPDA
+  subgroups:
+  - WFPDA
   fallbacks:
   - NFPirateFirstMateNFPirateFirstMatePDA

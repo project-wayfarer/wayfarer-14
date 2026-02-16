@@ -24,6 +24,7 @@
                 	StyleClasses="LabelKeyText"/> <!-- Mono -->
                 <CheckBox Name="AreaEchoCheckBox" Text="{Loc 'ui-options-area-echo-enabled'}" /> <!-- Mono -->
                 <CheckBox Name="AreaEchoHighResolutionCheckBox" Text="{Loc 'ui-options-area-echo-highres'}" /> <!-- Mono -->
+                <CheckBox Name="RadioNoiseCheckBox" Text="{Loc 'ui-options-radio-noise'}" /> <!-- Mono -->
                 <Label Text="{Loc 'ui-options-general-cursor'}"
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="ShowHeldItemCheckBox" Text="{Loc 'ui-options-show-held-item'}" />
