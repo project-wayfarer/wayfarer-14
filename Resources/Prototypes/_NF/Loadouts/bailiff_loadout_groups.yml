@@ -32,10 +32,10 @@
   - BailiffClothingNeckBadgeBailiff
 
 - type: loadoutGroup
-  id: MasterAtArmsPDA
+  id: MasterAtArmsPDA #WF job PDA
   name: loadout-group-contractor-pda
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
-  - MasterAtArmsMasterAtArmsPDA
+  - MasterAtArmsMasterAtArmsPDA #WF job PDA
   fallbacks:
-  - MasterAtArmsMasterAtArmsPDA
+  - MasterAtArmsMasterAtArmsPDA #WF job PDA

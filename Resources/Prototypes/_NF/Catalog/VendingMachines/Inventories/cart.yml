@@ -1,7 +1,7 @@
 - type: vendingMachineInventory
   id: NFPTechInventory
   startingInventory:
-    ClearNFPDA: 4294967295 #infinite
+    ClearPDA: 4294967295 #infinite
 #    ContractorPDA: 4294967295 #infinite
 #    PilotPDA: 4294967295 #infinite
 #    MercenaryPDA: 4294967295 #infinite
@@ -39,7 +39,7 @@
   startingInventory:
     JuniorPeacekeeperPDA: 10
     PeacekeeperPDA: 10
-    CorpsmanNFPDA: 10
+    CorpsmanPDA: 10
     InternalAffairsPDA: 10
     SeniorPeacekeeperPDA: 10
     MasterAtArmsPDA: 10

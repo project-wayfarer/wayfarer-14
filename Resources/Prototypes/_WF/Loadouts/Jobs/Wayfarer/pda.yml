@@ -386,42 +386,6 @@
     id: MusicianPDA
 
 - type: loadout
-  id: WFHoSPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: HoSPDA
-
-- type: loadout
-  id: WFSecurityPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: SecurityPDA
-
-- type: loadout
-  id: WFSeniorOfficerPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: SeniorOfficerPDA
-
-- type: loadout
-  id: WFBrigmedicPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: BrigmedicPDA
-
-- type: loadout
   id: WFSyndiAgentPDA
   effects:
   - !type:GroupLoadoutEffect

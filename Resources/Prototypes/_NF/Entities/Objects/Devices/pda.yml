@@ -91,36 +91,36 @@
   - type: Icon
     state: pda-stc
 
-#- type: entity
-#  parent: BaseSecurityPDA
-#  id: PeacekeeperPDA # WF chamge
-#  name: peacekeeper PDA
-#  description: Red to hide the stains of passenger blood.
-#  components:
-#  - type: Pda
-#    id: SecurityGuardIDCard
-#  - type: Appearance
-#    appearanceDataInit:
-#     enum.PdaVisuals.PdaType:
-#       !type:String
-#       pda-peacekeeper
-#  - type: PdaBorderColor
-#    borderColor: "#A32D26"
-#  - type: Icon
-#    state: pda-peacekeeper
-#- type: entity
-#  parent: ERTLeaderPDA
-#  id: ERTMailCarrierPDA
-#  suffix: Mail Carrier
-#  components:
-#  - type: Pda
-#    id: ERTMailCarrierIDCard
-#    penSlot:
-#      startingItem: PenCentcom
-#      priority: -1
-#      whitelist:
-#        tags:
-#        - Write
+- type: entity
+  parent: BaseSecurityPDA
+  id: ERTMailCarrierPDA # WF chamge
+  name: ert mail carrier PDA
+  description: Red to hide the stains of passenger blood.
+  components:
+  - type: Pda
+    id: SecurityGuardIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-ert
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+  - type: Icon
+    state: pda-ert
+- type: entity
+  parent: ERTLeaderPDA
+  id: ERTMailCarrierPDA
+  suffix: Mail Carrier
+  components:
+  - type: Pda
+    id: ERTMailCarrierIDCard
+    penSlot:
+      startingItem: PenCentcom
+      priority: -1
+      whitelist:
+        tags:
+        - Write
 
 #- type: entity
 #  parent: [BaseSecurityPDA, BaseCommandContraband]
