@@ -765,7 +765,7 @@
   - ContractorClownPDA
   - ContractorMimePDA
   fallbacks:
-#  - ContractorContractorPDA
+  - ContractorClearNFPDA #don'tchangethisbecauseotherwiseit'sagrrrkitten
 
 - type: loadoutGroup
   id: ContractorGlasses

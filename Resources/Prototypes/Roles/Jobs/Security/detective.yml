@@ -28,18 +28,18 @@
   accessGroups: # Frontier
   - GeneralAccess # Frontier
 
-#- type: startingGear
-#  id: DetectiveGear
-#  equipment:
-#    eyes: ClothingEyesGlassesSecurity
+- type: startingGear
+  id: DetectiveGear
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
 #    id: DetectivePDA
-#    ears: ClothingHeadsetSecurity
-#    belt: ClothingBeltHolsterFilled
-#  storage:
-#    back:
-#    - Flash
-#    - ForensicPad
-#    - ForensicScanner
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltHolsterFilled
+  storage:
+    back:
+    - Flash
+    - ForensicPad
+    - ForensicScanner
 
 - type: chameleonOutfit
   id: DetectiveChameleonOutfit
