@@ -30,7 +30,7 @@
   minPlayers: 0
   stations:
     Dagger:
-      stationProto: StandardFrontierVesselAntag
+      stationProto: StandardFrontierAntagVessel
       components:
       - type: StationNameSetup
         mapNameTemplate: 'Dagger{1}' # Designation pending, CGP IFF will spook other outlaws.
