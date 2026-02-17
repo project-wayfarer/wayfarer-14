@@ -9,7 +9,7 @@
   fallbacks:
   - NFDetectiveClothingUniformJumpsuitDetective
   - NFDetectiveClothingUniformJumpskirtDetective
-  
+
 - type: loadoutGroup
   id: NFDetectiveOuterClothing
   name: loadout-group-contractor-outerclothing
@@ -27,7 +27,7 @@
   loadouts:
   - NFDetectiveClothingHeadHatFedoraBrown
   - NFDetectiveClothingHeadHatFedoraGrey
-  
+
 - type: loadoutGroup
   id: NFDetectiveGloves
   name: loadout-group-contractor-gloves
@@ -45,10 +45,10 @@
   - NFDetectiveClothingNeckNfsdBadgeDetective
 
 - type: loadoutGroup
-  id: NFDetectivePDA
+  id: InternalAffairsPDA # Wayfarer aPDA resprite
   name: loadout-group-contractor-pda
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
-  - NFDetectiveNFDetectivePDA
+  - InternalAffairsInternalAffairsPDA # Wayfarer aPDA resprite
   fallbacks:
-  - NFDetectiveNFDetectivePDA
+  - InternalAffairsInternalAffairsPDA # Wayfarer aPDA resprite

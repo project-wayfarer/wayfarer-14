@@ -1,8 +1,8 @@
 - type: loadout
-  id: ContractorContractorPDA
+  id: ContractorWayfarerPDA # WF: Contractor to Wayfarer
   price: 0
   equipment:
-    id: ContractorPDA
+    id: WayfarerPDA # WF: Contractor to Wayfarer
 
 - type: loadout
   id: ContractorClearNFPDA
@@ -64,6 +64,24 @@
   price: 500
   equipment:
     id: ChefPDA
+
+- type: loadout
+  id: ContractorInventoryAssociatePDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: InventoryAssociatePDA
+
+- type: loadout
+  id: ContractorLabSciPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: LabSciPDA
 
 - type: loadout
   id: ContractorBotanistPDA
@@ -164,6 +182,59 @@
   equipment:
     id: AtmosPDA
 
+- type: loadout
+  id: ContractorCookPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: CookPDA
+
+- type: loadout
+  id: ContractorDeckworkerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: DeckworkerPDA
+
+- type: loadout
+  id: ContractorPracticingNursePDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: PracticingNursePDA
+
+- type: loadout
+  id: ContractorProspectorPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: ProspectorPDA
+
+- type: loadout
+  id: ContractorTouristPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: TouristPDA
+
+- type: loadout
+  id: ContractorResidentPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    id: ResidentPDA
 #T2
 - type: loadout
   id: ContractorCaptainPDA
@@ -173,6 +244,42 @@
   price: 750
   equipment:
     id: CaptainPDA
+
+- type: loadout
+  id: ContractorRoboticistPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: RoboticistPDA
+
+- type: loadout
+  id: ContractorPlasmaScientistPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: PlasmaScientistPDA
+
+- type: loadout
+  id: ContractorLawyerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: LawyerPDA
+
+- type: loadout
+  id: ContractorLifeSupportTechPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: LifeSupportTechPDA
 
 - type: loadout
   id: ContractorQuartermasterPDA
@@ -255,6 +362,60 @@
   equipment:
     id: MimePDA
 
+- type: loadout
+  id: ContractorPizzaioloPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: PizzaioloPDA
+
+- type: loadout
+  id: ContractorBakerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: BakerPDA
+
+- type: loadout
+  id: ContractorExcavatorPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: ExcavatorPDA
+
+- type: loadout
+  id: ContractorGeneticsPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: GeneticsPDA
+
+- type: loadout
+  id: ContractorPhysPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: PhysPDA
+
+- type: loadout
+  id: ContractorProsecutorPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  price: 750
+  equipment:
+    id: ProsecutorPDA
+
 #T3
 - type: loadout
   id: ContractorClownPDA
@@ -264,6 +425,24 @@
   price: 1500
   equipment:
     id: ClownPDA
+
+- type: loadout
+  id: ContractorFoolPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 1500
+  equipment:
+    id: FoolPDA
+
+- type: loadout
+  id: ContractorJesterPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT3
+  price: 1500
+  equipment:
+    id: JesterPDA
 
 - type: loadout
   id: ContractorMusicianPDA

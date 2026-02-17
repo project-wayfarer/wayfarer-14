@@ -33,13 +33,13 @@
   - SheriffClothingNeckNfsdBadgeSheriff
 
 - type: loadoutGroup
-  id: SheriffPDA
+  id: CommodorePDA
   name: loadout-group-contractor-pda
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
-  - SheriffSheriffPDA
+  - CommodoreCommodorePDA
   fallbacks:
-  - SheriffSheriffPDA
+  - CommodoreCommodorePDA
 
 - type: loadoutGroup
   id: SheriffFace

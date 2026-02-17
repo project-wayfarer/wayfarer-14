@@ -15,15 +15,14 @@
   - NFPirateJumpskirt
 
 - type: loadoutGroup
-  id: NFPiratePDA
+  id: OutlawPDA #WF change
   name: loadout-group-contractor-pda
   loadouts:
-  - NFPirateNFPiratePDA
-  - NFPirateNFShantymanPDA
+  - OutlawOutlawPDA #WF change
   subgroups:
   - WFPDA
   fallbacks:
-  - NFPirateNFPiratePDA
+  - OutlawOutlawPDA #WF change
 
 - type: loadoutGroup
   id: NFPirateFace
@@ -110,15 +109,14 @@
   - NFPirateCaptainClothingOuterCoatPirate
 
 - type: loadoutGroup
-  id: NFPirateCaptainPDA
+  id: WantedOutlawPDA #WF change
   name: loadout-group-contractor-pda
   loadouts:
-  - NFPirateCaptainNFPirateCaptainPDA
-  - NFPirateCaptainNFShantymanPDA
+  - WantedOutlawWantedOutlawPDA #WF change
   subgroups:
   - WFPDA
   fallbacks:
-  - NFPirateCaptainNFPirateCaptainPDA
+  - WantedOutlawWantedOutlawPDA #WF change
 
 - type: loadoutGroup
   id: PirateCaptainWallet
@@ -175,13 +173,12 @@
   fallbacks:
   - NFPirateFirstMateClothingOuterCoatGentle
 
-- type: loadoutGroup
-  id: NFPirateFirstMatePDA
-  name: loadout-group-contractor-pda
-  loadouts:
-  - NFPirateFirstMateNFPirateFirstMatePDA
-  - NFPirateFirstMateNFShantymanPDA
-  subgroups:
-  - WFPDA
-  fallbacks:
-  - NFPirateFirstMateNFPirateFirstMatePDA
+#- type: loadoutGroup
+#  id: NFPirateFirstMatePDA
+#  name: loadout-group-contractor-pda
+#  hidden: true # No point in showing this, it gets auto-selected.
+#  loadouts:
+#  - NFPirateFirstMateNFPirateFirstMatePDA
+#  - NFPirateFirstMateNFShantymanPDA
+#  fallbacks:
+#  - NFPirateFirstMateNFPirateFirstMatePDA

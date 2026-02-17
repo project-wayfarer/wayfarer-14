@@ -845,7 +845,6 @@
   loadouts:
   - WFPDA
   - WFClearNFPDA
-  - MercenaryMercenaryPDA
   - WFSalvagePDA
   - WFResearchAssistantPDA
   - WFCargoPDA
@@ -865,24 +864,43 @@
   - WFZookeeperPDA
   - WFEngineerPDA
   - WFAtmosPDA
+  - WFLabSciPDA
+  - WFCookPDA
+  - WFDeckworkerPDA
+  - WFPracticingNursePDA
+  - WFProspectorPDA
+  - WFResidentPDA
+  - WFTouristPDA
+#T2
   - WFCaptainPDA
   - WFQuartermasterPDA
   - WFSeniorResearcherPDA
   - WFRnDPDA
   - WFSeniorPhysicianPDA
-  - WFCMOPDA # Temp removed for DOC. Will return if replaced.
+  - WFCMOPDA
   - WFSeniorEngineerPDA
   - WFCEPDA
   - WFBoxerPDA
+  - WFLawyerPDA
+  - WFLifeSupportTechPDA
+  - WFPhysPDA
+  - WFPizzaioloPDA
+  - WFGeneticsPDA
+  - WFBakerPDA
+  - WFExcavatorPDA
+  - WFPlasmaScientistPDA
+  - WFProsecutorPDA
+  - WFRoboticistPDA
+  - WFMimePDA
+#T3
   - WFMusicianPDA
   - WFClownPDA
-  - WFMimePDA
-  - WFHoSPDA
-  - WFSecurityPDA
-  - WFSeniorOfficerPDA
-  - WFBrigmedicPDA
+  - WFFoolPDA
+  - WFJesterPDA
   - WFSyndiAgentPDA
   - WFSyndiPDA
+
+
   fallbacks:
   - WFPDA
 

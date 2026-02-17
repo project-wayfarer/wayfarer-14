@@ -2,13 +2,13 @@
   id: WFPDA
   price: 0
   equipment:
-    id: PilotPDA
+    id: WayfarerPDA
 
 - type: loadout
   id: WFClearNFPDA
   price: 0
   equipment:
-    id: ClearNFPDA
+    id: ClearPDA
 
 - type: loadout
   id: WFSalvagePDA
@@ -52,6 +52,60 @@
   price: 500
   equipment:
     id: BartenderPDA
+
+- type: loadout
+  id: WFEngineerPDA
+  price: 500
+  equipment:
+    id: EngineerPDA
+
+- type: loadout
+  id: WFAtmosPDA
+  price: 500
+  equipment:
+    id: AtmosPDA
+
+- type: loadout
+  id: WFLabSciPDA
+  price: 500
+  equipment:
+    id: LabSciPDA
+
+- type: loadout
+  id: WFCookPDA
+  price: 500
+  equipment:
+    id: CookPDA
+
+- type: loadout
+  id: WFDeckworkerPDA
+  price: 500
+  equipment:
+    id: DeckworkerPDA
+
+- type: loadout
+  id: WFPracticingNursePDA
+  price: 500
+  equipment:
+    id: PracticingNursePDA
+
+- type: loadout
+  id: WFProspectorPDA
+  price: 500
+  equipment:
+    id: ProspectorPDA
+
+- type: loadout
+  id: WFResidentPDA
+  price: 500
+  equipment:
+    id: ResidentPDA
+
+- type: loadout
+  id: WFTouristPDA
+  price: 500
+  equipment:
+    id: TouristPDA
 
 - type: loadout
   id: WFChefPDA
@@ -113,18 +167,6 @@
   equipment:
     id: ZookeeperPDA
 
-- type: loadout
-  id: WFEngineerPDA
-  price: 500
-  equipment:
-    id: EngineerPDA
-
-- type: loadout
-  id: WFAtmosPDA
-  price: 500
-  equipment:
-    id: AtmosPDA
-
 #T2
 - type: loadout
   id: WFCaptainPDA
@@ -134,6 +176,15 @@
   price: 750
   equipment:
     id: CaptainPDA
+
+- type: loadout
+  id: WFLawyerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: LawyerPDA
 
 - type: loadout
   id: WFQuartermasterPDA
@@ -216,6 +267,87 @@
   equipment:
     id: MimePDA
 
+- type: loadout
+  id: WFLifeSupportTechPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: LifeSupportTechPDA
+
+- type: loadout
+  id: WFPhysPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: PhysPDA
+
+- type: loadout
+  id: WFPizzaioloPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: PizzaioloPDA
+
+- type: loadout
+  id: WFGeneticsPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: GeneticsPDA
+
+- type: loadout
+  id: WFBakerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: BakerPDA
+
+- type: loadout
+  id: WFExcavatorPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: ExcavatorPDA
+
+- type: loadout
+  id: WFPlasmaScientistPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: PlasmaScientistPDA
+
+- type: loadout
+  id: WFProsecutorPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: ProsecutorPDA
+
+- type: loadout
+  id: WFRoboticistPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: RoboticistPDA
+
 #T3
 - type: loadout
   id: WFClownPDA
@@ -227,6 +359,24 @@
     id: ClownPDA
 
 - type: loadout
+  id: WFFoolPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1500
+  equipment:
+    id: FoolPDA
+
+- type: loadout
+  id: WFJesterPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1500
+  equipment:
+    id: JesterPDA
+
+- type: loadout
   id: WFMusicianPDA
   effects:
   - !type:GroupLoadoutEffect
@@ -236,47 +386,11 @@
     id: MusicianPDA
 
 - type: loadout
-  id: WFHoSPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: HoSPDA
-
-- type: loadout
-  id: WFSecurityPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: SecurityPDA
-
-- type: loadout
-  id: WFSeniorOfficerPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: SeniorOfficerPDA
-
-- type: loadout
-  id: WFBrigmedicPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 2000
-  equipment:
-    id: BrigmedicPDA
-
-- type: loadout
   id: WFSyndiAgentPDA
   effects:
   - !type:GroupLoadoutEffect
     proto: WFT3
-  price: 2000
+  price: 20000
   equipment:
     id: SyndiAgentPDA
 
@@ -285,6 +399,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: WFT3
-  price: 2000
+  price: 20000
   equipment:
     id: SyndiPDA

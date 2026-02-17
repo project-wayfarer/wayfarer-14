@@ -16,7 +16,7 @@
   - ContractorEars
   - ContractorEncryptionKey
   - ContractorBoxSurvival
-  - ContractorPDA
+#  - ContractorPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -41,7 +41,7 @@
   - PilotEars
   - ContractorEncryptionKey
   - ContractorBoxSurvival
-  - PilotPDA
+#  - PilotPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -66,7 +66,7 @@
   - MercenaryEars
   - ContractorEncryptionKey
   - ContractorBoxSurvival
-  - MercenaryPDA
+#  - MercenaryPDA #WF removed
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -200,7 +200,7 @@
   - SecurityGuardBelt
   - SecurityGuardEars
   - NfsdBoxSurvival
-  - SecurityGuardPDA
+#  - SecurityGuardPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -301,7 +301,7 @@
   - NfsdBelt
   - NfsdEarsBrown
   - NfsdBoxSurvival
-  - CadetPDA
+  - JuniorPeacekeeperPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -326,7 +326,7 @@
   - NfsdBelt
   - NfsdEarsBrown
   - NfsdBoxSurvival
-  - DeputyPDA
+  - PeacekeeperPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -351,7 +351,7 @@
   - BrigmedicBelt
   - NfsdEarsCream
   - NfsdBoxSurvival
-  - BrigmedicPDA
+  - CorpsmanPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -376,7 +376,7 @@
   - NfsdBelt
   - NfsdEarsCream
   - NfsdBoxSurvival
-  - NFDetectivePDA
+  - InternalAffairsPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -450,7 +450,7 @@
   - NfsdBelt
   - NfsdEarsAltGreen
   - NfsdBoxSurvival
-  - BailiffPDA
+  - MasterAtArmsPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -475,7 +475,7 @@
   - NfsdBelt
   - NfsdEarsAltBrown
   - NfsdBoxSurvival
-  - SeniorOfficerPDA
+  - SeniorPeacekeeperPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -500,7 +500,7 @@
   - NfsdBelt
   - SheriffEars
   - NfsdBoxSurvival
-  - SheriffPDA
+  - CommodorePDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -523,7 +523,7 @@
   - NFPirateFace
   - NFPirateEars
   - ContractorBoxSurvival
-  - NFPiratePDA
+  - OutlawPDA
   - ContractorWallet
   - PirateBackpackItems
   - ContractorHandItems
@@ -544,7 +544,7 @@
   - NFPirateFace
   - NFPirateEars
   - ContractorBoxSurvival
-  - NFPirateFirstMatePDA
+  - WantedOutlawPDA
   - ContractorWallet
   - PirateBackpackItems
   - ContractorHandItems
@@ -565,7 +565,7 @@
   - NFPirateFace
   - NFPirateCaptainEars
   - ContractorBoxSurvival
-  - NFPirateCaptainPDA
+  - WantedOutlawPDA
   - PirateCaptainWallet
   - PirateCaptainBackpackItems
   - ContractorHandItems
