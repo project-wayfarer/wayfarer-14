@@ -33,11 +33,11 @@
         - type: PreventPilot
         paths:
 #        - /Maps/_NF/Shuttles/Scrap/canister.yml # Too small
-        - /Maps/_NF/Shuttles/Scrap/disciple.yml
-        - /Maps/_NF/Shuttles/Scrap/nugget.yml
-        - /Maps/_NF/Shuttles/Scrap/orange.yml
-        - /Maps/_NF/Shuttles/Scrap/point.yml
-        - /Maps/_NF/Shuttles/Scrap/tide.yml
+#        - /Maps/_NF/Shuttles/Scrap/disciple.yml
+#        - /Maps/_NF/Shuttles/Scrap/nugget.yml
+#        - /Maps/_NF/Shuttles/Scrap/orange.yml
+#        - /Maps/_NF/Shuttles/Scrap/point.yml
+#        - /Maps/_NF/Shuttles/Scrap/tide.yml
         - /Maps/_NF/Shuttles/Scrap/scrap-investigator.yml # Please replace all this maps ones we finish some automated system
         - /Maps/_NF/Shuttles/Scrap/scrap-crescent.yml
         - /Maps/_NF/Shuttles/Scrap/scrap-barge.yml
@@ -47,6 +47,7 @@
         - /Maps/_NF/Shuttles/Scrap/scrap-sparrow.yml
         # Start WF
         - /Maps/_WF/Shuttles/Scrap/scrap-hauler.yml
+        - /Maps/_WF/Shuttles/Scrap/scrap-scryer.yml
         # End WF
   - type: ActiveRadio
     channels:
