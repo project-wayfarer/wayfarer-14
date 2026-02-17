@@ -4,7 +4,7 @@
 
 - type: entity
   id: BaseHydrakinOrgan
-  name: hydrakin organ 
+  name: hydrakin organ
   parent: [BaseItem]
   abstract: true
   components:
@@ -69,9 +69,6 @@
   - type: Item
     size: Small
     heldPrefix: liver
-  - type: Liver # Shitmed Change
-  - type: Organ # Shitmed Change
-    slotId: liver # Shitmed Change
 
 - type: entity
   id: OrganHydrakinHeart

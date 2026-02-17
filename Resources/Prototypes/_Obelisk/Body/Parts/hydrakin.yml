@@ -10,10 +10,6 @@
   name: "hydrakin body part"
   abstract: true
   components:
-  - type: Icon # Shitmed Change
-    sprite: _Obelisk/Mobs/Species/Hydrakin/parts.rsi
-  - type: BodyPart # Shitmed Change
-    species: Hydrakin
   - type: Extractable
     juiceSolution:
       reagents:
@@ -37,7 +33,6 @@
         Quantity: 10
       - ReagentId: AmmoniaBlood
         Quantity: 20
-
 
 - type: entity
   id: HeadHydrakin

@@ -16,9 +16,14 @@
 - type: speciesBaseSprites
   id: MobHydrakinSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobHydrakinHead
     Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobHydrakinTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -36,38 +41,50 @@
 - type: markingPoints
   id: MobHydrakinMarkingLimits
   points:
-    Hair:
-      points: 0
-      required: false
-    FacialHair:
-      points: 0
-      required: false
-    Snout:
-      points: 0
+    Special:
+      points: 32 # WF
       required: false
     Head:
-      points: 1
-      required: true
-      defaultMarkings: [ HydrakinEyesDefault]
-    Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ HydrakinTailDefault ]
+      points: 32 # WF
+      required: false
+      defaultMarkings: [ HydrakinEyesDefault ]
     HeadTop:
-      points: 1
-      required: true
+      points: 32 # WF
+      required: false
       defaultMarkings: [ HydrakinEarsDefault ]
+    HeadSide:
+      points: 32 # WF
+      required: false
+    Snout:
+      points: 32 # WF
+      required: false
+    Hair:
+      points: 32 # WF
+      required: false
+    FacialHair:
+      points: 32 # WF
+      required: false
     Chest:
-      points: 4
+      points: 32 # WF
       required: false
     Legs:
-      points: 8 # imp 2<8
+      points: 32 # WF
       required: false
     Arms:
-      points: 8 # imp 2<8
+      points: 32 # WF
+      required: false
+    Tail:
+      points: 32 # WF
+      required: false
+      defaultMarkings: [ HydrakinTailDefault ]
+    UndergarmentTop:
+      points: 32 # WF
+      required: false
+    UndergarmentBottom:
+      points: 32 # WF
       required: false
     Overlay:
-      points: 2
+      points: 32 # WF
       required: false
 
 - type: humanoidBaseSprite
