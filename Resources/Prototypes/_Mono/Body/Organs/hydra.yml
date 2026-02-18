@@ -33,7 +33,6 @@
     state: stomach
   - type: Stomach
   - type: Organ
-    slotId: stomach
   - type: Metabolizer
     maxReagents: 3
     metabolizerTypes: [ Animal, Hydrakin ]
@@ -100,7 +99,6 @@
     size: Small
     heldPrefix: lungs
   - type: Organ
-    slotId: lungs
   - type: Lung
   - type: Metabolizer
     removeEmpty: true

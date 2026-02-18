@@ -12,13 +12,9 @@
   markingLimits: MobHydrakinMarkingLimits
   dollPrototype: MobHydrakinDummy
   skinColoration: Hues
-  maleFirstNames: names_hydrakin_unisex
-  femaleFirstNames: names_hydrakin_unisex
+  maleFirstNames: NamesHydrakinUnisex
+  femaleFirstNames: NamesHydrakinUnisex
   naming: First
-  sexes:
-  - Unsexed
-  - Male
-  - Female
 
 - type: speciesBaseSprites
   id: MobHydrakinSprites
@@ -51,17 +47,14 @@
     Special:
       points: 32 # WF
       required: false
-    HeadSide:
-      points: 1
-      required: false
     Head:
-      points: 32 # WF
+      points: 1 # WF
       required: false
       defaultMarkings: [ HydrakinEyesDefault ]
     HeadTop:
       points: 32 # WF
       required: false
-      defaultMarkings: [ HydrakinEarsDefault ]
+#      defaultMarkings: [ HydrakinEarsDefault ]
     HeadSide:
       points: 32 # WF
       required: false
@@ -86,7 +79,7 @@
     Tail:
       points: 32 # WF
       required: false
-      defaultMarkings: [ HydrakinTailDefault ]
+#      defaultMarkings: [ HydrakinTailDefault ]
     UndergarmentTop:
       points: 32 # WF
       required: false
