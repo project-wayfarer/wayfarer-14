@@ -24,10 +24,10 @@
   minPlayers: 0
   stations:
     Kite:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Kite {1}'
+        mapNameTemplate: 'Kite CGP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

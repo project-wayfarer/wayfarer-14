@@ -134,17 +134,6 @@
   - type: Clothing
     sprite: Clothing/Neck/Scarfs/zebra.rsi
 
-- type: entity
-  parent: ClothingScarfBase
-  id: ClothingNeckScarfSolidRed
-  name: solid red scarf
-  description: A red scarf, devoid of pattern.
-  components:
-  - type: Sprite
-    sprite: Clothing/Neck/Scarfs/solidred.rsi
-  - type: Clothing
-    sprite: Clothing/Neck/Scarfs/solidred.rsi
-
 # Pride Scarves
 - type: entity
   parent: ClothingScarfBase

@@ -2,7 +2,7 @@
   parent: BasePDA
   id: NFPrisonerPDA # Frontier: add NF prefix
   name: prisoner PDA
-  description: Clear, so you can make sure there's nothing being smuggled inside.
+  description: For those who have fallen afoul of the law.
   components:
   - type: Pda
     id: NFPrisonerIDCard # Frontier: PrisonerIDCard < NFPrisonerIDCard
@@ -10,15 +10,15 @@
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
         !type:String
-        pda-clear
+        pda-prisoner
   - type: Icon
-    state: pda-clear
+    state: pda-prisoner
 
 - type: entity
   parent: BasePDA
   id: ValetPDA
   name: valet PDA
-  description: Why isn't it gray?
+  description: Transporting people, it's courier but you can chat to the cargo.
   components:
   - type: Pda
     id: ValetNFIDCard # Frontier: ValetIDCard<ValetNFIDCard
@@ -33,21 +33,21 @@
   - type: Icon
     state: pda-valet
 
-- type: entity
-  parent: BaseSecurityPDA
-  id: PrisonGuardPDA
-  name: prison guard PDA
-  description: Red to hide the stains of prisoner blood.
-  components:
-  - type: Pda
-    id: PrisonGuardIDCard
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pda-security
-  - type: PdaBorderColor
-    borderColor: "#A32D26"
-    accentVColor: "#DFDFDF"
+#- type: entity
+#  parent: BaseSecurityPDA
+#  id: PrisonGuardPDA
+#  name: prison guard PDA
+#  description: Red to hide the stains of prisoner blood.
+#  components:
+#  - type: Pda
+#    id: PrisonGuardIDCard
+#  - type: Appearance
+#    appearanceDataInit:
+#      enum.PdaVisuals.PdaType:
+#        !type:String
+#        pda-security
+#  - type: PdaBorderColor
+#    borderColor: "#A32D26"
+#    accentVColor: "#DFDFDF"
 #  - type: Icon
 #    state: pda-guard

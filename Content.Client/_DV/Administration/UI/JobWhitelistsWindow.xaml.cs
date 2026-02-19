@@ -88,7 +88,7 @@ public sealed partial class JobWhitelistsWindow : FancyWindow
                 continue;
             // End Frontier
 
-            var panel = new DepartmentWhitelistPanel(proto, _proto, state.Whitelists, state.GlobalWhitelist);
+            var panel = new DepartmentWhitelistPanel(proto, _proto, state.Whitelists); // WF: Globalwhitelist to join server =/= job whitelist
             panel.OnSetJob += (id, whitelisting) => OnSetJob?.Invoke(id, whitelisting);
             Departments.AddChild(panel);
         }
@@ -100,7 +100,7 @@ public sealed partial class JobWhitelistsWindow : FancyWindow
             if (proto.Whitelisted)
                 ghostRoles.Add(proto.ID);
         }
-        var ghostRolePanel = new GhostRoleSetWhitelistPanel(ghostRoles, Loc.GetString("player-panel-ghost-role-whitelists"), Color.FromHex("#71f0ca"), _proto, state.GhostRoleWhitelists, state.GlobalWhitelist);
+        var ghostRolePanel = new GhostRoleSetWhitelistPanel(ghostRoles, Loc.GetString("player-panel-ghost-role-whitelists"), Color.FromHex("#71f0ca"), _proto, state.GhostRoleWhitelists);// WF: Globalwhitelist to join server =/= job whitelist
         ghostRolePanel.OnSetGhostRole += (id, whitelisting) => OnSetGhostRole?.Invoke(id, whitelisting);
         GhostRoles.AddChild(ghostRolePanel);
         // End Frontier

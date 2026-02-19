@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Maintainer Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Hauler
+  parent: BaseVessel
+  name: TI Hauler
+  description: A rugged entry-level cargo freighter. Comes with amenities for long trips. Powered by Biofuel and Solars. Manufactured by Telum Industries.
+  price: 26000
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/hauler.yml
+  guidebookPage: Null
+  class:
+  - Cargo
+  engine:
+  - Biofuel
+  - Solar
+
+- type: gameMap
+  id: Hauler
+  mapName: 'Hauler'
+  mapPath: /Maps/_WF/Shuttles/Civilian/hauler.yml
+  minPlayers: 0
+  stations:
+    Hauler:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Hauler CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

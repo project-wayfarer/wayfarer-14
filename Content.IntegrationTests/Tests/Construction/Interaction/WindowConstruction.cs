@@ -33,7 +33,7 @@ public sealed class WindowConstruction : InteractionTest
     }
 
     [Test]
-    public async Task DeonstructReinforcedWindow()
+    public async Task DeconstructReinforcedWindow()
     {
         await StartDeconstruction(RWindow);
         await Interact(

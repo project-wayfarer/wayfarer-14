@@ -24,10 +24,10 @@
   minPlayers: 0
   stations:
     Qauata:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Qauata {1}'
+        mapNameTemplate: 'Qauata CGP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

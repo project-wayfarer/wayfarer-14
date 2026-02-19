@@ -62,7 +62,7 @@
       collection: IanBark
 
 - type: entity
-  parent: [NFClothingBackpack, BaseC1Contraband ] # Frontier: BaseSecurityContraband<BaseC1Contraband, ClothingBackpack<NFClothingBackpack
+  parent: [NFClothingBackpack] # WF Removed Contraband
   id: ClothingBackpackSecurity
   name: security backpack
   description: It's a very robust backpack.
@@ -71,7 +71,7 @@
     sprite: Clothing/Back/Backpacks/security.rsi
 
 - type: entity
-  parent: [NFClothingBackpack, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable, ClothingBackpack<NFClothingBackpack
+  parent: [NFClothingBackpack] # WF Removed Contraband
   id: ClothingBackpackBrigmedic
   name: brigmedic backpack
   description: It's a very sterile backpack.
@@ -275,7 +275,7 @@
 
 #Syndicate
 - type: entity
-  parent: [NFClothingBackpack, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, ClothingBackpack<NFClothingBackpack
+  parent: [NFClothingBackpack] # WF Removed Contraband
   id: ClothingBackpackSyndicate
   name: syndicate backpack
   description:

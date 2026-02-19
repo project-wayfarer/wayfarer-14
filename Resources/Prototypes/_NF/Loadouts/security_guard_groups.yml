@@ -76,14 +76,14 @@
   fallbacks:
   - SecurityBelt
 
-- type: loadoutGroup
-  id: SecurityGuardPDA
-  name: loadout-group-contractor-pda
-  hidden: true # No point in showing this, it gets auto-selected.
-  loadouts:
-  - SecurityGuardSecurityGuardPDA
-  fallbacks:
-  - SecurityGuardSecurityGuardPDA
+#- type: loadoutGroup
+#  id: SecurityGuardPDA
+#  name: loadout-group-contractor-pda
+#  hidden: true # No point in showing this, it gets auto-selected.
+#  loadouts:
+#  - SecurityGuardSecurityGuardPDA
+#  fallbacks:
+#  - SecurityGuardSecurityGuardPDA
 
 - type: loadoutGroup
   id: SecurityGuardFace
