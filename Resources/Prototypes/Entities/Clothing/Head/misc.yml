@@ -207,7 +207,7 @@
   - type: NFTreasure # Frontier
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseC3SyndicateContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: ClothingHeadBase # WF Removed Contraband
   id: ClothingHeadHatCatEars
   name: cat ears
   description: "NYAH!"

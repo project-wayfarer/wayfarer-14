@@ -44,10 +44,10 @@
     back:
     - EncryptionKeyMedical
 - type: loadout
-  id: ERParamedicPDA
+  id: EmergencyResponderPDA
   price: 0
   equipment:
-    id: ParamedicPDA
+    id: EmergencyResponderPDA
 
 - type: chameleonOutfit
   id: MedicalERChameleonOutfit
@@ -55,13 +55,12 @@
   equipment:
     outerClothing: ClothingOuterCoatParamedicWB
 
-# Food Service Role Loadout
 - type: roleLoadout
   id: JobMedicalER
   groups:
   - ContractorHead
   - ContractorNeck
-  - ParamedicJumpsuit
+  - EmergencyResponderJumpsuit
   - ContractorGloves
   - ContractorBackpack
   - ContractorOuterClothing
@@ -71,7 +70,7 @@
   - ContractorGlasses
   - ContractorBelt
   - ContractorEars
-  - ParamedicPDA
+  - EmergencyResponderPDA
   - ContractorEncryptionKey
   - ContractorBoxSurvival
   - ContractorWallet

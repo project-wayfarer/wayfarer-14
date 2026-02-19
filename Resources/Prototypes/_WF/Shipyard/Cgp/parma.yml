@@ -22,10 +22,10 @@
   minPlayers: 0
   stations:
     Parma:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Parma {1}'
+        mapNameTemplate: 'Parma CGP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

@@ -1387,3 +1387,190 @@ Entries:
   id: 6651
   time: '2026-02-11T16:48:34.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/456
+- author: VVersengt
+  changes:
+    - type: Fix
+      message: Various Dusk Fixes
+  id: 6652
+  time: '2026-02-12T12:23:42.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/465
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Added Concussive Gauntlets researchable technologies.
+  id: 6653
+  time: '2026-02-12T20:19:44.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/368
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Solar panels to dusk, curves to dusk, docking bay names
+    - type: Fix
+      message: Many smaller bugs with dusk
+  id: 6654
+  time: '2026-02-12T20:21:29.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/467
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Added CGP Dagger ship variant and derelict medivac.
+    - type: Tweak
+      message: Tweaks to Dagger and Medivac ships.
+  id: 6655
+  time: '2026-02-16T20:47:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/486
+- author: VVersengt
+  changes:
+    - type: Add
+      message: TI Hauler and variants.
+    - type: Remove
+      message: Frontier ship with the same name.
+  id: 6656
+  time: '2026-02-16T20:48:19.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/482
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Extensive loadout tweaks for Wayfarers.
+  id: 6657
+  time: '2026-02-12T20:22:25.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/469
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: Handheld mass scanner no longer forced to hand
+  id: 6658
+  time: '2026-02-13T18:26:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/471
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Examine structures for damage
+  id: 6659
+  time: '2026-02-13T18:27:04.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/473
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Radios make a sound when someone is talking on them
+  id: 6660
+  time: '2026-02-13T18:30:01.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/477
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        Rechargable trait to energy shields so they regain health and can be
+        continually used
+  id: 6661
+  time: '2026-02-13T18:32:47.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/480
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: Bar signs now display properly again
+  id: 6662
+  time: '2026-02-14T15:04:13.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/491
+- author: Eillyrea
+  changes:
+    - type: Remove
+      message: Civ category from the job select sccreen
+  id: 6663
+  time: '2026-02-14T15:04:52.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/489
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        Namespace ships will now be more easily identifiable by their IFF as to
+        what they do
+  id: 6664
+  time: '2026-02-14T15:05:57.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/488
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Solid Red scarf to loadout and uniform printer.
+    - type: Remove
+      message: Contraband status from most clothing items.
+    - type: Tweak
+      message: Massively overhauled loadouts for Wayfarer and Outlaw
+  id: 6665
+  time: '2026-02-14T23:51:28.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/492
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: >-
+        Fixed minor radar rendering errors involving half-tilt and half-width
+        tile variants.
+  id: 6666
+  time: '2026-02-16T21:43:15.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/472
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Disablers / lasers now pass through windows
+  id: 6667
+  time: '2026-02-16T22:05:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/476
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        Add more coloured paper in bureaucracy crates and mailvend, as well as
+        coloured sticky notes.
+  id: 6668
+  time: '2026-02-16T22:06:31.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/487
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        New aPDA sprites & more PDA options for Wayfarers, Command Roles,
+        Outlaws, CGP
+    - type: Remove
+      message: Old PDA sprites
+    - type: Tweak
+      message: 'Emergency Responder and Plant Technician get more PDA options '
+  id: 6669
+  time: '2026-02-16T22:11:17.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/494
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Scryer ship and it's derelict variant.
+    - type: Remove
+      message: Removed useless and otherwise empty ships from the derelict spawn pool.
+  id: 6670
+  time: '2026-02-17T11:25:56.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/496
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Chapel to Dusk! Please check this areas for potential bugs
+    - type: Tweak
+      message: >-
+        Bar, Kitchen, Cryo, Medical, Library have all been tweaked on Dusk. 
+        Please check these areas for potential bugs
+  id: 6671
+  time: '2026-02-18T23:57:22.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/497
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Set your own custom name for certain jobs
+  id: 6672
+  time: '2026-02-18T23:59:03.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/475
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: >-
+        Roles should be properly behind whitelists again (Please open a ticket
+        if you have access to jobs you haven't whitelisted for, so we can
+        bugtest/look into further)
+  id: 6673
+  time: '2026-02-19T00:00:00.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/490

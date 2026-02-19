@@ -1,8 +1,39 @@
 - type: loadoutGroup
-  id: ParamedicPDA
+  id: EmergencyResponderPDA
   name: loadout-group-contractor-pda
-  hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
-  - ParamedicParamedicPDA
+  - EmergencyResponderEmergencyResponderPDA
+  - WFMedicalInternPDA
+  - WFMedicalPDA
+  - WFPsychologistPDA
+  - WFChemistryPDA
+  - WFSeniorPhysicianPDA
+  - WFCMOPDA
   fallbacks:
-  - ParamedicParamedicPDA
+  - EmergencyResponderEmergencyResponderPDA
+
+- type: loadoutGroup
+  id: EmergencyResponderJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - ClothingUniformJumpsuitParamedicSyndie
+  - WFClothingUniformJumpsuitParamedic
+  - WFClothingUniformJumpskirtParamedic
+  - WFClothingUniformJumpsuitVirology
+  - WFClothingUniformJumpskirtVirology
+  - WFClothingUniformJumpsuitChemistry
+  - WFClothingUniformJumpskirtChemistry
+  - WFClothingUniformJumpsuitGenetics
+  - WFClothingUniformJumpskirtGenetics
+  - WFClothingUniformJumpsuitPsychologist
+  - WFClothingUniformJumpskirtPsychologist
+  - WFClothingUniformJumpsuitSeniorPhysician
+  - WFClothingUniformJumpskirtSeniorPhysician
+  - WFClothingUniformJumpsuitMilitaryMedicalDoctor
+  - WFClothingUniformJumpsuitMilitaryParamedic
+  - WFClothingUniformJumpsuitMilitaryChemistry
+  - WFClothingUniformJumpsuitMilitaryVirology
+  - WFClothingUniformJumpsuitMilitaryGenetics
+  fallbacks:
+  - EmergencyResponderEmergencyResponderPDA
+

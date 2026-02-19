@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Maintainer Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Looter
+  parent: BaseVesselAntag
+  name: Looter
+  description: A rugged entry-level cargo freighter. This one has been retrofitted for nefarious deeds. Powered by Biofuel and Solars. Manufactured by Telum Industries.
+  price: 33870
+  category: Small
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/looter.yml
+  guidebookPage: Null
+  class:
+  - Pirate
+  engine:
+  - Biofuel
+  - Solar
+
+- type: gameMap
+  id: Looter
+  mapName: 'Looter'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/looter.yml
+  minPlayers: 0
+  stations:
+    Looter:
+      stationProto: StandardFrontierAntagVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Hauler CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+            NFPirate: [ 0, 0 ]

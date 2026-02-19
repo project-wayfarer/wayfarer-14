@@ -1,0 +1,64 @@
+#T0
+- type: loadout
+  id: WFNFBoxSurvival
+  name: oxygen survival box
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFOxygenBreather
+  storage:
+    back:
+    - NFBoxSurvival
+
+- type: loadout
+  id: WFNFBoxSurvivalNitrogen
+  name: nitrogen survival box
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNitrogenBreather
+  storage:
+    back:
+    - NFBoxSurvivalNitrogen
+
+- type: loadout
+  id: WFNFBoxSurvivalSheleg
+  name: oxygen survival box
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFSheleg
+  storage:
+    back:
+    - NFBoxSurvivalSheleg
+
+#T1
+- type: loadout
+  id: WFNFBoxSurvivalExtended
+  name: extended-oxygen survival box
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFOxygenBreather
+  price: 1000
+  storage:
+    back:
+    - NFBoxSurvivalExtended
+
+- type: loadout
+  id: WFNFBoxSurvivalExtendedNitrogen
+  name: extended-nitrogen survival box
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNitrogenBreather
+  price: 1000
+  storage:
+    back:
+    - NFBoxSurvivalExtendedNitrogen
+
+- type: loadout
+  id: WFNFBoxSurvivalExtendedSheleg
+  name: extended-oxygen survival box
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFSheleg
+  price: 1000
+  storage:
+    back:
+    - NFBoxSurvivalExtendedSheleg

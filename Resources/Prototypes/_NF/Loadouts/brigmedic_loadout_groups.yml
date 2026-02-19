@@ -41,14 +41,14 @@
   - BrigmedicClothingNeckNfsdBadgeSecurityBrigmedic
 
 - type: loadoutGroup
-  id: BrigmedicPDA
+  id: CorpsmanPDA #WF PDA resprite
   name: loadout-group-contractor-pda
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
-  - BrigmedicBrigmedicPDA
+  - CorpsmanCorpsmanPDA #WF PDA resprite
   fallbacks:
-  - BrigmedicBrigmedicPDA
-  
+  - CorpsmanCorpsmanPDA #WF PDA resprite
+
 - type: loadoutGroup
   id: BrigmedicGlasses
   name: loadout-group-contractor-glasses

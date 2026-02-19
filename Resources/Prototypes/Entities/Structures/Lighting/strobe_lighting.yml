@@ -1,6 +1,6 @@
 - type: entity
   id: AlwaysPoweredStrobeLight
-  name: strobe
+  name: rotating light # WF name change
   description: "UH?! Sorry, all I can hear is WEE-OOO-WEE-OOO!"
   suffix: Always powered
   components:
@@ -80,7 +80,7 @@
     - Wallmount
 
 - type: entity
-  name: strobe
+  name: rotating light # WF name change
   description: "UH?! Sorry, all I can hear is WEE-OOO-WEE-OOO!"
   id: PoweredStrobeLightEmpty
   suffix: Empty

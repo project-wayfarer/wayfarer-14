@@ -14,7 +14,7 @@
   name: TI Dagger
   description: A rugged light fighter with a single coaxial cannon mounted on the front. Runs on Uranium. Manufactured by Telum Industries.
   price: 42950
-  category: Small
+  category: Medium
   group: BlackMarket
   shuttlePath: /Maps/_WF/Shuttles/Outlaw/dagger.yml
   guidebookPage: Null
@@ -30,10 +30,10 @@
   minPlayers: 0
   stations:
     Dagger:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierAntagVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Dagger {1}'
+        mapNameTemplate: 'Dagger{1}' # Designation pending, CGP IFF will spook other outlaws.
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

@@ -1,0 +1,404 @@
+- type: loadout
+  id: WFPDA
+  price: 0
+  equipment:
+    id: WayfarerPDA
+
+- type: loadout
+  id: WFClearNFPDA
+  price: 0
+  equipment:
+    id: ClearPDA
+
+- type: loadout
+  id: WFSalvagePDA
+  price: 250
+  equipment:
+    id: SalvagePDA
+
+- type: loadout
+  id: WFResearchAssistantPDA
+  price: 250
+  equipment:
+    id: ResearchAssistantPDA
+
+- type: loadout
+  id: WFCargoPDA
+  price: 250
+  equipment:
+    id: CargoPDA
+
+- type: loadout
+  id: WFMedicalInternPDA
+  price: 250
+  equipment:
+    id: MedicalInternPDA
+
+- type: loadout
+  id: WFTechnicalAssistantPDA
+  price: 250
+  equipment:
+    id: TechnicalAssistantPDA
+
+- type: loadout
+  id: WFServiceWorkerPDA
+  price: 250
+  equipment:
+    id: ServiceWorkerPDA
+
+#T1
+- type: loadout
+  id: WFBartenderPDA
+  price: 500
+  equipment:
+    id: BartenderPDA
+
+- type: loadout
+  id: WFEngineerPDA
+  price: 500
+  equipment:
+    id: EngineerPDA
+
+- type: loadout
+  id: WFAtmosPDA
+  price: 500
+  equipment:
+    id: AtmosPDA
+
+- type: loadout
+  id: WFLabSciPDA
+  price: 500
+  equipment:
+    id: LabSciPDA
+
+- type: loadout
+  id: WFCookPDA
+  price: 500
+  equipment:
+    id: CookPDA
+
+- type: loadout
+  id: WFDeckworkerPDA
+  price: 500
+  equipment:
+    id: DeckworkerPDA
+
+- type: loadout
+  id: WFPracticingNursePDA
+  price: 500
+  equipment:
+    id: PracticingNursePDA
+
+- type: loadout
+  id: WFProspectorPDA
+  price: 500
+  equipment:
+    id: ProspectorPDA
+
+- type: loadout
+  id: WFResidentPDA
+  price: 500
+  equipment:
+    id: ResidentPDA
+
+- type: loadout
+  id: WFTouristPDA
+  price: 500
+  equipment:
+    id: TouristPDA
+
+- type: loadout
+  id: WFChefPDA
+  price: 500
+  equipment:
+    id: ChefPDA
+
+- type: loadout
+  id: WFBotanistPDA
+  price: 500
+  equipment:
+    id: BotanistPDA
+
+- type: loadout
+  id: WFChaplainPDA
+  price: 500
+  equipment:
+    id: ChaplainPDA
+
+- type: loadout
+  id: WFLibrarianPDA
+  price: 500
+  equipment:
+    id: LibrarianPDA
+
+- type: loadout
+  id: WFMedicalPDA
+  price: 500
+  equipment:
+    id: MedicalPDA
+
+- type: loadout
+  id: WFPsychologistPDA
+  price: 500
+  equipment:
+    id: PsychologistPDA
+
+- type: loadout
+  id: WFChemistryPDA
+  price: 500
+  equipment:
+    id: ChemistryPDA
+
+- type: loadout
+  id: WFSciencePDA
+  price: 500
+  equipment:
+    id: SciencePDA
+
+- type: loadout
+  id: WFReporterPDA
+  price: 500
+  equipment:
+    id: ReporterPDA
+
+- type: loadout
+  id: WFZookeeperPDA
+  price: 500
+  equipment:
+    id: ZookeeperPDA
+
+#T2
+- type: loadout
+  id: WFCaptainPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: CaptainPDA
+
+- type: loadout
+  id: WFLawyerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: LawyerPDA
+
+- type: loadout
+  id: WFQuartermasterPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: QuartermasterPDA
+
+- type: loadout
+  id: WFSeniorResearcherPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: SeniorResearcherPDA
+
+- type: loadout
+  id: WFRnDPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: RnDPDA
+
+- type: loadout
+  id: WFSeniorPhysicianPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: SeniorPhysicianPDA
+
+- type: loadout
+  id: WFCMOPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: CMOPDA
+
+- type: loadout
+  id: WFSeniorEngineerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: SeniorEngineerPDA
+
+- type: loadout
+  id: WFCEPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: CEPDA
+
+- type: loadout
+  id: WFBoxerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: BoxerPDA
+
+- type: loadout
+  id: WFMimePDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: MimePDA
+
+- type: loadout
+  id: WFLifeSupportTechPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: LifeSupportTechPDA
+
+- type: loadout
+  id: WFPhysPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: PhysPDA
+
+- type: loadout
+  id: WFPizzaioloPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: PizzaioloPDA
+
+- type: loadout
+  id: WFGeneticsPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: GeneticsPDA
+
+- type: loadout
+  id: WFBakerPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: BakerPDA
+
+- type: loadout
+  id: WFExcavatorPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: ExcavatorPDA
+
+- type: loadout
+  id: WFPlasmaScientistPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: PlasmaScientistPDA
+
+- type: loadout
+  id: WFProsecutorPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: ProsecutorPDA
+
+- type: loadout
+  id: WFRoboticistPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 750
+  equipment:
+    id: RoboticistPDA
+
+#T3
+- type: loadout
+  id: WFClownPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1500
+  equipment:
+    id: ClownPDA
+
+- type: loadout
+  id: WFFoolPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1500
+  equipment:
+    id: FoolPDA
+
+- type: loadout
+  id: WFJesterPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1500
+  equipment:
+    id: JesterPDA
+
+- type: loadout
+  id: WFMusicianPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1500
+  equipment:
+    id: MusicianPDA
+
+- type: loadout
+  id: WFSyndiAgentPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    id: SyndiAgentPDA
+
+- type: loadout
+  id: WFSyndiPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 20000
+  equipment:
+    id: SyndiPDA
