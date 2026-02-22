@@ -1,0 +1,32 @@
+- type: vessel
+  id: Mjolnir
+  parent: BaseVessel
+  name: UCA Mjolnir
+  description: A deep space exploration ship with an advanced sensor suite and open cockpit for observing stellar phenomena. Comes with a xenoarchaeloegy setup. Manufactured by Telum Industries.
+  price: 38955
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/mjolnir.yml
+  guidebookPage: Null
+  class:
+  - Engineering
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Mjolnir
+  mapName: 'Mjolnir'
+  mapPath: /Maps/_WF/Shuttles/Civilian/mjolnir.yml
+  minPlayers: 0
+  stations:
+    Mjolnir:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Mjolnir CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
