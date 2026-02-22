@@ -14,7 +14,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.Graphics;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 
 namespace Content.Client.Stylesheets
@@ -96,21 +95,21 @@ namespace Content.Client.Stylesheets
         public static readonly Color PanelDark = Color.FromHex("#1E201E");
 
         public static readonly Color NanoGold = Color.FromHex("#A88B5E");
-        public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
+        public static readonly Color GoodGreenFore = Color.FromHex("#444466");
         public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#464B46");
+        public static readonly Color ButtonColorDefault = Color.FromHex("#363B56");
         public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
-        public static readonly Color ButtonColorHovered = Color.FromHex("#575B57");
+        public static readonly Color ButtonColorHovered = Color.FromHex("#474B67");
         public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B");
-        public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#303331");
+        public static readonly Color ButtonColorPressed = Color.FromHex("#1e4c75");
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#1B1D1F");
 
         public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
         public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#3e6c45");
+        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#2e5c55");
         public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a");
 
         public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
@@ -124,14 +123,14 @@ namespace Content.Client.Stylesheets
 
         // Context menu button colors
         public static readonly Color ButtonColorContext = Color.FromHex("#1119");
-        public static readonly Color ButtonColorContextHover = Color.DarkGray;
-        public static readonly Color ButtonColorContextPressed = Color.LightSlateGray;
+        public static readonly Color ButtonColorContextHover = Color.FromHex("#3a3a6a");
+        public static readonly Color ButtonColorContextPressed = Color.FromHex("#7a7aaa");
         public static readonly Color ButtonColorContextDisabled = Color.Black;
 
         // Examine button colors
         public static readonly Color ExamineButtonColorContext = Color.Transparent;
-        public static readonly Color ExamineButtonColorContextHover = Color.DarkGray;
-        public static readonly Color ExamineButtonColorContextPressed = Color.LightSlateGray;
+        public static readonly Color ExamineButtonColorContextHover = Color.FromHex("#3a3a6a");
+        public static readonly Color ExamineButtonColorContextPressed = Color.FromHex("#7a7aaa");
         public static readonly Color ExamineButtonColorContextDisabled = Color.FromHex("#5A5A5A");
 
         // UI Panel colors
@@ -140,7 +139,7 @@ namespace Content.Client.Stylesheets
         // Fancy Tree elements
         public static readonly Color FancyTreeEvenRowColor = Color.FromHex("#252725");
         public static readonly Color FancyTreeOddRowColor = FancyTreeEvenRowColor * new Color(0.8f, 0.8f, 0.8f);
-        public static readonly Color FancyTreeSelectedRowColor = new Color(55, 59, 55);
+        public static readonly Color FancyTreeSelectedRowColor = new Color(55, 55, 59);
 
         //Used by the APC and SMES menus
         public const string StyleClassPowerStateNone = "PowerStateNone";
@@ -159,7 +158,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassButtonColorRed = "ButtonColorRed";
         public const string StyleClassButtonColorGreen = "ButtonColorGreen";
 
-        public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
+        public static readonly Color ChatBackgroundColor = Color.FromHex("#15162aDD");
 
         // DeltaV - AAC button variables
         public static readonly string CommandButtonClass = "CommandButton";
@@ -195,8 +194,8 @@ namespace Content.Client.Stylesheets
         // End DeltaV
 
         // Coyote Frontier - AAC button colors
-        public static readonly Color NFSDButttonColorDefault = Color.FromHex("#4b653e");
-        public static readonly Color NFSDButtonColorHovered = Color.FromHex("#667A76");
+        public static readonly Color NFSDButttonColorDefault = Color.FromHex("#ffa71a");
+        public static readonly Color NFSDButtonColorHovered = Color.FromHex("#df870a");
         public static readonly Color PirateButtonColorDefault = Color.FromHex("#61503A");
         public static readonly Color PirateButtonColorHovered = Color.FromHex("#675C64");
         // end Coyote Frontier
@@ -607,7 +606,7 @@ namespace Content.Client.Stylesheets
             var sliderForeBox = new StyleBoxTexture
             {
                 Texture = sliderOutlineTex,
-                Modulate = Color.FromHex("#494949")
+                Modulate = Color.FromHex("#292959")
             };
 
             var sliderGrabBox = new StyleBoxTexture
@@ -630,7 +629,7 @@ namespace Content.Client.Stylesheets
             var insetBack = new StyleBoxTexture
             {
                 Texture = buttonTex,
-                Modulate = Color.FromHex("#202023"),
+                Modulate = Color.FromHex("#101033"),
             };
             insetBack.SetPatchMargin(StyleBox.Margin.All, 10);
 
@@ -1567,7 +1566,7 @@ namespace Content.Client.Stylesheets
                 }),
 
                 Element<PanelContainer>().Class(OptionButton.StyleClassOptionsBackground)
-                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#25252A"))),
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#15152A"))),
 
                 new StyleRule(new SelectorElement(typeof(PanelContainer), new []{ ClassHighDivider}, null, null), new []
                 {
@@ -1589,15 +1588,15 @@ namespace Content.Client.Stylesheets
                 // Different Background shapes ---
                 Element<PanelContainer>().Class(ClassAngleRect)
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#252725")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#151725")),
 
                 Element<PanelContainer>().Class("BackgroundOpenRight")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenRight)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#15152A")),
 
                 Element<PanelContainer>().Class("BackgroundOpenLeft")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenLeft)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#15152A")),
                 // ---
 
                 // Dividers
@@ -1616,7 +1615,7 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class("WindowHeadingBackground")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenLeft) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, PanelColorDark),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#191939")),
 
                 Element<PanelContainer>().Class("WindowHeadingBackgroundLight")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenLeft) { Padding = default }),
@@ -1624,7 +1623,7 @@ namespace Content.Client.Stylesheets
                 // Window Header Help Button
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton)
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Nano/help.png"))
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#4B596A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#3B497A")),
 
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton).Pseudo(ContainerButton.StylePseudoClassHover)
                     .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#7F3636")),
@@ -1635,11 +1634,11 @@ namespace Content.Client.Stylesheets
                 //The lengths you have to go through to change a background color smh
                 Element<PanelContainer>().Class("PanelBackgroundBaseDark")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenBoth) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, PanelColorDark),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#191939")),
 
                 Element<PanelContainer>().Class("PanelBackgroundLight")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenBoth) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#2F2F3B")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#191939")),
 
                 // Window Footer
                 Element<TextureRect>().Class("NTLogoDark")
@@ -1774,7 +1773,7 @@ namespace Content.Client.Stylesheets
                 //PDA - Backgrounds
                 Element<PanelContainer>().Class("PdaContentBackground")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenBoth)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#252725")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#151725")),
 
                 Element<PanelContainer>().Class("PdaBackground")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenBoth)
@@ -1782,13 +1781,13 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class("PdaBackgroundRect")
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#717059")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#616069")),
 
                 Element<PanelContainer>().Class("PdaBorderRect")
                     .Prop(PanelContainer.StylePropertyPanel, AngleBorderRect),
 
                 Element<PanelContainer>().Class("BackgroundDark")
-                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#252725"))),
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#151735"))),
 
                 //PDA - Buttons
                 Element<PdaSettingsButton>().Pseudo(ContainerButton.StylePseudoClassNormal)

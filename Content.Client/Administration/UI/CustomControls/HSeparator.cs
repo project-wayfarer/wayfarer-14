@@ -10,7 +10,7 @@ namespace Content.Client.Administration.UI.CustomControls;
  */
 public sealed class HSeparator : Control
 {
-    private static readonly Color DefaultSeparatorColor = Color.FromHex("#3D4059");
+    private static readonly Color DefaultSeparatorColor = Color.FromHex("#3C4D58");
 
     private Color _separatorColor = DefaultSeparatorColor;
     public Color SeparatorColor
