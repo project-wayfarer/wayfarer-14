@@ -1,22 +1,12 @@
-﻿# Author Info
-# GitHub: ???
-# Discord: ???
-
-# Maintainer Info
-# GitHub: ???
-# Discord: ???
-
-# Shuttle Notes:
-#
-- type: vessel
-  id: Cigarette Butt
+﻿- type: vessel
+  id: Beater
   parent: BaseVessel
-  name: GE Cigarette Butt
+  name: GE Beater
   description: A meteorite that meets the absolute basic minimum standards of what a shuttle is. Not FDA approved.
-  price: 12113
+  price: 12110
   category: Small
   group: Scrap
-  shuttlePath: /Maps/_WF/Shuttles/Scrapyard/cigarettebutt.yml
+  shuttlePath: /Maps/_WF/Shuttles/Scrapyard/beater.yml
   guidebookPage: Null
   class:
   - Scrapyard
@@ -24,16 +14,16 @@
   - Plasma
 
 - type: gameMap
-  id: Cigarette Butt
-  mapName: 'GE Cigarette Butt'
-  mapPath: /Maps/_WF/Shuttles/Scrapyard/cigarettebutt.yml
+  id: Beater
+  mapName: 'GE Beater'
+  mapPath: /Maps/_WF/Shuttles/Scrapyard/beater.yml
   minPlayers: 0
   stations:
-    Cigarette Butt:
+    Beater:
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Cigarette Butt SCAV{1}'
+        mapNameTemplate: 'Beater SCAV{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
