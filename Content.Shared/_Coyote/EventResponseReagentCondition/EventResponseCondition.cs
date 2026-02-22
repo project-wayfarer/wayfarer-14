@@ -12,7 +12,7 @@ public sealed partial class EventResponse : EntityEffectCondition
     public string Response;
 
     [DataField]
-    public string GuidebookHelp = "NULL!!!";
+    public string GuidebookHelpthing = "NULL!!!";
 
     public override bool Condition(EntityEffectBaseArgs args)
     {
@@ -27,6 +27,6 @@ public sealed partial class EventResponse : EntityEffectCondition
 
     public override string GuidebookExplanation(IPrototypeManager prototype)
     {
-        return GuidebookHelp; // localization is for losers
+        return GuidebookHelpthing; // localization is for losers
     }
 }

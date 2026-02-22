@@ -20,7 +20,7 @@ public sealed class EventResponseReagentConditionSystem : EntitySystem
     /// but technically are different components, we have to convert the
     /// incoming component data into something common.
     /// </summary>
-    private static void RespondToEvent(
+   public void RespondToEvent(
         EntityUid uid,
         EventResponseConditionComponent component,
         ref EntityEffectConditionMessageEvent args)
@@ -28,7 +28,8 @@ public sealed class EventResponseReagentConditionSystem : EntitySystem
         HandleEventResponse(component.Responses, component.MessageTriggers, args);
     }
 
-    private static void RespondToEvent(
+    /// <inheritdoc/>
+    public void RespondToEvent(
         EntityUid uid,
         TheobromineIntoleranceComponent component,
         ref EntityEffectConditionMessageEvent args)
@@ -36,7 +37,8 @@ public sealed class EventResponseReagentConditionSystem : EntitySystem
         HandleEventResponse(component.Responses, component.MessageTriggers, args);
     }
 
-    private static void RespondToEvent(
+    /// <inheritdoc/>
+    public void RespondToEvent(
         EntityUid uid,
         AllicinIntoleranceComponent component,
         ref EntityEffectConditionMessageEvent args)
@@ -46,7 +48,7 @@ public sealed class EventResponseReagentConditionSystem : EntitySystem
 
     /// This is the actual response handler, which checks if the message
     /// matches any of the triggers, and adds the responses if it does.
-    private static void HandleEventResponse(
+    private void HandleEventResponse(
         List<string> responses,
         List<string> messageTriggers,
         EntityEffectConditionMessageEvent args)
@@ -67,7 +69,7 @@ public sealed class EntityEffectConditionMessageEvent(
 {
     public EntityUid TargetEntity { get; } = targetEntity;
     public string Message { get; } = message;
-    private List<string> Responses { get; } = new();
+    public List<string> Responses { get; } = new();
 
     public void AddResponse(string response)
     {
