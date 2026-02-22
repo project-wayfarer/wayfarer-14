@@ -38,16 +38,19 @@
 #        - /Maps/_NF/Shuttles/Scrap/orange.yml
 #        - /Maps/_NF/Shuttles/Scrap/point.yml
 #        - /Maps/_NF/Shuttles/Scrap/tide.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-investigator.yml # Please replace all this maps ones we finish some automated system
-        - /Maps/_NF/Shuttles/Scrap/scrap-crescent.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-barge.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-courserx.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-comet.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-sprinter.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-sparrow.yml
+#        - /Maps/_NF/Shuttles/Scrap/scrap-investigator.yml # Please replace all this maps ones we finish some automated system
+#        - /Maps/_NF/Shuttles/Scrap/scrap-crescent.yml
+#        - /Maps/_NF/Shuttles/Scrap/scrap-barge.yml
+#        - /Maps/_NF/Shuttles/Scrap/scrap-courserx.yml
+#        - /Maps/_NF/Shuttles/Scrap/scrap-comet.yml
+#        - /Maps/_NF/Shuttles/Scrap/scrap-sprinter.yml
+#        - /Maps/_NF/Shuttles/Scrap/scrap-sparrow.yml
         # Start WF
         - /Maps/_WF/Shuttles/Scrap/scrap-hauler.yml
         - /Maps/_WF/Shuttles/Scrap/scrap-scryer.yml
+        - /Maps/_WF/Shuttles/Scrap/scrap-hammerhead.yml
+        - /Maps/_WF/Shuttles/Scrap/scrap-medivac.yml
+        - /Maps/_WF/Shuttles/Scrap/scrap-mjolnir.yml
         # End WF
   - type: ActiveRadio
     channels:
