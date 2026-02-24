@@ -1,0 +1,34 @@
+- type: vessel
+  id: Svalinn
+  parent: BaseVessel
+  name: UCA Svalinn
+  description: The workhorse of the CGP, a patrol vessel designed for two people.  With basic weapons, space for evidence, and equipment to conduct investigative work, whilst maintaining comfortable living spaces.
+  price: 97760
+  category: Medium
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/svalinn.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  - Fighter
+  engine:
+  - Uranium
+  - APU
+
+- type: gameMap
+  id: Svalinn
+  mapName: 'Svalinn'
+  mapPath: /Maps/_WF/Shuttles/Cgp/svalinn.yml
+  minPlayers: 0
+  stations:
+    Svalinn:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Svalinn CGP{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: {}
