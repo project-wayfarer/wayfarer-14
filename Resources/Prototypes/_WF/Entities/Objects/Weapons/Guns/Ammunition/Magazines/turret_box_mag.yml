@@ -1,0 +1,10 @@
+## .30 Uranium 200 Rounds - For use in POI Turrets
+- type: entity
+  parent: MagazineAsmgtUniversalEmpty
+  id: MagazineAsmgtUniversal30UraniumHighCapacity
+  name: ASMGT-compatible box magazine
+  suffix: loaded .30 Uranium 200 Rounds
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 200
+    proto: NFCartridgeRifle30Uranium
