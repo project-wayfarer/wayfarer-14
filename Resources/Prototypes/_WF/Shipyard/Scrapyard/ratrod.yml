@@ -1,21 +1,21 @@
 ﻿- type: vessel
   id: Ratrod
   parent: BaseVessel
-  name: GB Ratrod
+  name: ZKW Ratrod
   description: A barely working project shuttle with one goal, go fast. Reckless and not for the faint of heart, where they dug this junker up is a mystery
-  price: 10000
-  category: Small
+  price:  7400
+  category: Micro
   group: Scrap
   shuttlePath: /Maps/_WF/Shuttles/Scrapyard/ratrod.yml
   guidebookPage: Null
   class:
   - Scrapyard
   engine:
-  - Plasma
+  - Welding
 
 - type: gameMap
   id: Ratrod
-  mapName: 'GB Ratrod'
+  mapName: 'ZKW Ratrod'
   mapPath: /Maps/_WF/Shuttles/Scrapyard/ratrod.yml
   minPlayers: 0
   stations:
