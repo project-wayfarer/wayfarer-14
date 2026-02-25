@@ -31,7 +31,7 @@
     inherentRadioChannels:
     - Common
     - Binary
-  - type: bankaccount
+  - type: BankAccount #Wayfarer gives the borg the ability to deposit money into it's account
 
 - type: entity
   id: BorgChassisGeneric
