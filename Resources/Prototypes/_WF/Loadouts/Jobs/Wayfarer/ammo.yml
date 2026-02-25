@@ -5,6 +5,7 @@
   maxLimit: 2
   loadouts:
   - WFAmmoShotgun12Buckshot
+  - WFAmmoCrossbow
   - WFAmmoPistol35
   - WFAmmoPistol45
   - WFAmmoRifle20
@@ -25,6 +26,16 @@
   storage:
     back:
     - NFAmmunitionBoxShellShotgunBuckshot
+
+- type: loadout
+  id: WFAmmoCrossbow
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  storage:
+    back:
+    - ClothingBeltQuiverCrossbowFilledBolt
 
 - type: loadout
   id: WFAmmoPistol35
