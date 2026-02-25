@@ -603,15 +603,15 @@
     sounds:
       collection: Paracusia
 
-- type: entity
-  parent: BaseGameRule
-  id: IonStorm
-  components:
-  - type: StationEvent
-    weight: 8
-    reoccurrenceDelay: 20
-    duration: 1
-  - type: IonStormRule
+# - type: entity
+#   parent: BaseGameRule
+#   id: IonStorm # Disabled until event is rewritten
+#   components:
+#   - type: StationEvent
+#     weight: 8
+#     reoccurrenceDelay: 20
+#     duration: 1
+#   - type: IonStormRule
 
 - type: entity
   id: MimicVendorRule

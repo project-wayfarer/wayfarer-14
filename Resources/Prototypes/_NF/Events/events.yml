@@ -84,13 +84,13 @@
     duration: 60
   - type: VentClogRule
 
-- type: entity
-  parent: BaseGameRule
-  id: NFIonStorm
-  components:
-  - type: StationEvent
-    earliestStart: 15 # Frontier
-    weight: 8
-    reoccurrenceDelay: 120 # Frontier: 20<120
-    duration: 1
-  - type: IonStormRule
+# - type: entity
+#   parent: BaseGameRule
+#   id: NFIonStorm # Disabled until event is rewritten
+#   components:
+#   - type: StationEvent
+#     earliestStart: 15 # Frontier
+#     weight: 8
+#     reoccurrenceDelay: 120 # Frontier: 20<120
+#     duration: 1
+#   - type: IonStormRule
