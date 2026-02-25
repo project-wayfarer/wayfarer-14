@@ -266,6 +266,7 @@
       - state: borgdecon1
         map: ["enum.WiresVisualLayers.MaintenancePanel"]
         visible: false
+  - type: CryoSleep
   - type: Charger
     chargeRate: 30
     slotId: entity_storage
