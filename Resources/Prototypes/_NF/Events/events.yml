@@ -3,7 +3,7 @@
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: NFBreakerFlip
-    - id: NFIonStorm
+  # - id: NFIonStorm # Disabled until event is rewritten
     # - id: NFPowerGridCheck # Disabled
     - id: NFRandomSentience
     - id: NFSolarFlare
@@ -86,12 +86,11 @@
 
 - type: entity
   parent: BaseGameRule
-  id: NFIonStorm # Disabled until event is rewritten
+  id: NFIonStorm
   components:
   - type: StationEvent
-    maxOccurrences: 0 # Should make it so they just never occur, but just in case, I also set weight to 0
     earliestStart: 15 # Frontier
-    weight: 0 # Wayfarer reduces chance of ion storm
+    weight: 8
     reoccurrenceDelay: 120 # Frontier: 20<120
     duration: 1
   - type: IonStormRule

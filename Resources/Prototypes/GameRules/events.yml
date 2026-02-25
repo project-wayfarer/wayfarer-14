@@ -13,7 +13,7 @@
     - id: CockroachMigration
     - id: GasLeak
     - id: GreytideVirus
-    - id: IonStorm # its calm like 90% of the time smh
+  # - id: IonStorm # Disabled until event is rewritten
     - id: KudzuGrowth
     - id: MassHallucinations
     - id: MimicVendorRule
@@ -608,10 +608,9 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 0 # Wayfarer reduces chance of ion storm
+    weight: 8
     reoccurrenceDelay: 20
-     duration: 1
-    maxOccurrences: 0 # Should make it so they just never occur
+    duration: 1
   - type: IonStormRule
 
 - type: entity
