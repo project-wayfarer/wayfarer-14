@@ -1,0 +1,33 @@
+﻿- type: vessel
+  id: Reclaimer
+  parent: BaseVessel
+  name: GE Reclaimer
+  description: A somewhat restored cargo vessel, repurposed for planetary and space based asset acquisition.
+  price: 60380
+  category: Large
+  group: Expedition
+  shuttlePath: /Maps/_WF/Shuttles/Expedition/reclaimer.yml
+  guidebookPage: Null
+  class:
+  - Cargo
+  - Expedition
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Reclaimer
+  mapName: 'Reclaimer'
+  mapPath: /Maps/_WF/Shuttles/Expedition/reclaimer.yml
+  minPlayers: 0
+  stations:
+    Reclaimer:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Reclaimer EXP{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

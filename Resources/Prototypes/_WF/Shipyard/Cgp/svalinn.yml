@@ -1,33 +1,32 @@
 - type: vessel
-  id: Kite
+  id: Svalinn
   parent: BaseVessel
-  name: UCA Kite
-  description: A CGP Combat Ship designed to function in Combat with an EMP generator for chasing criminals and capturing them.
-  price: 160950
+  name: UCA Svalinn
+  description: The workhorse of the CGP, a patrol vessel designed for two people.  With basic weapons, space for evidence, and equipment to conduct investigative work, whilst maintaining comfortable living spaces.
+  price: 97760
   category: Medium
   group: Security
   access: Security
-  shuttlePath: /Maps/_WF/Shuttles/Cgp/kite.yml
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/svalinn.yml
   guidebookPage: Null
   class:
   - Pursuit
   - Fighter
-  - Detainment
-  - Medical
   engine:
   - Uranium
+  - APU
 
 - type: gameMap
-  id: Kite
-  mapName: 'Kite'
-  mapPath: /Maps/_WF/Shuttles/Cgp/kite.yml
+  id: Svalinn
+  mapName: 'Svalinn'
+  mapPath: /Maps/_WF/Shuttles/Cgp/svalinn.yml
   minPlayers: 0
   stations:
-    Kite:
+    Svalinn:
       stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Kite CGP{1}'
+        mapNameTemplate: 'Svalinn CGP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

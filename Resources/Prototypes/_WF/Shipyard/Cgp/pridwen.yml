@@ -1,33 +1,31 @@
 - type: vessel
-  id: Heater
+  id: Pridwen
   parent: BaseVessel
-  name: UCA Heater
-  description: A CGP Ship set for a small crew or a single Internal Affairs agent.
-  price: 38965
+  name: UCA Pridwen
+  description: The United Chalyssian Alliances answer to the Dagger, a ship designed for internal investigations using a similar chassis design.
+  price: 55860
   category: Medium
   group: Security
   access: Security
-  shuttlePath: /Maps/_WF/Shuttles/Cgp/heater.yml
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/pridwen.yml
   guidebookPage: Null
   class:
   - Pursuit
-  - Patrol
-  - Detainment
+  - Fighter
   engine:
-  - Plasma
-  - APU
+  - Uranium
 
 - type: gameMap
-  id: Heater
-  mapName: 'Heater'
-  mapPath: /Maps/_WF/Shuttles/Cgp/heater.yml
+  id: Pridwen
+  mapName: 'Pridwen'
+  mapPath: /Maps/_WF/Shuttles/Cgp/pridwen.yml
   minPlayers: 0
   stations:
-    Heater:
+    Pridwen:
       stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Heater CGP{1}'
+        mapNameTemplate: 'Pridwen CGP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

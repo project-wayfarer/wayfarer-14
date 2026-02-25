@@ -82,6 +82,22 @@
   subgroups:
   - WFBackpackItems
 
+# == RADIO KEYS - Wayfarer
+- type: loadoutGroup
+  id: OutlawEncryptionKey
+  name: loadout-group-contractor-encryption-key
+  minLimit: 0
+  maxLimit: 6
+  loadouts:
+  - WFEncryptionKeyTraffic
+  - WFEncryptionKeyMedical
+  - WFEncryptionKeyCargo
+  - WFEncryptionKeyEngineering
+  - WFEncryptionKeyScience
+  - EncryptionKeyFreelance
+  fallbacks:
+  - WFEncryptionKeyTraffic
+
 # Pirate Captain loadouts
 
 - type: loadoutGroup
