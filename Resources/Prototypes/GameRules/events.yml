@@ -603,15 +603,16 @@
     sounds:
       collection: Paracusia
 
-# - type: entity
-#   parent: BaseGameRule
-#   id: IonStorm # Disabled until event is rewritten
-#   components:
-#   - type: StationEvent
-#     weight: 8
-#     reoccurrenceDelay: 20
-#     duration: 1
-#   - type: IonStormRule
+- type: entity
+  parent: BaseGameRule
+  id: IonStorm
+  components:
+  - type: StationEvent
+    weight: 0 # Wayfarer reduces chance of ion storm
+    reoccurrenceDelay: 20
+     duration: 1
+    maxOccurrences: 0 # Should make it so they just never occur
+  - type: IonStormRule
 
 - type: entity
   id: MimicVendorRule
