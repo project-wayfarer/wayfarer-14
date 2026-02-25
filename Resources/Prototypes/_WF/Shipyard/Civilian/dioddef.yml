@@ -1,0 +1,33 @@
+- type: vessel
+  id: Diodeff
+  parent: BaseVessel
+  name: UCA Diodeff
+  description: An escape pod repurposed as a basic bridge, that someone can build their own ship out the back of it.  Simple and cheap.
+  price: 7210
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/dioddef.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  engine:
+  - APU
+  - Solar
+
+- type: gameMap
+  id: Diodeff
+  mapName: 'Diodeff'
+  mapPath: /Maps/_WF/Shuttles/Civilian/dioddef.yml
+  minPlayers: 0
+  stations:
+    Diodeff:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Dioddef CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
