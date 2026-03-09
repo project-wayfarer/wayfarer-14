@@ -4,10 +4,12 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Content.Server._DV.Cargo.Components;
 using Content.Server._DV.CustomObjectiveSummary;
 using Content.Server._NF.Bank;
 using Content.Server._NF.GameRule.Components;
 using Content.Server._NF.GameTicking.Events;
+using Content.Server._NF.SectorServices;
 using Content.Server.Cargo.Components;
 using Content.Server.Database;
 using Content.Server.GameTicking;
@@ -16,6 +18,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Preferences.Managers;
 using Content.Server._NF.ShuttleRecords;
 using Content.Shared._NF.Bank;
+using Content.Shared._NF.Bank.BUI;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared._NF.CCVar;
 using Content.Shared.GameTicking;
@@ -47,6 +50,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly CustomObjectiveSummarySystem _customObjectiveSummary = default!;
     [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
+    [Dependency] private readonly SectorServiceSystem _sectorService = default!;
 
     private readonly HttpClient _httpClient = new();
 
@@ -533,6 +537,44 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
             
             _sawmill.Info($"SaveRoundSummaryToDatabase: Player stories count: {playerStoriesData.Count}");
 
+            // Collect Mail Metrics data from SectorLogisticStatsComponent
+            JsonDocument? mailMetricsJson = null;
+            if (TryComp<SectorLogisticStatsComponent>(_sectorService.GetServiceEntity(), out var logiStats))
+            {
+                var mailMetricsData = new Dictionary<string, object>
+                {
+                    { "Earnings", logiStats.Metrics.Earnings },
+                    { "DamagedLosses", logiStats.Metrics.DamagedLosses },
+                    { "ExpiredLosses", logiStats.Metrics.ExpiredLosses },
+                    { "TamperedLosses", logiStats.Metrics.TamperedLosses },
+                    { "OpenedCount", logiStats.Metrics.OpenedCount },
+                    { "DamagedCount", logiStats.Metrics.DamagedCount },
+                    { "ExpiredCount", logiStats.Metrics.ExpiredCount },
+                    { "TamperedCount", logiStats.Metrics.TamperedCount },
+                    { "TotalIncome", logiStats.Metrics.TotalIncome }
+                };
+                mailMetricsJson = JsonDocument.Parse(JsonSerializer.Serialize(mailMetricsData));
+                _sawmill.Info($"SaveRoundSummaryToDatabase: Mail metrics collected - Earnings: {logiStats.Metrics.Earnings}, Opened: {logiStats.Metrics.OpenedCount}");
+            }
+
+            // Collect Spesos Flow data from SectorBankComponent ledger
+            JsonDocument? spesosFlowJson = null;
+            if (TryComp<SectorBankComponent>(_sectorService.GetServiceEntity(), out var sectorBank))
+            {
+                var spesosFlowData = new List<Dictionary<string, object>>();
+                foreach (var (ledgerEntry, value) in sectorBank.AccountLedgerEntries)
+                {
+                    spesosFlowData.Add(new Dictionary<string, object>
+                    {
+                        { "Account", ledgerEntry.Account.ToString() },
+                        { "Type", ledgerEntry.Type.ToString() },
+                        { "Amount", value }
+                    });
+                }
+                spesosFlowJson = JsonDocument.Parse(JsonSerializer.Serialize(spesosFlowData));
+                _sawmill.Info($"SaveRoundSummaryToDatabase: Spesos flow collected - {spesosFlowData.Count} entries");
+            }
+
             _sawmill.Info($"SaveRoundSummaryToDatabase: Calling database save for round {roundId}");
 
             // Save to database
@@ -542,7 +584,9 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                 roundEndTime,
                 profitLossJson,
                 playerStoriesJson,
-                playerManifestJson
+                playerManifestJson,
+                mailMetricsJson,
+                spesosFlowJson
             );
 
             _sawmill.Info($"Saved round {roundId} summary to database successfully");

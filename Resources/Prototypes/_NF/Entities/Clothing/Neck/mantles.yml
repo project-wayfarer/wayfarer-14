@@ -39,8 +39,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantleSheriff
-  name: sheriff's mantle
-  description: Shootouts with nukies are just another Tuesday for this Sheriff. This mantle is a symbol of commitment to the station.
+  name: commodore's mantle
+  description: Shootouts with nukies are just another Tuesday for this Commodore. This mantle is a symbol of commitment to the station.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Mantles/nfsdsheriff.rsi
@@ -86,6 +86,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      under-clothing: !type:ContainerSlot {} # Wayfarer
   - type: Construction
     graph: NFGoblinMadeClothingNeckTrashMantle
     node: NFGoblinMadeClothingNeckTrashMantle

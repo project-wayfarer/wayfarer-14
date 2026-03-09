@@ -44,27 +44,27 @@ public sealed partial class IdCardConsoleComponent : Component
     {
         "Armory",
         //"Atmospherics",
-        "Bailiff", // Frontier
         //"Bar",
-        "Brig",
-        "Brigmedic", // Frontier
         "Captain",
+        "Brig", //Moved to be where CGP would be on Alphabetical
         //"Cargo",
         //"Chapel",
         //"Chemistry",
         //"ChiefMedicalOfficer",
         "Command",
+        "HeadOfSecurity", // WF "Commodore"
+        "Brigmedic", // WF "Corpsman"
         //"Cryogenics",
-        "Detective", // Frontier: moved into alphabetical order
         "Engineering",
         "External",
-        "Frontier", // Frontier
         //"Hydroponics",
+        "Detective", // Wayfarer "Internal Affairs"
         "Janitor",
         //"Kitchen",
         //"Lawyer",
         "Mail", // Frontier
         "Maintenance",
+        "Bailiff", // WF "Master at Arms"
         "Medical",
         "Mercenary", // Frontier
         "ChiefEngineer", // Frontier: moved down, alphabetic w.r.t. "Plant Manager"
@@ -73,11 +73,11 @@ public sealed partial class IdCardConsoleComponent : Component
         //"ResearchDirector",
         //"Salvage",
         "Security",
-        "Sergeant", // Frontier
+        "Sergeant", // WF "Senior Peacekeeper"
         "Service",
-        "HeadOfSecurity", // Frontier: moved down, alphabetic w.r.t. "Sheriff"
         "HeadOfPersonnel", // Frontier: moved down, alphabetic w.r.t. "Station Representative"
         "StationTrafficController", // Frontier
+        "Frontier", // Wayfarer
         //"Theatre",
     };
 

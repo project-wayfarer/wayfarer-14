@@ -1,3 +1,4 @@
+// Wayfarer: Modified to support multiple stored characters - commented out PlayerBeforeSpawnEvent reset
 using Content.Server.Administration.Logs;
 using Content.Server.GameTicking;
 using Content.Shared.Bed.Sleep;
@@ -23,8 +24,10 @@ public sealed partial class CryoSleepSystem
     private void InitReturning()
     {
         SubscribeNetworkEvent<WakeupRequestMessage>(OnWakeupMessage);
-        SubscribeLocalEvent<PlayerJoinedLobbyEvent>(e => ResetCryosleepState(e.PlayerSession.UserId));
-        SubscribeLocalEvent<PlayerBeforeSpawnEvent>(e => ResetCryosleepState(e.Player.UserId));
+        // Don't reset on lobby join - allow players to resume their cryo characters
+        // SubscribeLocalEvent<PlayerJoinedLobbyEvent>(e => ResetCryosleepState(e.PlayerSession.UserId));
+        // Don't reset on spawn - allow players to have multiple characters in cryo
+        // SubscribeLocalEvent<PlayerBeforeSpawnEvent>(e => ResetCryosleepState(e.Player.UserId));
     }
 
     private void OnWakeupMessage(WakeupRequestMessage message, EntitySessionEventArgs session)
@@ -48,14 +51,17 @@ public sealed partial class CryoSleepSystem
             return ReturnToBodyStatus.Disabled;
 
         var id = mind.UserId;
-        if (id == null || !_storedBodies.TryGetValue(id.Value, out var storedBody))
+        if (id == null || !_storedBodies.TryGetValue(id.Value, out var storedBodies) || storedBodies.Count == 0)
             return ReturnToBodyStatus.BodyMissing;
 
         if (!force && (mind.CurrentEntity is not { Valid: true } ghost || !HasComp<GhostComponent>(ghost)))
             return ReturnToBodyStatus.NotAGhost;
 
-        var cryopod = storedBody!.Value.Cryopod;
-        var body = storedBody.Value.Body;
+        // Use the first stored body
+        var storedBody = storedBodies[0];
+        var cryopod = storedBody.Cryopod;
+        var body = storedBody.Body;
+        
         if (!Exists(cryopod) || Deleted(cryopod) || !TryComp<CryoSleepComponent>(cryopod, out var cryoComp))
         {
             var fallbackQuery = EntityQueryEnumerator<CryoSleepFallbackComponent, CryoSleepComponent>();
@@ -100,7 +106,8 @@ public sealed partial class CryoSleepSystem
     /// </summary>
     public void ResetCryosleepState(NetUserId id)
     {
-        var body = _storedBodies.GetValueOrDefault(id, null);
+        if (!_storedBodies.TryGetValue(id, out var bodies))
+            return;
 
         _storedBodies.Remove(id);
 
@@ -111,10 +118,13 @@ public sealed partial class CryoSleepSystem
             _ghost.SetCanReturnFromCryo(ghost, false);
         }
 
-        if (body != null
-            && Transform(body.Value.Body).MapUid == _storageMap)
+        // Delete all stored bodies if they're still on the storage map
+        foreach (var body in bodies)
         {
-            QueueDel(body.Value.Body);
+            if (Transform(body.Body).MapUid == _storageMap)
+            {
+                QueueDel(body.Body);
+            }
         }
     }
 
@@ -125,10 +135,11 @@ public sealed partial class CryoSleepSystem
 
     public bool TryGetSleepingBody(NetUserId userId, [NotNullWhen(true)] out EntityUid? body, [NotNullWhen(true)] out EntityUid? pod)
     {
-        if (_storedBodies.TryGetValue(userId, out var storedBody) && storedBody != null)
+        if (_storedBodies.TryGetValue(userId, out var storedBodies) && storedBodies.Count > 0)
         {
-            body = storedBody.Value.Body;
-            pod = storedBody.Value.Cryopod;
+            var storedBody = storedBodies[0];
+            body = storedBody.Body;
+            pod = storedBody.Cryopod;
             return true;
         }
         else

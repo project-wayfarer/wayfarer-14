@@ -172,6 +172,20 @@
   materials:
     Steel: 1800
 
+- type: latheRecipe #WF accessibility flare
+  id: BoxDispenserBlueFlare
+  result: BoxDispenserBlueFlare
+  parent: NFBaseLightTubeRecipe
+  materials:
+    Steel: 1800
+
+- type: latheRecipe #WF accessibility flare
+  id: BoxDispenserMagentaFlare
+  result: BoxDispenserMagentaFlare
+  parent: NFBaseLightTubeRecipe
+  materials:
+    Steel: 1800
+
 - type: latheRecipe
   id: GlowstickBlue
   result: GlowstickBlue

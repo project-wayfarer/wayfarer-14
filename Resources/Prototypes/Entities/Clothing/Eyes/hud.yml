@@ -163,7 +163,7 @@
   - type: ShowThirstIcons
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons] # WF Removed Contraband
   id: ClothingEyesHudMedSec
   name: medsec hud
   description: An eye display that looks like a mixture of medical and security huds.
@@ -211,7 +211,7 @@
   - type: ShowSyndicateIcons
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingEyesBase, ShowSecurityIcons] # WF Removed Contraband
   id: ClothingEyesHudSyndicate
   name: syndicate visor
   description: The syndicate's professional head-up display, designed for better detection of humanoids and their subsequent elimination.
@@ -227,7 +227,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingEyesBase, ShowSecurityIcons] # WF Removed Contraband
   id: ClothingEyesHudSyndicateAgent
   name: syndicate medical visor
   description: The Syndicate Corpsman's professional heads-up display, designed for quick diagnosis of their team's status.
@@ -244,7 +244,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons, ContrabandClothing] # Frontier: added ContrabandClothing as parent
+  parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons] # WF Removed Contraband
   id: ClothingEyesGlassesHiddenSecurity
   suffix: Syndicate
 

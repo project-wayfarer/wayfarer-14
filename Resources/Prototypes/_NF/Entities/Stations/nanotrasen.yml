@@ -11,9 +11,11 @@
   - BaseStationMail # Mail
   - BaseStationSectorServices # Hosts all sector-wide services
   - BaseStationDampening
-  - BaseStationDeadDropHintExempt # No hints
+#  - BaseStationDeadDropHintExempt # WF dusk is big
   - BaseStationRenameWarpPoints
   - BaseStationBusDepot # All the buses
+  - NFBaseStationCargo # WF Dusk has cargo trade
+  - BaseStationCargoMarket # WF Dusk has cargo trade
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform

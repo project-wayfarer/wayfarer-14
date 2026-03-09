@@ -2,7 +2,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckNfsdBadge
   name: CGP badge
-  description: Respect my authority!
+  description: Here to help.
   abstract: true
   components:
   - type: Item
@@ -16,25 +16,25 @@
 - type: entity
   parent: ClothingNeckNfsdBadge
   id: ClothingNeckNfsdBadgeSecurityCadet
-  name: CGP cadet badge
-  suffix: Bronze - Cadet
+  name: CGP junior peacekeeper badge
+  suffix: Bronze - Junior Peacekeeper
 
 - type: entity
   parent: ClothingNeckNfsdBadge
   id: ClothingNeckNfsdBadgeSecurity
-  suffix: Silver - Deputy
-  name: CGP deputy badge
+  suffix: Silver - Peacekeeper
+  name: CGP junior peacekeeper badge
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_silver_badge.rsi
   - type: Clothing
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_silver_badge.rsi
-    
+
 - type: entity
   parent: ClothingNeckNfsdBadge
   id: ClothingNeckNfsdBadgeSecurityBrigmedic
-  suffix: Silver - Brigmedic
-  name: CGP brigmedic badge
+  suffix: Silver - Corpsman
+  name: CGP corpsman badge
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_silvercross_badge.rsi
@@ -44,8 +44,8 @@
 - type: entity
   parent: ClothingNeckNfsdBadge
   id: ClothingNeckNfsdBadgeDetective
-  suffix: Silver - Detective
-  name: CGP detective badge
+  suffix: Silver - Internal Affairs Officer
+  name: CGP internal affairs officer badge
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_silver_badge.rsi
@@ -55,8 +55,8 @@
 - type: entity
   parent: ClothingNeckNfsdBadge
   id: ClothingNeckNfsdBadgeSeniorOfficer
-  suffix: Gold - Sergeant
-  name: CGP sergeant badge
+  suffix: Gold - Senior Peacekeeper
+  name: CGP senior peacekeeper badge
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_gold_badge.rsi
@@ -66,8 +66,8 @@
 - type: entity
   parent: ClothingNeckNfsdBadge
   id: ClothingNeckNfsdBadgeWarden
-  suffix: Gold - Bailiff
-  name: CGP bailiff badge
+  suffix: Gold - Master at Arms
+  name: CGP master at arms badge
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_gold_badge.rsi
@@ -77,8 +77,8 @@
 - type: entity
   parent: ClothingNeckNfsdBadge
   id: ClothingNeckNfsdBadgeSheriff
-  suffix: Star - Sheriff
-  name: CGP sheriff badge
+  suffix: Star - Commodore
+  name: CGP commodore badge
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_star_badge.rsi
@@ -86,16 +86,16 @@
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_star_badge.rsi
   - type: EmbeddableProjectile # pointy
 
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckPublicAffairsLiaisonBadge
-  name: public affairs liaison badge
-  description: A badge for grade 4 paperwork wizards affiliated with the CGP.
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/Neck/Misc/palbadge.rsi
-    scale: 0.5, 0.5
-  - type: Clothing
-    sprite: _NF/Clothing/Neck/Misc/palbadge.rsi
-  - type: TypingIndicatorClothing
-    proto: pal
+#- type: entity
+#  parent: ClothingNeckBase
+#  id: ClothingNeckPublicAffairsLiaisonBadge
+#  name: public affairs liaison badge
+#  description: A badge for grade 4 paperwork wizards affiliated with the CGP.
+#  components:
+#  - type: Sprite
+#    sprite: _NF/Clothing/Neck/Misc/palbadge.rsi
+#    scale: 0.5, 0.5
+#  - type: Clothing
+#    sprite: _NF/Clothing/Neck/Misc/palbadge.rsi
+#  - type: TypingIndicatorClothing
+#    proto: pal

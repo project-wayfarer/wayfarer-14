@@ -197,6 +197,26 @@
     vendPrice: 500
   - type: NFFuel
 
+# Start Wayfarer
+- type: entity
+  parent: JerryCan
+  suffix: biofuel
+  id: JerryCanBioFuel
+  #  categories: [ HideSpawnMenu ] # Frontier
+  components:
+  - type: Label
+    currentLabel: reagent-name-bio-fuel
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: BioFuel
+          Quantity: 200
+  - type: StaticPrice
+    vendPrice: 2000
+  - type: NFFuel
+# End Wayfarer
+
 # Fuel-grade items
 - type: entity
   parent: BaseItem

@@ -4,6 +4,7 @@ lobby-state-right-now-question = Right Now?
 lobby-state-right-now-confirmation = Right Now
 lobby-state-round-start-countdown-text = Round starts In: {$timeLeft}
 lobby-state-ready-button-join-state = Join
+lobby-state-ready-button-resume-state = Resume
 lobby-state-ready-button-ready-up-state = Ready Up
 lobby-state-player-status-not-ready = Not Ready
 lobby-state-player-status-ready = Ready
@@ -29,3 +30,9 @@ lobby-state-playtime-comment-normal =
 lobby-state-playtime-comment-concerning = You've played for {$hours} hours today. Please take a break.
 lobby-state-playtime-comment-grasstouchless = {$hours} hours. Consider logging off to attend to your needs.
 lobby-state-playtime-comment-selfdestructive = {$hours} hours. Really?
+
+# Wayfarer: Character resume from cryosleep feature
+resume-character-window-title = Resume Character
+resume-character-window-prompt = Select a character to resume from cryosleep:
+resume-character-window-cancel-button = Cancel
+resume-character-window-no-characters = No characters in cryosleep.

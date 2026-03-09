@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Maintainer Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Scryer
+  parent: BaseVessel
+  name: TI Scryer
+  description: A deep space exploration ship with an advanced sensor suite and open cockpit for observing stellar phenomena. Comes with a xenoarchaeloegy setup. Manufactured by Telum Industries.
+  price: 80000
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/scryer.yml
+  guidebookPage: Null
+  class:
+  - Science
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Scryer
+  mapName: 'Scryer'
+  mapPath: /Maps/_WF/Shuttles/Civilian/scryer.yml
+  minPlayers: 0
+  stations:
+    Scryer:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Scryer CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

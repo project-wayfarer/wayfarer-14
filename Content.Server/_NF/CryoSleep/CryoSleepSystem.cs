@@ -1,18 +1,24 @@
+// Wayfarer: Added character resume from cryosleep feature - multiple stored characters per user, station name storage
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Server._NF.Shipyard.Systems;
+using Content.Server.Administration.Logs;
 using Content.Server.DoAfter;
 using Content.Server.EUI;
 using Content.Server.Ghost;
 using Content.Server.Interaction;
 using Content.Server.Mind;
 using Content.Server.Popups;
+using Content.Server.Station.Systems;
 using Content.Shared._NF.CCVar;
 using Content.Shared._NF.CryoSleep;
 using Content.Shared._NF.CryoSleep.Events;
+using Content.Shared._WF.CryoSleep; // Wayfarer: Resume character messages
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Bed.Sleep;
+using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
@@ -21,11 +27,13 @@ using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
+using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.PDA;
+using Content.Shared.Players;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Store.Components;
@@ -34,6 +42,7 @@ using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
@@ -61,8 +70,10 @@ public sealed partial class CryoSleepSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; //For cryosleep warnings
+    [Dependency] private readonly Shared.Roles.SharedRoleSystem _roles = default!;
+    [Dependency] private readonly StationSystem _station = default!;
 
-    private readonly Dictionary<NetUserId, StoredBody?> _storedBodies = new();
+    private readonly Dictionary<NetUserId, List<StoredBody>> _storedBodies = new();
     private EntityUid? _storageMap;
 
     public override void Initialize()
@@ -79,6 +90,9 @@ public sealed partial class CryoSleepSystem : EntitySystem
         SubscribeLocalEvent<CryoSleepComponent, CryoStoreDoAfterEvent>(OnAutoCryoSleep);
         SubscribeLocalEvent<CryoSleepComponent, DragDropTargetEvent>(OnEntityDragDropped);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
+
+        SubscribeNetworkEvent<GetStoredCharactersRequestMessage>(OnGetStoredCharactersRequest);
+        SubscribeNetworkEvent<ResumeCharacterRequestMessage>(OnResumeCharacterRequest);
 
         InitReturning();
     }
@@ -429,7 +443,20 @@ public sealed partial class CryoSleepSystem : EntitySystem
             id = mind.UserId;
             if (id != null)
             {
-                _storedBodies[id.Value] = new StoredBody() { Body = body, Cryopod = cryopod };
+                if (!_storedBodies.ContainsKey(id.Value))
+                    _storedBodies[id.Value] = new List<StoredBody>();
+                
+                // Get the station name
+                var stationUid = _station.GetOwningStation(cryopod);
+                var stationName = stationUid != null ? Name(stationUid.Value) : "Unknown Station";
+                
+                var newBody = new StoredBody() { Body = body, Cryopod = cryopod, Mind = mindEntity, StationName = stationName };
+                
+                // Remove any existing entry for this body (in case of re-cryo)
+                _storedBodies[id.Value].RemoveAll(sb => sb.Body == body);
+                
+                // Add the new body
+                _storedBodies[id.Value].Add(newBody);
             }
 
             _ghost.OnGhostAttempt(mindEntity, false, true, mind: mind);
@@ -488,9 +515,146 @@ public sealed partial class CryoSleepSystem : EntitySystem
         _storedBodies.Clear();
     }
 
+    private void OnGetStoredCharactersRequest(GetStoredCharactersRequestMessage msg, EntitySessionEventArgs args)
+    {
+        var userId = args.SenderSession.UserId;
+        var characters = new List<StoredCharacterInfo>();
+
+        if (_storedBodies.TryGetValue(userId, out var storedBodies))
+        {
+            foreach (var storedBody in storedBodies)
+            {
+                var body = storedBody.Body;
+                var cryopod = storedBody.Cryopod;
+                var mindId = storedBody.Mind;
+
+                if (Exists(body) && !Deleted(body))
+                {
+                    var characterName = MetaData(body).EntityName;
+                    var jobName = "Unknown";
+
+                    // Get the job name from the stored mind's job role
+                    if (TryComp<MindComponent>(mindId, out var mindComp) && mindComp != null)
+                    {
+                        if (_roles.MindHasRole<Shared.Roles.Jobs.JobRoleComponent>(mindId, out var jobRole))
+                        {
+                            if (jobRole.Value.Comp1.JobPrototype != null)
+                            {
+                                jobName = jobRole.Value.Comp1.JobPrototype;
+                            }
+                        }
+                    }
+
+                    characters.Add(new StoredCharacterInfo(
+                        GetNetEntity(body),
+                        GetNetEntity(cryopod),
+                        characterName,
+                        jobName,
+                        storedBody.StationName
+                    ));
+                }
+            }
+        }
+
+        var response = new GetStoredCharactersResponseMessage(characters);
+        RaiseNetworkEvent(response, args.SenderSession);
+    }
+
+    private void OnResumeCharacterRequest(ResumeCharacterRequestMessage msg, EntitySessionEventArgs args)
+    {
+        var userId = args.SenderSession.UserId;
+
+        if (!_storedBodies.TryGetValue(userId, out var storedBodies))
+            return;
+
+        var body = GetEntity(msg.Body);
+        
+        // Find the specific stored body
+        StoredBody? storedBody = null;
+        foreach (var sb in storedBodies)
+        {
+            if (sb.Body == body)
+            {
+                storedBody = sb;
+                break;
+            }
+        }
+        
+        if (storedBody == null)
+            return;
+
+        // Get the stored mind entity
+        var mindId = storedBody.Value.Mind;
+        if (!TryComp<MindComponent>(mindId, out var mindComp))
+            return;
+
+        // Handle the return directly since we already have all the info
+        var cryopod = storedBody.Value.Cryopod;
+        
+        // Check if cryo return is enabled
+        if (!_configurationManager.GetCVar(NFCCVars.CryoReturnEnabled))
+            return;
+        
+        // Try to insert the body into the cryopod
+        if (!Exists(cryopod) || Deleted(cryopod) || !TryComp<CryoSleepComponent>(cryopod, out var cryoComp))
+        {
+            // Find a fallback cryopod
+            var fallbackQuery = EntityQueryEnumerator<CryoSleepFallbackComponent, CryoSleepComponent>();
+            bool foundFallback = false;
+            while (fallbackQuery.MoveNext(out cryopod, out _, out cryoComp))
+            {
+                if (!IsOccupied(cryoComp) && _container.Insert(body, cryoComp.BodyContainer))
+                {
+                    foundFallback = true;
+                    break;
+                }
+            }
+            
+            if (!foundFallback)
+                return;
+        }
+        else
+        {
+            if (IsOccupied(cryoComp))
+                return;
+            
+            if (!_container.Insert(body, cryoComp.BodyContainer))
+                return;
+        }
+        
+        // Remove from stored bodies and transfer control to the player
+        storedBodies.Remove(storedBody.Value);
+        if (storedBodies.Count == 0)
+            _storedBodies.Remove(userId);
+        
+        _mind.ControlMob(userId, body);
+        
+        // Tell the client to switch to game state
+        if (_player.TryGetSessionById(userId, out var session))
+        {
+            RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
+        }
+        
+        // Force the mob to sleep
+        var sleep = EnsureComp<SleepingComponent>(body);
+        sleep.CooldownEnd = TimeSpan.FromSeconds(5);
+        
+        _popup.PopupEntity(Loc.GetString("cryopod-wake-up", ("entity", body)), body);
+        RaiseLocalEvent(body, new CryosleepWakeUpEvent(cryopod, userId), true);
+        
+        // Remove this body from stored bodies since they've resumed
+        storedBodies.Remove(storedBody.Value);
+        if (storedBodies.Count == 0)
+            _storedBodies.Remove(userId);
+        
+        _adminLogger.Add(LogType.LateJoin, LogImpact.Medium, $"{userId} has returned from cryosleep!");
+    }
+
     private struct StoredBody
     {
         public EntityUid Body;
         public EntityUid Cryopod;
+        public EntityUid Mind;
+        public string StationName;
     }
 }

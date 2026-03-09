@@ -12,7 +12,7 @@
 - type: entity
   id: BedsheetNfsdBrigmedic
   parent: BedsheetBase
-  name: brigmedic bedsheet
+  name: corpsman bedsheet
   components:
   - type: Sprite
     sprite: _NF/Objects/Misc/bedsheets.rsi
@@ -23,7 +23,7 @@
 - type: entity
   id: BedsheetNfsdSheriff
   parent: BedsheetBase
-  name: sheriff bedsheet
+  name: commodore bedsheet
   components:
   - type: Sprite
     sprite: _NF/Objects/Misc/bedsheets.rsi

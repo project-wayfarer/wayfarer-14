@@ -44,6 +44,36 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         );
 
         SubscribeLocalEvent<InteractionVerbsComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
+        SubscribeLocalEvent<GetVerbsEvent<InteractionVerb>>(OnGetGlobalInteractionVerbs);
+    }
+
+    private void OnGetGlobalInteractionVerbs(GetVerbsEvent<InteractionVerb> args)
+    {
+        // Skip if entity has InteractionVerbsComponent - those are handled separately
+        if (HasComp<InteractionVerbsComponent>(args.Target))
+            return;
+
+        // Don't show verbs if we can't interact
+        if (!args.CanInteract && !args.CanAccess)
+            return;
+
+        var user = args.User;
+        var target = args.Target;
+        var hasHands = args.Hands != null;
+
+        // Only handle global verbs for entities without InteractionVerbsComponent
+        foreach (var proto in PrototypeManager.EnumeratePrototypes<InteractionVerbPrototype>())
+        {
+            if (!proto.Global)
+                continue;
+
+            if (!IsVerbApplicable(proto, user, target, hasHands, args.CanAccess, args.CanInteract))
+                continue;
+
+            var verb = CreateVerb(proto, user, target, hasHands, args.CanAccess, args.CanInteract);
+            if (verb != null)
+                args.Verbs.Add(verb);
+        }
     }
 
     private void OnGetInteractionVerbs(EntityUid uid, InteractionVerbsComponent component, GetVerbsEvent<InteractionVerb> args)

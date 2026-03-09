@@ -6,12 +6,10 @@
   abstract: true
   components:
   - type: Hunger
-    baseDecayRate: 0.005 # 75% slower than default (0.02 * 0.25)
   - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
     sprite: Mobs/Species/Human/parts.rsi
     state: full
   - type: Thirst
-    baseDecayRate: 0.015 # 75% slower than default (0.1 * 0.25)
   - type: Butcherable
     butcheringType: Spike
     spawned:

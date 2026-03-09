@@ -83,7 +83,7 @@
       collection: WeakHit
     forceSound: true
   - type: StaminaDamageOnCollide
-    damage: 18
+    damage: 16 # 7 hits to stun WF reduction stamina rebalance
 
 - type: entity
   id: NFBulletDisablerLow
@@ -100,7 +100,7 @@
       collection: WeakHit
     forceSound: true
   - type: StaminaDamageOnCollide
-    damage: 14
+    damage: 13 # 8 hits to stun WF reduction stamina rebalance
 
 #region Kinetic bolts
 - type: entity

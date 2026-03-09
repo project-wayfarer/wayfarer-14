@@ -1,0 +1,11 @@
+- type: entity
+  parent: PlushieLizard
+  id: WehfarerPlushie #Weh!
+  name: wehfarer plushie
+  description: An adorable stuffed toy that resembles a Wehfarer, the synth mascot to dusk station. Made by Concordia Command as a token endurace and care. "Welcome to the Nebulan Coast!"
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Fun/Plushies/lizard.rsi
+    state: wehfarericon
+  - type: Item
+    sprite: _WF/Objects/Fun/Plushies/lizard.rsi

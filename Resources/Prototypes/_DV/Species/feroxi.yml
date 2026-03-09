@@ -40,44 +40,51 @@
 - type: markingPoints
   id: MobFeroxiMarkingLimits
   points:
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
+    Special:
+      points: 32 # WF
       required: false
     Head:
-      points: 3
+      points: 32 # WF
       required: false
     HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ FeroxiEars ]
-    Snout:
-      points: 1
-      required: true
-      defaultMarkings: [ FeroxiSnout ]
-    Chest:
-      points: 3
+      points: 32 # WF
       required: false
-    Arms:
-      points: 1
+      defaultMarkings: [ FeroxiEars ]
+    HeadSide:
+      points: 32 # WF
+      required: false
+    Snout:
+      points: 32 # WF
+      required: false
+      defaultMarkings: [ FeroxiSnout ]
+    Hair:
+      points: 32 # WF
+      required: false
+    FacialHair:
+      points: 32 # WF
+      required: false
+    Chest:
+      points: 32 # WF
       required: false
     Legs:
-      points: 1
+      points: 32 # WF
+      required: false
+    Arms:
+      points: 32 # WF
       required: false
     Tail:
-      points: 1
-      required: true
+      points: 32 # WF
+      required: false
       defaultMarkings: [ FeroxiTailAndDorsal ]
-    # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
-      points: 3
+      points: 32 # WF
       required: false
     UndergarmentBottom:
-      points: 3
+      points: 32 # WF
       required: false
-    # End Frontier
+    Overlay:
+      points: 32 # WF
+      required: false
 
 - type: humanoidBaseSprite
   id: MobFeroxiHead

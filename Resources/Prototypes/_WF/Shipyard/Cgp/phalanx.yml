@@ -1,0 +1,36 @@
+- type: vessel
+  id: Phalanx
+  parent: BaseVessel
+  name: UCA Phalanx
+  description: The CGP Battleship, a large, heavily armed and armoured warship, designed to be crewed by six or more people.  It is the most formidable ship yet built for maintaining the peace.
+  price: 177755
+  category: Large
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/phalanx.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  - Fighter
+  - Detainment
+  - Medical
+  engine:
+  - APU
+  - Uranium
+
+- type: gameMap
+  id: Phalanx
+  mapName: 'Phalanx'
+  mapPath: /Maps/_WF/Shuttles/Cgp/phalanx.yml
+  minPlayers: 0
+  stations:
+    Phalanx:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Phalanx CGP{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: {}

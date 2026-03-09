@@ -14,18 +14,18 @@
     prototype: FrontierBirthdayGift
 
 # Interview variant
-- type: job
-  id: ContractorInterview
-  name: job-name-contractor-interview
-  description: job-description-contractor
-  playTimeTracker: JobContractorInterview
-  startingGear: ContractorHologramGear
-  icon: "JobIconContractor"
-  supervisors: job-supervisors-hire
-  accessGroups:
-  - GeneralAccess
-  jobEntity: InterviewHologramContractor
-  newPlayerMessage: false
+#- type: job
+#  id: ContractorInterview
+#  name: job-name-contractor-interview
+#  description: job-description-contractor
+#  playTimeTracker: JobContractorInterview
+#  startingGear: ContractorHologramGear
+#  icon: "JobIconContractor"
+#  supervisors: job-supervisors-hire
+#  accessGroups:
+#  - GeneralAccess
+#  jobEntity: InterviewHologramContractor
+#  newPlayerMessage: false
 
 - type: startingGear
   id: ContractorHologramGear

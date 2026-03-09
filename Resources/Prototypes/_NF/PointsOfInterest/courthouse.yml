@@ -31,6 +31,9 @@
   stations:
     Courthouse:
       stationProto: StandardFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Fiat justitia ruat caelum." # Let justice be done, though the heavens fall
       components:
         - type: StationNameSetup
           mapNameTemplate: "Courthouse"

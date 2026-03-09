@@ -13,13 +13,13 @@ public sealed partial class PoweredLightVariationPassComponent : Component
     ///     Chance that a light will be replaced with a broken variant.
     /// </summary>
     [DataField]
-    public float LightBreakChance = 0.15f;
+    public float LightBreakChance = 0.03f;
 
     /// <summary>
     ///     Chance that a light will be replaced with an aged variant.
     /// </summary>
     [DataField]
-    public float LightAgingChance = 0.05f;
+    public float LightAgingChance = 0.06f;
 
     [DataField]
     public float AgedLightTubeFlickerChance = 0.03f;

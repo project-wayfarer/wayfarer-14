@@ -56,9 +56,9 @@
   - type: StationEvent
     startAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_solar_flare_start.ogg
-    weight: 1.5
-    earliestStart: 15
-    reoccurrenceDelay: 45
+    weight: 0.4
+    earliestStart: 30
+    reoccurrenceDelay: 60
     startAnnouncement: station-event-solar-flare-nf-start-announcement
     endAnnouncement: station-event-solar-flare-nf-end-announcement
     endAudio:
@@ -67,7 +67,7 @@
     maxDuration: 240
   - type: SolarFlareRule
     allChannels: true
-    lightBreakChancePerSecond: 0.0003
+    lightBreakChancePerSecond: 0.0008
     doorToggleChancePerSecond: 0.001
 
 - type: entity

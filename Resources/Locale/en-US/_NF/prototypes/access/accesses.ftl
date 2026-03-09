@@ -1,9 +1,9 @@
-id-card-access-level-frontier = Frontier
+id-card-access-level-frontier = Wayfarer
 id-card-access-level-pilot = Pilot
 id-card-access-level-mail = Mail
 id-card-access-level-mercenary = Mercenary
 id-card-access-level-stc = Station Traffic Controller
-id-card-access-level-sergeant = Sergeant
-id-card-access-level-bailiff = Bailiff
-id-card-access-level-brigmedic = Brigmedic
+id-card-access-level-sergeant = Senior Peacekeeper
+id-card-access-level-bailiff = Master at Arms
+id-card-access-level-brigmedic = Corpsman
 id-card-access-level-pirate = Pirate

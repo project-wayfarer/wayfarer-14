@@ -23,6 +23,7 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         {"FollowRange", 7f},
         {"IdleRange", 7f},
         {"InteractRange", SharedInteractionSystem.InteractionRange},
+        {"LightbotRange", 32f},
         {"MaximumIdleTime", 7f},
         {MedibotInjectRange, 4f},
         {MeleeMissChance, 0.3f},

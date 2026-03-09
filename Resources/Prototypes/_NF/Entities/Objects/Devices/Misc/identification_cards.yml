@@ -19,7 +19,7 @@
   name: pilot ID card
   components:
   - type: PresetIdCard
-    job: Pilot
+    job: Wayfarer
   - type: Sprite
     sprite: _NF/Objects/Misc/id_cards.rsi
     layers:
@@ -45,23 +45,23 @@
   - type: Item
     heldPrefix: silver
 
-- type: entity
-  parent: IDCardStandard
-  id: PublicAffairsIDCard
-  name: public affairs liaison ID card
-  components:
-  - type: PresetIdCard
-    job: PublicAffairsLiaison
-  - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
-    layers:
-    - state: nfsd
-    - state: idpublicaffairsliaison
+#- type: entity
+#  parent: IDCardStandard
+#  id: PublicAffairsIDCard
+#  name: public affairs liaison ID card
+#  components:
+#  - type: PresetIdCard
+#    job: PublicAffairsLiaison
+#  - type: Sprite
+#    sprite: _NF/Objects/Misc/id_cards.rsi
+#    layers:
+#    - state: nfsd
+#    - state: idpublicaffairsliaison
 
 - type: entity
   parent: IDCardStandard
   id: CadetIDCard
-  name: CGP cadet ID card
+  name: CGP junior peacekeeper ID card
   components:
   - type: PresetIdCard
     job: Cadet
@@ -78,7 +78,7 @@
 - type: entity
   parent: CadetIDCard
   id: DeputyIDCard
-  name: CGP deputy ID card
+  name: CGP peacekeeper ID card
   components:
   - type: PresetIdCard
     job: Deputy
@@ -91,7 +91,7 @@
 - type: entity
   parent: CadetIDCard
   id: BrigmedicNFIDCard
-  name: CGP brigmedic ID card
+  name: CGP corpsman ID card
   components:
   - type: PresetIdCard
     job: Brigmedic
@@ -104,7 +104,7 @@
 - type: entity
   parent: CadetIDCard
   id: SergeantIDCard
-  name: CGP sergeant ID card
+  name: CGP senior peacekeeper ID card
   components:
   - type: PresetIdCard
     job: SeniorOfficer
@@ -117,7 +117,7 @@
 - type: entity
   parent: CadetIDCard
   id: BailiffIDCard
-  name: CGP bailiff ID card
+  name: CGP master-at-arms ID card
   components:
   - type: PresetIdCard
     job: Bailiff
@@ -130,7 +130,7 @@
 - type: entity
   parent: [CadetIDCard, BaseCommandContraband]
   id: ShriffIDCard
-  name: CGP sheriff ID card
+  name: CGP commodore ID card
   components:
   - type: PresetIdCard
     job: Sheriff
@@ -145,7 +145,7 @@
 - type: entity
   parent: CadetIDCard
   id: NFDetectiveIDCard
-  name: CGP detective ID card
+  name: CGP internal affairs agent ID card
   components:
   - type: PresetIdCard
     job: NFDetective

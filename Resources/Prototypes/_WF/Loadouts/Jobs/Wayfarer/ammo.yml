@@ -1,0 +1,139 @@
+- type: loadoutGroup
+  id: WFAmmo
+  name: loadout-group-wayfarer-ammo
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - WFAmmoShotgun12Buckshot
+  - WFAmmoCrossbow
+  - WFAmmoPistol35
+  - WFAmmoPistol45
+  - WFAmmoRifle20
+  - WFAmmoRifle30
+  - WFAmmoMag35
+  - WFAmmoMag20
+  - WFAmmoClip20
+  - WFAmmoMag30
+  - WFAmmoMag45
+  - WFAmmoSubmachineMag35
+
+- type: loadout
+  id: WFAmmoShotgun12Buckshot
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  storage:
+    back:
+    - NFAmmunitionBoxShellShotgunBuckshot
+
+- type: loadout
+  id: WFAmmoCrossbow
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  storage:
+    back:
+    - ClothingBeltQuiverCrossbowFilledBolt
+
+- type: loadout
+  id: WFAmmoPistol35
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  storage:
+    back:
+    - NFAmmunitionBoxPistol35
+
+- type: loadout
+  id: WFAmmoPistol45
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 600
+  storage:
+    back:
+    - NFAmmunitionBoxPistol45
+
+- type: loadout
+  id: WFAmmoRifle20
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 600
+  storage:
+    back:
+    - NFAmmunitionBoxRifle20
+
+- type: loadout
+  id: WFAmmoRifle30
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 800
+  storage:
+    back:
+    - NFAmmunitionBoxRifle30
+
+#Magazines
+- type: loadout
+  id: WFAmmoMag35
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2000
+  storage:
+    back:
+    - NFMagazinePistol35
+
+- type: loadout
+  id: WFAmmoMag20
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2500
+  storage:
+    back:
+    - NFMagazineRifle20
+
+- type: loadout
+  id: WFAmmoClip20
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2500
+  storage:
+    back:
+    - NFMagazineClipRifle20
+
+- type: loadout
+  id: WFAmmoMag30
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 2500
+  storage:
+    back:
+    - NFMagazineRifle30
+
+- type: loadout
+  id: WFAmmoMag45
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OUTT1
+  price: 6000
+  storage:
+    back:
+    - NFMagazinePistol45
+
+- type: loadout
+  id: WFAmmoSubmachineMag35
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT4
+  price: 6000
+  storage:
+    back:
+    - NFMagazineSubMachineGun35

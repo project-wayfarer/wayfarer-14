@@ -15,7 +15,7 @@
     soundHit:
       path: /Audio/Weapons/Guns/Hits/snap.ogg
   - type: StaminaDamageOnCollide
-    damage: 22 # 5 hits to stun sounds reasonable
+    damage: 16 # 7 hits to stun sounds reasonable WF reduction stamina rebalance
 
 - type: entity
   id: BaseBulletEmp

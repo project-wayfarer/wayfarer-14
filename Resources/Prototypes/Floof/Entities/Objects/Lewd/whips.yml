@@ -18,9 +18,9 @@
     soundHit:
       path: /Audio/Floof/Lewd/whip.ogg
   - type: StaminaDamageOnHit
-    damage: 20
+    damage: 14 #WF reduction stamina rebalance
   - type: StaminaDamageOnCollide
-    damage: 20
+    damage: 14 #WF reduction stamina rebalance
   - type: StaticPrice
     price: 60
   - type: Item

@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2025 tonotom
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: CrateTradeBaseSecure
+  id: CrateTradeSecureSalvage
+  name: abandoned cargo crate
+  description: Forgotten export from an era bygone. The exterior has held fast, keeping its contents commercially viable despite countless cycles of solar radiation. The label indicates a fivefold freight commission upon delivery.
+  components:
+  - type: TradeCrate
+    valueAtDestination: 15000
+    valueElsewhere: 3000
+  - type: Icon
+    sprite: _Mono/Structures/Storage/Crates/salvcargo.rsi
+  - type: Sprite
+    sprite: _Mono/Structures/Storage/Crates/salvcargo.rsi
+    layers:
+    - state: icon
+    - sprite: _NF/Interface/Misc/cargo_destination_icons.rsi
+      state: cargo_other
+      offset: 0.275,-0.265
+      map: ["enum.TradeCrateVisualLayers.Icon"]
+      visible: false
+    - sprite: _NF/Interface/Misc/cargo_destination_icons.rsi
+      state: cargo_priority_inactive
+      offset: 0.025,-0.265
+      map: ["enum.TradeCrateVisualLayers.Priority"]
+      visible: false
+    - state: paper
+      sprite: Structures/Storage/Crates/labels.rsi
+      offset: "-0.5,0"
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 150 # Heavy
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer

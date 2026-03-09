@@ -4,15 +4,15 @@ id-card-access-level-cryogenics = Cryogenics
 id-card-access-level-emergency-shuttle-repeal = E.Shuttle Repeal All
 
 id-card-access-level-head-of-personnel = Station Representative
-id-card-access-level-head-of-security = Sheriff
+id-card-access-level-head-of-security = Commodore
 id-card-access-level-security = Security
 id-card-access-level-armory = Armory
-id-card-access-level-brig = Brig
-id-card-access-level-detective = Detective
+id-card-access-level-brig = CGP
+id-card-access-level-detective = Internal Affairs
 id-card-access-level-genpop-enter = Enter Genpop
 id-card-access-level-genpop-leave = Leave Genpop
 
-id-card-access-level-chief-engineer = Chief Engineer
+id-card-access-level-chief-engineer = Plant Manager
 id-card-access-level-engineering = Engineering
 id-card-access-level-atmospherics = Atmospherics
 

@@ -61,7 +61,7 @@ public sealed class AutopilotSystem : EntitySystem
         }
 
         DisableAutopilot(gridUid.Value);
-        SendShuttleMessage(gridUid.Value, "Autopilot server disconnected - autopilot disabled");
+        SendShuttleMessage(gridUid.Value, "Autopilot: Server disconnected - autopilot disabled");
     }
 
     public override void Update(float frameTime)
@@ -86,7 +86,7 @@ public sealed class AutopilotSystem : EntitySystem
             if (!HasPoweredAutopilotServer(uid))
             {
                 DisableAutopilot(uid);
-                SendShuttleMessage(uid, "Autopilot server lost power - autopilot disabled");
+                SendShuttleMessage(uid, "Autopilot: Server lost power - autopilot disabled");
                 continue;
             }
 
@@ -99,17 +99,15 @@ public sealed class AutopilotSystem : EntitySystem
 
             if (distance <= autopilot.ArrivalDistance)
             {
+                var destinationName = autopilot.DestinationName ?? "destination";
                 autopilot.Enabled = false;
-                SendShuttleMessage(uid, "Autopilot: Destination reached - Parking");
+                SendShuttleMessage(uid, $"Autopilot: {destinationName} reached - Parking");
 
                 // Apply brakes
                 ApplyBraking(uid, shuttle, physics, xform, frameTime);
 
                 // Park the shuttle by setting it to Anchor mode (same as UI "Park" button)
-                const float AnchorDampingStrength = 2.5f;
-                shuttle.BodyModifier = AnchorDampingStrength;
-                if (shuttle.DampingModifier != 0)
-                    shuttle.DampingModifier = shuttle.BodyModifier;
+                shuttle.DampingModifier = ShuttleSystem.AnchorDampingStrength;
                 shuttle.EBrakeActive = false;
 
                 // Refresh shuttle consoles so pilots see the mode change to "Park"
@@ -119,7 +117,7 @@ public sealed class AutopilotSystem : EntitySystem
             }
 
             // Calculate steering force using Reynolds steering behaviors
-            var maxSpeed = shuttle.BaseMaxLinearVelocity * autopilot.SpeedMultiplier;
+            var maxSpeed = CalculateMaxSpeed(shuttle, physics.LinearVelocity) * autopilot.SpeedMultiplier;
             var currentVelocity = physics.LinearVelocity;
 
             // Obstacle avoidance: check for obstacles first (highest priority)
@@ -180,6 +178,35 @@ public sealed class AutopilotSystem : EntitySystem
             var facingDirection = currentVelocity.LengthSquared() > 1f ? Vector2.Normalize(currentVelocity) : (distance > 0.01f ? toTarget / distance : Vector2.UnitY);
             RotateTowardsTarget(uid, shuttle, xform, physics, facingDirection, frameTime);
         }
+    }
+
+    /// <summary>
+    /// Calculate the maximum speed for the shuttle considering thruster upgrades.
+    /// Uses the same formula as MoverController.ObtainMaxVel to account for upgraded thrusters.
+    /// </summary>
+    private float CalculateMaxSpeed(ShuttleComponent shuttle, Vector2 velocity)
+    {
+        if (velocity.LengthSquared() < 0.01f)
+            return shuttle.BaseMaxLinearVelocity;
+
+        var vel = Vector2.Normalize(velocity);
+
+        var horizIndex = vel.X > 0 ? 1 : 3; // east else west
+        var vertIndex = vel.Y > 0 ? 2 : 0; // north else south
+
+        // Calculate the velocity scaling based on thrust ratios
+        // This accounts for upgraded thrusters having more thrust than base
+        var horizComp = vel.X != 0 && shuttle.LinearThrust[horizIndex] > 0
+            ? MathF.Pow(Vector2.Dot(vel, new Vector2(shuttle.BaseLinearThrust[horizIndex] / shuttle.LinearThrust[horizIndex], 0f)), 2)
+            : 0;
+        var vertComp = vel.Y != 0 && shuttle.LinearThrust[vertIndex] > 0
+            ? MathF.Pow(Vector2.Dot(vel, new Vector2(0f, shuttle.BaseLinearThrust[vertIndex] / shuttle.LinearThrust[vertIndex])), 2)
+            : 0;
+
+        if (horizComp + vertComp < 0.0001f)
+            return shuttle.BaseMaxLinearVelocity;
+
+        return shuttle.BaseMaxLinearVelocity * vel.Length() * MathF.ReciprocalSqrtEstimate(horizComp + vertComp);
     }
 
     /// <summary>
@@ -400,7 +427,7 @@ public sealed class AutopilotSystem : EntitySystem
 
         // Calculate target velocity based on threat level
         // Higher threat = lower allowed speed
-        var baseMaxVelocity = shuttle.BaseMaxLinearVelocity * 0.6f;
+        var baseMaxVelocity = CalculateMaxSpeed(shuttle, physics.LinearVelocity) * 0.6f;
         var threatSpeedMultiplier = 1f - threatLevel * 0.9f; // At max threat, only 10% speed allowed
         var targetMaxVelocity = baseMaxVelocity * threatSpeedMultiplier;
 
@@ -648,7 +675,7 @@ public sealed class AutopilotSystem : EntitySystem
     /// <summary>
     /// Enable autopilot
     /// </summary>
-    public void EnableAutopilot(EntityUid shuttleUid, MapCoordinates targetCoordinates)
+    public void EnableAutopilot(EntityUid shuttleUid, MapCoordinates targetCoordinates, string? destinationName = null)
     {
         var autopilot = EnsureComp<AutopilotComponent>(shuttleUid);
 
@@ -659,15 +686,13 @@ public sealed class AutopilotSystem : EntitySystem
 
         autopilot.Enabled = true;
         autopilot.TargetCoordinates = targetCoordinates;
+        autopilot.DestinationName = destinationName;
         autopilot.ReportedObstacles.Clear(); // Reset obstacle tracking for new journey
 
         // Switch to "Drive" mode (Dampen) - release any parking brake or anchor
         if (TryComp<ShuttleComponent>(shuttleUid, out var shuttle))
         {
-            const float DampenDampingStrength = 0.25f;
-            shuttle.BodyModifier = DampenDampingStrength;
-            if (shuttle.DampingModifier != 0)
-                shuttle.DampingModifier = shuttle.BodyModifier;
+            shuttle.DampingModifier = ShuttleSystem.DampenDampingStrength;
             shuttle.EBrakeActive = false;
 
             // Refresh shuttle consoles so pilots see the mode change to "Drive"
@@ -684,8 +709,6 @@ public sealed class AutopilotSystem : EntitySystem
                 pilot.HeldButtons = ShuttleButtons.None;
             }
         }
-
-        SendShuttleMessage(shuttleUid, "Autopilot engaged");
     }
 
     /// <summary>
@@ -702,7 +725,26 @@ public sealed class AutopilotSystem : EntitySystem
 
         autopilot.Enabled = false;
         autopilot.TargetCoordinates = null;
-        SendShuttleMessage(shuttleUid, "Autopilot disabled");
+        SendShuttleMessage(shuttleUid, "Autopilot: Disabled");
+    }
+
+    /// <summary>
+    /// Disable autopilot and set the shuttle to Drive (Dampen) mode.
+    /// Used when a pilot takes manual control.
+    /// </summary>
+    public void DisableAutopilotToDriveMode(EntityUid shuttleUid)
+    {
+        DisableAutopilot(shuttleUid);
+
+        if (!TryComp<ShuttleComponent>(shuttleUid, out var shuttle))
+            return;
+
+        // Set to Drive (Dampen) mode
+        shuttle.DampingModifier = ShuttleSystem.DampenDampingStrength;
+        shuttle.EBrakeActive = false;
+
+        // Refresh shuttle consoles so pilots see the mode change
+        _console.RefreshShuttleConsoles(shuttleUid);
     }
 
     /// <summary>

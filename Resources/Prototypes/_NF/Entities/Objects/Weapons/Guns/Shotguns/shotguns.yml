@@ -60,6 +60,9 @@
     sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
+  - type: Tag
+    tags:
+    - WeaponShotgunEnforcer
 
 - type: entity
   id: NFWeaponShotgunKammerer
@@ -80,6 +83,9 @@
     capacity: 5
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
+  - type: Tag
+    tags:
+    - WeaponShotgunKammerer
 
 - type: entity
   id: NFWeaponShotgunSawn

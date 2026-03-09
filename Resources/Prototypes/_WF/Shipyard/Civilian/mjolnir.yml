@@ -1,0 +1,32 @@
+- type: vessel
+  id: Mjolnir
+  parent: BaseVessel
+  name: UCA Mjolnir
+  description: An industrial ship for rebuilding, tugging and supporting atmospherics of other ships.
+  price: 52565
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/mjolnir.yml
+  guidebookPage: Null
+  class:
+  - Engineering
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Mjolnir
+  mapName: 'Mjolnir'
+  mapPath: /Maps/_WF/Shuttles/Civilian/mjolnir.yml
+  minPlayers: 0
+  stations:
+    Mjolnir:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Mjolnir CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

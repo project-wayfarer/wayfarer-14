@@ -16,7 +16,7 @@
   - ContractorEars
   - ContractorEncryptionKey
   - ContractorBoxSurvival
-  - ContractorPDA
+#  - ContractorPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -41,7 +41,7 @@
   - PilotEars
   - ContractorEncryptionKey
   - ContractorBoxSurvival
-  - PilotPDA
+#  - PilotPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -66,7 +66,7 @@
   - MercenaryEars
   - ContractorEncryptionKey
   - ContractorBoxSurvival
-  - MercenaryPDA
+#  - MercenaryPDA #WF removed
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -96,6 +96,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobNFJanitor
@@ -117,6 +120,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobMailCarrier
@@ -138,6 +144,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobStationTrafficController
@@ -161,6 +170,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobStationRepresentative
@@ -185,6 +197,9 @@
   - StationRepBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobSecurityGuard
@@ -200,7 +215,7 @@
   - SecurityGuardBelt
   - SecurityGuardEars
   - NfsdBoxSurvival
-  - SecurityGuardPDA
+#  - SecurityGuardPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -234,6 +249,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobPlantManager
@@ -259,6 +277,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobPlantTechnician
@@ -283,6 +304,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 # region CGP
 - type: roleLoadout
@@ -301,7 +325,7 @@
   - NfsdBelt
   - NfsdEarsBrown
   - NfsdBoxSurvival
-  - CadetPDA
+  - JuniorPeacekeeperPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -326,7 +350,7 @@
   - NfsdBelt
   - NfsdEarsBrown
   - NfsdBoxSurvival
-  - DeputyPDA
+  - PeacekeeperPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -351,7 +375,7 @@
   - BrigmedicBelt
   - NfsdEarsCream
   - NfsdBoxSurvival
-  - BrigmedicPDA
+  - CorpsmanPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -376,7 +400,7 @@
   - NfsdBelt
   - NfsdEarsCream
   - NfsdBoxSurvival
-  - NFDetectivePDA
+  - InternalAffairsPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -385,29 +409,29 @@
   - ContractorHandItems
   - NfsdSpeciesSpecific
 
-- type: roleLoadout
-  id: JobPublicAffairsLiaison
-  groups:
-  - ContractorHead
-  - PalNeck
-  - PalJumpsuit
-  - PalGloves
-  - NfsdBackpackBrown
-  - NfsdForcedOuterClothing
-  - NfsdShoesBrown
-  - ContractorFace
-  - NfsdGlasses
-  - ContractorBelt
-  - NfsdEarsBrown
-  - NfsdBoxSurvival
-  - PalPDA
-  - ContractorWallet
-  - ContractorCartridge
-  - ContractorImplanter
-  - ContractorEncryptionKey
-  - ContractorBackpackItems
-  - ContractorHandItems
-  - NFSpeciesSpecific # Explicitly civilian variant
+#'- type: roleLoadout
+#  id: JobPublicAffairsLiaison
+#  groups:
+#  - ContractorHead
+#  - PalNeck
+#  - PalJumpsuit
+#  - PalGloves
+#  - NfsdBackpackBrown
+#  - NfsdForcedOuterClothing
+#  - NfsdShoesBrown
+#  - ContractorFace
+#  - NfsdGlasses
+#  - ContractorBelt
+#  - NfsdEarsBrown
+#  - NfsdBoxSurvival
+#  - PalPDA
+#  - ContractorWallet
+#  - ContractorCartridge
+#  - ContractorImplanter
+#  - ContractorEncryptionKey
+#  - ContractorBackpackItems
+#  - ContractorHandItems
+#  - NFSpeciesSpecific # Explicitly civilian variant
 
 # - type: roleLoadout # Fix when this is actully used
   # id: JobPrisonGuard
@@ -450,7 +474,7 @@
   - NfsdBelt
   - NfsdEarsAltGreen
   - NfsdBoxSurvival
-  - BailiffPDA
+  - MasterAtArmsPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -475,7 +499,7 @@
   - NfsdBelt
   - NfsdEarsAltBrown
   - NfsdBoxSurvival
-  - SeniorOfficerPDA
+  - SeniorPeacekeeperPDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -500,7 +524,7 @@
   - NfsdBelt
   - SheriffEars
   - NfsdBoxSurvival
-  - SheriffPDA
+  - CommodorePDA
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -514,17 +538,18 @@
   id: JobNFPirate
   groups:
   - NFPirateHead
-#  - NFPirateNeck
+  - WFNeck # Wayfarer
   - NFPirateJumpsuit
-#  - NFPirateGloves
-  - ContractorBackpack
+  - WFGloves # Wayfarer
+  - WFBackpack # Wayfarer
   - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
   - NFPirateEars
   - ContractorBoxSurvival
-  - NFPiratePDA
+  - OutlawPDA # Wayfarer
   - ContractorWallet
+  - OutlawEncryptionKey # Wayfarer
   - PirateBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
@@ -534,18 +559,19 @@
   id: JobNFPirateFirstMate
   groups:
   - NFPirateFirstMateHead
-#  - NFPirateNeck
+  - WFNeck # Wayfarer
   - NFPirateJumpsuit
-#  - NFPirateGloves
-  - ContractorBackpack
+  - WFGloves # Wayfarer
+  - WFBackpack # Wayfarer
   - NFPirateFirstMateOuterClothing
   - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
   - NFPirateEars
   - ContractorBoxSurvival
-  - NFPirateFirstMatePDA
+  - WantedOutlawPDA # Wayfarer
   - ContractorWallet
+  - OutlawEncryptionKey # Wayfarer
   - PirateBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
@@ -555,18 +581,19 @@
   id: JobNFPirateCaptain
   groups:
   - NFPirateCaptainHead
-#  - NFPirateNeck
+  - WFNeck # Wayfarer
   - NFPirateJumpsuit
-#  - NFPirateGloves
-  - ContractorBackpack
+  - WFGloves # Wayfarer
+  - WFBackpack # Wayfarer
   - NFPirateCaptainOuterClothing
   - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
   - NFPirateCaptainEars
   - ContractorBoxSurvival
-  - NFPirateCaptainPDA
+  - WantedOutlawPDA # Wayfarer
   - PirateCaptainWallet
+  - OutlawEncryptionKey # Wayfarer
   - PirateCaptainBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific

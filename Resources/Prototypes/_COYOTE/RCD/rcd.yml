@@ -1,0 +1,148 @@
+# Flooring
+- type: rcd
+  id: FloorWood
+  name: rcd-component-floor-wood
+  category: WallsAndFlooring
+  sprite: /Textures/Tiles/wood_tile.png
+  mode: ConstructTile
+  prototype: FloorWood
+  cost: 1
+  delay: 1
+  collisionMask: InteractImpassable
+  rules:
+    - CanBuildOnEmptyTile
+  fx: EffectRCDConstruct1
+
+# Walls
+- type: rcd
+  id: WallMining
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/mining.rsi
+    state: full
+  mode: ConstructObject
+  prototype: WallMining
+  cost: 6
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: WallMiningDiagonal
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/mining_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: WallMiningDiagonal
+  cost: 4
+  delay: 2
+  collisionMask: FullTileMask
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rotation: User
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: WallPlastitanium
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/plastitanium.rsi
+    state: full
+  mode: ConstructObject
+  prototype: WallPlastitanium
+  cost: 8
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: WallPlastitaniumDiagonal
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/plastitanium_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: WallPlastitaniumDiagonal
+  cost: 6
+  delay: 2
+  collisionMask: FullTileMask
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rotation: User
+  fx: EffectRCDConstruct2
+
+# Windows
+- type: rcd
+  id: MiningWindow
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/mining.rsi
+    state: full
+  mode: ConstructObject
+  prototype: MiningWindow
+  cost: 4
+  delay: 2
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: MiningWindowDiagonal
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/mining_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: MiningWindowDiagonal
+  cost: 2
+  delay: 2
+  collisionMask: Impassable
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rules:
+  - IsWindow
+  rotation: User
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: PlastitaniumWindow
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/plastitanium_window.rsi
+    state: full
+  mode: ConstructObject
+  prototype: PlastitaniumWindow
+  cost: 6
+  delay: 2
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: PlastitaniumWindowDiagonal
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/plastitanium_window_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: PlastitaniumWindowDiagonal
+  cost: 3
+  delay: 2
+  collisionMask: Impassable
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rules:
+  - IsWindow
+  rotation: User
+  fx: EffectRCDConstruct2
+
+# Airlocks
+
+
+# Lighting
+
+
+

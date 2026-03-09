@@ -145,3 +145,28 @@
   allowSelfInteract: false
   priority: 0
   categoryKey: interaction
+
+- type: Interaction
+  id: LookAt
+  action:
+    !type:NoOpAction
+  effectSuccess:
+    popup: DefaultInteraction
+    effectTarget: TargetThenUser
+    soundPerceivedByOthers: true
+    sound:
+      path: /Audio/Effects/thudswoosh.ogg
+      params:
+        volume: -8
+        variation: 0.15
+  delay: 0
+  cooldown: 2
+  range:
+    min: 0
+    max: 10.0  # Can look at from a distance
+  requiresCanInteract: false
+  requiresHands: false
+  allowSelfInteract: false
+  priority: 0
+  categoryKey: interaction
+  global: true  # Allow looking at any entity, not just mobs

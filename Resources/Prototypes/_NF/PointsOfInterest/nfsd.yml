@@ -31,6 +31,9 @@
   stations:
     Nfsd:
       stationProto: SecurityFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Facta non verba." # actions, not words - Kiara copied my latin thing from MD >:(
       components:
         - type: StationNameSetup
           mapNameTemplate: 'CGP Outpost'
@@ -48,8 +51,6 @@
             NFDetective: [ 1, 1 ]
             Deputy: [ 3, 3 ]
             Cadet: [ 0, 0 ]
-            # Others:
-            PublicAffairsLiaison: [ 1, 1 ]
             Prisoner: [ 0, 0 ]
           tags:
           - HeadOfPersonnel

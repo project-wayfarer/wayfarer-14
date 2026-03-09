@@ -11,8 +11,8 @@
   startingGear: BrigmedicGear
   icon: JobIconBrigmedicNF
   supervisors: job-supervisors-bailiff
-  weight: 125
-  displayWeight: 35
+  weight: 135 # WF Above deputy as specialist role, below senior officer
+  displayWeight: 45 # WF Above deputy as specialist role, below senior officer
   canBeAntag: false
   access:
   - Brigmedic

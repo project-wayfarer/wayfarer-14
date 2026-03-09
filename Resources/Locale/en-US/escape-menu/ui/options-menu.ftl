@@ -36,6 +36,10 @@ ui-options-exped-music-volume = Expedition music volume:
 ui-options-lobby-volume = Lobby & Round-end volume:
 ui-options-interface-volume = Interface volume:
 ui-options-ambience-max-sounds = Ambience simultaneous sounds:
+ui-options-combat-music-volume = Combat Music volume:
+ui-options-combat-music-windup = Combat Music activation time:
+ui-options-combat-music-winddown = Combat Music deactivation time:
+ui-options-combat-music-sec-format = { $value } sec
 ui-options-lobby-music = Lobby & Round-end Music
 ui-options-restart-sounds = Round Restart Sounds
 ui-options-event-music = Event Music
@@ -45,6 +49,9 @@ ui-options-mention-sound = Play Mention Sound
 ui-options-looc-sound = Play LOOC Notification Sound
 ui-options-subtle-sound = Play Subtle Notification Sound
 ui-options-volume-label = Volume
+## Mono Audio menu
+
+ui-options-combat-music = Combat Music
 
 ## Graphics menu
 
@@ -66,6 +73,7 @@ ui-options-show-combat-mode-indicators = Show combat mode indicators with cursor
 ui-options-opaque-storage-window = Opaque storage window
 ui-options-show-ooc-patron-color = Show OOC Patreon color
 ui-options-show-looc-on-head = Show LOOC chat above characters head
+ui-options-radio-noise = Play radio static sounds
 ui-options-fancy-speech = Show names in speech bubbles
 ui-options-fancy-name-background = Add background to speech bubble names
 ui-options-vsync = VSync
@@ -176,6 +184,9 @@ ui-options-static-storage-ui = Lock storage window to hotbar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
+ui-options-function-smart-equip-suit-storage = Smart-equip to suit storage
+ui-options-function-smart-equip-pocket1 = Smart-equip to first pocket
+ui-options-function-smart-equip-pocket2 = Smart-equip to second pocket
 ui-options-function-open-backpack = Open backpack
 ui-options-function-open-belt = Open belt
 ui-options-function-throw-item-in-hand = Throw item
@@ -193,7 +204,7 @@ ui-options-function-focus-emote = Focus chat (Emote)
 ui-options-function-focus-whisper-chat-window = Focus chat (Whisper)
 ui-options-function-focus-radio-window = Focus chat (Radio)
 ui-options-function-focus-looc-window = Focus chat (LOOC)
-ui-options-function-focus-subtlelooc-window = Focus chat (Subtle LOOC)
+ui-options-function-focus-subtle-looc-window = Focus chat (Subtle OOC)
 ui-options-function-focus-ooc-window = Focus chat (OOC)
 ui-options-function-focus-admin-chat-window = Focus chat (Admin)
 ui-options-function-focus-dead-chat-window = Focus chat (Dead)

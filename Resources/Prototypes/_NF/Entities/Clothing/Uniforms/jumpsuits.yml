@@ -80,7 +80,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitNfsd
   name: CGP jumpsuit
-  description: A long sleeved jumpsuit produced for deputy sheriffs. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
+  description: A long sleeved jumpsuit produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump.rsi
@@ -91,7 +91,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitNfsdShort
   name: CGP jumpsuit
-  description: A short sleeved jumpsuit produced for deputy sheriffs. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
+  description: A short sleeved jumpsuit produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump_short.rsi
@@ -142,16 +142,16 @@
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_cream.rsi
 
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitPublicAffairsLiaison
-  name: public affairs liaison jumpsuit
-  description: A starched and pressed suit for the public affairs liaison.
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/Uniforms/Jumpsuit/public_affairs.rsi
-  - type: Clothing
-    sprite: _NF/Clothing/Uniforms/Jumpsuit/public_affairs.rsi
+#- type: entity
+#  parent: ClothingUniformBase
+#  id: ClothingUniformJumpsuitPublicAffairsLiaison
+#  name: public affairs liaison jumpsuit
+#  description: A starched and pressed suit for the public affairs liaison.
+#  components:
+#  - type: Sprite
+#    sprite: _NF/Clothing/Uniforms/Jumpsuit/public_affairs.rsi
+#  - type: Clothing
+#    sprite: _NF/Clothing/Uniforms/Jumpsuit/public_affairs.rsi
 
 # Syndicate Jupsuits with sensors off
 - type: entity

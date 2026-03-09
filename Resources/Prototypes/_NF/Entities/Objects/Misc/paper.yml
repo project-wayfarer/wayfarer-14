@@ -31,7 +31,7 @@
 - type: entity
   id: BoxFolderClipboardPal
   parent: BoxFolderClipboard
-  name: PAL clipboard
+  name: IAA clipboard
   description: The tool of choice for the master of bureaucracy.
   components:
   - type: Sprite
@@ -44,7 +44,7 @@
 - type: entity
   id: BoxFolderPalGreen
   parent: BoxFolderBase
-  name: PAL folder
+  name: IAA folder
   suffix: Green
   description: A folder to contain important CGP forms.
   components:
@@ -69,7 +69,7 @@
 - type: entity
   id: BoxFolderPalBrown
   parent: BoxFolderBase
-  name: PAL folder
+  name: IAA folder
   suffix: Brown
   description: A folder to contain important CGP forms.
   components:

@@ -1,0 +1,31 @@
+- type: reagent
+  id: Neostigmine
+  name: reagent-name-neostigmine
+  group: Medicine
+  desc: reagent-desc-neostigmine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#90E4C1"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 0.75
+        type: Add
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: 0.5 #1 per 1u
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 11
+        damage:
+          types:
+            Blunt: 3 # 6 per 1u
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 11

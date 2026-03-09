@@ -28,6 +28,9 @@
   stations:
     CaseysCasino:
       stationProto: DeadDropFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "The only sure thing about luck is that it will change."
       components:
         - type: StationNameSetup
           mapNameTemplate: "Crazy Casey's Casino"

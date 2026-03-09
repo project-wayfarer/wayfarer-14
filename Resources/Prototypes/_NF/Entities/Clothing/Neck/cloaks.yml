@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakSheriff
-  name: sheriff's cloak
+  name: commodore's cloak
   description: An exquisite brown and green cloak fitting for those who can assert dominance over wrongdoers. Take a stab at being civil in prosecution!
   components:
   - type: Sprite
@@ -34,6 +34,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      under-clothing: !type:ContainerSlot {} # Wayfarer
   - type: Construction
     graph: ClothingNeckCloakRosyGraph
     node: ClothingNeckCloakRosy
@@ -55,6 +56,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      under-clothing: !type:ContainerSlot {} # Wayfarer
   - type: Construction
     graph: NFGoblinMadeClothingNeckTrashCloak
     node: NFGoblinMadeClothingNeckTrashCloak

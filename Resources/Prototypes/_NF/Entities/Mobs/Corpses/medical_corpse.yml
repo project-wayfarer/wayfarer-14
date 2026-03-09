@@ -73,6 +73,8 @@
 
 - type: randomHumanoidSettings
   id: MedicalBounty
+  speciesBlacklist:
+  - IPC
   components:
   - type: StinkyTrait
   - type: Carriable # Carrying system from nyanotrasen.

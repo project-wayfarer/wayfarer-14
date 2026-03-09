@@ -1,3 +1,4 @@
+using Content.Client._WF.CryoSleep; // Wayfarer: Character resume from cryosleep
 using Content.Client._NF.LateJoin;
 using Content.Client.Audio;
 using Content.Client.Eui;
@@ -8,6 +9,7 @@ using Content.Client.Playtime;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
 using Content.Shared.CCVar;
+using Content.Shared._WF.CryoSleep; // Wayfarer: Character resume messages
 using Robust.Client;
 using Robust.Client.Console;
 using Robust.Client.ResourceManagement;
@@ -15,6 +17,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
+using Robust.Shared.GameObjects;
 using PickerWindow = Content.Client._NF.LateJoin.Windows.PickerWindow;
 
 namespace Content.Client.Lobby
@@ -33,12 +36,16 @@ namespace Content.Client.Lobby
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
+        private CryoSleepClientSystem _cryoSleepSystem = default!;
 
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
 
         // Frontier - save pickerwindow so it opens only once
         private PickerWindow? _pickerWindow = null;
+        
+        // Track whether the user clicked the Resume button
+        private bool _pendingResumeRequest = false;
 
         protected override void Startup()
         {
@@ -52,6 +59,7 @@ namespace Content.Client.Lobby
             var chatController = _userInterfaceManager.GetUIController<ChatUIController>();
             _gameTicker = _entityManager.System<ClientGameTicker>();
             _contentAudioSystem = _entityManager.System<ContentAudioSystem>();
+            _cryoSleepSystem = _entityManager.System<CryoSleepClientSystem>();
             _contentAudioSystem.LobbySoundtrackChanged += UpdateLobbySoundtrackInfo;
 
             chatController.SetMainChat(true);
@@ -74,10 +82,13 @@ namespace Content.Client.Lobby
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
+            Lobby.ResumeButton.OnPressed += OnResumePressed;
 
             _gameTicker.InfoBlobUpdated += UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated += LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
+
+            _cryoSleepSystem.OnCharactersResponse += OnGetStoredCharactersResponse;
         }
 
         protected override void Shutdown()
@@ -94,6 +105,9 @@ namespace Content.Client.Lobby
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
+            Lobby!.ResumeButton.OnPressed -= OnResumePressed;
+
+            _cryoSleepSystem.OnCharactersResponse -= OnGetStoredCharactersResponse;
 
             Lobby = null;
         }
@@ -120,6 +134,43 @@ namespace Content.Client.Lobby
             // simply change the enum to station or crew in the PickerWindow constructor.
             _pickerWindow ??= new PickerWindow();
             _pickerWindow.OpenCentered();
+        }
+
+        private void OnResumePressed(BaseButton.ButtonEventArgs args)
+        {
+            _pendingResumeRequest = true;
+            _cryoSleepSystem.RequestStoredCharacters();
+        }
+
+        private void OnGetStoredCharactersResponse(GetStoredCharactersResponseMessage msg)
+        {
+            // Update Resume button visibility
+            if (_gameTicker.IsGameStarted && Lobby != null)
+            {
+                Lobby.ResumeButton.Visible = msg.Characters.Count > 0;
+            }
+            
+            // If this was triggered by clicking the Resume button, show the window
+            if (_pendingResumeRequest)
+            {
+                _pendingResumeRequest = false;
+                
+                if (msg.Characters.Count == 0)
+                {
+                    return;
+                }
+
+                var window = new ResumeCharacterWindow();
+                window.PopulateCharacters(msg.Characters);
+                
+                window.OnCharacterSelected += body =>
+                {
+                    _cryoSleepSystem.RequestResumeCharacter(body);
+                    window.Close();
+                };
+
+                window.OpenCentered();
+            }
         }
 
         private void OnReadyToggled(BaseButton.ButtonToggledEventArgs args)
@@ -189,6 +240,9 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.ToggleMode = false;
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ObserveButton.Disabled = false;
+                
+                // Request stored characters to determine Resume button visibility
+                _cryoSleepSystem.RequestStoredCharacters();
             }
             else
             {
@@ -198,6 +252,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
                 Lobby!.ObserveButton.Disabled = true;
+                Lobby!.ResumeButton.Visible = false;
             }
 
             if (_gameTicker.ServerInfoBlob != null)

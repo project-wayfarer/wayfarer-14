@@ -1,5 +1,5 @@
 - type: entity
-  name: frontier uplink coin
+  name: zekke credit
   parent: BaseItem
   id: FrontierUplinkCoin
   suffix: 20 TC
@@ -52,7 +52,7 @@
   parent: [ BaseItem, StorePresetSecurityUplink ]
   id: BaseSecurityUplinkRadio
   name: CGP uplink
-  description: Retro looking old radio...
+  description: Tried and tested Bluespace Technology in the palm of your hand
   suffix: Empty
   categories: [ HideSpawnMenu ]
   components:

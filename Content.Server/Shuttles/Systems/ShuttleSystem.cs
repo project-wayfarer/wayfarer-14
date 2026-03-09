@@ -89,8 +89,8 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         SubscribeLocalEvent<ShuttleComponent, ComponentStartup>(OnShuttleStartup);
         SubscribeLocalEvent<ShuttleComponent, ComponentShutdown>(OnShuttleShutdown);
         SubscribeLocalEvent<ShuttleComponent, TileFrictionEvent>(OnTileFriction);
-        SubscribeLocalEvent<ShuttleComponent, FTLStartedEvent>(OnFTLStarted);
-        SubscribeLocalEvent<ShuttleComponent, FTLCompletedEvent>(OnFTLCompleted);
+        // SubscribeLocalEvent<ShuttleComponent, FTLStartedEvent>(OnFTLStarted); // Wayfarer: Disable for now
+        // SubscribeLocalEvent<ShuttleComponent, FTLCompletedEvent>(OnFTLCompleted); // Wayfarer: Disable for now
 
         SubscribeLocalEvent<GridInitializeEvent>(OnGridInit);
         NfInitialize(); // Frontier
@@ -128,8 +128,6 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         {
             Enable(uid, component: physicsComponent, shuttle: component);
         }
-
-        component.DampingModifier = component.BodyModifier;
     }
 
     public void Toggle(EntityUid uid, ShuttleComponent component)
@@ -192,13 +190,16 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         args.Modifier *= ent.Comp.DampingModifier;
     }
 
-    private void OnFTLStarted(Entity<ShuttleComponent> ent, ref FTLStartedEvent args)
-    {
-        ent.Comp.DampingModifier = 0f;
-    }
-
-    private void OnFTLCompleted(Entity<ShuttleComponent> ent, ref FTLCompletedEvent args)
-    {
-        ent.Comp.DampingModifier = ent.Comp.BodyModifier;
-    }
+    // Wayfarer start: Getting rid of this for now, since we don't have FTL
+    // We can replace this with a simple bool flag if we need it later
+    // private void OnFTLStarted(Entity<ShuttleComponent> ent, ref FTLStartedEvent args)
+    // {
+    //     ent.Comp.DampingModifier = 0f;
+    // }
+    //
+    // private void OnFTLCompleted(Entity<ShuttleComponent> ent, ref FTLCompletedEvent args)
+    // {
+    //     ent.Comp.DampingModifier = ent.Comp.BodyModifier;
+    // }
+    // Wayfarer end
 }

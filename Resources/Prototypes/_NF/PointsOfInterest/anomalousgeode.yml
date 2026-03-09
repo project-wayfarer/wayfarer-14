@@ -29,6 +29,9 @@
   stations:
     AnomalousGeode:
       stationProto: StandardFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge."
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Anomalous Geode'

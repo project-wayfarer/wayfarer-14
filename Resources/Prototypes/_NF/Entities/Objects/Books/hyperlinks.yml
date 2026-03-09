@@ -31,15 +31,15 @@
 - type: entity
   parent: BaseHyperlinkBook
   id: HyperlinkBookNfsdSop
-  name: CGP SOP manual
-  description: A book defining CGP standard operating procedures.
+  name: CGP GO-RP manual
+  description: A book defining CGP General Orders, Roles and Procedures
   components:
   - type: Sprite
     sprite: _NF/Objects/Misc/books.rsi
     layers:
     - state: nfsd_sop
   - type: HyperlinkBook
-    url: https://frontierstation.wiki.gg/wiki/NFSDSOP
+    url: https://wayfarer14.com/wiki/cgp-gorp # WF Redirects to our wiki instead of Frontier SOP
   - type: Tag
     tags:
     - Book

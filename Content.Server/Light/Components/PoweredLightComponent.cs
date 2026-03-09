@@ -87,7 +87,7 @@ namespace Content.Server.Light.Components
         /// 0 is totally immune to solar flares.
         /// </summary>
         [DataField]
-        public float SolarFlareShieldingCoefficient = 1.0f;
+        public float SolarFlareShieldingCoefficient = 0.01f;
         // End Frontier: shielded lights
     }
 }

@@ -30,6 +30,9 @@
   stations:
     BarrierGate:
       stationProto: StandardFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Coming all the way out here was worth it, right?"
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Barrier Gate'

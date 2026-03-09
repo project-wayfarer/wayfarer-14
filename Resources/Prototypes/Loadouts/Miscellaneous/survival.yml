@@ -6,6 +6,7 @@
     species:
     - SlimePerson
     - Vox
+    - OldKinVox
 
 - type: loadoutEffectGroup
   id: OxygenBreather
@@ -25,6 +26,7 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Vox
+    - OldKinVox
 
 # Basic
 - type: loadout

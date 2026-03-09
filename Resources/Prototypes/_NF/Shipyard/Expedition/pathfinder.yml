@@ -28,7 +28,7 @@
   mapName: 'KC Pathfinder'
   mapPath: /Maps/_NF/Shuttles/Expedition/pathfinder.yml
   minPlayers: 0
-  stations: 
+  stations:
     Pathfinder:
       stationProto: StandardFrontierExpeditionVessel
       components:
@@ -39,6 +39,4 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            ContractorInterview: [ 0, 0 ]
-            PilotInterview: [ 0, 0 ]
-            MercenaryInterview: [ 0, 0 ]
+            WayfarerInterview: [ 0, 0 ]

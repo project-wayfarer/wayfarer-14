@@ -153,3 +153,6 @@ reagent-desc-potassium-iodide = Will reduce the damaging effects of radiation by
 
 reagent-name-haloperidol = haloperidol
 reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Reduces druggy effects and jitteriness. Causes drowsiness.
+
+reagent-name-neostigmine = neostigmine
+reagent-desc-neostigmine = A misty medication used to counter muscle weakness, helping to maintain control over the body.  Causes faint bruising from the muscular hyperactivity.

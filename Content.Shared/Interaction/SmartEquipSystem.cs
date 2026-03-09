@@ -36,6 +36,9 @@ public sealed class SmartEquipSystem : EntitySystem
             .Bind(ContentKeyFunctions.SmartEquipBackpack, InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SmartEquipBelt, InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SmartEquipWallet, InputCmdHandler.FromDelegate(HandleSmartEquipWallet, handle: false, outsidePrediction: false)) // Frontier
+            .Bind(ContentKeyFunctions.SmartEquipSuitStorage, InputCmdHandler.FromDelegate(HandleSmartEquipSuitStorage, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipPocket1, InputCmdHandler.FromDelegate(HandleSmartEquipPocket1, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipPocket2, InputCmdHandler.FromDelegate(HandleSmartEquipPocket2, handle: false, outsidePrediction: false))
             .Register<SmartEquipSystem>();
     }
 
@@ -55,13 +58,56 @@ public sealed class SmartEquipSystem : EntitySystem
     {
         HandleSmartEquip(session, "belt");
     }
+    private void HandleSmartEquipSuitStorage(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "suitstorage", true);
+    }
+
+    private void HandleSmartEquipPocket1(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "pocket1", true);
+    }
+
+    private void HandleSmartEquipPocket2(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "pocket2", true);
+    }
+
+    private void SaveLocation(StorageComponent storage, EntityUid itemUid)
+    {
+        var id = IoCManager.Resolve<IEntityManager>().GetNetEntity(itemUid).ToString();
+        storage.StoredItems.TryGetValue(itemUid, out var location);
+
+        if (!storage.SavedLocations.TryGetValue(id, out var locations))
+            locations = new();
+
+        if (locations.Contains(location))
+            return;
+
+        locations.Add(location);
+        storage.SavedLocations[id] = locations;
+    }
     // Frontier: smart-equip to wallet
     private void HandleSmartEquipWallet(ICommonSession? session)
     {
         HandleSmartEquip(session, "wallet");
     }
     // End Frontier: smart-equip to wallet
-    private void HandleSmartEquip(ICommonSession? session, string equipmentSlot)
+
+    private ItemStorageLocation? LoadLocation(StorageComponent storage, EntityUid itemUid)
+    {
+        var id = IoCManager.Resolve<IEntityManager>().GetNetEntity(itemUid).ToString();
+
+        if (!storage.SavedLocations.TryGetValue(id, out var locations))
+            return null;
+
+        if (locations.Count == 0)
+            return null;
+
+        return locations[^1];
+    }
+
+    private void HandleSmartEquip(ICommonSession? session, string equipmentSlot, bool ignoreStorage = false)
     {
         if (session is not { } playerSession)
             return;
@@ -133,7 +179,7 @@ public sealed class SmartEquipSystem : EntitySystem
         }
 
         // case 2 (storage item):
-        if (TryComp<StorageComponent>(slotItem, out var storage))
+        if (TryComp<StorageComponent>(slotItem, out var storage) && !ignoreStorage)
         {
             switch (handItem)
             {
@@ -170,7 +216,7 @@ public sealed class SmartEquipSystem : EntitySystem
         }
 
         // case 3 (itemslot item):
-        if (TryComp<ItemSlotsComponent>(slotItem, out var slots))
+        if (TryComp<ItemSlotsComponent>(slotItem, out var slots) && !ignoreStorage)
         {
             if (handItem == null)
             {

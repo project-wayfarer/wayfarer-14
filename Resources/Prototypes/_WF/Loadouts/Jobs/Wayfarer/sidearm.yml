@@ -1,0 +1,141 @@
+- type: loadoutGroup
+  id: WFSidearm
+  name: loadout-group-wayfarer-sidearm
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - WFSidearmFlareGun
+  - WFSidearmMK58
+  - WFSidearmArgenti
+  - WFSidearmLaserPistol
+  - WFSidearmDisabler
+  - WFSidearmPollock
+  - WFSidearmFitz
+  - WFSidearmSvalinn
+  - WFSidearmUniversal
+  - WFSidearmEnergyRevolver
+  - WFSidearmRitland45
+  - WFSidearmCobra
+
+# Loadouts
+- type: loadout
+  id: WFSidearmMK58
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 3800
+  storage:
+    back:
+    - NFWeaponPistolMk58
+
+- type: loadout
+  id: WFSidearmLaserPistol
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 4500
+  storage:
+    back:
+    - NFWeaponEnergyPistolLaser
+
+- type: loadout
+  id: WFSidearmDisabler
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 3800
+  storage:
+    back:
+    - NFWeaponEnergyPistolDisabler
+
+- type: loadout
+  id: WFSidearmArgenti
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 3000
+  storage:
+    back:
+    - NFWeaponRevolverArgenti
+
+- type: loadout
+  id: WFSidearmFlareGun
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 3800
+  storage:
+    back:
+    - NFWeaponHoloflareGun
+
+- type: loadout
+  id: WFSidearmFitz
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 3800
+  storage:
+    back:
+    - NFWeaponRevolverFitz
+
+- type: loadout
+  id: WFSidearmPollock
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 7500
+  storage:
+    back:
+    - NFWeaponPistolPollock
+
+- type: loadout
+  id: WFSidearmSvalinn
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 8000
+  storage:
+    back:
+    - NFWeaponEnergyPistolLaserSvalinn
+
+#CGP time to unlock guns (200 hours)
+- type: loadout
+  id: WFSidearmUniversal
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CGPT1
+  price: 120000
+  storage:
+    back:
+    - NFWeaponPistolUniversalNfsd
+
+- type: loadout
+  id: WFSidearmEnergyRevolver
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CGPT1
+  price: 200000
+  storage:
+    back:
+    - WeaponEnergyRevolver
+
+#Outlaw time to unlock guns (200 hours)
+- type: loadout
+  id: WFSidearmRitland45
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OUTT1
+  price: 120000
+  storage:
+    back:
+    - NFWeaponRevolverRitland45
+
+- type: loadout
+  id: WFSidearmCobra
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OUTT1
+  price: 200000
+  storage:
+    back:
+    - NFWeaponPistolCobra

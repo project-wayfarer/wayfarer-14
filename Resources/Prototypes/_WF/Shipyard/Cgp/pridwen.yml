@@ -1,0 +1,33 @@
+- type: vessel
+  id: Pridwen
+  parent: BaseVessel
+  name: UCA Pridwen
+  description: The United Chalyssian Alliances answer to the Dagger, a ship designed for internal investigations using a similar chassis design.
+  price: 55860
+  category: Medium
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/pridwen.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  - Fighter
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Pridwen
+  mapName: 'Pridwen'
+  mapPath: /Maps/_WF/Shuttles/Cgp/pridwen.yml
+  minPlayers: 0
+  stations:
+    Pridwen:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Pridwen CGP{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: {}

@@ -71,13 +71,14 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         {
             UndockRequest?.Invoke(entity);
         };
-        
+
         DockContainer.UndockAllRequest += dockEntities =>
         {
             UndockAllRequest?.Invoke(dockEntities);
         };
 
         NfInitialize(); // Frontier Initialization for the ShuttleConsoleWindow
+        WfInitialize(); // Wayfarer Initialization for the ShuttleConsoleWindow
     }
 
     private void ClearModes(ShuttleConsoleMode mode)

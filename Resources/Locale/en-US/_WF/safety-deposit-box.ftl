@@ -3,6 +3,7 @@ safety-deposit-console-title = Safety Deposit Box Console
 safety-deposit-console-header = Safety Deposit Box Management
 safety-deposit-console-purchase-section = Purchase New Box
 safety-deposit-console-bank-payment-note = Cost will be deducted from your bank account.
+safety-deposit-console-purchase-trial = Trial (1x1) - ${$cost}
 safety-deposit-console-purchase-small = Small (2x2) - ${$cost}
 safety-deposit-console-purchase-medium = Medium (2x4) - ${$cost}
 safety-deposit-console-purchase-large = Large (2x6) - ${$cost}
@@ -19,7 +20,7 @@ safety-deposit-console-box-id-short = Box ID: {$id}...
 safety-deposit-console-box-deposited = Stored
 safety-deposit-console-box-not-deposited = Not Stored
 safety-deposit-console-box-in-world = In World
-safety-deposit-console-box-lost = Lost (Empty)
+safety-deposit-console-box-lost = Lost
 
 # Safety Deposit Box Entity
 safety-deposit-box-boxSlot = Box Slot

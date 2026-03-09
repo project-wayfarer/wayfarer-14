@@ -1,0 +1,138 @@
+- type: loadoutGroup
+  id: WFLongarm
+  name: loadout-group-wayfarer-longarm
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - WFLongarmCrossbow
+  - WFLongarmKammerer
+  - WFLongarmDoubleBarreled
+  - WFLongarmSVS
+  - WFLongarmCeremonial
+  - WFLongarmRepeater
+  - WFLongarmNovaliteC1
+  - WFLongarmGestio
+  - WFLongarmJackdaw
+  - WFLongarmAtreides
+  - WFLongarmEnforcer
+
+# Loadouts
+- type: loadout
+  id: WFLongarmKammerer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 6000
+  storage:
+    back:
+    - NFWeaponShotgunKammerer
+
+- type: loadout
+  id: WFLongarmDoubleBarreled
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 7200
+  storage:
+    back:
+    - NFWeaponShotgunDoubleBarreled
+
+- type: loadout
+  id: WFLongarmCrossbow
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 4000
+  storage:
+    back:
+    - CrossbowModern
+
+- type: loadout
+  id: WFLongarmCeremonial
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 6000
+  storage:
+    back:
+    - NFWeaponRifleCeremonial
+
+- type: loadout
+  id: WFLongarmMusket
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 6000
+  storage:
+    back:
+    - NFWeaponRifleMusket
+
+- type: loadout
+  id: WFLongarmSVS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 6000
+  storage:
+    back:
+    - NFWeaponRifleSVS
+
+- type: loadout
+  id: WFLongarmRepeater
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 7200
+  storage:
+    back:
+    - NFWeaponRifleRepeater
+
+- type: loadout
+  id: WFLongarmNovaliteC1
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 7500
+  storage:
+    back:
+    - NFWeaponRifleAssaultNovaliteC1
+
+- type: loadout
+  id: WFLongarmGestio
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 7500
+  storage:
+    back:
+    - NFWeaponRifleAssaultGestio
+
+- type: loadout
+  id: WFLongarmAtreides
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT4
+  price: 200000
+  storage:
+    back:
+    - NFWeaponSubMachineGunAtreides
+
+- type: loadout
+  id: WFLongarmEnforcer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT4
+  price: 200000
+  storage:
+    back:
+    - NFWeaponShotgunEnforcer
+
+- type: loadout
+  id: WFLongarmJackdaw
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT4
+  price: 200000
+  storage:
+    back:
+    - NFWeaponRifleAssaultJackdaw

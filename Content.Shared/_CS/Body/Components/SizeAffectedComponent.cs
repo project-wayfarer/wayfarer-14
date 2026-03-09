@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Numerics;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._CS.Body.Components;
@@ -45,4 +46,16 @@ public sealed partial class SizeAffectedComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<string, float> OriginalFixtureRadii = new();
+
+    /// <summary>
+    /// Stores original fixture polygon vertices for scaling calculations (fixture id -> original vertices)
+    /// </summary>
+    [DataField]
+    public Dictionary<string, Vector2[]> OriginalFixtureVertices = new();
+
+    /// <summary>
+    /// Stores original fixture densities for mass scaling calculations (fixture id -> original density)
+    /// </summary>
+    [DataField]
+    public Dictionary<string, float> OriginalFixtureDensities = new();
 }

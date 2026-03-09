@@ -42,8 +42,9 @@
     temperature: 400.0
   - type: PointLight
     enabled: false
-    radius: 1.1
-    color: darkorange
+    radius: 2.0
+    energy: 2.0
+    color: "#FF8C00"
   - type: Appearance
   - type: BurnStateVisuals
     unlitIcon: match_unlit

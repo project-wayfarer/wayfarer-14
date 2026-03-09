@@ -26,7 +26,7 @@
 - type: entity
   parent: BaseShipVoucher
   id: ShipVoucherNfsdSergeant
-  name: CGP sergeant ship voucher
+  name: CGP senior peacekeeper ship voucher
   description: Allows for one free small to medium CGP ship purchase. Destroyed on sale.
   components:
   - type: Sprite
@@ -46,7 +46,7 @@
 - type: entity
   parent: ShipVoucherNfsdSergeant
   id: ShipVoucherNfsdBailiff
-  name: CGP bailiff ship voucher
+  name: CGP master-at-arms ship voucher
   description: Allows for one free small to capital CGP ship purchase. Destroyed on sale.
   components:
   - type: Sprite

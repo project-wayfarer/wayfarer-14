@@ -61,6 +61,7 @@ construction-graph-tag-human-head = human head
 construction-graph-tag-bucket = bucket
 construction-graph-tag-borg-arm = borg arm
 construction-graph-tag-borg-head = borg head
+construction-graph-tag-light-replacer = light replacer
 construction-graph-tag-medkit = medkit
 construction-graph-tag-flower = flower
 construction-graph-tag-ambrosia = ambrosia

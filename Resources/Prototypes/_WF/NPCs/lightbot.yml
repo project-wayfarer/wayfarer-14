@@ -1,0 +1,37 @@
+# HTN task definitions for the lightbot
+- type: htnCompound
+  id: LightbotCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: FixNearbyLightsCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+# Finds a nearby broken light and moves to fix it
+- type: htnCompound
+  id: FixNearbyLightsCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:PickNearbyBrokenLightOperator
+            rangeKey: LightbotRange
+            targetKey: Target
+            targetMoveKey: TargetCoordinates
+
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: InteractRange
+            
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: InteractRange
+          operator: !type:LightbotReplaceLightOperator
+            targetKey: Target

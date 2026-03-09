@@ -40,9 +40,9 @@ public sealed partial class ShuttleSystem
     private TimeSpan _nextConsoleCacheRefresh = TimeSpan.Zero;
     private readonly TimeSpan _consoleCacheRefreshInterval = TimeSpan.FromSeconds(30);
 
-    private const float SpaceFrictionStrength = 0.0075f;
-    private const float DampenDampingStrength = 0.25f;
-    private const float AnchorDampingStrength = 2.5f;
+    public const float SpaceFrictionStrength = 0.0000f; // Wayfarer: Zero friction in Cruise mode
+    public const float DampenDampingStrength = 0.25f; // Wayfarer: Public for autopilot
+    public const float AnchorDampingStrength = 2.5f; // Wayfarer: Public for autopilot
     private void NfInitialize()
     {
         SubscribeLocalEvent<ShuttleConsoleComponent, SetInertiaDampeningRequest>(OnSetInertiaDampening);
@@ -70,7 +70,7 @@ public sealed partial class ShuttleSystem
             return false;
         }
 
-        shuttleComponent.BodyModifier = mode switch
+        shuttleComponent.DampingModifier = mode switch // Wayfarer: Set DampingModifier directly
         {
             InertiaDampeningMode.Off => SpaceFrictionStrength,
             InertiaDampeningMode.Dampen => DampenDampingStrength,
@@ -78,8 +78,6 @@ public sealed partial class ShuttleSystem
             _ => DampenDampingStrength, // other values: default to some sane behaviour (assume normal dampening)
         };
 
-        if (shuttleComponent.DampingModifier != 0)
-            shuttleComponent.DampingModifier = shuttleComponent.BodyModifier;
         shuttleComponent.EBrakeActive = false;
         _console.RefreshShuttleConsoles(transform.GridUid.Value);
         return true;
@@ -126,9 +124,9 @@ public sealed partial class ShuttleSystem
         if (shuttle.EBrakeActive)
             return InertiaDampeningMode.Emergency; // mainly to uncheck the thing in the UI
 
-        if (shuttle.BodyModifier >= AnchorDampingStrength)
+        if (shuttle.DampingModifier >= AnchorDampingStrength) // Wayfarer: Set DampingModifier directly
             return InertiaDampeningMode.Anchor;
-        else if (shuttle.BodyModifier <= SpaceFrictionStrength)
+        else if (shuttle.DampingModifier <= SpaceFrictionStrength) // Wayfarer: Set DampingModifier directly
             return InertiaDampeningMode.Off;
         else
             return InertiaDampeningMode.Dampen;

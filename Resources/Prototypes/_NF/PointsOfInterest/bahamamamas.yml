@@ -33,6 +33,9 @@
   stations:
     Bahama:
       stationProto: DeadDropFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Where the rum never runs dry."
       components:
         - type: StationNameSetup
           mapNameTemplate: "Bahama Mama's"

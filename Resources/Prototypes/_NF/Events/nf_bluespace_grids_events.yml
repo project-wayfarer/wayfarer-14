@@ -13,8 +13,8 @@
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_cache_leave.ogg
     earliestStart: 100
     weight: 5
-    duration: 1350
-    maxDuration: 1560
+    duration: 1800
+    maxDuration: 2100
     reoccurrenceDelay: 360 # 6 hours
     requiredJobs:
       Sheriff: 1
@@ -23,8 +23,8 @@
       grid: !type:GridSpawnGroup
         nameLoc:
         - station-event-bluespace-name-SyndicateWeaponsCache
-        minimumDistance: 1500
-        maximumDistance: 2500
+        minimumDistance: 3250
+        maximumDistance: 4000
         addComponents:
         - type: Gravity
           enabled: true
@@ -54,19 +54,20 @@
     endAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_vault_leave.ogg
     warningAnnouncement: station-event-bluespace-vault-warning-announcement
-
     earliestStart: 100
     weight: 5
-    duration: 1020
-    maxDuration: 1350
+    duration: 1800
+    maxDuration: 2100
     reoccurrenceDelay: 360 # 6 hours
+    requiredJobs:
+      Sheriff: 1
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
         nameLoc:
         - station-event-bluespace-name-SecureNTVault
-        minimumDistance: 1500
-        maximumDistance: 2500
+        minimumDistance: 3250
+        maximumDistance: 4000
         addComponents:
         - type: Gravity
           enabled: true
@@ -85,6 +86,7 @@
       Frontier: 0.25
       Medical: 0.25
       Edison: 0.25
+
 - type: entity
   id: BluespaceVaultSmallError
   parent: BaseStationEventShortDelay
@@ -100,16 +102,18 @@
     earliestStart: 100
     maximumPlayers: 30
     weight: 5
-    duration: 590
-    maxDuration: 780
+    duration: 1200
+    maxDuration: 1500
     reoccurrenceDelay: 360 # 6 hours
+    requiredJobs:
+      Sheriff: 1
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
         nameLoc:
         - station-event-bluespace-name-SecureNTVault
-        minimumDistance: 1500
-        maximumDistance: 2500
+        minimumDistance: 3250
+        maximumDistance: 4000
         addComponents:
         - type: Gravity
           enabled: true
@@ -128,6 +132,7 @@
       Frontier: 0.25
       Medical: 0.25
       Edison: 0.25
+
 - type: entity
   id: BluespaceSyndicateFTLInterception
   parent: BaseStationEventShortDelay
@@ -300,7 +305,7 @@
     weight: 5
     duration: 900
     maxDuration: 1800
-    reoccurrenceDelay: 240 # once per 4 hours
+    reoccurrenceDelay: 480 # once per 4 hours
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup

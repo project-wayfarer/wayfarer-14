@@ -1,0 +1,59 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "copyright": "thrust and thrust_burn_unshaded by Shaeone",
+    "extra_copyright": [
+        "base_cgp, base_small_cgp, thrust_burn_cgp, and thrust_burn_small_cgp edited by sheepmera"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "states": [
+        {
+            "name": "base_cgp"
+        },
+        {
+            "name": "base_small_cgp"
+        },
+        {
+            "name": "thrust"
+        },
+        {
+            "name": "thrust_burn_cgp",
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "thrust_burn_small_cgp",
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "thrust_burn_unshaded",
+            "directions": 1,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        }
+    ]
+}

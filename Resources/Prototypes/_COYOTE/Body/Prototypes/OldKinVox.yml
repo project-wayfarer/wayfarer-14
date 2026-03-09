@@ -1,0 +1,49 @@
+- type: body
+  id: OldKinVox
+  name: "vox"
+  root: torso
+  slots:
+    head:
+      part: HeadOldKinVox
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganVoxEyes
+    torso:
+      part: TorsoOldKinVox
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      organs:
+        heart: OrganVoxHeart
+        lungs: OrganVoxLungs
+        stomach: OrganVoxStomach
+        liver: OrganVoxLiver
+        kidneys: OrganVoxLiver
+    right arm:
+      part: RightArmOldKinVox
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmOldKinVox
+      connections:
+      - left hand
+    right hand:
+      part: RightHandOldKinVox
+    left hand:
+      part: LeftHandOldKinVox
+    right leg:
+      part: RightLegOldKinVox
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegOldKinVox
+      connections:
+      - left foot
+    right foot:
+      part: RightFootOldKinVox
+    left foot:
+      part: LeftFootOldKinVox

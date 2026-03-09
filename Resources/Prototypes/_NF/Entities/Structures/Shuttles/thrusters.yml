@@ -220,9 +220,9 @@
   suffix: CGP
   components:
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/thruster.rsi
+    sprite: _WF/Structures/Shuttles/thruster.rsi
     layers: &nfsdThrusterLayers
-    - state: base_nfsd
+    - state: base_cgp
       map: ["enum.ThrusterVisualLayers.Base"]
     - state: thrust
       map: ["enum.ThrusterVisualLayers.ThrustOn"]
@@ -242,7 +242,7 @@
   suffix: DEBUG, CGP
   components:
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/thruster.rsi
+    sprite: _WF/Structures/Shuttles/thruster.rsi
     layers: *nfsdThrusterLayers
   - type: Machine
     board: ThrusterNfsdMachineCircuitboard
@@ -253,15 +253,15 @@
   suffix: CGP
   components:
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    sprite: _WF/Structures/Shuttles/gyroscope.rsi
     layers: &nfsdGyroLayers
-    - state: base_nfsd
+    - state: base_cgp
       map: ["enum.ThrusterVisualLayers.Base"]
     - state: thrust
       map: ["enum.ThrusterVisualLayers.ThrustOn"]
       shader: unshaded
       visible: false
-    - state: thrust_burn_nfsd
+    - state: thrust_burn_cgp
       map: [ "enum.ThrusterVisualLayers.Thrusting" ]
       visible: false
     - state: thrust_burn_unshaded
@@ -277,7 +277,7 @@
   suffix: DEBUG, CGP
   components:
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    sprite: _WF/Structures/Shuttles/gyroscope.rsi
     layers: *nfsdGyroLayers
     snapCardinals: true
   - type: Machine
@@ -290,15 +290,15 @@
   suffix: CGP
   components:
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    sprite: _WF/Structures/Shuttles/gyroscope.rsi
     layers:
-    - state: base_small_nfsd
+    - state: base_small_cgp
       map: ["enum.ThrusterVisualLayers.Base"]
     - state: thrust
       map: ["enum.ThrusterVisualLayers.ThrustOn"]
       shader: unshaded
       visible: false
-    - state: thrust_burn_small_nfsd
+    - state: thrust_burn_small_cgp
       map: [ "enum.ThrusterVisualLayers.Thrusting" ]
       visible: false
     - state: thrust_burn_unshaded

@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 Dvir
+# SPDX-FileCopyrightText: 2024 ErhardSteinhauer
+# SPDX-FileCopyrightText: 2024 Kill_Me_I_Noobs
+# SPDX-FileCopyrightText: 2025 AndresE55
+# SPDX-FileCopyrightText: 2025 Whatstone
+# SPDX-FileCopyrightText: 2025 tonotom
+# SPDX-FileCopyrightText: 2025 tonotom1
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Frontier
 
 # region Elemental Spawners
@@ -596,9 +606,10 @@
     - NFCrateSalvageAssortedGoodiesTrashCart
     chance: 0.95
     rarePrototypes:
-    - CrateTradeSecureNormal
-    - CrateTradeSecureHigh
-    - CrateSalvageEquipment
+#    - CrateTradeSecureNormal
+#    - CrateTradeSecureHigh #Mono out
+#    - CrateSalvageEquipment #Mono out
+    - CrateTradeSecureSalvage #Mono in
     - CrateTrashCartFilled
     - CrateArtifactContainer
     rareChance: 0.03
@@ -617,7 +628,7 @@
       state: fueltank
   - type: RandomSpawner
     prototypes:
-#    - WeldingFuelTankHighCapacity
+    - WeldingFuelTankHighCapacity #Mono in
     - WaterTankHighCapacity
     chance: 0.95
 
@@ -633,30 +644,35 @@
       state: alien
   - type: RandomSpawner
     prototypes:
-    - ClosetToolFilled
-    - LockerElectricalSuppliesFilled
-    - LockerWeldingSuppliesFilled
+#    - ClosetToolFilled #Mono out
+#    - LockerElectricalSuppliesFilled # Mono out
+#    - LockerWeldingSuppliesFilled # Mono out
 #    - ClosetEmergencyFilledRandom # Medical gameplay anyone?
-    - ClosetMaintenanceFilledRandom
+    - ClosetMaintenanceFilledRandomMono #Mono : ClosetMaintenanceFilledRandom >> ClosetMaintenanceFilledRandomMono
     chance: 0.95
     rarePrototypes:
-#    - LockerMedicineFilled # Medical gameplay anyone?
-#    - LockerMedicalFilled # Medical gameplay anyone?
-#    - LockerChemistryFilled # Medical gameplay anyone?
 #    - LockerParamedicFilled # Medical gameplay anyone?
+#    - LockerMedicalFilled # Medical gameplay anyone?
+    - LockerMedicineFilled # Mono in
+    - ClosetEmergencyFilledRandom # Mono in
+    - ClosetEmergencyN2FilledRandom # Mono in
+    - LockerChemistryFilled # Mono in
+    - ClosetToolFilled #Mono in
+    - LockerElectricalSuppliesFilled # Mono in
+    - LockerWeldingSuppliesFilled # Mono in
     - LockerAtmosphericsFilledHardsuit
-    - LockerAtmosphericsFilled
+#    - LockerAtmosphericsFilled #Mono out
     - LockerSalvageSpecialistFilledHardsuit
     - LockerEngineerFilledHardsuit
-    - NFLockerSecurityFilled
+#    - NFLockerSecurityFilled #Mono out
     - NFClosetBombFilled
     - ClosetFireFilled
     - NFLockerScienceFilled
     - ClosetJanitorFilled
     - LockerBotanistFilled
-    - LockerEngineerFilled
+#    - LockerEngineerFilled #Mono out
     - ClosetRadiationSuitFilled
-    - LockerSalvageSpecialistFilled
+#    - LockerSalvageSpecialistFilled #Mono out
     - ClosetL3Filled
     rareChance: 0.25
     offset: 0.0
@@ -726,17 +742,21 @@
       state: base
   - type: RandomSpawner
     prototypes:
+    - SuitStorageBase #Mono in
     - SuitStorageEVA
     - SuitStorageEVAAlternate
     - SuitStorageEVAEmergency
-#    - SuitStorageEVAPrisoner
+    - SuitStorageEVAPrisoner #Mono in
+    - SuitStorageEVAContractor #Mono in
 #    - SuitStorageEVAPirate
     - SuitStorageEngi
     - SuitStorageAtmos
     - SuitStorageSalv
     chance: 0.95
     rarePrototypes:
-    - SuitStorageBase
+#    - SuitStorageBase #Mono out
+    - SuitStorageMining #Mono in
+    - SuitStorageQuartermaster #Mono in
     rareChance: 0.05
     offset: 0.0
 
@@ -756,7 +776,8 @@
     chance: 0.5
     rarePrototypes:
     - PortableGeneratorSuperPacman
-    - PortableGeneratorJrPacman
+    - PortableGeneratorPacman #Mono in
+#    - PortableGeneratorJrPacman #Mono out
     rareChance: 0.3
     offset: 0.0
 

@@ -13,7 +13,8 @@
   description: department-NFCivilian-description # Frontier
   color: "#9FED58"
   weight: -10
-  roles:
+  editorHidden: true # WF
+#  roles:
   # - Bartender # Frontier
   # - Botanist # Frontier
   # - Boxer # Frontier
@@ -30,10 +31,11 @@
   # - Visitor # Frontier
   # - Zookeeper # Frontier
   # - ServiceWorker # Frontier
-  - Contractor # Frontier
-  - Mercenary # Frontier
-  - Pilot # Frontier
-  - Borg # Frontier
+  # - Contractor # WF doesn't use
+  # - Mercenary # WF doesn't use
+  # - Pilot # WF doesn't use
+  # - Wayfarer #WF civilian job
+  # - Borg # Frontier
 
 - type: department
   id: CentralCommand
@@ -106,13 +108,16 @@
   color: "#52B4E9"
   weight: -93
   primary: false
-  editorHidden: true # Frontier
+  roles:
+  - DirectorOfCare #WF move to have medical department
+  - MedicalER #WF
+
 
 - type: department
   id: Security
   name: department-Security
   description: department-NFSecurity-description # Frontier
-  color: "#5C7D4D" # Frontier: DE3A3A<5C7D4D
+  color: "#FFA71A" # WF CGP Colour
   weight: 1 # Frontier: 20<1 - accounted for in jobs
   roles:
 #  - Detective # Frontier
@@ -120,7 +125,7 @@
 #  - SecurityCadet # Frontier
 #  - SecurityOfficer # Frontier
 #  - Warden # Frontier
-  - PrisonGuard ##nyano
+  - PrisonGuard #nyano
   - Brigmedic # Frontier
 #  - SecurityGuard # Frontier
   - NFDetective # Frontier
@@ -129,7 +134,7 @@
   - Bailiff # Frontier
   - Sheriff # Frontier
   - SeniorOfficer # Frontier
-  - PublicAffairsLiaison # Frontier
+#  - PublicAffairsLiaison # Frontier
 
 - type: department
   id: Science

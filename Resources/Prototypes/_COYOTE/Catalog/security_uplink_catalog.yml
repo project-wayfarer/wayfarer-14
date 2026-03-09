@@ -1,0 +1,15 @@
+- type: listing
+  id: UplinkNfsdRCD
+  name:  uplink-nfsd-rcd-name
+  description: uplink-nfsd-rcd-desc
+  productEntity: NFSDRCD
+  icon: { sprite: _NF/Objects/Tools/rcd.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 10
+  categories:
+  - UplinkSecurityUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink

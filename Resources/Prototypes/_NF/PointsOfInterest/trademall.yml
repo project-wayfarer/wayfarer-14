@@ -43,6 +43,9 @@
   stations:
     TradeMall:
       stationProto: MarketFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "We used to build civilizations. Now we build shopping malls." # Bill Bryson
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Trade Mall'

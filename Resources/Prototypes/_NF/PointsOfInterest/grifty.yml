@@ -32,6 +32,9 @@
   stations:
     Grifty:
       stationProto: DeadDropRecordsFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Life is not a tour of gas stations."
       components:
         - type: StationNameSetup
           mapNameTemplate: "Grifty's Gas n Grub"

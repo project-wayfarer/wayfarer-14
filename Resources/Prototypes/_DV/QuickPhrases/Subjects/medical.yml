@@ -187,3 +187,8 @@
   id: LimbsPhrase
   parent: BaseMedicinePhrase
   text: phrase-limbs
+
+- type: quickPhrase
+  id: ChemNeostigminePhrase
+  parent: BaseMedicinePhrase
+  text: reagent-name-neostigmine

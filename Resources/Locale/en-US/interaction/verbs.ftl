@@ -52,3 +52,10 @@ interaction-Pet-description = Pet your co-worker to ease their stress.
 interaction-Pet-success-self-popup = You pet {THE($target)} on {POSS-ADJ($target)} head.
 interaction-Pet-success-target-popup = {THE($user)} pets you on your head.
 interaction-Pet-success-others-popup = {THE($user)} pets {THE($target)}.
+
+# LookAt Interaction
+interaction-LookAt-name = Look at
+interaction-LookAt-description = Take a moment to really look at someone.
+interaction-LookAt-success-self-popup = You look at {THE($target)}.
+interaction-LookAt-success-target-popup = {THE($user)} looks at you.
+interaction-LookAt-success-others-popup = {THE($user)} looks at {THE($target)}.

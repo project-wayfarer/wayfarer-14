@@ -15,6 +15,7 @@
 #     - CheckOut
 #     - Hug
 #     - Pet
+#     - LookAt
 
 # Alternatively, you can make verbs "global" by setting `global: true` in the
 # interaction_verbs.yml prototype file, which will allow them to work on ANY entity
@@ -33,6 +34,7 @@
     - CheckOut
     - Hug
     - Pet
+    - LookAt
   - type: Sprite
     sprite: Mobs/Species/Human/parts.rsi
     state: full

@@ -61,6 +61,7 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
+    - DepositBlacklist # Wayfarer
   - type: StaticPrice
     price: 200 # Frontier: 750<200
   - type: StealTarget
@@ -88,7 +89,7 @@
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingShoesBootsMagBase, BaseJetpack] # WF Removed Contraband
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
@@ -101,6 +102,9 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
+  - type: Tag # Wayfarer
+    tags: # Wayfarer
+    - DepositBlacklist # Wayfarer
   - type: GasTank
     outputPressure: 42.6
     air:

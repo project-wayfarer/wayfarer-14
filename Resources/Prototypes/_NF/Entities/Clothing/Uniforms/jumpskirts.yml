@@ -58,7 +58,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtNfsd
   name: CGP jumpskirt
-  description: A long sleeved jumpskirt produced for deputy sheriffs. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
+  description: A long sleeved jumpskirt produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Uniforms/Jumpskirt/nfsd_skirt.rsi
@@ -69,23 +69,23 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtNfsdShort
   name: CGP jumpskirt
-  description: A short sleeved jumpskirt produced for deputy sheriffs. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
+  description: A short sleeved jumpskirt produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Uniforms/Jumpskirt/nfsd_skirt_short.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpskirt/nfsd_skirt_short.rsi
 
-- type: entity
-  parent: ClothingUniformSkirtBase
-  id: ClothingUniformJumpskirtPublicAffairsLiaison
-  name: public affairs liaison jumpskirt
-  description: A starched and pressed skirt suit for the public affairs liaison.
-  components:
-  - type: Sprite
-    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
-  - type: Clothing
-    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
+#- type: entity
+#  parent: ClothingUniformSkirtBase
+#  id: ClothingUniformJumpskirtPublicAffairsLiaison
+#  name: public affairs liaison jumpskirt
+#  description: A starched and pressed skirt suit for the public affairs liaison.
+#  components:
+#  - type: Sprite
+#    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
+#  - type: Clothing
+#    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -97,7 +97,7 @@
     sprite: _NF/Clothing/Uniforms/Jumpskirt/private_security.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpskirt/private_security.rsi
-    
+
 - type: entity
   parent: ClothingUniformJumpskirtHoP
   id: ClothingUniformJumpskirtSr

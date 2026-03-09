@@ -292,6 +292,7 @@
       lightningExplode: false
     - type: ComplexInteraction
     - type: Carriable
+    - type: Crawler
     - type: InteractionVerbs
       allowedVerbs:
       - Lick
@@ -300,6 +301,7 @@
       - Wave
       - Hug
       - Pet
+      - LookAt
 
 - type: damageModifierSet
   id: IPC

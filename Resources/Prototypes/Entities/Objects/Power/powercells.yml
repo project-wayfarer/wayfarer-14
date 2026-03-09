@@ -281,7 +281,7 @@
       startingCharge: 1200
     - type: BatterySelfRecharger
       autoRecharge: true
-      autoRechargeRate: 40
+      autoRechargeRate: 25 #WF reduction
     - type: MachinePart # Frontier
       part: PowerCell # Frontier
       rating: 4 # Frontier: tier of this is arguable

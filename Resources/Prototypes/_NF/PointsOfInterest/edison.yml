@@ -32,6 +32,9 @@
   stations:
     Edison:
       stationProto: RecordsFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "The problems seemed impossible. But we were engineers, and engineers can do damn near anything." # NASA engineer quote
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Edison Power Plant'

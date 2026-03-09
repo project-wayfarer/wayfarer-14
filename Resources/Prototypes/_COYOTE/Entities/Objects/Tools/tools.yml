@@ -1,0 +1,76 @@
+- type: entity
+  name: Pirate RCD
+  parent: [BaseC3PirateContraband, RCD]
+  id: PirateRCD
+  description: A blackmarket construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
+  components:
+  - type: RCD
+    isShipyardRCD: true
+    availablePrototypes:
+    - WallMining
+    - WallMiningDiagonal
+    - MiningWindow
+    - MiningWindowDiagonal
+    - FloorWood
+    - WallPlastitanium
+    - WallPlastitaniumDiagonal
+    - PlastitaniumWindow
+    - PlastitaniumWindowDiagonal
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - Deconstruct
+  - type: Sprite
+    state: icon-shipyard
+  - type: GridAccess
+
+- type: entity
+  name: NFSD RCD
+  parent: [BaseC2ContrabandUnredeemable, RCD]
+  id: NFSDRCD
+  description: A security construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
+  components:
+  - type: RCD
+    isShipyardRCD: true
+    availablePrototypes:
+    - WallPlastitanium
+    - WallPlastitaniumDiagonal
+    - PlastitaniumWindow
+    - PlastitaniumWindowDiagonal
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - Deconstruct
+  - type: Sprite
+    state: icon-shipyard
+  - type: GridAccess

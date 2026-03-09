@@ -1,105 +1,84 @@
 - type: guideEntry
-  id: FrontierRuleset
-  name: guide-entry-frontier-rules
-  text: "/ServerInfo/_NF/Guidebook/Rules/FrontierRuleset.xml"
+  id: WayfarerRules
+  name: guide-entry-wayfarer-rules
+  text: "/ServerInfo/_WF/Guidebook/Rules/WayfarerRules.xml"
   priority: -2
   ruleEntry: true
   children:
-  - FrontierRuleZeroTolerance
-  - FrontierRule1
-  - FrontierRule2
-  - FrontierRule3
-  - FrontierRule4
-  - FrontierRule5
-  - FrontierRule6
-  - FrontierRule7
-  - FrontierRule8
-  - FrontierRule9
-  - FrontierRule10
-  - FrontierRule11
-  - FrontierRule12
-  - FrontierRule13
+  - WayfarerRuleA0
+  - WayfarerRuleA1
+  - WayfarerRuleA2
+  - WayfarerRuleA3
+  - WayfarerRuleB1
+  - WayfarerRuleB2
+  - WayfarerRuleB3
+  - WayfarerRuleC1
+  - WayfarerRuleC2
+  - WayfarerRuleD1
+  - WayfarerRuleD2
 
 - type: guideEntry
-  id: FrontierRuleZeroTolerance
-  name: guide-entry-frontier-rule-zero-tolerance
+  id: WayfarerRuleA0
+  name: guide-entry-wayfarer-rule-a0
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/Zero_Tolerance.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/A0.xml"
 
 - type: guideEntry
-  id: FrontierRule1
-  name: guide-entry-frontier-rule-1
+  id: WayfarerRuleA1
+  name: guide-entry-wayfarer-rule-a1
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/1_Community.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/A1.xml"
 
 - type: guideEntry
-  id: FrontierRule2
-  name: guide-entry-frontier-rule-2
+  id: WayfarerRuleA2
+  name: guide-entry-wayfarer-rule-a2
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/2_ICInfo.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/A2.xml"
 
 - type: guideEntry
-  id: FrontierRule3
-  name: guide-entry-frontier-rule-3
+  id: WayfarerRuleA3
+  name: guide-entry-wayfarer-rule-a3
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/3_Escalation.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/A3.xml"
 
 - type: guideEntry
-  id: FrontierRule4
-  name: guide-entry-frontier-rule-4
+  id: WayfarerRuleB1
+  name: guide-entry-wayfarer-rule-b1
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/4_Chat.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/B1.xml"
 
 - type: guideEntry
-  id: FrontierRule5
-  name: guide-entry-frontier-rule-5
+  id: WayfarerRuleB2
+  name: guide-entry-wayfarer-rule-b2
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/5_Roleplay.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/B2.xml"
 
 - type: guideEntry
-  id: FrontierRule6
-  name: guide-entry-frontier-rule-6
+  id: WayfarerRuleB3
+  name: guide-entry-wayfarer-rule-b3
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/6_Safezone.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/B3.xml"
 
 - type: guideEntry
-  id: FrontierRule7
-  name: guide-entry-frontier-rule-7
+  id: WayfarerRuleC1
+  name: guide-entry-wayfarer-rule-c1
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/7_Antag.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/C1.xml"
 
 - type: guideEntry
-  id: FrontierRule8
-  name: guide-entry-frontier-rule-8
+  id: WayfarerRuleC2
+  name: guide-entry-wayfarer-rule-c2
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/8_PVP.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/C2.xml"
 
 - type: guideEntry
-  id: FrontierRule9
-  name: guide-entry-frontier-rule-9
+  id: WayfarerRuleD1
+  name: guide-entry-wayfarer-rule-d1
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/9_Pirates.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/D1.xml"
 
 - type: guideEntry
-  id: FrontierRule10
-  name: guide-entry-frontier-rule-10
+  id: WayfarerRuleD2
+  name: guide-entry-wayfarer-rule-d2
   ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/10_Crimes.xml"
-
-- type: guideEntry
-  id: FrontierRule11
-  name: guide-entry-frontier-rule-11
-  ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/11_Silicons.xml"
-
-- type: guideEntry
-  id: FrontierRule12
-  name: guide-entry-frontier-rule-12
-  ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/12_Security.xml"
-
-- type: guideEntry
-  id: FrontierRule13
-  name: guide-entry-frontier-rule-13
-  ruleEntry: true
-  text: "/ServerInfo/_NF/Guidebook/Rules/13_Command.xml"
+  text: "/ServerInfo/_WF/Guidebook/Rules/D2.xml"

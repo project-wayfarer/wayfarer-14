@@ -32,6 +32,9 @@
   stations:
     ThePit:
       stationProto: DeadDropFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "We fight not for freedom, nor for wealth, nor honor, but only and alone for glory." # 1320 Declaration of Arbroath but switched freedom and glory
       components:
         - type: StationNameSetup
           mapNameTemplate: "The Pit"

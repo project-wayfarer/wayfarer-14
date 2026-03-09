@@ -8,18 +8,21 @@
   - NFPirateJumpskirt
   - NFPirateClothingUniformJumpsuitPirateSlops
   - NFPirateClothingUniformJumpsuitPirateLuffy
+  subgroups:
+  - WFJumpsuit
   fallbacks:
   - NFPirateJumpsuit
   - NFPirateJumpskirt
 
 - type: loadoutGroup
-  id: NFPiratePDA
+  id: OutlawPDA #WF change
   name: loadout-group-contractor-pda
   loadouts:
-  - NFPirateNFPiratePDA
-  - NFPirateNFShantymanPDA
+  - OutlawOutlawPDA #WF change
+  subgroups:
+  - WFPDA
   fallbacks:
-  - NFPirateNFPiratePDA
+  - OutlawOutlawPDA #WF change
 
 - type: loadoutGroup
   id: NFPirateFace
@@ -29,6 +32,8 @@
   - ContractorClothingMaskBreath
   - ContractorClothingMaskBreathMedical
   - ContractorClothingMaskGas
+  subgroups:
+  - WFFace
   fallbacks:
   - ContractorClothingMaskBreath
 
@@ -37,6 +42,8 @@
   name: loadout-group-contractor-ears
   loadouts:
   - NFPirateEarsClothingHeadsetFreelance
+  subgroups:
+  - WFEars
   fallbacks:
   - NFPirateEarsClothingHeadsetFreelance
 
@@ -46,6 +53,8 @@
   loadouts:
   - NFPirateClothingShoesBootsLaceup
   - NFPirateClothingShoesBootsPirateLuffy
+  subgroups:
+  - WFShoes
   fallbacks:
   - NFPirateClothingShoesBootsLaceup
 
@@ -58,6 +67,8 @@
   - NFPirateClothingHeadBandBrown
   - NFPirateClothingHeadBandGrey
   - NFPirateClothingHeadBandRed
+  subgroups:
+  - WFHead
   fallbacks:
   - NFPirateClothingHeadBandBlack
 
@@ -69,7 +80,23 @@
   loadouts:
   - PirateNFPouchPirate
   subgroups:
-  - ContractorBackpackItems
+  - WFBackpackItems
+
+# == RADIO KEYS - Wayfarer
+- type: loadoutGroup
+  id: OutlawEncryptionKey
+  name: loadout-group-contractor-encryption-key
+  minLimit: 0
+  maxLimit: 6
+  loadouts:
+  - WFEncryptionKeyTraffic
+  - WFEncryptionKeyMedical
+  - WFEncryptionKeyCargo
+  - WFEncryptionKeyEngineering
+  - WFEncryptionKeyScience
+  - EncryptionKeyFreelance
+  fallbacks:
+  - WFEncryptionKeyTraffic
 
 # Pirate Captain loadouts
 
@@ -80,6 +107,8 @@
   loadouts:
   - NFPirateClothingHeadHatPirate
   - NFPirateClothingHeadHatPirateLuffy
+  subgroups:
+  - WFHead
   fallbacks:
   - NFPirateClothingHeadHatPirate
 
@@ -90,17 +119,20 @@
   - NFPirateCaptainClothingOuterCoatPirate
   - NFPirateClothingOuterCoatVictorian
   - NFPirateClothingOuterCoatVictorianRed
+  subgroups:
+  - WFOuterClothing
   fallbacks:
   - NFPirateCaptainClothingOuterCoatPirate
 
 - type: loadoutGroup
-  id: NFPirateCaptainPDA
+  id: WantedOutlawPDA #WF change
   name: loadout-group-contractor-pda
   loadouts:
-  - NFPirateCaptainNFPirateCaptainPDA
-  - NFPirateCaptainNFShantymanPDA
+  - WantedOutlawWantedOutlawPDA #WF change
+  subgroups:
+  - WFPDA
   fallbacks:
-  - NFPirateCaptainNFPirateCaptainPDA
+  - WantedOutlawWantedOutlawPDA #WF change
 
 - type: loadoutGroup
   id: PirateCaptainWallet
@@ -116,6 +148,8 @@
   name: loadout-group-contractor-ears
   loadouts:
   - NFPirateCaptainEarsClothingHeadsetAltFreelancer
+  subgroups:
+  - WFEars
   fallbacks:
   - NFPirateCaptainEarsClothingHeadsetAltFreelancer
 
@@ -127,7 +161,7 @@
   loadouts:
   - PirateNFPouchPirateCaptain
   subgroups:
-  - ContractorBackpackItems
+  - WFBackpackItems
 
 # Pirate First Mate loadouts
 
@@ -138,6 +172,8 @@
   loadouts:
   - NFPirateClothingHeadHatPirateTricord
   - NFPirateClothingHeadHatPirateLuffy
+  subgroups:
+  - WFHead
   fallbacks:
   - NFPirateClothingHeadHatPirateTricord
 
@@ -148,14 +184,17 @@
   - NFPirateFirstMateClothingOuterCoatGentle
   - NFPirateClothingOuterCoatVictorian
   - NFPirateClothingOuterCoatVictorianRed
+  subgroups:
+  - WFOuterClothing
   fallbacks:
   - NFPirateFirstMateClothingOuterCoatGentle
 
-- type: loadoutGroup
-  id: NFPirateFirstMatePDA
-  name: loadout-group-contractor-pda
-  loadouts:
-  - NFPirateFirstMateNFPirateFirstMatePDA
-  - NFPirateFirstMateNFShantymanPDA
-  fallbacks:
-  - NFPirateFirstMateNFPirateFirstMatePDA
+#- type: loadoutGroup
+#  id: NFPirateFirstMatePDA
+#  name: loadout-group-contractor-pda
+#  hidden: true # No point in showing this, it gets auto-selected.
+#  loadouts:
+#  - NFPirateFirstMateNFPirateFirstMatePDA
+#  - NFPirateFirstMateNFShantymanPDA
+#  fallbacks:
+#  - NFPirateFirstMateNFPirateFirstMatePDA

@@ -39,40 +39,49 @@
   id: MobReptilianMarkingLimits
   onlyWhitelisted: true
   points:
-    Hair:
-      points: 0
+    Special:
+      points: 32 # WF
       required: false
-    FacialHair:
-      points: 0
+    Head:
+      points: 32 # WF
       required: false
-    Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ LizardTailSmooth ]
-    Snout:
-      points: 1
-      required: true
-      defaultMarkings: [ LizardSnoutRound ]
     HeadTop:
-      points: 2
+      points: 32 # WF
       required: false
     HeadSide:
-      points: 1
+      points: 32 # WF
       required: false
-    UndergarmentTop:
-      points: 3
+    Snout:
+      points: 32 # WF
       required: false
-    UndergarmentBottom:
-      points: 3
+      defaultMarkings: [ LizardSnoutRound ]
+    Hair:
+      points: 32 # WF
+      required: false
+    FacialHair:
+      points: 32 # WF
       required: false
     Chest:
-      points: 4 # imp 3<4
+      points: 32 # WF
       required: false
     Legs:
-      points: 8 # imp 2<8
+      points: 32 # WF
       required: false
     Arms:
-      points: 8 # imp 2<8
+      points: 32 # WF
+      required: false
+    Tail:
+      points: 32 # WF
+      required: false
+      defaultMarkings: [ LizardTailSmooth ]
+    UndergarmentTop:
+      points: 32 # WF
+      required: false
+    UndergarmentBottom:
+      points: 32 # WF
+      required: false
+    Overlay:
+      points: 32 # WF
       required: false
 
 - type: humanoidBaseSprite

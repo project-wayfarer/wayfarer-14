@@ -814,3 +814,874 @@ Entries:
   id: 6583
   time: '2026-01-20T20:23:32.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/286
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: CGP Roles
+    - type: Remove
+      message: NFSD Roles
+    - type: Tweak
+      message: Updated ID console
+  id: 6584
+  time: '2026-01-20T23:31:52.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/280
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added 'Look At' Verb
+    - type: Tweak
+      message: Changed so mobs can be interacted with (Mothroaches, dragons, etc)
+  id: 6585
+  time: '2026-01-20T23:32:05.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/287
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added better multiple character resuming support via cryosleep
+  id: 6586
+  time: '2026-01-21T00:19:29.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/288
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Fixed autopilot board being accessible without research
+    - type: Fix
+      message: Fixed autopilot using upgraded speed in maxspeed calculation
+  id: 6587
+  time: '2026-01-21T01:05:26.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/289
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Adjusted solar flare events to be less frequent and longer between them
+  id: 6588
+  time: '2026-01-21T01:16:36.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/291
+- author: anpage
+  changes:
+    - type: Tweak
+      message: Moved the autopilot toggle to the shuttle console UI
+  id: 6589
+  time: '2026-01-21T02:51:45.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/292
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Fixed shuttle "cruise" to have no friction/speed decay
+  id: 6590
+  time: '2026-01-21T03:08:46.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/265
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Pirate/CGP RCDs
+  id: 6591
+  time: '2026-01-21T03:23:29.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/281
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added Lightbot
+  id: 6592
+  time: '2026-01-21T03:47:55.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/266
+- author: anpage
+  changes:
+    - type: Fix
+      message: Fixed shuttle "Drive" and "Park" mode having no damping
+  id: 6593
+  time: '2026-01-22T23:57:40.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/297
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: You can now toggle your hardsuit helmet on over your hat or beret!
+  id: 6594
+  time: '2026-01-23T14:34:01.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/314
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: >-
+        Lights less likely to break passively, more likely to break during solar
+        flares
+    - type: Tweak
+      message: >-
+        Shielded lights 100x more effective at protecting lights during solar
+        flares
+  id: 6595
+  time: '2026-01-23T17:13:31.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/345
+- author: RoY7x
+  changes:
+    - type: Add
+      message: >-
+        Added Wehfarer as a plushie! He now is available in the cuddly critter
+        vend, and you can occasionally find him in the plushie crates out in
+        salvage wrecks!
+    - type: Tweak
+      message: >-
+        Used the plushie version that was voted on by you in our server poll.
+        Sprite done by Rellu
+  id: 6596
+  time: '2026-01-24T02:51:04.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/349
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: RTG Energy output 10 -> 6, dRTG Energy output 10 -> 2
+  id: 6597
+  time: '2026-01-25T18:11:37.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/352
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: Can insert shotguns into shotgun cabinet again
+  id: 6598
+  time: '2026-01-25T18:12:22.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/353
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Larger stacks of Materials
+  id: 6599
+  time: '2026-01-25T18:17:09.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/344
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Neostigmine, a chem for recovering stamina
+    - type: Tweak
+      message: Stunmeta has been nerfed
+  id: 6600
+  time: '2026-01-25T18:18:09.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/341
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Hotkeys for Smart Equip Pockets / Suit Storage
+  id: 6601
+  time: '2026-01-25T18:18:43.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/355
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Final renaming to CGP roles (I hope)
+  id: 6602
+  time: '2026-01-25T18:20:07.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/356
+- author: RoY7x
+  changes:
+    - type: Fix
+      message: >-
+        Forgot to add Wehfarer to loadout groups. Now you can spawn with your
+        own Wehfarer and don't have to rely on the cuddly critter vend to have
+        him!
+  id: 6603
+  time: '2026-01-26T01:53:09.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/358
+- author: Eillyrea
+  changes:
+    - type: Remove
+      message: MothFood trait from plushies
+  id: 6604
+  time: '2026-01-26T13:57:05.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/366
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Added corner lattices
+  id: 6605
+  time: '2026-01-26T13:59:36.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/363
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Resomi cooking recipes.
+    - type: Add
+      message: Buckets of fried chicken.
+    - type: Add
+      message: Paper buckets to Happy Honk vendors and service lathes.
+    - type: Tweak
+      message: Changed Resomi butchering return from raw lizard to raw Resomi
+  id: 6606
+  time: '2026-01-26T23:03:26.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/364
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: .60 rounds now AP
+  id: 6607
+  time: '2026-01-26T23:06:57.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/354
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Changed ethanol and nicotine to provide very minor radiation healing
+  id: 6608
+  time: '2026-01-27T15:49:48.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/371
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: >-
+        Salvage wreck maints lockers more common and loot pool expanded.
+        Hopefully they should be a bit more fun to open.
+  id: 6609
+  time: '2026-01-27T15:55:56.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/259
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Changed subtle text to remove 'subtly' from chat message
+  id: 6610
+  time: '2026-01-27T15:57:18.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/360
+- author: RoY7x
+  changes:
+    - type: Add
+      message: B.I.O.P.A.C.M.A.N. Biofuel Generator
+    - type: Add
+      message: BioFuel, a mix of Ethanol and Oil (5:1 Ratio)
+    - type: Tweak
+      message: Made J.R.P.A.C.M.A.N.'s able to output to MV as well as LV.
+  id: 6611
+  time: '2026-01-28T00:17:40.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/361
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: OOC Freetext not loading properly
+  id: 6612
+  time: '2026-01-28T00:26:31.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/373
+- author: kitbravo
+  changes:
+    - type: Add
+      message: Blue and magenta flare boxes to Autolathe an salvage vendor
+  id: 6613
+  time: '2026-01-28T00:53:56.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/370
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: Cannonballs now destroy tiles
+  id: 6614
+  time: '2026-01-28T21:54:44.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/390
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Remastered the Buckler, smaller, faster, stronger!
+    - type: Fix
+      message: Fixed prices of CGP fleet
+    - type: Fix
+      message: CGP fleet in line with mapping standards
+  id: 6615
+  time: '2026-01-28T21:55:22.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/389
+- author: ark1368, alin-but-real, ShepardToTheStars
+  changes:
+    - type: Tweak
+      message: Frontier Outpost has been renamed to Wayfarer Outpost
+    - type: Add
+      message: Stations, POIs, and ships now have their displayed upon entering.
+    - type: Add
+      message: Added area-based sound echos.
+    - type: Tweak
+      message: >-
+        Background music is more dynamic. It can change depending on how far you
+        are from Wayfarer station, if  you're in combat, if you're on a specific
+        grid, etc.
+    - type: Add
+      message: >-
+        There are new options to control ambient and combat music in the
+        options.
+  id: 6616
+  time: '2026-01-28T21:58:52.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/391
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: FUC are now ZC (Zekke Credits)
+  id: 6617
+  time: '2026-01-29T17:20:55.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/393
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Hamger salvaging shuttle.
+  id: 6618
+  time: '2026-01-29T17:22:08.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/394
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: >-
+        Editing the NanoChat number on an agent ID will no longer cause the
+        server to crash and burn.
+  id: 6619
+  time: '2026-01-29T18:05:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/398
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Vaults/Caches should no longer spawn near PoIs
+    - type: Tweak
+      message: >-
+        Vaults/Caches won't spawn unless there's a Commodore on shift, they also
+        last longer
+    - type: Tweak
+      message: >-
+        Vaults/Caches have had their wording updated to no longer be
+        NT/Syndicate
+  id: 6620
+  time: '2026-01-29T18:53:09.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/396
+- author: kitbravo
+  changes:
+    - type: Add
+      message: Clarity
+    - type: Remove
+      message: Confusion
+    - type: Fix
+      message: >-
+        Fixed CGP and Shortband chat colors to be easily differentiated from
+        automated messages.
+  id: 6621
+  time: '2026-01-31T01:02:44.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/409
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Changed Hunger and Thirst component to match other species.
+  id: 6622
+  time: '2026-01-31T01:03:03.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/408
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Experimental Welders cannot be recycled to address exploit
+  id: 6623
+  time: '2026-01-31T01:03:47.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/406
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Interaction verbs print to chat as emote
+    - type: Tweak
+      message: '"Look at" verb now works on everything, not just mobs'
+  id: 6624
+  time: '2026-01-31T01:04:22.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/403
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added additional Round Summary Data
+  id: 6625
+  time: '2026-01-31T01:30:33.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/405
+- author: drraccoony
+  changes:
+    - type: Remove
+      message: Removed IPC from Medical Bounties
+  id: 6626
+  time: '2026-02-01T17:46:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/415
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: >-
+        Re-adjusted hunger and thirst values, normalized them across all
+        species.
+  id: 6627
+  time: '2026-02-01T21:09:19.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/413
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Changed Size Manipulator (Hitbox Scaling, Mass Scaling and examine text)
+  id: 6628
+  time: '2026-02-02T05:23:21.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/422
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Changed Deposit Box Blacklist
+  id: 6629
+  time: '2026-02-02T05:23:48.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/419
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: IPCs can now use the Syndicate borg laugh ("synlaughs" or emote wheel)
+    - type: Fix
+      message: Various emote issues with Vulps, IPCs and Resomi
+  id: 6630
+  time: '2026-02-02T23:11:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/425
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Lowered/Removed a lot of the loadout unlock times
+  id: 6631
+  time: '2026-02-02T23:12:43.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/426
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Audio of the biomass reclaimer
+  id: 6632
+  time: '2026-02-02T23:13:20.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/427
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Grammar on some rules
+    - type: Fix
+      message: Rule B1.3 now has greater flexibility after being RR
+  id: 6633
+  time: '2026-02-02T23:14:11.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/428
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: >-
+        The e-sword and double-bladed e-sword should no longer hum after its
+        toggled off.
+  id: 6634
+  time: '2026-02-02T23:15:16.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/430
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Fixed Matches casting light properly
+  id: 6635
+  time: '2026-02-04T06:29:20.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/434
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Changed character names to allow numbers
+  id: 6636
+  time: '2026-02-04T06:31:01.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/435
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: IPCs can fall down and crawl like everyone else.
+  id: 6637
+  time: '2026-02-05T04:57:40.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/438
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        Tricordrazine now heals a very small amount of radiation damage (5u =
+        1rad)
+  id: 6638
+  time: '2026-02-05T04:58:04.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/439
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: Combat medipens now heal again.
+  id: 6639
+  time: '2026-02-05T04:58:25.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/440
+- author: Eillyrea
+  changes:
+    - type: Remove
+      message: Rotting gibbing you
+  id: 6640
+  time: '2026-02-05T23:54:19.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/429
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Corners to Radar
+  id: 6641
+  time: '2026-02-05T23:54:49.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/442
+- author: Eillyrea
+  changes:
+    - type: Remove
+      message: Removed being fast
+  id: 6642
+  time: '2026-02-05T23:58:09.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/441
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: SMEs hold 3x the Charge, aSMEs hold 4x the charge
+  id: 6643
+  time: '2026-02-05T23:59:03.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/432
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted hunger and thirst values again, and removed Feroxi's extra
+        dehydration component.
+  id: 6644
+  time: '2026-02-06T00:01:18.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/437
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Tripled payout for medical bounties.
+  id: 6645
+  time: '2026-02-06T00:02:16.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/443
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: Added more fun to the ContraVend.
+    - type: Add
+      message: The syndicate hardsuits now glow more menacingly.
+    - type: Tweak
+      message: Vulpkanin syndicate hardsuit sprites have been updated.
+    - type: Fix
+      message: Fixed fun!
+  id: 6646
+  time: '2026-02-08T18:21:10.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/444
+- author: DevArchwave
+  changes:
+    - type: Tweak
+      message: >-
+        Trimmed and stitched two of the announcement audios in order to avoid
+        mentioning NT.
+  id: 6647
+  time: '2026-02-08T18:22:02.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/446
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Medivac S&R Shuttle.
+  id: 6648
+  time: '2026-02-08T18:40:35.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/449
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: UCA-Swan, a science ship
+  id: 6649
+  time: '2026-02-08T18:41:36.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/447
+- author: RoY7x
+  changes:
+    - type: Fix
+      message: Biopacman not having a shuttle varient for mapping
+    - type: Fix
+      message: Biopacman missing from dungeon loot pools
+  id: 6650
+  time: '2026-02-09T02:15:59.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/450
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Dusk Station
+    - type: Remove
+      message: Frontier Outpost
+  id: 6651
+  time: '2026-02-11T16:48:34.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/456
+- author: VVersengt
+  changes:
+    - type: Fix
+      message: Various Dusk Fixes
+  id: 6652
+  time: '2026-02-12T12:23:42.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/465
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Added Concussive Gauntlets researchable technologies.
+  id: 6653
+  time: '2026-02-12T20:19:44.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/368
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Solar panels to dusk, curves to dusk, docking bay names
+    - type: Fix
+      message: Many smaller bugs with dusk
+  id: 6654
+  time: '2026-02-12T20:21:29.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/467
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Added CGP Dagger ship variant and derelict medivac.
+    - type: Tweak
+      message: Tweaks to Dagger and Medivac ships.
+  id: 6655
+  time: '2026-02-16T20:47:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/486
+- author: VVersengt
+  changes:
+    - type: Add
+      message: TI Hauler and variants.
+    - type: Remove
+      message: Frontier ship with the same name.
+  id: 6656
+  time: '2026-02-16T20:48:19.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/482
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Extensive loadout tweaks for Wayfarers.
+  id: 6657
+  time: '2026-02-12T20:22:25.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/469
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: Handheld mass scanner no longer forced to hand
+  id: 6658
+  time: '2026-02-13T18:26:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/471
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Examine structures for damage
+  id: 6659
+  time: '2026-02-13T18:27:04.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/473
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Radios make a sound when someone is talking on them
+  id: 6660
+  time: '2026-02-13T18:30:01.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/477
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        Rechargable trait to energy shields so they regain health and can be
+        continually used
+  id: 6661
+  time: '2026-02-13T18:32:47.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/480
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: Bar signs now display properly again
+  id: 6662
+  time: '2026-02-14T15:04:13.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/491
+- author: Eillyrea
+  changes:
+    - type: Remove
+      message: Civ category from the job select sccreen
+  id: 6663
+  time: '2026-02-14T15:04:52.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/489
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        Namespace ships will now be more easily identifiable by their IFF as to
+        what they do
+  id: 6664
+  time: '2026-02-14T15:05:57.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/488
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Solid Red scarf to loadout and uniform printer.
+    - type: Remove
+      message: Contraband status from most clothing items.
+    - type: Tweak
+      message: Massively overhauled loadouts for Wayfarer and Outlaw
+  id: 6665
+  time: '2026-02-14T23:51:28.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/492
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: >-
+        Fixed minor radar rendering errors involving half-tilt and half-width
+        tile variants.
+  id: 6666
+  time: '2026-02-16T21:43:15.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/472
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Disablers / lasers now pass through windows
+  id: 6667
+  time: '2026-02-16T22:05:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/476
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        Add more coloured paper in bureaucracy crates and mailvend, as well as
+        coloured sticky notes.
+  id: 6668
+  time: '2026-02-16T22:06:31.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/487
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        New aPDA sprites & more PDA options for Wayfarers, Command Roles,
+        Outlaws, CGP
+    - type: Remove
+      message: Old PDA sprites
+    - type: Tweak
+      message: 'Emergency Responder and Plant Technician get more PDA options '
+  id: 6669
+  time: '2026-02-16T22:11:17.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/494
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Scryer ship and it's derelict variant.
+    - type: Remove
+      message: Removed useless and otherwise empty ships from the derelict spawn pool.
+  id: 6670
+  time: '2026-02-17T11:25:56.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/496
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Chapel to Dusk! Please check this areas for potential bugs
+    - type: Tweak
+      message: >-
+        Bar, Kitchen, Cryo, Medical, Library have all been tweaked on Dusk. 
+        Please check these areas for potential bugs
+  id: 6671
+  time: '2026-02-18T23:57:22.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/497
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Set your own custom name for certain jobs
+  id: 6672
+  time: '2026-02-18T23:59:03.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/475
+- author: Eillyrea
+  changes:
+    - type: Fix
+      message: >-
+        Roles should be properly behind whitelists again (Please open a ticket
+        if you have access to jobs you haven't whitelisted for, so we can
+        bugtest/look into further)
+  id: 6673
+  time: '2026-02-19T00:00:00.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/490
+- author: gaywolfgirl6
+  changes:
+    - type: Add
+      message: new scrapyard ship cigarette butt
+  id: 6674
+  time: '2026-02-22T13:19:43.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/510
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Cigarrete Butt ship is now called Beater
+  id: 6675
+  time: '2026-02-22T13:55:49.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/511
+- author: gaywolfgirl6
+  changes:
+    - type: Add
+      message: ship named Reclaimer
+  id: 6676
+  time: '2026-02-23T16:40:43.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/514
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: New Tugboat ship Mjolnir
+  id: 6677
+  time: '2026-02-23T16:41:45.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/512
+- author: VVersengt
+  changes:
+    - type: Add
+      message: More radio encryption keys to Outlaws.
+  id: 6678
+  time: '2026-02-23T17:03:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/507
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: UCA - Svalinn, the workhorse of the CGP fleet
+  id: 6679
+  time: '2026-02-24T20:49:41.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/519
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: UCA - Phalanx, a CGP Warship
+  id: 6680
+  time: '2026-02-24T21:20:25.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/516
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: UCA - Pridwen, a CGP Internal Investigations ship
+  id: 6681
+  time: '2026-02-24T21:20:46.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/518
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: >-
+        Overhauled the UCA Mjolnir, making it look better and it's scrap version
+        more dangerous with better loot
+  id: 6682
+  time: '2026-02-24T21:38:18.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/520
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Theobromine and Allicin intolerance traits
+    - type: Remove
+      message: Theobromine and Allicin intolerances from races that had it initially.
+  id: 6683
+  time: '2026-02-26T06:23:39.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/509
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: Sidearm, Longarm and Ammo loadouts to all Civilian jobs
+  id: 6684
+  time: '2026-02-26T06:24:07.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/527
+- author: Eillyrea
+  changes:
+    - type: Add
+      message: >-
+        UCA - Dioddef, a small bare minimum shuttle for people who want to build
+        their own ship from it's bridge.
+  id: 6685
+  time: '2026-02-26T06:24:27.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/528
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Militech Armored Transport UIV and signal pressure plates.
+  id: 6686
+  time: '2026-02-26T08:06:13.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/521
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Changed default Borg laws.
+  id: 6687
+  time: '2026-03-05T19:12:30.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/529
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Space carp will now chase you more aggressively.
+  id: 6688
+  time: '2026-03-05T19:12:49.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/530

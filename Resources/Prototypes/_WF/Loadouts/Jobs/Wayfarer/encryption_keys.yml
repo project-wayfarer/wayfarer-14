@@ -1,0 +1,40 @@
+- type: loadout
+  id: WFEncryptionKeyCommon
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyCommon
+
+- type: loadout
+  id: WFEncryptionKeyTraffic
+  encryptionKeys:
+  - EncryptionKeyTraffic
+
+- type: loadout
+  id: WFEncryptionKeyMedical
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotDoc
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyMedical
+
+- type: loadout
+  id: WFEncryptionKeyCargo
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyCargo
+
+- type: loadout
+  id: WFEncryptionKeyEngineering
+  price: 20
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  encryptionKeys:
+  - EncryptionKeyEngineering
+
+- type: loadout
+  id: WFEncryptionKeyScience
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyScience

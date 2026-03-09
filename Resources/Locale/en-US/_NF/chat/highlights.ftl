@@ -6,14 +6,13 @@ highlights-mail-carrier = Mail Carrier
 highlights-security-guard = Security Guard, Station Guard, Guard
 highlights-director-of-care = "DOC", Director of Care
 
-highlights-cadet = Cadet, "CGP"
-highlights-deputy = Deputy, "CGP"
-highlights-detective = Detective, "Det", "CGP"
-highlights-brigmedic = Brigmedic, Brigmed, "CGP"
-highlights-sergeant = Sergeant, Sarge, "CGP"
-highlights-bailiff = Bailiff, "CGP"
-highlights-public-affairs-liaison = Liaison, "PAL", "CGP"
-highlights-sheriff = Sheriff, "CGP"
+highlights-cadet = Junior Peacekeeper, "JPK", "CGP"
+highlights-deputy = Peacekeeper, "PK", "CGP"
+highlights-detective = Internal Affairs Agent, "IAA", "CGP"
+highlights-brigmedic = Corpsman, Corps, "CGP"
+highlights-sergeant = Senior Peacekeeper, SPK, "CGP"
+highlights-bailiff = Master at Arms, "MaA", "CGP"
+highlights-sheriff = Commodore, "CGP"
 
 highlights-prisoner = Prisoner
 highlights-pirate = Pirate

@@ -24,8 +24,8 @@
 - type: entity
   parent: [ClothingEyesHudMedical, ClothingEyesHudNfsd]
   id: ClothingEyesHudNfsdMed
-  name: brigmedic hud
-  description: An eye display that looks like a mixture of medical and nfsd huds.
+  name: corpsman hud
+  description: An eye display that looks like a mixture of medical and CGP huds.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Eyes/Hud/nfsd_hud.rsi

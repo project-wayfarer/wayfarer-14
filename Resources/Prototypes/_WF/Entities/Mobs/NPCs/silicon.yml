@@ -1,0 +1,31 @@
+- type: entity
+  parent: MobSiliconBase
+  id: MobLightBot
+  name: lightbot
+  description: An automated light maintenance bot. Wanders the station replacing broken or missing light bulbs.
+  components:
+    - type: Sprite
+      sprite: _WF/Mobs/Silicon/Bots/LightBot.rsi
+      state: lightbot
+    - type: Construction
+      graph: LightBot
+      node: bot
+    - type: Lightbot
+      range: 32
+    - type: LightReplacer
+      contents:
+      - id: LightTube
+        amount: 3
+      - id: LightBulb
+        amount: 3
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.5
+      baseSprintSpeed: 3.5
+    - type: HTN
+      rootTask:
+        task: LightbotCompound
+    - type: InteractionPopup
+      interactSuccessString: petting-success-cleanbot
+      interactFailureString: petting-failure-cleanbot
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg

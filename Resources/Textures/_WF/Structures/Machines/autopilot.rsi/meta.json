@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprite by Rellu for Wayfarer",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "autopilot-on",
+            "delays": [
+                [
+                    1.35,
+                    1.35,
+                    1.35
+                ]
+            ]
+        },
+        {
+            "name": "autopilot-nopower"
+        },
+        {
+            "name": "autopilot-stripe"
+        },
+        {
+            "name": "autopilot-open"
+        }
+    ]
+}

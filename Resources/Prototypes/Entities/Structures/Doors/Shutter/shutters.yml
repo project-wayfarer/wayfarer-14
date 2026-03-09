@@ -14,8 +14,6 @@
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures

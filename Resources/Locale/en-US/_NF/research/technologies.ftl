@@ -141,3 +141,5 @@ nf-research-technology-syringe-gun = Syringe Gun
 nf-research-technology-trash-power-generators = Combustion Power Generators
 nf-research-technology-vim = Vim
 nf-research-technology-wireless-audio-visual-communication = Wireless Telecommunications
+# Wayfarer
+wf-research-technology-blastmining = Blast Mining

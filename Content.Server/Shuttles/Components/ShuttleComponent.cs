@@ -62,18 +62,13 @@ namespace Content.Server.Shuttles.Components
         [ViewVariables]
         public DirectionFlag ThrustDirections = DirectionFlag.None;
 
+        // Wayfarer start: Remove 0.0 sentinel value for FTL
         /// <summary>
-        /// Base damping modifier applied to the shuttle's physics component when not in FTL.
-        /// </summary>
-        [DataField]
-        public float BodyModifier = 0.25f;
-
-        /// <summary>
-        /// Final Damping Modifier for a shuttle.
-        /// This value is set to 0 during FTL. And to BodyModifier when not in FTL.
+        /// Damping modifier applied to the shuttle's physics component.
         /// </summary>
         [DataField]
         public float DampingModifier;
+        // Wayfarer end
 
         /// <summary>
         /// Delay between checks to throw on the E-brake.

@@ -1006,7 +1006,7 @@
       sound:
        path: /Audio/Weapons/rubberhammer.ogg
     - type: StaminaDamageOnCollide
-      damage: 20
+      damage: 15 #WF reduction stamina rebalance
 
 - type: entity
   parent: [BaseClearContraband, NFBaseWeaponFrameRevolverFoamForce, NFBaseWeaponRevolverChamberCap]

@@ -1,0 +1,18 @@
+- type: trait
+  id: TheobromineIntoleranceTrait
+  name: trait-theobromine-intolerance-name
+  description: trait-theobromine-intolerance-desc
+  category: Disabilities
+  cost: 1
+  components:
+  - type: TheobromineIntolerance
+
+- type: trait
+  id: AllicinIntoleranceTrait
+  name: trait-allicin-intolerance-name
+  description: trait-allicin-intolerance-desc
+  category: Disabilities
+  cost: 1
+  components:
+  - type: AllicinIntolerance
+

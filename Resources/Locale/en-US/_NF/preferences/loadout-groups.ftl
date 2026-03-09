@@ -19,3 +19,6 @@ loadout-group-contractor-survival-box = survival box
 loadout-group-contractor-cartridge = PDA cartridges
 loadout-group-contractor-wallet = wallet
 loadout-group-contractor-implanter = implanters
+loadout-group-wayfarer-sidearm = sidearms
+loadout-group-wayfarer-longarm = longarms
+loadout-group-wayfarer-ammo = ammunition

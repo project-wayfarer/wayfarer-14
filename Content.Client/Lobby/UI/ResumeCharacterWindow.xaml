@@ -1,0 +1,28 @@
+<!-- Wayfarer: Character resume from cryosleep feature - window UI -->
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'resume-character-window-title'}"
+                      MinSize="600 500"
+                      SetSize="650 550">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True">
+        <!-- Character List Panel -->
+        <PanelContainer VerticalExpand="True" Margin="4">
+            <PanelContainer.PanelOverride>
+                <graphics:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+            </PanelContainer.PanelOverride>
+            
+            <BoxContainer Orientation="Vertical" Margin="12" SeparationOverride="8">
+                <Label Text="{Loc 'resume-character-window-prompt'}" 
+                       StyleClasses="LabelHeading" 
+                       Margin="0 0 0 8"/>
+                
+                <ScrollContainer Name="CharacterScrollContainer" VerticalExpand="True">
+                    <BoxContainer Name="CharacterListContainer" 
+                                  Orientation="Vertical" 
+                                  SeparationOverride="8" />
+                </ScrollContainer>
+            </BoxContainer>
+        </PanelContainer>
+    </BoxContainer>
+</controls:FancyWindow>

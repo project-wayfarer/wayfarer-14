@@ -68,7 +68,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingHeadBase, BaseC2ContrabandUnredeemable] # Frontier: added BaseC2ContrabandUnredeemable
+  parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadHatSecurityTrooper
   name: trooper hat
   description: A campaign hat for the Nanotrasen Troopers. It's supposed to come with a case, too...
@@ -418,7 +418,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingHeadBase, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadHatHoshat
   name: head of security cap
   description: A stylish cap worn by the Head of Security. Shows the officers who's in charge.
@@ -844,7 +844,7 @@
     sprite: Clothing/Head/Hats/truckershat.rsi
 
 - type: entity
-  parent: [ClothingHeadBase, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadPyjamaSyndicateBlack
   name: syndicate black pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -860,7 +860,7 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: [ClothingHeadBase, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadPyjamaSyndicatePink
   name: syndicate pink pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -876,7 +876,7 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: [ClothingHeadBase, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
+  parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadPyjamaSyndicateRed
   name: syndicate red pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -1077,7 +1077,7 @@
         Caustic: 0.95
 
 - type: entity
-  parent: [ClothingHeadBase, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband added ContrabandClothing as parent
+  parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadHatSyndie
   name: syndicate hat
   description: A souvenir hat from "Syndieland", their production has already been closed.
@@ -1088,7 +1088,7 @@
     sprite: Clothing/Head/Hats/syndiecap.rsi
 
 - type: entity
-  parent: [ClothingHeadBase, ContrabandClothing] # Frontier: added ContrabandClothing as parent
+  parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadHatSyndieMAA
   name: master at arms hat
   description: Master at arms hat, looks intimidating, I doubt that you will like to communicate with its owner...
