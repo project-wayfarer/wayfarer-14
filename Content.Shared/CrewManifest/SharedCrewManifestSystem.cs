@@ -21,14 +21,12 @@ public sealed class RequestCrewManifestMessage : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed class CrewManifestEuiState : EuiStateBase
+public sealed class CrewManifestEuiState : EuiStateBase // Coyote: Removed StationName
 {
-    public string StationName { get; }
     public CrewManifestEntries? Entries { get; }
 
-    public CrewManifestEuiState(string stationName, CrewManifestEntries? entries)
+    public CrewManifestEuiState(CrewManifestEntries? entries)
     {
-        StationName = stationName;
         Entries = entries;
     }
 }
