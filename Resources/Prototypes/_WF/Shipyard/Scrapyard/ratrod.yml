@@ -1,0 +1,32 @@
+﻿- type: vessel
+  id: Ratrod
+  parent: BaseVessel
+  name: ZKW Ratrod
+  description: A barely working project shuttle with one goal, go fast. Reckless and not for the faint of heart, where they dug this junker up is a mystery
+  price:  7400
+  category: Micro
+  group: Scrap
+  shuttlePath: /Maps/_WF/Shuttles/Scrapyard/ratrod.yml
+  guidebookPage: Null
+  class:
+  - Scrapyard
+  engine:
+  - Welding
+
+- type: gameMap
+  id: Ratrod
+  mapName: 'ZKW Ratrod'
+  mapPath: /Maps/_WF/Shuttles/Scrapyard/ratrod.yml
+  minPlayers: 0
+  stations:
+    Ratrod:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Ratrod SCAV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

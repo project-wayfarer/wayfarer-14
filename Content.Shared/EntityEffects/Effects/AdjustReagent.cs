@@ -83,7 +83,7 @@ namespace Content.Shared.EntityEffects.Effects
                     ("amount", MathF.Abs(Amount.Float())));
             }
 
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

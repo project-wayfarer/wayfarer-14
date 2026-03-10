@@ -1,0 +1,48 @@
+- type: entity # deployed turret
+  id: WeaponTurretAsmgtPOIRogueSilicon
+  name: ASMGT
+  description: |-
+    An Autonomous Sentry Machine Gun Turret (ASMGT) is a magazine-fed turret with barrels compatible with .20, .25, .30 and .35 cartridges.
+  suffix: RogueSilicon
+  parent:
+  - BaseWeaponTurretMagazineFed
+  components:
+  - type: Gun
+    examineCaliber: gun-examine-caliber-asmgt
+    burstFireRate: 8
+    shotsPerBurst: 2
+    burstCooldown: 0.25
+    selectedMode: Burst
+    availableModes:
+    - Burst
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      components:
+      - HumanoidAppearance
+  - type: NpcFactionMember
+    factions:
+    - SiliconsExpeditionNF
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Turrets/magazinefed.rsi
+    drawdepth: Mobs
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Appearance
+  - type: MagazineVisuals
+    magState: mag
+    steps: 11
+    zeroVisible: true
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineAsmgtUniversal30UraniumHighCapacity
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineAsmgt
