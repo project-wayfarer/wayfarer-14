@@ -16,7 +16,7 @@ public sealed partial class HaulerAutopilotRuleComponent : Component
     /// The path to the hauler shuttle map file.
     /// </summary>
     [DataField]
-    public ResPath ShuttlePath = new("/Maps/_WF/Shuttles/Hauler/ambitionap.yml");
+    public ResPath ShuttlePath = new("/Maps/_WF/ShuttleEvent/armoredtransport.yml");
 
     /// <summary>
     /// Minimum distance to spawn the shuttle from the center of the map.
