@@ -29,6 +29,8 @@
       gridComponents:
       - type: VesselInfo
         description: "An abandoned mining outpost turned refuge for the exiled."
+      - type: VesselMusic
+        ambientMusicPrototype: CamelotMusic
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Perdition'
