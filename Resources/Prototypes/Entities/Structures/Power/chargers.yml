@@ -266,7 +266,6 @@
       - state: borgdecon1
         map: ["enum.WiresVisualLayers.MaintenancePanel"]
         visible: false
-  - type: CryoSleep # Wayfarer
   - type: Charger
     chargeRate: 30
     slotId: entity_storage
@@ -322,4 +321,3 @@
       entity_storage: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
-      body_container: !type:ContainerSlot # Wayfarer
