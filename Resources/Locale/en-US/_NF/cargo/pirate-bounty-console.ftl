@@ -15,7 +15,7 @@ pirate-bounty-console-manifest-reward = Reward: {$reward}
 pirate-bounty-console-description-label = [color=gray]{$description}[/color]
 pirate-bounty-console-id-label = {$id}
 
-pirate-bounty-console-flavor-left = Powered by BlackArch! Down with NT!
+pirate-bounty-console-flavor-left = Powered by BlackArch
 pirate-bounty-console-flavor-right = v7.2.9b
 
 pirate-bounty-chest-name = black market bounty chest ({$id})
