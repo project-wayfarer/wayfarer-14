@@ -1,0 +1,55 @@
+#Outlaw Hardsuit
+- type: entity
+  parent: NFClothingHeadHardsuitWithLightBase
+  id: ClothingHeadOutlawHardsuit
+  categories: [ HideSpawnMenu ]
+  name: outlaw hardsuit helmet
+  description: Lightly armored hardsuit helmet for outlaws.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Mono/Clothing/Head/Hardsuits/ussp_combat_light.rsi
+  - type: Clothing
+    sprite: _Mono/Clothing/Head/Hardsuits/ussp_combat_light.rsi
+  - type: PointLight
+    color: "#ffeead"
+    radius: 6
+    energy: 4
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#Outlaw Combat Hardsuit
+- type: entity
+  parent: NFClothingHeadHardsuitWithLightBase
+  id: ClothingHeadOutlawHardsuitCombat
+  categories: [ HideSpawnMenu ]
+  name: outlaw combat hardsuit helmet
+  description: Heavily armored hardsuit helmet for outlaws.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Mono/Clothing/Head/Hardsuits/ussp_combat.rsi
+  - type: Clothing
+    sprite: _Mono/Clothing/Head/Hardsuits/ussp_combat.rsi
+  - type: PointLight
+    color: "#ffeead"
+    radius: 6
+    energy: 4
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.80
+        Heat: 0.9

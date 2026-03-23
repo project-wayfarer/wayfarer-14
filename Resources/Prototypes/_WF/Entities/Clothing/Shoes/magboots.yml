@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingShoesBootsMagSyndie
+  id: ClothingShoesBootsMagBM
+  name: tactical magboots
+  description: Tactical magnetic boots that have a heavy magnetic pull and integrated thrusters for boarding. It can hold 0.75 L of gas.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Shoes/Boots/magboots-ashen.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Mono/Clothing/Shoes/Boots/magboots-ashen.rsi

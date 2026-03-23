@@ -14,9 +14,9 @@
     range: 1.70
     damage:
       types:
-        Blunt: 10
-        Piercing: 3
-        Structural: 10
+        Blunt: 25 # WF 10 to 25
+#        Piercing: 3 # WF
+        Structural: 25 # WF 10 to 25
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
     bluntStaminaDamageFactor: 1.50 # 15 stamina damage
@@ -27,9 +27,9 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 20
-        Piercing: 2
-        Structural: 20
+        Blunt: 25 # WF 20 to 25
+#        Piercing: 2 # WF
+        Structural: 175 # WF 20 to 175
   - type: Tool
     qualities:
       - Prying

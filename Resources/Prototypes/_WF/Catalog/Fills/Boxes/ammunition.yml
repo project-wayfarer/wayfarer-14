@@ -1,0 +1,97 @@
+#35 Stendos
+- type: entity
+  name: box of pistol (.35 pistol) magazines
+  parent: BoxMagazine
+  id: MagBox35Ext
+  description: A box full of extended pistol (.35 pistol) magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineHighCapacityPistol35
+      amount: 4
+
+#35 Stendos - Overpressure
+- type: entity
+  name: box of pistol (.35 pistol, overpressure) magazines
+  parent: BoxMagazine
+  id: MagBox35ExtOverpressure
+  description: A box full of extended pistol (.35 pistol) magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineHighCapacityPistol35Overpressure
+      amount: 4
+
+#35 Stendos - Incendiary
+- type: entity
+  name: box of pistol (.35 pistol, incendiary) magazines
+  parent: BoxMagazine
+  id: MagBox35ExtIncendiary
+  description: A box full of extended pistol (.35 pistol, incendiary) magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineHighCapacityPistol35Incendiary
+      amount: 4
+
+#35 Stendos - Uranium
+- type: entity
+  name: box of pistol (.35 pistol, uranium) magazines
+  parent: BoxMagazine
+  id: MagBox35ExtUranium
+  description: A box full of extended pistol (.35 pistol, uranium) magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineHighCapacityPistol35Uranium
+      amount: 4
+
+#45 Speedloader
+- type: entity
+  name: box of (.45 pistol) speedloaders
+  parent: BoxMagazine
+  id: MagBox45Speedloader
+  description: A box full of (.45 pistol) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol45
+      amount: 6
+
+#45 Speedloader - Overpressure
+- type: entity
+  name: box of (.45 pistol, overpressure) speedloaders
+  parent: BoxMagazine
+  id: MagBox45SpeedloaderOverpressure
+  description: A box full of (.45 pistol) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol45Overpressure
+      amount: 6
+
+#45 Speedloader - Incendiary
+- type: entity
+  name: box of (.45 pistol, incendiary) speedloaders
+  parent: BoxMagazine
+  id: MagBox45SpeedloaderIncendiary
+  description: A box full of (.45 pistol, incendiary) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol45Incendiary
+      amount: 6
+
+#45 Speedloader - Uranium
+- type: entity
+  name: box of (.45 pistol, uranium) speedloaders
+  parent: BoxMagazine
+  id: MagBox45SpeedloaderUranium
+  description: A box full of (.45 pistol, uranium) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol45Uranium
+      amount: 6
+
+#my fingers hurt
