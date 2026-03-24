@@ -14,12 +14,12 @@
     range: 1.70
     damage:
       types:
-        Blunt: 25 # WF 10 to 25
+        Blunt: 10
 #        Piercing: 3 # WF
         Structural: 25 # WF 10 to 25
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
-    bluntStaminaDamageFactor: 1.50 # 15 stamina damage
+    bluntStaminaDamageFactor: 1.0 # WF 1.5 to 1.0 since it's 100% of blunt to stam
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.5 #if wielded you will only consume 5
@@ -27,7 +27,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 25 # WF 20 to 25
+        Blunt: 30 # WF 20 to 30
 #        Piercing: 2 # WF
         Structural: 175 # WF 20 to 175
   - type: Tool
