@@ -24,6 +24,7 @@
   parent: PokerChip
   id: WhitePokerChip
   description: A white poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
   components:
   - type: Stack
     stackType: PokerWhite
@@ -95,10 +96,21 @@
     count: 40
 
 - type: entity
+  parent: WhitePokerChip
+  id: WhitePokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_5
+  - type: Stack
+    count: 50
+
+- type: entity
   name: red poker chip
   parent: PokerChip
   id: RedPokerChip
   description: A red poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
   components:
   - type: Stack
     stackType: PokerRed
@@ -170,10 +182,21 @@
     count: 40
 
 - type: entity
+  parent: RedPokerChip
+  id: RedPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_red_5
+  - type: Stack
+    count: 50
+
+- type: entity
   name: green poker chip
   parent: PokerChip
   id: GreenPokerChip
   description: A green poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
   components:
   - type: Stack
     stackType: PokerGreen
@@ -245,10 +268,21 @@
     count: 40
 
 - type: entity
+  parent: GreenPokerChip
+  id: GreenPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_green_5
+  - type: Stack
+    count: 50
+
+- type: entity
   name: yellow poker chip
   parent: PokerChip
   id: YellowPokerChip
   description: A yellow poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
   components:
   - type: Stack
     stackType: PokerYellow
@@ -320,10 +354,21 @@
     count: 40
 
 - type: entity
+  parent: YellowPokerChip
+  id: YellowPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_yellow_5
+  - type: Stack
+    count: 50
+
+- type: entity
   name: blue poker chip
   parent: PokerChip
   id: BluePokerChip
   description: A blue poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
   components:
   - type: Stack
     stackType: PokerBlue
@@ -395,10 +440,21 @@
     count: 40
 
 - type: entity
+  parent: BluePokerChip
+  id: BluePokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_blue_5
+  - type: Stack
+    count: 50
+
+- type: entity
   name: black poker chip
   parent: PokerChip
   id: BlackPokerChip
   description: A black poker chip, probably worth spesos. Gambling is fun!  # Removing Spesos Value - Wayfarer14
+  abstract: true
   components:
   - type: Stack
     stackType: PokerBlack
@@ -468,3 +524,13 @@
     state: chip_black_5
   - type: Stack
     count: 40
+
+- type: entity
+  parent: BlackPokerChip
+  id: BlackPokerChip50
+  suffix: 50
+  components:
+  - type: Sprite
+    state: chip_black_5
+  - type: Stack
+    count: 50
