@@ -2,7 +2,7 @@
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BorgCharger]
   id: CryoBorgCharger
   name: cyborg recharging and hibernation station
-  description: A stationary charger for various robotic and cyborg entities. Specialized cryogenic technology have been added for long hibernation updates.
+  description: A stationary charging pod for various robotic and cyborg entities. Specialized technology have been added for long-term defragmentation and system hibernation.
   components:
   - type: CryoSleep # Wayfarer
   - type: ContainerContainer
