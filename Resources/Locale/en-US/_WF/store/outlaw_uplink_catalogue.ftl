@@ -17,9 +17,15 @@ uplink-outlaw-jetpack-mame = Black Market Jetpack
 uplink-outlaw-jetpack-desc = This jetpack hides your radar signature, allowing you to fly undetected in outer space.
 
 uplink-outlaw-dctc-name = Telecrystal
-uplink-outlaw-dctc-desc = A single Telecrystal
+uplink-outlaw-dctc-desc = A single Telecrystal.
 uplink-outlaw-dctc10-name = Telecrystal x 10
-uplink-outlaw-dctc10-desc = Ten whole Telecrystals
+uplink-outlaw-dctc10-desc = Ten whole Telecrystals.
+uplink-outlaw-cash-name = 1,000 Spesos
+uplink-outlaw-cash-desc = A wad of cash.
+uplink-outlaw-cash10-name = 10,000 Spesos
+uplink-outlaw-cash10-desc = A wad of cash.
+uplink-outlaw-cash100-name = 100,000 Spesos
+uplink-outlaw-cash100-desc = Wads out for the ladies!
 
 uplink-outlaw-box35ext-name = .35 Extended Magazines
 uplink-outlaw-box35ext-desc = A box full of extended pistol (.35 pistol) magazines.
@@ -41,6 +47,22 @@ uplink-outlaw-box45speedloaderuranium-desc = A box full of (.45 pistol, uranium)
 
 uplink-outlaw-medkit-name = Medical Kit
 uplink-outlaw-medkit-desc = A basic medical kit.
+uplink-outlaw-moonshine-name = Moonshine Jug
+uplink-outlaw-moonshine-desc = A jug of moonshine, very strong.
+uplink-outlaw-vialthc-name = Vial (THC)
+uplink-outlaw-vialthc-desc = The main psychoactive compound in cannabis.
+uplink-outlaw-vialspacedrugs-name = Vial (Space Mirage)
+uplink-outlaw-vialspacedrugs-desc = An illegal compound which induces a number of effects such as loss of balance and visual artefacts.
 
 uplink-outlaw-voucher-name = Black Market ship voucher
 uplink-outlaw-voucher-desc = A voucher card allowing the redemption of a ship from the black market shipyard.
+
+uplink-outlaw-bundle-paperwork-name = Black market paperwork bundle
+uplink-outlaw-bundle-paperwork-desc = Contains a set of stamps, paper, and pen.
+uplink-outlaw-bundle-kidnap-name = Kidnapper Bundle
+uplink-outlaw-bundle-kidnap-desc = Contains a set of restraints, a stun baton and some lube for good measure.
+
+uplink-outlaw-pirateplushie-name = Yarr Moth Plushie
+uplink-outlaw-pirateplushie-desc = It's dastardly and has a dashing cloak. It chitters when you squeeze it!
+uplink-outlaw-card-name = Syndicate Business Card
+uplink-outlaw-card-desc = A blood-red colored business card.

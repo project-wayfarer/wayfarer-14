@@ -9,3 +9,6 @@ store-category-outlawexplosives = Explosives
 store-category-outlawmedical = Medical
 store-category-outlawimplanters = Implanters
 store-category-outlawvouchers = Ship Vouchers
+store-category-outlawconversion = Conversion
+store-category-outlawbundles = Bundles
+store-category-outlawmisc = Misc

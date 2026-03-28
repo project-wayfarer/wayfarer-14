@@ -1,4 +1,38 @@
 # Hardsuits --
+# Pirate EVA
+- type: listing
+  id: UplinkOutlawPirateHardsuit
+  name:  uplink-pirate-hardsuit-name
+  description: uplink-pirate-hardsuit-desc
+  productEntity: ClothingOuterEVASuitPirate
+  icon: { sprite: Clothing/OuterClothing/Hardsuits/pirateeva.rsi, state: icon }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawHardsuits
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Pirate Hardsuit
+- type: listing
+  id: UplinkOutlawPirateHardsuitCaptain
+  name:  uplink-pirate-hardsuit-captain-name
+  description: uplink-pirate-hardsuit-captain-desc
+  productEntity: ClothingOuterHardsuitPirateCap
+  icon: { sprite: Clothing/OuterClothing/Hardsuits/piratecaptain.rsi, state: icon }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawHardsuits
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 # Outlaw Hardsuit
 - type: listing
   id: UplinkOutlawHardsuit
@@ -136,6 +170,22 @@
       tags:
       - OutlawUplinkBase
 
+# Voice Mask
+- type: listing
+  id: UplinkOutlawVoiceMask
+  name: uplink-voice-mask-name
+  description: uplink-voice-mask-desc
+  productEntity: ClothingMaskGasVoiceChameleon
+  cost:
+    Doubloon: 6
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 #Weapons --
 # Stun Baton
 - type: listing
@@ -145,7 +195,7 @@
   productEntity: Stunbaton
   icon: { sprite: Objects/Weapons/Melee/stunbaton.rsi, state: stunbaton_off }
   cost:
-    Doubloon: 1
+    Doubloon: 2
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -162,7 +212,7 @@
   productEntity: Truncheon
   icon: { sprite: Objects/Weapons/Melee/truncheon.rsi, state: icon }
   cost:
-    Doubloon: 1
+    Doubloon: 2
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -229,7 +279,7 @@
   productEntity: TelescopicShield
   icon: { sprite: Objects/Weapons/Melee/teleriot_shield.rsi, state: teleriot-on }
   cost:
-    Doubloon: 2
+    Doubloon: 4
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -271,6 +321,23 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+
+# Stitcher
+- type: listing
+  id: UplinkOutlawPiratePirateStitcher
+  name: uplink-pirate-pirate-stitcher-name
+  description: uplink-pirate-pirate-stitcher-desc
+  productEntity: PirateStitcherCircuitboard
+  icon: { sprite: _NF/Objects/Misc/module.rsi, state: pirate_stitcher }
+  cost:
+    Doubloon: 4
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+  categories:
+  - UplinkOutlawUtility
 
 # Ionized Bluespace Dust
 - type: listing
@@ -315,40 +382,6 @@
   icon: { sprite: _NF/Objects/Tools/pmag.rsi, state: icon }
   cost:
     Doubloon: 4
-  categories:
-  - UplinkOutlawUtility
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
-
-# TC Conversion
-- type: listing
-  id: UplinkOutlawDCTC
-  name: uplink-outlaw-dctc-name
-  description: uplink-outlaw-dctc-desc
-  productEntity: Telecrystal1
-  icon: { sprite: Objects/Specific/Syndicate/telecrystal.rsi, state: telecrystal }
-  cost:
-    Doubloon: 3
-  categories:
-  - UplinkOutlawUtility
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
-
-# TC Conversion
-- type: listing
-  id: UplinkOutlawDCTC10
-  name: uplink-outlaw-dctc10-name
-  description: uplink-outlaw-dctc10-desc
-  productEntity: Telecrystal10
-  icon: { sprite: Objects/Specific/Syndicate/telecrystal.rsi, state: telecrystal }
-  cost:
-    Doubloon: 30
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -675,6 +708,54 @@
       tags:
       - OutlawUplinkBase
 
+# Moonshine
+- type: listing
+  id: UplinkOulawMoonshine
+  name: uplink-outlaw-moonshine-name
+  description: uplink-outlaw-moonshine-desc
+  productEntity: CustomDrinkJugMoonshine
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# THC
+- type: listing
+  id: UplinkOulawVialTHC
+  name: uplink-outlaw-vialthc-name
+  description: uplink-outlaw-vialthc-desc
+  productEntity: THCVial
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Space Mirage
+- type: listing
+  id: UplinkOulawSpaceDrugs
+  name: uplink-outlaw-vialspacedrugs-name
+  description: uplink-outlaw-vialspacedrugs-desc
+  productEntity: SpacedrugsVial
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 #Combat Medipen
 - type: listing
   id: UplinkOutlawCombatMedipen
@@ -786,6 +867,175 @@
     Doubloon: 20
   categories:
   - UplinkOutlawVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Conversion--
+# TC Conversion
+- type: listing
+  id: UplinkOutlawDCTC
+  name: uplink-outlaw-dctc-name
+  description: uplink-outlaw-dctc-desc
+  productEntity: Telecrystal1
+  icon: { sprite: Objects/Specific/Syndicate/telecrystal.rsi, state: telecrystal }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# TC Conversion 10
+- type: listing
+  id: UplinkOutlawDCTC10
+  name: uplink-outlaw-dctc10-name
+  description: uplink-outlaw-dctc10-desc
+  productEntity: Telecrystal10
+  icon: { sprite: Objects/Specific/Syndicate/telecrystal.rsi, state: telecrystal }
+  cost:
+    Doubloon: 30
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Cash Conversion
+- type: listing
+  id: UplinkOutlawCash
+  name: uplink-outlaw-cash-name
+  description: uplink-outlaw-cash-desc
+  productEntity: SpaceCash1000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000 }
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Cash Conversion 10
+- type: listing
+  id: UplinkOutlawCash10
+  name: uplink-outlaw-cash10-name
+  description: uplink-outlaw-cash10-desc
+  productEntity: SpaceCash10000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_10000 }
+  cost:
+    Doubloon: 10
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Cash Conversion 100
+- type: listing
+  id: UplinkOutlawCash100
+  name: uplink-outlaw-cash100-name
+  description: uplink-outlaw-cash100-desc
+  productEntity: SpaceCash100000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_100000 }
+  cost:
+    Doubloon: 100
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Bundles--
+# Paperwork Bundle
+- type: listing
+  id: UplinkOutlawPaperworkBundle
+  name: uplink-outlaw-bundle-paperwork-name
+  description: uplink-outlaw-bundle-paperwork-desc
+  productEntity: OutlawPaperworkBundle
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawBundles
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Kidnapper Bundle
+- type: listing
+  id: UplinkOutlawKidnapBundle
+  name: uplink-outlaw-bundle-kidnap-name
+  description: uplink-outlaw-bundle-kidnap-desc
+  productEntity: OutlawKidnapperkBundle
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawBundles
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Misc--
+# Pirate Plushie
+- type: listing
+  id: UplinkOutlawPlushiePirate
+  name: uplink-outlaw-pirateplushie-name
+  description: uplink-outlaw-pirateplushie-desc
+  productEntity: PlushieYarrMoth
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Syndie Card
+- type: listing
+  id: UplinkOutlawSyndicateBusinessCard
+  name: uplink-outlaw-card-name
+  description: uplink-outlaw-card-desc
+  productEntity: SyndicateBusinessCard
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Pirate Hoverbike
+- type: listing
+  id: UplinkOutlawPirateHoverbike
+  name:  uplink-pirate-hoverbike-name
+  description: uplink-pirate-hoverbike-desc
+  productEntity: VehicleHoverbikePirateKey
+  icon: { sprite: _NF/Objects/Vehicles/hoverbike.rsi, state: keys }
+  cost:
+    Doubloon: 10
+  categories:
+  - UplinkOutlawMisc
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:

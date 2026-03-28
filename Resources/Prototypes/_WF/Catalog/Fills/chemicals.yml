@@ -1,0 +1,46 @@
+# Moonshine
+- type: entity
+  parent: CustomDrinkJug
+  id: CustomDrinkJugMoonshine
+  components:
+  - type: Label
+    currentLabel: reagent-name-moonshine
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Moonshine
+          Quantity: 150
+
+# THC
+- type: entity
+  parent: BaseChemistryEmptyVial
+  suffix: THC 30u
+  id: THCVial
+  components:
+  - type: Label
+    currentLabel: reagent-name-thc
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: THC
+          Quantity: 30
+
+# Space Mirage
+- type: entity
+  parent: BaseChemistryEmptyVial
+  suffix: Space Mirage 30u
+  id: SpacedrugsVial
+  components:
+  - type: Label
+    currentLabel: reagent-name-space-drugs
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 30
