@@ -1,0 +1,29 @@
+- type: listing
+  id: UplinkSyndicateWhimsyBundle
+  name: uplink-whimsy-bundle-name
+  description: uplink-whimsy-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledWhimsy
+  cost:
+    Telecrystal: 16 # 65->16 Coyote start
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkSyndicateLollypopBundle
+  name: uplink-lollypop-bundle-name
+  description: uplink-lollypop-bundle-desc
+  productEntity: SyndicateLollypopBundle
+  cost:
+    Telecrystal: 8 # 15->8
+  categories:
+  - UplinkChemicals
+
+- type: listing
+  id: UplinkSyndicateLollypopBundleBig
+  name: uplink-lollypop-bundle-big-name
+  description: uplink-lollypop-bundle-big-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledCandy
+  cost:
+    Telecrystal: 16 # 100->16 Coyote end
+  categories:
+  - UplinkChemicals

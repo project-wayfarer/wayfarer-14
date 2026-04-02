@@ -1,0 +1,38 @@
+- type: entity
+  id: BorgModuleLollypopMedical
+  parent: [BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: medical lollipop cyborg module
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: generic
+    - state: icon-lollypop
+  - type: ItemBorgModule
+    moduleId: GSLollipopMedical
+    items:
+    # - LauncherLollypopRegenerating
+    - LauncherLollypopRegeneratingTricordazine
+    # - LauncherLollypopRegeneratingMystery # Fear of emergent gameplay
+  - type: BorgModuleIcon
+    icon: { sprite: _Goobstation/Actions/actions_borg.rsi, state: lollypop-module }
+
+
+- type: entity
+  id: BorgModuleLollypopService
+  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  name: service lollipop cyborg module
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: generic
+    - state: icon-lollypop
+  - type: ItemBorgModule
+    moduleId: GSLollipopService
+    items:
+    - LauncherLollypopRegenerating
+    # - LauncherLollypopRegeneratingTricordazine
+    # - LauncherLollypopRegeneratingMystery # Fear of emergent gameplay
+  - type: BorgModuleIcon
+    icon: { sprite: _Goobstation/Actions/actions_borg.rsi, state: lollypop-module }

@@ -1,0 +1,10 @@
+- type: vendingMachineInventory
+  id: SweetToofInventory
+  startingInventory:
+    FoodSnackLollypopWrappedMystery: 3 # 12->3 Coyote start
+    FoodSnackLollypopWrappedMysteryNeutral: 3 # 6->3
+    FoodSnackLollypopWrapped: 6
+    FoodSnackLollypopWrappedWeh: 4
+    FoodSnackChocolate: 3 # 6->3 Coyote end
+  emaggedInventory:
+    FoodSnackLollypopWrappedMysteryEvil: 2

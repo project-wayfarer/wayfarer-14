@@ -1,0 +1,1173 @@
+# Base Prototypes
+# Lollypops are meant to hold chems. If you can implement them injecting chems while on the mask slot, that'd be cool.
+
+- type: entity
+  parent: FoodBase
+  id: FoodSnackLollypopWrappedBase
+  description: A plain old lollypop. It's still in a wrapper.
+  abstract: true
+  components:
+  - type: Food
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Food/lollypop.rsi
+    state: lollypop-wrapped
+  - type: Item
+    size: Tiny
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopBase # Change this to effect what lollypop it spawns.
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: [FoodBase, FoodInjectableBase]
+  id: FoodSnackLollypopBase
+  abstract: true
+  description: A plain old lollypop. It's cherry flavoured.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cherry
+  - type: Food
+    trash:
+    - FoodPacketLollypopTrash
+  - type: Tag
+    tags:
+    - FoodSnack
+    - ClothMade
+  - type: Clothing
+    quickEquip: false # You want to eat it, not stick it in your mouth.
+    sprite: _Goobstation/Objects/Consumable/Food/lollypop.rsi
+    slots: [ mask ]
+  - type: Sprite # I kinda hope this... doesn't work?
+    sprite: _Goobstation/Objects/Consumable/Food/lollypop.rsi
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#FFC0CB" # Change this to change the lollypop color. Default is pink.
+  - type: Item
+    size: Tiny
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFC0CB"
+      right:
+      - state: inhand-right
+        color: "#FFC0CB"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 5
+
+# Lollypops
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrapped
+  name: wrapped lollypop
+  description: A plain old lollypop. It's still in a wrapper.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypop
+
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypop
+  name: lollypop
+  description: A plain old lollypop. It's cherry flavoured!
+
+# Rainbow
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedRainbow
+  name: wrapped rainbow lollypop
+  description: A rainbow colored lollypop. How fancy!
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopRainbow
+
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopRainbow
+  name: rainbow lollypop
+  description: A rainbow colored lollypop. Flavored with unicorn tears.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - unicorntears
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: lollypop-rainbow
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+
+# Carp
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedCarp
+  name: wrapped carp lollypop
+  description: A carp shaped lollypop. How silly!
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopCarp
+
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopCarp
+  name: carp lollypop
+  description: A carp shaped lollypop. Careful, it bites!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite # I kinda hope this... doesn't work?
+    layers:
+    - state: lollypop-trash
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: lollypop-carp
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+
+# Blueshield
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase # Todo, give this to blueshield.
+  id: FoodSnackLollypopWrappedBlueshield
+  name: wrapped blueshield lollypop
+  description: A deep blue lollypop. It's still in the wrapper
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopBlueshield
+
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopBlueshield
+  name: blueshield lollypop
+  description: A deep blue lollypop, imbuing you with a sense of determination. Get out there soldier!
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#040273"
+
+# Captain
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedCaptain
+  name: wrapped captains' lollypop
+  description: An extravagant lollypop. It's still in the wrapper
+  components:
+  - type: Sprite
+    state: lollypop-wrapped-nanotrasen
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopCaptain
+
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopCaptain
+  name: captains' lollypop
+  description: A blueish lollypop containing a potentially unhealthy amount of gold leaf. Only for the goodest of captains.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cola
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: lollypop-captain
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+
+# CentComm
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedCentComm
+  name: wrapped centcomm lollypop
+  description: An even more extravagant lollypop. It's still in the wrapper
+  components:
+  - type: Sprite
+    state: lollypop-wrapped-centcomm
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopCentcomm
+
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopCentcomm
+  name: centcomm lollypop
+  description: A green lollypop containing an extremely unhealthy amount of gold leaf. Only for the best centcomm agents.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - electrons
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: lollypop-centcomm
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100 # Cram this baby FULL of omnizine.
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+
+# Chempops - Bicaridine
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopBicaridine
+  name: bicaridine lollypop
+  description: A bicaridine filled lollypop. Flavoured like oranges.
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#ffaa00"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Bicaridine
+          Quantity: 10
+
+
+# Kelotane
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopKelotane
+  name: kelotane lollypop
+  description: A kelotane filled lollypop. Eat with a dermaline one at the same time for maximal effects.
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#bf3d19"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Kelotane
+          Quantity: 10
+
+
+# Dermaline
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopDermaline
+  name: dermaline lollypop
+  description: A dermaline filled lollypop. Flavored with... blue?
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#215263"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Dermaline
+          Quantity: 10
+
+
+# Tricordazine
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedTricordrazine
+  name: wrapped tricordrazine lollypop
+  description: A Tricordrazine filled lollypop. It's still in a wrapper.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopTricordrazine
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopTricordrazine
+  name: Tricordrazine lollypop
+  description: A Tricordrazine filled lollypop. A doctors favorite!
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#00e5ff"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Tricordrazine
+          Quantity: 10
+
+
+# Dylovene
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopDylovene
+  name: dylovene lollypop
+  description: A dylovene filled lollypop. It's a dull purple.
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#3a1d8a"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Dylovene
+          Quantity: 10
+
+
+# Omnizine
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedOmnizine
+  name: wrapped omnizine lollypop
+  description: An omnizine filled lollypop. It's still in a wrapper.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopOmnizine
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopOmnizine
+  name: omnizine lollypop
+  description: An omnizine filled lollypop. Reserved for the best of patients.
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#fcf7f9"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Omnizine
+          Quantity: 10
+
+
+# Dexalin Plus
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopDexalinPlus
+  name: dexalin plus lollypop
+  description: A dexalin plus filled lollypop. Commonly forcefed to people who forgot their internals.
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#4da0bd"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: DexalinPlus
+          Quantity: 10
+
+
+# Hyronalin
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopHyronalin
+  name: hyronalin lollypop
+  description: A hyronalin filled lollypop. Not quite as effective as you'd hope.
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#4cb580"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Hyronalin
+          Quantity: 10
+
+
+# Random Lollypops
+
+# Good pops, always has something useful in some way.
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedMystery
+  name: wrapped mystery lollypop
+  suffix: good
+  description: A mysterious lollypop. Perfect for all your doctoring needs.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypop
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopDermaline
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopKelotane # Gotta dilute the pool. Can't have this be TOO good.
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopBicaridine
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopHyronalin # Don't add arithrizine!
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopTricordrazine
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopDexalinPlus
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopDylovene
+      orGroup: LollypopMystery
+      prob: 0.30 # Rarer since it's a good medication.
+    - id: FoodSnackLollypopOmnizine
+      orGroup: LollypopMystery
+      prob: 0.15 # Reduced slightly since I'm making the dispenser more common
+
+
+# Neutral pops, could be bad, could be good.
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedMysteryNeutral
+  name: wrapped mystery lollypop
+  suffix: neutral
+  description: A mysterious lollypop. It could be any one of them!
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypop
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopDermaline
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopBicaridine
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopTricordrazine
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopDexalinPlus
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopDylovene
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopHyronalin
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopWeh
+      prob: 0.35 # The other ones actually heal you so I don't want this one to be too common.
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopWehInverse
+      prob: 0.35 # The other ones actually heal you so I don't want this one to be too common.
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopMindbreakerToxin
+      orGroup: LollypopMystery
+      prob: 0.45
+    - id: FoodSnackLollypopOmnizine
+      orGroup: LollypopMystery
+      prob: 0.15
+    - id: FoodSnackLollypopSynaptizine
+      orGroup: LollypopMystery
+      prob: 0.35
+
+
+# EVIL pops, syndicates and rare loot.
+
+- type: entity
+  parent: [FoodSnackLollypopWrappedSyndicate, BaseC1Contraband] # Frontier: BaseSyndicateContraband > BaseC1Contraband
+  id: FoodSnackLollypopWrappedMysteryEvil
+  name: wrapped mystery lollypop
+  suffix: evil
+  description: A mysterious lollypop. This one gives you a bad feeling.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopLacerinol
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopBruizine
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopPuncturase
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopSigynate
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopInsuzine
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopPyrazine
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopLeporazine
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopPolypyrylium
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypop
+      orGroup: LollypopMystery
+      prob: 0.20
+    - id: FoodSnackLollypopDermaline
+      orGroup: LollypopMystery
+      prob: 0.30 # Rarer since it's a good medication.
+    - id: FoodSnackLollypopTricordrazine
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopDexalinPlus
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopMindbreakerToxin
+      orGroup: LollypopMystery
+    - id: FoodSnackLollypopOmnizine
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopLexorin
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopCognizine
+      orGroup: LollypopMystery
+      prob: 0.20
+    - id: FoodSnackLollypopSynaptizine
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopCarpoToxin
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopNocturine
+      orGroup: LollypopMystery
+      prob: 0.35
+    - id: FoodSnackLollypopHyperzine
+      orGroup: LollypopMystery
+      prob: 0.35
+
+
+# Syndicate Lollypops
+
+# Normal
+
+- type: entity
+  parent: [FoodSnackLollypopWrappedBase, BaseC1Contraband]
+  id: FoodSnackLollypopWrappedSyndicate
+  name: wrapped syndicate lollypop
+  description: Manufactured by Donk co, and perfect for storing chems discreetly.
+  components:
+  - type: Sprite
+    state: lollypop-wrapped-syndicate
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopSyndicate
+
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopSyndicate
+  name: lollypop
+  description: A plain old lollypop. This one gives you a bad feeling. # Only way to tell them apart. Read your descriptions!
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#810e0e"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30 # Syndi lollypops hold more
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+
+# Advanced Burns
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopSigynate
+  name: sigynate lollypop
+  suffix: sigynate
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#e0a5b9"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Sigynate
+          Quantity: 10
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopInsuzine
+  name: insuzine lollypop
+  suffix: insuzine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#8147ff"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Insuzine
+          Quantity: 10
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopPyrazine
+  name: pyrazine lollypop
+  suffix: pyrazine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#aa4308"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Pyrazine
+          Quantity: 10
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopLeporazine
+  name: leporazine lollypop
+  suffix: leporazine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#ff7db5"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Leporazine
+          Quantity: 10
+
+# Advanced brutes
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopPolypyrylium
+  name: polypyrylium lollypop
+  suffix: polypyrylium
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#9423FF"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 10
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopLacerinol
+  name: lacerinol lollypop
+  suffix: lacerinol
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#283332"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Lacerinol
+          Quantity: 10
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopBruizine
+  name: bruizine lollypop
+  suffix: bruizine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#ff3636"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Bruizine
+          Quantity: 10
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopPuncturase
+  name: puncturase lollypop
+  suffix: puncturase
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#b9bf93"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Puncturase
+          Quantity: 10
+
+# Lexorin Lollypop
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopLexorin
+  name: lexorin lollypop
+  suffix: lexorin
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#6b0007"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Lexorin
+          Quantity: 10
+
+# Nocturine
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopNocturine
+  name: nocturine lollypop
+  suffix: Nocturine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#128e80"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Nocturine
+          Quantity: 10
+
+
+# Hyperzine
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopHyperzine
+  name: hyperzine lollypop
+  suffix: hyperzine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#c62933"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Stimulants
+          Quantity: 10
+
+# Synaptizine
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopSynaptizine
+  name: synaptizine lollypop
+  suffix: Synaptizine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#d49a2f"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Synaptizine
+          Quantity: 10
+
+# Carpotoxin
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopCarpoToxin
+  name: carpotoxin lollypop
+  suffix: CarpoToxin
+  description: Who the hell is Audrey White?
+  components:
+    - type: Sprite
+      layers:
+      - state: lollypop
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: color
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#e2a38c"
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+          - ReagentId: Sugar
+            Quantity: 5
+          - ReagentId: CarpoToxin
+            Quantity: 15
+
+# Non-medication Lollypops
+# Cognizine
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopCognizine
+  name: cognizine lollypop
+  description: A cognizine filled lollypop. It shimmers a mesmerizing purple.
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#b50ee8"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Cognizine
+          Quantity: 10
+
+
+# Weh Juice
+
+- type: entity
+  parent: FoodSnackLollypopWrappedBase
+  id: FoodSnackLollypopWrappedWeh
+  name: wrapped weh lollypop
+  description: A Weh! filled lollypop. It's still in a wrapper.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackLollypopWeh
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopWeh
+  name: Weh! lollypop
+  description: A Weh! filled lollypop. Weh!
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop-weh
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: lollypop-weh
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: JuiceThatMakesYouWeh
+          Quantity: 10
+
+
+# Hew Juice
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopWehInverse
+  name: Hew! lollypop
+  description: A Hew! filled lollypop. Hew!
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop-weh-inverse
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: lollypop-weh-inverse
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: JuiceThatMakesYouHew
+          Quantity: 10
+
+
+# Mindbreaker Toxin
+
+- type: entity
+  parent: FoodSnackLollypopBase
+  id: FoodSnackLollypopMindbreakerToxin
+  name: mindbreaker toxin lollypop
+  description: A mindbreaker toxin filled lollypop. Should you... eat this?
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#77b58e"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: MindbreakerToxin
+          Quantity: 10
+
+# Trash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketLollypopTrash
+  name: lollypop stick
+  description: It's lightly chewed on.
+  components:
+  - type: Tag
+    tags:
+    - Trash
+    - ClothMade
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Food/lollypop.rsi
+    state: lollypop-trash
+  - type: Clothing
+    quickEquip: false # You want to eat it, not stick it in your mouth.
+    sprite: _Goobstation/Objects/Consumable/Food/lollypop.rsi
+    slots: [ mask ]
+  - type: Food
+    solution: food
+  - type: FlavorProfile
+    flavors:
+    - paper
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 25
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodSnackLollypopTrashBase
+  description: A lollypop wrapper.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Food/lollypop.rsi
+    state: lollypop-wrapper
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodSnackLollypopTrashBase
+  id: FoodSnackLollypopTrash
+  name: lollypop wrapper
+  components:
+  - type: Sprite
+    state: lollypop-wrapper
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [FoodSnackLollypopTrashBase, BaseC1Contraband] # Frontier: BaseSyndicateContraband > BaseC1Contraband
+  id: FoodSnackLollypopTrashSyndicate
+  name: syndicate lollypop wrapper
+  description: Someone's been naughty...
+  components:
+  - type: Sprite
+    state: lollypop-wrapper-syndicate
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodSnackLollypopTrashBase
+  id: FoodSnackLollypopTrashNanotrasen
+  name: nanotrasen lollypop wrapper
+  description: You could probably sell this for a pretty penny.
+  components:
+  - type: Sprite
+    state: lollypop-wrapper-nanotrasen
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodSnackLollypopTrashBase
+  id: FoodSnackLollypopTrashCentcomm
+  name: centcomm lollypop wrapper
+  description: So heavy the gold on it might just be real.
+  components:
+  - type: Sprite
+    state: lollypop-wrapper-centcomm

@@ -1,0 +1,56 @@
+- type: entity
+  name: lollychop
+  parent: [BaseItem, BaseC1Contraband]
+  id: LollyChop
+  description: Fill (split) your buddies' tummies (skulls) with this delicious candy (cold steel).
+  components:
+  - type: Tag
+    tags:
+    - FireAxe
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Melee/lollychop.rsi
+    state: icon
+  - type: MeleeWeapon
+    # heavyStaminaCost: 15
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 0.75
+    bluntStaminaDamageFactor: 2.40 # Coyote start
+    damage:
+      types:
+        Blunt: 14 # 10->14
+        Slash: 5
+        Structural: 10
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 19 # 10->19
+        Structural: 40
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _Goobstation/Objects/Weapons/Melee/lollychop.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: Tool
+    qualities:
+    - Prying
+    - Axing
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: UseDelay
+    delay: 1
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 30
+  - type: MeleeChemicalInjector
+    transferAmount: 5
+    solution: melee

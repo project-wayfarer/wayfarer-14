@@ -1,0 +1,13 @@
+- type: microwaveMealRecipe
+  id: RecipeLollypop
+  name: lollypop recipe
+  result: FoodSnackLollypop
+  time: 5
+  group: Medicinal
+  solids:
+    Paper: 1
+  reagents:
+    Sugar: 5
+  recipeType:
+  - Assembler
+  - MedicalAssembler
