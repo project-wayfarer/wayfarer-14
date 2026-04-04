@@ -5,19 +5,35 @@
     Title="{Loc 'character-info-title'}"
     MinWidth="400"
     MinHeight="545">
-    <ScrollContainer>
-        <BoxContainer Orientation="Vertical">
-            <Label Name="RoleType" VerticalAlignment="Top" Margin="0 6 0 10" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
-            <BoxContainer Orientation="Horizontal">
-                <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView" Access="Public" SetSize="64 64"/>
-                <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
-                    <Label Name="NameLabel" Access="Public"/>
-                    <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
+    <TabContainer Name="TabContainer" Access="Public">
+        <!-- Info Tab -->
+        <ScrollContainer Name="InfoTab">
+            <BoxContainer Orientation="Vertical">
+                <Label Name="RoleType" VerticalAlignment="Top" Margin="0 6 0 10" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
+                <BoxContainer Orientation="Horizontal">
+                    <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView" Access="Public" SetSize="64 64"/>
+                    <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
+                        <Label Name="NameLabel" Access="Public"/>
+                        <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
+                    </BoxContainer>
+                </BoxContainer>
+                <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" HorizontalAlignment="Center"/>
+                <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
+                <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
+            </BoxContainer>
+        </ScrollContainer>
+        
+        <!-- Roleplay Level Tab -->
+        <ScrollContainer Name="RoleplayLevelTab">
+            <BoxContainer Orientation="Vertical" Margin="10">
+                <Label Text="{Loc 'character-info-roleplay-stats'}" StyleClasses="LabelHeading" HorizontalAlignment="Left" Margin="0 0 0 20"/>
+                <BoxContainer Orientation="Vertical" HorizontalAlignment="Left">
+                    <Label Name="RoleplayLevelLabel" Access="Public" Text="RP Level: 1" StyleClasses="LabelHeading" Margin="0 0 0 10"/>
+                    <!-- <Label Name="ExperienceLabel" Access="Public" Text="Experience: 0 / 100" Margin="0 0 0 5"/> -->
+                    <ProgressBar Name="ExperienceProgressBar" Access="Public" MinWidth="300" MinValue="0" MaxValue="1" Value="0" Margin="0 0 0 10"/>
+                    <Label Name="TotalCommendsLabel" Access="Public" Text="Total Commends Received: 0" Margin="0 0 0 5"/>
                 </BoxContainer>
             </BoxContainer>
-            <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" HorizontalAlignment="Center"/>
-            <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
-            <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
-        </BoxContainer>
-    </ScrollContainer>
+        </ScrollContainer>
+    </TabContainer>
 </windows:CharacterWindow>

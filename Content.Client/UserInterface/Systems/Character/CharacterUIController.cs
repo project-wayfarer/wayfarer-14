@@ -11,6 +11,7 @@ using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
+using Content.Shared._WF.RoleplayLeveling.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
@@ -55,6 +56,10 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
         _window.OnClose += DeactivateButton;
         _window.OnOpen += ActivateButton;
+        
+        // Set up tab titles
+        _window.TabContainer.SetTabTitle(0, Loc.GetString("character-info-tab-info"));
+        _window.TabContainer.SetTabTitle(1, Loc.GetString("character-info-tab-roleplay"));
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenCharacterMenu,
@@ -142,6 +147,27 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
+        
+        // Update roleplay level tab
+        if (_ent.TryGetComponent<RoleplayLevelComponent>(entity, out var rpLevel))
+        {
+            _window.RoleplayLevelLabel.Text = $"Level: {rpLevel.Level}";
+            // _window.RoleplayLevelLabel.Text = $"Level: {rpLevel.Level} ({rpLevel.Experience} / {rpLevel.ExperienceToNextLevel} XP)";
+            _window.TotalCommendsLabel.Text = $"Total Commends: {rpLevel.TotalCommends}";
+            
+            // Update experience progress bar
+            var progress = rpLevel.ExperienceToNextLevel > 0 
+                ? (float)rpLevel.Experience / rpLevel.ExperienceToNextLevel 
+                : 1.0f;
+            _window.ExperienceProgressBar.Value = progress;
+        }
+        else
+        {
+            _window.RoleplayLevelLabel.Text = "Level: 1";
+            // _window.RoleplayLevelLabel.Text = "Level: 1 (0 / 100 XP)";
+            _window.TotalCommendsLabel.Text = "Total Commends: 0";
+            _window.ExperienceProgressBar.Value = 0.0f;
+        }
 
         foreach (var (groupId, conditions) in objectives)
         {

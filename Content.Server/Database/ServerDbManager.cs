@@ -405,6 +405,16 @@ namespace Content.Server.Database
         Task DeleteSafetyDepositBox(Guid boxId, CancellationToken cancel = default);
 
         #endregion
+
+        #region Wayfarer Roleplay Leveling
+
+        Task<WayfarerRoleplayLevel> GetOrCreateRoleplayLevel(Guid userId, CancellationToken cancel = default);
+        Task UpdateRoleplayLevel(Guid userId, int level, long experience, long experienceToNextLevel, int totalCommends, CancellationToken cancel = default);
+        Task AddRoleplayCommend(int roundId, int recipientProfileId, Guid recipientUserId, int giverProfileId, Guid giverUserId, string? comment, bool isPrivate, CancellationToken cancel = default);
+        Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(Guid userId, bool includePrivate = false, CancellationToken cancel = default);
+        Task<int> GetRoundCommendsGivenByPlayer(Guid giverUserId, int roundId, CancellationToken cancel = default);
+
+        #endregion
     }
 
     /// <summary>
@@ -1232,6 +1242,40 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.DeleteSafetyDepositBox(boxId, cancel));
+        }
+
+        #endregion
+
+        #region Wayfarer Roleplay Leveling
+
+        public Task<WayfarerRoleplayLevel> GetOrCreateRoleplayLevel(Guid userId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetOrCreateRoleplayLevel(userId, cancel));
+        }
+
+        public Task UpdateRoleplayLevel(Guid userId, int level, long experience, long experienceToNextLevel, int totalCommends, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateRoleplayLevel(userId, level, experience, experienceToNextLevel, totalCommends, cancel));
+        }
+
+        public Task AddRoleplayCommend(int roundId, int recipientProfileId, Guid recipientUserId, int giverProfileId, Guid giverUserId, string? comment, bool isPrivate, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddRoleplayCommend(roundId, recipientProfileId, recipientUserId, giverProfileId, giverUserId, comment, isPrivate, cancel));
+        }
+
+        public Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(Guid userId, bool includePrivate = false, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPlayerCommends(userId, includePrivate, cancel));
+        }
+
+        public Task<int> GetRoundCommendsGivenByPlayer(Guid giverUserId, int roundId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetRoundCommendsGivenByPlayer(giverUserId, roundId, cancel));
         }
 
         #endregion

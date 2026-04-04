@@ -1,0 +1,33 @@
+﻿- type: vessel
+  id: Monitor
+  parent: BaseVessel
+  name: QH Monitor
+  description: A mercenary scouting vessel, repurposed for mining operations. Capable of landing on planetary surfaces.
+  price: 62900
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/_WF/Shuttles/Expedition/monitor.yml
+  guidebookPage: Null
+  class:
+  - Cargo
+  - Expedition
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Monitor
+  mapName: 'Monitor'
+  mapPath: /Maps/_WF/Shuttles/Expedition/monitor.yml
+  minPlayers: 0
+  stations:
+    Monitor:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Monitor EXP{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

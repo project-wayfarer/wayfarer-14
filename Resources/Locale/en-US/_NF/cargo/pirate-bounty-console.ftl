@@ -4,7 +4,7 @@ pirate-bounty-console-accept-button-label = Accept
 pirate-bounty-console-skip-button-text = Skip
 pirate-bounty-console-skip-button-accepted = Cancel
 pirate-bounty-console-time-label = Time: [color=orange]{$time}[/color]
-pirate-bounty-console-reward-label = Reward: [color=limegreen]{$reward} DB[/color]
+pirate-bounty-console-reward-label = Reward: [color=limegreen]{$reward} DC[/color]
 pirate-bounty-console-manifest-label = Manifest: [color=orange]{$item}[/color]
 pirate-bounty-console-manifest-entry =
     { $amount ->
@@ -15,7 +15,7 @@ pirate-bounty-console-manifest-reward = Reward: {$reward}
 pirate-bounty-console-description-label = [color=gray]{$description}[/color]
 pirate-bounty-console-id-label = {$id}
 
-pirate-bounty-console-flavor-left = Powered by BlackArch! Down with NT!
+pirate-bounty-console-flavor-left = Powered by BlackArch
 pirate-bounty-console-flavor-right = v7.2.9b
 
 pirate-bounty-chest-name = black market bounty chest ({$id})
