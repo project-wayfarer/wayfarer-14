@@ -8729,13 +8729,15 @@ entities:
     - type: Transform
       pos: -3.5,2.5
       parent: 2
-- proto: SpawnPointNFPirateFirstMate
-  entities:
-  - uid: 1304
-    components:
-    - type: Transform
-      pos: -3.5,2.5
-      parent: 2
+#Start Wayfarer
+#- proto: SpawnPointNFPirateFirstMate
+#  entities:
+#  - uid: 1304
+#    components:
+#    - type: Transform
+#      pos: -3.5,2.5
+#      parent: 2
+#End Wayfarer
 - proto: SpawnPointObserver
   entities:
   - uid: 1305
