@@ -1,0 +1,1043 @@
+# Hardsuits --
+# Pirate EVA
+- type: listing
+  id: UplinkOutlawPirateHardsuit
+  name:  uplink-pirate-hardsuit-name
+  description: uplink-pirate-hardsuit-desc
+  productEntity: ClothingOuterEVASuitPirate
+  icon: { sprite: Clothing/OuterClothing/Hardsuits/pirateeva.rsi, state: icon }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawHardsuits
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Pirate Hardsuit
+- type: listing
+  id: UplinkOutlawPirateHardsuitCaptain
+  name:  uplink-pirate-hardsuit-captain-name
+  description: uplink-pirate-hardsuit-captain-desc
+  productEntity: ClothingOuterHardsuitPirateCap
+  icon: { sprite: Clothing/OuterClothing/Hardsuits/piratecaptain.rsi, state: icon }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawHardsuits
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Outlaw Hardsuit
+- type: listing
+  id: UplinkOutlawHardsuit
+  name: uplink-outlaw-hardsuit-name
+  description: uplink-outlaw-hardsuit-desc
+  productEntity: ClothingOuterOutlawHardsuit
+  icon: { sprite: _Mono/Clothing/OuterClothing/Hardsuits/ussp_combat_light.rsi, state: icon }
+  cost:
+    Doubloon: 5
+  categories:
+  - UplinkOutlawHardsuits
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Combat Hardsuit
+- type: listing
+  id: UplinkOutlawHardsuitCombat
+  name: uplink-outlaw-hardsuitcombat-name
+  description: uplink-outlaw-hardsuitcombat-desc
+  productEntity: ClothingOuterOutlawHardsuitCombat
+  icon: { sprite: _Mono/Clothing/OuterClothing/Hardsuits/ussp_combat.rsi, state: icon }
+  cost:
+    Doubloon: 15
+  categories:
+  - UplinkOutlawHardsuits
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Wearables  --
+# Tactical Vest
+- type: listing
+  id: UplinkOutlawTacVest
+  name: uplink-outlaw-tacvest-name
+  description: uplink-outlaw-tacvest-desc
+  productEntity: ClothingOuterArmorBulletproofBM
+  icon: { sprite: _Mono/Clothing/OuterClothing/Armor/bulletproof_polyvalent.rsi, state: icon }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Heavy Tactical Vest
+- type: listing
+  id: UplinkOutlawHeavyTacVest
+  name: uplink-outlaw-htacvest-name
+  description: uplink-outlaw-htacvest-desc
+  productEntity: ClothingOuterArmorHeavyTactical
+  icon: { sprite: _Goobstation/Clothing/OuterClothing/Armor/bulletproof.rsi, state: icon }
+  cost:
+    Doubloon: 6
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Tactical Helmet
+- type: listing
+  id: UplinkOutlawTacHelm
+  name: uplink-outlaw-tachelm-name
+  description: uplink-outlaw-tachelm-desc
+  productEntity: ClothingHeadHelmetBM
+  icon: { sprite: _Goobstation/Clothing/Head/Helmets/security.rsi, state: icon }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Bounty Hunter HUD
+- type: listing
+  id: UplinkOutlawBHUD
+  name: uplink-outlaw-bountyhud-name
+  description: uplink-outlaw-bountyhud-desc
+  productEntity: ClothingEyesHudBountyHunter
+  icon: { sprite: Clothing/Eyes/Hud/sec.rsi, state: icon }
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Jetpack
+- type: listing
+  id: UplinkOutlawJetpack
+  name: uplink-outlaw-jetpack-mame
+  description: uplink-outlaw-jetpack-desc
+  productEntity: JetpackBMFilled
+  icon: { sprite: _Goobstation/Objects/Tanks/contractorpack.rsi, state: icon }
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Magboots
+- type: listing
+  id: UplinkOutlawMagboots
+  name: uplink-outlaw-magboots-name
+  description: uplink-outlaw-magboots-desc
+  productEntity: ClothingShoesBootsMagBM
+  icon: { sprite: _Mono/Clothing/Shoes/Boots/magboots-ashen.rsi, state: icon }
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Voice Mask
+- type: listing
+  id: UplinkOutlawVoiceMask
+  name: uplink-voice-mask-name
+  description: uplink-voice-mask-desc
+  productEntity: ClothingMaskGasVoiceChameleon
+  cost:
+    Doubloon: 6
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Weapons --
+# Stun Baton
+- type: listing
+  id: UplinkOutlawStunbaton
+  name:  uplink-security-stunbaton-name
+  description: uplink-security-stunbaton-desc
+  productEntity: Stunbaton
+  icon: { sprite: Objects/Weapons/Melee/stunbaton.rsi, state: stunbaton_off }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawWeapons
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Truncheon
+- type: listing
+  id: UplinkOutlawTruncheon
+  name:  uplink-security-truncheon-name
+  description: uplink-security-truncheon-desc
+  productEntity: Truncheon
+  icon: { sprite: Objects/Weapons/Melee/truncheon.rsi, state: icon }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawWeapons
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Breaching Hammer
+- type: listing
+  id: UplinkOutlawHammer
+  name:  uplink-security-hammer-name
+  description: uplink-security-hammer-desc
+  productEntity: SecBreachingHammer
+  icon: { sprite: Nyanotrasen/Objects/Weapons/Melee/breaching_hammer.rsi, state: icon }
+  cost:
+    Doubloon: 12
+  categories:
+  - UplinkOutlawWeapons
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Viper
+- type: listing
+  id: UplinkOutlawPistolViper
+  name: uplink-pistol-viper-name
+  description: uplink-pistol-viper-desc
+  productEntity: NFWeaponPistolViper
+  cost:
+    Doubloon: 9
+  categories:
+  - UplinkOutlawWeapons
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Ritland 45
+- type: listing
+  id: UplinkOutlawRevolverRitland
+  name: uplink-revolver-ritland-name
+  description: uplink-revolver-ritland-desc
+  productEntity: NFWeaponRevolverRitland45
+  cost:
+    Doubloon: 12
+  categories:
+  - UplinkOutlawWeapons
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Utility --
+# Telescopic Shield
+- type: listing
+  id: UplinkOutlawTeleShield
+  name:  uplink-security-teleshield-name
+  description: uplink-security-teleshield-desc
+  productEntity: TelescopicShield
+  icon: { sprite: Objects/Weapons/Melee/teleriot_shield.rsi, state: teleriot-on }
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# BM Access Configurator
+- type: listing
+  id: UplinkOutlawAccessConfigurator
+  name:  uplink-pirate-accessconfigurator-captain-name
+  description: uplink-pirate-accessconfigurator-captain-desc
+  productEntity: AccessConfiguratorAntag
+  icon: { sprite: _NF/Objects/Tools/antag_access_configurator.rsi, state: icon }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Pirate Repair Kit
+- type: listing
+  id: UplinkOutlawRepairKit
+  name: uplink-pirate-repair-kit-name
+  description: uplink-pirate-repair-kit-desc
+  productEntity: PirateRepairKit
+  icon: { sprite: _NF/Objects/Tools/Toolboxes/toolbox_pirate.rsi, state: icon }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Stitcher
+- type: listing
+  id: UplinkOutlawPiratePirateStitcher
+  name: uplink-pirate-pirate-stitcher-name
+  description: uplink-pirate-pirate-stitcher-desc
+  productEntity: PirateStitcherCircuitboard
+  icon: { sprite: _NF/Objects/Misc/module.rsi, state: pirate_stitcher }
+  cost:
+    Doubloon: 4
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+  categories:
+  - UplinkOutlawUtility
+
+# Ionized Bluespace Dust
+- type: listing
+  id: UplinkOutlawIonizedBluespaceDustBag
+  name: uplink-pirate-ionized-dust-bag-name
+  description: uplink-pirate-ionized-dust-bag-desc
+  productEntity: IonizedBluespaceDustBag
+  icon: { sprite: _NF/Objects/Specific/Pirate/bluespace_dust.rsi, state: icon }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Pinpointer Scanner
+- type: listing
+  id: UplinkOutlawPinpointerScanner
+  name: uplink-pirate-pinpointer-target-scanner-name
+  description: uplink-pirate-pinpointer-target-scanner-desc
+  productEntity: PinpointerScanner
+  icon: { sprite: _NF/Objects/Specific/Pirate/pinpointer_scanner.rsi, state: icon }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Machine Liberator
+- type: listing
+  id: UplinkOutlawPMAG
+  name: uplink-pirate-pmag-name
+  description: uplink-pirate-pmag-desc
+  productEntity: PmagUnlimited
+  icon: { sprite: _NF/Objects/Tools/pmag.rsi, state: icon }
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Ammo --
+#35 Stendos
+- type: listing
+  id: UplinkOutlawBox35Ext
+  name: uplink-outlaw-box35ext-name
+  description: uplink-outlaw-box35ext-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox35Ext
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#35 Stendos - Overpressure
+- type: listing
+  id: UplinkOutlawBox35ExtOverpressure
+  name: uplink-outlaw-box35extoverpressure-name
+  description: uplink-outlaw-box35extoverpressure-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox35ExtOverpressure
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#35 Stendos - Incendiary
+- type: listing
+  id: UplinkOutlawBox35ExtIncendiary
+  name: uplink-outlaw-box35extincendiary-name
+  description: uplink-outlaw-box35extincendiary-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox35ExtIncendiary
+  cost:
+    Doubloon: 6
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#35 Stendos - Uranium
+- type: listing
+  id: UplinkOutlawBox35ExtUranium
+  name: uplink-outlaw-box35exturanium-name
+  description: uplink-outlaw-box35exturanium-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox35ExtUranium
+  cost:
+    Doubloon: 9
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#45 Speedloader
+- type: listing
+  id: UplinkOutlawBox45Speedloader
+  name: uplink-outlaw-box45speedloader-name
+  description: uplink-outlaw-box45speedloader-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox45Speedloader
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#45 Speedloader - Overpressure
+- type: listing
+  id: UplinkOutlawBox45SpeedloaderOverpressure
+  name: uplink-outlaw-box45speedloaderoverpressure-name
+  description: uplink-outlaw-box45speedloaderoverpressure-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox45SpeedloaderOverpressure
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#45 Speedloader - Incendiary
+- type: listing
+  id: UplinkOutlawBox45SpeedloaderIncendiary
+  name: uplink-outlaw-box45speedloaderincendiary-name
+  description: uplink-outlaw-box45speedloaderincendiary-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox45SpeedloaderIncendiary
+  cost:
+    Doubloon: 6
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#45 Speedloader - Uranium
+- type: listing
+  id: UplinkOutlawBox45SpeedloaderUranium
+  name: uplink-outlaw-box45speedloaderuranium-name
+  description: uplink-outlaw-box45speedloaderuranium-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox45SpeedloaderUranium
+  cost:
+    Doubloon: 9
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#60 Ammo
+- type: listing
+  id: UplinkOutlaw60Ammo
+  name:  uplink-pirate-flintlockammo-name
+  description: uplink-pirate-flintlockammo-desc
+  productEntity: NFAmmunitionBoxRifle60
+  icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi, state: icon-60 }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Cannon Ammo
+- type: listing
+  id: UplinkOutlawCannonball
+  name:  uplink-pirate-cannonball-name
+  description: uplink-pirate-cannonball-desc
+  productEntity: CratePirateChestCannonBall
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi, state: ball }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+- type: listing
+  id: UplinkOutlawNFCannonBallEmp
+  name:  uplink-pirate-cannonball-emp-name
+  description: uplink-pirate-cannonball-emp-desc
+  productEntity: CratePirateChestNFCannonBallEmp
+  icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi, state: ball-emp }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+- type: listing
+  id: UplinkOutlawGrapeshot
+  name:  uplink-pirate-grapeshot-name
+  description: uplink-pirate-grapeshot-desc
+  productEntity: CratePirateChestGrapeShot
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi, state: grapeshot }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+- type: listing
+  id: UplinkOutlawGlassshot
+  name:  uplink-pirate-glassshot-name
+  description: uplink-pirate-glassshot-desc
+  productEntity: CratePirateChestGlassShot
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi, state: glassshot }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Explosives --
+#Frag Grenades
+- type: listing
+  id: UplinkOutlawExplosiveGrenade
+  name: uplink-explosive-grenade-name
+  description: uplink-explosive-grenade-desc
+  productEntity: ExGrenade
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#C4
+- type: listing
+  id: UplinkOutlawC4
+  name: uplink-c4-name
+  description: uplink-c4-desc
+  productEntity: C4
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Emp Grenades
+- type: listing
+  id: UplinkOutlawEmpGrenadeBox
+  name:  uplink-security-empgrenade-box-name
+  description: uplink-security-empgrenade-box-desc
+  productEntity: BoxEMPGrenadesNfsd
+  icon: { sprite: Objects/Weapons/Grenades/empgrenade.rsi, state: icon}
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Shrapnel Grenade
+- type: listing
+  id: UplinkOulawGrenadeShrapnel
+  name: uplink-shrapnel-grenade-name
+  description: uplink-shrapnel-grenade-desc
+  productEntity: GrenadeShrapnel
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Incendiary Grenade
+- type: listing
+  id: UplinkOulawGrenadeIncendiary
+  name: uplink-incendiary-grenade-name
+  description: uplink-incendiary-grenade-desc
+  productEntity: GrenadeIncendiary
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Medical --
+#Basic Medkit
+- type: listing
+  id: UplinkOulawMedkit
+  name: uplink-outlaw-medkit-name
+  description: uplink-outlaw-medkit-desc
+  productEntity: MedkitFilled
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Moonshine
+- type: listing
+  id: UplinkOulawMoonshine
+  name: uplink-outlaw-moonshine-name
+  description: uplink-outlaw-moonshine-desc
+  productEntity: CustomDrinkJugMoonshine
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# THC
+- type: listing
+  id: UplinkOulawVialTHC
+  name: uplink-outlaw-vialthc-name
+  description: uplink-outlaw-vialthc-desc
+  productEntity: THCVial
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Space Mirage
+- type: listing
+  id: UplinkOulawSpaceDrugs
+  name: uplink-outlaw-vialspacedrugs-name
+  description: uplink-outlaw-vialspacedrugs-desc
+  productEntity: SpacedrugsVial
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Combat Medipen
+- type: listing
+  id: UplinkOutlawCombatMedipen
+  name: uplink-combat-medipen-name
+  description: uplink-combat-medipen-desc
+  productEntity: CombatMedipen
+  cost:
+    Doubloon: 12
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Hyperzine Pen
+- type: listing
+  id: UplinkOutlawStimpack
+  name: uplink-stimpack-name
+  description: uplink-stimpack-desc
+  productEntity: Stimpack
+  cost:
+    Doubloon: 12
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Interdynes
+- type: listing
+  id: UplinkOutlawCigs
+  name: uplink-cigarettes-name
+  description: uplink-cigarettes-desc
+  productEntity: CigPackSyndicate
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Implanters
+# Radio Implanter
+- type: listing
+  id: UplinkRadioImplanterOutlaw
+  name: uplink-pirate-radio-implanter-name
+  description: uplink-pirate-radio-implanter-desc
+  productEntity: RadioImplanterFreelance
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: pirate_label }
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawImplanters
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Acidifier
+- type: listing
+  id: UplinkOutlawAcidifierImplant
+  name: uplink-death-acidifier-implant-name
+  description: uplink-death-acidifier-implant-desc
+  productEntity: DeathAcidifierImplanter
+  icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: gib }
+  cost:
+    Doubloon: 12
+  categories:
+  - UplinkOutlawImplanters
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Freedom
+- type: listing
+  id: UplinkOutlawFreedomImplant
+  name: uplink-freedom-implanter-name
+  description: uplink-freedom-implanter-desc
+  productEntity: FreedomImplanter
+  icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: freedom }
+  cost:
+    Doubloon: 15
+  categories:
+  - UplinkOutlawImplanters
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Vouchers--
+- type: listing
+  id: UplinkOutlawShipVoucher
+  name: uplink-outlaw-voucher-name
+  description: uplink-outlaw-voucher-desc
+  productEntity: ShipVoucherOutlaw
+  icon: { sprite: _Mono/Objects/Misc/lpc.rsi, state: ltech, stripepdv }
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkOutlawVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Conversion--
+# TC Conversion
+- type: listing
+  id: UplinkOutlawDCTC
+  name: uplink-outlaw-dctc-name
+  description: uplink-outlaw-dctc-desc
+  productEntity: Telecrystal1
+  icon: { sprite: Objects/Specific/Syndicate/telecrystal.rsi, state: telecrystal }
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# TC Conversion 10
+- type: listing
+  id: UplinkOutlawDCTC10
+  name: uplink-outlaw-dctc10-name
+  description: uplink-outlaw-dctc10-desc
+  productEntity: Telecrystal10
+  icon: { sprite: Objects/Specific/Syndicate/telecrystal.rsi, state: telecrystal }
+  cost:
+    Doubloon: 30
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Cash Conversion
+- type: listing
+  id: UplinkOutlawCash
+  name: uplink-outlaw-cash-name
+  description: uplink-outlaw-cash-desc
+  productEntity: SpaceCash1000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000 }
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Cash Conversion 10
+- type: listing
+  id: UplinkOutlawCash10
+  name: uplink-outlaw-cash10-name
+  description: uplink-outlaw-cash10-desc
+  productEntity: SpaceCash10000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_10000 }
+  cost:
+    Doubloon: 10
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Cash Conversion 100
+- type: listing
+  id: UplinkOutlawCash100
+  name: uplink-outlaw-cash100-name
+  description: uplink-outlaw-cash100-desc
+  productEntity: SpaceCash100000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_100000 }
+  cost:
+    Doubloon: 100
+  categories:
+  - UplinkOutlawConversion
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Bundles--
+# Paperwork Bundle
+- type: listing
+  id: UplinkOutlawPaperworkBundle
+  name: uplink-outlaw-bundle-paperwork-name
+  description: uplink-outlaw-bundle-paperwork-desc
+  productEntity: OutlawPaperworkBundle
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawBundles
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Kidnapper Bundle
+- type: listing
+  id: UplinkOutlawKidnapBundle
+  name: uplink-outlaw-bundle-kidnap-name
+  description: uplink-outlaw-bundle-kidnap-desc
+  productEntity: OutlawKidnapperkBundle
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawBundles
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Misc--
+# Pirate Plushie
+- type: listing
+  id: UplinkOutlawPlushiePirate
+  name: uplink-outlaw-pirateplushie-name
+  description: uplink-outlaw-pirateplushie-desc
+  productEntity: PlushieYarrMoth
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Syndie Card
+- type: listing
+  id: UplinkOutlawSyndicateBusinessCard
+  name: uplink-outlaw-card-name
+  description: uplink-outlaw-card-desc
+  productEntity: SyndicateBusinessCard
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Pirate Hoverbike
+- type: listing
+  id: UplinkOutlawPirateHoverbike
+  name:  uplink-pirate-hoverbike-name
+  description: uplink-pirate-hoverbike-desc
+  productEntity: VehicleHoverbikePirateKey
+  icon: { sprite: _NF/Objects/Vehicles/hoverbike.rsi, state: keys }
+  cost:
+    Doubloon: 10
+  categories:
+  - UplinkOutlawMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase

@@ -81,20 +81,20 @@
   description: A space pirate chest, not for station lubbers.
   components:
   - type: Sprite
-    sprite: _NF/Structures/Storage/Crates/piratechestgrey.rsi
+    sprite: _NF/Structures/Storage/Crates/piratechestgrey.rsi # TODO: OUTLAW
   - type: Icon
-    sprite: _NF/Structures/Storage/Crates/piratechestgrey.rsi
+    sprite: _NF/Structures/Storage/Crates/piratechestgrey.rsi # TODO: OUTLAW
 
 - type: entity
   parent: CratePirate
   id: CratePirateBounty
-  name: pirate bounty chest
-  description: A chest for storing looted goods. Huh, this one's blank.
+  name: black market bounty chest # WF
+  description: A chest for ill-gotten gains. Huh, this one's blank.
   components:
   - type: Sprite
-    sprite: _NF/Structures/Storage/Crates/pirate_bounty.rsi
+    sprite: _NF/Structures/Storage/Crates/pirate_bounty.rsi # TODO: OUTLAW
   - type: Icon
-    sprite: _NF/Structures/Storage/Crates/pirate_bounty.rsi
+    sprite: _NF/Structures/Storage/Crates/pirate_bounty.rsi # TODO: OUTLAW
   - type: PirateBountyLabel # Needs to be filled out.
 
 - type: entity

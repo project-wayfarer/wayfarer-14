@@ -50,6 +50,8 @@ namespace Content.Server.Database
         public DbSet<WayfarerRoundSummary> WayfarerRoundSummaries { get; set; } = null!;
         public DbSet<WayfarerSafetyDepositBox> WayfarerSafetyDepositBox { get; set; } = null!;
         public DbSet<WayfarerSafetyDepositBoxItem> WayfarerSafetyDepositBoxItem { get; set; } = null!;
+        public DbSet<WayfarerRoleplayLevel> WayfarerRoleplayLevels { get; set; } = null!;
+        public DbSet<WayfarerRoleplayCommend> WayfarerRoleplayCommends { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -399,6 +401,24 @@ namespace Content.Server.Database
                 .WithMany(b => b.Items)
                 .HasForeignKey(i => i.BoxId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // Wayfarer Roleplay Levels configuration
+            modelBuilder.Entity<WayfarerRoleplayLevel>()
+                .HasIndex(rl => rl.UserId)
+                .IsUnique();
+
+            modelBuilder.Entity<WayfarerRoleplayLevel>()
+                .HasIndex(rl => rl.Level);
+
+            // Wayfarer Roleplay Commends configuration
+            modelBuilder.Entity<WayfarerRoleplayCommend>()
+                .HasIndex(rc => rc.RecipientUserId);
+
+            modelBuilder.Entity<WayfarerRoleplayCommend>()
+                .HasIndex(rc => rc.GiverUserId);
+
+            modelBuilder.Entity<WayfarerRoleplayCommend>()
+                .HasIndex(rc => rc.RoundId);
 
             modelBuilder.Entity<WayfarerSafetyDepositBoxItem>()
                 .HasIndex(i => i.BoxId);
@@ -1526,5 +1546,110 @@ namespace Content.Server.Database
         /// When this item was deposited
         /// </summary>
         public DateTime DepositDate { get; set; }
+    }
+
+    // Wayfarer Roleplay Leveling System Tables
+    [Table("wayfarer_roleplay_levels")]
+    public class WayfarerRoleplayLevel
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The user ID (account-based tracking)
+        /// </summary>
+        [Required, Column("user_id")]
+        public Guid UserId { get; set; }
+
+        /// <summary>
+        /// Current roleplay level
+        /// </summary>
+        [Required, Column("level")]
+        public int Level { get; set; } = 1;
+
+        /// <summary>
+        /// Current experience points
+        /// </summary>
+        [Required, Column("experience")]
+        public long Experience { get; set; } = 0;
+
+        /// <summary>
+        /// Experience required to reach the next level
+        /// </summary>
+        [Required, Column("experience_to_next_level")]
+        public long ExperienceToNextLevel { get; set; } = 100;
+
+        /// <summary>
+        /// Total number of commends received from other players
+        /// </summary>
+        [Required, Column("total_commends")]
+        public int TotalCommends { get; set; } = 0;
+
+        /// <summary>
+        /// When this record was created
+        /// </summary>
+        [Column("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        /// When this record was last updated
+        /// </summary>
+        [Column("last_updated")]
+        public DateTime LastUpdated { get; set; }
+    }
+
+    [Table("wayfarer_roleplay_commends")]
+    public class WayfarerRoleplayCommend
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The round number when this commend was given
+        /// </summary>
+        [Required, Column("round_id")]
+        public int RoundId { get; set; }
+
+        /// <summary>
+        /// The profile ID (character slot) of the recipient
+        /// </summary>
+        [Required, Column("recipient_profile_id")]
+        public int RecipientProfileId { get; set; }
+
+        /// <summary>
+        /// The user ID (account) of the recipient
+        /// </summary>
+        [Required, Column("recipient_user_id")]
+        public Guid RecipientUserId { get; set; }
+
+        /// <summary>
+        /// The profile ID (character slot) of the person giving the commend
+        /// </summary>
+        [Required, Column("giver_profile_id")]
+        public int GiverProfileId { get; set; }
+
+        /// <summary>
+        /// The user ID (account) of the person giving the commend
+        /// </summary>
+        [Required, Column("giver_user_id")]
+        public Guid GiverUserId { get; set; }
+
+        /// <summary>
+        /// Optional comment left with the commend
+        /// </summary>
+        [Column("comment")]
+        public string? Comment { get; set; }
+
+        /// <summary>
+        /// Whether this commend is private (only visible to recipient)
+        /// </summary>
+        [Required, Column("is_private")]
+        public bool IsPrivate { get; set; } = false;
+
+        /// <summary>
+        /// When this commend was given
+        /// </summary>
+        [Required, Column("created_at")]
+        public DateTime CreatedAt { get; set; }
     }
 }

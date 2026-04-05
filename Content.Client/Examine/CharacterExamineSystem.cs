@@ -3,9 +3,12 @@ using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
+using Content.Shared._WF.RoleplayLeveling.Events;
 using Robust.Client.GameObjects;
+using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Shared.Utility;
+using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.Examine;
 
@@ -16,6 +19,7 @@ public sealed class CharacterExamineSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystem _examine = default!;
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
+    [Dependency] private readonly IPlayerManager _player = default!;
 
     private readonly Dictionary<NetEntity, CharacterDetailWindow> _openWindows = new();
 
@@ -26,6 +30,7 @@ public sealed class CharacterExamineSystem : EntitySystem
         SubscribeLocalEvent<HumanoidAppearanceComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
         SubscribeLocalEvent<MindContainerComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbsWithMind);
         SubscribeNetworkEvent<CharacterInfoEvent>(HandleCharacterInfo);
+        SubscribeNetworkEvent<AvailableCommendsMessage>(HandleAvailableCommends);
     }
 
     private void OnGetExamineVerbs(EntityUid uid, HumanoidAppearanceComponent component, GetVerbsEvent<ExamineVerb> args)
@@ -80,10 +85,16 @@ public sealed class CharacterExamineSystem : EntitySystem
             _openWindows.Remove(netEntity);
         };
 
+        // Wire up commend button
+        window.SubmitCommendButton.OnPressed += args => OnSubmitCommend(args, uid, window);
+
         window.OpenCentered();
 
         // Request character info from server
         RaiseNetworkEvent(new RequestCharacterInfoEvent { Entity = netEntity });
+        
+        // Request available commends count
+        RaiseNetworkEvent(new RequestAvailableCommendsMessage());
     }
 
     private void HandleCharacterInfo(CharacterInfoEvent message)
@@ -92,7 +103,7 @@ public sealed class CharacterExamineSystem : EntitySystem
             return;
 
         // Set character info
-        window.SetCharacterInfo(message.CharacterName, message.JobTitle);
+        window.SetCharacterInfo(message.CharacterName, message.RoleplayLevel);
 
         // Set description with markup parsing
         FormattedMessage descriptionMessage;
@@ -120,5 +131,65 @@ public sealed class CharacterExamineSystem : EntitySystem
         }
         window.SetConsent(consentMessage);
     }
-}
 
+    private void OnSubmitCommend(ButtonEventArgs args, EntityUid targetEntity, CharacterDetailWindow window)
+    {
+        // Prevent self-commending
+        if (_player.LocalEntity == targetEntity)
+        {
+            window.SubmitCommendButton.Text = "Cannot commend yourself!";
+            return;
+        }
+
+        var comment = window.CommendCommentInput.Text;
+        if (string.IsNullOrWhiteSpace(comment))
+        {
+            window.SubmitCommendButton.Text = "Please enter a comment!";
+            return;
+        }
+
+        var isPrivate = window.CommendPrivateCheckbox.Pressed;
+
+        // Send the commend message
+        RaiseNetworkEvent(new GiveCommendMessage(GetNetEntity(targetEntity), comment, isPrivate));
+
+        // Clear the form and show success
+        window.CommendCommentInput.Clear();
+        window.CommendPrivateCheckbox.Pressed = false;
+        window.SubmitCommendButton.Text = "Commend sent!";
+        
+        // Request updated commends count
+        RaiseNetworkEvent(new RequestAvailableCommendsMessage());
+    }
+    
+    private void HandleAvailableCommends(AvailableCommendsMessage message)
+    {
+        // Update all open windows with the new commends count
+        foreach (var window in _openWindows.Values)
+        {
+            var hasCommends = message.AvailableCommends > 0;
+            
+            // Update text with appropriate pluralization
+            var commendsText = message.AvailableCommends == 1 
+                ? "You have 1 commend left to give" 
+                : $"You have {message.AvailableCommends} commends left to give";
+            window.CommendsRemainingLabel.Text = commendsText;
+            
+            // Enable/disable UI elements based on available commends
+            window.CommendCommentInput.Editable = hasCommends;
+            window.CommendPrivateCheckbox.Disabled = !hasCommends;
+            window.SubmitCommendButton.Disabled = !hasCommends;
+            
+            // Update button text if no commends available
+            if (!hasCommends)
+            {
+                window.SubmitCommendButton.Text = "No Commends Available";
+            }
+            else if (window.SubmitCommendButton.Text == "No Commends Available" || 
+                     window.SubmitCommendButton.Text == "Commend sent!")
+            {
+                window.SubmitCommendButton.Text = "Submit Commend";
+            }
+        }
+    }
+}

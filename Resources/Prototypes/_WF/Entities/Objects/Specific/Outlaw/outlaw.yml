@@ -1,0 +1,480 @@
+# region Data Chits
+- type: entity
+  name: data chit
+  parent: BaseItem
+  id: Doubloon
+  suffix: 100 DC
+  description: A rugged, shielded disk containing encrypted black market data.
+  components:
+  - type: WarnOnCryoSleep
+  - type: Sprite
+    sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi
+    state: chits
+  - type: Item
+    sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi
+    size: Tiny
+  - type: Stack
+    count: 100
+    stackType: Doubloon
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 40
+  - type: Currency
+    price:
+      Doubloon: 1
+
+- type: entity
+  parent: Doubloon
+  id: Doubloon1
+  suffix: 1 DC
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: Doubloon
+  id: Doubloon5
+  suffix: 5 DC
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: Doubloon
+  id: Doubloon25
+  suffix: 25 DC
+  components:
+  - type: Stack
+    count: 25
+
+- type: entity
+  parent: Doubloon
+  id: Doubloon10
+  suffix: 50 DC
+  components:
+  - type: Stack
+    count: 50
+
+# region Base Uplink
+- type: entity
+  parent: [ BaseItem, StorePresetPirateUplink ]
+  id: BasePirateUplink
+  name: outlaw uplink # WF
+  abstract: true # WF
+  description: A scarred tablet encased in heat-resistant composite with slot for data chits on the side. # WF
+  suffix: Empty
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-green # WF - Default to green
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: Item
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    heldPrefix: icon
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Tag
+    tags:
+    - OutlawUplinkBase
+
+# region Uplink Colors
+- type: entity
+  id: PirateUplinkSpriteRed
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-red
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: PointLight
+    color: "#ff504e"
+    energy: 0.1
+    falloff: 30
+
+- type: entity
+  id: PirateUplinkSpriteKiara # Its her favorite color and she requested it for gcp. I think its funny to call it a pirate uplink
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-kiara
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: PointLight
+    color: "#ffb54e"
+    energy: 0.1
+    falloff: 30
+
+- type: entity
+  id: PirateUplinkSpriteGreen
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-green
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: PointLight
+    color: "#81ff4e"
+    energy: 0.1
+    falloff: 30
+
+- type: entity
+  id: PirateUplinkSpriteTeal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-teal
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: PointLight
+    color: "#4effea"
+    energy: 0.1
+    falloff: 30
+
+- type: entity
+  id: PirateUplinkSpriteBlue
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-blue
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: PointLight
+    color: "#4e5dff"
+    energy: 0.2
+    falloff: 35
+
+- type: entity
+  id: PirateUplinkSpritePurple
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-purple # Its her favorite color and she requested it for gcp
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: PointLight
+    color: "#924eff"
+    energy: 0.3
+    falloff: 40
+
+- type: entity
+  id: PirateUplinkSpritePink
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Devices/rogue_uplink.rsi
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay-pink # Its her favorite color and she requested it for gcp
+      scale: 0.7, 0.7
+      shader: unshaded
+  - type: PointLight
+    color: "#ff4ed3"
+    energy: 0.1
+    falloff: 30
+
+# region Uplink Amounts
+- type: entity
+  id: PirateUplinkAmountDebug
+  abstract: true
+  components:
+  - type: Store
+    balance:
+      Doubloon: 99999
+
+- type: entity
+  id: PirateUplinkAmount50
+  abstract: true
+  components:
+  - type: Store
+    balance:
+      Doubloon: 50
+
+- type: entity
+  id: PirateUplinkAmount20
+  abstract: true
+  components:
+  - type: Store
+    balance:
+      Doubloon: 20
+
+# region Concrete Uplinks
+# Parenting clusterfuck to basically just not have to re-specify amounts
+# [Color, Amount, PirateUplink]
+# Most of these will be picked in some thing like a thief kit
+# Guh, this feels a bit like overkill but at least I'm not having to specify amounts all over again
+- type: entity
+  parent: [PirateUplinkSpriteRed, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkRedDebug
+  suffix: Red, DEBUG
+
+- type: entity
+  parent: [PirateUplinkSpriteKiara, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkKiaraDebug
+  suffix: Kiara, DEBUG
+
+- type: entity
+  parent: [PirateUplinkSpriteGreen, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkGreenDebug
+  suffix: Green, DEBUG
+
+- type: entity
+  parent: [PirateUplinkSpriteTeal, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkTealDebug
+  suffix: Teal, DEBUG
+
+- type: entity
+  parent: [PirateUplinkSpriteBlue, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkBlueDebug
+  suffix: Blue, DEBUG
+
+- type: entity
+  parent: [PirateUplinkSpritePurple, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkPurpleDebug
+  suffix: Purple, DEBUG
+
+- type: entity
+  parent: [PirateUplinkSpritePink, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkPinkDebug
+  suffix: Pink, DEBUG
+
+- type: entity
+  parent: [PirateUplinkSpriteRed, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkRed50
+  suffix: Red, 50 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteKiara, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkKiara50
+  suffix: Kiara, 50 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteGreen, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkGreen50
+  suffix: Green, 50 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteTeal, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkTeal50
+  suffix: Teal, 50 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteBlue, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkBlue50
+  suffix: Blue, 50 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpritePurple, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkPurple50
+  suffix: Purple, 50 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpritePink, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkPink50
+  suffix: Pink, 50 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteRed, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkRed20
+  suffix: Red, 20 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteKiara, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkKiara20
+  suffix: Kiara, 20 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteGreen, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkGreen20
+  suffix: Green, 20 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteTeal, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkTeal20
+  suffix: Teal, 20 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpriteBlue, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkBlue20
+  suffix: Blue, 20 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpritePurple, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkPurple20
+  suffix: Purple, 20 DC
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [PirateUplinkSpritePink, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkPink20
+  suffix: Pink, 20 DC
+  categories: [ HideSpawnMenu ]
+
+# region Legacy
+- type: entity
+  parent: PirateUplinkTealDebug
+  id: BasePirateUplinkRadioDebug
+  suffix: DEBUG
+  components:
+  - type: Store
+    balance:
+      Doubloon: 99999
+
+- type: entity
+  parent: PirateUplinkRed50
+  id: BasePirateUplinkRadioPirateCaptain
+  suffix: Wanted Outlaw, 50 DC
+  components:
+  - type: Store
+    balance:
+      Doubloon: 50
+
+- type: entity
+  parent: PirateUplinkGreen20
+  id: BasePirateUplinkPirateCrew
+  suffix: Outlaw, 20 DC
+  components:
+  - type: Store
+    balance:
+      Doubloon: 20
+
+# region Misc Items
+- type: entity
+  parent: BaseItem
+  id: IonizedBluespaceDustBag
+  name: bag of ionized bluespace dust
+  description: Claimed by some to clear magnetic navigational fields. Claimed by others to be a bag of blue dust.
+  components:
+  - type: ClearPinpointer
+    emptyMessage: bluespace-dust-no-dust-left
+    useOnOthersMessage: bluespace-dust-interact-other
+    useOnSelfMessage: bluespace-dust-interact-self
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Pirate/bluespace_dust.rsi
+    layers:
+    - state: base
+    - state: charge-3
+      map: [ "enum.LimitedChargesVisualLayers.Charges" ]
+  - type: LimitedCharges
+  - type: LimitedChargesVisuals
+    chargeSteps: 4
+    chargePrefix: charge
+  - type: Appearance
+
+- type: entity
+  id: PinpointerScannerUnpowered
+  parent: BaseItem
+  name: pinpointer target scanner
+  description: A scanner that looks for pinpointer signatures.
+  suffix: Unpowered
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Pirate/pinpointer_scanner.rsi
+    layers:
+      - state: icon
+      - state: icon-on
+        visible: false
+        map: ["on"]
+      - state: icon-on-unlit
+        shader: unshaded
+        visible: false
+        map: ["on-unlit"]
+      - state: sweep-unlit
+        shader: unshaded
+        visible: false
+        map: ["sweep-unlit"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        on:
+          True: { visible: true }
+          False: { visible: false }
+        on-unlit:
+          True: { visible: true }
+          False: { visible: false }
+        sweep-unlit:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemToggle
+  - type: ProximityBeeper
+    minRange: 3
+  - type: ProximityDetector
+    range: 10
+    components:
+    - type: PinpointerTarget
+  - type: Beeper
+    isMuted: true
+    minBeepInterval: 0.25
+    maxBeepInterval: 1.0
+    beepSound:
+      path: "/Audio/Items/locator_beep.ogg"
+      params:
+        maxDistance: 1
+        volume: -8
+
+- type: entity
+  id: PinpointerScanner
+  parent: [ PinpointerScannerUnpowered, PowerCellSlotSmallItem ]
+  suffix: Powered
+  components:
+  - type: PowerCellDraw
+    drawRate: 1
+    useRate: 0
+  - type: ToggleCellDraw
+
+- type: entity
+  id: PinpointerScannerEmpty
+  parent: PinpointerScanner
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default

@@ -1486,6 +1486,107 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("uploaded_resource_log", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.WayfarerRoleplayCommend", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("text")
+                        .HasColumnName("comment");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<int>("GiverProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("giver_profile_id");
+
+                    b.Property<Guid>("GiverUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("giver_user_id");
+
+                    b.Property<bool>("IsPrivate")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_private");
+
+                    b.Property<int>("RecipientProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("recipient_profile_id");
+
+                    b.Property<Guid>("RecipientUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("recipient_user_id");
+
+                    b.Property<int>("RoundId")
+                        .HasColumnType("integer")
+                        .HasColumnName("round_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_wayfarer_roleplay_commends");
+
+                    b.HasIndex("GiverUserId");
+
+                    b.HasIndex("RecipientUserId");
+
+                    b.HasIndex("RoundId");
+
+                    b.ToTable("wayfarer_roleplay_commends", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.WayfarerRoleplayLevel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<long>("Experience")
+                        .HasColumnType("bigint")
+                        .HasColumnName("experience");
+
+                    b.Property<long>("ExperienceToNextLevel")
+                        .HasColumnType("bigint")
+                        .HasColumnName("experience_to_next_level");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("last_updated");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("integer")
+                        .HasColumnName("level");
+
+                    b.Property<int>("TotalCommends")
+                        .HasColumnType("integer")
+                        .HasColumnName("total_commends");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_wayfarer_roleplay_levels");
+
+                    b.HasIndex("Level");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("wayfarer_roleplay_levels", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.WayfarerRoundSummary", b =>
                 {
                     b.Property<int>("RoundNumber")

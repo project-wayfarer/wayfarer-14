@@ -2,6 +2,8 @@ using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.IoC;
+using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -328,16 +330,46 @@ public sealed partial class MarkingSet
     /// <param name="marking">The marking instance in question.</param>
     public void AddFront(MarkingCategories category, Marking marking)
     {
-        if (!marking.Forced && Points.TryGetValue(category, out var points))
+        // Try to get points for this category
+        Points.TryGetValue(category, out var categoryPoints);
+
+        // If we have category points with default markings defined, check if we should remove them
+        if (categoryPoints != null && categoryPoints.DefaultMarkings.Count > 0)
         {
-            if (points.Points <= 0)
+            // Check if this marking being added is itself a default marking
+            var isDefaultMarking = categoryPoints.DefaultMarkings.Contains(marking.MarkingId);
+
+            // If we're adding a NON-default marking, remove all default markings from this category first
+            if (!isDefaultMarking && Markings.TryGetValue(category, out var existingMarkings))
+            {
+                // Find and remove all default markings, refunding their points
+                var defaultsToRemove = existingMarkings
+                    .Where(m => categoryPoints.DefaultMarkings.Contains(m.MarkingId))
+                    .ToList();
+
+                foreach (var defaultMarking in defaultsToRemove)
+                {
+                    existingMarkings.Remove(defaultMarking);
+                    if (!defaultMarking.Forced && categoryPoints != null)
+                    {
+                        categoryPoints.Points++;
+                    }
+                }
+            }
+        }
+
+        // Check if we have enough points to add this marking
+        if (!marking.Forced && categoryPoints != null)
+        {
+            if (categoryPoints.Points <= 0)
             {
                 return;
             }
 
-            points.Points--;
+            categoryPoints.Points--;
         }
 
+        // Add the marking to the list
         if (!Markings.TryGetValue(category, out var markings))
         {
             markings = new();
@@ -354,22 +386,83 @@ public sealed partial class MarkingSet
     /// <param name="marking"></param>
     public void AddBack(MarkingCategories category, Marking marking)
     {
-        if (!marking.Forced && Points.TryGetValue(category, out var points))
+        // Try to get points for this category
+        Points.TryGetValue(category, out var categoryPoints);
+
+        // Debug logging
+        if (categoryPoints != null)
         {
-            if (points.Points <= 0)
+            Logger.Debug($"[MarkingSet] AddBack: Category={category}, Marking={marking.MarkingId}, DefaultMarkings.Count={categoryPoints.DefaultMarkings.Count}, Points={categoryPoints.Points}");
+            if (categoryPoints.DefaultMarkings.Count > 0)
+            {
+                Logger.Debug($"  DefaultMarkings: {string.Join(", ", categoryPoints.DefaultMarkings)}");
+            }
+        }
+        else
+        {
+            Logger.Debug($"[MarkingSet] AddBack: Category={category}, Marking={marking.MarkingId}, categoryPoints is NULL");
+        }
+
+        // If we have category points with default markings defined, check if we should remove them
+        if (categoryPoints != null && categoryPoints.DefaultMarkings.Count > 0)
+        {
+            // Check if this marking being added is itself a default marking
+            var isDefaultMarking = categoryPoints.DefaultMarkings.Contains(marking.MarkingId);
+            Logger.Debug($"  isDefaultMarking={isDefaultMarking}");
+
+            // Case 1: If we're adding a NON-default marking, remove all default markings from this category first
+            if (!isDefaultMarking && Markings.TryGetValue(category, out var existingMarkings))
+            {
+                Logger.Debug($"  Existing markings before removal: {string.Join(", ", existingMarkings.Select(m => m.MarkingId))}");
+                
+                // Find and remove all default markings, refunding their points
+                var defaultsToRemove = existingMarkings
+                    .Where(m => categoryPoints.DefaultMarkings.Contains(m.MarkingId))
+                    .ToList();
+
+                Logger.Debug($"  Defaults to remove: {string.Join(", ", defaultsToRemove.Select(m => m.MarkingId))}");
+
+                foreach (var defaultMarking in defaultsToRemove)
+                {
+                    existingMarkings.Remove(defaultMarking);
+                    if (!defaultMarking.Forced && categoryPoints != null)
+                    {
+                        categoryPoints.Points++;
+                    }
+                }
+                
+                Logger.Debug($"  Existing markings after removal: {string.Join(", ", existingMarkings.Select(m => m.MarkingId))}");
+            }
+            // Case 2: If we're adding a DEFAULT marking, check if there are already non-default markings
+            // If so, don't add this default marking (custom markings take precedence)
+            else if (isDefaultMarking && Markings.TryGetValue(category, out var existingMarkings2))
+            {
+                var hasNonDefaults = existingMarkings2.Any(m => !categoryPoints.DefaultMarkings.Contains(m.MarkingId));
+                if (hasNonDefaults)
+                {
+                    Logger.Debug($"  Skipping default marking - category already has custom markings: {string.Join(", ", existingMarkings2.Select(m => m.MarkingId))}");
+                    return; // Don't add this default marking
+                }
+            }
+        }
+
+        // Check if we have enough points to add this marking
+        if (!marking.Forced && categoryPoints != null)
+        {
+            if (categoryPoints.Points <= 0)
             {
                 return;
             }
 
-            points.Points--;
+            categoryPoints.Points--;
         }
 
+        // Add the marking to the list
         if (!Markings.TryGetValue(category, out var markings))
         {
             markings = new();
             Markings[category] = markings;
         }
-
 
         markings.Add(marking);
     }

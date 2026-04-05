@@ -1,0 +1,15 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOutlaw
+  icon:
+    sprite: /Textures/_WF/Interface/Misc/job_icons.rsi
+    state: outlaw
+  jobName: job-name-nf-pirate
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconWantedOutlaw
+  icon:
+    sprite: /Textures/_WF/Interface/Misc/job_icons.rsi
+    state: wantedoutlaw
+  jobName: job-name-nf-pirate-captain

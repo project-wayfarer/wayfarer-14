@@ -4,66 +4,75 @@
   text: "/ServerInfo/_NF/Guidebook/Shipyard.xml"
   priority: 7
   children:
-  - ShipyardAdder
-  - ShipyardAegis
-  - ShipyardAkupara
-  - ShipyardAmbition
-  - ShipyardApothecary
-  - ShipyardBarge
-  - ShipyardBaroness
-  - ShipyardBocadillo
-  - ShipyardBodkin
-  - ShipyardBookworm
-  - ShipyardBrigand
-  - ShipyardBulker
-  - ShipyardCaladrius
-  - ShipyardCamper
-  - ShipyardCeres
-  - ShipyardCharon
-  - ShipyardChisel
-  - ShipyardComet
-  - ShipyardConstruct
-  - ShipyardCopperhead
-  - ShipyardCourier
-  - ShipyardCrescent
-  - ShipyardCrossroads
-  - ShipyardDragoon
-  - ShipyardDruid
-  - ShipyardEagle
-  - ShipyardGarden
-  - ShipyardGasbender
-  - ShipyardGaslight
-  - ShipyardGeode
-  - ShipyardHammer
-  - ShipyardHauler
-  - ShipyardHarbormaster
-  - ShipyardHonker
-  - ShipyardInvestigator
-  - ShipyardIzakaya
-  - ShipyardKestrel
-  - ShipyardKilderkin
-  - ShipyardLiquidator
-  - ShipyardLoader
-  - ShipyardLyrae
-  - ShipyardMcCargo
-  - ShipyardMcDelivery
-  - ShipyardNightlight
-  - ShipyardNook
-  - ShipyardPathfinder
-  - ShipyardPhoenix
-  - ShipyardPlacebo
-  - ShipyardProspector
-  - ShipyardPulsar
-  - ShipyardRetort
-  - ShipyardSearchlight
-  - ShipyardSkipper
-  - ShipyardSpirit
-  - ShipyardStasis
-  - ShipyardStringer
-  - ShipyardSurveyor
-  - ShipyardTide
-  - ShipyardVagabond
-  - ShipyardVitalis
+   - CgpShipyard        # WF edit
+   - CivShipyard        # WF edit
+#   - SyndicateShipyard  # WF edit
+   - ExpedShipyard      # WF edit
+   - MedShipyard        # WF edit
+   - OutlawShipyard     # WF edit
+   - ScrapShipyard      # WF edit
+   - StaffShipyard      # WF edit
+#   Moved over to be listed under the purchase shipyards. Resources/Prototypes/_WF/Guidebook/Shipyards.yml
+#  - ShipyardAdder
+#  - ShipyardAegis
+#  - ShipyardAkupara
+#  - ShipyardAmbition
+#  - ShipyardApothecary
+#  - ShipyardBarge
+#  - ShipyardBaroness
+#  - ShipyardBocadillo
+#  - ShipyardBodkin
+#  - ShipyardBookworm
+#  - ShipyardBrigand
+#  - ShipyardBulker
+#  - ShipyardCaladrius
+#  - ShipyardCamper
+#  - ShipyardCeres
+#  - ShipyardCharon
+#  - ShipyardChisel
+#  - ShipyardComet
+#  - ShipyardConstruct
+#  - ShipyardCopperhead
+#  - ShipyardCourier
+#  - ShipyardCrescent
+#  - ShipyardCrossroads
+#  - ShipyardDragoon
+#  - ShipyardDruid
+#  - ShipyardEagle
+#  - ShipyardGarden
+#  - ShipyardGasbender
+#  - ShipyardGaslight
+#  - ShipyardGeode
+#  - ShipyardHammer
+#  - ShipyardHauler
+#  - ShipyardHarbormaster
+#  - ShipyardHonker
+#  - ShipyardInvestigator
+#  - ShipyardIzakaya
+#  - ShipyardKestrel
+#  - ShipyardKilderkin
+#  - ShipyardLiquidator
+#  - ShipyardLoader
+#  - ShipyardLyrae
+#  - ShipyardMcCargo
+#  - ShipyardMcDelivery
+#  - ShipyardNightlight
+#  - ShipyardNook
+#  - ShipyardPathfinder
+#  - ShipyardPhoenix
+#  - ShipyardPlacebo
+#  - ShipyardProspector
+#  - ShipyardPulsar
+#  - ShipyardRetort
+#  - ShipyardSearchlight
+#  - ShipyardSkipper
+#  - ShipyardSpirit
+#  - ShipyardStasis
+#  - ShipyardStringer
+#  - ShipyardSurveyor
+#  - ShipyardTide
+#  - ShipyardVagabond
+#  - ShipyardVitalis
 
 - type: guideEntry
   id: ShipyardAdder
@@ -364,3 +373,4 @@
   id: ShipyardVitalis
   name: guide-entry-shipyard-vitalis
   text: "/ServerInfo/_NF/Guidebook/Shipyard/Vitalis.xml"
+

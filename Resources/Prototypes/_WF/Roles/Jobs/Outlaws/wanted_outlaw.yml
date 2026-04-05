@@ -1,0 +1,51 @@
+- type: job
+  id: NFPirateCaptain
+  name: job-name-nf-pirate-captain # Not really a "captain" but we're just using their IDs.
+  description: job-description-nf-pirate-captain
+  playTimeTracker: JobPirateCaptain
+  whitelisted: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 388800 # 48 hours
+  startingGear: NFPirateCaptainGear
+  alwaysUseSpawner: true
+  hideConsoleVisibility: true
+  canBeAntag: true
+  icon: "JobIconWantedOutlaw"
+  supervisors: job-supervisors-freebooters-union
+  weight: 40
+  displayWeight: 40
+  setPreference: true
+  newPlayerMessage: false
+  access:
+  - Pirate
+  accessGroups:
+  - GeneralAccess
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: AutoPirateCaptain
+    - type: SpecialSectorStationRecord # must be given on spawn
+      recordGeneration: FalseRecord
+    - type: DisableSuitSensors
+  - !type:AddImplantSpecial
+    implants: [ FreelanceTrackingImplant ]
+  - !type:GiveItemOnHolidaySpecial # Even pirates get a piece of cake.
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+- type: startingGear
+  id: NFPirateCaptainGear
+  equipment:
+    belt: ClothingBeltUtility
+    pocket1: BasePirateUplinkRadioPirateCaptain
+    pocket2: EnergyCutlass
+  storage:
+    back:
+    - AppraisalTool
+    - PirateTechFabFlatpack
+    - Multitool
+
+- type: chameleonOutfit
+  id: NFPirateCaptainChameleonOutfit
+  job: NFPirateCaptain

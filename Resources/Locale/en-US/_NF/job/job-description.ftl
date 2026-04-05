@@ -10,9 +10,18 @@ job-description-guard = Keep track of prisoners and make sure they have their ba
 job-description-mail-carrier = Deliver mail. Avoid dogs.
 job-description-mercenary = Use your quick draw and sharp wits to earn your pay. Go adventuring for sport, or track and hunt down bounties.
 job-description-pilot = Pilot spaceships from point A to B, outmaneuver pirates and dodge asteroids. You are a leaf on the solar wind, let others marvel at how you soar.
-job-description-nf-pirate = Drink grog, follow orders, swab the deck, and abide by your Captain and your code.
-job-description-nf-pirate-captain = Lead a crew of ne'er-do-wells across the open space and plunder with honor, obeying the code.
-job-description-nf-pirate-first-mate = Assist your captain in any hijinks you find yourselves in.
+job-description-nf-pirate =
+    You've found yourself on the wrong side of the law, though your exploits aren't totally known to the authorities. Make a name for yourself or keep lying low. The choice is yours. 
+    
+    Note: This is a softer antag version of wanted outlaw. You are not immediately wanted by the GCP and it will be easier to hide in plain sight.
+job-description-nf-pirate-captain = 
+    You've made quite the name for yourself but your infamy has made you wanted by the CGP.
+    
+    Note: This is a high risk role. You are immediately set to wanted in the GCP's database and they will be aware you exist.
+job-description-nf-pirate-first-mate = 
+    You've found yourself on the wrong side of the law, though your exploits aren't totally known to the authorities. Make a name for yourself or keep lying low. The choice is yours. 
+    
+    Note: This is a softer antag version of wanted outlaw. You are not immediately wanted by the GCP and it will be easier to hide in plain sight.
 job-description-plant-manager = Generate ludicrous amounts of power to use or sell, keep the sector's stations in functional order.
 job-description-plant-technician = Assist the plant manager in operating power plant machinery, perform crucial off-site repairs.
 job-description-prisoner = Sit in prison. Gamble with your cellmates. Talk to the bailiff. Write your memoirs.

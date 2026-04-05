@@ -4046,13 +4046,15 @@ entities:
     - type: Transform
       pos: 0.5,-3.5
       parent: 1
-- proto: SpawnPointNFPirateFirstMate
-  entities:
-  - uid: 386
-    components:
-    - type: Transform
-      pos: 1.5,-3.5
-      parent: 1
+#Start Wayfarer
+#- proto: SpawnPointNFPirateFirstMate
+#  entities:
+#  - uid: 386
+#    components:
+#    - type: Transform
+#      pos: 1.5,-3.5
+#      parent: 1
+#End Wayfarer
 - proto: StatueVenusRed
   entities:
   - uid: 387

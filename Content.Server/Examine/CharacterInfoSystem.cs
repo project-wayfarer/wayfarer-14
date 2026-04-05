@@ -7,6 +7,7 @@ using Content.Shared.DetailExaminable;
 using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Content.Shared._WF.RoleplayLeveling.Components;
 using Robust.Server.Player;
 
 namespace Content.Server.Examine;
@@ -70,6 +71,16 @@ public sealed class CharacterInfoSystem : EntitySystem
         if (_idCardSystem.TryFindIdCard(entity, out var idCard) && idCard.Comp.LocalizedJobTitle != null)
         {
             response.JobTitle = idCard.Comp.LocalizedJobTitle;
+        }
+
+        // Get roleplay level
+        if (TryComp<RoleplayLevelComponent>(entity, out var rpLevel))
+        {
+            response.RoleplayLevel = $"Level {rpLevel.Level}";
+        }
+        else
+        {
+            response.RoleplayLevel = "Level 1";
         }
 
         // Get description (flavor text)

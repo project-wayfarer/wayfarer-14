@@ -1405,6 +1405,103 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("uploaded_resource_log", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.WayfarerRoleplayCommend", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("comment");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("created_at");
+
+                    b.Property<int>("GiverProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("giver_profile_id");
+
+                    b.Property<Guid>("GiverUserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("giver_user_id");
+
+                    b.Property<bool>("IsPrivate")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("is_private");
+
+                    b.Property<int>("RecipientProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("recipient_profile_id");
+
+                    b.Property<Guid>("RecipientUserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("recipient_user_id");
+
+                    b.Property<int>("RoundId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("round_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_wayfarer_roleplay_commends");
+
+                    b.HasIndex("GiverUserId");
+
+                    b.HasIndex("RecipientUserId");
+
+                    b.HasIndex("RoundId");
+
+                    b.ToTable("wayfarer_roleplay_commends", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.WayfarerRoleplayLevel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("created_at");
+
+                    b.Property<long>("Experience")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("experience");
+
+                    b.Property<long>("ExperienceToNextLevel")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("experience_to_next_level");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("last_updated");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("level");
+
+                    b.Property<int>("TotalCommends")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("total_commends");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_wayfarer_roleplay_levels");
+
+                    b.HasIndex("Level");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("wayfarer_roleplay_levels", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.WayfarerRoundSummary", b =>
                 {
                     b.Property<int>("RoundNumber")

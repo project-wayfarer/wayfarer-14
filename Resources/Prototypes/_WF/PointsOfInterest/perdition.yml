@@ -1,22 +1,16 @@
 # Author Info
-# GitHub:
-# Discord: dvir01
+# GitHub: VVersengt
+# Discord: versengt
 
-# Maintainer Info
-# GitHub: ???
-# Discord: ???
-
-# Notes:
-# Byarr
 - type: pointOfInterest
-  id: Cove
+  id: Perdition
   parent: BasePOI
-  name: Pirate Cove
+  name: Perdition
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGamePreset: [ NFPirate ]
   spawnGroup: Required
-  gridPath: /Maps/_NF/POI/cove.yml
+  gridPath: /Maps/_WF/POI/perdition.yml
   hideWarp: true
   addComponents:
   - type: IFF
@@ -25,21 +19,21 @@
     readOnly: false
 
 - type: gameMap
-  id: Cove
-  mapName: 'Pirate Cove'
-  mapPath: /Maps/_NF/POI/cove.yml
+  id: Perdition
+  mapName: 'Perdition'
+  mapPath: /Maps/_WF/POI/perdition.yml
   minPlayers: 0
   stations:
-    Cove:
+    Perdition:
       stationProto: RecordsFrontierOutpost
       gridComponents:
+      - type: VesselInfo
+        description: "An abandoned mining outpost turned refuge for the exiled."
       - type: VesselMusic
         ambientMusicPrototype: CamelotMusic
-      - type: VesselInfo # WF
-        description: "The code is more what you'd call 'guidelines' than actual rules." # pirate theme'd for now until outlaws
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Pirate Cove'
+          mapNameTemplate: 'Perdition'
         - type: ExtraStationInformation
           iconPath: /Textures/_NF/Interface/Pirate/piratelogo.png
           stationSubtext: 'frontier-lobby-pirate-subtext'
