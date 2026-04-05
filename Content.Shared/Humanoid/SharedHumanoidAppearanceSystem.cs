@@ -624,6 +624,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         markingObject.Forced = forced;
         humanoid.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
 
+        // Automatically hide Genital markings by default (like undergarments)
+        if (prototype.MarkingCategory == MarkingCategories.Genital)
+        {
+            humanoid.HiddenMarkings.Add(marking);
+        }
+
         if (sync)
             Dirty(uid, humanoid);
     }
