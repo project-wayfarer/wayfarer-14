@@ -119,19 +119,19 @@
       briefing: &pirateBriefing
         sound: "/Audio/_NF/Misc/pirate_greeting.ogg"
     # Pirate First Mate role
-    - prefRoles: [ NFPirateFirstMate ]
-      max: 999
-      playerRatio: -1
-      lateJoinAdditional: false
-      allowNonHumans: true
-      multiAntagSetting: All
-      components: *pirateComponents
-      mindRoles:
-      - MindRoleNFPirateFirstMate
-      whitelist:
-        components:
-        - AutoPirateFirstMate
-      briefing: *pirateBriefing
+#    - prefRoles: [ NFPirateFirstMate ]
+#      max: 999
+#      playerRatio: -1
+#      lateJoinAdditional: false
+#      allowNonHumans: true
+#      multiAntagSetting: All
+#      components: *pirateComponents
+#      mindRoles:
+#      - MindRoleNFPirateFirstMate
+#      whitelist:
+#        components:
+#        - AutoPirateFirstMate
+#      briefing: *pirateBriefing
     # Pirate role
     - prefRoles: [ NFPirate ]
       max: 999

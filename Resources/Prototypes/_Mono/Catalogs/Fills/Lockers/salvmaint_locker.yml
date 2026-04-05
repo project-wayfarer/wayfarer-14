@@ -673,7 +673,7 @@
       - !type:AllSelector
         children:
         - id: NFWeaponShotgunDoubleBarreled
-        - id: WeaponShotgunKammerer
+        - id: NFWeaponShotgunKammerer
         - id: NFAmmunitionBoxShellShotgunSlug
       #Faith
       - !type:AllSelector
@@ -689,7 +689,7 @@
     - id: NFWeaponEnergyPistolLaser
     - id: BoxT3ComponentsAssorted
     - id: PlushieThrongler
-    
+
   #Yeh prize
     - !type:GroupSelector
       weight: 10

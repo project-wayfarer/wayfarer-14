@@ -58,11 +58,11 @@
 
 # region Base Uplink
 - type: entity
-  parent: [ BaseItem, StorePresetPirateUplink ]
+  parent: [ BaseItem, StorePresetOutlawUplink ]
   id: BasePirateUplink
-  name: outlaw uplink # WF
-  abstract: true # WF
-  description: A scarred tablet encased in heat-resistant composite with slot for data chits on the side. # WF
+  name: outlaw uplink
+  abstract: true
+  description: A scarred tablet encased in heat-resistant composite with slot for data chits on the side.
   suffix: Empty
   categories: [ HideSpawnMenu ]
   components:
@@ -71,7 +71,7 @@
     layers:
     - state: icon
       scale: 0.7, 0.7
-    - state: icon-overlay-green # WF - Default to green
+    - state: icon-overlay-green
       scale: 0.7, 0.7
       shader: unshaded
   - type: Item
