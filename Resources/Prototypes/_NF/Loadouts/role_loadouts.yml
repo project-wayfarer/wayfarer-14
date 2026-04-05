@@ -533,16 +533,18 @@
   - NfsdSpeciesSpecific
 
 # region NFPirate
-
+# TODO: Migrate this shit into _WF/Loadouts
 - type: roleLoadout
   id: JobNFPirate
   groups:
-  - NFPirateHead
+#  - NFPirateHead
+  - WFHead # Wayfarer
   - WFNeck # Wayfarer
   - NFPirateJumpsuit
   - WFGloves # Wayfarer
   - WFBackpack # Wayfarer
-  - NFPirateForcedOuterClothing
+  - WFOuterClothing # Wayfarer
+#  - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
   - NFPirateEars
@@ -553,6 +555,9 @@
   - PirateBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm # Wayfarer
+  - WFLongarm # Wayfarer
+  - WFAmmo # Wayfarer
   canCustomizeName: true # pseudonym?
 
 - type: roleLoadout
@@ -585,8 +590,9 @@
   - NFPirateJumpsuit
   - WFGloves # Wayfarer
   - WFBackpack # Wayfarer
-  - NFPirateCaptainOuterClothing
-  - NFPirateForcedOuterClothing
+  - WFOuterClothing # Wayfarer
+#  - NFPirateCaptainOuterClothing
+#  - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
   - NFPirateCaptainEars
@@ -597,6 +603,9 @@
   - PirateCaptainBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm # Wayfarer
+  - WFLongarm # Wayfarer
+  - WFAmmo # Wayfarer
   canCustomizeName: true # pseudonym?
 
 # region Prisoner
