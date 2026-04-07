@@ -39,6 +39,7 @@
     earliestStart: 20
     weight: 5
     duration: 35
+    minimumPlayers: 2 # WF Added minimumPlayers
     maximumPlayers: 20
     reoccurrenceDelay: 180
   - type: BluespaceCargoRule
