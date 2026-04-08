@@ -1,3 +1,32 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 Bright0
+// SPDX-FileCopyrightText: 2022 Chief-Engineer
+// SPDX-FileCopyrightText: 2022 Jezithyr
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2022 Lucas
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Christopher Thirtle
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Ed
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Ygg01
+// SPDX-FileCopyrightText: 2024 Arendian
+// SPDX-FileCopyrightText: 2024 Cojoke
+// SPDX-FileCopyrightText: 2024 Dvir
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 ShadowCommander
+// SPDX-FileCopyrightText: 2024 keronshb
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 SlamBamActionman
+// SPDX-FileCopyrightText: 2025 SpaceManiac
+// SPDX-FileCopyrightText: 2025 ark1368
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
@@ -10,6 +39,7 @@ using Content.Shared.Item;
 using Content.Shared.Lock;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
+using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
@@ -40,12 +70,21 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     [Dependency] private   readonly SharedJointSystem _joints = default!;
     [Dependency] private   readonly SharedPhysicsSystem _physics = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private   readonly SharedStackSystem _stack = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private   readonly WeldableSystem _weldable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
 
+    private EntityQuery<StackComponent> _stackQuery;
+
     public const string ContainerName = "entity_storage";
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        _stackQuery = GetEntityQuery<StackComponent>();
+    }
 
     protected void OnEntityUnpausedEvent(EntityUid uid, SharedEntityStorageComponent component, EntityUnpausedEvent args)
     {
@@ -286,11 +325,46 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         }
 
         _joints.RecursiveClearJoints(toInsert);
-        if (!_container.Insert(toInsert, component.Contents))
-            return false;
 
-        var inside = EnsureComp<InsideEntityStorageComponent>(toInsert);
-        inside.Storage = container;
+        // Try to stack
+        if (_stackQuery.TryGetComponent(toInsert, out var insertStack))
+        {
+            var toInsertCount = insertStack.Count;
+
+            foreach (var ent in component.Contents.ContainedEntities)
+            {
+                if (!_stackQuery.TryGetComponent(ent, out var containedStack))
+                    continue;
+
+                if (!_stack.TryAdd(toInsert, ent, insertStack, containedStack))
+                    continue;
+
+                // If the entire stack was merged, we're done
+                if (insertStack.Count == 0)
+                {
+                    var inside = EnsureComp<InsideEntityStorageComponent>(toInsert);
+                    inside.Storage = container;
+                    return true;
+                }
+            }
+
+            // If there's still some stack remaining and we can't insert it
+            if (insertStack.Count > 0 && !_container.Insert(toInsert, component.Contents))
+            {
+                // If we couldn't insert anything at all
+                if (toInsertCount == insertStack.Count)
+                    return false;
+            }
+        }
+        else
+        {
+            // Not stackable
+            if (!_container.Insert(toInsert, component.Contents))
+                return false;
+        }
+
+        var insideComp = EnsureComp<InsideEntityStorageComponent>(toInsert);
+        insideComp.Storage = container;
         return true;
     }
 
