@@ -18,7 +18,8 @@
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_normal_crate.ogg
     weight: 5
     duration: 35
-    reoccurrenceDelay: 120
+    minimumPlayers: 2 # WF Added minimumPlayers
+    reoccurrenceDelay: 180 # WF 120 to 180
   - type: BluespaceCargoRule
     spawnerPrototype: RandomCargoSpawner
     flashPrototype: EffectFlashBluespaceQuiet
@@ -38,6 +39,7 @@
     earliestStart: 20
     weight: 5
     duration: 35
+    minimumPlayers: 2 # WF Added minimumPlayers
     maximumPlayers: 20
     reoccurrenceDelay: 180
   - type: BluespaceCargoRule
