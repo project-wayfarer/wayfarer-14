@@ -5,7 +5,7 @@
   roundStart: true
   prototype: MobGoblin
   sprites: MobGoblinSprites
-  markingLimits: MobGoblinMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobGoblinMarkingLimits WF
   dollPrototype: MobGoblinDummy
   # Coyote: Small enough to fit in a bag
   minHeight: 0.6
@@ -23,6 +23,7 @@
 - type: speciesBaseSprites
   id: MobGoblinSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     Head: MobGoblinHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -43,39 +44,7 @@
     RLeg: MobGoblinRLeg
     LFoot: MobGoblinLFoot
     RFoot: MobGoblinRFoot
-
-- type: markingPoints
-  id: MobGoblinMarkingLimits
-  points:
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
-      required: false
-    HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ GoblinEarsBasic ]
-    Snout:
-      points: 2
-      required: false
-#      defaultMarkings: [ GoblinNoseBasic ]
-    UndergarmentTop:
-      points: 3
-      required: false
-    UndergarmentBottom:
-      points: 3
-      required: false
-    Chest:
-      points: 1
-      required: false
-    Legs:
-      points: 2
-      required: false
-    Arms:
-      points: 2
-      required: false
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
 
 - type: humanoidBaseSprite
   id: MobGoblinEyes

@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobVox
   sprites: MobVoxSprites
-  markingLimits: MobVoxMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobVoxMarkingLimits WF
   dollPrototype: MobVoxDummy
   skinColoration: Hues # imp VoxFeathers<Hues
   defaultSkinTone: "#6c741d"
@@ -22,6 +22,7 @@
 - type: speciesBaseSprites
   id: MobVoxSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobVoxHead
@@ -44,57 +45,7 @@
     LFoot: MobVoxLFoot
     RFoot: MobVoxRFoot
     Tail: MobHumanoidAnyMarking
-
-- type: markingPoints
-  id: MobVoxMarkingLimits
-  onlyWhitelisted: false
-  points:
-    Special:
-      points: 32 # WF
-      required: false
-    Head:
-      points: 32 # WF
-      required: false
-    HeadTop:
-      points: 32 # WF
-      required: false
-    HeadSide:
-      points: 32 # WF
-      required: false
-    Snout:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ VoxBeak ]
-    Hair:
-      points: 32 # WF
-      required: false
-    FacialHair:
-      points: 32 # WF
-      required: false
-    Chest:
-      points: 32 # WF
-      required: false
-    Legs:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
-    Arms:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
-    Tail:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ VoxTail ]
-    UndergarmentTop:
-      points: 32 # WF
-      required: false
-    UndergarmentBottom:
-      points: 32 # WF
-      required: false
-    Overlay:
-      points: 32 # WF
-      required: false
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
 
 - type: humanoidBaseSprite
   id: MobVoxEyes

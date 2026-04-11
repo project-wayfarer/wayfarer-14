@@ -5,7 +5,7 @@
   prototype: MobResomi
   sprites: MobResomiSprites
   defaultSkinTone: "#faf7f7"
-  markingLimits: MobResomiMarkingLimits
+  markingLimits: MobHumanMarkingLimits
   # maleFirstNames: names_resomi_male
   # femaleFirstNames: names_resomi_female
   dollPrototype: MobResomiDummy
@@ -29,10 +29,15 @@
 - type: speciesBaseSprites
   id: MobResomiSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobResomiHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Hair: MobResomiHair
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
     Chest: MobResomiTorso
     Eyes: MobResomiEyes
     LArm: MobResomiLArm
@@ -47,30 +52,7 @@
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Genital: MobHumanoidAnyMarking
-
-- type: markingPoints
-  id: MobResomiMarkingLimits
-  onlyWhitelisted: true
-  points:
-    Hair:
-      points: 1
-      required: false
-    Tail:
-      points: 2
-      required: true
-      defaultMarkings: [ ResomiTail, ResomiTailFeathers ]
-    Legs:
-      points: 2
-      required: false
-    Arms:
-      points: 2
-      required: false
-    Head:
-      points: 2
-      required: false
-    Chest:
-      points: 1
-      required: false
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot, this will look weird as fuck
 
 - type: humanoidBaseSprite
   id: MobResomiEyes
