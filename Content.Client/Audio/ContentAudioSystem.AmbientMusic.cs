@@ -14,12 +14,13 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Client.CombatMode;
-using Content.Shared.CombatMode;
 using Robust.Shared.Timing;
 using Content.Shared.NPC.Components;
 using Content.Shared._Mono.CCVar;
 using Content.Shared._Crescent.Vessel;
-using Content.Shared.Ghost;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Weapons.Melee;
+using Content.Shared.Weapons.Ranged.Components;
 
 namespace Content.Client.Audio;
 
@@ -37,6 +38,7 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly CombatModeSystem _combatModeSystem = default!; //CLIENT ONE. WHY ARE THERE 3??
     [Dependency] private readonly SpaceBiomeSystem _spaceBiome = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     //options menu ---
     private static float _volumeSliderAmbient;
@@ -117,6 +119,32 @@ public sealed partial class ContentAudioSystem
         if (!_timing.IsFirstTimePredicted) //otherwise this will tick like 5x faster on client. thanks prediction
             return;
 
+        var player = _player.LocalEntity;
+        if (player == null)
+            return;
+
+        if (_combatMusicToggle) // if cvar is off, don't bother
+        {
+            bool currentCombatState = _combatModeSystem.IsInCombatMode()
+                && _hands.TryGetActiveItem(player.Value, out var item)
+                && (HasComp<MeleeWeaponComponent>(item) || HasComp<GunComponent>(item));
+
+            if (currentCombatState && !_combatWindUpBool) //if combat mode is being turned ON
+            {
+                _combatWindUpBool = true;
+                _combatWindUpTimer = 0;
+                _combatWindDownBool = false;
+                _combatWindDownTimer = 0;
+            }
+            else if (!currentCombatState && !_combatWindDownBool) //if combat mode is being turned OFF
+            {
+                _combatWindDownBool = true;
+                _combatWindDownTimer = 0;
+                _combatWindUpBool = false;
+                _combatWindUpTimer = 0;
+            }
+        }
+
         if (_initialStationMusicBool)
         {
             _initialStationMusicTimer += frameTime;
@@ -163,7 +191,6 @@ public sealed partial class ContentAudioSystem
     {
         SubscribeLocalEvent<SpaceBiomeSwapMessage>(OnBiomeChange);
         SubscribeLocalEvent<PlayerParentChangedMessage>(OnPlayerParentChange);
-        SubscribeLocalEvent<ToggleCombatActionEvent>(OnCombatModeToggle);
 
         SubscribeLocalEvent<LocalPlayerDetachedEvent>(OnPlayerDetach); //in case u die in combatmode
 
@@ -240,28 +267,6 @@ public sealed partial class ContentAudioSystem
     private void SwitchCombatMusic(bool currentCombatState)
     {
         SetMusic(_lastGrid, _lastBiome, currentCombatState);
-    }
-    private void OnCombatModeToggle(ToggleCombatActionEvent ev)
-    {
-        if (_combatMusicToggle == false) // if cvar is off, don't bother
-            return;
-        if (!_timing.IsFirstTimePredicted == true) //needed, because combat mode is predicted, and triggers 7 times otherwise.
-            return;
-        bool currentCombatState = _combatModeSystem.IsInCombatMode();
-        if (currentCombatState) //if combat mode is being turned ON
-        {
-            _combatWindUpBool = true;
-            _combatWindUpTimer = 0;
-            _combatWindDownBool = false;
-            _combatWindDownTimer = 0;
-        }
-        else //if combat mode is being turned OFF
-        {
-            _combatWindDownBool = true;
-            _combatWindDownTimer = 0;
-            _combatWindUpBool = false;
-            _combatWindUpTimer = 0;
-        }
     }
 
     /// <summary>
