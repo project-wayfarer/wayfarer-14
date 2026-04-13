@@ -7,6 +7,39 @@
   parent:
   - BaseWeaponTurretMagazineFed
   components:
+  - type: PointLight
+    enabled: true
+    autoRot: true
+    netsync: false
+    radius: 16
+    energy: 8
+    mask: /Textures/_NF/Effects/LightMasks/beam.png
+    color: "#990000"
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      # TODO: Construction graph
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 5
   - type: Gun
     examineCaliber: gun-examine-caliber-asmgt
     burstFireRate: 8
@@ -15,6 +48,10 @@
     selectedMode: Burst
     availableModes:
     - Burst
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2000: Dead # bandaid fix, value here should be high enough to prevent situations when mob(turret) changes it's state before being destoyed
   - type: NPCImprintingOnSpawnBehaviour
     whitelist:
       components:

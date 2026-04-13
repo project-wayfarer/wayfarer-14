@@ -58,26 +58,25 @@
 - type: roleLoadout
   id: JobMedicalER
   groups:
-  - ContractorHead
-  - ContractorNeck
   - EmergencyResponderJumpsuit
-  - ContractorGloves
-  - ContractorBackpack
-  - ContractorOuterClothing
-  - ContractorForcedOuterClothing
-  - ContractorShoes
-  - ContractorFace
-  - ContractorGlasses
-  - ContractorBelt
-  - ContractorEars
+  - WFOuterClothing
+  - WFBackpack
+  - WFShoes
+  - WFHead
+  - WFEars
+  - WFGloves
   - EmergencyResponderPDA
-  - ContractorEncryptionKey
-  - ContractorBoxSurvival
-  - ContractorWallet
-  - ContractorCartridge
-  - ContractorImplanter
-  - ContractorBackpackItems
-  - ContractorHandItems
+  - WFGlasses
+  - WFFace
+  - WFBelt
+  - WFNeck
+  - WFEncryptionKey
+  - WFBoxSurvival
+  - WFWallet
+  - WFCartridge
+  - WFImplanter
+  - WFBackpackItems
+  - WFHandItems
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
