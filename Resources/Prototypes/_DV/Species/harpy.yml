@@ -4,13 +4,14 @@
   roundStart: true
   prototype: MobHarpy
   sprites: MobHarpySprites
-  markingLimits: MobHarpyMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobHarpyMarkingLimits WF
   dollPrototype: MobHarpyDummy
   skinColoration: HumanToned
 
 - type: speciesBaseSprites
   id: MobHarpySprites
   sprites:
+    Special: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobHarpyHead
@@ -34,57 +35,6 @@
     LFoot: MobHarpyLFoot
     RFoot: MobHarpyRFoot
     RArmExtension: MobHumanoidAnyMarking # Frontier
-
-
-- type: markingPoints
-  id: MobHarpyMarkingLimits
-  points:
-    Special:
-      points: 32 # WF
-      required: false
-    Head:
-      points: 32 # WF
-      required: false
-    HeadTop:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ HarpyEarsDefault ]
-    HeadSide:
-      points: 32 # WF
-      required: false
-    Snout:
-      points: 32 # WF
-      required: false
-    Hair:
-      points: 32 # WF
-      required: false
-    FacialHair:
-      points: 32 # WF
-      required: false
-    Chest:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ HarpyChestDefault ]
-    Legs:
-      points: 32 # WF
-      required: false
-    Arms:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ HarpyWingDefaultHuescale ]
-    Tail:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ HarpyTailPhoenix ]
-    UndergarmentTop:
-      points: 32 # WF
-      required: false
-    UndergarmentBottom:
-      points: 32 # WF
-      required: false
-    Overlay:
-      points: 32 # WF
-      required: false
 
 - type: humanoidBaseSprite
   id: MobHarpyHead

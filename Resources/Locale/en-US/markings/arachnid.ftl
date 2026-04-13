@@ -1,94 +1,94 @@
-marking-ArachnidCheliceraeDownwards = Chelicerae (Downwards)
-marking-ArachnidCheliceraeDownwards-downwards = Chelicerae
+marking-ArachnidCheliceraeDownwards = [ Arachnid ] Chelicerae (Downwards)
+marking-ArachnidCheliceraeDownwards-downwards = [ Arachnid ] Chelicerae
 
-marking-ArachnidCheliceraeInwards = Chelicerae (Inwards)
-marking-ArachnidCheliceraeInwards-inwards = Chelicerae
+marking-ArachnidCheliceraeInwards = [ Arachnid ] Chelicerae (Inwards)
+marking-ArachnidCheliceraeInwards-inwards = [ Arachnid ] Chelicerae
 
-marking-ArachnidAppendagesDefault = Appendages (Long)
-marking-ArachnidAppendagesDefault-long_primary = Appendage
-marking-ArachnidAppendagesDefault-long_secondary = Stripes
+marking-ArachnidAppendagesDefault = [ Arachnid ] Appendages (Long)
+marking-ArachnidAppendagesDefault-long_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesDefault-long_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesSharp = Appendages (Sharp)
-marking-ArachnidAppendagesSharp-sharp_primary = Appendage
-marking-ArachnidAppendagesSharp-sharp_secondary = Stripes
+marking-ArachnidAppendagesSharp = [ Arachnid ] Appendages (Sharp)
+marking-ArachnidAppendagesSharp-sharp_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesSharp-sharp_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesZigZag = Appendages (ZigZag)
-marking-ArachnidAppendagesZigZag-zigzag_primary = Appendage
-marking-ArachnidAppendagesZigZag-zigzag_secondary = Stripes
+marking-ArachnidAppendagesZigZag = [ Arachnid ] Appendages (ZigZag)
+marking-ArachnidAppendagesZigZag-zigzag_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesZigZag-zigzag_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesCurled = Appendages (Curled)
-marking-ArachnidAppendagesCurled-curled_primary = Appendage
-marking-ArachnidAppendagesCurled-curled_secondary = Stripes
+marking-ArachnidAppendagesCurled = [ Arachnid ] Appendages (Curled)
+marking-ArachnidAppendagesCurled-curled_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesCurled-curled_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesStingers = Appendages (Stingers)
-marking-ArachnidAppendagesStingers-stingers_primary = Appendage
-marking-ArachnidAppendagesStingers-stingers_secondary = Stripes
+marking-ArachnidAppendagesStingers = [ Arachnid ] Appendages (Stingers)
+marking-ArachnidAppendagesStingers-stingers_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesStingers-stingers_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesChipped = Appendages (Chipped)
-marking-ArachnidAppendagesChipped-chipped_primary = Appendage
-marking-ArachnidAppendagesChipped-chipped_secondary = Stripes
+marking-ArachnidAppendagesChipped = [ Arachnid ] Appendages (Chipped)
+marking-ArachnidAppendagesChipped-chipped_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesChipped-chipped_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesHarvest = Appendages (Harvest)
-marking-ArachnidAppendagesHarvest-harvest_primary = Appendage
-marking-ArachnidAppendagesHarvest-harvest_secondary = Stripes
+marking-ArachnidAppendagesHarvest = [ Arachnid ] Appendages (Harvest)
+marking-ArachnidAppendagesHarvest-harvest_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesHarvest-harvest_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesShort = Appendages (Short)
-marking-ArachnidAppendagesShort-short_primary = Appendage
-marking-ArachnidAppendagesShort-short_secondary = Stripes
+marking-ArachnidAppendagesShort = [ Arachnid ] Appendages (Short)
+marking-ArachnidAppendagesShort-short_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesShort-short_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidAppendagesFreaky = Appendages (Freaky long)
-marking-ArachnidAppendagesFreaky-freaky_primary = Appendage
-marking-ArachnidAppendagesFreaky-freaky_secondary = Stripes
+marking-ArachnidAppendagesFreaky = [ Arachnid ] Appendages (Freaky long)
+marking-ArachnidAppendagesFreaky-freaky_primary = [ Arachnid ] Appendage
+marking-ArachnidAppendagesFreaky-freaky_secondary = [ Arachnid ] Stripes
 
-marking-ArachnidTorsoStripes = Stripes
-marking-ArachnidTorsoStripes-stripes = Design
+marking-ArachnidTorsoStripes = [ Arachnid ] Stripes
+marking-ArachnidTorsoStripes-stripes = [ Arachnid ] Design
 
-marking-ArachnidTorsoSlashes = Slashes
-marking-ArachnidTorsoSlashes-slashes = Design
+marking-ArachnidTorsoSlashes = [ Arachnid ] Slashes
+marking-ArachnidTorsoSlashes-slashes = [ Arachnid ] Design
 
-marking-ArachnidTorsoCross = Cross
-marking-ArachnidTorsoCross-cross = Design
+marking-ArachnidTorsoCross = [ Arachnid ] Cross
+marking-ArachnidTorsoCross-cross = [ Arachnid ] Design
 
-marking-ArachnidTorsoX = X
-marking-ArachnidTorsoX-x = Design
+marking-ArachnidTorsoX = [ Arachnid ] X
+marking-ArachnidTorsoX-x = [ Arachnid ] Design
 
-marking-ArachnidTorsoHeart = Heart
-marking-ArachnidTorsoHeart-heart = Design
+marking-ArachnidTorsoHeart = [ Arachnid ] Heart
+marking-ArachnidTorsoHeart-heart = [ Arachnid ] Design
 
-marking-ArachnidTorsoHourglass = Hourglass
-marking-ArachnidTorsoHourglass-hourglass = Design
+marking-ArachnidTorsoHourglass = [ Arachnid ] Hourglass
+marking-ArachnidTorsoHourglass-hourglass = [ Arachnid ] Design
 
-marking-ArachnidTorsoNailAndHammer = Nail and Hammer
-marking-ArachnidTorsoNailAndHammer-nail-and-hammer = Design
+marking-ArachnidTorsoNailAndHammer = [ Arachnid ] Nail and Hammer
+marking-ArachnidTorsoNailAndHammer-nail-and-hammer = [ Arachnid ] Design
 
-marking-ArachnidTorsoStar = Star
-marking-ArachnidTorsoStar-star = Design
+marking-ArachnidTorsoStar = [ Arachnid ] Star
+marking-ArachnidTorsoStar-star = [ Arachnid ] Design
 
-marking-ArachnidTorsoArrows = Arrows
-marking-ArachnidTorsoArrows-arrows = Design
+marking-ArachnidTorsoArrows = [ Arachnid ] Arrows
+marking-ArachnidTorsoArrows-arrows = [ Arachnid ] Design
 
-marking-ArachnidTorsoCore = Core
-marking-ArachnidTorsoCore-core = Design
+marking-ArachnidTorsoCore = [ Arachnid ] Core
+marking-ArachnidTorsoCore-core = [ Arachnid ] Design
 
-marking-ArachnidTorsoFiddleback = Fiddleback
-marking-ArachnidTorsoFiddleback-fiddleback = Design
+marking-ArachnidTorsoFiddleback = [ Arachnid ] Fiddleback
+marking-ArachnidTorsoFiddleback-fiddleback = [ Arachnid ] Design
 
-marking-ArachnidTorsoSkull = Skull
-marking-ArachnidTorsoSkull-skull = Design
+marking-ArachnidTorsoSkull = [ Arachnid ] Skull
+marking-ArachnidTorsoSkull-skull = [ Arachnid ] Design
 
-marking-ArachnidTorsoTarget = Target
-marking-ArachnidTorsoTarget-target = Design
+marking-ArachnidTorsoTarget = [ Arachnid ] Target
+marking-ArachnidTorsoTarget-target = [ Arachnid ] Design
 
-marking-ArachnidRArmStripes = Arachnid Stripes (Right)
-marking-ArachnidRArmStripes-stripes_right = Stripes
+marking-ArachnidRArmStripes = [ Arachnid ] Arachnid Stripes (Right)
+marking-ArachnidRArmStripes-stripes_right = [ Arachnid ] Stripes
 
-marking-ArachnidLArmStripes = Arachnid Stripes (Left)
-marking-ArachnidLArmStripes-stripes_left = Stripes
+marking-ArachnidLArmStripes = [ Arachnid ] Arachnid Stripes (Left)
+marking-ArachnidLArmStripes-stripes_left = [ Arachnid ] Stripes
 
-marking-ArachnidRLegStripes = Arachnid Stripes (Right)
-marking-ArachnidRLegStripes-stripes_right = Stripes
+marking-ArachnidRLegStripes = [ Arachnid ] Arachnid Stripes (Right)
+marking-ArachnidRLegStripes-stripes_right = [ Arachnid ] Stripes
 
-marking-ArachnidLLegStripes = Arachnid Stripes (Left)
-marking-ArachnidLLegStripes-stripes_left = Stripes
+marking-ArachnidLLegStripes = [ Arachnid ] Arachnid Stripes (Left)
+marking-ArachnidLLegStripes-stripes_left = [ Arachnid ] Stripes
 
-marking-ArachnidOverlayFuzzy = Fuzzy
+marking-ArachnidOverlayFuzzy = [ Arachnid ] Fuzzy

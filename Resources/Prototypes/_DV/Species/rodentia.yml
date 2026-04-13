@@ -5,7 +5,7 @@
   prototype: MobRodentia
   sprites: MobRodentiaSprites
   defaultSkinTone: "#747474"
-  markingLimits: MobRodentiaMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobRodentiaMarkingLimits WF
   dollPrototype: MobRodentiaDummy
   # Coyote: Small enough to fit in a bag
   minHeight: 0.6
@@ -24,6 +24,7 @@
 - type: speciesBaseSprites
   id: MobRodentiaSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobRodentiaHead
@@ -46,54 +47,7 @@
     RLeg: MobRodentiaRLeg
     LFoot: MobRodentiaLFoot
     RFoot: MobRodentiaRFoot
-
-- type: markingPoints
-  id: MobRodentiaMarkingLimits
-  points:
-    Special:
-      points: 32 # WF
-      required: false
-    Head:
-      points: 32 # WF
-      required: false
-    HeadTop:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ RodentiaHeadTopEarDefault ]
-    HeadSide:
-      points: 32 # WF
-      required: false
-    Snout:
-      points: 32 # WF
-      required: false
-    Hair:
-      points: 32 # WF
-      required: false
-    FacialHair:
-      points: 32 # WF
-      required: false
-    Chest:
-      points: 32 # WF
-      required: false
-    Legs:
-      points: 32 # WF
-      required: false
-    Arms:
-      points: 32 # WF
-      required: false
-    Tail:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ RodentiaTailDefault ]
-    UndergarmentTop:
-      points: 32 # WF
-      required: false
-    UndergarmentBottom:
-      points: 32 # WF
-      required: false
-    Overlay:
-      points: 32 # WF
-      required: false
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
 
 - type: humanoidBaseSprite
   id: MobRodentiaHead

@@ -5,7 +5,7 @@
   prototype: MobMoth
   sprites: MobMothSprites
   defaultSkinTone: "#ffda93"
-  markingLimits: MobMothMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobMothMarkingLimits
   dollPrototype: MobMothDummy
   skinColoration: Hues
   maleFirstNames: NamesMothFirstMale
@@ -15,6 +15,7 @@
 - type: speciesBaseSprites
   id: MobMothSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobMothHead
@@ -36,61 +37,13 @@
     RLeg: MobMothRLeg
     LFoot: MobMothLFoot
     RFoot: MobMothRFoot
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot... wait what?
 
 - type: humanoidBaseSprite
   id: MobMothEyes
   baseSprite:
     sprite: Mobs/Species/Moth/parts.rsi
     state: eyes
-
-- type: markingPoints
-  id: MobMothMarkingLimits
-  onlyWhitelisted: false
-  points:
-    Special:
-      points: 32 # WF
-      required: false
-    Head:
-      points: 32 # WF
-      required: false
-    HeadTop:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ MothAntennasDefault ]
-    HeadSide:
-      points: 32 # WF
-      required: false
-    Snout:
-      points: 32 # WF
-      required: false
-    Hair:
-      points: 32 # WF
-      required: false
-    FacialHair:
-      points: 32 # WF
-      required: false
-    Chest:
-      points: 32 # WF
-      required: false
-    Legs:
-      points: 32 # WF
-      required: false
-    Arms:
-      points: 32 # WF
-      required: false
-    Tail:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ MothWingsDefault ]
-    UndergarmentTop:
-      points: 32 # WF
-      required: false
-    UndergarmentBottom:
-      points: 32 # WF
-      required: false
-    Overlay:
-      points: 32 # WF
-      required: false
 
 - type: humanoidBaseSprite
   id: MobMothHead

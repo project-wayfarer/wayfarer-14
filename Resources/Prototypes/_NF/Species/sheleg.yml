@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobSheleg
   dollPrototype: MobShelegDummy
-  markingLimits: MobShelegMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobShelegMarkingLimits WF
   sprites: MobShelegSprites
   skinColoration: ShelegToned
   defaultSkinTone: "#2A48CC"
@@ -21,8 +21,8 @@
   sprites:
     Special: MobHumanoidAnyMarking
     Head: MobShelegHead
-    Hair: MobShelegHair
-    FacialHair: MobShelegHair
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
@@ -30,6 +30,7 @@
     Chest: MobShelegTorso
     Eyes: MobHumanoidEyes
     HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     LArm: MobShelegLArm
     RArm: MobShelegRArm
     LHand: MobShelegLHand
@@ -38,43 +39,7 @@
     RLeg: MobShelegRLeg
     LFoot: MobShelegLFoot
     RFoot: MobShelegRFoot
-
-- type: markingPoints
-  id: MobShelegMarkingLimits
-  points:
-    Special: # the cat ear joke
-      points: 0
-      required: false
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
-      required: false
-    Snout:
-      points: 1
-      required: false
-    Tail: # the cat tail joke
-      points: 0
-      required: false
-    HeadTop:
-      points: 1
-      required: false
-    UndergarmentTop:
-      points: 3
-      required: false
-    UndergarmentBottom:
-      points: 3
-      required: false
-    Chest:
-      points: 4
-      required: false
-    Legs:
-      points: 8
-      required: false
-    Arms:
-      points: 8
-      required: false
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
 
 # - type: humanoidBaseSprite
   # id: MobShelegEyes

@@ -36,6 +36,7 @@ public sealed class HaulerAutopilotRuleSystem : StationEventSystem<HaulerAutopil
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly LinkedLifecycleGridSystem _linkedLifecycleGrid = default!;
 
     public override void Update(float frameTime)
     {
@@ -161,7 +162,7 @@ public sealed class HaulerAutopilotRuleSystem : StationEventSystem<HaulerAutopil
 
         // FTL the shuttle to the spawn coordinates
         var spawnCoords = new EntityCoordinates(mapUid.Value, spawnPosition);
-        
+
         if (!TryComp<ShuttleComponent>(shuttleUid, out var shuttleComp))
         {
             Log.Error($"Loaded shuttle {shuttleUid} doesn't have ShuttleComponent!");
@@ -217,8 +218,19 @@ public sealed class HaulerAutopilotRuleSystem : StationEventSystem<HaulerAutopil
             // Disable autopilot if it's still active
             _autopilot.DisableAutopilot(component.ShuttleUid.Value);
 
-            // Delete the shuttle
-            QueueDel(component.ShuttleUid.Value);
+            // Handle players still on grid when time up
+            var playerMobs = _linkedLifecycleGrid.GetEntitiesToReparent(component.ShuttleUid.Value);
+            foreach (var mob in playerMobs)
+            {
+                _transform.DetachEntity(mob.Entity.Owner, mob.Entity.Comp);
+            }
+            // Deletion has to happen before grid traversal re-parents players.
+            Del(component.ShuttleUid.Value);
+
+            foreach (var mob in playerMobs)
+            {
+                _transform.SetCoordinates(mob.Entity.Owner, new EntityCoordinates(mob.MapUid, mob.MapPosition));
+            }
         }
     }
 }

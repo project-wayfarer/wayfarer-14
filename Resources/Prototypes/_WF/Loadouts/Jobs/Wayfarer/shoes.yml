@@ -608,6 +608,18 @@
     shoes: ClothingShoesJester
 
 - type: loadout
+  id: WFClothingShoesJesterALT
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 1200
+  equipment:
+    shoes: ClothingShoesJesterALT
+
+- type: loadout
   id: WFClothingShoesBootsPerformer
   effects:
   - !type:GroupLoadoutEffect
