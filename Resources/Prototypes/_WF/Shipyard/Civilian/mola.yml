@@ -1,0 +1,35 @@
+- type: vessel
+  id: Mola-Mola
+  parent: BaseVessel
+  name: ZKW Mola Mola
+  description: A large slow moving cafe/spa meant for long term travel to those isolated mining locations to provide relaxation to travlers. Built at the ZK shipyards at the request of the maid unions.
+  price: 109000 #792 tc  55189 94,789
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/mola.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  - Kitchen
+  engine:
+  - Biofuel
+  - Solar
+
+- type: gameMap
+  id: Mola-Mola
+  mapName: 'ZKW Mola-Mola'
+  mapPath: /Maps/_WF/Shuttles/Civilian/mola.yml
+  minPlayers: 0
+  stations:
+    Mola-Mola:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Mola-Mola CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
+#792 tc  55189
