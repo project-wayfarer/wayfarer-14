@@ -877,15 +877,6 @@
     availableModes:
     - FullAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: SpawnMobViscerator
-    fireCost: 100
-  - type: Battery
-    maxCharge: 100
-    startingCharge: 100
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 5
 
 #region Tier 3
 - type: entity
