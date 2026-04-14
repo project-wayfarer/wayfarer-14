@@ -114,7 +114,7 @@ public sealed class HaulerAutopilotRuleSystem : StationEventSystem<HaulerAutopil
                 if (timeNearby >= component.ProximityTimeRequired)
                 {
                     // Play audio to this player
-                    _audio.PlayGlobal(component.ProximitySound, actor.PlayerSession, AudioParams.Default);
+                    // _audio.PlayGlobal(component.ProximitySound, actor.PlayerSession, AudioParams.Default);
                     component.PlayersWhoHeardAudio.Add(playerUid);
                     playersToRemove.Add(playerUid);
                 }
