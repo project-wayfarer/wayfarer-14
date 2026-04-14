@@ -72,7 +72,7 @@ public sealed partial class PathfindingSystem
             }
             else if ((request.Flags & PathFlags.Smashing) != 0x0 && end.Data.Damage > 0f)
             {
-                modifier += 10f + end.Data.Damage / 100f;
+                modifier += end.Data.Damage / 100f;
             }
             else if (isClimb && (request.Flags & PathFlags.Climbing) != 0x0)
             {
@@ -91,8 +91,9 @@ public sealed partial class PathfindingSystem
 
     public List<PathPoly> Simplify(List<PathPoly> vertices, float tolerance = 0)
     {
-        // TODO: Needs more work
-        if (vertices.Count <= 3)
+        // #Misfits Change /Fix/: Keep exact obstacle nodes, but collapse free-space staircase
+        // segments into fewer waypoints so steering stops overreacting to every intermediate turn.
+        if (vertices.Count <= 2)
             return vertices;
 
         var simplified = new List<PathPoly>();
@@ -127,12 +128,100 @@ public sealed partial class PathfindingSystem
             simplified.Add(vertices[^1]);
         }
 
+        if (simplified.Count <= 2)
+            return simplified;
+
+        var shortcut = new List<PathPoly> { simplified[0] };
+        var anchorIndex = 0;
+
+        while (anchorIndex < simplified.Count - 1)
+        {
+            var nextIndex = anchorIndex + 1;
+
+            for (var candidateIndex = simplified.Count - 1; candidateIndex > anchorIndex + 1; candidateIndex--)
+            {
+                if (!CanShortcutFreeSpace(simplified, anchorIndex, candidateIndex, tolerance))
+                    continue;
+
+                nextIndex = candidateIndex;
+                break;
+            }
+
+            shortcut.Add(simplified[nextIndex]);
+            anchorIndex = nextIndex;
+        }
+
         // Check LOS and cut out more nodes
         // TODO: Grid cast
         // https://github.com/recastnavigation/recastnavigation/blob/c5cbd53024c8a9d8d097a4371215e3342d2fdc87/Detour/Source/DetourNavMeshQuery.cpp#L2455
         // Essentially you just do a raycast but a specialised version.
 
-        return simplified;
+        return shortcut;
+    }
+
+    private bool CanShortcutFreeSpace(List<PathPoly> vertices, int anchorIndex, int candidateIndex, float tolerance)
+    {
+        var start = vertices[anchorIndex];
+        var end = vertices[candidateIndex];
+
+        if (!start.IsValid() || !end.IsValid() || start.GraphUid != end.GraphUid)
+            return false;
+
+        if (!start.Data.IsFreeSpace || !end.Data.IsFreeSpace)
+            return false;
+
+        var startPoint = start.Box.Center;
+        var endPoint = end.Box.Center;
+
+        for (var i = anchorIndex + 1; i < candidateIndex; i++)
+        {
+            var node = vertices[i];
+
+            if (!node.IsValid() || node.GraphUid != start.GraphUid || !node.Data.IsFreeSpace)
+                return false;
+
+            // Keep the shortcut conservative: the direct segment must still pass through every
+            // intermediate free-space poly, so we smooth diagonal staircases without cutting corners.
+            if (!SegmentIntersectsBox(startPoint, endPoint, node.Box.Enlarged(tolerance + 0.05f)))
+                return false;
+        }
+
+        return true;
+    }
+
+    private bool SegmentIntersectsBox(System.Numerics.Vector2 start, System.Numerics.Vector2 end, Box2 box)
+    {
+        if (box.Contains(start) || box.Contains(end))
+            return true;
+
+        var direction = end - start;
+        var min = 0f;
+        var max = 1f;
+
+        if (!ClipAxis(start.X, direction.X, box.Left, box.Right, ref min, ref max))
+            return false;
+
+        if (!ClipAxis(start.Y, direction.Y, box.Bottom, box.Top, ref min, ref max))
+            return false;
+
+        return max >= min;
+    }
+
+    private bool ClipAxis(float start, float direction, float minBound, float maxBound, ref float min, ref float max)
+    {
+        if (Math.Abs(direction) < 0.0001f)
+            return start >= minBound && start <= maxBound;
+
+        var inv = 1f / direction;
+        var enter = (minBound - start) * inv;
+        var exit = (maxBound - start) * inv;
+
+        if (enter > exit)
+            (enter, exit) = (exit, enter);
+
+        min = Math.Max(min, enter);
+        max = Math.Min(max, exit);
+        return max >= min;
     }
 
     private bool IsCollinear(PathPoly prev, PathPoly current, PathPoly next, float tolerance)

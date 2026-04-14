@@ -482,24 +482,22 @@ public sealed partial class PathfindingSystem
                                     continue;
                                 }
 
-                                // Do an AABB check first as it's probably faster, then do an actual point check.
+                                // Check if the fixture's AABB overlaps the subtile cell.
+                                // Using AABB overlap (instead of a point-containment + TestPoint) correctly
+                                // detects narrow fixtures (e.g. thin fences) whose shape may not contain
+                                // any of the discrete sample points.
+                                var subTileBox = Box2.CenteredAround(localPos, new Vector2(1f / SubStep, 1f / SubStep));
                                 var intersects = false;
 
                                 foreach (var proxy in fixture.Proxies)
                                 {
-                                    if (!proxy.AABB.Contains(localPos))
+                                    if (!proxy.AABB.Intersects(subTileBox))
                                         continue;
 
                                     intersects = true;
                                 }
 
-                                if (!intersects ||
-                                    !_xformQuery.TryGetComponent(ent, out var xform))
-                                {
-                                    continue;
-                                }
-
-                                if (!_fixtures.TestPoint(fixture.Shape, new Transform(xform.LocalPosition, xform.LocalRotation), localPos))
+                                if (!intersects)
                                 {
                                     continue;
                                 }

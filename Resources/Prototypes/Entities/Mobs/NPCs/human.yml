@@ -25,9 +25,22 @@
         - SalvageSpecialistGear
     - type: InputMover
     - type: MobMover
+  # // WF - Use new N14HostileCompound preset
     - type: HTN
       rootTask:
-        task: SimpleHumanoidHostileCompound
+        task: N14HostileCompound
+      blackboard:
+        NavClimb: !type:Bool
+          true
+        NavInteract: !type:Bool
+          true
+        NavPry: !type:Bool
+          true
+        NavSmash: !type:Bool
+          true
+        MeleeRange: !type:Single
+          1.5
+# // WF
 
 - type: entity
   name: spirate
@@ -43,9 +56,22 @@
       - PirateGear
   - type: InputMover
   - type: MobMover
+  # // WF - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: SimpleHumanoidHostileCompound
+      task: N14HostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      MeleeRange: !type:Single
+        1.5
+# // WF
 
 - type: entity
   name: syndicate footsoldier
@@ -60,9 +86,22 @@
         - SyndicateFootsoldierGearRuin
     - type: InputMover
     - type: MobMover
+  # WF Start
     - type: HTN
       rootTask:
-        task: SimpleHumanoidHostileCompound
+        task: SimpleRangedHostileCompound
+      blackboard:
+        NavClimb: !type:Bool
+          true
+        NavInteract: !type:Bool
+          true
+        NavPry: !type:Bool
+          true
+        NavSmash: !type:Bool
+          true
+        MeleeRange: !type:Single
+          1.5
+  # WF End
 
 - type: entity
   name: syndicate shuttle pilot

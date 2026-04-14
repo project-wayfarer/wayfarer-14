@@ -9,9 +9,18 @@
   - type: NpcFactionMember
     factions:
     - Xeno
+  # WF Start
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound #todo custom argocyte AI
+      task: N14RangedHostileCompound
+    blackboard:
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      MeleeRange: !type:Single
+        1.5
+  # WF End
   - type: Sprite
     sprite: Mobs/Aliens/Argocyte/argocyte_common.rsi
   - type: SolutionContainerManager
@@ -31,8 +40,6 @@
   - type: Insulated
   - type: CombatMode
   - type: MeleeWeapon
-    angle: 0
-    animation: WeaponArcBite
     damage:
       types:
         Slash: 5

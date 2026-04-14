@@ -7,11 +7,18 @@
   components:
     - type: InputMover
     - type: MobMover
+  # // WF - Use new N14HostileCompound preset
     - type: HTN
       rootTask:
-        task: SimpleHostileCompound
+        task: N14HostileCompound
       blackboard:
-        NavSmash: !type:Bool true
+        NavSmash: !type:Bool
+          true
+        NavPry: !type:Bool
+          true
+        MeleeRange: !type:Single
+          1.5
+        # // WF
     - type: NpcFactionMember
       factions:
         - Dragon
@@ -60,8 +67,9 @@
           maxAmount: 4
     - type: MeleeWeapon
       altDisarm: false
-      angle: 0
-      animation: WeaponArcBite
+      angle: 10 # Mobs use wideswing instead of aimbot
+      animation: WeaponArcThrust
+      wideAnimation: WeaponArcThrust
       soundHit:
         path: /Audio/Effects/bite.ogg
       damage:

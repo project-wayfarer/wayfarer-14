@@ -28,6 +28,8 @@ public sealed class AutopilotSystem : EntitySystem
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly ShuttleConsoleSystem _console = default!;
 
+    private readonly HashSet<Entity<MapGridComponent>> _nearbyGrids = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -117,7 +119,7 @@ public sealed class AutopilotSystem : EntitySystem
             }
 
             // Calculate steering force using Reynolds steering behaviors
-            var maxSpeed = CalculateMaxSpeed(shuttle, physics.LinearVelocity) * autopilot.SpeedMultiplier;
+            var maxSpeed = 50;
             var currentVelocity = physics.LinearVelocity;
 
             // Obstacle avoidance: check for obstacles first (highest priority)
@@ -264,9 +266,9 @@ public sealed class AutopilotSystem : EntitySystem
             ourRadius = MathF.Max(ourAABB.Width, ourAABB.Height) / 2f;
         }
 
-        // Find all grids in scan range
-        var grids = new HashSet<Entity<MapGridComponent>>();
-        _lookup.GetEntitiesInRange(pos.MapId, pos.Position, autopilot.ScanRange, grids);
+        // Find all grids in scan range.
+        _nearbyGrids.Clear();
+        _lookup.GetEntitiesInRange(pos.MapId, pos.Position, autopilot.ScanRange, _nearbyGrids);
 
         Vector2? mostThreateningAvoidance = null;
         var nearestIntersection = float.MaxValue;
@@ -276,10 +278,10 @@ public sealed class AutopilotSystem : EntitySystem
         if (autopilot.DebugObstacles && !autopilot.ReportedObstacles.Contains(EntityUid.Invalid))
         {
             autopilot.ReportedObstacles.Add(EntityUid.Invalid); // Use Invalid as a "we've reported scan status" marker
-            SendShuttleMessage(shuttleUid, $"Autopilot: Scanning... speed={speed:F1}, lookAhead={lookAheadDistance:F0}m, ourRadius={ourRadius:F0}m, gridsInRange={grids.Count}");
+            SendShuttleMessage(shuttleUid, $"Autopilot: Scanning... speed={speed:F1}, lookAhead={lookAheadDistance:F0}m, ourRadius={ourRadius:F0}m, gridsInRange={_nearbyGrids.Count}");
         }
 
-        foreach (var grid in grids)
+        foreach (var grid in _nearbyGrids)
         {
             var gridUid = grid.Owner;
 
@@ -547,7 +549,7 @@ public sealed class AutopilotSystem : EntitySystem
         }
 
         // Dead zone - don't rotate if we're close enough
-        if (MathF.Abs(angleDiff) < 0.15f)
+        if (MathF.Abs(angleDiff) < 0.05f)
         {
             _thruster.SetAngularThrust(shuttle, false);
             return;
