@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 04/15/2026 07:47:15
-  entityCount: 19386
+  time: 04/15/2026 08:20:19
+  entityCount: 19389
 maps:
 - 1
 grids:
@@ -17475,7 +17475,7 @@ entities:
       pos: -7.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -152732.92
+      secondsUntilStateChange: -152797.25
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -114236,6 +114236,23 @@ entities:
     components:
     - type: Transform
       pos: 10.5,-12.5
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 19387
+    components:
+    - type: Transform
+      pos: 3.5,-57.5
+      parent: 2
+  - uid: 19388
+    components:
+    - type: Transform
+      pos: 4.5,-57.5
+      parent: 2
+  - uid: 19389
+    components:
+    - type: Transform
+      pos: 5.5,-57.5
       parent: 2
 - proto: SpawnPointMailCarrier
   entities:
