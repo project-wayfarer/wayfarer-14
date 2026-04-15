@@ -1,10 +1,17 @@
 gun-examine-nf-recoil = - [color={$color}]Recoil[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per shot
+gun-examine-nf-recoil-compare = - [color={$color}]Recoil[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per shot [color={$deltaColor}]({$delta}°)[/color]
 gun-examine-nf-stability = - [color={$color}]Stability[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per second
+gun-examine-nf-stability-compare = - [color={$color}]Stability[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per second [color={$deltaColor}]({$delta}°)[/color]
 gun-examine-nf-max-angle = - [color={$color}]Maximum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color]
+gun-examine-nf-max-angle-compare = - [color={$color}]Maximum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] [color={$deltaColor}]({$delta}°)[/color]
 gun-examine-nf-min-angle = - [color={$color}]Minimum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color]
+gun-examine-nf-min-angle-compare = - [color={$color}]Minimum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] [color={$deltaColor}]({$delta}°)[/color]
 gun-examine-nf-fire-rate = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color]
+gun-examine-nf-fire-rate-compare = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color] [color={$deltaColor}]({$delta} RPS)[/color]
 gun-examine-nf-fire-rate-burst = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color] (burst of [color=lightblue]{$burstsize}[/color] at [color=lightblue]{NATURALFIXED($burstrate, 1)} RPS[/color])
+gun-examine-nf-fire-rate-burst-compare = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color] (burst of [color=lightblue]{$burstsize}[/color] at [color=lightblue]{NATURALFIXED($burstrate, 1)} RPS[/color]) [color={$deltaColor}]({$delta} RPS)[/color]
 gun-examine-nf-muzzle-velocity = - [color={$color}]Muzzle velocity[/color]: [color=lightblue]{NATURALFIXED($value, 1)} m/s[/color]
+gun-examine-nf-muzzle-velocity-compare = - [color={$color}]Muzzle velocity[/color]: [color=lightblue]{NATURALFIXED($value, 1)} m/s[/color] [color={$deltaColor}]({$delta} m/s)[/color]
 gun-examine-nf-stat-modifier = [bold]([color=lime]{$plus}{NATURALPERCENT($difference, 1)}[/color])[/bold]
 gun-examine-nf-class = - [color={$color}]Class[/color]: [color=lightblue]{$value}[/color]
 gun-examine-nf-manufacturer = - [color={$color}]Manufacturer[/color]: [color=lightblue]{$value}[/color]
