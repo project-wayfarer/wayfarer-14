@@ -122,10 +122,18 @@ public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
                 _popupSystem.PopupEntity(othersMessage, args.Target, filter, true, PopupType.Medium);
             }
 
-            // Also send the message to chat as an emote
-            if (othersMessage != null)
+            // Also send the message to chat as an emote using a dedicated key that does NOT include the
+            // actor's name, since the chat system prepends it automatically via chat-manager-entity-me-wrap-message.
+            if (popupProto.EmoteSuffix != null)
             {
-                _chatSystem.TrySendInGameICMessage(args.User, othersMessage, InGameICChatType.Emote, ChatTransmitRange.Normal, 
+                var chatMessage = Loc.GetString($"interaction-{proto.ID}-{prefix.ToString().ToLower()}-{popupProto.EmoteSuffix}-popup",
+                    ("user", args.User),
+                    ("target", args.Target),
+                    ("used", args.Used ?? EntityUid.Invalid),
+                    ("selfTarget", args.User == args.Target),
+                    ("hasUsed", hasUsed));
+
+                _chatSystem.TrySendInGameICMessage(args.User, chatMessage, InGameICChatType.Emote, ChatTransmitRange.Normal,
                     nameOverride: null, ignoreActionBlocker: true);
             }
         }

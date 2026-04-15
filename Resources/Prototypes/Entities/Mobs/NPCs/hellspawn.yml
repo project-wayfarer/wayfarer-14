@@ -21,9 +21,16 @@
     defaultRotation: 90
     horizontalRotation: 90
   - type: GhostTakeoverAvailable
+  # // WF - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: N14HostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      MeleeRange: !type:Single
+        1.5
+  # // WF
   - type: NpcFactionMember
     factions:
       - SimpleHostile

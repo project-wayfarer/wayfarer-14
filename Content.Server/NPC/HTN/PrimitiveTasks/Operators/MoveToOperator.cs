@@ -199,7 +199,8 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
         {
             comp.DirectMove = false; // i'm not sure whether this being needed is a good sign - if you know a better solution, tell
 
-            if (blackboard.TryGetValue<EntityCoordinates>(NPCBlackboard.OwnerCoordinates, out var coordinates, _entManager))
+            if (blackboard.TryGetValue<EntityCoordinates>(NPCBlackboard.OwnerCoordinates, out var coordinates, _entManager)
+                && _entManager.EntityExists(targetCoordinates.EntityId))
             {
                 var mapCoords = _transform.ToMapCoordinates(coordinates);
                 _steering.PrunePath(uid, mapCoords, _transform.ToMapCoordinates(targetCoordinates).Position - mapCoords.Position, result.Path);

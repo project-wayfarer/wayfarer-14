@@ -43,14 +43,32 @@ public sealed class HaulerAutopilotRuleSystem : StationEventSystem<HaulerAutopil
         base.Update(frameTime);
 
         // Check all active hauler autopilot events
-        var query = EntityQueryEnumerator<HaulerAutopilotRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out var component, out var gameRule))
+        var query = EntityQueryEnumerator<HaulerAutopilotRuleComponent, GameRuleComponent, StationEventComponent>();
+        while (query.MoveNext(out var uid, out var component, out var gameRule, out var stationEvent))
         {
             if (!GameTicker.IsGameRuleActive(uid, gameRule) || component.ShuttleUid == null || !Exists(component.ShuttleUid.Value))
                 continue;
 
             UpdateProximityTracking(component);
+            CheckWarningAnnouncement(uid, component, stationEvent);
         }
+    }
+
+    private void CheckWarningAnnouncement(EntityUid uid, HaulerAutopilotRuleComponent component, StationEventComponent stationEvent)
+    {
+        if (component.WarningAnnouncementSent || stationEvent.EndTime == null)
+            return;
+
+        var timeRemaining = stationEvent.EndTime.Value - _timing.CurTime;
+        if (timeRemaining.TotalSeconds > 120)
+            return;
+
+        component.WarningAnnouncementSent = true;
+        var allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
+        ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame,
+            Loc.GetString("station-event-hauler-autopilot-warning-announcement"),
+            playSound: false,
+            colorOverride: stationEvent.StartAnnouncementColor);
     }
 
     private void UpdateProximityTracking(HaulerAutopilotRuleComponent component)

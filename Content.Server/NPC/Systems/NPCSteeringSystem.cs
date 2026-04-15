@@ -1,23 +1,4 @@
-// SPDX-FileCopyrightText: 2022 metalgearsloth
-// SPDX-FileCopyrightText: 2023 Checkraze
-// SPDX-FileCopyrightText: 2023 DrSmugleaf
-// SPDX-FileCopyrightText: 2023 Leon Friedrich
-// SPDX-FileCopyrightText: 2023 Morb
-// SPDX-FileCopyrightText: 2023 Visne
-// SPDX-FileCopyrightText: 2023 Vordenburg
-// SPDX-FileCopyrightText: 2023 nikthechampiongr
-// SPDX-FileCopyrightText: 2024 Ed
-// SPDX-FileCopyrightText: 2024 Kara
-// SPDX-FileCopyrightText: 2024 Mervill
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
-// SPDX-FileCopyrightText: 2024 Tayrtahn
-// SPDX-FileCopyrightText: 2024 TemporalOroboros
-// SPDX-FileCopyrightText: 2024 deltanedas
-// SPDX-FileCopyrightText: 2025 Ilya246
-// SPDX-FileCopyrightText: 2025 sleepyyapril
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
+using System.Buffers;
 using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
@@ -49,6 +30,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Enums;
 using Content.Shared.Prying.Systems;
 using Microsoft.Extensions.ObjectPool;
 using Prometheus;
@@ -73,6 +55,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
     [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ClimbSystem _climb = default!;
@@ -92,6 +75,8 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<MovementSpeedModifierComponent> _modifierQuery;
+    private EntityQuery<NPCMeleeCombatComponent> _npcMeleeQuery;
+    private EntityQuery<NPCRangedCombatComponent> _npcRangedQuery;
     private EntityQuery<NpcFactionMemberComponent> _factionQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -107,6 +92,36 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     private bool _enabled;
 
     private bool _pathfinding = true;
+    private bool _pathfindingCombatOnly;
+    private bool _pathShareEnabled;
+    private float _pathShareRadius;
+    private float _pathShareActivationRange;
+    private float _pathShareTargetTolerance;
+    private float _pathShareBreakawayChance;
+    private float _pathShareBreakawayDuration;
+    private float _pathShareDirectOverrideRatio;
+    private bool _pathShareNonCombatEnabled;
+    private bool _pathShareNonCombatDynamic;
+    private int _pathShareNonCombatMaxSkip;
+    private float _pathShareNonCombatFlipChance;
+    private float _pathShareLoopFlipEndpointTolerance;
+
+    private static readonly TimeSpan SharedPathLifetime = TimeSpan.FromSeconds(1.5);
+    private readonly Dictionary<PathGroupKey, SharedPathSnapshot> _sharedPaths = new();
+    private readonly List<PathGroupKey> _prunePathGroups = new();
+    private readonly Dictionary<EntityUid, TimeSpan> _breakawayUntil = new();
+    private readonly List<EntityUid> _pruneBreakaway = new();
+    private TimeSpan _nextSharedPathPrune;
+
+    private readonly record struct PathGroupKey(EntityUid TargetUid, MapId MapId, PathFlags Flags);
+
+    private sealed class SharedPathSnapshot
+    {
+        public MapCoordinates Origin;
+        public MapCoordinates Target;
+        public List<PathPoly> Path = new();
+        public TimeSpan Timestamp;
+    }
 
     public static readonly Vector2[] Directions = new Vector2[InterestDirections];
 
@@ -123,6 +138,8 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         Log.Level = LogLevel.Info;
         _fixturesQuery = GetEntityQuery<FixturesComponent>();
         _modifierQuery = GetEntityQuery<MovementSpeedModifierComponent>();
+        _npcMeleeQuery = GetEntityQuery<NPCMeleeCombatComponent>();
+        _npcRangedQuery = GetEntityQuery<NPCRangedCombatComponent>();
         _factionQuery = GetEntityQuery<NpcFactionMemberComponent>();
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
@@ -135,6 +152,20 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         UpdatesBefore.Add(typeof(SharedPhysicsSystem));
         Subs.CVar(_configManager, CCVars.NPCEnabled, SetNPCEnabled, true);
         Subs.CVar(_configManager, CCVars.NPCPathfinding, SetNPCPathfinding, true);
+        Subs.CVar(_configManager, CCVars.NPCPathfindingCombatOnly, value => _pathfindingCombatOnly = value, true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareEnabled, SetPathShareEnabled, true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareRadius, value => _pathShareRadius = value, true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareActivationRange, value => _pathShareActivationRange = value, true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareTargetTolerance, value => _pathShareTargetTolerance = value, true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareBreakawayChance, value => _pathShareBreakawayChance = Math.Clamp(value, 0f, 1f), true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareBreakawayDuration, value => _pathShareBreakawayDuration = MathF.Max(0f, value), true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareDirectOverrideRatio, value => _pathShareDirectOverrideRatio = MathF.Max(0f, value), true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareNonCombatEnabled, value => _pathShareNonCombatEnabled = value, true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareNonCombatDynamic, value => _pathShareNonCombatDynamic = value, true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareNonCombatMaxSkip, value => _pathShareNonCombatMaxSkip = Math.Max(0, value), true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareNonCombatFlipChance, value => _pathShareNonCombatFlipChance = Math.Clamp(value, 0f, 1f), true);
+        Subs.CVar(_configManager, CCVars.NPCPathShareLoopFlipEndpointTolerance, value => _pathShareLoopFlipEndpointTolerance = MathF.Max(0f, value), true);
+        _player.PlayerStatusChanged += OnPlayerStatusChanged;
 
         SubscribeLocalEvent<NPCSteeringComponent, ComponentShutdown>(OnSteeringShutdown);
         SubscribeNetworkEvent<RequestNPCSteeringDebugEvent>(OnDebugRequest);
@@ -147,9 +178,11 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
             foreach (var (comp, mover) in EntityQuery<NPCSteeringComponent, InputMoverComponent>())
             {
                 mover.CurTickSprintMovement = Vector2.Zero;
-                comp.PathfindToken?.Cancel();
-                comp.PathfindToken = null;
+                CancelAndDisposePathRequest(comp);
             }
+
+            _sharedPaths.Clear();
+            _breakawayUntil.Clear();
         }
 
         _enabled = obj;
@@ -163,10 +196,21 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         {
             foreach (var comp in EntityQuery<NPCSteeringComponent>(true))
             {
-                comp.PathfindToken?.Cancel();
-                comp.PathfindToken = null;
+                CancelAndDisposePathRequest(comp);
             }
         }
+    }
+
+    private void SetPathShareEnabled(bool value)
+    {
+        _pathShareEnabled = value;
+
+        if (value)
+            return;
+
+        // Clear transient sharing state immediately when feature is disabled.
+        _sharedPaths.Clear();
+        _breakawayUntil.Clear();
     }
 
     private void OnDebugRequest(RequestNPCSteeringDebugEvent msg, EntitySessionEventArgs args)
@@ -183,8 +227,26 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     private void OnSteeringShutdown(EntityUid uid, NPCSteeringComponent component, ComponentShutdown args)
     {
         // Cancel any active pathfinding jobs as they're irrelevant.
-        component.PathfindToken?.Cancel();
+        CancelAndDisposePathRequest(component);
+        _breakawayUntil.Remove(uid);
+    }
+
+    private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
+    {
+        if (e.NewStatus is SessionStatus.Disconnected or SessionStatus.Zombie)
+            _subscribedSessions.Remove(e.Session);
+    }
+
+    private static void CancelAndDisposePathRequest(NPCSteeringComponent component)
+    {
+        var token = component.PathfindToken;
         component.PathfindToken = null;
+
+        if (token == null)
+            return;
+
+        token.Cancel();
+        token.Dispose();
     }
 
     /// <summary>
@@ -197,8 +259,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
             if (component.Coordinates.Equals(coordinates))
                 return component;
 
-            component.PathfindToken?.Cancel();
-            component.PathfindToken = null;
+            CancelAndDisposePathRequest(component);
             component.CurrentPath.Clear();
         }
         else
@@ -234,7 +295,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         if (!Resolve(uid, ref component, false))
             return;
 
-        if (TryComp(uid, out InputMoverComponent? controller))
+        if (EntityManager.TryGetComponent(uid, out InputMoverComponent? controller))
         {
             controller.CurTickSprintMovement = Vector2.Zero;
 
@@ -242,8 +303,8 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
             RaiseLocalEvent(uid, ref ev);
         }
 
-        component.PathfindToken?.Cancel();
-        component.PathfindToken = null;
+        CancelAndDisposePathRequest(component);
+        _breakawayUntil.Remove(uid);
         RemComp<NPCSteeringComponent>(uid);
     }
 
@@ -254,9 +315,22 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         if (!_enabled)
             return;
 
-        // Not every mob has the modifier component so do it as a separate query.
-        var npcs = new (EntityUid, NPCSteeringComponent, InputMoverComponent, TransformComponent)[Count<ActiveNPCComponent>()];
+        if ((_pathShareEnabled || _sharedPaths.Count > 0 || _breakawayUntil.Count > 0) &&
+            _timing.CurTime >= _nextSharedPathPrune)
+        {
+            PruneSharedPaths();
+            _nextSharedPathPrune = _timing.CurTime + TimeSpan.FromSeconds(1);
+        }
 
+        var activeCount = Count<ActiveNPCComponent>();
+        if (activeCount == 0)
+            return;
+
+        // Not every mob has the modifier component so do it as a separate query.
+        var npcs = ArrayPool<(EntityUid, NPCSteeringComponent, InputMoverComponent, TransformComponent)>.Shared.Rent(activeCount);
+
+        try
+        {
         var query = EntityQueryEnumerator<ActiveNPCComponent, NPCSteeringComponent, InputMoverComponent, TransformComponent>();
         var index = 0;
 
@@ -275,11 +349,11 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         _activeSteeringCount = 0;
 
-        Parallel.For(0, index, options, i =>
+            for (var i = 0; i < index; i++)
         {
             var (uid, steering, mover, xform) = npcs[i];
             Steer(uid, steering, mover, xform, frameTime, curTime);
-        });
+            }
 
         ActiveSteeringGauge.Set(_activeSteeringCount);
 
@@ -303,6 +377,273 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
             filter.AddPlayers(_subscribedSessions);
 
             RaiseNetworkEvent(new NPCSteeringDebugEvent(data), filter);
+        }
+    }
+        finally
+        {
+            ArrayPool<(EntityUid, NPCSteeringComponent, InputMoverComponent, TransformComponent)>.Shared.Return(npcs, true);
+        }
+    }
+
+    private bool IsActivelyChasing(EntityUid uid)
+    {
+        if (_npcMeleeQuery.TryComp(uid, out var melee) &&
+            melee.Target.IsValid() &&
+            melee.Status is not CombatStatus.NotInSight and not CombatStatus.TargetUnreachable)
+        {
+            return true;
+        }
+
+        if (_npcRangedQuery.TryComp(uid, out var ranged) &&
+            ranged.Target.IsValid() &&
+            ranged.Status != CombatStatus.NotInSight)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool ShouldPathfind(EntityUid uid)
+    {
+        // Core pathfinding should remain authoritative for NPC behavior.
+        // Combat-only settings should scope optimization layers (path sharing),
+        // not disable normal steering/path requests.
+        return _pathfinding;
+    }
+
+    private bool ShouldUsePathSharing(EntityUid uid, out bool inCombat)
+    {
+        inCombat = false;
+
+        if (!_pathShareEnabled)
+            return false;
+
+        inCombat = IsActivelyChasing(uid);
+
+        if (inCombat)
+            return true;
+
+        if (_pathfindingCombatOnly && !_pathShareNonCombatEnabled)
+            return false;
+
+        if (!_pathfindingCombatOnly && !_pathShareNonCombatEnabled)
+            return false;
+
+        return true;
+    }
+
+    private bool TryReuseSharedPath(EntityUid uid, NPCSteeringComponent steering, TransformComponent xform)
+    {
+        if (!ShouldUsePathSharing(uid, out var inCombat) || _sharedPaths.Count == 0)
+            return false;
+
+        // Do not override pathing while we're already in-range for current behavior
+        // (e.g. melee/ranged engagement), or while obstacle handling is in progress.
+        if (steering.Status == SteeringStatus.InRange || steering.DoAfterId != null)
+            return false;
+
+        var now = _timing.CurTime;
+
+        // Randomized short breakaway windows introduce variation while keeping shared path cost low.
+        if (_breakawayUntil.TryGetValue(uid, out var until) && now < until)
+            return false;
+
+        if (_pathShareBreakawayChance > 0f && _random.Prob(_pathShareBreakawayChance))
+        {
+            _breakawayUntil[uid] = now + TimeSpan.FromSeconds(_pathShareBreakawayDuration);
+            return false;
+        }
+
+        if (!TryGetPathGroupKey(uid, steering, out var key))
+            return false;
+
+        if (!_sharedPaths.TryGetValue(key, out var snapshot))
+            return false;
+
+        var ourMap = _transform.GetMapCoordinates(uid, xform: xform);
+        var targetMap = _transform.ToMapCoordinates(steering.Coordinates);
+
+        if (ourMap.MapId != targetMap.MapId)
+            return false;
+
+        if (now - snapshot.Timestamp > SharedPathLifetime)
+            return false;
+
+        var radiusSq = _pathShareRadius * _pathShareRadius;
+        var activationRangeSq = _pathShareActivationRange * _pathShareActivationRange;
+        var targetToleranceSq = _pathShareTargetTolerance * _pathShareTargetTolerance;
+
+        if (snapshot.Path.Count == 0 || snapshot.Origin.MapId != ourMap.MapId || snapshot.Target.MapId != targetMap.MapId)
+            return false;
+
+        if ((snapshot.Origin.Position - ourMap.Position).LengthSquared() > radiusSq)
+            return false;
+
+        // Only chain while this NPC is within active chase range of the same target.
+        if ((targetMap.Position - ourMap.Position).LengthSquared() > activationRangeSq)
+            return false;
+
+        if ((snapshot.Target.Position - targetMap.Position).LengthSquared() > targetToleranceSq)
+            return false;
+
+        // If direct pursuit is clearly cheaper than entering the shared route, replan independently.
+        if (snapshot.Path.Count > 0)
+        {
+            var firstNode = _transform.ToMapCoordinates(GetCoordinates(snapshot.Path[0]));
+            if (firstNode.MapId == ourMap.MapId)
+            {
+                var directDist = (targetMap.Position - ourMap.Position).Length();
+                var entryDist = (firstNode.Position - ourMap.Position).Length();
+
+                if (entryDist > 0.001f && directDist <= entryDist * _pathShareDirectOverrideRatio)
+                {
+                    _breakawayUntil[uid] = now + TimeSpan.FromSeconds(_pathShareBreakawayDuration * 0.5f);
+                    return false;
+                }
+            }
+        }
+
+        var adoptedPath = new List<PathPoly>(snapshot.Path);
+
+        if (!inCombat)
+            ApplyNonCombatPathVariation(uid, key, ourMap, targetMap, adoptedPath);
+
+        if (adoptedPath.Count == 0)
+            return false;
+
+        steering.CurrentPath = new Queue<PathPoly>(adoptedPath);
+        steering.FailedPathCount = 0;
+
+        // Chain propagation: a follower that reuses the path becomes a fresh local anchor.
+        snapshot.Origin = ourMap;
+        snapshot.Target = targetMap;
+        snapshot.Timestamp = now;
+
+        return true;
+    }
+
+    private void ApplyNonCombatPathVariation(
+        EntityUid uid,
+        PathGroupKey key,
+        MapCoordinates ourMap,
+        MapCoordinates targetMap,
+        List<PathPoly> path)
+    {
+        if (!_pathShareNonCombatDynamic || path.Count <= 1)
+            return;
+
+        if (ShouldFlipNonCombatSharedPath(uid, key, path))
+            path.Reverse();
+
+        if (_pathShareNonCombatMaxSkip > 0 && path.Count > 1)
+        {
+            var maxSkips = Math.Min(_pathShareNonCombatMaxSkip, path.Count - 1);
+
+            if (maxSkips > 0)
+            {
+                var hash = Math.Abs(uid.GetHashCode());
+                var skipCount = hash % (maxSkips + 1);
+
+                if (skipCount > 0)
+                    path.RemoveRange(0, skipCount);
+            }
+        }
+
+        if (path.Count == 0)
+            return;
+
+        // Ensure variation does not adopt a path heading away from the target.
+        var first = _transform.ToMapCoordinates(GetCoordinates(path[0]));
+        if (first.MapId != ourMap.MapId)
+            return;
+
+        var direct = targetMap.Position - ourMap.Position;
+        var entry = first.Position - ourMap.Position;
+
+        if (direct.LengthSquared() > 0.0001f && entry.LengthSquared() > 0.0001f && Vector2.Dot(direct, entry) < 0f)
+            path.Reverse();
+    }
+
+    private bool CanFlipLoopLikePath(List<PathPoly> path)
+    {
+        if (path.Count < 4)
+            return false;
+
+        var first = _transform.ToMapCoordinates(GetCoordinates(path[0]));
+        var last = _transform.ToMapCoordinates(GetCoordinates(path[^1]));
+
+        if (first.MapId != last.MapId)
+            return false;
+
+        var tolerance = _pathShareLoopFlipEndpointTolerance;
+        return (first.Position - last.Position).LengthSquared() <= tolerance * tolerance;
+    }
+
+    private bool ShouldFlipNonCombatSharedPath(EntityUid uid, PathGroupKey key, List<PathPoly> path)
+    {
+        if (_pathShareNonCombatFlipChance <= 0f || !CanFlipLoopLikePath(path))
+            return false;
+
+        // Use a deterministic roll per NPC + path group to avoid rapid flip/no-flip oscillation.
+        unchecked
+        {
+            var hash = 17;
+            hash = hash * 31 + uid.GetHashCode();
+            hash = hash * 31 + key.TargetUid.GetHashCode();
+            hash = hash * 31 + (int)key.MapId;
+            hash = hash * 31 + (int)key.Flags;
+            hash = hash * 31 + path.Count;
+
+            var roll = (uint)hash % 10000u;
+            return roll < _pathShareNonCombatFlipChance * 10000f;
+        }
+    }
+
+    private bool TryGetPathGroupKey(EntityUid uid, NPCSteeringComponent steering, out PathGroupKey key)
+    {
+        key = default;
+        var targetUid = steering.Coordinates.EntityId;
+
+        if (!targetUid.IsValid() || Deleted(targetUid))
+            return false;
+
+        var ourMap = _transform.GetMapCoordinates(uid);
+        var targetMap = _transform.ToMapCoordinates(steering.Coordinates);
+
+        if (ourMap.MapId != targetMap.MapId)
+            return false;
+
+        key = new PathGroupKey(targetUid, ourMap.MapId, steering.Flags);
+        return true;
+    }
+
+    private void PruneSharedPaths()
+    {
+        _prunePathGroups.Clear();
+        var now = _timing.CurTime;
+
+        foreach (var (key, snapshot) in _sharedPaths)
+        {
+            if (now - snapshot.Timestamp > SharedPathLifetime || Deleted(key.TargetUid))
+                _prunePathGroups.Add(key);
+        }
+
+        foreach (var key in _prunePathGroups)
+        {
+            _sharedPaths.Remove(key);
+        }
+
+        _pruneBreakaway.Clear();
+        foreach (var (uid, until) in _breakawayUntil)
+        {
+            if (now >= until || Deleted(uid))
+                _pruneBreakaway.Add(uid);
+        }
+
+        foreach (var uid in _pruneBreakaway)
+        {
+            _breakawayUntil.Remove(uid);
         }
     }
 
@@ -361,12 +702,11 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         var agentRadius = steering.Radius;
         var worldPos = _transform.GetWorldPosition(xform);
         var (layer, mask) = _physics.GetHardCollision(uid);
+
         // Use rotation relative to parent to rotate our context vectors by.
         var offsetRot = -_mover.GetParentGridAngle(mover);
-
         _modifierQuery.TryGetComponent(uid, out var modifier);
         var body = _physicsQuery.GetComponent(uid);
-
         // Monolith - early port of wizden#38846
         var weightless = _gravity.IsWeightless(uid);
         var moveSpeed = GetSprintSpeed(uid, modifier);
@@ -475,19 +815,32 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
             return;
         }
 
-        steering.PathfindToken = new CancellationTokenSource();
+        var pathToken = new CancellationTokenSource();
+        steering.PathfindToken = pathToken;
 
         var flags = _pathfindingSystem.GetFlags(uid);
 
-        var result = await _pathfindingSystem.GetPathSafe(
+        PathResultEvent result;
+        try
+        {
+            result = await _pathfindingSystem.GetPathSafe(
             uid,
             xform.Coordinates,
             steering.Coordinates,
             steering.Range,
-            steering.PathfindToken.Token,
+                pathToken.Token,
             flags);
-
+        }
+        finally
+        {
+            if (ReferenceEquals(steering.PathfindToken, pathToken))
         steering.PathfindToken = null;
+
+            pathToken.Dispose();
+        }
+
+        if (pathToken.IsCancellationRequested)
+            return;
 
         if (result.Result == PathResult.NoPath)
         {
@@ -507,6 +860,17 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         PrunePath(uid, ourPos, targetPos.Position - ourPos.Position, result.Path);
         steering.CurrentPath = new Queue<PathPoly>(result.Path);
+
+        if (ShouldUsePathSharing(uid, out _) && TryGetPathGroupKey(uid, steering, out var key))
+        {
+            _sharedPaths[key] = new SharedPathSnapshot
+            {
+                Origin = ourPos,
+                Target = targetPos,
+                Path = new List<PathPoly>(result.Path),
+                Timestamp = _timing.CurTime,
+            };
+        }
     }
 
     // TODO: Move these to movercontroller
@@ -538,4 +902,12 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         return weightless ? ent.Comp.WeightlessFriction : ent.Comp.Friction;
     }
     // </Monolith>
+    public override void Shutdown()
+    {
+        base.Shutdown();
+        _player.PlayerStatusChanged -= OnPlayerStatusChanged;
+        _subscribedSessions.Clear();
+        _sharedPaths.Clear();
+        _breakawayUntil.Clear();
+    }
 }

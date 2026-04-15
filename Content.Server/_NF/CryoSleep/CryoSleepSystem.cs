@@ -1,6 +1,7 @@
 // Wayfarer: Added character resume from cryosleep feature - multiple stored characters per user, station name storage
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Server._NF.Bank;
 using Content.Server._NF.Shipyard.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.DoAfter;
@@ -14,6 +15,8 @@ using Content.Shared._NF.CCVar;
 using Content.Shared._NF.CryoSleep;
 using Content.Shared._NF.CryoSleep.Events;
 using Content.Shared._WF.CryoSleep; // Wayfarer: Resume character messages
+using Content.Shared._NF.Bank.Components;
+using Content.Server.Preferences.Managers;
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.ActionBlocker;
@@ -69,6 +72,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; //For cryosleep warnings
     [Dependency] private readonly Shared.Roles.SharedRoleSystem _roles = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -449,8 +453,18 @@ public sealed partial class CryoSleepSystem : EntitySystem
                 // Get the station name
                 var stationUid = _station.GetOwningStation(cryopod);
                 var stationName = stationUid != null ? Name(stationUid.Value) : "Unknown Station";
+
+                // Capture the character slot so we can restore the correct bank account on resume.
+                var characterSlot = -1;
+                if (_player.TryGetSessionById(id.Value, out var playerSession) &&
+                    _prefsManager.TryGetCachedPreferences(id.Value, out var prefs) &&
+                    TryComp<BankAccountComponent>(bodyId, out var bankComp) &&
+                    bankComp.CharacterSlot >= 0)
+                {
+                    characterSlot = bankComp.CharacterSlot;
+                }
                 
-                var newBody = new StoredBody() { Body = body, Cryopod = cryopod, Mind = mindEntity, StationName = stationName };
+                var newBody = new StoredBody() { Body = body, Cryopod = cryopod, Mind = mindEntity, StationName = stationName, CharacterSlot = characterSlot };
                 
                 // Remove any existing entry for this body (in case of re-cryo)
                 _storedBodies[id.Value].RemoveAll(sb => sb.Body == body);
@@ -628,6 +642,13 @@ public sealed partial class CryoSleepSystem : EntitySystem
             _storedBodies.Remove(userId);
         
         _mind.ControlMob(userId, body);
+
+        // Restore the character slot so bank operations target the right account.
+        if (storedBody.Value.CharacterSlot >= 0)
+        {
+            var bankComp = EnsureComp<BankAccountComponent>(body);
+            bankComp.CharacterSlot = storedBody.Value.CharacterSlot;
+        }
         
         // Tell the client to switch to game state
         if (_player.TryGetSessionById(userId, out var session))
@@ -656,5 +677,6 @@ public sealed partial class CryoSleepSystem : EntitySystem
         public EntityUid Cryopod;
         public EntityUid Mind;
         public string StationName;
+        public int CharacterSlot; // Which prefs slot the player was using when they entered cryo
     }
 }

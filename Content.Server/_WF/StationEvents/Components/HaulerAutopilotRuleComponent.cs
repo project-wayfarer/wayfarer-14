@@ -69,4 +69,9 @@ public sealed partial class HaulerAutopilotRuleComponent : Component
     /// Tracks which players have already heard the audio (to avoid repeating).
     /// </summary>
     public HashSet<EntityUid> PlayersWhoHeardAudio = new();
+
+    /// <summary>
+    /// Whether the 2-minute FTL warning announcement has already been sent.
+    /// </summary>
+    public bool WarningAnnouncementSent;
 }

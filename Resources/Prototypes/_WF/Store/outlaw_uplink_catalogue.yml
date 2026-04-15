@@ -24,7 +24,24 @@
   productEntity: ClothingOuterHardsuitPirateCap
   icon: { sprite: Clothing/OuterClothing/Hardsuits/piratecaptain.rsi, state: icon }
   cost:
-    Doubloon: 3
+    Doubloon: 5
+  categories:
+  - UplinkOutlawHardsuits
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Elite Pirate Hardsuit
+- type: listing
+  id: UplinkOutlawPirateHardsuitElite
+  name:  uplink-pirate-hardsuit-elite-name
+  description: uplink-pirate-hardsuit-elite-desc
+  productEntity: ClothingOuterHardsuitPirateElite
+  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/pirate_elite.rsi, state: icon }
+  cost:
+    Doubloon: 15
   categories:
   - UplinkOutlawHardsuits
   conditions:

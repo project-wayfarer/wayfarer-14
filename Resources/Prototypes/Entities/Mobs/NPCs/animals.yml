@@ -1205,12 +1205,14 @@
         - Passive
     - type: HTN
       rootTask:
-        task: SimpleHostileCompound
+        task: N14HostileCompound # WF
       blackboard:
         NavClimb: !type:Bool true
         NavInteract: !type:Bool true
         NavPry: !type:Bool true
         NavSmash: !type:Bool true
+      MeleeRange: !type:Single
+        1.5
     - type: Prying
       pryPowered: true
       force: true

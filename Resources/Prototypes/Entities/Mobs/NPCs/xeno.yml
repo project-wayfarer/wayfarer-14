@@ -10,9 +10,10 @@
   - type: CombatMode
   - type: InputMover
   - type: MobMover
+# WF Start
   - type: HTN
     rootTask:
-      task: XenoCompound
+      task: N14HostileCompound
     blackboard:
       NavClimb: !type:Bool
         true
@@ -22,6 +23,9 @@
         true
       NavSmash: !type:Bool
         true
+      MeleeRange: !type:Single
+        1.5
+# WF End
   - type: Prying
     pryPowered: true
     force: true
@@ -75,7 +79,8 @@
     angle: 0
     soundHit:
      collection: AlienClaw
-    animation: WeaponArcBite
+    animation: WeaponArcClaw # WF ArcBite to WeaponArcClaw
+    wideAnimation: WeaponArcClaw # WF ArcBite to WeaponArcClaw
     damage:
       groups:
         Brute: 6
@@ -338,9 +343,22 @@
   - type: SlowOnDamage
     speedModifierThresholds:
       25: 0.7
+  # WF Start
   - type: HTN
     rootTask:
-      task: SimpleRangedHostileCompound
+      task: N14RangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      MeleeRange: !type:Single
+        1.5
+  # WF End
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 0.75
   - type: BasicEntityAmmoProvider
@@ -397,9 +415,20 @@
       gender: male
   - type: InputMover
   - type: MobMover
+  # WF Start
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: N14HostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      MeleeRange: !type:Single
+        1.5
+  # WF End
   - type: NpcFactionMember
     factions:
     - Xeno
@@ -477,18 +506,16 @@
   - type: CombatMode
   - type: InputMover
   - type: MobMover
+  # WF Start
   - type: HTN
     rootTask:
-      task: XenoCompound
+      task: N14HostileCompound
     blackboard:
-      NavClimb: !type:Bool
-        true
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
       NavSmash: !type:Bool
         true
+      MeleeRange: !type:Single
+        1.5
+  # WF End
   - type: Reactive
     groups:
       Flammable: [Touch]

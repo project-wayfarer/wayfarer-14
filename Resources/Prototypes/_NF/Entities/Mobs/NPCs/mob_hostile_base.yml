@@ -375,52 +375,58 @@
   id: MobHumanoidHostileAISimpleMelee
   abstract: true
   components:
+  # // WF - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-       task: SimpleHostileCompound
+      task: N14HostileCompound
     blackboard:
-      NavClimb: !type:Bool
-        false
-      NavInteract: !type:Bool
+      NavSmash: !type:Bool
         true
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool # They use this option too much for my liking, but I'll keep it here as an option
-        true
+      MeleeRange: !type:Single
+        1.5
+# // WF
 
 - type: entity
   id: MobHumanoidHostileAISimpleRanged
   abstract: true
   components:
+  # WF Start
   - type: HTN
     rootTask:
-       task: SimpleRangedHostileCompound
+      task: N14RangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        false
+        true
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool # They use this option too much for my liking, but I'll keep it here as an option
+      NavSmash: !type:Bool
         true
+      MeleeRange: !type:Single
+        1.5
+  # WF End
 
 - type: entity
   id: MobHumanoidHostileAIComplex
   abstract: true
   components:
+  # // WF - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-       task: SimpleHumanoidHostileCompound
+      task: N14RangedHostileCompound
     blackboard:
-      NavClimb: !type:Bool
-        false
+      #NavClimb: !type:Bool # Commented out because it made them trip over tables and it was really funny but they didn't stand up
+        #true
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-#      NavSmash: !type:Bool # They use this option too much for my liking, but I'll keep it here as an option
-#        true
+      NavSmash: !type:Bool
+        true
+      MeleeRange: !type:Single
+        1.5
+# // WF
 #endregion
 
 #region NPC types
