@@ -26,6 +26,10 @@ humanoid-profile-editor-reset-button = Reset
 humanoid-profile-editor-spawn-priority-label = Spawn priority:
 # Wayfarer
 humanoid-profile-editor-hide-from-playerlist-label = Hide from web playerlist:
+humanoid-profile-editor-height-label = Height:
+humanoid-profile-editor-height-value = {$cm} cm
+humanoid-profile-editor-width-label = Width:
+humanoid-profile-editor-width-value = {$cm} cm
 # End Wayfarer
 humanoid-profile-editor-eyes-label = Eye color:
 humanoid-profile-editor-jobs-tab = Jobs

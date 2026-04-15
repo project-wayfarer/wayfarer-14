@@ -117,6 +117,22 @@ namespace Content.Shared.Preferences
         public bool HideFromPlayerlist { get; private set; } = false;
         // End Wayfarer
 
+        // Wayfarer: character height/width scale
+        /// <summary>
+        /// The base height scale for this character (1.0 = species default).
+        /// Clamped to the species' MinHeight/MaxHeight on validation.
+        /// </summary>
+        [DataField]
+        public float Height { get; private set; } = 1f;
+
+        /// <summary>
+        /// The base width scale for this character (1.0 = species default).
+        /// Clamped to the species' MinWidth/MaxWidth on validation.
+        /// </summary>
+        [DataField]
+        public float Width { get; private set; } = 1f;
+        // End Wayfarer
+
         /// <summary>
         /// <see cref="_jobPriorities"/>
         /// </summary>
@@ -206,6 +222,10 @@ namespace Content.Shared.Preferences
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
                 other.HideFromPlayerlist) // Wayfarer
         {
+            // Wayfarer: preserve height/width in copy
+            Height = other.Height;
+            Width = other.Width;
+            // End Wayfarer
         }
 
         /// <summary>
@@ -342,6 +362,16 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithHideFromPlayerlist(bool hideFromPlayerlist)
         {
             return new(this) { HideFromPlayerlist = hideFromPlayerlist };
+        }
+
+        public HumanoidCharacterProfile WithHeight(float height)
+        {
+            return new(this) { Height = height };
+        }
+
+        public HumanoidCharacterProfile WithWidth(float width)
+        {
+            return new(this) { Width = width };
         }
         // End Wayfarer
 
@@ -511,6 +541,8 @@ namespace Content.Shared.Preferences
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (HideFromPlayerlist != other.HideFromPlayerlist) return false; // Wayfarer
+            if (Math.Abs(Height - other.Height) > 0.001f) return false; // Wayfarer
+            if (Math.Abs(Width - other.Width) > 0.001f) return false; // Wayfarer
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
             if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
@@ -621,6 +653,11 @@ namespace Content.Shared.Preferences
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
+            // Wayfarer: clamp height/width to species limits
+            var height = Math.Clamp(Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+            var width = Math.Clamp(Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+            // End Wayfarer
+
             var prefsUnavailableMode = PreferenceUnavailable switch
             {
                 PreferenceUnavailableMode.StayInLobby => PreferenceUnavailableMode.StayInLobby,
@@ -673,6 +710,8 @@ namespace Content.Shared.Preferences
             BankBalance = bankBalance;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
+            Height = height; // Wayfarer
+            Width = width; // Wayfarer
 
             _jobPriorities.Clear();
 

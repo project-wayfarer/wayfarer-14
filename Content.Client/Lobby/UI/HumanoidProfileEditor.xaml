@@ -88,6 +88,28 @@
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
+                                <!-- Wayfarer: Height/Width sliders -->
+                                <BoxContainer HorizontalExpand="True" SeparationOverride="10">
+                                    <!-- Height -->
+                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-height-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <Label Name="HeightValueLabel" HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <Slider HorizontalExpand="True" Name="HeightSlider" MinValue="0" MaxValue="100" />
+                                    </BoxContainer>
+                                    <!-- Width -->
+                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-width-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <Label Name="WidthValueLabel" HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <Slider HorizontalExpand="True" Name="WidthSlider" MinValue="0" MaxValue="100" />
+                                    </BoxContainer>
+                                </BoxContainer>
+                                <!-- End Wayfarer -->
                                 <!-- Show clothing -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-clothing'}" />

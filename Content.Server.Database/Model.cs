@@ -469,6 +469,8 @@ namespace Content.Server.Database
         public string SkinColor { get; set; } = null!;
         public int SpawnPriority { get; set; } = 0;
         public bool HideFromPlayerlist { get; set; } = false; // Wayfarer
+        public float Height { get; set; } = 1f; // Wayfarer
+        public float Width { get; set; } = 1f; // Wayfarer
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
