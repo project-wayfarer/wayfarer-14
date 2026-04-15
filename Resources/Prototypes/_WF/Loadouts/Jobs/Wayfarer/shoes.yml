@@ -17,6 +17,331 @@
   equipment:
     shoes: ClothingShoesClothwrap
 
+# Socks
+
+- type: loadout
+  id: ClothingUnderSocksPlain
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksPlain
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksBartender
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksBartender
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksMusician
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksMusician
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksMerc
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksMerc
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksPrivSec
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksPrivSec
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksPilot
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksPilot
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksLogis
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksLogis
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksCourier
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksCourier
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksLOLogis
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksLOLogis
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksChaplain
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksChaplain
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksChef
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksChef
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksChemists
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksChemists
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksDetective
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksDetective
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksEngi
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksEngi
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksChiefEngi
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksChiefEngi
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksJanitor
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksJanitor
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksMedic
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksMedic
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksParaMedic
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksParaMedic
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksCMO
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksCMO
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksCoder
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksCoder
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksBee
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksBee
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksPlainWhite
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksPlainWhite
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksStripedPurple
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksStripedPurple
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksStripedRainbow
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksStripedRainbow
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksStripedWhite
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksStripedWhite
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksEpi
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksEpi
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksEpiHead
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksEpiHead
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksMantisEpi
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 500
+  equipment:
+    shoes: ClothingUnderSocksMantisEpi
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksCC
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 5000
+  equipment:
+    shoes: ClothingUnderSocksCC
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksSecurity
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 5000
+  equipment:
+    shoes: ClothingUnderSocksSecurity
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksHeadSecurity
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 5000
+  equipment:
+    shoes: ClothingUnderSocksHeadSecurity
+  groupBy: "socks"
+
+- type: loadout
+  id: ClothingUnderSocksCoderValid
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 5000
+  equipment:
+    shoes: ClothingUnderSocksCoderValid
+  groupBy: "socks"
+
+# ==
+
+
 - type: loadout
   id: WFClothingShoesTourist
   hideEffects:
