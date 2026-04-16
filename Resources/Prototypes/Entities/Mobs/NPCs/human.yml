@@ -37,7 +37,7 @@
         NavPry: !type:Bool
           true
         NavSmash: !type:Bool
-          true
+          false
         MeleeRange: !type:Single
           1.5
 # // WF
@@ -59,7 +59,7 @@
   # // WF - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14HostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavClimb: !type:Bool
         true
@@ -68,7 +68,7 @@
       NavPry: !type:Bool
         true
       NavSmash: !type:Bool
-        true
+        false
       MeleeRange: !type:Single
         1.5
 # // WF
@@ -89,7 +89,7 @@
   # WF Start
     - type: HTN
       rootTask:
-        task: SimpleRangedHostileCompound
+        task: N14RangedHostileCompound
       blackboard:
         NavClimb: !type:Bool
           true

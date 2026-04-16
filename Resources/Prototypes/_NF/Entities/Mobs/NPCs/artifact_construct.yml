@@ -13,7 +13,7 @@
         - ArtifactConstruct
     - type: HTN
       rootTask:
-        task: SimpleHostileCompound
+        task: N14HostileCompound # WF
       blackboard:
         NavClimb: !type:Bool
           true
@@ -125,7 +125,7 @@
     - type: CreamPied
     - type: HTN
       rootTask:
-        task: SimpleRangedHostileCompound
+        task: N14RangedHostileCompound
     - type: Stamina
       critThreshold: 300
     - type: HitscanBatteryAmmoProvider

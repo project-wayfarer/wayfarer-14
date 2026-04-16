@@ -18,7 +18,7 @@
     - type: GhostTakeoverAvailable
     - type: HTN
       rootTask:
-        task: SimpleRangedHostileCompound
+        task: N14RangedHostileCompound
     - type: HitscanBatteryAmmoProvider
       proto: NFRedMediumLaser # Frontier: RedLaser<NFRedMediumLaser
       fireCost: 62.5

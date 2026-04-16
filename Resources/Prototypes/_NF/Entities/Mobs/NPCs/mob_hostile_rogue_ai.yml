@@ -6,7 +6,7 @@
   components:
   - type: HTN
     rootTask:
-       task: SimpleHostileCompound
+       task: N14HostileCompound # WF
     blackboard:
       NavClimb: !type:Bool
         false
@@ -25,7 +25,7 @@
   components:
   - type: HTN
     rootTask:
-       task: SimpleRangedHostileCompound
+       task: N14RangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
         false

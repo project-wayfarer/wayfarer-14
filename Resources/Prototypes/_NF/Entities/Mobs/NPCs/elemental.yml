@@ -242,7 +242,7 @@
     state: uranium_golem
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: N14HostileCompound # WF
   - type: MeleeWeapon
     hidden: true
     soundHit:

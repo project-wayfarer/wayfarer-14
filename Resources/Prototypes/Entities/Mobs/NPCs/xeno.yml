@@ -13,7 +13,7 @@
 # WF Start
   - type: HTN
     rootTask:
-      task: N14HostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavClimb: !type:Bool
         true
@@ -418,7 +418,7 @@
   # WF Start
   - type: HTN
     rootTask:
-      task: N14HostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavClimb: !type:Bool
         true
@@ -509,7 +509,7 @@
   # WF Start
   - type: HTN
     rootTask:
-      task: N14HostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavSmash: !type:Bool
         true

@@ -63,7 +63,7 @@
       - Pibble
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavSmash: !type:Bool
         true
