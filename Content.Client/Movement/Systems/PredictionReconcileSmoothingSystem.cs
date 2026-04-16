@@ -1,6 +1,8 @@
 using System.Numerics;
 using Content.Shared.Camera;
+using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
+using Robust.Shared.Configuration;
 using Robust.Client.Player;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -15,18 +17,27 @@ namespace Content.Client.Movement.Systems;
 /// </summary>
 public sealed class PredictionReconcileSmoothingSystem : EntitySystem
 {
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
-    private const float BaseMovementTolerance = 0.08f;
-    private const float VelocityToleranceScale = 1.6f;
+    private const float BaseMovementTolerance = 0.05f;
+    private const float VelocityToleranceScale = 1.35f;
+    private const float ActivationThresholdScale = 0.75f;
     private const float MaxSmoothingOffset = 1.2f;
-    private const float SmoothingDecayPerSecond = 12f;
+    private const float SmoothingFollowPerSecond = 18f;
+    private const float SmoothingDecayPerSecond = 5f;
+    private const float SmoothingRetriggerCooldown = 0.08f;
+    private const float SmoothingReturnDelay = 0.12f;
+    private const float ForcedSmoothingCorrection = 0.25f;
 
     private EntityUid? _trackedUid;
     private Vector2 _lastWorldPos;
     private bool _hasLastPos;
     private Vector2 _reconcileOffset;
+    private Vector2 _targetOffset;
+    private float _retriggerCooldown;
+    private float _returnCooldown;
 
     public override void Initialize()
     {
@@ -40,12 +51,36 @@ public sealed class PredictionReconcileSmoothingSystem : EntitySystem
     {
         base.FrameUpdate(frameTime);
 
+        if (_cfg.GetCVar(CCVars.DisableVisualSmoothingEffect))
+        {
+            _reconcileOffset = Vector2.Zero;
+            _targetOffset = Vector2.Zero;
+            _retriggerCooldown = 0f;
+            _returnCooldown = 0f;
+            _trackedUid = _player.LocalEntity;
+
+            if (_trackedUid is { } tracked && !Deleted(tracked))
+            {
+                _lastWorldPos = _transform.GetWorldPosition(tracked);
+                _hasLastPos = true;
+            }
+            else
+            {
+                _hasLastPos = false;
+            }
+
+            return;
+        }
+
         var local = _player.LocalEntity;
         if (local == null || Deleted(local.Value))
         {
             _trackedUid = null;
             _hasLastPos = false;
             _reconcileOffset = Vector2.Zero;
+            _targetOffset = Vector2.Zero;
+            _retriggerCooldown = 0f;
+            _returnCooldown = 0f;
             return;
         }
 
@@ -63,6 +98,9 @@ public sealed class PredictionReconcileSmoothingSystem : EntitySystem
         if (frameTime <= 0f)
             return;
 
+        _retriggerCooldown = MathF.Max(0f, _retriggerCooldown - frameTime);
+        _returnCooldown = MathF.Max(0f, _returnCooldown - frameTime);
+
         var delta = worldPos - _lastWorldPos;
         var moved = delta.Length();
 
@@ -70,21 +108,36 @@ public sealed class PredictionReconcileSmoothingSystem : EntitySystem
         if (TryComp<PhysicsComponent>(uid, out var physics))
             expectedMove += physics.LinearVelocity.Length() * frameTime * VelocityToleranceScale;
 
-        if (moved > expectedMove && moved > 0.0001f)
+        var activationMove = expectedMove * ActivationThresholdScale;
+
+        if (moved > activationMove && moved > 0.0001f)
         {
-            var excess = moved - expectedMove;
+            var excess = moved - activationMove;
             var correction = delta * (excess / moved);
+            var correctionLen = correction.Length();
 
-            // Apply inverse camera offset so large reconciliation jumps are visually blended.
-            _reconcileOffset -= correction;
+            if (_retriggerCooldown <= 0f || correctionLen >= ForcedSmoothingCorrection)
+            {
+                // Accumulate into a target offset so repeated corrections steer the camera smoothly
+                // instead of repeatedly pulling it back toward center between triggers.
+                _targetOffset -= correction;
+                _retriggerCooldown = SmoothingRetriggerCooldown;
+                _returnCooldown = SmoothingReturnDelay;
+            }
 
-            var offsetLen = _reconcileOffset.Length();
+            var offsetLen = _targetOffset.Length();
             if (offsetLen > MaxSmoothingOffset)
-                _reconcileOffset = _reconcileOffset / offsetLen * MaxSmoothingOffset;
+                _targetOffset = _targetOffset / offsetLen * MaxSmoothingOffset;
         }
 
-        var blend = 1f - MathF.Exp(-SmoothingDecayPerSecond * frameTime);
-        _reconcileOffset = Vector2.Lerp(_reconcileOffset, Vector2.Zero, blend);
+        if (_returnCooldown <= 0f)
+        {
+            var decayBlend = 1f - MathF.Exp(-SmoothingDecayPerSecond * frameTime);
+            _targetOffset = Vector2.Lerp(_targetOffset, Vector2.Zero, decayBlend);
+        }
+
+        var followBlend = 1f - MathF.Exp(-SmoothingFollowPerSecond * frameTime);
+        _reconcileOffset = Vector2.Lerp(_reconcileOffset, _targetOffset, followBlend);
         _lastWorldPos = worldPos;
     }
 
