@@ -686,6 +686,12 @@ public sealed class AutopilotSystem : EntitySystem
             return;
         }
 
+        if (TryComp<PhysicsComponent>(shuttleUid, out var physics))
+        {
+            _physics.SetSleepingAllowed(shuttleUid, physics, false);
+            _physics.SetAwake(shuttleUid, physics, true);
+        }
+
         autopilot.Enabled = true;
         autopilot.TargetCoordinates = targetCoordinates;
         autopilot.DestinationName = destinationName;

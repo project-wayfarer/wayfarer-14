@@ -35,6 +35,9 @@ public sealed class MoverController : SharedMoverController
 
     private Dictionary<EntityUid, (ShuttleComponent, List<(EntityUid, PilotComponent, InputMoverComponent, TransformComponent)>)> _shuttlePilots = new();
 
+    private const float IdleShuttleLinearVelocityEpsilon = 0.05f;
+    private const float IdleShuttleAngularVelocityEpsilon = 0.01f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -583,6 +586,17 @@ public sealed class MoverController : SharedMoverController
                     PhysicsSystem.ApplyTorque(shuttleUid, torque, body: body);
                     _thruster.SetAngularThrust(shuttle, true);
                 }
+            }
+
+            if (linearInput == Vector2.Zero &&
+                MathHelper.CloseTo(angularInput, 0f) &&
+                MathHelper.CloseTo(brakeInput, 0f) &&
+                body.Awake &&
+                body.LinearVelocity.LengthSquared() <= IdleShuttleLinearVelocityEpsilon * IdleShuttleLinearVelocityEpsilon &&
+                MathF.Abs(body.AngularVelocity) <= IdleShuttleAngularVelocityEpsilon &&
+                (!TryComp<AutopilotComponent>(shuttleUid, out var autopilot) || !autopilot.Enabled))
+            {
+                PhysicsSystem.SetAwake(shuttleUid, body, false);
             }
         }
     }
