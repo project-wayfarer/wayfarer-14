@@ -271,7 +271,10 @@
   - WFClothingKimonoPink
   - WFClothingUniformJumpsuitGladiator
   - WFClothingUniformJumpskirtPerformer
-  - WFClothingUniformJumpskirtJanimaid
+  - UniformMaid
+  - ClothingUniformJumpskirtJanimaid
+  - ClothingUniformJumpskirtJanimaidmini
+  - ClothingUniformJumpskirtTacticalMaid
   - WFClothingUniformJumpsuitSafari
   - WFUniformShortsRed
   - WFUniformShortsRedWithTop
@@ -446,6 +449,16 @@
   - ClothingOuterCoatWarden
   - ClothingOuterCoatAMG
   - ClothingOuterCoatSyndieCapArmored
+  # Hardsuits
+  - ClothingOuterEVASuitFsc
+  - ClothingOuterEVASuitFsb
+  - ClothingOuterHardsuitSalvage
+  - ClothingOuterHardsuitLuxury
+  - ClothingOuterEVASuitFsa
+  - ClothingOuterHardsuitMercenary
+  - ClothingOuterHardsuitPrivateSecurity
+  - ClothingOuterHardsuitTacticalMaid
+  - ClothingOuterHardsuitDeathsquad
   #
   - ClothingOuterCoatSyndieCap
   - WFClothingOuterHoodieGrey
@@ -516,6 +529,7 @@
   - WFClothingBeltMilitaryWebbing
   - WFClothingBeltMilitaryWebbingMed
   - WFClothingBeltSecurity
+  - ClothingBeltAssault
   - WFClothingBeltPlant
   - WFClothingBeltPlantFilled
   - WFClothingBeltChef
@@ -670,6 +684,7 @@
   - WFClothingHeadBandSkull
   - WFClothingHeadBandGrey
   - WFClothingHeadBandGold
+  - ClothingHeadHatTacticalMaidHeadband
   # Berets
   - WFClothingHeadHatBeret
   - WFClothingHeadHatBeretFrench
@@ -704,6 +719,11 @@
   - WFClothingHeadHelmetBasic
   - WFClothingHeadHelmetMercenary
   - WFClothingHeadHelmetMercenaryBlack
+  # Flowers
+  - FoodPoppy
+  - FoodLily
+  - ClothingHeadHatFlowerWreath
+  - FoodAmbrosiaVulgaris
   #
   - ClothingHeadHatHoshat
   - ClothingHeadHatSyndieMAA
@@ -793,6 +813,7 @@
   - WFClothingHandsGlovesMercFingerless
   - WFClothingHandsMercenaryGlovesCombat
   - WFClothingHandsGlovesCombat
+  - ClothingHandsTacticalMaidGloves
   # Warmers
   - ClothingHandsPlainWhiteWarmers
   - ClothingHandsPlainWarmers
@@ -1043,6 +1064,8 @@
   - WFCigPackGreen
   - WFCigarCase
   - WFNFAshtray
+  - BarberScissors
+  - Binoculars
   - WFTapeRecorder
   - WFSmokingPipeFilledTobacco
   - WFTobaccoPouchBrownFilled
@@ -1102,7 +1125,6 @@
   - WFRubberStampTrader
   - WFRubberStampClown
   - WFRubberStampMime
-
 # == IN-HAND ITEMS
 - type: loadoutGroup
   id: WFHandItems

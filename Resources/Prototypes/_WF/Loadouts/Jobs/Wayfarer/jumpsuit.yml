@@ -1279,6 +1279,36 @@
     jumpsuit: ClothingUniformJumpsuitMilitaryPilot
   groupBy: "mercjumpsuit"
 
+- type: loadout
+  id: UniformMaid
+  price: 1000
+  equipment:
+    jumpsuit: UniformMaid
+  groupBy: "maid"
+
+- type: loadout
+  id: ClothingUniformJumpskirtJanimaid
+  price: 1000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaid
+  groupBy: "maid"
+
+- type: loadout
+  id: ClothingUniformJumpskirtJanimaidmini
+  price: 1000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaidmini
+  groupBy: "maid"
+
+- type: loadout
+  id: ClothingUniformJumpskirtTacticalMaid
+  price: 5000
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtTacticalMaid
+  groupBy: "maid"
+
+#
+
 #T2 Head and Senior drip, theater and elite service drip
 - type: loadout
   id: WFClothingUniformJumpsuitMonasticRobeDark
@@ -1583,15 +1613,6 @@
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtPerformer
-
-- type: loadout
-  id: WFClothingUniformJumpskirtJanimaid
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 1000
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtJanimaid
 
 - type: loadout
   id: WFClothingUniformJumpsuitSafari

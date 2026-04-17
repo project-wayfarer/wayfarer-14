@@ -44,3 +44,67 @@
         reagents:
         - ReagentId: SpaceDrugs
           Quantity: 30
+
+# Bicaridine
+- type: entity
+  id: ChemistryBottleBicaridine
+  suffix: bicaridine
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-bicaridine
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 30
+
+# Dermaline
+- type: entity
+  id: ChemistryBottleDermaline
+  suffix: dermaline
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-dermaline
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Dermaline
+          Quantity: 30
+
+# Dylovene
+- type: entity
+  id: ChemistryBottleDylovene
+  suffix: dylovene
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-dylovene
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Dylovene
+          Quantity: 30
+
+# Hyronalin
+- type: entity
+  id: ChemistryBottleHyronalin
+  suffix: hyronalin
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-hyronalin
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Hyronalin
+          Quantity: 30
