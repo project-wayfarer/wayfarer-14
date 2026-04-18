@@ -14,6 +14,7 @@
                 <ui:OptionSlider Name="SliderVolumeExpedMusic" Title="{Loc 'ui-options-exped-music-volume'}" /> <!-- Frontier: exped volume slider -->
                 <ui:OptionSlider Name="SliderVolumeLobby" Title="{Loc 'ui-options-lobby-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeInterface" Title="{Loc 'ui-options-interface-volume'}" />
+                <ui:OptionSlider Name="SliderVolumeAndyAnnouncements" Title="{Loc 'ui-options-andy-announcement-volume'}" />
                 <ui:OptionSlider Name="SliderMaxAmbienceSounds" Title="{Loc 'ui-options-ambience-max-sounds'}"
                                  Margin="0 0 0 8" />
                 <ui:OptionSlider Name="SliderVolumeCombatMusic" Title="{Loc 'ui-options-combat-music-volume'}" />

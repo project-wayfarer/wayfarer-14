@@ -558,6 +558,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.CustomSpecieName = profile.Customspeciesname;
 
+        // Wayfarer: apply base height/width from character customization
+        // SetHeight/SetWidth clamp to species limits; store as base values so
+        // temporary modifiers (e.g. SizeManipulator gun) can scale relative to them.
+        SetHeight((uid, humanoid), profile.Height, sync: false);
+        SetWidth((uid, humanoid), profile.Width, sync: false);
+        humanoid.BaseHeight = humanoid.Height;
+        humanoid.BaseWidth = humanoid.Width;
+        // End Wayfarer
+
         Dirty(uid, humanoid);
     }
 

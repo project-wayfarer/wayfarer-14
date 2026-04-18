@@ -363,15 +363,15 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Caustic: 0.05
+        Caustic: 0.5 # WF .05 to .5
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier # So many layers of stain protection makes it very heavy
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.85 # WF .75 to .85
+    sprintModifier: 0.85 # WF .75 to .85
   - type: HeldSpeedModifier
   - type: FootstepModifier
     footstepSoundCollection:

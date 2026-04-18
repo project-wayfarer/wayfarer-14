@@ -29,6 +29,9 @@
     activatedShape:
     - 0,0,2,0
     - 1,1,1,2
+  - type: MeleeWeapon
+    autoAttack: true # WF
+    attackRate: 1.5 # WF
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types: # Slightly less total damage than wielded crusher glaive has

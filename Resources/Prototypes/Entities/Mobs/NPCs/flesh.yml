@@ -8,7 +8,7 @@
   # // WF - Use new N14HostileCompoint preset
   - type: HTN
     rootTask:
-      task: N14HostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavSmash: !type:Bool
         true
@@ -217,7 +217,7 @@
   components:
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavClimb: !type:Bool
         true

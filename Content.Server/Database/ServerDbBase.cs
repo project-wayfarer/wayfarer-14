@@ -303,7 +303,9 @@ namespace Content.Server.Database
                 traits.ToHashSet(),
                 loadouts,
                 profile.HideFromPlayerlist // Wayfarer
-            );
+            )
+            .WithHeight(profile.Height) // Wayfarer
+            .WithWidth(profile.Width);  // Wayfarer
         }
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
@@ -333,6 +335,8 @@ namespace Content.Server.Database
             profile.SkinColor = appearance.SkinColor.ToHex();
             profile.SpawnPriority = (int) humanoid.SpawnPriority;
             profile.HideFromPlayerlist = humanoid.HideFromPlayerlist; // Wayfarer
+            profile.Height = humanoid.Height; // Wayfarer
+            profile.Width = humanoid.Width;   // Wayfarer
             profile.Markings = markings;
             profile.Slot = slot;
             profile.PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable;

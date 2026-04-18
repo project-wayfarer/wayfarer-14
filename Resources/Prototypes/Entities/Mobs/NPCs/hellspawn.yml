@@ -24,7 +24,7 @@
   # // WF - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14HostileCompound
+      task: N14HostileCompound # WF
     blackboard:
       NavSmash: !type:Bool
         true

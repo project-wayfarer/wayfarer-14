@@ -1,3 +1,167 @@
+#12
+- type: entity
+  name: box of 12 gauge buckshot shells
+  parent: BoxMagazine
+  id: BoxShotgunAmmo
+  description: A box full of 12 gauge buckshot shells.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFAmmunitionBoxShellShotgunBuckshot
+      amount: 4
+
+#35
+- type: entity
+  name: box of .35 pistol ammunition
+  parent: BoxMagazine
+  id: MagBox35Pistol
+  description: A box full of .35 pistol ammunition.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazinePistol35
+      amount: 2
+    - id: NFAmmunitionBoxPistol35
+      amount: 1
+
+#35 SMG
+- type: entity
+  name: box of .35 pistol (SMG) ammunition
+  parent: BoxMagazine
+  id: MagBox35SMG
+  description: A box full of .35 pistol ammunition.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineSubMachineGun35
+      amount: 2
+    - id: NFAmmunitionBoxPistol35
+      amount: 1
+
+#35 WT SMG
+- type: entity
+  name: box of .35 pistol (SMG, Top-Down) ammunition
+  parent: BoxMagazine
+  id: MagBox35SMGTD
+  description: A box full of .35 pistol ammunition.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineSubMachineGunTopMounted35
+      amount: 2
+    - id: NFAmmunitionBoxPistol35
+      amount: 1
+
+#45
+- type: entity
+  name: box of .45 pistol ammunition
+  parent: BoxMagazine
+  id: MagBox45
+  description: A box full of .45 pistol ammunition.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazinePistol45
+      amount: 2
+    - id: NFAmmunitionBoxPistol45
+      amount: 1
+
+#35 Speedloader
+- type: entity
+  name: box of (.35 pistol) speedloaders
+  parent: BoxMagazine
+  id: MagBox35SpeedloaderAndAmmo
+  description: A box full of (.35 pistol) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol35
+      amount: 2
+    - id: NFAmmunitionBoxPistol35
+      amount: 1
+
+#45 Speedloader
+- type: entity
+  name: box of (.45 pistol) speedloaders
+  parent: BoxMagazine
+  id: MagBox45SpeedloaderAndAmmo
+  description: A box full of (.45 pistol) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol45
+      amount: 2
+    - id: NFAmmunitionBoxPistol45
+      amount: 1
+
+#20
+- type: entity
+  name: box of .20 rifle ammunition
+  parent: BoxMagazine
+  id: MagBox20
+  description: A box full of .20 rifle ammunition.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFAmmunitionBoxRifle20
+      amount: 4
+
+#20 Clip
+- type: entity
+  name: box of .20 rifle ammunition with clips
+  parent: BoxMagazine
+  id: MagBox20Clip
+  description: A box full of .20 rifle ammunition, in clips.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineClipRifle20
+      amount: 2
+    - id: NFAmmunitionBoxRifle20
+      amount: 1
+
+#20 Mag
+- type: entity
+  name: box of .20 rifle ammunition with magazines
+  parent: BoxMagazine
+  id: MagBox20Rifle
+  description: A box full of .20 rifle ammunition, with 2 magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineRifle20
+      amount: 2
+    - id: NFAmmunitionBoxRifle20
+      amount: 1
+
+#30
+- type: entity
+  name: box of .30 rifle ammunition
+  parent: BoxMagazine
+  id: MagBox30
+  description: A box full of .30 rifle ammunition.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFAmmunitionBoxRifle30
+      amount: 4
+
+#30 Mag
+- type: entity
+  name: box of .30 rifle ammunition with magazines
+  parent: BoxMagazine
+  id: MagBox30Rifle
+  description: A box full of .30 rifle ammunition, with 2 magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineRifle30
+      amount: 2
+    - id: NFAmmunitionBoxRifle30
+      amount: 1
+
+
+
 #35 Stendos
 - type: entity
   name: box of pistol (.35 pistol) magazines

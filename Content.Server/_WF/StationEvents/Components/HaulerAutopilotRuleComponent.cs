@@ -63,7 +63,7 @@ public sealed partial class HaulerAutopilotRuleComponent : Component
     /// The sound to play when a player stays near the shuttle.
     /// </summary>
     [DataField]
-    public SoundSpecifier ProximitySound = new SoundPathSpecifier("/Audio/_WF/Music/HaulerBreach.ogg");
+    // public SoundSpecifier ProximitySound = new SoundPathSpecifier("/Audio/_WF/Music/HaulerBreach.ogg");
 
     /// <summary>
     /// Tracks which players have already heard the audio (to avoid repeating).

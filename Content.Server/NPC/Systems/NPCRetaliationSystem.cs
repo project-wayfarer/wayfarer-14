@@ -21,7 +21,7 @@ public sealed class NPCRetaliationSystem : EntitySystem
 
     // #Misfits Change — nearby friendly NPCs within roughly their aggro band will assist when one of them is attacked.
     // This fixes the common case where only the directly-hit mob retaliates while its packmates stay idle outside passive scan range.
-    private const float DefaultAssistRange = 14f;
+    private const float DefaultAssistRange = 16f;
 
     /// <inheritdoc />
     public override void Initialize()
@@ -83,8 +83,8 @@ public sealed class NPCRetaliationSystem : EntitySystem
         if (!HasComp<MobStateComponent>(target))
             return false;
 
-        // don't retaliate against the same faction
-        if (_npcFaction.IsEntityFriendly(ent.Owner, target))
+        if (!ent.Comp.RetaliateFriendlies
+            && _npcFaction.IsEntityFriendly(ent.Owner, target))
             return false;
 
         _npcFaction.AggroEntity(ent.Owner, target);

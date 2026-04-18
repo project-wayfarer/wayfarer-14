@@ -12,6 +12,7 @@
   - type: GravityAffected
   - type: Physics
     bodyType: KinematicController
+  - type: ProximityNPC # Misfits Add — sleep distant NPCs to reduce tick load
   - type: Fixtures
     fixtures:
       fix1:

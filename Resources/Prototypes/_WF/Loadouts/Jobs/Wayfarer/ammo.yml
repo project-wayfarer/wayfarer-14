@@ -4,136 +4,107 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - WFAmmoShotgun12Buckshot
+  - BoxShotgunAmmo
+  - MagBox35Pistol
+  - MagBox35SMG
+  - MagBox35SMGTD
+  - MagBox45
+  - MagBox35SpeedloaderAndAmmo
+  - MagBox45SpeedloaderAndAmmo
+  - MagBox20
+  - MagBox20Clip
+  - MagBox20Rifle
+  - MagBox30
+  - MagBox30Rifle
   - WFAmmoCrossbow
-  - WFAmmoPistol35
-  - WFAmmoPistol45
-  - WFAmmoRifle20
-  - WFAmmoRifle30
-  - WFAmmoMag35
-  - WFAmmoMag20
-  - WFAmmoClip20
-  - WFAmmoMag30
-  - WFAmmoMag45
-  - WFAmmoSubmachineMag35
 
 - type: loadout
-  id: WFAmmoShotgun12Buckshot
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 600
+  id: BoxShotgunAmmo
+  price: 4000
   storage:
     back:
-    - NFAmmunitionBoxShellShotgunBuckshot
+    - BoxShotgunAmmo
+
+- type: loadout
+  id: MagBox35Pistol
+  price: 4000
+  storage:
+    back:
+    - MagBox35Pistol
+
+- type: loadout
+  id: MagBox35SMG
+  price: 4000
+  storage:
+    back:
+    - MagBox35SMG
+
+- type: loadout
+  id: MagBox35SMGTD
+  price: 4000
+  storage:
+    back:
+    - MagBox35SMGTD
+
+- type: loadout
+  id: MagBox45
+  price: 4000
+  storage:
+    back:
+    - MagBox45
+
+- type: loadout
+  id: MagBox35SpeedloaderAndAmmo
+  price: 4000
+  storage:
+    back:
+    - MagBox35SpeedloaderAndAmmo
+
+- type: loadout
+  id: MagBox45SpeedloaderAndAmmo
+  price: 4000
+  storage:
+    back:
+    - MagBox45SpeedloaderAndAmmo
+
+- type: loadout
+  id: MagBox20
+  price: 4000
+  storage:
+    back:
+    - MagBox20
+
+- type: loadout
+  id: MagBox20Clip
+  price: 4000
+  storage:
+    back:
+    - MagBox20Clip
+
+- type: loadout
+  id: MagBox20Rifle
+  price: 4000
+  storage:
+    back:
+    - MagBox20Rifle
+
+- type: loadout
+  id: MagBox30
+  price: 4000
+  storage:
+    back:
+    - MagBox30
+
+- type: loadout
+  id: MagBox30Rifle
+  price: 4000
+  storage:
+    back:
+    - MagBox30Rifle
 
 - type: loadout
   id: WFAmmoCrossbow
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 600
+  price: 4000
   storage:
     back:
     - ClothingBeltQuiverCrossbowFilledBolt
-
-- type: loadout
-  id: WFAmmoPistol35
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 600
-  storage:
-    back:
-    - NFAmmunitionBoxPistol35
-
-- type: loadout
-  id: WFAmmoPistol45
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 600
-  storage:
-    back:
-    - NFAmmunitionBoxPistol45
-
-- type: loadout
-  id: WFAmmoRifle20
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 600
-  storage:
-    back:
-    - NFAmmunitionBoxRifle20
-
-- type: loadout
-  id: WFAmmoRifle30
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 800
-  storage:
-    back:
-    - NFAmmunitionBoxRifle30
-
-#Magazines
-- type: loadout
-  id: WFAmmoMag35
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 2000
-  storage:
-    back:
-    - NFMagazinePistol35
-
-- type: loadout
-  id: WFAmmoMag20
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 2500
-  storage:
-    back:
-    - NFMagazineRifle20
-
-- type: loadout
-  id: WFAmmoClip20
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 2500
-  storage:
-    back:
-    - NFMagazineClipRifle20
-
-- type: loadout
-  id: WFAmmoMag30
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 2500
-  storage:
-    back:
-    - NFMagazineRifle30
-
-- type: loadout
-  id: WFAmmoMag45
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: OUTT1
-  price: 6000
-  storage:
-    back:
-    - NFMagazinePistol45
-
-- type: loadout
-  id: WFAmmoSubmachineMag35
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT4
-  price: 6000
-  storage:
-    back:
-    - NFMagazineSubMachineGun35
