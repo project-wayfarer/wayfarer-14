@@ -57,8 +57,8 @@ public sealed partial class CryoSleepSystem
         if (!force && (mind.CurrentEntity is not { Valid: true } ghost || !HasComp<GhostComponent>(ghost)))
             return ReturnToBodyStatus.NotAGhost;
 
-        // Use the first stored body
-        var storedBody = storedBodies[0];
+        // Use the last stored body (most recent character)
+        var storedBody = storedBodies[^1];
         var cryopod = storedBody.Cryopod;
         var body = storedBody.Body;
         
@@ -86,7 +86,11 @@ public sealed partial class CryoSleepSystem
                 return ReturnToBodyStatus.Occupied;
         }
 
-        _storedBodies.Remove(id.Value);
+        // Remove only the specific body being resumed, not all stored bodies
+        storedBodies.Remove(storedBody);
+        if (storedBodies.Count == 0)
+            _storedBodies.Remove(id.Value);
+        
         _mind.ControlMob(id.Value, body);
         // Force the mob to sleep
         var sleep = EnsureComp<SleepingComponent>(body);
