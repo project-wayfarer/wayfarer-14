@@ -289,4 +289,16 @@ public abstract class SharedChatSystem : EntitySystem
         tagStart += tag.Length + 2;
         return rawmsg.Substring(tagStart, tagEnd - tagStart);
     }
+
+    /// <summary>
+    /// Strips any [color=...] tag wrapping directly around the given inner tag in a chat message.
+    /// e.g. [color=red][BubbleContent]...[/BubbleContent][/color] becomes [BubbleContent]...[/BubbleContent]
+    /// </summary>
+    public static string StripColorTagAroundTag(ChatMessage message, string innerTag)
+    {
+        var rawmsg = message.WrappedMessage;
+        rawmsg = Regex.Replace(rawmsg, $@"\[color=[^\]]*\](\[{Regex.Escape(innerTag)}\])", "$1");
+        rawmsg = rawmsg.Replace($"[/{innerTag}][/color]", $"[/{innerTag}]");
+        return rawmsg;
+    }
 }

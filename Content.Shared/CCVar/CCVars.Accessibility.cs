@@ -31,6 +31,12 @@ public sealed partial class CCVars
             CVar.CLIENTONLY | CVar.ARCHIVE,
             "Toggles displaying names with individual colors.");
 
+    public static readonly CVarDef<bool> ChatEnableBodyColor =
+        CVarDef.Create("accessibility.enable_body_color",
+            true,
+            CVar.CLIENTONLY | CVar.ARCHIVE,
+            "Toggles displaying chat message bodies with the speaker's unique color.");
+
     /// <summary>
     ///     Screen shake intensity slider, controlling the intensity of the CameraRecoilSystem.
     ///     Goes from 0 (no recoil at all) to 1 (regular amounts of recoil)
