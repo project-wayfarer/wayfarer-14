@@ -1,3 +1,20 @@
+# Flavorol - For testing
+- type: entity
+  id: ChemistryBottleFlavorol
+  suffix: flavorol
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-flavorol
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Flavorol
+          Quantity: 30
+
+
 # Moonshine
 - type: entity
   parent: CustomDrinkJug

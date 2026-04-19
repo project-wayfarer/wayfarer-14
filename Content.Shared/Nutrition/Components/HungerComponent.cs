@@ -97,7 +97,7 @@ public sealed partial class HungerComponent : Component
     [AutoNetworkedField]
     public Dictionary<HungerThreshold, float> HungerThresholdDecayModifiers = new()
     {
-        { HungerThreshold.Overfed, 1.2f },
+        { HungerThreshold.Overfed, 0.8f }, // Wayfarer 1.2 to 0.8 to give a "satieted" effect intead of draining hunger faster to get to the "Okay" threshold
         { HungerThreshold.Okay, 1f },
         { HungerThreshold.Peckish, 0.8f },
         { HungerThreshold.Starving, 0.6f },
