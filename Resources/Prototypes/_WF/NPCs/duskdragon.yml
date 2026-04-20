@@ -57,8 +57,7 @@
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: HTN
-    rootTask:
-      task: MouseCompound
+    enabled: false
   - type: CombatMode
   - type: MobMover
   - type: InputMover
@@ -158,7 +157,13 @@
   - type: Inventory # Inventory for the dragon, based off the parrot.. since only a headset is really required.
     speciesId: monkey
     templateId: parrot
-  - type: Hands #hands for the dragons.
+    displacements: #this should stop headsets from actually being seen on the dragon, since it doesn't have a head that can fit them properly, but still allows them to equip
+        ears:
+          sizeMaps:
+            32:
+              sprite: Mobs/Animals/parrot/displacement.rsi
+              state: ears
+  - type: Hands #hands for the dragons. Has to be defined this way.. trying to use count: simply doesn't work.
     hands:
       hand_right:
         location: Right
