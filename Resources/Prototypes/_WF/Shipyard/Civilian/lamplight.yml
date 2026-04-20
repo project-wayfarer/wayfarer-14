@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Maintainer Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Lamplight
+  parent: BaseVessel
+  name: SI Lamplight
+  description: A new model service shuttle equipped with all necesities for a restaurant and crew accomodations.
+  price: 92000
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/Lamplight.yml
+  guidebookPage: Null
+  class:
+  - Kitchen
+  engine:
+  - Biofuel
+  - Solar
+
+- type: gameMap
+  id: Lamplight
+  mapName: 'SI Lamplight'
+  mapPath: /Maps/_WF/Shuttles/Civilian/lamplight.yml
+  minPlayers: 0
+  stations:
+    Lamplight:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'SI Lamplight{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
