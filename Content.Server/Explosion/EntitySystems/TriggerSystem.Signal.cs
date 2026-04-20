@@ -1,6 +1,7 @@
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.Explosion.Components;
 using Content.Shared.DeviceLinking.Events;
+using Content.Server.DeviceLinking.Components;
 
 namespace Content.Server.Explosion.EntitySystems
 {
@@ -14,6 +15,8 @@ namespace Content.Server.Explosion.EntitySystems
 
             SubscribeLocalEvent<TimerStartOnSignalComponent,SignalReceivedEvent>(OnTimerSignalReceived);
             SubscribeLocalEvent<TimerStartOnSignalComponent,ComponentInit>(OnTimerSignalInit);
+
+            SubscribeLocalEvent<SignalOnTriggerComponent, TriggerEvent>(OnSignalTrigger);
         }
 
         private void OnSignalReceived(EntityUid uid, TriggerOnSignalComponent component, ref SignalReceivedEvent args)
@@ -39,5 +42,14 @@ namespace Content.Server.Explosion.EntitySystems
         {
             _signalSystem.EnsureSinkPorts(uid, component.Port);
         }
+
+        // Wayfarer - SignalOnTrigger
+        private void OnSignalTrigger(EntityUid uid, SignalOnTriggerComponent component, TriggerEvent args)
+        {
+            _signalSystem.InvokePort(uid, component.TriggerPort);
+            args.Handled = true;
+        }
+        // End Wayfarer
+
     }
 }

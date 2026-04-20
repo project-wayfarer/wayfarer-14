@@ -517,6 +517,22 @@
   - NFReinforcedJug
   position: 0, 10
 
+# WF - Add cloning
+- type: technology
+  id: WFCloning
+  name: nf-research-technology-cloning
+  entityIcon: CloningPod
+  discipline: NFMedical
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - CloningPodMachineCircuitboard
+  - CloningConsoleComputerCircuitboard
+  - MedicalScannerMachineCircuitboard
+  technologyPrerequisites:
+  - NFAppliedBiochemicalStasis
+  position: 4, 11
+
 - type: technology
   id: NFReinforcedJug
   name: nf-research-technology-reinforced-jug

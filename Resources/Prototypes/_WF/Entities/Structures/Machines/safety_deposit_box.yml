@@ -144,6 +144,7 @@
       machine_parts: !type:Container
   - type: ActivatableUI
     key: enum.SafetyDepositConsoleUiKey.Key
+  - type: InteractionOutline
 
   - type: UserInterface
     interfaces:

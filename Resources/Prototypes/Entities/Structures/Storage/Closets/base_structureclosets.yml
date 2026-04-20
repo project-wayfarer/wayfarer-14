@@ -2,7 +2,7 @@
   id: ClosetBase
   parent: BaseStructureDynamic
   name: closet
-  description: A standard-issue Nanotrasen storage unit.
+  description: A standard-issue storage unit. # wayfarer edit: remove nanotrasen mention in description
   abstract: true
   components:
   - type: Animateable
@@ -137,7 +137,7 @@
   id: BaseWallCloset
   abstract: true
   name: wall closet
-  description: A standard-issue Nanotrasen storage unit, now on walls.
+  description: A standard-issue storage unit, now on walls. # wayfarer edit: remove nanotrasen mention in description
   components:
   - type: ResistLocker
   - type: Weldable

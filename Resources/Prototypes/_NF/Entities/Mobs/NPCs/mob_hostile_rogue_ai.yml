@@ -6,7 +6,7 @@
   components:
   - type: HTN
     rootTask:
-       task: SimpleHostileCompound
+       task: N14HostileCompound # WF
     blackboard:
       NavClimb: !type:Bool
         false
@@ -25,7 +25,7 @@
   components:
   - type: HTN
     rootTask:
-       task: SimpleRangedHostileCompound
+       task: N14RangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
         false
@@ -877,15 +877,6 @@
     availableModes:
     - FullAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: SpawnMobViscerator
-    fireCost: 100
-  - type: Battery
-    maxCharge: 100
-    startingCharge: 100
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 5
 
 #region Tier 3
 - type: entity

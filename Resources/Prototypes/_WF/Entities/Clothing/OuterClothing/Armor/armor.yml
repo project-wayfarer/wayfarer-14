@@ -1,0 +1,45 @@
+# Black Market Vest
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorBulletproofBM
+  name: tactical vest
+  description: A tactical vest procured from the Black Market. Sturdy materials provide good protection.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Armor/bulletproof_polyvalent.rsi
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Armor/bulletproof_polyvalent.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.5
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+
+# Black Market Tactical Gear
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorHeavyTactical
+  name: Heavy Tactical Rig
+  description: A rather cumbersome assortment of heavy ballistic plates and durathread inserts. Provides very good protection at the cost of speed.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/bulletproof.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Armor/bulletproof.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.4
+        Heat: 0.6
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.85

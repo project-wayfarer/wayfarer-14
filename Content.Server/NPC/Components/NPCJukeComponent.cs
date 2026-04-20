@@ -6,18 +6,29 @@ namespace Content.Server.NPC.Components;
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class NPCJukeComponent : Component
 {
-    [DataField("jukeType")]
+    [DataField]
     public JukeType JukeType = JukeType.Away;
 
-    [DataField("jukeDuration")]
+    [DataField]
     public float JukeDuration = 0.5f;
 
-    [DataField("nextJuke", customTypeSerializer:typeof(TimeOffsetSerializer))]
+    [DataField]
+    public float JukeCooldown = 3f;
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan NextJuke;
 
-    [DataField("targetTile")]
+    [DataField]
     public Vector2i? TargetTile;
+
+    /// <summary>
+    /// Distance at which a ranged NPC will try to back away from an approaching target.
+    /// Only used when <see cref="JukeType"/> is <see cref="JukeType.Away"/> and the NPC has
+    /// an active <see cref="NPCRangedCombatComponent"/>.
+    /// </summary>
+    [DataField]
+    public float RetreatDistance = 4f;
 }
 
 public enum JukeType : byte

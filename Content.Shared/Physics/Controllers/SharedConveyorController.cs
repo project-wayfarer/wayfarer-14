@@ -4,6 +4,7 @@ using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Stacks;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
@@ -24,6 +25,7 @@ public abstract class SharedConveyorController : VirtualController
     [Dependency] private readonly FixtureSystem _fixtures = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;
     [Dependency] private readonly SharedMoverController _mover = default!;
+    [Dependency] private   readonly SharedStackSystem _stack = default!;
 
     protected const string ConveyorFixture = "conveyor";
 
@@ -58,6 +60,8 @@ public abstract class SharedConveyorController : VirtualController
 
     private void OnConveyedFriction(Entity<ConveyedComponent> ent, ref TileFrictionEvent args)
     {
+        if(!ent.Comp.Conveying)
+            return;
         // Wizden#37468: Conveyors spin fix
         if (!TryComp<FixturesComponent>(ent, out var fixture) || !IsConveyed((ent, fixture)))
             return;
@@ -150,7 +154,10 @@ public abstract class SharedConveyorController : VirtualController
             var physics = ent.Entity.Comp3;
 
             if (physics.BodyStatus != BodyStatus.OnGround) // Wizden#37468
-                continue; // Wizden#37468
+            {
+                SetConveying(ent.Entity.Owner, ent.Entity.Comp1, false);
+                continue;
+            }
 
             var velocity = physics.LinearVelocity;
             var angularVelocity = physics.AngularVelocity; // Wizden#37468
@@ -166,7 +173,15 @@ public abstract class SharedConveyorController : VirtualController
 
             if (ent.Result)
             {
-                SetConveying(ent.Entity.Owner, ent.Entity.Comp1, targetDir.LengthSquared() > 0f);
+                if (targetDir.LengthSquared() > 0f)
+                {
+                    SetConveying(ent.Entity.Owner, ent.Entity.Comp1, true);
+                }
+                else if (ent.Entity.Comp1.Conveying)
+                {
+                    SetConveying(ent.Entity.Owner, ent.Entity.Comp1, false);
+                    _stack.TryMergeToContacts(ent.Entity.Owner);
+                }
 
                 // We apply friction here so when we push items towards the center of the conveyor they don't go overspeed.
                 // We also don't want this to apply to mobs as they apply their own friction and otherwise
@@ -387,7 +402,8 @@ public abstract class SharedConveyorController : VirtualController
 
             var result = System.TryConvey(
                 (convey.Entity.Owner, convey.Entity.Comp1, convey.Entity.Comp2, convey.Entity.Comp3, convey.Entity.Comp4),
-                Prediction, out var direction);
+                Prediction,
+                out var direction);
 
             Conveyed[index] = (convey.Entity, direction, result);
         }

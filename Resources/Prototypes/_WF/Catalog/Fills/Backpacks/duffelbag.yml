@@ -1,5 +1,3 @@
-
-
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateHardsuitMedicBundle
@@ -13,3 +11,38 @@
       - id: ClothingHandsGlovesCombat
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
+
+#Outlaw Bundles
+# Pirate Paperwork
+- type: entity
+  parent: NFClothingBackpackDuffelColorBrown
+  id: OutlawPaperworkBundle
+  name: black market paperwork bundle
+  description: "Contains a set of stamps, paper, and pen."
+  components:
+  - type: StorageFill
+    contents:
+    - id: RubberStampTrader
+    - id: RubberStampApproved
+    - id: RubberStampDenied
+    - id: BoxPaper
+    - id: BoxFolderRed
+    - id: BoxFolderBlack
+    - id: LuxuryPen
+
+# Kidnapper Bundle
+- type: entity
+  parent: NFClothingBackpackDuffelColorBrown
+  id: OutlawKidnapperkBundle
+  name: kidnapper bundle
+  description: "Contains a set of restraints, a stun baton and some lube for good measure."
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxHandcuff
+    - id: Stunbaton
+    - id: ClothingMaskMuzzle
+    - id: ClothingMaskMuzzle
+    - id: ClothingEyesBlindfold
+    - id: ClothingEyesBlindfold
+    - id: DrinkSpaceLube

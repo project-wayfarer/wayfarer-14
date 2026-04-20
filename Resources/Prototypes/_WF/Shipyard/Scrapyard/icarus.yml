@@ -1,0 +1,43 @@
+﻿# Author Info
+# GitHub: Goodfaun
+# Discord: Goodfaun
+
+# Maintainer Info
+# GitHub: Goodfaun
+# Discord: Goodfaun
+
+# Shuttle Notes:
+# Science ship funny
+- type: vessel
+  id: Icarus
+  parent: BaseVessel
+  name: BAM Icarus
+  description: Has science gone too far? NO now lets get it done!
+  price: 24500 # tc 110 appraised 13028.744018554688 roles: 2 sci+anom (110*50 + 13028.744018554688) *1.3
+  category: Small
+  group: Scrap
+  shuttlePath: /Maps/_WF/Shuttles/Scrapyard/icarus.yml
+  guidebookPage: ShipyardIcarus
+  class:
+  - Civilian
+  - Science
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Icarus
+  mapName: 'BAM Icarus'
+  mapPath: /Maps/_WF/Shuttles/Scrapyard/icarus.yml
+  minPlayers: 0
+  stations:
+    Icarus:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Icarus SCAV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

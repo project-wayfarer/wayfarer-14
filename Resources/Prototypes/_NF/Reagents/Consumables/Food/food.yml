@@ -8,23 +8,23 @@
   color: "#775441"
   metabolisms:
     Food:
-      metabolismRate: 0.1
+      metabolismRate: 0.01 # Wayfarer 10x slower metabolismRate
       effects:
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.15
-        sprintSpeedModifier: 1.15
-      - !type:SatiateHunger
-      - !type:HealthChange #minor health benefit if you eat full meals, helps with the existing 'healthy' vitamins etc. to create a complete and balanced diet.
-        conditions:
-        - !type:ReagentThreshold
-          min: 10
-        damage:
-          types:
-            Poison: -0.1
-            Radiation: -0.1
-            Cold: -0.2
-      - !type:ModifyBloodLevel
-        amount: .5
+        walkSpeedModifier: 1.1 # Wayfarer 1.15 to 1.1
+        sprintSpeedModifier: 1.1 # Wayfarer 1.15 to 1.1
+#      - !type:SatiateHunger
+#      - !type:HealthChange #minor health benefit if you eat full meals, helps with the existing 'healthy' vitamins etc. to create a complete and balanced diet.
+#        conditions:
+#        - !type:ReagentThreshold
+#          min: 10
+#        damage:
+#          types:
+#            Poison: -0.1
+#            Radiation: -0.1
+#            Cold: -0.2
+#      - !type:ModifyBloodLevel
+#        amount: .5
   plantMetabolism:
   - !type:PlantAdjustNutrition
     amount: 1

@@ -1,8 +1,8 @@
 <Document>
-  # NT New Frontiers Program
-
-Welcome to the Coyote Sector! By being here, you're helping to develop the furthest reaches of space!
-
+  # New Frontiers Program
+  <!-- Wayfarer: removed NT-->
+Welcome to the Zekke Sector! By being here, you're helping to develop the furthest reaches of space!
+  <!-- Wayfarer: removed Coyote sector replace with wayfarer! also added in Zekke mention-->
 [color=#33bbff]If you'd like a hand, ask on the radio, or talk to somebody.[/color]
 The [color=#dd0000]Valet[/color] or [color=#009933]Station Representative[/color] should be able to help, they're to the right of medbay.
 
@@ -27,14 +27,14 @@ To make money, why not:
   </Box>
   Some provisions (e.g. air tanks, salvage equipment) are available from vendors on Nash Station, but most amenities (medical services, food) should be offered by players on shuttles or at the Trade Depot.
 
-Be sure to stock up at Nash Station if going out on an extended voyage, and take advantage of the [color=#33bbff]medical insurance tracker[/color] in your loadout, or from the NanoMed vendor in medbay.
-
+Be sure to stock up at Dusk Station if going out on an extended voyage, and take advantage of the [color=#33bbff]medical insurance tracker[/color] in your loadout, or from the NanoMed vendor in medbay.
+  <!-- Wayfarer: removed Nash station replace with Dusk!-->
   <Box>
     <GuideEntityEmbed Entity="PottedPlant0"/>
   </Box>
 
-  Fun fact: Sleeping in your ship overnight can make you suffer from CO2 buildup. This is usually due to the power in your ship dying, which leads to your scrubber dying, which leads to you dying too.
-
+  Fun fact: Sleeping in your ship overnight can make you suffer from CO2 buildup and lack of O2. This is usually due to the power in your ship dying, which leads to your scrubber dying as well as your vents, which leads to you dying too.
+  <!-- Wayfarer: fix the air thing. because you need O2 as well...-->
   OH NO SO WHAT DO YOU DO???
 
   Two options: bolt your doors open to let the CO2 diffuse over a larger area, OR use a potted plant! Potted plants can scrub the CO2 out of the air, slowly, but more than fast enough to keep you alive overnight.
@@ -42,5 +42,19 @@ Be sure to stock up at Nash Station if going out on an extended voyage, and take
   To make a plant scrub the air, simply wrench it to the ground by your bed. It'll do the rest! You might expect it to make oxygen, but it doesn't. It just removes CO2.
 
   This works with any potted plant with the Label on it (you'll know it when you see it), even if its a plastic plant or something that wouldn't really make sense to process CO2. Generally, if its even vaguely potted plant like, it'll work. Unless it doesn't.
+  <!-- Wayfarer: fix the air thing. because you need O2 as well...-->
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+  </Box>
 
+  NOW you got step 1 done now you need to work on O2
+
+  Without power your ship will not vent in new air. so go to a cargo depot and buy a new O2 (as many as you think you need for the night, shouldn't really need more than 2) anyway put that canister in your ship doesn't need to be anchored.
+
+  Open the UI on the can make sure the pressure reads [bold]101.3[/bold] kpa on [color=#964B00]Release Valve Status[/color] and open the valve! it should release gas to equal the atmosphere pressure.
+
+  but wait what if I breath N2 instead of O2? ... uhhh sorry the mothroach ate the rest of this guide book you are just gonna have to figure it out yourself! good luck! (what you mean its on a pda not paper and can't be eaten by a mothroach? look over there a distraction!)
+  <Box>
+    <GuideEntityEmbed Entity="MobMothroach" Caption="Distraction"/>
+  </Box>
 </Document>

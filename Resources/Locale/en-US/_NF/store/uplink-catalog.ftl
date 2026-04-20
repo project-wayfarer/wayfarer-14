@@ -292,7 +292,7 @@ uplink-pirate-revolverammo-name = Pirate Revolver Ammo Box
 uplink-pirate-revolverammo-desc = A box of .45 pistol rounds, used in the pirate revolver.
 
 uplink-pirate-flintlockammo-name = Flintlock Pistol Ammo Box
-uplink-pirate-flintlockammo-desc = A box of .60 anti-materiel rounds, used in the flintlock pistol.
+uplink-pirate-flintlockammo-desc = A box of .60 anti-materiel rounds.
 
 uplink-pirate-ecutlass-name = Energy Cutlass
 uplink-pirate-ecutlass-desc = An energy cutlass!
@@ -310,22 +310,22 @@ uplink-pirate-graygrenade-name = Gray Pirate Grenade
 uplink-pirate-graygrenade-desc = A solid grenade that feels like a cannonball.
 
 uplink-pirate-accessconfigurator-captain-name = Black Market Access Configurator
-uplink-pirate-accessconfigurator-captain-desc = An access configurator that is sold on the black market. Lock ya booty behind pirate access today!
+uplink-pirate-accessconfigurator-captain-desc = An access configurator that is sold on the black market.
 
 uplink-pirate-radio-implanter-name = Radio Implanter
 uplink-pirate-radio-implanter-desc = Implants a Freelance radio, allowing covert communication without a headset.
 
 uplink-pirate-pmag-name = Machine Liberator
-uplink-pirate-pmag-desc = Removes station-binding machine DRM. A pirate's best friend.
+uplink-pirate-pmag-desc = Removes station-binding machine DRM. A outlaw's best friend.
 
-uplink-pirate-repair-kit-name = Pirate Computer Repair Kit
-uplink-pirate-repair-kit-desc = A collection of tools used to repair a pirate console. For those times when you have a string of bad luck.
+uplink-pirate-repair-kit-name = Black Market Computer Repair Kit
+uplink-pirate-repair-kit-desc = A collection of tools used to repair a black market console. For those times when you have a string of bad luck.
 
 uplink-pirate-ionized-dust-bag-name = Ionized Bluespace Dust
 uplink-pirate-ionized-dust-bag-desc = A bag of dust that can clear pinpointers pointing at a given object, supposedly.
 
 uplink-pirate-pinpointer-target-scanner-name = Pinpointer Target Scanner
-uplink-pirate-pinpointer-target-scanner-desc = A jury-rigged scanner that can find objects targeted by pinpointers. Batteries included, lubber.
+uplink-pirate-pinpointer-target-scanner-desc = A jury-rigged scanner that can find objects targeted by pinpointers.
 
 uplink-pirate-pirate-stitcher-name = Pirate Stitcher
 uplink-pirate-pirate-stitcher-desc = A circuit board for a pirate stitcher. Assemble it to make pirate clothing and goodies!

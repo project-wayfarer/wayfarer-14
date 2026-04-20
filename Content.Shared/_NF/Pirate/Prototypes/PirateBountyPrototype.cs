@@ -44,7 +44,7 @@ public sealed partial class PirateBountyPrototype : IPrototype
     /// A prefix appended to the beginning of a bounty's ID.
     /// </summary>
     [DataField]
-    public string IdPrefix = "ARR-";
+    public string IdPrefix = "BMO-"; // WF - Black Market Order
 }
 
 [DataDefinition, Serializable, NetSerializable]

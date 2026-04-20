@@ -16,16 +16,15 @@
           Quantity: 12
         - ReagentId: Fat
           Quantity: 6
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatResomiCutlet
   - type: InternalTemperature
     conductivity: 0.41
   - type: FlavorProfile
     flavors:
       - raw
       - resomi
-  - type: Construction
-    graph: ResomiSteak
-    node: start
-    defaultTarget: cooked resomi
 
 - type: entity
   name: breaded resomi

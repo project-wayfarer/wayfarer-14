@@ -8,13 +8,13 @@
   When going on expedition, your ship will jump to a planet and you need to complete an objective in a limited time.
   Completing this objective lowers the wait until you can attempt the next expedition.
   When your time runs out, the ship jumps back, [bold]whether you're on it or not[/bold].
-
-  Ships purchased at Frontier Outpost [bold]cannot[/bold] go on expedition, but [italic]any purchased at [bold]Expeditionary Lodge[/bold] can[/italic].
-  You will need to use the [color=#a4885c]salvage console[/color] onboard.
-
+  <!-- Wayfarer: removed Frontier oupost with Dusk-->
+  Ships purchased at Dusk [bold]cannot[/bold] go on expedition, but [italic]any purchased at [bold]Expeditionary Lodge[/bold] can[/italic].
+  You will need to use the [color=#a4885c]Expedition console[/color] onboard.
+  <!-- Wayfarer: change salvage to expedition-->
   To go on an expedition:
   - Pilot your ship so there is 200 m of empty space in each direction.
-  - Use the [color=#a4885c]salvage console[/color].
+  - Use the [color=#a4885c]Expedition console[/color].
   - Pick one of the five missions offered to you.
   - Note the enemy, conditions, total time, and objectives for the mission.
   - Buckle into a seat to avoid falling down.
@@ -42,7 +42,8 @@
 
   # Gear
   ## Environmental Hazards
-  The first hazard you will encounter on the planet is [italic]the planet itself[/italic]. Planetary environments are diverse: the atmosphere and temperature can vary - both can be dangerous. The [color=#a4885c]salvage console[/color] will give you a rough idea of what conditions on the planet are in the [color=#a4885c]Modifiers[/color] section of the mission description. This information will help you to decide what environmental protection gear you need, if any.
+  <!-- Wayfarer: change salvage to expedition-->
+  The first hazard you will encounter on the planet is [italic]the planet itself[/italic]. Planetary environments are diverse: the atmosphere and temperature can vary - both can be dangerous. The [color=#a4885c]expedition console[/color] will give you a rough idea of what conditions on the planet are in the [color=#a4885c]Modifiers[/color] section of the mission description. This information will help you to decide what environmental protection gear you need, if any.
 
   <Box>
   <GuideEntityEmbed Entity="FloorLiquidPlasmaEntity"/>
@@ -133,7 +134,7 @@ If you [italic]do[/italic] get set on fire, remember to [bold]click the [color=#
   <GuideEntityEmbed Entity="RiotShield"/>
   </Box>
   Most of the time, you can't avoid getting hit. Wearing armor reduces damage taken, keeping you in action for longer, and giving you a chance to go and heal. Since different types of enemies do different types of damage, choosing your armor wisely will significantly increase your chances of survival.
-
+  <!-- Wayfarer: attention needed! Syndicate naval force-->
   Here are some examples for your consideration:
   - [textlink="Syndicate naval forces" link="MobsExpeditionGuideSyndicate"] use firearms that deal [color=yellow]piercing[/color] damage. Wearing armor with high pierce resistance (like a bulletproof vest) is a good choice.
   - [textlink="Rogue silicons" link="MobsExpeditionGuideSilicons"] mostly deal [color=#ffa500]heat[/color] damage: wearing a reflective vest is a good choice.

@@ -1,32 +1,32 @@
 # goblin ears
-marking-GoblinEarsBasic = Basic Ears
-marking-GoblinEarsBasic-goblin_ears_default = Basic Ears
+marking-GoblinEarsBasic = [ Goblin ] Basic Ears
+marking-GoblinEarsBasic-goblin_ears_default = [ Goblin ] Basic Ears
 
-marking-GoblinEarsBasicAlt = Basic Ears (Alt)
-marking-GoblinEarsBasicAlt-goblin_ears_default_alt = Basic Ears (Alt)
+marking-GoblinEarsBasicAlt = [ Goblin ] Basic Ears (Alt)
+marking-GoblinEarsBasicAlt-goblin_ears_default_alt = [ Goblin ] Basic Ears (Alt)
 
-marking-GoblinEarsLong01 = Long Ears (Tips Down)
-marking-GoblinEarsLong01-goblin_ears_long_01 = Long Ears (Tips Down)
+marking-GoblinEarsLong01 = [ Goblin ] Long Ears (Tips Down)
+marking-GoblinEarsLong01-goblin_ears_long_01 = [ Goblin ] Long Ears (Tips Down)
 
-marking-GoblinEarsLong02 = Long Ears (Tips Up)
-marking-GoblinEarsLong02-goblin_ears_long_02 = Long Ears (Tips Up)
+marking-GoblinEarsLong02 = [ Goblin ] Long Ears (Tips Up)
+marking-GoblinEarsLong02-goblin_ears_long_02 = [ Goblin ] Long Ears (Tips Up)
 
 # goblin noses
-marking-GoblinNoseBasic = Basic Nose
-marking-GoblinNoseBasic-goblin_nose_default = Basic Nose
+marking-GoblinNoseBasic = [ Goblin ] Basic Nose
+marking-GoblinNoseBasic-goblin_nose_default = [ Goblin ] Basic Nose
 
-marking-GoblinNoseLong = Long Nose
-marking-GoblinNoseLong-goblin_nose_long = Long Nose
+marking-GoblinNoseLong = [ Goblin ] Long Nose
+marking-GoblinNoseLong-goblin_nose_long = [ Goblin ] Long Nose
 
-marking-GoblinNoseCrooked = Crooked Nose
-marking-GoblinNoseCrooked-goblin_nose_crooked = Crooked Nose
+marking-GoblinNoseCrooked = [ Goblin ] Crooked Nose
+marking-GoblinNoseCrooked-goblin_nose_crooked = [ Goblin ] Crooked Nose
 
 # goblin tusks
-marking-GoblinTusksBasic = No Tusks
-marking-GoblinTusksBasic-goblin_tusks_none = No Tusks
+marking-GoblinTusksBasic = [ Goblin ] No Tusks
+marking-GoblinTusksBasic-goblin_tusks_none = [ Goblin ] No Tusks
 
-marking-GoblinTusksSmall = Small Tusks
-marking-GoblinTusksSmall-goblin_tusks_small = Small Tusks
+marking-GoblinTusksSmall = [ Goblin ] Small Tusks
+marking-GoblinTusksSmall-goblin_tusks_small = [ Goblin ] Small Tusks
 
-marking-GoblinTusksBig = Long Tusks
-marking-GoblinTusksBig-goblin_tusks_big = Long Tusks
+marking-GoblinTusksBig = [ Goblin ] Long Tusks
+marking-GoblinTusksBig-goblin_tusks_big = [ Goblin ] Long Tusks

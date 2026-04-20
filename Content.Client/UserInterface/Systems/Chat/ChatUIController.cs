@@ -73,6 +73,7 @@ public sealed partial class ChatUIController : UIController
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;
     private bool _chatNameColorsEnabled;
+    private bool _chatBodyColorsEnabled;
 
     private ISawmill _sawmill = default!;
 
@@ -193,6 +194,8 @@ public sealed partial class ChatUIController : UIController
         SubscribeNetworkEvent<DamageForceSayEvent>(OnDamageForceSay);
         _config.OnValueChanged(CCVars.ChatEnableColorName, (value) => { _chatNameColorsEnabled = value; });
         _chatNameColorsEnabled = _config.GetCVar(CCVars.ChatEnableColorName);
+        _config.OnValueChanged(CCVars.ChatEnableBodyColor, (value) => { _chatBodyColorsEnabled = value; });
+        _chatBodyColorsEnabled = _config.GetCVar(CCVars.ChatEnableBodyColor);
 
         _speechBubbleRoot = new LayoutContainer();
 
@@ -847,6 +850,12 @@ public sealed partial class ChatUIController : UIController
             var grammar = _ent.GetComponentOrNull<GrammarComponent>(_ent.GetEntity(msg.SenderEntity));
             if (grammar != null && grammar.ProperNoun == true)
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
+        }
+
+        // Strip body color if accessibility option is disabled
+        if ((msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper) && !_chatBodyColorsEnabled)
+        {
+            msg.WrappedMessage = SharedChatSystem.StripColorTagAroundTag(msg, "BubbleContent");
         }
 
         // Color any words chosen by the client.

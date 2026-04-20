@@ -6,11 +6,17 @@ using Content.Server.Worldgen.Systems.GC;
 using Content.Server.Worldgen.Tools;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server._NF.Worldgen.Components.Debris; // Frontier
+using Content.Shared.CCVar;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Worldgen.Systems.Debris;
 
@@ -26,10 +32,24 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+
+    private const float IdleDebrisLinearVelocityEpsilon = 0.05f;
+    private const float IdleDebrisAngularVelocityEpsilon = 0.01f;
 
     private ISawmill _sawmill = default!;
 
+    private Queue<DebrisFeaturePlacerControllerComponent> _debrisQ = new();
+
     private List<Entity<MapGridComponent>> _mapGrids = new();
+    private int _maxSpawnsPerTick = 1;
+    private int _maxDeSpawnsPerTick = 1;
+    private int _deSpawnsThisTick = 0;
+    private int _spawnsThisTick = 0;
+    private TimeSpan _updateDelay = TimeSpan.FromSeconds(1);
+    private TimeSpan _nextUpdate = TimeSpan.Zero;
 
     /// <inheritdoc />
     public override void Initialize()
@@ -42,6 +62,130 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
         SubscribeLocalEvent<OwnedDebrisComponent, TryCancelGC>(OnTryCancelGC);
         SubscribeLocalEvent<SimpleDebrisSelectorComponent, TryGetPlaceableDebrisFeatureEvent>(
             OnTryGetPlacableDebrisEvent);
+
+        _cfg.OnValueChanged(CCVars.DebrisMaxSpawnsPerTick, v => _maxSpawnsPerTick = v, true);
+        _cfg.OnValueChanged(CCVars.DebrisMaxDeSpawnsPerTick, v => _maxDeSpawnsPerTick = v, true);
+        _cfg.OnValueChanged(CCVars.DebrisDelayBetweenUpdates, v => _updateDelay = TimeSpan.FromSeconds(v), true);
+    }
+
+    /// <inheritdoc />
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        // Enforce update delay
+        var curTime = _timing.CurTime;
+        if (curTime < _nextUpdate)
+            return;
+        _nextUpdate = curTime + _updateDelay;
+        _deSpawnsThisTick = 0;
+        _spawnsThisTick = 0;
+
+        if (_debrisQ.Count <= 0)
+        {
+            var query = EntityQueryEnumerator<DebrisFeaturePlacerControllerComponent>();
+            while (query.MoveNext(out var uid, out var component))
+            {
+                _debrisQ.Enqueue(component);
+            }
+        }
+        while (_debrisQ.Count > 0)
+        {
+            if (_spawnsThisTick >= _maxSpawnsPerTick
+                && _deSpawnsThisTick >= _maxDeSpawnsPerTick)
+                break;
+            if (!_debrisQ.TryDequeue(out var component))
+                break;
+            if (component.Deleted)
+                continue;
+            ProcessPendingDeSpawns(component);
+            ProcessPendingSpawns(component);
+        }
+    }
+
+    /// <summary>
+    ///     Processes queued debris spawns gradually to avoid lag spikes.
+    /// </summary>
+    private void ProcessPendingSpawns(DebrisFeaturePlacerControllerComponent component)
+    {
+        if (_maxSpawnsPerTick <= 0)
+            return;
+        if (_spawnsThisTick >= _maxSpawnsPerTick)
+            return;
+        while (component.PendingSpawns.TryDequeue(out var pending)
+               && _spawnsThisTick < _maxSpawnsPerTick)
+        {
+            // Skip if already exists or chunk is gone
+            if (component.OwnedDebris.ContainsKey(pending.Point)
+                || Deleted(pending.ChunkUid))
+            {
+                continue;
+            }
+
+            var ent = Spawn(pending.DebrisProto, pending.Coords);
+            component.OwnedDebris.Add(pending.Point, ent);
+
+            var owned = EnsureComp<OwnedDebrisComponent>(ent);
+            owned.OwningController = pending.ControllerUid;
+            owned.LastKey = pending.Point;
+
+            EnsureComp<SpaceDebrisComponent>(ent); // Frontier
+            TrySleepDebris(ent);
+
+            _spawnsThisTick++;
+        }
+    }
+
+    private void TrySleepDebris(EntityUid uid)
+    {
+        if (!TryComp<PhysicsComponent>(uid, out var body))
+            return;
+
+        if (body.BodyType != BodyType.Dynamic)
+            return;
+
+        _physics.SetSleepingAllowed(uid, body, true);
+
+        if (body.Awake &&
+            body.LinearVelocity.LengthSquared() <= IdleDebrisLinearVelocityEpsilon * IdleDebrisLinearVelocityEpsilon &&
+            MathF.Abs(body.AngularVelocity) <= IdleDebrisAngularVelocityEpsilon)
+        {
+            _physics.SetAwake(uid, body, false);
+        }
+    }
+
+    /// <summary>
+    ///     Processes queued debris despawns gradually to avoid lag spikes.
+    /// </summary>
+    private void ProcessPendingDeSpawns(DebrisFeaturePlacerControllerComponent component)
+    {
+        if (_maxDeSpawnsPerTick <= 0)
+            return;
+        if (_deSpawnsThisTick >= _maxDeSpawnsPerTick)
+            return;
+        while (component.PendingDeSpawns.TryPeek(out var debrisTuple)
+               && _deSpawnsThisTick < _maxDeSpawnsPerTick)
+        {
+            var vect = debrisTuple.Item1;
+            var debris = debrisTuple.Item2;
+            var chunk = debrisTuple.Item3;
+            if (Deleted(debris))
+            {
+                component.PendingDeSpawns.Dequeue();
+                component.OwnedDebris.Remove(vect);
+                component.DoSpawns = true;
+                continue;
+            }
+            if (HasComp<LoadedChunkComponent>(chunk))
+            {
+                break; // Can't despawn while loaded
+            }
+            _deSpawnsThisTick++;
+            QueueDel(debris);
+            component.PendingDeSpawns.Dequeue();
+            component.OwnedDebris.Remove(vect);
+            component.DoSpawns = true;
+        }
     }
 
     /// <summary>
@@ -60,22 +204,33 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
         if (!HasComp<WorldChunkComponent>(component.OwningController))
             return; // Redundant logic, prolly needs it's own handler for your custom system.
 
-        var placer = Comp<DebrisFeaturePlacerControllerComponent>(component.OwningController);
         var xform = args.Component;
         var ownerXform = Transform(component.OwningController);
+
+        // Early exit checks - avoid unnecessary work
         if (xform.MapUid is null || ownerXform.MapUid is null)
             return; // not our problem
 
         if (xform.MapUid != ownerXform.MapUid)
         {
             _sawmill.Error($"Somehow debris {uid} left it's expected map! Unparenting it to avoid issues.");
+            var placer = Comp<DebrisFeaturePlacerControllerComponent>(component.OwningController);
             RemCompDeferred<OwnedDebrisComponent>(uid);
             placer.OwnedDebris.Remove(component.LastKey);
             return;
         }
 
-        placer.OwnedDebris.Remove(component.LastKey);
-        var newChunk = GetOrCreateChunk(GetChunkCoords(uid), xform.MapUid!.Value);
+        // Check if debris actually crossed chunk boundaries - skip dictionary updates if not
+        var newChunkCoords = GetChunkCoords(uid);
+        var oldChunkCoords = WorldGen.WorldToChunkCoords(component.LastKey);
+
+        if (newChunkCoords == oldChunkCoords)
+            return; // Still in same chunk, no update needed
+
+        var oldPlacer = Comp<DebrisFeaturePlacerControllerComponent>(component.OwningController);
+        oldPlacer.OwnedDebris.Remove(component.LastKey);
+
+        var newChunk = GetOrCreateChunk(newChunkCoords, xform.MapUid!.Value);
         if (newChunk is null || !TryComp<DebrisFeaturePlacerControllerComponent>(newChunk, out var newPlacer))
         {
             // Whelp.
@@ -106,13 +261,15 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
     private void OnChunkUnloaded(EntityUid uid, DebrisFeaturePlacerControllerComponent component,
         ref WorldChunkUnloadedEvent args)
     {
-        foreach (var (_, debris) in component.OwnedDebris)
+        foreach (var (vector, debris) in component.OwnedDebris)
         {
             if (debris is not null)
-                _gc.TryGCEntity(debris.Value); // gonb.
+            {
+                component.PendingDeSpawns.Enqueue((vector, debris.Value, args.Chunk));
+                // _gc.TryGCEntity(debris.Value); // gonb.
+            }
         }
-
-        component.DoSpawns = true;
+        // component.DoSpawns = true;
     }
 
     /// <summary>
@@ -145,15 +302,14 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
     ///     - Checks if the debris is currently supposed to do spawns, if it isn't, aborts immediately.
     ///     - Evaluates the density value to be used for placement, if it's zero, aborts.
     ///     - Generates the points to generate debris at, if and only if they've not been selected already by a prior load.
-    ///     - Does the following in a loop over all generated points:
-    ///         - Raises an event to check if something else wants to intercept debris placement, if the event is handled,
-    ///           continues to the next point without generating anything.
-    ///         - Raises an event to get the debris type that should be used for generation.
-    ///         - Spawns the given debris at the point, adding it to the placer's index.
+    ///     - Queues debris for deferred spawning across multiple ticks to avoid lag spikes.
     /// </summary>
     private void OnChunkLoaded(EntityUid uid, DebrisFeaturePlacerControllerComponent component,
         ref WorldChunkLoadedEvent args)
     {
+        // if our things were scheduled for despawn, cancel that, chunk is loaded again
+        component.PendingDeSpawns.Clear();
+
         if (component.DoSpawns == false)
             return;
 
@@ -177,11 +333,13 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
         // If we've been loaded before, reuse the same coordinates.
         if (component.OwnedDebris.Count != 0)
         {
-            //TODO: Remove LINQ.
-            points = component.OwnedDebris
-                .Where(x => !Deleted(x.Value))
-                .Select(static x => x.Key)
-                .ToList();
+            // Manual iteration instead of LINQ to reduce allocations
+            points = new List<Vector2>(component.OwnedDebris.Count);
+            foreach (var (key, value) in component.OwnedDebris)
+            {
+                if (!Deleted(value))
+                    points.Add(key);
+            }
         }
 
         points ??= GeneratePointsInChunk(args.Chunk, density, chunk.Coordinates, chunkMap);
@@ -190,6 +348,7 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
 
         var safetyBounds = Box2.UnitCentered.Enlarged(component.SafetyZoneRadius);
         var failures = 0; // Avoid severe log spam.
+
         foreach (var point in points)
         {
             if (component.OwnedDebris.TryGetValue(point, out var existing))
@@ -232,14 +391,15 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
                 }
             }
 
-            var ent = Spawn(debrisFeatureEv.DebrisProto, coords);
-            component.OwnedDebris.Add(point, ent);
-
-            var owned = EnsureComp<OwnedDebrisComponent>(ent);
-            owned.OwningController = uid;
-            owned.LastKey = point;
-
-            EnsureComp<SpaceDebrisComponent>(ent); // Frontier
+            // Queue the spawn instead of spawning immediately - spreads load across ticks
+            component.PendingSpawns.Enqueue(new PendingDebrisSpawn
+            {
+                Point = point,
+                DebrisProto = debrisFeatureEv.DebrisProto,
+                Coords = coords,
+                ControllerUid = uid,
+                ChunkUid = args.Chunk
+            });
         }
 
         if (failures > 0)

@@ -96,6 +96,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobNFJanitor
@@ -117,6 +120,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobMailCarrier
@@ -138,6 +144,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobStationTrafficController
@@ -161,6 +170,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobStationRepresentative
@@ -185,6 +197,9 @@
   - StationRepBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobSecurityGuard
@@ -234,6 +249,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobPlantManager
@@ -259,6 +277,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 - type: roleLoadout
   id: JobPlantTechnician
@@ -283,6 +304,9 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm #WF addition
+  - WFLongarm #WF addition
+  - WFAmmo #WF addition
 
 # region CGP
 - type: roleLoadout
@@ -509,16 +533,18 @@
   - NfsdSpeciesSpecific
 
 # region NFPirate
-
+# TODO: Migrate this shit into _WF/Loadouts
 - type: roleLoadout
   id: JobNFPirate
   groups:
-  - NFPirateHead
+#  - NFPirateHead
+  - WFHead # Wayfarer
   - WFNeck # Wayfarer
   - NFPirateJumpsuit
   - WFGloves # Wayfarer
   - WFBackpack # Wayfarer
-  - NFPirateForcedOuterClothing
+  - WFOuterClothing # Wayfarer
+#  - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
   - NFPirateEars
@@ -529,6 +555,9 @@
   - PirateBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm # Wayfarer
+  - WFLongarm # Wayfarer
+  - WFAmmo # Wayfarer
   canCustomizeName: true # pseudonym?
 
 - type: roleLoadout
@@ -561,8 +590,9 @@
   - NFPirateJumpsuit
   - WFGloves # Wayfarer
   - WFBackpack # Wayfarer
-  - NFPirateCaptainOuterClothing
-  - NFPirateForcedOuterClothing
+  - WFOuterClothing # Wayfarer
+#  - NFPirateCaptainOuterClothing
+#  - NFPirateForcedOuterClothing
   - NFPirateShoes
   - NFPirateFace
   - NFPirateCaptainEars
@@ -573,6 +603,9 @@
   - PirateCaptainBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - WFSidearm # Wayfarer
+  - WFLongarm # Wayfarer
+  - WFAmmo # Wayfarer
   canCustomizeName: true # pseudonym?
 
 # region Prisoner

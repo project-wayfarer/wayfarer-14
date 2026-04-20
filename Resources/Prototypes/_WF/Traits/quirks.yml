@@ -1,0 +1,12 @@
+# If you add a new trait, make sure to add the corresponding component to the whitelist in \Resources\Prototypes\Entities\Mobs\Player\clone.yml so it gets copied to clones correctly!
+
+- type: trait
+  id: ClownTraining
+  name: trait-clowntraining-name
+  description: trait-clowntraining-desc
+  category: Quirks
+  components:
+    - type: ClownTraining
+    - type: AutoEmote
+      emotes:
+      - ClownGiggle

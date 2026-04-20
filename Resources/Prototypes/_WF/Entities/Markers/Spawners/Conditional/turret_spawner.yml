@@ -1,0 +1,15 @@
+# Hostile
+- type: entity
+  id: WFSpawnMobWeaponTurretAsmgtPOIRogueSilicon
+  parent: MarkerBase
+  name: ASMGT
+  suffix: RogueSilicon, Wayfarer POI
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _NF/Objects/Weapons/Guns/Turrets/magazinefed.rsi
+      state: base
+  - type: ConditionalSpawner
+    prototypes:
+    - WeaponTurretAsmgtPOIRogueSilicon

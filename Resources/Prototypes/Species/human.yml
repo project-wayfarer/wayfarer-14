@@ -26,6 +26,7 @@
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
     Chest: MobHumanTorso
     Eyes: MobHumanoidEyes
     HeadTop: MobHumanoidAnyMarking
@@ -39,6 +40,7 @@
     RFoot: MobHumanRFoot
     Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
     HeadSide: MobHumanoidAnyMarking # Einstein Engines - Oni
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
 
 - type: markingPoints
   id: MobHumanMarkingLimits
@@ -80,6 +82,9 @@
       points: 32 # WF
       required: false
     UndergarmentBottom:
+      points: 32 # WF
+      required: false
+    Genital:
       points: 32 # WF
       required: false
     Overlay:

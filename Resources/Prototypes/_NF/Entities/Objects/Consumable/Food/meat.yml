@@ -277,8 +277,8 @@
           Quantity: 12
         - ReagentId: Vitamin
           Quantity: 8
-        - ReagentId: Flavorol
-          Quantity: 4
+#        - ReagentId: Flavorol # Wayfarer - Commented out because of reagent buffs and I don't want powergamers just hypoing this
+#          Quantity: 4
   - type: Tag
     tags:
     - Meat
@@ -303,8 +303,8 @@
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 2
-        - ReagentId: Flavorol
-          Quantity: 1
+#        - ReagentId: Flavorol # Wayfarer - Commented out because of reagent buffs and I don't want powergamers just hypoing this
+#          Quantity: 1
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     layers:

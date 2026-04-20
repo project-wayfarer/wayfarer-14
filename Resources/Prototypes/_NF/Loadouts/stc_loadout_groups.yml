@@ -15,7 +15,7 @@
   loadouts:
   - StcClothingHeadHatStcCap
   subgroups:
-  - ContractorHead
+  - WFHead # Wayfarer edit
   fallbacks:
   - StcClothingHeadHatStcCap
 
@@ -24,9 +24,9 @@
   name: loadout-group-contractor-ears
   loadouts: []
   subgroups:
-  - MercenaryEars
-  - PilotEars
-  - ContractorEars
+  # - MercenaryEars
+  # - PilotEars
+  - WFEars # Wayfarer edit. Removed Merc/Pilot, already in WFEars.
   fallbacks:
   - ContractorClothingHeadsetGreyCommon
 
@@ -36,7 +36,7 @@
   loadouts:
   - StcClothingShoesBootsLaceup
   subgroups:
-  - ContractorShoes
+  - WFShoes # Wayfarer edit
   fallbacks:
   - StcClothingShoesBootsLaceup
 
@@ -47,4 +47,4 @@
   loadouts:
   - StcClothingEyesHudCommand
   subgroups:
-  - ContractorGlasses
+  - WFGlasses # Wayfarer edit

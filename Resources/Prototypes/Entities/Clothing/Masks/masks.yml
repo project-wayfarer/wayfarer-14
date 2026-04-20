@@ -85,7 +85,7 @@
   parent: ClothingMaskGasAtmos # Frontier: removed BaseCommandContraband
   id: ClothingMaskGasCaptain
   name: captain's gas mask
-  description: Nanotrasen cut corners and repainted a spare atmospheric gas mask, but don't tell anyone.
+  description: The original manufacturer cut corners and repainted a spare atmospheric gas mask, but don't tell anyone. # wayfarer edit: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: Clothing/Mask/gascaptain.rsi

@@ -1,0 +1,122 @@
+- type: loadoutGroup
+  id: WFAmmo
+  name: loadout-group-wayfarer-ammo
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - BoxShotgunAmmo
+  - MagBox35Pistol
+  - MagBox35SMG
+  - MagBox35SMGTD
+  - MagBox45
+  - MagBox35SpeedloaderAndAmmo
+  - MagBox45SpeedloaderAndAmmo
+  - MagBox20
+  - MagBox20Clip
+  - MagBox20Rifle
+  - MagBox30
+  - MagBox30Rifle
+  - WFAmmoCrossbow
+  - WFBoxCartridgeCap
+
+- type: loadout
+  id: BoxShotgunAmmo
+  price: 4000
+  storage:
+    back:
+    - BoxShotgunAmmo
+
+- type: loadout
+  id: MagBox35Pistol
+  price: 4000
+  storage:
+    back:
+    - MagBox35Pistol
+
+- type: loadout
+  id: MagBox35SMG
+  price: 4000
+  storage:
+    back:
+    - MagBox35SMG
+
+- type: loadout
+  id: MagBox35SMGTD
+  price: 4000
+  storage:
+    back:
+    - MagBox35SMGTD
+
+- type: loadout
+  id: MagBox45
+  price: 4000
+  storage:
+    back:
+    - MagBox45
+
+- type: loadout
+  id: MagBox35SpeedloaderAndAmmo
+  price: 4000
+  storage:
+    back:
+    - MagBox35SpeedloaderAndAmmo
+
+- type: loadout
+  id: MagBox45SpeedloaderAndAmmo
+  price: 4000
+  storage:
+    back:
+    - MagBox45SpeedloaderAndAmmo
+
+- type: loadout
+  id: MagBox20
+  price: 4000
+  storage:
+    back:
+    - MagBox20
+
+- type: loadout
+  id: MagBox20Clip
+  price: 4000
+  storage:
+    back:
+    - MagBox20Clip
+
+- type: loadout
+  id: MagBox20Rifle
+  price: 4000
+  storage:
+    back:
+    - MagBox20Rifle
+
+- type: loadout
+  id: MagBox30
+  price: 4000
+  storage:
+    back:
+    - MagBox30
+
+- type: loadout
+  id: MagBox30Rifle
+  price: 4000
+  storage:
+    back:
+    - MagBox30Rifle
+
+- type: loadout
+  id: WFAmmoCrossbow
+  price: 4000
+  storage:
+    back:
+    - ClothingBeltQuiverCrossbowFilledBolt
+
+# Clown
+- type: loadout
+  id: WFBoxCartridgeCap
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 300
+  storage:
+    back:
+    - NFBoxCartridgeCap

@@ -40,6 +40,12 @@ consent-NoClone-desc = Turn this on to disallow Paradox clones of yourself.
 consent-NSFWDescriptions-name = Show NSFW Descriptions
 consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.
 
+consent-GenitalMarkings-name = See Genital Markings
+consent-GenitalMarkings-desc = Turn this on to allow showing/hiding genital markings in-game.
+
+consent-Aphrodisiacs-name = Be affected by aphrodisiacs
+consent-Aphrodisiacs-desc = Turn this on to be affected by pomelustine, philterex, and libidozenithine.
+
 consent-Vore-name = Vore
 consent-Vore-desc = Allow yourself to be devoured by other players.
 

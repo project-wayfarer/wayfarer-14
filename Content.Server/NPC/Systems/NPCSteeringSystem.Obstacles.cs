@@ -6,6 +6,7 @@ using Content.Shared.CombatMode;
 using Content.Shared.DoAfter;
 using Content.Shared.Doors.Components;
 using Content.Shared.NPC;
+using Content.Shared.Weapons.Melee;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
@@ -161,8 +162,24 @@ public sealed partial class NPCSteeringSystem
             // Try smashing obstacles.
             else if ((component.Flags & PathFlags.Smashing) != 0x0)
             {
-                if (_melee.TryGetWeapon(uid, out _, out var meleeWeapon) && meleeWeapon.NextAttack <= _timing.CurTime && TryComp<CombatModeComponent>(uid, out var combatMode))
+                // Resolve the melee weapon to use for smashing.
+                // TryGetWeapon short-circuits when holding a non-melee item, so fall back
+                // to the entity's own innate MeleeWeaponComponent (e.g. unarmed fists).
+                MeleeWeaponComponent? meleeWeapon;
+                EntityUid weaponUid;
+                if (!_melee.TryGetWeapon(uid, out weaponUid, out meleeWeapon))
                 {
+                    if (!TryComp<MeleeWeaponComponent>(uid, out meleeWeapon))
+                        return SteeringObstacleStatus.Failed;
+                    weaponUid = uid;
+                }
+
+                if (TryComp<CombatModeComponent>(uid, out var combatMode))
+                {
+                    // Weapon still on cooldown — keep waiting instead of failing the path.
+                    if (meleeWeapon.NextAttack > _timing.CurTime)
+                        return SteeringObstacleStatus.Continuing;
+
                     _combat.SetInCombatMode(uid, true, combatMode);
                     var destructibleQuery = GetEntityQuery<DestructibleComponent>();
 
@@ -175,7 +192,7 @@ public sealed partial class NPCSteeringSystem
                         // TODO: Validate we can damage it
                         if (destructibleQuery.HasComponent(ent))
                         {
-                            attackResult = _melee.AttemptLightAttack(uid, uid, meleeWeapon, ent);
+                            attackResult = _melee.AttemptLightAttack(uid, weaponUid, meleeWeapon, ent);
                             break;
                         }
                     }

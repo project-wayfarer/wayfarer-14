@@ -49,6 +49,16 @@
   groupBy: "headbands"
 
 - type: loadout
+  id: ClothingHeadHatTacticalMaidHeadband
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 2500
+  equipment:
+    head: ClothingHeadHatTacticalMaidHeadband
+  groupBy: "headbands"
+
+- type: loadout
   id: WFClothingHeadHatGreysoft
   hideEffects:
   - !type:GroupLoadoutEffect
@@ -368,6 +378,41 @@
     head: ClothingHeadHatFedoraBrown
   groupBy: "ferdora"
 
+- type: loadout
+  id: FoodPoppy
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: FoodPoppy
+
+- type: loadout
+  id: FoodLily
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: FoodLily
+
+- type: loadout
+  id: ClothingHeadHatFlowerWreath
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: ClothingHeadHatFlowerWreath
+
+- type: loadout
+  id: FoodAmbrosiaVulgaris
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: FoodAmbrosiaVulgaris
 
 #T2
 - type: loadout

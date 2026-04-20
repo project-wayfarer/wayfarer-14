@@ -1,0 +1,241 @@
+﻿- type: entity
+  parent: PosterBase
+  id: ShuttleMapBuckler
+  name: "Buckler"
+  description: "Detailed map of a Buckler shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: buckler
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapGrandideals
+  name: "Grand Ideals"
+  description: "Detailed map of a Grand Ideals shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: grandideals
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapHeater
+  name: "Heater"
+  description: "Detailed map of a Heater shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: heater
+    
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapIcarus
+  name: "Icarus"
+  description: "Detailed map of a Icarus shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: icarus
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapKite
+  name: "Kite"
+  description: "Detailed map of a Kite shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: kite
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapParma
+  name: "Parma"
+  description: "Detailed map of a Parma shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: parma
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapPhalanx
+  name: "Phalanx"
+  description: "Detailed map of a Phalanx shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: phalanx
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapPridwen
+  name: "Pridwen"
+  description: "Detailed map of a Pridwen shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: pridwen
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapQauata
+  name: "Qauata"
+  description: "Detailed map of a Qauata shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: qauata
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapSvalinn
+  name: "Svalinn"
+  description: "Detailed map of a Svalinn shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: svalinn
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapDioddef
+  name: "Dioddef"
+  description: "Detailed map of a Dioddef shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: dioddef
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapHamger
+  name: "Hamger"
+  description: "Detailed map of a Hamger shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: hamger
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapHammerhead
+  name: "Hammerhead"
+  description: "Detailed map of a Hammerhead shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: hammerhead
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapMedivac
+  name: "Medivac"
+  description: "Detailed map of a Medivac shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: medivac
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapMjolnir
+  name: "Mjolnir"
+  description: "Detailed map of a Mjolnir shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: mjolnir
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapScryer
+  name: "Scryer"
+  description: "Detailed map of a Scryer shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: scryer
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapSwan
+  name: "Swan"
+  description: "Detailed map of a Swan shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: swan
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapReclaimer
+  name: "Reclaimer"
+  description: "Detailed map of a Reclaimer shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: reclaimer
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapDagger
+  name: "Dagger"
+  description: "Detailed map of a Dagger shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: dagger
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapLooter
+  name: "Looter"
+  description: "Detailed map of a Looter shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: looter
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapBeater
+  name: "Beater"
+  description: "Detailed map of a Beater shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: beater
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapRatrod
+  name: "Ratrod"
+  description: "Detailed map of a Rodrod shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: ratrod

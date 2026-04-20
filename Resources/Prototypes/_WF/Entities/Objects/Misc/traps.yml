@@ -1,0 +1,51 @@
+# Taken from Monolith
+- type: entity
+  name: pressure plate
+  id: PressurePlate
+  parent: BaseStructureDisableAnchoring
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: RequiresGrid
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+        - LowImpassable
+  - type: Sprite
+    drawdepth: Items
+    sprite: Objects/Misc/landmine.rsi
+    layers:
+    - state: landmine
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: LandMine
+    sound:
+      path: /Audio/Effects/beep_landmine.ogg
+      params:
+        maxDistance: 5
+  - type: Stealth
+    enabled: True
+    maxVisibility: 0.25
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    stepOn: true
+  - type: TriggerOnStepTrigger
+  - type: SignalOnTrigger
+  - type: DeviceLinkSource
+    ports:
+    - SignalTrigger
+  - type: DeleteOnTrigger

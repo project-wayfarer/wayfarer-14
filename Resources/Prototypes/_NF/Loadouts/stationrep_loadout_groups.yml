@@ -27,7 +27,7 @@
   - StationRepClothingBackpackMessengerSr
   - StationRepClothingBackpackIan
   subgroups:
-  - ContractorBackpack
+  - WFBackpack
   fallbacks:
   - StationRepClothingBackpackMessengerSr
 
@@ -39,7 +39,7 @@
   - StationRepClothingHeadHatSrCap
   - StationRepClothingHeadHatSrBeret
   subgroups:
-  - ContractorHead
+  - WFHead
 
 - type: loadoutGroup
   id: StationRepEars
@@ -49,9 +49,9 @@
   loadouts:
   - StationRepClothingHeadsetAltCentComCommon
   subgroups:
-  - MercenaryEars
-  - PilotEars
-  - ContractorEars
+  # - MercenaryEars
+  # - PilotEars
+  - WFEars # Wayfarer edit. Removed Pilot/Merc ears, already in WFEars.
   fallbacks:
   - StationRepClothingHeadsetAltCentComCommon
 
@@ -87,7 +87,7 @@
   loadouts:
   - StationRepNFPouchSr
   subgroups:
-  - ContractorBackpackItems
+  - WFBackpackItems # Wayfarer edit
 
 - type: loadoutGroup
   id: StationRepGlasses
@@ -97,7 +97,7 @@
   - StationRepClothingEyesHudCommand
   - StationRepClothingEyesGlassesCommand
   subgroups:
-  - ContractorGlasses
+  - WFGlasses # Wayfarer edit
 
 - type: loadoutGroup
   id: StationRepBelt
@@ -107,4 +107,4 @@
   - StationRepClothingBeltSheathFilledHilt
   - StationRepClothingBeltSheathFilled
   subgroups:
-  - ContractorBelt
+  - WFBelt # Wayfarer edit

@@ -56,6 +56,23 @@
     Steel: 800
     Glass: 900
 
+# WF Cloning Start
+- type: latheRecipe
+  id: CloningPodMachineCircuitboard
+  parent: [BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory]
+  result: CloningPodMachineCircuitboard
+
+- type: latheRecipe
+  id: CloningConsoleComputerCircuitboard
+  parent: [BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory]
+  result: CloningConsoleComputerCircuitboard
+
+- type: latheRecipe
+  id: MedicalScannerMachineCircuitboard
+  parent: [BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory]
+  result: MedicalScannerMachineCircuitboard
+# WF End
+
 - type: latheRecipe
   id: NFScrapProcessorCircuitboard
   parent: [BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory]

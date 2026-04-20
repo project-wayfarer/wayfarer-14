@@ -1,2 +1,2 @@
 store-currency-display-security-telecrystal = ZC
-store-currency-display-pirate-telecrystal = DB
+store-currency-display-pirate-telecrystal = DC

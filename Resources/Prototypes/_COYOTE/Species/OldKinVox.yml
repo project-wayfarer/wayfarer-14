@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobOldKinVox
   sprites: MobOldKinVoxSprites
-  markingLimits: MobOldKinVoxMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobOldKinVoxMarkingLimits WF
   dollPrototype: MobOldKinVoxDummy
   skinColoration: Hues # imp VoxFeathers<Hues
   defaultSkinTone: "#526d29"
@@ -31,12 +31,16 @@
 - type: speciesBaseSprites
   id: MobOldKinVoxSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     Head: MobOldKinVoxHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
     Chest: MobOldKinVoxTorso
     Eyes: MobOldKinVoxEyes
     LArm: MobOldKinVoxLArm
@@ -51,46 +55,6 @@
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
 
-- type: markingPoints
-  id: MobOldKinVoxMarkingLimits
-  onlyWhitelisted: true
-  points:
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
-      required: false
-    Head:
-      points: 3
-      required: true
-      defaultMarkings: [ OldKinVoxBeak, OldKinVoxCrest ]
-    Arms:
-      points: 5
-      required: true
-      defaultMarkings: [ OldKinVoxClawsHandsLeft, OldKinVoxClawsHandsRight, OldKinVoxScutesArmsLeft, OldKinVoxScutesArmsRight ]
-    Legs:
-      points: 4
-      required: true
-      defaultMarkings: [ OldKinVoxClawsFeetLeft, OldKinVoxClawsFeetRight, OldKinVoxScutesLegsLeft, OldKinVoxScutesLegsRight ]
-    UndergarmentTop:
-      points: 3
-      required: false
-    UndergarmentBottom:
-      points: 3
-      required: false
-    Chest:
-      points: 2
-      required: false
-    Overlay: # imp
-      points: 4
-      required: false
-    Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ OldKinVoxTail ]
-
-
 - type: humanoidBaseSprite
   id: MobOldKinVoxEyes
   baseSprite:
@@ -101,7 +65,7 @@
   id: OldKinVoxTail
   bodyPart: TailOversuit
   markingCategory: Tail
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   forcedColoring: true
   sprites:
   - sprite: _COYOTE/Mobs/Species/OldKinVox/parts.rsi
