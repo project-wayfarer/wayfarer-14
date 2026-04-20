@@ -1574,7 +1574,7 @@
       - NanoChatCartridge # DeltaV
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, SelectableLock]
   id: ChameleonPDA
   name: wayfarer PDA # WF passenger<Wayfarer
   description: Why isn't it gray?

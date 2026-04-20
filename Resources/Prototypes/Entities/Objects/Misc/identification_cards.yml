@@ -188,7 +188,6 @@
   - type: PresetIdCard
     job: MedicalER
 
-
 - type: entity
   parent: IDCardStandard
   id: ChemistIDCard
@@ -606,7 +605,7 @@
 
 - type: entity
   name: wayfarer ID card # WF Contractor to Wayfarer, Remove Contraband ( add back post contra rework )
-  parent: [IDCardStandard]
+  parent: [ IDCardStandard, BaseChameleon ]
   id: AgentIDCard
   suffix: Agent
   components:
@@ -622,9 +621,11 @@
     - state: idcontractor # Frontier: idpassenger<idcontractor
       sprite: _NF/Objects/Misc/id_cards.rsi # Frontier
   - type: AgentIDCard
+  - type: UIRequiresLock
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
     inHandsOnly: true
+    verbText: agent-id-open-ui-verb
   - type: Tag
     tags:
     - DoorBumpOpener

@@ -1,13 +1,18 @@
 using System.Linq;
 using Content.Client.Gameplay;
 using Content.Shared._Crescent.SpaceBiomes;
+using Content.Client._Crescent.SpaceBiomes;
 using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
-using Content.Client._Crescent.SpaceBiomes;
+using Content.Shared.Random;
+using Content.Shared.Random.Rules;
+using Robust.Client.GameObjects;
 using Robust.Client.Player;
+using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -16,6 +21,7 @@ using Robust.Shared.Random;
 using Content.Client.CombatMode;
 using Content.Shared.CombatMode;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 using Content.Shared.NPC.Components;
 using Content.Shared._Mono.CCVar;
 using Content.Shared._Crescent.Vessel;
@@ -30,10 +36,12 @@ public sealed partial class ContentAudioSystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IStateManager _state = default!;
+    [Dependency] private readonly RulesSystem _rules = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly CombatModeSystem _combatModeSystem = default!; //CLIENT ONE. WHY ARE THERE 3??
     [Dependency] private readonly SpaceBiomeSystem _spaceBiome = default!;
@@ -170,6 +178,7 @@ public sealed partial class ContentAudioSystem
         SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnPlayerSpawn);
 
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
+        _sawmill = _logManager.GetSawmill("audio.ambience");
         Subs.CVar(_configManager, MonoCVars.CombatMusicVolume, CombatCVarChanged, true);
         Subs.CVar(_configManager, MonoCVars.CombatMusicEnabled, CombatToggleChanged, true);
         Subs.CVar(_configManager, MonoCVars.CombatMusicWindUpTime, CombatWindUpChanged, true);
@@ -561,5 +570,4 @@ public sealed partial class ContentAudioSystem
         FadeOut(_ambientMusicStream);
         _ambientMusicStream = null;
     }
-
 }

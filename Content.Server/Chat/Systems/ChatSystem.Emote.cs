@@ -174,8 +174,10 @@ public partial class ChatSystem
     /// <param name="uid"></param>
     /// <param name="textInput"></param>
     /// <returns>True if the chat message should be displayed (because the emote was explicitly cancelled), false if it should not be.</returns>
-    public bool TryEmoteChatInput(EntityUid uid, string textInput)
+    private bool TryEmoteChatInput(EntityUid uid, string textInput)
+    private bool TryEmoteChatInput(EntityUid uid, string textInput, out bool eventInvoked) // Frontier: add eventInvoked
     {
+        eventInvoked = false; // Frontier: track whether event was invoked
         var actionTrimmedLower = TrimPunctuation(textInput.ToLower());
         if (!_wordEmoteDict.TryGetValue(actionTrimmedLower, out var emotes)) // DeltaV, renames to emotes
             return true;
@@ -188,24 +190,13 @@ public partial class ChatSystem
 
             if (TryInvokeEmoteEvent(uid, emote))
             {
+                eventInvoked = true; // Frontier: track whether event was invoked
                 validEmote = true; // DeltaV
                 break; // Frontier: break on first emote (avoid playing multiple sounds at once)
             }
         }
 
         return validEmote;
-    }
-
-    /// <summary>
-    /// Checks if the given text matches an emote trigger without actually invoking the emote.
-    /// Used by systems that need to detect emotes without playing sounds/effects.
-    /// </summary>
-    /// <param name="textInput">The text to check</param>
-    /// <returns>True if the text matches a valid emote trigger</returns>
-    public bool IsEmoteTrigger(string textInput)
-    {
-        var actionTrimmedLower = TrimPunctuation(textInput.ToLower());
-        return _wordEmoteDict.ContainsKey(actionTrimmedLower);
     }
 
     static string TrimPunctuation(string textInput)
@@ -318,3 +309,19 @@ public sealed class EmoteEvent : HandledEntityEventArgs
         Handled = false;
     }
 }
+
+// Frontier: custom emote event
+/// <summary>
+///     Raised on an entity when it sends a custom emote (one with a message but no sound).
+///     Handled by holopads.
+/// </summary>
+public sealed class NFEntityEmotedEvent : EntityEventArgs
+{
+    public readonly string Emote;
+
+    public NFEntityEmotedEvent(string emote)
+    {
+        Emote = emote;
+    }
+}
+// End Frontier
