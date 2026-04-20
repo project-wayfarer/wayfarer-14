@@ -7,36 +7,36 @@
 # Discord: ???
 
 # Shuttle Notes:
-#
-- type: vessel
-  id: Pathfinder
-  parent: BaseVessel
-  name: KC Pathfinder
-  description: Once a scout ship serving with the Nanotrasen Marine Expeditionary Forces, this now decommissioned expedition capable ship can be yours!
-  price: 50000 #27908 0.2 33489.6
-  category: Small
-  group: Expedition
-  shuttlePath: /Maps/_NF/Shuttles/Expedition/pathfinder.yml
-  guidebookPage: ShipyardPathfinder
-  class:
-  - Expedition
-  engine:
-  - AME
+# Depreciated, replaced by the QH Monitor.
+#- type: vessel
+#  id: Pathfinder
+#  parent: BaseVessel
+#  name: KC Pathfinder
+#  description: Once a scout ship serving with the Nanotrasen Marine Expeditionary Forces, this now decommissioned expedition capable ship can be yours!
+#  price: 50000 #27908 0.2 33489.6
+#  category: Small
+#  group: Expedition
+#  shuttlePath: /Maps/_NF/Shuttles/Expedition/pathfinder.yml
+#  guidebookPage: ShipyardPathfinder
+#  class:
+#  - Expedition
+#  engine:
+#  - AME
 
-- type: gameMap
-  id: Pathfinder
-  mapName: 'KC Pathfinder'
-  mapPath: /Maps/_NF/Shuttles/Expedition/pathfinder.yml
-  minPlayers: 0
-  stations:
-    Pathfinder:
-      stationProto: StandardFrontierExpeditionVessel
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: 'Pathfinder {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: '14'
-        - type: StationJobs
-          availableJobs:
-            WayfarerInterview: [ 0, 0 ]
+#- type: gameMap
+#  id: Pathfinder
+#  mapName: 'KC Pathfinder'
+#  mapPath: /Maps/_NF/Shuttles/Expedition/pathfinder.yml
+#  minPlayers: 0
+#  stations:
+#    Pathfinder:
+#      stationProto: StandardFrontierExpeditionVessel
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: 'Pathfinder {1}'
+#          nameGenerator:
+#            !type:NanotrasenNameGenerator
+#            prefixCreator: '14'
+#        - type: StationJobs
+#          availableJobs:
+#            WayfarerInterview: [ 0, 0 ]

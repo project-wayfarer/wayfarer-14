@@ -1,20 +1,20 @@
-marking-ScarsVoxRoadrashLeftHead-roadrash_l_head = Road Rash (Left)
-marking-ScarsVoxRoadrashLeftHead = Road Rash (Left)
+marking-ScarsVoxRoadrashLeftHead-roadrash_l_head = [ Vox ] Road Rash (Left)
+marking-ScarsVoxRoadrashLeftHead = [ Vox ] Road Rash (Left)
 
-marking-ScarsVoxRoadrashRightHead-roadrash_r_head = Road Rash (Right)
-marking-ScarsVoxRoadrashRightHead = Road Rash (Right)
+marking-ScarsVoxRoadrashRightHead-roadrash_r_head = [ Vox ] Road Rash (Right)
+marking-ScarsVoxRoadrashRightHead = [ Vox ] Road Rash (Right)
 
-marking-ScarsVoxBigslashLeftHead-bigslash_l_head = Big Slash (Left)
-marking-ScarsVoxBigslashLeftHead = Big Slash (Left)
+marking-ScarsVoxBigslashLeftHead-bigslash_l_head = [ Vox ] Big Slash (Left)
+marking-ScarsVoxBigslashLeftHead = [ Vox ] Big Slash (Left)
 
-marking-ScarsVoxBigslashRightHead-roadrash_r_head = Big Slash (Right)
-marking-ScarsVoxBigslashRightHead = Big Slash (Right)
+marking-ScarsVoxBigslashRightHead-roadrash_r_head = [ Vox ] Big Slash (Right)
+marking-ScarsVoxBigslashRightHead = [ Vox ] Big Slash (Right)
 
-marking-ScarsVoxSlashLeftHead-slash_l_head = Slash (Left)
-marking-ScarsVoxSlashLeftHead = Slash (Left)
+marking-ScarsVoxSlashLeftHead-slash_l_head = [ Vox ] Slash (Left)
+marking-ScarsVoxSlashLeftHead = [ Vox ] Slash (Left)
 
-marking-ScarsVoxSlashRightHead-slash_r_head = Slash (Right)
-marking-ScarsVoxSlashRightHead = Slash (Right)
+marking-ScarsVoxSlashRightHead-slash_r_head = [ Vox ] Slash (Right)
+marking-ScarsVoxSlashRightHead = [ Vox ] Slash (Right)
 
-marking-ScarsVoxClawTorso-claw_torso = Claw Scar
-marking-ScarsVoxClawTorso = Claw Scar
+marking-ScarsVoxClawTorso-claw_torso = [ Vox ] Claw Scar
+marking-ScarsVoxClawTorso = [ Vox ] Claw Scar

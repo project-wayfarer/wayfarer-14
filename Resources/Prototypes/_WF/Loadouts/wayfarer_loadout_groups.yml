@@ -90,6 +90,40 @@
   - WFClothingUniformJumpskirtSeniorResearcher
   - WFClothingUniformJumpsuitResearchDirector
   - WFClothingUniformJumpskirtResearchDirector
+  # Thongs - AH FUCK HERE WE GO AGAIN I HATE LOADOUTS
+  - ClothingUniformPlainWhiteThong
+  - ClothingUniformPlainThong
+  - ClothingUniformBartenderThong
+  - ClothingUniformMusicianThong
+  - ClothingUniformPilotThong
+  - ClothingUniformMercThong
+  - ClothingUniformPrivSecThong
+  - ClothingUniformLogisThong
+  - ClothingUniformCourierThong
+  - ClothingUniformLOLogisThong
+  - ClothingUniformChaplainThong
+  - ClothingUniformChefThong
+  - ClothingUniformChemistsThong
+  - ClothingUniformDetectiveThong
+  - ClothingUniformEngiThong
+  - ClothingUniformChiefEngiThong
+  - ClothingUniformJanitorThong
+  - ClothingUniformMedicThong
+  - ClothingUniformChemistsThong
+  - ClothingUniformParaMedicThong
+  - ClothingUniformCMOThong
+  - ClothingUniformCoderThong
+  - ClothingUniformBeeThong
+  - ClothingUniformStripedPurpleThong
+  - ClothingUniformStripedRainbowThong
+  - ClothingUniformStripedWhiteThong
+  - ClothingUniformEpiThong
+  - ClothingUniformEpiHeadThong
+  - ClothingUniformMantisEpiThong
+  - ClothingUniformCCThong
+  - ClothingUniformSecurityThong
+  - ClothingUniformHeadSecurityThong
+  - ClothingUniformCoderValidThong
   # Military
   - WFClothingUniformJumpsuitCaptain
   - WFClothingUniformJumpskirtCaptain
@@ -237,7 +271,10 @@
   - WFClothingKimonoPink
   - WFClothingUniformJumpsuitGladiator
   - WFClothingUniformJumpskirtPerformer
-  - WFClothingUniformJumpskirtJanimaid
+  - UniformMaid
+  - ClothingUniformJumpskirtJanimaid
+  - ClothingUniformJumpskirtJanimaidmini
+  - ClothingUniformJumpskirtTacticalMaid
   - WFClothingUniformJumpsuitSafari
   - WFUniformShortsRed
   - WFUniformShortsRedWithTop
@@ -412,6 +449,16 @@
   - ClothingOuterCoatWarden
   - ClothingOuterCoatAMG
   - ClothingOuterCoatSyndieCapArmored
+  # Hardsuits
+  - ClothingOuterEVASuitFsc
+  - ClothingOuterEVASuitFsb
+  - ClothingOuterHardsuitSalvage
+  - ClothingOuterHardsuitLuxury
+  - ClothingOuterEVASuitFsa
+  - ClothingOuterHardsuitMercenary
+  - ClothingOuterHardsuitPrivateSecurity
+  - ClothingOuterHardsuitTacticalMaid
+  - ClothingOuterHardsuitDeathsquad
   #
   - ClothingOuterCoatSyndieCap
   - WFClothingOuterHoodieGrey
@@ -482,6 +529,7 @@
   - WFClothingBeltMilitaryWebbing
   - WFClothingBeltMilitaryWebbingMed
   - WFClothingBeltSecurity
+  - ClothingBeltAssault
   - WFClothingBeltPlant
   - WFClothingBeltPlantFilled
   - WFClothingBeltChef
@@ -539,6 +587,39 @@
   - WFClothingShoesColorGreen
   - WFClothingShoesColorYellow
   - WFClothingShoesColorWhite
+  # Socks
+  - ClothingUnderSocksPlainWhite
+  - ClothingUnderSocksPlain
+  - ClothingUnderSocksBartender
+  - ClothingUnderSocksMusician
+  - ClothingUnderSocksMerc
+  - ClothingUnderSocksPrivSec
+  - ClothingUnderSocksPilot
+  - ClothingUnderSocksLogis
+  - ClothingUnderSocksCourier
+  - ClothingUnderSocksLOLogis
+  - ClothingUnderSocksChaplain
+  - ClothingUnderSocksChef
+  - ClothingUnderSocksChemists
+  - ClothingUnderSocksDetective
+  - ClothingUnderSocksEngi
+  - ClothingUnderSocksChiefEngi
+  - ClothingUnderSocksJanitor
+  - ClothingUnderSocksMedic
+  - ClothingUnderSocksParaMedic
+  - ClothingUnderSocksCMO
+  - ClothingUnderSocksCoder
+  - ClothingUnderSocksBee
+  - ClothingUnderSocksStripedPurple
+  - ClothingUnderSocksStripedRainbow
+  - ClothingUnderSocksStripedWhite
+  - ClothingUnderSocksEpi
+  - ClothingUnderSocksEpiHead
+  - ClothingUnderSocksMantisEpi
+  - ClothingUnderSocksCC
+  - ClothingUnderSocksSecurity
+  - ClothingUnderSocksHeadSecurity
+  - ClothingUnderSocksCoderValid
   # Winter Boots
   - WFClothingShoesBootsWinter
   - WFClothingShoesBootsWinterAtmos
@@ -579,6 +660,7 @@
 
   - WFClothingShoesClown
   - WFClothingShoesJester
+  - WFClothingShoesJesterALT
   - WFClothingShoesBootsPerformer
   - WFClothingShoesSkates
   - WFClothingShoesClownLarge
@@ -602,6 +684,7 @@
   - WFClothingHeadBandSkull
   - WFClothingHeadBandGrey
   - WFClothingHeadBandGold
+  - ClothingHeadHatTacticalMaidHeadband
   # Berets
   - WFClothingHeadHatBeret
   - WFClothingHeadHatBeretFrench
@@ -636,6 +719,11 @@
   - WFClothingHeadHelmetBasic
   - WFClothingHeadHelmetMercenary
   - WFClothingHeadHelmetMercenaryBlack
+  # Flowers
+  - FoodPoppy
+  - FoodLily
+  - ClothingHeadHatFlowerWreath
+  - FoodAmbrosiaVulgaris
   #
   - ClothingHeadHatHoshat
   - ClothingHeadHatSyndieMAA
@@ -725,6 +813,42 @@
   - WFClothingHandsGlovesMercFingerless
   - WFClothingHandsMercenaryGlovesCombat
   - WFClothingHandsGlovesCombat
+  - ClothingHandsTacticalMaidGloves
+  # Warmers
+  - ClothingHandsPlainWhiteWarmers
+  - ClothingHandsPlainWarmers
+  - ClothingHandsBartenderWarmers
+  - ClothingHandsMusicianWarmers
+  - ClothingHandsPilotWarmers
+  - ClothingHandsPrivSecWarmers
+  - ClothingHandsMercWarmers
+  - ClothingHandsLOLogisWarmers
+  - ClothingHandsCourierWarmers
+  - ClothingHandsLogisWarmers
+  - ClothingHandsChaplainWarmers
+  - ClothingHandsChefWarmers
+  - ClothingHandsChemistsWarmers
+  - ClothingHandsDetectiveWarmers
+  - ClothingHandsChiefEngiWarmers
+  - ClothingHandsEngiWarmers
+  - ClothingHandsJanitorWarmers
+  - ClothingHandsCMOWarmers
+  - ClothingHandsParaMedicWarmers
+  - ClothingHandsChemistsWarmers
+  - ClothingHandsMedicWarmers
+  - ClothingHandsStripedWhiteWarmers
+  - ClothingHandsStripedRainbowWarmers
+  - ClothingHandsStripedPurpleWarmers
+  - ClothingHandsBeeWarmers
+  - ClothingHandsCoderWarmers
+  - ClothingHandsMantisEpiWarmers
+  - ClothingHandsEpiHeadWarmers
+  - ClothingHandsEpiWarmers
+  - ClothingHandsCCWarmers
+  - ClothingHandsHeadSecurityWarmers
+  - ClothingHandsSecurityWarmers
+  - ClothingHandsCoderValidWarmers
+  #
   - WFClothingHandsGlovesLatex
   - WFClothingHandsGlovesNitrile
   - WFClothingHandsGlovesRobohands
@@ -940,6 +1064,8 @@
   - WFCigPackGreen
   - WFCigarCase
   - WFNFAshtray
+  - BarberScissors
+  - Binoculars
   - WFTapeRecorder
   - WFSmokingPipeFilledTobacco
   - WFTobaccoPouchBrownFilled
@@ -953,6 +1079,8 @@
   - WFFlippoLighter
   - WFFlippoEngravedLighter
   - WFDrinkFlaskOld
+  - WFDrinkMREFlask
+  - WFDrinkFlaskBar
   - WFDrinkShinyFlask
   - WFDrinkFlask
   - WFDrinkVacuumFlask
@@ -997,7 +1125,6 @@
   - WFRubberStampTrader
   - WFRubberStampClown
   - WFRubberStampMime
-
 # == IN-HAND ITEMS
 - type: loadoutGroup
   id: WFHandItems

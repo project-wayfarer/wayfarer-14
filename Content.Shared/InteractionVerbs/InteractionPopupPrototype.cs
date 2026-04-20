@@ -40,6 +40,14 @@ public sealed partial class InteractionPopupPrototype : IPrototype
     [DataField("others")]
     public string? OthersSuffix = "others";
 
+    /// <summary>
+    ///     Loc suffix for the message sent to the chat log as an emote. Unlike the other suffixes, this string
+    ///     should NOT include the actor's name, since the chat system prepends it automatically.
+    ///     If null, no chat message is sent.
+    /// </summary>
+    [DataField("emote")]
+    public string? EmoteSuffix = null;
+
     public enum Prefix : byte
     {
         Success,

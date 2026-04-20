@@ -271,6 +271,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
             if (hasBalance)
             {
+                // Store the prefs slot so bank operations always target this character's
+                // account even if SelectedCharacterIndex changes (e.g. after cryosleep swap).
+                bankComp.CharacterSlot = prefs!.IndexOfCharacter(profile!);
                 _bank.TryBankWithdraw(session!, prefs!, profile!, initialBankBalance - bankBalance, out var newBalance);
             }
 

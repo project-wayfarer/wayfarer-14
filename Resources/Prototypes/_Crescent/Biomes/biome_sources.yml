@@ -46,7 +46,7 @@
   components:
   - type: SpaceBiomeSource
     id: BiomeFarReachesIII
-    swapDistance: 28000 #beyond this is fallback
+    swapDistance: 50000 #beyond this is fallback
     priority: 250
 
 - type: entity
@@ -66,7 +66,7 @@
   components:
   - type: SpaceBiomeSource
     id: BiomeFarReachesI
-    swapDistance: 22000
+    swapDistance: 19000
     priority: 750
 
 - type: entity
@@ -76,7 +76,7 @@
   components:
   - type: SpaceBiomeSource
     id: BiomeOuterRing
-    swapDistance: 18000
+    swapDistance: 14000
     priority: 1000
 
 - type: entity
@@ -86,7 +86,7 @@
   components:
   - type: SpaceBiomeSource
     id: BiomeMiddleRing
-    swapDistance: 10000
+    swapDistance: 9000
     priority: 1500
 
 - type: entity

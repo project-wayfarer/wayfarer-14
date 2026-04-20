@@ -1,0 +1,327 @@
+#Socks and Things
+#
+#Bee
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsBeeWarmers
+  name: bee arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/beewarmer.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/beewarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-yellow
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformBeeThong
+  name: bee thong
+  description: Styled with a bee motif, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/beethong.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/beethong.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+#Coder
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsCoderWarmers
+  name: coder arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/coderwarmer.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/coderwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-white
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCoderThong
+  name: coder thong
+  description: A coder styled thong, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/coderthong.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/coderthong.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+#CoderValid
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsCoderValidWarmers
+  name: coder valid arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/codervalidwarmer.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/codervalidwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-black
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksCoderValid
+  name: coder valid thigh-high socks
+  description: A pair of thigh-high socks.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Socks/codervalid.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Socks/codervalid.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCoderValidThong
+  name: coder valid thong
+  description: A coder styled thong, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/codervalidthong.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/codervalidthong.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+#Plain
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsPlainWarmers
+  name: plain arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/plainwarmer.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/plainwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-black
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksPlain
+  name: plain thigh-high socks
+  description: A pair of thigh-high socks.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Socks/plainsocks.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Socks/plainsocks.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformPlainThong
+  name: plain thong
+  description: A plain styled thong, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/plainthong.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/plainthong.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+#Plain White
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsPlainWhiteWarmers
+  name: plain white arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/plainwarmerwhite.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/plainwarmerwhite.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-white
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksPlainWhite
+  name: plain white thigh-high socks
+  description: A pair of thigh-high socks.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Socks/plainsockswhite.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Socks/plainsockswhite.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformPlainWhiteThong
+  name: plain white thong
+  description: A plain styled thong, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/plainthongwhite.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/plainthongwhite.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+#Striped Purple
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsStripedPurpleWarmers
+  name: striped purple arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/stripewarmerpurple.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/stripewarmerpurple.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-purple
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksStripedPurple
+  name: striped purple thigh-high socks
+  description: A pair of thigh-high socks.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Socks/stripesockspurple.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Socks/stripesockspurple.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStripedPurpleThong
+  name: striped purple thong
+  description: A striped styled thong, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/stripethongpurple.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/stripethongpurple.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+#Striped Rainbow
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsStripedRainbowWarmers
+  name: striped rainbow arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/stripewarmerrainbow.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/stripewarmerrainbow.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-yellow
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksStripedRainbow
+  name: striped rainbow thigh-high socks
+  description: A pair of thigh-high socks.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Socks/stripesocksrainbow.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Socks/stripesocksrainbow.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStripedRainbowThong
+  name: striped rainbow thong
+  description: A striped styled thong, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/stripethongrainbow.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/stripethongrainbow.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+#Striped White
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsStripedWhiteWarmers
+  name: striped white arm-warmers
+  description: A pair of rather nice arm-warmers.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Gloves/stripewarmerwhite.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Gloves/stripewarmerwhite.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-white
+  - type: FingerprintMask
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksStripedWhite
+  name: striped white thigh-high socks
+  description: A pair of thigh-high socks.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Socks/stripesockswhite.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Socks/stripesockswhite.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStripedWhiteThong
+  name: striped white thong
+  description: A striped styled thong, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Uniforms/stripethongwhite.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Uniforms/stripethongwhite.rsi
+  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
+    price: 80 # Frontier

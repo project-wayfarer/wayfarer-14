@@ -17,7 +17,6 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
-using Robust.Shared.GameObjects;
 using PickerWindow = Content.Client._NF.LateJoin.Windows.PickerWindow;
 
 namespace Content.Client.Lobby
@@ -43,7 +42,7 @@ namespace Content.Client.Lobby
 
         // Frontier - save pickerwindow so it opens only once
         private PickerWindow? _pickerWindow = null;
-        
+
         // Track whether the user clicked the Resume button
         private bool _pendingResumeRequest = false;
 
@@ -149,12 +148,12 @@ namespace Content.Client.Lobby
             {
                 Lobby.ResumeButton.Visible = msg.Characters.Count > 0;
             }
-            
+
             // If this was triggered by clicking the Resume button, show the window
             if (_pendingResumeRequest)
             {
                 _pendingResumeRequest = false;
-                
+
                 if (msg.Characters.Count == 0)
                 {
                     return;
@@ -162,7 +161,7 @@ namespace Content.Client.Lobby
 
                 var window = new ResumeCharacterWindow();
                 window.PopulateCharacters(msg.Characters);
-                
+
                 window.OnCharacterSelected += body =>
                 {
                     _cryoSleepSystem.RequestResumeCharacter(body);
@@ -184,7 +183,28 @@ namespace Content.Client.Lobby
             {
                 Lobby!.StartTime.Text = string.Empty;
                 var roundTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
-                Lobby!.StationTime.Text = Loc.GetString("lobby-state-player-status-round-time", ("hours", roundTime.Hours), ("minutes", roundTime.Minutes));
+                // WEEOO WEEOO DEBUG DEBUG WEEOO WEEOO
+                // every 5 seconds, alternate between adding in a day
+                // if (roundTime.Seconds % 10 >= 5)
+                // {
+                //     roundTime += TimeSpan.FromDays(3);
+                // }
+                // WEEOO WEEOO DEBUG END
+                if (roundTime.Days > 0)
+                {
+                    Lobby!.StationTime.Text = Loc.GetString(
+                        "lobby-state-player-status-round-time-days",
+                        ("days", roundTime.Days),
+                        ("hours", roundTime.Hours),
+                        ("minutes", roundTime.Minutes));
+                }
+                else
+                {
+                    Lobby!.StationTime.Text = Loc.GetString(
+                        "lobby-state-player-status-round-time",
+                        ("hours", roundTime.Hours),
+                        ("minutes", roundTime.Minutes));
+                }
                 return;
             }
 
@@ -240,7 +260,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.ToggleMode = false;
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ObserveButton.Disabled = false;
-                
+
                 // Request stored characters to determine Resume button visibility
                 _cryoSleepSystem.RequestStoredCharacters();
             }

@@ -258,7 +258,7 @@
   components:
   - type: HTN
     rootTask:
-       task: SimpleHostileCompound
+       task: N14HostileCompound # WF
     blackboard:
       NavClimb: !type:Bool
         true

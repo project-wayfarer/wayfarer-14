@@ -61,9 +61,13 @@ public sealed partial class PathfindingSystem
             return PathResult.NoPath;
         }
 
+        if (request.CostSoFar.Count == 0)
+        {
         currentNode = startNode;
         request.Frontier.Add((0.0f, startNode));
         request.CostSoFar[startNode] = 0.0f;
+        }
+
         var count = 0;
         var arrived = false;
 
@@ -129,7 +133,7 @@ public sealed partial class PathfindingSystem
             return PathResult.NoPath;
         }
 
-        var route = ReconstructPath(request.CameFrom, currentNode);
+        var route = ReconstructPath(request.CameFrom, currentNode!);
         var path = new Queue<EntityCoordinates>(route.Count);
 
         foreach (var node in route)

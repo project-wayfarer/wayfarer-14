@@ -19,8 +19,8 @@ adventure-webhook-footer =
 nf-adventure-title = Adventure
 nf-adventure-description = Join a ship crew or buy your own and explore, research, salvage, or haul your way to riches!
 
-nf-pirate-title = Pirates
-nf-pirate-description = A gang of pirates is on the loose! Take care out in space and try not to get plundered!
+nf-pirate-title = Outlaws
+nf-pirate-description = Outlaws have been spotted in the sector. Report any suspicious activity to the CGP immediately!
 
 nf-test-title = Test
 nf-test-description = A preset intended for testing. No POIs, no bluespace events, final destination.

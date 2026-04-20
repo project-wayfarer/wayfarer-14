@@ -31,6 +31,7 @@ namespace Content.Client.MainMenu
 
         private MainMenuControl _mainMenuControl = default!;
         private bool _isConnecting;
+        private bool _pendingDirectConnect;
 
         // ReSharper disable once InconsistentNaming
         private static readonly Regex IPv6Regex = new(@"\[(.*:.*:.*)](?::(\d+))?");
@@ -94,6 +95,13 @@ namespace Content.Client.MainMenu
 
         private void TryConnect(string address)
         {
+            if (_client.RunLevel >= ClientRunLevel.Connecting)
+            {
+                _userInterfaceManager.Popup(
+                    Loc.GetString("main-menu-failed-to-connect", ("reason", "Client is already connecting or connected.")));
+                return;
+            }
+
             var inputName = _mainMenuControl.UsernameBox.Text.Trim();
             if (!UsernameHelpers.IsNameValid(inputName, out var reason))
             {
@@ -112,6 +120,7 @@ namespace Content.Client.MainMenu
             }
 
             _setConnectingState(true);
+            _pendingDirectConnect = true;
             _netManager.ConnectFailed += _onConnectFailed;
             try
             {
@@ -123,6 +132,7 @@ namespace Content.Client.MainMenu
                 _userInterfaceManager.Popup($"Unable to connect: {e.Message}", "Connection error.");
                 _sawmill.Warning(e.ToString());
                 _netManager.ConnectFailed -= _onConnectFailed;
+                _pendingDirectConnect = false;
                 _setConnectingState(false);
             }
         }
@@ -134,7 +144,13 @@ namespace Content.Client.MainMenu
                 case ClientRunLevel.Connecting:
                     _setConnectingState(true);
                     break;
+                case ClientRunLevel.Connected:
+                    _pendingDirectConnect = false;
+                    _setConnectingState(false);
+
+                    break;
                 case ClientRunLevel.Initialize:
+                    _pendingDirectConnect = false;
                     _setConnectingState(false);
                     _netManager.ConnectFailed -= _onConnectFailed;
                     break;
@@ -143,6 +159,14 @@ namespace Content.Client.MainMenu
 
         private void ParseAddress(string address, out string ip, out ushort port)
         {
+            address = address.Trim();
+
+            if (string.IsNullOrWhiteSpace(address))
+                throw new ArgumentException("Address cannot be empty.");
+
+            if (TryParseUriAddress(address, out ip, out port))
+                return;
+
             var match6 = IPv6Regex.Match(address);
             if (match6 != Match.Empty)
             {
@@ -177,12 +201,73 @@ namespace Content.Client.MainMenu
                     throw new ArgumentException("Not a valid port.");
                 }
             }
+
+            if (string.IsNullOrWhiteSpace(ip))
+                throw new ArgumentException("Not a valid Address.");
+        }
+
+        private bool TryParseUriAddress(string address, out string ip, out ushort port)
+        {
+            ip = string.Empty;
+            port = _client.DefaultPort;
+
+            var schemeIndex = address.IndexOf("://", StringComparison.Ordinal);
+            if (schemeIndex <= 0)
+                return false;
+
+            var scheme = address[..schemeIndex].ToLowerInvariant();
+            if (scheme is not ("udp" or "ss14" or "ss14s"))
+                throw new ArgumentException($"Unsupported URI scheme: {scheme}");
+
+            var endpoint = address[(schemeIndex + 3)..];
+            var slash = endpoint.IndexOf('/');
+            if (slash >= 0)
+                endpoint = endpoint[..slash];
+
+            if (string.IsNullOrWhiteSpace(endpoint))
+                throw new ArgumentException("Not a valid Address.");
+
+            if (endpoint.StartsWith('['))
+            {
+                var closing = endpoint.IndexOf(']');
+                if (closing <= 1)
+                    throw new ArgumentException("Not a valid Address.");
+
+                ip = endpoint[1..closing];
+
+                if (endpoint.Length == closing + 1)
+                    return true;
+
+                if (endpoint[closing + 1] != ':')
+                    throw new ArgumentException("Not a valid Address.");
+
+                var portStr = endpoint[(closing + 2)..];
+                if (!ushort.TryParse(portStr, out port))
+                    throw new ArgumentException("Not a valid port.");
+
+                return true;
+            }
+
+            var split = endpoint.Split(':');
+            if (split.Length > 2)
+                throw new ArgumentException("Not a valid Address.");
+
+            ip = split[0];
+
+            if (string.IsNullOrWhiteSpace(ip))
+                throw new ArgumentException("Not a valid Address.");
+
+            if (split.Length == 2 && !ushort.TryParse(split[1], out port))
+                throw new ArgumentException("Not a valid port.");
+
+            return true;
         }
 
         private void _onConnectFailed(object? _, NetConnectFailArgs args)
         {
             _userInterfaceManager.Popup(Loc.GetString("main-menu-failed-to-connect",("reason", args.Reason)));
             _netManager.ConnectFailed -= _onConnectFailed;
+            _pendingDirectConnect = false;
             _setConnectingState(false);
         }
 

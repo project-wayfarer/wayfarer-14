@@ -221,6 +221,15 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
+            // Wayfarer: height/width sliders
+            #region HeightWidth
+
+            HeightSlider.OnValueChanged += _ => OnHeightSliderChanged();
+            WidthSlider.OnValueChanged += _ => OnWidthSliderChanged();
+
+            #endregion HeightWidth
+            // End Wayfarer
+
             RefreshSpecies();
 
             SpeciesButton.OnItemSelected += args =>
@@ -229,6 +238,7 @@ namespace Content.Client.Lobby.UI
                 SetSpecies(_species[args.Id].ID);
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
+                UpdateHeightWidthSliders(); // Wayfarer
             };
 
             #region Skin
@@ -787,6 +797,7 @@ namespace Content.Client.Lobby.UI
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
             UpdateHideFromPlayerlistCheckbox(); // Wayfarer
+            UpdateHeightWidthSliders(); // Wayfarer
             UpdateAgeEdit();
             UpdateCustomSpecieNameEdit();
             UpdateEyePickers();
@@ -1541,6 +1552,69 @@ namespace Content.Client.Lobby.UI
             }
 
             HideFromPlayerlistCheckbox.Pressed = Profile.HideFromPlayerlist;
+        }
+
+        private void UpdateHeightWidthSliders()
+        {
+            if (Profile == null || !_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var species))
+                return;
+
+            // Update slider ranges to match the current species limits
+            HeightSlider.MinValue = 0f;
+            HeightSlider.MaxValue = 100f;
+            WidthSlider.MinValue = 0f;
+            WidthSlider.MaxValue = 100f;
+
+            // Convert profile scale to 0-100 slider value
+            HeightSlider.Value = ScaleToSlider(Profile.Height, species.MinHeight, species.MaxHeight);
+            WidthSlider.Value = ScaleToSlider(Profile.Width, species.MinWidth, species.MaxWidth);
+
+            UpdateHeightWidthLabels(species);
+        }
+
+        private void UpdateHeightWidthLabels(SpeciesPrototype species)
+        {
+            if (Profile == null)
+                return;
+
+            var heightCm = (int) Math.Round(species.AverageHeight * Profile.Height);
+            var widthCm = (int) Math.Round(species.AverageWidth * Profile.Width);
+            HeightValueLabel.Text = Loc.GetString("humanoid-profile-editor-height-value", ("cm", heightCm));
+            WidthValueLabel.Text = Loc.GetString("humanoid-profile-editor-width-value", ("cm", widthCm));
+        }
+
+        private static float SliderToScale(float sliderValue, float min, float max)
+        {
+            return min + (sliderValue / 100f) * (max - min);
+        }
+
+        private static float ScaleToSlider(float scale, float min, float max)
+        {
+            if (Math.Abs(max - min) < 0.0001f)
+                return 50f;
+            return Math.Clamp((scale - min) / (max - min) * 100f, 0f, 100f);
+        }
+
+        private void OnHeightSliderChanged()
+        {
+            if (Profile == null || !_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var species))
+                return;
+
+            var newHeight = (float) Math.Round(SliderToScale(HeightSlider.Value, species.MinHeight, species.MaxHeight), 2);
+            Profile = Profile.WithHeight(newHeight);
+            UpdateHeightWidthLabels(species);
+            ReloadProfilePreview();
+        }
+
+        private void OnWidthSliderChanged()
+        {
+            if (Profile == null || !_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var species))
+                return;
+
+            var newWidth = (float) Math.Round(SliderToScale(WidthSlider.Value, species.MinWidth, species.MaxWidth), 2);
+            Profile = Profile.WithWidth(newWidth);
+            UpdateHeightWidthLabels(species);
+            ReloadProfilePreview();
         }
         // End Wayfarer
 

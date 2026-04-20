@@ -1,8 +1,8 @@
 ﻿# Hair
 
-marking-MothHairHighPonytail = Curly Ponytail
-marking-MothHairShortCut = Short Cut
-marking-MothHairShortMessy = Short Messy
-marking-MothHairSidePonytail = Side Ponytail
-marking-MothHairSideSwept = Side Swept
-marking-MothHairTuft = Tuft
+marking-MothHairHighPonytail = [ Moth ] Curly Ponytail
+marking-MothHairShortCut = [ Moth ] Short Cut
+marking-MothHairShortMessy = [ Moth ] Short Messy
+marking-MothHairSidePonytail = [ Moth ] Side Ponytail
+marking-MothHairSideSwept = [ Moth ] Side Swept
+marking-MothHairTuft = [ Moth ] Tuft

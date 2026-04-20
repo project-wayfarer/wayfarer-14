@@ -5,7 +5,7 @@
   prototype: MobChitinid
   sprites: MobChitinidSprites
   defaultSkinTone: "#ffda93"
-  markingLimits: MobChitinidMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobChitinidMarkingLimits WF
   dollPrototype: MobChitinidDummy
   skinColoration: Hues
   maleFirstNames: NamesChitinidFirstMale
@@ -15,13 +15,16 @@
 - type: speciesBaseSprites
   id: MobChitinidSprites
   sprites:
+    Special: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobChitinidHead
     Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
     Chest: MobChitinidTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -35,61 +38,13 @@
     RLeg: MobChitinidRLeg
     LFoot: MobChitinidLFoot
     RFoot: MobChitinidRFoot
+    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
 
 - type: humanoidBaseSprite
   id: MobChitinidEyes
   baseSprite:
     sprite: _DV/Mobs/Species/Chitinid/parts.rsi
     state: eyes
-
-- type: markingPoints
-  id: MobChitinidMarkingLimits
-  onlyWhitelisted: false
-  points:
-    Special:
-      points: 32 # WF
-      required: false
-    Head:
-      points: 32 # WF
-      required: false
-    HeadTop:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ ChitinidAntennasDefault ]
-    HeadSide:
-      points: 32 # WF
-      required: false
-    Snout:
-      points: 32 # WF
-      required: false
-    Hair:
-      points: 32 # WF
-      required: false
-    FacialHair:
-      points: 32 # WF
-      required: false
-    Chest:
-      points: 32 # WF
-      required: false
-    Legs:
-      points: 32 # WF
-      required: false
-    Arms:
-      points: 32 # WF
-      required: false
-    Tail:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ ChitinidWingsDefault ]
-    UndergarmentTop:
-      points: 32 # WF
-      required: false
-    UndergarmentBottom:
-      points: 32 # WF
-      required: false
-    Overlay:
-      points: 32 # WF
-      required: false
 
 - type: humanoidBaseSprite
   id: MobChitinidHead

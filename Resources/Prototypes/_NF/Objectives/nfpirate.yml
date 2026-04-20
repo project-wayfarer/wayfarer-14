@@ -13,8 +13,8 @@
 - type: entity
   parent: [BaseNFPirateObjective, BaseFreeObjective] # TODO: make this less free?
   id: NFPiratePlunderObjective
-  name: Plunder the sector.
-  description: Amass wealth by pillaging the sector.
+  name: Make a name for yourself. Or fly under the radar.
+  description: Will you become wanted by the GCP, or stay in the shadows?
   components:
   - type: Objective
     icon:
@@ -24,10 +24,10 @@
 - type: entity
   parent: [BaseNFPirateObjective, BaseFreeObjective] # TODO: make this less free?
   id: NFPirateBountyObjective
-  name: Fulfill bounties.
-  description: Earn doubloons to spend by completing bounties.
+  name: Fulfill black market bounties.
+  description: Earn data chits to spend on the black market by completing bounties.
   components:
   - type: Objective
     icon:
-      sprite: _NF/Objects/Specific/Pirate/pirate_doubloon.rsi
-      state: doubloon
+      sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi # WF
+      state: chits

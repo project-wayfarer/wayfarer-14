@@ -16,6 +16,7 @@ namespace Content.Shared.Humanoid
         FacialHair,
         UndergarmentTop,
         UndergarmentBottom,
+        Genital,
         Chest,
         Head,
         Snout,

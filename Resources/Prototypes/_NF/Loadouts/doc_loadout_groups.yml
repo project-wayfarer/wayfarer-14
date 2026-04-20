@@ -28,7 +28,7 @@
   - DocClothingBackpackSatchelMedical
   - DocClothingBackpackMessengerMedical
   subgroups:
-  - ContractorBackpack
+  - WFBackpack # Wayfarer edit
   fallbacks:
   - DocClothingBackpackMedical
 
@@ -40,7 +40,7 @@
   - DocClothingHeadBeret
   - DocClothingHeadMirror
   subgroups:
-  - ContractorHead
+  - WFHead # Wayfarer edit
 
 - type: loadoutGroup
   id: DocEars
@@ -76,6 +76,6 @@
   - DocClothingShoesColorWhite
   - StcClothingShoesBootsLaceup # reused purposefully
   subgroups:
-  - ContractorShoes
+  - WFShoes # Wayfarer edit
   fallbacks:
   - DocClothingShoesColorWhite

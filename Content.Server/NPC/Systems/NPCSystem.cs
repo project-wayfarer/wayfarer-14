@@ -77,7 +77,7 @@ namespace Content.Server.NPC.Systems
         /// <summary>
         /// Is the NPC awake and updating?
         /// </summary>
-        public bool IsAwake(EntityUid uid, HTNComponent component, ActiveNPCComponent? active = null)
+        public bool IsAwake(EntityUid uid, ActiveNPCComponent? active = null)
         {
             return Resolve(uid, ref active, false);
         }

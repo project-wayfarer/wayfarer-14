@@ -13,6 +13,7 @@ using Robust.Shared.Network;
 using Content.Shared._NF.CryoSleep.Events;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Ghost;
+using Content.Shared._NF.Bank.Components;
 
 namespace Content.Server._NF.CryoSleep;
 
@@ -88,6 +89,14 @@ public sealed partial class CryoSleepSystem
 
         _storedBodies.Remove(id.Value);
         _mind.ControlMob(id.Value, body);
+
+        // Restore the character slot so bank operations target the right account.
+        if (storedBody.CharacterSlot >= 0)
+        {
+            var bankComp = EnsureComp<BankAccountComponent>(body);
+            bankComp.CharacterSlot = storedBody.CharacterSlot;
+        }
+
         // Force the mob to sleep
         var sleep = EnsureComp<SleepingComponent>(body);
         sleep.CooldownEnd = TimeSpan.FromSeconds(5);

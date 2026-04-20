@@ -62,7 +62,7 @@
   - type: MobMover
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: N14HostileCompound # WF
   - type: NpcFactionMember
     factions:
     - Syndicate

@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseShipVoucher
+  id: ShipVoucherOutlaw
+  name: black market shipyard voucher
+  description: A voucher card allowing the redemption of a ship from the black market shipyard.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpc.rsi
+    layers:
+    - state: ltech
+    - state: stripepdv
+  - type: Item
+    heldPrefix: ltech
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: BlackMarket
+    access:
+    - Pirate

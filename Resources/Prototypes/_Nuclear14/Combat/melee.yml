@@ -1,0 +1,49 @@
+# It shouldn't pick up objects or anything similar, merely charge and hit you with whatever he got.
+- type: htnCompound
+  id: N14MeleeCombatCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: N14MeleeAttackTargetCompound
+
+- type: htnCompound
+  id: N14MeleeAttackTargetCompound
+  branches:
+    - preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            # #Misfits Change /Fix:/ Plan the route up front so melee NPCs commit to
+            # obstacle-aware movement instead of steering blind into doors before combat jukes run.
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: MeleeRange
+
+        # #Misfits Change — Use AdjacentTile juke for melee NPCs so they strafe
+        # sideways (combat alive-ness) without fleeing. Away is for ranged only.
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: AdjacentTile
+
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyMeleeTargets
+              key: Target
