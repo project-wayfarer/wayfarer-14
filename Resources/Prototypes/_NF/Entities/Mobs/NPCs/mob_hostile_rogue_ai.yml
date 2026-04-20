@@ -991,18 +991,18 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      160: Critical
-      320: Dead
+      400: Critical #Way 160-400 buffed for boss purposes
+      400: Dead #Way 320 - 400 buffed for boss purposes made same as critical due to robot design
   - type: SlowOnDamage
     speedModifierThresholds:
       96: 0.7
       130: 0.5
   - type: HitscanBatteryAmmoProvider
-    proto: NFRedLaserPractice
+    proto: NFRedLightLaser #Way Changed from NFRedLightPractice to NFRedLightLaser now.. this is actually scary and deadly
     fireCost: 10
   - type: Gun
     showExamineText: false
-    fireRate: 8
+    fireRate: 4 #Way halved firerate since damage went from a single point of heat to 12 points of heat...
     minAngle: 1
     maxAngle: 10
     angleIncrease: 1
