@@ -49,6 +49,11 @@
     speechSounds: Lizard
     speechVerb: Reptilian
     allowedEmotes: ['Thump', 'ReptilianHiss', 'Chirp', 'Gurgle', 'Weh'] # Dragons are close enough to lizard
+  - type: TypingIndicator
+    proto: lizard
+  - type: Vocal
+    sounds:
+      Unsexed: FemaleReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: HTN
@@ -140,8 +145,6 @@
         Slash: 20
   - type: Puller
     needsHands: false
-  - type: ReplacementAccent
-    accent: genericAggressive
   - type: Tag
     tags:
     - CannotSuicide
