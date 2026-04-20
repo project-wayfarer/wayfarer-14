@@ -27,18 +27,18 @@
     snapCardinals: true
   - type: Climbable
   - type: Clickable
-
+#wayfarer edit nanotrasen remove changed to zekke
 - type: entity
   id: AltarNanotrasen
   parent: AltarBase
-  name: nanotrasen altar
+  name: zekke altar
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
-    state: nanotrasen
+    sprite: _WF/Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: zekke
   - type: Icon
-    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
-    state: nanotrasen
+    sprite: _WF/Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: zekke
   - type: Destructible
     thresholds:
     - trigger:

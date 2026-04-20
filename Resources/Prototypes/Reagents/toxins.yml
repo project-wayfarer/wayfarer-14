@@ -403,19 +403,20 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:OrganType
-          type: Animal # Applying damage to the mobs with lower metabolism capabilities
+        - !type:EventResponse
+          message: "TheobromineIntolerance"
+          response: "Damage"
+          guidebookHelpthing: "they have Theobromine Intolerance Trait"
         damage:
           types:
             Poison: 0.3 # DeltaV - slightly reduced to account for slowed metabolism rate
       - !type:ChemVomit
         probability: 0.1 #Scaled for time, not metabolismrate. # DeltaV - Increased from .04 Vomit more when there is a lot of it
         conditions:
-          - !type:OrganType
-            type: Animal
-          - !type:ReagentThreshold # DeltaV - Readded this. No longer causes vomitting at the lightest whiff of coffee
-            reagent: Theobromine
-            min: 0.5
+          - !type:EventResponse
+            message: "TheobromineIntolerance"
+            response: "Vomit"
+            guidebookHelpthing: "they have Theobromine Intolerance Trait"
 
 - type: reagent
   id: Amatoxin
@@ -546,8 +547,10 @@
         conditions:
         - !type:ReagentThreshold
           min: 1
-        - !type:OrganType
-          type: Animal
+        - !type:EventResponse
+          message: "AllicinIntolerance"
+          response: "Damage"
+          guidebookHelpthing: "they have Allicin Intolerance Trait"
         damage:
           types:
             Poison: 0.06

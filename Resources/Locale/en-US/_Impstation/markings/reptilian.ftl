@@ -1,12 +1,12 @@
-marking-LizardSnoutpiercings-piercings1 = Piercings
-marking-LizardSnoutpiercings = Piercings
+marking-LizardSnoutpiercings-piercings1 = [ Lizard ] Piercings
+marking-LizardSnoutpiercings = [ Lizard ] Piercings
 
-marking-LizardHornsNubby-horns_nubby = Lizard Horns (Nubby)
-marking-LizardHornsNubby = Lizard Horns (Nubby)
+marking-LizardHornsNubby-horns_nubby = [ Lizard ] Lizard Horns (Nubby)
+marking-LizardHornsNubby = [ Lizard ] Lizard Horns (Nubby)
 
-marking-LizardHornsKoboldEarspiercings = Lizard Ears (Kobold, Pierced)
-marking-LizardHornsKoboldEarspiercings-horns_kobold_ears = Ears
-marking-LizardHornsKoboldEarspiercings-horns_kobold_ears_piercings = Piercings
+marking-LizardHornsKoboldEarspiercings = [ Lizard ] Lizard Ears (Kobold, Pierced)
+marking-LizardHornsKoboldEarspiercings-horns_kobold_ears = [ Lizard ] Ears
+marking-LizardHornsKoboldEarspiercings-horns_kobold_ears_piercings = [ Lizard ] Piercings
 
-marking-Fangs = Lizard Fangs
-marking-Fangs-Fangs = Fangs
+marking-Fangs = [ Lizard ] Lizard Fangs
+marking-Fangs-Fangs = [ Lizard ] Fangs

@@ -28,6 +28,20 @@
     back:
     - CigPackGreen
 
+- type: loadout
+  id: BarberScissors
+  name: barber scissors
+  price: 2000
+  inhand:
+  - BarberScissors
+
+- type: loadout
+  id: Binoculars
+  name: barber scissors
+  price: 2000
+  inhand:
+  - Binoculars
+
 #T1
 - type: loadout
   id: WFCigarCase
@@ -169,6 +183,22 @@
   storage:
     back:
     - DrinkFlaskOld
+
+#T0
+- type: loadout
+  id: WFDrinkFlaskBar
+  price: 500
+  storage:
+    back:
+    - DrinkFlaskBar
+
+#T0
+- type: loadout
+  id: WFDrinkMREFlask
+  price: 500
+  storage:
+    back:
+    - DrinkMREFlask
 
 #T1
 - type: loadout
@@ -548,3 +578,64 @@
   storage:
     back:
     - RubberStampEngineer
+
+# Clown
+- type: loadout
+  id: WFHonkCoFlippo
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - HonkCoFlippo
+
+- type: loadout
+  id: WFBikeHorn
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - BikeHorn
+
+- type: loadout
+  id: WFClownRecorder
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - ClownRecorder
+
+- type: loadout
+  id: WFWhoopieCushion
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - WhoopieCushion
+
+- type: loadout
+  id: WFToyHammer
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - ToyHammer
+
+- type: loadout
+  id: WFCrazyGlue
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - CrazyGlue

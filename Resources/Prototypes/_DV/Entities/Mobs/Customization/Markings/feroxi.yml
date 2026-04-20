@@ -15,6 +15,9 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-dorsal: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -110,6 +113,8 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -119,6 +124,9 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-stripes: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -130,6 +138,11 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-stripes: TailBehind
+    feroxi-dorsal: TailBehind
+    feroxi-dorsal-stripes: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -145,6 +158,11 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-top-tip: TailBehind
+    feroxi-tail-bottom-tip: TailBehind
+    feroxi-tail-second-dorsal-tip: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -160,6 +178,13 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-top-tip: TailBehind
+    feroxi-tail-bottom-tip: TailBehind
+    feroxi-tail-second-dorsal-tip: TailBehind
+    feroxi-dorsal: TailBehind
+    feroxi-dorsal-tip: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -179,6 +204,14 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-stripes: TailBehind
+    feroxi-tail-top-tip: TailBehind
+    feroxi-tail-bottom-tip: TailBehind
+    feroxi-tail-under: TailBehind
+    feroxi-dorsal: TailBehind
+    feroxi-dorsal-stripes: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -200,6 +233,12 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-stripes: TailBehind
+    feroxi-tail-top-tip: TailBehind
+    feroxi-tail-bottom-tip: TailBehind
+    feroxi-tail-under: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -217,6 +256,9 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-under: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -228,6 +270,10 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-under: TailBehind
+    feroxi-dorsal: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -241,6 +287,10 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-stripes: TailBehind
+    feroxi-tail-under: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -254,6 +304,12 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-stripes: TailBehind
+    feroxi-tail-under: TailBehind
+    feroxi-dorsal: TailBehind
+    feroxi-dorsal-stripes: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -271,6 +327,12 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-top-tip: TailBehind
+    feroxi-tail-bottom-tip: TailBehind
+    feroxi-tail-second-dorsal-tip: TailBehind
+    feroxi-tail-under: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -288,6 +350,14 @@
   bodyPart: Tail
   markingCategory: Tail
   # speciesRestriction: [ Feroxi ] -WF
+  layering:
+    feroxi-tail: TailBehind
+    feroxi-tail-top-tip: TailBehind
+    feroxi-tail-bottom-tip: TailBehind
+    feroxi-tail-second-dorsal-tip: TailBehind
+    feroxi-tail-under: TailBehind
+    feroxi-dorsal: TailBehind
+    feroxi-dorsal-tip: TailBehind
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail

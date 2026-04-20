@@ -1,45 +1,49 @@
-- type: job
-  id: NFPirate
-  name: job-name-nf-pirate
-  description: job-description-nf-pirate
-  playTimeTracker: JobPirate
-  whitelisted: true
-  startingGear: NFPirateGear
-  alwaysUseSpawner: true
-  hideConsoleVisibility: true
-  canBeAntag: true
-  icon: "JobIconNFPirate"
-  supervisors: job-supervisors-nf-pirate
-  weight: 20
-  displayWeight: 20
-  setPreference: true
-  newPlayerMessage: false
-  access:
-  - Pirate
-  accessGroups:
-  - GeneralAccess
-  special:
-  - !type:AddComponentSpecial
-    components:
-    - type: AutoPirate
-    - type: SpecialSectorStationRecord # must be given on spawn
-      recordGeneration: FalseRecord
-    - type: DisableSuitSensors
-  - !type:AddImplantSpecial
-    implants: [ FreelanceTrackingImplant ]
-  - !type:GiveItemOnHolidaySpecial # Even pirates get a piece of cake.
-    holiday: FrontierBirthday
-    prototype: FrontierBirthdayGift
+# This entire file has been commented out and moved to Resources/Prototypes/_WF/Entities/Objects/Specific/Outlaw/outlaw.yml.
+# We still want to use some of the old pirate entity IDs on the backend so we don't have to change crazy amounts of references in the code.
+# If there's a conflict here, we need to look at if it *shouldn't* be ported over because it probably doesn't fit with our antag structure.
 
-- type: startingGear
-  id: NFPirateGear
-  equipment:
-    belt: ClothingBeltUtility
-    pocket1: BasePirateUplinkPirateCrew
-  storage:
-    back:
-    - AppraisalTool
+# - type: job
+#   id: NFPirate
+#   name: job-name-nf-pirate
+#   description: job-description-nf-pirate
+#   playTimeTracker: JobPirate
+#   whitelisted: true
+#   startingGear: NFPirateGear
+#   alwaysUseSpawner: true
+#   hideConsoleVisibility: true
+#   canBeAntag: true
+#   icon: "JobIconNFPirate"
+#   supervisors: job-supervisors-nf-pirate
+#   weight: 20
+#   displayWeight: 20
+#   setPreference: false
+#   newPlayerMessage: false
+#   access:
+#   - Pirate
+#   accessGroups:
+#   - GeneralAccess
+#   special:
+#   - !type:AddComponentSpecial
+#     components:
+#     - type: AutoPirate
+#     - type: SpecialSectorStationRecord # must be given on spawn
+#       recordGeneration: FalseRecord
+#     - type: DisableSuitSensors
+#   - !type:AddImplantSpecial
+#     implants: [ FreelanceTrackingImplant ]
+#   - !type:GiveItemOnHolidaySpecial # Even pirates get a piece of cake.
+#     holiday: FrontierBirthday
+#     prototype: FrontierBirthdayGift
 
-- type: chameleonOutfit
-  id: NFPirateChameleonOutfit
-  job: NFPirate
+# - type: startingGear
+#   id: NFPirateGear
+#   equipment:
+#     belt: ClothingBeltUtility
+#     pocket1: BasePirateUplinkPirateCrew
+#   storage:
+#     back:
+#     - AppraisalTool
+
+# - type: chameleonOutfit
+#   id: NFPirateChameleonOutfit
+#   job: NFPirate

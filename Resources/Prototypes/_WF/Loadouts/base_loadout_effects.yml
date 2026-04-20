@@ -16,3 +16,31 @@
       !type:OverallPlaytimeRequirement
       time: 43200 # 12 hrs
 
+# CGP playtime
+- type: loadoutEffectGroup
+  id: CGPT1
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Security
+      time: 720000 # 200 hrs
+
+# Outlaw playtime
+- type: loadoutEffectGroup
+  id: OUTT1
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Antag
+      time: 720000 # 200 hrs
+
+# T4 Generic playtime
+- type: loadoutEffectGroup
+  id: WFT4
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 720000 # 200 hrs

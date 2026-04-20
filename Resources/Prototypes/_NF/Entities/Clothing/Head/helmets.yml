@@ -6,7 +6,7 @@
   parent: [ BaseC2ContrabandUnredeemable, ClothingHeadHelmetBasic ]
   id: ClothingHeadHelmetERTMailCarrier
   name: ERT mail carrier helmet
-  description: An in-atmosphere helmet worn by mail members of the Nanotrasen Emergency Response Team. Has dark purple highlights.
+  description: An in-atmosphere helmet worn by mail members of the Emergency Response Team. Has dark purple highlights. # wayfarer edit: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Helmets/ert_mailcarrier.rsi

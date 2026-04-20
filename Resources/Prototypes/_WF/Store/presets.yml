@@ -1,0 +1,23 @@
+- type: entity
+  id: StorePresetOutlawUplink
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-outlaw-uplink
+    categories:
+    - UplinkOutlawHardsuits
+    - UplinkOutlawWearables
+    - UplinkOutlawWeapons
+    - UplinkOutlawUtility
+    - UplinkOutlawAmmo
+    - UplinkOutlawExplosives
+    - UplinkOutlawMedical
+    - UplinkOutlawImplanters
+    - UplinkOutlawVouchers
+    - UplinkOutlawConversion
+    - UplinkOutlawBundles
+    - UplinkOutlawMisc
+    currencyWhitelist:
+    - Doubloon
+    balance:
+      Doubloon: 0

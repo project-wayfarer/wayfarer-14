@@ -31,7 +31,7 @@ public sealed class SizeManipulationSystem : EntitySystem
         base.Initialize();
 
         _sawmill = Logger.GetSawmill("size_manipulator");
-        
+
         SubscribeLocalEvent<SizeAffectedComponent, ExaminedEvent>(OnExamined);
     }
 
@@ -46,13 +46,13 @@ public sealed class SizeManipulationSystem : EntitySystem
         string message;
         if (totalScale > 1.0f)
         {
-            message = Loc.GetString("size-manipulator-examine-bigger", ("scale", totalScale.ToString("F2")));
+            message = Loc.GetString("size-manipulator-examine-bigger", [("target", uid), ("scale", totalScale.ToString("F2"))]);
         }
         else
         {
-            message = Loc.GetString("size-manipulator-examine-smaller", ("scale", totalScale.ToString("F2")));
+            message = Loc.GetString("size-manipulator-examine-smaller", [("target", uid), ("scale", totalScale.ToString("F2"))]);
         }
-        
+
         args.PushMarkup($"[color=gray]{message}[/color]");
     }
 
@@ -187,7 +187,7 @@ public sealed class SizeManipulationSystem : EntitySystem
                     // Scale all vertices by the total scale from the original vertices
                     var originalVerts = sizeComp.OriginalFixtureVertices[id];
                     var scaledVerts = new Vector2[originalVerts.Length];
-                    
+
                     for (int i = 0; i < originalVerts.Length; i++)
                     {
                         scaledVerts[i] = originalVerts[i] * totalScale;
@@ -212,7 +212,7 @@ public sealed class SizeManipulationSystem : EntitySystem
             // we need to scale density by scale to achieve scale³ mass scaling
             var originalDensity = sizeComp.OriginalFixtureDensities[id];
             var newDensity = originalDensity * totalScale;
-            
+
             // Only update density if it changed significantly
             if (Math.Abs(fixture.Density - newDensity) > 0.001f)
             {
@@ -224,7 +224,7 @@ public sealed class SizeManipulationSystem : EntitySystem
 
         // Recalculate mass data once after all fixtures have been scaled
         _physics.ResetMassData(target, fixtures);
-        
+
         if (TryComp<PhysicsComponent>(target, out var physicsComp))
         {
             _sawmill.Debug($"SizeManipulation: New mass for {ToPrettyString(target)} is {physicsComp.Mass} kg (scale: {totalScale})");

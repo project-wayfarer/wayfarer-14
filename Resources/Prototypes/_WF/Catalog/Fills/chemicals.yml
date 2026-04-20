@@ -1,0 +1,127 @@
+# Flavorol - For testing
+- type: entity
+  id: ChemistryBottleFlavorol
+  suffix: flavorol
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-flavorol
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Flavorol
+          Quantity: 30
+
+
+# Moonshine
+- type: entity
+  parent: CustomDrinkJug
+  id: CustomDrinkJugMoonshine
+  components:
+  - type: Label
+    currentLabel: reagent-name-moonshine
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Moonshine
+          Quantity: 150
+
+# THC
+- type: entity
+  parent: BaseChemistryEmptyVial
+  suffix: THC 30u
+  id: THCVial
+  components:
+  - type: Label
+    currentLabel: reagent-name-thc
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: THC
+          Quantity: 30
+
+# Space Mirage
+- type: entity
+  parent: BaseChemistryEmptyVial
+  suffix: Space Mirage 30u
+  id: SpacedrugsVial
+  components:
+  - type: Label
+    currentLabel: reagent-name-space-drugs
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 30
+
+# Bicaridine
+- type: entity
+  id: ChemistryBottleBicaridine
+  suffix: bicaridine
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-bicaridine
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 30
+
+# Dermaline
+- type: entity
+  id: ChemistryBottleDermaline
+  suffix: dermaline
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-dermaline
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Dermaline
+          Quantity: 30
+
+# Dylovene
+- type: entity
+  id: ChemistryBottleDylovene
+  suffix: dylovene
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-dylovene
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Dylovene
+          Quantity: 30
+
+# Hyronalin
+- type: entity
+  id: ChemistryBottleHyronalin
+  suffix: hyronalin
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-hyronalin
+  - type: SolutionContainerManager
+    solutions:
+      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
+        maxVol: 30
+        reagents:
+        - ReagentId: Hyronalin
+          Quantity: 30

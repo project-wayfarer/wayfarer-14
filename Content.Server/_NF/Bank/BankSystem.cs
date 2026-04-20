@@ -80,7 +80,7 @@ public sealed partial class BankSystem : SharedBankSystem
             return false;
         }
 
-        if (prefs.SelectedCharacter is not HumanoidCharacterProfile profile)
+        if (!TryGetCharacterProfile(bank, prefs, out var profile))
         {
             _log.Info($"TryBankWithdraw: {mobUid} has the wrong prefs type");
             return false;
@@ -128,7 +128,7 @@ public sealed partial class BankSystem : SharedBankSystem
             return false;
         }
 
-        if (prefs.SelectedCharacter is not HumanoidCharacterProfile profile)
+        if (!TryGetCharacterProfile(bank, prefs, out var profile))
         {
             _log.Info($"TryBankDeposit: {mobUid} has the wrong prefs type");
             return false;
@@ -238,7 +238,10 @@ public sealed partial class BankSystem : SharedBankSystem
             return false;
         }
 
-        if (prefs.SelectedCharacter is not HumanoidCharacterProfile profile)
+        // Prefer the stored character slot if available, so that after a
+        // cryosleep character swap the correct character's account is used.
+        TryComp<BankAccountComponent>(ent, out var bankComp);
+        if (!TryGetCharacterProfile(bankComp, prefs, out var profile))
         {
             _log.Info($"{ent} has the wrong prefs type");
             balance = 0;
@@ -276,12 +279,48 @@ public sealed partial class BankSystem : SharedBankSystem
     }
 
     /// <summary>
+    /// Returns the character profile for a bank account, preferring the stored CharacterSlot
+    /// over prefs.SelectedCharacter so that cryosleep character swaps work correctly.
+    /// </summary>
+    private bool TryGetCharacterProfile(
+        BankAccountComponent? bankComp,
+        PlayerPreferences prefs,
+        [NotNullWhen(true)] out HumanoidCharacterProfile? profile)
+    {
+        if (bankComp != null &&
+            bankComp.CharacterSlot >= 0 &&
+            prefs.Characters.TryGetValue(bankComp.CharacterSlot, out var slotProfile) &&
+            slotProfile is HumanoidCharacterProfile humanSlot)
+        {
+            profile = humanSlot;
+            return true;
+        }
+
+        if (prefs.SelectedCharacter is HumanoidCharacterProfile selected)
+        {
+            profile = selected;
+            return true;
+        }
+
+        profile = null;
+        return false;
+    }
+
+    /// <summary>
     /// Update the bank balance to the character's current account balance.
     /// </summary>
     private void UpdateBankBalance(EntityUid mobUid, BankAccountComponent comp)
     {
-        if (TryGetBalance(mobUid, out var balance))
-            comp.Balance = balance;
+        if (!_playerManager.TryGetSessionByEntity(mobUid, out var session) ||
+            !_prefsManager.TryGetCachedPreferences(session.UserId, out var prefs))
+        {
+            comp.Balance = 0;
+            Dirty(mobUid, comp);
+            return;
+        }
+
+        if (TryGetCharacterProfile(comp, prefs, out var profile))
+            comp.Balance = profile.BankBalance;
         else
             comp.Balance = 0;
 

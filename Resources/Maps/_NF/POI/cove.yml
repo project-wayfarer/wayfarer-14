@@ -9563,13 +9563,15 @@ entities:
     - type: Transform
       pos: -6.5,9.5
       parent: 1
-- proto: SpawnPointNFPirateFirstMate
-  entities:
-  - uid: 14
-    components:
-    - type: Transform
-      pos: -7.5,9.5
-      parent: 1
+#Start Wayfarer
+#- proto: SpawnPointNFPirateFirstMate
+#  entities:
+#  - uid: 14
+#    components:
+#    - type: Transform
+#      pos: -7.5,9.5
+#      parent: 1
+#End Wayfarer
 - proto: StairStageWood
   entities:
   - uid: 1599

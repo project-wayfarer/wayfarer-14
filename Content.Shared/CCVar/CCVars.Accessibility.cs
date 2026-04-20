@@ -19,11 +19,23 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> ReducedMotion =
         CVarDef.Create("accessibility.reduced_motion", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    ///     Disables the client-side visual reconcile smoothing effect used to soften sudden movement corrections.
+    /// </summary>
+    public static readonly CVarDef<bool> DisableVisualSmoothingEffect =
+        CVarDef.Create("accessibility.disable_visual_smoothing_effect", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
     public static readonly CVarDef<bool> ChatEnableColorName =
         CVarDef.Create("accessibility.enable_color_name",
             true,
             CVar.CLIENTONLY | CVar.ARCHIVE,
             "Toggles displaying names with individual colors.");
+
+    public static readonly CVarDef<bool> ChatEnableBodyColor =
+        CVarDef.Create("accessibility.enable_body_color",
+            true,
+            CVar.CLIENTONLY | CVar.ARCHIVE,
+            "Toggles displaying chat message bodies with the speaker's unique color.");
 
     /// <summary>
     ///     Screen shake intensity slider, controlling the intensity of the CameraRecoilSystem.

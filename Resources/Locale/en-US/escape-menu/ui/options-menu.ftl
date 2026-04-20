@@ -374,6 +374,7 @@ ui-options-accessability-header-visuals = Visuals
 ui-options-accessability-header-content = Content
 
 ui-options-enable-color-name = Add colors to character names
+ui-options-enable-body-color = Color chat message text by speaker
 ui-options-colorblind-friendly = Colorblind friendly mode
 ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-screen-shake-intensity = Screen shake intensity

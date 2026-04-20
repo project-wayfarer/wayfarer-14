@@ -1,0 +1,138 @@
+- type: loadoutGroup
+  id: WFBundles
+  name: loadout-group-wayfarer-bundles
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - WFBundleSalvage
+  - WFBundleSalvageLux
+  - WFBundleChef
+  - WFBundleJanitor
+  - WFBundleParamedic
+
+- type: loadout
+  id: WFBundleSalvage
+  name: salvager bundle
+  price: 20000
+  inhand:
+  - WFBundleSalvage
+
+- type: loadout
+  id: WFBundleSalvageLux
+  name: luxury salvager bundle
+  price: 50000
+  inhand:
+  - WFBundleSalvageLux
+
+- type: loadout
+  id: WFBundleChef
+  name: chef bundle
+  price: 10000
+  inhand:
+  - WFBundleChef
+
+- type: loadout
+  id: WFBundleJanitor
+  name: janitor bundle
+  price: 10000
+  inhand:
+  - WFBundleJanitor
+
+- type: loadout
+  id: WFBundleParamedic
+  name: paramedic bundle
+  price: 50000
+  inhand:
+  - WFBundleParamedic
+
+- type: entity
+  parent: NFClothingBackpackDuffelColorBrown
+  id: WFBundleSalvage
+  name: salvager bundle
+  description: "Contains a mining drill, advanced PKA, scanner, medkit, lantern and a beer."
+  components:
+  - type: StorageFill
+    contents:
+    - id: MiningDrill
+    - id: NFWeaponPkaCannon
+    - id: AdvancedMineralScannerUnpowered
+    - id: MedkitFilled
+    - id: Lantern
+    - id: DrinkBeerCan
+
+- type: entity
+  parent: ClothingBackpackDuffelSalvage
+  id: WFBundleSalvageLux
+  name: luxury salvager bundle
+  description: "Contains a energy pickaxe, scanner, medkit, lantern and a bottle of whiskey."
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFEnergyPickaxe
+    - id: AdvancedMineralScannerUnpowered
+    - id: PillCanisterTricordrazine
+    - id: MedkitAdvancedFilled
+    - id: Lantern
+    - id: DrinkWhiskeyBottleFull
+
+- type: entity
+  parent: NFClothingBackpackDuffelColorBrown
+  id: WFBundleChef
+  name: chef bundle
+  description: "Contains a cleaver, beakers, flour, enzyme, salt, pepper, milk and some meat."
+  components:
+  - type: StorageFill
+    contents:
+    - id: ButchCleaver
+    - id: BoxBeaker
+    - id: ReagentContainerFlour
+      amount: 2
+    - id: FoodCondimentBottleEnzyme
+    - id: ReagentContainerSalt
+    - id: ReagentContainerPepper
+    - id: DrinkMilkCarton
+    - id: FoodMeat
+      amount: 6
+
+- type: entity
+  parent: NFClothingBackpackDuffelJanitor
+  id: WFBundleJanitor
+  name: janitor bundle
+  description: "Contains 4 cleanades, a box of lights, a janicart, welding tools and some space clearer."
+  components:
+  - type: StorageFill
+    contents:
+    - id: CleanerGrenade
+      amount: 4
+    - id: BoxLightMixed
+    - id: JanicartFlatpack
+    - id: Welder
+    - id: ClothingEyesGlassesMeson
+    - id: SprayBottleSpaceCleaner
+      amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelTrauma
+  id: WFBundleParamedic
+  name: paramedic bundle
+  description: "Contains two medkits, gloves, a portable defib and various medicines."
+  components:
+  - type: StorageFill
+    contents:
+    - id: MedkitFilled
+      amount: 2
+    - id: ClothingHandsGlovesLatex
+    - id: ClothingMaskSterile
+    - id: ChemistryBottleEpinephrine
+      amount: 2
+    - id: ChemistryBottleDermaline
+      amount: 2
+    - id: ChemistryBottleBicaridine
+      amount: 2
+    - id: ChemistryBottleDylovene
+      amount: 2
+    - id: ChemistryBottleHyronalin
+      amount: 2
+    - id: Syringe
+      amount: 2
+    - id: DefibrillatorCompact

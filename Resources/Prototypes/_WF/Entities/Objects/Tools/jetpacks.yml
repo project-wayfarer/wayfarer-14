@@ -1,0 +1,35 @@
+#Empty BlackMarket
+- type: entity
+  id: JetpackBM
+  parent: [BaseJetpack]
+  name: black market jetpack
+  suffix: Empty
+  components:
+  - type: Item
+    sprite: _Goobstation/Objects/Tanks/contractorpack.rsi
+  - type: Sprite
+    sprite: _Goobstation/Objects/Tanks/contractorpack.rsi
+  - type: Clothing
+    sprite: _Goobstation/Objects/Tanks/contractorpack.rsi
+  - type: Tag
+    tags:
+    - DemagImmune
+  - type: Jetpack
+    radarBlip: false
+
+#Filled BlackMarket
+- type: entity
+  id: JetpackBMFilled
+  parent: JetpackBM
+  name: black market jetpack
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 13 minutes of thrust
+      volume: 5
+      temperature: 293.15
+      moles:
+      - 1.025689525 # oxygen
+      - 1.025689525 # nitrogen

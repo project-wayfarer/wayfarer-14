@@ -605,13 +605,13 @@
     listNumber: false
 
 - type: entity
-  name: contractor ID card # Frontier: passenger<contractor
-  parent: [IDCardStandard, BaseC3SyndicateContraband]
+  name: wayfarer ID card # WF Contractor to Wayfarer, Remove Contraband ( add back post contra rework )
+  parent: [IDCardStandard]
   id: AgentIDCard
   suffix: Agent
   components:
   - type: PresetIdCard
-    job: Contractor # Frontier: Passenger<Contractor
+    job: Wayfarer # WF
   - type: Access
     tags:
     - Maintenance
@@ -638,8 +638,6 @@
         type: AgentIDCardBoundUserInterface
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
-  - type: Contraband # Frontier
-    hideValues: true # Frontier
   - type: NanoChatCard # DeltaV
     listNumber: false
 
@@ -653,7 +651,7 @@
     tags:
     - Maintenance
     - SyndicateAgent
-    - NuclearOperative
+#    - NuclearOperative
 
 - type: entity
   parent: IDCardStandard
@@ -668,7 +666,7 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: [ BaseC3SyndicateContraband, IDCardStandard ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ IDCardStandard ] # WF Removed Contraband
   id: SyndicateIDCard
   name: syndicate ID card
   components:
@@ -677,13 +675,13 @@
     - state: syndie
   - type: Access
     tags:
-    - NuclearOperative
+#    - NuclearOperative
     - SyndicateAgent
   - type: NanoChatCard # DeltaV
     listNumber: false
 
 - type: entity
-  parent: [ BaseC3PirateContraband, IDCardStandard ] # Frontier: BaseMajorContraband<BaseC3PirateContraband
+  parent: [ IDCardStandard ] # WF Removed Contraband
   id: PirateIDCard
   name: pirate ID card
   categories: [ HideSpawnMenu ] # Frontier
@@ -693,7 +691,6 @@
     - state: pirate
   - type: Access
     tags:
-    - NuclearOperative
     - SyndicateAgent
   - type: NanoChatCard # DeltaV
     listNumber: false

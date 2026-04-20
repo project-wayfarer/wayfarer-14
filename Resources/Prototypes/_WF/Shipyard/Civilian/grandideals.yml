@@ -1,0 +1,34 @@
+- type: vessel
+  id: Grandideals
+  parent: BaseVessel
+  name: TGA Grand Ideals
+  description: A completely gutted Ambition designed for much more imaginative and creative uses, whilse still sporting the basic needs for salvaging. Pilots can easily adjust the innards of this skeleton ship into whatever purpose they'd need it to be.
+  price: 285000
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/grandideals.yml
+  guidebookPage:  ShipyardGrandideals
+  class:
+  - Civilian
+  - Engineering
+  - Medical
+  engine:
+  - AME
+
+- type: gameMap
+  id: Grandideals
+  mapName: 'TGA Grand Ideals'
+  mapPath: /Maps/_WF/Shuttles/Civilian/grandideals.yml
+  minPlayers: 0
+  stations:
+    Grandideals:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Grand Ideals Civ{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobTajaran
   sprites: MobTajaranSprites
-  markingLimits: MobTajaranMarkingLimits
+  markingLimits: MobHumanMarkingLimits #MobTajaranMarkingLimits WF
   dollPrototype: MobTajaranDummy
   skinColoration: Hues
   minHeight: 0.65
@@ -16,69 +16,22 @@
   maleFirstNames: names_tajaran_first
   femaleFirstNames: names_tajaran_first
   lastNames: names_tajaran_last
-  # CS - Integrate marking system
-  kind:
-  - BasicHumanlike
-  - BasicFurry
-  # CS - end
-
-- type: markingPoints
-  id: MobTajaranMarkingLimits
-  points:
-    Special:
-      points: 32 # WF
-      required: false
-    Head:
-      points: 32 # WF
-      required: false
-    HeadTop:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ TajaranEarsBasic ]
-    HeadSide:
-      points: 32 # WF
-      required: false
-    Snout:
-      points: 32 # WF
-      required: false
-    Hair:
-      points: 32 # WF
-      required: false
-    FacialHair:
-      points: 32 # WF
-      required: false
-    Chest:
-      points: 32 # WF
-      required: false
-    Legs:
-      points: 32 # WF
-      required: false
-    Arms:
-      points: 32 # WF
-      required: false
-    Tail:
-      points: 32 # WF
-      required: false
-      defaultMarkings: [ TajaranTailRetro ]
-    UndergarmentTop:
-      points: 32 # WF
-      required: false
-    UndergarmentBottom:
-      points: 32 # WF
-      required: false
-    Overlay:
-      points: 32 # WF
-      required: false
 
 - type: speciesBaseSprites
   id: MobTajaranSprites
   sprites:
+    Special: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobTajaranHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
     Chest: MobTajaranTorso
     Eyes: MobTajaranEyes
     LArm: MobTajaranLArm

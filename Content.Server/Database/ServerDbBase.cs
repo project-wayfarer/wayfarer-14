@@ -303,7 +303,9 @@ namespace Content.Server.Database
                 traits.ToHashSet(),
                 loadouts,
                 profile.HideFromPlayerlist // Wayfarer
-            );
+            )
+            .WithHeight(profile.Height) // Wayfarer
+            .WithWidth(profile.Width);  // Wayfarer
         }
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
@@ -333,6 +335,8 @@ namespace Content.Server.Database
             profile.SkinColor = appearance.SkinColor.ToHex();
             profile.SpawnPriority = (int) humanoid.SpawnPriority;
             profile.HideFromPlayerlist = humanoid.HideFromPlayerlist; // Wayfarer
+            profile.Height = humanoid.Height; // Wayfarer
+            profile.Width = humanoid.Width;   // Wayfarer
             profile.Markings = markings;
             profile.Slot = slot;
             profile.PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable;
@@ -2325,6 +2329,130 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
             db.DbContext.WayfarerSafetyDepositBox.Remove(box);
             await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        #endregion
+
+        #region Wayfarer Roleplay Leveling
+
+        public async Task<WayfarerRoleplayLevel> GetOrCreateRoleplayLevel(
+            Guid userId,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var existing = await db.DbContext.WayfarerRoleplayLevels
+                .FirstOrDefaultAsync(rl => rl.UserId == userId, cancel);
+
+            if (existing != null)
+                return existing;
+
+            // Create new roleplay level record
+            var newLevel = new WayfarerRoleplayLevel
+            {
+                UserId = userId,
+                Level = 1,
+                Experience = 0,
+                ExperienceToNextLevel = 100,
+                TotalCommends = 0,
+                CreatedAt = DateTime.UtcNow,
+                LastUpdated = DateTime.UtcNow
+            };
+
+            db.DbContext.WayfarerRoleplayLevels.Add(newLevel);
+            await db.DbContext.SaveChangesAsync(cancel);
+
+            return newLevel;
+        }
+
+        public async Task UpdateRoleplayLevel(
+            Guid userId,
+            int level,
+            long experience,
+            long experienceToNextLevel,
+            int totalCommends,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var roleplayLevel = await db.DbContext.WayfarerRoleplayLevels
+                .FirstOrDefaultAsync(rl => rl.UserId == userId, cancel);
+
+            if (roleplayLevel == null)
+            {
+                roleplayLevel = new WayfarerRoleplayLevel
+                {
+                    UserId = userId,
+                    CreatedAt = DateTime.UtcNow
+                };
+                db.DbContext.WayfarerRoleplayLevels.Add(roleplayLevel);
+            }
+
+            roleplayLevel.Level = level;
+            roleplayLevel.Experience = experience;
+            roleplayLevel.ExperienceToNextLevel = experienceToNextLevel;
+            roleplayLevel.TotalCommends = totalCommends;
+            roleplayLevel.LastUpdated = DateTime.UtcNow;
+
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task AddRoleplayCommend(
+            int roundId,
+            int recipientProfileId,
+            Guid recipientUserId,
+            int giverProfileId,
+            Guid giverUserId,
+            string? comment,
+            bool isPrivate,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var commend = new WayfarerRoleplayCommend
+            {
+                RoundId = roundId,
+                RecipientProfileId = recipientProfileId,
+                RecipientUserId = recipientUserId,
+                GiverProfileId = giverProfileId,
+                GiverUserId = giverUserId,
+                Comment = comment,
+                IsPrivate = isPrivate,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            db.DbContext.WayfarerRoleplayCommends.Add(commend);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(
+            Guid userId,
+            bool includePrivate = false,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var query = db.DbContext.WayfarerRoleplayCommends
+                .Where(c => c.RecipientUserId == userId);
+
+            if (!includePrivate)
+                query = query.Where(c => !c.IsPrivate);
+
+            return await query
+                .OrderByDescending(c => c.CreatedAt)
+                .ToListAsync(cancel);
+        }
+
+        public async Task<int> GetRoundCommendsGivenByPlayer(
+            Guid giverUserId,
+            int roundId,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            return await db.DbContext.WayfarerRoleplayCommends
+                .Where(c => c.GiverUserId == giverUserId && c.RoundId == roundId)
+                .CountAsync(cancel);
         }
 
         #endregion

@@ -12,9 +12,90 @@
   hideEffects:
   - !type:GroupLoadoutEffect
     proto: NFCoatCapable
-  price: 1300
+  price: 8000
   equipment:
     outerClothing: ClothingOuterHardsuitVoidParamed
+
+- type: loadout
+  id: ClothingOuterHardsuitPrivateSecurity
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterHardsuitPrivateSecurity
+
+- type: loadout
+  id: ClothingOuterHardsuitMercenary
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterHardsuitMercenary
+
+- type: loadout
+  id: ClothingOuterHardsuitTacticalMaid
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterHardsuitTacticalMaid
+
+- type: loadout
+  id: ClothingOuterEVASuitFsc
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 10000
+  equipment:
+    outerClothing: ClothingOuterEVASuitFsc
+
+- type: loadout
+  id: ClothingOuterEVASuitFsb
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 10000
+  equipment:
+    outerClothing: ClothingOuterEVASuitFsb
+
+- type: loadout
+  id: ClothingOuterEVASuitFsa
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterEVASuitFsa
+
+- type: loadout
+  id: ClothingOuterHardsuitSalvage
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 10000
+  equipment:
+    outerClothing: ClothingOuterHardsuitSalvage
+
+- type: loadout
+  id: ClothingOuterHardsuitLuxury
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 20000
+  equipment:
+    outerClothing: ClothingOuterHardsuitLuxury
+
+- type: loadout
+  id: ClothingOuterHardsuitDeathsquad
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 100000000
+  equipment:
+    outerClothing: ClothingOuterHardsuitDeathsquad
 
 - type: loadout
   id: WFClothingOuterHoodieGrey

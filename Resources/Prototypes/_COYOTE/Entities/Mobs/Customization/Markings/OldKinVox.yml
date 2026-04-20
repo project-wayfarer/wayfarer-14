@@ -3,7 +3,7 @@
   bodyPart: LArm
   markingCategory: Arms
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: arm_markings_left
@@ -13,7 +13,7 @@
   bodyPart: RArm
   markingCategory: Arms
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: arm_markings_right
@@ -23,7 +23,7 @@
   bodyPart: Snout
   markingCategory: Head
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: beak
@@ -38,7 +38,7 @@
   bodyPart: LFoot
   markingCategory: Legs
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   colorLinks:
     claws_feet_left_behind: claws_feet_left
   layering:
@@ -60,7 +60,7 @@
   bodyPart: RFoot
   markingCategory: Legs
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   colorLinks:
     claws_feet_right_behind: claws_feet_right
   layering:
@@ -82,7 +82,7 @@
   bodyPart: LHand
   markingCategory: Arms
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_hands_left
@@ -97,7 +97,7 @@
   bodyPart: RHand
   markingCategory: Arms
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_hands_right
@@ -112,7 +112,7 @@
   bodyPart: Snout #Loathesome Dungeater!
   markingCategory: Head
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: crest
@@ -127,7 +127,7 @@
   bodyPart: Head
   markingCategory: Head
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: neck_markings
@@ -137,7 +137,7 @@
   bodyPart: LHand #Why? Because it's technically on the hand.
   markingCategory: Arms
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_arms_left
@@ -152,7 +152,7 @@
   bodyPart: RHand #Why? Because it's technically on the hand.
   markingCategory: Arms
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   sprites:
     - sprite: _COYOTE/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_arms_right
@@ -167,7 +167,7 @@
   bodyPart: LFoot #as Above, so Below
   markingCategory: Legs
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   colorLinks:
     scutes_legs_left: scutes_foot_left
   layering:
@@ -192,7 +192,7 @@
   bodyPart: RFoot #as Above, so Below
   markingCategory: Legs
   canBeDisplaced: false
-  speciesRestriction: [OldKinVox]
+  #speciesRestriction: [OldKinVox]
   colorLinks:
     scutes_legs_right: scutes_foot_right
   layering:

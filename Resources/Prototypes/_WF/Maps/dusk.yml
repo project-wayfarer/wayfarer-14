@@ -10,6 +10,8 @@
     Dusk:
       stationProto: StandardFrontierStation
       gridComponents:
+      - type: VesselMusic
+        ambientMusicPrototype: ColossusCentralMusic
       - type: VesselInfo # WF
         description: "From the Dusk begins a new dawn."
       components:

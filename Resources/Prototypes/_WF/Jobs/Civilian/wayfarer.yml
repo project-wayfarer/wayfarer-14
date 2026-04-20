@@ -12,6 +12,9 @@
   accessGroups:
   - GeneralAccess
   special:
+  - !type:AddComponentSpecial
+    components:
+    - type: PreventShipyardTitleOverwrite
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
@@ -96,4 +99,8 @@
   - WFImplanter
   - WFBackpackItems
   - WFHandItems
+  - WFBundles
   - NFSpeciesSpecific
+  - WFSidearm
+  - WFLongarm
+  - WFAmmo

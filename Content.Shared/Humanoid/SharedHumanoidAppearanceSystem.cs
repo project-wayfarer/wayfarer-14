@@ -558,6 +558,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.CustomSpecieName = profile.Customspeciesname;
 
+        // Wayfarer: apply base height/width from character customization
+        // SetHeight/SetWidth clamp to species limits; store as base values so
+        // temporary modifiers (e.g. SizeManipulator gun) can scale relative to them.
+        SetHeight((uid, humanoid), profile.Height, sync: false);
+        SetWidth((uid, humanoid), profile.Width, sync: false);
+        humanoid.BaseHeight = humanoid.Height;
+        humanoid.BaseWidth = humanoid.Width;
+        // End Wayfarer
+
         Dirty(uid, humanoid);
     }
 
@@ -623,6 +632,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var markingObject = new Marking(marking, colors);
         markingObject.Forced = forced;
         humanoid.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
+
+        // Automatically hide Genital markings by default (like undergarments)
+        if (prototype.MarkingCategory == MarkingCategories.Genital)
+        {
+            humanoid.HiddenMarkings.Add(marking);
+        }
 
         if (sync)
             Dirty(uid, humanoid);

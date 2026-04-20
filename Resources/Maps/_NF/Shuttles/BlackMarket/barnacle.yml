@@ -2089,13 +2089,15 @@ entities:
     - type: Transform
       pos: 0.5,-4.5
       parent: 1
-- proto: SpawnPointNFPirateFirstMate
-  entities:
-  - uid: 230
-    components:
-    - type: Transform
-      pos: -0.5,-4.5
-      parent: 1
+#Start Wayfarer
+#- proto: SpawnPointNFPirateFirstMate
+#  entities:
+#  - uid: 230
+#    components:
+#    - type: Transform
+#      pos: -0.5,-4.5
+#      parent: 1
+#End Wayfarer
 - proto: SubstationBasic
   entities:
   - uid: 231

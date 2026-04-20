@@ -325,6 +325,26 @@
     maxFillLevels: 2
     fillBaseName: packet-solid-
 
+# Wayfarer - Honey
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketHoney
+  name: honey
+  description: Great for sweetening up your day!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Honey
+          Quantity: 10
+  - type: Icon
+    state: packet-honey
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
 # Bottles
 
 - type: entity

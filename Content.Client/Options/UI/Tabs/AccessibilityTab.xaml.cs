@@ -13,8 +13,10 @@ public sealed partial class AccessibilityTab : Control
         RobustXamlLoader.Load(this);
 
         Control.AddOptionCheckBox(CCVars.ChatEnableColorName, EnableColorNameCheckBox);
+        Control.AddOptionCheckBox(CCVars.ChatEnableBodyColor, EnableBodyColorCheckBox);
         Control.AddOptionCheckBox(CCVars.AccessibilityColorblindFriendly, ColorblindFriendlyCheckBox);
         Control.AddOptionCheckBox(CCVars.ReducedMotion, ReducedMotionCheckBox);
+        Control.AddOptionCheckBox(CCVars.DisableVisualSmoothingEffect, DisableVisualSmoothingEffectCheckBox);
         Control.AddOptionPercentSlider(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider);
         Control.AddOptionPercentSlider(CCVars.ChatWindowOpacity, ChatWindowOpacitySlider);
         Control.AddOptionPercentSlider(CCVars.SpeechBubbleTextOpacity, SpeechBubbleTextOpacitySlider);

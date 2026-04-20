@@ -80,6 +80,8 @@
         10
       NavSmash: !type:Bool
         true
+      MeleeRange: !type:Single # WF
+        1.5
   - type: NPCUseActionOnTarget
     actionId: ActionGoliathTentacle
   - type: Tag
@@ -237,7 +239,7 @@
     - SimpleHostile
   - type: HTN
     rootTask:
-      task: SimpleRangedHostileCompound
+      task: N14RangedCombatCompound # WF - Use N14 
     blackboard:
       VisionRadius: !type:Single
         4
@@ -245,6 +247,8 @@
         9
       NavSmash: !type:Bool
         true
+      MeleeRange: !type:Single # WF
+        1.5
   - type: Butcherable
     spawned:
     - id: FoodHivelordRemains
@@ -291,7 +295,7 @@
     - SimpleHostile
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: N14HostileCompound # WF - Use new N14HostileCompoint preset
     blackboard: # highly aggressive
       VisionRadius: !type:Single
         15
@@ -299,6 +303,8 @@
         15
       NavSmash: !type:Bool
         true
+      MeleeRange: !type:Single # WF
+        1.5
   - type: TimedDespawn
     lifetime: 100
 
@@ -417,6 +423,8 @@
         12
       NavSmash: !type:Bool
         true
+      MeleeRange: !type:Single
+        1.5
   - type: Reflect
     reflectProb: 1
     reflects:

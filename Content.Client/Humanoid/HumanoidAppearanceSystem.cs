@@ -256,6 +256,12 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
+        // Wayfarer: apply base height/width so UpdateSprite scales the preview correctly
+        humanoid.Height = profile.Height;
+        humanoid.Width = profile.Width;
+        humanoid.BaseHeight = profile.Height;
+        humanoid.BaseWidth = profile.Width;
+        // End Wayfarer
 
         UpdateSprite((uid, humanoid, Comp<SpriteComponent>(uid)));
     }

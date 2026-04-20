@@ -15,6 +15,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Construction.EntitySystems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.Labels.EntitySystems;
 using Robust.Shared.EntitySerialization.Systems;
@@ -39,6 +40,7 @@ namespace Content.Server.Salvage
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+        [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         [Dependency] private readonly ShuttleSystem _shuttle = default!;
         [Dependency] private readonly ShuttleConsoleSystem _shuttleConsoles = default!;
         [Dependency] private readonly StationSystem _station = default!;

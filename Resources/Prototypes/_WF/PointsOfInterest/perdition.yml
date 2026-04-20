@@ -1,0 +1,50 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+- type: pointOfInterest
+  id: Perdition
+  parent: BasePOI
+  name: Perdition
+  minimumDistance: 10000
+  maximumDistance: 15000
+  spawnGamePreset: [ NFPirate ]
+  spawnGroup: Required
+  gridPath: /Maps/_WF/POI/perdition.yml
+  hideWarp: true
+  addComponents:
+  - type: IFF
+    color: "#C83737"
+    flags: [HideLabel, Hide]
+    readOnly: false
+
+- type: gameMap
+  id: Perdition
+  mapName: 'Perdition'
+  mapPath: /Maps/_WF/POI/perdition.yml
+  minPlayers: 0
+  stations:
+    Perdition:
+      stationProto: RecordsFrontierOutpost
+      gridComponents:
+      - type: VesselInfo
+        description: "An abandoned mining outpost turned refuge for the exiled."
+      - type: VesselMusic
+        ambientMusicPrototype: CamelotMusic
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Perdition'
+        - type: ExtraStationInformation
+          iconPath: /Textures/_NF/Interface/Pirate/piratelogo.png
+          stationSubtext: 'frontier-lobby-pirate-subtext'
+          stationDescription: 'frontier-lobby-pirate-description'
+          lobbySortOrder: 6
+        - type: StationJobs
+          availableJobs:
+            NFPirateCaptain: [ 1, 1 ]
+            NFPirate: [ 2, 4 ]
+        - type: StationDeadDropReporting
+          messageSet: Pirate
+        - type: StationDeadDropHintExempt
+        - type: TradeCrateWildcardDestination
+        - type: BindToStationVariationPassExemption
