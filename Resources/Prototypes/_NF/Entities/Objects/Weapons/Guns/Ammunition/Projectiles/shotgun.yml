@@ -19,7 +19,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6
+        Piercing: 6 #Wayfarer 5 -> 6
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -30,8 +30,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 1.8
-        Heat: 2.2
+        Blunt: 1.8 #Wayfarer -> 2.4 -> 1.8
+        Heat: 2.2 #Wayfarer 1.6 -> 2.2
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -53,9 +53,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2.5
+        Blunt: 2.5 #Wayfarer
         Piercing: 3.5
-        Radiation: 1.5
+        Radiation: 1.5 #Wayfarer 3.5 -> 1.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -106,8 +106,8 @@
   abstract: true
   components:
   - type: ProjectileSpread
-    count: 11 # 12 total, includes the spread as a bullet
-    spread: 8.5
+    count: 11 # 12 total, includes the spread as a bullet ##Wayfarer 9 -> 11
+    spread: 8.5 #Wayfarer 10.5 -> 8.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
