@@ -60,6 +60,8 @@ public sealed class CommunityGoalsEui : BaseEui
     private async Task RefreshAsync()
     {
         var goals = await _db.GetAllCommunityGoals();
+        if (IsShutDown)
+            return;
         _cachedGoals = goals.Select(ToData).ToList();
         StateDirty();
     }
