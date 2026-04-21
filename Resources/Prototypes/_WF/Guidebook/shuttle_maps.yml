@@ -151,7 +151,18 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: medivac
-
+    
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapMender
+  name: "Mender"
+  description: "Detailed map of a Mender shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: mender
+    
 - type: entity
   parent: PosterBase
   id: ShuttleMapMjolnir

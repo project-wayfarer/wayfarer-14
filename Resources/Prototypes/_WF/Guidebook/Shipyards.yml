@@ -104,6 +104,7 @@
   - ShipyardEagle # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardHammerhead
   - ShipyardMedivac
+  - ShipyardMender
   - ShipyardSearchlight # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardSpirit # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardStasis # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
@@ -211,6 +212,11 @@
   name: guide-entry-shipyard-medivac
   text: "/ServerInfo/_WF/Guidebook/Shipyard/MedShipyard/Medivac.xml"
 
+- type: guideEntry
+  id: ShipyardMender
+  name: guide-entry-shipyard-mender
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/MedShipyard/Mender.xml"
+  
 - type: guideEntry
   id: ShipyardMjolnir
   name: guide-entry-shipyard-mjolnir

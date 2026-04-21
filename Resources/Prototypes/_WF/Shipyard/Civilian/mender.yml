@@ -1,0 +1,44 @@
+# Author Info
+# GitHub: RefertomeasMatt
+# Discord: refertomeasmatt
+
+# Maintainer Info
+# GitHub: RefertomeasMatt
+# Discord: refertomeasmatt
+
+# Shuttle Notes:
+#
+- type: vessel  
+  id: Mender
+  parent: BaseVessel  
+  name: LVHI Mender
+  description: An older cargo hauler mader by LVHI, which had far outlived it's usefulness as a commerce ship, but now lives again as an affordable medical ship which also retains some storage capacity.
+  price: 79720 # (322 *50 + 38880 ) * 1.(15*3) (Medical + Support + Chemistry)
+  category: Medium
+  group: Medical
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/mender.yml
+  guidebookPage: ShipyardMender
+  class:
+  - Medical
+  - Chemistry
+  - Cargo
+  engine:  
+  - Uranium
+
+- type: gameMap
+  id: Mender
+  mapName: 'LVHI Mender'
+  mapPath: /Maps/_WF/Shuttles/Civilian/mender.yml
+  minPlayers: 0  
+  stations:  
+    Mender:
+      stationProto: StandardFrontierVessel
+      components:  
+      - type: StationNameSetup  
+        mapNameTemplate: 'Mender MED{1}'  
+        nameGenerator:  
+          !type:NanotrasenNameGenerator  
+          prefixCreator: '14'  
+      - type: StationJobs  
+        availableJobs:  
+          WayfarerInterview: [ 0, 0 ]
