@@ -112,6 +112,10 @@ public sealed class AutopilotSystem : EntitySystem
                 shuttle.DampingModifier = ShuttleSystem.AnchorDampingStrength;
                 shuttle.EBrakeActive = false;
 
+                // Re-enable physics sleep (EnableAutopilot disabled it) so the parked
+                // shuttle can sleep and leave movedGrids, reducing HandleGridCollisions work.
+                _physics.SetSleepingAllowed(uid, physics, true);
+
                 // Refresh shuttle consoles so pilots see the mode change to "Park"
                 _console.RefreshShuttleConsoles(uid);
 
@@ -734,6 +738,12 @@ public sealed class AutopilotSystem : EntitySystem
         autopilot.Enabled = false;
         autopilot.TargetCoordinates = null;
         SendShuttleMessage(shuttleUid, "Autopilot: Disabled");
+
+        // Re-enable physics sleep so a stationary shuttle can sleep and exit movedGrids.
+        // EnableAutopilot sets SleepingAllowed=false to ensure the body stays awake while
+        // navigating; we must undo that here or the shuttle stays permanently awake.
+        if (TryComp<PhysicsComponent>(shuttleUid, out var physics))
+            _physics.SetSleepingAllowed(shuttleUid, physics, true);
     }
 
     /// <summary>
