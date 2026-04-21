@@ -183,8 +183,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 32.5
-        Blunt: 6
+        Piercing: 32.5 #Wayfarer 30 -> 32.5
+        Blunt: 6 #Wayfarer 5 -> 6
 
 - type: entity
   categories: [ HideSpawnMenu ]
