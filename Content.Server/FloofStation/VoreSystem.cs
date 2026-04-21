@@ -189,8 +189,8 @@ public sealed class VoreSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (_food.IsMouthBlocked(uid, uid))
-            return;
+        // if (_food.IsMouthBlocked(uid, uid))
+        //     return;
 
         _popups.PopupEntity(Loc.GetString("vore-attempt-devour", ("entity", uid), ("prey", target)), uid, PopupType.LargeCaution);
 

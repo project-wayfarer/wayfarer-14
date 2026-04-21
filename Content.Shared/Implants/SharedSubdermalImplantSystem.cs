@@ -5,6 +5,9 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Linq;
+using Content.Shared.Interaction;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Mobs;
 using Content.Shared.Verbs;
 
 namespace Content.Shared.Implants;
@@ -25,9 +28,9 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
         SubscribeLocalEvent<SubdermalImplantComponent, ContainerGettingRemovedAttemptEvent>(OnRemoveAttempt);
         SubscribeLocalEvent<SubdermalImplantComponent, EntGotRemovedFromContainerMessage>(OnRemove);
 
-        SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
-        SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
-        SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
+        // SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
+        // SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
+        // SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
     }
 
     private void OnInsert(Entity<SubdermalImplantComponent> ent, ref EntGotInsertedIntoContainerMessage args)
@@ -112,7 +115,8 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
         }
         else
         {
-            Log.Warning($"Tried to inject implant '{implantId}' without SubdermalImplantComponent into {ToPrettyString(target):implanted}");
+            Log.Warning(
+                $"Tried to inject implant '{implantId}' without SubdermalImplantComponent into {ToPrettyString(target):implanted}");
             Del(implant);
             return null;
         }
@@ -160,16 +164,9 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
     {
         if (!Resolve(target, ref target.Comp, false))
             return;
-
-        var relayEv = new ImplantRelayEvent<T>(args);
-        foreach (var implant in implantContainer.ContainedEntities)
-        {
-            if (args is HandledEntityEventArgs { Handled : true })
-                return;
-
-        _container.CleanContainer(target.Comp.ImplantContainer);
+            _container.CleanContainer(target.Comp.ImplantContainer);
+        }
     }
-}
 
 /// <summary>
 /// Event that is raised whenever someone is implanted with any given implant.

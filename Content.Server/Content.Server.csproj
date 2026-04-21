@@ -83,6 +83,7 @@
     <Folder Include="Warps\" />
     <Folder Include="_NF\Explosion\EntitySystems\" />
     <Folder Include="_NF\Medical\SuitSensors\" />
+    <Folder Include="_WF\DeviceLinking\" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>

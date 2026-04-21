@@ -174,7 +174,6 @@ public partial class ChatSystem
     /// <param name="uid"></param>
     /// <param name="textInput"></param>
     /// <returns>True if the chat message should be displayed (because the emote was explicitly cancelled), false if it should not be.</returns>
-    private bool TryEmoteChatInput(EntityUid uid, string textInput)
     private bool TryEmoteChatInput(EntityUid uid, string textInput, out bool eventInvoked) // Frontier: add eventInvoked
     {
         eventInvoked = false; // Frontier: track whether event was invoked
@@ -310,18 +309,18 @@ public sealed class EmoteEvent : HandledEntityEventArgs
     }
 }
 
-// Frontier: custom emote event
-/// <summary>
-///     Raised on an entity when it sends a custom emote (one with a message but no sound).
-///     Handled by holopads.
-/// </summary>
-public sealed class NFEntityEmotedEvent : EntityEventArgs
-{
-    public readonly string Emote;
-
-    public NFEntityEmotedEvent(string emote)
-    {
-        Emote = emote;
-    }
-}
-// End Frontier
+// // Frontier: custom emote event
+// /// <summary>
+// ///     Raised on an entity when it sends a custom emote (one with a message but no sound).
+// ///     Handled by holopads.
+// /// </summary>
+// public sealed class NFEntityEmotedEvent : EntityEventArgs
+// {
+//     public readonly string Emote;
+//
+//     public NFEntityEmotedEvent(string emote)
+//     {
+//         Emote = emote;
+//     }
+// }
+// // End Frontier
