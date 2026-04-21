@@ -195,9 +195,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 9
+        Blunt: 9 #Wayfarer 10 -> 9
   - type: StaminaDamageOnCollide
-    damage: 25 # 5 hits to stun WF reduction stamina rebalance
+    damage: 25 # 5 hits to stun WF reduction stamina rebalance ##Wayfarer 24 -> 25
 
 - type: entity
   categories: [ HideSpawnMenu ]
