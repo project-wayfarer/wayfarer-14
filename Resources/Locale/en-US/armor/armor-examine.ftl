@@ -2,8 +2,11 @@
 armor-examinable-verb-text = Armor
 armor-examinable-verb-message = Examine the armor values.
 armor-examine = It provides the following protection:
+armor-examine-compare = It provides the following protection (vs. equipped):
 armor-coefficient-value = - [color=yellow]{$type}[/color] damage reduced by [color=lightblue]{$value}%[/color].
+armor-coefficient-value-compare = - [color=yellow]{$type}[/color] damage reduced by [color=lightblue]{$value}%[/color] [color={$deltaColor}]({$delta}%)[/color].
 armor-reduction-value = - [color=yellow]{$type}[/color] damage reduced by [color=lightblue]{$value}[/color].
+armor-reduction-value-compare = - [color=yellow]{$type}[/color] damage reduced by [color=lightblue]{$value}[/color] [color={$deltaColor}]({$delta})[/color].
 armor-damage-type-blunt = Blunt
 armor-damage-type-slash = Slash
 armor-damage-type-piercing = Piercing

@@ -22,6 +22,17 @@
 
 - type: entity
   parent: PosterBase
+  id: ShuttleMapDowntownsuperstar
+  name: "Downtown Superstar"
+  description: "Detailed map of a Downstown Superstar shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: downtownsuperstar
+
+- type: entity
+  parent: PosterBase
   id: ShuttleMapHeater
   name: "Heater"
   description: "Detailed map of a Heater shuttle."
@@ -30,7 +41,7 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: heater
-    
+
 - type: entity
   parent: PosterBase
   id: ShuttleMapIcarus
