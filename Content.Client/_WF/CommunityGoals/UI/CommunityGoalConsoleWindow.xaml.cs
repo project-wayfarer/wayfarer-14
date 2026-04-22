@@ -28,6 +28,14 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
         ClearButton.OnPressed += _ => OnClearStaging?.Invoke();
     }
 
+    protected override DragMode GetDragModeFor(Vector2 relativeMousePos)
+    {
+        // Only allow moving the window by dragging the title bar (above the contents area).
+        if (relativeMousePos.Y < ContentsContainer.Position.Y)
+            return DragMode.Move;
+        return DragMode.None;
+    }
+
     public void UpdateState(CommunityGoalConsoleState state)
     {
         // ── Staging area ──────────────────────────────────────────────────────
@@ -123,11 +131,12 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
             FontColorOverride = Color.FromHex("#aaffaa"),
         });
 
-        root.AddChild(new Label
+        root.AddChild(new RichTextLabel
         {
             Text = goal.Description,
+            HorizontalExpand = true,
+            MaxWidth = 440f,
             Margin = new Thickness(8, 0, 0, 4),
-            FontColorOverride = Color.FromHex("#cccccc"),
         });
 
         foreach (var req in goal.Requirements)

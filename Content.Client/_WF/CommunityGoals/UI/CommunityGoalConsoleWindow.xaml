@@ -1,33 +1,60 @@
 <controls:FancyWindow
         xmlns="https://spacestation14.io"
         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-        Title="Community Goals Terminal" MinSize="620 540">
-    <BoxContainer Orientation="Vertical">
+        xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+        Title="Community Goals Terminal" MinSize="700 480" SetSize="820 540">
+    <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="0">
 
-        <!-- Staging area header -->
-        <BoxContainer Orientation="Horizontal" Margin="8 6 8 2">
-            <Label Text="Staging Area" FontColorOverride="#ddddaa" Margin="0 0 8 0" VerticalAlignment="Center"/>
-            <Label Name="StagingCount" Text="0 items" FontColorOverride="#888888" HorizontalExpand="True" VerticalAlignment="Center"/>
-            <Button Name="CommitButton" Text="Contribute All" MinWidth="120" Margin="4 0" Disabled="True"/>
-            <Button Name="ClearButton" Text="Return Items" MinWidth="100" Disabled="True"/>
+        <!-- ═══ Left column: Goals ═══ -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="True"
+                      SetWidth="480" SeparationOverride="4" Margin="0 0 4 0">
+            <Label Text="Community Goals" FontColorOverride="#aaffaa"
+                   HorizontalAlignment="Center" Margin="6 6 6 2"/>
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                </PanelContainer.PanelOverride>
+                <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                    <BoxContainer Name="GoalsList" Orientation="Vertical"
+                                  HorizontalExpand="True" Margin="6 4"/>
+                </ScrollContainer>
+            </PanelContainer>
         </BoxContainer>
 
-        <!-- Instruction hint -->
-        <Label Name="HintLabel" Text="Use items on this terminal to stage them for contribution."
-               FontColorOverride="#666666" Margin="10 0 8 2"/>
+        <!-- Divider -->
+        <PanelContainer MinWidth="2">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#444444"/>
+            </PanelContainer.PanelOverride>
+        </PanelContainer>
 
-        <!-- Staged items list (scrollable, capped height) -->
-        <ScrollContainer MinHeight="60" MaxHeight="180" Margin="6 0 6 4">
-            <BoxContainer Name="StagingList" Orientation="Vertical" Margin="2"/>
-        </ScrollContainer>
-
-        <PanelContainer StyleClasses="LowDivider" Margin="6 0 6 4"/>
-
-        <!-- Goals list -->
-        <Label Text="Active Goals" FontColorOverride="#aaffaa" Margin="8 2"/>
-        <ScrollContainer VerticalExpand="True">
-            <BoxContainer Name="GoalsList" Orientation="Vertical" Margin="6"/>
-        </ScrollContainer>
+        <!-- ═══ Right column: Staging ═══ -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True"
+                      SizeFlagsStretchRatio="2" SeparationOverride="4" Margin="4 0 0 0">
+            <Label Text="Staging Area" FontColorOverride="#ddddaa"
+                   HorizontalAlignment="Center" Margin="6 6 6 2"/>
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                    <Label Name="HintLabel"
+                           Text="Use items on this terminal to stage them for contribution."
+                           FontColorOverride="#555555" HorizontalAlignment="Center"
+                           Margin="6 10 6 4"/>
+                    <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                        <BoxContainer Name="StagingList" Orientation="Vertical"
+                                      HorizontalExpand="True" Margin="4 2"/>
+                    </ScrollContainer>
+                </BoxContainer>
+            </PanelContainer>
+            <Label Name="StagingCount" Text="Nothing staged" FontColorOverride="#888888"
+                   HorizontalAlignment="Center" Margin="4 4 4 2"/>
+            <Button Name="CommitButton" Text="Contribute All"
+                    HorizontalExpand="True" Disabled="True" Margin="6 0"/>
+            <Button Name="ClearButton" Text="Return Items"
+                    HorizontalExpand="True" Disabled="True" Margin="6 4"/>
+        </BoxContainer>
 
     </BoxContainer>
 </controls:FancyWindow>

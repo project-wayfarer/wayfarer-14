@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Database;
+using Content.Server.Research.Disk;
 using Content.Server.GameTicking;
 using Content.Server._NF.RoundNotifications.Events;
 using Content.Shared._WF.CommunityGoals;
@@ -110,20 +111,38 @@ public sealed class CommunityGoalsSystem : EntitySystem
     /// Returns true if an item with <paramref name="itemProtoId"/> (and optional
     /// <paramref name="itemStackTypeId"/>) satisfies a requirement defined as
     /// <paramref name="reqProtoId"/>.
-    /// Matches by exact prototype ID OR by shared stack type (so SheetSteel10
-    /// satisfies a SheetSteel requirement, because both have stackType Steel).
+    /// Matches by exact prototype ID, shared stack type (so SheetSteel10
+    /// satisfies a SheetSteel requirement), or shared research-disk category
+    /// (any ResearchDisk variant satisfies a ResearchDisk requirement).
     /// </summary>
     public bool MatchesRequirement(string itemProtoId, string? itemStackTypeId, string reqProtoId)
     {
         if (itemProtoId.Equals(reqProtoId, StringComparison.OrdinalIgnoreCase))
             return true;
 
-        if (itemStackTypeId == null)
-            return false;
+        // Stack-type matching (e.g. SheetSteel10 matches a SheetSteel requirement)
+        if (itemStackTypeId != null)
+        {
+            var reqStackType = GetProtoStackTypeId(reqProtoId);
+            if (reqStackType != null && reqStackType.Equals(itemStackTypeId, StringComparison.OrdinalIgnoreCase))
+                return true;
+        }
 
-        var reqStackType = GetProtoStackTypeId(reqProtoId);
-        return reqStackType != null &&
-               reqStackType.Equals(itemStackTypeId, StringComparison.OrdinalIgnoreCase);
+        // Research-disk matching: any ResearchDisk variant matches any other ResearchDisk requirement
+        if (IsResearchDiskProto(itemProtoId) && IsResearchDiskProto(reqProtoId))
+            return true;
+
+        return false;
+    }
+
+    /// <summary>
+    /// Returns true if the given entity prototype has a <c>ResearchDiskComponent</c>.
+    /// </summary>
+    public bool IsResearchDiskProto(string protoId)
+    {
+        if (!_protoManager.TryIndex<EntityPrototype>(protoId, out var proto))
+            return false;
+        return proto.TryGetComponent<ResearchDiskComponent>(out _);
     }
 
     /// <summary>

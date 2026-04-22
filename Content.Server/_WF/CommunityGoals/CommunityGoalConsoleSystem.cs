@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
+using Content.Server.Research.Disk;
 using Content.Shared._WF.CommunityGoals;
 using Content.Shared._WF.CommunityGoals.BUI;
 using Content.Shared._WF.CommunityGoals.Components;
@@ -119,7 +120,7 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
             return;
         }
 
-        long amount = TryComp<StackComponent>(item, out var stack) ? stack.Count : 1;
+        long amount = GetItemAmount(item);
         _audio.PlayPvs(comp.InsertSound, uid);
         _popup.PopupEntity(
             Loc.GetString("community-goal-console-item-staged", ("amount", amount), ("item", Name(item))),
@@ -156,8 +157,8 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
             if (protoId == null)
                 continue;
 
-            long amount = TryComp<StackComponent>(ent, out var stack) ? stack.Count : 1;
-            var itemStackType = stack?.StackTypeId;
+            long amount = GetItemAmount(ent);
+            var itemStackType = TryComp<StackComponent>(ent, out var stackComp) ? stackComp.StackTypeId : null;
 
             // Find the requirement proto this item maps to (for canonical recording).
             var reqProtoId = _goals.ActiveGoals
@@ -247,7 +248,7 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
             if (!_goals.MatchesRequirement(protoId, itemStackType, targetReq.EntityPrototypeId))
                 continue;
 
-            long amount = TryComp<StackComponent>(ent, out var stack) ? stack.Count : 1;
+            long amount = GetItemAmount(ent);
             toConsume.Add(ent);
             totalAmount += amount;
             itemName = Name(ent);
@@ -280,6 +281,20 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
     }
 
     /// <summary>
+    /// Returns the contribution amount for a staged entity.
+    /// Research disks contribute their <c>Points</c> value;
+    /// stacks contribute their count; everything else contributes 1.
+    /// </summary>
+    private long GetItemAmount(EntityUid ent)
+    {
+        if (TryComp<ResearchDiskComponent>(ent, out var disk))
+            return disk.Points;
+        if (TryComp<StackComponent>(ent, out var stack))
+            return stack.Count;
+        return 1;
+    }
+
+    /// <summary>
     /// Ejects all staged items back to the floor around the console.
     /// </summary>
     private void OnClearStaging(EntityUid uid, CommunityGoalConsoleComponent comp, CommunityGoalClearStagingMessage args)
@@ -306,8 +321,8 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
                 if (protoId == null)
                     continue;
 
-                long amount = TryComp<StackComponent>(ent, out var stack) ? stack.Count : 1;
-                var itemStackType = stack?.StackTypeId;
+                long amount = GetItemAmount(ent);
+                var itemStackType = TryComp<StackComponent>(ent, out var stackComp) ? stackComp.StackTypeId : null;
                 var display = Name(ent);
 
                 // Normalize to requirement proto so variants (SheetSteel10 etc.) merge correctly.
