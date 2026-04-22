@@ -27,6 +27,7 @@ guide-entry-shipyard-beater = Beater
 guide-entry-shipyard-buckler = Buckler
 guide-entry-shipyard-dagger = Dagger
 guide-entry-shipyard-dioddef = Dioddef
+guide-entry-shipyard-downtownsuperstar = DowntownSuperstar
 guide-entry-shipyard-grandideals = Grand Ideals
 guide-entry-shipyard-hamger = Hamger
 guide-entry-shipyard-hammerhead = Hammerhead

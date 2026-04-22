@@ -50,6 +50,117 @@
     - type: Clothing
       sprite: Floof/Clothing/Neck/collar_pink.rsi
 
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarShock
+  name: advanced shock collar
+  description: A modular shock collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+    - type: Clothing
+      sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarBell
+  name: advanced bell collar
+  description: A modular bell collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: _NF/Clothing/Neck/bellcollar.rsi
+    - type: Clothing
+      sprite: _NF/Clothing/Neck/bellcollar.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarEpi
+  name: advanced epistemics collar
+  description: A modular epistemics collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_epi.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_epi.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarEngi
+  name: advanced engineering collar
+  description: A modular engineering collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_engi.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_engi.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarLogi
+  name: advanced logistics collar
+  description: A modular logistics collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_logi.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_logi.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarMed
+  name: advanced medical collar
+  description: A modular medical collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_med.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_med.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarSec
+  name: advanced security collar
+  description: A modular security collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_sec.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_sec.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarCmd
+  name: advanced captains collar
+  description: A modular captains collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_cmd.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_cmd.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarCC
+  name: advanced CentCom collar
+  description: A modular CentCom collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_cc.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_cc.rsi
+
+- type: entity
+  parent: ClothingNeckAdvancedCollarBase
+  id: ClothingNeckAdvancedCollarSyndi
+  name: advanced blood-red collar
+  description: A modular blood-red collar that can have various functional modules installed.
+  components:
+    - type: Sprite
+      sprite: Floof/Clothing/Neck/collar_syndi.rsi
+    - type: Clothing
+      sprite: Floof/Clothing/Neck/collar_syndi.rsi
+
+
 # Collar Modules
 
 - type: entity

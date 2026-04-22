@@ -506,18 +506,18 @@
     - WhitelistChameleon
     - Kangaroo
     - DepositBlacklist # Wayfarer
-
+#wayfarer: remove NT on dusters as well as nanotrasen on description
 - type: entity
   parent: [ClothingHandsBase, BaseC1Contraband] # Frontier: BaseGrandTheftContraband<BaseC1Contraband
   id: ClothingHandsKnuckleDustersQM
   name: QM's golden knuckle dusters
-  description: "24karat gold infused with plasteel and branded with the Nanotrasen logo. A true symbol of the Quartermaster's might."
+  description: "24karat gold infused with plasteel A true symbol of the Quartermaster's might."
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/goldenknuckleduster.rsi
+    sprite: _WF/Clothing/Hands/Gloves/KnuckleDusters/goldenknuckledusters.rsi  # wayfarer edit: removed the NT on the sprite
     state: goldenknuckleduster
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/goldenknuckleduster.rsi
+    sprite: _WF/Clothing/Hands/Gloves/KnuckleDusters/goldenknuckledusters.rsi  # wayfarer edit: removed the NT on the sprite
   - type: Fiber
     fiberColor: fibers-gold
   - type: MeleeWeapon
@@ -644,10 +644,10 @@
   description: "Blessed by the Gods to break all those who don't obey."
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/goldenknuckleduster.rsi
+    sprite: _WF/Clothing/Hands/Gloves/KnuckleDusters/goldenknuckledusters.rsi # wayfarer edit: removed the NT on the sprite
     state: goldenknuckleduster
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/goldenknuckleduster.rsi
+    sprite: _WF/Clothing/Hands/Gloves/KnuckleDusters/goldenknuckledusters.rsi # wayfarer edit: removed the NT on the sprite
   - type: Fiber
     fiberColor: fibers-gold
   - type: MeleeWeapon

@@ -79,7 +79,7 @@
   parent: [ ClothingHeadset, BaseCentcommCommandContraband ] # Frontier: Added BaseCentcommCommandContraband, removed BaseCentcommContraband.
   id: ClothingHeadsetCentCom
   name: CentComm headset
-  description: A headset used by the upper echelons of Nanotrasen.
+  description: A headset used by the upper echelons of Central Command. # wayfarer edit: remove nanotrasen mention in description
   components:
   - type: ContainerFill
     containers:

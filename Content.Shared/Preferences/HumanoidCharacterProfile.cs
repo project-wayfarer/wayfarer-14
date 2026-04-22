@@ -54,13 +54,13 @@ namespace Content.Shared.Preferences
         [DataField]
         private HashSet<ProtoId<TraitPrototype>> _traitPreferences = new();
 
+        [DataField]
+        private Dictionary<string, RoleLoadout> _loadouts = new();
+
         /// <summary>
         /// <see cref="_loadouts"/>
         /// </summary>
         public IReadOnlyDictionary<string, RoleLoadout> Loadouts => _loadouts;
-
-        [DataField]
-        private Dictionary<string, RoleLoadout> _loadouts = new();
 
         [DataField]
         public string Name { get; set; } = "John Doe";
@@ -604,9 +604,10 @@ namespace Content.Shared.Preferences
 
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^\w\d -',]", string.Empty);
+                name = Regex.Replace(name, @"[^\w\d ',-]", string.Empty);
                 /*
-                 * Wayfarer: allow anything classified as a word character or digit, as well as spaces, hyphens, apostrophes, and commas.
+                 * Wayfarer: allow anything classified as a word character or digit, as well as spaces, apostrophes, commas, and hyphens.
+                 * Hyphen must be the first/last character in the regex, otherwise it's interpreted as defining a range.
                  */
             }
 

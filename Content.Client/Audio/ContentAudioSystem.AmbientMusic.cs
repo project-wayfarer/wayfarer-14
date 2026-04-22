@@ -1,18 +1,13 @@
 using System.Linq;
 using Content.Client.Gameplay;
 using Content.Shared._Crescent.SpaceBiomes;
-using Content.Client._Crescent.SpaceBiomes;
 using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
-using Content.Shared.Random;
-using Content.Shared.Random.Rules;
-using Robust.Client.GameObjects;
+using Content.Client._Crescent.SpaceBiomes;
 using Robust.Client.Player;
-using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Shared.Audio;
-using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -21,7 +16,6 @@ using Robust.Shared.Random;
 using Content.Client.CombatMode;
 using Content.Shared.CombatMode;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 using Content.Shared.NPC.Components;
 using Content.Shared._Mono.CCVar;
 using Content.Shared._Crescent.Vessel;
@@ -41,7 +35,6 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IStateManager _state = default!;
-    [Dependency] private readonly RulesSystem _rules = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly CombatModeSystem _combatModeSystem = default!; //CLIENT ONE. WHY ARE THERE 3??
     [Dependency] private readonly SpaceBiomeSystem _spaceBiome = default!;
@@ -145,7 +138,7 @@ public sealed partial class ContentAudioSystem
                 _replayAmbientMusicTimer = 0;
             }
         }
-        if (_combatWindUpBool)
+        /*if (_combatWindUpBool)
         {
             _combatWindUpTimer += frameTime;
             if (_combatWindUpTimer > _combatMusicTimeToStart)
@@ -164,14 +157,14 @@ public sealed partial class ContentAudioSystem
                 _combatWindDownBool = false;
                 _combatWindDownTimer = 0;
             }
-        }
+        }*/
     }
 
     private void InitializeAmbientMusic()
     {
         SubscribeLocalEvent<SpaceBiomeSwapMessage>(OnBiomeChange);
         SubscribeLocalEvent<PlayerParentChangedMessage>(OnPlayerParentChange);
-        SubscribeLocalEvent<ToggleCombatActionEvent>(OnCombatModeToggle);
+        //SubscribeLocalEvent<ToggleCombatActionEvent>(OnCombatModeToggle);
 
         SubscribeLocalEvent<LocalPlayerDetachedEvent>(OnPlayerDetach); //in case u die in combatmode
 
@@ -179,10 +172,10 @@ public sealed partial class ContentAudioSystem
 
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
         _sawmill = _logManager.GetSawmill("audio.ambience");
-        Subs.CVar(_configManager, MonoCVars.CombatMusicVolume, CombatCVarChanged, true);
-        Subs.CVar(_configManager, MonoCVars.CombatMusicEnabled, CombatToggleChanged, true);
-        Subs.CVar(_configManager, MonoCVars.CombatMusicWindUpTime, CombatWindUpChanged, true);
-        Subs.CVar(_configManager, MonoCVars.CombatMusicWindDownTime, CombatWindDownChanged, true);
+        //Subs.CVar(_configManager, MonoCVars.CombatMusicVolume, CombatCVarChanged, true);
+        //Subs.CVar(_configManager, MonoCVars.CombatMusicEnabled, CombatToggleChanged, true);
+        //Subs.CVar(_configManager, MonoCVars.CombatMusicWindUpTime, CombatWindUpChanged, true);
+        //Subs.CVar(_configManager, MonoCVars.CombatMusicWindDownTime, CombatWindDownChanged, true);
 
         // Setup tracks to pull from. Runs once.
         _musicTracks = GetTracks();
@@ -290,7 +283,7 @@ public sealed partial class ContentAudioSystem
         // therefore we check these top 2 bottom
 
         #region combat music
-        if (newCombatState != _lastCombatState) //we switch combat music on or off now
+        /*if (newCombatState != _lastCombatState) //we switch combat music on or off now
         {
             _lastCombatState = newCombatState; // cache combat state since its different than the last
             if (newCombatState) //true = we toggled combat ON.
@@ -334,15 +327,15 @@ public sealed partial class ContentAudioSystem
                 _lastBiome = null;
                 _lastGrid = null;
             }
-        }
+        }*/
         #endregion
 
-        if (_currentlyPlaying >= MusicType.Combat) //if we are in combatmode, we still want to cache info, but we want to return here so that we dont stop playing combatmode music
+        /*if (_currentlyPlaying >= MusicType.Combat) //if we are in combatmode, we still want to cache info, but we want to return here so that we dont stop playing combatmode music
         {
             _lastGrid = newGrid;
             _lastBiome = newBiome;
             return;
-        }
+        }*/
 
         #region grid music
 
@@ -570,4 +563,5 @@ public sealed partial class ContentAudioSystem
         FadeOut(_ambientMusicStream);
         _ambientMusicStream = null;
     }
+
 }

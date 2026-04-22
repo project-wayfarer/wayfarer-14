@@ -8,11 +8,11 @@
       backSprite:
       - sprite: _EstacaoPirata/Objects/Misc/cards.rsi
         state: singlecard_down_syndicate
-
+#wayfarer : doing a little cheat they are now "sly" cards so I can keep the s on them
 - type: entity
   parent: CardBoxBase
   id: CardBoxSyndicate
-  name: syndicate deck box
+  name: sly deck box # wayfarer removed syndicate
   components:
   - type: Item
     size: Small
