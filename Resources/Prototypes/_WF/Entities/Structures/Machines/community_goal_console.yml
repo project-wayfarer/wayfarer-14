@@ -23,6 +23,7 @@
   - type: ContainerContainer
     containers:
       community-goal-staging: !type:Container
+      board: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
   - type: ActivatableUI
