@@ -214,9 +214,26 @@
     Poison:
       effects:
       - !type:HealthChange
+        # Wayfarer start
+        conditions:
+        - !type:OrganType
+          type: Avali
+          shouldHave: false
+        # End Wayfarer
         damage:
           types:
             Caustic: 1
+    # Wayfarer start
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Avali
+        damage:
+          types:
+            Asphyxiation: -1
+    # End Wayfarer
     Gas:
       effects:
       - !type:HealthChange
@@ -224,6 +241,11 @@
         - !type:OrganType
           type: Rat
           shouldHave: false
+        # Wayfarer start
+        - !type:OrganType
+          type: Avali
+          shouldHave: false
+        # End Wayfarer
         - !type:ReagentThreshold
           reagent: Ammonia
           min: 1
@@ -240,6 +262,11 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
+        # Wayfarer start
+        - !type:OrganType
+          type: Avali
+          shouldHave: false
+        # End Wayfarer
         - !type:ReagentThreshold
           reagent: Ammonia
           min: 0.8

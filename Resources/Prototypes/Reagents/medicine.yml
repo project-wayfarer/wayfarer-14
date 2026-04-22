@@ -267,6 +267,12 @@
     Medicine:
       effects:
       - !type:HealthChange
+      # Wayfarer Start
+        conditions:
+          - !type:OrganType
+            type: Avali
+            shouldHave: false
+      # End Wayfarer
         damage:
           types:
             Asphyxiation: -1
@@ -279,6 +285,17 @@
           types:
             Asphyxiation: 3
             Cold: 1
+      # Wayfarer Start
+      - !type:HealthChange #Starlight
+        conditions:
+        - !type:OrganType
+          type: Avali
+        damage:
+          types:
+            Poison: 1.5 # Avali blood is ammonia based, so chems made to treat normal bloodloss poison them instead (Lethal Dose: 20u)
+            Asphyxiation: 1
+            Bloodloss: 1
+      # End Wayfarer
 
 - type: reagent
   id: DexalinPlus
@@ -292,10 +309,16 @@
     Medicine:
       effects:
       - !type:HealthChange
+        # Wayfarer Start
+        conditions:
+        - !type:OrganType
+          type: Avali
+          shouldHave: false
         damage:
           types:
             Asphyxiation: -3.5
             Bloodloss: -3
+        # End Wayfarer
       - !type:AdjustReagent
         conditions:
         - !type:ReagentThreshold
@@ -311,6 +334,17 @@
           types:
             Asphyxiation: 5
             Cold: 3
+      # Wayfarer Start
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Avali
+        damage:
+          types:
+            Poison: 2.5 # Avali blood is ammonia based, so chems made to treat normal bloodloss poison them instead. Dex+ is worse. (Lethal Dose: 15u)
+            Asphyxiation: 1.5
+            Bloodloss: 1
+      # End Wayfarer
 
 # this ones a doozy
 - type: reagent
@@ -704,7 +738,23 @@
             type: Feroxi
           factor: 2
         - !type:ModifyBloodLevel
+          # Wayfarer Start
+          conditions:
+            - !type:OrganType
+              type: Avali
+              shouldHave: false
+          # End Wayfarer
           amount: 6
+        # Wayfarer Start
+        - !type:HealthChange
+          conditions:
+            - !type:OrganType
+              type: Avali
+          damage:
+            types:
+              Caustic: 2 # 30 damage per unit was ridiculous, but I'm leaving some damage to punish mistakes without risking round removal. Adding salt to water shouldn't suddenly make it the strongest toxin in the game by far.
+              Heat: 2
+        # End Wayfarer
 
 - type: reagent
   id: Siderlac

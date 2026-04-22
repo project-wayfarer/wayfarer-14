@@ -1,0 +1,235 @@
+- type: emote
+  id: Hisses
+  name: chat-emote-name-hiss
+  category: Vocal
+  available: false
+  icon: { sprite: _Starlight/Actions/felionoid.rsi, state: cat_print }
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-hiss"]
+  chatTriggers:
+  - hiss
+  - hiss.
+  - hiss!
+  - hiss?
+  - hissing
+  - hissing.
+  - hissing!
+  - hissing?
+  - hisses
+  - hisses.
+  - hisses!
+  - hisses?
+
+- type: emote
+  id: Trill
+  name: chat-emote-name-trill
+  category: Vocal
+  available: false
+  icon: { sprite: _Starlight/Actions/felionoid.rsi, state: cat_print }
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-trill"]
+  chatTriggers:
+    - trill
+    - trill.
+    - trill!
+    - trill?
+    - trills
+    - trills.
+    - trills!
+    - trills?
+    - trilling
+    - trilling.
+    - trilling!
+    - trilling?
+
+- type: emote
+  id: Scree
+  name: chat-emote-name-scree
+  category: Vocal
+  available: false
+  icon: { sprite: _Starlight/Actions/resomi.rsi, state: bird_call }
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-scree"]
+  chatTriggers:
+  - scree
+  - scree.
+  - scree!
+  - scree?
+  - screeing
+  - screeing.
+  - screeing!
+  - screeing?
+  - screes
+  - screes.
+  - screes!
+  - screes?
+
+- type: emote
+  id: Call
+  name: chat-emote-name-call
+  category: Vocal
+  available: false
+  icon: { sprite: _Starlight/Actions/resomi.rsi, state: bird_call }
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-call"]
+  chatTriggers:
+  - call
+  - call.
+  - call!
+  - call?
+  - calling
+  - calling.
+  - calling!
+  - calling?
+  - calls
+  - calls.
+  - calls!
+  - calls?
+
+- type: emote
+  id: Squawk
+  name: chat-emote-name-squawk
+  category: Vocal
+  available: false
+  icon: { sprite: _Starlight/Actions/resomi.rsi, state: bird_call }
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-squawk"]
+  chatTriggers:
+  - squawk
+  - squawk.
+  - squawk!
+  - squawk?
+  - squawking
+  - squawking.
+  - squawking!
+  - squawking?
+  - squawks
+  - squawks.
+  - squawks!
+  - squawks?
+
+# Avali Sounds
+- type: emoteSounds
+  id: MaleAvali
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_Starlight/Effects/avali_scream.ogg
+    Laugh:
+      path: /Audio/_Starlight/Voice/Avali/avali_laugh.ogg
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Hisses:
+      collection: FelionoidHisses
+    Purr:
+      collection: FelionoidPurrs
+    Growl:
+      collection: FelionoidGrowls
+    Trill:
+      collection: FelionoidTrills
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
+    Crying:
+      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_whistle.ogg
+    Chirp:
+      collection: ResomiChirp
+
+- type: emoteSounds
+  id: FemaleAvali
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_Starlight/Effects/avali_scream.ogg
+    Laugh:
+      path: /Audio/_Starlight/Voice/Avali/avali_laugh.ogg
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Hisses:
+      collection: FelionoidHisses
+    Purr:
+      collection: FelionoidPurrs
+    Growl:
+      collection: FelionoidGrowls
+    Trill:
+      collection: FelionoidTrills
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
+    Crying:
+      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_whistle.ogg
+    Chirp:
+      collection: ResomiChirp
