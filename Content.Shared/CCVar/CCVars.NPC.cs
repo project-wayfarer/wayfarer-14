@@ -5,7 +5,7 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     public static readonly CVarDef<int> NPCMaxUpdates =
-        CVarDef.Create("npc.max_updates", 96);
+        CVarDef.Create("npc.max_updates", 512);
 
     public static readonly CVarDef<bool> NPCEnabled = CVarDef.Create("npc.enabled", true);
 
@@ -48,13 +48,13 @@ public sealed partial class CCVars
     ///     Chance that an NPC temporarily breaks from shared-path chaining and computes its own path.
     /// </summary>
     public static readonly CVarDef<float> NPCPathShareBreakawayChance =
-        CVarDef.Create("npc.path_share_breakaway_chance", 0.10f);
+        CVarDef.Create("npc.path_share_breakaway_chance", 0.33f);
 
     /// <summary>
     ///     How long (seconds) a breakaway NPC keeps using independent pathfinding before rejoining chain reuse.
     /// </summary>
     public static readonly CVarDef<float> NPCPathShareBreakawayDuration =
-        CVarDef.Create("npc.path_share_breakaway_duration", 1.25f);
+        CVarDef.Create("npc.path_share_breakaway_duration", 2f);
 
     /// <summary>
     ///     If direct target distance is less than this fraction of shared-entry distance,
@@ -67,7 +67,7 @@ public sealed partial class CCVars
     ///     If true, NPCs that are not actively in combat can still reuse shared paths.
     /// </summary>
     public static readonly CVarDef<bool> NPCPathShareNonCombatEnabled =
-        CVarDef.Create("npc.path_share_noncombat_enabled", true);
+        CVarDef.Create("npc.path_share_noncombat_enabled", false);
 
     /// <summary>
     ///     If true, non-combat shared-path followers apply small path variation to avoid rigid clumping.
@@ -95,7 +95,7 @@ public sealed partial class CCVars
     /// <summary>
     ///     #Misfits Add: Override for juke cooldown timing. -1 uses default behavior, >0 overrides all juke cooldowns.
     /// </summary>
-    public static readonly CVarDef<float> NPCJukeCooldownOverride = CVarDef.Create("npc.juke_cooldown_override", 1f);
+    public static readonly CVarDef<float> NPCJukeCooldownOverride = CVarDef.Create("npc.juke_cooldown_override", -1f);
 
     /// <summary>
     /// How often (seconds) the proximity NPC system scans for nearby players.

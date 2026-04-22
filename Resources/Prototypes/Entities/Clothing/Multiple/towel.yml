@@ -665,10 +665,10 @@
         color: "#EAE8E8"
   - type: Fiber
     fiberColor: fibers-white
-
+#wayfarer: NT item, removed the N on the sprite, renamed the towel
 - type: entity
   id: TowelColorNT
-  name: NanoTrasen brand towel
+  name: true dark blue towel
   parent: BaseTowel
   components:
   - type: Sprite
@@ -676,8 +676,6 @@
     - state: icon
       color: "#004787"
     - state: iconstripe
-      color: "#EAE8E8"
-    - state: NTmono
       color: "#EAE8E8"
   - type: Item
     inhandVisuals:
@@ -736,7 +734,7 @@
 
 - type: entity
   id: TowelColorSyndicate
-  name: syndicate towel
+  name: stylized gray towel #wayfarer: removed syndicate
   parent: BaseTowel # WF Removed Contraband
   components:
   - type: Sprite

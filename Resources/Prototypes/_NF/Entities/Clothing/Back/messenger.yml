@@ -52,7 +52,7 @@
   parent: ClothingBackpackMessengerContractor
   id: ClothingBackpackMessengerCaptain
   name: captain's messenger bag
-  description: An exclusive messenger bag for Nanotrasen officers.
+  description: An exclusive messenger bag for captains # wayfarer edit: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/color.rsi
@@ -90,7 +90,7 @@
   parent: ClothingBackpackMessengerContractor
   id: ClothingBackpackMessengerSr
   name: station representative's messenger bag
-  description: An exclusive messenger bag for Nanotrasen officers.
+  description: An exclusive messenger bag for station representatives. # wayfarer edit: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/color.rsi

@@ -19,9 +19,10 @@
   </Box>
 
   ## Hardbombs
-  Listed below are the two common types of bombs you will encounter while defusing. A training bomb will only provide minor hull damage and generally not kill you. A syndicate bomb however will punch a big hole into the hull, and gib you if you are not wearing protective gear.
+  <!-- Wayfarer: syndicate mention replaced with outlaw-->
+  Listed below are the two common types of bombs you will encounter while defusing. A training bomb will only provide minor hull damage and generally not kill you. A outlaw bomb however will punch a big hole into the hull, and gib you if you are not wearing protective gear.
   <Box>
-    <GuideEntityEmbed Entity="SyndicateBomb"/>
+    <GuideEntityEmbed Entity="SyndicateBomb" Caption="Outlaw Bomb"/>
     <GuideEntityEmbed Entity="TrainingBomb"/>
   </Box>
 

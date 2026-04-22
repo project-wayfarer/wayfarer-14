@@ -663,11 +663,6 @@ public sealed partial class CryoSleepSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString("cryopod-wake-up", ("entity", body)), body);
         RaiseLocalEvent(body, new CryosleepWakeUpEvent(cryopod, userId), true);
         
-        // Remove this body from stored bodies since they've resumed
-        storedBodies.Remove(storedBody.Value);
-        if (storedBodies.Count == 0)
-            _storedBodies.Remove(userId);
-        
         _adminLogger.Add(LogType.LateJoin, LogImpact.Medium, $"{userId} has returned from cryosleep!");
     }
 

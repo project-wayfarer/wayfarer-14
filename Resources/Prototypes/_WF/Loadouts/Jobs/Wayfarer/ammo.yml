@@ -17,6 +17,7 @@
   - MagBox30
   - MagBox30Rifle
   - WFAmmoCrossbow
+  - WFBoxCartridgeCap
 
 - type: loadout
   id: BoxShotgunAmmo
@@ -108,3 +109,14 @@
   storage:
     back:
     - ClothingBeltQuiverCrossbowFilledBolt
+
+# Clown
+- type: loadout
+  id: WFBoxCartridgeCap
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 300
+  storage:
+    back:
+    - NFBoxCartridgeCap

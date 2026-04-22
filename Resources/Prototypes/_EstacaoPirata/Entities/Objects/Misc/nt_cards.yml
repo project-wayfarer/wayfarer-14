@@ -8,11 +8,11 @@
       backSprite:
       - sprite: _EstacaoPirata/Objects/Misc/cards.rsi
         state: singlecard_down_nanotrasen
-
+#wayfarer : doing a little cheat they are now play "Nice" cards so I can keep the n on them
 - type: entity
   parent: CardBoxBase
   id: CardBoxNanotrasen
-  name: nanotrasen deck box
+  name: play nice deck box # wayfarer edit remove nanotrasen
   components:
   - type: Item
     size: Small

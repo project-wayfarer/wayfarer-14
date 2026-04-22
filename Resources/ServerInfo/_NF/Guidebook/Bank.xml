@@ -1,8 +1,8 @@
 <Document>
-  # NT Galactic Bank
-
-As a contractor with Nanotrasen, you have a persistent bank account.
-Money that you [bold]deposit[/bold] at an [color=#44cc00]ATM[/color] on Frontier Outpost or Tinnia's rest will be stored in your account.
+  # Galactic Bank
+  <!-- Wayfarer: nanotrasen mention remove.-->
+As a contractor with Concordia, you have a persistent bank account. <!-- Wayfarer: removed frontier outpost and tinnia's rest -->
+Money that you [bold]deposit[/bold] at an [color=#44cc00]ATM[/color] will be stored in your account.
 
 ## ATMs
   <Box>
@@ -10,8 +10,8 @@ Money that you [bold]deposit[/bold] at an [color=#44cc00]ATM[/color] on Frontier
     <GuideEntityEmbed Entity="SpaceCash1000"/>
   </Box>
   You can access your personal bank account at any time to withdraw your hard-earned [color=#44cc00]Spesos[/color] at any [color=#44cc00]Galactic Bank ATM[/color].
-
-Only ATMs on Frontier Outpost and Tinnia's Rest allow you to deposit money.
+  <!-- Wayfarer: removed frontier outpost and tinnia's rest replaced with Stations POIs.-->
+Only ATMs on Stations POIs such as Dusk Station. allow you to deposit money.
 Make sure you deposit your cash and sell off your ship before ending your shift!
 
 ## Account Access

@@ -1,0 +1,9 @@
+﻿- type: entity
+  parent: PosterBase
+  id: WFSectorMap
+  name: sector map
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/large_icons/128x96.rsi
+    state: sector_map

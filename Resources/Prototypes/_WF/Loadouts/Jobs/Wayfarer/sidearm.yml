@@ -16,6 +16,7 @@
   - WFSidearmEnergyRevolver
   - WFSidearmRitland45
   - WFSidearmCobra
+  - WFRevolverCapGun
 
 # Loadouts
 - type: loadout
@@ -139,3 +140,14 @@
   storage:
     back:
     - NFWeaponPistolCobra
+
+# Clown
+- type: loadout
+  id: WFRevolverCapGun
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - NFRevolverCapGun

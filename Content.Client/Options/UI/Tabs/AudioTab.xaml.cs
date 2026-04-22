@@ -73,8 +73,8 @@ public sealed partial class AudioTab : Control
             _cfg.GetCVar(CCVars.MinMaxAmbientSourcesConfigured),
             _cfg.GetCVar(CCVars.MaxMaxAmbientSourcesConfigured));
 
-        // Mono begin
-        Control.AddOptionPercentSlider(
+        // Mono begin - combat music options commented out
+        /*Control.AddOptionPercentSlider(
             MonoCVars.CombatMusicVolume,
             SliderVolumeCombatMusic,
             scale: ContentAudioSystem.CombatMultiplier);
@@ -93,7 +93,7 @@ public sealed partial class AudioTab : Control
             120,
             (_, value) => Loc.GetString("ui-options-combat-music-sec-format", ("value", value))); // and also i think 2 minutes is enough of an upper limit since it refreshes anytime you turn it back on even for a second
 
-        Control.AddOptionCheckBox(MonoCVars.CombatMusicEnabled, CombatMusicCheckBox);
+        Control.AddOptionCheckBox(MonoCVars.CombatMusicEnabled, CombatMusicCheckBox);*/
         // Mono end
         Control.AddOptionCheckBox(CCVars.LobbyMusicEnabled, LobbyMusicCheckBox);
         Control.AddOptionCheckBox(CCVars.RestartSoundsEnabled, RestartSoundsCheckBox);

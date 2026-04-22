@@ -152,7 +152,7 @@ public sealed class ThirstSystem : EntitySystem
         {
             case ThirstThreshold.OverHydrated:
                 component.LastThirstThreshold = component.CurrentThirstThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 1.2f;
+                component.ActualDecayRate = component.BaseDecayRate * 0.9f; // Wayfarer 1.2 to 0.9
                 return;
 
             case ThirstThreshold.Okay:

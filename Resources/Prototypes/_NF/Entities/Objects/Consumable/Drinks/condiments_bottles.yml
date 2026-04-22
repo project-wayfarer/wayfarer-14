@@ -151,6 +151,24 @@
   - type: Label
     currentLabel: reagent-name-mayo
 
+#Wayfarer - Add Honey
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkHoneyJug
+  name: honey jug
+  description: Great for sweetening up your day!.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: Honey
+          Quantity: 150
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-honey
+
 # imp coffee machine
 - type: entity
   parent: DrinkBottlePlasticBaseFull
@@ -193,7 +211,7 @@
   id: JugWater
   name: water powder jug
   suffix: For Drinks, Full
-  description: A jug of water. Also probably microplastics. 
+  description: A jug of water. Also probably microplastics.
   components:
   - type: SolutionContainerManager
     solutions:

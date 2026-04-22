@@ -3,12 +3,12 @@
 
 <!-- Note: range values will not scale with the world size cvar! -->
 
-The Frontier sector consists of a large, disk-like asteroid belt. In the center of the belt, Frontier Outpost serves as the arrival point for greenhorns and seasoned pilgrims alike.
+The Frontier sector consists of a large, disk-like asteroid belt. In the center of the belt, Dusk Station serves as the arrival point for greenhorns and seasoned pilgrims alike.
 
-The area immediately around Frontier Outpost is mostly empty space. Beyond this, there are [bold]three distinct zones[/bold]:
-
+The area immediately around Dusk Statoin is mostly empty space. Beyond this, there are [bold]three distinct zones[/bold]:
+  <!-- Wayfarer: removed Frontier Outpost replace with Dusk, also replaced the topsector map.-->
 <Box Margin="0">
-  <GuideEntityEmbed Entity="NFSectorMap" Caption="" Margin="-20"/>
+  <GuideEntityEmbed Entity="WFSectorMap" Caption="" Margin="-20"/>
 </Box>
 
 - The [color=#c73232]inner ring[/color] ([color=gold]≤5 km[/color]) has been developed into a base for service stations like [color=forestgreen]Trade Outpost[/color] and [color=mediumturquoise]Medical Dispatch[/color]. You can still find errant scrap, small asteroids, and the occasional wreck, but better materials are found further out. At the edge of this zone, you'll find [color=green]Cargo Depots[/color], the destination for most cargo freighters.

@@ -1,0 +1,189 @@
+#Dusks's resident dragon.. somewhat of an actor creature for purposes of roleplay.
+#to do list.. Make a custom headset that doesn't visually show so can equip one without looking silly, also make it a forced loadout
+#Also make a custom sprite for it, the random sprite is just a placeholder to make sure the visuals work properly.
+
+
+- type: entity
+  parent:
+  - SimpleSpaceMobBase
+  - FlyingMobBase
+  - MobHumanoidInvetorySimplified
+  id: DuskDragon
+  name: Dusk Dragon
+  description: A strange dragon that seems to inhabit Dusk occasionally
+  components:
+  - type: Climbing
+  - type: Perishable
+  - type: Hunger
+    thresholds:
+      Overfed: 100
+      Okay: 50
+      Peckish: 25
+      Starving: 10
+      Dead: 0
+    baseDecayRate: 0.001 # Very slow metobolisim dragon
+  - type: Thirst
+    thresholds:
+      OverHydrated: 200
+      Okay: 150
+      Thirsty: 100
+      Parched: 50
+      Dead: 0
+    baseDecayRate: 0.001 # Very slow metobolisim dragon
+  - type: StatusEffects
+    allowed:
+      - Stun
+      - KnockedDown
+      - SlowedDown
+      - Stutter
+      - Electrocution
+      - ForcedSleep
+      - Pacified
+      - StaminaModifier
+      - Drowsiness
+      - Adrenaline
+  - type: Bloodstream
+    bloodMaxVolume: 1000
+  - type: FloatingVisuals
+  - type: Speech
+    speechSounds: Lizard
+    speechVerb: Reptilian
+    allowedEmotes: ['Thump', 'ReptilianHiss', 'Chirp', 'Gurgle', 'Weh'] # Dragons are close enough to lizard
+  - type: TypingIndicator
+    proto: lizard
+  - type: Vocal
+    sounds:
+      Unsexed: FemaleReptilian
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
+  - type: HTN
+    enabled: false
+  - type: CombatMode
+  - type: MobMover
+  - type: InputMover
+  - type: Emoting
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+    baseWeightlessModifier: 1.5
+  - type: RandomSprite #Removal later once proper sprite is present
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        alive: Rainbow
+  - type: Sprite
+    sprite: _NF/Mobs/Pets/baby_dragon.rsi
+    noRot: true
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: alive-unshaded
+      shader: unshaded
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+        BaseUnshaded: alive-unshaded
+      Critical:
+        Base: crit
+      Dead:
+        Base: dead
+        BaseUnshaded: dead-unshaded
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 100
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: MobState
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritLastWords
+  - type: MobThresholds
+    thresholds: # HP for the dragon..
+      0: Alive
+      400: Critical
+      600: Dead
+  - type: Metabolizer
+    solutionOnBody: false
+    metabolizerTypes: [ Dragon ]
+    groups:
+    - id: Medicine
+    - id: Cryogenic
+    - id: Poison
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatDragon
+      amount: 1
+  - type: InteractionPopup
+    successChance: 0.90 # It's no goose, but you better smell like carp.
+    interactSuccessString: petting-success-dragon
+    interactFailureString: petting-failure-dragon
+    interactFailureSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+    soundPerceivedByOthers: false # A 75% chance for a loud roar would get old fast.
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage: #increased damage so it can semi defend itself if required..
+      types:
+        Piercing: 10
+        Slash: 20
+  - type: Puller
+    needsHands: false
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - CanPilot
+    - LizardEmotes
+  - type: ActionGun
+    action: ActionDragonsBreath
+    gunProto: DragonsBreathGun
+  - type: ComplexInteraction #Allows manipulation of interactables
+  - type: Inventory # Inventory for the dragon, based off the parrot.. since only a headset is really required.
+    speciesId: monkey
+    templateId: parrot
+    displacements: #this should stop headsets from actually being seen on the dragon, since it doesn't have a head that can fit them properly, but still allows them to equip
+        ears:
+          sizeMaps:
+            32:
+              sprite: Mobs/Animals/parrot/displacement.rsi
+              state: ears
+  - type: Hands #hands for the dragons. Has to be defined this way.. trying to use count: simply doesn't work.
+    hands:
+      hand_right:
+        location: Right
+      hand_left:
+        location: Left
+    sortedHands:
+    - hand_right
+    - hand_left
+  - type: UserInterface #additonal user interface for hardspace radar,
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+
+
+  - type: RadarConsole #Giving the dragon an ability to know where it's flying
+    maxRange: 1024 # Frontier: increase admin radar range
+    followEntity: true
+    hideCoords: false # Frontier
+    maxIffRange: null # Frontier

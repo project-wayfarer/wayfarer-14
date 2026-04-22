@@ -12,7 +12,7 @@
   id: Scryer
   parent: BaseVessel
   name: TI Scryer
-  description: A deep space exploration ship with an advanced sensor suite and open cockpit for observing stellar phenomena. Comes with a xenoarchaeloegy setup. Manufactured by Telum Industries.
+  description: A moderately armored dropship capable of planetside combat operations. Manufactured by Telum Industries.
   price: 80000
   category: Medium
   group: Shipyard
@@ -30,10 +30,10 @@
   minPlayers: 0
   stations:
     Scryer:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Scryer CIV{1}'
+        mapNameTemplate: 'Scryer EXP{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

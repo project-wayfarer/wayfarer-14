@@ -55,6 +55,7 @@ nf-research-technology-basic-shuttle-armament = Basic Shuttle Armament
 nf-research-technology-basic-spray = Pressurized Dispensers
 nf-research-technology-basic-xenoarcheology = Basic Xenoarcheology
 nf-research-technology-biochemical-stasis = Biochemical Stasis
+nf-research-technology-cloning = Cloning Technology
 nf-research-technology-biogenerator = Biomass Fabrication
 nf-research-technology-biomass = Organic Matter Recycling
 nf-research-technology-bluespace-cargo-transport = Bluespace Cargo Transport

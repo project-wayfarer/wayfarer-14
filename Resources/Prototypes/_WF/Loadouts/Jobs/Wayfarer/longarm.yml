@@ -15,6 +15,7 @@
   - WFLongarmJackdaw
   - WFLongarmAtreides
   - WFLongarmEnforcer
+  - WFLauncherCreamPie
 
 # Loadouts
 - type: loadout
@@ -136,3 +137,14 @@
   storage:
     back:
     - NFWeaponRifleAssaultJackdaw
+
+# Clown
+- type: loadout
+  id: WFLauncherCreamPie
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 2000
+  storage:
+    back:
+    - LauncherCreamPie

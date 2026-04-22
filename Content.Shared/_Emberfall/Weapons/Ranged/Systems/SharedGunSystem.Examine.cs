@@ -13,7 +13,21 @@ public abstract partial class SharedGunSystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        var examineMarkup = GetGunExamine(ent);
+        // Find another gun in the examiner's hands to use as a comparison baseline.
+        GunComponent? compareGun = null;
+        foreach (var held in _hands.EnumerateHeld(args.User))
+        {
+            if (held == ent.Owner)
+                continue;
+
+            if (TryComp<GunComponent>(held, out var heldGun))
+            {
+                compareGun = heldGun;
+                break;
+            }
+        }
+
+        var examineMarkup = GetGunExamine(ent, compareGun);
 
         var ev = new GunExamineEvent(examineMarkup);
         RaiseLocalEvent(ent, ref ev);
@@ -26,76 +40,200 @@ public abstract partial class SharedGunSystem
             Loc.GetString("gun-examinable-verb-message"));
     }
 
-    private FormattedMessage GetGunExamine(Entity<GunComponent> ent)
+    /// <summary>
+    /// Returns the effective rounds-per-second of a gun, accounting for burst mode.
+    /// </summary>
+    private static float GetEffectiveFireRate(GunComponent gun)
+    {
+        if (gun.SelectedMode == SelectiveFire.Burst)
+            return gun.ShotsPerBurstModified / (gun.BurstCooldown + (gun.ShotsPerBurstModified - 1) / gun.BurstFireRate);
+        return gun.FireRateModified;
+    }
+
+    private FormattedMessage GetGunExamine(Entity<GunComponent> ent, GunComponent? compareGun = null)
     {
         TryComp(ent.Owner, out RareWeaponComponent? rareComp); // Frontier: rare weapons
 
         var msg = new FormattedMessage();
-        msg.AddMarkupOrThrow(Loc.GetString("gun-examine"));
+        msg.AddMarkupOrThrow(Loc.GetString(compareGun != null ? "gun-examine-compare" : "gun-examine"));
 
         // Frontier: use nf-prefixed loc strings, no rounding on values
-        // Recoil (AngleIncrease)
+        // Recoil (AngleIncrease) — lower is better
         msg.PushNewline();
-        msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-recoil",
-            ("color", FireRateExamineColor),
-            ("value", ent.Comp.AngleIncreaseModified.Degrees)
-        ));
+        var recoilVal = ent.Comp.AngleIncreaseModified.Degrees;
+        if (compareGun != null)
+        {
+            var delta = Math.Round(recoilVal - compareGun.AngleIncreaseModified.Degrees, 1);
+            var deltaColor = delta < 0d ? "green" : (delta > 0d ? "red" : "gray");
+            var sign = delta > 0d ? "+" : "";
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-recoil-compare",
+                ("color", FireRateExamineColor),
+                ("value", recoilVal),
+                ("delta", $"{sign}{delta}"),
+                ("deltaColor", deltaColor)
+            ));
+        }
+        else
+        {
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-recoil",
+                ("color", FireRateExamineColor),
+                ("value", recoilVal)
+            ));
+        }
         PushStatModifier(msg, rareComp?.AccuracyModifier);
 
-        // Stability (AngleDecay)
+        // Stability (AngleDecay) — higher is better
         msg.PushNewline();
-        msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-stability",
-            ("color", FireRateExamineColor),
-            ("value", ent.Comp.AngleDecayModified.Degrees)
-        ));
+        var stabilityVal = ent.Comp.AngleDecayModified.Degrees;
+        if (compareGun != null)
+        {
+            var delta = Math.Round(stabilityVal - compareGun.AngleDecayModified.Degrees, 1);
+            var deltaColor = delta > 0d ? "green" : (delta < 0d ? "red" : "gray");
+            var sign = delta > 0d ? "+" : "";
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-stability-compare",
+                ("color", FireRateExamineColor),
+                ("value", stabilityVal),
+                ("delta", $"{sign}{delta}"),
+                ("deltaColor", deltaColor)
+            ));
+        }
+        else
+        {
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-stability",
+                ("color", FireRateExamineColor),
+                ("value", stabilityVal)
+            ));
+        }
         PushStatModifier(msg, rareComp != null ? 1 / rareComp?.AccuracyModifier : null);
 
-        // Max Angle
+        // Max Angle — lower is better
         msg.PushNewline();
-        msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-max-angle",
-            ("color", FireRateExamineColor),
-            ("value", ent.Comp.MaxAngleModified.Degrees)
-        ));
+        var maxAngleVal = ent.Comp.MaxAngleModified.Degrees;
+        if (compareGun != null)
+        {
+            var delta = Math.Round(maxAngleVal - compareGun.MaxAngleModified.Degrees, 1);
+            var deltaColor = delta < 0d ? "green" : (delta > 0d ? "red" : "gray");
+            var sign = delta > 0d ? "+" : "";
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-max-angle-compare",
+                ("color", FireRateExamineColor),
+                ("value", maxAngleVal),
+                ("delta", $"{sign}{delta}"),
+                ("deltaColor", deltaColor)
+            ));
+        }
+        else
+        {
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-max-angle",
+                ("color", FireRateExamineColor),
+                ("value", maxAngleVal)
+            ));
+        }
         PushStatModifier(msg, rareComp?.AccuracyModifier);
 
-        // Min Angle
+        // Min Angle — lower is better
         msg.PushNewline();
-        msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-min-angle",
-            ("color", FireRateExamineColor),
-            ("value", ent.Comp.MinAngleModified.Degrees)
-        ));
+        var minAngleVal = ent.Comp.MinAngleModified.Degrees;
+        if (compareGun != null)
+        {
+            var delta = Math.Round(minAngleVal - compareGun.MinAngleModified.Degrees, 1);
+            var deltaColor = delta < 0d ? "green" : (delta > 0d ? "red" : "gray");
+            var sign = delta > 0d ? "+" : "";
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-min-angle-compare",
+                ("color", FireRateExamineColor),
+                ("value", minAngleVal),
+                ("delta", $"{sign}{delta}"),
+                ("deltaColor", deltaColor)
+            ));
+        }
+        else
+        {
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-min-angle",
+                ("color", FireRateExamineColor),
+                ("value", minAngleVal)
+            ));
+        }
         PushStatModifier(msg, rareComp?.AccuracyModifier);
 
         // Frontier: separate burst fire calculation
-        // Fire Rate (converted from RPS to RPM)
+        // Fire Rate — higher is better
+        msg.PushNewline();
         if (ent.Comp.SelectedMode != SelectiveFire.Burst)
         {
-            msg.PushNewline();
-            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-fire-rate",
-                ("color", FireRateExamineColor),
-                ("value", ent.Comp.FireRateModified)
-            ));
+            var fireRateVal = ent.Comp.FireRateModified;
+            if (compareGun != null)
+            {
+                var compareRate = (double)GetEffectiveFireRate(compareGun);
+                var delta = Math.Round(fireRateVal - compareRate, 1);
+                var deltaColor = delta > 0d ? "green" : (delta < 0d ? "red" : "gray");
+                var sign = delta > 0d ? "+" : "";
+                msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-fire-rate-compare",
+                    ("color", FireRateExamineColor),
+                    ("value", fireRateVal),
+                    ("delta", $"{sign}{delta}"),
+                    ("deltaColor", deltaColor)
+                ));
+            }
+            else
+            {
+                msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-fire-rate",
+                    ("color", FireRateExamineColor),
+                    ("value", fireRateVal)
+                ));
+            }
             PushStatModifier(msg, rareComp?.FireRateModifier);
         }
         else
         {
             var fireRate = ent.Comp.ShotsPerBurstModified / (ent.Comp.BurstCooldown + (ent.Comp.ShotsPerBurstModified - 1) / ent.Comp.BurstFireRate);
-            msg.PushNewline();
-            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-fire-rate-burst",
-                ("color", FireRateExamineColor),
-                ("value", fireRate),
-                ("burstsize", ent.Comp.ShotsPerBurstModified),
-                ("burstrate", ent.Comp.BurstFireRate)
-            ));
+            if (compareGun != null)
+            {
+                var compareRate = (double)GetEffectiveFireRate(compareGun);
+                var delta = Math.Round(fireRate - compareRate, 1);
+                var deltaColor = delta > 0d ? "green" : (delta < 0d ? "red" : "gray");
+                var sign = delta > 0d ? "+" : "";
+                msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-fire-rate-burst-compare",
+                    ("color", FireRateExamineColor),
+                    ("value", fireRate),
+                    ("burstsize", ent.Comp.ShotsPerBurstModified),
+                    ("burstrate", ent.Comp.BurstFireRate),
+                    ("delta", $"{sign}{delta}"),
+                    ("deltaColor", deltaColor)
+                ));
+            }
+            else
+            {
+                msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-fire-rate-burst",
+                    ("color", FireRateExamineColor),
+                    ("value", fireRate),
+                    ("burstsize", ent.Comp.ShotsPerBurstModified),
+                    ("burstrate", ent.Comp.BurstFireRate)
+                ));
+            }
         }
         // End Frontier: separate burst fire calculation
 
-        // Muzzle Velocity (ProjectileSpeed)
+        // Muzzle Velocity (ProjectileSpeed) — higher is better
         msg.PushNewline();
-        msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-muzzle-velocity",
-            ("color", FireRateExamineColor),
-            ("value", ent.Comp.ProjectileSpeedModified)
-        ));
+        var muzzleVal = ent.Comp.ProjectileSpeedModified;
+        if (compareGun != null)
+        {
+            var delta = Math.Round(muzzleVal - compareGun.ProjectileSpeedModified, 1);
+            var deltaColor = delta > 0d ? "green" : (delta < 0d ? "red" : "gray");
+            var sign = delta > 0d ? "+" : "";
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-muzzle-velocity-compare",
+                ("color", FireRateExamineColor),
+                ("value", muzzleVal),
+                ("delta", $"{sign}{delta}"),
+                ("deltaColor", deltaColor)
+            ));
+        }
+        else
+        {
+            msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-muzzle-velocity",
+                ("color", FireRateExamineColor),
+                ("value", muzzleVal)
+            ));
+        }
         PushStatModifier(msg, rareComp?.ProjectileSpeedModifier);
         // End Frontier: use nf-prefixed loc strings, no rounding on values
 
