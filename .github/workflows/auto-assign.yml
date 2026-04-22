@@ -1,24 +1,21 @@
-name: PR Setup
+name: "PR: Auto-assign"
 
 on:
   pull_request:
     types: [opened, ready_for_review]
 
 jobs:
-  setup:
+  auto-assign:
     if: github.repository == 'project-wayfarer/wayfarer-14'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Assign author + request reviewers
+      - name: "PR: Auto-assign"
         uses: actions/github-script@v7
         with:
           script: |
             const pr = context.payload.pull_request
             const author = pr.user.login
-
-            if (pr.head.repo.fork)
-              return;
 
             const reviewers = ['drraccoony']
             const filteredReviewers = reviewers.filter(r => r !== author)
