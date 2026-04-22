@@ -36,7 +36,6 @@
   - ShipyardCrescent # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCrossroads # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardDioddef
-  - ShipyardDowntownsuperstar
   - ShipyardDragoon # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGarden # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGasbender # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
@@ -166,11 +165,6 @@
   id: ShipyardDagger
   name: guide-entry-shipyard-dagger
   text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Dagger.xml"
-
-- type: guideEntry
-  id: ShipyardDowntownsuperstar
-  name: guide-entry-shipyard-downtownsuperstar
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/DowntownSuperstar.xml"
 
 - type: guideEntry
   id: ShipyardDioddef
