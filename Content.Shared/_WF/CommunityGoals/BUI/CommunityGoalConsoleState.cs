@@ -3,6 +3,25 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._WF.CommunityGoals.BUI;
 
 /// <summary>
+/// One entry in the staging area — items are grouped by prototype so stacks of the same
+/// type are shown as a single row.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class StagedItemData
+{
+    public string PrototypeId;
+    public string DisplayName;
+    public long Amount;
+
+    public StagedItemData(string prototypeId, string displayName, long amount)
+    {
+        PrototypeId = prototypeId;
+        DisplayName = displayName;
+        Amount = amount;
+    }
+}
+
+/// <summary>
 /// State pushed from the server to the client whenever the console UI is open.
 /// </summary>
 [Serializable, NetSerializable]
@@ -14,29 +33,13 @@ public sealed class CommunityGoalConsoleState : BoundUserInterfaceState
     public List<CommunityGoalData> ActiveGoals;
 
     /// <summary>
-    /// Prototype ID of the item currently inserted in the contribution slot, or null if empty.
+    /// Items currently staged for contribution (grouped by prototype ID).
     /// </summary>
-    public string? SlottedItemPrototype;
+    public List<StagedItemData> StagedItems;
 
-    /// <summary>
-    /// How many of the slotted item are there (stack count, or 1 for single items).
-    /// </summary>
-    public long SlottedItemAmount;
-
-    /// <summary>
-    /// Display name of the slotted item (from MetaData).
-    /// </summary>
-    public string? SlottedItemName;
-
-    public CommunityGoalConsoleState(
-        List<CommunityGoalData> activeGoals,
-        string? slottedItemPrototype,
-        long slottedItemAmount,
-        string? slottedItemName)
+    public CommunityGoalConsoleState(List<CommunityGoalData> activeGoals, List<StagedItemData> stagedItems)
     {
         ActiveGoals = activeGoals;
-        SlottedItemPrototype = slottedItemPrototype;
-        SlottedItemAmount = slottedItemAmount;
-        SlottedItemName = slottedItemName;
+        StagedItems = stagedItems;
     }
 }

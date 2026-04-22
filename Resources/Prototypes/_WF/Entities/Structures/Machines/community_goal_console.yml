@@ -20,16 +20,9 @@
   - type: Computer
     board: CommunityGoalConsoleCircuitboard
   - type: CommunityGoalConsole
-    itemSlot:
-      name: community-goal-console-slot
-      insertSound: /Audio/Machines/scanning.ogg
-      ejectSound: /Audio/Machines/tray_eject.ogg
-      ejectOnBreak: true
-      swap: false
-  - type: ItemSlots
   - type: ContainerContainer
     containers:
-      community-goal-console-slot: !type:ContainerSlot
+      community-goal-staging: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
   - type: ActivatableUI

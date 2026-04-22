@@ -25,10 +25,18 @@
             <PanelContainer StyleClasses="LowDivider" Margin="0 4 0 4"/>
         </BoxContainer>
 
-        <!-- List of existing goals -->
-        <ScrollContainer VerticalExpand="True">
-            <BoxContainer Name="GoalsList" Orientation="Vertical" Margin="4"/>
-        </ScrollContainer>
+        <!-- List of goals split by status -->
+        <TabContainer Name="GoalTabs" VerticalExpand="True">
+            <ScrollContainer VerticalExpand="True">
+                <BoxContainer Name="ActiveGoalsList" Orientation="Vertical" Margin="4"/>
+            </ScrollContainer>
+            <ScrollContainer VerticalExpand="True">
+                <BoxContainer Name="UpcomingGoalsList" Orientation="Vertical" Margin="4"/>
+            </ScrollContainer>
+            <ScrollContainer VerticalExpand="True">
+                <BoxContainer Name="ExpiredGoalsList" Orientation="Vertical" Margin="4"/>
+            </ScrollContainer>
+        </TabContainer>
 
     </BoxContainer>
 </controls:FancyWindow>

@@ -29,6 +29,9 @@ public sealed class CommunityGoalsEui : BaseEui
 
         _window.OnRemoveRequirement += requirementId =>
             SendMessage(new RemoveCommunityGoalRequirementMessage(requirementId));
+
+        _window.OnUpdateRequirement += (requirementId, amount) =>
+            SendMessage(new UpdateCommunityGoalRequirementMessage(requirementId, amount));
     }
 
     public override void Opened()

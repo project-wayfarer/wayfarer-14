@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
 using Content.Server.Database;
 using Content.Server.EUI;
+using Content.Server.GameTicking;
 using Content.Shared._WF.CommunityGoals;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
@@ -15,7 +16,10 @@ public sealed class CommunityGoalsEui : BaseEui
     [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly IEntitySystemManager _entitySystems = default!;
 
+    private CommunityGoalsSystem _goals = default!;
+    private GameTicker _gameTicker = default!;
     private readonly ISawmill _sawmill;
 
     public CommunityGoalsEui()
@@ -28,14 +32,18 @@ public sealed class CommunityGoalsEui : BaseEui
     {
         // Synchronous path: state is fetched on Opened() and refreshed after each mutation.
         // We keep a cached copy and push it immediately; mutations call RefreshAsync().
-        return new CommunityGoalsEuiState(_cachedGoals);
+        return new CommunityGoalsEuiState(_cachedGoals, _cachedRound);
     }
+
+    private int _cachedRound;
 
     private List<CommunityGoalData> _cachedGoals = new();
 
     public override async void Opened()
     {
         base.Opened();
+        _goals = _entitySystems.GetEntitySystem<CommunityGoalsSystem>();
+        _gameTicker = _entitySystems.GetEntitySystem<GameTicker>();
         await RefreshAsync();
     }
 
@@ -63,7 +71,21 @@ public sealed class CommunityGoalsEui : BaseEui
         if (IsShutDown)
             return;
         _cachedGoals = goals.Select(ToData).ToList();
+        _cachedRound = _gameTicker.RoundId;
         StateDirty();
+    }
+
+    /// <summary>
+    /// Refreshes the EUI's own goal cache AND tells CommunityGoalsSystem to reload
+    /// its active-goals cache, which raises CommunityGoalsUpdatedEvent and pushes
+    /// fresh state to all open in-game consoles.
+    /// </summary>
+    private async Task RefreshAllAsync()
+    {
+        await RefreshAsync();
+        if (IsShutDown)
+            return;
+        await _goals.RefreshActiveGoals();
     }
 
     public override async void HandleMessage(EuiMessageBase msg)
@@ -102,8 +124,13 @@ public sealed class CommunityGoalsEui : BaseEui
                 await _db.RemoveCommunityGoalRequirement(removeReq.RequirementId);
                 _sawmill.Info($"Admin {Player.Name} removed requirement #{removeReq.RequirementId}");
                 break;
+
+            case UpdateCommunityGoalRequirementMessage updateReq:
+                await _db.UpdateCommunityGoalRequirement(updateReq.RequirementId, updateReq.RequiredAmount);
+                _sawmill.Info($"Admin {Player.Name} updated requirement #{updateReq.RequirementId} required amount to {updateReq.RequiredAmount}");
+                break;
         }
 
-        await RefreshAsync();
+        await RefreshAllAsync();
     }
 }

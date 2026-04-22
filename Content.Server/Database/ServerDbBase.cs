@@ -2587,6 +2587,20 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync(cancel);
         }
 
+        public async Task UpdateCommunityGoalRequirement(int requirementId, long requiredAmount, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var req = await db.DbContext.WayfarerCommunityGoalRequirements
+                .FirstOrDefaultAsync(r => r.Id == requirementId, cancel);
+
+            if (req == null)
+                return;
+
+            req.RequiredAmount = requiredAmount;
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
         public async Task AddCommunityGoalContribution(
             int requirementId,
             long amount,

@@ -6,9 +6,18 @@ using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server._NF.RoundNotifications.Events;
 using Content.Shared._WF.CommunityGoals;
+using Content.Shared.Stacks;
 using Robust.Shared.Log;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._WF.CommunityGoals;
+
+/// <summary>
+/// Raised on the server whenever the cached active community goals list changes
+/// (contributions recorded, admin edits applied, or round-start load).
+/// Subscribe to this to know when to push fresh UI state to in-game consoles.
+/// </summary>
+public sealed class CommunityGoalsUpdatedEvent : EntityEventArgs { }
 
 /// <summary>
 /// Tracks which community goals are active for the current round and
@@ -19,6 +28,7 @@ public sealed class CommunityGoalsSystem : EntitySystem
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -61,22 +71,24 @@ public sealed class CommunityGoalsSystem : EntitySystem
         }).ToList();
 
         _sawmill.Info($"Loaded {_activeGoals.Count} active community goal(s) for round {roundId}.");
+        RaiseLocalEvent(new CommunityGoalsUpdatedEvent());
     }
 
     /// <summary>
     /// Records a contribution of <paramref name="amount"/> units for every active requirement
-    /// whose EntityPrototypeId matches <paramref name="entityPrototypeId"/>.
+    /// whose EntityPrototypeId matches <paramref name="entityPrototypeId"/> (exact or same stack type).
     /// Returns the number of requirements updated.
     /// </summary>
     public async Task<int> RecordContribution(string entityPrototypeId, long amount)
     {
+        var itemStackType = GetProtoStackTypeId(entityPrototypeId);
         var updated = 0;
 
         foreach (var goal in _activeGoals)
         {
             foreach (var req in goal.Requirements)
             {
-                if (!req.EntityPrototypeId.Equals(entityPrototypeId, StringComparison.OrdinalIgnoreCase))
+                if (!MatchesRequirement(entityPrototypeId, itemStackType, req.EntityPrototypeId))
                     continue;
 
                 await _db.AddCommunityGoalContribution(req.Id, amount);
@@ -88,7 +100,67 @@ public sealed class CommunityGoalsSystem : EntitySystem
             }
         }
 
+        if (updated > 0)
+            RaiseLocalEvent(new CommunityGoalsUpdatedEvent());
+
         return updated;
+    }
+
+    /// <summary>
+    /// Returns true if an item with <paramref name="itemProtoId"/> (and optional
+    /// <paramref name="itemStackTypeId"/>) satisfies a requirement defined as
+    /// <paramref name="reqProtoId"/>.
+    /// Matches by exact prototype ID OR by shared stack type (so SheetSteel10
+    /// satisfies a SheetSteel requirement, because both have stackType Steel).
+    /// </summary>
+    public bool MatchesRequirement(string itemProtoId, string? itemStackTypeId, string reqProtoId)
+    {
+        if (itemProtoId.Equals(reqProtoId, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if (itemStackTypeId == null)
+            return false;
+
+        var reqStackType = GetProtoStackTypeId(reqProtoId);
+        return reqStackType != null &&
+               reqStackType.Equals(itemStackTypeId, StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Returns the StackTypeId defined on the given entity prototype, or null if it has none.
+    /// </summary>
+    public string? GetProtoStackTypeId(string protoId)
+    {
+        if (!_protoManager.TryIndex<EntityPrototype>(protoId, out var proto))
+            return null;
+
+        return proto.TryGetComponent<StackComponent>(out var sc) ? sc.StackTypeId : null;
+    }
+
+    /// <summary>
+    /// Records a contribution of <paramref name="amount"/> units directly to the specific
+    /// requirement identified by <paramref name="requirementId"/>, bypassing prototype matching.
+    /// Used by the targeted per-requirement contribute button.
+    /// </summary>
+    public async Task RecordContributionToRequirement(int requirementId, long amount)
+    {
+        await _db.AddCommunityGoalContribution(requirementId, amount);
+
+        foreach (var goal in _activeGoals)
+        {
+            foreach (var req in goal.Requirements)
+            {
+                if (req.Id != requirementId)
+                    continue;
+
+                req.CurrentAmount += amount;
+                _sawmill.Debug($"Targeted contribution: +{amount} → req #{requirementId} " +
+                               $"({req.CurrentAmount}/{req.RequiredAmount})");
+                break;
+            }
+        }
+
+        RaiseLocalEvent(new CommunityGoalsUpdatedEvent());
     }
 
     /// <summary>
@@ -117,5 +189,7 @@ public sealed class CommunityGoalsSystem : EntitySystem
                 CurrentAmount = r.CurrentAmount,
             }).ToList(),
         }).ToList();
+
+        RaiseLocalEvent(new CommunityGoalsUpdatedEvent());
     }
 }

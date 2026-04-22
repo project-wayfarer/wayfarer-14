@@ -1,11 +1,12 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
+using Content.Shared._WF.CommunityGoals;
 using Content.Shared._WF.CommunityGoals.BUI;
 using Content.Shared._WF.CommunityGoals.Components;
 using Content.Shared._WF.CommunityGoals.Events;
-using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
+using Content.Shared.Interaction;
 using Content.Shared.Stacks;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
@@ -17,12 +18,11 @@ namespace Content.Server._WF.CommunityGoals;
 public sealed class CommunityGoalConsoleSystem : EntitySystem
 {
     [Dependency] private readonly CommunityGoalsSystem _goals = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
 
     public override void Initialize()
     {
@@ -30,14 +30,32 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
 
         SubscribeLocalEvent<CommunityGoalConsoleComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<CommunityGoalConsoleComponent, BoundUIOpenedEvent>(OnUIOpened);
-        SubscribeLocalEvent<CommunityGoalConsoleComponent, EntInsertedIntoContainerMessage>(OnSlotChanged);
-        SubscribeLocalEvent<CommunityGoalConsoleComponent, EntRemovedFromContainerMessage>(OnSlotChanged);
-        SubscribeLocalEvent<CommunityGoalConsoleComponent, CommunityGoalContributeMessage>(OnContribute);
+        SubscribeLocalEvent<CommunityGoalConsoleComponent, EntInsertedIntoContainerMessage>(OnContainerChanged);
+        SubscribeLocalEvent<CommunityGoalConsoleComponent, EntRemovedFromContainerMessage>(OnContainerChanged);
+        SubscribeLocalEvent<CommunityGoalConsoleComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<CommunityGoalConsoleComponent, CommunityGoalCommitMessage>(OnCommit);
+        SubscribeLocalEvent<CommunityGoalConsoleComponent, CommunityGoalClearStagingMessage>(OnClearStaging);
+        SubscribeLocalEvent<CommunityGoalConsoleComponent, CommunityGoalContributeToRequirementMessage>(OnContributeToRequirement);
+        SubscribeLocalEvent<CommunityGoalsUpdatedEvent>(OnGoalsUpdated);
     }
 
     private void OnInit(EntityUid uid, CommunityGoalConsoleComponent comp, ComponentInit args)
     {
-        _itemSlots.AddItemSlot(uid, CommunityGoalConsoleComponent.SlotId, comp.ItemSlot);
+        _containers.EnsureContainer<Container>(uid, CommunityGoalConsoleComponent.StagingContainerId);
+    }
+
+    /// <summary>
+    /// Whenever the active goals list changes (contribution, admin edit, round start),
+    /// push fresh state to every community goal console that has open UIs.
+    /// </summary>
+    private void OnGoalsUpdated(CommunityGoalsUpdatedEvent ev)
+    {
+        var query = EntityQueryEnumerator<CommunityGoalConsoleComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (_uiSystem.IsUiOpen(uid, CommunityGoalConsoleUiKey.Key))
+                UpdateUI(uid, comp);
+        }
     }
 
     private void OnUIOpened(EntityUid uid, CommunityGoalConsoleComponent comp, BoundUIOpenedEvent args)
@@ -45,89 +63,270 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
         UpdateUI(uid, comp);
     }
 
-    private void OnSlotChanged(EntityUid uid, CommunityGoalConsoleComponent comp, ContainerModifiedMessage args)
+    private void OnContainerChanged(EntityUid uid, CommunityGoalConsoleComponent comp, ContainerModifiedMessage args)
     {
+        if (args.Container.ID != CommunityGoalConsoleComponent.StagingContainerId)
+            return;
         UpdateUI(uid, comp);
     }
 
-    private async void OnContribute(EntityUid uid, CommunityGoalConsoleComponent comp, CommunityGoalContributeMessage args)
+    /// <summary>
+    /// When a player uses an item on the console, stage it for contribution.
+    /// </summary>
+    private void OnInteractUsing(EntityUid uid, CommunityGoalConsoleComponent comp, InteractUsingEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!_containers.TryGetContainer(uid, CommunityGoalConsoleComponent.StagingContainerId, out var container))
+            return;
+
+        var item = args.Used;
+        var protoId = MetaData(item).EntityPrototype?.ID;
+
+        if (protoId == null)
+        {
+            _popup.PopupEntity(Loc.GetString("community-goal-console-unknown-item"), uid, args.User);
+            args.Handled = true;
+            return;
+        }
+
+        // Match by exact proto OR shared stack type (e.g. SheetSteel10 matches a SheetSteel requirement)
+        var itemStackType = TryComp<StackComponent>(item, out var sc) ? sc.StackTypeId : null;
+        var matched = _goals.ActiveGoals
+            .Any(g => g.Requirements.Any(r =>
+                _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId)));
+
+        if (!matched)
+        {
+            _popup.PopupEntity(
+                Loc.GetString("community-goal-console-not-needed", ("item", Name(item))),
+                uid, args.User);
+            args.Handled = true;
+            return;
+        }
+
+        if (container.ContainedEntities.Count >= comp.MaxStagingItems)
+        {
+            _popup.PopupEntity(Loc.GetString("community-goal-console-staging-full"), uid, args.User);
+            args.Handled = true;
+            return;
+        }
+
+        if (!_containers.Insert(item, container))
+        {
+            args.Handled = true;
+            return;
+        }
+
+        long amount = TryComp<StackComponent>(item, out var stack) ? stack.Count : 1;
+        _audio.PlayPvs(comp.InsertSound, uid);
+        _popup.PopupEntity(
+            Loc.GetString("community-goal-console-item-staged", ("amount", amount), ("item", Name(item))),
+            uid, args.User);
+
+        args.Handled = true;
+    }
+
+    /// <summary>
+    /// Commits all staged items: records contributions in the DB and deletes the items.
+    /// </summary>
+    private async void OnCommit(EntityUid uid, CommunityGoalConsoleComponent comp, CommunityGoalCommitMessage args)
     {
         if (args.Actor is not { Valid: true } player)
             return;
 
-        var item = comp.ItemSlot.Item;
-        if (item == null)
+        if (!_containers.TryGetContainer(uid, CommunityGoalConsoleComponent.StagingContainerId, out var container))
+            return;
+
+        if (container.ContainedEntities.Count == 0)
         {
             _audio.PlayPvs(comp.ErrorSound, uid);
-            _popup.PopupEntity(Loc.GetString("community-goal-console-no-item"), uid, player);
             return;
         }
 
-        var protoId = MetaData(item.Value).EntityPrototype?.ID;
-        if (protoId == null)
+        // Aggregate contributions, normalizing each item's proto to the matching requirement's proto.
+        // e.g. SheetSteel10 → records as SheetSteel (whatever the requirement is defined as).
+        var contributions = new Dictionary<string, long>();
+        var names = new Dictionary<string, string>();
+
+        foreach (var ent in container.ContainedEntities)
         {
-            _audio.PlayPvs(comp.ErrorSound, uid);
-            _popup.PopupEntity(Loc.GetString("community-goal-console-unknown-item"), uid, player);
-            return;
+            var protoId = MetaData(ent).EntityPrototype?.ID;
+            if (protoId == null)
+                continue;
+
+            long amount = TryComp<StackComponent>(ent, out var stack) ? stack.Count : 1;
+            var itemStackType = stack?.StackTypeId;
+
+            // Find the requirement proto this item maps to (for canonical recording).
+            var reqProtoId = _goals.ActiveGoals
+                .SelectMany(g => g.Requirements)
+                .FirstOrDefault(r => _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId))
+                ?.EntityPrototypeId ?? protoId;
+
+            if (contributions.TryGetValue(reqProtoId, out var existing))
+                contributions[reqProtoId] = existing + amount;
+            else
+                contributions[reqProtoId] = amount;
+
+            names[reqProtoId] = Name(ent);
         }
 
-        // Determine contribution amount (stack or 1)
-        long amount = 1;
-        if (TryComp<StackComponent>(item.Value, out var stack))
-            amount = stack.Count;
+        // Delete all staged items.
+        foreach (var ent in container.ContainedEntities.ToList())
+            QueueDel(ent);
 
-        var itemName = Name(item.Value);
-
-        // Check that at least one active requirement matches before consuming
-        var matched = _goals.ActiveGoals
-            .Any(g => g.Requirements.Any(r =>
-                r.EntityPrototypeId.Equals(protoId, StringComparison.OrdinalIgnoreCase)));
-
-        if (!matched)
+        // Record each unique prototype contribution in the DB.
+        var totalUpdated = 0;
+        foreach (var (protoId, amount) in contributions)
         {
-            _audio.PlayPvs(comp.ErrorSound, uid);
-            _popup.PopupEntity(Loc.GetString("community-goal-console-not-needed", ("item", itemName)), uid, player);
-            return;
+            var updated = await _goals.RecordContribution(protoId, amount);
+            totalUpdated += updated;
+
+            if (updated > 0)
+            {
+                _adminLog.Add(LogType.Action, LogImpact.Low,
+                    $"{ToPrettyString(player)} contributed {amount}x {protoId} to {updated} community goal requirement(s).");
+            }
         }
 
-        // Consume the item
-        _itemSlots.TryEject(uid, comp.ItemSlot, null, out _);
-        QueueDel(item.Value);
-
-        // Record contribution
-        var updated = await _goals.RecordContribution(protoId, amount);
-
-        _audio.PlayPvs(comp.ContributeSound, uid);
+        _audio.PlayPvs(comp.CommitSound, uid);
         _popup.PopupEntity(
-            Loc.GetString("community-goal-console-contributed", ("amount", amount), ("item", itemName)),
+            Loc.GetString("community-goal-console-committed", ("types", contributions.Count)),
             uid, player);
 
-        _adminLog.Add(LogType.Action, LogImpact.Low,
-            $"{ToPrettyString(player)} contributed {amount}x {protoId} to {updated} community goal requirement(s).");
+        UpdateUI(uid, comp);
+    }
 
+    /// <summary>
+    /// Contributes all staged items that match a specific requirement, leaving others in place.
+    /// </summary>
+    private async void OnContributeToRequirement(EntityUid uid, CommunityGoalConsoleComponent comp, CommunityGoalContributeToRequirementMessage args)
+    {
+        if (args.Actor is not { Valid: true } player)
+            return;
+
+        if (!_containers.TryGetContainer(uid, CommunityGoalConsoleComponent.StagingContainerId, out var container))
+            return;
+
+        // Locate the target requirement in the active goal cache.
+        CommunityGoalRequirementData? targetReq = null;
+        foreach (var goal in _goals.ActiveGoals)
+        {
+            foreach (var req in goal.Requirements)
+            {
+                if (req.Id == args.RequirementId)
+                {
+                    targetReq = req;
+                    break;
+                }
+            }
+            if (targetReq != null)
+                break;
+        }
+
+        if (targetReq == null)
+        {
+            _audio.PlayPvs(comp.ErrorSound, uid);
+            return;
+        }
+
+        // Collect staged items that match this requirement.
+        var toConsume = new List<EntityUid>();
+        long totalAmount = 0;
+        var itemName = targetReq.DisplayName ?? targetReq.EntityPrototypeId;
+
+        foreach (var ent in container.ContainedEntities)
+        {
+            var protoId = MetaData(ent).EntityPrototype?.ID;
+            if (protoId == null)
+                continue;
+
+            var itemStackType = TryComp<StackComponent>(ent, out var sc) ? sc.StackTypeId : null;
+            if (!_goals.MatchesRequirement(protoId, itemStackType, targetReq.EntityPrototypeId))
+                continue;
+
+            long amount = TryComp<StackComponent>(ent, out var stack) ? stack.Count : 1;
+            toConsume.Add(ent);
+            totalAmount += amount;
+            itemName = Name(ent);
+        }
+
+        if (toConsume.Count == 0)
+        {
+            _audio.PlayPvs(comp.ErrorSound, uid);
+            return;
+        }
+
+        // Delete the matched entities from the staging container.
+        foreach (var ent in toConsume)
+            QueueDel(ent);
+
+        // Record contribution only to this specific requirement.
+        await _goals.RecordContributionToRequirement(targetReq.Id, totalAmount);
+
+        _adminLog.Add(LogType.Action, LogImpact.Low,
+            $"{ToPrettyString(player)} contributed {totalAmount}x {itemName} to community goal requirement #{targetReq.Id}.");
+
+        _audio.PlayPvs(comp.CommitSound, uid);
+        _popup.PopupEntity(
+            Loc.GetString("community-goal-console-contributed-targeted",
+                ("amount", totalAmount),
+                ("item", itemName)),
+            uid, player);
+
+        UpdateUI(uid, comp);
+    }
+
+    /// <summary>
+    /// Ejects all staged items back to the floor around the console.
+    /// </summary>
+    private void OnClearStaging(EntityUid uid, CommunityGoalConsoleComponent comp, CommunityGoalClearStagingMessage args)
+    {
+        if (!_containers.TryGetContainer(uid, CommunityGoalConsoleComponent.StagingContainerId, out var container))
+            return;
+
+        _containers.EmptyContainer(container);
         UpdateUI(uid, comp);
     }
 
     private void UpdateUI(EntityUid uid, CommunityGoalConsoleComponent comp)
     {
-        string? slotProto = null;
-        long slotAmount = 0;
-        string? slotName = null;
+        var staged = new List<StagedItemData>();
 
-        var item = comp.ItemSlot.Item;
-        if (item != null)
+        if (_containers.TryGetContainer(uid, CommunityGoalConsoleComponent.StagingContainerId, out var container))
         {
-            slotProto = MetaData(item.Value).EntityPrototype?.ID;
-            slotName = Name(item.Value);
-            slotAmount = TryComp<StackComponent>(item.Value, out var stack) ? stack.Count : 1;
+            // Group staged items by their matched requirement proto ID for consistent display.
+            var groups = new Dictionary<string, (long amount, string name)>();
+
+            foreach (var ent in container.ContainedEntities)
+            {
+                var protoId = MetaData(ent).EntityPrototype?.ID;
+                if (protoId == null)
+                    continue;
+
+                long amount = TryComp<StackComponent>(ent, out var stack) ? stack.Count : 1;
+                var itemStackType = stack?.StackTypeId;
+                var display = Name(ent);
+
+                // Normalize to requirement proto so variants (SheetSteel10 etc.) merge correctly.
+                var groupKey = _goals.ActiveGoals
+                    .SelectMany(g => g.Requirements)
+                    .FirstOrDefault(r => _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId))
+                    ?.EntityPrototypeId ?? protoId;
+
+                if (groups.TryGetValue(groupKey, out var existing))
+                    groups[groupKey] = (existing.amount + amount, display);
+                else
+                    groups[groupKey] = (amount, display);
+            }
+
+            foreach (var (protoId, (amount, display)) in groups)
+                staged.Add(new StagedItemData(protoId, display, amount));
         }
 
-        var state = new CommunityGoalConsoleState(
-            _goals.ActiveGoals.ToList(),
-            slotProto,
-            slotAmount,
-            slotName);
-
+        var state = new CommunityGoalConsoleState(_goals.ActiveGoals.ToList(), staged);
         _uiSystem.SetUiState(uid, CommunityGoalConsoleUiKey.Key, state);
     }
 }

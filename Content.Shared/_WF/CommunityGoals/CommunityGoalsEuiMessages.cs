@@ -37,10 +37,12 @@ public sealed class CommunityGoalData
 public sealed class CommunityGoalsEuiState : EuiStateBase
 {
     public List<CommunityGoalData> Goals;
+    public int CurrentRound;
 
-    public CommunityGoalsEuiState(List<CommunityGoalData> goals)
+    public CommunityGoalsEuiState(List<CommunityGoalData> goals, int currentRound)
     {
         Goals = goals;
+        CurrentRound = currentRound;
     }
 }
 
@@ -122,5 +124,18 @@ public sealed class RemoveCommunityGoalRequirementMessage : EuiMessageBase
     public RemoveCommunityGoalRequirementMessage(int requirementId)
     {
         RequirementId = requirementId;
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class UpdateCommunityGoalRequirementMessage : EuiMessageBase
+{
+    public int RequirementId;
+    public long RequiredAmount;
+
+    public UpdateCommunityGoalRequirementMessage(int requirementId, long requiredAmount)
+    {
+        RequirementId = requirementId;
+        RequiredAmount = requiredAmount;
     }
 }

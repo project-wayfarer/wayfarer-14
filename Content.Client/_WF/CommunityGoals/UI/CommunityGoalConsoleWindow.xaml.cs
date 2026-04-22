@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._WF.CommunityGoals;
 using Content.Shared._WF.CommunityGoals.BUI;
@@ -7,7 +9,6 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
-using System.Numerics;
 using Robust.Shared.Maths;
 
 namespace Content.Client._WF.CommunityGoals.UI;
@@ -15,34 +16,70 @@ namespace Content.Client._WF.CommunityGoals.UI;
 [GenerateTypedNameReferences]
 public sealed partial class CommunityGoalConsoleWindow : FancyWindow
 {
-    public Action? OnContribute;
+    public Action? OnCommit;
+    public Action? OnClearStaging;
+    public Action<int>? OnContributeToRequirement;
 
     public CommunityGoalConsoleWindow()
     {
         RobustXamlLoader.Load(this);
 
-        ContributeButton.OnPressed += _ => OnContribute?.Invoke();
+        CommitButton.OnPressed += _ => OnCommit?.Invoke();
+        ClearButton.OnPressed += _ => OnClearStaging?.Invoke();
     }
 
     public void UpdateState(CommunityGoalConsoleState state)
     {
-        // Update slot display
-        if (state.SlottedItemPrototype != null)
+        // ── Staging area ──────────────────────────────────────────────────────
+        StagingList.RemoveAllChildren();
+
+        var totalStacks = state.StagedItems.Count;
+        var hasItems = totalStacks > 0;
+
+        StagingCount.Text = hasItems
+            ? $"{totalStacks} type{(totalStacks != 1 ? "s" : "")} staged"
+            : "nothing staged";
+        StagingCount.FontColorOverride = hasItems ? Color.White : Color.FromHex("#888888");
+        CommitButton.Disabled = !hasItems;
+        ClearButton.Disabled = !hasItems;
+        HintLabel.Visible = !hasItems;
+
+        foreach (var item in state.StagedItems)
         {
-            SlotLabel.Text = state.SlottedItemName != null
-                ? $"{state.SlottedItemName}  ×{state.SlottedItemAmount}"
-                : $"{state.SlottedItemPrototype}  ×{state.SlottedItemAmount}";
-            SlotLabel.FontColorOverride = Color.White;
-            ContributeButton.Disabled = false;
-        }
-        else
-        {
-            SlotLabel.Text = "— empty —";
-            SlotLabel.FontColorOverride = Color.FromHex("#888888");
-            ContributeButton.Disabled = true;
+            var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, Margin = new Thickness(4, 1) };
+
+            // Highlight if this type matches any active goal requirement
+            var matched = state.ActiveGoals
+                .Any(g => g.Requirements.Any(r =>
+                    r.EntityPrototypeId.Equals(item.PrototypeId, StringComparison.OrdinalIgnoreCase)));
+
+            row.AddChild(new Label
+            {
+                Text = $"• {item.DisplayName}",
+                HorizontalExpand = true,
+                FontColorOverride = matched ? Color.FromHex("#ffffaa") : Color.FromHex("#cccccc"),
+                ToolTip = item.PrototypeId,
+            });
+            row.AddChild(new Label
+            {
+                Text = $"×{item.Amount:N0}",
+                FontColorOverride = matched ? Color.FromHex("#ffffaa") : Color.FromHex("#888888"),
+                Margin = new Thickness(8, 0, 0, 0),
+            });
+
+            if (!matched)
+            {
+                row.AddChild(new Label
+                {
+                    Text = "  (not needed)",
+                    FontColorOverride = Color.FromHex("#cc6666"),
+                });
+            }
+
+            StagingList.AddChild(row);
         }
 
-        // Rebuild goals list
+        // ── Goals list ────────────────────────────────────────────────────────
         GoalsList.RemoveAllChildren();
 
         if (state.ActiveGoals.Count == 0)
@@ -56,9 +93,14 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
             return;
         }
 
+        // Collect staged proto IDs for highlighting
+        var stagedProtos = state.StagedItems
+            .Select(i => i.PrototypeId)
+            .ToList();
+
         foreach (var goal in state.ActiveGoals)
         {
-            GoalsList.AddChild(BuildGoalEntry(goal, state.SlottedItemPrototype));
+            GoalsList.AddChild(BuildGoalEntry(goal, stagedProtos, OnContributeToRequirement));
             GoalsList.AddChild(new PanelContainer
             {
                 StyleClasses = { "LowDivider" },
@@ -67,7 +109,7 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
         }
     }
 
-    private static Control BuildGoalEntry(CommunityGoalData goal, string? slottedProto)
+    private static Control BuildGoalEntry(CommunityGoalData goal, List<string> stagedProtos, Action<int>? onContribute)
     {
         var root = new BoxContainer
         {
@@ -75,14 +117,12 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
             Margin = new Thickness(4, 2),
         };
 
-        // Title
         root.AddChild(new Label
         {
             Text = goal.Title,
             FontColorOverride = Color.FromHex("#aaffaa"),
         });
 
-        // Description
         root.AddChild(new Label
         {
             Text = goal.Description,
@@ -90,10 +130,9 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
             FontColorOverride = Color.FromHex("#cccccc"),
         });
 
-        // Requirements
         foreach (var req in goal.Requirements)
         {
-            root.AddChild(BuildRequirementBar(req, slottedProto));
+            root.AddChild(BuildRequirementBar(req, stagedProtos, onContribute));
         }
 
         if (goal.Requirements.Count == 0)
@@ -108,11 +147,10 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
         return root;
     }
 
-    private static Control BuildRequirementBar(CommunityGoalRequirementData req, string? slottedProto)
+    private static Control BuildRequirementBar(CommunityGoalRequirementData req, List<string> stagedProtos, Action<int>? onContribute)
     {
         var isCompleted = req.CurrentAmount >= req.RequiredAmount;
-        var isSlotMatch = slottedProto != null &&
-                          slottedProto.Equals(req.EntityPrototypeId, StringComparison.OrdinalIgnoreCase);
+        var isStaged = stagedProtos.Any(p => p.Equals(req.EntityPrototypeId, StringComparison.OrdinalIgnoreCase));
 
         var pct = req.RequiredAmount > 0
             ? Math.Clamp((double)req.CurrentAmount / req.RequiredAmount, 0, 1)
@@ -130,14 +168,14 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
         // Label row
         var labelRow = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
 
-        var bullet = isSlotMatch ? "▶ " : "• ";
+        var bullet = isStaged && !isCompleted ? "▶ " : "• ";
         labelRow.AddChild(new Label
         {
             Text = $"{bullet}{name}",
             HorizontalExpand = true,
             FontColorOverride = isCompleted
                 ? Color.FromHex("#aaffaa")
-                : isSlotMatch
+                : isStaged
                     ? Color.FromHex("#ffffaa")
                     : Color.White,
         });
@@ -145,33 +183,28 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
         {
             Text = isCompleted ? $"{progress}  ✓" : progress,
             FontColorOverride = isCompleted ? Color.FromHex("#aaffaa") : Color.FromHex("#aaaaaa"),
+            Margin = new Thickness(8, 0, 0, 0),
         });
+
+        // Per-requirement contribute button
+        var reqId = req.Id;
+        var contributeBtn = new Button
+        {
+            Text = Loc.GetString("community-goal-console-contribute-req"),
+            Disabled = isCompleted || !isStaged,
+            Margin = new Thickness(8, 0, 0, 0),
+        };
+        contributeBtn.OnPressed += _ => onContribute?.Invoke(reqId);
+        labelRow.AddChild(contributeBtn);
+
         row.AddChild(labelRow);
 
-        // Progress bar (simple coloured panel)
-        var barBg = new PanelContainer
-        {
-            MinSize = new Vector2(0, 8),
-            HorizontalExpand = true,
-            Margin = new Thickness(0, 2, 0, 4),
-        };
-        barBg.PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#333333") };
-
-        var barFill = new PanelContainer
-        {
-            HorizontalAlignment = HAlignment.Left,
-            MinSize = new Vector2(0, 8),
-        };
-        barFill.PanelOverride = new StyleBoxFlat
-        {
-            BackgroundColor = isCompleted ? Color.FromHex("#44aa44") : Color.FromHex("#4488cc"),
-        };
-
-        // We'll use a custom layout approach: wrap in a ratio container via code
         var bar = new ProgressBar
         {
+            MinValue = 0,
+            MaxValue = 1,
             Value = (float)pct,
-            MinSize = new Vector2(0, 12),
+            MinHeight = 12,
             HorizontalExpand = true,
         };
         row.AddChild(bar);

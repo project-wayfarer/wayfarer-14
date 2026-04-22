@@ -425,6 +425,7 @@ namespace Content.Server.Database
         Task DeleteCommunityGoal(int goalId, CancellationToken cancel = default);
         Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId, string entityPrototypeId, string? displayName, long requiredAmount, CancellationToken cancel = default);
         Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default);
+        Task UpdateCommunityGoalRequirement(int requirementId, long requiredAmount, CancellationToken cancel = default);
         Task AddCommunityGoalContribution(int requirementId, long amount, CancellationToken cancel = default);
 
         #endregion
@@ -1335,6 +1336,12 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.RemoveCommunityGoalRequirement(requirementId, cancel));
+        }
+
+        public Task UpdateCommunityGoalRequirement(int requirementId, long requiredAmount, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateCommunityGoalRequirement(requirementId, requiredAmount, cancel));
         }
 
         public Task AddCommunityGoalContribution(int requirementId, long amount, CancellationToken cancel = default)
