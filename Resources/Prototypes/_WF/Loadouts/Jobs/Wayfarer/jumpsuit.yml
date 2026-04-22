@@ -1481,16 +1481,6 @@
   groupBy: "engineerJumpsuit"
 
 - type: loadout
-  id: WFClothingUniformJumpsuitChiefEngineerNT
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT2
-  price: 1000
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitChiefEngineerNT
-  groupBy: "engineerJumpsuit"
-
-- type: loadout
   id: WFClothingUniformJumpsuitChiefEngineer
   effects:
   - !type:GroupLoadoutEffect

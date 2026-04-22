@@ -31,4 +31,17 @@ public sealed partial class ShockOnTriggerComponent : BaseXOnTriggerComponent
     /// </summary>
     [DataField, AutoNetworkedField]
     public TimeSpan Duration = TimeSpan.FromSeconds(2);
+
+    // /// <summary>
+    // /// The minimum delay between repeating triggers.
+    // /// </summary>
+    // [DataField]
+    // public TimeSpan Cooldown = TimeSpan.FromSeconds(4);
+    //
+    // /// <summary>
+    // /// When can the trigger run again?
+    // /// </summary>
+    // [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    // [AutoPausedField]
+    // public TimeSpan NextTrigger = TimeSpan.Zero;
 }

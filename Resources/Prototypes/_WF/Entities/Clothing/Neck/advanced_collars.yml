@@ -101,7 +101,7 @@
     - type: ShockOnTrigger
       damage: 1
       duration: 2.5
-      cooldown: 3.5
+      #cooldown: 3.5
     - type: DeviceNetwork
       deviceNetId: Wireless
       receiveFrequencyId: BasicDevice

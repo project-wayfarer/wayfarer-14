@@ -45,7 +45,5 @@
     stepOn: true
   - type: TriggerOnStepTrigger
   - type: SignalOnTrigger
-  - type: DeviceLinkSource
-    ports:
-    - SignalTrigger
+    port: Pressed
   - type: DeleteOnTrigger
