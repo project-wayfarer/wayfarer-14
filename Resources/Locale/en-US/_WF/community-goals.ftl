@@ -6,3 +6,4 @@ community-goal-console-item-staged = Staged {$amount}x {$item} for contribution.
 community-goal-console-committed = Submitted {$types} item type(s) to the community goals!
 community-goal-console-contributed-targeted = Contributed {$amount}x {$item} to the requirement!
 community-goal-console-contribute-req = Contribute
+community-goal-console-commit-failed = Something went wrong recording your contribution. Your items have been returned.

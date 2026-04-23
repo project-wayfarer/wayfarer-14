@@ -174,23 +174,35 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
             names[reqProtoId] = Name(ent);
         }
 
-        // Delete all staged items.
-        foreach (var ent in container.ContainedEntities.ToList())
-            QueueDel(ent);
-
-        // Record each unique prototype contribution in the DB.
+        // Record each unique prototype contribution in the DB first, then delete.
+        // This order ensures items are not lost if the DB write fails.
         var totalUpdated = 0;
-        foreach (var (protoId, amount) in contributions)
+        try
         {
-            var updated = await _goals.RecordContribution(protoId, amount);
-            totalUpdated += updated;
-
-            if (updated > 0)
+            foreach (var (protoId, amount) in contributions)
             {
-                _adminLog.Add(LogType.Action, LogImpact.Low,
-                    $"{ToPrettyString(player)} contributed {amount}x {protoId} to {updated} community goal requirement(s).");
+                var updated = await _goals.RecordContribution(protoId, amount);
+                totalUpdated += updated;
+
+                if (updated > 0)
+                {
+                    _adminLog.Add(LogType.Action, LogImpact.Low,
+                        $"{ToPrettyString(player)} contributed {amount}x {protoId} to {updated} community goal requirement(s).");
+                }
             }
         }
+        catch (Exception ex)
+        {
+            Log.Error($"Failed to record community goal contribution for {ToPrettyString(player)}: {ex}");
+            _audio.PlayPvs(comp.ErrorSound, uid);
+            _popup.PopupEntity(Loc.GetString("community-goal-console-commit-failed"), uid, player);
+            UpdateUI(uid, comp);
+            return;
+        }
+
+        // Only delete items after a successful DB write.
+        foreach (var ent in container.ContainedEntities.ToList())
+            QueueDel(ent);
 
         _audio.PlayPvs(comp.CommitSound, uid);
         _popup.PopupEntity(
@@ -260,12 +272,23 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
             return;
         }
 
-        // Delete the matched entities from the staging container.
+        // Record contribution first, then delete — so items are not lost if the DB write fails.
+        try
+        {
+            await _goals.RecordContributionToRequirement(targetReq.Id, totalAmount);
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"Failed to record targeted community goal contribution for {ToPrettyString(player)}: {ex}");
+            _audio.PlayPvs(comp.ErrorSound, uid);
+            _popup.PopupEntity(Loc.GetString("community-goal-console-commit-failed"), uid, player);
+            UpdateUI(uid, comp);
+            return;
+        }
+
+        // Only delete items after a successful DB write.
         foreach (var ent in toConsume)
             QueueDel(ent);
-
-        // Record contribution only to this specific requirement.
-        await _goals.RecordContributionToRequirement(targetReq.Id, totalAmount);
 
         _adminLog.Add(LogType.Action, LogImpact.Low,
             $"{ToPrettyString(player)} contributed {totalAmount}x {itemName} to community goal requirement #{targetReq.Id}.");
