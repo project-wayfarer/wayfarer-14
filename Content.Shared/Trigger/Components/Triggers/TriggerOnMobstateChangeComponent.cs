@@ -24,6 +24,13 @@ public sealed partial class TriggerOnMobstateChangeComponent : BaseTriggerOnXCom
     public bool PreventSuicide = false;
 
     /// <summary>
+    /// If true, suppresses this trigger when the implanted entity is currently vored,
+    /// preventing medical radio pings from firing while inside a predator.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool PreventVore = false;
+
+    /// <summary>
     /// If false, the trigger user will be the entity that caused the mobstate to change.
     /// If true, the trigger user will the entity that changed its mob state.
     /// </summary>

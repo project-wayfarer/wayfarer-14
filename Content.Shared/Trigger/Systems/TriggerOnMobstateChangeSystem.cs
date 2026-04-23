@@ -1,4 +1,5 @@
-﻿using Content.Shared.Implants;
+﻿using Content.Shared.FloofStation;
+using Content.Shared.Implants;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
@@ -33,6 +34,9 @@ public sealed partial class TriggerOnMobstateChangeSystem : EntitySystem
     private void OnMobStateRelay(EntityUid uid, TriggerOnMobstateChangeComponent component, ImplantRelayEvent<MobStateChangedEvent> args)
     {
         if (!component.MobState.Contains(args.Event.NewMobState))
+            return;
+
+        if (component.PreventVore && HasComp<VoredComponent>(args.ImplantedEntity))
             return;
 
         _trigger.Trigger(uid, component.TargetMobstateEntity ? args.ImplantedEntity : args.Event.Origin, component.KeyOut);
