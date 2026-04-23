@@ -33,6 +33,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Roles.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.PDA;
@@ -548,16 +549,11 @@ public sealed partial class CryoSleepSystem : EntitySystem
                     var jobName = "Unknown";
 
                     // Get the job name from the stored mind's job role
-                    // if (TryComp<MindComponent>(mindId, out var mindComp) && mindComp != null)
-                    // {
-                    //     if (_roles.MindHasRole<Shared.Roles.Jobs.JobRoleComponent>(mindId, out var jobRole))
-                    //     {
-                    //         if (jobRole.Value.Comp1.JobPrototype != null)
-                    //         {
-                    //             jobName = jobRole.Value.Comp1.JobPrototype;
-                    //         }
-                    //     }
-                    // }
+                    if (_roles.MindHasRole<JobRoleComponent>(mindId, out var jobRole)
+                        && jobRole.Value.Comp1.JobPrototype is {} proto)
+                    {
+                        jobName = proto;
+                    }
 
                     characters.Add(new StoredCharacterInfo(
                         GetNetEntity(body),
