@@ -166,8 +166,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
-        Slash: 14
+        Piercing: 4.5 #Wayfarer 4 -> 4.5
+        Slash: 16 #Wayfarer 14 -> 16
 
 - type: entity
   parent: BaseCrossbowBolt
@@ -240,6 +240,7 @@
     damage:
       types:
         Piercing: 12
+        Slash: 2 #Wayfarer
   - type: Construction
     graph: CraftCrossbowBoltGlassShard
     node: CraftCrossbowBoltGlassShard
@@ -270,7 +271,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 14
+        Piercing: 12 #Wayfarer 14 -> 12
+        Slash: 6 #Wayfarer
   - type: Construction
     graph: CraftCrossbowBoltPlasmaGlassShard
     node: CraftCrossbowBoltPlasmaGlassShard
@@ -302,8 +304,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 14
-        Radiation: 4
+        Piercing: 10 #Wayfarer 14 -> 10
+        Radiation: 6 #Wayfarer 4 -> 6
+        Slash: 2 #Wayfarer
   - type: Construction
     graph: CraftCrossbowBoltUraniumGlassShard
     node: CraftCrossbowBoltUraniumGlassShard
@@ -370,6 +373,7 @@
     damage:
       types:
         Piercing: 20
+        Slash: 5 #Wayfarer
     ignoreResistances: true
   - type: Construction
     graph: CraftCrossbowBoltPlasteel
@@ -577,7 +581,7 @@
       types:
         Piercing: 6
   - type: TimedDespawn
-    lifetime: 0.25
+    lifetime: 0.27 #Wayfarer 0.25 -> 0.27
 
 # Blood cult
 - type: entity
@@ -605,4 +609,4 @@
       types:
         Piercing: 5
         Slash: 5
-        Bloodloss: 3
+        Bloodloss: 4 #Wayfarer 3 -> 4

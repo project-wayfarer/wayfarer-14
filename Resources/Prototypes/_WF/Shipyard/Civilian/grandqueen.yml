@@ -1,0 +1,43 @@
+﻿# Author Info
+# GitHub: Goodfaun
+# Discord: Goodfaun
+
+# Maintainer Info
+# GitHub: Goodfaun
+# Discord: Goodfaun
+
+# Shuttle Notes:
+# Grand Luxury cruise liner
+- type: vessel
+  id: GrandQueen
+  parent: BaseVessel
+  name: BAM Grand Queen
+  description: A luxury grand cruiseliner, comes with a spa full kitchen, and a front row seat.
+  price: 185000 # 904 *50 appraised 69246.912 *1.6
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/grandqueen.yml
+  guidebookPage: ShipyardGrandqueen
+  class:
+  - Civilian
+  - Kitchen
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: GrandQueen
+  mapName: 'GrandQueen'
+  mapPath: /Maps/_WF/Shuttles/Civilian/grandqueen.yml
+  minPlayers: 0
+  stations:
+    GrandQueen:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Grand Queen CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

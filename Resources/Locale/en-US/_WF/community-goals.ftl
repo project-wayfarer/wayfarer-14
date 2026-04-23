@@ -1,0 +1,9 @@
+community-goal-console-title = Community Goals Terminal
+community-goal-console-unknown-item = This item cannot be identified.
+community-goal-console-not-needed = {$item} is not needed for any active community goal.
+community-goal-console-staging-full = The staging area is full! Contribute or return items first.
+community-goal-console-item-staged = Staged {$amount}x {$item} for contribution.
+community-goal-console-committed = Submitted {$types} item type(s) to the community goals!
+community-goal-console-contributed-targeted = Contributed {$amount}x {$item} to the requirement!
+community-goal-console-contribute-req = Contribute
+community-goal-console-commit-failed = Something went wrong recording your contribution. Your items have been returned.
