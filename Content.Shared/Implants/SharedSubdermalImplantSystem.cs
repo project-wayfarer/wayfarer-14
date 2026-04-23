@@ -28,9 +28,6 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
         SubscribeLocalEvent<SubdermalImplantComponent, ContainerGettingRemovedAttemptEvent>(OnRemoveAttempt);
         SubscribeLocalEvent<SubdermalImplantComponent, EntGotRemovedFromContainerMessage>(OnRemove);
 
-        // SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
-        // SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
-        // SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
     }
 
     private void OnInsert(Entity<SubdermalImplantComponent> ent, ref EntGotInsertedIntoContainerMessage args)
@@ -164,9 +161,9 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
     {
         if (!Resolve(target, ref target.Comp, false))
             return;
-            _container.CleanContainer(target.Comp.ImplantContainer);
-        }
+        _container.CleanContainer(target.Comp.ImplantContainer);
     }
+}
 
 /// <summary>
 /// Event that is raised whenever someone is implanted with any given implant.
