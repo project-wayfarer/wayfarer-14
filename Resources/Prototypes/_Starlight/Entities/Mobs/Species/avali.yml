@@ -51,7 +51,7 @@
         Peckish: 150
         Starving: 100
         Dead: 0
-      baseDecayRate: 0.03
+      # Wayfarer: All species have the same hunger rate
     - type: Thirst
     - type: Icon
       sprite: _Starlight/Mobs/Species/Avali/parts.rsi
@@ -62,8 +62,8 @@
     - type: Butcherable
       butcheringType: Spike
       spawned:
-        - id: FoodMeatChicken
-          amount: 3
+        - id: FoodMeatResomi # Wayfarer: FoodMeatChicken<FoodMeatResomi
+          amount: 5 # Wayfarer: 3<5
     - type: Speech
       speechVerb: Parrot # RMC did it right.
       speechSounds: MaleAvali
