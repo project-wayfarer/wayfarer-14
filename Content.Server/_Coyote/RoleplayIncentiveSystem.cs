@@ -113,14 +113,14 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         {
             return; // lot of stuff happens and it dont
         }
-        // // if its EmotingOrQuickEmoting, we need to doffgerentiate thewween the tween the two
-        // if (actOut == RoleplayActs.EmotingOrQuickEmoting)
-        // {
-        //     actOut = DoffgerentiateEmotingAndQuickEmoting(
-        //         args.Source,
-        //         args.Message
-        //         );
-        // }
+        // if its EmotingOrQuickEmoting, we need to doffgerentiate thewween the tween the two
+        if (actOut == RoleplayActs.EmotingOrQuickEmoting)
+        {
+            actOut = DoffgerentiateEmotingAndQuickEmoting(
+                args.Source,
+                args.Message
+                );
+        }
         // make the thing
         var action = new RoleplayAction(
             actOut,
@@ -169,27 +169,20 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         };
     }
 
-    // private RoleplayActs DoffgerentiateEmotingAndQuickEmoting(
-    //     EntityUid source,
-    //     string message
-    //     )
-    // {
-    //     // Check if the message is a valid emote trigger WITHOUT invoking it
-    //     // (to avoid playing sounds/effects twice)
-    //     if (_chatsys.IsEmoteTrigger(message))
-    //     {
-    //         // if the message is a valid emote, then its a quick emote
-    //         return RoleplayActs.QuickEmoting;
-    //     }
-    //     return RoleplayActs.Emoting;
-    //
-    //     // well i cant figure out how the system does it, so im just gonnasay if theres
-    //     // no spaces, its a quick emote
-    //     // return !message.Contains(' ')
-    //     //     ? RoleplayActs.QuickEmoting
-    //     //     // otherwise, its a normal emote
-    //     //     : RoleplayActs.Emoting;
-    // }
+    private RoleplayActs DoffgerentiateEmotingAndQuickEmoting(
+        EntityUid source,
+        string message
+        )
+    {
+        // Check if the message is a valid emote trigger WITHOUT invoking it
+        // (to avoid playing sounds/effects twice)
+        if (_chatsys.IsEmoteTrigger(message))
+        {
+            // if the message is a valid emote, then its a quick emote
+            return RoleplayActs.QuickEmoting;
+        }
+        return RoleplayActs.Emoting;
+    }
 
     /// <summary>
     /// Goes through all the relevant actions taken and stored, judges them,

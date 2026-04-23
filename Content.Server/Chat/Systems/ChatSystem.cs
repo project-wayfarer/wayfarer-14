@@ -700,13 +700,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         }
 
-        // // Frontier: send custom emotes through custom event
-        // if (!emoteEventInvoked)
-        // {
-        //     var ev = new NFEntityEmotedEvent(action);
-        //     RaiseLocalEvent(source, ev, true);
-        // }
-        // // End Frontier
+        // Frontier: send custom emotes through custom event
+        if (!emoteEventInvoked)
+        {
+            var ev = new NFEntityEmotedEvent(source, action);
+            RaiseLocalEvent(source, ev, true);
+        }
+        // End Frontier
 
         SendInVoiceRange(ChatChannel.Emotes,
             action,

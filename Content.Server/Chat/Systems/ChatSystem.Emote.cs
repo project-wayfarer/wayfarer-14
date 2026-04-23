@@ -198,6 +198,15 @@ public partial class ChatSystem
         return validEmote;
     }
 
+    /// <summary>
+    ///     Checks if a given message matches any emote trigger word, without invoking the emote.
+    /// </summary>
+    public bool IsEmoteTrigger(string message)
+    {
+        var actionTrimmedLower = TrimPunctuation(message.ToLower());
+        return _wordEmoteDict.ContainsKey(actionTrimmedLower);
+    }
+
     static string TrimPunctuation(string textInput)
     {
         var trimEnd = textInput.Length;
