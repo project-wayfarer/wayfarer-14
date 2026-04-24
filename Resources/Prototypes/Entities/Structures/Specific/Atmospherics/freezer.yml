@@ -6,6 +6,10 @@
   components:
   - type: AtmosMonitor
     temperatureThresholdId: freezerTemperature
+  - type: Tag # wayfarer edit: fix freezer vents from rotating when doing fixroations command
+    tags:
+    - AirSensor
+    - ForceNoFixRotations # end of wayfarer edit
 
 - type: entity
   parent: [AirSensorFreezerBase, AirSensor]
