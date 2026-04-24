@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 04/23/2026 01:13:16
-  entityCount: 268
+  time: 04/24/2026 01:44:35
+  entityCount: 273
 maps: []
 grids:
 - 1
@@ -740,6 +740,11 @@ entities:
     - type: Transform
       pos: 1.5,-4.5
       parent: 1
+  - uid: 270
+    components:
+    - type: Transform
+      pos: -1.5,-0.5
+      parent: 1
 - proto: CableMV
   entities:
   - uid: 118
@@ -761,6 +766,11 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-1.5
+      parent: 1
+  - uid: 269
+    components:
+    - type: Transform
+      pos: -1.5,-0.5
       parent: 1
 - proto: Catwalk
   entities:
@@ -1280,6 +1290,13 @@ entities:
     - type: Transform
       pos: -0.5,1.5
       parent: 1
+- proto: FaxMachineShip
+  entities:
+  - uid: 272
+    components:
+    - type: Transform
+      pos: -0.5,-0.5
+      parent: 1
 - proto: Grille
   entities:
   - uid: 213
@@ -1313,6 +1330,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-0.5
+      parent: 1
+- proto: NFHolopadShip
+  entities:
+  - uid: 273
+    components:
+    - type: Transform
+      pos: 0.5,1.5
       parent: 1
 - proto: PortableGeneratorJrPacmanShuttle
   entities:
@@ -1522,11 +1546,20 @@ entities:
     - type: Transform
       pos: 5.5,5.5
       parent: 1
-- proto: SubstationBasic
+- proto: SubstationWallBasic
   entities:
   - uid: 252
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,-0.5
+      parent: 1
+- proto: Table
+  entities:
+  - uid: 271
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
       pos: -0.5,-0.5
       parent: 1
 - proto: Thruster
