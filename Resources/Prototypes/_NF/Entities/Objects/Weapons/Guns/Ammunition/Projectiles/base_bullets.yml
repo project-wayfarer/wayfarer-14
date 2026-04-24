@@ -244,7 +244,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30
+        Piercing: 50 # Wayfarer
         Structural: 200
     penetrationThreshold: 360
     penetrationDamageTypeRequirement:
@@ -263,7 +263,7 @@
       types:
         Blunt: 10
   - type: StaminaDamageOnCollide
-    damage: 60
+    damage: 61 #Wayfarer 60 -> 61
   - type: Tracer
     color: "#00b0ffFF"
     length: 3

@@ -1,0 +1,42 @@
+<controls:FancyWindow
+        xmlns="https://spacestation14.io"
+        xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+        Title="Community Goals" MinSize="700 600">
+    <BoxContainer Orientation="Vertical">
+
+        <!-- Create New Goal form -->
+        <BoxContainer Name="NewGoalPanel" Orientation="Vertical" Margin="6">
+            <Label Text="── Create New Goal ──" FontColorOverride="#aaffaa"/>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="Title:" Margin="0 0 4 0" MinWidth="55"/>
+                <LineEdit Name="NewTitle" HorizontalExpand="True" PlaceHolder="Goal title"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="Desc:" Margin="0 0 4 0" MinWidth="55"/>
+                <LineEdit Name="NewDescription" HorizontalExpand="True" PlaceHolder="Describe the goal"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" Margin="2">
+                <Label Text="Start Round:" Margin="0 0 4 0"/>
+                <LineEdit Name="NewStartRound" MinWidth="80" PlaceHolder="(any)"/>
+                <Label Text="End Round:" Margin="8 0 4 0"/>
+                <LineEdit Name="NewEndRound" MinWidth="80" PlaceHolder="(never)"/>
+                <Button Name="CreateGoalButton" Text="Create Goal" Margin="8 0 0 0"/>
+            </BoxContainer>
+            <PanelContainer StyleClasses="LowDivider" Margin="0 4 0 4"/>
+        </BoxContainer>
+
+        <!-- List of goals split by status -->
+        <TabContainer Name="GoalTabs" VerticalExpand="True">
+            <ScrollContainer VerticalExpand="True">
+                <BoxContainer Name="ActiveGoalsList" Orientation="Vertical" Margin="4"/>
+            </ScrollContainer>
+            <ScrollContainer VerticalExpand="True">
+                <BoxContainer Name="UpcomingGoalsList" Orientation="Vertical" Margin="4"/>
+            </ScrollContainer>
+            <ScrollContainer VerticalExpand="True">
+                <BoxContainer Name="ExpiredGoalsList" Orientation="Vertical" Margin="4"/>
+            </ScrollContainer>
+        </TabContainer>
+
+    </BoxContainer>
+</controls:FancyWindow>

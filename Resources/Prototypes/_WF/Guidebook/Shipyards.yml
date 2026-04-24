@@ -40,6 +40,7 @@
   - ShipyardGarden # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGasbender # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGaslight # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardGrandqueen
   - ShipyardGrandideals
   - ShipyardHamger
   - ShipyardHammer # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
@@ -171,6 +172,11 @@
   name: guide-entry-shipyard-dioddef
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Dioddef.xml"
 
+- type: guideEntry
+  id: ShipyardGrandqueen
+  name: guide-entry-shipyard-grandqueen
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Grandqueen.xml"
+  
 - type: guideEntry
   id: ShipyardGrandideals
   name: guide-entry-shipyard-grandideals

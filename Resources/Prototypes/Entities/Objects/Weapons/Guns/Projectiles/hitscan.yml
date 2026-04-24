@@ -53,7 +53,7 @@
   id: RedMediumLaser
   damage:
     types:
-      Heat: 17
+      Heat: 21 #Wayfarer 17 -> 21
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
@@ -69,7 +69,7 @@
   id: RedLightLaser
   damage:
     types:
-      Heat: 7
+      Heat: 12 #Wayfarer 7 -> 12
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
@@ -102,7 +102,7 @@
   id: RedHeavyLaser
   damage:
     types:
-      Heat: 28
+      Heat: 45 #Wayfarer 28 -> 45
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy
@@ -118,7 +118,7 @@
   id: Pulse
   damage:
     types:
-      Heat: 35
+      Heat: 30 #Wayfarer 35 -> 30
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_blue

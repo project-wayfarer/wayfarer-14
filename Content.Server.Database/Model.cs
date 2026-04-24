@@ -52,6 +52,8 @@ namespace Content.Server.Database
         public DbSet<WayfarerSafetyDepositBoxItem> WayfarerSafetyDepositBoxItem { get; set; } = null!;
         public DbSet<WayfarerRoleplayLevel> WayfarerRoleplayLevels { get; set; } = null!;
         public DbSet<WayfarerRoleplayCommend> WayfarerRoleplayCommends { get; set; } = null!;
+        public DbSet<WayfarerCommunityGoal> WayfarerCommunityGoals { get; set; } = null!;
+        public DbSet<WayfarerCommunityGoalRequirement> WayfarerCommunityGoalRequirements { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -422,6 +424,19 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<WayfarerSafetyDepositBoxItem>()
                 .HasIndex(i => i.BoxId);
+
+            // Wayfarer Community Goals configuration
+            modelBuilder.Entity<WayfarerCommunityGoal>()
+                .HasIndex(g => g.IsActive);
+
+            modelBuilder.Entity<WayfarerCommunityGoalRequirement>()
+                .HasOne(r => r.Goal)
+                .WithMany(g => g.Requirements)
+                .HasForeignKey(r => r.GoalId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCommunityGoalRequirement>()
+                .HasIndex(r => r.GoalId);
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -1653,5 +1668,93 @@ namespace Content.Server.Database
         /// </summary>
         [Required, Column("created_at")]
         public DateTime CreatedAt { get; set; }
+    }
+
+    // Wayfarer Community Goals Tables
+    [Table("wayfarer_community_goals")]
+    public class WayfarerCommunityGoal
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Short display title of the community goal.
+        /// </summary>
+        [Required, Column("title")]
+        public string Title { get; set; } = null!;
+
+        /// <summary>
+        /// Full description text shown to players.
+        /// </summary>
+        [Required, Column("description")]
+        public string Description { get; set; } = null!;
+
+        /// <summary>
+        /// Optional round number on which this goal becomes active. Null = active immediately.
+        /// </summary>
+        [Column("start_round")]
+        public int? StartRound { get; set; }
+
+        /// <summary>
+        /// Optional round number after which this goal is no longer active. Null = never expires.
+        /// </summary>
+        [Column("end_round")]
+        public int? EndRound { get; set; }
+
+        /// <summary>
+        /// Whether this goal is enabled at all. Admins can soft-disable without deleting.
+        /// </summary>
+        [Required, Column("is_active")]
+        public bool IsActive { get; set; } = true;
+
+        /// <summary>
+        /// When this goal record was created.
+        /// </summary>
+        [Required, Column("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        /// Item/entity requirements for this goal.
+        /// </summary>
+        public List<WayfarerCommunityGoalRequirement> Requirements { get; set; } = new();
+    }
+
+    [Table("wayfarer_community_goal_requirements")]
+    public class WayfarerCommunityGoalRequirement
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Foreign key to the parent community goal.
+        /// </summary>
+        [Column("goal_id")]
+        public int GoalId { get; set; }
+
+        public WayfarerCommunityGoal Goal { get; set; } = null!;
+
+        /// <summary>
+        /// The entity prototype ID to track (e.g. "SpaceCash", "Ingot_Gold", "Plasteel").
+        /// </summary>
+        [Required, Column("entity_prototype_id")]
+        public string EntityPrototypeId { get; set; } = null!;
+
+        /// <summary>
+        /// Optional human-readable display name override. Falls back to prototype name if null.
+        /// </summary>
+        [Column("display_name")]
+        public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// How many of this item must be contributed to complete this requirement.
+        /// </summary>
+        [Column("required_amount")]
+        public long RequiredAmount { get; set; }
+
+        /// <summary>
+        /// How many have been contributed so far (accumulated across rounds).
+        /// </summary>
+        [Column("current_amount")]
+        public long CurrentAmount { get; set; }
     }
 }

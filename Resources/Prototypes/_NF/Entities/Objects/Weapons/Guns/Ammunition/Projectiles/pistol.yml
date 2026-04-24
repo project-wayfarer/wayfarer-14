@@ -23,8 +23,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6
-        Blunt: 7
+        Piercing: 6.5 #Wayfarer 6 -> 6.5
+        Blunt: 7.5 #Wayfarer 7 -> 7.5
   - type: StaminaDamageOnCollide
     damage: 5 # 12 hits to slowdown
 
@@ -38,7 +38,7 @@
     damage:
       types:
         Blunt: 7.2 # 0.6 * base total dmg
-        Heat: 4.8 # 0.4 * base total dmg
+        Heat: 5 # 0.4 * base total dmg ##Wayfarer 4.8 -> 5
   - type: StaminaDamageOnCollide
     damage: 4 # 15 hits to slowdown
 
@@ -79,9 +79,9 @@
     damage:
       types:
         Shock: 6
-        Blunt: 6
+        Blunt: 5.5 #Wayfarer 6 -> 5.5
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 4.5 # 13 hits to slowdown ##Wayfarer 4 -> 4.5
 
 - type: entity
   id: NFBulletPistol35Rubber
@@ -106,8 +106,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 8
-        Blunt: 8
+        Piercing: 7.5 #Wayfarer 8 -> 7.5
+        Blunt: 8.5 #Wayfarer 8 -> 8.5
   - type: StaminaDamageOnCollide
     damage: 6 # 10 hits to slowdown
 
@@ -120,8 +120,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 9
-        Blunt: 10.5
+        Piercing: 9.5 #Wayfarer 9 -> 9.5
+        Blunt: 11 #Wayfarer 10.5 -> 11
   - type: StaminaDamageOnCollide
     damage: 7 # ~9 hits to slowdown
 
@@ -134,8 +134,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 10.8 # 0.6 * base total dmg
-        Heat: 7.2 # 0.4 * base total dmg
+        Blunt: 8.6 # 0.6 * base total dmg ##Wayfarer 10.8 -> 8.6
+        Heat: 8.8 # 0.4 * base total dmg ##Wayfarer 7.2 -> 8.8
   - type: StaminaDamageOnCollide
     damage: 6 # 10 hits to slowdown
 
@@ -148,7 +148,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 14.4 # 0.6 * (1.4 * base total dmg)
+        Blunt: 11 # 0.6 * (1.4 * base total dmg) ##Wayfarer 14.4 -> 11
+        Piercing: 3.5 #Wayfarer
         Radiation: 9.6 # 0.6 * (1.4 * base total dmg)
   - type: StaminaDamageOnCollide
     damage: 6 # 10 hits to slowdown
@@ -162,7 +163,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 1
+        Blunt: 1.5 #Wayfarer 1 -> 1.5
 
 # Frontier
 # .45 pistol
@@ -175,8 +176,8 @@
   - type: Projectile
     damage:
       types:
-        Shock: 9
-        Blunt: 9
+        Shock: 9.5 #Wayfarer 9 -> 9.5
+        Blunt: 8.5 #Wayfarer 9 -> 8.5
   - type: StaminaDamageOnCollide
     damage: 6 # 10 hits to slowdown
 
@@ -189,6 +190,6 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2
+        Blunt: 2.5 #Wayfarer 2 -> 2.5
   - type: StaminaDamageOnCollide
-    damage: 16 # ~7 hits to stun sounds reasonable WF reduction stamina rebalance
+    damage: 16.5 # ~7 hits to stun sounds reasonable WF reduction stamina rebalance
