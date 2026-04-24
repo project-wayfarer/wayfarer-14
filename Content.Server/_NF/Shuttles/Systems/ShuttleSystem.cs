@@ -409,8 +409,8 @@ public sealed partial class ShuttleSystem
         {
             SoundSpecifier eBrakeBeep = quietly switch
             {
-                true => new SoundPathSpecifier("/Audio/_COYOTE/ShuttleStuff/ShuttleEBrakeEngagedQuietly.ogg"),
-                false => new SoundPathSpecifier("/Audio/_COYOTE/ShuttleStuff/ShuttleEBrakeEngaged.ogg"),
+                true => new SoundPathSpecifier("/Audio/_CS/ShuttleStuff/ShuttleEBrakeEngagedQuietly.ogg"),
+                false => new SoundPathSpecifier("/Audio/_CS/ShuttleStuff/ShuttleEBrakeEngaged.ogg"),
             };
             var audioParams = quietly switch
             {

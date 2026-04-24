@@ -871,7 +871,7 @@ public sealed partial class ChatUIController : UIController
         // Play mention sound if a highlight was matched
         if (highlightMatched && _mentionSoundEnabled && _audio != null)
         {
-            _audio.PlayGlobal("/Audio/_COYOTE/UserInterface/mention.ogg", Filter.Local(), false);
+            _audio.PlayGlobal("/Audio/_CS/UserInterface/mention.ogg", Filter.Local(), false);
         }
 
         // Play LOOC sound notification if enabled and on cooldown
@@ -884,7 +884,7 @@ public sealed partial class ChatUIController : UIController
             {
                 if ((currentTime - _lastLoocSoundTime) >= SoundCooldown)
                 {
-                    _audio.PlayGlobal("/Audio/_COYOTE/UserInterface/looc_sound.ogg", Filter.Local(), false);
+                    _audio.PlayGlobal("/Audio/_CS/UserInterface/looc_sound.ogg", Filter.Local(), false);
                 }
                 // Reset cooldown timer on each message to avoid interrupting conversations
                 _lastLoocSoundTime = currentTime;
@@ -901,7 +901,7 @@ public sealed partial class ChatUIController : UIController
             {
                 if ((currentTime - _lastSubtleSoundTime) >= SoundCooldown)
                 {
-                    _audio.PlayGlobal("/Audio/_COYOTE/UserInterface/subtle_sound.ogg", Filter.Local(), false);
+                    _audio.PlayGlobal("/Audio/_CS/UserInterface/subtle_sound.ogg", Filter.Local(), false);
                 }
                 // Reset cooldown timer on each message to avoid interrupting conversations
                 _lastSubtleSoundTime = currentTime;

@@ -1,0 +1,163 @@
+- type: species
+  id: OldKinVox
+  name: species-name-oldkinvox
+  roundStart: true
+  prototype: MobOldKinVox
+  sprites: MobOldKinVoxSprites
+  markingLimits: MobHumanMarkingLimits #MobOldKinVoxMarkingLimits WF
+  dollPrototype: MobOldKinVoxDummy
+  skinColoration: Hues # imp VoxFeathers<Hues
+  defaultSkinTone: "#526d29"
+  maleFirstNames: NamesVox
+  femaleFirstNames: NamesVox
+  naming: First
+  sexes:
+  - Unsexed # NO WAY MY VOX SEXES ALL THE TIME
+  kind:
+  - VoxLike
+
+  minAge: 500     # OLD-kin, for a reason.
+  maxAge: 1000000 # Their age is based off their cortical stack, not the body they inhabit
+  youngAge: 4000  # They saw jebus rise and fall, and wonder why humans think they are superior
+  oldAge: 400000
+
+  minHeight: 0.9
+  defaultHeight: 1.2
+  maxHeight: 1.3
+  minWidth: 0.85
+  defaultWidth: 1.2
+  maxWidth: 1.35
+
+- type: speciesBaseSprites
+  id: MobOldKinVoxSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobOldKinVoxHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
+    Chest: MobOldKinVoxTorso
+    Eyes: MobOldKinVoxEyes
+    LArm: MobOldKinVoxLArm
+    RArm: MobOldKinVoxRArm
+    LHand: MobOldKinVoxLHand
+    RHand: MobOldKinVoxRHand
+    LLeg: MobOldKinVoxLLeg
+    RLeg: MobOldKinVoxRLeg
+    LFoot: MobOldKinVoxLFoot
+    RFoot: MobOldKinVoxRFoot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxEyes
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: eyes
+
+- type: marking
+  id: OldKinVoxTail
+  bodyPart: TailOversuit
+  markingCategory: Tail
+  #speciesRestriction: [OldKinVox]
+  forcedColoring: true
+  sprites:
+  - sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: tail
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxHead
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxHeadMale
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxHeadFemale
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxTorso
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxTorsoMale
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxTorsoFemale
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxGroin
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLLeg
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLArm
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLHand
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxLFoot
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRLeg
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRArm
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRHand
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobOldKinVoxRFoot
+  baseSprite:
+    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    state: r_foot
+

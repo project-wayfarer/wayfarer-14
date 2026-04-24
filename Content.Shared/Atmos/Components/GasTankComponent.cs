@@ -129,16 +129,16 @@ public sealed partial class GasTankComponent : Component, IGasMixtureHolder
         {
             new GasPressureAlertThreshold(
                 0.10f,
-                new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/airwarning_critical.ogg"),
-                new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/jetpack_critical.ogg")),
+                new SoundPathSpecifier("/Audio/_CS/GasWarnings/airwarning_critical.ogg"),
+                new SoundPathSpecifier("/Audio/_CS/GasWarnings/jetpack_critical.ogg")),
             new GasPressureAlertThreshold(
                 0.20f,
-                new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/airwarning_verylow.ogg"),
-                new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/jetpack_verylow.ogg")),
+                new SoundPathSpecifier("/Audio/_CS/GasWarnings/airwarning_verylow.ogg"),
+                new SoundPathSpecifier("/Audio/_CS/GasWarnings/jetpack_verylow.ogg")),
             new GasPressureAlertThreshold(
                 0.35f,
-                new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/airwarning_low.ogg"),
-                new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/jetpack_low.ogg")),
+                new SoundPathSpecifier("/Audio/_CS/GasWarnings/airwarning_low.ogg"),
+                new SoundPathSpecifier("/Audio/_CS/GasWarnings/jetpack_low.ogg")),
         };
 
     /// <summary>
@@ -165,14 +165,14 @@ public sealed partial class GasTankComponent : Component, IGasMixtureHolder
         /// <summary>
         /// The sound to play when the alert is tripped.
         /// </summary>
-        public SoundSpecifier AlertSound = new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/airwarning_low.ogg");
+        public SoundSpecifier AlertSound = new SoundPathSpecifier("/Audio/_CS/GasWarnings/airwarning_low.ogg");
 
         /// <summary>
         /// The sound to play when the alert is tripped,
         /// And is an active jetpack, and is not internals.
         /// yeah pretty specific but, ya know how it is.
         /// </summary>
-        public SoundSpecifier JetpackAlertSound = new SoundPathSpecifier("/Audio/_COYOTE/GasWarnings/jetpack_low.ogg");
+        public SoundSpecifier JetpackAlertSound = new SoundPathSpecifier("/Audio/_CS/GasWarnings/jetpack_low.ogg");
 
         public GasPressureAlertThreshold(float pressurePercentThreshold,
             SoundSpecifier alertSound,

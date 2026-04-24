@@ -1,0 +1,213 @@
+- type: marking
+  id: OldKinVoxArmMarkingsLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: arm_markings_left
+
+- type: marking
+  id: OldKinVoxArmMarkingsRight
+  bodyPart: RArm
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: arm_markings_right
+
+- type: marking
+  id: OldKinVoxBeak
+  bodyPart: Snout
+  markingCategory: Head
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: beak
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: OldKinVoxClawsFeetLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  colorLinks:
+    claws_feet_left_behind: claws_feet_left
+  layering:
+    claws_feet_left: LFoot
+#    claws_feet_left_behind: LFootBehind
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_feet_left
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_feet_left_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: OldKinVoxClawsFeetRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  colorLinks:
+    claws_feet_right_behind: claws_feet_right
+  layering:
+    claws_feet_right: RFoot
+#    claws_feet_right_behind: RFootBehind
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_feet_right
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_feet_right_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: OldKinVoxClawsHandsLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_hands_left
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: OldKinVoxClawsHandsRight
+  bodyPart: RHand
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: claws_hands_right
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: OldKinVoxCrest
+  bodyPart: Snout #Loathesome Dungeater!
+  markingCategory: Head
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: crest
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: OldKinVoxNeckMarkings
+  bodyPart: Head
+  markingCategory: Head
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: neck_markings
+
+- type: marking
+  id: OldKinVoxScutesArmsLeft
+  bodyPart: LHand #Why? Because it's technically on the hand.
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: scutes_arms_left
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: OldKinVoxScutesArmsRight
+  bodyPart: RHand #Why? Because it's technically on the hand.
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: scutes_arms_right
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: OldKinVoxScutesLegsLeft
+  bodyPart: LFoot #as Above, so Below
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  colorLinks:
+    scutes_legs_left: scutes_foot_left
+  layering:
+#    r_foot_behind: RFootBehind
+    scutes_legs_left: LLeg
+    scutes_foot_left: LFoot
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: scutes_legs_left
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: scutes_foot_left
+    - sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+      state: r_foot_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: OldKinVoxScutesLegsRight
+  bodyPart: RFoot #as Above, so Below
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [OldKinVox]
+  colorLinks:
+    scutes_legs_right: scutes_foot_right
+  layering:
+#    l_foot_behind: LFootBehind
+    scutes_legs_right: RLeg
+    scutes_foot_right: RFoot
+  sprites:
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: scutes_legs_right
+    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+      state: scutes_foot_right
+    - sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+      state: l_foot_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
