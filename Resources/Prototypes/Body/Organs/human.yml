@@ -27,6 +27,9 @@
   - type: Tag
     tags:
       - Meat
+      # Wayfarer: Allow organ to be picked up by trashcan (because holy fuck 4-8 organ per organism is painful)
+      - Trash
+      # End Wayfarer
 
 - type: entity
   id: BaseHumanOrgan
