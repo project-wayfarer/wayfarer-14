@@ -2456,5 +2456,168 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
 
         #endregion
+
+        #region Wayfarer Community Goals
+
+        public async Task<List<WayfarerCommunityGoal>> GetAllCommunityGoals(
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            return await db.DbContext.WayfarerCommunityGoals
+                .Include(g => g.Requirements)
+                .OrderBy(g => g.Id)
+                .ToListAsync(cancel);
+        }
+
+        public async Task<List<WayfarerCommunityGoal>> GetActiveCommunityGoals(
+            int roundId,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            return await db.DbContext.WayfarerCommunityGoals
+                .Include(g => g.Requirements)
+                .Where(g => g.IsActive
+                    && (g.StartRound == null || g.StartRound <= roundId)
+                    && (g.EndRound == null || g.EndRound >= roundId))
+                .OrderBy(g => g.Id)
+                .ToListAsync(cancel);
+        }
+
+        public async Task<WayfarerCommunityGoal> CreateCommunityGoal(
+            string title,
+            string description,
+            int? startRound,
+            int? endRound,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var goal = new WayfarerCommunityGoal
+            {
+                Title = title,
+                Description = description,
+                StartRound = startRound,
+                EndRound = endRound,
+                IsActive = true,
+                CreatedAt = DateTime.UtcNow,
+            };
+
+            db.DbContext.WayfarerCommunityGoals.Add(goal);
+            await db.DbContext.SaveChangesAsync(cancel);
+            return goal;
+        }
+
+        public async Task UpdateCommunityGoal(
+            int goalId,
+            string title,
+            string description,
+            int? startRound,
+            int? endRound,
+            bool isActive,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var goal = await db.DbContext.WayfarerCommunityGoals
+                .FirstOrDefaultAsync(g => g.Id == goalId, cancel);
+
+            if (goal == null)
+                return;
+
+            goal.Title = title;
+            goal.Description = description;
+            goal.StartRound = startRound;
+            goal.EndRound = endRound;
+            goal.IsActive = isActive;
+
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task DeleteCommunityGoal(int goalId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var goal = await db.DbContext.WayfarerCommunityGoals
+                .Include(g => g.Requirements)
+                .FirstOrDefaultAsync(g => g.Id == goalId, cancel);
+
+            if (goal == null)
+                return;
+
+            db.DbContext.WayfarerCommunityGoals.Remove(goal);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(
+            int goalId,
+            string entityPrototypeId,
+            string? displayName,
+            long requiredAmount,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var req = new WayfarerCommunityGoalRequirement
+            {
+                GoalId = goalId,
+                EntityPrototypeId = entityPrototypeId,
+                DisplayName = displayName,
+                RequiredAmount = requiredAmount,
+                CurrentAmount = 0,
+            };
+
+            db.DbContext.WayfarerCommunityGoalRequirements.Add(req);
+            await db.DbContext.SaveChangesAsync(cancel);
+            return req;
+        }
+
+        public async Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var req = await db.DbContext.WayfarerCommunityGoalRequirements
+                .FirstOrDefaultAsync(r => r.Id == requirementId, cancel);
+
+            if (req == null)
+                return;
+
+            db.DbContext.WayfarerCommunityGoalRequirements.Remove(req);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task UpdateCommunityGoalRequirement(int requirementId, long requiredAmount, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var req = await db.DbContext.WayfarerCommunityGoalRequirements
+                .FirstOrDefaultAsync(r => r.Id == requirementId, cancel);
+
+            if (req == null)
+                return;
+
+            req.RequiredAmount = requiredAmount;
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task AddCommunityGoalContribution(
+            int requirementId,
+            long amount,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var req = await db.DbContext.WayfarerCommunityGoalRequirements
+                .FirstOrDefaultAsync(r => r.Id == requirementId, cancel);
+
+            if (req == null)
+                return;
+
+            req.CurrentAmount += amount;
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        #endregion
     }
 }

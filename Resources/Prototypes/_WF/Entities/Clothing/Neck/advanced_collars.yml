@@ -210,6 +210,7 @@
       moduleDescription: Shocks wearer on wireless signal
     # Store the component configurations that will be added to the collar
     - type: ShockOnTrigger
+      targetContainer: true
       damage: 1
       duration: 2.5
       cooldown: 3.5

@@ -19,7 +19,6 @@
     group: GenericNumber
   - type: StatusEffects
     allowed:
-    - Stutter
     - Electrocution
     - TemporaryBlindness
     - RadiationProtection
@@ -239,7 +238,7 @@
     - SimpleHostile
   - type: HTN
     rootTask:
-      task: N14RangedCombatCompound # WF - Use N14 
+      task: N14RangedCombatCompound # WF - Use N14
     blackboard:
       VisionRadius: !type:Single
         4

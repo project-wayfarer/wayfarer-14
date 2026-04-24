@@ -5,7 +5,6 @@ using Content.Server._NF.RoundNotifications.Events; // Frontier
 using Content.Server.Announcements;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
-using Content.Server.Ghost;
 using Content.Server.Maps;
 using Content.Server.Roles;
 using Content.Shared.CCVar;
@@ -14,6 +13,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
+using Content.Shared.Roles.Components;
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Shared.Asynchronous;
@@ -21,7 +21,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -432,7 +431,7 @@ namespace Content.Server.GameTicking
             SpawnPlayers(readyPlayers, readyPlayerProfiles, force);
 
             _roundStartDateTime = DateTime.UtcNow;
-            
+
             // Automatically set shift end time if configured
             var defaultShiftEndTime = _cfg.GetCVar(CCVars.GameShiftEndTime);
             if (defaultShiftEndTime > 0)
@@ -444,7 +443,7 @@ namespace Content.Server.GameTicking
             {
                 ShiftEndTime = null;
             }
-            
+
             RunLevel = GameRunLevel.InRound;
 
             RoundStartTimeSpan = _gameTiming.CurTime;

@@ -30,6 +30,7 @@ public sealed partial class ContentAudioSystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -170,6 +171,7 @@ public sealed partial class ContentAudioSystem
         SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnPlayerSpawn);
 
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
+        _sawmill = _logManager.GetSawmill("audio.ambience");
         //Subs.CVar(_configManager, MonoCVars.CombatMusicVolume, CombatCVarChanged, true);
         //Subs.CVar(_configManager, MonoCVars.CombatMusicEnabled, CombatToggleChanged, true);
         //Subs.CVar(_configManager, MonoCVars.CombatMusicWindUpTime, CombatWindUpChanged, true);
