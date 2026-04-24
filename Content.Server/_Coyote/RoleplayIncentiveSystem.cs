@@ -182,13 +182,6 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             return RoleplayActs.QuickEmoting;
         }
         return RoleplayActs.Emoting;
-
-        // well i cant figure out how the system does it, so im just gonnasay if theres
-        // no spaces, its a quick emote
-        // return !message.Contains(' ')
-        //     ? RoleplayActs.QuickEmoting
-        //     // otherwise, its a normal emote
-        //     : RoleplayActs.Emoting;
     }
 
     /// <summary>

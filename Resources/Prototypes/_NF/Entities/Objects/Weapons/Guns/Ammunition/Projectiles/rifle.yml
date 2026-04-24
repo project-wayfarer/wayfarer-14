@@ -45,7 +45,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 19.5 #Wayfarer 19 -> 19.5
 
 - type: entity
   id: NFBulletRifle20Overpressure
@@ -56,7 +56,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 21
+        Piercing: 21.5 #Wayfarer 21 -> 21.5
 
 - type: entity
   id: NFBulletRifle20Incendiary
@@ -67,8 +67,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 11.7 # 0.6 * base total dmg
-        Heat: 7.8 # 0.4 * base total dmg
+        Piercing: 10.7 # 0.6 * base total dmg ##Wayfarer 11.7 -> 10.7
+        Heat: 8.4 # 0.4 * base total dmg ##Wayfarer 7.8 -> 8.4
 
 - type: entity
   id: NFBulletRifle20Uranium
@@ -79,8 +79,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 16.2 # 0.6 * (1.4 * base total dmg)
-        Radiation: 8.8 # 0.4 * (1.4 * base total dmg)
+        Piercing: 16.0 # 0.6 * (1.4 * base total dmg) ##Wayfarer 16.2 -> 16.0
+        Radiation: 9.0 # 0.4 * (1.4 * base total dmg) ##Wayfarer 8.8 -> 9
 
 - type: entity
   id: NFBulletRifle20Practice
@@ -187,7 +187,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 22
+        Piercing: 22.5 #Wayfarer 22 -> 22.5
 
 - type: entity
   id: NFBulletRifle30Overpressure
@@ -198,7 +198,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 23
+        Piercing: 23.5 #Wayfarer 23 -> 23.5
 
 - type: entity
   id: NFBulletRifle30Incendiary
@@ -210,7 +210,7 @@
     damage:
       types:
         Piercing: 13.2
-        Heat: 8.8
+        Heat: 9.2 #Wayfarer 8.8 -> 9.2
 
 - type: entity
   id: NFBulletRifle30Uranium
@@ -221,8 +221,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 18.8
-        Radiation: 9.2
+        Piercing: 19.2 #Wayfarer 18.8 -> 19.2
+        Radiation: 9.7 #Wayfarer 9.2 -> 9.7
 
 - type: entity
   id: NFBulletRifle30Practice
@@ -246,7 +246,7 @@
       types:
         Piercing: 2
   - type: StaminaDamageOnCollide
-    damage: 13 # ~8 hits to stun sounds reasonable
+    damage: 15 # ~8 hits to stun sounds reasonable ##Wayfarer 13 -> 15
 
 #region .60 rifle
 - type: entity
@@ -258,8 +258,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 45
-        Structural: 200
+        Piercing: 47 #Wayfarer 45 -> 47
+        Structural: 208 #Wayfarer 200 -> 208
     ignoreResistances: true
     penetrationThreshold: 260
     penetrationDamageTypeRequirement:

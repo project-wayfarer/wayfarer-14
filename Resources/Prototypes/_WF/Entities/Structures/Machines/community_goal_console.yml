@@ -1,0 +1,49 @@
+- type: entity
+  id: CommunityGoalConsole
+  name: community goals terminal
+  description: A terminal displaying the current community goals and their progress. Insert items to contribute.
+  parent: BaseComputer
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: generic
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      state: generic_panel_open
+  - type: Computer
+    board: CommunityGoalConsoleCircuitboard
+  - type: CommunityGoalConsole
+  - type: ContainerContainer
+    containers:
+      community-goal-staging: !type:Container
+      board: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: ActivatableUI
+    key: enum.CommunityGoalConsoleUiKey.Key
+  - type: InteractionOutline
+  - type: UserInterface
+    interfaces:
+      enum.CommunityGoalConsoleUiKey.Key:
+        type: CommunityGoalConsoleBoundUserInterface
+  - type: Anchorable
+  - type: Pullable
+
+- type: entity
+  id: CommunityGoalConsoleCircuitboard
+  parent: BaseComputerCircuitboard
+  name: community goals terminal board
+  description: A circuit board for a community goals terminal.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: generic
+  - type: ComputerBoard
+    prototype: CommunityGoalConsole

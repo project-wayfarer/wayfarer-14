@@ -24,11 +24,14 @@ public sealed class SalvageSystem : SharedSalvageSystem
             return;
 
         component.Stage = state.Stage;
+        if (state.SelectedSong != null) // Frontier
+            component.SelectedSong = state.SelectedSong; // Frontier
 
         if (component.Stage >= ExpeditionStage.MusicCountdown)
         {
             _audio.DisableAmbientMusic();
         }
+
     }
 
     private void OnPlayAmbientMusic(ref PlayAmbientMusicEvent ev)
@@ -47,4 +50,16 @@ public sealed class SalvageSystem : SharedSalvageSystem
 
         ev.Cancelled = true;
     }
+
+    // Frontier: resolve expedition comp
+    public override bool ResolveExpedition(EntityUid? uid, ref SharedSalvageExpeditionComponent? component)
+    {
+        if (component is not null)
+            return true;
+
+        TryComp<SalvageExpeditionComponent>(uid, out var localComp);
+        component = localComp;
+        return component != null;
+    }
+    // End Frontier
 }

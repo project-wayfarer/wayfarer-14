@@ -30,7 +30,18 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: heater
-    
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapGrandqueen
+  name: "Grandqueen"
+  description: "Detailed map of a Grandqueen shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: grandqueen
+
 - type: entity
   parent: PosterBase
   id: ShuttleMapIcarus

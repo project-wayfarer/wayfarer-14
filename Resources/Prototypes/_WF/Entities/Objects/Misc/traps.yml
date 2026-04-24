@@ -43,9 +43,10 @@
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     stepOn: true
-  - type: TriggerOnStepTrigger
-  - type: SignalOnTrigger
   - type: DeviceLinkSource
     ports:
-    - SignalTrigger
+    - Pressed
+  - type: TriggerOnStepTrigger
+  - type: SignalOnTrigger
+    port: Pressed
   - type: DeleteOnTrigger
