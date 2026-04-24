@@ -23,18 +23,6 @@
     <ProjectReference Include="..\RobustToolbox\Robust.Client\Robust.Client.csproj" />
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="_COYOTE\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Explosion\SmokeOnTriggerSystem.cs" />
-    <Compile Remove="Explosion\TriggerOnProximityComponent.cs" />
-    <Compile Remove="Administration\Components\HeadstandComponent.cs" />
-    <Compile Remove="Storage\Components\EntityStorageComponent.cs" />
-    <Compile Remove="Trigger\TimerTriggerVisualizerComponent.cs" />
-    <Compile Remove="Trigger\TimerTriggerVisualizerSystem.cs" />
-    <Compile Remove="Explosion\TriggerSystem.cs" />
-  </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
 </Project>
