@@ -23,6 +23,28 @@
       <Private>false</Private>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="_NF\Silicons\Borgs\DroppableBorgModuleComponent.cs" />
+    <Compile Remove="Explosion\Components\SharedTriggerOnProximityComponent.cs" />
+    <Compile Remove="Nutrition\EntitySystems\IngestionBlockerSystem.cs" />
+    <Compile Remove="Roles\MindRoleComponent.cs" />
+    <Compile Remove="Explosion\EntitySystems\SharedTriggerSystem.cs" />
+    <Compile Remove="Explosion\EntitySystems\SharedSmokeOnTriggerSystem.cs" />
+    <Compile Remove="Explosion\Components\OnTrigger\ExplodeOnTriggerComponent.cs" />
+    <Compile Remove="Toilet\Systems\SharedToiletSystem.cs" />
+    <Compile Remove="Explosion\EntitySystems\SharedReleaseGasOnTriggerSystem.cs" />
+    <Compile Remove="Implants\Components\RattleComponent.cs" />
+    <Compile Remove="Explosion\Components\OnUseTimerTriggerComponent.cs" />
+    <Compile Remove="Explosion\EntitySystems\SharedRepulseAttractOnTriggerSystem.cs" />
+    <Compile Remove="Mindshield\FakeMindShield\SharedFakeMindShieldImplantSystem.cs" />
+    <Compile Remove="Flash\Components\FlashOnTriggerComponent.cs" />
+    <Compile Remove="Mousetrap\MousetrapVisuals.cs" />
+    <Compile Remove="Roles\SiliconBrainRoleComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Medical\SuitSensor\" />
+    <Folder Include="_NF\Silicons\Borgs\" />
+  </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
 </Project>

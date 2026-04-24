@@ -3,9 +3,6 @@ using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Interaction;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Speech;
-using Content.Server.Speech.Components;
-using Content.Server._DV.AACTablet; // Frontier: AAC tablet support
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Labels.Components;
@@ -14,6 +11,7 @@ using Content.Shared.Power;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Speech;
+using Content.Shared.Speech.Components;
 using Content.Shared.Telephone;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -83,9 +81,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
             return;
 
         // Ignore background chatter from non-player entities
-        // Wayfarer: Allow AAC tablets to transmit through holopads
-        // TODO: Make it show the holders portrait on holopad instead of the AAC Tablet
-        if (!HasComp<MindContainerComponent>(args.Source) && !HasComp<AACTabletComponent>(args.Source))
+        if (!HasComp<MindContainerComponent>(args.Source))
             return;
 
         // Simple check to make sure that we haven't sent this message already this frame

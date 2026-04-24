@@ -22,6 +22,7 @@ using Content.Shared.Mind;
 using Content.Shared.Alert;
 using Content.Server._EinsteinEngines.Silicon.Death;
 using Content.Server._EinsteinEngines.Power.Components;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Server._EinsteinEngines.Silicon.Charge;
 

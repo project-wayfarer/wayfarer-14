@@ -36,7 +36,12 @@
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
-  - ClothingNeckPolyamoryPin # Wayfarer-14
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
   - TowelColorBlack
   - TowelColorDarkBlue
   - TowelColorDarkGreen
@@ -1067,12 +1072,12 @@
   - JackBoots
   - SecurityWinterBoots
 
-#- type: loadoutGroup
-#  id: SecurityPDA
-#  name: loadout-group-security-id
-#  loadouts:
-#  - SecurityPDA
-#  - SeniorOfficerPDA
+- type: loadoutGroup
+  id: SecurityPDA
+  name: loadout-group-security-id
+  loadouts:
+  - SecurityPDA
+  - SeniorOfficerPDA
 
 - type: loadoutGroup
   id: DetectiveHead

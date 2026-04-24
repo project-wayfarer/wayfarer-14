@@ -35,6 +35,7 @@ using Content.Shared.Contests;
 using Content.Shared.Standing;
 using Content.Server.Power.Components;
 using Content.Shared.PowerCell;
+using Content.Server._DV.Storage.EntitySystems;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Mind.Components;
 
@@ -60,7 +61,7 @@ public sealed class VoreSystem : EntitySystem
     [Dependency] private readonly ContestsSystem _contests = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly FoodSystem _food = default!;
+    [Dependency] private readonly MouthStorageSystem _mouthStorage = default!;
 
     public override void Initialize()
     {
@@ -74,6 +75,7 @@ public sealed class VoreSystem : EntitySystem
 
         SubscribeLocalEvent<VoredComponent, EntGotRemovedFromContainerMessage>(OnRelease);
         SubscribeLocalEvent<VoredComponent, CanSeeAttemptEvent>(OnSeeAttempt);
+        SubscribeLocalEvent<VoredComponent, ContainerGettingRemovedAttemptEvent>(OnVoredRemoveAttempt);
     }
 
     private void OnInit(EntityUid uid, VoreComponent component, MapInitEvent args)
@@ -189,7 +191,7 @@ public sealed class VoreSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (_food.IsMouthBlocked(uid, uid))
+        if (_mouthStorage.IsMouthBlocked(uid))
             return;
 
         _popups.PopupEntity(Loc.GetString("vore-attempt-devour", ("entity", uid), ("prey", target)), uid, PopupType.LargeCaution);
@@ -261,6 +263,17 @@ public sealed class VoreSystem : EntitySystem
         _popups.PopupEntity(Loc.GetString("vore-devoured", ("entity", uid), ("prey", target)), target, uid, PopupType.SmallCaution);
 
         _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(uid)} vored {ToPrettyString(target)}");
+    }
+
+    private void OnVoredRemoveAttempt(EntityUid uid, VoredComponent component, ContainerGettingRemovedAttemptEvent args)
+    {
+        // Only block removal from the predator's stomach — not other containers.
+        if (!TryComp<VoreComponent>(component.Pred, out var predvore)
+            || predvore.Stomach != args.Container)
+            return;
+
+        // Block unforced self-escape from the stomach.
+        args.Cancel();
     }
 
     private void OnRelease(EntityUid uid, VoredComponent component, EntGotRemovedFromContainerMessage args)

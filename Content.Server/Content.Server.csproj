@@ -27,5 +27,63 @@
     <ProjectReference Include="..\RobustToolbox\Robust.Server\Robust.Server.csproj" />
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Explosion\EntitySystems\ReleaseGasOnTriggerSystem.cs" />
+    <Compile Remove="AlertLevel\AlertLevelChangeOnTriggerComponent.cs" />
+    <Compile Remove="Explosion\EntitySystems\SmokeOnTriggerSystem.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnSlipComponent.cs" />
+    <Compile Remove="_NF\Explosion\Components\ReplaceOnTriggerComponent.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnSignalComponent.cs" />
+    <Compile Remove="Salvage\Expeditions\SalvageStructureComponent.cs" />
+    <Compile Remove="Objectives\Components\PickRandomHeadComponent.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnCollideComponent.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnActivateComponent.cs" />
+    <Compile Remove="Explosion\Components\ActiveTriggerOnTimedCollideComponent.cs" />
+    <Compile Remove="Chat\SpeakOnTriggerComponent.cs" />
+    <Compile Remove="Kitchen\EntitySystems\KitchenSpikeSystem.cs" />
+    <Compile Remove="Explosion\Components\OnTrigger\DeleteOnTriggerComponent.cs" />
+    <Compile Remove="Implants\Components\ScramImplantComponent.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnStepTriggerComponent.cs" />
+    <Compile Remove="Roles\SurvivorRoleComponent.cs" />
+    <Compile Remove="Ghost\Roles\GhostRoleMarkerRoleComponent.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnTimedCollideComponent.cs" />
+    <Compile Remove="Explosion\Components\OnTrigger\SoundOnTriggerComponent.cs" />
+    <Compile Remove="Mech\Components\MechAssemblyComponent.cs" />
+    <Compile Remove="Roles\DragonRoleComponent.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnProximityComponent.cs" />
+    <Compile Remove="Explosion\Components\SpawnOnTriggerComponent.cs" />
+    <Compile Remove="Speech\ListenEvent.cs" />
+    <Compile Remove="Explosion\EntitySystems\TriggerSystem.Signal.cs" />
+    <Compile Remove="Roles\RoleBriefingComponent.cs" />
+    <Compile Remove="IgnitionSource\IgniteOnTriggerComponent.cs" />
+    <Compile Remove="Rotatable\FlippableComponent.cs" />
+    <Compile Remove="Light\Components\PoweredLightComponent.cs" />
+    <Compile Remove="Damage\Systems\DamageUserOnTriggerSystem.cs" />
+    <Compile Remove="Roles\InitialInfectedRoleComponent.cs" />
+    <Compile Remove="Zombies\ZombieImmuneComponent.cs" />
+    <Compile Remove="Roles\NinjaRoleComponent.cs" />
+    <Compile Remove="Weapons\Melee\Balloon\BalloonPopperComponent.cs" />
+    <Compile Remove="Explosion\Components\TriggerOnUseComponent.cs" />
+    <Compile Remove="Explosion\Components\OnTrigger\AnchorOnTriggerComponent.cs" />
+    <Compile Remove="Administration\Components\HeadstandComponent.cs" />
+    <Compile Remove="Station\Components\StationDataComponent.cs" />
+    <Compile Remove="Roles\ThiefRoleComponent.cs" />
+    <Compile Remove="Polymorph\Components\PolymorphOnTriggerComponent.cs" />
+    <Compile Remove="Explosion\EntitySystems\TriggerSystem.cs" />
+    <Compile Remove="Objectives\Components\RandomTraitorAliveComponent.cs" />
+    <Compile Remove="Roles\SubvertedSiliconRoleComponent.cs" />
+    <Compile Remove="Storage\Components\EntityStorageComponent.cs" />
+    <Compile Remove="Kitchen\Components\SharpComponent.cs" />
+    <Compile Remove="Mech\Systems\MechAssemblySystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Explosion\Components\OnTrigger\" />
+    <Folder Include="Rotatable\" />
+    <Folder Include="Toilet\" />
+    <Folder Include="Warps\" />
+    <Folder Include="_NF\Explosion\EntitySystems\" />
+    <Folder Include="_NF\Medical\SuitSensors\" />
+    <Folder Include="_WF\DeviceLinking\" />
+  </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>
