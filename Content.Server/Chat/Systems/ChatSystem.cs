@@ -24,6 +24,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
+using Content.Shared.Station.Components;
 using Content.Shared.Whitelist;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
@@ -73,7 +74,6 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int SubtleLOOCRange = SubtleRange; // how far Subtle LOOC goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
-    public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
 
     public const bool SayGoesThroughWalls = true; // I like says going through walls
     public const bool SayEffectedByOcclusion = true; // Ensmallen says that are occluded by walls should be smaller
@@ -216,15 +216,14 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         ignoreActionBlocker = CheckIgnoreSpeechBlocker(source, ignoreActionBlocker);
 
-        // // this method is a disaster
-        // // every second i have to spend working with this code is fucking agony
-        // // scientists have to wonder how any of this was merged
-        // // coding any game admin feature that involves chat code is pure torture
-        // // changing even 10 lines of code feels like waterboarding myself
-        // // and i dont feel like vibe checking 50 code paths
-        // // so we set this here
-        // // to-do free me from chat code
-        // Oh come on its not that bad! -Superlagg
+        // this method is a disaster
+        // every second i have to spend working with this code is fucking agony
+        // scientists have to wonder how any of this was merged
+        // coding any game admin feature that involves chat code is pure torture
+        // changing even 10 lines of code feels like waterboarding myself
+        // and i dont feel like vibe checking 50 code paths
+        // so we set this here
+        // todo free me from chat code
         if (player != null)
         {
             _chatManager.EnsurePlayer(player.UserId).AddEntity(GetNetEntity(source));
@@ -260,7 +259,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // Wayfarer end
 
         // Was there an emote in the message? If so, send it.
-        if (emoteStr != message && emoteStr != null)
+        if (player != null && emoteStr != message && emoteStr != null)
         {
             SendEntityEmote(source, emoteStr, range, nameOverride, ignoreActionBlocker, chatColor: nameColorString);
         }
@@ -388,7 +387,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound == null ? DefaultAnnouncementSound : _audio.ResolveSound(announcementSound), Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
@@ -418,7 +417,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound?.ToString() ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
     }
@@ -458,7 +457,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (playDefaultSound)
         {
-            _audio.PlayGlobal(announcementSound?.ToString() ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");
@@ -692,20 +691,22 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("entity", ent),
             ("message", FormattedMessage.RemoveMarkupOrThrow(action)),
-            ("chatColor", chatColor ?? Color.White.ToHex())); // COYOTESTATION ADD - makes the your name color right
+            ("chatColor", chatColor ?? Color.White.ToHex())); // COYOTESTATION ADD - makes your name color right
 
-        bool soundEmoteSent = true; // Frontier: if check emote is false, assume somebody's sending an emote
-        if (checkEmote)
-            soundEmoteSent = TryEmoteChatInput(source, action); // Frontier: assign value to soundEmoteSent
-
-        // Frontier: send emote message
-        if (!soundEmoteSent)
+        bool emoteEventInvoked = false; // Frontier: track emote event
+        if (checkEmote &&
+            !TryEmoteChatInput(source, action, out emoteEventInvoked)) // Frontier: track emote event
         {
-            var ev = new NFEntityEmotedEvent(source, action); // Frontier
-            RaiseLocalEvent(source, ev, true); // Frontier
             return;
         }
 
+        // Frontier: send custom emotes through custom event
+        if (!emoteEventInvoked)
+        {
+            var ev = new NFEntityEmotedEvent(source, action);
+            RaiseLocalEvent(source, ev, true);
+        }
+        // End Frontier
 
         SendInVoiceRange(ChatChannel.Emotes,
             action,

@@ -35,11 +35,16 @@ namespace Content.Shared.Verbs
             IconsOnly = iconsOnly;
         }
 
-        public VerbCategory(string text, SpriteSpecifier? icon, bool iconsOnly = false)
+        private VerbCategory(string text, SpriteSpecifier icon, bool iconsOnly = false)
         {
             Text = Loc.GetString(text);
             Icon = icon;
             IconsOnly = iconsOnly;
+        }
+
+        public static VerbCategory FromRsi(string text, string rsiPath, string state, bool iconsOnly = false)
+        {
+            return new VerbCategory(text, new SpriteSpecifier.Rsi(new ResPath(rsiPath), state), iconsOnly);
         }
 
         public static readonly VerbCategory Admin =
@@ -99,9 +104,8 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory Pen = // Frontier
             new("verb-categories-pen", "/Textures/Interface/pencil.png"); // Frontier
 
-        public static readonly VerbCategory Vore = new VerbCategory(
-            "verb-categories-vore",
-            new SpriteSpecifier.Rsi(new("/Textures/Interface/Actions/devour.rsi"), "icon-on"));
+        public static readonly VerbCategory Vore =
+            FromRsi("verb-categories-vore", "Interface/Actions/devour.rsi", "icon"); // Wayfarer
 
         public static readonly VerbCategory RadioChannels =
             new("verb-categories-radio-channels", "/Textures/Interface/VerbIcons/dot.svg.192dpi.png");

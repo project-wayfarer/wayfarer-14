@@ -1,0 +1,26 @@
+
+- type: marking
+  id: AvaliTattooEyeLeft
+  bodyPart: Eyes
+  markingCategory: Head
+  coloring:
+    layers:
+      eye_left:
+        type: !type:EyeColoring
+  # speciesRestriction: [ Avali ] # Wayfarer: No restriction
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eye_left
+
+- type: marking
+  id: AvaliTattooEyeRight
+  bodyPart: Eyes
+  markingCategory: Head
+  coloring:
+    layers:
+      eye_right:
+        type: !type:EyeColoring
+  # speciesRestriction: [ Avali ] # Wayfarer: No restriction
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eye_right

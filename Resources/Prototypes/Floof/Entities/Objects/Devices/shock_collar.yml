@@ -12,6 +12,7 @@
       equipDelay: 1
       unequipDelay: 10 # It's a collar meant to be used on prisoners (or not), so it probably has some sort of safety.
     - type: ShockOnTrigger
+      targetContainer: true
       damage: 1
       duration: 2.5
       cooldown: 3.5

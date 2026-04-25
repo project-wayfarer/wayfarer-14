@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Body.Events;
 using Content.Shared.Body.Events;
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
@@ -246,5 +247,15 @@ namespace Content.Shared.ActionBlocker
 
             return !ev.Cancelled;
         }
+
+        // Starlight edit start - Allow us to block heat radiation
+        public bool CanRadiateHeat(EntityUid uid)
+        {
+            var ev = new RadiateHeatAttemptEvent(uid);
+            RaiseLocalEvent(uid, ref ev);
+
+            return !ev.Cancelled;
+        }
+        // Starlight edit end
     }
 }

@@ -33,6 +33,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Roles.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.PDA;
@@ -449,7 +450,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
             {
                 if (!_storedBodies.ContainsKey(id.Value))
                     _storedBodies[id.Value] = new List<StoredBody>();
-                
+
                 // Get the station name
                 var stationUid = _station.GetOwningStation(cryopod);
                 var stationName = stationUid != null ? Name(stationUid.Value) : "Unknown Station";
@@ -463,12 +464,12 @@ public sealed partial class CryoSleepSystem : EntitySystem
                 {
                     characterSlot = bankComp.CharacterSlot;
                 }
-                
+
                 var newBody = new StoredBody() { Body = body, Cryopod = cryopod, Mind = mindEntity, StationName = stationName, CharacterSlot = characterSlot };
-                
+
                 // Remove any existing entry for this body (in case of re-cryo)
                 _storedBodies[id.Value].RemoveAll(sb => sb.Body == body);
-                
+
                 // Add the new body
                 _storedBodies[id.Value].Add(newBody);
             }
@@ -548,15 +549,10 @@ public sealed partial class CryoSleepSystem : EntitySystem
                     var jobName = "Unknown";
 
                     // Get the job name from the stored mind's job role
-                    if (TryComp<MindComponent>(mindId, out var mindComp) && mindComp != null)
+                    if (_roles.MindHasRole<JobRoleComponent>(mindId, out var jobRole)
+                        && jobRole.Value.Comp1.JobPrototype is {} proto)
                     {
-                        if (_roles.MindHasRole<Shared.Roles.Jobs.JobRoleComponent>(mindId, out var jobRole))
-                        {
-                            if (jobRole.Value.Comp1.JobPrototype != null)
-                            {
-                                jobName = jobRole.Value.Comp1.JobPrototype;
-                            }
-                        }
+                        jobName = proto;
                     }
 
                     characters.Add(new StoredCharacterInfo(
@@ -582,7 +578,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
             return;
 
         var body = GetEntity(msg.Body);
-        
+
         // Find the specific stored body
         StoredBody? storedBody = null;
         foreach (var sb in storedBodies)
@@ -593,7 +589,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
                 break;
             }
         }
-        
+
         if (storedBody == null)
             return;
 
@@ -604,11 +600,11 @@ public sealed partial class CryoSleepSystem : EntitySystem
 
         // Handle the return directly since we already have all the info
         var cryopod = storedBody.Value.Cryopod;
-        
+
         // Check if cryo return is enabled
         if (!_configurationManager.GetCVar(NFCCVars.CryoReturnEnabled))
             return;
-        
+
         // Try to insert the body into the cryopod
         if (!Exists(cryopod) || Deleted(cryopod) || !TryComp<CryoSleepComponent>(cryopod, out var cryoComp))
         {
@@ -623,7 +619,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
                     break;
                 }
             }
-            
+
             if (!foundFallback)
                 return;
         }
@@ -631,16 +627,16 @@ public sealed partial class CryoSleepSystem : EntitySystem
         {
             if (IsOccupied(cryoComp))
                 return;
-            
+
             if (!_container.Insert(body, cryoComp.BodyContainer))
                 return;
         }
-        
+
         // Remove from stored bodies and transfer control to the player
         storedBodies.Remove(storedBody.Value);
         if (storedBodies.Count == 0)
             _storedBodies.Remove(userId);
-        
+
         _mind.ControlMob(userId, body);
 
         // Restore the character slot so bank operations target the right account.
@@ -649,20 +645,20 @@ public sealed partial class CryoSleepSystem : EntitySystem
             var bankComp = EnsureComp<BankAccountComponent>(body);
             bankComp.CharacterSlot = storedBody.Value.CharacterSlot;
         }
-        
+
         // Tell the client to switch to game state
         if (_player.TryGetSessionById(userId, out var session))
         {
             RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
         }
-        
+
         // Force the mob to sleep
         var sleep = EnsureComp<SleepingComponent>(body);
         sleep.CooldownEnd = TimeSpan.FromSeconds(5);
-        
+
         _popup.PopupEntity(Loc.GetString("cryopod-wake-up", ("entity", body)), body);
         RaiseLocalEvent(body, new CryosleepWakeUpEvent(cryopod, userId), true);
-        
+
         _adminLogger.Add(LogType.LateJoin, LogImpact.Medium, $"{userId} has returned from cryosleep!");
     }
 

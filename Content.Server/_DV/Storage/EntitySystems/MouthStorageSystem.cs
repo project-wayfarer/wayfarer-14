@@ -20,6 +20,14 @@ public sealed class MouthStorageSystem : SharedMouthStorageSystem
         SubscribeLocalEvent<MouthStorageComponent, IngestionAttemptEvent>(OnIngestAttempt);
     }
 
+    // Returns true if the entity's mouth storage is blocked by an item
+    public bool IsMouthBlocked(EntityUid uid)
+    {
+        if (!TryComp<MouthStorageComponent>(uid, out var component))
+            return false;
+        return IsMouthBlocked(component);
+    }
+
     // Force you to mumble if you have items in your mouth
     private void OnAccent(EntityUid uid, MouthStorageComponent component, AccentGetEvent args)
     {
@@ -28,7 +36,7 @@ public sealed class MouthStorageSystem : SharedMouthStorageSystem
     }
 
     // Attempting to eat or drink anything with items in your mouth won't work
-    private void OnIngestAttempt(EntityUid uid, MouthStorageComponent component, IngestionAttemptEvent args)
+    private void OnIngestAttempt(EntityUid uid, MouthStorageComponent component, ref IngestionAttemptEvent args)
     {
         if (!IsMouthBlocked(component))
             return;
@@ -38,6 +46,6 @@ public sealed class MouthStorageSystem : SharedMouthStorageSystem
 
         var firstItem = storage.Container.ContainedEntities[0];
         args.Blocker = firstItem;
-        args.Cancel();
+        args.Cancelled = true;
     }
 }
