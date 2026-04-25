@@ -117,7 +117,7 @@
 #Empty black
 - type: entity
   id: JetpackBlack
-  parent: [BaseJetpack, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseJetpack, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   name: jetpack
   suffix: Empty
   components:

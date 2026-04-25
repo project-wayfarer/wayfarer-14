@@ -27,7 +27,7 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
     private Dictionary<NetUserId, TimeSpan> _nextBlipRequestPerUser = new();
 
     // The minimum amount of time between handled blip requests.
-    private static readonly TimeSpan MinRequestPeriod = TimeSpan.FromSeconds(1);
+    private static readonly TimeSpan MinRequestPeriod = TimeSpan.FromMilliseconds(250); // Wayfarer: TimeSpan.FromSeconds(1)<TimeSpan.FromMilliseconds(250) Faster update for tracking shipgun projectiles.
     // Maximum distance for blips to be considered visible
     private const float MaxBlipRenderDistance = 300f;
     // Blink interval for critical state (in seconds)
@@ -142,16 +142,16 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
             var scale = blip.Scale;
             var shape = blip.Shape;
             var color = blip.RadarColor;
-            
+
             // Check if entity or its parent is in critical state and modify color
             var entityToCheck = blipUid;
-            
+
             // If this blip doesn't have a mob state, check the parent (e.g., player holding a PDA)
             if (!HasComp<MobStateComponent>(entityToCheck) && blipXform.ParentUid.IsValid())
             {
                 entityToCheck = blipXform.ParentUid;
             }
-            
+
             if (TryComp<MobStateComponent>(entityToCheck, out var mobState))
             {
                 if (_mobState.IsCritical(entityToCheck, mobState))
@@ -161,7 +161,7 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
                     color = blinkPhase < 0.5 ? Color.Red : color;
                 }
             }
-            
+
             // {
             //     var ev = new RadarBlipEvent(
             //         color,

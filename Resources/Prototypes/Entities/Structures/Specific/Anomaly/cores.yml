@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BaseScienceContraband ] #Wayfarer: Added BaseScienceContraband
   id: BaseAnomalyCore
   abstract: true
   name: anomaly core
@@ -29,6 +29,8 @@
   - type: Tag
     tags:
     - ForceableFollow
+  - type: PirateBountyItem # Wayfarer
+    id: AnomalyCore
   - type: AnomalyCore
     timeToDecay: 600
     startPrice: 10000

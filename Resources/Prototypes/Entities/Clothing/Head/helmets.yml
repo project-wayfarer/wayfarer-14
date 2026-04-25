@@ -419,7 +419,7 @@
       Hair: HEAD
 
 - type: entity
-  parent: [ BaseC3SyndicateContraband, ClothingHeadHelmetBase ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ BaseMilitaryContraband, ClothingHeadHelmetBase ] # Wayfarer: BaseSyndicateContraband<BaseMilitaryContraband
   id: ClothingHeadHelmetRaid
   name: syndicate raid helmet
   description: An armored helmet for use with the syndicate raid suit. Very stylish.

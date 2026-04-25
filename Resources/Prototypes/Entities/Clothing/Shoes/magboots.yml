@@ -89,7 +89,7 @@
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack] # WF Removed Contraband
+  parent: [ ClothingShoesBootsMagBase, BaseJetpack, BaseMilitaryContraband ] # Wayfarer: Added BaseMilitaryContraband
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.

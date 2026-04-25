@@ -260,7 +260,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: blunderbuss
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC3PirateContraband] # Frontier: BaseMinorContraband<BaseC3PirateContraband
+  parent: [BaseWeaponShotgun, BaseGunWieldable] # Frontier: BaseMinorContraband<BaseC3PirateContraband # Wayfarer: Removed Contraband
   id: WeaponShotgunBlunderbuss
   suffix: Pirate
   description: Deadly at close range, an illegal shotgun often found at the side of a pirate.

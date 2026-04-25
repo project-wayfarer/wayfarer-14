@@ -1,0 +1,21 @@
+# Outlaw Bounty
+- type: contrabandSeverity
+  id: DataTarget
+  examineText: contraband-examine-text-outlawData
+
+- type: contrabandSeverity
+  id: ExoticMatter
+  examineText: contraband-examine-text-exoticmatter
+
+- type: contrabandSeverity
+  id: MilitaryGrade
+  examineText: contraband-examine-text-milspec
+  showDepartmentsAndJobs: true
+
+- type: contrabandSeverity
+  id: DestructiveDevice
+  examineText: contraband-examine-text-destructivedevice
+
+- type: contrabandSeverity
+  id: BlackMarket
+  examineText: contraband-examine-text-blackmarket

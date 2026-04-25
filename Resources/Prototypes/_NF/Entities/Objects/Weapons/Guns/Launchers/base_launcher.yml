@@ -46,7 +46,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseC3SyndicateContraband, NFBaseWeaponFrameLauncher ]
+  parent: [ BaseBMContraband, NFBaseWeaponFrameLauncher ] #Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: NFBaseWeaponFrameLauncherGorlex
   components:
   - type: Gun
@@ -59,7 +59,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseC3PirateContraband, NFBaseWeaponFrameLauncher ]
+  parent: [ BaseDDContraband, NFBaseWeaponFrameLauncher ] #Wayfarer: BaseC3PirateContraband<BaseDDContraband
   id: NFBaseWeaponFrameLauncherSteelbolt
   components:
   - type: Gun

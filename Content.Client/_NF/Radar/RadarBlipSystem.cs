@@ -18,7 +18,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
     private static readonly List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> EmptyRawBlipList = new();
     private TimeSpan _lastRequestTime = TimeSpan.Zero;
     // Minimum time between requests.  Slightly larger than the server-side value.
-    private static readonly TimeSpan RequestThrottle = TimeSpan.FromMilliseconds(1250);
+    private static readonly TimeSpan RequestThrottle = TimeSpan.FromMilliseconds(300); // Wayfarer: 1250<300
 
     // Maximum distance for blips to be considered visible
     private const float MaxBlipRenderDistance = 256f;
@@ -33,7 +33,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
     private TimeSpan _lastUpdatedTime;
     private List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> _blips = new();
     private Vector2 _radarWorldPosition;
-    
+
     // Cached filtered results
     private List<(Vector2, float, Color, RadarBlipShape)> _cachedBlips = new();
     private List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> _cachedRawBlips = new();
@@ -77,14 +77,14 @@ public sealed partial class RadarBlipSystem : EntitySystem
 
         // Cache the radar position for distance culling
         var newRadarPosition = _xform.GetWorldPosition(console);
-        
+
         // Invalidate cache if radar moved significantly
         if (Vector2.DistanceSquared(newRadarPosition, _cachedRadarPosition) > RadarPositionChangeThresholdSquared)
         {
             _cacheValid = false;
             _cachedRadarPosition = newRadarPosition;
         }
-        
+
         _radarWorldPosition = newRadarPosition;
 
         var netConsole = GetNetEntity(console);
@@ -150,7 +150,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
                 _cachedRawBlips.Add(blip);
                 continue;
             }
-            
+
             if (TryGetEntity(blip.Grid, out var gridEntity))
             {
                 var worldPos = _xform.GetWorldPosition(gridEntity.Value);

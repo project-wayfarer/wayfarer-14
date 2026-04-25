@@ -15,14 +15,14 @@
   - NFPirateJumpskirt
 
 - type: loadoutGroup
-  id: OutlawPDA #WF change
+  id: WFOutlawPDA #WF change
   name: loadout-group-contractor-pda
   loadouts:
-  - OutlawOutlawPDA #WF change
-  subgroups:
-  - WFPDA
+  - WFOutlawPDA #WF change
+#  subgroups: # Wayfarer: Outlaws get Chamelon PDAs
+#  - WFPDA
   fallbacks:
-  - OutlawOutlawPDA #WF change
+  - WFOutlawPDA #WF change
 
 - type: loadoutGroup
   id: NFPirateFace
@@ -125,14 +125,14 @@
   - NFPirateCaptainClothingOuterCoatPirate
 
 - type: loadoutGroup
-  id: WantedOutlawPDA #WF change
+  id: WFWantedOutlawPDA #WF change
   name: loadout-group-contractor-pda
   loadouts:
-  - WantedOutlawWantedOutlawPDA #WF change
-  subgroups:
-  - WFPDA
+  - WFWantedOutlawPDA #WF change
+#  subgroups: # Wayfarer: Outlaws get Chamelon PDAs
+#  - WFPDA
   fallbacks:
-  - WantedOutlawWantedOutlawPDA #WF change
+  - WFWantedOutlawPDA #WF change
 
 - type: loadoutGroup
   id: PirateCaptainWallet

@@ -6,8 +6,8 @@
   id: Perdition
   parent: BasePOI
   name: Perdition
-  minimumDistance: 10000
-  maximumDistance: 15000
+  minimumDistance: 6000
+  maximumDistance: 10000
   spawnGamePreset: [ NFPirate ]
   spawnGroup: Required
   gridPath: /Maps/_WF/POI/perdition.yml
@@ -41,8 +41,8 @@
           lobbySortOrder: 6
         - type: StationJobs
           availableJobs:
-            NFPirateCaptain: [ 1, 1 ]
-            NFPirate: [ 2, 4 ]
+            NFPirateCaptain: [ 8, 8 ]
+            NFPirate: [ 8, 8 ]
         - type: StationDeadDropReporting
           messageSet: Pirate
         - type: StationDeadDropHintExempt
