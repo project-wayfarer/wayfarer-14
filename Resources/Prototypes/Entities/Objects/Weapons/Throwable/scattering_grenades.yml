@@ -90,7 +90,7 @@
     positional: true
 
 - type: entity
-  parent: [ScatteringGrenadeBase, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ScatteringGrenadeBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ClusterGrenade
   name: clustergrenade
   description: Why use one grenade when you can use three at once!
@@ -120,7 +120,7 @@
     price: 2500
 
 - type: entity
-  parent: [ScatteringGrenadeBase, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ScatteringGrenadeBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ClusterBananaPeel
   name: cluster banana peel
   description: Splits into 6 explosive banana peels after throwing, guaranteed fun!
@@ -145,7 +145,7 @@
     positional: true
 
 - type: entity
-  parent: [SoapSyndie, ScatteringGrenadeBase, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [SoapSyndie, ScatteringGrenadeBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SlipocalypseClusterSoap
   name: slipocalypse clustersoap
   description: Spreads small pieces of syndicate soap over an area upon landing on the floor.

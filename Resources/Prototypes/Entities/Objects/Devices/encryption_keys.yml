@@ -241,7 +241,7 @@
     - EncryptionService
 
 - type: entity
-  parent: [EncryptionKey, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [EncryptionKey, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: EncryptionKeySyndie
   name: blood-red encryption key
   categories: [ DoNotMap ] # Frontier
@@ -275,7 +275,7 @@
     - state: ai_label
 
 - type: entity
-  parent: [ EncryptionKey, BaseC3SyndicateContrabandNoValue ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
+  parent: [ EncryptionKey, BaseBMContraband ] # Frontier: Wayfarer<BaseBMContraband
   id: EncryptionKeyBinarySyndicate
   name: binary translator key
   description: A syndicate encryption key that translates binary signals used by silicons.

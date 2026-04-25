@@ -9,6 +9,7 @@
   - type: Appearance
   - type: InteractionOutline
   - type: Anchorable
+    delay: 6 # Wayfarer: Anchor delay to make it impractical to strip these mid combat
   - type: Rotatable
   - type: ContainerContainer
   - type: Gun
@@ -276,7 +277,7 @@
 
 - type: entity
   id: ShuttleGunPirateCannon
-  parent: [BaseStructureDisableToolUse, ShuttleGunBase, BaseC3PirateContrabandNoValue] # Frontier: Added BaseStructureDisableToolUse, BaseC3PirateContrabandNoValue
+  parent: [ ShuttleGunBase , BaseDDContraband ] # Wayfarer: BaseC3PirateContrabandNoValue<BaseDDContraband
   name: pirate ship cannon
   description: Kaboom!
   components:

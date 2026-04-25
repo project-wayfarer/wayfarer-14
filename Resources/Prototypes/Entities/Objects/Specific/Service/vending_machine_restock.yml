@@ -45,6 +45,8 @@
         acts: [ "Destruction" ]
   - type: StaticPrice # Frontier
     price: 400 # Frontier
+  - type: PirateBountyItem # Wayfarer
+    id: BountyRestock # Wayfarer
 
 - type: entity
   parent: BaseVendingMachineRestock

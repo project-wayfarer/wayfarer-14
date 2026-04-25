@@ -24,9 +24,9 @@
   id: Pirate
   channel: Freelance
   messageSets:
-  - prob: 0.333
-    minDelay: 14
-    maxDelay: 16
+  - prob: 1.0 # Wayfarer: 0.333<1.0 I wanna see what happens
+    minDelay: 4 # Wayfarer: 14<4
+    maxDelay: 8 # Wayfarer: 16<8
     messages:
     - type: PodLocation
       message: smuggling-report-pirate

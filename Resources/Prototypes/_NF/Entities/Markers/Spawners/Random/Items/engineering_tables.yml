@@ -185,7 +185,7 @@
     # spawn probabilities skewed towards empty toolboxes to reduce entity spam
     # Electrical
     - !type:GroupSelector
-      weight: 32
+      weight: 33 # Wayfarer: Increased as we had to remove the trapped ones so they don't spawn in bundles.
       children:
       - id: ToolboxElectricalFilled
         weight: 20
@@ -193,7 +193,7 @@
         weight: 80
     # Emergency
     - !type:GroupSelector
-      weight: 32
+      weight: 33 # Wayfarer: See comment above.
       children:
       - id: ToolboxEmergencyFilled
         weight: 20
@@ -201,7 +201,7 @@
         weight: 80
     # Mechanical
     - !type:GroupSelector
-      weight: 32
+      weight: 34 # Wayfarer: See comment above.
       children:
       - id: ToolboxMechanicalFilledAllTools
         weight: 15
@@ -210,12 +210,12 @@
       - id: ToolboxMechanical
         weight: 70
     # Trap
-    - !type:GroupSelector
-      weight: 4
-      children:
-      - id: NFToolboxMineCryo
-      - id: NFToolboxMineExplosive
-      - id: NFToolboxMineFire
+    #- !type:GroupSelector # Wayfarer: Let's not.
+    #  weight: 4
+    #  children:
+    #  - id: NFToolboxMineCryo
+    #  - id: NFToolboxMineExplosive
+    #  - id: NFToolboxMineFire
 # Commented out: buy it from your local SyndiVend
 #    # Syndicate
 #    - !type:GroupSelector

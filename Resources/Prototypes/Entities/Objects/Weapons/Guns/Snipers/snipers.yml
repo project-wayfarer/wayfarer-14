@@ -174,7 +174,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: flintlock pistol
-  parent: [BaseWeaponSniper, BaseC3PirateContraband] # Frontier: BaseMajorContraband<BaseC3PirateContraband
+  parent: [BaseWeaponSniper] # Frontier: BaseMajorContraband<BaseC3PirateContraband # Wayfarer: Removed Contraband
   id: WeaponPistolFlintlock
   description: A pirate's companion. Yarrr! Uses .45 magnum ammo.
   components:

@@ -135,7 +135,7 @@
 - type: entity
   name: corpsman's medical pouch
   id: CorpsmanMedicalPouch
-  parent: [ MedicalPouch, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband > BaseC3SyndicateContraband
+  parent: MedicalPouch # Wayfarer: Removed Contraband
   description: Holds up to 15 tiny medical items.
   components:
   - type: Sprite
