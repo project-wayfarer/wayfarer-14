@@ -19,7 +19,6 @@
     - Oni # DeltaV
     - Feroxi # Flooftier
     - Rodentia # Flooftier - Commented out until guide entry is added
-    # - Resomi # Commented out until guide entry is added
     - Chitinid # DeltaV
     - Tajaran #EE
     - IPC # Goob
@@ -76,19 +75,14 @@
   name: species-name-rodentia
   text: "/ServerInfo/Guidebook/Mobs/_DV/Rodentia.xml"
 
-#- type: guideEntry
-#  id: Resomi
-#  name: species-name-resomi
-#  text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
-
 - type: guideEntry
   id: Tajaran
   name: species-name-tajaran
   text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
 
-# Wayfarer: Add Avali
+# Starlight
 - type: guideEntry
   id: Avali
   name: species-name-avali
   text: "/ServerInfo/_Starlight/Guidebook/Mobs/Avali.xml"
-# End Wayfarer
+# End Starlight
