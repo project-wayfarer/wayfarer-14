@@ -1,7 +1,7 @@
 #Empty BlackMarket
 - type: entity
   id: JetpackBM
-  parent: [BaseJetpack]
+  parent: [ BaseJetpack, BaseBMContraband ]
   name: black market jetpack
   suffix: Empty
   components:

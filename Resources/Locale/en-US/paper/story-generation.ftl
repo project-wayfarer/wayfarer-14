@@ -94,6 +94,9 @@ story-gen-book-character37 = dwarf
 story-gen-book-character38 = thief
 story-gen-book-character39 = wizard
 story-gen-book-character40 = slime
+# Wayfarer start
+story-gen-book-character41 = avali
+# end Wayfarer
 
 story-gen-book-character-trait1 = stupid
 story-gen-book-character-trait2 = smart

@@ -122,7 +122,7 @@
 
 - type: entity
   name: suspicious toolbox
-  parent: [ToolboxBase, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ToolboxBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ToolboxSyndicate
   description: A sinister looking toolbox filled with elite syndicate tools.
   components:

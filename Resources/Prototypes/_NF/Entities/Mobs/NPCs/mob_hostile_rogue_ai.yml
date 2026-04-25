@@ -48,7 +48,7 @@
   - MobStaminaBoss # No stunning bots
   - BaseC3MobConstruct
   - MobNonHumanHostileBase
-  - MobHumanoidInvetorySimplified
+  - MobHumanoidInvetory #Wayfarer MobHumanoidInvetorySimplified -> MobHumanoidInventory
   - MobRogueSiliconAISimpleRanged
   #- MobLaserReflect # Added to prevent laser abuse from players
   - NFMobRestrictionsSilicon
@@ -114,7 +114,7 @@
     damage:
       types:
         Heat: 4
-        Blunt: 6
+        Blunt: 12 # WF Change - 6 -> 12 So they can hurt you harder
         Structural: 20
     soundHit:
       collection: MetalThud
@@ -135,6 +135,107 @@
       params:
         variation: 0.125
   - type: SoundWhileAlive
+  - type: NoSlip # WF Add - No Slipping the Silicons today!
+
+# Wayfarer: Rogue Silicon Boss Base
+- type: entity
+  name: bossmind unit
+  abstract: true
+  parent:
+  - NFMobNoEquipmentOnGib
+  - MobMovementSpeedModifierRanged
+  - MobStaminaBoss # No stunning bots
+  - BaseC3MobConstruct
+  - MobNonHumanHostileBase
+  - MobHumanoidInvetory
+  - MobRogueSiliconAISimpleRanged
+  #- MobLaserReflect # Added to prevent laser abuse from players
+  - NFMobRestrictionsSilicon
+  id: MobRogueSiliconBossBase
+  components:
+  - type: Damageable
+    damageContainer: Silicon
+    damageModifierSet: MobRogueBossDamageModifierSet
+  - type: NpcFactionMember
+    factions:
+    - SiliconsExpeditionNF
+  - type: NameIdentifier
+    group: Silicon
+  - type: Bloodstream
+    bloodReagent: WeldingFuel
+    bloodMaxVolume: 60
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Critical
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      64: Critical
+      110: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.7
+      52: 0.5
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+    locPrefix: silicon
+  - type: Repairable
+    doAfterDelay: 10
+    allowSelfRepair: true
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 100
+  - type: Battery
+    maxCharge: 300
+    startingCharge: 300
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.5
+    rechargeSound:
+      path: /Audio/_NF/Effects/silence.ogg
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Heat: 4
+        Blunt: 12 # WF Change - 6 -> 12 So they can hurt you harder
+        Structural: 20
+    soundHit:
+      collection: MetalThud
+  - type: Speech
+    speechSounds: SyndieBorg
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSiliconSyndicate
+  - type: AutoWakeUp
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: NFScrapbotFootstep
+  - type: SpamEmitSound
+    minInterval: 10
+    maxInterval: 60
+    sound:
+      collection: NFScrapbotChatter
+      params:
+        variation: 0.125
+  - type: SoundWhileAlive
+  - type: NoSlip # WF Add - No Slipping the Silicons today!
+# Wayfarer End
 
 - type: entity
   parent:
@@ -261,6 +362,66 @@
     volume: -6
     range: 5
     sound: /Audio/_NF/Effects/Scrapbots/thruster-droning.ogg
+
+# Wayfarer: Rogue Silicon Drone Boss Base
+- type: entity
+  parent:
+  - MobRogueSiliconBossBase
+  id: MobRogueSiliconDroneBossBase
+  name: elite drone
+  description: Hacked and reprogrammed by a rogue AI departmental drones. Now even deadlier.
+  abstract: true
+  components:
+  - type: Loadout
+    prototypes:
+    - MobRogueSiliconLootT1
+  - type: CanMoveInAir
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30 # Lowered the value, to allow them to fit through the airlocks
+        density: 100
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: DamageStateVisuals
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Bloodstream
+    bloodReagent: WeldingFuel
+    bloodMaxVolume: 6
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      24: Critical
+      72: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      14: 0.7
+      20: 0.5
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.75
+    minAngle: 5
+    maxAngle: 15
+    angleIncrease: 2
+    angleDecay: 3
+    soundGunshot:
+      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/_NF/Effects/silence.ogg
+  - type: SoundWhileAlive
+  - type: AmbientSound
+    volume: -6
+    range: 5
+    sound: /Audio/_NF/Effects/Scrapbots/thruster-droning.ogg
+# Wayfarer End
+
 
 # VARIATIONS
 #region Tier 1
@@ -758,7 +919,7 @@
     animation: WeaponArcPunch
     damage:
       types:
-        Blunt: 6
+        Blunt: 12 # WF Change - 6 -> 12 So they can hurt you harder
         Shock: 7
         Structural: 20
     soundHit:
@@ -950,7 +1111,7 @@
 #region Tier 4 Boss
 - type: entity
   parent:
-  - MobRogueSiliconDroneBase
+  - MobRogueSiliconDroneBossBase # WF Change - MobRogueSiliconDroneBase to MobRogueSiliconDroneBossBase
   - MobPassiveRegen
   - MobRogueSiliconHitscanBatteryAmmo
   - NFMobBossRestrictions # Cannot use HostileBossBase, conflicts with silicon definitions
@@ -998,7 +1159,7 @@
       96: 0.7
       130: 0.5
   - type: HitscanBatteryAmmoProvider
-    proto: NFRedLaserPractice
+    proto: WFGuardianLaser # WF Change - NFRedLaserPractice to WFGuardianLaser
     fireCost: 10
   - type: Gun
     showExamineText: false
@@ -1046,7 +1207,7 @@
 
 - type: entity
   parent:
-  - MobRogueSiliconBase
+  - MobRogueSiliconBossBase # WF Change - MobRogueSiliconBase to MobRogueSiliconBossBase
   - MobPassiveRegen
   - NFMobBossRestrictions # Cannot use HostileBossBase, conflicts with silicon definitions
   id: MobRogueSiliconBoss
@@ -1072,14 +1233,14 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      240: Critical
-      360: Dead
+      340: Critical # WF Change - 240 -> 340
+      460: Dead # WF Change - 360 -> 460
   - type: SlowOnDamage
     speedModifierThresholds:
       144: 0.7
       192: 0.5
   - type: BasicEntityAmmoProvider
-    proto: NFBulletRocketMini # NFCartridgeRocketMini
+    proto: WFOnestarRocketMini # WF Change - NFCartridgeRocketMini to WFOnestarRocketMini
     capacity: 10
     count: 10
   - type: Gun

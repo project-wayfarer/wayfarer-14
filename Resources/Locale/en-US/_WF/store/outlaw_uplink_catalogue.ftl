@@ -20,11 +20,11 @@ uplink-outlaw-dctc-name = Telecrystal
 uplink-outlaw-dctc-desc = A single Telecrystal.
 uplink-outlaw-dctc10-name = Telecrystal x 10
 uplink-outlaw-dctc10-desc = Ten whole Telecrystals.
-uplink-outlaw-cash-name = 1,000 Spesos
+uplink-outlaw-cash-name = 2,500 Spesos
 uplink-outlaw-cash-desc = A wad of cash.
-uplink-outlaw-cash10-name = 10,000 Spesos
+uplink-outlaw-cash10-name = 25,000 Spesos
 uplink-outlaw-cash10-desc = A wad of cash.
-uplink-outlaw-cash100-name = 100,000 Spesos
+uplink-outlaw-cash100-name = 250,000 Spesos
 uplink-outlaw-cash100-desc = Wads out for the ladies!
 
 uplink-outlaw-box35ext-name = .35 Extended Magazines
@@ -44,6 +44,10 @@ uplink-outlaw-box45speedloaderincendiary-name = .45 Pistol Incendiary Speedloade
 uplink-outlaw-box45speedloaderincendiary-desc = A box full of (.45 pistol, incendiary) speedloaders.
 uplink-outlaw-box45speedloaderuranium-name = .45 Pistol Uranium Speedloaders
 uplink-outlaw-box45speedloaderuranium-desc = A box full of (.45 pistol, uranium) speedloaders.
+
+
+uplink-outlaw-stinger-grenade-name = Stinger Grenade
+uplink-outlaw-stinger-grenade-desc = A timed grenade capable of releasing a spray of non-lethal pellets in all directions.
 
 uplink-outlaw-medkit-name = Medical Kit
 uplink-outlaw-medkit-desc = A basic medical kit.
@@ -66,3 +70,6 @@ uplink-outlaw-pirateplushie-name = Yarr Moth Plushie
 uplink-outlaw-pirateplushie-desc = It's dastardly and has a dashing cloak. It chitters when you squeeze it!
 uplink-outlaw-card-name = Syndicate Business Card
 uplink-outlaw-card-desc = A blood-red colored business card.
+
+uplink-outlaw-cannon-name = Pirate Cannon
+uplink-outlaw-cannon-desc = A ship mounted pirate cannon... don't we have railguns?
