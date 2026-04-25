@@ -37,9 +37,16 @@ public sealed class CommunityGoalConsoleState : BoundUserInterfaceState
     /// </summary>
     public List<StagedItemData> StagedItems;
 
-    public CommunityGoalConsoleState(List<CommunityGoalData> activeGoals, List<StagedItemData> stagedItems)
+    /// <summary>
+    /// Items sitting on nearby community goal donation pallets (grouped by prototype ID).
+    /// These are committed alongside staged items when the player presses Contribute.
+    /// </summary>
+    public List<StagedItemData> PalletItems;
+
+    public CommunityGoalConsoleState(List<CommunityGoalData> activeGoals, List<StagedItemData> stagedItems, List<StagedItemData> palletItems)
     {
         ActiveGoals = activeGoals;
         StagedItems = stagedItems;
+        PalletItems = palletItems;
     }
 }

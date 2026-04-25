@@ -1,0 +1,18 @@
+- type: entity
+  id: CommunityGoalPallet
+  name: community goal donation pallet
+  description: Place items on this pallet and press "Contribute All" on the nearby community goals terminal to donate them. Useful for large items like gas canisters that cannot be inserted into the terminal directly.
+  parent: BaseCargoPallet
+  components:
+  - type: CommunityGoalPallet
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: Structures/cargo_pallets.rsi
+    layers:
+    - state: cargo_pallet_sell
+  - type: Icon
+    sprite: Structures/cargo_pallets.rsi
+    state: cargo_pallet_sell
+  - type: IconSmooth
+    key: community_goal_pallet
+    base: cargo_pallet_sell_

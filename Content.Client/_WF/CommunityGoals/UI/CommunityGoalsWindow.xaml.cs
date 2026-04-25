@@ -69,6 +69,11 @@ public sealed partial class CommunityGoalsWindow : FancyWindow
         PopulateGoalList(ActiveGoalsList,   active,   "No active community goals.");
         PopulateGoalList(UpcomingGoalsList, upcoming, "No upcoming community goals.");
         PopulateGoalList(ExpiredGoalsList,  expired,  "No expired community goals.");
+
+        // Force a fresh layout pass so RichTextLabel word-wrap and ScrollContainer
+        // heights are calculated against the actual window size, not the infinite
+        // size used during OpenCentered's initial Measure call.
+        InvalidateMeasure();
     }
 
     private void PopulateGoalList(BoxContainer list, List<CommunityGoalData> goals, string emptyText)
@@ -119,7 +124,9 @@ public sealed partial class CommunityGoalsWindow : FancyWindow
         root.AddChild(header);
 
         // Description
-        root.AddChild(new Label { Text = goal.Description, Margin = new Thickness(20, 0, 0, 2), FontColorOverride = Color.FromHex("#cccccc") });
+        var descLabel = new RichTextLabel { HorizontalExpand = true, Margin = new Thickness(20, 0, 0, 2) };
+        descLabel.SetMessage(goal.Description, defaultColor: Color.FromHex("#cccccc"));
+        root.AddChild(descLabel);
 
         // Requirements section
         var reqHeader = new Label { Text = "Requirements:", Margin = new Thickness(20, 2, 0, 0), FontColorOverride = Color.FromHex("#ddddaa") };

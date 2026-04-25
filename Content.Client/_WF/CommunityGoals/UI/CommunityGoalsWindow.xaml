@@ -27,13 +27,13 @@
 
         <!-- List of goals split by status -->
         <TabContainer Name="GoalTabs" VerticalExpand="True">
-            <ScrollContainer VerticalExpand="True">
+            <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
                 <BoxContainer Name="ActiveGoalsList" Orientation="Vertical" Margin="4"/>
             </ScrollContainer>
-            <ScrollContainer VerticalExpand="True">
+            <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
                 <BoxContainer Name="UpcomingGoalsList" Orientation="Vertical" Margin="4"/>
             </ScrollContainer>
-            <ScrollContainer VerticalExpand="True">
+            <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
                 <BoxContainer Name="ExpiredGoalsList" Orientation="Vertical" Margin="4"/>
             </ScrollContainer>
         </TabContainer>

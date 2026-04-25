@@ -24,6 +24,10 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
     {
         RobustXamlLoader.Load(this);
 
+        HintLabel.SetMessage(
+            "Use items on this terminal or donation pallet to stage them for contribution.",
+            defaultColor: Color.FromHex("#555555"));
+
         CommitButton.OnPressed += _ => OnCommit?.Invoke();
         ClearButton.OnPressed += _ => OnClearStaging?.Invoke();
     }
@@ -42,14 +46,15 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
         StagingList.RemoveAllChildren();
 
         var totalStacks = state.StagedItems.Count;
-        var hasItems = totalStacks > 0;
+        var hasPalletItems = state.PalletItems.Count > 0;
+        var hasItems = totalStacks > 0 || hasPalletItems;
 
         StagingCount.Text = hasItems
-            ? $"{totalStacks} type{(totalStacks != 1 ? "s" : "")} staged"
+            ? $"{totalStacks} type{(totalStacks != 1 ? "s" : "")} staged{(hasPalletItems ? $", {state.PalletItems.Count} on pallet" : "")}"
             : "nothing staged";
         StagingCount.FontColorOverride = hasItems ? Color.White : Color.FromHex("#888888");
         CommitButton.Disabled = !hasItems;
-        ClearButton.Disabled = !hasItems;
+        ClearButton.Disabled = totalStacks == 0;
         HintLabel.Visible = !hasItems;
 
         foreach (var item in state.StagedItems)
@@ -87,6 +92,42 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
             StagingList.AddChild(row);
         }
 
+        // ── Pallet items ──────────────────────────────────────────────────────
+        if (hasPalletItems)
+        {
+            StagingList.AddChild(new Label
+            {
+                Text = "── on donation pallet ──",
+                FontColorOverride = Color.FromHex("#7799aa"),
+                Margin = new Thickness(4, 4, 4, 1),
+            });
+
+            foreach (var item in state.PalletItems)
+            {
+                var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, Margin = new Thickness(4, 1) };
+
+                var matched = state.ActiveGoals
+                    .Any(g => g.Requirements.Any(r =>
+                        r.EntityPrototypeId.Equals(item.PrototypeId, StringComparison.OrdinalIgnoreCase)));
+
+                row.AddChild(new Label
+                {
+                    Text = $"• {item.DisplayName}",
+                    HorizontalExpand = true,
+                    FontColorOverride = matched ? Color.FromHex("#aaddff") : Color.FromHex("#888888"),
+                    ToolTip = item.PrototypeId,
+                });
+                row.AddChild(new Label
+                {
+                    Text = $"×{item.Amount:N0}",
+                    FontColorOverride = matched ? Color.FromHex("#aaddff") : Color.FromHex("#666666"),
+                    Margin = new Thickness(8, 0, 0, 0),
+                });
+
+                StagingList.AddChild(row);
+            }
+        }
+
         // ── Goals list ────────────────────────────────────────────────────────
         GoalsList.RemoveAllChildren();
 
@@ -101,9 +142,10 @@ public sealed partial class CommunityGoalConsoleWindow : FancyWindow
             return;
         }
 
-        // Collect staged proto IDs for highlighting
+        // Collect staged + pallet proto IDs for highlighting goal requirements
         var stagedProtos = state.StagedItems
             .Select(i => i.PrototypeId)
+            .Concat(state.PalletItems.Select(i => i.PrototypeId))
             .ToList();
 
         foreach (var goal in state.ActiveGoals)

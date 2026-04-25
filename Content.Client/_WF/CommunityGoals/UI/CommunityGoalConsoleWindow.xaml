@@ -38,9 +38,8 @@
                     <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Vertical" VerticalExpand="True">
-                    <Label Name="HintLabel"
-                           Text="Use items on this terminal to stage them for contribution."
-                           FontColorOverride="#555555" HorizontalAlignment="Center"
+                    <RichTextLabel Name="HintLabel"
+                           HorizontalExpand="True" HorizontalAlignment="Center"
                            Margin="6 10 6 4"/>
                     <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
                         <BoxContainer Name="StagingList" Orientation="Vertical"
