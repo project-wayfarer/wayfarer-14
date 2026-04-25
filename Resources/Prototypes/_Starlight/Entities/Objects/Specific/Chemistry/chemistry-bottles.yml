@@ -1,0 +1,14 @@
+- type: entity
+  id: ChemistryBottleAmoxla
+  suffix: amoxla
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-amoxla
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Amoxla
+          Quantity: 30
