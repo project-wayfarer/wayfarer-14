@@ -14,7 +14,7 @@ If you want to host or create content for Wayfarer 14, this is the repo you need
 #### Wayfarer 14
 <div class="header" align="center">
 
-[Website](https://wayfarer14.com/) | [Discord](https://discord.gg/QpVfma2eAp) | [Wiki](https://Wayfarerstation.wiki.gg/)
+[Website](https://wayfarer14.com/) | [Discord](https://discord.gg/QpVfma2eAp) | [Wiki](https://wayfarer14.com/wiki)
 
 </div>
 
