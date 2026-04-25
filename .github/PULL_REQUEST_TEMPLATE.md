@@ -19,11 +19,11 @@ Small fixes/refactors are exempt. Media may be used in SS14 progress reports wit
 
 ## Requirements
 <!-- Confirm the following by placing an X in the brackets [X]: -->
-- [ ] I have read [CONTRIBUTING.md](https://github.com/project-wayfarer/wayfarer-14/blob/master/CONTRIBUTING.md) and and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+- [ ] I have read [CONTRIBUTING.md](CONTRIBUTING.md) and and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 - [ ] I have added media to this PR or it does not require an ingame showcase.
-- [ ] I have reviewed the [Ship Submission Guidelines](https://frontierstation.wiki.gg/wiki/Ship_Submission_Guidelines) if relevant.
+- [ ] I have reviewed the [Ship Submission Guidelines](https://wayfarer14.com/wiki/mapping-requirements) if relevant.
 - [ ] I confirm that the content in this PR is my own work, and/or is properly attributed to the original author(s).
-- [ ] If my code is AI Assisted, I have read and agree to the [AI_POLICY.md](https://github.com/project-wayfarer/wayfarer-14/blob/master/AI_POLICY.md)
+- [ ] If my code is AI Assisted, I have read and agree to the [AI_POLICY.md](AI_POLICY.md)
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
 
 ## Breaking changes

@@ -113,8 +113,16 @@ public sealed class VoreSystem : EntitySystem
 
     private void VoreVerb(EntityUid uid, VoreComponent component, GetVerbsEvent<InnateVerb> args)
     {
-        if (args.User != args.Target)
+        // Wayfarer: No vore verb if they turned consent off for vore (why was this missed?)
+        if (!args.CanInteract
+            || !args.CanAccess
+            || args.User != args.Target
+            || !HasComp<VoreComponent>(args.Target)
+            || !_consent.HasConsent(args.Target, "Vore")
+            || !_consent.HasConsent(args.User, "Vore")
+            || HasComp<VoredComponent>(args.User))
             return;
+        // End Warferer
 
         // Add toggle for showing examine text
         if (component.ShowOnExamine)

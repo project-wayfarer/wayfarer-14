@@ -191,7 +191,7 @@
             state: hair
   - type: Inventory
     speciesId: vox
-    templateId: OldKinVox
+    #templateId: OldKinVox
     displacements:
       jumpsuit:
         sizeMaps:
@@ -259,7 +259,7 @@
     prototype: Vox
   - type: Inventory
     speciesId: vox
-    templateId: OldKinVox
+    #templateId: OldKinVox
     displacements:
       jumpsuit:
         sizeMaps:
@@ -281,7 +281,6 @@
           32:
             sprite: _COYOTE/Mobs/Species/OldKinVox/displacement.rsi
             state: head
-
       ears:
         sizeMaps:
           32:

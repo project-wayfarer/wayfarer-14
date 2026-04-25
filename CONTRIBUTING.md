@@ -5,7 +5,7 @@ If you're considering contributing to Wayfarer, [Wizard's Den's PR guidelines](h
 Importantly, do not make webedits. From the text above:
 > Do not use GitHub's web editor to create PRs. PRs submitted through the web editor may be closed without review.
 
-"Upstream" refers to the [space-wizards/space-station-14](https://github.com/space-wizards/space-station-14) repository that this fork was created from.
+"Upstream" refers to the [new-frontiers-14/frontier-station-14](https://github.com/new-frontiers-14/frontier-station-14/) repository that this fork was created from.
 
 # Wayfarer-specific content
 
@@ -98,7 +98,7 @@ player-panel-job-whitelists = Role Whitelists
 
 # Mapping
 
-For ship submissons, refer to the [Ship Submission Guidelines](https://Wayfarerstation.wiki.gg/wiki/Ship_Submission_Guidelines) on the Wayfarer wiki.
+For ship submissons, refer to the [Ship Submission Guidelines](https://wayfarer14.com/wiki/mapping-requirements) on the Wayfarer wiki.
 
 In general:
 
