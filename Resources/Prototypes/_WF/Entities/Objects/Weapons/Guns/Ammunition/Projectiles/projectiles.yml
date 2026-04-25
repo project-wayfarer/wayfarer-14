@@ -1,0 +1,39 @@
+# Energy Weapons
+- type: hitscan
+  id: WFGuardianLaser # Tuned for the Rogue Silicon Guardian's high Fire Rate
+  damage:
+    types:
+      Heat: 9
+  muzzleFlash: &lightMuzzleFlash
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_laser
+  travelFlash: &lightTravelFlash
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam
+  impactFlash: &lightImpactFlash
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_laser
+  maxLength: 21
+
+# Explosives
+- type: entity
+  parent: BaseBulletTrigger
+  id: WFOnestarRocketMini # Tuned for the Rogue Silicon One Star Boss
+  name: mini rocket
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: grenade
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: MicroBomb
+    maxIntensity: 2 # max 2 per tile
+    intensitySlope: 2
+    totalIntensity: 6 # 6 total damage to distribute over tiles
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5

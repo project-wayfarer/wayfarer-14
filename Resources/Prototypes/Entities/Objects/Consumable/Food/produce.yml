@@ -1889,7 +1889,7 @@
 
 - type: entity
   name: gatfruit
-  parent: [ FoodProduceBase, BaseC3SyndicateContrabandUnredeemable ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandUnredeemable
+  parent: [ FoodProduceBase ] # Wayfarer: Removed Contraband
   id: FoodGatfruit
   description: A delicious, gun-shaped fruit with a thick wooden stem.
   components:

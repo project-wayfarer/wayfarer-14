@@ -12,6 +12,8 @@
       stackRequirements:
         # Manipulator: 4 # Frontier
         Glass: 1
+    - type: PirateBountyItem # Wayfarer
+      id: AutolatheMachineCircuitboard # Wayfarer
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -686,6 +688,8 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
+    - type: PirateBountyItem # Wayfarer
+      id: HydroponicsTrayMachineCircuitboard
 
 - type: entity
   id: SeedExtractorMachineCircuitboard
@@ -953,6 +957,8 @@
     stackRequirements:
       # Manipulator: 4 # Frontier
       Steel: 5
+  - type: PirateBountyItem # Wayfarer
+    id: ThrusterMachineCircuitboard
 
 - type: entity
   id: GyroscopeMachineCircuitboard
@@ -1049,6 +1055,8 @@
     stackRequirements:
       # Manipulator: 2 # Frontier
       Glass: 1
+  - type: PirateBountyItem # Wayfarer
+    id: HotplateMachineCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard

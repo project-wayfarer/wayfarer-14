@@ -1,7 +1,7 @@
 #region Rockets
 
 - type: entity
-  parent: [BaseItem, BaseC2ContrabandUnredeemable]
+  parent: [ BaseItem, BaseDDContraband ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseDDContraband
   id: NFBaseCartridgeRocket
   abstract: true
   components:

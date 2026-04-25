@@ -76,7 +76,7 @@
 
 - type: entity
   name: energy sword
-  parent: [BaseMeleeWeaponEnergy, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseMeleeWeaponEnergy, BaseMilitaryContraband] # Wayfarer: BaseSyndicateContraband<BaseMilitaryContraband
   id: EnergySword
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
@@ -96,7 +96,7 @@
 
 - type: entity
   name: energy dagger
-  parent: [BaseMeleeWeaponEnergy, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseMeleeWeaponEnergy, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: EnergyDaggerLoud
   description: A not as loud and dangerous dagger with a beam made of pure, concentrated plasma. This one is completely undisguised.
   components:
@@ -240,7 +240,7 @@
     hideValues: true # Frontier
 
 - type: entity
-  parent: [BaseItem, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseItem, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: EnergyDaggerBox
   name: e-dagger box
   suffix: E-Dagger
@@ -259,7 +259,7 @@
 
 - type: entity
   name: energy cutlass
-  parent: [BaseMeleeWeaponEnergy, BaseC3PirateContraband] # Frontier: BaseMajorContraband<BaseC3PirateContraband
+  parent: [BaseMeleeWeaponEnergy] # Frontier: BaseMajorContraband<BaseC3PirateContraband # Wayfarer: Removed Contraband
   id: EnergyCutlass
   description: An exotic energy weapon.
   components:
@@ -283,7 +283,7 @@
 
 - type: entity
   name: double-bladed energy sword
-  parent: [BaseMeleeWeaponEnergy, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseMeleeWeaponEnergy, BaseMilitaryContraband] # Wayfarer: BaseSyndicateContraband<BaseMilitaryContraband
   id: EnergySwordDouble
   description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
   components:

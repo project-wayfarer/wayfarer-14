@@ -55,7 +55,7 @@
 - type: entity
   name: explosive grenade
   description: Grenade that creates a small but devastating explosion.
-  parent: [GrenadeBase, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [GrenadeBase, BaseMilitaryContraband] # Wayfarer: BaseSyndicateContraband<BaseMilitaryContraband
   id: ExGrenade
   components:
   - type: ExplodeOnTrigger
@@ -133,7 +133,7 @@
 - type: entity
   name: syndicate minibomb
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
-  parent: [GrenadeBase, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [GrenadeBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SyndieMiniBomb
   components:
   - type: Sprite
@@ -201,7 +201,7 @@
 
 
 - type: entity
-  parent: [ GrenadeBase, BaseC3SyndicateContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ GrenadeBase, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SingularityGrenade
   name: singularity grenade
   description: Grenade that simulates the power of a singularity, pulling things in a heap.

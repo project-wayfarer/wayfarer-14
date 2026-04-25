@@ -26,24 +26,24 @@
     amount: 4
     id: FireExtinguisher
 
-- type: pirateBounty
-  id: PirateBountyCaptainGloves
-  reward: 5
-  description: pirate-bounty-description-generic
-  entries:
-  - name: pirate-bounty-item-captainGloves
-    amount: 2
-    id: ClothingHandsGlovesCaptain
+#- type: pirateBounty # Wayfarer: Removed, good luck ever finding these
+#  id: PirateBountyCaptainGloves
+#  reward: 5
+#  description: pirate-bounty-description-generic
+#  entries:
+#  - name: pirate-bounty-item-captainGloves
+#    amount: 2
+#    id: ClothingHandsGlovesCaptain
 
 - type: pirateBounty
   id: PirateBountyGyro
   reward: 4
   description: pirate-bounty-description-generic
-  spawnChest: false
+  spawnChest: true # Wayfarer: false<true
   entries:
   - name: pirate-bounty-item-gyro
     amount: 2
-    id: Gyroscope
+    id: GyroscopeMachineCircuitboard # Wayfarer: Gyroscope<GyroscopeMachineCircuitboard
 
 - type: pirateBounty
   id: PirateBountyDefib
@@ -58,31 +58,31 @@
   id: PirateBountyAlcohol
   reward: 4
   description: pirate-bounty-description-generic
-  spawnChest: false
+  spawnChest: true # Wayfarer: false<true
   entries:
   - name: pirate-bounty-item-alcohol
     amount: 2
-    id: BoozeDispenser
+    id: BoozeDispenserMachineCircuitboard # Wayfarer: BoozeDispenser<BoozeDispenserMachineCircuitboard
 
 - type: pirateBounty
   id: PirateBountyThruster
   reward: 4
   description: pirate-bounty-description-generic
-  spawnChest: false
+  spawnChest: true # Wayfarer: false<true
   entries:
   - name: pirate-bounty-item-thruster
     amount: 3
-    id: Thruster
+    id: ThrusterMachineCircuitboard # Wayfarer: Thruster<ThrusterMachineCircuitboard
 
 - type: pirateBounty
   id: PirateBountyGravGen
   reward: 5
   description: pirate-bounty-description-generic
-  spawnChest: false
+  spawnChest: true # Wayfarer: false<true
   entries:
   - name: pirate-bounty-item-gravGen
     amount: 2
-    id: GravityGenerator
+    id: MiniGravityGeneratorCircuitboard # Wayfarer: GravityGenerator<MiniGravityGeneratorCircuitboard
 
 - type: pirateBounty
   id: PirateBountyVendingMachine
@@ -132,7 +132,7 @@
 
 - type: pirateBounty
   id: PirateBountyRTG
-  reward: 4
+  reward: 6 # Wayfarer: 4<6
   description: pirate-bounty-description-generic
   spawnChest: false
   entries:
@@ -142,11 +142,11 @@
 
 - type: pirateBounty
   id: PirateBountyMercGas
-  reward: 3
+  reward: 1 # Wayfarer 2<1
   description: pirate-bounty-description-generic
   entries:
   - name: pirate-bounty-item-mercgas
-    amount: 3
+    amount: 2 # Wayfarer 3<2
     id: ClothingMaskGasMercenary
 
 - type: pirateBounty
@@ -160,11 +160,11 @@
 
 - type: pirateBounty
   id: PirateBountyMK58
-  reward: 5
+  reward: 4 # Wayfarer 5<4
   description: pirate-bounty-description-generic
   entries:
   - name: pirate-bounty-item-mk58
-    amount: 2
+    amount: 6 # Wayfarer 2<6
     id: WeaponPistolMk58
 
 - type: pirateBounty
@@ -184,17 +184,17 @@
   entries:
   - name: pirate-bounty-item-hotplate
     amount: 1
-    id: ChemistryHotplate
+    id: HotplateMachineCircuitboard # Wayfarer: ChemistryHotplate<HotplateMachineCircuitboard
 
 - type: pirateBounty
   id: PirateBountyDeepFryer
   reward: 5
   description: pirate-bounty-description-generic
-  spawnChest: false
+  spawnChest: true # Wayfarer: false<true
   entries:
   - name: pirate-bounty-item-deepfryer
     amount: 2
-    id: KitchenDeepFryer
+    id: DeepFryerMachineCircuitboard # Wayfarer: KitchenDeepFryer<DeepFryerMachineCircuitboard
 
 # FIXME: replace with something that isn't in an astrovend
 # - type: pirateBounty
@@ -208,7 +208,7 @@
 
 - type: pirateBounty
   id: PirateBountyMedicalFabBoard
-  reward: 3
+  reward: 5 # Wayfarer: 3<5
   description: pirate-bounty-description-generic
   entries:
   - name: pirate-bounty-item-medicalfabboard
@@ -238,11 +238,11 @@
   id: PirateBountyAutolathe
   reward: 3
   description: pirate-bounty-description-generic
-  spawnChest: false
+  spawnChest: true # Wayfarer: false<true
   entries:
   - name: pirate-bounty-item-autolathe
     amount: 2
-    id: Autolathe
+    id: AutolatheMachineCircuitboard
 
 - type: pirateBounty
   id: PirateBountyDiamond
@@ -264,7 +264,7 @@
 
 - type: pirateBounty
   id: PirateBountyPlasmaCanister
-  reward: 5
+  reward: 8 # Wayfarer 5<8
   description: pirate-bounty-description-generic
   spawnChest: false
   entries:
@@ -286,11 +286,11 @@
   id: PirateBountyHydroTray
   reward: 4
   description: pirate-bounty-description-generic
-  spawnChest: false
+  spawnChest: true # Wayfarer: false<true
   entries:
   - name: pirate-bounty-item-hydrotray
     amount: 2
-    id: HydroponicsTray
+    id: HydroponicsTrayMachineCircuitboard # Wayfarer: HydroponicsTray<HydroponicsTrayMachineCircuitboard
 
 - type: pirateBounty
   id: PirateBountyEnforcer
@@ -301,3 +301,63 @@
   - name: pirate-bounty-item-enforcer
     amount: 1
     id: Enforcer
+
+# Wayfarer Start
+
+#Medical HUDs
+- type: pirateBounty
+  id: PirateBountyClothingEyesHudMedical
+  reward: 3
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: pirate-bounty-item-medhud
+    amount: 2
+    id: ClothingEyesHudMedical
+
+#Treasure Rings
+- type: pirateBounty
+  id: PirateBountyRings
+  reward: 6
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: pirate-bounty-item-rings
+    amount: 12
+    id: PreciousRings
+
+#Anomaly Core
+- type: pirateBounty
+  id: PirateBountyAnomalyCore
+  reward: 12
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: pirate-bounty-item-anomalycore
+    amount: 1
+    id: AnomalyCore
+
+#Encrypted Data
+- type: pirateBounty
+  id: PirateBountyData
+  reward: 4
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: pirate-bounty-item-data
+    amount: 2
+    id: EncryptedData
+
+#Restocks
+- type: pirateBounty
+  id: PirateBountyRestock
+  reward: 2
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: pirate-bounty-item-restocks
+    amount: 4
+    id: BountyRestock
+
+#    - type: PirateBountyItem # Wayfarer
+#      id: ArtifactAnalyzerMachineCircuitboard # Wayfarer
