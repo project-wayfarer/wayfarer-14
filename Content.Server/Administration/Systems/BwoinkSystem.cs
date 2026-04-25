@@ -81,6 +81,9 @@ namespace Content.Server.Administration.Systems
 
         private int _maxAdditionalChars;
         private readonly Dictionary<NetUserId, DateTime> _activeConversations = new();
+        private readonly Dictionary<NetUserId, List<BwoinkTextMessage>> _messageHistory = new();
+        private readonly Dictionary<NetUserId, DateTime> _adminOfflineSince = new();
+        private const int MaxHistoryPerChannel = 100;
 
         public override void Initialize()
         {
@@ -108,7 +111,13 @@ namespace Content.Server.Administration.Systems
 
             SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameRunLevelChanged);
             SubscribeNetworkEvent<BwoinkClientTypingUpdated>(OnClientTypingUpdated);
-            SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _activeConversations.Clear());
+            SubscribeLocalEvent<RoundRestartCleanupEvent>(_ =>
+            {
+                _activeConversations.Clear();
+                _messageHistory.Clear();
+                _adminOfflineSince.Clear();
+            });
+            _adminManager.OnPermsChanged += OnAdminPermsChanged;
 
         	_rateLimit.Register(
                 RateLimitKey,
@@ -161,6 +170,8 @@ namespace Content.Server.Administration.Systems
         {
             if (e.NewStatus == SessionStatus.Disconnected)
             {
+                if (_adminManager.GetAdminData(e.Session)?.HasFlag(AdminFlags.Adminhelp) == true)
+                    _adminOfflineSince[e.Session.UserId] = DateTime.Now;
                 if (_activeConversations.TryGetValue(e.Session.UserId, out var lastMessageTime))
                 {
                     var timeSinceLastMessage = DateTime.Now - lastMessageTime;
@@ -754,6 +765,10 @@ namespace Content.Server.Administration.Systems
 
             LogBwoink(msg);
 
+            var history = _messageHistory.GetOrNew(message.UserId);
+            if (history.Count < MaxHistoryPerChannel)
+                history.Add(msg);
+
             var admins = GetTargetAdmins();
 
             // Notify all admins
@@ -854,6 +869,54 @@ namespace Content.Server.Administration.Systems
             }
         }
         // End Frontier: webhook text messages
+
+        private void OnAdminPermsChanged(AdminPermsChangedEventArgs args)
+        {
+            if (args.Flags == null || !args.Flags.Value.HasFlag(AdminFlags.Adminhelp))
+                return;
+
+            if (_messageHistory.Count == 0)
+            {
+                _adminOfflineSince.Remove(args.Player.UserId);
+                return;
+            }
+
+            _adminOfflineSince.TryGetValue(args.Player.UserId, out var offlineSince);
+            _adminOfflineSince.Remove(args.Player.UserId);
+
+            var channel = args.Player.Channel;
+            foreach (var (userId, messages) in _messageHistory)
+            {
+                // If reconnecting, only replay messages sent while the admin was offline.
+                // If first join this round (no disconnect time), replay all history.
+                var relevantMessages = offlineSince != default
+                    ? messages.Where(m => m.SentAt > offlineSince).ToList()
+                    : (IReadOnlyList<BwoinkTextMessage>)messages;
+
+                if (relevantMessages.Count == 0)
+                    continue;
+
+                var headerMsg = new BwoinkTextMessage(
+                    userId,
+                    SystemUserId,
+                    Loc.GetString("bwoink-system-history-header"),
+                    playSound: false);
+                RaiseNetworkEvent(headerMsg, channel);
+
+                foreach (var message in relevantMessages)
+                {
+                    RaiseNetworkEvent(
+                        new BwoinkTextMessage(
+                            message.UserId,
+                            message.TrueSender,
+                            message.Text,
+                            sentAt: message.SentAt,
+                            playSound: false,
+                            adminOnly: message.AdminOnly),
+                        channel);
+                }
+            }
+        }
 
         private IList<INetChannel> GetNonAfkAdmins()
         {
