@@ -87,6 +87,10 @@
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Rifles/svs42.rsi
+  - type: Item # Wayfarer: Added Size: Large
+    size: Large
+    shape:
+    - 0,0,4,2
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/svs42.rsi
   - type: AltFireMelee

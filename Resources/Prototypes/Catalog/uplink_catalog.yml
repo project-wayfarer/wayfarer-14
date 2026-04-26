@@ -1760,11 +1760,11 @@
     Telecrystal: 20
   categories:
   - UplinkWearables
-  #conditions: # WF - Give ContraVend more choices
-  #- !type:StoreWhitelistCondition
-  #  whitelist:
-  #    tags:
-  #    - NukeOpsUplink
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
 
 - type: listing
   id: UplinkClothingEyesHudSyndicate

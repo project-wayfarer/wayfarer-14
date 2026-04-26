@@ -47,11 +47,8 @@ public sealed class SmartFridgeSystem : EntitySystem
         if (!_container.TryGetContainer(ent, ent.Comp.Container, out var container))
             return false;
 
-        if (ent.Comp.CheckAccessOnInsert && !Allowed(ent, user)) // Frontier: add CheckAccessOnInsert
+        if (!Allowed(ent, user))
             return true;
-
-        if (ent.Comp.ContainedEntries.Count >= ent.Comp.MaxContainedCount) // Frontier
-            return true; // Frontier
 
         bool anyInserted = false;
         foreach (var used in usedItems)
@@ -96,13 +93,6 @@ public sealed class SmartFridgeSystem : EntitySystem
         if (ent.Comp.ContainedEntries.TryGetValue(key, out var contained))
         {
             contained.Remove(GetNetEntity(args.Entity));
-            // Frontier: remove listing when empty
-            if (contained.Count <= 0)
-            {
-                ent.Comp.ContainedEntries.Remove(key);
-                ent.Comp.Entries.Remove(key);
-            }
-            // End Frontier: remove listing when empty
         }
 
         Dirty(ent);
@@ -140,13 +130,6 @@ public sealed class SmartFridgeSystem : EntitySystem
 
             _audio.PlayPredicted(ent.Comp.SoundVend, ent, args.Actor);
             contained.Remove(item);
-            // Frontier: remove listing when empty
-            if (contained.Count <= 0)
-            {
-                ent.Comp.ContainedEntries.Remove(args.Entry);
-                ent.Comp.Entries.Remove(args.Entry);
-            }
-            // End Frontier: remove listing when empty
             Dirty(ent);
             return;
         }
@@ -175,7 +158,7 @@ public sealed class SmartFridgeSystem : EntitySystem
 
     private void OnGetDumpableVerb(Entity<SmartFridgeComponent> ent, ref GetDumpableVerbEvent args)
     {
-        if (!ent.Comp.CheckAccessOnInsert || _accessReader.IsAllowed(args.User, ent)) // Frontier: add CheckAccessOnInsert
+        if (_accessReader.IsAllowed(args.User, ent))
         {
             args.Verb = Loc.GetString("dump-smartfridge-verb-name", ("unit", ent));
         }

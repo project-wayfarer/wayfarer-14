@@ -23,7 +23,8 @@ public sealed partial class ProduceMaterialExtractorComponent : Component
     [DataField]
     public List<ProtoId<ReagentPrototype>> ExtractionReagents = new()
     {
-        "Nutriment"
+        "Nutriment",
+        "Vitamin", // Wayfarer: Added Vitamin
     };
 
     [DataField]
