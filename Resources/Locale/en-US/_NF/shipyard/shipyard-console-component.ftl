@@ -82,3 +82,6 @@ shipyard-console-engine-Welding = Welding Fuel
 shipyard-console-engine-Plasma = Plasma
 shipyard-console-engine-Uranium = Uranium
 shipyard-console-engine-Bananium = Bananium
+
+# WF
+shipyard-console-engine-Biofuel = Biofuel
