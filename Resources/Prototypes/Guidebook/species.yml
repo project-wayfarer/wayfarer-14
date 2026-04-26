@@ -19,11 +19,11 @@
     - Oni # DeltaV
     - Feroxi # Flooftier
     - Rodentia # Flooftier - Commented out until guide entry is added
-    # - Avali # Commented out until guide entry is added
     # - Resomi # Commented out until guide entry is added
     - Chitinid # DeltaV
     - Tajaran #EE
     - IPC # Goob
+    - Avali # Starlight
 
 - type: guideEntry
   id: Arachnid
@@ -85,3 +85,10 @@
   id: Tajaran
   name: species-name-tajaran
   text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
+
+# Wayfarer: Add Avali
+- type: guideEntry
+  id: Avali
+  name: species-name-avali
+  text: "/ServerInfo/_Starlight/Guidebook/Mobs/Avali.xml"
+# End Wayfarer

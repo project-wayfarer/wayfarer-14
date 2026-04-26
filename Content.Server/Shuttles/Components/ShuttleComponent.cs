@@ -67,7 +67,7 @@ namespace Content.Server.Shuttles.Components
         /// Damping modifier applied to the shuttle's physics component.
         /// </summary>
         [DataField]
-        public float DampingModifier;
+        public float DampingModifier = 0.25f; // Wayfarer: 0<0.25
         // Wayfarer end
 
         /// <summary>

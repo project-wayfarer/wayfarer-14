@@ -1,0 +1,14 @@
+- type: entity
+  parent: Jug
+  suffix: amoxla
+  id: JugAmoxla
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-amoxla
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Amoxla
+          Quantity: 200
