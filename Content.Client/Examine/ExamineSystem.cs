@@ -201,7 +201,7 @@ namespace Content.Client.Examine
             }
 
             // Actually open the tooltip.
-            _examineTooltipOpen = new Popup { MaxWidth = 1200 };
+            _examineTooltipOpen = new Popup { MaxWidth = 1200 }; //Maxwidth 400 -> 1200 CoyoteSector
             _userInterfaceManager.ModalRoot.AddChild(_examineTooltipOpen);
             var panel = new PanelContainer() { Name = "ExaminePopupPanel" };
             panel.AddStyleClass(StyleClassEntityTooltip);
