@@ -1,6 +1,6 @@
 # Tactical Helmet
 - type: entity
-  parent: [ClothingHeadHelmetArmoredBase]
+  parent: [ ClothingHeadHelmetArmoredBase ]
   id: ClothingHeadHelmetBM
   name: tactical helmet
   description: A tactical helmet procured from the Black Market. Comes with a flash resistant visor.
@@ -23,3 +23,7 @@
   - type: HideLayerClothing
     layers:
       Hair: HEAD
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 1

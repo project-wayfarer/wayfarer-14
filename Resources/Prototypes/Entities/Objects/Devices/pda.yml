@@ -926,72 +926,72 @@
   - type: BlipCartridge
     defaultPreset: BlipPresetScience
 
-#- type: entity
-#  parent: BaseSecurityPDA
-#  id: HoSPDA
-#  name: head of security PDA
-#  description: Whosoever bears this PDA is the law.
-#  components:
-#  - type: Pda
-#    id: HoSIDCard
-#  - type: Appearance
-#    appearanceDataInit:
-#     enum.PdaVisuals.PdaType:
-#       !type:String
-#       pda-hos
-#  - type: PdaBorderColor
-#    borderColor: "#A32D26"
-#    accentHColor: "#447987"
-#  - type: Icon
-#    state: pda-hos
-#  - type: CartridgeLoader
-#    preinstalled:
-#    - CrewManifestCartridge
-#    - NotekeeperCartridge
-#    - NanoTaskCartridge
-#    - NewsReaderCartridge
-#    - WantedListCartridge
-#    - LogProbeCartridge
-#    - NanoChatCartridge # DeltaV
-#  - type: BlipCartridge
-#    defaultPreset: BlipPresetCommand
+- type: entity
+  parent: BaseSecurityPDA
+  id: HoSPDA
+  name: head of security PDA
+  description: Whosoever bears this PDA is the law.
+  components:
+  - type: Pda
+    id: HoSIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-hos
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentHColor: "#447987"
+  - type: Icon
+    state: pda-hos
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - WantedListCartridge
+    - LogProbeCartridge
+    - NanoChatCartridge # DeltaV
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
-#- type: entity
-#  parent: BaseSecurityPDA
-#  id: WardenPDA
-#  name: warden PDA
-#  description: The OS appears to have been jailbroken.
-#  components:
-#  - type: Pda
-#    id: WardenIDCard
-#  - type: Appearance
-#    appearanceDataInit:
-#     enum.PdaVisuals.PdaType:
-#       !type:String
-#       pda-warden
-#  - type: PdaBorderColor
-#    borderColor: "#A32D26"
-#    accentVColor: "#949137"
-#  - type: Icon
-#    state: pda-warden
+- type: entity
+  parent: BaseSecurityPDA
+  id: WardenPDA
+  name: warden PDA
+  description: The OS appears to have been jailbroken.
+  components:
+  - type: Pda
+    id: WardenIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-warden
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentVColor: "#949137"
+  - type: Icon
+    state: pda-warden
 
-#- type: entity
-#  parent: BaseSecurityPDA
-#  id: SecurityPDA
-#  name: security PDA
-#  description: Red to hide the stains of passenger blood.
- # components:
-#  - type: Pda
-#    id: SecurityIDCard
-#  - type: Appearance
-#    appearanceDataInit:
-#     enum.PdaVisuals.PdaType:
-#       !type:String
-#       pda-security
-#  - type: PdaBorderColor
-#    borderColor: "#A32D26"
-#  - type: Icon
-#    state: pda-security
+- type: entity
+  parent: BaseSecurityPDA
+  id: SecurityPDA
+  name: security PDA
+  description: Red to hide the stains of passenger blood.
+  components:
+  - type: Pda
+    id: SecurityIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-security
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+  - type: Icon
+    state: pda-security
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1510,24 +1510,24 @@
   - type: Icon
     state: pda-seniorphysician
 
-#- type: entity
-#  parent: BaseSecurityPDA
-#  id: SeniorOfficerPDA
-#  name: senior officer PDA
-#  description: Beaten, battered and broken, but just barely useable.
-#  components:
-#  - type: Pda
-#    id: SeniorOfficerIDCard
-#  - type: Appearance
-#    appearanceDataInit:
-#     enum.PdaVisuals.PdaType:
-#       !type:String
-#       pda-seniorofficer
-#  - type: PdaBorderColor
-#    borderColor: "#A32D26"
-#    accentVColor: "#DFDFDF"
-#  - type: Icon
-#    state: pda-seniorofficer
+- type: entity
+  parent: BaseSecurityPDA
+  id: SeniorOfficerPDA
+  name: senior officer PDA
+  description: Beaten, battered and broken, but just barely useable.
+  components:
+  - type: Pda
+    id: SeniorOfficerIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-seniorofficer
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentVColor: "#DFDFDF"
+  - type: Icon
+    state: pda-seniorofficer
 
 - type: entity
   parent: [ SyndiPDA ] # WF Removed Contraband
@@ -1574,7 +1574,7 @@
       - NanoChatCartridge # DeltaV
 
 - type: entity
-  parent: BasePDA
+  parent: [BasePDA, SelectableLock]
   id: ChameleonPDA
   name: wayfarer PDA # WF passenger<Wayfarer
   description: Why isn't it gray?

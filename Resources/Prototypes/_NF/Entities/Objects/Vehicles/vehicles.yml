@@ -651,7 +651,7 @@
 - type: entity
   parent:
   - VehicleHoverbikeMailcarrier
-  - BaseC3PirateContraband
+  #- BaseC3PirateContraband # Wayfarer: Removed Contraband
   id: VehicleHoverbikePirate
   name: pirate hoverbike
   description: Yarr! Dis be me sovereign space shuttle. Now, whaur me rum?
@@ -704,7 +704,7 @@
     - DoorBumpOpener
     - DemagImmune
   - type: Vehicle
-    radarBlip: false
+    radarBlip: true # Wayfarer: false<true fuck stealth hoverbikes
 
 - type: entity
   parent: VehicleHoverbikePirate

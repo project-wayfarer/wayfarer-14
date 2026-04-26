@@ -1,6 +1,6 @@
 # Black Market Vest
 - type: entity
-  parent: ClothingOuterArmorBase
+  parent: [ ClothingOuterArmorBase ]
   id: ClothingOuterArmorBulletproofBM
   name: tactical vest
   description: A tactical vest procured from the Black Market. Sturdy materials provide good protection.
@@ -18,10 +18,14 @@
         Heat: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.80
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 1
 
 # Black Market Tactical Gear
 - type: entity
-  parent: ClothingOuterArmorBase
+  parent: [ ClothingOuterArmorBase ]
   id: ClothingOuterArmorHeavyTactical
   name: Heavy Tactical Rig
   description: A rather cumbersome assortment of heavy ballistic plates and durathread inserts. Provides very good protection at the cost of speed.
@@ -43,3 +47,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.85
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 1

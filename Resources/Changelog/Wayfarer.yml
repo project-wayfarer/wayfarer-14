@@ -2117,3 +2117,127 @@ Entries:
   id: 6740
   time: '2026-04-23T06:17:31.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/629
+- author: Goodfaun
+  changes:
+    - type: Fix
+      message: freezer vents rotating due to fixrotations command
+  id: 6741
+  time: '2026-04-24T06:28:03.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/641
+- author: Thr3d
+  changes:
+    - type: Fix
+      message: >-
+        Correct name of binoculars and spawn binoculars/scissors in backpack
+        instead of hand
+  id: 6742
+  time: '2026-04-24T09:44:42.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/642
+- author: Khaomi
+  changes:
+    - type: Tweak
+      message: Make organs have "Trash" tag
+  id: 6743
+  time: '2026-04-24T16:50:49.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/643
+- author: BlueSushii
+  changes:
+    - type: Tweak
+      message: Dead drops are scarier
+  id: 6744
+  time: '2026-04-24T17:06:03.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/638
+- author: DevArchwave
+  changes:
+    - type: Tweak
+      message: Removed lootboxmines from the engineering tools generation tables.
+  id: 6745
+  time: '2026-04-24T17:06:20.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/636
+- author: Khaomi
+  changes:
+    - type: Add
+      message: Add Avali
+  id: 6746
+  time: '2026-04-24T18:21:30.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/626
+- author: Feathernights
+  changes:
+    - type: Tweak
+      message: Increased the damage on Silicon's Melee and the Boss units.
+    - type: Tweak
+      message: Silicons no longer slip on slippery objects/reagents/etc.
+    - type: Tweak
+      message: >-
+        Increased the resilience on the Guardian and One Star Unit, including
+        the Crit and Damage thresholds on the One Star.
+  id: 6747
+  time: '2026-04-25T01:08:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/604
+- author: VVersengt
+  changes:
+    - type: Add
+      message: >-
+        Added new items to outlaw uplink, replaced their PDAs with chameleon
+        versions and tweaked some uplink prices.
+    - type: Add
+      message: Added ew outlaw bounties, and simplified others.
+    - type: Tweak
+      message: Cannon projectiles now have radar blips
+    - type: Add
+      message: New contraband tags for items, pending a more focused PR.
+    - type: Add
+      message: >-
+        Data items like hardrives and encrypted data disks are now valuable to
+        Outlaws
+    - type: Fix
+      message: Fixed various issues around Perdition
+  id: 6748
+  time: '2026-04-25T01:58:08.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/648
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Subtle chat can now be filtered
+  id: 6749
+  time: '2026-04-25T03:25:20.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/650
+- author: Khaomi
+  changes:
+    - type: Add
+      message: Add Amoxla and Avali guidebook entry
+  id: 6750
+  time: '2026-04-25T05:45:55.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/651
+- author: Khaomi
+  changes:
+    - type: Fix
+      message: Fix vore verb not being disabled when vore consent is disabled
+  id: 6751
+  time: '2026-04-25T05:46:26.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/644
+- author: Goodfaun
+  changes:
+    - type: Fix
+      message: Grand queen ship freezer atmos
+  id: 6752
+  time: '2026-04-25T05:48:57.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/647
+- author: DevArchwave
+  changes:
+    - type: Tweak
+      message: >-
+        Partly reverts sink volume changes, putting them closer to their
+        original upstream values
+  id: 6753
+  time: '2026-04-25T06:22:12.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/637
+- author: DevArchwave
+  changes:
+    - type: Fix
+      message: >-
+        Old-Kin Vox now have access to proper inventory, and their loadout
+        works.
+  id: 6754
+  time: '2026-04-25T15:47:07.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/653

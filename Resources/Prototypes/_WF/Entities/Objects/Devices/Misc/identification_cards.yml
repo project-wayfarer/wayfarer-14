@@ -1,0 +1,13 @@
+- type: entity
+  parent: [ IDCardStandard, AgentIDCard ]
+  id: WFOutlawIDCard
+  name: normal ID card
+  description: It's fine, don't worry about it.
+  components:
+  - type: PresetIdCard
+    job: Wayfarer
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcontractor # Frontier: idpassenger<idcontractor
+      sprite: _NF/Objects/Misc/id_cards.rsi # Frontier

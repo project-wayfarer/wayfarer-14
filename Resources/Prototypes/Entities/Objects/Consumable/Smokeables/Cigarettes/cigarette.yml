@@ -81,8 +81,8 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Ichor # WF - Omnizine > Ichor replacement
-            Quantity: 5
+          - ReagentId: Tricordrazine # Wayfarer: Omnizine<Tricordrazine
+            Quantity: 10 # Wayfarer: 5<10
 
 - type: entity
   id: CigaretteOmnizine

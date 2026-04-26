@@ -1,0 +1,44 @@
+- type: entity
+  id: BaseDataContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: DataTarget
+    hideCarryStatus: true
+    turnInValues:
+      Doubloon: 1 # 1 Robux
+
+- type: entity
+  id: BaseScienceContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: ExoticMatter
+    hideCarryStatus: true
+
+- type: entity
+  id: BaseDDContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: DestructiveDevice
+
+- type: entity
+  id: BaseMilitaryContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: MilitaryGrade
+    allowedDepartments: [ Security, Command ]
+    turnInValues:
+      FrontierUplinkCoin: 1
+      Doubloon: 1
+
+- type: entity
+  id: BaseBMContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 1

@@ -1,0 +1,17 @@
+# Boss Damage Modifiers
+- type: damageModifierSet
+  id: MobRogueBossDamageModifierSet
+  coefficients:
+    Structural: 1.2
+    Blunt: 0.6
+    Slash: 0.3
+    Piercing: 0.6
+    Heat: 0.7
+    Shock: 1.5
+    Caustic: 0.9
+    Radiation: 1.2
+    Cold: 0.0
+    Poison: 0.0
+    Asphyxiation: 0.0
+    Bloodloss: 0.0
+    Cellular: 0.0

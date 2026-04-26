@@ -387,7 +387,7 @@
   - type: Unremoveable
 
 - type: entity
-  parent: [ClothingHandsButcherable, BaseC3SyndicateContraband, ContrabandClothing] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband added ContrabandClothing as parent
+  parent: [ ClothingHandsButcherable, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ClothingHandsGlovesNorthStar
   name: gloves of the north star
   description: These gloves allow you to punch incredibly fast.
@@ -538,7 +538,7 @@
     stealGroup: ClothingHandsKnuckleDustersQM
 
 - type: entity
-  parent: [ClothingHandsBase, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ClothingHandsBase, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ClothingHandsKnuckleDustersSyndicate
   name: syndicate knuckle dusters
   description: "Plastitanium knuckle dusters branded with the blood-red S. A real man beats someone to death with these."

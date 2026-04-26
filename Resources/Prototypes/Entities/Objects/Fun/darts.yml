@@ -191,7 +191,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: [ BaseItem, BaseC3SyndicateContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ BaseItem, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: HypoDartBox
   name: hypodart box
   suffix: HypoDart

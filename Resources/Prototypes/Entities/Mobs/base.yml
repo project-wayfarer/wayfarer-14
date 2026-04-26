@@ -64,15 +64,14 @@
   components:
   - type: Damageable
     damageContainer: Biological
-#Remove destructible: WF gibbing prevention
-#  - type: Destructible
-#    thresholds:
-#    - trigger:
-#        !type:DamageTypeTrigger
-#        damageType: Blunt
-#        damage: 400
-#      behaviors:
-#      - !type:GibBehavior { }
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
 #    - trigger: # Frontier - Removed round remover
 #        !type:DamageTypeTrigger
 #        damageType: Heat
@@ -88,6 +87,21 @@
 #      - !type:PlaySoundBehavior
 #        sound:
 #          collection: MeatLaserImpact
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
+        popupType: LargeCaution
+        targetOnly: true
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 40
+      behaviors:
+      - !type:VomitBehavior
   - type: RadiationReceiver
   - type: Stamina
   - type: MobState
@@ -138,11 +152,7 @@
     attackRate: 1 # WF
     range: 1.5 # WF
     soundHit:
-      path: /Audio/Effects/bite.ogg
-    angle: 10 # Mobs use wideswing instead of aimbot
-    animation: WeaponArcThrust
-    wideAnimation: WeaponArcThrust
-# // WF
+      collection: MetalThud
     damage:
       groups:
         Brute: 5

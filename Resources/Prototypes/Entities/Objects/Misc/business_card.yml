@@ -1,8 +1,8 @@
 - type: entity
   id: SyndicateBusinessCard
-  name: syndicate business card
-  parent: [ Paper, BaseC3SyndicateContrabandNoValue ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
-  description: A black card with the syndicate's logo. There's something written on the back.
+  name: outlaw business card # Wayfarer: Renamed
+  parent: [ Paper ] # Wayfarer: Removed Contraband
+  description: A black card with a depiction of a three headed snake. There's something written on the back. # Wayfarer: Changed Description
   components:
     - type: Sprite
       sprite: Objects/Misc/bureaucracy.rsi

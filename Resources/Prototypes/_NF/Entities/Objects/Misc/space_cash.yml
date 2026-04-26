@@ -31,6 +31,19 @@
   - type: Stack
     count: 100000
 
+# Wayfarer Start
+- type: entity
+  parent: SpaceCash
+  id: SpaceCash250000
+  suffix: 250000
+  components:
+  - type: Icon
+    sprite: Objects/Economy/cash.rsi
+    state: cash_100000
+  - type: Stack
+    count: 250000
+# Wayfarer End
+
 # Fake fake money (ikr)
 - type: entity
   parent: BaseItem
@@ -112,7 +125,7 @@
 - type: currency
   id: Spesso
   displayName: bank-currency-display-spesos-fake
-  cash: 
+  cash:
     1: SpaceCashCounterfeit
   canWithdraw: true # I guess?
 

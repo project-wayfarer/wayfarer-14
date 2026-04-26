@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    if: github.event.pull_request.draft == false && github.actor != 'FrontierATC'
+    if: github.event.pull_request.draft == false && github.actor != 'web-flow' # Wayfarer: FontierATC<web-flow
     strategy:
       matrix:
         os: [ubuntu-latest]

@@ -548,13 +548,13 @@
     state: pda-tourist
 
 - type: entity
-  parent: PiratePDA
+  parent: ChameleonPDA
   id: OutlawPDA
-  name: outlaw PDA
+  name: wayfarer PDA
   description: Somehow smells of plotting and scheming?
   components:
   - type: Pda
-    id: NFPirateIDCard
+    id: WFOutlawIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -564,13 +564,13 @@
     state: pda-outlaw
 
 - type: entity
-  parent: PiratePDA
+  parent: ChameleonPDA
   id: WantedOutlawPDA
-  name: wanted outlaw PDA
+  name: wayfarer PDA
   description: Worn by someone who is always on the run.
   components:
   - type: Pda
-    id: NFPirateCaptainIDCard
+    id: WFOutlawIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:

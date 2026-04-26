@@ -6,7 +6,7 @@ on:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  CHANGELOG_DIR: Resources/Changelog/Wayfarer.yml # Frontier: Changelog.yml<Wayfarer.yml
+  CHANGELOG_DIR: Resources/Changelog/Wayfarer.yml # Wayfarer: Changelog.yml<Wayfarer.yml
   PR_NUMBER: ${{ github.event.number }}
 
 jobs:
