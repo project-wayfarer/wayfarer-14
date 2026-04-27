@@ -63,7 +63,7 @@
                 max: 5
   - type: HTN
     rootTask:
-      task: TurretCompound
+      task: N14TurretCompound # Wayfarer: TurretCompount<N14TurretCompound
     blackboard:
       RotateSpeed: !type:Single
         3.141

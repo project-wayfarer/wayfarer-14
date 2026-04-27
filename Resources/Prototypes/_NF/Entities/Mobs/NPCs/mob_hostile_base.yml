@@ -239,14 +239,14 @@
   - type: ProtectedFromStepTriggers
   - type: Climbing
   - type: Tool
-    speedModifier: 1.5
+    speedModifier: 3 # 1.5->3 Mono
     qualities:
       - Prying
     hideQualities: true
   - type: Prying
     pryPowered: true
     force: true
-    speedModifier: 1.5
+    speedModifier: 3 # 1.5->3 Mono
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Access
@@ -380,7 +380,13 @@
     rootTask:
       task: N14HostileCompound # WF
     blackboard:
-      NavSmash: !type:Bool
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool # They use this option too much for my liking, but I'll keep it here as an option
         true
       MeleeRange: !type:Single
         1.5
@@ -396,7 +402,7 @@
       task: N14RangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool

@@ -28,7 +28,7 @@
         addComponents:
         - type: Gravity
           enabled: true
-          inherent: true
+          inherent: false
         - type: IFF
           color: "#E10F9B"
         - type: Shuttle
@@ -71,7 +71,7 @@
         addComponents:
         - type: Gravity
           enabled: true
-          inherent: true
+          inherent: false
         - type: IFF
           color: "#E10F9B"
         - type: LinkedLifecycleGridParent
@@ -117,7 +117,7 @@
         addComponents:
         - type: Gravity
           enabled: true
-          inherent: true
+          inherent: false
         - type: IFF
           color: "#E10F9B"
         - type: LinkedLifecycleGridParent
@@ -161,7 +161,7 @@
         addComponents:
         - type: Gravity
           enabled: true
-          inherent: true
+          inherent: false
         - type: IFF
           color: "#E10F9B"
         - type: LinkedLifecycleGridParent
@@ -200,7 +200,7 @@
         addComponents:
         - type: Gravity
           enabled: true
-          inherent: true
+          inherent: false
         - type: IFF
           color: "#E10F9B"
         - type: LinkedLifecycleGridParent
@@ -239,7 +239,7 @@
         addComponents:
         - type: Gravity
           enabled: true
-          inherent: true
+          inherent: false
         - type: IFF
           color: "#E10F9B"
         - type: LinkedLifecycleGridParent
@@ -278,7 +278,7 @@
         addComponents:
         - type: Gravity
           enabled: true
-          inherent: true
+          inherent: false
         - type: IFF
         - type: LinkedLifecycleGridParent
         - type: ProtectedGrid
