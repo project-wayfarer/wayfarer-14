@@ -1150,8 +1150,8 @@
       whitelist:
         tags:
           - SecurityUplink
-    - !type:BuyerJobCondition
-      whitelist:
-        - Sheriff
-        - Bailiff
-        - SeniorOfficer
+#    - !type:BuyerJobCondition # Wayfarer
+#      whitelist:
+#        - Sheriff
+#        - Bailiff
+#        - SeniorOfficer
