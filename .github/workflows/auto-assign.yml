@@ -4,6 +4,10 @@ on:
   pull_request:
     types: [opened, ready_for_review]
 
+permissions:
+  pull-requests: write
+  issues: write
+
 jobs:
   auto-assign:
     if: github.repository == 'project-wayfarer/wayfarer-14'
