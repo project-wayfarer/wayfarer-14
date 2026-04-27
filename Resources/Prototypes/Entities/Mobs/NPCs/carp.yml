@@ -7,10 +7,10 @@
   components:
     - type: InputMover
     - type: MobMover
-  # // WF - Use new N14HostileCompound preset
+  # // Wayfarer - Use new N14HostileCompound preset
     - type: HTN
       rootTask:
-        task: N14HostileCompound # WF
+        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
       blackboard:
         NavSmash: !type:Bool
           true
@@ -18,7 +18,7 @@
           true
         MeleeRange: !type:Single
           1.5
-        # // WF
+    # // Wayfarer
     - type: NpcFactionMember
       factions:
         - Dragon

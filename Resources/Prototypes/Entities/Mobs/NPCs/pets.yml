@@ -166,7 +166,7 @@
       - Cat
   - type: HTN
     rootTask:
-      task: N14HostileCompound # WF
+      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
   - type: Grammar
     attributes:
       proper: true
@@ -717,7 +717,7 @@
         state: shiva
   - type: HTN
     rootTask:
-      task: N14HostileCompound # WF
+      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
   - type: Physics
   - type: DamageStateVisuals
     states:

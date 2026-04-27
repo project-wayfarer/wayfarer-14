@@ -18,7 +18,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:JukeOperator
             jukeType: Away
-            retreatDistance: 3
+            retreatDistance: 3 # Wayfarer: 2.5<3
 
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
@@ -32,7 +32,7 @@
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             stopOnLineOfSight: true
-            rangeKey: RangedRange
+            rangeKey: RangedRange # Wayfarer: MeleeRange<RangedRange
 
         - !type:HTNPrimitiveTask
           preconditions:
