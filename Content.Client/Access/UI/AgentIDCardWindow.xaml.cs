@@ -42,23 +42,23 @@ namespace Content.Client.Access.UI
             JobLineEdit.OnTextEntered += e => OnJobChanged?.Invoke(e.Text);
             JobLineEdit.OnFocusExit += e => OnJobChanged?.Invoke(e.Text);
 
-            // DeltaV - Add handlers for number changes
-            NumberLineEdit.OnTextEntered += OnNumberEntered;
-            NumberLineEdit.OnFocusExit += OnNumberEntered;
-
-            // DeltaV - Filter to only allow digits
-            NumberLineEdit.OnTextChanged += args =>
-            {
-                if (args.Text.Length > MaxNumberLength)
-                {
-                    NumberLineEdit.Text = args.Text[..MaxNumberLength];
-                }
-
-                // Filter to digits only
-                var newText = string.Concat(args.Text.Where(char.IsDigit));
-                if (newText != args.Text)
-                    NumberLineEdit.Text = newText;
-            };
+            // // DeltaV - Add handlers for number changes // Wayfarer: Disabled
+            // NumberLineEdit.OnTextEntered += OnNumberEntered;
+            // NumberLineEdit.OnFocusExit += OnNumberEntered;
+            //
+            // // DeltaV - Filter to only allow digits
+            // NumberLineEdit.OnTextChanged += args =>
+            // {
+            //     if (args.Text.Length > MaxNumberLength)
+            //     {
+            //         NumberLineEdit.Text = args.Text[..MaxNumberLength];
+            //     }
+            //
+            //     // Filter to digits only
+            //     var newText = string.Concat(args.Text.Where(char.IsDigit));
+            //     if (newText != args.Text)
+            //         NumberLineEdit.Text = newText;
+            // };
         }
 
         // DeltaV - Add number validation and event
@@ -68,11 +68,11 @@ namespace Content.Client.Access.UI
                 OnNumberChanged?.Invoke(number);
         }
 
-        // DeltaV - Add setter for current number
-        public void SetCurrentNumber(uint? number)
-        {
-            NumberLineEdit.Text = number?.ToString("D4") ?? "";
-        }
+        // // DeltaV - Add setter for current number // Wayfarer: Disabled
+        // public void SetCurrentNumber(uint? number)
+        // {
+        //     NumberLineEdit.Text = number?.ToString("D4") ?? "";
+        // }
 
         public void SetAllowedIcons(string currentJobIconId)
         {
