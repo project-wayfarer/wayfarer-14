@@ -131,7 +131,7 @@
     effectTarget: TargetThenUser
     soundPerceivedByOthers: true
     sound:
-      path: /Audio/Items/bikehorn.ogg
+      path: /Audio/Effects/thudswoosh.ogg # Wayfarer: /Audio/Items/bikehorn.ogg < /Audio/Effects/thudswoosh.ogg; why the fuck was it bikehorn originally?
       params:
         volume: -5
         variation: 0.2
