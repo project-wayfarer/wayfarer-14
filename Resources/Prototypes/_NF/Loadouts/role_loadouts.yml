@@ -532,81 +532,69 @@
   - ContractorHandItems
   - NfsdSpeciesSpecific
 
-# region NFPirate
-# TODO: Migrate this shit into _WF/Loadouts
-- type: roleLoadout
-  id: JobNFPirate
-  groups:
+# region NFPirate # Wayfarer: Moved to outlaw and wanted_outlaw
+
+#- type: roleLoadout
+#  id: JobNFPirate
+#  groups:
 #  - NFPirateHead
-  - WFHead # Wayfarer
-  - WFNeck # Wayfarer
-  - NFPirateJumpsuit
-  - WFGloves # Wayfarer
-  - WFBackpack # Wayfarer
-  - WFOuterClothing # Wayfarer
+#  #  - NFPirateNeck
+#  - NFPirateJumpsuit
+#  #  - NFPirateGloves
+#  - ContractorBackpack
 #  - NFPirateForcedOuterClothing
-  - NFPirateShoes
-  - NFPirateFace
-  - NFPirateEars
-  - ContractorBoxSurvival
-  - WFOutlawPDA # Wayfarer
-  - ContractorWallet
-  - OutlawEncryptionKey # Wayfarer
-  - PirateBackpackItems
-  - ContractorHandItems
-  - NFSpeciesSpecific
-  - WFSidearm # Wayfarer
-  - WFLongarm # Wayfarer
-  - WFAmmo # Wayfarer
-  canCustomizeName: true # pseudonym?
-
-- type: roleLoadout
-  id: JobNFPirateFirstMate
-  groups:
-  - NFPirateFirstMateHead
-  - WFNeck # Wayfarer
-  - NFPirateJumpsuit
-  - WFGloves # Wayfarer
-  - WFBackpack # Wayfarer
-  - NFPirateFirstMateOuterClothing
-  - NFPirateForcedOuterClothing
-  - NFPirateShoes
-  - NFPirateFace
-  - NFPirateEars
-  - ContractorBoxSurvival
-  - WFWantedOutlawPDA # Wayfarer
-  - ContractorWallet
-  - OutlawEncryptionKey # Wayfarer
-  - PirateBackpackItems
-  - ContractorHandItems
-  - NFSpeciesSpecific
-  canCustomizeName: true # pseudonym?
-
-- type: roleLoadout
-  id: JobNFPirateCaptain
-  groups:
-  - NFPirateCaptainHead
-  - WFNeck # Wayfarer
-  - NFPirateJumpsuit
-  - WFGloves # Wayfarer
-  - WFBackpack # Wayfarer
-  - WFOuterClothing # Wayfarer
+#  - NFPirateShoes
+#  - NFPirateFace
+#  - NFPirateEars
+#  - ContractorBoxSurvival
+#  - NFPiratePDA
+#  - ContractorWallet
+#  - PirateBackpackItems
+#  - ContractorHandItems
+#  - NFSpeciesSpecific
+#  canCustomizeName: true # pseudonym?
+#
+#- type: roleLoadout
+#  id: JobNFPirateFirstMate
+#  groups:
+#  - NFPirateFirstMateHead
+#  #  - NFPirateNeck
+#  - NFPirateJumpsuit
+#  #  - NFPirateGloves
+#  - ContractorBackpack
+#  - NFPirateFirstMateOuterClothing
+#  - NFPirateForcedOuterClothing
+#  - NFPirateShoes
+#  - NFPirateFace
+#  - NFPirateEars
+#  - ContractorBoxSurvival
+#  - NFPirateFirstMatePDA
+#  - ContractorWallet
+#  - PirateBackpackItems
+#  - ContractorHandItems
+#  - NFSpeciesSpecific
+#  canCustomizeName: true # pseudonym?
+#
+#- type: roleLoadout
+#  id: JobNFPirateCaptain
+#  groups:
+#  - NFPirateCaptainHead
+#  #  - NFPirateNeck
+#  - NFPirateJumpsuit
+#  #  - NFPirateGloves
+#  - ContractorBackpack
 #  - NFPirateCaptainOuterClothing
 #  - NFPirateForcedOuterClothing
-  - NFPirateShoes
-  - NFPirateFace
-  - NFPirateCaptainEars
-  - ContractorBoxSurvival
-  - WFWantedOutlawPDA # Wayfarer
-  - PirateCaptainWallet
-  - OutlawEncryptionKey # Wayfarer
-  - PirateCaptainBackpackItems
-  - ContractorHandItems
-  - NFSpeciesSpecific
-  - WFSidearm # Wayfarer
-  - WFLongarm # Wayfarer
-  - WFAmmo # Wayfarer
-  canCustomizeName: true # pseudonym?
+#  - NFPirateShoes
+#  - NFPirateFace
+#  - NFPirateCaptainEars
+#  - ContractorBoxSurvival
+#  - NFPirateCaptainPDA
+#  - PirateCaptainWallet
+#  - PirateCaptainBackpackItems
+#  - ContractorHandItems
+#  - NFSpeciesSpecific
+#  canCustomizeName: true # pseudonym?
 
 # region Prisoner
 

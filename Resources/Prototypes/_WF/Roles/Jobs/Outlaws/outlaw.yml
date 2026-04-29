@@ -4,7 +4,11 @@
   description: job-description-nf-pirate
   playTimeTracker: JobPirate
   whitelisted: true
-  startingGear: NFPirateGear
+  startingGear: OutlawStartingGear
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security # CGP
+    time: 28800 # 8 hours
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -31,15 +35,39 @@
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
 
-- type: startingGear
-  id: NFPirateGear
-  equipment:
-    belt: ClothingBeltUtility
-    pocket1: BasePirateUplinkPirateCrew
-  storage:
-    back:
-    - AppraisalTool
-
 - type: chameleonOutfit
   id: NFPirateChameleonOutfit
   job: NFPirate
+
+- type: startingGear
+  id: OutlawStartingGear
+  equipment:
+    pocket1: BasePirateUplinkPirateCrew
+
+- type: roleLoadout
+  id: JobNFPirate
+  groups:
+  - WFJumpsuit
+  - WFOuterClothing
+  - WFBackpack
+  - WFShoes
+  - WFHead
+  - NFPirateEars
+  - WFGloves
+  - WFOutlawPDA
+  - WFGlasses
+  - WFFace
+  - WFBelt
+  - WFNeck
+  - OutlawEncryptionKey
+  - WFBoxSurvival
+  - WFWallet
+  - WFCartridge
+  - WFImplanter
+  - PirateBackpackItems
+  - WFHandItems
+  - NFSpeciesSpecific
+  - WFSidearm
+  - WFLongarm
+  - WFAmmo
+  canCustomizeName: true # pseudonym?
