@@ -1,3 +1,4 @@
+#nullable enable // Mono change
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -53,7 +54,8 @@ namespace Content.IntegrationTests.Tests
                     // TODO: Fix this better in engine.
                     mapSystem.SetTile(grid.Owner, grid.Comp, Vector2i.Zero, new Tile(1));
                     var coord = new EntityCoordinates(grid.Owner, 0, 0);
-                    entityMan.SpawnEntity(protoId, coord);
+                    //entityMan.SpawnEntity(protoId, coord);
+                    SpawnEntity(entityMan, protoId, coord); // Replacement from Monolith.
                 }
             });
 
@@ -110,7 +112,8 @@ namespace Content.IntegrationTests.Tests
                     .ToList();
                 foreach (var protoId in protoIds)
                 {
-                    entityMan.SpawnEntity(protoId, map.GridCoords);
+                    //entityMan.SpawnEntity(protoId, map.GridCoords);
+                    SpawnEntity(entityMan, protoId, map.GridCoords); // Replacement from Monolith.
                 }
             });
             await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
@@ -176,7 +179,8 @@ namespace Content.IntegrationTests.Tests
                 {
                     mapSys.CreateMap(out var mapId);
                     var grid = mapManager.CreateGridEntity(mapId);
-                    var ent = sEntMan.SpawnEntity(protoId, new EntityCoordinates(grid.Owner, 0.5f, 0.5f));
+                    //var ent = sEntMan.SpawnEntity(protoId, new EntityCoordinates(grid.Owner, 0.5f, 0.5f));
+                    var ent = SpawnEntity(sEntMan, protoId, new EntityCoordinates(grid.Owner, 0.5f, 0.5f)); // Replacement from Monolith.
                     foreach (var (_, component) in sEntMan.GetNetComponents(ent))
                     {
                         sEntMan.Dirty(ent, component);
@@ -286,7 +290,8 @@ namespace Content.IntegrationTests.Tests
                     var serverEntities = new HashSet<EntityUid>(Entities(server.EntMan));
                     var clientEntities = new HashSet<EntityUid>(Entities(client.EntMan));
                     EntityUid uid = default;
-                    await server.WaitPost(() => uid = server.EntMan.SpawnEntity(protoId, coords));
+                    //await server.WaitPost(() => uid = server.EntMan.SpawnEntity(protoId, coords));
+                    await server.WaitPost(() => uid = SpawnEntity(server.EntMan, protoId, coords)); // Replacement from Monolith.
                     await pair.RunTicksSync(3);
 
                     // If the entity deleted itself, check that it didn't spawn other entities
@@ -427,7 +432,8 @@ namespace Content.IntegrationTests.Tests
                             continue;
                         }
 
-                        var entity = entityManager.SpawnEntity(null, testLocation);
+                        //var entity = entityManager.SpawnEntity(null, testLocation);
+                        var entity = SpawnEntity(entityManager, null, testLocation); // Replacement from Monolith.
 
                         Assert.That(entityManager.GetComponent<MetaDataComponent>(entity).EntityInitialized);
 
@@ -454,5 +460,44 @@ namespace Content.IntegrationTests.Tests
 
             await pair.CleanReturnAsync();
         }
+        //Monolith Start
+        private EntityUid SpawnEntity(
+            IEntityManager entManager,
+            string? protoName,
+            MapCoordinates coordinates,
+            ComponentRegistry? registry = null)
+        {
+            try
+            {
+                return entManager.SpawnEntity(protoName, coordinates, registry);
+            }
+            catch (Exception e)
+            {
+                // hey look, it tells you specifically what entity now!
+                Assert.Fail($"Failed to spawn entity {protoName}\n{e}");
+            }
+
+            return EntityUid.Invalid;
+        }
+
+        private EntityUid SpawnEntity(
+            IEntityManager entManager,
+            string? protoName,
+            EntityCoordinates coordinates,
+            ComponentRegistry? registry = null)
+        {
+            try
+            {
+                return entManager.SpawnEntity(protoName, coordinates, registry);
+            }
+            catch (Exception e)
+            {
+                // hey look, it tells you specifically what entity now!
+                Assert.Fail($"Failed to spawn entity {protoName}\n{e}");
+            }
+
+            return EntityUid.Invalid;
+        }
+        //Monolith End
     }
 }

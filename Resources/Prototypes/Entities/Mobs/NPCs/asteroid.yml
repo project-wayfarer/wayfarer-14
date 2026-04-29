@@ -294,7 +294,7 @@
     - SimpleHostile
   - type: HTN
     rootTask:
-      task: N14HostileCompound # WF - Use new N14HostileCompoint preset
+      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
     blackboard: # highly aggressive
       VisionRadius: !type:Single
         15
@@ -302,7 +302,7 @@
         15
       NavSmash: !type:Bool
         true
-      MeleeRange: !type:Single # WF
+      MeleeRange: !type:Single # Wayfarer
         1.5
   - type: TimedDespawn
     lifetime: 100

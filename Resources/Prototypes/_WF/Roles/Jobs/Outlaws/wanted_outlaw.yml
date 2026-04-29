@@ -27,7 +27,8 @@
     components:
     - type: AutoPirateCaptain
     - type: SpecialSectorStationRecord # must be given on spawn
-      recordGeneration: FalseRecord
+      recordGeneration: Normal # Real DNA/fingerprint/job on the criminal record so CGP can match to the wanted entry.
+    - type: WantedOutlaw # Wayfarer: triggers sector record + Wanted status + CGP radio ping at spawn
     - type: DisableSuitSensors
   - !type:AddImplantSpecial
     implants: [ FreelanceTrackingImplant ]

@@ -48,14 +48,14 @@
     - Pirate # Frontier
   - type: UserInterface
     interfaces:
-      enum.SolarControlConsoleUiKey.Key:
-        type: SolarControlConsoleBoundUserInterface
+#      enum.SolarControlConsoleUiKey.Key: # Wayfarer: Disabled
+#        type: SolarControlConsoleBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
       enum.RadarConsoleUiKey.Key:
         type: RadarConsoleBoundUserInterface
-      enum.CargoConsoleUiKey.Orders:
-        type: CargoOrderConsoleBoundUserInterface
+#      enum.CargoConsoleUiKey.Orders: # Wayfarer: Disabled
+#        type: CargoOrderConsoleBoundUserInterface
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
       enum.GeneralStationRecordConsoleKey.Key:
@@ -63,19 +63,19 @@
         type: GeneralStationRecordConsoleBoundUserInterface
   - type: IntrinsicUI
     uis:
-      enum.SolarControlConsoleUiKey.Key:
-        toggleAction: ActionAGhostShowSolar
+#      enum.SolarControlConsoleUiKey.Key: # Wayfarer: Disabled
+#        toggleAction: ActionAGhostShowSolar
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: ActionAGhostShowCommunications
       enum.RadarConsoleUiKey.Key:
         toggleAction: ActionAGhostShowRadar
-      enum.CargoConsoleUiKey.Orders:
-        toggleAction: ActionAGhostShowCargo
+#      enum.CargoConsoleUiKey.Orders: # Wayfarer: Disabled
+#        toggleAction: ActionAGhostShowCargo
       enum.CrewMonitoringUIKey.Key:
         toggleAction: ActionAGhostShowCrewMonitoring
       enum.GeneralStationRecordConsoleKey.Key:
         toggleAction: ActionAGhostShowStationRecords
-  - type: SolarControlConsole # look ma i AM the computer!
+#  - type: SolarControlConsole # Wayfarer: Disabled
   - type: CommunicationsConsole
     title: comms-console-announcement-title-centcom
     color: "#1d8bad"
@@ -117,6 +117,12 @@
   - type: BankAccount # Frontier
   - type: ExplosionResistance
     damageCoefficient: 0
+  - type: ShowJobIcons # Wayfarer: Add ShowJobIcons
+  - type: ShowHealthBars # Wayfarer: Add ShowHealthbars
+    damageContainers:
+    - Biological
+    - Inorganic
+    - Silicon
 
 - type: entity
   abstract: true

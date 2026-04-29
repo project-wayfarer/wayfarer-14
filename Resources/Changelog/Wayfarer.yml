@@ -2404,3 +2404,60 @@ Entries:
   id: 6773
   time: '2026-04-28T07:34:46.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/696
+- author: VVersengt
+  changes:
+    - type: Remove
+      message: Agent IDs can no longer copy or change NanoChat IDs
+  id: 6774
+  time: '2026-04-28T14:53:19.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/697
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: Ghosts wont hear notification pings
+  id: 6775
+  time: '2026-04-28T14:53:39.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/694
+- author: Luweth
+  changes:
+    - type: Add
+      message: Added Colors for blips! (Really simple.)
+  id: 6776
+  time: '2026-04-28T14:54:16.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/693
+- author: Luweth
+  changes:
+    - type: Add
+      message: A guide and new displacement maps!
+    - type: Remove
+      message: Residual weirdness
+    - type: Fix
+      message: Proper species components, various functional issues!
+  id: 6777
+  time: '2026-04-28T14:55:49.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/691
+- author: VVersengt
+  changes:
+    - type: Remove
+      message: Unshackled the Syndicate Grenadier
+    - type: Tweak
+      message: Adjusted NPC Pathfinding (again) and they will now pry doors faster.
+    - type: Fix
+      message: Fixed mobs on UIVs being weightless
+  id: 6778
+  time: '2026-04-28T19:30:16.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/686
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Ported IFF Coloring (One of my original features)
+  id: 6779
+  time: '2026-04-29T04:58:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/706
+- author: TheSlapper
+  changes:
+    - type: Add
+      message: (Miles) Wanted Outlaws can now enter a reason for being wanted.
+  id: 6780
+  time: '2026-04-29T05:14:34.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/705

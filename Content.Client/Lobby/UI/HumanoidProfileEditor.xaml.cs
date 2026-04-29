@@ -1072,6 +1072,15 @@ namespace Content.Client.Lobby.UI
                 SetDirty();
             };
 
+            // Wayfarer
+            _loadoutWindow.OnCrimeReasonChanged += reason =>
+            {
+                roleLoadout.CrimeReason = reason;
+                Profile = Profile.WithLoadout(roleLoadout);
+                SetDirty();
+            };
+            // End Wayfarer
+
             _loadoutWindow.OnLoadoutPressed += (loadoutGroup, loadoutProto) =>
             {
                 roleLoadout.AddLoadout(loadoutGroup, loadoutProto, _prototypeManager);

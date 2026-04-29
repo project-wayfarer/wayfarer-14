@@ -62,7 +62,7 @@
             max: 5
   - type: HTN
     rootTask:
-      task: TurretCompound
+      task: N14TurretCompound # Wayfarer: TurretCompount<N14TurretCompound
     blackboard:
       RotateSpeed: !type:Single
         3.141
@@ -135,4 +135,4 @@
   - type: ExtensionCableReceiver
   - type: HTN
     rootTask:
-      task: EnergyTurretCompound
+      task: N14TurretCompound # Wayfarer: TurretCompount<N14TurretCompound

@@ -22,6 +22,9 @@ public sealed partial class RoleLoadoutPrototype : IPrototype
     [DataField]
     public bool CanCustomizeName = true;
 
+    [DataField]
+    public bool CanCustomizeCrimeReason; // Wayfarer
+
     /// <summary>
     /// Should we use a random name for this loadout?
     /// </summary>

@@ -29,6 +29,8 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
     /// </summary>
     public string? EntityName;
 
+    public string? CrimeReason; // Wayfarer
+
     /*
      * Loadout-specific data used for validation.
      */
@@ -50,6 +52,7 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
         }
 
         weh.EntityName = EntityName;
+        weh.CrimeReason = CrimeReason; // Wayfarer
 
         return weh;
     }
@@ -93,6 +96,13 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
                 EntityName = null;
             }
         }
+
+        // Wayfarer
+        if (!roleProto.CanCustomizeCrimeReason || CrimeReason?.Trim() is not { Length: > 0 } reason)
+            CrimeReason = null;
+        else
+            CrimeReason = reason.Length > 256 ? reason[..256] : reason;
+        // End Wayfarer
 
         // In some instances we might not have picked up a new group for existing data.
         foreach (var groupProto in roleProto.Groups)
@@ -462,7 +472,8 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
         if (!Role.Equals(other.Role) ||
             SelectedLoadouts.Count != other.SelectedLoadouts.Count ||
             Points != other.Points ||
-            EntityName != other.EntityName)
+            EntityName != other.EntityName ||
+            CrimeReason != other.CrimeReason) // Wayfarer
         {
             return false;
         }

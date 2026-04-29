@@ -1064,6 +1064,11 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CrimeReason")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)")
+                        .HasColumnName("crime_reason");
+
                     b.Property<string>("EntityName")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")

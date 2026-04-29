@@ -133,6 +133,42 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         /// End Frontier
     }
 
+    // Wayfarer
+    // Creates the sector record for a spawning player and returns its key, or returns the
+    // existing key if the record already exists (CreateGeneralRecord dedupes by name).
+    // Directed PlayerSpawnCompleteEvent handlers run before the broadcast handler in OnPlayerSpawn, 
+    // so callers like WantedOutlawSystem would miss the record on a player's first spawn of the round.
+    public StationRecordKey? TryCreateSectorRecord(
+        EntityUid player,
+        EntityUid? idUid,
+        HumanoidCharacterProfile profile,
+        string jobId,
+        string? fingerprint,
+        string? dna)
+    {
+        if (TryComp<SpecialSectorStationRecordComponent>(player, out var specialRecord)
+            && specialRecord.RecordGeneration == RecordGenerationType.NoRecord)
+            return null;
+
+        var serviceEnt = _sectorService.GetServiceEntity();
+        if (!TryComp(serviceEnt, out StationRecordsComponent? sectorRecords))
+            return null;
+
+        var playerJob = jobId;
+        if (specialRecord is { RecordGeneration: RecordGenerationType.FalseRecord })
+        {
+            playerJob = _random.Pick(FakeJobIds);
+            fingerprint = _forensics.GenerateFingerprint();
+            dna = _forensics.GenerateDNA();
+        }
+
+        CreateGeneralRecord(serviceEnt, idUid, profile.Name, profile.Age, profile.Species, profile.Gender, playerJob, fingerprint, dna, profile, sectorRecords);
+        return GetRecordByName(serviceEnt, profile.Name) is { } id
+            ? new StationRecordKey(id, serviceEnt)
+            : null;
+    }
+    // End Wayfarer
+
 
     /// <summary>
     ///     Create a general record to store in a station's record set.

@@ -11,6 +11,7 @@
     - Reptilian
     - SlimePerson
     - Vox
+    - Oldkin # Wayfarer
     - Goblin # Frontier
     - Sheleg # Frontier
     - Vulpkanin # DeltaV
@@ -86,3 +87,10 @@
   name: species-name-avali
   text: "/ServerInfo/_Starlight/Guidebook/Mobs/Avali.xml"
 # End Starlight
+
+# Wayfarer
+- type: guideEntry
+  id: Oldkin
+  name: species-name-oldkinvox
+  text: "/ServerInfo/_WF/Guidebook/Mobs/OldKinVox.xml"
+# End Wayfarer

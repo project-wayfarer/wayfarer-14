@@ -20,6 +20,7 @@ namespace Content.Client.Lobby.UI.Loadouts;
 public sealed partial class LoadoutWindow : FancyWindow
 {
     public event Action<string>? OnNameChanged;
+    public event Action<string>? OnCrimeReasonChanged; // Wayfarer
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutPressed;
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutUnpressed;
 
@@ -59,6 +60,21 @@ public sealed partial class LoadoutWindow : FancyWindow
             RoleNameEdit.Text = name ?? string.Empty;
             RoleNameEdit.OnTextChanged += args => OnNameChanged?.Invoke(args.Text);
         }
+
+        // Wayfarer
+        if (!proto.CanCustomizeCrimeReason)
+        {
+            CrimeReasonBox.Visible = false;
+        }
+        else
+        {
+            CrimeReasonEdit.IsValid = text => text.Length <= 256;
+            CrimeReasonLabel.Text = Loc.GetString("wf-loadout-crime-reason-label");
+            CrimeReasonEdit.ToolTip = Loc.GetString("wf-loadout-crime-reason-tooltip", ("max", 256));
+            CrimeReasonEdit.Text = loadout.CrimeReason ?? string.Empty;
+            CrimeReasonEdit.OnTextChanged += args => OnCrimeReasonChanged?.Invoke(args.Text);
+        }
+        // End Wayfarer
 
         // Hide if no groups
         if (proto.Groups.Count == 0)

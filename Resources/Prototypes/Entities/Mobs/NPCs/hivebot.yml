@@ -13,7 +13,7 @@
       state: basic_attack
   - type: HTN
     rootTask:
-      task: N14HostileCompound # WF
+      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
     blackboard:
       NavSmash: !type:Bool
         true
@@ -83,7 +83,7 @@
       state: ranged_attack
   - type: HTN
     rootTask:
-      task: N14RangedHostileCompound
+      task: N14RangedHostileCompound # Wayfarer: SimpleRangedHostileCompound<N14RangedHostileCompound
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 0.50
   - type: BasicEntityAmmoProvider

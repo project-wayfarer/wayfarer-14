@@ -5,7 +5,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: arm_markings_left
 
 - type: marking
@@ -15,7 +15,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: arm_markings_right
 
 - type: marking
@@ -25,7 +25,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: beak
   coloring:
     default:
@@ -45,9 +45,9 @@
     claws_feet_left: LFoot
 #    claws_feet_left_behind: LFootBehind
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_left
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_left_behind
   coloring:
     default:
@@ -67,9 +67,9 @@
     claws_feet_right: RFoot
 #    claws_feet_right_behind: RFootBehind
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_right
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_feet_right_behind
   coloring:
     default:
@@ -84,7 +84,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_hands_left
   coloring:
     default:
@@ -99,7 +99,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: claws_hands_right
   coloring:
     default:
@@ -114,7 +114,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: crest
   coloring:
     default:
@@ -129,7 +129,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: neck_markings
 
 - type: marking
@@ -139,7 +139,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_arms_left
   coloring:
     default:
@@ -154,7 +154,7 @@
   canBeDisplaced: false
   #speciesRestriction: [OldKinVox]
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_arms_right
   coloring:
     default:
@@ -175,11 +175,11 @@
     scutes_legs_left: LLeg
     scutes_foot_left: LFoot
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_legs_left
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_foot_left
-    - sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    - sprite: _WF/Mobs/Species/OldKinVox/parts.rsi
       state: r_foot_behind
   coloring:
     default:
@@ -200,11 +200,11 @@
     scutes_legs_right: RLeg
     scutes_foot_right: RFoot
   sprites:
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_legs_right
-    - sprite: _CS/Mobs/Customization/OldKinVox/Markings.rsi
+    - sprite: _WF/Mobs/Customization/OldKinVox/Markings.rsi
       state: scutes_foot_right
-    - sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    - sprite: _WF/Mobs/Species/OldKinVox/parts.rsi
       state: l_foot_behind
   coloring:
     default:

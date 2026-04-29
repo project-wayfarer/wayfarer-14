@@ -283,6 +283,7 @@ namespace Content.Server.Database
                 var loadout = new RoleLoadout(role.RoleName)
                 {
                     EntityName = role.EntityName,
+                    CrimeReason = role.CrimeReason, // Wayfarer
                 };
 
                 foreach (var group in role.Groups)
@@ -391,6 +392,7 @@ namespace Content.Server.Database
                 {
                     RoleName = role,
                     EntityName = loadouts.EntityName ?? string.Empty,
+                    CrimeReason = loadouts.CrimeReason, // Wayfarer
                 };
 
                 foreach (var (group, groupLoadouts) in loadouts.SelectedLoadouts)

@@ -1,13 +1,11 @@
-# TODO: Add descriptions (many)
-# TODO BODY: Part damage
 - type: entity
   abstract: true
   parent: [ BaseItem, BasePart ]
   id: PartOldKinVox
-  name: "vox body part"
+  name: "old-kin vox body part"
   components:
   - type: Sprite
-    sprite: _CS/Mobs/Species/OldKinVox/parts.rsi
+    sprite: _WF/Mobs/Species/OldKinVox/parts.rsi
   - type: Extractable
     juiceSolution:
       reagents:
@@ -19,7 +17,7 @@
 - type: entity
   parent: [PartOldKinVox, BaseTorso]
   id: TorsoOldKinVox
-  name: "vox torso"
+  name: "old-kin vox torso"
   components:
   - type: Sprite
     state: "torso"
@@ -34,7 +32,7 @@
 - type: entity
   parent: [ PartOldKinVox, BaseHead ]
   id: HeadOldKinVox
-  name: "vox head"
+  name: "old-kin vox head"
   components:
   - type: Sprite
     state: "head"
@@ -49,7 +47,7 @@
 - type: entity
   parent: [ PartOldKinVox, BaseLeftArm ]
   id: LeftArmOldKinVox
-  name: "left vox arm"
+  name: "left old-kin vox arm"
   components:
   - type: Sprite
     state: "l_arm"
@@ -57,7 +55,7 @@
 - type: entity
   parent: [ PartOldKinVox, BaseRightArm ]
   id: RightArmOldKinVox
-  name: "right vox arm"
+  name: "right old-kin vox arm"
   components:
   - type: Sprite
     state: "r_arm"
@@ -65,7 +63,7 @@
 - type: entity
   parent: [ PartOldKinVox, BaseLeftHand ]
   id: LeftHandOldKinVox
-  name: "left vox hand"
+  name: "left old-kin vox hand"
   components:
   - type: Sprite
     state: "l_hand"
@@ -73,7 +71,7 @@
 - type: entity
   parent: [ PartOldKinVox, BaseRightHand ]
   id: RightHandOldKinVox
-  name: "right vox hand"
+  name: "right old-kin vox hand"
   components:
   - type: Sprite
     state: "r_hand"
@@ -81,7 +79,7 @@
 - type: entity
   parent:  [ PartOldKinVox, BaseLeftLeg ]
   id: LeftLegOldKinVox
-  name: "left vox leg"
+  name: "left old-kin vox leg"
   components:
   - type: Sprite
     state: "l_leg"
@@ -89,7 +87,7 @@
 - type: entity
   parent:  [ PartOldKinVox, BaseRightLeg ]
   id: RightLegOldKinVox
-  name: "right vox leg"
+  name: "right old-kin vox leg"
   components:
   - type: Sprite
     state: "r_leg"
@@ -97,7 +95,7 @@
 - type: entity
   parent: [ PartOldKinVox, BaseLeftFoot ]
   id: LeftFootOldKinVox
-  name: "left vox foot"
+  name: "left old-kin vox foot"
   components:
   - type: Sprite
     state: "l_foot"
@@ -105,7 +103,7 @@
 - type: entity
   parent: [ PartOldKinVox, BaseRightFoot ]
   id: RightFootOldKinVox
-  name: "right vox foot"
+  name: "right old-kin vox foot"
   components:
   - type: Sprite
     state: "r_foot"

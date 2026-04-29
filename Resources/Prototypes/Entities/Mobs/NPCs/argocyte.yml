@@ -9,10 +9,10 @@
   - type: NpcFactionMember
     factions:
     - Xeno
-  # WF Start
+  # // Wayfarer - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14RangedHostileCompound
+      task: N14RangedHostileCompound # Wayfarer: SimpleHostileCompound<N14RangedHostileCompound
     blackboard:
       NavPry: !type:Bool
         true
@@ -20,7 +20,7 @@
         true
       MeleeRange: !type:Single
         1.5
-  # WF End
+  # // Wayfarer
   - type: Sprite
     sprite: Mobs/Aliens/Argocyte/argocyte_common.rsi
   - type: SolutionContainerManager

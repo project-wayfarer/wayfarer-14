@@ -5,16 +5,16 @@
   description: A shambling mass of flesh, animated through anomalous energy.
   abstract: true
   components:
-  # // WF - Use new N14HostileCompoint preset
+  # // Wayfarer - Use new N14HostileCompoint preset
   - type: HTN
     rootTask:
-      task: N14HostileCompound # WF
+      task: N14HostileCompound
     blackboard:
       NavSmash: !type:Bool
         true
       MeleeRange: !type:Single
         1.5
-  # // WF
+  # // Wayfarer
   - type: NPCImprintingOnSpawnBehaviour
     spawnFriendsSearchRadius: 10
     whitelist:
@@ -217,7 +217,7 @@
   components:
   - type: HTN
     rootTask:
-      task: N14HostileCompound # WF
+      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
     blackboard:
       NavClimb: !type:Bool
         true

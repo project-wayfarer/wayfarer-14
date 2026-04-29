@@ -69,6 +69,8 @@ public sealed partial class BlipCartridgeComponent : Component
         "BlipColorBlue",
         "BlipColorCyan",
         "BlipColorTeal",
+        "BlipColorEnigmatic", // Wayfarer
+        "BlipColorSilver", // Wayfarer
     };
 
     /// <summary>
