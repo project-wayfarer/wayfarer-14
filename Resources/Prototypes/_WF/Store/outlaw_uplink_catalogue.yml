@@ -388,6 +388,22 @@
       tags:
       - OutlawUplinkBase
 
+- type: listing
+  id: UplinkOutlawRCD
+  name:  uplink-pirate-rcd-name
+  description: uplink-pirate-rcd-desc
+  productEntity: PirateRCD
+  icon: { sprite: _NF/Objects/Tools/rcd.rsi, state: icon }
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 # Pirate Repair Kit
 - type: listing
   id: UplinkOutlawRepairKit

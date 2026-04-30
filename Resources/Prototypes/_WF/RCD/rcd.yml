@@ -1,0 +1,24 @@
+# Electrical
+- type: rcd
+  id: ThrusterNfsd
+  category: Electrical
+  sprite: /Textures/Interface/Radial/RCD/thruster.png
+  mode: ConstructObject
+  prototype: ThrusterNfsd
+  cost: 4
+  delay: 2
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct3
+
+- type: rcd
+  id: ThrusterRogue
+  category: Electrical
+  sprite: /Textures/Interface/Radial/RCD/thruster.png
+  mode: ConstructObject
+  prototype: ThrusterRogue
+  cost: 4
+  delay: 2
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct3

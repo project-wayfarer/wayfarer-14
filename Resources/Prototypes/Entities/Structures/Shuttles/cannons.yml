@@ -300,6 +300,7 @@
     layers:
     - state: base
   - type: Gun
+    projectileSpeed: 40 # Wayfarer: Increase projectile velocity
     fireRate: 1
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg

@@ -751,11 +751,11 @@
       whitelist:
         tags:
           - SecurityUplink
-    - !type:BuyerJobCondition
-      whitelist:
-        - Bailiff
-        - SeniorOfficer
-        - Sheriff
+#    - !type:BuyerJobCondition # Wayfarer: Breaching Hammers for all
+#      whitelist:
+#        - Bailiff
+#        - SeniorOfficer
+#        - Sheriff
 
 - type: listing
   id: UplinkSecurityTeleShield
@@ -1102,6 +1102,22 @@
       whitelist:
         tags:
           - SecurityUplink
+
+- type: listing # Wayfarer: Duster Frag Rounds
+  id: UplinkSecurityFragGrenadeAmmoMags
+  name:  uplink-security-frag-ammo-mags-name
+  description: uplink-security-frag-ammo-mags-desc
+  productEntity: NFMagazineGrenadeFrag
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi, state: icon}
+  cost:
+    FrontierUplinkCoin: 2
+  categories:
+  - UplinkSecurityAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
 
 - type: listing
   id: UplinkSecurityTrackingDartsAmmo

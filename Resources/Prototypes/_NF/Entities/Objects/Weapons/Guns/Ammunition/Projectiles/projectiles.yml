@@ -57,6 +57,11 @@
     range: 4
     energyConsumption: 2700000
     disableDuration: 60
+  - type: RadarBlip # Wayfarer: Add Radar Blip
+    scale: 2
+    shape: Triangle
+    visibleFromOtherGrids: true
+    radarColor: '#00FFFF' # EMP
 
 - type: entity
   parent: BaseBulletTrigger
@@ -125,6 +130,11 @@
     range: 4
     energyConsumption: 2700000
     disableDuration: 60
+  - type: RadarBlip # Wayfarer: Add Radar Blip
+    scale: 2
+    shape: Triangle
+    visibleFromOtherGrids: true
+    radarColor: '#00FFFF' # EMP
 
 - type: entity
   id: NFBaseBulletLaser

@@ -121,7 +121,7 @@
   - type: CartridgeAmmo
     proto: NFBulletGrenadeEMP
   - type: EmpDescription
-    range: 6 #Wayfarer 5 -> 6
+    range: 8 #Wayfarer 5<8 # Makes them not useless
     energyConsumption: 2700000
     disableDuration: 12.5 #Wayfarer 10 -> 12.5
 
@@ -164,3 +164,8 @@
     range: 4
     energyConsumption: 2700000
     disableDuration: 60
+  - type: RadarBlip # Wayfarer: Add Radar Blip
+    scale: 2
+    shape: Triangle
+    visibleFromOtherGrids: true
+    radarColor: '#00FFFF' # EMP

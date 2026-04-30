@@ -190,11 +190,11 @@
   parent: BaseGeneratorWallmount
   id: GeneratorWallmountAPU
   name: shuttle APU
-  description: An auxiliary power unit for a shuttle - 6kW.
-  suffix: APU, 6kW
+  description: An auxiliary power unit for a shuttle - 9kW. # Wayfarer: 6<9
+  suffix: APU, 9kW # Wayfarer: 6<9
   components:
   - type: PowerSupplier
-    supplyRate: 6000
+    supplyRate: 9000 # Wayfarer: 6000<9000
   - type: Construction
     graph: WallmountGenerator
     node: APU

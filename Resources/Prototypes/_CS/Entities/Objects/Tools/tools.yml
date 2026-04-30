@@ -1,6 +1,6 @@
 - type: entity
-  name: Pirate RCD
-  parent: [BaseC3PirateContraband, RCD]
+  name: Black Market RCD # Wayfarer: Changed Name
+  parent: [BaseBMContraband, RCD] # Wayfarer: BaseBaseC3PirateContraband<BaseBMContraband
   id: PirateRCD
   description: A blackmarket construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
   components:
@@ -34,6 +34,7 @@
     - MVCable
     - HVCable
     - CableTerminal
+    - ThrusterRogue # Wayfarer
     - Deconstruct
   - type: Sprite
     state: icon-shipyard
@@ -41,7 +42,7 @@
 
 - type: entity
   name: NFSD RCD
-  parent: [BaseC2ContrabandUnredeemable, RCD]
+  parent: [BaseMilitaryContraband, RCD] #Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: NFSDRCD
   description: A security construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
   components:
@@ -70,6 +71,7 @@
     - MVCable
     - HVCable
     - CableTerminal
+    - ThrusterNfsd # Wayfarer
     - Deconstruct
   - type: Sprite
     state: icon-shipyard

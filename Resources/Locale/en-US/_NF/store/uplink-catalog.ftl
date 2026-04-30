@@ -224,6 +224,9 @@ uplink-security-emp-ammo-desc = A box containing 4 EMP projectile grenades.
 uplink-security-emp-ammo-mags-name = EMP Grenade Cartridge
 uplink-security-emp-ammo-mags-desc = A single EMP grenade cartridge, for shipboard weapons.
 
+uplink-security-frag-ammo-mags-name = Frag Grenade Cartridge
+uplink-security-frag-ammo-mags-desc = A single Frag grenade cartridge, for shipboard weapons.
+
 uplink-security-trackingdart-ammo-name = Tracking Darts Ammo
 uplink-security-trackingdart-ammo-desc = A box containing 3 tracking darts and 3 pinpointers.
 
