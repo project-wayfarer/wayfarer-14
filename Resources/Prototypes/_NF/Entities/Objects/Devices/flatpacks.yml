@@ -703,7 +703,7 @@
     - state: medical_console
 
 - type: entity
-  parent: BaseNFFlatpack
+  parent: [ BaseNFFlatpack, BaseMilitaryContraband ] # Wayfarer: Added BaseMilitaryContraband Contraband
   id: ComputerIFFFlatpack
   name: IFF computer flatpack
   description: A flatpack used for constructing a IFF computer.

@@ -265,7 +265,7 @@
     stealGroup: CargoShuttleConsoleCircuitboard
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [ BaseComputerAiAccess, BaseMilitaryContraband ] # Wayfarer: Added BaseMilitaryContraband Contraband
   id: ComputerIFF
   name: IFF computer
   description: Allows you to control the IFF characteristics of this vessel.
