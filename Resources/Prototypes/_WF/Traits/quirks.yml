@@ -10,3 +10,11 @@
     - type: AutoEmote
       emotes:
       - ClownGiggle
+
+- type: trait
+  id: Carnivore
+  name: trait-carnivore-name
+  description: trait-carnivore-desc
+  category: Quirks
+  components:
+    - type: Carnivore
