@@ -5,7 +5,7 @@
     An Autonomous Sentry Machine Gun Turret (ASMGT) is a magazine-fed turret with barrels compatible with .20, .25, .30 and .35 cartridges.
   suffix: RogueSilicon
   parent:
-  - BaseWeaponTurretMagazineFed
+  - BaseWeaponTurretBallisticNF
   components:
   - type: PointLight
     enabled: true
@@ -68,18 +68,31 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Appearance
-  - type: MagazineVisuals
-    magState: mag
-    steps: 11
-    zeroVisible: true
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineAsmgtUniversal30UraniumHighCapacity
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-          - MagazineAsmgt
+  - type: BallisticAmmoProvider
+    proto: NFCartridgeRifle30Uranium
+    capacity: 500
+
+- type: entity
+  id: WFWeaponTurretLaserRogueSilicon
+  name: laser turret
+  suffix: Wayfarer, RogueSilicon
+  parent:
+  - BaseC3SyndicateContraband
+  - BaseTurretSearchBeam
+  - BaseWeaponTurretEnergyNF
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Turrets/laser.rsi
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+      params:
+        variation: 0.125
+  - type: HitscanBatteryAmmoProvider
+    proto: NFRedLightLaser
+    fireCost: 10
+  - type: NpcFactionMember
+    factions:
+    - SiliconsExpeditionNF

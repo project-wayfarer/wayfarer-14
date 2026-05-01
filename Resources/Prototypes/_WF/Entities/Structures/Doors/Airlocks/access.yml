@@ -1,0 +1,19 @@
+- type: entity
+  parent: HighSecDoor
+  id: HighSecUnpryable
+  suffix: Central Command, Unpryable
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCentralCommand ]
+  - type: Door
+    canPry: false
+    openSound:
+      path: /Audio/Machines/airlock_open.ogg
+    closeSound:
+      path: /Audio/Machines/airlock_close.ogg
+    denySound:
+      path: /Audio/Machines/airlock_deny.ogg
+    crushDamage:
+      types:
+        Blunt: 50

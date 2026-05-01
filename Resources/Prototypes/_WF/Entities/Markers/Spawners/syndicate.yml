@@ -1,0 +1,19 @@
+- type: entity
+  name: Contraband Crate Spawner
+  suffix: Hauler
+  id: SpawnContrabandCrateHauler
+  parent: MarkerBase
+  components:
+      - type: Sprite
+        layers:
+            - state: red
+            - sprite: Structures/Storage/Crates/generic.rsi
+              state: icon
+      - type: RandomSpawner
+        prototypes:
+            - CrateTradeContrabandSecure5
+            - CrateTradeContrabandSecure4
+            - CrateTradeContrabandSecure3
+            - CrateTradeContrabandSecure2
+            - CrateTradeContrabandSecure1
+            - CrateTradeContrabandSecure1

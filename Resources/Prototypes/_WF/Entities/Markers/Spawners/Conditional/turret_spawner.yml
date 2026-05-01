@@ -13,3 +13,18 @@
   - type: ConditionalSpawner
     prototypes:
     - WeaponTurretAsmgtPOIRogueSilicon
+
+- type: entity
+  id: WFSpawnMobWeaponTurretLaserSilicon
+  parent: MarkerBase
+  name: silicon laser turret spawner
+  suffix: RogueSilicon, Wayfarer POI
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _NF/Objects/Weapons/Guns/Turrets/laser.rsi
+      state: base
+  - type: ConditionalSpawner
+    prototypes:
+    - WFWeaponTurretLaserRogueSilicon
