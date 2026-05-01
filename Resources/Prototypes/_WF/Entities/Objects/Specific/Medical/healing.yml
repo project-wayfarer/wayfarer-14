@@ -12,3 +12,18 @@
         reagents:
         - ReagentId: Neostigmine
           Quantity: 300
+
+- type: entity
+  parent: VialBluespace
+  suffix: Amoxla 300u
+  id: AmoxlaMedicalVialBluespace
+  components:
+  - type: Label
+    currentLabel: reagent-name-amoxla
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 300
+        reagents:
+        - ReagentId: Amoxla
+          Quantity: 300

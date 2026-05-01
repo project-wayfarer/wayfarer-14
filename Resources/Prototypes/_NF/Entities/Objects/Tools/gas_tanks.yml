@@ -77,3 +77,35 @@
   - type: Tag # Wayfarer
     tags: # Wayfarer
     - DepositBlacklist # Wayfarer
+
+- type: entity
+  parent: DoubleEmergencyAirTank
+  id: SmallBluespaceAirTankFilledRespiron
+  name: pocket bluespace air tank
+  suffix: Filled, Respiron
+  description: A pocket sized bluespace gas tank. Holds 10L of gas
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tanks/bluespace_pocket_tank.rsi
+  - type: Item
+    sprite: _NF/Objects/Tanks/bluespace_pocket_tank.rsi
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      volume: 10
+      temperature: 293.15
+      moles:
+      - 0 # oxygen
+      - 0 # nitrogen
+      - 0 # CO2
+      - 0 # Plasma
+      - 0 # Tritium
+      - 0 # Water vapor
+      - 0 # Ammonia
+      - 0 # N2O
+      - 0 # Frezon
+      - 4.15 # Respiron
+      - 0 # Helium
+  - type: Tag # Wayfarer
+    tags: # Wayfarer
+    - DepositBlacklist # Wayfarer

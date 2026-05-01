@@ -61,3 +61,41 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadOutlawHardsuitCombat
+
+# UTSP Combat Suit
+- type: entity
+  parent: [ ClothingOuterHardsuitBaseNF, BaseMilitaryContraband ]
+  id: ClothingOuterUTSPHardsuit
+  name: UTSP combat exosuit
+  description: A high tech combat exosuit developed for the elite UTSP emergency response teams.
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/ertengineer.rsi
+  - type: Clothing
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/ertengineer.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: FireProtection
+    reduction: 0.9
+  - type: StaminaResistance
+    damageCoefficient: 0.10
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.1
+        Slash: 0.1
+        Piercing: 0.1
+        Heat: 0.1
+        Radiation: 0.1
+        Caustic: 0.1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadUTSPHardsuit
