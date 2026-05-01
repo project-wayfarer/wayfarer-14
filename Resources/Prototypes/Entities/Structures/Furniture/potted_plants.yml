@@ -54,8 +54,8 @@
           path: /Audio/Effects/plant_rustle.ogg
   - type: StaticPrice
     price: 50
-    vendPrice: 2000 #Coyote 50 -> 2000
-# Start Coyote
+    vendPrice: 2000 # CS: 50<2000
+# CS Start
   - type: PortableScrubber
     baseTransferRate: 1
     amPlant: true
@@ -74,7 +74,7 @@
         nodeGroupID: Pipe
         rotationsEnabled: false
         volume: 1
-#End Coyote
+# End CS
 
 - type: entity
   id: PottedPlant0

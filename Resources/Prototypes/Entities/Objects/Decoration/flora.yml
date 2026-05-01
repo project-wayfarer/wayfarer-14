@@ -90,7 +90,7 @@
           Log:
             min: 2
             max: 8
-#Start Wayfarer
+# Wayfarer Start
   - type: PortableScrubber
     baseTransferRate: 1
     amPlant: true
@@ -109,7 +109,7 @@
         nodeGroupID: Pipe
         rotationsEnabled: false
         volume: 1
-#End Wayfarer
+# End Wayfarer
 
 - type: entity
   parent: BaseTree
