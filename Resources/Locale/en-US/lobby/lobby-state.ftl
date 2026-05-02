@@ -18,17 +18,6 @@ lobby-state-player-status-round-time =
     [1]minute
     *[other]minutes
     }
-lobby-state-player-status-round-time-days =
-    The round time is: {$days} {$days ->
-    [1]day,
-    *[other]days,
-    } {$hours} {$hours ->
-    [1]hour,
-    *[other]hours,
-    } and {$minutes} {$minutes ->
-    [1]minute
-    *[other]minutes
-    }
 lobby-state-song-text = Playing: [color=white]{$songTitle}[/color] by [color=white]{$songArtist}[/color]
 lobby-state-song-no-song-text = No lobby song playing.
 lobby-state-song-unknown-title = [color=dimgray]Unknown title[/color]
