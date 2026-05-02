@@ -7,11 +7,11 @@ station-event-bluespace-scrap-start-announcement = Storms detected in bluespace 
 station-event-bluespace-scrap-warning-announcement = Bluespace instability detected on wreckage, five minutes until expected departure.
 station-event-bluespace-scrap-end-announcement = Critical bluespace instability detected, storm wreckage has exited the sector.
 
-station-event-bluespace-vault-start-announcement = A Governmental armored vault is inbound to the sector. There is a No Fly Zone for 200 meters around it. Station accounts will be rewarded for its safe return.
+station-event-bluespace-vault-start-announcement = A Governmental armored vault is inbound to the sector. There is a No Fly Zone for 200 meters around it. CGP is authorized to use lethal force on trespassers. Station accounts will be rewarded for its safe return.
 station-event-bluespace-vault-warning-announcement = Remote FTL procedures initialized, five minutes until vault extraction.
 station-event-bluespace-vault-end-announcement = We have retrieved the vault from your sector. Station accounts have been paid.
 
-station-event-bluespace-cache-start-announcement = A Mili-tech weapons cache is inbound to the sector. There is a No Fly Zone for 200 meters around it. Station accounts will be rewarded for guarding the cache.
+station-event-bluespace-cache-start-announcement = A Mili-tech weapons cache is inbound to the sector. There is a No Fly Zone for 200 meters around it. CGP is authorized to use lethal force on trespassers. Station accounts will be rewarded for guarding the cache.
 station-event-bluespace-cache-warning-announcement = Remote FTL procedures initialized, five minutes until weapons cache extraction.
 station-event-bluespace-cache-end-announcement = We have retrieved the Mili-tech weapons cache from your sector. Station accounts have been paid.
 

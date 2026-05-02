@@ -18,6 +18,10 @@
     reoccurrenceDelay: 360 # 6 hours
     requiredJobs:
       Sheriff: 1
+    # Wayfarer timer
+    WayfareCacheGroup: Caches
+    WayfareCacheGroupMins: 120
+    
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
@@ -61,6 +65,9 @@
     reoccurrenceDelay: 360 # 6 hours
     requiredJobs:
       Sheriff: 1
+    # Wayfarer timer
+    WayfareCacheGroup: Caches
+    WayfareCacheGroupMins: 120
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
@@ -107,6 +114,9 @@
     reoccurrenceDelay: 360 # 6 hours
     requiredJobs:
       Sheriff: 1
+    # Wayfarer timer
+    WayfareCacheGroup: Caches
+    WayfareCacheGroupMins: 120
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup

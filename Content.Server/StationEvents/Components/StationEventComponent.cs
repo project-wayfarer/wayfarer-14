@@ -144,4 +144,17 @@ public sealed partial class StationEventComponent : Component
     /// </summary>
     [DataField]
     public bool WarningAnnounced;
+	
+	
+    /// <summary>
+    ///     Wayfarer: Groups for vault, cache
+    /// </summary>
+    [DataField]
+    public string? WayfareCacheGroup;
+	
+    /// <summary>
+    ///    Wayfarer: CooldownTimer for Unified cache
+    /// </summary>
+    [DataField]
+    public float WayfareCacheGroupMins = 0f;
 }

@@ -293,6 +293,30 @@ public sealed class EventManagerSystem : EntitySystem
         {
             return false;
         }
+		
+		//Start Wayfarer
+        if (stationEvent.WayfareCacheGroup != null && stationEvent.WayfareCacheGroupMins > 0)
+        {
+            foreach (var (proto, otherEvent) in AllEvents())
+                {
+
+                    if (proto.ID == prototype.ID)
+                    continue;
+
+
+                    if (otherEvent.WayfareCacheGroup != stationEvent.WayfareCacheGroup)
+                    continue;
+
+                    var lastRunGroup = TimeSinceLastEvent(proto);
+
+                    if (lastRunGroup != TimeSpan.Zero &&
+                    currentTime.TotalMinutes <
+                    lastRunGroup.TotalMinutes + stationEvent.WayfareCacheGroupMins)
+                        {
+                        return false;
+                        }
+                }
+        }
 
         return true;
     }
