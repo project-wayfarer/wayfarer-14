@@ -16,6 +16,7 @@
   name: trait-carnivore-name
   description: trait-carnivore-desc
   category: Digestions
+  cost: 1
   components:
     - type: Carnivore
 
@@ -24,5 +25,6 @@
   name: trait-herbivore-name
   description: trait-herbivore-desc
   category: Digestions
+  cost: 1
   components:
     - type: Herbivore
