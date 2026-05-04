@@ -18,9 +18,10 @@
     reoccurrenceDelay: 360 # 6 hours
     requiredJobs:
       Sheriff: 1
-    # Wayfarer timer
+    # Wayfarer: Cache/Vault group universal Timer
     WayfareCacheGroup: Caches
     WayfareCacheGroupMins: 120
+    # Wayfarer: End
     
   - type: BluespaceErrorRule
     groups:
@@ -65,9 +66,10 @@
     reoccurrenceDelay: 360 # 6 hours
     requiredJobs:
       Sheriff: 1
-    # Wayfarer timer
+    # Wayfarer: Cache/Vault group universal Timer
     WayfareCacheGroup: Caches
     WayfareCacheGroupMins: 120
+    # Wayfarer: End Timer
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
@@ -114,9 +116,10 @@
     reoccurrenceDelay: 360 # 6 hours
     requiredJobs:
       Sheriff: 1
-    # Wayfarer timer
+    # Wayfarer: Cache/Vault group universal Timer
     WayfareCacheGroup: Caches
     WayfareCacheGroupMins: 120
+    # Wayfarer: End timer
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup

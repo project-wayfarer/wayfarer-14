@@ -317,6 +317,7 @@ public sealed class EventManagerSystem : EntitySystem
                         }
                 }
         }
+		// End Wayfarer
 
         return true;
     }
