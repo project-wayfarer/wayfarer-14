@@ -19,9 +19,9 @@
     requiredJobs:
       Sheriff: 1
     # Wayfarer: Cache/Vault group universal Timer
-    WayfareCacheGroup: Caches
-    WayfareCacheGroupMins: 120
-    # Wayfarer: End
+    wayfareCacheGroup: Caches
+    wayfareCacheGroupMins: 120
+    # Wayfarer: End timer
     
   - type: BluespaceErrorRule
     groups:
@@ -67,8 +67,8 @@
     requiredJobs:
       Sheriff: 1
     # Wayfarer: Cache/Vault group universal Timer
-    WayfareCacheGroup: Caches
-    WayfareCacheGroupMins: 120
+    wayfareCacheGroup: Caches
+    wayfareCacheGroupMins: 120
     # Wayfarer: End Timer
   - type: BluespaceErrorRule
     groups:
@@ -117,8 +117,8 @@
     requiredJobs:
       Sheriff: 1
     # Wayfarer: Cache/Vault group universal Timer
-    WayfareCacheGroup: Caches
-    WayfareCacheGroupMins: 120
+    wayfareCacheGroup: Caches
+    wayfareCacheGroupMins: 120
     # Wayfarer: End timer
   - type: BluespaceErrorRule
     groups:
