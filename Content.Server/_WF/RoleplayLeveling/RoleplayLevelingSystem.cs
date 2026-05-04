@@ -31,10 +31,10 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
     [Dependency] private readonly IChatManager _chatManager = default!;
 
     private int _currentRoundId = 0;
-    
+
     // Track when players joined this round for calculating commend availability
     private readonly Dictionary<NetUserId, TimeSpan> _playerJoinTimes = new();
-    
+
     // Anti-spam: Track last message time per player
     private readonly Dictionary<EntityUid, TimeSpan> _lastMessageTime = new();
     private const float MessageCooldown = 2.0f; // 2 seconds between XP awards
@@ -59,7 +59,7 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
             return;
 
         var speaker = args.Source;
-        
+
         // Check if player has roleplay level component
         if (!TryComp<RoleplayLevelComponent>(speaker, out _))
             return;
@@ -78,7 +78,7 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
         var chatXp = _cfg.GetCVar(CCVars.RoleplayXpChat);
         AwardExperience(speaker, chatXp, "Chat message");
     }
-    
+
     private void OnEmote(EntityUid uid, RoleplayLevelComponent component, ref EmoteEvent args)
     {
         // Anti-spam check (same cooldown as chat)
@@ -108,7 +108,7 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
             return;
 
         var userId = actor.PlayerSession.UserId;
-        
+
         // Track when this player joined the round for commend calculations
         if (!_playerJoinTimes.ContainsKey(userId))
         {
@@ -154,7 +154,7 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
             return;
 
         comp.Experience += amount;
-        
+
         // Check for level up
         while (comp.Experience >= comp.ExperienceToNextLevel)
         {
@@ -183,7 +183,7 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
             return;
 
         var giver = args.SenderSession.AttachedEntity.Value;
-        
+
         // Convert NetEntity to EntityUid
         var recipientEntity = GetEntity(msg.Target);
         if (!recipientEntity.IsValid())
@@ -204,23 +204,23 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
 
         // Calculate how many commends the giver has available based on playtime
         var availableCommends = CalculateAvailableCommends(giverUserId);
-        
+
         // Check how many they've already given this round
         var commendsGiven = await _dbManager.GetRoundCommendsGivenByPlayer(giverUserId.UserId, _currentRoundId);
-        
+
         if (commendsGiven >= availableCommends)
             return; // No more commends available
 
         // Get actual profile IDs from database
         var giverPrefs = _prefsManager.GetPreferences(giverUserId);
         var recipientPrefs = _prefsManager.GetPreferences(recipientUserId);
-        
+
         var giverSlot = giverPrefs.SelectedCharacterIndex;
         var recipientSlot = recipientPrefs.SelectedCharacterIndex;
-        
+
         var giverProfileId = await _dbManager.GetProfileIdAsync(giverUserId, giverSlot);
         var recipientProfileId = await _dbManager.GetProfileIdAsync(recipientUserId, recipientSlot);
-        
+
         if (giverProfileId == null || recipientProfileId == null)
             return; // Can't commend if profile doesn't exist in database
 
@@ -269,7 +269,7 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
             comp.ExperienceToNextLevel,
             comp.TotalCommends);
     }
-    
+
     /// <summary>
     /// Calculate how many commends a player has available based on their playtime this round
     /// </summary>
@@ -277,29 +277,29 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
     {
         var startingCommends = _cfg.GetCVar(CCVars.RoleplayCommendStart);
         var maxCommends = _cfg.GetCVar(CCVars.RoleplayCommendMax);
-        
+
         if (!_playerJoinTimes.TryGetValue(userId, out var joinTime))
             return startingCommends; // Default to starting commends if join time not tracked
-        
+
         var playtime = (_timing.CurTime - joinTime).TotalHours;
         var hoursPerCommend = _cfg.GetCVar(CCVars.RoleplayCommendHours);
-        
+
         // Start with configured starting commends, earn 1 more every X hours, up to max
         var earnedCommends = startingCommends + (int)(playtime / hoursPerCommend);
-        
+
         return Math.Min(earnedCommends, maxCommends);
     }
-    
+
     private async void OnRequestAvailableCommends(RequestAvailableCommendsMessage msg, EntitySessionEventArgs args)
     {
         var userId = args.SenderSession.UserId;
-        
+
         // Calculate available commends
         var availableCommends = CalculateAvailableCommends(userId);
-        
+
         // Get how many they've already given
         var commendsGiven = await _dbManager.GetRoundCommendsGivenByPlayer(userId.UserId, _currentRoundId);
-        
+
         // Send back remaining commends
         var remaining = Math.Max(0, availableCommends - commendsGiven);
         RaiseNetworkEvent(new AvailableCommendsMessage(remaining), args.SenderSession);

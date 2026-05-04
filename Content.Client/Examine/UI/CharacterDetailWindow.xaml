@@ -6,10 +6,11 @@
         <!-- Header with character name and roleplay level - This area is draggable -->
         <PanelContainer StyleClasses="AngleRect" MinHeight="60">
             <BoxContainer Orientation="Vertical" Margin="10 10 10 10">
-                <Label Name="CharacterName" 
+                <Label Name="CharacterName"
                        FontColorOverride="#FFFFFF"
                        StyleClasses="LabelHeading"/>
-                <Label Name="RoleplayLevel" 
+                <!-- Wayfarer: JobTitle<RoleplayLevel -->
+                <Label Name="RoleplayLevel"
                        FontColorOverride="#AAAAAA"
                        StyleClasses="LabelSubText"/>
             </BoxContainer>
@@ -21,7 +22,7 @@
                 <!-- Description Tab -->
                 <BoxContainer Name="DescriptionTab" Orientation="Vertical">
                     <ScrollContainer VerticalExpand="True">
-                        <RichTextLabel Name="DescriptionText" 
+                        <RichTextLabel Name="DescriptionText"
                                       Margin="10"
                                       MaxWidth="510"
                                       VerticalExpand="True"/>
@@ -31,13 +32,14 @@
                 <!-- OOC Consent Tab -->
                 <BoxContainer Name="ConsentTab" Orientation="Vertical">
                     <ScrollContainer VerticalExpand="True">
-                        <RichTextLabel Name="ConsentText" 
+                        <RichTextLabel Name="ConsentText"
                                       Margin="10"
                                       MaxWidth="510"
                                       VerticalExpand="True"/>
                     </ScrollContainer>
                 </BoxContainer>
-                
+
+                <!-- Wayfarer -->
                 <!-- Commend Tab -->
                 <BoxContainer Name="CommendTab" Orientation="Vertical">
                     <ScrollContainer VerticalExpand="True">
@@ -54,6 +56,7 @@
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>
+                <!-- End Wayfarer-->
             </TabContainer>
         </PanelContainer>
     </BoxContainer>

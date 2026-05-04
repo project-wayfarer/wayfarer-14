@@ -7,7 +7,7 @@ using Content.Shared.DetailExaminable;
 using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
-using Content.Shared._WF.RoleplayLeveling.Components;
+using Content.Shared._WF.RoleplayLeveling.Components; // Wayfarer
 using Robust.Server.Player;
 
 namespace Content.Server.Examine;
@@ -73,6 +73,7 @@ public sealed class CharacterInfoSystem : EntitySystem
             response.JobTitle = idCard.Comp.LocalizedJobTitle;
         }
 
+        // Wayfarer
         // Get roleplay level
         if (TryComp<RoleplayLevelComponent>(entity, out var rpLevel))
         {
@@ -82,6 +83,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         {
             response.RoleplayLevel = "Level 1";
         }
+        // Wayfarer End
 
         // Get description (flavor text)
         if (TryComp<DetailExaminableComponent>(entity, out var detailExaminable))

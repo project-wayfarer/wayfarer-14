@@ -56,10 +56,12 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
         _window.OnClose += DeactivateButton;
         _window.OnOpen += ActivateButton;
-        
+
+        // Wayfarer
         // Set up tab titles
         _window.TabContainer.SetTabTitle(0, Loc.GetString("character-info-tab-info"));
         _window.TabContainer.SetTabTitle(1, Loc.GetString("character-info-tab-roleplay"));
+        // End Wayfarer
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenCharacterMenu,
@@ -147,17 +149,18 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
-        
+
+        // Wayfarer
         // Update roleplay level tab
         if (_ent.TryGetComponent<RoleplayLevelComponent>(entity, out var rpLevel))
         {
             _window.RoleplayLevelLabel.Text = $"Level: {rpLevel.Level}";
             // _window.RoleplayLevelLabel.Text = $"Level: {rpLevel.Level} ({rpLevel.Experience} / {rpLevel.ExperienceToNextLevel} XP)";
             _window.TotalCommendsLabel.Text = $"Total Commends: {rpLevel.TotalCommends}";
-            
+
             // Update experience progress bar
-            var progress = rpLevel.ExperienceToNextLevel > 0 
-                ? (float)rpLevel.Experience / rpLevel.ExperienceToNextLevel 
+            var progress = rpLevel.ExperienceToNextLevel > 0
+                ? (float)rpLevel.Experience / rpLevel.ExperienceToNextLevel
                 : 1.0f;
             _window.ExperienceProgressBar.Value = progress;
         }
@@ -168,6 +171,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             _window.TotalCommendsLabel.Text = "Total Commends: 0";
             _window.ExperienceProgressBar.Value = 0.0f;
         }
+        // Wayferer End
 
         foreach (var (groupId, conditions) in objectives)
         {

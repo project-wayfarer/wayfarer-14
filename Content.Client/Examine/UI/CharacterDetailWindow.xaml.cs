@@ -10,30 +10,35 @@ namespace Content.Client.Examine.UI;
 [GenerateTypedNameReferences]
 public sealed partial class CharacterDetailWindow : FancyWindow
 {
+    // Wayfarer: Removed references to elements
+
     public CharacterDetailWindow()
     {
         RobustXamlLoader.Load(this);
 
+        // Wayfarer: Removed FindControl, etc etc
+
         // Set tab titles
-        TabContainer.SetTabTitle(0, Loc.GetString("character-window-tab-description"));
-        TabContainer.SetTabTitle(1, Loc.GetString("character-window-tab-consent"));
-        TabContainer.SetTabTitle(2, Loc.GetString("character-window-tab-commend"));
+        TabContainer.SetTabTitle(0, Loc.GetString("character-window-tab-description")); // Wayfarer: _tabContainer<TabContainer
+        TabContainer.SetTabTitle(1, Loc.GetString("character-window-tab-consent")); // Wayfarer: _tabContainer<TabContainer
+        TabContainer.SetTabTitle(2, Loc.GetString("character-window-tab-commend")); // Wayfarer
     }
 
+    // Wayfarer: Switch from jobTitle to RoleplayLevel
     public void SetCharacterInfo(string characterName, string roleplayLevel)
     {
         Title = Loc.GetString("character-window-title");
-        CharacterName.Text = characterName;
-        RoleplayLevel.Text = roleplayLevel;
+        CharacterName.Text = characterName; // Wayfarer: _characterName<CharacterName
+        RoleplayLevel.Text = roleplayLevel; // Wayfarer: _jobTitle<RoleplayLevel
     }
 
     public void SetDescription(FormattedMessage description)
     {
-        DescriptionText.SetMessage(description);
+        DescriptionText.SetMessage(description); // Wayfarer: _descriptionText<DescriptionText
     }
 
     public void SetConsent(FormattedMessage consent)
     {
-        ConsentText.SetMessage(consent);
+        ConsentText.SetMessage(consent); // Wayfarer: _consentText<ConsentText
     }
 }
