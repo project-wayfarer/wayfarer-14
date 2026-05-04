@@ -29,10 +29,11 @@
         <!-- Roleplay Level Tab -->
         <ScrollContainer Name="RoleplayLevelTab">
             <BoxContainer Orientation="Vertical" Margin="10">
-                <Label Text="{Loc 'character-info-roleplay-stats'}" StyleClasses="LabelHeading" HorizontalAlignment="Center" Margin="0 0 0 20"/>
-                <BoxContainer Orientation="Vertical" HorizontalAlignment="Center">
-                    <Label Name="RoleplayLevelLabel" Access="Public" Text="Roleplay Level: 1" StyleClasses="LabelHeading" Margin="0 0 0 10"/>
-                    <Label Name="ExperienceLabel" Access="Public" Text="Experience: 0 / 100" Margin="0 0 0 5"/>
+                <Label Text="{Loc 'character-info-roleplay-stats'}" StyleClasses="LabelHeading" HorizontalAlignment="Left" Margin="0 0 0 20"/>
+                <BoxContainer Orientation="Vertical" HorizontalAlignment="Left">
+                    <Label Name="RoleplayLevelLabel" Access="Public" Text="RP Level: 1" StyleClasses="LabelHeading" Margin="0 0 0 10"/>
+                    <!-- <Label Name="ExperienceLabel" Access="Public" Text="Experience: 0 / 100" Margin="0 0 0 5"/> -->
+                    <ProgressBar Name="ExperienceProgressBar" Access="Public" MinWidth="300" MinValue="0" MaxValue="1" Value="0" Margin="0 0 0 10"/>
                     <Label Name="TotalCommendsLabel" Access="Public" Text="Total Commends Received: 0" Margin="0 0 0 5"/>
                 </BoxContainer>
             </BoxContainer>
