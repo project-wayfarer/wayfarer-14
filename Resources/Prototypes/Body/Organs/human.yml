@@ -78,7 +78,7 @@
   - type: Item
     size: Small
     heldPrefix: brain
-  
+
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
@@ -203,6 +203,25 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Stomach
+    # Wayfarer: Custom digestible system
+    carnivoreDigestible:
+      tags:
+      - Meat
+      - Pill
+      - Crayon
+      - Paper
+    herbivoreDigestible:
+      tags:
+      - Fruit
+      - Vegetable
+      - Flower
+      - Ambrosia
+      - Pill
+      # Does this count???
+      - Crayon
+      # Also this??
+      - Paper
+    # Wayfarer End
   # The stomach metabolizes stuff like foods and drinks.
   # TODO: Have it work off of the ent's solution container, and move this
   # to intestines instead.

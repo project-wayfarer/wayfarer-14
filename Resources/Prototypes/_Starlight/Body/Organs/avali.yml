@@ -5,7 +5,16 @@
   name: stomach
   description: "The stomach of an avali, on closer inspection, actually consists of two stomachs."
   components:
-    # Wayfarer: Removed specialDigestible
+  - type: Stomach
+    # Wayfarer: Use our digestable:tm: system!
+    carnivoreDigestible:
+      tags:
+      - Meat
+      - Pill
+      - Crayon
+      - Paper
+      - AvianFood
+    # Wayfarer end
   - type: SolutionContainerManager
     solutions:
       stomach:

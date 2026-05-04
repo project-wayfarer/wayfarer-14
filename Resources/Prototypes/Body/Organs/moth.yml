@@ -13,6 +13,14 @@
       components:
       - MothFood
       # End Frontier: general moth digestion
+    # Wayfarer: mmmm food
+    carnivoreDigestible:
+      components:
+      - MothFood
+    herbivoreDigestible:
+      components:
+      - MothFood
+    # Wayfarer end
     isSpecialDigestibleExclusive: false # Frontier
   - type: SolutionContainerManager
     solutions:

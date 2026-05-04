@@ -28,6 +28,14 @@
     specialDigestible:
       tags:
       - Trash
+    # Wayfarer: mmmm food
+    carnivoreDigestible:
+      tags:
+      - Trash
+    herbivoreDigestible:
+      tags:
+      - Trash
+    # Wayfarer end
     isSpecialDigestibleExclusive: false
   - type: Sprite
     sprite: Mobs/Species/Vox/organs.rsi
