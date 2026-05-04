@@ -150,11 +150,11 @@ public sealed partial class StationEventComponent : Component
     ///     Wayfarer: Groups for vault, cache
     /// </summary>
     [DataField]
-    public string? wayfareCacheGroup;
+    public string? WayfareCacheGroup;
 	
     /// <summary>
     ///    Wayfarer: CooldownTimer for Unified cache
     /// </summary>
     [DataField]
-    public float wayfareCacheGroupMins = 0f;
+    public float WayfareCacheGroupMins = 0f;
 }

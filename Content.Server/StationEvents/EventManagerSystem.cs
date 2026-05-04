@@ -295,7 +295,7 @@ public sealed class EventManagerSystem : EntitySystem
         }
 		
 		//Start Wayfarer
-        if (stationEvent.wayfareCacheGroup != null && stationEvent.wayfareCacheGroupMins > 0)
+        if (stationEvent.WayfareCacheGroup != null && stationEvent.WayfareCacheGroupMins > 0)
         {
             foreach (var (proto, otherEvent) in AllEvents())
                 {
@@ -304,14 +304,14 @@ public sealed class EventManagerSystem : EntitySystem
                     continue;
 
 
-                    if (otherEvent.wayfareCacheGroup != stationEvent.wayfareCacheGroup)
+                    if (otherEvent.WayfareCacheGroup != stationEvent.WayfareCacheGroup)
                     continue;
 
                     var lastRunGroup = TimeSinceLastEvent(proto);
 
                     if (lastRunGroup != TimeSpan.Zero &&
                     currentTime.TotalMinutes <
-                    lastRunGroup.TotalMinutes + stationEvent.wayfareCacheGroupMins)
+                    lastRunGroup.TotalMinutes + stationEvent.WayfareCacheGroupMins)
                         {
                         return false;
                         }
