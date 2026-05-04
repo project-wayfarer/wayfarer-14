@@ -9,7 +9,7 @@
     species: Chitinid
     hideLayersOnEquip:
     - HeadTop
-  - type: Hunger # Wayfarer: Uncommented Hunger and Thirst components, why the fuck were they commented out?
+  - type: Hunger # Wayfarer: Removed decay rate and uncommented Hunger and Thirst components, why the fuck were they commented out?
   - type: Thirst
 
   - type: UnpoweredFlashlight # Frontier: https://github.com/DeltaV-Station/Delta-v/pull/2796 this was added back and need to be removed if we ever take DeltaV medical
