@@ -3,11 +3,10 @@
   name: job-name-senior-officer
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
-  whitelisted: true
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 129600 # 36 hours
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 129600 # 36 hours as Deputy
   startingGear: SeniorOfficerGear
   icon: JobIconSergeant
   supervisors: job-supervisors-bailiff

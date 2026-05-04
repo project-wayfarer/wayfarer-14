@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, ClothingHeadHelmetAccessoryHolder]  # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
   id: ClothingHeadHatHardhatBase
   abstract: true
   components:
@@ -60,12 +60,14 @@
         startingItem: PowerCellMedium
   - type: Item
     heldPrefix: off
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
   - type: Tag
     tags:
-    - WhitelistChameleon
+    - WhitelistChameleon 
+  - type: ContainerContainer 
+    containers:
+      cell_slot: !type:ContainerSlot
+      storagebase: !type:Container # Wayfarer c:
+        ents: []
 
 - type: entity
   parent: ClothingHeadHatHardhatBase

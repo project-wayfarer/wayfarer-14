@@ -79,6 +79,10 @@ namespace Content.Client.Administration.UI.Bwoink
                 if (info.Antag && info.ActiveThisRound)
                     sb.Append(new Rune(0x1F5E1)); // 🗡
 
+                // Mark NFSD players with symbol // Wayfarer
+                if (info.IsNFSD && info.ActiveThisRound) // Wayfarer
+                    sb.Append(new Rune(0x1F6E1)); // 🛡 // Wayfarer
+
                 // Mark new players with symbol
                 if (IsNewPlayer(info))
                     sb.Append(new Rune(0x23F2)); // ⏲

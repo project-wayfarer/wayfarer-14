@@ -38,6 +38,9 @@ using Content.Shared.PowerCell;
 using Content.Server._DV.Storage.EntitySystems;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Mind.Components;
+using Robust.Shared.Audio;
+using Content.Shared.Body.Systems;
+using Content.Shared.Body.Components;
 
 namespace Content.Server.FloofStation;
 
@@ -62,6 +65,7 @@ public sealed class VoreSystem : EntitySystem
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly MouthStorageSystem _mouthStorage = default!;
+    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
 
     public override void Initialize()
     {
@@ -72,20 +76,27 @@ public sealed class VoreSystem : EntitySystem
         SubscribeLocalEvent<VoreComponent, BeingGibbedEvent>(OnGibContents);
         SubscribeLocalEvent<VoreComponent, ExaminedEvent>((uid, _, args) => OnExamine(uid, args));
         SubscribeLocalEvent<VoreComponent, VoreDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<VoreComponent, PlaceInMouthDoAfterEvent>(OnMouthDoAfter);
 
         SubscribeLocalEvent<VoredComponent, EntGotRemovedFromContainerMessage>(OnRelease);
         SubscribeLocalEvent<VoredComponent, CanSeeAttemptEvent>(OnSeeAttempt);
         SubscribeLocalEvent<VoredComponent, ContainerGettingRemovedAttemptEvent>(OnVoredRemoveAttempt);
+
+        SubscribeLocalEvent<HeldInMouthComponent, EntGotRemovedFromContainerMessage>(OnMouthRelease);
+        SubscribeLocalEvent<HeldInMouthComponent, CanSeeAttemptEvent>(OnMouthSeeAttempt);
+        SubscribeLocalEvent<HeldInMouthComponent, ContainerGettingRemovedAttemptEvent>(OnHeldInMouthRemoveAttempt);
     }
 
     private void OnInit(EntityUid uid, VoreComponent component, MapInitEvent args)
     {
         component.Stomach = _containerSystem.EnsureContainer<Container>(uid, "stomach");
+        component.Mouth = _containerSystem.EnsureContainer<Container>(uid, "vore-mouth");
     }
 
     private void AddVerbs(EntityUid uid, VoreComponent component, GetVerbsEvent<InnateVerb> args)
     {
         DevourVerb(uid, component, args);
+        PlaceInMouthVerb(uid, component, args);
         VoreVerb(uid, component, args);
     }
 
@@ -97,7 +108,8 @@ public sealed class VoreSystem : EntitySystem
             || !HasComp<VoreComponent>(args.Target)
             || !_consent.HasConsent(args.Target, "Vore")
             || !_consent.HasConsent(args.User, "Vore")
-            || HasComp<VoredComponent>(args.User))
+            || HasComp<VoredComponent>(args.User)
+            || HasComp<HeldInMouthComponent>(args.User))
             return;
 
         InnateVerb verbDevour = new()
@@ -120,7 +132,8 @@ public sealed class VoreSystem : EntitySystem
             || !HasComp<VoreComponent>(args.Target)
             || !_consent.HasConsent(args.Target, "Vore")
             || !_consent.HasConsent(args.User, "Vore")
-            || HasComp<VoredComponent>(args.User))
+            || HasComp<VoredComponent>(args.User)
+            || HasComp<HeldInMouthComponent>(args.User))
             return;
         // End Warferer
 
@@ -148,6 +161,39 @@ public sealed class VoreSystem : EntitySystem
                 Message = "Will show to bystanders examine text that suggests you've consumed people"
             };
             args.Verbs.Add(verbShowExamine);
+        }
+
+        foreach (var mouthPrey in component.Mouth.ContainedEntities)
+        {
+            InnateVerb verbSpitOut = new()
+            {
+                Act = () => _containerSystem.TryRemoveFromContainer(mouthPrey, true),
+                Text = Loc.GetString("vore-spit-out", ("entity", mouthPrey)),
+                Category = VerbCategory.Vore,
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/eject.svg.192dpi.png")),
+                Priority = 4
+            };
+            args.Verbs.Add(verbSpitOut);
+
+            InnateVerb verbSwallow = new()
+            {
+                Act = () => SwallowFromMouth(uid, mouthPrey, component),
+                Text = Loc.GetString("vore-swallow", ("entity", mouthPrey)),
+                Category = VerbCategory.Vore,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Interface/Actions/devour.rsi"), "icon-on"),
+                Priority = 3
+            };
+            args.Verbs.Add(verbSwallow);
+
+            InnateVerb verbChew = new()
+            {
+                Act = () => Chew(uid, mouthPrey),
+                Text = Loc.GetString("vore-chew", ("entity", mouthPrey)),
+                Category = VerbCategory.Vore,
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
+                Priority = 5
+            };
+            args.Verbs.Add(verbChew);
         }
 
         foreach (var prey in component.Stomach.ContainedEntities)
@@ -271,6 +317,178 @@ public sealed class VoreSystem : EntitySystem
         _popups.PopupEntity(Loc.GetString("vore-devoured", ("entity", uid), ("prey", target)), target, uid, PopupType.SmallCaution);
 
         _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(uid)} vored {ToPrettyString(target)}");
+    }
+
+    private void PlaceInMouthVerb(EntityUid uid, VoreComponent component, GetVerbsEvent<InnateVerb> args)
+    {
+        if (!args.CanInteract
+            || !args.CanAccess
+            || args.User == args.Target
+            || !HasComp<VoreComponent>(args.Target)
+            || !_consent.HasConsent(args.Target, "Vore")
+            || !_consent.HasConsent(args.User, "Vore")
+            || HasComp<VoredComponent>(args.User)
+            || HasComp<HeldInMouthComponent>(args.User)
+            || HasComp<VoredComponent>(args.Target)
+            || HasComp<HeldInMouthComponent>(args.Target)
+            || component.Mouth.ContainedEntities.Count > 0)
+            return;
+
+        InnateVerb verbPlaceInMouth = new()
+        {
+            Act = () => TryPlaceInMouth(uid, args.Target, component),
+            Text = Loc.GetString("vore-place-in-mouth", ("entity", args.Target)),
+            Category = VerbCategory.Vore,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("Interface/Actions/devour.rsi"), "icon-on"),
+            Priority = -2
+        };
+        args.Verbs.Add(verbPlaceInMouth);
+    }
+
+    public void TryPlaceInMouth(EntityUid uid, EntityUid target, VoreComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        if (_mouthStorage.IsMouthBlocked(uid))
+            return;
+
+        _popups.PopupEntity(Loc.GetString("vore-attempt-place-in-mouth", ("entity", uid), ("prey", target)), uid, PopupType.LargeCaution);
+
+        if (!TryComp<PhysicsComponent>(uid, out var predPhysics)
+            || !TryComp<PhysicsComponent>(target, out var preyPhysics))
+            return;
+
+        var length = TimeSpan.FromSeconds(component.Delay * 0.7f
+                        * _contests.MassContest(preyPhysics, predPhysics, false, 4f)
+                        * _contests.StaminaContest(uid, target)
+                        * (_standingState.IsDown(target) ? 0.5f : 1));
+
+        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, length, new PlaceInMouthDoAfterEvent(), uid, target: target)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            RequireCanInteract = true
+        });
+    }
+
+    private void OnMouthDoAfter(EntityUid uid, VoreComponent component, PlaceInMouthDoAfterEvent args)
+    {
+        if (args.Target is null || args.Cancelled)
+            return;
+
+        PlaceInMouth(uid, args.Target.Value, component);
+    }
+
+    public void PlaceInMouth(EntityUid uid, EntityUid target, VoreComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        var held = EnsureComp<HeldInMouthComponent>(target);
+        held.Pred = uid;
+        EnsureComp<PressureImmunityComponent>(target);
+        _blindableSystem.UpdateIsBlind(target);
+        if (TryComp<TemperatureComponent>(target, out var temp))
+            temp.AtmosTemperatureTransferEfficiency = 0;
+
+        _containerSystem.Insert(target, component.Mouth);
+        _audioSystem.PlayPvs(component.SoundDevour, uid);
+
+        if (_playerManager.TryGetSessionByEntity(target, out var sessionprey)
+            || sessionprey is not null)
+            _audioSystem.PlayEntity(component.SoundDevour, sessionprey, uid);
+
+        if (_playerManager.TryGetSessionByEntity(uid, out var sessionpred)
+            || sessionpred is not null)
+            _audioSystem.PlayEntity(component.SoundDevour, sessionpred, uid);
+
+        _popups.PopupEntity(Loc.GetString("vore-placed-in-mouth", ("entity", uid), ("prey", target)), target, target, PopupType.SmallCaution);
+        _popups.PopupEntity(Loc.GetString("vore-placed-in-mouth", ("entity", uid), ("prey", target)), target, uid, PopupType.SmallCaution);
+
+        _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(uid)} placed {ToPrettyString(target)} in their mouth");
+    }
+
+    public void SwallowFromMouth(EntityUid pred, EntityUid prey, VoreComponent? component = null)
+    {
+        if (!Resolve(pred, ref component))
+            return;
+
+        // Remove the mouth component before Devour so the mouth-release handler doesn't fire
+        // when ContainerSystem moves the prey from the mouth container to the stomach.
+        RemComp<HeldInMouthComponent>(prey);
+        Devour(pred, prey, component);
+    }
+
+    public void Chew(EntityUid pred, EntityUid prey)
+    {
+        // Capture bleed amount before damage so we can restore it — chewing deals brute but shouldn't cause bleeding.
+        var hadBloodstream = TryComp<BloodstreamComponent>(prey, out var bloodstream);
+        var bleedBefore = hadBloodstream ? bloodstream!.BleedAmount : 0f;
+
+        DamageSpecifier damage = new();
+        damage.DamageDict.Add("Blunt", 10);
+        _damageable.TryChangeDamage(prey, damage, true, false);
+
+        // Reverse any bleed increase caused by the damage.
+        if (hadBloodstream)
+        {
+            var bleedDelta = bloodstream!.BleedAmount - bleedBefore;
+            if (bleedDelta > 0)
+                _bloodstream.TryModifyBleedAmount((prey, bloodstream), -bleedDelta);
+        }
+
+        _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Items/eating_1.ogg"), pred);
+
+        _popups.PopupEntity(Loc.GetString("vore-chew-msg", ("entity", pred), ("prey", prey)), pred, pred, PopupType.SmallCaution);
+        _popups.PopupEntity(Loc.GetString("vore-chew-msg", ("entity", pred), ("prey", prey)), pred, prey, PopupType.SmallCaution);
+
+        _adminLog.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(pred)} chewed on {ToPrettyString(prey)}");
+    }
+
+    private void OnMouthRelease(EntityUid uid, HeldInMouthComponent component, EntGotRemovedFromContainerMessage args)
+    {
+        if (!TryComp<VoreComponent>(component.Pred, out var predvore)
+            || predvore.Mouth != args.Container)
+            return;
+
+        _transform.AttachToGridOrMap(uid);
+
+        RemComp<HeldInMouthComponent>(uid);
+        RemComp<PressureImmunityComponent>(uid);
+        _blindableSystem.UpdateIsBlind(uid);
+        if (TryComp<TemperatureComponent>(uid, out var temp))
+            temp.AtmosTemperatureTransferEfficiency = 0.1f;
+
+        if (_playerManager.TryGetSessionByEntity(args.Container.Owner, out var sessionpred)
+            || sessionpred is not null)
+            _audioSystem.PlayEntity(component.SoundSpit, sessionpred, uid);
+
+        if (_playerManager.TryGetSessionByEntity(uid, out var sessionprey)
+            || sessionprey is not null)
+            _audioSystem.PlayEntity(component.SoundSpit, sessionprey, uid);
+
+        _popups.PopupEntity(Loc.GetString("vore-spit-out-msg", ("entity", uid), ("pred", args.Container.Owner)), uid, args.Container.Owner, PopupType.Medium);
+        _popups.PopupEntity(Loc.GetString("vore-spit-out-msg", ("entity", uid), ("pred", args.Container.Owner)), uid, uid, PopupType.Medium);
+
+        _adminLog.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(uid)} was spit out from {ToPrettyString(args.Container.Owner)}'s mouth");
+    }
+
+    private void OnMouthSeeAttempt(EntityUid uid, HeldInMouthComponent component, CanSeeAttemptEvent args)
+    {
+        if (component.LifeStage <= ComponentLifeStage.Running)
+            args.Cancel();
+    }
+
+    private void OnHeldInMouthRemoveAttempt(EntityUid uid, HeldInMouthComponent component, ContainerGettingRemovedAttemptEvent args)
+    {
+        // Only block removal from the predator's mouth — not other containers.
+        if (!TryComp<VoreComponent>(component.Pred, out var predvore)
+            || predvore.Mouth != args.Container)
+            return;
+
+        // Block unforced self-escape from the mouth.
+        args.Cancel();
     }
 
     private void OnVoredRemoveAttempt(EntityUid uid, VoredComponent component, ContainerGettingRemovedAttemptEvent args)
@@ -446,7 +664,10 @@ public sealed class VoreSystem : EntitySystem
         }
 
         if (TryComp<VoreComponent>(prey, out var preyvore))
+        {
             _containerSystem.EmptyContainer(preyvore.Stomach);
+            _containerSystem.EmptyContainer(preyvore.Mouth);
+        }
 
         QueueDel(prey);
     }
@@ -474,6 +695,8 @@ public sealed class VoreSystem : EntitySystem
     {
         if (component.Stomach != null)
             _containerSystem.EmptyContainer(component.Stomach);
+        if (component.Mouth != null)
+            _containerSystem.EmptyContainer(component.Mouth);
     }
 
     public override void Update(float frameTime)

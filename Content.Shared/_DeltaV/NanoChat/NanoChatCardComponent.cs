@@ -67,4 +67,12 @@ public sealed partial class NanoChatCardComponent : Component
     /// </summary>
     [DataField]
     public bool IsClosed;
+
+    /// <summary>
+    ///     Username of the original owner whose name is on the ID card (for detecting stolen PDA usage)
+    ///     This is set when the card is first initialized with an owner name
+    /// </summary>
+    [DataField]
+    [Access(typeof(SharedNanoChatSystem), Other = AccessPermissions.ReadWrite)]
+    public string? OriginalOwnerUsername;
 }

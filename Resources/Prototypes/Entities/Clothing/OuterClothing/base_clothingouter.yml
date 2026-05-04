@@ -28,7 +28,7 @@
 
 - type: entity
   abstract: true
-  parent: ClothingOuterBase
+  parent: [ ClothingOuterBase, ClothingArmorPlate ] # Coyote: Allows outerwear that has storage to use armor plates.
   id: ClothingOuterStorageBase
   components:
   - type: Storage
@@ -104,7 +104,7 @@
 
 - type: entity
   abstract: true
-  parent: [RecyclableItemClothHardsuit, ClothingOuterBase, GeigerCounterClothing, AllowSuitStorageClothing] # Frontier: added RecyclableItemClothHardsuit
+  parent: [RecyclableItemClothHardsuit, ClothingOuterBase, GeigerCounterClothing, AllowSuitStorageClothing, ClothingArmorPlate] # Frontier: added RecyclableItemClothHardsuit # Mono: add ClothingArmorPlate
   id: ClothingOuterHardsuitBase
   name: base hardsuit
   components:
@@ -137,6 +137,10 @@
     containers:
       toggleable-clothing: !type:ContainerSlot {}
       under-clothing: !type:ContainerSlot {} # Wayfarer
+    # Mono: Added storage for them to fit the armor plates.
+      storagebase: !type:Container
+        ents: []
+    # End Mono
   - type: GroupExamine
   - type: Tag
     tags:

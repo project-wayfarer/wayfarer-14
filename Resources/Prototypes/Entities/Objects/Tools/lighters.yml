@@ -215,6 +215,12 @@
   - type: IgnitionSource
     ignited: false
   - type: Engraveable # Frontier
+  - type: HelmetAccessory # Wayfarer :>
+    rsi:
+      sprite: _WF/Clothing/Helmetaddons/Smoking/Zippos/zippo.rsi
+      state: helmet
+
+
 
 - type: entity
   name: flippo engraved lighter

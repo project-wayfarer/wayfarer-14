@@ -156,6 +156,19 @@
   - type: GuideHelp
     guides:
     - ShuttleCraft
+  - type: NoSignalOnLink # Mono
+  # Mono
+  - type: DeviceLinkSource
+    ports:
+    - device-button-1
+    - device-button-2
+    - device-button-3
+    - device-button-4
+    - device-button-5
+    - device-button-6
+    - device-button-7
+    - device-button-8
+  # End Mono
 
 - type: entity
   parent: [BaseComputerShuttle, BaseShuttleIntercom] # Frontier - BaseShuttleIntercom

@@ -1,3 +1,4 @@
+using Content.Shared._WF.Traits; // Wayfarer
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
@@ -18,6 +19,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
+using Content.Shared.Tag; // Wayfarer
 using Content.Shared.Tools.EntitySystems;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
@@ -190,6 +192,26 @@ public sealed partial class IngestionSystem : EntitySystem
         if (ev.Universal)
             return true;
 
+        // Wayfarer: Carnivore trait
+        foreach (var stomach in stomachs)
+        {
+            var isCarnivore = false;
+
+            if (HasComp<CarnivoreComponent>(stomach.Comp2.Body))
+            {
+                isCarnivore = true;
+                if (_whitelistSystem.IsWhitelistPass(CarnivoreDigestibleWhitelist, food))
+                    return true;
+            }
+
+            if (isCarnivore)
+            {
+                popup = true;
+                return false;
+            }
+        }
+        // Wayfarer end
+
         if (ev.SpecialDigestion)
         {
             foreach (var ent in stomachs)
@@ -216,6 +238,13 @@ public sealed partial class IngestionSystem : EntitySystem
         return false;
     }
 
+    // Wayfarer: Carnivore's helper method and fields
+    private static readonly EntityWhitelist CarnivoreDigestibleWhitelist = new()
+    {
+        Tags = new List<ProtoId<TagPrototype>> { "Meat", "Pill", "Crayon", "Paper" },
+    };
+    // Wayfarer end
+
     /// <summary>
     /// Generic method which takes a single stomach into account, and checks if a given food item passes a stomach whitelist.
     /// </summary>
@@ -231,6 +260,11 @@ public sealed partial class IngestionSystem : EntitySystem
 
         if (ev.Universal)
             return true;
+
+        // Wayfarer: Carnivore trait
+        if (HasComp<CarnivoreComponent>(stomach.Comp2.Body))
+            return _whitelistSystem.IsWhitelistPass(CarnivoreDigestibleWhitelist, food);
+        // Wayfarer end
 
         if (ev.SpecialDigestion)
             return _whitelistSystem.IsWhitelistPass(stomach.Comp1.SpecialDigestible, food);

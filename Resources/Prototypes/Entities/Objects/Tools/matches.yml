@@ -115,6 +115,11 @@
     tags:
     - Trash
   - type: SpaceGarbage
+  - type: HelmetAccessory # Wayfarer :>
+    rsi:
+      sprite: _WF/Clothing/Helmetaddons/Smoking/matches.rsi 
+      state: helmet
+
 
 - type: entity
   parent: [Matchbox, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband

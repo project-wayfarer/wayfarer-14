@@ -16,6 +16,7 @@ namespace Content.Client.Shuttles.UI
         public event Action<NetEntity?, ServiceFlags>? OnServiceFlagsChanged;
         public event Action<NetEntity?, Vector2>? OnSetTargetCoordinates;
         public event Action<NetEntity?, bool>? OnSetHideTarget;
+        public event Action<string, string>? OnNetworkPortButtonPressed; // Mono
 
         private bool _targetCoordsModified = false;
 
@@ -46,7 +47,25 @@ namespace Content.Client.Shuttles.UI
             TargetY.OnTextChanged += _ => _targetCoordsModified = true;
             TargetSet.OnPressed += _ => SetTargetCoords();
             TargetShow.OnPressed += _ => SetHideTarget(!TargetShow.Pressed);
+
+            // Mono: Network Port Buttons
+            DeviceButton1.OnPressed += _ => OnPortButtonPressed("device-button-1", "button-1");
+            DeviceButton2.OnPressed += _ => OnPortButtonPressed("device-button-2", "button-2");
+            DeviceButton3.OnPressed += _ => OnPortButtonPressed("device-button-3", "button-3");
+            DeviceButton4.OnPressed += _ => OnPortButtonPressed("device-button-4", "button-4");
+            DeviceButton5.OnPressed += _ => OnPortButtonPressed("device-button-5", "button-5");
+            DeviceButton6.OnPressed += _ => OnPortButtonPressed("device-button-6", "button-6");
+            DeviceButton7.OnPressed += _ => OnPortButtonPressed("device-button-7", "button-7");
+            DeviceButton8.OnPressed += _ => OnPortButtonPressed("device-button-8", "button-8");
+            // End Mono
         }
+
+        // Mono
+        private void OnPortButtonPressed(string sourcePort, string targetPort)
+        {
+            OnNetworkPortButtonPressed?.Invoke(sourcePort, targetPort);
+        }
+        // End Mono
 
         private void SetDampenerMode(InertiaDampeningMode mode)
         {

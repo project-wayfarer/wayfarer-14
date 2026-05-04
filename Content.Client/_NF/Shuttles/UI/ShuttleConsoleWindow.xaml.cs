@@ -13,6 +13,7 @@ namespace Content.Client.Shuttles.UI
         public event Action<NetEntity?, ServiceFlags>? OnServiceFlagsChanged;
         public event Action<NetEntity?, Vector2>? OnSetTargetCoordinates;
         public event Action<NetEntity?, bool>? OnSetHideTarget;
+        public event Action<string, string>? OnNetworkPortButtonPressed; // Mono
 
         private void NfInitialize()
         {
@@ -32,6 +33,12 @@ namespace Content.Client.Shuttles.UI
             {
                 OnSetHideTarget?.Invoke(entity, hide);
             };
+            // Mono
+            NavContainer.OnNetworkPortButtonPressed += (sourcePort, targetPort) =>
+            {
+                OnNetworkPortButtonPressed?.Invoke(sourcePort, targetPort);
+            };
+            // End Mono
         }
 
     }

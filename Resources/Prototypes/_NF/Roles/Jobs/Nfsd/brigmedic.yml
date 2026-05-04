@@ -3,11 +3,10 @@
   name: job-name-brigmedic
   description: job-description-brigmedic-nf
   playTimeTracker: JobBrigmedic
-  whitelisted: true
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 43200 # 12 hours
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 43200 # 12 hours as Deputy
   startingGear: BrigmedicGear
   icon: JobIconBrigmedicNF
   supervisors: job-supervisors-bailiff

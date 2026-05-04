@@ -1,3 +1,4 @@
+using Content.Server.Materials; // Coyote
 using Content.Server.Storage.Components;
 using Content.Shared.Materials;
 using Robust.Shared.Physics.Components;
@@ -109,6 +110,12 @@ public sealed class MaterialStorageMagnetPickupSystem : EntitySystem
 
                 if (near == parentUid)
                     continue;
+                // Coyote Start: Biogen Magnet
+                var  ev = new FeedProduceEvent(near);
+                RaiseLocalEvent(uid, ev, true);
+                if (ev.Handled)
+                    continue;
+                // Coyote End
 
                 if (!_storage.TryInsertMaterialEntity(uid, near, uid, storage))
                     continue;

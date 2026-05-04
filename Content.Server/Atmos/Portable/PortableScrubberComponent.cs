@@ -99,6 +99,7 @@ namespace Content.Server.Atmos.Portable
 
         /// <summary>
         /// is it always on and works for free and is just a plant?
+        /// CS Start
         /// </summary>
         [DataField("passive")]
         public bool Passive = false;
@@ -108,5 +109,6 @@ namespace Content.Server.Atmos.Portable
         /// </summary>
         [DataField("amPlant")]
         public bool AmPlant = false;
+        // End CS
     }
 }

@@ -100,11 +100,26 @@
 
 - type: entity
   parent: OrganHumanBrain
-  id: OrganVoxStack
+  id: OrganVoxStack # Wayfarer
   name: cortical stack
-  description: "A stack containing all the memories and experiences of a vox."
+  description: "A advanced bio-electronic device containing all the memories and identity of a Vox."
   components:
   - type: Sprite
     sprite: Mobs/Species/Vox/organs.rsi
   - type: Item
     size: Small
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Silicon
+          Quantity: 10
+        - ReagentId: GreyMatter
+          Quantity: 5
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Silicon
+          Quantity: 10
+        - ReagentId: GreyMatter
+          Quantity: 5

@@ -1612,6 +1612,15 @@
     jumpsuit: ClothingUniformJumpskirtPerformer
 
 - type: loadout
+  id: WFClothingUniformSkirtDruid
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  equipment:
+    jumpsuit: ClothingUniformSkirtDruid
+
+- type: loadout
   id: WFClothingUniformJumpsuitSafari
   effects:
   - !type:GroupLoadoutEffect

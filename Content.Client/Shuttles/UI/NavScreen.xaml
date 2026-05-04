@@ -1,8 +1,14 @@
 <controls:BoxContainer Visible="False"
+              Orientation="Vertical"
               HorizontalExpand="True"
+              VerticalExpand="True"
               xmlns:controls="https://spacestation14.io"
               xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
-              xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls">
+              xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls"><!-- Wayfarer: was implicit horizontal -->
+            <!-- Wayfarer: wrap radar+sidebar so we can add a bottom row below -->
+            <controls:BoxContainer Orientation="Horizontal"
+                                   HorizontalExpand="True"
+                                   VerticalExpand="True">
                 <ui:ShuttleNavControl Name="NavRadar"
                                  MouseFilter="Stop"
                                  VerticalAlignment="Stretch"
@@ -199,5 +205,62 @@
                     </controls:BoxContainer>
                     <!-- End Frontier - Service Flags -->
 
-                    </controls:BoxContainer>
                 </controls:BoxContainer>
+            </controls:BoxContainer>
+            <!-- End Wayfarer: radar+sidebar wrapper -->
+
+            <!-- Wayfarer: Mono Network Port Buttons relocated to bottom row -->
+            <controls:BoxContainer Orientation="Horizontal"
+                                   HorizontalExpand="True"
+                                   Margin="5 0 5 5">
+                <controls:Button Name="DeviceButton1"
+                                 Text="{controls:Loc 'shuttle-console-device-button-1'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenRight"
+                                 Margin="0"/>
+                <controls:Button Name="DeviceButton2"
+                                 Text="{controls:Loc 'shuttle-console-device-button-2'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenBoth"
+                                 Margin="0"/>
+                <controls:Button Name="DeviceButton3"
+                                 Text="{controls:Loc 'shuttle-console-device-button-3'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenBoth"
+                                 Margin="0"/>
+                <controls:Button Name="DeviceButton4"
+                                 Text="{controls:Loc 'shuttle-console-device-button-4'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenBoth"
+                                 Margin="0"/>
+                <controls:Button Name="DeviceButton5"
+                                 Text="{controls:Loc 'shuttle-console-device-button-5'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenBoth"
+                                 Margin="0"/>
+                <controls:Button Name="DeviceButton6"
+                                 Text="{controls:Loc 'shuttle-console-device-button-6'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenBoth"
+                                 Margin="0"/>
+                <controls:Button Name="DeviceButton7"
+                                 Text="{controls:Loc 'shuttle-console-device-button-7'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenBoth"
+                                 Margin="0"/>
+                <controls:Button Name="DeviceButton8"
+                                 Text="{controls:Loc 'shuttle-console-device-button-8'}"
+                                 TextAlign="Center"
+                                 HorizontalExpand="True"
+                                 StyleClasses="OpenLeft"
+                                 Margin="0"/>
+            </controls:BoxContainer>
+            <!-- End Wayfarer -->
+</controls:BoxContainer>

@@ -15,6 +15,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+using static Content.Shared.Damage.DamageableSystem;
+
 namespace Content.Shared.Damage
 {
     public sealed class DamageableSystem : EntitySystem
@@ -159,6 +161,13 @@ namespace Content.Shared.Damage
             RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin));
         }
 
+        // Mono: damage origin flags for if we can't or don't want to discern by UID
+        public enum DamageOriginFlag
+        {
+            Explosion, // flag set by ExplosionSystem.Processing
+            Barotrauma // flag set by BarotraumaSystem
+        }
+
         /// <summary>
         ///     Applies damage specified via a <see cref="DamageSpecifier"/>.
         /// </summary>
@@ -172,7 +181,9 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null)
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
+            // Mono: arg to ID indirect damage sources
+            DamageOriginFlag? originFlag = null)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -185,7 +196,8 @@ namespace Content.Shared.Damage
                 return damage;
             }
 
-            var before = new BeforeDamageChangedEvent(damage, origin);
+            var before = new BeforeDamageChangedEvent(damage, origin,
+                false, originFlag); // Mono: originFlag
             RaiseLocalEvent(uid.Value, ref before);
 
             if (before.Cancelled)
@@ -368,7 +380,7 @@ namespace Content.Shared.Damage
     ///     Raised before damage is done, so stuff can cancel it if necessary.
     /// </summary>
     [ByRefEvent]
-    public record struct BeforeDamageChangedEvent(DamageSpecifier Damage, EntityUid? Origin = null, bool Cancelled = false);
+    public record struct BeforeDamageChangedEvent(DamageSpecifier Damage, EntityUid? Origin = null, bool Cancelled = false, DamageOriginFlag? OriginFlag = null); // Mono: OriginFlag
 
     /// <summary>
     ///     Raised on an entity when damage is about to be dealt,

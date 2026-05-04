@@ -10,6 +10,9 @@ public sealed partial class VoreComponent : Component
     [ViewVariables]
     public Container Stomach = default!;
 
+    [ViewVariables]
+    public Container Mouth = default!;
+
     [DataField("soundDevour")]
     public SoundSpecifier SoundDevour = new SoundPathSpecifier("/Audio/Floof/gulp.ogg");
 

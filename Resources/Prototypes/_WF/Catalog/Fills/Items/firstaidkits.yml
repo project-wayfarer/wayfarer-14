@@ -1,0 +1,19 @@
+- type: entity
+  id: CorpsmanMedicalPouchERT
+  suffix: ERT, High Quality
+  parent: CorpsmanMedicalPouch
+  components:
+  - type: StorageFill
+    contents:
+    - id: BruizineMedicalVialBluespace
+    - id: LacerinolMedicalVialBluespace
+    - id: PuncturaseMedicalVialBluespace
+    - id: OligomersMedicalVialBluespace
+    - id: HyperzineMedicalVialBluespace
+    - id: PyrazineMedicalVialBluespace
+    - id: StellibininMedicalVialBluespace
+    - id: OligArithMedicalVialBluespace
+    - id: DexPlusMedicalVialBluespace
+    - id: SalineMedicalVialBluespace
+    - id: AmoxlaMedicalVialBluespace
+

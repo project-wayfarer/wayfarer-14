@@ -143,6 +143,11 @@ public sealed class DeviceLinkSystem : SharedDeviceLinkSystem
         if (args.Source != ent.Owner)
             return;
 
+        // Mono
+        if (HasComp<NoSignalOnLinkComponent>(ent))
+            return;
+        // End Mono
+
         // only do anything if a signal is being sent from a port
         if (!ent.Comp.LastSignals.TryGetValue(args.SourcePort, out var signal))
             return;

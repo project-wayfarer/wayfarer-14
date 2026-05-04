@@ -1,3 +1,4 @@
+using System.Collections.Frozen;
 using System.Linq;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -57,7 +58,14 @@ public sealed class AdminSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly BankSystem _bank = default!; // Frontier
+    [Dependency] private readonly BankSystem _bank = default!; // Wayfarer
+
+    // Wayfarer: NFSD icon in ahelp
+    private static readonly FrozenSet<string> NfsdJobIds = new string[]
+    {
+        "Bailiff", "Brigmedic", "Cadet", "Deputy", "NFDetective", "SeniorOfficer", "Sheriff"
+    }.ToFrozenSet();
+    // End Wayfarer
 
     private readonly Dictionary<NetUserId, PlayerInfo> _playerList = new();
 
@@ -246,6 +254,7 @@ public sealed class AdminSystem : EntitySystem
         }
 
         var antag = false;
+        var isNFSD = false; // Wayfarer
 
         // Starting role, antagonist status and role type
         RoleTypePrototype? roleType = null;
@@ -265,6 +274,11 @@ public sealed class AdminSystem : EntitySystem
 
             antag = _role.MindIsAntagonist(mindId);
             startingRole = _jobs.MindTryGetJobName(mindId);
+
+            // Wayfarer: NFSD icon in ahelp
+            if (_jobs.MindTryGetJob(mindId, out var jobProto))
+                isNFSD = NfsdJobIds.Contains(jobProto.ID);
+            // End Wayfarer
         }
 
         // Connection status and playtime
@@ -295,7 +309,8 @@ public sealed class AdminSystem : EntitySystem
             connected,
             _roundActivePlayers.Contains(data.UserId),
             overallPlaytime,
-            balance); // Frontier
+            balance, // Frontier
+            isNFSD); // Wayfarer: NFSD icon in ahelp
     }
 
     private void OnPanicBunkerChanged(bool enabled)

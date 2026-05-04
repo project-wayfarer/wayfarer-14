@@ -20,7 +20,8 @@ public sealed record PlayerInfo(
     bool Connected,
     bool ActiveThisRound,
     TimeSpan? OverallPlaytime,
-    int Balance) // Frontier
+    int Balance, // Frontier
+    bool IsNFSD) // Wayfarer: NFSD icon in ahelp
 {
     private string? _playtimeString;
 

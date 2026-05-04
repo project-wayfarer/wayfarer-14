@@ -201,7 +201,7 @@ namespace Content.Client.Examine
             }
 
             // Actually open the tooltip.
-            _examineTooltipOpen = new Popup { MaxWidth = 1200 };
+            _examineTooltipOpen = new Popup { MaxWidth = 1200 }; // CS: 400<1200
             _userInterfaceManager.ModalRoot.AddChild(_examineTooltipOpen);
             var panel = new PanelContainer() { Name = "ExaminePopupPanel" };
             panel.AddStyleClass(StyleClassEntityTooltip);

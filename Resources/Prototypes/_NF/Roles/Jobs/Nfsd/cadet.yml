@@ -4,11 +4,6 @@
   description: job-description-cadet-nf
   playTimeTracker: JobSecurityCadet
   whitelisted: true
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 64800 # 18 hours
-      inverted: true # Leave slots open for newer, less confident players.
   startingGear: CadetGear
   icon: JobIconCadetNF
   supervisors: job-supervisors-cadet

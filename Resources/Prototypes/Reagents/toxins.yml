@@ -744,7 +744,7 @@
     Food:
       effects:
       - !type:SatiateHunger
-        factor: 0.2 # Frontier: 1<0.2
+        factor: 0.8 # Frontier: 1<0.2 # Wayfarer: 0.2<0.8
         conditions:
         - !type:OrganType
           type: Vox

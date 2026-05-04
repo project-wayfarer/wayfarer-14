@@ -183,6 +183,7 @@ namespace Content.Client.Lobby
             {
                 Lobby!.StartTime.Text = string.Empty;
                 var roundTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+                // Coyote Start
                 // WEEOO WEEOO DEBUG DEBUG WEEOO WEEOO
                 // every 5 seconds, alternate between adding in a day
                 // if (roundTime.Seconds % 10 >= 5)
@@ -205,6 +206,7 @@ namespace Content.Client.Lobby
                         ("hours", roundTime.Hours),
                         ("minutes", roundTime.Minutes));
                 }
+                // Coyote End
                 return;
             }
 

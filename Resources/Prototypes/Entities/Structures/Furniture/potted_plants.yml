@@ -54,7 +54,8 @@
           path: /Audio/Effects/plant_rustle.ogg
   - type: StaticPrice
     price: 50
-    vendPrice: 2000 # eat it
+    vendPrice: 2000 # CS: 50<2000
+# CS Start
   - type: PortableScrubber
     baseTransferRate: 1
     amPlant: true
@@ -73,6 +74,7 @@
         nodeGroupID: Pipe
         rotationsEnabled: false
         volume: 1
+# End CS
 
 - type: entity
   id: PottedPlant0

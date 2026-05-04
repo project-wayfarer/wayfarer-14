@@ -118,6 +118,11 @@ public struct NanoChatMessage
     public uint SenderId;
 
     /// <summary>
+    ///     The username of the player who sent the message.
+    /// </summary>
+    public string? SenderUsername;
+
+    /// <summary>
     ///     Whether the message failed to deliver to the recipient.
     ///     This can happen if the recipient is out of range or if there's no active telecomms server.
     /// </summary>
@@ -129,12 +134,14 @@ public struct NanoChatMessage
     /// <param name="timestamp">When the message was sent</param>
     /// <param name="content">The content of the message</param>
     /// <param name="senderId">The sender's NanoChat number</param>
+    /// <param name="senderUsername">The username of the player who sent the message</param>
     /// <param name="deliveryFailed">Whether delivery to the recipient failed</param>
-    public NanoChatMessage(TimeSpan timestamp, string content, uint senderId, bool deliveryFailed = false)
+    public NanoChatMessage(TimeSpan timestamp, string content, uint senderId, string? senderUsername = null, bool deliveryFailed = false)
     {
         Timestamp = timestamp;
         Content = content;
         SenderId = senderId;
+        SenderUsername = senderUsername;
         DeliveryFailed = deliveryFailed;
     }
 }

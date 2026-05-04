@@ -1,6 +1,10 @@
 verb-categories-vore = Vore
 
 vore-devour = [color=red]Devour[/color]
+vore-place-in-mouth = Place {CAPITALIZE($entity)} in mouth
+vore-spit-out = Spit out {CAPITALIZE($entity)}
+vore-swallow = [color=orange]Swallow[/color] {CAPITALIZE($entity)}
+vore-chew = Chew on {CAPITALIZE($entity)}
 vore-release = Release {CAPITALIZE($entity)}
 vore-digest = Digest {CAPITALIZE($entity)}
 vore-stop-digest = Stop digesting {CAPITALIZE($entity)}
@@ -8,7 +12,11 @@ vore-show-examine-on = Show On Examine: YES
 vore-show-examine-off = Show On Examine: NO
 
 vore-attempt-devour = {CAPITALIZE($entity)} is trying to devour {CAPITALIZE($prey)}!
+vore-attempt-place-in-mouth = {CAPITALIZE($entity)} is trying to place {CAPITALIZE($prey)} in their mouth!
 vore-devoured = {CAPITALIZE($entity)} devoured {CAPITALIZE($prey)}
+vore-placed-in-mouth = {CAPITALIZE($entity)} placed {CAPITALIZE($prey)} in their mouth
+vore-spit-out-msg = {CAPITALIZE($entity)} was spit out from {CAPITALIZE($pred)}'s mouth
+vore-chew-msg = {CAPITALIZE($entity)} chews on {CAPITALIZE($prey)}!
 vore-digest-start = {CAPITALIZE($entity)} belly begins to get more active...
 vore-digest-start-chat = [color=red]{CAPITALIZE($entity)} belly begins to get more active...[/color]
 vore-digest-stop = {CAPITALIZE($entity)} belly seems to calm down...

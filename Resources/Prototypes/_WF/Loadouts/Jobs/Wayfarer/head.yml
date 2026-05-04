@@ -414,6 +414,15 @@
   equipment:
     head: FoodAmbrosiaVulgaris
 
+- type: loadout
+  id: WFClothingHeadHatDruid
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: ClothingHeadHatDruid
+
 #T2
 - type: loadout
   id: WFClothingHeadHatCaptain

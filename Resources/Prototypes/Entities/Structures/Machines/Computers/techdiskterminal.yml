@@ -13,15 +13,15 @@
       state: icon
     - map: ["computerLayerScreen"]
       state: unshaded
-  - type: DiskConsole
+  - type: PointDiskConsole # Wayfarer: DiskConsole<PointDiskConsole (Monolith #1408)
   - type: ResearchClient
   - type: ActivatableUI
-    key: enum.DiskConsoleUiKey.Key
+    key: enum.PointDiskConsoleUiKey.Key # Wayfarer: DiskConsoleUiKey<PointDiskConsoleUiKey (Monolith #1408)
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-      enum.DiskConsoleUiKey.Key:
-        type: DiskConsoleBoundUserInterface
+      enum.PointDiskConsoleUiKey.Key: # Wayfarer: DiskConsoleUiKey<PointDiskConsoleUiKey (Monolith #1408)
+        type: PointDiskConsoleBoundUserInterface # Wayfarer: DiskConsoleBoundUserInterface<PointDiskConsoleBoundUserInterface
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
   - type: ExtensionCableReceiver

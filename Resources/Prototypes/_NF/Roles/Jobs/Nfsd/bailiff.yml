@@ -3,14 +3,13 @@
   name: job-name-bailiff
   description: job-description-bailiff
   playTimeTracker: JobWarden
-  whitelisted: true
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 259200 # 72 hours
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 259200 # 72 hours as Deputy
     - !type:RoleTimeRequirement
       role: JobSeniorOfficer
-      time: 86400 # 24 hours
+      time: 86400 # 24 hours as Senior Officer
   startingGear: BailiffGear
   icon: JobIconBailiff
   supervisors: job-supervisors-sheriff

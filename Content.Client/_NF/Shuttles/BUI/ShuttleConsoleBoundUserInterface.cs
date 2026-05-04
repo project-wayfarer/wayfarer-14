@@ -4,6 +4,7 @@
 using System.Numerics;
 using Content.Client.Shuttles.UI;
 using Content.Shared._NF.Shuttles.Events;
+using Content.Shared._Mono.Shuttles.Events; // Mono
 using Content.Shared.Shuttles.Components;
 
 namespace Content.Client.Shuttles.BUI
@@ -18,6 +19,7 @@ namespace Content.Client.Shuttles.BUI
             _window.OnSetTargetCoordinates += OnSetTargetCoordinates;
             _window.OnSetHideTarget += OnSetHideTarget;
             _window.RequestTrackEntity += OnTrackEntity;
+            _window.OnNetworkPortButtonPressed += OnNetworkPortButtonPressed; // Mono
         }
         private void OnInertiaDampeningModeChanged(NetEntity? entityUid, InertiaDampeningMode mode)
         {
@@ -64,5 +66,16 @@ namespace Content.Client.Shuttles.BUI
                 TrackedEntity = trackEntity
             });
         }
+
+        // Mono
+        private void OnNetworkPortButtonPressed(string sourcePort, string targetPort)
+        {
+            SendMessage(new ShuttlePortButtonPressedMessage
+            {
+                SourcePort = sourcePort,
+                TargetPort = targetPort
+            });
+        }
+        // End Mono
     }
 }

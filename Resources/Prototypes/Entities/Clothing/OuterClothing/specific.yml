@@ -1,6 +1,6 @@
 ﻿- type: entity
-  parent: [ClothingOuterBase, BaseChameleon]
   id: ClothingOuterChameleon
+  parent: [ClothingOuterBase, BaseChameleon, ClothingArmorPlate ] # Coyote: Allows it to use armor plates.
   name: vest
   description: A thick vest with a rubbery, water-resistant shell.
   suffix: Chameleon
@@ -23,3 +23,11 @@
           Slash: 0.95
           Heat: 0.90
       showArmorOnExamine: false
+    # Coyote: These are required for the ability to both use its storage, and have the chameleon UI.
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+        enum.ChameleonUiKey.Key:
+          type: ChameleonBoundUserInterface
+    # Coyote End

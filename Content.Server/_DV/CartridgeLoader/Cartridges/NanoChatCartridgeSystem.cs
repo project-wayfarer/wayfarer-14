@@ -17,6 +17,7 @@ using Content.Shared.Radio.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Server.Player;
 
 namespace Content.Server._DeltaV.CartridgeLoader.Cartridges;
 
@@ -26,6 +27,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedNanoChatSystem _nanoChat = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -279,11 +281,31 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 content = content[..NanoChatMessage.MaxContentLength];
         }
 
+        // Try to get the username of the player sending the message
+        string? senderUsername = null;
+        if (card.Comp.PdaUid != null && TryComp<TransformComponent>(card.Comp.PdaUid.Value, out var pdaTransform))
+        {
+            var parent = pdaTransform.ParentUid;
+            if (EntityManager.EntityExists(parent) && _playerManager.TryGetSessionByEntity(parent, out var session))
+            {
+                senderUsername = session.Name;
+
+                // Set the original owner username if not already set
+                // This captures who the ID card originally belonged to
+                if (string.IsNullOrEmpty(card.Comp.OriginalOwnerUsername))
+                {
+                    card.Comp.OriginalOwnerUsername = senderUsername;
+                    Dirty(card);
+                }
+            }
+        }
+
         // Create and store message for sender
         var message = new NanoChatMessage(
             _timing.CurTime,
             content,
-            (uint)card.Comp.Number
+            (uint)card.Comp.Number,
+            senderUsername
         );
 
         // Attempt delivery

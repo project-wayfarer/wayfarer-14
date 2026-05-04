@@ -3,11 +3,10 @@
   name: job-name-deputy
   description: job-description-deputy
   playTimeTracker: JobSecurityOfficer
-  whitelisted: true
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 21600 # 6 hours
+    - !type:RoleTimeRequirement
+      role: JobSecurityCadet
+      time: 21600 # 6 hours as Cadet
   startingGear: DeputyGear
   icon: JobIconDeputy
   supervisors: job-supervisors-sergeant

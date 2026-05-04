@@ -3,11 +3,10 @@
   name: job-name-sheriff
   description: job-description-sheriff
   playTimeTracker: JobHeadOfSecurity
-  whitelisted: true
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 43200 # 12 hours
+      time: 43200 # 12 hours as Bailiff
   startingGear: SheriffGear
   alwaysUseSpawner: true
   icon: JobIconSheriff

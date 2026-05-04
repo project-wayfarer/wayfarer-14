@@ -17,6 +17,11 @@
     solution: drink
   - type: ExaminableSolution
     examinableWhileClosed: false
+  - type: HelmetAccessory # Wayfarer: TODO: add more sprites for different flask types, i just cant be bothered to rn, current one is captain flask.
+    rsi:
+      sprite: _WF/Clothing/Helmetaddons/Flasks/flask.rsi 
+      state: helmet
+
 
 - type: entity
   id: DrinkFlaskVisualsOpenable

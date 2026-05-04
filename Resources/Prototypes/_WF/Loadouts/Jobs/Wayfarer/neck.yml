@@ -394,6 +394,24 @@
   equipment:
     neck: ClothingNeckMantleCap
 
+- type: loadout
+  id: WFClothingNeckDruidCape
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  equipment:
+    neck: ClothingNeckDruid
+
+- type: loadout
+  id: WFClothingNeckDruidMantle
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 1000
+  equipment:
+    neck: ClothingNeckDruidMantle
+
 #T3 for lols
 - type: loadout
   id: WFClothingNeckCloakCapFormal

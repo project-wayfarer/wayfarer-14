@@ -90,6 +90,26 @@
           Log:
             min: 2
             max: 8
+# Wayfarer Start
+  - type: PortableScrubber
+    baseTransferRate: 1
+    amPlant: true
+    partRatingTransferRateModifier: 2.0
+    filterGases:
+    - CarbonDioxide
+    gasMixture:
+      volume: 125000
+    passive: true
+  - type: AtmosDevice
+    joinSystem: true
+  - type: NodeContainer
+    nodes:
+      port:
+        !type:PortablePipeNode
+        nodeGroupID: Pipe
+        rotationsEnabled: false
+        volume: 1
+# End Wayfarer
 
 - type: entity
   parent: BaseTree
