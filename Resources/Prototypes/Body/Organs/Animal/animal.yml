@@ -76,6 +76,17 @@
   components:
   - type: Sprite
     state: stomach
+  - type: Organ
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 40
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Stomach
     # Wayfarer: Custom digestible system
     carnivoreDigestible:
       tags:
@@ -95,17 +106,6 @@
       # Also this??
       - Paper
     # Wayfarer End
-  - type: Organ
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 40
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-  - type: Stomach
   - type: Metabolizer
     maxReagents: 3
     metabolizerTypes: [ Animal ]
