@@ -278,6 +278,8 @@ public sealed partial class IngestionSystem : EntitySystem
         var isCarnivore = HasComp<CarnivoreComponent>(stomach.Comp2.Body);
         var isHerbivore = HasComp<HerbivoreComponent>(stomach.Comp2.Body);
 
+        Log.Info($"Multi, isCarnivore: {isCarnivore}, isHerbivore: {isHerbivore}, CarnivoreDigestible: {stomach.Comp1.CarnivoreDigestible}, HerbivoreDigestible: {stomach.Comp1.HerbivoreDigestible}");
+
         // Let not mess up the default vanilla stuff if we don't have traits, shall we?
         if (isCarnivore || isHerbivore)
         {
@@ -285,6 +287,8 @@ public sealed partial class IngestionSystem : EntitySystem
                 isCarnivore ? stomach.Comp1.CarnivoreDigestible :
                 isHerbivore ? stomach.Comp1.HerbivoreDigestible :
                 null;
+
+            Log.Info($"whitelistToUse: {whitelistToUse}");
 
             if (whitelistToUse is not null)
             {
