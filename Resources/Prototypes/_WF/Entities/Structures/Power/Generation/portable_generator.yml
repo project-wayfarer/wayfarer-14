@@ -8,8 +8,9 @@
   suffix: Biofuel, 15 kW
   components:
   - type: Sprite
+    sprite: _WF/Structures/Power/Generation/portable_generator.rsi
     layers:
-    - state: portgen0
+    - state: portgen4
       map: [ "enum.GeneratorVisualLayers.Body" ]
     - state: portgen_on_unlit
       map: [ "enum.GeneratorVisualLayers.Unlit" ]
@@ -19,8 +20,8 @@
     visuals:
       enum.GeneratorVisuals.Running:
         enum.GeneratorVisualLayers.Body:
-          True: { state: portgen0on }
-          False: { state: portgen0 }
+          True: { state: portgen4on }
+          False: { state: portgen4 }
         enum.GeneratorVisualLayers.Unlit:
           True: { visible: true }
           False: { visible: false }
@@ -60,8 +61,8 @@
     loadNodes:
     - output_hv
     - output_mv
-    sprite: Structures/Power/Generation/portable_generator.rsi
-    state: portgen0
+    sprite: _WF/Structures/Power/Generation/portable_generator.rsi
+    state: portgen4
   - type: Explosive
     explosionType: Default
     tileBreakScale: 0
