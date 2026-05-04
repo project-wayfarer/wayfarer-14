@@ -13,7 +13,7 @@
       - !type:MovespeedModifier
         walkSpeedModifier: 1.1 # Wayfarer 1.15 to 1.1
         sprintSpeedModifier: 1.1 # Wayfarer 1.15 to 1.1
-#      - !type:SatiateHunger
+      - !type:SatiateHunger # Wayfarer
 #      - !type:HealthChange #minor health benefit if you eat full meals, helps with the existing 'healthy' vitamins etc. to create a complete and balanced diet.
 #        conditions:
 #        - !type:ReagentThreshold

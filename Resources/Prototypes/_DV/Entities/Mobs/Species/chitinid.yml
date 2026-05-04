@@ -9,11 +9,8 @@
     species: Chitinid
     hideLayersOnEquip:
     - HeadTop
-
-  # CS - We have a different system to handle this
-  # - type: Hunger
-  #   baseDecayRate: 0.0467 #needs to eat more to survive
-  # - type: Thirst
+  - type: Hunger # Wayfarer: Uncommented Hunger and Thirst components, why the fuck were they commented out?
+  - type: Thirst
 
   - type: UnpoweredFlashlight # Frontier: https://github.com/DeltaV-Station/Delta-v/pull/2796 this was added back and need to be removed if we ever take DeltaV medical
   - type: PointLight # Frontier
