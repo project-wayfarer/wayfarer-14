@@ -45,7 +45,7 @@
       shader: unshaded
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
-    - state: paper
+    - state: paper # Coyote
       visible: false
       sprite: _CS/Objects/Misc/airlock_labels.rsi
       map: [ "enum.PaperLabelVisuals.Layer" ]
@@ -83,7 +83,7 @@
   - type: ContainerContainer
     containers:
       board: !type:Container
-      paper_label: !type:ContainerSlot
+      paper_label: !type:ContainerSlot # Coyote
   - type: Weldable
     fuel: 5
     time: 3
@@ -97,16 +97,16 @@
         enum.ElectrifiedLayers.Sparks:
           True: { visible: True }
           False: { visible: False }
-      enum.PaperLabelVisuals.HasLabel:
+      enum.PaperLabelVisuals.HasLabel: # Coyote
         enum.PaperLabelVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
-      enum.DoorVisuals.State:
+      enum.DoorVisuals.State: # Coyote
         enum.PaperLabelVisuals.Layer:
           Closing: { visible: false }
           Opening: { visible: false }
           Open: { visible: false }
-      enum.PaperLabelVisuals.LabelType:
+      enum.PaperLabelVisuals.LabelType: # Coyote
         enum.PaperLabelVisuals.Layer:
           Paper: { state: paper }
           Bounty: { state: bounty }
@@ -202,7 +202,7 @@
     - Airlocks
     - WirePanels
     - Networking
-  - type: PaperLabel
+  - type: PaperLabel # Coyote
     labelSlot:
       insertVerbText: comp-paper-label-insert
       ejectVerbText: comp-paper-label-eject
