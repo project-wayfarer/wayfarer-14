@@ -1,0 +1,26 @@
+- type: marking
+  id: wfbangsshort
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _WF/Mobs/Customization/misc_markings.rsi
+      state: bangs_short
+
+
+- type: marking
+  id: wgbangsmed
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _WF/Mobs/Customization/misc_markings.rsi
+      state: bangs_medium
+
+
+- type: marking
+  id: wfbangslong
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _WF/Mobs/Customization/misc_markings.rsi
+      state: bangs_long
+
