@@ -202,6 +202,7 @@
     - Airlocks
     - WirePanels
     - Networking
+  - type: ItemSlots # Wayfarer: Integration tests want this here since PaperLabel adds it if it isn't present
   - type: PaperLabel # Coyote
     labelSlot:
       insertVerbText: comp-paper-label-insert
