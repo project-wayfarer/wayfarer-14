@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Prototypes;
 
@@ -49,25 +48,6 @@ public sealed partial class LatheMenu
         }
         return true;
     }
-
-    private int GetMaximumCraftQuantity(LatheRecipePrototype recipe) // Wayfarer
-    {
-        if (!_entityManager.TryGetComponent(Entity, out LatheComponent? lathe))
-            return 1;
-
-        var maxPerMaterial = new List<int>();
-
-        foreach (var (material, amount) in recipe.Materials)
-        {
-            var cost = SharedLatheSystem.AdjustMaterial(amount,
-                recipe.ApplyMaterialDiscount,
-                lathe.FinalMaterialUseMultiplier);
-            maxPerMaterial.Add(GetTotalMaterialAmount(material, _bufferAmount ?? 0) / cost);
-        }
-
-        return maxPerMaterial.Min();
-    }
-
     /// <summary>
     /// Gets the total available amount of a material, including buffer contributions for biomass.
     /// </summary>
