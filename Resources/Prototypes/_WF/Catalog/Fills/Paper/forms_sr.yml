@@ -1,0 +1,239 @@
+# Station Representative Forms
+# These forms should be kept up-to-date with changes to Space Law.
+
+# Filled Folder
+- type: entity
+  id: BoxFolderDuskSr
+  parent: BoxFolderBase
+  name: SR folder
+  description: A folder filled with paperwork templates.
+  suffix: Forms
+  components:
+  - type: Sprite
+    layers:
+    - state: folder-colormap
+      color: "#1f6626ff"
+    - state: folder-base
+  - type: StorageFill
+    contents:
+    - id: PaperWrittenDuskEmployment
+    - id: PaperWrittenDuskMACPermit
+    - id: PaperWrittenDuskRPA
+    - id: PaperWrittenDuskRentalFAQ
+    - id: PaperWrittenDuskEvictionNotice
+    - id: Paper
+      prob: 0.5
+    - id: Paper
+      prob: 0.5
+    - id: Paper
+      prob: 0.5
+    - id: Paper
+      prob: 0.5
+
+# Forms
+- type: entity
+  id: PaperWrittenDuskEmployment
+  name: crew payroll outline
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                        [color=DarkSlateGray][mono]Crew Payroll Outline[/mono][/color]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [bold]Name:[/bold]
+      [bold]Species:[/bold]
+
+      [bold]Occupation[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
+      \[ ] Bartender  [color=SlateGray]|[/color]  \[ ] Companion  [color=SlateGray]|[/color]  \[ ] Chef  [color=SlateGray]|[/color]  \[ ] Engineer
+      \[ ] Janitor  [color=SlateGray]|[/color]  \[ ] Librarian  [color=SlateGray]|[/color]  \[ ] Medical Staff  [color=SlateGray]|[/color]  \[ ] Musician
+      \[ ] Other:
+
+      [bold]Hours Worked[/bold] [italic][color=SlateGray](estimated)[/color][/italic][bold]:[/bold]
+      [bold]Pay Rate:[/bold] $15,000/hr
+      [bold]Total Due:[/bold]
+
+
+      [bold]Station Representative:[/bold]
+      [bold]Shift Time:[/bold]
+
+      [italic][color=#AAAAAA]This Outline is null and void without the signature of both parties and the stamp of the acting Representative of the station.[/color][/italic]
+
+- type: entity
+  id: PaperWrittenDuskMACPermit
+  name: MAC permit
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                [color=DarkSlateGray][mono]Major Alteration Construction Permit[/mono][/color]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [bold]Name:[/bold]
+      [bold]Species:[/bold]
+      [bold]Construction Crew:[/bold]
+      -
+      -
+      -
+
+      [italic][color=#AAAAAA](The following below is to be filled out by Issuer of this Agreement.)[/color][/italic]
+
+      [bold]Station Representative:[/bold]
+      [bold]Shift Time:[/bold]
+
+      [bold]Construction Planned:[/bold]
+      -
+      -
+      -
+
+
+      [italic][color=SlateGray]This Major Alteration Construction (MAC) Permit allows for major changes described in the list above. These changes are allowed to be made ONLY by the Permit holder and the crew members listed in the Construction Crew. Changes that deviate outside of what was outlined may void this permit and render the Permit holder and their crew subject to being charged for Vandalism.[/color]
+
+      [color=#AAAAAA]This agreement is null and void without the signature of both parties and the stamp of the acting Representative of the station.[/color][/italic]
+
+- type: entity
+  id: PaperWrittenDuskRPA
+  name: rental parcel agreement
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                 [color=DarkSlateGray][mono]Rental Parcel Agreement[/mono][/color]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [bold]Name:[/bold]
+      [bold]Species:[/bold]
+
+      [bold]Rental Parcel[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
+      \[ ] [mono]Small ($10,000)[/mono]
+      \[ ] [mono]Medium ($25,000)[/mono]
+      \[ ] [mono]Large ($50,000)[/mono]
+
+      [bold]Usage[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
+      \[ ] [mono]Commercial[/mono]
+      \[ ] [mono]Service[/mono]
+      \[ ] [mono]Social[/mono]
+      \[ ] [mono]Other[/mono]
+      If Other, Please Specify:
+
+      [italic][color=#AAAAAA](The following below is to be filled out by Issuer of this Agreement.)[/color][/italic]
+
+      [bold]Station Representative:[/bold]
+      [bold]Shift Time:[/bold]
+
+      [bold]Parcel Pricing[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
+      \[ ] [mono]Introductory ($0)[/mono]
+      \[ ] [mono]Standard Rate[/mono]
+      \[ ] [mono]Double Rate[/mono]
+
+      [italic][color=#AAAAAA]This agreement is null and void without the signature of both parties and the stamp of the acting Representative of the station.
+
+      The acting Representative may revoke this agreement if you are late on your payment or if you violate the Dusk Renter's Agreement.[/color][/italic]
+
+- type: entity
+  id: PaperWrittenDuskRentalFAQ
+  name: renter's agreement
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                   [color=DarkSlateGray][mono]Renter's Agreement/FAQ[/mono][/color]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [bold]1. Sizes and Prices[/bold]
+      1.1 When renting one of the parcels on Dusk, there are three sizes you can choose from, with limited availability and varying prices:
+
+      - Small: [italic]7x4, $10,000[/italic]
+      - Medium: [italic]13x4, $25,000[/italic]
+      - Large: [italic]~9x20*, $50,000[/italic]
+
+      [italic]*This is a rough estimate, as the layout is not symmetrical. Number given is an approximate of tiles.[/italic]
+
+      1.2 These prices are static, unless modified by the SR through various Rates or waivers [italic](see[/italic] Rent and Leasing [italic]for more info)[/italic].
+
+
+      [bold]2. Rent and Leasing[/bold]
+      2.1 When signing the Rental Parcel Agreement, the acting Representative may assign one of three Rates to your Parcel:
+
+      [bold]Introductory:[/bold] Fee is waived for the remainder of the shift. Upon the next Shift start, Rental Parcel Agreements with this rate are void, and may be renewed with the acting Representative.
+      [bold]Standard Rate:[/bold] Fee is at the normal rate listed in Sizes and Pricing. [italic](i.e $10,000 for Small, $25,000 for Medium, etc.)[/italic]
+      [bold]Double Rate:[/bold] Fee is at double the rate listed in Sizes and Pricing. [italic](i.e $20,000 for Small, $50,000 for Medium, etc.)[/italic]
+
+      With the rental of a Parcel, you are entitled to the space up until the end of a Shift, and then on as long as you have your Rental Parcel Agreement and pay your dues in a timely manner.
+
+      2.2 Rent is due at 10:00 AM, CST. You are required to pay the acting Representative the amount due, which is equal to the agreed upon Price and Rate. Failure to do so will result in eviction and your Rental Parcel Agreement being null and void. When you pay your rent, you must also offer your Rental Parcel Agreement to be copied for documentation and filing purposes.
+
+      2.3 If you are not able to reach the acting Representative in time, such as the Representative not being available at the time or being caught in extenuating circumstances, you may instead process your dues remotely.
+
+      [bold]For Rent:[/bold]
+      1. Place the amount due in an Envelope and seal it.
+      2. Write the following on the Envelope, filling in where appropriate and signing it:
+
+      [mono]TO: SR OFFICE, DUSK STATION
+
+      FROM: (YOUR NAME HERE)
+
+      RENT - (ENTER SHIFT TIME)[/mono]
+
+      3. Deliver the Envelope to a Parcel Dropoff Box.
+
+      [bold]For your Rental Parcel Agreement:[/bold]
+      1. Insert your Rental Parcel Agreement into an available Fax Machine.
+      2. Fax a copy of your Rental Parcel Agreement to the following recipient: Dusk Station - Station Rep
+
+
+      [bold]3. Appropriate Use of Parcels [/bold]
+      3.1 Rental Parcels are to be used for the specified reason on the Rental Agreement. Deviations are allowed, so long as it does not change the intended use of the Parcel. For example, if a space is rented for a shop, it may sell any kind of good, but it may NOT be used for medical treatment like the Medbay would be used, unless specified.
+
+      3.2 You are allowed to make renovations to the space, so long as these renovations are not extensive or leave the agreed space. Instances of allowed changes are:
+      - Changing/Adding light fixtures.
+      - Replacing the floor tiles.
+      - Adding dividers that do not impede access to the Parcel from the front desk or the airlocks [italic](including the Maintenance access)[/italic].
+
+      3.3 Space Law applies to this agreement. Under no circumstances may you perform any illegal activities using the rented space. This is including, but not limited to:
+      - Selling Contraband without a permit, or to someone without a permit.
+      - Smuggling or any form of Contraband trafficking.
+      - Offering Wanted Outlaws refuge.
+
+      Failure to follow these guidelines will result in eviction, your Rental Parcel Agreement being null and void, and the likelihood of you being processed as an accomplice to any crimes committed by the perpetrator.
+
+# Notices
+- type: entity
+  id: PaperWrittenDuskEvictionNotice
+  name: eviction notice
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+                                                            [color=Gold][mono][head=2]▲[/head][/mono][/color]
+                                                      [color=Gold][mono][head=2]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]
+                                                            [color=Gold][mono][head=2]▼[/head][/mono][/color]
+
+                [head=1][color=#154A8A]- \[ EVICTION NOTICE ] -[/color][/head]
+
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [head=3]Time of Issuance: [FILL HERE][/head]
+
+      This is a formal notice of Eviction. You are being evicted from the premises for the following reason(s):
+
+      \[ ] [bold]Unauthorized Shuttle Docking/Loitering[/bold] - Your craft will be undocked and towed, regardless of persons in it.
+
+      \[ ] [bold]Renter's Agreement Violation[/bold] - You must evacuate all belongings from the Rental Parcel and cease operations and/or use of this property immediately. Violation of this notice will result in forfeiture of any leftover property to be dispersed at the acting Representative's discretion.
+
+      \[ ] [bold]Criminal Activity[/bold] - You are formally unwelcome on Dusk Station. Staff are encouraged to deny services, and you will be considered trespassing if seen on these premises for the remainder of the shift.
+
+      [italic][color=#AAAAAA]The penalty specified will be enacted either immediately or up to an hour from issuance, per the discretion of the acting Representative. If you believe this to be in error, contact us immediately at the Station Representative Office.[/color][/italic]
