@@ -2885,3 +2885,84 @@ Entries:
   id: 6828
   time: '2026-05-06T06:56:48.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/774
+- author: Feathernights
+  changes:
+    - type: Add
+      message: Added new paperwork to the PTech (SR). Beware, bureaucracy!
+    - type: Remove
+      message: Removed the old SR folder from the PTech (SR).
+  id: 6829
+  time: '2026-05-06T22:18:24.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/801
+- author: Luweth
+  changes:
+    - type: Add
+      message: Added EVA bridge, park and spacewalk!
+    - type: Add
+      message: Rechargers and wall rechargers to Dusk. Check bar and hospital!
+    - type: Add
+      message: Vox Dorm lock buttons
+    - type: Add
+      message: Cryoroom defib!
+    - type: Fix
+      message: All dorms buttons cannot be clicked from outside of the room now!
+    - type: Fix
+      message: One case of airlock Initialization in map, found by Archie.
+  id: 6830
+  time: '2026-05-06T22:19:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/786
+- author: Possumongus
+  changes:
+    - type: Tweak
+      message: Removed copyrighted tracks from the soundtrack.
+  id: 6831
+  time: '2026-05-06T22:23:29.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/800
+- author: stinky, Absotively, walksanatora
+  changes:
+    - type: Tweak
+      message: reverses the display order for labels from hand labelers
+    - type: Tweak
+      message: merges labeler UI improvements from wizden (reset/clear button)
+    - type: Tweak
+      message: >-
+        ports hand labeler label saving from starlight (saved labels persist
+        through client restarts & through new rounds)
+  id: 6832
+  time: '2026-05-06T22:27:15.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/783
+- author: ThiccNekoThighs
+  changes:
+    - type: Fix
+      message: PDA ringtones are now in-tune
+  id: 6833
+  time: '2026-05-06T22:28:57.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/791
+- author: Possumongus
+  changes:
+    - type: Fix
+      message: fixed the scary music
+  id: 6834
+  time: '2026-05-07T00:55:13.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/805
+- author: DevArchwave
+  changes:
+    - type: Add
+      message: 'New entity for mappers: Respiron Gas Miner'
+  id: 6835
+  time: '2026-05-07T00:56:04.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/804
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added Community goal contributor tracking
+  id: 6836
+  time: '2026-05-07T01:21:45.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/806
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Fixed PDA End time countdown
+  id: 6837
+  time: '2026-05-07T02:58:48.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/809

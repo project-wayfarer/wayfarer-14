@@ -1542,6 +1542,56 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("wayfarer_community_goals", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalContribution", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint")
+                        .HasColumnName("amount");
+
+                    b.Property<string>("CharacterName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("character_name");
+
+                    b.Property<DateTime>("ContributedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("contributed_at");
+
+                    b.Property<string>("EntityPrototypeId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("entity_prototype_id");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("player_user_id");
+
+                    b.Property<int>("RequirementId")
+                        .HasColumnType("integer")
+                        .HasColumnName("requirement_id");
+
+                    b.Property<int>("RoundId")
+                        .HasColumnType("integer")
+                        .HasColumnName("round_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_wayfarer_community_goal_contributions");
+
+                    b.HasIndex("PlayerUserId");
+
+                    b.HasIndex("RequirementId")
+                        .HasDatabaseName("IX_wayfarer_community_goal_contributions_requirement_id");
+
+                    b.ToTable("wayfarer_community_goal_contributions", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalRequirement", b =>
                 {
                     b.Property<int>("Id")
@@ -2402,6 +2452,18 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalContribution", b =>
+                {
+                    b.HasOne("Content.Server.Database.WayfarerCommunityGoalRequirement", "Requirement")
+                        .WithMany("Contributions")
+                        .HasForeignKey("RequirementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_wayfarer_community_goal_contributions_wayfarer_community_go~");
+
+                    b.Navigation("Requirement");
+                });
+
             modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalRequirement", b =>
                 {
                     b.HasOne("Content.Server.Database.WayfarerCommunityGoal", "Goal")
@@ -2562,6 +2624,11 @@ namespace Content.Server.Database.Migrations.Postgres
             modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoal", b =>
                 {
                     b.Navigation("Requirements");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalRequirement", b =>
+                {
+                    b.Navigation("Contributions");
                 });
 
             modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
