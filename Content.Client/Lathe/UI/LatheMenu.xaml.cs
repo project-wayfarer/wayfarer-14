@@ -145,6 +145,10 @@ public sealed partial class LatheMenu : DefaultWindow
             {
                 if (!int.TryParse(AmountLineEdit.Text, out var amount) || amount <= 0)
                     amount = 1;
+
+                if (AmountLineEdit.Text.ToLower() == "max" || AmountLineEdit.Text.ToLower() == "all") // Wayfarer: Allow crafting a recipe the maximum number of times
+                    amount = GetMaximumCraftQuantity(prototype);
+
                 RecipeQueueAction?.Invoke(s, amount);
             };
             RecipeList.AddChild(control);
