@@ -247,17 +247,16 @@ namespace Content.Server.PDA
                 ownedShipName = ShipyardSystem.GetFullName(shuttleDeedComp);
             // End Frontier: balance & ship deeds
 
-            // Send the remaining duration until shift end
-            // The client will calculate the absolute end time using its own RealTime
-            // This avoids clock synchronization issues between client and server
-            TimeSpan? shiftEndTime = null;
+            // Send the absolute UTC wall-clock time when the shift ends.
+            // Using DateTime.UtcNow (OS time) avoids any game-tick drift that occurs
+            // when the server runs slower than real-time under heavy load.
+            DateTime? shiftEndTime = null;
             if (_gameTicker.ShiftEndTime.HasValue)
             {
                 var timeRemaining = _gameTicker.ShiftEndTime.Value - _timing.RealTime;
                 if (timeRemaining > TimeSpan.Zero)
                 {
-                    // Send duration, client will add to its own RealTime
-                    shiftEndTime = timeRemaining;
+                    shiftEndTime = DateTime.UtcNow + timeRemaining;
                 }
             }
 

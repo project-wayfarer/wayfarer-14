@@ -2629,6 +2629,10 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         public async Task AddCommunityGoalContribution(
             int requirementId,
             long amount,
+            Guid? playerUserId = null,
+            string? characterName = null,
+            string? entityPrototypeId = null,
+            int roundId = 0,
             CancellationToken cancel = default)
         {
             await using var db = await GetDb(cancel);
@@ -2640,6 +2644,22 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 return;
 
             req.CurrentAmount += amount;
+
+            if (playerUserId.HasValue && characterName != null)
+            {
+                var contribution = new WayfarerCommunityGoalContribution
+                {
+                    RequirementId = requirementId,
+                    PlayerUserId = playerUserId.Value,
+                    CharacterName = characterName,
+                    EntityPrototypeId = entityPrototypeId ?? req.EntityPrototypeId,
+                    Amount = amount,
+                    RoundId = roundId,
+                    ContributedAt = DateTime.UtcNow,
+                };
+                db.DbContext.WayfarerCommunityGoalContributions.Add(contribution);
+            }
+
             await db.DbContext.SaveChangesAsync(cancel);
         }
 

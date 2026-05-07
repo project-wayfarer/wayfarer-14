@@ -426,7 +426,7 @@ namespace Content.Server.Database
         Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId, string entityPrototypeId, string? displayName, long requiredAmount, CancellationToken cancel = default);
         Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default);
         Task UpdateCommunityGoalRequirement(int requirementId, long requiredAmount, CancellationToken cancel = default);
-        Task AddCommunityGoalContribution(int requirementId, long amount, CancellationToken cancel = default);
+        Task AddCommunityGoalContribution(int requirementId, long amount, Guid? playerUserId = null, string? characterName = null, string? entityPrototypeId = null, int roundId = 0, CancellationToken cancel = default);
 
         #endregion
     }
@@ -1344,10 +1344,10 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.UpdateCommunityGoalRequirement(requirementId, requiredAmount, cancel));
         }
 
-        public Task AddCommunityGoalContribution(int requirementId, long amount, CancellationToken cancel = default)
+        public Task AddCommunityGoalContribution(int requirementId, long amount, Guid? playerUserId = null, string? characterName = null, string? entityPrototypeId = null, int roundId = 0, CancellationToken cancel = default)
         {
             DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddCommunityGoalContribution(requirementId, amount, cancel));
+            return RunDbCommand(() => _db.AddCommunityGoalContribution(requirementId, amount, playerUserId, characterName, entityPrototypeId, roundId, cancel));
         }
 
         #endregion

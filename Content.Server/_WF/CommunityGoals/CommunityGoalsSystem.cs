@@ -80,10 +80,11 @@ public sealed class CommunityGoalsSystem : EntitySystem
     /// whose EntityPrototypeId matches <paramref name="entityPrototypeId"/> (exact or same stack type).
     /// Returns the number of requirements updated.
     /// </summary>
-    public async Task<int> RecordContribution(string entityPrototypeId, long amount)
+    public async Task<int> RecordContribution(string entityPrototypeId, long amount, Guid? playerUserId = null, string? characterName = null)
     {
         var itemStackType = GetProtoStackTypeId(entityPrototypeId);
         var updated = 0;
+        var roundId = _gameTicker.RoundId;
 
         foreach (var goal in _activeGoals)
         {
@@ -92,7 +93,7 @@ public sealed class CommunityGoalsSystem : EntitySystem
                 if (!MatchesRequirement(entityPrototypeId, itemStackType, req.EntityPrototypeId))
                     continue;
 
-                await _db.AddCommunityGoalContribution(req.Id, amount);
+                await _db.AddCommunityGoalContribution(req.Id, amount, playerUserId, characterName, req.EntityPrototypeId, roundId);
                 req.CurrentAmount += amount;
                 updated++;
 
@@ -161,9 +162,27 @@ public sealed class CommunityGoalsSystem : EntitySystem
     /// requirement identified by <paramref name="requirementId"/>, bypassing prototype matching.
     /// Used by the targeted per-requirement contribute button.
     /// </summary>
-    public async Task RecordContributionToRequirement(int requirementId, long amount)
+    public async Task RecordContributionToRequirement(int requirementId, long amount, Guid? playerUserId = null, string? characterName = null)
     {
-        await _db.AddCommunityGoalContribution(requirementId, amount);
+        var roundId = _gameTicker.RoundId;
+
+        // Find the requirement's proto for the contribution record
+        string? reqProtoId = null;
+        foreach (var goal in _activeGoals)
+        {
+            foreach (var req in goal.Requirements)
+            {
+                if (req.Id == requirementId)
+                {
+                    reqProtoId = req.EntityPrototypeId;
+                    break;
+                }
+            }
+            if (reqProtoId != null)
+                break;
+        }
+
+        await _db.AddCommunityGoalContribution(requirementId, amount, playerUserId, characterName, reqProtoId, roundId);
 
         foreach (var goal in _activeGoals)
         {
