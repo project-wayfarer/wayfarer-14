@@ -16,11 +16,13 @@
   weight: 150
   displayWeight: 60
   canBeAntag: false
-#  access: # Wayfarer: Moved to CGPCommand
+# Wayfarer: Moved to CGPCommand
+#  access:
 #  - Armory
 #  - Sergeant
 #  - Bailiff
 #  - Brigmedic
+# Wayfarer End
   accessGroups:
   - CGPCommand #Wayfarer: GeneralNfsdAccess<CGPCommand
   special:
@@ -38,8 +40,8 @@
   storage:
     back:
     - Flash
-#    - NFMagazineHighCapacityPistol35Overpressure # Wayfarer: Sidearms selectable in loadout
-#    - NFMagazineHighCapacityPistol35Rubber
+#    - NFMagazineHighCapacityPistol35Overpressure
+#    - NFMagazineHighCapacityPistol35Rubber # Wayfarer
 #    - BaseSecurityUplinkRadioOfficer # Wayfarer: Moved to Pocket
     - FrontierUplinkCoin5
     - ShipVoucherNfsdBailiff

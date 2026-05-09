@@ -1300,10 +1300,12 @@
   parent: NFBaseBootRecipe
   result: ClothingHandsGlovesCombat
 
-- type: latheRecipe # Wayfarer
+# Wayfarer
+- type: latheRecipe
   id: ClothingHandsGlovesCombatWhite
   parent: NFBaseBootRecipe
   result: ClothingHandsGlovesCombatWhite
+# Wayfer End
 
 - type: latheRecipe
   id: ClothingHandsGlovesSr
