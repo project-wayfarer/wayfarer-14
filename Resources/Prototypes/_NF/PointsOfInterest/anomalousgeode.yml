@@ -1,40 +1,40 @@
-# Author Info
-# GitHub:
-# Discord: Checkraze
-
-# Maintainer Info
-# GitHub: ???
-# Discord: ???
-
-# Notes:
-# The local Science lab
-- type: pointOfInterest
-  id: AnomalousGeode
-  parent: BasePOI
-  name: 'Anomalous Geode'
-  minimumDistance: 2100
-  maximumDistance: 3800
-  spawnGroup: ScienceLab
-  gridPath: /Maps/_NF/POI/anomalousgeode.yml
-  addComponents:
-  - type: SolarPoweredGrid
-    trackOnInit: true
-    doNotCull: true
-
-- type: gameMap
-  id: AnomalousGeode
-  mapName: 'Anomalous Geode'
-  mapPath: /Maps/_NF/POI/anomalousgeode.yml
-  minPlayers: 0
-  stations:
-    AnomalousGeode:
-      stationProto: StandardFrontierOutpost
-      gridComponents:
-      - type: VesselInfo # WF
-        description: "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge."
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: 'Anomalous Geode'
-        - type: StationJobs
-          availableJobs: {}
-        - type: StationDeadDropHintExempt
+## Author Info
+## GitHub:
+## Discord: Checkraze
+#
+## Maintainer Info
+## GitHub: ???
+## Discord: ???
+#
+## Notes:
+## The local Science lab
+#- type: pointOfInterest
+#  id: AnomalousGeode
+#  parent: BasePOI
+#  name: 'Anomalous Geode'
+#  minimumDistance: 2100
+#  maximumDistance: 3800
+#  spawnGroup: ScienceLab
+#  gridPath: /Maps/_NF/POI/anomalousgeode.yml
+#  addComponents:
+#  - type: SolarPoweredGrid
+#    trackOnInit: true
+#    doNotCull: true
+#
+#- type: gameMap
+#  id: AnomalousGeode
+#  mapName: 'Anomalous Geode'
+#  mapPath: /Maps/_NF/POI/anomalousgeode.yml
+#  minPlayers: 0
+#  stations:
+#    AnomalousGeode:
+#      stationProto: StandardFrontierOutpost
+#      gridComponents:
+#      - type: VesselInfo # WF
+#        description: "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge."
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: 'Anomalous Geode'
+#        - type: StationJobs
+#          availableJobs: {}
+#        - type: StationDeadDropHintExempt
