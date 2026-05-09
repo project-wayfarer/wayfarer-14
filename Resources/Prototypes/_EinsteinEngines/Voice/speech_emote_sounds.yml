@@ -43,21 +43,21 @@
       path: /Audio/Effects/tesla_consume.ogg
       params:
         variation: 0.125
-    Beep: # normal
+    IPCBeep: # Wayfarer
       path: /Audio/_EE/Voice/IPC/beep_2000.ogg
     Boop:
       path: /Audio/_EE/Voice/IPC/beep_500.ogg
-    Buzz:
+    IPCBuzz: # Wayfarer
       path: /Audio/Machines/buzz-sigh.ogg
     Honk:
       path: /Audio/Items/bikehorn.ogg
       params:
         variation: 0.125
-    Chime:
+    IPCChime: # Wayfarer
       path: /Audio/Effects/Cargo/ping.ogg
-    Buzz-Two:
+    IPCBuzz-Two: # Wayfarer
       path: /Audio/Machines/buzz-two.ogg
-    Ping:
+    IPCPing: # Wayfarer
       path: /Audio/Effects/beep1.ogg
       params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
         variation: 0.125
