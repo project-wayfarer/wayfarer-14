@@ -93,7 +93,7 @@ namespace Content.Shared.Interaction
         /// </summary>
         public const CollisionGroup InRangeUnobstructedMask = CollisionGroup.Impassable | CollisionGroup.InteractImpassable;
 
-        public const float InteractionRange = 2.0f; // Wayfarer: 1.5f>2.0f
+        public const float InteractionRange = 1.5f;
         public const float InteractionRangeSquared = InteractionRange * InteractionRange;
         public const float MaxRaycastRange = 100f;
         public const string RateLimitKey = "Interaction";
