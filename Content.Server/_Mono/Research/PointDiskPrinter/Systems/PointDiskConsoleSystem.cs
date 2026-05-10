@@ -24,6 +24,7 @@ public sealed class PointDiskConsoleSystem : EntitySystem
         SubscribeLocalEvent<PointDiskConsoleComponent, PointDiskConsolePrint1KDiskMessage>(OnPrint1KDisk);
         SubscribeLocalEvent<PointDiskConsoleComponent, PointDiskConsolePrint5KDiskMessage>(OnPrint5KDisk);
         SubscribeLocalEvent<PointDiskConsoleComponent, PointDiskConsolePrint10KDiskMessage>(OnPrint10KDisk);
+        SubscribeLocalEvent<PointDiskConsoleComponent, PointDiskConsolePrint50KDiskMessage>(OnPrint50KDisk);
         SubscribeLocalEvent<PointDiskConsoleComponent, ResearchServerPointsChangedEvent>(OnPointsChanged);
         SubscribeLocalEvent<PointDiskConsoleComponent, ResearchRegistrationChangedEvent>(OnRegistrationChanged);
         SubscribeLocalEvent<PointDiskConsoleComponent, BeforeActivatableUIOpenEvent>(OnBeforeUiOpen);
@@ -173,7 +174,7 @@ public sealed class PointDiskConsoleSystem : EntitySystem
         var canPrint50K = !(TryComp<PointDiskConsolePrintingComponent>(uid, out var printing50K) && printing50K.FinishTime >= _timing.CurTime) &&
                        totalPoints >= component.PricePer50KDisk;
 
-        var state = new PointDiskConsoleBoundUserInterfaceState(totalPoints, component.PricePer1KDisk, component.PricePer5KDisk, component.PricePer10KDisk, canPrint1K, canPrint5K, canPrint10K, canPrint50K);
+        var state = new PointDiskConsoleBoundUserInterfaceState(totalPoints, component.PricePer1KDisk, component.PricePer5KDisk, component.PricePer10KDisk, component.PricePer50KDisk, canPrint1K, canPrint5K, canPrint10K, canPrint50K);
         _ui.SetUiState(uid, PointDiskConsoleUiKey.Key, state);
     }
 
