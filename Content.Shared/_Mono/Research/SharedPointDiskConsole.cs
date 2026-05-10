@@ -52,4 +52,8 @@ public sealed class PointDiskConsolePrint5KDiskMessage : BoundUserInterfaceMessa
 public sealed class PointDiskConsolePrint10KDiskMessage : BoundUserInterfaceMessage
 {
 
+}[Serializable, NetSerializable] /// Wayfarer addition
+public sealed class PointDiskConsolePrint50KDiskMessage : BoundUserInterfaceMessage
+{
+
 }
