@@ -25,6 +25,13 @@ public sealed partial class PointDiskConsoleComponent : Component
     /// </summary>
     [DataField("pricePer10KDisk"), ViewVariables(VVAccess.ReadWrite)]
     public int PricePer10KDisk = 10000;
+       /// <summary>
+
+    /// How much it costs to print a 50k point disk
+    /// Wayfarer addition
+    /// </summary>
+    [DataField("pricePer50KDisk"), ViewVariables(VVAccess.ReadWrite)]
+    public int PricePer50KDisk = 50000;
 
     /// <summary>
     /// The prototype of what's being printed
@@ -37,6 +44,10 @@ public sealed partial class PointDiskConsoleComponent : Component
 
     [DataField("diskPrototype10K", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string Disk10KPrototype = "ResearchDisk10000";
+
+    /// Wayfarer addition
+    [DataField("diskPrototype50K", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    public string Disk50KPrototype = "ResearchDisk50000";
 
     /// <summary>
     /// How long it takes to print <see cref="PointDiskPrototype"/>

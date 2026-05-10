@@ -79,6 +79,8 @@
   # End Den additions
   - type: ResearchDisk
     points: 50000
+  - type: StaticPrice # Frontier
+    price: 5000 # Frontier
 
 - type: entity
   parent: ResearchDisk
