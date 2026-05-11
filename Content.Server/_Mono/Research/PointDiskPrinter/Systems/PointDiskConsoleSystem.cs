@@ -55,7 +55,7 @@ public sealed class PointDiskConsoleSystem : EntitySystem
             // Wayfarer
             if (printing.Disk50K)
                 Spawn(console.Disk50KPrototype, xform.Coordinates);
-         // Wayfarer end
+            // Wayfarer end
         }
     }
 
@@ -120,27 +120,28 @@ public sealed class PointDiskConsoleSystem : EntitySystem
         UpdateUserInterface(uid, component);
     }
 
-  // Wayfarer
-  private void OnPrint50KDisk(EntityUid uid, PointDiskConsoleComponent component, PointDiskConsolePrint50KDiskMessage args)
+    // Wayfarer
+    private void OnPrint50KDisk(EntityUid uid, PointDiskConsoleComponent component, PointDiskConsolePrint50KDiskMessage args)
     {
-        if (HasComp<PointDiskConsolePrintingComponent>(uid))
-            return;
+          if (HasComp<PointDiskConsolePrintingComponent>(uid))
+              return;
 
-        if (!_research.TryGetClientServer(uid, out var server, out var serverComp))
-            return;
+          if (!_research.TryGetClientServer(uid, out var server, out var serverComp))
+              return;
 
-        if (serverComp.Points < component.PricePer50KDisk)
-            return;
+          if (serverComp.Points < component.PricePer50KDisk)
+              return;
 
-        _research.ModifyServerPoints(server.Value, -component.PricePer50KDisk, serverComp);
-        _audio.PlayPvs(component.PrintSound, uid);
+          _research.ModifyServerPoints(server.Value, -component.PricePer50KDisk, serverComp);
+          _audio.PlayPvs(component.PrintSound, uid);
 
-        var printing = EnsureComp<PointDiskConsolePrintingComponent>(uid);
-        printing.Disk50K = true;
-        printing.FinishTime = _timing.CurTime + component.PrintDuration;
-        UpdateUserInterface(uid, component);
+          var printing = EnsureComp<PointDiskConsolePrintingComponent>(uid);
+          printing.Disk50K = true;
+          printing.FinishTime = _timing.CurTime + component.PrintDuration;
+          UpdateUserInterface(uid, component);
     }
-  // Wayfarer end
+    // Wayfarer end
+
     private void OnPointsChanged(EntityUid uid, PointDiskConsoleComponent component, ref ResearchServerPointsChangedEvent args)
     {
         UpdateUserInterface(uid, component);
