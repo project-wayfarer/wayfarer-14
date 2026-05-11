@@ -29,11 +29,13 @@
     receiveFrequencyId: BasicDevice
   - type: WirelessNetworkConnection
     range: 15
+  # Wayfarer: added recyclable component
   - type: PhysicalComposition # Wayfarer
     materialComposition:
       Steel: 50
     chemicalComposition:
       Silicon: 10
+  # Wayfarer end
 - type: entity
   parent: RemoteSignaller
   id: RemoteSignallerAdvanced

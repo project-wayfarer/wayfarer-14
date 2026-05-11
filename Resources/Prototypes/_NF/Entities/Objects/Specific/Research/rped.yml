@@ -32,7 +32,9 @@
     whitelist:
       components:
       - MachinePart
-  - type: PhysicalComposition # Wayfarer: added recyclable component
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
     materialComposition:
       Steel: 50
       Plastic: 20
+  # Wayfarer end

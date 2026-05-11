@@ -21,10 +21,12 @@
     - ScannersAndVessels
   - type: Item
     storedRotation: -90
-  - type: PhysicalComposition #wayfarer recyclable component
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
     materialComposition:
       Steel: 50
       Plastic: 20
+  # Wayfarer end
 
 - type: entity
   id: AnomalyLocatorUnpowered
@@ -63,10 +65,12 @@
       params:
         maxDistance: 1
         volume: -8
-  - type: PhysicalComposition #wayfarer recyclable component
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
     materialComposition:
       Steel: 50
       Plastic: 20
+  # Wayfarer end
 
 - type: entity
   id: AnomalyLocator

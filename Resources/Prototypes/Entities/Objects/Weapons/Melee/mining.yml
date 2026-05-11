@@ -93,7 +93,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseC1Contraband, RecyclableItemSteelMedium ] # Frontier: BaseSecurityCargoContraband<BaseC1Contraband #wayfarer: added recyclable component
+  parent: [ BaseItem, BaseC1Contraband, RecyclableItemSteelMedium ] # Frontier: BaseSecurityCargoContraband<BaseC1Contraband # Wayfarer: added recyclable component
   id: BaseWeaponCrusher # Crusher? But I...
   name: crusher
   description: An early design of the proto-kinetic accelerator.
