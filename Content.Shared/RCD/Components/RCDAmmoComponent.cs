@@ -7,7 +7,8 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
+//
+// Wayfarer: Ported from goobstation to wayfarer https://github.com/Goob-Station/Goob-Station
 using Content.Shared.RCD.Systems;
 using Robust.Shared.GameStates;
 

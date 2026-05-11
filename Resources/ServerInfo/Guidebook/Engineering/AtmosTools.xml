@@ -1,9 +1,10 @@
 <Document>
   # Atmos Tools
-  Atmospheric Technicians have the same core toolset as Engineers, but they also have access to two new tools, the Holofan Projector and the Gas Analyzer.
+  Atmospheric Technicians have the same core toolset as Engineers, but they also have access to three  new tools, the Holofan Projector, RPD, and the Gas Analyzer. <!--Wayfarer: two to three-->
 
   <Box>
     <GuideEntityEmbed Entity="HolofanProjector"/>
+    <GuideEntityEmbed Entity="RPD"/>
     <GuideEntityEmbed Entity="GasAnalyzer"/>
   </Box>
 
@@ -14,13 +15,22 @@
     <GuideEntityEmbed Entity="HolofanProjector"/>
     <GuideEntityEmbed Entity="HoloFan"/>
   </Box>
-
+  
   This is super useful for moving in between [textlink="firelock buffers" link="FireAndGasControl"] without leaking gas between rooms, as well a signifying to regular crew that a room may be unsafe for entry.
   It can also be used for forming a temporary barrier to allow crew to quickly move between a spaced and unspaced area without risk of leaking air from other rooms.
 
   It has an internal charge that will deplete with each use, but it can be recharged by taking out the power cell and inserting it into a cell charger or recharger.
 
   Holofans that are placed adjacent to a [textlink="firelock" link="FireAndGasControl"] will deactivate the firelock lockout, allowing the firelock to be opened by hand.
+  
+  
+  ## RPD
+  The RPD allows engineers to quickly build and destroy pipe set ups. There are also unique configurations one may do by using it over the standard construction methods
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend"/>
+    <GuideEntityEmbed Entity="RPD"/> 
+  </Box>
 
   ## Gas Analyzer
   The Gas Analyzer is a tool that can be used to analyze the gas composition of an exposed atmosphere, or any [textlink="atmospheric device" link="GasManipulation"] containing gas.

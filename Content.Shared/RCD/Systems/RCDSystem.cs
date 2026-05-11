@@ -22,8 +22,8 @@
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
-//Wayfarer: Ported from goobstation to wayfarer
+//
+// Wayfarer: Ported from goobstation to wayfarer https://github.com/Goob-Station/Goob-Station
 
 using Content.Shared.Administration.Logs;
 using Content.Shared.Charges.Components;
