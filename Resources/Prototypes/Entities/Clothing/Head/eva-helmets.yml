@@ -79,30 +79,22 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/paramedhelm.rsi
+    sprite: _Goobstation/Clothing/Head/Hardsuits/goobparamed.rsi # Wayfarer: Paramedhelm.rsi to Goobparamed.rsi
   - type: HandheldLight
     addPrefix: false
   - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
-      - state: equipped-head-light
-      head-vox:
-      - state: equipped-head-light-vox
-      head-dog:
-      - state: equipped-head-light-dog
-      head-avali: #starlight
-      - state: equipped-head-light-avali
+      - state: on-equipped-HELMET # Wayfarer: equipped-head-light to on-equipped-HELMET
+      head-vulp:
+      - state: on-equipped-HELMET-vulpkanin # Wayfarer: adds Vulp helm light
   - type: Clothing
     clothingVisuals:
       head:
-      - state: equipped-head
-      head-vox:
-      - state: equipped-head-vox
-      head-dog:
-      - state: equipped-head-dog
-      head-avali: #starlight
-      - state: equipped-head-light-avali
+      - state: off-equipped-HELMET # Wayfarer: equipped-head to off-equipped-HELMET
+      head-vulp:
+      - state: off-equipped-HELMET-vulpkanin # Wayfarer: adds Vulp helm
   - type: TemperatureProtection
     heatingCoefficient: 0.1
     coolingCoefficient: 0.1
