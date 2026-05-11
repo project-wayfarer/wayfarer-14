@@ -70,7 +70,6 @@
         acts: [ "Destruction" ]
   - type: SyncSprite # Frontier
 
-
 - type: entity
   id: ConveyorBeltAssembly
   parent: BaseItem
@@ -93,4 +92,3 @@
     materialComposition:
       Steel: 100
       RawScrap: 25
-

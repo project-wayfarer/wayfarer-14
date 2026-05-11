@@ -176,7 +176,7 @@
     containers:
       storagebase: !type:Container
         ents: []
-  - type: PhysicalComposition
+  - type: PhysicalComposition # Wayfarer: added recyclable component
     materialComposition:
       Steel: 20
       Plastic: 10
