@@ -61,4 +61,4 @@ public sealed class PointDiskConsolePrint50KDiskMessage : BoundUserInterfaceMess
 {
 
 }
-# Wayfarer end
+// Wayfarer end
