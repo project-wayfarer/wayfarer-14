@@ -10,8 +10,8 @@
   - type: Sprite
     sprite: _NF/Objects/Power/big_ame_jar.rsi
   - type: AmeFuelContainer
-    fuelAmount: 15000
-    fuelCapacity: 15000 # ~ 900 MJ
+    fuelAmount: 15000 # Wayfarer: 1500<15000
+    fuelCapacity: 15000 # Wayfarer: 1500<15000
   - type: StaticPrice
     price: 4000 # 1k at 1.25 #Wayfarer: 800<40000
-    vendPrice: 40000 # Frontier: FuelVend price #Wayfarer: 4000<6000
+    vendPrice: 40000 # Wayfarer
