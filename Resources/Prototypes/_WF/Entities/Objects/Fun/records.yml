@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseRecord
+  id: WFRecord
+  name: golden record
+  description: For storing analogue data, everyone knows that circles are unparalleled. This one has a warm, golden sheen.
+  components:
+  - type: Sprite
+    state: golden
+  - type: JukeboxContainer
+    tracks:
+    - WFChillpeach200am
+    - WFChillpeachInDreamLand
+    - WFChillpeachPurple
+    - WFRamalowAnxiety
+    - WFRiddimanDeepSpace
