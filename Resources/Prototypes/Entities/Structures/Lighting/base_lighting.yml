@@ -57,6 +57,11 @@
         - None
         layer:
         - TabletopMachineLayer
+   #Wayfarer: RCD tag start
+  - type: Tag 
+    tags:
+    - WallLight
+   #Wayfarer: RCD tag end
   - type: Destructible
     thresholds:
     - trigger:
