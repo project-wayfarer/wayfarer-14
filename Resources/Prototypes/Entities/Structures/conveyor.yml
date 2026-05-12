@@ -88,4 +88,9 @@
     node: item
   - type: StaticPrice
     price: 40
-
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+      RawScrap: 25
+  # Wayfarer end

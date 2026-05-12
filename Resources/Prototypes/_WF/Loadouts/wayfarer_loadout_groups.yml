@@ -302,6 +302,87 @@
   - WFClothingUniformJumpskirtBlueTurtleneckDress
   - WFClothingUniformJumpskirtYellowTurtleneckDress
   - WFClothingUniformJumpskirtYellowOldDress
+  # Starlight clothing
+  - WFSLClothingUniformJumpskirtGothic
+  - WFSLClothingUniformJumpskirtMaid
+  - WFSLClothingUniformJumpskirtDressRed
+  - WFSLClothingUniformJumpskirtTango
+  - WFSLClothingUniformJumpskirtVictorianBlack
+  - WFSLClothingUniformJumpskirtReporter
+  - WFSLClothingUniformJumpskirtJournalist
+  - WFSLClothingUniformJumpskirtVictorianrRed
+  - WFSLClothingUniformJumpskirtSuitNurse
+  - WFSLClothingUniformJumpskirtPencilTan
+  - WFSLClothingUniformJumpskirtCargoSalvage
+  - WFSLClothingUniformJumpskirtCargoSalvageFormal
+  - WFSLClothingUniformJumpskirtSalvageLead
+  - WFSLClothingUniformJumpskirtMiningSpecialist
+  - WFSLClothingUniformJumpskirtCargoFormal
+  - WFSLClothingUniformJumpskirtScientistFormal
+  - WFSLClothingUniformJumpskirtCoroner
+  - WFSLClothingUniformJumpskirtElegantMaid
+  - WFSLClothingUniformColorJumpskirtRainbow
+  - WFSLClothingUniformJumpskirtSchool
+  - WFSLClothingUniformJumpskirtCapTurtleneck
+  - WFSLClothingUniformJumpskirtHoPTurtleneck
+  - WFSLClothingUniformJumpskirtHoSBlack
+  - WFSLClothingUniformJumpskirtRDClassical
+  - WFSLClothingUniformJulianneVA11HALLA
+  - WFSLClothingUniformElegantLadyDress
+  - WFSLClothingUniformPastryDress
+  - WFSLClothingUniformJumpsuitSuitCheckered
+  - WFSLClothingUniformJumpsuitSuitTan
+  - WFSLClothingUniformJumpsuitSuitWaiter
+  - WFSLClothingUniformJumpsuitCargoAlt
+  - WFSLClothingUniformJumpsuitCargoFormal
+  - WFSLClothingUniformJumpsuitSalvageFormal
+  - WFSLClothingUniformJumpsuitCoroner
+  - WFSLClothingUniformJumpsuitCoronerAlt
+  - WFSLClothingUniformJumpsuitSuperstarCop
+  - WFSLClothingUniformJumpsuitAerostatic
+  - WFSLClothingUniformJumpsuitCapTurtleneck
+  - WFSLClothingUniformJumpsuitCaptainNoble
+  - WFSLClothingUniformJumpsuitHoPTurtleneck
+  - WFSLClothingUniformJumpsuitHoSBlack
+  - WFSLClothingUniformJumpsuitRDClassical
+  - WFSLClothingUniformJumpsuitVampir
+  - WFSLClothingUniformJumpsuitPerformerClown
+  - WFSLClothingUniformJumpsuitClownFormal
+  - WFSLClothingUniformJumpskirtPerformerClown
+  - WFSLClothingUniformJumpskirtClownFormal
+  - WFSLSpottedClownUniformSuit
+  - WFSLClothingUniformJumpsuitPerformerMime
+  - WFSLClothingUniformJumpskirtPerformerMime
+  - WFSLClothingUniformJumpsuitMimeSuaveWhite
+  - WFSLClothingUniformJumpsuitMimeSuaveBlack
+  - WFSLClothingUniformDama235123
+  - WFSLBodysuitJeansUniformSuit
+  - WFSLCamoUniformSuit
+  - WFSLCandyClownUniformSuit
+  - WFSLCoolTanktopUniformSuit
+  - WFSLDruidRobesUniformSuit
+  - WFSLFlamboyantUniformSuit
+  - WFSLFlamencoUniformSuit
+  - WFSLFlyCaptainUniformSuit
+  - WFSLKiltUniformSuit
+  - WFSLLilacDressUniformSuit
+  - WFSLLittleBlackDressUniformSuit
+  - WFSLLumberjackOverallsUniformSuit
+  - WFSLMechanicOverallsUniformSuit
+  - WFSLMessyDressShirtUniformSuit
+  - WFSLMimeFrillsUniformSuit
+  - WFSLOldWomanUniformSuit
+  - WFSLPunkJeansUniformSuit
+  - WFSLRefereeUniformSuit
+  - WFSLSailorUniformSuit
+  - WFSLStripedClownUniformSuit
+  - WFSLSundressUniformSuit
+  - WFSLTatteredClothesUniformSuit
+  - WFSLTieDyeUniformSuit
+  - WFSLTogaUniformSuit
+  - WFSLVintageUniformSuit
+  - WFSLCargoOverallsUniformSuit
+  - WFSLRedRegaliaSuit
   fallbacks:
   - WFClothingUniformJumpsuitColorGrey
   - WFClothingUniformJumpskirtColorGrey
@@ -669,6 +750,10 @@
   - WFClothingShoesSkates
   - WFClothingShoesClownLarge
   - WFClothingShoesBling
+  # Starlight clothing
+  - WFSLClothingShoesHighheelShoes
+  - WFSLClothingUniformBootsVampir
+  - WFSLClothingShoesBootsSalvage1208134
   fallbacks:
   - WFClothingShoesColorBlack
 
@@ -778,6 +863,9 @@
   - WFPlunger
   - WFClothingHeadHatCone
   - WFClothingHeadHatTophat
+  # Starlight clothing
+  - WFSLClothingHeadBase0121
+  - WFSLRedRegaliaHat
 
 # == HEADSETS
 - type: loadoutGroup
@@ -820,6 +908,7 @@
   - WFClothingHandsGlovesMercFingerless
   - WFClothingHandsMercenaryGlovesCombat
   - WFClothingHandsGlovesCombat
+  - ClothingHandsGlovesCombatWhite
   - ClothingHandsTacticalMaidGloves
   # Warmers
   - ClothingHandsPlainWhiteWarmers
@@ -969,6 +1058,11 @@
   - FloofClothingCollarLogi
   - FloofClothingCollarCmd
   - FloofClothingShockCollar
+  # Starlight clothing
+  - WFSLClothingUniformDama0965
+  - WFSLClothingUniformShinelVampir
+  - WFSLClothingNeckTieGeoffroyblack12
+  - WFSLRedRegaliaCloak
   # Flooftier collars end
 
 # == PDAS

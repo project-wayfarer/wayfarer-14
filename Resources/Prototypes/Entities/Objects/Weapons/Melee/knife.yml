@@ -27,6 +27,11 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+  # Wayfarer end
 
 - type: entity
   parent: BaseKnife

@@ -902,7 +902,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterClown
-  groupBy: "winterboots"
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingShoesBootsWinterMime
@@ -915,7 +915,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterMime
-  groupBy: "winterboots"
+  groupBy: "mime"
 
 - type: loadout
   id: WFClothingShoesClown
@@ -928,6 +928,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesClown
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingShoesJester
@@ -940,6 +941,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesJester
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingShoesJesterALT
@@ -952,6 +954,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesJesterALT
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingShoesBootsPerformer
@@ -989,6 +992,7 @@
   price: 7500
   equipment:
     shoes: ClothingShoesClownLarge
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingShoesBling
@@ -1001,3 +1005,22 @@
   price: 7500
   equipment:
     shoes: ClothingShoesBling
+
+# Starlight clothing
+- type: loadout
+  id: WFSLClothingShoesHighheelShoes
+  price: 500
+  equipment:
+    shoes: SLClothingShoesHighheelShoes
+
+- type: loadout
+  id: WFSLClothingUniformBootsVampir
+  price: 500
+  equipment:
+    shoes: SLClothingUniformBootsVampir
+
+- type: loadout
+  id: WFSLClothingShoesBootsSalvage1208134
+  price: 500
+  equipment:
+    shoes: SLClothingShoesBootsSalvage1208134

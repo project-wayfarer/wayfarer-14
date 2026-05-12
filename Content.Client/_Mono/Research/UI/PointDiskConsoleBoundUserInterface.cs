@@ -37,6 +37,12 @@ namespace Content.Client._Mono.Research.UI
             {
                 SendMessage(new PointDiskConsolePrint10KDiskMessage());
             };
+            // Wayfarer
+            _menu.OnPrint50KButtonPressed += () =>
+            {
+                SendMessage(new PointDiskConsolePrint50KDiskMessage());
+            };
+            // Wayfarer end
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)

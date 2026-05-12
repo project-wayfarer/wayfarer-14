@@ -22,14 +22,14 @@
 - type: startingGear
   id: CadetGear
   equipment:
-    pocket1: NFWeaponPistolUniversalNfsdLessLethal
+#    pocket1: NFWeaponPistolUniversalNfsdLessLethal # Wayfarer: Sidearms selectable in loadout
     pocket2: BookSecurity
   storage:
     back:
     - Flash
-    - NFMagazineHighCapacityPistol35
-    - NFMagazineHighCapacityPistol35Rubber
-    - FrontierUplinkCoin10
+#    - NFMagazineHighCapacityPistol35
+#    - NFMagazineHighCapacityPistol35Rubber # Wayfarer
+#    - FrontierUplinkCoin10 # Wayfarer: Unusable by Cadet
 
 - type: chameleonOutfit
   id: CadetChameleonOutfit

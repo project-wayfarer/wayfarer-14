@@ -38,6 +38,12 @@
       params:
         maxDistance: 1
   - type: MiningScanner
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+      Plastic: 20
+  # Wayfarer end
 
 - type: entity
   id: MineralScanner

@@ -212,7 +212,7 @@
 #region Holoflare pistol
 - type: entity
   id: NFWeaponHoloflareGun
-  parent: [ NFBaseWeaponFrameEnergyPistol ]
+  parent: [ NFBaseWeaponFrameEnergyPistol, RecyclableItemDeviceTiny ] # Wayfarer: added recyclable component
   name: holoflare pistol
   description: |-
     A modification of a civilian-grade laser pistol that can project holoflares onto surfaces.

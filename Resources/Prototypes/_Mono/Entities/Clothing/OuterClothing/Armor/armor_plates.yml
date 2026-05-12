@@ -1,7 +1,7 @@
 #FIRST GENERATION PLATES
 # Durathread
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelSmall] # Wayfarer: added recyclable component
   id: ArmorPlateLight
   name: durathread plate
   description: A lightweight protective plate made from advanced durathread fibers. Initially manufactured by Aether, but the process has long been reverse-engineered.
@@ -33,7 +33,7 @@
 
 # Ceramic
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelSmall] # Wayfarer: added recyclable component
   id: ArmorPlateMedium
   name: ceramic plate
   description: A medium-weight ceramic composite plate manufactured with a material process proprietary to Aether.
@@ -65,7 +65,7 @@
 
 # Plasteel
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelMedium] # Wayfarer: added recyclable component
   id: ArmorPlateTactical
   name: plasteel plate
   description: A heavy-duty plasteel plate manufactured by a layered cold-stamping process proprietary to Aether.
@@ -97,7 +97,7 @@
 
 # Plastitanium
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelMedium] # Wayfarer: added recyclable component
   id: ArmorPlatePlastitanium
   name: plastitanium plate
   description: An advanced plastitanium composite plate manufactured by Aether.
@@ -130,7 +130,7 @@
 #PLATE EXPANSION PACK
 # Refractive
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelMedium] # Wayfarer: added recyclable component
   id: ArmorPlateRefractive
   name: plas-uranium laminate plate
   description: An iridescent plate manufactured by a plasma-uranium glass nanolamination process proprietary to Union Wrightworks. Tuned to stop emissions in the weapons energy-band via total internal reflection.
@@ -171,7 +171,7 @@
 
 # Steel
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelMedium] # Wayfarer: added recyclable component
   id: ArmorPlateSteel
   name: steel armor plate
   description: Rolled, work-hardened steel. Obsolete yet time-tested. Heavy and prone to spalling, but its simplicity means it will outlive its owner.

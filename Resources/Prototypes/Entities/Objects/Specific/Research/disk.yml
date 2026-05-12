@@ -79,6 +79,10 @@
   # End Den additions
   - type: ResearchDisk
     points: 50000
+  # Wayfarer
+  - type: StaticPrice
+    price: 5000
+  # Wayfarer end
 
 - type: entity
   parent: ResearchDisk

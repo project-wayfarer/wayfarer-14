@@ -42,6 +42,15 @@
                     HorizontalAlignment="Center"
                     VerticalExpand="False">
                 </Button>
+                <!-- Wayfarer -->
+                <Button
+                    Name="Print50KButton"
+                    Text="{Loc 'point-disk-ui-print-50k-button'}"
+                    MaxWidth="240"
+                    HorizontalAlignment="Center"
+                    VerticalExpand="False">
+                </Button>
+                <!-- Wayfarer end -->
             </BoxContainer>
         </PanelContainer>
     </BoxContainer>

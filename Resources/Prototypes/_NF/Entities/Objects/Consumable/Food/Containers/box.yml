@@ -275,6 +275,11 @@
     - tray5
     - tray6
   - type: NFIngredient
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Cardboard: 50
+  # Wayfarer end
 
 - type: entity
   parent: FoodBoxSushi

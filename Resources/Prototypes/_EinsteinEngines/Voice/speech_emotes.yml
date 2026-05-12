@@ -16,26 +16,28 @@
   whitelist: # Wayfarer
     components:
     - Silicon
-  chatMessages: [ boops ]
+  chatMessages: [ "chat-emote-msg-boop" ] # Wayfarer: localization and punctuation
   chatTriggers:
     - boops
 
 - type: emote
-  id: Whirr # uncategorized as it is generic
+  id: Whirr
   name: chat-emote-name-whirr
+  category: Vocal # Wayfarer: adds emote to emote wheel
   whitelist: # Wayfarer
     components:
     - Silicon
-  chatMessages: [ whirrs ]
+  chatMessages: [ "chat-emote-msg-whirr" ] # Wayfarer: localization and punctuation
   chatTriggers:
     - whirrs
 
 - type: emote # Wayfarer
   id: SyndieBorgLaugh
   name: chat-emote-name-laugh
+  category: Vocal # Wayfarer: adds emote to emote wheel
   whitelist:
     components:
     - Silicon
-  chatMessages: [ laughs ]
+  chatMessages: [ "chat-emote-msg-laugh" ] # Wayfarer: localization and punctuation
   chatTriggers:
   - synlaughs

@@ -399,6 +399,12 @@ namespace Content.Server.Database
             modelBuilder.Entity<WayfarerSafetyDepositBox>()
                 .HasIndex(b => b.OwnerUserId);
 
+            modelBuilder.Entity<WayfarerSafetyDepositBox>()
+                .HasOne(b => b.Profile)
+                .WithMany()
+                .HasForeignKey(b => b.ProfileId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<WayfarerSafetyDepositBoxItem>()
                 .HasOne(i => i.Box)
                 .WithMany(b => b.Items)
@@ -1517,6 +1523,14 @@ namespace Content.Server.Database
         /// The character profile index (slot number) of the owner
         /// </summary>
         public int CharacterIndex { get; set; }
+
+        /// <summary>
+        /// Foreign key to the character profile. Null for boxes created before this column was added.
+        /// When the profile is deleted, this box is also deleted via cascade.
+        /// </summary>
+        public int? ProfileId { get; set; }
+
+        public Profile? Profile { get; set; }
 
         /// <summary>
         /// Display name of the owner when the box was created

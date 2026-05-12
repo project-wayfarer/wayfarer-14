@@ -1,6 +1,6 @@
 - type: entity
   name: pickaxe
-  parent: [ BaseItem, RecyclableItemWoodMedium ] # Frontier: added RecyclableItemWoodMedium
+  parent: BaseItem
   id: Pickaxe
   description: Notched to perfection, for jamming it into rocks.
   components:
@@ -42,7 +42,7 @@
 
 - type: entity
   name: mining drill
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelMedium] # Wayfarer: added recyclable component
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
@@ -69,7 +69,7 @@
 
 - type: entity
   name: diamond tipped mining drill
-  parent: MiningDrill
+  parent: [MiningDrill, RecyclableItemSteelMedium] # Wayfarer: added recyclable component
   id: MiningDrillDiamond
   description: A significantly more efficient mining drill tipped with diamond.
   components:
@@ -93,7 +93,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseC1Contraband ] # Frontier: BaseSecurityCargoContraband<BaseC1Contraband
+  parent: [ BaseItem, BaseC1Contraband, RecyclableItemSteelMedium ] # Frontier: BaseSecurityCargoContraband<BaseC1Contraband # Wayfarer: added recyclable component
   id: BaseWeaponCrusher # Crusher? But I...
   name: crusher
   description: An early design of the proto-kinetic accelerator.

@@ -27,13 +27,13 @@
 - type: startingGear
   id: SeniorOfficerGear
   equipment:
-    pocket1: NFWeaponPistolUniversalNfsdLessLethal
+    pocket1: BaseSecurityUplinkRadioOfficer # Wayfarer: NFWeaponPistolUniversalNfsdLessLethal<BaseSecurityUplinkRadioOfficer
   storage:
     back:
     - Flash
-    - NFMagazineHighCapacityPistol35Overpressure
-    - NFMagazineHighCapacityPistol35Rubber
-    - BaseSecurityUplinkRadioOfficer
+#    - NFMagazineHighCapacityPistol35Overpressure
+#    - NFMagazineHighCapacityPistol35Rubber # Wayfarer
+#    - BaseSecurityUplinkRadioOfficer # Wayfarer: Moved to Pocket
     - FrontierUplinkCoin5
     - ShipVoucherNfsdSergeant
 

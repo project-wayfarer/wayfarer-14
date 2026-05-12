@@ -11,6 +11,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Tiles; // Frontier
 
+using Content.Shared.SSDIndicator; // Wayfarer
+
 namespace Content.Server.Xenoarchaeology.Artifact.XAE;
 
 /// <summary>
@@ -47,6 +49,11 @@ public sealed class XAEPortalSystem : BaseXAESystem<XAEPortalComponent>
                 if (Vector2.Distance(_transform.GetMapCoordinates(uid, xform).Position, entPosition) > ent.Comp.MaxRange)
                     continue;
                 // End Frontier: ensure range check (don't teleport people from across the map or off of protected grids)
+
+                // Wayfarer: Ensure the mind in question is not ssd.
+                if (TryComp<SSDIndicatorComponent>(uid, out var ssd) && ssd.IsSSD)
+                    continue;
+                // End Wayfarer: Ensure the mind in question is not ssd.
 
                 validMinds.Add(uid);
             }

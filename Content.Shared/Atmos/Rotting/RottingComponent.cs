@@ -49,7 +49,7 @@ public sealed partial class RottingComponent : Component
             { "Rot", 0.06 } // Wayfarer: Changed Cellular to Rot damage to split them into two separate types.
         }
     };
-
+    // Wayfarer: Rot damage cap
     [DataField]
     public float DamageCap = 300f;
 
@@ -58,4 +58,5 @@ public sealed partial class RottingComponent : Component
     /// </summary>
     [DataField]
     public float TotalBluntDamageDealt = 0f;
+    // Wayfarer End
 }

@@ -1535,6 +1535,7 @@
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitJester
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingUniformJumpsuitJesterAlt
@@ -1544,6 +1545,7 @@
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitJesterAlt
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingUniformJumpsuitKilt
@@ -1657,6 +1659,7 @@
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitClown
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingUniformJumpsuitMime
@@ -1666,6 +1669,7 @@
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpsuitMime
+  groupBy: "mime"
 
 - type: loadout
   id: WFClothingUniformJumpskirtMime
@@ -1675,6 +1679,7 @@
   price: 1000
   equipment:
     jumpsuit: ClothingUniformJumpskirtMime
+  groupBy: "mime"
 
 - type: loadout
   id: WFClothingUniformJumpsuitTshirtJeans
@@ -2427,3 +2432,540 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtBrigmedic
   groupBy: "secJumpsuit"
+
+# Starlight clothing
+- type: loadout
+  id: WFSLClothingUniformJumpskirtGothic
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtGothic
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtMaid
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtMaid
+  groupBy: "maid"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtDressRed
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtDressRed
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtTango
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtTango
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtVictorianBlack
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtVictorianBlack
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtReporter
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtReporter
+  groupBy: "journalist"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtJournalist
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtJournalist
+  groupBy: "journalist"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtVictorianrRed
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtVictorianrRed
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtSuitNurse
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtSuitNurse
+  groupBy: "jumpsuitMedical"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtPencilTan
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtPencilTan
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtCargoSalvage
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtCargoSalvage
+  groupBy: "jumpsuitCargo"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtCargoSalvageFormal
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtCargoSalvageFormal
+  groupBy: "jumpsuitCargo"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtSalvageLead
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtSalvageLead
+  groupBy: "jumpsuitCargo"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtMiningSpecialist
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtMiningSpecialist
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtCargoFormal
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtCargoFormal
+  groupBy: "jumpsuitCargo"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtScientistFormal
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtScientistFormal
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtCoroner
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtCoroner
+  groupBy: "jumpsuitMedical"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtElegantMaid
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtElegantMaid
+  groupBy: "maid"
+
+- type: loadout
+  id: WFSLClothingUniformColorJumpskirtRainbow
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformColorJumpskirtRainbow
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtSchool
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtSchool
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtCapTurtleneck
+  price: 1250
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtCapTurtleneck
+  groupBy: "jumpsuitCaptain"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtHoPTurtleneck
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtHoPTurtleneck
+  groupBy: "jumpsuitHop"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtHoSBlack
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtHoSBlack
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtRDClassical
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtRDClassical
+  groupBy: "jumpsuitSci"
+
+- type: loadout
+  id: WFSLClothingUniformJulianneVA11HALLA
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJulianneVA11HALLA
+  groupBy: "jumpsuitBartender"
+
+- type: loadout
+  id: WFSLClothingUniformElegantLadyDress
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformElegantLadyDress
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLClothingUniformPastryDress
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformPastryDress
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitSuitCheckered
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitSuitCheckered
+  groupBy: "fancySuit"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitSuitTan
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitSuitTan
+  groupBy: "fancySuit"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitSuitWaiter
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitSuitWaiter
+  groupBy: "fancySuit"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitCargoAlt
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitCargoAlt
+  groupBy: "jumpsuitCargo"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitCargoFormal
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitCargoFormal
+  groupBy: "jumpsuitCargo"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitSalvageFormal
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitSalvageFormal
+  groupBy: "jumpsuitCargo"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitCoroner
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitCoroner
+  groupBy: "jumpsuitMedical"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitCoronerAlt
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitCoronerAlt
+  groupBy: "jumpsuitMedical"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitSuperstarCop
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitSuperstarCop
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitAerostatic
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitAerostatic
+- type: loadout
+  id: WFSLClothingUniformJumpsuitCapTurtleneck
+  price: 1250
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitCapTurtleneck
+  groupBy: "jumpsuitCaptain"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitCaptainNoble
+  price: 1250
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitCaptainNoble
+  groupBy: "jumpsuitCaptain"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitHoPTurtleneck
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitHoPTurtleneck
+  groupBy: "jumpsuitHop"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitHoSBlack
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitHoSBlack
+  groupBy: "secJumpsuit"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitRDClassical
+  price: 1000
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitRDClassical
+  groupBy: "jumpsuitSci"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitVampir
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitVampir
+
+- type: loadout
+  id: WFSLClothingUniformDama235123
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformDama235123
+  groupBy: "jumpsuitCaptain"
+
+- type: loadout
+  id: WFSLBodysuitJeansUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLBodysuitJeansUniformSuit
+
+- type: loadout
+  id: WFSLCamoUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLCamoUniformSuit
+
+- type: loadout
+  id: WFSLCandyClownUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLCandyClownUniformSuit
+  groupBy: "clown"
+
+- type: loadout
+  id: WFSLCoolTanktopUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLCoolTanktopUniformSuit
+
+- type: loadout
+  id: WFSLDruidRobesUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLDruidRobesUniformSuit
+
+- type: loadout
+  id: WFSLFlamboyantUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLFlamboyantUniformSuit
+
+- type: loadout
+  id: WFSLFlamencoUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLFlamencoUniformSuit
+
+- type: loadout
+  id: WFSLFlyCaptainUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLFlyCaptainUniformSuit
+
+- type: loadout
+  id: WFSLKiltUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLKiltUniformSuit
+
+- type: loadout
+  id: WFSLLilacDressUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLLilacDressUniformSuit
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLLittleBlackDressUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLLittleBlackDressUniformSuit
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLLumberjackOverallsUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLLumberjackOverallsUniformSuit
+  groupBy: "overalls"
+
+- type: loadout
+  id: WFSLMechanicOverallsUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLMechanicOverallsUniformSuit
+  groupBy: "overalls"
+
+- type: loadout
+  id: WFSLMessyDressShirtUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLMessyDressShirtUniformSuit
+
+- type: loadout
+  id: WFSLMimeFrillsUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLMimeFrillsUniformSuit
+  groupBy: "mime"
+
+- type: loadout
+  id: WFSLOldWomanUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLOldWomanUniformSuit
+
+- type: loadout
+  id: WFSLPunkJeansUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLPunkJeansUniformSuit
+
+- type: loadout
+  id: WFSLRefereeUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLRefereeUniformSuit
+
+- type: loadout
+  id: WFSLSailorUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLSailorUniformSuit
+
+- type: loadout
+  id: WFSLStripedClownUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLStripedClownUniformSuit
+  groupBy: "clown"
+
+- type: loadout
+  id: WFSLSundressUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLSundressUniformSuit
+  groupBy: "dresses"
+
+- type: loadout
+  id: WFSLTatteredClothesUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLTatteredClothesUniformSuit
+
+- type: loadout
+  id: WFSLTieDyeUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLTieDyeUniformSuit
+
+- type: loadout
+  id: WFSLTogaUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLTogaUniformSuit
+
+- type: loadout
+  id: WFSLVintageUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLVintageUniformSuit
+
+- type: loadout
+  id: WFSLCargoOverallsUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLCargoOverallsUniformSuit
+  groupBy: "overalls"
+
+- type: loadout
+  id: WFSLRedRegaliaSuit
+  price: 1000
+  equipment:
+    jumpsuit: SLRedRegaliaSuit
+
+# == Starlight clown/mime additions
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitPerformerClown
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitPerformerClown
+  groupBy: "clown"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitClownFormal
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitClownFormal
+  groupBy: "clown"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtPerformerClown
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtPerformerClown
+  groupBy: "clown"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtClownFormal
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtClownFormal
+  groupBy: "clown"
+
+- type: loadout
+  id: WFSLSpottedClownUniformSuit
+  price: 500
+  equipment:
+    jumpsuit: SLSpottedClownUniformSuit
+  groupBy: "clown"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitPerformerMime
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitPerformerMime
+  groupBy: "mime"
+
+- type: loadout
+  id: WFSLClothingUniformJumpskirtPerformerMime
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpskirtPerformerMime
+  groupBy: "mime"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitMimeSuaveWhite
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitMimeSuaveWhite
+  groupBy: "mime"
+
+- type: loadout
+  id: WFSLClothingUniformJumpsuitMimeSuaveBlack
+  price: 500
+  equipment:
+    jumpsuit: SLClothingUniformJumpsuitMimeSuaveBlack
+  groupBy: "mime"

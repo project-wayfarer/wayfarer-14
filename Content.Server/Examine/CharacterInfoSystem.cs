@@ -78,6 +78,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         if (TryComp<RoleplayLevelComponent>(entity, out var rpLevel))
         {
             response.RoleplayLevel = $"Level {rpLevel.Level}";
+            response.TotalCommends = rpLevel.TotalCommends;
         }
         else
         {

@@ -28,3 +28,11 @@
   cost: 1
   components:
     - type: Herbivore
+
+- type: trait
+  id: ClayBody
+  name: trait-claybody-name
+  description: trait-claybody-desc
+  category: Quirks
+  components:
+    - type: WFClayBody

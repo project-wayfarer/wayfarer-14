@@ -1,0 +1,26 @@
+# Clay Chunk — dropped when a Clay Body player is plucked.
+# Can be returned to the player to restore their size.
+
+- type: entity
+  parent: BaseItem
+  id: WFClayChunk
+  name: clay chunk
+  description: A warm, pliable lump of clay plucked from someone's body. It still radiates a faint life-force.
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/materials.rsi
+    state: ash
+  - type: Item
+    sprite: Objects/Materials/materials.rsi
+    size: Tiny
+  - type: WFClayChunk
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

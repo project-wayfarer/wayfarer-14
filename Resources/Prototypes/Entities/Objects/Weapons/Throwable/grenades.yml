@@ -412,6 +412,12 @@
           # Unprimed: <Use state determined by enum.ConstructionVisuals.Layer>
   - type: StaticPrice
     price: 30 # Frontier: 75<30
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+      Plastic: 20
+  # Wayfarer end
 
 - type: entity
   name: EMP grenade

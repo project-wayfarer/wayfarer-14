@@ -1,3 +1,5 @@
+using System.Linq;
+using Content.Server.Administration;
 using Content.Server.Database;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
@@ -48,6 +50,7 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
         SubscribeNetworkEvent<GiveCommendMessage>(OnGiveCommendMessage);
         SubscribeNetworkEvent<RequestAvailableCommendsMessage>(OnRequestAvailableCommends);
+        SubscribeNetworkEvent<RequestMyCommendsMessage>(OnRequestMyCommends);
         SubscribeLocalEvent<EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<RoleplayLevelComponent, EmoteEvent>(OnEmote);
     }
@@ -258,6 +261,10 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
         // Raise event
         var commendEvent = new RoleplayCommendReceivedEvent(recipientEntity, giver, msg.Comment, msg.IsPrivate);
         RaiseLocalEvent(commendEvent);
+
+        // Send updated commend count back to the giver
+        var remaining = Math.Max(0, availableCommends - (commendsGiven + 1));
+        RaiseNetworkEvent(new AvailableCommendsMessage(remaining), args.SenderSession);
     }
 
     private async void SaveToDatabase(EntityUid player, RoleplayLevelComponent comp)
@@ -303,5 +310,36 @@ public sealed class RoleplayLevelingSystem : SharedRoleplayLevelingSystem
         // Send back remaining commends
         var remaining = Math.Max(0, availableCommends - commendsGiven);
         RaiseNetworkEvent(new AvailableCommendsMessage(remaining), args.SenderSession);
+    }
+
+    private async void OnRequestMyCommends(RequestMyCommendsMessage msg, EntitySessionEventArgs args)
+    {
+        var userId = args.SenderSession.UserId;
+
+        // Fetch all commends including private ones (it's the player's own)
+        var allCommends = await _dbManager.GetPlayerCommends(userId.UserId, includePrivate: true);
+        var recent = allCommends.Take(10).ToList();
+
+        var entries = new List<CommendEntryData>();
+        foreach (var c in recent)
+        {
+            string giverName;
+            if (c.IsPrivate)
+            {
+                giverName = "Anonymous";
+            }
+            else
+            {
+                giverName = await _dbManager.GetCharacterNameByProfileIdAsync(c.GiverProfileId) ?? "Unknown";
+            }
+
+            entries.Add(new CommendEntryData(
+                c.Comment ?? "",
+                giverName,
+                c.IsPrivate,
+                c.CreatedAt));
+        }
+
+        RaiseNetworkEvent(new MyCommendsMessage(entries), args.SenderSession);
     }
 }

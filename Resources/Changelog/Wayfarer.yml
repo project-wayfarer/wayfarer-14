@@ -3004,3 +3004,141 @@ Entries:
   id: 6841
   time: '2026-05-08T06:04:51.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/821
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added WFClayBody Quirk
+  id: 6842
+  time: '2026-05-08T14:03:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/820
+- author: Luweth
+  changes:
+    - type: Tweak
+      message: Changed a missed button to not be clickable through walls in maints.
+    - type: Fix
+      message: EVA bridge grid atmos pressure bug. Cleaned up airlock.
+  id: 6843
+  time: '2026-05-08T14:07:35.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/819
+- author: TheSlapper
+  changes:
+    - type: Add
+      message: (Miles) Ported numerous clothing items from Starlight
+  id: 6844
+  time: '2026-05-09T16:48:59.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/826
+- author: drraccoony
+  changes:
+    - type: Add
+      message: Added in-game ability to read commends
+    - type: Tweak
+      message: Commend improvements
+  id: 6845
+  time: '2026-05-09T16:49:17.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/822
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: EMPs will no longer disable radios.
+    - type: Tweak
+      message: 40mm EMP will now disable devices for 30 seconds instead of 12
+  id: 6846
+  time: '2026-05-09T17:31:18.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/831
+- author: drraccoony
+  changes:
+    - type: Tweak
+      message: >-
+        Changed Hoverbikes. Riders have a 70% chance of knockdown upon taking
+        damage while riding.
+  id: 6847
+  time: '2026-05-10T00:46:13.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/833
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Hypospray to DoC and Brigmedic.
+    - type: Tweak
+      message: >-
+        Changed CGP loadouts so they have patrol suits and gave them access to
+        the gun loadouts like everyone else.
+    - type: Add
+      message: White variant of combat gloves.
+    - type: Add
+      message: 'STC is now mindshielded. '
+  id: 6848
+  time: '2026-05-10T00:48:25.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/825
+- author: drraccoony
+  changes:
+    - type: Fix
+      message: Fixed Spacehulk spawn lagspike
+  id: 6849
+  time: '2026-05-10T00:48:38.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/817
+- author: DevArchwave
+  changes:
+    - type: Tweak
+      message: >-
+        Artifact teleport effect now checks for non-ssd targets and had its
+        range decreased.
+    - type: Tweak
+      message: >-
+        Artifact explosion weights reduced a little, in favor of a healing
+        effect.
+    - type: Tweak
+      message: Duration of artifact polymorph effects halved.
+  id: 6850
+  time: '2026-05-10T00:50:52.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/818
+- author: JustKaits
+  changes:
+    - type: Add
+      message: Rui added guidebook sprite
+  id: 6851
+  time: '2026-05-10T02:24:30.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/630
+- author: Whisper
+  changes:
+    - type: Add
+      message: Added all silicon/borg emotes to IPC
+  id: 6852
+  time: '2026-05-11T02:28:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/827
+- author: BlueSushii
+  changes:
+    - type: Add
+      message: 50k disks to terminal
+  id: 6853
+  time: '2026-05-11T23:51:23.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/845
+- author: BlueSushii
+  changes:
+    - type: Tweak
+      message: Artifacts worth more
+  id: 6854
+  time: '2026-05-11T23:52:00.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/844
+- author: DevArchwave
+  changes:
+    - type: Tweak
+      message: Reduced the space cleanup system's cooldown.
+    - type: Tweak
+      message: Capped the ammonia emission from rotting entities.
+  id: 6855
+  time: '2026-05-11T23:53:08.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/849
+- author: Possumongus
+  changes:
+    - type: Fix
+      message: Fixed IPC snout sprite missplacement
+  id: 6856
+  time: '2026-05-11T23:54:47.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/846
+- author: DevArchwave
+  changes:
+    - type: Tweak
+      message: New sprites for the AME and its jars.
+  id: 6857
+  time: '2026-05-12T09:17:49.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/855

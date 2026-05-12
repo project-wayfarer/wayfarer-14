@@ -104,15 +104,15 @@
     - id: XenoArtifactShuffle
       weight: 3.0
     - id: XenoArtifactHealAll
-      weight: 1.0
+      weight: 3.0 # Wayfarer: 1.0<3.0
     #- id: XenoArtifactTesla
     #  weight: 10.0
     #- id: XenoArtifactSingularity
     #  weight: 10.0
     - id: XenoArtifactExplosionScary
-      weight: 1.0
+      weight: 0.5 # Wayfarer: 1<0.5
     - id: XenoArtifactBoom
-      weight: 5.0
+      weight: 3.5 # Wayfarer: 5.0<3.5
     - id: XenoArtifactEffectCreationGasPlasma
       weight: 2.0
     - id: XenoArtifactEffectCreationGasTritium

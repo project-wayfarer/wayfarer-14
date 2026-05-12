@@ -383,6 +383,12 @@
   - type: Tag
     tags:
     - Syringe
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 10
+      Plastic: 5
+  # Wayfarer end
 
 - type: entity
   parent: BaseSyringe

@@ -36,6 +36,13 @@
         path: /Audio/Machines/Nuke/general_beep.ogg
         params:
           volume: -2
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 150
+    chemicalComposition:
+      Silicon: 15
+  # Wayfarer end
 
 - type: entity
   parent: TimerTrigger

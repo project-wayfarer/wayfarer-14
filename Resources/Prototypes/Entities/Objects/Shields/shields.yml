@@ -59,6 +59,12 @@
                   max: 2
     - type: StaticPrice
       price: 50 # Frontier: 100<50 - TODO: material value rework
+    # Wayfarer: added recyclable component
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 50
+        Plastic: 20
+    # Wayfarer end
 
 #Security Shields
 
@@ -527,6 +533,12 @@
       price: 350
     - type: Damageable
       damageContainer: Shield
+    # Wayfarer: added recyclable component
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 50
+        Plastic: 20
+    # Wayfarer end
 
 - type: entity
   name: broken energy shield

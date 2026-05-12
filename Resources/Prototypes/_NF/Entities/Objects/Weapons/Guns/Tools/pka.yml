@@ -1,7 +1,7 @@
 #region base
 - type: entity
   id: NFBaseWeaponFramePka
-  parent: [ NFBaseWeaponEncumbranceSubMachineGun, NFBaseItemWeaponGun ]
+  parent: [ NFBaseWeaponEncumbranceSubMachineGun, NFBaseItemWeaponGun, RecyclableItemDeviceSmall ] # Wayfarer: added recyclable component
   name: proto-kinetic accelerator
   description: Fires low-damage kinetic bolts at a short range.
   abstract: true
@@ -41,6 +41,11 @@
     price: 0 # WizDen price
   - type: NFWeaponDetails
     class: weapon-details-class-tool
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+  # Wayfarer end
 
 #region manufacturer
 - type: entity

@@ -16,13 +16,15 @@
   weight: 150
   displayWeight: 60
   canBeAntag: false
-  access:
-  - Armory
-  - Sergeant
-  - Bailiff
-  - Brigmedic
+# Wayfarer: Moved to CGPCommand
+#  access:
+#  - Armory
+#  - Sergeant
+#  - Bailiff
+#  - Brigmedic
+# Wayfarer End
   accessGroups:
-  - GeneralNfsdAccess
+  - CGPCommand #Wayfarer: GeneralNfsdAccess<CGPCommand
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, NFSDTrackingImplant ]
@@ -33,14 +35,14 @@
 - type: startingGear
   id: BailiffGear
   equipment:
-    pocket1: NFWeaponPistolUniversalNfsdLessLethal
+    pocket1: BaseSecurityUplinkRadioOfficer #Wayfarer: NFWeaponPistolUniversalNfsdLessLethal<BaseSecurityUplinkRadioOfficer
     pocket2: HoloprojectorNfsd
   storage:
     back:
     - Flash
-    - NFMagazineHighCapacityPistol35Overpressure
-    - NFMagazineHighCapacityPistol35Rubber
-    - BaseSecurityUplinkRadioOfficer
+#    - NFMagazineHighCapacityPistol35Overpressure
+#    - NFMagazineHighCapacityPistol35Rubber # Wayfarer
+#    - BaseSecurityUplinkRadioOfficer # Wayfarer: Moved to Pocket
     - FrontierUplinkCoin5
     - ShipVoucherNfsdBailiff
     - RubberStampBailiff

@@ -605,6 +605,7 @@
   price: 1250
   equipment:
     head: ClothingHeadHatJester
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingHeadHatJesterAlt
@@ -617,6 +618,7 @@
   price: 1250
   equipment:
     head: ClothingHeadHatJesterAlt
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingHeadHatBeret
@@ -655,7 +657,7 @@
   price: 1250
   equipment:
     head: ClothingHeadHatMimesoft
-  groupBy: "caps"
+  groupBy: "mime"
 
 - type: loadout
   id: WFClothingHeadHatPilgrim
@@ -1045,3 +1047,16 @@
   price: 5000
   equipment:
     head: ClothingHeadHatWarden
+
+# Starlight clothing
+- type: loadout
+  id: WFSLClothingHeadBase0121
+  price: 500
+  equipment:
+    head: SLClothingHeadBase0121
+
+- type: loadout
+  id: WFSLRedRegaliaHat
+  price: 1000
+  equipment:
+    head: SLRedRegaliaHat
