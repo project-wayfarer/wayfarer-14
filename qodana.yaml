@@ -1,0 +1,28 @@
+﻿#-------------------------------------------------------------------------------#
+#               Qodana analysis is configured by qodana.yaml file               #
+#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
+#-------------------------------------------------------------------------------#
+
+version: "1.0"
+
+ide: QDNET
+
+profile:
+  name: qodana.recommended
+
+# Build the solution before analysis.
+# Replace the solution name if needed.
+bootstrap: |
+  dotnet restore
+  dotnet build SpaceStation14.sln --configuration Release --no-restore
+
+# Fail the CI pipeline if too many issues are found.
+failureConditions:
+  severityThresholds:
+    critical: 1
+    high: 10
+    moderate: 50
+
+# Optional: install plugins if your project uses Unity or Rider-specific support.
+# plugins:
+#   - id: com.intellij.plugins.unity
