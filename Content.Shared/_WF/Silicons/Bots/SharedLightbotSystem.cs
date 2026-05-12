@@ -1,4 +1,4 @@
-namespace Content.Shared.Silicons.Bots;
+namespace Content.Shared._WF.Silicons.Bots;
 
 /// <summary>
 /// Shared system for lightbot functionality.

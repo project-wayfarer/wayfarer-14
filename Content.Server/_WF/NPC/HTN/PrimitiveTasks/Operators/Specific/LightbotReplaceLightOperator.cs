@@ -1,11 +1,12 @@
-using Content.Server.Light.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Shared.Light.Components;
-using Content.Shared.NPC.Components;
-using Content.Shared.Silicons.Bots;
+using Content.Shared._WF.Silicons.Bots;
 using Robust.Shared.Audio.Systems;
+using Content.Server.NPC.HTN.PrimitiveTasks;
+using Content.Server.NPC;
+using Content.Server.NPC.HTN;
 
-namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+namespace Content.Server._WF.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 /// <summary>
 /// Operator for replacing a broken light bulb in a fixture.

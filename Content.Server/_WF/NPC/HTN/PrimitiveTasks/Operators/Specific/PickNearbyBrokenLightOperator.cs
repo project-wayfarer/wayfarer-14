@@ -1,14 +1,14 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server.Light.Components;
+using Content.Server._WF.Silicons.Bots;
+using Content.Server.NPC.HTN.PrimitiveTasks;
 using Content.Server.NPC.Pathfinding;
-using Content.Server.Silicons.Bots;
 using Content.Shared.Interaction;
-using Content.Shared.NPC.Components;
-using Content.Shared.Silicons.Bots;
+using Content.Shared._WF.Silicons.Bots;
+using Content.Server.NPC;
 
-namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
+namespace Content.Server._WF.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 /// <summary>
 /// Operator for finding nearby broken lights that need replacement.
@@ -19,7 +19,7 @@ public sealed partial class PickNearbyBrokenLightOperator : HTNOperator
     private LightbotSystem _lightbot = default!;
     private PathfindingSystem _pathfinding = default!;
 
-    [DataField("rangeKey")] 
+    [DataField("rangeKey")]
     public string RangeKey = "LightbotRange";
 
     /// <summary>
@@ -66,13 +66,13 @@ public sealed partial class PickNearbyBrokenLightOperator : HTNOperator
         foreach (var light in brokenLights)
         {
             var lightXform = _entManager.GetComponent<TransformComponent>(light);
-            
+
             // Skip if on different map
             if (lightXform.MapID != ownerXform.MapID)
                 continue;
 
             var distance = (lightXform.WorldPosition - ownerXform.WorldPosition).Length();
-            
+
             if (distance < bestDistance)
             {
                 bestDistance = distance;
@@ -84,7 +84,7 @@ public sealed partial class PickNearbyBrokenLightOperator : HTNOperator
             return (false, null);
 
         var targetXform = _entManager.GetComponent<TransformComponent>(bestTarget.Value);
-        
+
         // Check if we can path to the target
         var pathRange = SharedInteractionSystem.InteractionRange - 0.5f;
         var path = await _pathfinding.GetPath(owner, bestTarget.Value, pathRange, cancelToken);

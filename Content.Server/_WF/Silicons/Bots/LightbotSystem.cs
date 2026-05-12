@@ -1,8 +1,7 @@
-using Content.Server.Light.Components;
 using Content.Shared.Light.Components;
-using Content.Shared.Silicons.Bots;
+using Content.Shared._WF.Silicons.Bots;
 
-namespace Content.Server.Silicons.Bots;
+namespace Content.Server._WF.Silicons.Bots;
 
 /// <summary>
 /// System for lightbot functionality.
@@ -23,7 +22,7 @@ public sealed class LightbotSystem : SharedLightbotSystem
 
         // Check if the light has a bulb
         var bulbUid = light.LightBulbContainer.ContainedEntity;
-        
+
         // Missing bulb needs replacement
         if (bulbUid == null)
             return true;

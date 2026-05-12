@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Silicons.Bots;
+namespace Content.Shared._WF.Silicons.Bots;
 
 /// <summary>
 /// Component for bots that replace broken or missing light bulbs in fixtures.
