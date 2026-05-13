@@ -391,20 +391,16 @@
       head-dog:
       - state: on-equipped-HELMET-dog # Wayfarer: equipped-head-light-dog to on-equipped-HELMET-dog (Goob Sprite Port)
         shader: unshaded
-      head-cat:
-      - state: equipped-head-light-cat
       - type: Clothing
         clothingVisuals:
           head:
           - state: off-equipped-HELMET # Wayfarer: equipped-head-light to off-equipped-HELMET (Goob Sprite Port)
-          head-cat:
-          - state: equipped-head-cat
-          - state: equipped-head-unshaded-cat
-        shader: unshaded
           head-vox:
           - state: off-equipped-HELMET-vox # Wayfarer: equipped-head-light to off-equipped-HELMET (Goob Sprite Port)
           head-dog:
           - state: off-equipped-HELMET-dog # Wayfarer: equipped-head-light to off-equipped-HELMET (Goob Sprite Port)
+      head-cat:
+      - state: equipped-head-light-cat
   - type: PointLight
     color: "#daffad"
   - type: PressureProtection
