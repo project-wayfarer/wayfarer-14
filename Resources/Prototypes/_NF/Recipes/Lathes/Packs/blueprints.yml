@@ -80,7 +80,9 @@
   - PortableGeneratorJrPacmanMachineCircuitboard
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
+  - SolarAssemblyFlatpack
   - EmitterCircuitboard
+  - PowerComputerCircuitboard
   # AtmosphericTech
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
@@ -107,6 +109,8 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
+  - AlertsComputerCircuitboard
+  - AtmosMonitoringComputerCircuitboard
   # AdvancedToolsTechnology
   - WelderExperimental
   - PowerDrill
@@ -177,6 +181,8 @@
   # IndustrialMedicine
   - MedicalAssemblerMachineCircuitboard
   - HotplateMachineCircuitboard
+  - ElectrolysisUnitMachineCircuitboard
+  - CentrifugeMachineCircuitboard
   - DefibrillatorCompact
   # SyringeGun
   - LauncherSyringe
@@ -229,6 +235,7 @@
   - JetpackSecurity
   # AdvancedPersonalPropulsion
   - JetpackVoid
+  - NFClothingShoesBootsJetpack
   # HardsuitsExperimentalIndustrial
   - ClothingOuterHardsuitMaximPrototype
 
@@ -243,8 +250,6 @@
   # NFBasicShuttleArmament
   - NFGrenadeFlash
   - NFGrenadeEMP
-  # PersonalPropulsion
-  - JetpackNfsd
 
 # region Salvage
 - type: latheRecipePack
@@ -266,6 +271,7 @@
   - JetpackCaptain
   # AdvancedPersonalPropulsion
   - JetpackVoid
+  - NFClothingShoesBootsJetpack
   # BluespaceGasTanks
   - BluespaceAirTank
   - SmallBluespaceAirTank
@@ -400,6 +406,7 @@
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
   - ImpCoffeeMachineCircuitboard
+  - NFCookingBag
   # MiscellaneousItemsOrganization
   - NFPouchUtility
   - NFPouchEngineering

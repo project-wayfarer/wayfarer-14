@@ -607,9 +607,9 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+    sprite: _NF/Structures/Walls/solid.rsi # Frontier
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+    sprite: _NF/Structures/Walls/solid.rsi # Frontier
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -725,14 +725,14 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _NF/Structures/Walls/reinforced_diagonal.rsi # Frontier: _NF folder
     state: state0
   - type: IconSmooth
-    mode: Diagonal
+    mode: DiagonalNF # Frontier: Diagonal<DiagonalNF
     key: walls
     base: state
   - type: Icon
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _NF/Structures/Walls/reinforced_diagonal.rsi # Frontier: _NF folder
     state: state0
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -1023,13 +1023,13 @@
   name: solid wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi # Frontier
+    sprite: _NF/Structures/Walls/solid.rsi # Frontier
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-    sprite: Structures/Walls/solid.rsi # Frontier
+    sprite: _NF/Structures/Walls/solid.rsi # Frontier
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -1067,10 +1067,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/solid_diagonal.rsi
+    sprite: _NF/Structures/Walls/solid_diagonal.rsi # Frontier: use _NF variant
     state: state0
   - type: Icon
-    sprite: Structures/Walls/solid_diagonal.rsi
+    sprite: _NF/Structures/Walls/solid_diagonal.rsi # Frontier: use _NF variant
     state: state0
   - type: Destructible
     thresholds:

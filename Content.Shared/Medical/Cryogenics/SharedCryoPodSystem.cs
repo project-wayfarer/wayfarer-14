@@ -57,7 +57,7 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
     private EntityQuery<SolutionContainerManagerComponent> _solutionContainerQuery;
 
     // Frontier: keep a list of cryogenics reagents. The pod will only filter these out from the provided solution. TODO: Don't hardcode this
-    private static readonly string[] CryogenicsReagents = ["Cryoxadone", "Aloxadone", "Doxarubixadone", "Opporozidone", "Necrosol", "Traumoxadone", "Stelloxadone", "Ruboxadone",]; // Wayfarer: Added Ruboxadone to the list of cryogenics.
+    private static readonly string[] CryogenicsReagents = ["Cryoxadone", "Aloxadone", "Doxarubixadone", "Opporozidone", "Necrosol", "Traumoxadone", "Stelloxadone"];
 
     [Dependency] private readonly SharedTransformSystem _transform = default!; // Frontier
     [Dependency] private readonly SharedInteractionSystem _interaction = default!; // Frontier

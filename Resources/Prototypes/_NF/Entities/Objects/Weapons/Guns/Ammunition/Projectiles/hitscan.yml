@@ -3,7 +3,7 @@
   id: NFRedLightLaser
   damage:
     types:
-      Heat: 18 #Wayfarer 12 -> 18
+      Heat: 10
   muzzleFlash: &lightMuzzleFlash
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
@@ -20,7 +20,7 @@
   id: NFRedMediumLaser
   damage:
     types:
-      Heat: 24 #Wayfarer 16 -> 24
+      Heat: 15
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy
@@ -37,7 +37,7 @@
   id: NFRedHeavyLaser
   damage:
     types:
-      Heat: 30 #Wayfarer 20 -> 30
+      Heat: 17.5
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy
@@ -54,7 +54,7 @@
   id: NFRedSpecialLaser
   damage:
     types:
-      Heat: 40 #Wayfarer 24 -> 40
+      Heat: 25
   muzzleFlash: &specialMuzzleFlash
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy2
@@ -71,8 +71,8 @@
   id: NFXrayLaser
   damage:
     types:
-      Heat: 15
-      Radiation: 20
+      Heat: 12.5
+      Radiation: 12.5
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_xray
@@ -89,7 +89,7 @@
   id: NFPulse
   damage:
     types:
-      Heat: 28 #Wayfarer 24 -> 28
+      Heat: 22.5
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_blue
@@ -120,7 +120,7 @@
   maxLength: 60
   damage:
     types:
-      Heat: 40
+      Heat: 37.5
       Structural: 10
   muzzleFlash: *specialMuzzleFlash
   travelFlash: *specialTravelFlash

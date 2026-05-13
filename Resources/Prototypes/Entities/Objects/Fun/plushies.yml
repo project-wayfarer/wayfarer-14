@@ -33,7 +33,7 @@
       Cloth: 100
   - type: StaticPrice
     price: 5
-  - type: Edible
+  - type: Food
     requiresSpecialDigestion: true
     useSound: *BasePlushieSound
     delay: 2
@@ -48,7 +48,8 @@
     tags:
     - Payload
     - ClothMade
-#  - type: MothFood # WF removed - Stops plushies eaten by random moth spawns
+#    - type: MothFood # Frontier # Wayfarer: Stops plushies eaten by random moth spawns
+    - type: NFPlushie # Frontier
 
 - type: entity
   parent: BasePlushie
@@ -351,10 +352,11 @@
     sound: *PlushieLizardSound
   - type: EmitSoundOnCollide
     sound: *PlushieLizardSound
-  - type: Edible
+  - type: Food
+    requiresSpecialDigestion: true
     useSound: *PlushieLizardSound
-    transferAmount: 10
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieLizardSound
   - type: Extractable
     juiceSolution:
@@ -417,9 +419,11 @@
     sound: *PlushieExperimentSound
   - type: EmitSoundOnCollide
     sound: *PlushieExperimentSound
-  - type: Edible
+  - type: Food
+    requiresSpecialDigestion: true
     useSound: *PlushieExperimentSound
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieExperimentSound
   - type: Clothing
     clothingVisuals:
@@ -478,7 +482,7 @@
   parent: PlushieLizard
   id: PlushieSpaceLizard #ᵂᵉʰ!
   name: space lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentComm as a token initiative to combat speciesism in space environments. "Welcome your new colleagues as you do this plush, with open arms!"
+  description: An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentComm as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
   components:
   - type: Sprite
     sprite: Objects/Fun/Plushies/lizard.rsi
@@ -499,9 +503,11 @@
     sound: *PlushieSpaceLizardSound
   - type: EmitSoundOnCollide
     sound: *PlushieSpaceLizardSound
-  - type: Edible
+  - type: Food
+    requiresSpecialDigestion: true
     useSound: *PlushieSpaceLizardSound
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieSpaceLizardSound
   - type: Clothing
     sprite: Objects/Fun/Plushies/lizard.rsi
@@ -535,13 +541,13 @@
     sound: *PlushieLizardInversedSound
   - type: EmitSoundOnActivate
     sound: *PlushieLizardInversedSound
-  - type: EmitSoundOnCollide
-    sound: *PlushieLizardInversedSound
   - type: EmitSoundOnTrigger
     sound: *PlushieLizardInversedSound
-  - type: Edible
+  - type: Food
+    requiresSpecialDigestion: true
     useSound: *PlushieLizardInversedSound
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieLizardInversedSound
   - type: Extractable
     juiceSolution:
@@ -595,20 +601,24 @@
   - type: EmitSoundOnCollide
     sound: *PlushieDionaSound
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieDionaSound
-  - type: Edible
+  - type: Food
+    requiresSpecialDigestion: true
     useSound: *PlushieDionaSound
   - type: SolutionContainerManager
     solutions:
+      plushie:
+        maxVol: 1
       food:
-        maxVol: 11
+        maxVol: 10
         reagents:
         - ReagentId: Fiber
           Quantity: 10
   - type: RefillableSolution
-    solution: food
+    solution: plushie
   - type: SolutionContainerVisuals
-    solutionName: food
+    solutionName: plushie
     maxFillLevels: 1
     fillBaseName: plushie_diona
     changeColor: false
@@ -1008,9 +1018,11 @@
     sound: *PlushieVoxSound
   - type: EmitSoundOnCollide
     sound: *PlushieVoxSound
-  - type: Edible
+  - type: Food
+    requiresSpecialDigestion: true
     useSound: *PlushieVoxSound
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieVoxSound
   - type: Clothing
     quickEquip: false
@@ -1071,9 +1083,11 @@
     sound: *PlushieXenoSound
   - type: EmitSoundOnCollide
     sound: *PlushieXenoSound
-  - type: Edible
+  - type: Food
+    requiresSpecialDigestion: true
     useSound: *PlushieXenoSound
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieXenoSound
   - type: Clothing
     quickEquip: false

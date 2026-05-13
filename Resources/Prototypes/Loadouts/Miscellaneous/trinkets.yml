@@ -233,15 +233,6 @@
     - ClothingNeckGenderfluidPin
   groupBy: "pin"
 
-#Start Wayfarer-14
-- type: loadout
-  id: ClothingNeckPolyamoryPin
-  storage:
-    back:
-    - ClothingNeckPolyamoryPin
-  groupBy: "pin"
-#End Wayfarer-14
-
 # Canes
 # The white cane is intentionally not included here. Thats for the blind.
 - type: loadout
@@ -515,3 +506,12 @@
     back:
     - TowelColorMime
   groupBy: "towels"
+
+#Start Wayfarer-14
+- type: loadout
+  id: ClothingNeckPolyamoryPin
+  storage:
+    back:
+    - ClothingNeckPolyamoryPin
+  groupBy: "pin"
+#End Wayfarer-14

@@ -213,14 +213,13 @@ public sealed partial class MechSystem : SharedMechSystem
             // Frontier: snails and other simple mobs shouldn't access mech UI
             if (args.CanComplexInteract)
             {
-            var openUiVerb = new AlternativeVerb //can't hijack someone else's mech
-            {
-                Act = () => ToggleMechUi(uid, component, args.User),
-                Text = Loc.GetString("mech-ui-open-verb")
-            };
-            args.Verbs.Add(enterVerb);
-            args.Verbs.Add(openUiVerb);
-        }
+                var openUiVerb = new AlternativeVerb //can't hijack someone else's mech
+                {
+                    Act = () => ToggleMechUi(uid, component, args.User),
+                    Text = Loc.GetString("mech-ui-open-verb")
+                };
+                args.Verbs.Add(openUiVerb);
+            }
             // End Frontier
         }
         else if (!IsEmpty(component))

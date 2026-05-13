@@ -40,7 +40,7 @@
   id: CrateServiceReplacementLights
   parent: CrateGenericSteel
   name: replacement lights crate
-  description: May the light of Aether shine upon this station! Includes two boxes of twelve lights in both bulbs and tubes. #Wayfarer-14
+  description: May the light of Aether shine upon this station! Or at least, the light of twelve light tubes and twelve light bulbs. # Frontier: use correct quantities
   components:
   - type: StorageFill
     contents:
@@ -58,7 +58,7 @@
       - id: BoxLighttubeHoliday
       - id: BoxLighttubeHoliday
 
-#Start Wayfarer-14
+# Wayfarer
 - type: entity
   id: CrateServiceNavigationLights
   parent: CrateServiceHolidayLights
@@ -69,7 +69,7 @@
     contents:
     - id: BoxLighttubeNavRed
     - id: BoxLighttubeNavGreen
-#End Wayfarer-14
+# Wayfarer end
 
 - type: entity
   id: CrateMousetrapBoxes
@@ -159,26 +159,27 @@
   - type: StorageFill
     contents:
     - id: Paper
-      amount: 4 # DeltaV - make room for more folders & stickies & reams in the bureaucracy crate
+      amount: 12
+    - id: PaperOffice
+      amount: 6
     - id: Pen
       amount: 2
-    - id: BoxFolderClipboard
+    - id: BoxFolderClipboardEmpty
       amount: 2
     - id: HandLabeler
-    - id: BoxFolderBlue
-    - id: BoxFolderRed
-    - id: BoxFolderYellow
-      amount: 2 # DeltaV - more folders in the bureacracy crate
+    - id: BoxFolderBlueEmpty
+    - id: BoxFolderRedEmpty
+    - id: BoxFolderYellowEmpty
+    - id: NewtonCradle
+    - id: BoxEnvelope
+    - id: BrbSign
+    - id: RubberStampCaptain # Frontier
     # Begin DeltaV: sticky notes
     - id: PaperStickyNoteStackFilled
     - id: PaperStickyNoteStackFilledPink
     - id: PaperStickyNoteStackFilledGreen
     - id: PaperStickyNoteStackFilledBlue
     # End DeltaV: sticky notes
-    - id: NewtonCradle
-    - id: BoxEnvelope
-    - id: BrbSign
-    - id: RubberStampCaptain # Frontier
     # Start DeltaV - More folders & colored paper reams in the bureaucracy crate
     - id: BoxFolderBlack
       amount: 2
@@ -259,7 +260,7 @@
       - id: DrinkCreamCartonXL
       - id: DrinkDrGibbJug
       - id: DrinkEnergyDrinkJug
-      - id: DrinkGreenTeaJug
+      - id: DrinkGreenTeaJug # Frontier This is the stand in for safe tea.
       - id: DrinkIceJug
       - id: DrinkJuiceLimeCartonXL
       - id: DrinkJuiceOrangeCartonXL
@@ -269,7 +270,6 @@
       - id: DrinkSpaceMountainWindBottleFull
       - id: DrinkSpaceUpBottleFull
       - id: DrinkSugarJug
-      - id: DrinkTeaJug
       - id: DrinkTonicWaterBottleFull
       - id: DrinkWaterMelonJuiceJug
       - id: JugCaramexinin # Frontier: Caramexinin<JugCaramexinin

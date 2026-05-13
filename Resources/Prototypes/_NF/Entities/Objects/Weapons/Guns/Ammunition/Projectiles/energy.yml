@@ -9,7 +9,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 12
+        Heat: 10
 
 # Assault Rifles / Carbines
 - type: entity
@@ -38,7 +38,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 16
+        Heat: 15
 
 # Rifles
 - type: entity
@@ -50,7 +50,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 20
+        Heat: 17.5
 
 #region Disabler bolts
 - type: entity
@@ -83,7 +83,7 @@
       collection: WeakHit
     forceSound: true
   - type: StaminaDamageOnCollide
-    damage: 16 # 7 hits to stun WF reduction stamina rebalance
+    damage: 18
 
 - type: entity
   id: NFBulletDisablerLow
@@ -100,7 +100,7 @@
       collection: WeakHit
     forceSound: true
   - type: StaminaDamageOnCollide
-    damage: 13 # 8 hits to stun WF reduction stamina rebalance
+    damage: 14
 
 #region Kinetic bolts
 - type: entity
@@ -113,7 +113,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 14
+        Blunt: 12.5
         Structural: 30
   - type: Ammo
     muzzleFlash: HitscanEffect
@@ -136,7 +136,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 18
+        Blunt: 16.25
         Structural: 30
 
 - type: entity
@@ -155,8 +155,8 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 22
-        Structural: 35 #Wayfarer 30 -> 35
+        Blunt: 22.5
+        Structural: 30
   - type: PointLight
     color: "#ffffff"
   - type: MiningGatheringHard

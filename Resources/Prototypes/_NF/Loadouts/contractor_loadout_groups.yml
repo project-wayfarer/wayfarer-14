@@ -311,6 +311,8 @@
   minLimit: 0
   loadouts:
   - ContractorClothingOuterHardsuitVoidParamed
+  - ContractorClothingOuterCoatRobesGoblin # Goblin specific item
+  - ContractorClothingOuterEVASuitGoblin # Goblin specific item
   - ContractorClothingOuterHoodieGrey
   - ContractorClothingOuterVestHazard
   - ContractorClothingOuterApron
@@ -355,6 +357,14 @@
   - ContractorClothingOuterWinterRD
 #  - ContractorClothingOuterWinterCMO # Temp removed for MOM. Will return if replaced.
   - ContractorClothingOuterWinterCE
+  - ContractorClothingLongcoatBlack
+  - ContractorClothingLongcoatBrown
+  - ContractorClothingLongcoatNanoTrasen
+  - ContractorClothingLongcoatArashiLabs
+  - ContractorClothingLongcoatQM
+  - ContractorClothingLongcoatRD
+  - ContractorClothingLongcoatCE
+  - ContractorClothingLongcoatCaptain
 #  - ContractorClothingOuterCoatLabCmo # Temp removed for MOM. Will return if replaced.
   - ContractorClothingOuterCoatLabSeniorPhysician
   - ContractorClothingOuterCoatRD
@@ -424,6 +434,9 @@
   - ContractorClothingBeltHolster
   - ContractorClothingBeltChaplainSash
   - ContractorClothingBeltChaplainSashFilled
+  - ContractorTrashBagBlue
+  - ContractorTrashBag
+  - ContractorTrashBagBlueFilledTrash
   - ContractorBooksBag
   - ContractorChemBag
   - ContractorOreBag
@@ -666,7 +679,7 @@
   - ContractorClothingNeckCloakPan
   - ContractorClothingNeckCloakGay
   - ContractorClothingNeckCloakLesbian
-  - ContractorClothingNeckCloakPoly # Wayfarer-14
+  - ContractorClothingNeckCloakPoly # Wayfarer
   - ContractorBedsheetRainbow
   - ClothingNeckLGBTPin
   - ClothingNeckAllyPin
@@ -686,7 +699,7 @@
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
-  - ClothingNeckPolyamoryPin # Wayfarer-14
+  - ClothingNeckPolyamoryPin # Wayfarer
   - ContractorClothingNeckIFFNeutral
   - ContractorClothingNeckIFFGreen
   - ContractorClothingNeckIFFRed
@@ -828,6 +841,7 @@
   - ContractorBeachBall
   - ContractorCrayonBox
   - ContractorSoapNT
+  - ContractorClothingHeadHatHairflower
   - PlushieLizard
   - ContractorPlushieSharkGrey
   - ContractorPlushieSharkBlue
@@ -841,8 +855,27 @@
   - ContractorHoloGraffitiProjector # Punkish (might be annoying)
   - ContractorCrayonMagic
   - ContractorSprayPainterMagic
+  - ClothingNeckLGBTPin
+  - ClothingNeckAllyPin
+  - ClothingNeckAromanticPin
+  - ClothingNeckAsexualPin
+  - ClothingNeckAroacePin
+  - ClothingNeckBisexualPin
+  - ClothingNeckGayPin
+  - ClothingNeckIntersexPin
+  - ClothingNeckLesbianPin
+  - ClothingNeckNonBinaryPin
+  - ClothingNeckPansexualPin
+  - ClothingNeckPluralPin
+  - ClothingNeckOmnisexualPin
+  - ClothingNeckGenderqueerPin
+  - ClothingNeckGenderfluidPin
+  - ClothingNeckTransPin
+  - ClothingNeckAutismPin
+  - ClothingNeckGoldAutismPin
     # Bureaucracy
   - ContractorBoxFolderMedicalDoctor
+  - ContractorBoxFolderMixedPapers
   - ContractorBrbSign
   - ContractorHandLabeler
   - ContractorStampsApprovedDenied
@@ -889,6 +922,7 @@
   - ContractorHandheldCrewMonitor
   - ContractorHypoMini
   - ContractorBible
+  - ContractorBodycam
 
 - type: loadoutGroup
   id: ContractorFace
@@ -947,6 +981,9 @@
   loadouts:
   - ContractorClothingWalletLeatherBrown
   - ContractorClothingWalletLeatherBlack
+  - ContractorClothingWalletLeatherRed
+  - ContractorClothingWalletLeatherBlue
+  - ContractorClothingWalletLeatherGreen
   fallbacks:
   - ContractorClothingWalletLeatherBrown
 
@@ -971,6 +1008,7 @@
   - ContractorMedicalTrackingImplanter
   - ContractorLightImplanter
   - ContractorBikeHornImplanter
+  - ContractorWehImplanter
   - ContractorSadTromboneImplanter
   - ContractorMimePowersImplanter
   - ContractorBibleUserImplanter

@@ -9,7 +9,7 @@
   - ClothingOuterEVASuitEngineer
   - ClothingOuterEVASuitAtmosTech
   - NFFlash
-  - RpdAtmosRecipe #Wayfarer: Add RPD recipe
+  - RpdAtmosRecipe # Wayfarer: Add RPD recipe
 
 - type: latheRecipePack
   id: NFEngineeringStructureBoardsStatic
@@ -32,6 +32,7 @@
 - type: latheRecipePack
   id: NFEngineeringBoardsStatic
   recipes:
+  - IntercomElectronics
   - SmallThrusterMachineCircuitboard
   - SmallGyroscopeMachineCircuitboard
   - SolarControlComputerCircuitboard
@@ -54,6 +55,10 @@
   id: NFEngineeringMaterialsStatic
   recipes:
   #- NFSheetRGlassProcessed
+  - NFSheetPaperFromWood
+  - NFSheetPaperFromCardboard
+  - NFMaterialCardboard1Processed
+  - PaperFromSheetPaper
   - NFSheetPGlass1Processed
   - NFSheetRPGlass1Processed
   - NFSheetPlasteel1Processed
@@ -73,6 +78,10 @@
   - JawsOfLife
   - BorgModuleRCD
   - BorgModuleAdvancedTool
+  - ShipyardRCD
+  - ShipyardRCDAmmo
+  - ClothingHandsGlovesColorYellow
+  - NFClothingEyesGlassesMeson
 
 - type: latheRecipePack
   id: NFEngineeringBoards
@@ -84,7 +93,10 @@
   recipes:
   - GasMiningDrillMachineCircuitboard
   - GaslockFrameMachineCircuitboard
-#  - GaslockBigFrameMachineCircuitboard
+  - AlertsComputerCircuitboard
+  - PowerComputerCircuitboard
+  - AtmosMonitoringComputerCircuitboard
+  - SolarAssemblyFlatpack
 
 - type: latheRecipePack
   id: NFEngineering
@@ -98,5 +110,4 @@
   - SuperCapacitorStockPart
   - SuperMatterBinStockPart
   - PicoManipulatorStockPart
-  - NFWeaponParticleDecelerator
 #  - NFWeaponParticleDecelerator

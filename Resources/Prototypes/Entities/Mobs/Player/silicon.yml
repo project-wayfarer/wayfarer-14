@@ -384,11 +384,11 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+      - PositronicBrain
       borg_module:
-        - BorgModuleOperative
-        - BorgModuleL6C
-        - BorgModuleDoubleEsword
+      - BorgModuleOperative
+      - BorgModuleL6C
+      - BorgModuleDoubleEsword
   - type: ItemSlots
     slots:
       cell_slot:
@@ -400,13 +400,13 @@
   parent: PlayerBorgSyndicateAssaultBattery
   suffix: Ghost role
   components:
-    - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-assault-name
-      description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-assault-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
 
 - type: entity
   id: PlayerBorgSyndicateSaboteurBattery
@@ -417,11 +417,11 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+      - PositronicBrain
       borg_module:
-        - BorgModuleTool
-        - BorgModuleOperative
-        - BorgModuleSyndicateWeapon
+      - BorgModuleTool
+      - BorgModuleOperative
+      - BorgModuleSyndicateWeapon
   - type: ItemSlots
     slots:
       cell_slot:
@@ -433,13 +433,13 @@
   parent: PlayerBorgSyndicateSaboteurBattery
   suffix: Ghost role
   components:
-    - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-saboteur-name
-      description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-saboteur-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
 
 - type: entity
   name: syndicate invasion borg spawner
@@ -448,9 +448,9 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Structures/Decoration/banner.rsi
-        state: banner_syndicate
+    - state: red
+    - sprite: Structures/Decoration/banner.rsi
+      state: banner_syndicate
   - type: RandomSpawner
     prototypes:
     - PlayerBorgSyndicateAssaultGhostRole
@@ -502,11 +502,11 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+      - PositronicBrain
       borg_module:
-        - BorgModuleTool
-        # - BorgModuleFireExtinguisher # Frontier: jetpack is superior
-        - BorgModuleJetpack # Frontier
+      - BorgModuleTool
+      # - BorgModuleFireExtinguisher # Frontier: jetpack is superior
+      - BorgModuleJetpack # Frontier
   - type: ItemSlots
     slots:
       cell_slot:
@@ -520,14 +520,14 @@
   id: PlayerBorgDerelictGhostRole
   suffix: Ghost role
   components:
-    - type: GhostRole
-      name: ghost-role-information-derelict-cyborg-name
-      description: nf-ghost-role-information-derelict-cyborg-description # Frontier
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-      reregister: false
-    - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: ghost-role-information-derelict-cyborg-name
+    description: nf-ghost-role-information-derelict-cyborg-description # Frontier
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+    reregister: false
+  - type: GhostTakeoverAvailable
 
 - type: entity
   parent: JanitorBorgChassisDerelict

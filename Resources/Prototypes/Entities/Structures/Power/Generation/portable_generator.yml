@@ -134,7 +134,7 @@
     Runs off solid plasma sheets and is rated for up to 25 kW.
   parent: PortableGeneratorSwitchableBase
   id: PortableGeneratorPacman
-  suffix: Plasma, 15 kW
+  suffix: Plasma, 20 kW #Fronter 20>15
   components:
     - type: Sprite
       layers:
@@ -158,18 +158,18 @@
       board: PortableGeneratorPacmanMachineCircuitboard
     - type: FuelGenerator
       minTargetPower: 1000
-      maxTargetPower: 25000
-      targetPower: 15000
-      optimalPower: 15000
-      # 90 minutes at max output (halved burn rate)
-      optimalBurnRate: 0.0055555
+      maxTargetPower: 30000 #Frontier 25000<30000
+      targetPower: 20000 #Frontier 15000<20000
+      optimalPower: 20000 #Frontier 15000<20000
+      # 45 minutes at max output
+      optimalBurnRate: 0.011111
       # a decent curve
       fuelEfficiencyConstant: 0.95
     - type: SolidFuelGeneratorAdapter
       fuelMaterial: FuelGradePlasma # Frontier: Plasma<FuelGradePlasma
       multiplier: 0.01
     - type: MaterialStorage
-      storageLimit: 6000
+      storageLimit: 3000
       materialWhiteList: [Plasma, FuelGradePlasma, RawPlasma, Skrungle] # Frontier: add FuelGradePlasma, RawPlasma, Scrungle
     - type: PortableGenerator
       startChance: 0.8
@@ -193,6 +193,7 @@
     # Frontier: magnet pickup, fuel adapter
     - type: MaterialStorageMagnetPickup
       range: 0.30
+      magnetEnabled: true # Frontier
     - type: FuelGradeAdapter
       conversions:
       - input: Plasma
@@ -240,15 +241,15 @@
       maxTargetPower: 50000
       targetPower: 30000
       optimalPower: 30000
-      # 90 minutes at full power (halved burn rate)
-      optimalBurnRate: 0.00555555
+      # 45 minutes at full power
+      optimalBurnRate: 0.0111111
       # still decent power curve
       fuelEfficiencyConstant: 0.75
     - type: SolidFuelGeneratorAdapter
       fuelMaterial: FuelGradeUranium # Frontier: Uranium<FuelGradeUranium
       multiplier: 0.01
     - type: MaterialStorage
-      storageLimit: 6000
+      storageLimit: 3000
       materialWhiteList: [Uranium, FuelGradeUranium, RawUranium, Skrungle] # Frontier: add FuelGradeUranium, RawUranium, Skrungle
     - type: PortableGenerator
     - type: UpgradePowerSupplier
@@ -267,6 +268,7 @@
     # Frontier: magnet pickup, fuel adapter
     - type: MaterialStorageMagnetPickup
       range: 0.30
+      magnetEnabled: true # Frontier
     - type: FuelGradeAdapter
       conversions:
       - input: Uranium
@@ -331,8 +333,8 @@
       minTargetPower: 1000
       optimalPower: 6000 # Frontier - 2000<6000
       maxTargetPower: 15000
-      # 60~ minutes at full tank (halved burn rate)
-      optimalBurnRate: 0.05555555
+      # 30~ minutes at full tank.
+      optimalBurnRate: 0.11111111
       # Shallow curve
       fuelEfficiencyConstant: 0.5
     - type: ChemicalFuelGeneratorAdapter
@@ -342,7 +344,7 @@
     - type: SolutionContainerManager
       solutions:
         tank:
-          maxVol: 400 # Frontier - 50<400 (doubled)
+          maxVol: 200 # Frontier - 50<200
     - type: RefillableSolution
       solution: tank
     - type: PortableGenerator
@@ -356,11 +358,7 @@
           nodeGroupID: Apc
     - type: PowerMonitoringDevice
       group: Generator
-      # Wayfarer changed to allow MV output
-      loadNodes:
-      - output_mv
-      - output
-      # End Wayfarer
+      loadNode: output
       sprite: Structures/Power/Generation/portable_generator.rsi
       state: portgen3
     - type: PowerSupplier

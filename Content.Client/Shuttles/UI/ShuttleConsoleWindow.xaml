@@ -3,7 +3,7 @@
                       xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
                       Title="{Loc 'shuttle-console-window-title'}"
                       SetSize="960 797"
-                      MinSize="960 797"><!-- Wayfarer: 762<797 -->
+                      MinSize="960 797"><!-- Wayfarer: Set-Size: 960 762<960 797, MinSize: 480 381<960 797 -->
     <BoxContainer Orientation="Vertical">
         <!-- Top row mode buttons -->
         <BoxContainer Name="ModeButtons"

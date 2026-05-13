@@ -100,12 +100,6 @@
       collection: ReptilianHiss # Imp
     MonkeyScreeches: # Frontier
       collection: MonkeyScreeches # Frontier
-    Gurgle:
-      collection: LizardGurgle
-    Chirp:
-      collection: LizardChirp
-    Hiss:
-      path: /Audio/_Impstation/Voice/Reptilian/reptillian_hiss1.ogg
     Honk:
       collection: BikeHorn
     Whistle:
@@ -122,6 +116,14 @@
       collection: DeathGasp
     Belch: # Frontier
       collection: Belch # Frontier
+    # Unknown fork
+    Gurgle:
+      collection: LizardGurgle
+    Chirp:
+      collection: LizardChirp
+    Hiss:
+      path: /Audio/_Impstation/Voice/Reptilian/reptillian_hiss1.ogg
+    # Unknown fork end
     # Wayfarer: Fix Sigh
     Sigh:
       collection: MaleSigh
@@ -140,12 +142,6 @@
       collection: ReptilianHiss # Imp
     MonkeyScreeches: # Frontier
       collection: MonkeyScreeches # Frontier
-    Gurgle:
-      collection: LizardGurgle
-    Chirp:
-      collection: LizardChirp
-    Hiss:
-      path: /Audio/_Impstation/Voice/Reptilian/reptillian_hiss1.ogg
     Honk:
       collection: BikeHorn
     Whistle:
@@ -162,6 +158,14 @@
       collection: FemaleDeathGasp
     Belch: # Frontier
       collection: Belch # Frontier
+    Gurgle:
+      collection: LizardGurgle
+    Chirp:
+      collection: LizardChirp
+    # Unknown fork
+    Hiss:
+      path: /Audio/_Impstation/Voice/Reptilian/reptillian_hiss1.ogg
+    # Unknown fork end
     # Wayfarer: Fix Sigh
     Sigh:
       collection: FemaleSigh
@@ -278,22 +282,26 @@
       path: /Audio/Voice/Vox/vox_cough.ogg
     Sigh:
       path: /Audio/Voice/Vox/vox_sigh.ogg
-    Click:
-      path: /Audio/Voice/Vox/vox_click.ogg
+    MonkeyScreeches: # Frontier
+      collection: MonkeyScreeches # Frontier
     Honk:
       collection: BikeHorn
     Crying:
-      collection: VoxCry # Imp sounds
-      params: # Imp
-        volume: -7
+      path: /Audio/Voice/Vox/vox_cry.ogg
     Weh:
       collection: Weh
     Hew:
       collection: Hew
     Gasp:
-      collection: VoxGasp # Combined DeltaV and impstation sounds
+      path: /Audio/Effects/Gasp/vox_gasp.ogg
     DefaultDeathgasp:
-      collection: VoxDeathgasp # Combined DeltaV and impstation sounds
+      path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
+    Belch: # Frontier
+      collection: Belch # Frontier
+    # Unknown fork
+    Click:
+      path: /Audio/Voice/Vox/vox_click.ogg
+    # Unknown fork end
     # Begin Impstation Additions
     Chitter:
       collection: VoxChitter # Combined DeltaV and impstation sounds

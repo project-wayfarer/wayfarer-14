@@ -6,17 +6,17 @@
   name: death rattle implant
   categories: [ HideSpawnMenu ]
   components:
-    - type: SubdermalImplant
-      whitelist:
-        components:
-        - MobState # admeme implanting a chair with rattle implant needs to give the chair mobstate so it can die first
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Critical
-      - Dead
-      preventVore: true
-    - type: RattleOnTrigger
-      targetUser: true
+  - type: SubdermalImplant
+    whitelist:
+      components:
+      - MobState # admeme implanting a chair with rattle implant needs to give the chair mobstate so it can die first
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Critical
+    - Dead
+  - type: RattleOnTrigger
+    targetUser: true
+
 
 - type: entity
   parent: NFBaseDeathRattleImplant
@@ -104,7 +104,7 @@
     permanent: true
   - type: AddComponentsImplant
     componentsToAdd:
-      - type: BibleUser
+    - type: BibleUser
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -151,14 +151,14 @@
   description: This implant lets the user weh anywhere at any time.
   categories: [ HideSpawnMenu ]
   components:
-    - type: SubdermalImplant
-      implantAction: ActionActivateWehImplant
-    - type: TriggerOnActivateImplant
-    - type: EmitSoundOnTrigger
-      sound:
-        collection: Weh
-        params:
-          variation: 0.125
+  - type: SubdermalImplant
+    implantAction: ActionActivateWehImplant
+  - type: TriggerOnActivateImplant
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: Weh
+      params:
+        variation: 0.125
 
 - type: entity
   parent: BaseSubdermalImplant

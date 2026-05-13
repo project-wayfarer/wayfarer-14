@@ -194,7 +194,7 @@ namespace Content.Server.Lathe
                 return false;
             quantity = int.Min(quantity, MaxItemsPerRequest);
 
-            // Coyote Start: We comment out these two checks for the two methods below.
+            // Coyote: We comment out these two checks for the two methods below.
             /*
             if (!CanProduce(uid, recipe, quantity, component))
                 return false;
@@ -213,7 +213,7 @@ namespace Content.Server.Lathe
                 return false;
             if (!DeductMaterials(uid, component, recipe, quantity)) // Coyote: deduct materials (buffer first, then storage)
                 return false;
-            // Coyote End
+            // Coyote end
 
             if (component.Queue.Last is { } node && node.ValueRef.Recipe == recipe.ID)
                 node.ValueRef.ItemsRequested += quantity;
@@ -677,9 +677,8 @@ namespace Content.Server.Lathe
         #endregion
         // End Frontier
 
+        // Wayfarer Start
         #region Wayfarer
-        /// Wayfarer Start
-
         /// <summary>
         /// Refunds materials for unprinted items in a batch
         /// </summary>
@@ -703,8 +702,7 @@ namespace Content.Server.Lathe
                 _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
             }
         }
-
-        // End Wayfarer
         #endregion
+        // Wayfarer end
     }
 }

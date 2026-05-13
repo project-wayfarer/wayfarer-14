@@ -5,7 +5,7 @@
   playTimeTracker: JobStc
   startingGear: StcGear
   alwaysUseSpawner: true
-  whitelisted: true
+  whitelisted: true # Wayfarer
   canBeAntag: false
   icon: "JobIconStc"
   supervisors: job-supervisors-sr
@@ -19,10 +19,8 @@
   - Frontier
   - StationTrafficController
   special:
-  # Wayfarer: STC should have mindshield
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, NFSDTrackingImplant ]
-  # Wayfarer End
+    implants: [ MindShieldImplant, TrackingImplant, NFSDTrackingImplant ] # Wayfarer: STC should have mindshield
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
