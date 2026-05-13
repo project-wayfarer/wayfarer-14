@@ -4,9 +4,9 @@
   description: job-description-bailiff
   playTimeTracker: JobWarden
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 259200 # 72 hours as Deputy
+    - !type:DepartmentTimeRequirement # Wayfarer: RoleTimeRequirement<DepartmentTimeRequirement
+      department: Security # Wayfarer: role<department
+      time: 259200 # 72 hours as CGP
     - !type:RoleTimeRequirement
       role: JobSeniorOfficer
       time: 86400 # 24 hours as Senior Officer
