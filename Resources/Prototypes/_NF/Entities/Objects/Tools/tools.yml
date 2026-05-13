@@ -5,7 +5,7 @@
   description: An advanced construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
   components:
   - type: RCD
-  - type: ShipyardRCD #Wayfarer:isShipyardRCD: true > type: ShipyardRCD
+    isShipyardRCD: true
   - type: Sprite
     state: icon-shipyard
   - type: GridAccess
@@ -25,7 +25,7 @@
   description: Ammo cartridge for a shipyard RCD.
   components:
   - type: RCDAmmo
-  - type: ShipyardRCD #Wayfarer:isShipyardRCD: true > type: ShipyardRCD
+    isShipyardRCDAmmo: true
   - type: Sprite
     state: ammo-shipyard
   - type: Item

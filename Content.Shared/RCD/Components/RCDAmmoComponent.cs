@@ -1,14 +1,3 @@
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-//
-// Wayfarer: Ported from goobstation to wayfarer https://github.com/Goob-Station/Goob-Station
 using Content.Shared.RCD.Systems;
 using Robust.Shared.GameStates;
 
@@ -24,4 +13,11 @@ public sealed partial class RCDAmmoComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public int Charges = 30;
+
+    /// <summary>
+    /// ~~~ Frontier ~~~
+    /// A flag that limits RCD to the authorized ships.
+    /// </summary>
+    [DataField("isShipyardRCDAmmo"), AutoNetworkedField]
+    public bool IsShipyardRCDAmmo;
 }

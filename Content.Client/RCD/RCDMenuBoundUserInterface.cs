@@ -1,13 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-//
-// Wayfarer: Ported from goobstation to wayfarer https://github.com/Goob-Station/Goob-Station
-
 using Content.Client.Popups;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.RCD;
@@ -34,11 +24,6 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             ["Airlocks"] = ("rcd-component-airlocks", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/airlocks.png"))),
             ["Electrical"] = ("rcd-component-electrical", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/multicoil.png"))),
             ["Lighting"] = ("rcd-component-lighting", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Radial/RCD/lighting.png"))),
-            // Goobstation - RPD (13 of stars)
-            ["Piping"] = ("rcd-component-piping", new SpriteSpecifier.Texture(new ResPath("/Textures/_Goobstation/Interface/Radial/RPD/fourway.png"))), //Wayfarer: /Textures/Interface/Radial/RCP  -> /Textures/_Goobstation/
-            ["AtmosphericUtility"] = ("rcd-component-atmosphericutility", new SpriteSpecifier.Texture(new ResPath("/Textures/_Goobstation/Interface/Radial/RPD/port.png"))), //Wayfarer: /Textures/Interface/Radial/RCP  -> /Textures/_Goobstation/
-            ["PumpsValves"] = ("rcd-component-pumpsvalves", new SpriteSpecifier.Texture(new ResPath("/Textures/_Goobstation/Interface/Radial/RPD/pump_volume.png"))), //Wayfarer: /Textures/Interface/Radial/RCP  -> /Textures/_Goobstation/
-            ["Vents"] = ("rcd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/_Goobstation/Interface/Radial/RPD/vent_passive.png"))), //Wayfarer: /Textures/Interface/Radial/RCP  -> /Textures/_Goobstation/
         };
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

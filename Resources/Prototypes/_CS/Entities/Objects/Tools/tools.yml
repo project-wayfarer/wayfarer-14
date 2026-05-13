@@ -4,8 +4,8 @@
   id: PirateRCD
   description: A blackmarket construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
   components:
-  - type: ShipyardRCD #Wayfarer:isShipyardRCD: true > type: ShipyardRCD
   - type: RCD
+    isShipyardRCD: true
     availablePrototypes:
     - WallMining
     - WallMiningDiagonal
@@ -46,8 +46,8 @@
   id: NFSDRCD
   description: A security construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
   components:
-  - type: ShipyardRCD #Wayfarer:isShipyardRCD: true > type: ShipyardRCD
   - type: RCD
+    isShipyardRCD: true
     availablePrototypes:
     - WallPlastitanium
     - WallPlastitaniumDiagonal
