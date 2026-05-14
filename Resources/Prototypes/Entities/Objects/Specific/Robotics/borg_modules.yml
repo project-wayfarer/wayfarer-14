@@ -1,6 +1,6 @@
 - type: entity
   id: BaseBorgModule
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemDeviceTiny] # Wayfarer: add RecyclableItemDeviceTiny
   name: borg module
   description: A piece of tech that gives cyborgs new abilities.
   abstract: true

@@ -81,7 +81,7 @@
           volume: -2
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemPlasticTiny] # Wayfarer: add RecyclableItemPlasticTiny
   id: VoiceTrigger
   name: voice trigger
   description: Adds a machine link that is triggered by vocal keywords.
