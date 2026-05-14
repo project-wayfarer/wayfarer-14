@@ -114,7 +114,7 @@
     sprite: Objects/Fun/Darts/dart_yellow.rsi
 
 - type: entity
-  parent: [Dart, BaseC3SyndicateContraband] # Frontier: added BaseC3SyndicateContraband
+  parent: [Dart, BaseBMContraband] # Frontier: added BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: HypoDart
   suffix: HypoDart
   components:

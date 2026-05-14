@@ -553,7 +553,7 @@
 - type: entity
   parent:
   - VehicleHoverbikeMailcarrier
-  - BaseC2ContrabandUnredeemable
+  - BaseCGPContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NFVehicleHoverbikeNfsd
   name: CGP hoverbike
   description: A CGP issued turbine with bike handles. Very safe.
@@ -737,7 +737,7 @@
 - type: entity
   parent:
   - VehicleHoverbikeMailcarrier
-  - BaseC3SyndicateContraband
+  #- BaseC3SyndicateContraband # Wayfarer
   id: VehicleHoverbikeSyndicate
   name: syndicate hoverbike
   description: This thing screams style. And war crimes.

@@ -43,7 +43,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseC3SyndicateContraband, NFBaseWeaponFrameRevolver ]
+  parent: [ NFBaseWeaponFrameRevolver ] # Wayfarer: Remove contraband
   id: NFBaseWeaponFrameRevolverGorlex
   components:
   - type: Gun
@@ -57,7 +57,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseC3PirateContraband, NFBaseWeaponFrameRevolver ]
+  parent: [ BaseBMContraband, NFBaseWeaponFrameRevolver ] # Wayfarer: BaseC3PirateContraband<BaseBMContraband
   id: NFBaseWeaponFrameRevolverSteelbolt
   components:
   - type: Gun

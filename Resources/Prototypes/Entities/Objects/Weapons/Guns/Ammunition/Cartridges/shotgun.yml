@@ -2,7 +2,7 @@
   categories: [ HideSpawnMenu ] # Frontier
   id: BaseShellShotgun
   name: shell (.50)
-  parent: [ BaseCartridge, BaseC1Contraband ] # Frontier: added BaseC1Contraband
+  parent: BaseCartridge # Frontier: added BaseC1Contraband # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag

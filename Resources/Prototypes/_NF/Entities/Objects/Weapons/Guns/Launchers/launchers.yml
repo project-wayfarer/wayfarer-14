@@ -72,14 +72,14 @@
 
 - type: entity
   suffix: EMP
-  parent: [ BaseC2ContrabandUnredeemable, NFWeaponLauncherRocket ]
+  parent: [ BaseDDContraband, NFWeaponLauncherRocket ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseDDContraband
   id: NFWeaponLauncherRocketEmp
   components:
   - type: BallisticAmmoProvider
     proto: NFCartridgeRocketEmp
 
 - type: entity
-  parent: [ BaseC1Contraband, NFWeaponLauncherChinaLake ]
+  parent: [ NFWeaponLauncherChinaLake ] # Wayfarer: Removed contraband
   id: NFWeaponLauncherMail
   name: RPDS
   description: The Rapid Parcel Delivery System, a mail carrier's right hand. Launches mail capsules.
@@ -103,7 +103,7 @@
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
 
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponLauncherChamber40mmGrenadesNfsdSingleShot, NFBaseWeaponFrameLauncherNanotrasen ]
+  parent: [ BaseCGPContraband, NFBaseWeaponLauncherChamber40mmGrenadesNfsdSingleShot, NFBaseWeaponFrameLauncherNanotrasen ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NFWeaponLauncherGrenadeNfsd
   name: NGP-40 projector
   description: Single shot grenade launcher able to lob both grenades and darts!

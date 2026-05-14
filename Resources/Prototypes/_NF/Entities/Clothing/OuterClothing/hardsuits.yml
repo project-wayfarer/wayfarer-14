@@ -225,7 +225,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdBrigmedic
 
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, ClothingOuterHardsuitJuggernaut] # Jugger Suit
+  parent: [BaseCGPContraband, ClothingOuterHardsuitJuggernaut] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingOuterHardsuitNfsdExperimental
   name: CGP experimental combat suit
   description: A very heavily armored CGP suit. This space proof marvel of engineering uses state of the art alloys to provide immense protection while sacrificing little mobility.
@@ -380,7 +380,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitTacticalMaid
 
 - type: entity
-  parent: [BaseC3PirateContraband, ClothingOuterHardsuitBaseNF, ContrabandClothing]
+  parent: [BaseC3PirateContraband, ClothingOuterHardsuitBaseNF, ContrabandClothing] # Wayfarer: BaseC3PirateContraband<BaseBMContraband
   id: ClothingOuterHardsuitPirateElite
   name: elite pirate hardsuit
   description: An ancient elite armored hardsuit, designed by an unknown bearded man and built like a brick house.

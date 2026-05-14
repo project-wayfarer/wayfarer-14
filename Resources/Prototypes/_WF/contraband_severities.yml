@@ -19,3 +19,8 @@
 - type: contrabandSeverity
   id: BlackMarket
   examineText: contraband-examine-text-blackmarket
+
+- type: contrabandSeverity
+  id: CommandOnly
+  examineText: contraband-examine-text-commandonly
+  showDepartmentsAndJobs: true

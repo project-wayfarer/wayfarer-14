@@ -3,7 +3,7 @@
 - type: entity
   id: NFBaseMagazinePistol45
   name: pistol magazine (.45 pistol)
-  parent: [ BaseC1Contraband, BaseMagazineMagnum, RecyclableItemSteelTiny ]
+  parent: [ BaseMagazineMagnum, RecyclableItemSteelTiny ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag
@@ -36,7 +36,7 @@
 - type: entity
   id: NFBaseMagazinePistolSubMachineGun45
   name: smg magazine (.45 pistol)
-  parent: [ BaseC1Contraband, BaseMagazineMagnum, RecyclableItemSteelTiny ]
+  parent: [ BaseMagazineMagnum, RecyclableItemSteelTiny ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag

@@ -1,11 +1,11 @@
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, ClusterGrenade]
+  parent: [BaseCGPContraband, ClusterGrenade] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClusterGrenadeNfsd
 
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, GrenadeIncendiary]
+  parent: [BaseCGPContraband, GrenadeIncendiary] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: GrenadeIncendiaryNfsd
 
 - type: entity
-  parent: [BaseC2ContrabandUnredeemable, GrenadeShrapnel]
+  parent: [BaseCGPContraband, GrenadeShrapnel] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: GrenadeShrapnelNfsd

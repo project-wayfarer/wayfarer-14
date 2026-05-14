@@ -3,7 +3,7 @@
 - type: entity
   id: NFBaseSpeedLoaderPistol45
   name: "speed loader (.45 pistol)"
-  parent: [ BaseC1Contraband, BaseItem, RecyclableItemSteelTiny ]
+  parent: [ BaseItem, RecyclableItemSteelTiny ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag

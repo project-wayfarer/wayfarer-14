@@ -1,7 +1,7 @@
 - type: entity
   id: ClothingEyesArcadiaVisor
   name: arcadia visor
-  parent: [ ClothingEyesBase, BaseC3ContrabandNoValue, ContrabandClothing ]
+  parent: [ ClothingEyesBase ] # Wayfarer: Remove contraband
   description: A visor produced by Arcadia Industries, with some high tech optics systems built in.
   components:
   - type: Sprite
@@ -27,7 +27,7 @@
   - type: VisionCorrection
   - type: HelmetAccessory # Wayfarer :>
     rsi:
-      sprite: _WF/Clothing/Helmetaddons/Goggles/pilotgoggles.rsi 
+      sprite: _WF/Clothing/Helmetaddons/Goggles/pilotgoggles.rsi
       state: helmet
 
 - type: entity
@@ -60,5 +60,5 @@
   - type: ShowJobIcons
   - type: HelmetAccessory # Wayfarer :>
     rsi:
-      sprite: _WF/Clothing/Helmetaddons/Goggles/engigoggles.rsi 
+      sprite: _WF/Clothing/Helmetaddons/Goggles/engigoggles.rsi
       state: helmet

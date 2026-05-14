@@ -437,7 +437,7 @@
 
 # region Expedition
 - type: entity
-  parent: [ BaseC3Contraband, NFBaseBlueprint ]
+  parent: [ BaseBMContraband, NFBaseBlueprint ] # Wayfarer: BaseC3Contraband<BaseBMContraband
   id: NFBaseBlueprintExpedition
   abstract: true
   components:

@@ -25,7 +25,7 @@
 #Shortswords
 - type: entity
   name: cutlass
-  parent: [ BaseSword, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband
+  parent: BaseSword # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: Cutlass
   description: A wickedly curved blade, often seen in the hands of space pirates.
   components:
@@ -50,7 +50,7 @@
 
 - type: entity
   name: machete
-  parent: [ BaseSword, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband
+  parent: [ BaseSword ] # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: Machete
   description: A large, vicious looking blade.
   components:
@@ -76,7 +76,7 @@
 #Longswords
 - type: entity
   name: captain's sabre
-  parent: [ BaseSword, BaseC1Contraband ] # Frontier: BaseCommandContraband<BaseC1Contraband
+  parent: BaseSword # Frontier: BaseCommandContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: CaptainSabre
   description: A ceremonial weapon belonging to the captain of the station.
   components:
@@ -115,7 +115,7 @@
 
 - type: entity
   name: katana
-  parent: [ BaseSword, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband
+  parent: [ BaseSword ] # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: Katana
   description: Ancient craftwork made with not so ancient plasteel.
   components:
@@ -180,7 +180,7 @@
 #Greatswords
 - type: entity
   name: claymore
-  parent: [ BaseSword, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband
+  parent: BaseSword # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: Claymore
   description: An ancient war blade.
   components:

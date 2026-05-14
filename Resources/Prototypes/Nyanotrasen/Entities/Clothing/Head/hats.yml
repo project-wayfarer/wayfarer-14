@@ -65,7 +65,7 @@
         Piercing: 0.95
 
 - type: entity
-  parent: [ClothingHeadBase, BaseC2Contraband] # Frontier: added BaseC2Contraband
+  parent: [ClothingHeadBase] # Frontier: added BaseC2Contraband # Wayfarer: Removed contraband
   id: ClothingHeadHelmetKabuto
   name: kabuto and menpo
   description: A modern replica of a kabuto and menpo.

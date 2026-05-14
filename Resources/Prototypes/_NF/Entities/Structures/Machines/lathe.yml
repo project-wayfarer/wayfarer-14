@@ -363,7 +363,7 @@
 - type: entity
   id: MercenaryTechFabHacked
   parent:
-  - BaseC3Contraband
+  - BaseBMContraband # Wayfarer: BaseC3Contraband<BaseBMContraband
   - MercenaryTechFab
   - BaseHyperlathe
   - PunkHoloGraffitiOverlay # Prototype can be located at /Resources/Prototypes/_NF/Entities/Structures/Holographic/graffiti.yml

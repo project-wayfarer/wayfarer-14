@@ -29,7 +29,7 @@
 #region Pulse
 - type: entity
   id: NFWeaponEnergyRiflePulse
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponEnergyRifleHitScanPulse, NFBaseWeaponFrameEnergyRifleNanotrasen ]
+  parent: [ BaseCGPContraband, NFBaseWeaponEnergyRifleHitScanPulse, NFBaseWeaponFrameEnergyRifleNanotrasen ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   name: pulse rifle
   description: |-
     A weapon that is almost as infamous as its users. On the handle is a label that says 'for authorized use only.'
@@ -45,7 +45,7 @@
 #region Other
 - type: entity
   name: emp emitter
-  parent: [BaseC2ContrabandUnredeemable, NFBaseWeaponEnergyRifleEmp, NFBaseWeaponFrameEnergyRifleNanotrasen ]
+  parent: [BaseCGPContraband, NFBaseWeaponEnergyRifleEmp, NFBaseWeaponFrameEnergyRifleNanotrasen ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: WeaponEmpEmitter
   description: |-
     Releases electromagnetic pulses that disrupt or damage many electronic devices or drain power cells, has a slow self charging nuclear powered battery.

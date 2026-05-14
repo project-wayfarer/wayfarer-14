@@ -1,6 +1,6 @@
 - type: entity
   name: kanabou
-  parent: [BaseC2Contraband, BaseItem] # Frontier: added BaseC2Contraband
+  parent: [BaseItem] # Frontier: added BaseC2Contraband # Wayfarer: Removed contraband
   id: Kanabou
   description: The classic oni weapon, for those that forgo subtlety.
   components:

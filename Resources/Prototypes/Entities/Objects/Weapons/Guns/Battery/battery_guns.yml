@@ -104,7 +104,7 @@
 
 - type: entity
   name: svalinn laser pistol
-  parent: [ BaseWeaponPowerCellSmall, BaseC1Contraband ] # Frontier: BaseSecurityContraband<BaseC1Contraband
+  parent: BaseWeaponPowerCellSmall # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponLaserSvalinn
   description: A cheap and widely used laser pistol.
   components:
@@ -129,7 +129,7 @@
 
 - type: entity
   name: retro laser blaster
-  parent: [ BaseWeaponBatterySmall, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband
+  parent: BaseWeaponBatterySmall # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponLaserGun
   description: A civilian grade weapon using light amplified by the stimulated emission of radiation.
   components:
@@ -156,7 +156,7 @@
 
 - type: entity
   name: makeshift laser pistol
-  parent: [BaseWeaponBatterySmall, BaseC1Contraband] # Frontier: BaseMinorContraband>BaseC1Contraband
+  parent: BaseWeaponBatterySmall # Frontier: BaseMinorContraband>BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponMakeshiftLaser
   description: Better pray it won't burn your hands off. At least it's legal.
   components:
@@ -266,7 +266,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: pulse pistol
-  parent: [BaseWeaponBatterySmall, BaseC2ContrabandUnredeemable] # Frontier: BaseCentcommContraband>BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponBatterySmall, BaseCGPContraband] # Frontier: BaseCentcommContraband>BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: WeaponPulsePistol
   description: A state of the art energy pistol favoured as a sidearm by the NT operatives. On the handle is a label that says 'for authorized use only.'
   components:
@@ -303,7 +303,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: pulse carbine
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: added BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCGPContraband] # Frontier: added BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: WeaponPulseCarbine
   description: A high tech energy carbine favoured by the NT-ERT operatives. On the handle is a label that says 'for authorized use only.'
   components:
@@ -342,7 +342,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: pulse rifle
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseCentcommContraband>BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCGPContraband] # Frontier: BaseCentcommContraband>BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: WeaponPulseRifle
   description: A weapon that is almost as infamous as its users. On the handle is a label that says 'for authorized use only.'
   components:
@@ -379,7 +379,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: laser cannon
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCGPContraband] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon. On the handle is a label that says 'for authorized use only.' # Frontier: added label sentence
   components:
@@ -447,7 +447,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: x-ray cannon
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseC3Contraband] # Frontier: BaseSecurityContraband<BaseC3Contraband
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseBMContraband] # Frontier: BaseSecurityContraband<BaseC3Contraband # Wayfarer: BaseC3Contraband<BaseBMContraband
   id: WeaponXrayCannon
   description: An illegal and experimental weapon that uses concentrated x-ray energy against its target.
   components:
@@ -524,7 +524,7 @@
 
 - type: entity
   name: disabler
-  parent: [ WeaponDisablerPractice, BaseC1Contraband ] # Frontier: BaseSecurityCommandContraband<BaseC1Contraband
+  parent: WeaponDisablerPractice # Frontier: BaseSecurityCommandContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponDisabler
   description: A civilian grade self-defense weapon that exhausts organic targets, weakening them until they collapse.
   components:
@@ -553,7 +553,7 @@
 
 - type: entity
   name: disabler SMG
-  parent: [ BaseWeaponBattery, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ BaseWeaponBattery, BaseMilitaryContraband ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: WeaponDisablerSMG
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse. On the handle is a label that says 'for authorized use only.'
   components:
@@ -594,7 +594,7 @@
 
 - type: entity
   name: taser
-  parent: [ BaseWeaponBatterySmall, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ BaseWeaponBatterySmall, BaseMilitaryContraband ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: WeaponTaser
   description: A low-capacity, energy-based stun gun used by security teams to subdue targets at close range. On the handle is a label that says 'for authorized use only.'
   components:
@@ -648,7 +648,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: antique laser pistol
-  parent: [BaseWeaponBatterySmall, BaseC1Contraband] # Frontier: BaseGrandTheftContraband<BaseC1Contraband
+  parent: BaseWeaponBatterySmall # Frontier: BaseGrandTheftContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponAntiqueLaser
   description: This is an antique laser pistol. All craftsmanship is of the highest quality. It is decorated with a mahogany grip and chrome filigree. The object menaces with spikes of energy. On the item is an image of a captain and a clown. The clown is dead. The captain is striking a heroic pose.
   components:
@@ -697,7 +697,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: advanced laser pistol
-  parent: [ BaseWeaponBatterySmall, BaseC1Contraband ] # Frontier: BaseSecurityContraband<BaseC1Contraband
+  parent: [ BaseWeaponBatterySmall ] # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponAdvancedLaser
   description: An experimental civilian grade high-energy laser pistol with a self-charging nuclear battery.
   components:
@@ -734,7 +734,7 @@
 
 - type: entity
   name: C.H.I.M.P. handcannon
-  parent: [BaseWeaponBatterySmall, BaseC1Contraband] # Frontier: BaseScienceContraband<BaseC1Contraband
+  parent: BaseWeaponBatterySmall # Frontier: BaseScienceContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponPistolCHIMP
   description: Just because it's a little C.H.I.M.P. doesn't mean it can't punch like an A.P.E.
   components:
@@ -784,7 +784,7 @@
 
 - type: entity
   name: experimental C.H.I.M.P. handcannon
-  parent: [BaseC3SyndicateContraband, WeaponPistolCHIMP] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseBMContraband, WeaponPistolCHIMP] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: WeaponPistolCHIMPUpgraded
   description: This C.H.I.M.P. seems to have a greater punch than usual...
   components:
@@ -805,7 +805,7 @@
 
 - type: entity
   name: eye of a behonker
-  parent: [BaseWeaponBatterySmall, BaseC3Contraband] # Frontier: added BaseC3Contraband
+  parent: [BaseWeaponBatterySmall, BaseBMContraband] # Frontier: added BaseC3Contraband # Wayfarer: BaseC3Contraband<BaseBMContraband
   id: WeaponBehonkerLaser
   description: The eye of a behonker, it fires a laser when squeezed. An illegal weapon often used by the cult of the Honkmother.
   components:
@@ -829,7 +829,7 @@
 
 - type: entity
   name: energy shotgun
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseGrandTheftContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseMilitaryContraband] # Frontier: BaseGrandTheftContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: WeaponEnergyShotgun
   description: A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
   components:
@@ -886,7 +886,7 @@
 
 - type: entity
   name: temperature gun
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseC2Contraband] # Frontier: BaseSecurityContraband<BaseC2Contraband
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseBMContraband] # Frontier: BaseSecurityContraband<BaseC2Contraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseBMContraband
   id: WeaponTemperatureGun
   description: An advanced gun that shoots body-temperature-changing beams. This probably constitutes as some kind of war crime.
   components:

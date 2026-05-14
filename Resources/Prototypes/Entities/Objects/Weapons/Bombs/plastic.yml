@@ -98,7 +98,7 @@
 - type: entity
   name: seismic charge
   description: Concussion based explosive designed to destroy large amounts of rock.
-  parent: [ BasePlasticExplosive, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityCargoContraband>BaseC2ContrabandUnredeemable
+  parent: [ BasePlasticExplosive, BaseDDContraband, RecyclableItemDeviceTiny ] # Frontier: BaseSecurityCargoContraband>BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseDDContraband, add RecyclableItemDeviceTiny
   id: SeismicCharge
   components:
   - type: Sprite

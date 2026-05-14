@@ -3,7 +3,7 @@
 - type: entity
   id: NFBaseMagazineRifle20
   name: magazine (.20 rifle)
-  parent: [ BaseC1Contraband, RecyclableItemSteelTiny, BaseMagazineRifle ]
+  parent: [ RecyclableItemSteelTiny, BaseMagazineRifle ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag
@@ -38,7 +38,7 @@
 - type: entity
   id: NFBaseMagazineDrumRifle20
   name: drum magazine (.20 rifle)
-  parent: [ BaseC1Contraband, RecyclableItemSteelTiny, BaseMagazineRifle ]
+  parent: [ RecyclableItemSteelTiny, BaseMagazineRifle ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag

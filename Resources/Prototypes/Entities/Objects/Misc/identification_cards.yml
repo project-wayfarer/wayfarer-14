@@ -107,7 +107,7 @@
     - state: idintern-service
 
 - type: entity
-  parent: [IDCardStandard, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [IDCardStandard] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband
   id: CaptainIDCard
   name: captain ID card
   components:
