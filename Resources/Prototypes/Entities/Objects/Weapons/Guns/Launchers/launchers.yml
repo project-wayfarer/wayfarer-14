@@ -300,7 +300,7 @@
 
 - type: entity
   name: grappling gun
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemDeviceTiny] # Wayfarer: add RecyclableItemDeviceTiny
   id: WeaponGrapplingGun
   components:
     - type: Item
