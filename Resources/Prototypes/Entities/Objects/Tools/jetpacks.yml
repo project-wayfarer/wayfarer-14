@@ -117,7 +117,7 @@
 #Empty black
 - type: entity
   id: JetpackBlack
-  parent: [BaseJetpack, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
+  parent: [BaseJetpack] # Wayfarer: Remove contraband
   name: jetpack
   suffix: Empty
   components:
@@ -132,11 +132,11 @@
     #  - Back
     # End DeltaV modifications
   # Frontier: emaggable jetpacks
-  - type: Tag
-    tags:
-      - DemagImmune
-  - type: Jetpack
-    radarBlip: false
+#  - type: Tag
+#    tags:
+#      - DemagImmune
+#  - type: Jetpack
+#    radarBlip: false
   # End Frontier: emaggable jetpacks
 #  - type: StaticPrice # Frontier
 #    price: 1000 # Frontier
