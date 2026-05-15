@@ -369,20 +369,20 @@
 - type: entity
   parent: PirateUplinkRed50
   id: BasePirateUplinkRadioPirateCaptain
-  suffix: Wanted Outlaw, 50 DC
+  suffix: Wanted Outlaw, 30 DC
   components:
   - type: Store
     balance:
-      Doubloon: 50
+      Doubloon: 30
 
 - type: entity
   parent: PirateUplinkGreen20
   id: BasePirateUplinkPirateCrew
-  suffix: Outlaw, 20 DC
+  suffix: Outlaw, 30 DC
   components:
   - type: Store
     balance:
-      Doubloon: 20
+      Doubloon: 30
 
 # region Misc Items
 - type: entity
