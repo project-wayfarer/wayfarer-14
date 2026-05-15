@@ -1160,10 +1160,10 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: [ BasePDA ] # WF Removed Contraband
+  parent: [ BasePDA ] # Wayfarer: Removed Contraband
   id: SyndiPDA
-  name: syndicate PDA
-  description: Ok, time to be a productive member of- oh cool I'm a bad guy time to kill people!
+  name: red PDA # Wayfarer: Renamed
+  description: 99 and 44/100ths percent pure plastic. # Ok, time to be a productive member of- oh cool I'm a bad guy time to kill people! # Wayfarer
   components:
   - type: Pda
     id: SyndicateIDCard
@@ -1179,10 +1179,14 @@
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:
+      - CrewManifestCartridge # Wayfarer
       - NotekeeperCartridge
       - NanoChatCartridge # DeltaV
       - NanoTaskCartridge
+      - NewsReaderCartridge # Wayfarer
+      - BountyContractsCartridge # Wayfarer
       - AstroNavCartridge # Frontier
+      - BlipCartridge # Frontier
   - type: BlipCartridge
     defaultPreset: BlipPresetPirate
 
@@ -1549,10 +1553,10 @@
     defaultPreset: BlipPresetPirate
 
 - type: entity
-  parent: [ BaseMedicalPDA ] # WF Removed Contraband
+  parent: [ BaseMedicalPDA ] # Wayfarer: Removed Contraband
   id: SyndiAgentPDA
-  name: syndicate corpsman PDA
-  description: For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead!
+  name: red corpsman PDA # Wayfarer: Renamed
+  description: Frozen from so many deep space rescues. #For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead! # Wayfarer
   components:
   - type: Pda
     id: SyndicateIDCard
@@ -1568,10 +1572,14 @@
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:
+      - CrewManifestCartridge # Wayfarer
       - NotekeeperCartridge
-      - NanoTaskCartridge
-      - MedTekCartridge
       - NanoChatCartridge # DeltaV
+      - NanoTaskCartridge
+      - NewsReaderCartridge # Wayfarer
+      - BountyContractsCartridge # Wayfarer
+      - AstroNavCartridge # Frontier
+      - BlipCartridge # Frontier
 
 - type: entity
   parent: [BasePDA, SelectableLock]
