@@ -57,10 +57,11 @@ public sealed class CrewManifestCartridgeSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var owningStation = _stationSystem.GetOwningStation(uid);
-
-        if (owningStation is null)
-            return;
+        // Coyote: make crew manifest global
+        // var owningStation = _stationSystem.GetOwningStation(uid);
+        //
+        // if (owningStation is null)
+        //     return;
 
         var entries = _crewManifest.GetCrewManifest(); // coyote: remove name
 

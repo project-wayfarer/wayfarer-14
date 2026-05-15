@@ -14,6 +14,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.SSDIndicator; // Coyote
 using Content.Shared.Station;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
@@ -378,6 +379,10 @@ public abstract class SharedSuitSensorSystem : EntitySystem
         var isAlive = false;
         if (TryComp(sensor.User.Value, out MobStateComponent? mobState))
             isAlive = !_mobStateSystem.IsDead(sensor.User.Value, mobState);
+
+        // Coyote: Don't show SSD people on suit sensors.
+        if (TryComp<SSDIndicatorComponent>(sensor.User.Value, out var ssd) && ssd.IsSSD && isAlive)
+            return null;
 
         // get mob total damage
         var totalDamage = 0;

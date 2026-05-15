@@ -3,7 +3,7 @@ using Content.Server.Access.Components; // Coyote
 using Content.Server.Access.Systems; // Coyote
 using Content.Server.Administration;
 using Content.Server.EUI;
-using Content.Server.Medical.SuitSensors; // Coyote
+using Content.Shared.Medical.SuitSensors; // Coyote
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords;
