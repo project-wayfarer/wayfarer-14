@@ -47,6 +47,8 @@ uplink-outlaw-ecutlass-desc = An energy cutlass!
 
 uplink-outlaw-box45speedloader-name = .45 Pistol Speedloaders
 uplink-outlaw-box45speedloader-desc = A box full of (.45 pistol) speedloaders.
+uplink-outlaw-box45speedloaderrubber-name = .45 Pistol Rubber Speedloaders
+uplink-outlaw-box45speedloaderrubber-desc = A box full of (.45 pistol, rubber) speedloaders.
 uplink-outlaw-box45speedloaderoverpressure-name = .45 Pistol Overpressure Speedloaders
 uplink-outlaw-box45speedloaderoverpressure-desc = A box full of (.45 pistol, overpressure) speedloaders.
 uplink-outlaw-box45speedloaderincendiary-name = .45 Pistol Incendiary Speedloaders

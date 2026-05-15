@@ -246,6 +246,18 @@
     - id: NFSpeedLoaderPistol45
       amount: 6
 
+#45 Speedloader Rubber
+- type: entity
+  name: box of (.45 pistol, rubber) speedloaders
+  parent: BoxMagazine
+  id: MagBox45SpeedloaderRubber
+  description: A box full of (.45 pistol, rubber) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol45Rubber
+      amount: 6
+
 #45 Speedloader - Overpressure
 - type: entity
   name: box of (.45 pistol, overpressure) speedloaders

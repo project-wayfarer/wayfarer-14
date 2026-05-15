@@ -790,6 +790,23 @@
       tags:
       - OutlawUplinkBase
 
+#45 Speedloader Rubber
+- type: listing
+  id: UplinkOutlawBox45SpeedloaderRubber
+  name: uplink-outlaw-box45speedloaderrubber-name
+  description: uplink-outlaw-box45speedloaderrubber-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox45SpeedloaderRubber
+  cost:
+    Doubloon: 1
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 #45 Speedloader - Overpressure
 - type: listing
   id: UplinkOutlawBox45SpeedloaderOverpressure
