@@ -100,7 +100,7 @@ public sealed partial class ChatUIController : UIController
         {ChatSelectChannel.Console, SharedChatSystem.ConsolePrefix},
         {ChatSelectChannel.LOOC, SharedChatSystem.LOOCPrefix},
         {ChatSelectChannel.SubtleLOOC, SharedChatSystem.SubtleLOOCPrefix},
-        {ChatSelectChannel.ShipOOC, default}, // Wayfarer, no prefix
+        {ChatSelectChannel.ShipOOC, default}, // Wayfarer: no prefix
         {ChatSelectChannel.OOC, SharedChatSystem.OOCPrefix},
         {ChatSelectChannel.Emotes, SharedChatSystem.EmotesPrefix},
         {ChatSelectChannel.Subtle, SharedChatSystem.SubtlePrefix}, // Floofstation
@@ -878,7 +878,7 @@ public sealed partial class ChatUIController : UIController
         }
 
         // Play LOOC sound notification if enabled and on cooldown
-        if (_loocSoundEnabled && _audio != null && _ghost is not {IsGhost: true} && (msg.Channel == ChatChannel.LOOC || msg.Channel == ChatChannel.SubtleLOOC || msg.Channel == ChatChannel.ShipOOC))
+        if (_loocSoundEnabled && _audio != null && _ghost is not {IsGhost: true} && (msg.Channel == ChatChannel.LOOC || msg.Channel == ChatChannel.SubtleLOOC || msg.Channel == ChatChannel.ShipOOC)) // Wayfarer: Add ShipOOC
         {
             var isOwnMessage = _player.LocalEntity != null && _ent.GetEntity(msg.SenderEntity) == _player.LocalEntity;
             var currentTime = _timing.CurTime;
