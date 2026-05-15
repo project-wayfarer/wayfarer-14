@@ -87,7 +87,7 @@ namespace Content.Client.Chat.UI
 
                 // Wayfarer
                 case SpeechType.ShipOoc:
-                    return new TextSpeechBubble(message, senderEntity, "emoteBox", Color.FromHex("#FFE4C4"))
+                    return new TextSpeechBubble(message, senderEntity, "emoteBox", Color.FromHex("#FFE4C4"));
                 // End Wayfarer
 
                 default:
