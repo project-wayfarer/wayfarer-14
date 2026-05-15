@@ -21,3 +21,15 @@
   sprites:
   - sprite: _WF/Mobs/Customization/Eyes/blinking.rsi
     state: blinking_eye_l
+
+- type: marking
+  id: BlinkingEyeBoth
+  bodyPart: Eyes
+  markingCategory: Head
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _WF/Mobs/Customization/Eyes/blinking.rsi
+    state: blinking_eye_both
