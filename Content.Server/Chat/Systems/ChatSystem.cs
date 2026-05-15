@@ -72,7 +72,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int LOOCRange = 15; // how far LOOC goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public const int SubtleLOOCRange = SubtleRange; // how far Subtle LOOC goes in world units
-    public const int ShipOOCRange = 1000; // Wayfarer: how far Ship OOC goes in world units
+    public const int ShipOOCRange = 750; // Wayfarer: how far Ship OOC goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
 
