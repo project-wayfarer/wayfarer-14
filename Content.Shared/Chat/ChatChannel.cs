@@ -100,6 +100,13 @@ namespace Content.Shared.Chat
         /// </summary>
         SubtleLOOC = 1 << 17,
 
+        // Wayfarer
+        /// <summary>
+        ///     ShipOOC
+        /// </summary>
+        ShipOOC = 1 << 18,
+        // End Wayfarer
+
         /// <summary>
         ///     Channels considered to be IC.
         /// </summary>

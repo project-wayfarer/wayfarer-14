@@ -27,6 +27,7 @@ namespace Content.Client.Chat.UI
             Whisper,
             Looc,
             SubtleLooc,
+            ShipOoc // Wayfarer
         }
 
         /// <summary>
@@ -83,6 +84,9 @@ namespace Content.Client.Chat.UI
 
                 case SpeechType.SubtleLooc:
                     return new TextSpeechBubble(message, senderEntity, "emoteBox", Color.FromHex("#ff69b4"));
+
+                case SpeechType.ShipOoc: // Wayfarer
+                    return new TextSpeechBubble(message, senderEntity, "emoteBox", Color.FromHex("#FFE4C4")); // Wayfarer
 
                 default:
                     throw new ArgumentOutOfRangeException();

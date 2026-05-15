@@ -100,6 +100,8 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
             case ChatSelectChannel.LOOC:
             case ChatSelectChannel.OOC:
+            case ChatSelectChannel.SubtleLOOC: // Wayfarer
+            case ChatSelectChannel.ShipOOC: // Wayfarer
                 _typingIndicator?.ClientAlternateTyping(OocID);
                 break;
 
