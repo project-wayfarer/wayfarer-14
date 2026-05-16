@@ -480,8 +480,7 @@ public abstract class SharedSuitSensorSystem : EntitySystem
             payload.Add(SuitSensorConstants.NET_MAP_HASH, status.MapHash); // Frontier
         if (status.LocationName != null) // Frontier
             payload.Add(SuitSensorConstants.NET_LOCATION_NAME, status.LocationName); // Frontier
-        if (status.IsSpaceSleepDisorder != null) // Wayfarer
-            payload.Add(SuitSensorConstants.NET_IS_SSD, status.IsSpaceSleepDisorder);
+        payload.Add(SuitSensorConstants.NET_IS_SSD, status.IsSpaceSleepDisorder); // Wayfarer
 
         return payload;
     }
