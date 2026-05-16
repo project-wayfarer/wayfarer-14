@@ -7,3 +7,6 @@ job-description-wayfarer =  Not committed to anything beyond their own survival,
 
 job-name-wayfarer-interview = Wayfarer Applicant
 job-description-wayfarer-interview =  Work underneath your new Captain as they guide you.
+
+job-name-inactive = Inactive
+job-description-inactive = Someone who is currently experiencing the effects of Space Sleep Disorder
