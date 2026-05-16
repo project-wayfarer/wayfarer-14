@@ -22,14 +22,16 @@ public sealed class CriticalPatientData
     public string Species { get; }
     public string TimeSinceCrit { get; }
     public bool IsDead { get; }
+    public bool IsSpaceSleepDisorder { get; }
 
-    public CriticalPatientData(string name, string coordinates, string species, string timeSinceCrit, bool isDead)
+    public CriticalPatientData(string name, string coordinates, string species, string timeSinceCrit, bool isDead, bool isSpaceSleepDisorder)
     {
         Name = name;
         Coordinates = coordinates;
         Species = species;
         TimeSinceCrit = timeSinceCrit;
         IsDead = isDead;
+        IsSpaceSleepDisorder = isSpaceSleepDisorder;
     }
 }
 

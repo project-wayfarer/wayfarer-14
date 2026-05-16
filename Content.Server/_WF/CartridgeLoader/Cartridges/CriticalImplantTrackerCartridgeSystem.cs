@@ -11,6 +11,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.PDA;
+using Content.Shared.SSDIndicator;
 using Content.Shared.Trigger.Components.Conditions;
 using Content.Shared.Trigger.Components.Triggers;
 using Robust.Shared.Containers;
@@ -143,8 +144,13 @@ public sealed class CriticalImplantTrackerCartridgeSystem : EntitySystem
             if (!hasActiveBeacon)
                 continue;
 
+            // Check if the character is SSD
+            var isSpaceSleepDisorder = false;
+            if (TryComp<SSDIndicatorComponent>(mobUid, out var indicator))
+                isSpaceSleepDisorder = indicator.IsSSD;
+
             // Add all critical/dead patients with active beacons
-            patients.Add(new CriticalPatientData(name, coordinates, species, timeSinceCrit, isDead));
+            patients.Add(new CriticalPatientData(name, coordinates, species, timeSinceCrit, isDead, isSpaceSleepDisorder));
         }
 
         var state = new CriticalImplantTrackerUiState(patients);
