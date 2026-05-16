@@ -28,7 +28,7 @@ public sealed class CrewManifestSection : BoxContainer
         var gridContainer = new GridContainer()
         {
             HorizontalExpand = true,
-            Columns = 2
+            Columns = 3 // Wayfarer: 2 < 3
         };
 
         AddChild(gridContainer);
@@ -40,6 +40,15 @@ public sealed class CrewManifestSection : BoxContainer
                 HorizontalExpand = true,
             };
             name.SetMessage(entry.Name);
+
+            var inactiveLabel = new Label() // Wayfarer: Inactivity indicator for SSD characters
+            {
+                SetWidth = 5,
+                StyleClasses = { "LabelSubText" },
+                FontColorOverride = new Color(9, 169, 9),
+                Align = Label.AlignMode.Right,
+                Text = section.Name == "department-Inactive" ? "Zzz" : "",
+            };
 
             var titleContainer = new BoxContainer()
             {
@@ -70,6 +79,7 @@ public sealed class CrewManifestSection : BoxContainer
             }
 
             gridContainer.AddChild(name);
+            gridContainer.AddChild(inactiveLabel); // Wayfarer: Inactivity indicator for SSD characters
             gridContainer.AddChild(titleContainer);
         }
     }

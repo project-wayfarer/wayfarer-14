@@ -231,8 +231,7 @@ public sealed class CrewManifestSystem : EntitySystem
 
         while (sensors.MoveNext(out var uid, out var sensor)) // Coyote start
         {
-            if (sensor.User == null ||
-                (TryComp<SSDIndicatorComponent>(sensor.User, out var indicator) && indicator.IsSSD))
+            if (sensor.User == null ) // Wayfarer: Moved SSD check to allow showing SSD characters in a separate section
             {
                 continue;
             }
@@ -252,7 +251,12 @@ public sealed class CrewManifestSystem : EntitySystem
             if (!TryComp<PresetIdCardComponent>(card, out var preset))
                 continue;
 
-            var entry = new CrewManifestEntry(name, jobTitle, card.Comp.JobIcon, preset.JobName!.Value);
+            var jobName = preset.JobName!.Value; // Wayfarer
+            if (TryComp<SSDIndicatorComponent>(sensor.User, out var ssd) && ssd.IsSSD) // Wayfarer: Group SSD players separately
+                jobName = "Inactive";
+
+
+            var entry = new CrewManifestEntry(name, jobTitle, card.Comp.JobIcon, jobName); // Wayfarer: preset.JobName!.Value < jobName
 
             entriesSort.Add((null, entry));
         } // Coyote end
