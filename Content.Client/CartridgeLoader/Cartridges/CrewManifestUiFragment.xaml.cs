@@ -25,7 +25,7 @@ public sealed partial class CrewManifestUiFragment : BoxContainer
         CrewManifestListing.RemoveAllChildren();
 
         StationNameContainer.Visible = entries != null;
-        StationName.Text = "Crew Manifest"; // coyote: remove name
+        StationName.Text = Loc.GetString("crew-manifest-window-title"); // coyote: remove name
 
         if (entries == null)
             return;

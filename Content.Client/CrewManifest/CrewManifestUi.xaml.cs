@@ -22,7 +22,7 @@ public sealed partial class CrewManifestUi : DefaultWindow
         CrewManifestListing.RemoveAllChildren();
 
         StationNameContainer.Visible = entries != null;
-        StationName.Text = "Crew Manifest"; // Coyote: Remove name
+        StationName.Text = Loc.GetString("crew-manifest-window-title"); // Coyote: Remove name
 
         if (entries == null)
             return;
