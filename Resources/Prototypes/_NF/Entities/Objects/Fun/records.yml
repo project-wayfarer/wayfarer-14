@@ -153,7 +153,7 @@
     vendPrice: 10000 # in case it ends up in a vending machine, somehow
 
 - type: entity
-  parent: [ BaseRecord, BaseC3SyndicateContraband ]
+  parent: [ BaseRecord ] # Wayfarer: Remove contraband
   id: SyndieRecord
   name: blood-red record
   description: For storing analogue data, everyone knows that circles are unparalleled. This one smells metallic.

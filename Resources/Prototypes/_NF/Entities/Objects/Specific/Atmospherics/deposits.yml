@@ -499,7 +499,7 @@
 
 - type: entity
   id: GasDepositLocatorUnpowered
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemPlasticSmall] # Wayfarer: add RecyclableItemPlasticSmall
   name: gas deposit scanner
   description: A scanner that both checks the nearby area for gas deposits and estimates the composition of deposits.
   suffix: Unpowered

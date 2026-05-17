@@ -1,7 +1,7 @@
 #region base weapon
 - type: entity
   id: NFBaseItemWeaponGun
-  parent: [ BaseC1Contraband, BaseItem, RecyclableItemDeviceComplexNormal ] # Wayfarer: added recyclable component to all guns
+  parent: [ BaseItem, RecyclableItemDeviceComplexNormal ] # Wayfarer: added recyclable component to all guns, removed contraband
   suffix: Frontier
   abstract: true
   components:

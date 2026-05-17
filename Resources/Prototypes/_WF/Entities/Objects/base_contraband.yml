@@ -42,3 +42,11 @@
     severity: BlackMarket
     turnInValues:
       FrontierUplinkCoin: 1
+
+- type: entity
+  id: BaseCGPContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: CommandOnly
+    allowedDepartments: [ Security, Command ]

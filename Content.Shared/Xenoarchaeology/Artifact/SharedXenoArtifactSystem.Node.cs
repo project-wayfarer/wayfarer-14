@@ -8,6 +8,8 @@ using Robust.Shared.Utility;
 using Content.Shared._NF.CCVar; // Frontier
 using Robust.Shared.Configuration; // Frontier
 
+using Content.Shared._WF.CCVar; // Wayfarer
+
 namespace Content.Shared.Xenoarchaeology.Artifact;
 
 public abstract partial class SharedXenoArtifactSystem
@@ -410,6 +412,7 @@ public abstract partial class SharedXenoArtifactSystem
             nodeComponent.ResearchValue = (int)Math.Pow(nodeComponent.ResearchValue - 700, 0.9);
         // End Frontier: remove value from using artifexium, different value sets
 
+        nodeComponent.ResearchValue = (int)(nodeComponent.ResearchValue * _cfg.GetCVar(WFCVars.ArtifactPointMultiplier)); // Wayfarer: Apply the research multiplier.
     }
 
     // Frontier: ensure single use nodes

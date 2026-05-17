@@ -1,6 +1,6 @@
 - type: entity
   name: CGP energy shield
-  parent: [BaseC2ContrabandUnredeemable, EnergyShield]
+  parent: [BaseCGPContraband, EnergyShield] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: EnergyShieldNfsd
   components:
   - type: Sprite
@@ -12,7 +12,7 @@
 
 - type: entity
   name: metal shield
-  parent: [BaseC1Contraband, RiotShield ]
+  parent: RiotShield # Wayfarer: Removed contraband
   id: NFMetalShield
   description: A sturdy metal shield. It has a window so you can wink at whatever is hitting you.
   components:
@@ -25,7 +25,7 @@
 
 - type: entity
   id: NFShieldReflective
-  parent: [ BaseC1Contraband, RiotLaserShield ]
+  parent: [ RiotLaserShield ] # Wayfarer: Removed contraband
   name: reflective shield
   components:
   - type: Sprite
@@ -51,7 +51,7 @@
 
 - type: entity
   id: NFShieldBallistic
-  parent: [ BaseC1Contraband, RiotBulletShield ]
+  parent: RiotBulletShield # Wayfarer: Removed contraband
   name: bullet resistant shield
   components:
   - type: Sprite

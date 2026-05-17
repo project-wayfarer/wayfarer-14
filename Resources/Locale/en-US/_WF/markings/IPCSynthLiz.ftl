@@ -1,0 +1,10 @@
+﻿marking-IPCHeadSynthLizMale = [IPC] Synthetic Lizard, Male
+marking-IPCHeadSynthLizFemale = [IPC] Synthetic Lizard, female
+marking-IPCTorsoSynthLizMale = [IPC] Synthetic Lizard, Male
+marking-IPCTorsoSynthLizFemale = [IPC] Synthetic Lizard, female
+marking-IPCLLegSynthLiz = [IPC] Synthetic Lizard
+marking-IPCRLegSynthLiz = [IPC] Synthetic Lizard
+marking-IPCLArmSynthLiz = [IPC] Synthetic Lizard
+marking-IPCRArmSynthLiz = [IPC] Synthetic Lizard
+marking-IPCLHandSynthLiz = [IPC] Synthetic Lizard
+marking-IPCRHandSynthLiz = [IPC] Synthetic Lizard

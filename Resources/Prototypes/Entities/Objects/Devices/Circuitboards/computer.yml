@@ -377,7 +377,7 @@
       prototype: ComputerWallmountCrewMonitoring # Frontier
 
 - type: entity
-  parent: [BaseComputerCircuitboard, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseComputerCircuitboard, BaseCGPContraband] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: IDComputerCircuitboard
   name: ID card computer board
   description: A computer printed circuit board for an ID card console.
@@ -409,7 +409,7 @@
       prototype: ComputerTabletopBodyScanner # Frontier
 
 - type: entity
-  parent: [BaseComputerCircuitboard, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseComputerCircuitboard, BaseCGPContraband] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: CommsComputerCircuitboard
   name: communications computer board
   description: A computer printed circuit board for a communications console.

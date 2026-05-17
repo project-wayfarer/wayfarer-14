@@ -42,7 +42,7 @@
 
 - type: entity
   name: gorlex hypospray
-  parent: [BaseItem, BaseC3SyndicateContraband] # Frontier: add BaseC3SyndicateContraband
+  parent: [BaseItem, BaseBMContraband] # Frontier: add BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   description: Using reverse engineered designs from NT, Cybersun produced these in limited quantities for Gorlex Marauder operatives.
   id: SyndiHypo
   components:
@@ -620,7 +620,7 @@
 
 - type: entity
   name: combat medipen
-  parent: [ChemicalMedipen, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ChemicalMedipen, BaseBMContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: CombatMedipen
   description: A single-use medipen containing chemicals that regenerate most types of damage.
   components:
@@ -667,7 +667,7 @@
 - type: entity
   name: pen
   suffix: Hypopen
-  parent: [Pen, BaseC3SyndicateContraband] # It is just like normal pen, isn't it?
+  parent: [Pen, BaseBMContraband] # It is just like normal pen, isn't it? # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   description: A dark ink pen.
   id: Hypopen
   components:
@@ -693,7 +693,7 @@
     hideValues: true # Frontier - stealthy
 
 - type: entity
-  parent: [ BaseItem, BaseC3SyndicateContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [ BaseItem, BaseBMContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: HypopenBox
   name: hypopen box
   description: A small box containing a hypopen. Packaging disintegrates when opened, leaving no evidence behind.

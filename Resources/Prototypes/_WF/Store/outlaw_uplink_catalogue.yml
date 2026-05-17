@@ -56,7 +56,7 @@
   name: uplink-outlaw-hardsuit-name
   description: uplink-outlaw-hardsuit-desc
   productEntity: ClothingOuterOutlawHardsuit
-  icon: { sprite: _Mono/Clothing/OuterClothing/Hardsuits/ussp_combat_light.rsi, state: icon }
+  icon: { sprite: _Mono/Clothing/OuterClothing/Hardsuits/scaf_pirate.rsi, state: icon }
   cost:
     Doubloon: 5
   categories:
@@ -85,6 +85,24 @@
       - OutlawUplinkBase
 
 # Wearables  --
+
+# Chameleon kit
+- type: listing
+  id: UplinkOutlawChameleon
+  name: uplink-chameleon-name
+  description: uplink-chameleon-desc
+  productEntity: ClothingBackpackChameleonFill
+  icon: { sprite: /Textures/Clothing/Uniforms/Jumpsuit/rainbow.rsi, state: icon }
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 # Tactical Vest
 - type: listing
   id: UplinkOutlawTacVest
@@ -110,7 +128,7 @@
   productEntity: ClothingOuterArmorHeavyTactical
   icon: { sprite: _Goobstation/Clothing/OuterClothing/Armor/bulletproof.rsi, state: icon }
   cost:
-    Doubloon: 4
+    Doubloon: 3
   categories:
   - UplinkOutlawWearables
   conditions:
@@ -161,7 +179,7 @@
   productEntity: JetpackBMFilled
   icon: { sprite: _Goobstation/Objects/Tanks/contractorpack.rsi, state: icon }
   cost:
-    Doubloon: 6
+    Doubloon: 2
   categories:
   - UplinkOutlawWearables
   conditions:
@@ -178,7 +196,7 @@
   productEntity: ClothingShoesBootsMagBM
   icon: { sprite: _Mono/Clothing/Shoes/Boots/magboots-ashen.rsi, state: icon }
   cost:
-    Doubloon: 6
+    Doubloon: 3
   categories:
   - UplinkOutlawWearables
   conditions:
@@ -194,7 +212,7 @@
   description: uplink-voice-mask-desc
   productEntity: ClothingMaskGasVoiceChameleon
   cost:
-    Doubloon: 4
+    Doubloon: 2
   categories:
   - UplinkOutlawWearables
   conditions:
@@ -209,7 +227,7 @@
   description: uplink-clothing-no-slips-shoes-desc
   productEntity: ClothingShoesChameleonNoSlips
   cost:
-    Doubloon: 3
+    Doubloon: 2
   categories:
   - UplinkOutlawWearables
   conditions:
@@ -227,7 +245,7 @@
   productEntity: Stunbaton
   icon: { sprite: Objects/Weapons/Melee/stunbaton.rsi, state: stunbaton_off }
   cost:
-    Doubloon: 2
+    Doubloon: 1
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -253,6 +271,22 @@
       tags:
       - OutlawUplinkBase
 
+# Energy Cutlass
+- type: listing
+  id: UplinkOutlawECutlass
+  name:  uplink-outlaw-ecutlass-name
+  description: uplink-outlaw-ecutlass-desc
+  productEntity: EnergyCutlass
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawWeapons
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 # Breaching Hammer
 - type: listing
   id: UplinkOutlawHammer
@@ -261,7 +295,7 @@
   productEntity: SecBreachingHammer
   icon: { sprite: Nyanotrasen/Objects/Weapons/Melee/breaching_hammer.rsi, state: icon }
   cost:
-    Doubloon: 12
+    Doubloon: 6
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -277,7 +311,7 @@
   description: uplink-pistol-viper-desc
   productEntity: NFWeaponPistolViper
   cost:
-    Doubloon: 6
+    Doubloon: 3
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -294,7 +328,7 @@
   productEntity: NFWeaponPistolFlintlock
   icon: { sprite: Objects/Weapons/Guns/Snipers/flintlock.rsi, state: base }
   cost:
-    Doubloon: 3
+    Doubloon: 1
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -310,7 +344,24 @@
   description: uplink-revolver-ritland-desc
   productEntity: NFWeaponRevolverRitland45
   cost:
-    Doubloon: 6
+    Doubloon: 3
+  categories:
+  - UplinkOutlawWeapons
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# C-20R
+- type: listing
+  id: UplinkOutlawC20
+  name:  uplink-outlaw-c20-name
+  description: uplink-outlaw-c20-desc
+  productEntity: NFWeaponSubMachineGunC20r
+  icon: { sprite: /Textures/Objects/Weapons/Guns/SMGs/c20r.rsi, state: icon }
+  cost:
+    Doubloon: 9
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -327,7 +378,7 @@
   productEntity: NFWeaponLauncherPirateCannon
   icon: { sprite: Objects/Weapons/Guns/Launchers/pirate_cannon.rsi, state: icon }
   cost:
-    Doubloon: 6
+    Doubloon: 8
   categories:
   - UplinkOutlawWeapons
   conditions:
@@ -362,7 +413,7 @@
   productEntity: TelescopicShield
   icon: { sprite: Objects/Weapons/Melee/teleriot_shield.rsi, state: teleriot-on }
   cost:
-    Doubloon: 4
+    Doubloon: 2
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -379,7 +430,7 @@
   productEntity: AccessConfiguratorAntag
   icon: { sprite: _NF/Objects/Tools/antag_access_configurator.rsi, state: icon }
   cost:
-    Doubloon: 3
+    Doubloon: 1
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -412,7 +463,7 @@
   productEntity: PirateRepairKit
   icon: { sprite: _NF/Objects/Tools/Toolboxes/toolbox_pirate.rsi, state: icon }
   cost:
-    Doubloon: 3
+    Doubloon: 2
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -420,6 +471,23 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+
+# IFF Board / Disabled until rules around them are cemented in
+#- type: listing
+#  id: UplinkOutlawIFF
+#  name: uplink-outlaw-iff-name
+#  description: uplink-outlaw-iff-desc
+#  productEntity: ComputerIFFFlatpack
+#  icon: { sprite: _NF/Objects/Devices/flatpack.rsi, state: pirate_lathe }
+#  cost:
+#    Doubloon: 15
+#  categories:
+#  - UplinkOutlawUtility
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - OutlawUplinkBase
 
 # Stitcher
 - type: listing
@@ -429,7 +497,7 @@
   productEntity: PirateStitcherCircuitboard
   icon: { sprite: _NF/Objects/Misc/module.rsi, state: pirate_stitcher }
   cost:
-    Doubloon: 4
+    Doubloon: 1
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:
@@ -480,7 +548,7 @@
   productEntity: PmagUnlimited
   icon: { sprite: _NF/Objects/Tools/pmag.rsi, state: icon }
   cost:
-    Doubloon: 4
+    Doubloon: 3
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -496,7 +564,7 @@
   description: uplink-access-breaker-desc
   productEntity: AccessBreaker
   cost:
-    Doubloon: 6
+    Doubloon: 3
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -512,7 +580,7 @@
   description: uplink-emag-desc
   productEntity: Emag
   cost:
-    Doubloon: 6
+    Doubloon: 3
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -528,7 +596,55 @@
   description: uplink-radio-jammer-desc
   productEntity: RadioJammer
   cost:
-    Doubloon: 4
+    Doubloon: 3
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Camera Bug
+- type: listing
+  id: UplinkOutlawCameraBug
+  name: uplink-cameraBug-name
+  description: uplink-cameraBug-desc
+  productEntity: CameraBug
+  cost:
+    Doubloon: 2
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Sus toolbox
+- type: listing
+  id: UplinkOutlawToolbox
+  name: uplink-toolbox-name
+  description: uplink-toolbox-desc
+  productEntity: ToolboxSyndicateFilled
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#Syndie Jaws
+- type: listing
+  id: UplinkOutlawSyndicateJawsOfLife
+  name: uplink-syndicate-jaws-of-life-name
+  description: uplink-syndicate-jaws-of-life-desc
+  productEntity: SyndicateJawsOfLife
+  cost:
+    Doubloon: 2
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -546,7 +662,24 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox35Ext
   cost:
-    Doubloon: 3
+    Doubloon: 1
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#35 Stendos Rubber
+- type: listing
+  id: UplinkOutlawBox35ExtRubber
+  name: uplink-outlaw-box35extrubber-name
+  description: uplink-outlaw-box35extrubber-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: NFBoxMagazinePistol35Rubber
+  cost:
+    Doubloon: 1
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -563,7 +696,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox35ExtOverpressure
   cost:
-    Doubloon: 4
+    Doubloon: 2
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -580,7 +713,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox35ExtIncendiary
   cost:
-    Doubloon: 6
+    Doubloon: 3
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -597,7 +730,41 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox35ExtUranium
   cost:
-    Doubloon: 9
+    Doubloon: 5
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#35 SMG
+- type: listing
+  id: UplinkOutlawBox35SMG
+  name: uplink-outlaw-box35smg-name
+  description: uplink-outlaw-box35smg-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox35SMG2
+  cost:
+    Doubloon: 3
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#35 SMG Rubber
+- type: listing
+  id: UplinkOutlawBox35SMGRubber
+  name: uplink-outlaw-box35smgrubber-name
+  description: uplink-outlaw-box35smgrubber-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox35SMG2Rubber
+  cost:
+    Doubloon: 2
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -614,7 +781,24 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox45Speedloader
   cost:
-    Doubloon: 3
+    Doubloon: 1
+  categories:
+  - UplinkOutlawAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+#45 Speedloader Rubber
+- type: listing
+  id: UplinkOutlawBox45SpeedloaderRubber
+  name: uplink-outlaw-box45speedloaderrubber-name
+  description: uplink-outlaw-box45speedloaderrubber-desc
+  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+  productEntity: MagBox45SpeedloaderRubber
+  cost:
+    Doubloon: 1
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -631,7 +815,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox45SpeedloaderOverpressure
   cost:
-    Doubloon: 4
+    Doubloon: 2
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -648,7 +832,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox45SpeedloaderIncendiary
   cost:
-    Doubloon: 6
+    Doubloon: 3
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -665,24 +849,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox45SpeedloaderUranium
   cost:
-    Doubloon: 9
-  categories:
-  - UplinkOutlawAmmo
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
-
-#60 Ammo
-- type: listing
-  id: UplinkOutlaw60Ammo
-  name:  uplink-pirate-flintlockammo-name
-  description: uplink-pirate-flintlockammo-desc
-  productEntity: NFAmmunitionBoxRifle60
-  icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi, state: icon-60 }
-  cost:
-    Doubloon: 2
+    Doubloon: 5
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -780,7 +947,7 @@
   description: uplink-explosive-grenade-desc
   productEntity: ExGrenade
   cost:
-    Doubloon: 4
+    Doubloon: 3
   categories:
   - UplinkOutlawExplosives
   conditions:
@@ -796,7 +963,7 @@
   description: uplink-c4-desc
   productEntity: C4
   cost:
-    Doubloon: 4
+    Doubloon: 3
   categories:
   - UplinkOutlawExplosives
   conditions:
@@ -807,13 +974,13 @@
 
 #Emp Grenades
 - type: listing
-  id: UplinkOutlawEmpGrenadeBox
-  name:  uplink-security-empgrenade-box-name
-  description: uplink-security-empgrenade-box-desc
-  productEntity: BoxEMPGrenadesNfsd
+  id: UplinkOutlawEmpGrenade
+  name:  uplink-security-empgrenade-name
+  description: uplink-security-empgrenade-desc
+  productEntity: EmpGrenadeNfsd
   icon: { sprite: Objects/Weapons/Grenades/empgrenade.rsi, state: icon}
   cost:
-    Doubloon: 6
+    Doubloon: 2
   categories:
   - UplinkOutlawExplosives
   conditions:
@@ -829,7 +996,7 @@
   description: uplink-shrapnel-grenade-desc
   productEntity: GrenadeShrapnel
   cost:
-    Doubloon: 4
+    Doubloon: 2
   categories:
   - UplinkOutlawExplosives
   conditions:
@@ -845,7 +1012,7 @@
   description: uplink-incendiary-grenade-desc
   productEntity: GrenadeIncendiary
   cost:
-    Doubloon: 4
+    Doubloon: 2
   categories:
   - UplinkOutlawExplosives
   conditions:
@@ -861,7 +1028,7 @@
   description: uplink-flash-grenade-desc
   productEntity: GrenadeFlashBang
   cost:
-    Doubloon: 2
+    Doubloon: 1
   categories:
   - UplinkOutlawExplosives
   conditions:
@@ -877,7 +1044,7 @@
   description: uplink-outlaw-stinger-grenade-desc
   productEntity: GrenadeStinger
   cost:
-    Doubloon: 3
+    Doubloon: 2
   categories:
   - UplinkOutlawExplosives
   conditions:
@@ -894,7 +1061,7 @@
   description: uplink-outlaw-medkit-desc
   productEntity: MedkitFilled
   cost:
-    Doubloon: 8
+    Doubloon: 4
   categories:
   - UplinkOutlawMedical
   conditions:
@@ -910,7 +1077,7 @@
   description: uplink-outlaw-moonshine-desc
   productEntity: CustomDrinkJugMoonshine
   cost:
-    Doubloon: 2
+    Doubloon: 1
   categories:
   - UplinkOutlawMedical
   conditions:
@@ -926,7 +1093,7 @@
   description: uplink-outlaw-vialthc-desc
   productEntity: THCVial
   cost:
-    Doubloon: 2
+    Doubloon: 1
   categories:
   - UplinkOutlawMedical
   conditions:
@@ -942,7 +1109,7 @@
   description: uplink-outlaw-vialspacedrugs-desc
   productEntity: SpacedrugsVial
   cost:
-    Doubloon: 2
+    Doubloon: 1
   categories:
   - UplinkOutlawMedical
   conditions:
@@ -958,7 +1125,7 @@
   description: uplink-combat-medipen-desc
   productEntity: CombatMedipen
   cost:
-    Doubloon: 12
+    Doubloon: 8
   categories:
   - UplinkOutlawMedical
   conditions:
@@ -974,7 +1141,7 @@
   description: uplink-stimpack-desc
   productEntity: Stimpack
   cost:
-    Doubloon: 12
+    Doubloon: 8
   categories:
   - UplinkOutlawMedical
   conditions:
@@ -990,7 +1157,24 @@
   description: uplink-cigarettes-desc
   productEntity: CigPackSyndicate
   cost:
-    Doubloon: 4
+    Doubloon: 1
+  categories:
+  - UplinkOutlawMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Chemistry Kit
+- type: listing
+  id: UplinkOutlawChemistryKitBundle
+  name: uplink-chemistry-kit-name
+  description: uplink-chemistry-kit-desc
+  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: vials }
+  productEntity: ChemicalSynthesisKit
+  cost:
+    Doubloon: 8
   categories:
   - UplinkOutlawMedical
   conditions:
@@ -1008,7 +1192,7 @@
   productEntity: RadioImplanterFreelance
   icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: pirate_label }
   cost:
-    Doubloon: 2
+    Doubloon: 1
   categories:
   - UplinkOutlawImplanters
   conditions:
@@ -1025,7 +1209,7 @@
   productEntity: DeathAcidifierImplanter
   icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: gib }
   cost:
-    Doubloon: 12
+    Doubloon: 8
   categories:
   - UplinkOutlawImplanters
   conditions:
@@ -1042,7 +1226,7 @@
   productEntity: FreedomImplanter
   icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: freedom }
   cost:
-    Doubloon: 15
+    Doubloon: 8
   categories:
   - UplinkOutlawImplanters
   conditions:
@@ -1059,7 +1243,7 @@
   productEntity: ShipVoucherOutlaw
   icon: { sprite: _Mono/Objects/Misc/lpc.rsi, state: ltech, stripepdv }
   cost:
-    Doubloon: 20
+    Doubloon: 15
   categories:
   - UplinkOutlawVouchers
   conditions:
@@ -1162,7 +1346,7 @@
   description: uplink-outlaw-bundle-paperwork-desc
   productEntity: OutlawPaperworkBundle
   cost:
-    Doubloon: 4
+    Doubloon: 1
   categories:
   - UplinkOutlawBundles
   conditions:
@@ -1178,7 +1362,7 @@
   description: uplink-outlaw-bundle-kidnap-desc
   productEntity: OutlawKidnapperkBundle
   cost:
-    Doubloon: 4
+    Doubloon: 2
   categories:
   - UplinkOutlawBundles
   conditions:
@@ -1211,7 +1395,7 @@
   description: uplink-outlaw-card-desc
   productEntity: SyndicateBusinessCard
   cost:
-    Doubloon: 1
+    Doubloon: 0
   categories:
   - UplinkOutlawMisc
   conditions:
@@ -1228,7 +1412,7 @@
   productEntity: VehicleHoverbikePirateKey
   icon: { sprite: _NF/Objects/Vehicles/hoverbike.rsi, state: keys }
   cost:
-    Doubloon: 10
+    Doubloon: 8
   categories:
   - UplinkOutlawMisc
   conditions:

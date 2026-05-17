@@ -52,7 +52,7 @@
     id: ClothingEyesHudMedical
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingEyesBase, ShowSecurityIcons] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband
   id: ClothingEyesHudSecurity
   name: security hud
   description: A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records.
@@ -68,7 +68,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesBase, BaseCommandContraband]
+  parent: [ClothingEyesBase, ShowSecurityIcons, BaseCGPContraband] # Wayfarer: BaseCommandContraband<BaseCGPContraband , added ShowSecurityIcons
   id: ClothingEyesHudCommand
   name: administration hud
   description: A heads-up display that scans the humanoids in view and provides accurate data about their ID status.
@@ -213,10 +213,11 @@
   - type: ShowSyndicateIcons
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons] # WF Removed Contraband
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons] # Wayfarer: Removed Contraband, added ShowMedicalIcons
   id: ClothingEyesHudSyndicate
-  name: syndicate visor
-  description: The syndicate's professional head-up display, designed for better detection of humanoids and their subsequent elimination.
+  name: green digital visor # Wayfarer: syndicate visor<digital visor
+  # The syndicate's professional head-up display, designed for better detection of humanoids and their subsequent elimination.
+  description: A green digital visor providing a heads up display with information about a person's health status and ID.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Hud/synd.rsi
@@ -229,17 +230,18 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons] # WF Removed Contraband
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons] # Wayfarer: Removed Contraband, added ShowMedicalIcons
   id: ClothingEyesHudSyndicateAgent
-  name: syndicate medical visor
-  description: The Syndicate Corpsman's professional heads-up display, designed for quick diagnosis of their team's status.
+  name: blue digital visor # Wayfarer: syndicate visor<digital visor
+  # The Syndicate Corpsman's professional heads-up display, designed for quick diagnosis of their team's status.
+  description: A blue digital visor providing a heads up display with information about a person's health status and ID.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Hud/syndagent.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/syndagent.rsi
   - type: ShowSyndicateIcons
-  - type: ShowHealthBars
+  #- type: ShowHealthBars # Wayfarer
   - type: Tag
     tags:
     - PetWearable

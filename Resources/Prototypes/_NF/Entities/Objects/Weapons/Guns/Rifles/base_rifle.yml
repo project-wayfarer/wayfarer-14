@@ -46,7 +46,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseC3PirateContraband, NFBaseWeaponFrameRifle ]
+  parent: [ BaseBMContraband, NFBaseWeaponFrameRifle ] # Wayfarer: BaseC3PirateContraband<BaseBMContraband
   id: NFBaseWeaponFrameRifleSteelbolt
   components:
   - type: Gun

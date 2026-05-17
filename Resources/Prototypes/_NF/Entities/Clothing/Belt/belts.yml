@@ -1,7 +1,7 @@
 - type: entity
   id: ClothingWebbingArcadia
   name: arcadia webbing
-  parent: [ NFClothingBeltStorageBase, BaseC3ContrabandNoValue, ContrabandClothing ]
+  parent: [ NFClothingBeltStorageBase ] # Wayfarer: Removecontraband
   description: Webbing created by Arcadia Industries. Seems very capable of fitting many items.
   components:
   - type: Sprite
@@ -12,7 +12,7 @@
 - type: entity
   id: ClothingBeltArcadia
   name: arcadia belt
-  parent: [ NFClothingBeltStorageBase, BaseC3ContrabandNoValue, ContrabandClothing ]
+  parent: [ NFClothingBeltStorageBase ] # Wayfarer: Removecontraband
   description: A belt created by Arcadia Industries. Seems very capable of fitting many items.
   components:
   - type: Sprite
@@ -74,7 +74,7 @@
     sprite: _NF/Clothing/Belt/pilot.rsi
 
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, ClothingBeltAssault ]
+  parent: [ BaseCGPContraband, ClothingBeltAssault ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingBeltNfsd
   name: CGP belt
   description: A tactical assault belt.
@@ -85,7 +85,7 @@
     sprite: _WF/Clothing/Belt/CGP_belt.rsi # Wayfarer: _NF/Clothing/Belt/nfsd_belt.rsi<_WF/Clothing/Belt/CGP_belt.rsi
 
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, ClothingBeltSecurityWebbing ]
+  parent: [ BaseCGPContraband, ClothingBeltSecurityWebbing ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingBeltNfsdWebbing
   name: CGP webbing
   description: A tactical assault webbing.

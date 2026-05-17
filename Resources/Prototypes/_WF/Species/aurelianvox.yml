@@ -64,10 +64,10 @@
 
 - type: marking
   id: AurelianVoxTail
-  bodyPart: TailOversuit
+  bodyPart: TailBehind
   markingCategory: Tail
   #speciesRestriction: [AurelianVox]
-  forcedColoring: true
+  forcedColoring: false
   sprites:
   - sprite: _WF/Mobs/Species/AurelianVox/parts.rsi
     state: tail

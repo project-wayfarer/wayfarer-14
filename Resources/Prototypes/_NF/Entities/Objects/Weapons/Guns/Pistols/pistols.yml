@@ -59,7 +59,7 @@
 
 - type: entity
   id: NFWeaponPistolUniversalNfsd
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponPistolChamber35HighCapacityOverpressure, NFWeaponPistolUniversal ]
+  parent: [ NFBaseWeaponPistolChamber35HighCapacityOverpressure, NFWeaponPistolUniversal ] # Wayfarer: Removed contraband
   name: mk32-M "Universal" service pistol
   description: |-
     The Mark 32 Offensive Service Pistol. On the handle is a label that says 'for authorized use only.'

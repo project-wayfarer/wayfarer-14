@@ -49,6 +49,12 @@ internal sealed class ChatManager : IChatManager
                 _consoleHost.ExecuteCommand($"subtlelooc \"{CommandParsing.Escape(str)}\"");
                 break;
 
+            // Wayfarer
+            case ChatSelectChannel.ShipOOC:
+                _consoleHost.ExecuteCommand($"shipooc \"{CommandParsing.Escape(str)}\"");
+                break;
+            // End Wayfarer
+
             case ChatSelectChannel.OOC:
                 _consoleHost.ExecuteCommand($"ooc \"{CommandParsing.Escape(str)}\"");
                 break;

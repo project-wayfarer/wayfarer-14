@@ -3,7 +3,7 @@
 - type: entity
   id: NFBaseMagazinePistol35
   name: pistol magazine (.35 pistol)
-  parent: [ BaseC1Contraband, BaseMagazinePistol, RecyclableItemSteelTiny ]
+  parent: [ BaseMagazinePistol, RecyclableItemSteelTiny ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag
@@ -33,7 +33,7 @@
 - type: entity
   id: NFBaseMagazineHighCapacityPistol35
   name: high capacity pistol magazine (.35 pistol)
-  parent: [ BaseC1Contraband, BaseMagazinePistolHighCapacity, RecyclableItemSteelTiny ]
+  parent: [ BaseMagazinePistolHighCapacity, RecyclableItemSteelTiny ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag
@@ -63,7 +63,7 @@
 - type: entity
   id: NFBaseMagazinePistolSubMachineGun35
   name: smg magazine (.35 pistol)
-  parent: [ BaseC1Contraband, BaseMagazinePistolSubMachineGun, RecyclableItemSteelTiny ]
+  parent: [ BaseMagazinePistolSubMachineGun, RecyclableItemSteelTiny ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag
@@ -93,7 +93,7 @@
 - type: entity
   id: NFBaseMagazineSubMachineGunTopMounted35
   name: top mounted smg magazine (.35 pistol)
-  parent: [ BaseC1Contraband, MagazinePistolSubMachineGunTopMounted, RecyclableItemSteelTiny ]
+  parent: [ MagazinePistolSubMachineGunTopMounted, RecyclableItemSteelTiny ] # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag

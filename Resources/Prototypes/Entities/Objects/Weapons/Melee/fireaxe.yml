@@ -1,6 +1,6 @@
 - type: entity
   name: fireaxe
-  parent: [BaseItem, BaseC1Contraband] # Frontier: BaseEngineeringContraband<BaseC1Contraband
+  parent: BaseItem # Frontier: BaseEngineeringContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: FireAxe
   description: Truly, the weapon of a madman. Who would think to fight fire with an axe?
   components:

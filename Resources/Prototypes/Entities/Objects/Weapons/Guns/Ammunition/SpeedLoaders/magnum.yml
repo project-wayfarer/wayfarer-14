@@ -1,7 +1,7 @@
 - type: entity
   id: BaseSpeedLoaderMagnum
   name: "speed loader (.45 magnum)"
-  parent: [ BaseItem, BaseC1Contraband ] # Frontier: BaseSecurityContraband<BaseC1Contraband
+  parent: BaseItem # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag

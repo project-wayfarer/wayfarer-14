@@ -76,7 +76,7 @@
       - EncryptionKeyCommon
 
 - type: entity
-  parent: [ ClothingHeadset, BaseCentcommCommandContraband ] # Frontier: Added BaseCentcommCommandContraband, removed BaseCentcommContraband.
+  parent: [ ClothingHeadset, BaseCGPContraband ] # Frontier: Added BaseCentcommCommandContraband, removed BaseCentcommContraband. # Wayfarer: BaseCentcommCommandContraband<BaseCGPContraband
   id: ClothingHeadsetCentCom
   name: CentComm headset
   description: A headset used by the upper echelons of Central Command. # Wayfarer: remove nanotrasen mention in description
@@ -92,7 +92,7 @@
     sprite: Clothing/Ears/Headsets/centcom.rsi
 
 - type: entity
-  parent: [ClothingHeadset, BaseC2ContrabandUnredeemable] # Frontier: add BaseC2ContrabandUnredeemable as a parent
+  parent: [ClothingHeadset, BaseCGPContraband] # Frontier: add BaseC2ContrabandUnredeemable as a parent # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingHeadsetCommand
   name: command headset
   description: A headset with a commanding channel.
@@ -226,7 +226,7 @@
       - EncryptionKeyCommon
 
 - type: entity
-  parent: [ClothingHeadset, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityLawyerContraband<BaseC2ContrabandUnredeemable
+  parent: ClothingHeadset # Frontier: BaseSecurityLawyerContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: ClothingHeadsetSecurity
   name: security headset
   description: This is used by your elite security force.
@@ -242,7 +242,7 @@
     sprite: Clothing/Ears/Headsets/security.rsi
 
 - type: entity
-  parent: [ClothingHeadset, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: ClothingHeadset # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: ClothingHeadsetBrigmedic
   name: brigmedic headset
   description: A headset that helps to hear the death cries.
@@ -275,7 +275,7 @@
     sprite: Clothing/Ears/Headsets/service.rsi
 
 - type: entity
-  parent: [ClothingHeadset] # WF Remove contraband
+  parent: ClothingHeadset # Wayfarer: Removed Contraband
   id: ClothingHeadsetFreelance
   name: freelancer headset
   description: This is used by a roaming group of freelancers.

@@ -100,6 +100,7 @@ public sealed partial class ChatUIController : UIController
         {ChatSelectChannel.Console, SharedChatSystem.ConsolePrefix},
         {ChatSelectChannel.LOOC, SharedChatSystem.LOOCPrefix},
         {ChatSelectChannel.SubtleLOOC, SharedChatSystem.SubtleLOOCPrefix},
+        {ChatSelectChannel.ShipOOC, default}, // Wayfarer: no prefix
         {ChatSelectChannel.OOC, SharedChatSystem.OOCPrefix},
         {ChatSelectChannel.Emotes, SharedChatSystem.EmotesPrefix},
         {ChatSelectChannel.Subtle, SharedChatSystem.SubtlePrefix}, // Floofstation
@@ -535,9 +536,11 @@ public sealed partial class ChatUIController : UIController
         CanSendChannels |= ChatSelectChannel.OOC;
         CanSendChannels |= ChatSelectChannel.LOOC;
         CanSendChannels |= ChatSelectChannel.SubtleLOOC;
+        CanSendChannels |= ChatSelectChannel.ShipOOC; // Wayfarer
         FilterableChannels |= ChatChannel.OOC;
         FilterableChannels |= ChatChannel.LOOC;
         FilterableChannels |= ChatChannel.SubtleLOOC;
+        FilterableChannels |= ChatChannel.ShipOOC; // Wayfarer
 
         // can always hear server (nobody can actually send server messages).
         FilterableChannels |= ChatChannel.Server;
@@ -875,7 +878,7 @@ public sealed partial class ChatUIController : UIController
         }
 
         // Play LOOC sound notification if enabled and on cooldown
-        if (_loocSoundEnabled && _audio != null && _ghost is not {IsGhost: true} && (msg.Channel == ChatChannel.LOOC || msg.Channel == ChatChannel.SubtleLOOC))
+        if (_loocSoundEnabled && _audio != null && _ghost is not {IsGhost: true} && (msg.Channel == ChatChannel.LOOC || msg.Channel == ChatChannel.SubtleLOOC || msg.Channel == ChatChannel.ShipOOC)) // Wayfarer: Add ShipOOC
         {
             var isOwnMessage = _player.LocalEntity != null && _ent.GetEntity(msg.SenderEntity) == _player.LocalEntity;
             var currentTime = _timing.CurTime;
@@ -976,6 +979,12 @@ public sealed partial class ChatUIController : UIController
             case ChatChannel.SubtleLOOC:
                 AddSpeechBubble(msg, SpeechBubble.SpeechType.SubtleLooc);
                 break;
+
+            // Wayfarer
+            case ChatChannel.ShipOOC:
+                AddSpeechBubble(msg, SpeechBubble.SpeechType.ShipOoc);
+                break;
+            // End Wayfarer
         }
     }
 

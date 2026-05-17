@@ -72,6 +72,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int LOOCRange = 15; // how far LOOC goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public const int SubtleLOOCRange = SubtleRange; // how far Subtle LOOC goes in world units
+    public const int ShipOOCRange = 750; // Wayfarer: how far Ship OOC goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
 
@@ -354,6 +355,15 @@ public sealed partial class ChatSystem : SharedChatSystem
                     message,
                     hideChat);
                 break;
+            // Wayfarer
+            case InGameOOCChatType.ShipOoc:
+                SendShipOOC(
+                    source,
+                    player,
+                    message,
+                    hideChat);
+                break;
+            // End Wayfarer
             case InGameOOCChatType.Looc:
                 SendLOOC(
                     source,
@@ -802,6 +812,42 @@ public sealed partial class ChatSystem : SharedChatSystem
             LogImpact.Low,
             $"SubtleLOOC from {player:Player}: {message}");
     }
+
+    // Wayfarer
+    private void SendShipOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
+    {
+        var name = FormattedMessage.EscapeText(Identity.Name(source, EntityManager));
+
+        if (_adminManager.IsAdmin(player))
+        {
+            if (!_adminLoocEnabled)
+                return;
+        }
+        else if (!_loocEnabled)
+            return;
+        var wrappedMessage = Loc.GetString(
+            "chat-manager-entity-ship-ooc-wrap-message",
+            ("entityName", name),
+            ("message", FormattedMessage.EscapeText(message)));
+
+        SendInVoiceRange(
+            ChatChannel.ShipOOC,
+            message,
+            wrappedMessage,
+            source,
+            hideChat
+                ? ChatTransmitRange.HideChat
+                : ChatTransmitRange.NoGhosts,
+            player.UserId,
+            voiceRange: ShipOOCRange,
+            blockedByOcclusion: false,
+            ensmallenedByOcclusion: false);
+        _adminLogger.Add(
+            LogType.Chat,
+            LogImpact.Low,
+            $"ShipOOC from {player:Player}: {message}");
+    }
+    // End Wayfarer
 
     // ReSharper disable once InconsistentNaming
     private void SendLOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
@@ -1288,6 +1334,7 @@ public enum InGameOOCChatType : byte
 {
     Looc,
     SubtleLooc,
+    ShipOoc, // Wayfarer
     Dead
 }
 

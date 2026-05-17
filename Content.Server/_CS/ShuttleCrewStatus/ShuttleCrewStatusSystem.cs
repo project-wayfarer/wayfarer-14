@@ -1,9 +1,11 @@
 using Content.Server.GameTicking;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
+using Content.Server.Station.Components; // Wayfarer
 using Content.Shared.GameTicking;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
+using Content.Shared.Station.Components; // Wayfarer
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -100,17 +102,32 @@ public sealed class ShuttleCrewStatusSystem : EntitySystem
                     {
                         _shuttle.SetIFFColor(uid, crewStatus.OriginalColor.Value, iff);
                     }
+
+                    // Wayfarer: Ensure StationEventEligibleComponent, allowing random events to target active shuttles
+                    if (TryComp(uid, out StationMemberComponent? stationMember))
+                    {
+                        EnsureComp<StationEventEligibleComponent>(stationMember.Station);
+                    }
                 }
                 else
                 {
                     // Store current color if we haven't already
-                    if (!crewStatus.OriginalColor.HasValue)
+                    if (!crewStatus.OriginalColor.HasValue
+                        // Wayfarer: or if current IFF isn't inactive color & doesn't match what's stored
+                        || (iff.Color != _inactiveCrewColor && crewStatus.OriginalColor != iff.Color))
                     {
                         crewStatus.OriginalColor = iff.Color;
                     }
 
                     // Set to gray to indicate no active crew
                     _shuttle.SetIFFColor(uid, _inactiveCrewColor, iff);
+
+                    // Wayfarer: Prevent random events from targeting inactive shuttles
+                    if (TryComp(uid, out StationMemberComponent? stationMember) &&
+                        HasComp<StationEventEligibleComponent>(stationMember.Station))
+                    {
+                        RemComp<StationEventEligibleComponent>(stationMember.Station);
+                    }
                 }
             }
         }

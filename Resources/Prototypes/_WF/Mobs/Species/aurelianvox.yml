@@ -143,17 +143,19 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "outerClothing" ]
-    - map: [ "back" ]
+    - map: [ "back" ] # Not default to fix bags going over tail, going to have to find a better solution for this layering in the future.
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Should always be used for avox tails by default.
+    - map: [ "outerClothing" ] # Must be here or tails will show over armors.
     - map: [ "neck" ]
-    - map: [ "suitstorage" ] # This is not in the default order
+    - map: [ "suitstorage" ] # This is not in the default order.
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "mask" ] # Moved so hair is shown over back sprites for masks.
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -177,7 +179,7 @@
             sprite: _WF/Mobs/Species/AurelianVox/displacement.rsi
             state: hair
   - type: Inventory
-    speciesId: vox
+    speciesId: avox
     #templateId: AurelianVox
     displacements:
       jumpsuit:
@@ -245,7 +247,7 @@
   - type: Body
     prototype: AurelianVox
   - type: Inventory
-    speciesId: vox
+    speciesId: avox
     #templateId: AurelianVox
     displacements:
       jumpsuit:

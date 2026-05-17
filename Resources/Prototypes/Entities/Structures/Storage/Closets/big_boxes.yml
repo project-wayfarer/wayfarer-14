@@ -60,7 +60,7 @@
 - type: entity
   id: StealthBox
   suffix: stealth
-  parent: [BaseBigBox, BaseC3SyndicateContraband] # Frontier: added BaseC3SyndicateContraband
+  parent: [BaseBigBox, BaseBMContraband] # Frontier: added BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContrabandNoValue<BaseBMContraband
   description: Kept ya waiting, huh?
   components:
     - type: Damageable

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemSteelTiny] # Wayfarer: add RecyclableItemSteelTiny
   id: Cane
   name: cane
   description: A wooden cane.

@@ -153,7 +153,7 @@
 
 #Goliath Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseC1Contraband] # Frontier: BaseCargoContraband<BaseC1Contraband
+  parent: ClothingOuterHardsuitBase # Frontier: BaseCargoContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: ClothingOuterHardsuitGoliath
   name: goliath hardsuit
   description: A lightweight hardsuit, adorned with a patchwork of thick, chitinous goliath hide.
@@ -226,7 +226,7 @@
 
 #Security Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseC2ContrabandUnredeemable] # Removed BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterHardsuitBase, BaseMilitaryContraband] # Removed BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: ClothingOuterHardsuitSecurity
   name: security hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -262,7 +262,7 @@
 
 #Brigmedic Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseC2ContrabandUnredeemable] # Removed BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterHardsuitBase, BaseMilitaryContraband] # Removed BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: ClothingOuterHardsuitBrigmedic
   name: brigmedic hardsuit
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit.
@@ -289,7 +289,7 @@
 
 #Warden's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseC2ContrabandUnredeemable] # BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterHardsuitBase, BaseMilitaryContraband] # BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: ClothingOuterHardsuitWarden
   name: warden's hardsuit
   description: A specialized riot suit geared to combat low pressure environments.
@@ -476,7 +476,7 @@
 
 #Head of Security's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseC2ContrabandUnredeemable] # BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingOuterHardsuitBase, BaseMilitaryContraband] # BaseCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: ClothingOuterHardsuitSecurityRed
   name: head of security's hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.

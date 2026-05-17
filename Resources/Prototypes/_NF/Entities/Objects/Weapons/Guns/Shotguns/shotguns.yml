@@ -2,7 +2,7 @@
 - type: entity
   id: NFWeaponShotgunBulldog
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - NFBaseWeaponShotgunChamber50Magazine
   - NFBaseWeaponFrameShotgunWieldable
   name: Bulldog
@@ -155,7 +155,7 @@
 
 - type: entity
   id: NFWeaponShotgunBlunderbuss
-  parent: [ BaseC3PirateContraband, NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable ]
+  parent: [ BaseBMContraband, NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable ] # Wayfarer: BaseC3PirateContraband<BaseBMContraband
   name: blunderbuss
   description: |-
     Deadly at close range, an illegal shotgun often found at the side of a pirate.

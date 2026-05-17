@@ -1,6 +1,6 @@
 - type: entity
   name: nuclear authentication disk
-  parent: [BaseItem, BaseC2ContrabandUnredeemable] # Frontier: BaseGrandTheftContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseItem, BaseCGPContraband] # Frontier: BaseGrandTheftContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NukeDisk
   description: A nuclear auth disk, capable of arming a nuke if used along with a code. Note from nanotrasen reads "THIS IS YOUR MOST IMPORTANT POSESSION, SECURE DAT FUKKEN DISK!"
   components:
@@ -39,7 +39,7 @@
 
 - type: entity
   name: nuclear authentication disk
-  parent: [BaseItem, BaseC2ContrabandUnredeemable] # Frontier: BaseGrandTheftContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseItem, BaseCGPContraband] # Frontier: BaseGrandTheftContraband<BaseC2ContrabandUnredeemable  Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NukeDiskFake
   suffix: Fake
   description: A nuclear auth disk, capable of arming a nuke if used along with a code. Note from nanotrasen reads "THIS IS YOUR MOST IMPORTANT POSESSION, SECURE DAT FUKKEN DISK!"

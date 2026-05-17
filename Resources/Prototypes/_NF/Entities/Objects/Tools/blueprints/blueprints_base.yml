@@ -198,7 +198,7 @@
   - type: Tag
     tags:
     - NFBlueprintEngineeringTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
@@ -237,7 +237,7 @@
   - type: Tag
     tags:
     - NFBlueprintSalvageTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
@@ -276,7 +276,7 @@
   - type: Tag
     tags:
     - NFBlueprintProtolathe
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
@@ -315,7 +315,7 @@
   - type: Tag
     tags:
     - NFBlueprintServiceTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
@@ -354,7 +354,7 @@
   - type: Tag
     tags:
     - NFBlueprintMedicalTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
@@ -393,7 +393,7 @@
   - type: Tag
     tags:
     - NFBlueprintMercenaryTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
@@ -431,13 +431,13 @@
   - type: Tag
     tags:
     - NFBlueprintNfsdTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
 # region Expedition
 - type: entity
-  parent: [ BaseC3Contraband, NFBaseBlueprint ]
+  parent: [ BaseBMContraband, NFBaseBlueprint ] # Wayfarer: BaseC3Contraband<BaseBMContraband
   id: NFBaseBlueprintExpedition
   abstract: true
   components:
@@ -486,7 +486,7 @@
   - type: Tag
     tags:
     - NFBlueprintSalvageTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
 
@@ -526,6 +526,6 @@
     tags:
     - NFBlueprintMercenaryTechfab
     - NFBlueprintNfsdTechfab
-    - NFBlueprintAdvanced
+    #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper

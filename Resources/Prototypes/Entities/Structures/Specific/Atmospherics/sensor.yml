@@ -92,6 +92,13 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { state: gsensor1 }
           False: { state: gsensor0 }
+  # Starlight Start: RPD
+  - type: RCDDeconstructable
+    cost: 2
+    delay: 2
+    fx: EffectRCDDeconstruct2
+    rpd: true
+  # Starlight End: RPD
 
 - type: entity
   parent: BaseItem

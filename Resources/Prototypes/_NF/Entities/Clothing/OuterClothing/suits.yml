@@ -1,7 +1,7 @@
 # Syndicate bomb suit
 - type: entity
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - ClothingOuterSuitBomb
   - ContrabandClothing
   id: ClothingOuterSuitBombSyndie

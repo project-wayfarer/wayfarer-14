@@ -2,7 +2,7 @@
 # WizDen
 - type: entity
   id: NFWeaponEnergyRifleAssaultPulseCarbine
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponEnergyRifleAssaultHitScanPulse, NFBaseWeaponFrameEnergyRifleAssaultNanotrasen ]
+  parent: [ BaseCGPContraband, NFBaseWeaponEnergyRifleAssaultHitScanPulse, NFBaseWeaponFrameEnergyRifleAssaultNanotrasen ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   name: pulse carbine
   description: |-
     A high tech energy carbine favoured by the NT-ERT operatives. On the handle is a label that says 'for authorized use only.'

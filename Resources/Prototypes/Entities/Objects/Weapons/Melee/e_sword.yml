@@ -160,7 +160,7 @@
 
 - type: entity
   name: pen
-  parent: [BaseMeleeWeaponEnergy, SelectableLock, BaseC3SyndicateContraband] # Frontier: added BaseC3SyndicateContraband
+  parent: [BaseMeleeWeaponEnergy, SelectableLock, BaseBMContraband] # Frontier: added BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: EnergyDagger
   suffix: E-Dagger
   description: 'A dark ink pen.'

@@ -2,7 +2,7 @@
 - type: entity
   id: NFBaseShellShotgun
   name: shell (.50)
-  parent: [ BaseC1Contraband, BaseShellShotgun ]
+  parent: BaseShellShotgun # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag

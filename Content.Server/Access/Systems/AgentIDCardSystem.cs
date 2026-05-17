@@ -94,16 +94,22 @@ namespace Content.Server.Access.Systems
 
         private void OnAfterInteract(EntityUid uid, AgentIDCardComponent component, AfterInteractEvent args)
         {
-            if (args.Target == null || !args.CanReach || _lock.IsLocked(uid) ||
-                !TryComp<AccessComponent>(args.Target, out var targetAccess) || !HasComp<IdCardComponent>(args.Target))
-                return;
+            // Wayfarer: Disabled access copying
+            // if (args.Target == null || !args.CanReach || _lock.IsLocked(uid) ||
+            //     !TryComp<AccessComponent>(args.Target, out var targetAccess) || !HasComp<IdCardComponent>(args.Target))
+            //     return;
+            // Wayfarer: Disabled access copying
 
-            if (!TryComp<AccessComponent>(uid, out var access) || !HasComp<IdCardComponent>(uid))
-                return;
+            // Wayfarer: Disabled access copying
+            // if (!TryComp<AccessComponent>(uid, out var access) || !HasComp<IdCardComponent>(uid))
+            //     return;
+            // Wayfarer: Disabled access copying
 
-            var beforeLength = access.Tags.Count;
-            access.Tags.UnionWith(targetAccess.Tags);
-            var addedLength = access.Tags.Count - beforeLength;
+            // Wayfarer: Disabled access copying
+            // var beforeLength = access.Tags.Count;
+            // access.Tags.UnionWith(targetAccess.Tags);
+            // var addedLength = access.Tags.Count - beforeLength;
+            // Wayfarer end
 
             // // DeltaV - Copy NanoChat data if available // Wayfarer: Disabled
             // if (TryComp<NanoChatCardComponent>(args.Target, out var targetNanoChat) &&
@@ -133,21 +139,25 @@ namespace Content.Server.Access.Systems
             // }
             // // End DeltaV
 
-            if (addedLength == 0)
-            {
-                _popupSystem.PopupEntity(Loc.GetString("agent-id-no-new", ("card", args.Target)), args.Target.Value, args.User);
-                return;
-            }
+            // Wayfarer: Disabled access copying
+            // if (addedLength == 0)
+            // {
+            //     _popupSystem.PopupEntity(Loc.GetString("agent-id-no-new", ("card", args.Target)), args.Target.Value, args.User);
+            //     return;
+            // }
+            // Wayfarer end
 
-            Dirty(uid, access);
+            // Dirty(uid, access); // Wayfarer: Disabled access copying
 
-            if (addedLength == 1)
-            {
-                _popupSystem.PopupEntity(Loc.GetString("agent-id-new-1", ("card", args.Target)), args.Target.Value, args.User);
-                return;
-            }
+            // Wayfarer: Disabled access copying
+            // if (addedLength == 1)
+            // {
+            //     _popupSystem.PopupEntity(Loc.GetString("agent-id-new-1", ("card", args.Target)), args.Target.Value, args.User);
+            //     return;
+            // }
+            // Wayfarer end
 
-            _popupSystem.PopupEntity(Loc.GetString("agent-id-new", ("number", addedLength), ("card", args.Target)), args.Target.Value, args.User);
+            // _popupSystem.PopupEntity(Loc.GetString("agent-id-new", ("number", addedLength), ("card", args.Target)), args.Target.Value, args.User); Wayfarer: disabled access copying
         }
 
         private void AfterUIOpen(EntityUid uid, AgentIDCardComponent component, AfterActivatableUIOpenEvent args)

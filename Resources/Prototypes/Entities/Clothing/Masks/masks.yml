@@ -21,7 +21,7 @@
     hideOnToggle: true
 
 - type: entity
-  parent: [ClothingMaskGas, BaseC1Contraband] # Frontier: BaseSecurityContraband<BaseC1Contraband
+  parent: ClothingMaskGas # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: ClothingMaskGasSecurity
   name: security gas mask
   description: A standard issue Security gas mask.
@@ -44,7 +44,7 @@
 - type: entity
   parent: [ClothingMaskGas, BaseMilitaryContraband] # Wayfarer: BaseSyndicateContraband<BaseMilitaryContraband
   id: ClothingMaskGasSyndicate
-  name: syndicate gas mask
+  name: combat gas mask # Wayfarer: syndicate<combat I LOVE TACTICALSLOP
   description: A close-fitting tactical mask that can be connected to an air supply.
   components:
   - type: Sprite
@@ -95,7 +95,7 @@
   - type: IngestionBlocker
 
 - type: entity
-  parent: [ ClothingMaskGasAtmos, BaseCentcommContraband ]
+  parent: [ ClothingMaskGasAtmos, BaseMilitaryContraband ] # Wayfarer: BaseCentcommContraband<BaseMilitaryContraband
   id: ClothingMaskGasCentcom
   name: CentComm gas mask
   description: Oooh, gold and green. Fancy! This should help as you sit in your office.
@@ -242,7 +242,7 @@
     node: mask
 
 - type: entity
-  parent: [ClothingMaskClown, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: ClothingMaskClown # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband
   id: ClothingMaskClownSecurity
   name: security clown wig and mask
   description: A debatably oxymoronic but protective mask and wig.
@@ -391,7 +391,7 @@
     accent: StutteringAccent
 
 - type: entity
-  parent: [ ClothingMaskGas, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ ClothingMaskGas, BaseMilitaryContraband ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: ClothingMaskGasSwat
   name: swat gas mask
   description: A elite issue Security gas mask.
@@ -439,7 +439,7 @@
     id: ClothingMaskGasMercenary # Frontier
 
 - type: entity
-  parent: [ ClothingMaskGas, BaseCentcommContraband ]
+  parent: [ ClothingMaskGas, BaseMilitaryContraband ] # Wayfarer: BaseCentcommContraband<BaseMilitaryContraband
   id: ClothingMaskGasERT
   name: ert gas mask
   description: The gas mask of the elite squad of the ERT.
@@ -697,7 +697,7 @@
     sprite: Clothing/Mask/scaredmime.rsi
 
 - type: entity
-  parent: [ClothingMaskMime, BaseC1Contraband] # Frontier: BaseSecurityContraband<BaseC1Contraband
+  parent: ClothingMaskMime # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: ClothingMaskMimeSecurity
   name: security mime mask
   description: You have the right to remain silent.

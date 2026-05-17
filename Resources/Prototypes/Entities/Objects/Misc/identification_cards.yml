@@ -107,7 +107,7 @@
     - state: idintern-service
 
 - type: entity
-  parent: [IDCardStandard, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [IDCardStandard] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband
   id: CaptainIDCard
   name: captain ID card
   components:
@@ -667,9 +667,9 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: [ IDCardStandard ] # WF Removed Contraband
+  parent: [ IDCardStandard ] # Wayfarer: Removed Contraband
   id: SyndicateIDCard
-  name: syndicate ID card
+  name: ID card # Wayfarer: Renamed
   components:
   - type: Sprite
     layers:
@@ -682,7 +682,7 @@
     listNumber: false
 
 - type: entity
-  parent: [ IDCardStandard ] # WF Removed Contraband
+  parent: [ IDCardStandard ] # Wayfarer: Removed Contraband
   id: PirateIDCard
   name: pirate ID card
   categories: [ HideSpawnMenu ] # Frontier

@@ -1,6 +1,6 @@
 - type: entity
   name: plasteel mace
-  parent: [BaseC1Contraband, Truncheon]
+  parent: Truncheon # Wayfarer: Removed contraband
   id: PlasteelMace
   description: It's a lightweight stick with a spikey bit. It would probably be better if it was a heavy stick with a spikey bit.
   components:
@@ -23,7 +23,7 @@
 
 - type: entity
   name: plasteel epee
-  parent: [BaseC1Contraband, BaseSword]
+  parent: [BaseSword] # Wayfarer: Removed contraband
   id: PlasteelEpee
   description: You find yourself wondering if anyone else remembers Nidhogg.
   components:
@@ -53,7 +53,7 @@
 
 - type: entity
   name: plasteel axe
-  parent: [BaseC1Contraband, Truncheon]
+  parent: Truncheon # Wayfarer: Removed contraband
   id: PlasteelAxe
   description: Probably no good at doing axe things but it's a much better conversation starter than a knife.
   components:
@@ -76,7 +76,7 @@
 
 - type: entity
   name: plasteel spear
-  parent: [BaseC1Contraband, SpearReinforced]
+  parent: SpearReinforced # Wayfarer: Removed contraband
   id: PlasteelSpear
   description: It features a blade that can be coated in deadly poison. Or coffee. Or anything really. It's very coatable. Somehow worse than glass tied to a stick.
   components:

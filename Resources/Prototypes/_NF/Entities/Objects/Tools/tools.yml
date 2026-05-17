@@ -67,7 +67,7 @@
 
 - type: entity
   name: pirate repair kit
-  parent: [BaseItem, BaseC3PirateContraband]
+  parent: [BaseItem] # Wayfarer: Remove contraband
   id: PirateRepairKit
   description: A collection of equipment needed to repair a pirate console.
   components:

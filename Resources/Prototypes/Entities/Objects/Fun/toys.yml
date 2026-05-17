@@ -353,7 +353,7 @@
       revolver-ammo: !type:Container
 
 - type: entity
-  parent: [RevolverCapGun, BaseC3SyndicateContraband] # Frontier: added BaseC3SyndicateContraband
+  parent: [RevolverCapGun, BaseBMContraband] # Frontier: added BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: RevolverCapGunFake
   name: cap gun
   suffix: Fake

@@ -59,7 +59,7 @@
 
 - type: entity
   id: NFWeaponSubMachineGunWt550
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponSubMachineGunChamber35TopMounted, NFBaseWeaponFrameSubMachineGunNanotrasen ]
+  parent: [ BaseMilitaryContraband, NFBaseWeaponSubMachineGunChamber35TopMounted, NFBaseWeaponFrameSubMachineGunNanotrasen ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   name: WT-550
   description: |-
     An excellent SMG. On the receiver is a label that says 'for authorized use only.'

@@ -3254,3 +3254,162 @@ Entries:
   id: 6869
   time: '2026-05-13T02:52:13.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/861
+- author: Whisper
+  changes:
+    - type: Add
+      message: Added Synthetic Lizard markings! Try making an IPC!
+    - type: Fix
+      message: Fixed my stupid son looking stupid!
+  id: 6870
+  time: '2026-05-14T04:37:55.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/872
+- author: Possumongus
+  changes:
+    - type: Fix
+      message: Fixed typo in rules, make sure to read safe zone rules again carefully!
+  id: 6871
+  time: '2026-05-15T08:37:06.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/880
+- author: VVersengt
+  changes:
+    - type: Remove
+      message: Removed contraband tags from Arcadia items.
+    - type: Tweak
+      message: Reclassified most contraband to fit the new system.
+  id: 6872
+  time: '2026-05-15T12:44:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/874
+- author: VVersengt
+  changes:
+    - type: Add
+      message: Added new items to outlaw uplink and reduced prices across the board.
+    - type: Tweak
+      message: Flintlock is no longer a pocket Hristov, seriously why was this a thing?
+    - type: Tweak
+      message: Tweaked damage values on .45 ammo, it is god's chosen caliber after all.
+    - type: Tweak
+      message: Interdyne herbals now contain Bicaridine instead of Tricodrazine.
+    - type: Tweak
+      message: Outlaw hardsuit now has a new sprite.
+  id: 6873
+  time: '2026-05-15T12:47:43.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/881
+- author: JustKaits
+  changes:
+    - type: Add
+      message: some LV cables
+    - type: Remove
+      message: airlocks.
+  id: 6874
+  time: '2026-05-15T15:50:48.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/734
+- author: VVersengt
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Syndicate PDAs not having any apps installed. Do you have games on
+        your phone?
+  id: 6875
+  time: '2026-05-15T22:06:16.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/882
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: CGP Thrusters are just a tiny bit faster than regular ones.
+  id: 6876
+  time: '2026-05-15T22:10:18.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/884
+- author: DevArchwave
+  changes:
+    - type: Tweak
+      message: Omni blueprints have been largely removed, saved for common items.
+  id: 6877
+  time: '2026-05-15T22:12:48.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/870
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: Moved Perdition further out
+  id: 6878
+  time: '2026-05-15T22:13:21.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/877
+- author: DevArchwave
+  changes:
+    - type: Add
+      message: >-
+        Added mutable server configuration variables that can modify how many
+        points certain sources of science can give.
+  id: 6879
+  time: '2026-05-15T22:15:34.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/868
+- author: stinkiestdog
+  changes:
+    - type: Tweak
+      message: >-
+        Bluespace events no longer target shuttles which are considered
+        'inactive' (gray IFF).
+  id: 6880
+  time: '2026-05-15T22:16:08.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/878
+- author: Whisper
+  changes:
+    - type: Add
+      message: >-
+        Added (standard) blinking eye markings! You can add these to your
+        character to make them blink! (You can also toggle this off in-game if
+        you make the marking hidable!)
+  id: 6881
+  time: '2026-05-15T22:18:27.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/876
+- author: Luweth
+  changes:
+    - type: Add
+      message: Added Aurelian metabolizer type.
+    - type: Add
+      message: Countless mask and hardsuit variants for Aurelian Vox
+    - type: Tweak
+      message: >-
+        Changed Aurelian Vox to now be poisoned by healing chems derived from
+        Oxygen
+    - type: Tweak
+      message: Various localization adjustments for A-Vox
+    - type: Fix
+      message: Various Aurelian layering issues.
+  id: 6882
+  time: '2026-05-16T00:03:15.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/887
+- author: DevArchwave
+  changes:
+    - type: Add
+      message: Ported Starlight's RPD Refactor
+  id: 6883
+  time: '2026-05-16T00:07:35.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/866
+- author: Khaomi
+  changes:
+    - type: Add
+      message: Added Ship Out Of Character (SOOC)
+  id: 6884
+  time: '2026-05-16T00:14:10.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/885
+- author: DevArchwave
+  changes:
+    - type: Fix
+      message: Mitigated a client crash related to markings.
+  id: 6885
+  time: '2026-05-16T01:11:05.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/891
+- author: BlueSushii
+  changes:
+    - type: Add
+      message: Rules of engagment
+  id: 6886
+  time: '2026-05-16T01:11:27.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/892
+- author: stinkiestdog
+  changes:
+    - type: Tweak
+      message: Craftable wide sinks now have the correct tank volume (250u)
+  id: 6887
+  time: '2026-05-17T06:53:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/902

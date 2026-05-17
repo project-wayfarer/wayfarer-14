@@ -36,6 +36,13 @@
         /// </summary>
         SubtleLOOC = ChatChannel.SubtleLOOC,
 
+        // Wayfarer
+        /// <summary>
+        ///      Ship out-of-character channel
+        /// </summary>
+        ShipOOC = ChatChannel.ShipOOC,
+        // End Wayfarer
+
         /// <summary>
         ///     Out-of-character channel
         /// </summary>

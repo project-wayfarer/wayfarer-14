@@ -263,7 +263,7 @@
   name: death nettle
   description: This nettle's out for blood.
   id: DeathNettle
-  parent: [ProduceBase, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband
+  parent: ProduceBase # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/death_nettle.rsi
