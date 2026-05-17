@@ -855,7 +855,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 40
+        maxVol: 41 # Wayfarer 40<41
         reagents:
           - ReagentId: Nutriment
             Quantity: 8
