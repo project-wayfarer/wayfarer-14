@@ -151,6 +151,10 @@ ChemVends are forbidden to map onto ships.
 * Sink with Drain
 * Seed Extractor
 * Biogenerator
+#### Cloning Subdepartment
+* Cloning Pod
+* Cloning Console Computer
+* Medical Scanner
 ### CGP
 * APUs to support ship power (as few as possible)
 * IFF consoles
