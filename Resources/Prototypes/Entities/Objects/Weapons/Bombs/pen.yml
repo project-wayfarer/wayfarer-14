@@ -26,6 +26,11 @@
     - Trigger
   - type: EmitSoundOnUse
     handle: false # don't want the sound to stop the explosion from triggering
+  # Wayfarer: Deposit blacklist tag
+  - type: Tag
+    tags:
+    - DepositBlacklist
+  # End Wayfarer
 
 - type: entity
   parent: [BaseItem, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
