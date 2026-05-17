@@ -447,8 +447,10 @@ public abstract class SharedSuitSensorSystem : EntitySystem
                 break;
         }
 
+        // Wayfarer: SSD indicator in crew monitor UI
         if (TryComp<SSDIndicatorComponent>(sensor.User.Value, out var indicatorComp))
             status.IsSpaceSleepDisorder = indicatorComp.IsSSD;
+        // End Wayfarer
 
         return status;
     }

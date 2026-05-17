@@ -280,7 +280,8 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
 
             statusContainer.AddChild(nameLabel);
 
-            var inactiveLabel = new Label() // Wayfarer: Inactivity indicator for SSD characters
+            // Wayfarer: Inactivity indicator for SSD characters
+            var inactiveLabel = new Label()
             {
                 SetWidth = 5,
                 StyleClasses = { "LabelSubText" },
@@ -288,7 +289,9 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
                 Align = Label.AlignMode.Right,
                 Text = sensor.IsSpaceSleepDisorder ? "Zzz" : "",
             };
-            statusContainer.AddChild(inactiveLabel); // Wayfarer
+            statusContainer.AddChild(inactiveLabel);
+            // End Wayfarer
+
 
             // User job container
             var jobContainer = new BoxContainer()

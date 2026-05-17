@@ -4,7 +4,6 @@ using Content.Server.Access.Systems; // Coyote
 using Content.Server.Administration;
 using Content.Server.EUI;
 using Content.Shared.Medical.SuitSensors; // Coyote
-using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords;
 using Content.Server.StationRecords.Systems;
@@ -15,7 +14,6 @@ using Content.Shared.GameTicking;
 using Content.Shared.Roles;
 using Content.Shared.Station.Components;
 using Content.Shared.SSDIndicator; // Coyote
-using Content.Shared.StationRecords;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Player;
@@ -83,20 +81,26 @@ public sealed class CrewManifestSystem : EntitySystem
     // wrt the amount of players readied up.
     private void AfterGeneralRecordCreated(AfterGeneralRecordCreatedEvent ev)
     {
-        // BuildCrewManifest(); // coyote: NOP, we build on open
+        // Coyote: NOP, we build on open
+        // BuildCrewManifest();
         // UpdateEuis(ev.Key.OriginStation);
+        // End Coyote
     }
 
     private void OnRecordModified(RecordModifiedEvent ev)
     {
-        // BuildCrewManifest(); // coyote: NOP, we build on open
+        // Coyote: NOP, we build on open
+        // BuildCrewManifest();
         // UpdateEuis(ev.Key.OriginStation);
+        // End Coyote
     }
 
     private void OnRecordRemoved(RecordRemovedEvent ev)
     {
-        // BuildCrewManifest(); // coyote: NOP, we build on open
+        // Coyote: NOP, we build on open
+        // BuildCrewManifest();
         // UpdateEuis(ev.Key.OriginStation);
+        // End Coyote
     }
 
     private void OnBoundUiClose(EntityUid uid, CrewManifestViewerComponent component, BoundUIClosedEvent ev)
@@ -117,9 +121,9 @@ public sealed class CrewManifestSystem : EntitySystem
     ///     Gets the crew manifest for a given station, along with the name of the station.
     /// </summary>
     /// <returns>The name and crew manifest entries (unordered) of the station.</returns>
-    public CrewManifestEntries GetCrewManifest() // coyote: remove args, remove name
+    public CrewManifestEntries GetCrewManifest() // Coyote: remove args, remove name
     {
-        return BuildCrewManifest(); // coyote
+        return BuildCrewManifest(); // Coyote
     }
 
     private void UpdateEuis(EntityUid station)
@@ -229,9 +233,10 @@ public sealed class CrewManifestSystem : EntitySystem
         var entries = new CrewManifestEntries();
         var entriesSort = new List<(JobPrototype? job, CrewManifestEntry entry)>();
 
-        while (sensors.MoveNext(out var uid, out var sensor)) // Coyote start
+        // Coyote start
+        while (sensors.MoveNext(out var uid, out var sensor))
         {
-            if (sensor.User == null ) // Wayfarer: Moved SSD check to allow showing SSD characters in a separate section
+            if (sensor.User == null) // Wayfarer: Moved SSD check to allow showing SSD characters in a separate section
             {
                 continue;
             }
@@ -259,7 +264,8 @@ public sealed class CrewManifestSystem : EntitySystem
             var entry = new CrewManifestEntry(name, jobTitle, card.Comp.JobIcon, jobName); // Wayfarer: preset.JobName!.Value < jobName
 
             entriesSort.Add((null, entry));
-        } // Coyote end
+        }
+        // End Coyote
 
         entriesSort.Sort((a, b) =>
         {
@@ -271,8 +277,8 @@ public sealed class CrewManifestSystem : EntitySystem
         });
 
         entries.Entries = entriesSort.Select(x => x.entry).ToArray();
-        // _cachedEntries[station] = entries; // coyote: causes problems
-        return entries; // coyote
+        // _cachedEntries[station] = entries; // Coyote: causes problems
+        return entries; // Coyote
     }
 }
 

@@ -92,7 +92,8 @@ public sealed partial class CriticalImplantTrackerUiFragment : BoxContainer
             };
             headerContainer.AddChild(nameLabel);
 
-            var inactiveLabel = new Label() // Wayfarer: Inactivity indicator for SSD characters
+            // Inactivity indicator for SSD characters
+            var inactiveLabel = new Label()
             {
                 StyleClasses = { "LabelSubText" },
                 FontColorOverride = new Color(9, 169, 9),

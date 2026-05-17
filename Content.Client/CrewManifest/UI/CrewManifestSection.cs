@@ -41,7 +41,8 @@ public sealed class CrewManifestSection : BoxContainer
             };
             name.SetMessage(entry.Name);
 
-            var inactiveLabel = new Label() // Wayfarer: Inactivity indicator for SSD characters
+            // Wayfarer: Inactivity indicator for SSD characters
+            var inactiveLabel = new Label()
             {
                 SetWidth = 5,
                 StyleClasses = { "LabelSubText" },
@@ -49,6 +50,7 @@ public sealed class CrewManifestSection : BoxContainer
                 Align = Label.AlignMode.Right,
                 Text = section.Name == "department-Inactive" ? "Zzz" : "",
             };
+            // End Wayfarer
 
             var titleContainer = new BoxContainer()
             {
