@@ -10,8 +10,13 @@ on:
 
 jobs:
   Label:
-    if: ( github.event.pull_request.draft == false ) && ( github.actor != 'PJBot' ) && ( github.actor != 'web-flow' ) # Wayfarer: FontierATC<web-flow
+    if: ( github.event.pull_request.draft == false ) && ( github.actor != 'PJBot' ) && ( github.actor != 'FrontierATC' ) && ( github.actor != 'github-actions[bot]' ) # Frontier # Wayfarer
     runs-on: ubuntu-latest
+    # Wayfarer
+    permissions:
+      pull-requests: write
+      issues: write
+    # End Wayfarer
     steps:
       - name: Check for Merge Conflicts
         uses: eps1lon/actions-label-merge-conflict@v3.0.0

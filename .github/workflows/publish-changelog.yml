@@ -3,7 +3,7 @@ name: Publish Changelog
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 10 * * *'
 
 jobs:
  publish_changelog:
@@ -13,8 +13,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@v3
       with:
-        # token: ${{secrets.GITHUB_TOKEN}}
-        token: ${{secrets.CHANGELOG_PAT}}
+        token: ${{secrets.GITHUB_TOKEN}}
         ref: master
 
     - name: Publish changelog
