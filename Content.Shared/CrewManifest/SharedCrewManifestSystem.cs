@@ -25,7 +25,7 @@ public sealed class CrewManifestEuiState : EuiStateBase // Coyote: Removed Stati
 {
     public CrewManifestEntries? Entries { get; }
 
-    public CrewManifestEuiState(CrewManifestEntries? entries)
+    public CrewManifestEuiState(CrewManifestEntries? entries) // Coyote: Removed StationName
     {
         Entries = entries;
     }
