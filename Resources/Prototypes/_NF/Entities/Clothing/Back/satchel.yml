@@ -26,7 +26,7 @@
     sprite: _NF/Clothing/Back/Satchels/pilot.rsi
 
 - type: entity
-  parent: ClothingBackpackSatchelSecurity
+  parent: [ClothingBackpackSatchelSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackSatchelNfsdBrown
   name: CGP satchel
   components:

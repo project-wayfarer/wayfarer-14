@@ -792,7 +792,7 @@
         color: "#ffce5b"
 
 - type: entity
-  parent: ClothingUniformJumpsuitHoP
+  parent: [ClothingUniformJumpsuitHoP, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitMilitarySr
   name: station representative's jumpsuit
   suffix: Military

@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingEyesHudSecurity
+  parent: [ClothingEyesHudSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingEyesHudNfsd
   name: CGP hud
   description: A heads-up display that scans the humanoids in view and provides accurate data about their ID status and criminal records.
@@ -36,7 +36,7 @@
     node: medsecHud
 
 - type: entity
-  parent: ClothingEyesHudSecurity
+  parent: [ClothingEyesHudSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingEyesHudNfsdPatch
   name: CGP hud eyepatch
   description: A heads-up display that scans the humanoids in view and provides accurate data about their ID status and criminal records.

@@ -95,6 +95,8 @@
   - type: Clothing
     sprite: _WF/Clothing/Belt/CGP_webbing.rsi # Wayfarer: _NF/Clothing/Belt/nfsd_webbing.rsi<_WF/Clothing/Belt/CGP_webbing.rsi
   - type: CatWearable
+  - type: ExplosionResistance # Wayfarer: add Explosion Resistance
+    damageCoefficient: 0.1
 
 # Ported from Nyano
 - type: entity

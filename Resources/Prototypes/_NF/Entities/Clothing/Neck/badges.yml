@@ -1,5 +1,5 @@
 - type: entity # Base Badge
-  parent: ClothingNeckBase
+  parent: [ClothingNeckBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingNeckNfsdBadge
   name: CGP badge
   description: Here to help.

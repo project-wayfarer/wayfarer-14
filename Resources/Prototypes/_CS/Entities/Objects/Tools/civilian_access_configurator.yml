@@ -22,3 +22,9 @@
   - type: StaticPrice
     price: 500
     vendPrice: 2500
+  # Wayfarer: Fix contraband parent
+  - type: Contraband
+    severity: NotContraband
+    hideValues: true
+    hideCarryStatus: true
+  # End Wayfarer

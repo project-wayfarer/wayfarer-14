@@ -8,7 +8,7 @@
     sprite: _NF/Clothing/Back/Duffels/arcadia.rsi
 
 - type: entity
-  parent: ClothingBackpackDuffelSecurity
+  parent: [ClothingBackpackDuffelSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackDuffelNfsdBrown
   name: CGP duffel
   components:

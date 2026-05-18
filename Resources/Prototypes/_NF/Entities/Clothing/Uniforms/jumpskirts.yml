@@ -55,7 +55,7 @@
     sprite: _NF/Clothing/Uniforms/Jumpskirt/security_guard.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpskirtNfsd
   name: CGP jumpskirt
   description: A long sleeved jumpskirt produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
@@ -66,7 +66,7 @@
     sprite: _WF/Clothing/Uniforms/Jumpskirt/CGP_skirt.rsi # Wayfarer: _NF/Clothing/Uniforms/Jumpskirt/nfsd_skirt.rsi < _WF/Clothing/Uniforms/Jumpskirt/CGP_skirt.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpskirtNfsdShort
   name: CGP jumpskirt
   description: A short sleeved jumpskirt produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
@@ -99,10 +99,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpskirt/private_security.rsi
 
 - type: entity
-  parent: ClothingUniformJumpskirtHoP
+  parent: [ClothingUniformJumpskirtHoP, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpskirtSr
   name: station representative's uniform
-  description: A top of the line outfit for Frontier Outpost's station representative. No expense was spared in the tailoring, every stitch is a masterpiece. The fact this suit was even issued shows the trust Central Command is placing in their representative on this outpost.
+  description: A top of the line outfit for Dusk's station representative. No expense was spared in the tailoring, every stitch is a masterpiece. The fact this suit was even issued shows the trust Central Command is placing in their representative on this outpost. # Wayfarer: Frontier<Dusk
   components:
   - type: Sprite
     sprite: _NF/Clothing/Uniforms/Jumpskirt/sr.rsi

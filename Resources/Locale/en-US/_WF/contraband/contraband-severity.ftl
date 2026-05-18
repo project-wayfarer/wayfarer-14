@@ -4,3 +4,5 @@ contraband-examine-text-milspec = [color=red]This item is military grade equipme
 contraband-examine-text-destructivedevice = [color=yellow]This item is classified as a destructive device, and is illegal to possess without a permit.[/color]
 contraband-examine-text-blackmarket = [color=crimson]This item is Black Market contraband, and is illegal to possess.[/color]
 contraband-examine-text-commandonly = [color=red]This item is restricted to CGP and command staff, and is illegal to possess.[/color]
+
+contraband-examine-text-notreal = h

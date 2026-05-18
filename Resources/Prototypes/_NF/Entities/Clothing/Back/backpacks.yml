@@ -38,7 +38,7 @@
       collection: CatMeows
 
 - type: entity
-  parent: ClothingBackpackSecurity
+  parent: [ClothingBackpackSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackNfsdBrown
   name: CGP backpack
   components:

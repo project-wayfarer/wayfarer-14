@@ -44,9 +44,25 @@
       FrontierUplinkCoin: 1
 
 - type: entity
+  id: BaseBMContrabandNoValue
+  abstract: true
+  components:
+  - type: Contraband
+    severity: BlackMarket
+
+- type: entity
   id: BaseCGPContraband
   abstract: true
   components:
   - type: Contraband
     severity: CommandOnly
     allowedDepartments: [ Security, Command ]
+
+- type: entity # This is dumb I know but some things are parented to contraband items and this is easier than rewriting the entire prototype.
+  id: BaseNotContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: NotContraband
+    hideValues: true
+    hideCarryStatus: true

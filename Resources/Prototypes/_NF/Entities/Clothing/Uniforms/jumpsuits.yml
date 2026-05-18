@@ -77,7 +77,7 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/ert_mailcarrier.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitNfsd
   name: CGP jumpsuit
   description: A long sleeved jumpsuit produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
@@ -88,7 +88,7 @@
     sprite: _WF/Clothing/Uniforms/Jumpsuit/CGP_jump.rsi # Wayfarer: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump.rsi < _WF/Clothing/Uniforms/Jumpsuit/CGP_jump.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitNfsdShort
   name: CGP jumpsuit
   description: A short sleeved jumpsuit produced for CGP. Designed to reduce chaffing between the legs for the comfort of skin, slime, scales, fluff, and wood.
@@ -99,7 +99,7 @@
     sprite: _WF/Clothing/Uniforms/Jumpsuit/CGP_jump_short.rsi # Wayfarer: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump_short.rsi < _WF/Clothing/Uniforms/Jumpsuit/CGP_jump_short.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitNfsdTacBlack
   name: CGP tactical jumpsuit
   description: A tactical jumpsuit for deputies in the field.
@@ -110,7 +110,7 @@
     sprite: _WF/Clothing/Uniforms/Jumpsuit/CGP_tac_black.rsi # Wayfarer: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_black.rsi < _WF/Clothing/Uniforms/Jumpsuit/CGP_tac_black.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitNfsdTacGray
   name: CGP tactical jumpsuit
   description: A tactical jumpsuit for deputies in the field.
@@ -121,7 +121,7 @@
     sprite: _WF/Clothing/Uniforms/Jumpsuit/CGP_tac_gray.rsi # Wayfarer: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_gray.rsi < _WF/Clothing/Uniforms/Jumpsuit/CGP_tac_gray.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitNfsdTacCamo
   name: CGP tactical jumpsuit
   description: A tactical jumpsuit for deputies in the field.
@@ -132,7 +132,7 @@
     sprite: _WF/Clothing/Uniforms/Jumpsuit/CGP_tac_camo.rsi # Wayfarer: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_camo.rsi < _WF/Clothing/Uniforms/Jumpsuit/CGP_tac_camo.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitNfsdTacCream
   name: CGP tactical jumpsuit
   description: A tactical jumpsuit for deputies in the field.
@@ -216,10 +216,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/private_security.rsi
 
 - type: entity
-  parent: ClothingUniformJumpsuitHoP
+  parent: [ClothingUniformJumpsuitHoP, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingUniformJumpsuitSr
   name: station representative's uniform
-  description: A top of the line outfit for Frontier Outpost's station representative. No expense was spared in the tailoring, every stitch is a masterpiece. The fact this suit was even issued shows the trust Central Command is placing in their representative on this outpost.
+  description: A top of the line outfit for Dusk's station representative. No expense was spared in the tailoring, every stitch is a masterpiece. The fact this suit was even issued shows the trust Central Command is placing in their representative on this outpost. # Wayfarer: Frontier<Dusk
   components:
   - type: Sprite
     sprite: _NF/Clothing/Uniforms/Jumpsuit/sr.rsi

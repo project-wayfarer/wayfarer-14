@@ -101,7 +101,7 @@
 
 - type: entity
   id: NFAmmunitionBoxPistol35Uranium
-  parent: NFBaseAmmunitionBoxPistol35
+  parent: [NFBaseAmmunitionBoxPistol35, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   name: ammunition box (.35 pistol, uranium)
   components:
   - type: BallisticAmmoProvider
@@ -228,7 +228,7 @@
 
 - type: entity
   id: NFAmmunitionBoxPistol45Uranium
-  parent: NFBaseAmmunitionBoxPistol45
+  parent: [NFBaseAmmunitionBoxPistol45, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   name: ammunition box (.45 pistol, uranium)
   components:
   - type: BallisticAmmoProvider

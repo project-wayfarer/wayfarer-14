@@ -59,7 +59,7 @@
 #    - state: idpublicaffairsliaison
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, BaseCGPContraband] # Wayfarer: added BaseCGPContraband
   id: CadetIDCard
   name: CGP junior peacekeeper ID card
   components:

@@ -23,4 +23,9 @@
 - type: contrabandSeverity
   id: CommandOnly
   examineText: contraband-examine-text-commandonly
-  showDepartmentsAndJobs: true
+  showDepartmentsAndJobs: false
+
+# For shit with contraband parent
+- type: contrabandSeverity
+  id: NotContraband
+  examineText: contraband-examine-text-notreal

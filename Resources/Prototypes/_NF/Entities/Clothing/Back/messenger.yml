@@ -87,7 +87,7 @@
         color: "#f6d56a"
 
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerSr
   name: station representative's messenger bag
   description: An exclusive messenger bag for station representatives. # Wayfarer: remove nanotrasen mention in description
@@ -912,7 +912,7 @@
 
 #region CGP
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerNfsdBrown
   name: CGP messenger bag
   components:
@@ -957,7 +957,7 @@
         color: "#e1af4e"
 
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerNfsdCream
   name: CGP messenger bag
   components:
