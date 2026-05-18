@@ -171,7 +171,7 @@
 - type: entity
   id: NFMagazineRifle20Uranium
   name: magazine (.20 rifle, uranium)
-  parent: NFBaseMagazineRifle20
+  parent: [NFBaseMagazineRifle20, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: BallisticAmmoProvider
     proto: NFCartridgeRifle20Uranium

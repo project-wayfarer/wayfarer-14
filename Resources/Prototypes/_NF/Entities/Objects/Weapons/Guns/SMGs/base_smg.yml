@@ -29,7 +29,7 @@
 #region manufacturer
 - type: entity
   abstract: true
-  parent: NFBaseWeaponFrameSubMachineGun
+  parent: [NFBaseWeaponFrameSubMachineGun, BaseMilitaryContraband] # Wayfarer: add BaseMilitaryContraband
   id: NFBaseWeaponFrameSubMachineGunNanotrasen
   components:
   - type: Gun

@@ -42,7 +42,7 @@
   - type: NoSlip
 
 - type: entity
-  parent: ClothingShoesBootsMagSecurity
+  parent: [ClothingShoesBootsMagSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingShoesBootsMagNfsd
   name: CGP magboots
   components:
@@ -58,7 +58,7 @@
     sprintModifier: 0.9
 
 - type: entity
-  parent: [ClothingShoesBootsMagNfsd] # Wayfarer: Remove contraband
+  parent: [ClothingShoesBootsMagSecurity] # Wayfarer: Remove contraband | ClothingShoesBootsMagNfsd<ClothingShoesBootsMagSecurity
   id: ClothingShoesBootsMagPirate
   name: pirate magboots
   description: Pirate magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.

@@ -2,7 +2,7 @@
 #region Laser
 - type: entity
   id: NFWeaponEnergyRifleCarbine
-  parent: [ NFBaseWeaponEnergyRifleFireModes, NFBaseWeaponFrameEnergyRifleNanotrasen ]
+  parent: [ NFBaseWeaponEnergyRifleFireModes, NFBaseWeaponFrameEnergyRifleNanotrasen, BaseMilitaryContraband ] # Wayfarer: add BaseMilitaryContraband
   name: laser carbine
   suffix: Frontier
   description: |-

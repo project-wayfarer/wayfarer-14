@@ -46,7 +46,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseBMContraband, NFBaseWeaponFrameRifleAssault ] # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
+  parent: [ BaseMilitaryContraband, NFBaseWeaponFrameRifleAssault ] # Wayfarer: BaseC3SyndicateContraband<BaseMilitaryContraband
   id: NFBaseWeaponFrameRifleAssaultCybersun
   components:
   - type: Gun

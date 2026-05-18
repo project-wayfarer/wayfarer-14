@@ -118,7 +118,7 @@
 - type: entity
   id: NFSpeedLoaderPistol45Uranium
   name: "speed loader (.45 pistol, uranium)"
-  parent: NFBaseSpeedLoaderPistol45
+  parent: [NFBaseSpeedLoaderPistol45, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: BallisticAmmoProvider
     proto: NFCartridgePistol45Uranium
