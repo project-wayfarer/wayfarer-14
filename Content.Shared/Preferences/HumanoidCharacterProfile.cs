@@ -604,7 +604,7 @@ namespace Content.Shared.Preferences
 
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^\w\d ',-]", string.Empty);
+                name = Regex.Replace(name, @"[^\w\d ',\-.]", string.Empty);
                 /*
                  * Wayfarer: allow anything classified as a word character or digit, as well as spaces, apostrophes, commas, and hyphens.
                  * Hyphen must be the first/last character in the regex, otherwise it's interpreted as defining a range.
