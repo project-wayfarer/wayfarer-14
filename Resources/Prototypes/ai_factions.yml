@@ -72,9 +72,6 @@
 
 - type: npcFaction
   id: SimpleHostile
-  friendly:
-  - AnimalFriend # DeltaV - Add AnimalFriend faction
-  - SalvageMob
   hostile:
   - NanoTrasen
   - Syndicate

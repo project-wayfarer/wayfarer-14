@@ -67,7 +67,7 @@
         Piercing: 10
   - type: NpcFactionMember
     factions:
-    - SalvageMob #DeltaV - Changed to SalvageMob to not be friendly to Ovinia
+    - SimpleHostile
   - type: HTN
     constantlyReplan: false
     rootTask:
@@ -235,7 +235,7 @@
     count: 1
   - type: NpcFactionMember
     factions:
-    - SalvageMob # DeltaV - Changed to SalvageMob
+    - SimpleHostile
   - type: HTN
     rootTask:
       task: N14RangedCombatCompound # WF - Use N14
@@ -291,7 +291,7 @@
         acts: [ "Destruction" ]
   - type: NpcFactionMember
     factions:
-    - SalvageMob # DeltaV - Changed to SalvageMob
+    - SimpleHostile
   - type: HTN
     rootTask:
       task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
@@ -411,7 +411,7 @@
     chemicalMaxVolume: 0
   - type: NpcFactionMember
     factions:
-    - SalvageMob # DeltaV - Changed to SalvageMob
+    - SimpleHostile
   - type: HTN
     rootTask:
       task: BasiliskCompound
