@@ -6,6 +6,7 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
+using Content.Shared.Kitchen.Components; // Wayfarer
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
@@ -105,6 +106,12 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
         if (_whitelistSystem.IsWhitelistFail(component.Whitelist, item) ||
             _whitelistSystem.IsBlacklistPass(component.Blacklist, item))
             return false;
+
+        // Wayfarer: If we're a juicer, don't process items without juice solutions
+        if (component.OnlyReclaimJuices &&
+            CompOrNull<ExtractableComponent>(item)?.JuiceSolution == null)
+            return false;
+        // End Wayfarer
 
         if (Container.TryGetContainingContainer((item, null, null), out _) && !Container.TryRemoveFromContainer(item))
             return false;

@@ -1,0 +1,33 @@
+- type: entity
+  parent: ReagentGrinderIndustrial
+  id: JuicerIndustrial
+  name: industrial juicer
+  description: An industrial juicer.
+  components:
+  - type: MaterialReclaimer
+    whitelist:
+      components:
+      - Extractable #same as reagent grinder
+    blacklist:
+      tags:
+      - HighRiskItem #ian meat
+    efficiency: 0.9
+    reclaimMaterials: false # Materials have ExtractableComponent, which is whitelisted, so we have to avoid infinite recycling loops
+    onlyReclaimDrainable: false
+    onlyReclaimJuices: true
+    solutionContainerId: output
+    processMaterials: false # Frontier: fix material duplication
+  - type: Sprite
+    sprite: Structures/Machines/recycling.rsi
+    layers:
+    - state: grinder-b0
+  - type: Machine
+    board: JuicerIndustrialMachineCircuitboard
+  - type: GenericVisualizer
+    visuals:
+      enum.ConveyorVisuals.State:
+        enum.ConveyorState.Off:
+          Forward: { state: grinder-b1 }
+          Reverse: { state: grinder-b1 }
+          Off: { state: grinder-b0 }
+
