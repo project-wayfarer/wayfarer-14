@@ -30,6 +30,8 @@
   id: BaseMobAvali
   abstract: true
   components:
+    - type: Carriable # Wayfarer
+    - type: Perishable # Wayfarer
     # Warfarer: No Language system
     # Warfarer: No Absorbable
     - type: Tag
