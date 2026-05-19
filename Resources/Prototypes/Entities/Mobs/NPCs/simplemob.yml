@@ -8,6 +8,7 @@
   suffix: AI
   abstract: true
   components:
+  - type: Carriable # Wayfarer, makes all mobs carriable. Weight still applies.
   - type: Reactive
     groups:
       Flammable: [Touch]
