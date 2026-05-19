@@ -1,3 +1,4 @@
+
 - type: npcFaction
   id: Dragon
   hostile:
@@ -71,6 +72,9 @@
 
 - type: npcFaction
   id: SimpleHostile
+  friendly:
+  - AnimalFriend # DeltaV - Add AnimalFriend faction
+  - SalvageMob
   hostile:
   - NanoTrasen
   - Syndicate
@@ -265,7 +269,7 @@
   - Xeno # rivalry
 
   # cause they are hostile to them
-  - SimpleHostile 
+  - SimpleHostile
   - AllHostile
   - WizFedFaction # Frontier
   - BloodCultNF # Frontier
