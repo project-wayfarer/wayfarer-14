@@ -66,9 +66,22 @@
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
-    allChannels: true
-    lightBreakChancePerSecond: 0.0008
+    # Wayfarer: Solar Flare nerf: command, cgp and medical radio unaffected
+    onlyJamHeadsets: true
+    affectedChannels:
+    - Common
+    - Traffic
+    - Greeting
+    - Engineering
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Horny
+    - ExtremeKink
+    lightBreakChancePerSecond: 0.001
     doorToggleChancePerSecond: 0.001
+    # End Wayfarer
 
 - type: entity
   id: NFVentClog
