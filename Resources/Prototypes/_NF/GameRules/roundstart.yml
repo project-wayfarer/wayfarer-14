@@ -198,8 +198,8 @@
       tableId: AutoShipsEventsTable
     minimumTimeUntilFirstEvent: 1800 # 30 minutes
     minMaxEventTiming:
-      min: 14400 # 4 hours between events
-      max: 21600 # 6 hours between events
+      min: 7200 # 2 hours between events
+      max: 14400 # 4 hours between events
 
 - type: entityTable
   id: AutoShipsEventsTable
