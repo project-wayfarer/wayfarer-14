@@ -277,7 +277,7 @@
 
 - type: entity
   id: ShuttleGunPirateCannon
-  parent: [ ShuttleGunBase , BaseDDContraband ] # Wayfarer: BaseC3PirateContrabandNoValue<BaseDDContraband
+  parent: [ ShuttleGunBase , BaseBMContraband ] # Wayfarer: BaseC3PirateContrabandNoValue<BaseBMContraband
   name: pirate ship cannon
   description: Kaboom!
   components:
