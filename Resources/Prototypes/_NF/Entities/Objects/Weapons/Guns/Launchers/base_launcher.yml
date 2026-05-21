@@ -59,7 +59,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseDDContraband, NFBaseWeaponFrameLauncher ] #Wayfarer: BaseC3PirateContraband<BaseDDContraband
+  parent: [ NFBaseWeaponFrameLauncher, BaseBMContraband ] #Wayfarer: BaseC3PirateContraband<BaseBMContraband
   id: NFBaseWeaponFrameLauncherSteelbolt
   components:
   - type: Gun

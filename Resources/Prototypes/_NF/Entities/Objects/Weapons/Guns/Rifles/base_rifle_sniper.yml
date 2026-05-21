@@ -31,7 +31,7 @@
 #region manufacturer
 - type: entity
   abstract: true
-  parent: [ BaseMilitaryContraband, NFBaseWeaponFrameRifleSniper ] # Wayfarer: BaseC3SyndicateContraband<BaseMilitaryContraband
+  parent: [ NFBaseWeaponFrameRifleSniper, BaseBMContraband ] # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: NFBaseWeaponFrameRifleSniperCybersun
   components:
   - type: Gun

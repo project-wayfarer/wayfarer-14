@@ -85,7 +85,7 @@
     sprite: _WF/Clothing/Belt/CGP_belt.rsi # Wayfarer: _NF/Clothing/Belt/nfsd_belt.rsi<_WF/Clothing/Belt/CGP_belt.rsi
 
 - type: entity
-  parent: [ BaseCGPContraband, ClothingBeltSecurityWebbing ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
+  parent: [ BaseCGPContraband, ClothingBeltMilitaryWebbing ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband ClothingBeltSecurityWebbing<ClothingBeltMilitaryWebbing
   id: ClothingBeltNfsdWebbing
   name: CGP webbing
   description: A tactical assault webbing.
@@ -95,8 +95,6 @@
   - type: Clothing
     sprite: _WF/Clothing/Belt/CGP_webbing.rsi # Wayfarer: _NF/Clothing/Belt/nfsd_webbing.rsi<_WF/Clothing/Belt/CGP_webbing.rsi
   - type: CatWearable
-  - type: ExplosionResistance # Wayfarer: add Explosion Resistance
-    damageCoefficient: 0.1
 
 # Ported from Nyano
 - type: entity
