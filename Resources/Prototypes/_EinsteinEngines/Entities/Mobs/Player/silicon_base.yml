@@ -4,7 +4,8 @@
   parent: [BaseMob, MobDamageable, MobCombat, MobAtmosExposed, MobFlammable]
   abstract: true
   components:
-    - type: Carriable # This is needed due to the unique base
+# Wayfarer: This is needed due to the unique base
+    - type: Carriable
       canPickup: false
     - type: Fixtures
       fixtures:
