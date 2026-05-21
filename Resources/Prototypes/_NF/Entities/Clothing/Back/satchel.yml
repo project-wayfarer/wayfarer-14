@@ -10,7 +10,7 @@
 - type: entity
   id: ClothingBackpackSatchelArcadia
   name: arcadia satchel
-  parent: [ ClothingBackpackSatchel, BaseC3ContrabandNoValue, ContrabandClothing ]
+  parent: [ ClothingBackpackSatchel ] # Wayfarer: Removecontraband
   description: A satchel produced by Arcadia Industries.
   components:
   - type: Sprite
@@ -26,16 +26,16 @@
     sprite: _NF/Clothing/Back/Satchels/pilot.rsi
 
 - type: entity
-  parent: ClothingBackpackSatchelSecurity
+  parent: [ClothingBackpackSatchelSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackSatchelNfsdBrown
   name: CGP satchel
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Back/Satchels/nfsd_brown.rsi
+    sprite: _WF/Clothing/Back/Satchels/CGP_brown.rsi # Wayfarer: _NF/Clothing/Back/Satchels/nfsd_brown.rsi<_WF/Clothing/Back/Duffels/CGP_brown.rsi
 
 - type: entity
   parent: ClothingBackpackSatchelNfsdBrown
   id: ClothingBackpackSatchelNfsdCream
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Back/Satchels/nfsd_cream.rsi
+    sprite: _WF/Clothing/Back/Satchels/CGP_cream.rsi # Wayfarer: _NF/Clothing/Back/Satchels/nfsd_cream.rsi<_WF/Clothing/Back/Duffels/CGP_.rsi

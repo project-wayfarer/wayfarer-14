@@ -6,9 +6,9 @@
   description: A rugged, lightly armored combat hardsuit used by Outlaws.
   components:
   - type: Sprite
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/ussp_combat_light.rsi
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/scaf_pirate.rsi
   - type: Clothing
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/ussp_combat_light.rsi
+    sprite: _Mono/Clothing/OuterClothing/Hardsuits/scaf_pirate.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -24,8 +24,8 @@
         Radiation: 0.75
         Caustic: 0.75
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1.0
+    sprintModifier: 1.0
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadOutlawHardsuit
@@ -51,9 +51,9 @@
       coefficients:
         Blunt: 0.5
         Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.70
-        Radiation: 0.70
+        Piercing: 0.4
+        Heat: 0.6
+        Radiation: 0.6
         Caustic: 0.75
   - type: ClothingSpeedModifier
     walkModifier: 0.9

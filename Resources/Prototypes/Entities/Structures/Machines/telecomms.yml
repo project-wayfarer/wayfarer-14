@@ -177,7 +177,7 @@
   - type: Pullable
   - type: EncryptionKeyHolder
     keysExtractionMethod: Prying
-    keySlots: 10
+    keySlots: 13 # Wayfarer: 10<13
   - type: TelecomServer
   - type: ContainerContainer
     containers:

@@ -246,7 +246,7 @@
 
 #region Command
 - type: entity
-  parent: NFDepartmentalEVASuit
+  parent: [NFDepartmentalEVASuit, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingOuterEVASuitSr
   name: station representative EVA suit
   description: An EVA suit with a built-in helmet commonly issued to station representatives.
@@ -1465,7 +1465,7 @@
 
 #region CGP
 - type: entity
-  parent: NFDepartmentalEVASuitShoulderLight
+  parent: [NFDepartmentalEVASuitShoulderLight, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingOuterEVASuitNfsd
   name: CGP EVA suit
   description: An EVA suit with a built-in helmet commonly issued to CGP personnel.

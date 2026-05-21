@@ -32,8 +32,14 @@ namespace Content.Client.Verbs.UI
             TooltipSupplier = sender =>
             {
                 var label = new RichTextLabel();
+                // Wayfarer: Commented in favor of a new check below. This prevents a crash due to marking names being passed as-is to a parsing operation that expects rich text formatting.
+                // because of this, all markings that had a formatting of [ Race ] MarkingName caused client crashes. I will lose my sleep over this. Thanks.
+                /*
                 label.SetMessage(FormattedMessage.FromMarkupOrThrow(verb.Message ?? verb.Text));
-
+                */
+                var text = verb.Message ?? FormattedMessage.EscapeText(verb.Text);
+                label.SetMessage(FormattedMessage.FromMarkupOrThrow(text));
+                // Wayfarer End
                 var tooltip = new Tooltip();
                 tooltip.GetChild(0).Children.Clear();
                 tooltip.GetChild(0).Children.Add(label);

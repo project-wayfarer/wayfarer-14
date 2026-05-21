@@ -12,8 +12,12 @@ Do not:
 * Put free materials upon the ship beyond a small amount to get started
 * Every part of the ship should be accessible and not contain ‘hidden rooms’ by default
 
+Reviewing ships takes a lot of time and attention, if you have to be told multiple times to fix issues in your ship, it may be rejected.
+
+Before submitting a ship, please ensure you have testing buying and selling it at a shipyard in the dev environment, that it does not produce linter or build errors upon testing locally, and that you have run "fixrotations" and "fixgridatmos"
 ## Basics and hard requirements.
 **Your ship MUST meet these requirements at a minimum:**
+
 Core:
 * Be airtight
 * A two-stage airlock system for entering and exiting the ship via docking port.
@@ -31,7 +35,8 @@ Engineering:
 * Power systems (SMES, Substations, APCs) connected in a way that wires do not go under walls unless absolutely necessary
 * No more than two basic SMES batteries, but these are not requireed.
 * A single spare fuel locker
-* Atmospherics system with connectors for oxygen and nitrogen tanks, gas mixer, air vents, scrubbers and functional waste venting. Atmos piping follows the same rules as wiring
+* Atmospherics system with connectors for oxygen and nitrogen tanks, gas mixer, air vents, scrubbers and functional waste venting.
+* Atmos piping follows the same rules as wiring
 * Firelocks and Air Alarms set up to prevent catastrophic venting in case of a hull breach
 ## Ship Design
 #### Size and Shape
@@ -62,8 +67,16 @@ Engineering:
 7.  Atmos Piping:
 * Waste pipes are: Red: #990000
 * Distro pipes are: Blue: #0055cc
-
+## Nitpicks
+* Drains should be placed under sinks or showers, but keep it to one per room.
+* Do not use directional windows as exterior walls.
+* Your ship's visual design must stay consistent throughout.
+* Avoid using multiple color pallets for Decals if possible.
+* Do not map water tiles onto ships.
+* Ensure you have grilles placed under any exterior windows.
 ## Ship pricing
+Ensure your map is in an initialized state (Active simulation, capable of moving physically)
+
 First, get your ships size by using the command “gridtc [gridID]”
 
 Second, get your ships value by using the command “appraisegrid [gridID]”
@@ -100,98 +113,124 @@ Subdepartments are an extension of the ships primary or secondary role.
 
 **You can optionally leave anything out from the lists, but these are a recommended set of equipment for their slots**
 ### Science
-RD Server/Computer
-Artifact Analyser/Computer
-Protolathe/Autolathe
-Circuit Printer
+* Research and Development Server + Terminal
+* Artifact Analyser and Analysis Computer
+* Autolathe
+* Protolathe
+* Circuit Printer
 #### Anomalies Subdepartment:
-Anomaly Generator
-APE
-Anomaly analysis gear
-Anomaly vessel
+* Anomaly Generator
+* APE
+* Anomaly analysis tools
+* Anomaly vessel
 #### Robotics Subdepartment:
-Robotics / Mechfab
-Partially or fully built borg/mech
+* Exofab
+* Partially or fully built borg/mech
 ### Medical
-Medical beds
-Med techfab
-Stasis bed
-Nanomed
+* Medical beds
+* Med techfab
+* Stasis bed
+* Nanomed
 #### Chemistry Subdepartment
-Chem dispenser / chemmaster
-Centrifuge
-Grinder
-Electrolyser
-Sink
-Drain
-Hotplate
-#### Cryogenics Subdepartment
-Cryopod
-Linked up to the ship atmos or it’s own gas canister
-Freezer
-Waste filters for cryo
-#### Botany Subdepartment
-Hydroponics trays (1-2)
-Botany equipment
-Sink
-### CGP
-APUs to support ship power (as few as possible)
-IFF consoles
-Long range radars
-One small cell
-An evidence locker
-#### Brig Subdepartment:
-Space for 2-3 Prisoners to reside upon the ship
-Criminal records computer
-#### Ship Weapons Subdepartment:
-Ship canons / M-EMP
-#### Investigation Subdepartment:
-Criminal Records Computer
-Interrogation Space
-Evidence lockers
-#### CGP Armoury Subdepartment:
-An armoury with space for 3-4 officers
-Some lockers with lowest grade hardsuits
-Space access
-### Outlaws
-Mining / Plastitanium walls
-Reinforced Plasma / Uranium / Plastitanium Windows
-Outlaw specific thrusters (thrusterRogue)
-IFF Console
-#### Ship Weapons Subdepartment:
-Cannons
-### Support
-Large area of space for Cargo
-Conveyor belts
-Opening space for building
-#### Engineering Subdepartment:
-Circuit Printer
-Flatpack machine
-Engineering Techfab
-#### Atmospherics Subdepartment:
-Gas deposit miners
-Gaslocks
-Portable gaslocks
-Portable APC
-### Service
-Service Techfab
-One free initial Subdepartment
-#### Kitchen Subdepartment
-Microwave, Deep Fryer, Grille
-Hydroponics Trays (1-2)
-Seed extractors
-Hydroponics equipment
-Sink
-#### Service Bar Subdepartment
-Booze/Soda dispensers
-Hydroponics Trays (1-2)
-Hydroponics equipment
-Sink
-#### Service Hydroponics Subdepartment
-Hydroponics Trays (As many as you want)
-Seed extractors
-Hydroponics equipment
-Sink
-#### Service Roleplay Subdepartment.
+* Chemical Dispenser
+* ChemMaster 4000
+* Centrifuge
+* Grinder
+* Electrolyser
+* Sink with Drain
+* Hotplate
+* SmartFridge
+* Filled Chemistry locker
 
-Anything that doesn’t fall into any other category and is a space specifically designed purely for only roleplay.
+ChemVends are forbidden to map onto ships.
+#### Cryogenics Subdepartment
+* Cryopods with functional gas cooling loop, including waste gas management.
+#### Botany Subdepartment
+* Hydroponics trays
+* (1-2) Filled Botany Lockers or Wall Lockers
+* Sink with Drain
+* Seed Extractor
+* Biogenerator
+#### Cloning Subdepartment
+* Cloning Pod
+* Cloning Console Computer
+* Medical Scanner
+### CGP
+* APUs to support ship power (as few as possible)
+* IFF consoles
+* Long range radars
+* An evidence locker
+#### Brig Subdepartment:
+* Space for 2-3 Prisoners to reside upon the ship
+* Criminal records computer
+#### Ship Weapons Subdepartment:
+* Ship canons / M-EMP
+#### Investigation Subdepartment:
+* Criminal Records Computer
+* Interrogation Space
+* Evidence lockers
+#### CGP Armoury Subdepartment:
+* CGP secured weapon racks
+* CGP secured lockers with Patrol Suits
+* EVA Access
+### Outlaws
+* Mining / Plastitanium walls
+* Reinforced Plasma / Uranium / Plastitanium Windows
+* Outlaw specific thrusters (thrusterRogue)
+* IFF Console
+#### Ship Weapons Subdepartment:
+* Cannons
+### Support
+* Large area of space for Cargo
+* Conveyor belts
+* Opening space for building
+* Autolathe
+#### Salvage Subdepartment:
+* Salvage Techfab
+* Scrap Processor
+* Civilian Ore Processor
+#### Mercenary Subdepartment:
+* Mercenary Techfab
+* Gun safes and weapon racks in a secure compartment
+#### Engineering Subdepartment:
+* Circuit Printer
+* Flatpack machine
+* Engineering Techfab
+#### Atmospherics Subdepartment:
+* Gas deposit miners
+* Gaslocks
+* Portable gaslocks
+* Portable APC
+### Service
+* Service Techfab
+* One free initial Subdepartment (exclude from department cost multiplier)
+#### Kitchen Subdepartment
+* Microwave
+* Oven, Grill
+* Deep Fryer
+* Food-o-mat
+* Filled chef closet
+* ChefVend
+* Plasteel Chef's Dinnerware Vendor
+* Freezer compartment or fridges
+* Condiment Dispenser or Vendor
+* SmartFridge
+* Kitchen Shelves
+#### Botany Subdepartment
+* Hydroponics trays
+* (1-2) Filled Botany Lockers or Wall Lockers
+* Sink with Drain
+* Seed Extractor
+* Biogenerator
+#### Bar Subdepartment
+* Booze-o-mat
+* Booze Dispenser
+* Soda Dispenser
+
+### Uncategorized
+This list is for uncategorized lathes, machines and other things that do not fall under a specific department nor count towards a ship's total.
+* Autolathe
+* Material Silo
+* Material Reclaimer
+* Cargo racks
+* Coffee Machine

@@ -1,0 +1,188 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFedoraBlack
+  name: black fedora
+  description: A black fedora. Lookin' classy.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/blackfedora.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/blackfedora.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFedoraChoc
+  name: brown fedora
+  description: A brown fedora. Lookin' snazzy.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/brownfedora.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/brownfedora.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFedoraWhite
+  name: white fedora
+  description: A white fedora. Lookin' ritzy.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/whitefedora.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/whitefedora.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFlatBlack
+  name: black flat cap
+  description: A black flat cap, for driving cabs and delivering the papers.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/flatblack.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/flatblack.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFlatBrown
+  name: brown flat cap
+  description: A brown flat cap, for driving cabs and delivering the papers.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/flatbrown.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/flatbrown.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadPropellerHat
+  name: propeller hat
+  description: A colorful propeller hat made for those that wish to have some whimsy in their life.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/propellerhat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/propellerhat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatReindeer
+  name: reindeer headband
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/reindeer.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/reindeer.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatRedRibbon
+  name: red ribbon
+  description: A little red ribbon.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/red_ribbon.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/red_ribbon.rsi
+    slots:
+    - HEAD
+    - neck
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFestiveHatRed
+  name: festive red hat
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/festive_red.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/festive_red.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFestiveHatGreen
+  name: festive green hat
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/festive_green.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/festive_green.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatCandyCane
+  name: candy cane headband
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/candycane.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/candycane.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatStar
+  name: star topper headband
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/star.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/star.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatFestiveLights
+  name: festive lights
+  description: Seems like you got tangled in these.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/festive_lights.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/festive_lights.rsi
+    slots:
+    - HEAD
+    - NECK
+    - OUTERCLOTHING
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatElf
+  name: elf hat
+  description: Santa's little helper's hat.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/elf.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/elf.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatWrestlingMaskLuchaRed
+  name: Red Lucha Libre Mask
+  description: The luchador never removes his mask.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaRed.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaRed.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatWrestlingMaskLuchaBlue
+  name: Blue Lucha Libre Mask
+  description: Don't touch the mask.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaBlue.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaBlue.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair

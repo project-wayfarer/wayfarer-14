@@ -201,5 +201,5 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     // {
     //     ent.Comp.DampingModifier = ent.Comp.BodyModifier;
     // }
-    // Wayfarer end
+    // End Wayfarer
 }

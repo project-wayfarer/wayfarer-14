@@ -356,7 +356,7 @@
 
 - type: entity
   id: PortableGeneratorDKMachineCircuitboard
-  parent: [ BaseMachineCircuitboard, BaseC2ContrabandUnredeemable ]
+  parent: [ BaseMachineCircuitboard ] # Wayfarer: Removed contraband
   name: D-K portable generator machine board
   description: A machine printed circuit board for a D-K-type portable generator.
   components:
@@ -378,7 +378,7 @@
 
 - type: entity
   id: PortableGeneratorDKJrMachineCircuitboard
-  parent: [ BaseMachineCircuitboard, BaseC1Contraband ]
+  parent: BaseMachineCircuitboard # Wayfarer: Removed contraband
   name: D-K Jr. portable generator machine board
   description: A machine printed circuit board for a D-K Jr.-type portable generator.
   components:
@@ -629,7 +629,7 @@
 
 - type: entity
   id: PirateStitcherCircuitboard
-  parent: [UniformPrinterMachineCircuitboard, BaseC3PirateContrabandNoValue]
+  parent: [UniformPrinterMachineCircuitboard] # Wayfarer: Remove contraband
   name: pirate stitcher machine board
   description: Clearly brand new.
   components:

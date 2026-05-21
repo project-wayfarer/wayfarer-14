@@ -5,7 +5,7 @@
   description: A banner displaying the colors of the Concordia's Galactic Peacekeepers.
   components:
   - type: Sprite
-    sprite: _NF/Structures/Decoration/banner.rsi
+    sprite: _WF/Structures/Decoration/banner.rsi # Wayfarer: _NF/Structures/Decoration/banner.rsi < _WF/Structures/Decoration/banner.rsi
     state: nfsd-banner
   - type: Construction
     graph: BannersGraph
@@ -18,7 +18,7 @@
   description: A flag displaying the colors of the Concordia's Galactic Peacekeepers.
   components:
   - type: Sprite
-    sprite: _NF/Structures/Decoration/banner.rsi
+    sprite: _WF/Structures/Decoration/banner.rsi # Wayfarer: _NF/Structures/Decoration/banner.rsi < _WF/Structures/Decoration/banner.rsi
     state: nfsd-flag
   - type: Construction
     graph: BannersGraph

@@ -1818,6 +1818,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("uuid")
                         .HasColumnName("owner_user_id");
 
+                    b.Property<int?>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("purchase_date");
@@ -1829,6 +1833,9 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsUnique();
 
                     b.HasIndex("OwnerUserId");
+
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_wayfarer_safety_deposit_box_profile_id");
 
                     b.ToTable("wayfarer_safety_deposit_box", (string)null);
                 });
@@ -2474,6 +2481,17 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasConstraintName("FK_wayfarer_community_goal_requirements_wayfarer_community_goa~");
 
                     b.Navigation("Goal");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany()
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_wayfarer_safety_deposit_box_profile_profile_id");
+
+                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBoxItem", b =>

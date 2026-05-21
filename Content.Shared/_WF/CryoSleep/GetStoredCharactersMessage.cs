@@ -42,18 +42,23 @@ public sealed class StoredCharacterInfo
     public string CharacterName { get; set; } = string.Empty;
     public string JobName { get; set; } = string.Empty;
     public string StationName { get; set; } = string.Empty;
+    /// <summary>
+    /// The character preferences slot index. -1 if unknown.
+    /// </summary>
+    public int CharacterSlot { get; set; } = -1;
     
     public StoredCharacterInfo()
     {
     }
     
-    public StoredCharacterInfo(NetEntity body, NetEntity cryopod, string characterName, string jobName, string stationName)
+    public StoredCharacterInfo(NetEntity body, NetEntity cryopod, string characterName, string jobName, string stationName, int characterSlot = -1)
     {
         Body = body;
         Cryopod = cryopod;
         CharacterName = characterName;
         JobName = jobName;
         StationName = stationName;
+        CharacterSlot = characterSlot;
     }
 }
 
@@ -70,6 +75,24 @@ public sealed class ResumeCharacterRequestMessage : EntityEventArgs
     }
     
     public ResumeCharacterRequestMessage(NetEntity body)
+    {
+        Body = body;
+    }
+}
+
+/// <summary>
+/// Request from client to permanently remove a stored cryo character (abandon it).
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class RemoveStoredCharacterRequestMessage : EntityEventArgs
+{
+    public NetEntity Body { get; set; }
+
+    public RemoveStoredCharacterRequestMessage()
+    {
+    }
+
+    public RemoveStoredCharacterRequestMessage(NetEntity body)
     {
         Body = body;
     }

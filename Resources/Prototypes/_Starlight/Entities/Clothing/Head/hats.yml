@@ -1,0 +1,23 @@
+# Starlight clothing.
+
+- type: entity
+  parent: ClothingHeadBase
+  id: SLClothingHeadBase0121
+  name: wide-brimmed gilded hat
+  description: A cream-white wide-brimmed hat with large white feathers and golden trim.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/Head/Hats/belpero.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/Head/Hats/belpero.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: SLRedRegaliaHat
+  name: red regalia Hat
+  description: A fancy red hat like a mafiaoso would wear.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/Head/Hats/red_regalia.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/Head/Hats/red_regalia.rsi

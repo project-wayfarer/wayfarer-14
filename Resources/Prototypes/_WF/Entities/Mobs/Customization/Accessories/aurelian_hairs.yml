@@ -1,0 +1,39 @@
+- type: marking
+  id: AurelianVoxHairLongQuills
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_hairs.rsi
+      state: vox_longquills
+
+- type: marking
+  id: AurelianVoxHairQuills
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_hairs.rsi
+      state: vox_quills
+
+- type: marking
+  id: AurelianVoxHairshortQuills
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_hairs.rsi
+      state: vox_shortquills
+
+- type: marking
+  id: AurelianVoxHairMohawk
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_hairs.rsi
+      state: vox_mohawk

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: DVClothingNeckCopperNecklace
+  name: copper necklace
+  description: A large copper necklace with a piece of rose quartz embedded into the medallion.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Neck/Misc/coppernecklace.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Neck/Misc/coppernecklace.rsi

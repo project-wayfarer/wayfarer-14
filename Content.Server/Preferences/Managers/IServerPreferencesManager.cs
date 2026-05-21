@@ -22,6 +22,7 @@ namespace Content.Server.Preferences.Managers
         PlayerPreferences? GetPreferencesOrNull(NetUserId? userId);
         IEnumerable<KeyValuePair<NetUserId, ICharacterProfile>> GetSelectedProfilesForPlayers(List<NetUserId> userIds);
         bool HavePreferencesLoaded(ICommonSession session);
+        void SendCachedPreferences(ICommonSession session); // Wayfarer: send already-loaded preferences without a DB round-trip
         Task RefreshPreferencesAsync(ICommonSession session, CancellationToken cancel); // Frontier
         Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile, bool validateFields = true); // Frontier: add validateFields
         Task SetConstructionFavorites(NetUserId userId, List<ProtoId<ConstructionPrototype>> favorites);

@@ -293,9 +293,27 @@
     Poison:
       effects:
       - !type:HealthChange
+        # Wayfarer start
+        conditions:
+          - !type:OrganType
+            type: AurelianVox
+            shouldHave: false
+        # End Wayfarer
         damage:
           types:
             Cold: 1 # liquid nitrogen is cold
+    # Wayfarer start
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: AurelianVox # Aurelian Vox blood is nitrogen based.
+        damage:
+          types:
+            Asphyxiation: -0.5
+            Bloodloss: -0.5
+    # End Wayfarer
     Gas:
       effects:
       - !type:Oxygenate

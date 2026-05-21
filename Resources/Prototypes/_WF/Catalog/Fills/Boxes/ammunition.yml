@@ -210,6 +210,30 @@
     - id: NFMagazineHighCapacityPistol35Uranium
       amount: 4
 
+#35 SMG C20
+- type: entity
+  name: box of smg (.35 pistol) magazines
+  parent: BoxMagazine
+  id: MagBox35SMG2
+  description: A box full of smg (.35 pistol) magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineSubMachineGun35
+      amount: 4
+
+#35 SMG Rubber C20
+- type: entity
+  name: box of smg (.35 pistol) magazines
+  parent: BoxMagazine
+  id: MagBox35SMG2Rubber
+  description: A box full of extended pistol (.35 pistol) magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFMagazineSubMachineGun35Rubber
+      amount: 4
+
 #45 Speedloader
 - type: entity
   name: box of (.45 pistol) speedloaders
@@ -220,6 +244,18 @@
   - type: StorageFill
     contents:
     - id: NFSpeedLoaderPistol45
+      amount: 6
+
+#45 Speedloader Rubber
+- type: entity
+  name: box of (.45 pistol, rubber) speedloaders
+  parent: BoxMagazine
+  id: MagBox45SpeedloaderRubber
+  description: A box full of (.45 pistol, rubber) speedloaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFSpeedLoaderPistol45Rubber
       amount: 6
 
 #45 Speedloader - Overpressure

@@ -45,49 +45,49 @@
 # For syndicate/pirate labeled guns
 - type: entity
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - BaseExpeditionWeaponTier1
   id: BaseExpeditionWeaponTier1Syndicate
   abstract: true
 
 - type: entity
   parent:
-  - BaseC3PirateContraband
+  - BaseBMContraband # Wayfarer: BaseC3PirateContraband<BaseBMContraband
   - BaseExpeditionWeaponTier2
   id: BaseExpeditionWeaponTier2Pirate
   abstract: true
 
 - type: entity
   parent:
-  - BaseC3PirateContraband
+  - BaseBMContraband # Wayfarer: BaseC3PirateContraband<BaseBMContraband
   - BaseExpeditionWeaponTier3
   id: BaseExpeditionWeaponTier3Pirate
   abstract: true
 
 - type: entity
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - BaseExpeditionWeaponTier2
   id: BaseExpeditionWeaponTier2Syndicate
   abstract: true
 
 - type: entity
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - BaseExpeditionWeaponTier3
   id: BaseExpeditionWeaponTier3Syndicate
   abstract: true
 
 - type: entity
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - BaseExpeditionWeaponTier4
   id: BaseExpeditionWeaponTier4Syndicate
   abstract: true
 
 - type: entity
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - BaseExpeditionWeaponTier5
   id: BaseExpeditionWeaponTier5Syndicate
   abstract: true

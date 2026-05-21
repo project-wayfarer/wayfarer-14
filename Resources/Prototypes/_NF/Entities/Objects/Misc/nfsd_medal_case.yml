@@ -5,9 +5,9 @@
   description: This polished oak case hides medals to be given for distinguished service.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Storage/nfsdmedalcase.rsi
+    sprite: _WF/Objects/Storage/nfsdmedalcase.rsi # Wayfarer: _NF/Objects/Storage/nfsdmedalcase.rsi < _WF/Objects/Storage/nfsdmedalcase.rsi
   - type: Item
-    sprite: _NF/Objects/Storage/nfsdmedalcase.rsi
+    sprite: _WF/Objects/Storage/nfsdmedalcase.rsi # Wayfarer: _NF/Objects/Storage/nfsdmedalcase.rsi < _WF/Objects/Storage/nfsdmedalcase.rsi
   - type: Storage
     grid:
     - 0,0,7,1 # Explicit just in case the parent changes

@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: DVClothingShoesBootsFishing
+  name: fishing boots
+  description: Smells fishy!
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Shoes/Boots/fishing_boots.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Shoes/Boots/fishing_boots.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: DVClothingShoesMiscWhite
+  name: white leather shoes
+  description: Impeccably shined white leather shoes. Don't tread on these tootsies.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Shoes/Misc/whiteleather.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Shoes/Misc/whiteleather.rsi

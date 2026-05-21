@@ -187,3 +187,23 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: NFGameRulesTable
+
+# Wayfarer Start
+- type: entity
+  id: AutoShipsEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: AutoShipsEventsTable
+    minimumTimeUntilFirstEvent: 1800 # 30 minutes
+    minMaxEventTiming:
+      min: 14400 # 4 hours between events
+      max: 21600 # 6 hours between events
+
+- type: entityTable
+  id: AutoShipsEventsTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: HaulerAutopilotEvent # Requires 10 players minimum
+# End Wayfarer

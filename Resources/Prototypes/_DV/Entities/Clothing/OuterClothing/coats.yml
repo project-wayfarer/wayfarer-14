@@ -1,0 +1,66 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: DVClothingOuterCoatOvercoat
+  name: overcoat
+  description: A warm, dark overcoat, suitable for formal occasions.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Coats/overcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Coats/overcoat.rsi
+  - type: TemperatureProtection
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Heat: 0.75
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: DVClothingOuterCoatLeatherJacket
+  name: leather jacket
+  description: A rugged leather jacket, for fashion or for utility.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Coats/leatherjacket.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Coats/leatherjacket.rsi
+  - type: TemperatureProtection
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Heat: 0.75
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: DVClothingOuterDusterCoat
+  name: rugged duster
+  description: A rugged duster with a bandana scarf made for keeping off the ash and dust. Not much of that up in space though.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Coats/duster.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Coats/duster.rsi
+  - type: TemperatureProtection
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: DVClothingOuterCoatNavalCoat
+  name: Naval Coat
+  description: A thick naval coat with gold trimming for formal occasions.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Coats/navalcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Coats/navalcoat.rsi
+  - type: TemperatureProtection
+    coolingCoefficient: 0.1
+    heatingCoefficient: 1.1

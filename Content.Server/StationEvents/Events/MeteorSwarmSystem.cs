@@ -1,10 +1,12 @@
 using System.Numerics;
+using Content.Server._Coyote.ShuttleCrewStatus; // Wayfarer
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Random.Helpers;
+using Content.Server.Shuttles.Components; // Wayfarer
 using Robust.Server.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
@@ -26,9 +28,18 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
         base.Added(uid, component, gameRule, args);
 
         component.WaveCounter = component.Waves.Next(RobustRandom);
+    }
+
+    // Wayfarer: Plays the meteor event's announcement and sound, unless it was silenced.
+    protected override void Started(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        base.Started(uid, component, gameRule, args);
+
+        if (component.Silent)
+            return;
 
         // we don't want to send to players who aren't in game (i.e. in the lobby)
-        Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
+        var allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
 
         if (component.Announcement is { } locId)
             _chat.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(locId), playSound: false, colorOverride: Color.Gold);
@@ -43,12 +54,8 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
 
         component.NextWaveTime += TimeSpan.FromSeconds(component.WaveCooldown.Next(RobustRandom));
 
-
-        if (_station.GetStations().Count == 0)
-            return;
-
-        var station = RobustRandom.Pick(_station.GetStations());
-        if (_station.GetLargestGrid(station) is not { } grid)
+        // Wayfarer: Nothing to hit this wave, so skip it.
+        if (!TryPickTargetGrid(component, out var grid))
             return;
 
         var mapId = Transform(grid).MapID;
@@ -88,5 +95,62 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
         {
             ForceEndSelf(uid, gameRule);
         }
+    }
+
+    // Wayfarer: Sets which grid the meteors hit when targeted manually.
+    public void SetTargetGrid(EntityUid ruleEntity, EntityUid? targetGrid, MeteorSwarmComponent? component = null)
+    {
+        if (!Resolve(ruleEntity, ref component))
+            return;
+        component.TargetGrid = targetGrid;
+    }
+
+    // Wayfarer: Prevents the server announcement when a meteor event is called manually.
+    public void SetSilent(EntityUid ruleEntity, MeteorSwarmComponent? component = null)
+    {
+        if (!Resolve(ruleEntity, ref component))
+            return;
+        component.Silent = true;
+    }
+
+    // Wayfarer: Every grid a meteor swarm can hit. That is every POI and station, plus active player ships.
+    public IEnumerable<EntityUid> GetTargetableGrids()
+    {
+        var seen = new HashSet<EntityUid>();
+
+        foreach (var station in _station.GetStations())
+        {
+            if (_station.GetLargestGrid(station) is not { } grid)
+                continue;
+            if (TryComp<ShuttleCrewStatusComponent>(grid, out var crew) && !crew.HasActiveCrew)
+                continue;
+            if (seen.Add(grid))
+                yield return grid;
+        }
+
+        // Catch any active player ship the station loop above missed.
+        var ships = EntityQueryEnumerator<ShuttleCrewStatusComponent, ShuttleComponent>();
+        while (ships.MoveNext(out var ship, out var status, out _))
+            if (status.HasActiveCrew && seen.Add(ship))
+                yield return ship;
+    }
+
+    // Wayfarer: Picks the grid the meteors hit. The target if one was set, otherwise a random valid target.
+    private bool TryPickTargetGrid(MeteorSwarmComponent component, out EntityUid grid)
+    {
+        grid = default;
+
+        if (component.TargetGrid is { } pinned && Exists(pinned))
+        {
+            grid = pinned;
+            return true;
+        }
+
+        var pool = new List<EntityUid>(GetTargetableGrids());
+        if (pool.Count == 0)
+            return false;
+
+        grid = RobustRandom.Pick(pool);
+        return true;
     }
 }

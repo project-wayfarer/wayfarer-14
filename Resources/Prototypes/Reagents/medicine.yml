@@ -59,6 +59,16 @@
         conditions:
         - !type:ReagentThreshold
           min: 15
+        # Wayfarer Start
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: AurelianVox # Aurelian Vox blood is nitrogen based.
+        damage:
+          types:
+            Asphyxiation: -2
+            Bloodloss: -0.5
+        # End Wayfarer
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: -10
@@ -270,6 +280,9 @@
       # Wayfarer Start
         conditions:
           - !type:OrganType
+            type: AurelianVox
+            shouldHave: false
+          - !type:OrganType
             type: Avali
             shouldHave: false
       # End Wayfarer
@@ -286,6 +299,15 @@
             Asphyxiation: 3
             Cold: 1
       # Wayfarer Start
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: AurelianVox
+        damage:
+          types:
+            Poison: 2 # Aurelian Vox blood is nitrogen based, so chems made to treat normal bloodloss poison them instead. Dex+ is worse.
+            Asphyxiation: 1
+            Bloodloss: 1
       - !type:HealthChange #Starlight
         conditions:
         - !type:OrganType
@@ -312,6 +334,9 @@
         # Wayfarer Start
         conditions:
         - !type:OrganType
+          type: AurelianVox
+          shouldHave: false
+        - !type:OrganType
           type: Avali
           shouldHave: false
         damage:
@@ -335,6 +360,15 @@
             Asphyxiation: 5
             Cold: 3
       # Wayfarer Start
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: AurelianVox
+        damage:
+          types:
+            Poison: 3 # Aurelian Vox blood is nitrogen based, so chems made to treat normal bloodloss poison them instead. Dex+ is worse.
+            Asphyxiation: 1
+            Bloodloss: 1
       - !type:HealthChange
         conditions:
         - !type:OrganType

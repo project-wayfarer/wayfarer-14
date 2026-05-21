@@ -1723,6 +1723,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("owner_user_id");
 
+                    b.Property<int?>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("TEXT")
                         .HasColumnName("purchase_date");
@@ -1734,6 +1738,9 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsUnique();
 
                     b.HasIndex("OwnerUserId");
+
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_wayfarer_safety_deposit_box_profile_id");
 
                     b.ToTable("wayfarer_safety_deposit_box", (string)null);
                 });
@@ -2377,6 +2384,17 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasConstraintName("FK_wayfarer_community_goal_requirements_wayfarer_community_goals_goal_id");
 
                     b.Navigation("Goal");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany()
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_wayfarer_safety_deposit_box_profile_profile_id");
+
+                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBoxItem", b =>

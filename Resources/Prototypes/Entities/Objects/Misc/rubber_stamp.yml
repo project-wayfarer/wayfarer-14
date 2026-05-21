@@ -151,7 +151,7 @@
 
 - type: entity
   name: head of security's rubber stamp
-  parent: [RubberStampBase, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [RubberStampBase, BaseCGPContraband] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: RubberStampHos
   categories: [ DoNotMap ]
   components:
@@ -231,7 +231,7 @@
 
 - type: entity
   name: warden's rubber stamp
-  parent: [RubberStampBase, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [RubberStampBase, BaseCGPContraband] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: RubberStampWarden
   categories: [ DoNotMap ]
   components:
@@ -270,7 +270,7 @@
 
 - type: entity
   name: detective's rubber stamp
-  parent: [RubberStampBase, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [RubberStampBase, BaseCGPContraband] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: RubberStampDetective
   categories: [ DoNotMap ]
   components:

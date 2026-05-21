@@ -10,6 +10,7 @@ public static class ChatChannelExtensions
             ChatChannel.Radio => Color.LimeGreen,
             ChatChannel.LOOC => Color.MediumTurquoise,
             ChatChannel.SubtleLOOC => Color.LightPink,
+            ChatChannel.ShipOOC => Color.Bisque, // Wayfarer
             ChatChannel.OOC => Color.LightSkyBlue,
             ChatChannel.Dead => Color.MediumPurple,
             ChatChannel.Admin => Color.Red,

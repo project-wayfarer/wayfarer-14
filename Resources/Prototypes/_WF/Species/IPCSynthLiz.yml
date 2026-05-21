@@ -1,0 +1,95 @@
+# Head
+
+- type: marking
+  id: IPCHeadSynthLizMale
+  bodyPart: Head
+  markingCategory: Head
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_head_m
+
+- type: marking
+  id: IPCHeadSynthLizFemale
+  bodyPart: Head
+  markingCategory: Head
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_head_f
+
+# Torso
+
+- type: marking
+  id: IPCTorsoSynthLizMale
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_chest_m
+
+- type: marking
+  id: IPCTorsoSynthLizFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_chest_f
+
+# Left Leg
+
+- type: marking
+  id: IPCLLegSynthLiz
+  bodyPart: LLeg
+  markingCategory: Legs
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_l_leg
+
+#Right Leg
+
+- type: marking
+  id: IPCRLegSynthLiz
+  bodyPart: RLeg
+  markingCategory: Legs
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_r_leg
+
+# Left Arm
+
+- type: marking
+  id: IPCLArmSynthLiz
+  bodyPart: LArm
+  markingCategory: Arms
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_l_arm
+
+#Right Arm
+
+- type: marking
+  id: IPCRArmSynthLiz
+  bodyPart: RArm
+  markingCategory: Arms
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_r_arm
+
+#Left Hand
+
+- type: marking
+  id: IPCLHandSynthLiz
+  bodyPart: LHand
+  markingCategory: Arms
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_l_hand
+
+#Right Hand
+
+- type: marking
+  id: IPCRHandSynthLiz
+  bodyPart: RHand
+  markingCategory: Arms
+  sprites:
+  - sprite: _Splurt13/Mobs/Synthetic/synth_liz.rsi
+    state: synthliz_r_hand

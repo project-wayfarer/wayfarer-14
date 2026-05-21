@@ -88,10 +88,10 @@
 - type: entity
   parent:
   - MobCleanBot
-  - BaseC3SyndicateContrabandNoValue
+  #- BaseC3SyndicateContrabandNoValue # Wayfarer
   - NFBaseMobRestrictions
   id: MobCleanBotSyndie
-  name: stabby cleanbot # wayfarer edit: remove syndicate name
+  name: stabby cleanbot # Wayfarer: remove syndicate name
   description: The creep of automation now threatening space janitors with a knife.
   components:
   - type: NpcFactionMember

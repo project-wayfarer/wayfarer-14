@@ -106,8 +106,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 7.5 #Wayfarer 8 -> 7.5
-        Blunt: 8.5 #Wayfarer 8 -> 8.5
+        Piercing: 22 #Wayfarer 8<22 As John Moses Browning intended
+#        Blunt: 12 #Wayfarer 8 -> 8.5
   - type: StaminaDamageOnCollide
     damage: 6 # 10 hits to slowdown
 
@@ -120,8 +120,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 9.5 #Wayfarer 9 -> 9.5
-        Blunt: 11 #Wayfarer 10.5 -> 11
+        Piercing: 30 #Wayfarer 9<30
+#        Blunt: 11 #Wayfarer 10.5 -> 11
   - type: StaminaDamageOnCollide
     damage: 7 # ~9 hits to slowdown
 
@@ -134,8 +134,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 8.6 # 0.6 * base total dmg ##Wayfarer 10.8 -> 8.6
-        Heat: 8.8 # 0.4 * base total dmg ##Wayfarer 7.2 -> 8.8
+        Blunt: 15 # 0.6 * base total dmg ##Wayfarer 8.6<15
+        Heat: 9 # 0.4 * base total dmg ##Wayfarer 7.2 -> 9
   - type: StaminaDamageOnCollide
     damage: 6 # 10 hits to slowdown
 
@@ -148,8 +148,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 11 # 0.6 * (1.4 * base total dmg) ##Wayfarer 14.4 -> 11
-        Piercing: 3.5 #Wayfarer
+        Piercing: 20 # 0.6 * (1.4 * base total dmg) #Wayfarer 14.4<20 Blunt<Piercing
         Radiation: 9.6 # 0.6 * (1.4 * base total dmg)
   - type: StaminaDamageOnCollide
     damage: 6 # 10 hits to slowdown

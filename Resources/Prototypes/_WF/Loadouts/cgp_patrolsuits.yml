@@ -1,0 +1,39 @@
+- type: loadout
+  id: CGPPatrolSuitBronze
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  equipment:
+    outerClothing: ClothingOuterHardsuitNfsdBronze
+
+- type: loadout
+  id: CGPPatrolSuitSilver
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  equipment:
+    outerClothing: ClothingOuterHardsuitNfsdSilver
+
+- type: loadout
+  id: CGPPatrolSuitGold
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  equipment:
+    outerClothing: ClothingOuterHardsuitNfsdGold
+
+- type: loadout
+  id: CGPPatrolSuitBrig
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  equipment:
+    outerClothing: ClothingOuterHardsuitNfsdBrigmedic
+
+- type: loadout
+  id: CGPPatrolSuitCommodore
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  equipment:
+    outerClothing: ClothingOuterHardsuitNfsdSheriff

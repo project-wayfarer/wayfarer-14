@@ -1,7 +1,7 @@
 #region frame
 - type: entity
   abstract: true
-  parent: [ BaseC1Contraband, NFBaseWeaponEncumbranceSniper, NFBaseGunMeleeAttackHigh, NFBaseItemWeaponGun ]
+  parent: [ NFBaseWeaponEncumbranceSniper, NFBaseGunMeleeAttackHigh, NFBaseItemWeaponGun ] # Wayfarer: Removed contraband
   id: NFBaseWeaponFrameRifleSniper
   suffix: Frontier
   components:
@@ -31,7 +31,7 @@
 #region manufacturer
 - type: entity
   abstract: true
-  parent: [ BaseC3SyndicateContraband, NFBaseWeaponFrameRifleSniper ]
+  parent: [ BaseMilitaryContraband, NFBaseWeaponFrameRifleSniper ] # Wayfarer: BaseC3SyndicateContraband<BaseMilitaryContraband
   id: NFBaseWeaponFrameRifleSniperCybersun
   components:
   - type: Gun

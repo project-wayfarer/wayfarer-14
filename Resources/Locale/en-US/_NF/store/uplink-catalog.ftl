@@ -286,7 +286,7 @@ uplink-pirate-satchel-name = Pirate Satchel
 uplink-pirate-satchel-desc = An inconspicuous satchel filled with pirate goodies.
 
 uplink-pirate-flintlock-name = Flintlock Pistol
-uplink-pirate-flintlock-desc = A pirate captain's companion. Yarrr! Uses .60 anti-materiel ammo.
+uplink-pirate-flintlock-desc = A pirate captain's companion. Yarrr! Uses .45 pistol ammo.
 
 uplink-pirate-shotgunammo-name = Blunderbuss Shell Box
 uplink-pirate-shotgunammo-desc = A box of .50 shotgun shells, used in the blunderbuss.

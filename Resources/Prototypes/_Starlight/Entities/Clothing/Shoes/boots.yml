@@ -1,0 +1,24 @@
+# Starlight clothing.
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: SLClothingUniformBootsVampir
+  name: aristocrat boots
+  description: Old boots with a gray sole. # wayfarer
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Shoes/Boots/ari.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Shoes/Boots/ari.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: SLClothingShoesBootsSalvage1208134
+  name: tall black fur boots
+  description: Tall black thigh-high boots with fur, golden accents, and straps.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Shoes/Boots/belpero.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Shoes/Boots/belpero.rsi
+  - type: Matchbox # Cool as fuck =}

@@ -27,7 +27,7 @@
         Piercing: 0.9
         Heat: 0.9
 # Wayfarer: Below is the parent that adds functionality for helmet accessories to helmets/hats :>
-- type: entity 
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHelmetAccessoryHolder
   abstract: true
@@ -51,7 +51,7 @@
 
 #Basic Helmet (Security Helmet)
 - type: entity
-  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetArmoredBase, BaseC1Contraband] # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
+  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetArmoredBase] # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Add ClothingHeadHelmetAccessoryHolder, Removed Contraband
   id: ClothingHeadHelmetBasic
   name: helmet
   description: Standard security gear. Protects the head from impacts.
@@ -70,7 +70,7 @@
 
 #Mercenary Helmet
 - type: entity
-  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetArmoredBase, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
+  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetArmoredBase] # Frontier: BaseMajorContraband<BaseC1Contraband # Wayfarer: Add ClothingHeadHelmetAccessoryHolder, Removed Contraband
   id: ClothingHeadHelmetMercenary # Frontier: Merc<Mercenary
   name: mercenary helmet
   description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the jungle.
@@ -85,10 +85,10 @@
 
 #SWAT Helmet
 - type: entity
-  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetBase, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
+  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetBase, BaseMilitaryContraband] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Add ClothingHeadHelmetAccessoryHolder | BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
-  description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
+  description: An extremely robust helmet, commonly used by paramilitary forces. This one has white letters on the top. # Wayfarer: scrubbed Nanotrasen
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/swat.rsi
@@ -111,8 +111,8 @@
 
 #Syndicate SWAT Helmet
 - type: entity
-  parent: [ClothingHeadHelmetAccessoryHolder, BaseC3SyndicateContraband, ClothingHeadHelmetSwat, ContrabandClothing] # Frontier: added ContrabandClothing, BaseC3SyndicateContraband as parent # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
-  id: ClothingHeadHelmetSwatSyndicate 
+  parent: [ClothingHeadHelmetAccessoryHolder, BaseBMContraband, ClothingHeadHelmetSwat] # Frontier: added ContrabandClothing, BaseC3SyndicateContraband as parent # Wayfarer: Add ClothingHeadHelmetAccessoryHolder | BaseC3SyndicateContraband<BaseBMContraband, remove ContrabandClothing
+  id: ClothingHeadHelmetSwatSyndicate
   name: SWAT helmet
   suffix: Syndicate
   description: An extremely robust helmet, commonly used by paramilitary forces. It is adorned in a nefarious red and black stripe pattern.
@@ -127,7 +127,7 @@
 
 #Light Riot Helmet
 - type: entity
-  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetBase, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
+  parent: [ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetBase] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Add ClothingHeadHelmetAccessoryHolder, removed contraband.
   id: ClothingHeadHelmetRiot
   name: light riot helmet
   description: It's a helmet specifically designed to protect against close range attacks.
@@ -213,7 +213,7 @@
 
 #Space Ninja Helmet
 - type: entity
-  parent: [ClothingHeadEVAHelmetBase, BaseC3ContrabandNoValue, ContrabandClothing] # Frontier: BaseMajorContraband<BaseC3ContrabandNoValue, add ContrabandClothing
+  parent: [ClothingHeadEVAHelmetBase, BaseBMContraband, ContrabandClothing] # Frontier: BaseMajorContraband<BaseC3ContrabandNoValue, add ContrabandClothing # Wayfarer: BaseC3ContrabandNoValue<BaseBMContraband
   id: ClothingHeadHelmetSpaceNinja
   name: space ninja helmet
   description: What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear.
@@ -344,7 +344,7 @@
 
 #Chitinous Helmet
 - type: entity
-  parent: [ ClothingHeadHelmetBase, BaseC3ContrabandNoValue] # Frontier: BaseMajorContraband<BaseC3ContrabandNoValue
+  parent: ClothingHeadHelmetBase # Frontier: BaseMajorContraband<BaseC3ContrabandNoValue # Wayfarer: Removed contraband
   id: ClothingHeadHelmetLing
   name: chitinous helmet
   description: An all-consuming chitinous mass of armor.
@@ -367,7 +367,7 @@
 #ERT HELMETS
 #ERT Leader Helmet
 - type: entity
-  parent: [ClothingHeadHelmetAccessoryHolder, BaseCentcommContraband, ClothingHeadHelmetArmoredBase ] # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
+  parent: [ClothingHeadHelmetAccessoryHolder, BaseMilitaryContraband, ClothingHeadHelmetArmoredBase ] # Wayfarer: Add ClothingHeadHelmetAccessoryHolder, BaseCentcommContraband<BaseMilitaryContraband
   id: ClothingHeadHelmetERTLeader
   name: ERT leader helmet
   description: An in-atmosphere helmet worn by the leader of a Nanotrasen Emergency Response Team. Has blue highlights.
@@ -464,7 +464,7 @@
 #Bone Helmet
 #No need to hide the hair on this one
 - type: entity
-  parent: [ ClothingHeadHelmetArmoredBase, BaseC1Contraband ] # Frontier: BaseMinorContraband<BaseC1Contraband
+  parent: ClothingHeadHelmetArmoredBase # Frontier: BaseMinorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: ClothingHeadHelmetBone
   name: bone helmet
   description: Cool-looking helmet made of skull of your enemies.
@@ -479,7 +479,7 @@
 
 #Ironclad II Helmet
 - type: entity
-  parent: [ClothingHeadHelmetArmoredBase, BaseC1Contraband ] # Frontier: BaseMinorContraband<BaseC1Contraband
+  parent: ClothingHeadHelmetArmoredBase # Frontier: BaseMinorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: ClothingHeadHelmetPodWars
   name: ironclad II helmet
   description: An ironclad II helmet, a relic of the pod wars.
@@ -494,7 +494,7 @@
 
 #Justice Helmet
 - type: entity
-  parent: [ ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetBasic, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Add ClothingHeadHelmetAccessoryHolder
+  parent: [ ClothingHeadHelmetAccessoryHolder, ClothingHeadHelmetBasic ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Add ClothingHeadHelmetAccessoryHolder, removed contraband
   id: ClothingHeadHelmetJustice
   name: justice helm
   description: Advanced security gear. Protects the station from ne'er-do-wells.
@@ -548,7 +548,7 @@
     speed: 360
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer 
+  - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
       storagebase: !type:Container # Wayfarer c:

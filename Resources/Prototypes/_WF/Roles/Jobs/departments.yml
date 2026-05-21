@@ -1,0 +1,9 @@
+- type: department # Added to group SSD players separately on crew manifest
+  id: InactiveDeparment
+  name: department-Inactive
+  description: department-inactive-description
+  color: "#808080"
+  weight: -100 # should be the last section in crew manifest
+  editorHidden: true
+  roles:
+  - Inactive

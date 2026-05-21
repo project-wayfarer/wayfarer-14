@@ -1,7 +1,7 @@
 - type: entity
   id: ClothingHandsGlovesArcadiaCombat
   name: arcadia combat gloves
-  parent: [ ClothingHandsGlovesCombat, BaseC3ContrabandNoValue, ContrabandClothing ]
+  parent: [ ClothingHandsGlovesCombat ] # Wayfarer: Remove contraband
   description: Combat gloves produced by Arcadia Industries.
   components:
   - type: Sprite
@@ -22,20 +22,20 @@
   - type: Clothing
     sprite: _NF/Clothing/Hands/Gloves/pilot.rsi
   - type: Fiber
-    fiberColor: fibers-brown
+    fiberColor: fibers-brown # Wayfarer: fibers-cream<fibers-black
 
 - type: entity
-  parent: ClothingHandsGlovesCombat
+  parent: [ClothingHandsGlovesCombat, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHandsGlovesCombatNfsdBrown
   name: CGP combat gloves
   description: Insulated gloves for a deputy sheriff.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Hands/Gloves/nfsd_brown.rsi
+    sprite: _WF/Clothing/Hands/Gloves/CGP_brown.rsi # Wayfarer: _NF/Clothing/Hands/Gloves/nfsd_brown.rsi < _WF/Clothing/Hands/Gloves/CGP_brown.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Hands/Gloves/nfsd_brown.rsi
+    sprite: _WF/Clothing/Hands/Gloves/CGP_brown.rsi # Wayfarer: _NF/Clothing/Hands/Gloves/nfsd_brown.rsi < _WF/Clothing/Hands/Gloves/CGP_brown.rsi
   - type: Fiber
-    fiberColor: fibers-brown
+    fiberColor: fibers-black
 
 - type: entity
   parent: ClothingHandsGlovesCombatNfsdBrown
@@ -44,11 +44,11 @@
   description: Insulated gloves for a deputy sheriff.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Hands/Gloves/nfsd_cream.rsi
+    sprite: _WF/Clothing/Hands/Gloves/CGP_cream.rsi # Wayfarer: _NF/Clothing/Hands/Gloves/nfsd_cream.rsi < _WF/Clothing/Hands/Gloves/CGP_cream.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Hands/Gloves/nfsd_cream.rsi
+    sprite: _WF/Clothing/Hands/Gloves/CGP_cream.rsi # Wayfarer: _NF/Clothing/Hands/Gloves/nfsd_cream.rsi < _WF/Clothing/Hands/Gloves/CGP_cream.rsi
   - type: Fiber
-    fiberColor: fibers-cream
+    fiberColor: fibers-grey # Wayfarer: fibers-cream<fibers-grey
 
 - type: entity
   parent: ClothingHandsGlovesHop

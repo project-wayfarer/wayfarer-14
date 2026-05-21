@@ -2,7 +2,7 @@
 #region Laser
 - type: entity
   id: NFWeaponEnergySubMachineGunDeltaV
-  parent: [ NFBaseWeaponEnergySubMachineGunFireModes, NFBaseWeaponFrameEnergySubMachineGunNanotrasen ]
+  parent: [ NFBaseWeaponEnergySubMachineGunFireModes, NFBaseWeaponFrameEnergySubMachineGunNanotrasen, BaseMilitaryContraband ] # Wayfarer: add BaseMilitaryContraband
   name: energy submachine gun
   description: |-
     An advanced hybrid energy submachine gun with two settings: disable and kill. On the handle is a label that says 'for authorized use only.'

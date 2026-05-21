@@ -230,7 +230,7 @@ public sealed partial class IngestionSystem : EntitySystem
             popup = true;
             return false;
         }
-        // Wayfarer end
+        // End Wayfarer
 
         if (ev.SpecialDigestion)
         {
@@ -301,7 +301,7 @@ public sealed partial class IngestionSystem : EntitySystem
                 }
             }
         }
-        // Wayfarer end
+        // End Wayfarer
 
         if (ev.SpecialDigestion)
             return _whitelistSystem.IsWhitelistPass(stomach.Comp1.SpecialDigestible, food);

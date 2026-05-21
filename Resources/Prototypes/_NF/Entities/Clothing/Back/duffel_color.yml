@@ -336,7 +336,7 @@
       - state: inhand-right-zipper
 
 - type: entity
-  parent: NFClothingDuffel
+  parent: [NFClothingDuffel, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackDuffelSr
   name: station representative duffel
   description: No expense was spared in crafting of this premium duffelbag.

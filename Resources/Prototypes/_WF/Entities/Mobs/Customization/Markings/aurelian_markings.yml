@@ -1,0 +1,353 @@
+- type: marking
+  id: AurelianVoxArmMarkingsLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: arm_markings_left
+
+- type: marking
+  id: AurelianVoxArmMarkingsRight
+  bodyPart: RArm
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: arm_markings_right
+
+- type: marking
+  id: AurelianVoxBeak
+  bodyPart: Snout
+  markingCategory: Head
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: beak
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: AurelianVoxClawsFeetLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  colorLinks:
+    claws_feet_left_behind: claws_feet_left
+  layering:
+    claws_feet_left: LFoot
+#    claws_feet_left_behind: LFootBehind
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: claws_feet_left
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: claws_feet_left_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: AurelianVoxClawsFeetRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  colorLinks:
+    claws_feet_right_behind: claws_feet_right
+  layering:
+    claws_feet_right: RFoot
+#    claws_feet_right_behind: RFootBehind
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: claws_feet_right
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: claws_feet_right_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: AurelianVoxClawsHandsLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: claws_hands_left
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: AurelianVoxClawsHandsRight
+  bodyPart: RHand
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: claws_hands_right
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#a0a654"
+
+- type: marking
+  id: AurelianVoxCrest
+  bodyPart: Snout #Loathesome Dungeater!
+  markingCategory: Head
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: crest
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: AurelianVoxNeckMarkings
+  bodyPart: Head
+  markingCategory: Head
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: neck_markings
+
+- type: marking
+  id: AurelianVoxScutesArmsLeft
+  bodyPart: LHand #Why? Because it's technically on the hand.
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: scutes_arms_left
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: AurelianVoxScutesArmsRight
+  bodyPart: RHand #Why? Because it's technically on the hand.
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: scutes_arms_right
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: AurelianVoxScutesLegsLeft
+  bodyPart: LFoot #as Above, so Below
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  colorLinks:
+    scutes_legs_left: scutes_foot_left
+  layering:
+#    r_foot_behind: RFootBehind
+    scutes_legs_left: LLeg
+    scutes_foot_left: LFoot
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: scutes_legs_left
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: scutes_foot_left
+    - sprite: _WF/Mobs/Species/AurelianVox/parts.rsi
+      state: r_foot_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: AurelianVoxScutesLegsRight
+  bodyPart: RFoot #as Above, so Below
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  colorLinks:
+    scutes_legs_right: scutes_foot_right
+  layering:
+#    l_foot_behind: LFootBehind
+    scutes_legs_right: RLeg
+    scutes_foot_right: RFoot
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: scutes_legs_right
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: scutes_foot_right
+    - sprite: _WF/Mobs/Species/AurelianVox/parts.rsi
+      state: l_foot_behind
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#bc7d3e"
+
+- type: marking
+  id: AurelianVoxTail
+  bodyPart: TailBehind
+  markingCategory: Tail
+  #speciesRestriction: [AurelianVox]
+  forcedColoring: false
+  sprites:
+  - sprite: _WF/Mobs/Species/AurelianVox/parts.rsi
+    state: tail
+
+- type: marking
+  id: AurelianVoxTailOS
+  bodyPart: TailOversuit
+  markingCategory: Tail
+  #speciesRestriction: [AurelianVox]
+  forcedColoring: false
+  sprites:
+  - sprite: _WF/Mobs/Species/AurelianVox/parts.rsi
+    state: tail
+
+- type: marking
+  id: AurelianVoxRoboticArmRight
+  bodyPart: RArm
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_arm_right
+
+- type: marking
+  id: AurelianVoxRoboticArmLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_arm_left
+
+- type: marking
+  id: AurelianVoxRoboticHandRight
+  bodyPart: RHand
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_hand_right
+
+- type: marking
+  id: AurelianVoxRoboticHandLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_hand_left
+
+- type: marking
+  id: AurelianVoxRoboticLegRight
+  bodyPart: RLeg
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_leg_right
+
+- type: marking
+  id: AurelianVoxRoboticLegLeft
+  bodyPart: LLeg
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_leg_left
+
+- type: marking
+  id: AurelianVoxRoboticFootRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_foot_right
+
+- type: marking
+  id: AurelianVoxRoboticFootLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_foot_left
+
+- type: marking
+  id: AurelianVoxRoboticHead
+  bodyPart: Head
+  markingCategory: Head
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_head
+
+- type: marking
+  id: AurelianVoxRoboticChest
+  bodyPart: Chest
+  markingCategory: Chest
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_chest
+
+- type: marking
+  id: AurelianVoxRoboticTail
+  bodyPart: TailBehind
+  markingCategory: Tail
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_tail
+
+- type: marking
+  id: AurelianVoxRoboticTailOS
+  bodyPart: TailOversuit
+  markingCategory: Tail
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_markings.rsi
+      state: robotic_tail

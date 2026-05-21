@@ -344,12 +344,21 @@
   price: 2000
   equipment:
     gloves: ClothingHandsMercenaryGlovesCombat
+  groupBy: "combatgloves"
 
 - type: loadout
   id: WFClothingHandsGlovesCombat
   price: 2000
   equipment:
     gloves: ClothingHandsGlovesCombat
+  groupBy: "combatgloves"
+
+- type: loadout
+  id: ClothingHandsGlovesCombatWhite
+  price: 2000
+  equipment:
+    gloves: ClothingHandsGlovesCombatWhite
+  groupBy: "combatgloves"
 
 #T2
 - type: loadout

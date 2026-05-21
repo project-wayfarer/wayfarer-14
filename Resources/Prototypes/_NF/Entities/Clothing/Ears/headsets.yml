@@ -11,14 +11,14 @@
       - EncryptionKeyCommon
 
 - type: entity
-  parent: ClothingHeadset
+  parent: [ClothingHeadset, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadsetNfsdBrown
   name: CGP headset
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Ears/Headsets/nfsd_e_brown.rsi
+    sprite: _WF/Clothing/Ears/Headsets/CGP_e_brown.rsi # Wayfarer _NF/Clothing/Ears/Headsets/nfsd_e_brown.rsi < _WF/Clothing/Ears/Headsets/CGP_e_brown.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Ears/Headsets/nfsd_e_brown.rsi
+    sprite: _WF/Clothing/Ears/Headsets/CGP_e_brown.rsi # Wayfarer _NF/Clothing/Ears/Headsets/nfsd_e_brown.rsi < _WF/Clothing/Ears/Headsets/CGP_e_brown.rsi
   - type: ContainerFill
     containers:
       key_slots:
@@ -30,18 +30,18 @@
   id: ClothingHeadsetNfsdGreen
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Ears/Headsets/nfsd_e_green.rsi
+    sprite: _WF/Clothing/Ears/Headsets/CGP_e_green.rsi # Wayfarer _NF/Clothing/Ears/Headsets/nfsd_e_green.rsi < _WF/Clothing/Ears/Headsets/CGP_e_green.rsi # Wayfarer
   - type: Clothing
-    sprite: _NF/Clothing/Ears/Headsets/nfsd_e_green.rsi
+    sprite: _WF/Clothing/Ears/Headsets/CGP_e_green.rsi # Wayfarer _NF/Clothing/Ears/Headsets/nfsd_e_green.rsi < _WF/Clothing/Ears/Headsets/CGP_e_green.rsi # Wayfarer
 
 - type: entity
   parent: ClothingHeadsetNfsdBrown
   id: ClothingHeadsetNfsdCream
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Ears/Headsets/nfsd_e_cb.rsi
+    sprite: _WF/Clothing/Ears/Headsets/CGP_e_cb.rsi # Wayfarer _NF/Clothing/Ears/Headsets/nfsd_e_cb.rsi < _WF/Clothing/Ears/Headsets/CGP_e_cb.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Ears/Headsets/nfsd_e_cb.rsi
+    sprite: _WF/Clothing/Ears/Headsets/CGP_e_cb.rsi # Wayfarer _NF/Clothing/Ears/Headsets/nfsd_e_cb.rsi < _WF/Clothing/Ears/Headsets/CGP_e_cb.rsi
 
 # Common Versions - Frontier
 - type: entity

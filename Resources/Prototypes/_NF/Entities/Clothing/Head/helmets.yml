@@ -3,10 +3,10 @@
 
 #ERT Mail Carrier Helmet
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, ClothingHeadHelmetBasic ]
+  parent: [ BaseCGPContraband, ClothingHeadHelmetBasic ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingHeadHelmetERTMailCarrier
   name: ERT mail carrier helmet
-  description: An in-atmosphere helmet worn by mail members of the Emergency Response Team. Has dark purple highlights. # wayfarer edit: remove nanotrasen mention in description
+  description: An in-atmosphere helmet worn by mail members of the Emergency Response Team. Has dark purple highlights. # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Helmets/ert_mailcarrier.rsi
@@ -14,19 +14,19 @@
     sprite: _NF/Clothing/Head/Helmets/ert_mailcarrier.rsi
 
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, ClothingHeadHelmetBasic ]
+  parent: [ BaseCGPContraband, ClothingHeadHelmetBasic ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingHeadHelmetNfsd
   name: CGP helmet
   description: An CGP issued helmet to protect your head.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Helmets/nfsd.rsi
+    sprite: _WF/Clothing/Head/Helmets/CGP.rsi # Wayfarer: _NF/Clothing/Head/Helmets/nfsd.rsi < _WF/Clothing/Head/Helmets/CGP.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Helmets/nfsd.rsi
+    sprite: _WF/Clothing/Head/Helmets/CGP.rsi # Wayfarer: _NF/Clothing/Head/Helmets/nfsd.rsi < _WF/Clothing/Head/Helmets/CGP.rsi
 
 #Mercenary Helmet
 - type: entity
-  parent: [ BaseC1Contraband, ClothingHeadHelmetMercenary ]
+  parent: ClothingHeadHelmetMercenary # Wayfarer: Removed contraband
   id: ClothingHeadHelmetMercenaryBlack
   name: mercenary helmet
   description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the urban sprawl.

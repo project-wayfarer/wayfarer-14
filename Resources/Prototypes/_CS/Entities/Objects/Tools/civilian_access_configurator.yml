@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseC1Contraband, AccessConfigurator]
+  parent: AccessConfigurator # Wayfarer: Removed contraband
   id: AccessConfiguratorCivilian
   name: civilian access configurator
   description: An access configurator commonly used by ship captains, intended for the general market in the frontier.
@@ -22,3 +22,9 @@
   - type: StaticPrice
     price: 500
     vendPrice: 2500
+  # Wayfarer: Fix contraband parent
+  - type: Contraband
+    severity: NotContraband
+    hideValues: true
+    hideCarryStatus: true
+  # End Wayfarer

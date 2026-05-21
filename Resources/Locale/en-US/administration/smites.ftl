@@ -58,6 +58,7 @@ admin-smite-nyanify-name = Cat Ears
 admin-smite-kill-sign-name = Kill Sign
 admin-smite-omni-accent-name = Omni-Accent
 admin-smite-crawler-name = Crawler
+admin-smite-gib-name = Gib
 
 ## Smite descriptions
 
@@ -78,6 +79,7 @@ admin-smite-ghostkick-description = Silently kicks the user, dropping their conn
 admin-smite-nyanify-description = Forcibly add cat ears, there is no escape.
 admin-smite-kill-sign-description = Marks a player for death by their fellows.
 admin-smite-cluwne-description = Cluwnes them. The suit cannot be removed and the station's crew may murder them freely.
+admin-smite-gib-description = Tears them apart into pieces.
 admin-smite-anger-pointing-arrows-description = Angers the pointing arrows, causing them to assault this entity explosively.
 admin-smite-dust-description = Reduces the target to a small pile of ash.
 admin-smite-buffering-description = Causes the target to randomly start buffering, freezing them in place for a short timespan while they load.

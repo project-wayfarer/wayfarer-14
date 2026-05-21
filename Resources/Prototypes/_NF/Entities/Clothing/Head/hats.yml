@@ -1,7 +1,7 @@
 - type: entity
   id: ClothingHeadHatBH
   name: "bounty hunter's hat"
-  parent: [ BaseC1Contraband, ClothingHeadHatHoshat ]
+  parent: ClothingHeadHatHoshat # Wayfarer: Removed contraband
   description: "There's a new bounty hunter in the sector."
   components:
   - type: Sprite
@@ -140,51 +140,51 @@
     sprite: _NF/Clothing/Head/Hats/pirate_hat_luffy.rsi
 
 - type: entity
-  parent: ClothingHeadBaseButcherable
+  parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatNfsdBeretGreen
   name: CGP beret
   description: A green beret for use by CGP officers.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hats/nfsd_beret_green.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_beret_green.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_green.rsi < _WF/Clothing/Head/Hats/CGP_beret_green.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hats/nfsd_beret_green.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_beret_green.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_green.rsi < _WF/Clothing/Head/Hats/CGP_beret_green.rsi
   - type: CatWearable
 
 - type: entity
-  parent: ClothingHeadBaseButcherable
+  parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatNfsdBeretBrown
   name: CGP beret
   description: A brown beret for use by CGP officers.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hats/nfsd_beret_brown.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_beret_brown.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_brown.rsi < _WF/Clothing/Head/Hats/CGP_beret_brown.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hats/nfsd_beret_brown.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_beret_brown.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_brown.rsi < _WF/Clothing/Head/Hats/CGP_beret_brown.rsi
   - type: CatWearable
 
 - type: entity
-  parent: ClothingHeadBaseButcherable
+  parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatNfsdBeretCream
   name: CGP beret
   description: A cream beret for use by CGP officers.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hats/nfsd_beret_cream.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_beret_cream.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_cream.rsi < _WF/Clothing/Head/Hats/CGP_beret_cream.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hats/nfsd_beret_cream.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_beret_cream.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_cream.rsi < _WF/Clothing/Head/Hats/CGP_beret_cream.rsi
   - type: CatWearable
 
 - type: entity
-  parent: ClothingHeadBaseButcherable
+  parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatNfsdCampaign
   name: CGP campaign hat
   description: Yeehaw, partner.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hats/nfsd_campaign.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_campaign.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_campaign.rsi < _WF/Clothing/Head/Hats/CGP_campaign.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hats/nfsd_campaign.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_campaign.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_campaign.rsi < _WF/Clothing/Head/Hats/CGP_campaign.rsi
   - type: Storage
     maxItemSize: Tiny # No active lighters or welders
     grid:
@@ -218,24 +218,24 @@
         amount: 3
 
 - type: entity
-  parent: ClothingHeadBaseButcherable
+  parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatNfsdSmallCampaign
   name: CGP campaign cap
   description: All yee, no haw.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hats/nfsd_campaign_small.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_campaign_small.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_campaign_small.rsi < _WF/Clothing/Head/Hats/CGP_campaign_small.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hats/nfsd_campaign_small.rsi
+    sprite: _WF/Clothing/Head/Hats/CGP_campaign_small.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_campaign_small.rsi < _WF/Clothing/Head/Hats/CGP_campaign_small.rsi
   - type: CatWearable
   - type: PirateBountyItem
     id: CampaignHat
 
 - type: entity
-  parent: ClothingHeadHatHopcap
+  parent: [ClothingHeadHatHopcap, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatSrCap
   name: station representative's cap
-  description: A cap issued to Frontier Outpost's station representative. Try not to lose it.
+  description: A cap issued to Dusk's station representative. Try not to lose it. # Wayfarer: Frontier<Dusk
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Hats/sr_cap.rsi
@@ -244,10 +244,10 @@
   - type: HamsterWearable
 
 - type: entity
-  parent: ClothingHeadHatHopcap
+  parent: [ClothingHeadHatHopcap, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatSrBeret
   name: station representative's beret
-  description: A breezy beret issued to Frontier Outpost's station representative. Looks soft.
+  description: A breezy beret issued to Dusk's station representative. Looks soft. # Wayfarer: Frontier<Dusk
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Hats/sr_beret.rsi
@@ -256,10 +256,10 @@
   - type: CatWearable
 
 - type: entity
-  parent: ClothingHeadHatHopcap
+  parent: [ClothingHeadHatHopcap, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadHatStcCap
   name: station traffic controller's cap
-  description: A cap issued to Frontier Outpost's station traffic controller. Try not to lose it.
+  description: A cap issued to Dusk's station traffic controller. Try not to lose it. # Wayfarer: Frontier<Dusk
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Hats/stc_cap.rsi

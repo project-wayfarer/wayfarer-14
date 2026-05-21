@@ -43,7 +43,7 @@
         friction: 0.2
 
 - type: entity
-  parent: [ProjectileGrenadeBase, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ProjectileGrenadeBase, BaseMilitaryContraband] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: GrenadeStinger
   name: stinger grenade
   description: Nothing to see here, please disperse.

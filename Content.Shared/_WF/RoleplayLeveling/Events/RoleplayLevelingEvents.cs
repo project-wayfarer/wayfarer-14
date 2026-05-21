@@ -93,3 +93,45 @@ public sealed class AvailableCommendsMessage : EntityEventArgs
         AvailableCommends = availableCommends;
     }
 }
+
+/// <summary>
+/// Message sent from client to request their own recent commends
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class RequestMyCommendsMessage : EntityEventArgs
+{
+}
+
+/// <summary>
+/// A single commend entry returned to the client
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class CommendEntryData
+{
+    public string Comment { get; }
+    public string GiverName { get; }
+    public bool IsPrivate { get; }
+    public DateTime ReceivedAt { get; }
+
+    public CommendEntryData(string comment, string giverName, bool isPrivate, DateTime receivedAt)
+    {
+        Comment = comment;
+        GiverName = giverName;
+        IsPrivate = isPrivate;
+        ReceivedAt = receivedAt;
+    }
+}
+
+/// <summary>
+/// Message sent from server with the player's own recent commends
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class MyCommendsMessage : EntityEventArgs
+{
+    public List<CommendEntryData> Commends { get; }
+
+    public MyCommendsMessage(List<CommendEntryData> commends)
+    {
+        Commends = commends;
+    }
+}

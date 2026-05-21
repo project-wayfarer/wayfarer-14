@@ -27,12 +27,12 @@
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
             shutdownState: PlanFinished
-            pathfindInPlanning: false
+            pathfindInPlanning: true # Wayfarer: false<true
             removeKeyOnFinish: false
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             stopOnLineOfSight: true
-            rangeKey: RangedRange # Wayfarer: MeleeRange<RangedRange
+            rangeKey: MeleeRange # Wayfarer: RangedRange<MeleeRange
 
         - !type:HTNPrimitiveTask
           preconditions:

@@ -178,7 +178,7 @@
 #region SR
 - type: entity
   id: NFPouchSr
-  parent: NFPouchUtility
+  parent: [NFPouchUtility, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   name: station representative's pouch
   components:
   - type: Sprite
@@ -1035,7 +1035,7 @@
 #region nfsd
 - type: entity
   id: NFPouchNfsd
-  parent: NFPouchUtility
+  parent: [NFPouchUtility, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   name: CGP pouch
   components:
   - type: Sprite

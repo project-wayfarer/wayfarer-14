@@ -1,0 +1,293 @@
+# From Impstation (imp-station-14). Code: AGPL-3.0.
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformCircusClown
+  name: circus clown jumpsuit
+  description: A replica of the regalia of the great Googoo Funnyball, who tragically disappeared in a mysterious circus fire.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/circusclown.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/circusclown.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformJokester
+  name: jokester's jumpsuit
+  description: Now 100% more tomato-proof!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/clown_jokester.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/clown_jokester.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformHitmanSuit
+  name: contract killer suit
+  description: The perfect outfit for blending in at any event, office, or space station.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/hitmansuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/hitmansuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase # WF: Removed Tier3Contraband parent (not defined in wayfarer)
+  id: IMPClothingUniformBurglarJumpsuit
+  name: suspicious crime jumpsuit
+  description: The wearer of this is one sneaky snitch...
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/burglarjumpsuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/burglarjumpsuit.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: IMPClothingUniformJumpsuitCentcommIntern
+  name: CentComm intern's jumpsuit
+  description: It's a jumpsuit worn by those interning for CentComm. The top is styled after a polo shirt for easy identification.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Other/centcommintern.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Other/centcommintern.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformFuneralSuit
+  name: funeral suit
+  description: For when no color is allowed and all must be mourned.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/funeralsuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/funeralsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformNightclubSuit
+  name: nightclub suit
+  description: ID please?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/nightclubsuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/nightclubsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformMrSpaceWide
+  name: mr space wide suit
+  description: The unspoken attire for any hotel, motel, or branded inn activities.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mrspacewide.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mrspacewide.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformBrownSuit
+  name: brown suit
+  description: Not even the worst coffee spills will show up on this puppy, guaranteed.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brownsuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brownsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformCreamSuit
+  name: cream suit
+  description: A suit fit for a humble, small town gentleman with something to say.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/creamsuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/creamsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformDetectiveSuit
+  name: detective suit
+  description: Now excuse me, if I may just have a moment of your time...
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/detectivesuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/detectivesuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformMiamiVice
+  name: miami vice suit
+  description: When you need to arrest the clown at twelve o'clock and boogie board at one.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/miamivice.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/miamivice.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformSeniorBartender
+  name: senior bartender suit
+  description: But you are the bartender, you've always been the bartender.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/senior_bartender.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/senior_bartender.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformBrosBlazer
+  name: BROS blazer and jeans
+  description: BROS... Two!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brosblazer.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brosblazer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformJesterEvil
+  name: evil jester suit
+  description: Heeheehee...
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/jesterevil.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/jesterevil.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformSailorSuit
+  name: sailor suit
+  description: Wrong kind of ship!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/sailoruniform.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/sailoruniform.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformJumpsuitMimeCropped
+  name: cropped mime suit
+  description: ...?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimecropped.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimecropped.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformJumpsuitMimeNouveau
+  name: nouveau mime suit
+  description: ...!?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimenouveau.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimenouveau.rsi
+
+- type: entity
+  parent: ClothingUniformBase # WF: removed ClothingUniformFoldableBase, not in Wayfarer
+  id: IMPClothingUniformJumpsuitCourier
+  name: courier jumpsuit
+  description: A courier uniform, with blue accents.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/courier.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/courier.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformSpaceJumpsuitCasualBrown
+  name: casual space jumpsuit
+  description: An outfit reflecting the current trends of the deep spacefaring citizens near and far! # WF: removed Nanotrasen mention
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualbrown.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualbrown.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformSpaceJumpsuitCasualTriColor
+  name: casual space jumpsuit
+  description: An outfit reflecting the current trends of the deep spacefaring citizens near and far! # WF: removed Nanotrasen mention
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualtricolor.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualtricolor.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformSpaceJumpsuitCasualMulti
+  name: casual space jumpsuit
+  description: An outfit reflecting the current trends of the deep spacefaring citizens near and far! # WF: removed Nanotrasen mention
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualmulti.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualmulti.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformSpaceJumpsuitCasualBlue
+  name: casual space jumpsuit
+  description: An outfit reflecting the current trends of the deep spacefaring citizens near and far! # WF: removed Nanotrasen mention
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualblue.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/spacecasualblue.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformJumpsuitMusicianMarchingBand
+  name: musician's marching uniform
+  description: For when you need to join the parade.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mus_marchingband.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mus_marchingband.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: IMPClothingUniformJumpsuitTailcoatSuit
+  name: tailcoat suit
+  description: A rather fetching outfit with long tails, fit for any gentleperson looking to stand out.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/tailcoatsuit.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/tailcoatsuit.rsi

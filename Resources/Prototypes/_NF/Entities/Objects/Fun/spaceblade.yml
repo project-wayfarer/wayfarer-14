@@ -134,7 +134,7 @@
   id: SpaceBladeSec
   parent:
   - SpaceBlade
-  - BaseC2ContrabandUnredeemable
+  - BaseCGPContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   components:
   - type: Sprite
     state: secblade
@@ -147,7 +147,7 @@
   id: SpaceBladeContra
   parent:
   - SpaceBlade
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   description: Let it reap.
   components:
   - type: Sprite

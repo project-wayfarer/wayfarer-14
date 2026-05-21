@@ -413,6 +413,7 @@ namespace Content.Server.Database
         Task AddRoleplayCommend(int roundId, int recipientProfileId, Guid recipientUserId, int giverProfileId, Guid giverUserId, string? comment, bool isPrivate, CancellationToken cancel = default);
         Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(Guid userId, bool includePrivate = false, CancellationToken cancel = default);
         Task<int> GetRoundCommendsGivenByPlayer(Guid giverUserId, int roundId, CancellationToken cancel = default);
+        Task<string?> GetCharacterNameByProfileIdAsync(int profileId, CancellationToken cancel = default);
 
         #endregion
 
@@ -1290,6 +1291,12 @@ namespace Content.Server.Database
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetRoundCommendsGivenByPlayer(giverUserId, roundId, cancel));
+        }
+
+        public Task<string?> GetCharacterNameByProfileIdAsync(int profileId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetCharacterNameByProfileIdAsync(profileId, cancel));
         }
 
         #endregion

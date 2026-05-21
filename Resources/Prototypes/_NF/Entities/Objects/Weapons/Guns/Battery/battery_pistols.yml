@@ -30,7 +30,7 @@
 - type: entity
   categories: [ DoNotMap ]
   id: NFWeaponEnergyPistolLaserAntique
-  parent: [ NFBaseWeaponEnergyPistolFireModes, NFBaseWeaponFrameEnergyPistolNanotrasen ]
+  parent: [ NFBaseWeaponEnergyPistolFireModes, NFBaseWeaponFrameEnergyPistolNanotrasen, BaseMilitaryContraband ] # Wayfarer: add BaseMilitaryContraband
   name: antique laser pistol
   description: |-
     This is an antique laser pistol with two settings: disable and kill. All craftsmanship is of the highest quality. It is decorated with a mahogany grip and chrome filigree. The object menaces with spikes of energy. On the item is an image of a captain and a clown. The clown is dead. The captain is striking a heroic pose.
@@ -59,7 +59,7 @@
 - type: entity
   categories: [ DoNotMap ]
   id: NFWeaponEnergyPistolLaserX01Multiphase
-  parent: [ BaseC2ContrabandUnredeemable, NFWeaponEnergyPistolLaserAntique ]
+  parent: [ BaseMilitaryContraband, NFWeaponEnergyPistolLaserAntique ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   name: X-01 multiphase energy gun
   description: |-
     This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes. On the handle is a label that says 'for authorized use only.'
@@ -125,7 +125,7 @@
 #region Pulse
 - type: entity
   id: NFWeaponEnergyPistolPulse
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponEnergyPistolHitScanPulse, NFBaseWeaponFrameEnergyPistolNanotrasen ]
+  parent: [ BaseCGPContraband, NFBaseWeaponEnergyPistolHitScanPulse, NFBaseWeaponFrameEnergyPistolNanotrasen ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   name: pulse pistol
   description: |-
     A state of the art energy pistol favoured as a sidearm by the NT operatives. On the handle is a label that says 'for authorized use only.'
@@ -212,7 +212,7 @@
 #region Holoflare pistol
 - type: entity
   id: NFWeaponHoloflareGun
-  parent: [ NFBaseWeaponFrameEnergyPistol ]
+  parent: [ NFBaseWeaponFrameEnergyPistol, RecyclableItemDeviceTiny ] # Wayfarer: added recyclable component
   name: holoflare pistol
   description: |-
     A modification of a civilian-grade laser pistol that can project holoflares onto surfaces.

@@ -610,20 +610,20 @@ public sealed partial class AdminVerbSystem
             */
         }
 
-        var angerPointingArrowsName = Loc.GetString("admin-smite-anger-pointing-arrows-name").ToLowerInvariant();
-        Verb angerPointingArrows = new()
-        {
-            Text = angerPointingArrowsName,
-            Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Interface/Misc/pointing.rsi"), "pointing"),
-            Act = () =>
-            {
-                EnsureComp<PointingArrowAngeringComponent>(args.Target);
-            },
-            Impact = LogImpact.Extreme,
-            Message = string.Join(": ", angerPointingArrowsName, Loc.GetString("admin-smite-anger-pointing-arrows-description"))
-        };
-        args.Verbs.Add(angerPointingArrows);
+        // var angerPointingArrowsName = Loc.GetString("admin-smite-anger-pointing-arrows-name").ToLowerInvariant();
+        // Verb angerPointingArrows = new()
+        // {
+        //     Text = angerPointingArrowsName,
+        //     Category = VerbCategory.Smite,
+        //     Icon = new SpriteSpecifier.Rsi(new ("/Textures/Interface/Misc/pointing.rsi"), "pointing"),
+        //     Act = () =>
+        //     {
+        //         EnsureComp<PointingArrowAngeringComponent>(args.Target);
+        //     },
+        //     Impact = LogImpact.Extreme,
+        //     Message = string.Join(": ", angerPointingArrowsName, Loc.GetString("admin-smite-anger-pointing-arrows-description"))
+        // };
+        // args.Verbs.Add(angerPointingArrows);
 
         var dustName = Loc.GetString("admin-smite-dust-name").ToLowerInvariant();
         Verb dust = new()
@@ -1012,5 +1012,22 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", crawlerName, Loc.GetString("admin-smite-crawler-description"))
         };
         args.Verbs.Add(crawler);
+
+        // WF: Gib smite
+        var gibName = Loc.GetString("admin-smite-gib-name").ToLowerInvariant();
+        Verb gib = new()
+        {
+            Text = gibName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Mobs/Species/Human/organs.rsi"), "heart-on"),
+            Act = () =>
+            {
+                _bodySystem.GibBody(args.Target);
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", gibName, Loc.GetString("admin-smite-gib-description"))
+        };
+        args.Verbs.Add(gib);
+        // End WF
     }
 }

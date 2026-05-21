@@ -1,16 +1,16 @@
 #Empty security
 - type: entity
   id: JetpackNfsd
-  parent: JetpackSecurity
+  parent: [JetpackSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   name: CGP jetpack
   suffix: Empty
   components:
   - type: Item
-    sprite: _NF/Objects/Tanks/Jetpacks/nfsd.rsi
+    sprite: _WF/Objects/Tanks/Jetpacks/nfsd.rsi # Wayfarer: _NF/Objects/Tanks/Jetpacks/nfsd.rsi < _WF/Objects/Tanks/Jetpacks/nfsd.rsi
   - type: Sprite
-    sprite: _NF/Objects/Tanks/Jetpacks/nfsd.rsi
+    sprite: _WF/Objects/Tanks/Jetpacks/nfsd.rsi # Wayfarer: _NF/Objects/Tanks/Jetpacks/nfsd.rsi < _WF/Objects/Tanks/Jetpacks/nfsd.rsi
   - type: Clothing
-    sprite: _NF/Objects/Tanks/Jetpacks/nfsd.rsi
+    sprite: _WF/Objects/Tanks/Jetpacks/nfsd.rsi # Wayfarer: _NF/Objects/Tanks/Jetpacks/nfsd.rsi < _WF/Objects/Tanks/Jetpacks/nfsd.rsi
   - type: Tag
     tags:
       - EmagImmune
@@ -23,11 +23,11 @@
   suffix: Filled
   components:
   - type: Item
-    sprite: _NF/Objects/Tanks/Jetpacks/nfsd.rsi
+    sprite: _WF/Objects/Tanks/Jetpacks/nfsd.rsi # Wayfarer: _NF/Objects/Tanks/Jetpacks/nfsd.rsi < _WF/Objects/Tanks/Jetpacks/nfsd.rsi
   - type: Sprite
-    sprite: _NF/Objects/Tanks/Jetpacks/nfsd.rsi
+    sprite: _WF/Objects/Tanks/Jetpacks/nfsd.rsi # Wayfarer: _NF/Objects/Tanks/Jetpacks/nfsd.rsi < _WF/Objects/Tanks/Jetpacks/nfsd.rsi
   - type: Clothing
-    sprite: _NF/Objects/Tanks/Jetpacks/nfsd.rsi
+    sprite: _WF/Objects/Tanks/Jetpacks/nfsd.rsi # Wayfarer: _NF/Objects/Tanks/Jetpacks/nfsd.rsi < _WF/Objects/Tanks/Jetpacks/nfsd.rsi
   - type: Tag
     tags:
       - EmagImmune
@@ -35,7 +35,7 @@
 #Empty pirate
 - type: entity
   id: JetpackPirate
-  parent: [BaseJetpack, BaseC3PirateContraband]
+  parent: [BaseJetpack, BaseBMContraband] # Wayfarer: BaseC3PirateContraband<BaseBMContraband (stealth jetpack)
   name: pirate jetpack
   suffix: Empty
   components:

@@ -19,6 +19,6 @@ public sealed partial class XAEPortalComponent : Component
     /// Maximum range that the target entity should be from the portal, in meters.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float MaxRange = 1000f;
+    public float MaxRange = 50f; // Wayfarer: 1000<50
     // End Frontier
 }

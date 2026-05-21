@@ -55,4 +55,12 @@ public sealed partial class MeteorSwarmComponent : Component
 
     [DataField]
     public MinMax WaveCooldown = new (10, 60);
+
+    // Wayfarer: Optional admin-set target. If null, the meteors hit a random POI or active player ship.
+    [DataField]
+    public EntityUid? TargetGrid;
+
+    // Wayfarer: When true the meteor event starts with no announcement or sound. Set by the wfmeteorswarm command.
+    [DataField]
+    public bool Silent;
 }

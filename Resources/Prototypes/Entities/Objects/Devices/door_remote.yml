@@ -15,7 +15,7 @@
     stealGroup: DoorRemote
 
 - type: entity
-  parent: [DoorRemoteDefault, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [DoorRemoteDefault, BaseCGPContraband] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: DoorRemoteCommand
   name: command door remote
   components:

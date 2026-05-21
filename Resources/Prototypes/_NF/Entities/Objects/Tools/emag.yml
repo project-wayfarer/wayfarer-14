@@ -39,11 +39,11 @@
   - type: AutoRecharge
 
 - type: entity
-  parent: [BaseItem, BaseC3PirateContraband]
+  parent: [BaseItem, BaseBMContraband] # Wayfarer: BaseC3PirateContraband<BaseBMContraband
   id: PmagUnlimited
   name: machine liberator
   suffix: Unlimited
-  description: A portable package for machine DRM removal. Outlaw approved and tested. # WF
+  description: A portable package for machine DRM removal. Outlaw approved and tested. # Wayfarer
   components:
   - type: Emag
     emagType: [StationBound]

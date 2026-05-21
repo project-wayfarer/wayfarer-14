@@ -6,7 +6,7 @@
   description: |-
    A Contraband Denying Energy Turret (CDET). A disabler turret with built-in microreactor. Use screwdriver to disassemble.
   parent:
-  - BaseC2ContrabandUnredeemable
+  - BaseCGPContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   - BaseWeaponTurretEnergyNF
   components:
   - type: HTN
@@ -41,7 +41,7 @@
    A disassembled and packed Contraband Denying Energy Turret (CDET).
   suffix: NT, Packed
   parent:
-  - BaseC2ContrabandUnredeemable
+  - BaseCGPContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   - BaseItem
   components:
   - type: WeaponCaseInsertable
@@ -85,7 +85,7 @@
    A Self-Recharging Laser Auto Turret (SLAT). A laser turret with built-in microreactor. Use screwdriver to disassemble.
   suffix: Frontier, NT
   parent:
-  - BaseC2ContrabandUnredeemable
+  - BaseCGPContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   - BaseTurretSearchBeam
   - BaseWeaponTurretEnergyNF
   categories: [ HideSpawnMenu ]
@@ -116,7 +116,7 @@
    A disassembled and packed Self-Recharging Laser Auto Turret (SLAT).
   suffix: NT, Packed
   parent:
-  - BaseC2ContrabandUnredeemable
+  - BaseCGPContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   - BaseItem
   components:
   - type: WeaponCaseInsertable
@@ -198,7 +198,7 @@
    An Autonomous Sentry Machine Gun Turret (ASMGT) is a magazine-fed turret with barrels compatible with .20, .25, .30 and .35 cartridges. Use screwdriver to disassemble.
   suffix: NT
   parent:
-  - BaseC2ContrabandUnredeemable
+  - BaseMilitaryContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   - BaseWeaponTurretMagazineFed
   components:
   - type: Gun
@@ -246,7 +246,7 @@
    A disassembled and packed Autonomous Sentry Machine Gun Turret (ASMGT).
   suffix: NT, Packed
   parent:
-  - BaseC2ContrabandUnredeemable
+  - BaseMilitaryContraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   - BaseItem
   components:
   - type: WeaponCaseInsertable
@@ -287,7 +287,7 @@
   id: WeaponTurretAsmgtHostileUniversallyDeployed
   suffix: Universally Hostile
   parent:
-  - BaseC3Contraband
+  - BaseBMContraband # Wayfarer: BaseC3Contraband<BaseBMContraband
   - WeaponTurretAsmgtNtDeployed
   components:
   - type: NPCImprintingOnSpawnBehaviour

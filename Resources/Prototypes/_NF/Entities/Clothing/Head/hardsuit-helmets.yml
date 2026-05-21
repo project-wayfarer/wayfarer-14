@@ -102,11 +102,11 @@
   description: Lightly armored softsuit helmet for beat-cop needs.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
   - type: PointLight
-    color: "#ffeead"
+    color: "#ba8966" # Wayfarer: #ffeead<#ba8966
   - type: Armor
     modifiers:
       coefficients:
@@ -121,9 +121,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitNfsdBronze
@@ -131,9 +131,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitNfsdBronze
@@ -141,9 +141,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd.rsi < _WF/Clothing/Head/Hardsuits/CGP.rsi
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitNfsdBronze
@@ -151,9 +151,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_sheriff.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_sheriff.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_sheriff.rsi < _WF/Clothing/Head/Hardsuits/CGP_sheriff.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_sheriff.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_sheriff.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_sheriff.rsi < _WF/Clothing/Head/Hardsuits/CGP_sheriff.rsi
 
 - type: entity
   parent: NFClothingHeadHardsuitWithLightBaseNfsd
@@ -163,9 +163,9 @@
   description: Heavily armored hardsuit helmet for CGP raids.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_experimental.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_experimental.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_experimental.rsi < _WF/Clothing/Head/Hardsuits/CGP_experimental.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_experimental.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_experimental.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_experimental.rsi < _WF/Clothing/Head/Hardsuits/CGP_experimental.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -186,11 +186,11 @@
   description: Medium armored hardsuit helmet for CGP raids.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_combat.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_combat.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_combat.rsi < _WF/Clothing/Head/Hardsuits/CGP_combat.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_combat.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_combat.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_combat.rsi < _WF/Clothing/Head/Hardsuits/CGP_combat.rsi
   - type: PointLight
-    color: "#79bb66"
+    color: "#ba8966" # Wayfarer: #ffeead<#ba8966
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -211,9 +211,9 @@
   description: Medium armored hardsuit helmet for CGP raids.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_command.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_command.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_command.rsi < _WF/Clothing/Head/Hardsuits/CGP_command.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Head/Hardsuits/nfsd_command.rsi
+    sprite: _WF/Clothing/Head/Hardsuits/CGP_command.rsi # Wayfarer: _NF/Clothing/Head/Hardsuits/nfsd_command.rsi < _WF/Clothing/Head/Hardsuits/CGP_command.rsi
   - type: PointLight
     color: "#ffed7f"
   - type: PressureProtection

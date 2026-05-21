@@ -35,7 +35,7 @@
   description: A book defining CGP General Orders, Roles and Procedures
   components:
   - type: Sprite
-    sprite: _NF/Objects/Misc/books.rsi
+    sprite: _WF/Objects/Misc/books.rsi # Wayfarer: _NF/Objects/Misc/books.rsi < _WF/Objects/Misc/books.rsi
     layers:
     - state: nfsd_sop
   - type: HyperlinkBook

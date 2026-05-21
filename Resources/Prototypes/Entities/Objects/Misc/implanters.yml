@@ -191,7 +191,7 @@
 - type: entity
   id: TrackingImplanter
   name: tracking implanter
-  parent: [ BaseC2ContrabandUnredeemable, BaseImplantOnlyImplanter ] # Frontier: add BaseC2ContrabandUnredeemable
+  parent: [ BaseCGPContraband, BaseImplantOnlyImplanter ] # Frontier: add BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   components:
   - type: Implanter
     implant: NFSDTrackingImplant # Frontier: TrackingImplant<NFSDTrackingImplant
@@ -309,7 +309,7 @@
 - type: entity
   id: MindShieldImplanter
   name: mindshield implanter
-  parent: [ BaseC2ContrabandUnredeemable, BaseImplantOnlyImplanter ] # Frontier: add BaseC2ContrabandUnredeemable
+  parent: [ BaseMilitaryContraband, BaseImplantOnlyImplanter ] # Frontier: add BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   suffix: mindshield
   components:
   - type: Implanter

@@ -5,7 +5,7 @@
   abstract: true
   components:
     - type: Sprite
-      sprite: _NF/Structures/Wallmounts/signs.rsi
+      sprite: _WF/Structures/Wallmounts/signs.rsi # Wayfarer: _NF/Structures/Wallmounts/signs.rsi < _WF/Structures/Wallmounts/signs.rsi
 
 - type: entity
   parent: BaseSignDirectionalNF
@@ -86,7 +86,7 @@
   abstract: true
   components:
     - type: Sprite
-      sprite: _NF/Structures/Wallmounts/signs.rsi
+      sprite: _WF/Structures/Wallmounts/signs.rsi # Wayfarer: _NF/Structures/Wallmounts/signs.rsi < _WF/Structures/Wallmounts/signs.rsi
       
 - type: entity
   parent: NFBaseSign

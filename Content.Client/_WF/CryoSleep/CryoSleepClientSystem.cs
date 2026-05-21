@@ -31,4 +31,9 @@ public sealed class CryoSleepClientSystem : EntitySystem
     {
         RaiseNetworkEvent(new ResumeCharacterRequestMessage(body));
     }
+
+    public void RequestRemoveCharacter(NetEntity body)
+    {
+        RaiseNetworkEvent(new RemoveStoredCharacterRequestMessage(body));
+    }
 }

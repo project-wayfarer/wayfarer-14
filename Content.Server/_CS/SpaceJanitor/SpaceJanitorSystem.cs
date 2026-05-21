@@ -19,7 +19,7 @@ public sealed class SpaceJanitorSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     private const int MinutesBetweenChecks = 15;
-    private const int MinutesBeforeCleanup = 720; // 12 hours
+    private const int MinutesBeforeCleanup = 240; // 12 hours // Wayfarer: 720min<240min (4 hours)
     private TimeSpan _nextCheck = TimeSpan.Zero;
 
     /// <inheritdoc/>

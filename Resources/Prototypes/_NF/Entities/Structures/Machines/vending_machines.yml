@@ -194,7 +194,7 @@
 - type: entity
   id: VendingMachineArcadia
   name: ArcadiaDrobe
-  parent: [ VendingMachine, BaseC3Contraband ]
+  parent: [ VendingMachine ] # Wayfarer: Removed contraband
   description: Selling clothes from another reality for cheap prices!
   components:
     - type: VendingMachine
@@ -393,7 +393,7 @@
   - type: DatasetVocalizer
     dataset: NfsdDrobeAds
   - type: Sprite
-    sprite: _NF/Structures/Machines/VendingMachines/nfsddrobe.rsi
+    sprite: _WF/Structures/Machines/VendingMachines/nfsddrobe.rsi # Wayfarer: _NF/Structures/Machines/VendingMachines/nfsddrobe.rsi < _WF/Structures/Machines/VendingMachines/nfsddrobe.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -443,7 +443,7 @@
   - type: DatasetVocalizer
     dataset: NfsdDrobeAds
   - type: Sprite
-    sprite: _NF/Structures/Machines/VendingMachines/nfsdtech.rsi
+    sprite: _WF/Structures/Machines/VendingMachines/nfsdtech.rsi # Wayfarer: _NF/Structures/Machines/VendingMachines/NfsdTech.rsi < _WF/Structures/Machines/VendingMachines/NfsdTech.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

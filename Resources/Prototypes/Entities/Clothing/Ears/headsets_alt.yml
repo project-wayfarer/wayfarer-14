@@ -27,7 +27,7 @@
     sprite: Clothing/Ears/Headsets/cargo.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseCentcommCommandContraband] # Frontier: Added BaseCentcommCommandContraband, removed BaseCommandContraband.
+  parent: [ClothingHeadsetAlt, BaseCGPContraband] # Frontier: Added BaseCentcommCommandContraband, removed BaseCommandContraband. # Wayfarer: BaseCentcommCommandContraband<BaseCGPContraband
   id: ClothingHeadsetAltCentCom
   name: CentComm over-ear headset
   components:
@@ -42,7 +42,7 @@
     sprite: Clothing/Ears/Headsets/centcom.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  parent: [ClothingHeadsetAlt, BaseCGPContraband] # Wayfarer: BaseCommandContraband<BaseCGPContraband
   id: ClothingHeadsetAltCommand
   name: command over-ear headset
   components:
@@ -90,7 +90,7 @@
     stealGroup: ClothingHeadsetAltMedical
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingHeadsetAlt] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband
   id: ClothingHeadsetAltSecurity
   name: head of security's over-ear headset
   components:

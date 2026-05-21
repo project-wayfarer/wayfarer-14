@@ -9,7 +9,7 @@
     <!-- Wayfarer -->
     <TabContainer Name="TabContainer" Access="Public">
         <ScrollContainer Name="InfoTab">
-    <!-- Wayfarer end-->
+    <!-- End Wayfarer-->
             <BoxContainer Orientation="Vertical">
                 <Label Name="RoleType" VerticalAlignment="Top" Margin="0 6 0 10" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
                 <BoxContainer Orientation="Horizontal">
@@ -39,5 +39,5 @@
             </BoxContainer>
         </ScrollContainer>
     </TabContainer>
-    <!-- Wayfarer end-->
+    <!-- End Wayfarer-->
 </windows:CharacterWindow>

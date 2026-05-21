@@ -1,0 +1,49 @@
+- type: body
+  id: AurelianVox
+  name: "aurelianvox"
+  root: torso
+  slots:
+    head:
+      part: HeadAurelianVox
+      connections:
+      - torso
+      organs:
+        brain: OrganAurelianVoxNode
+        eyes: OrganAurelianVoxEyes
+    torso:
+      part: TorsoAurelianVox
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      organs:
+        heart: OrganAurelianVoxHeart
+        lungs: OrganAurelianVoxLungs
+        stomach: OrganAurelianVoxStomach
+        liver: OrganAurelianVoxLiver
+        kidneys: OrganAurelianVoxKidneys
+    right arm:
+      part: RightArmAurelianVox
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmAurelianVox
+      connections:
+      - left hand
+    right hand:
+      part: RightHandAurelianVox
+    left hand:
+      part: LeftHandAurelianVox
+    right leg:
+      part: RightLegAurelianVox
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegAurelianVox
+      connections:
+      - left foot
+    right foot:
+      part: RightFootAurelianVox
+    left foot:
+      part: LeftFootAurelianVox

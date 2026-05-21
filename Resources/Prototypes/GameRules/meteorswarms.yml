@@ -116,8 +116,9 @@
     announcement: null
     announcementSound: null
     nonDirectional: true
-    meteors: {} # Frontier
-      # MeteorSpaceDust: 1 # Frontier
+    # Wayfarer: Restored upstream meteor events.
+    meteors:
+      MeteorSpaceDust: 1
     waves:
       min: 2
       max: 3
@@ -136,8 +137,9 @@
     announcement: station-event-space-dust-start-announcement
     announcementSound: /Audio/Announcements/attention.ogg
     nonDirectional: true
-    meteors: {} # Frontier
-      # MeteorSpaceDust: 1 # Frontier
+    # Wayfarer: Restored upstream meteor events.
+    meteors:
+      MeteorSpaceDust: 1
     waves:
       min: 2
       max: 3
@@ -153,9 +155,10 @@
     weight: 18
     minimumPlayers: 15
   - type: MeteorSwarm
-    meteors: {} # Frontier
-      # MeteorSmall: 7 # Frontier
-      # MeteorMedium: 3 # Frontier
+    # Wayfarer: Restored upstream meteor events.
+    meteors:
+      MeteorSmall: 7
+      MeteorMedium: 3
 
 - type: entity
   parent: GameRuleMeteorSwarm
@@ -164,10 +167,11 @@
   - type: StationEvent
     weight: 10
   - type: MeteorSwarm
-    meteors: {} # Frontier
-      # MeteorSmall: 3 # Frontier
-      # MeteorMedium: 6 # Frontier
-      # MeteorLarge: 1 # Frontier
+    # Wayfarer: Restored upstream meteor events.
+    meteors:
+      MeteorSmall: 3
+      MeteorMedium: 6
+      MeteorLarge: 1
 
 - type: entity
   parent: GameRuleMeteorSwarm
@@ -176,10 +180,11 @@
   - type: StationEvent
     weight: 5
   - type: MeteorSwarm
-    meteors: {} # Frontier
-      # MeteorSmall: 2 # Frontier
-      # MeteorMedium: 4 # Frontier
-      # MeteorLarge: 4 # Frontier
+    # Wayfarer: Restored upstream meteor events.
+    meteors:
+      MeteorSmall: 2
+      MeteorMedium: 4
+      MeteorLarge: 4
 
 - type: entity
   parent: GameRuleMeteorSwarm
@@ -190,8 +195,9 @@
   - type: MeteorSwarm
     announcement: station-event-meteor-urist-start-announcement
     announcementSound: /Audio/Announcements/attention.ogg
-    meteors: {} # Frontier
-      # MeteorUrist: 1 # Frontier
+    # Wayfarer: Restored upstream meteor events.
+    meteors:
+      MeteorUrist: 1
     waves:
       min: 3
       max: 3

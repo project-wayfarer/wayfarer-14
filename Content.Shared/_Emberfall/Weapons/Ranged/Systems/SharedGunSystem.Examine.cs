@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared._NF.Weapons.Rarity; // Frontier
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Utility;
@@ -52,7 +51,6 @@ public abstract partial class SharedGunSystem
 
     private FormattedMessage GetGunExamine(Entity<GunComponent> ent, GunComponent? compareGun = null)
     {
-        TryComp(ent.Owner, out RareWeaponComponent? rareComp); // Frontier: rare weapons
 
         var msg = new FormattedMessage();
         msg.AddMarkupOrThrow(Loc.GetString(compareGun != null ? "gun-examine-compare" : "gun-examine"));
@@ -80,7 +78,6 @@ public abstract partial class SharedGunSystem
                 ("value", recoilVal)
             ));
         }
-        PushStatModifier(msg, rareComp?.AccuracyModifier);
 
         // Stability (AngleDecay) — higher is better
         msg.PushNewline();
@@ -104,7 +101,6 @@ public abstract partial class SharedGunSystem
                 ("value", stabilityVal)
             ));
         }
-        PushStatModifier(msg, rareComp != null ? 1 / rareComp?.AccuracyModifier : null);
 
         // Max Angle — lower is better
         msg.PushNewline();
@@ -128,7 +124,6 @@ public abstract partial class SharedGunSystem
                 ("value", maxAngleVal)
             ));
         }
-        PushStatModifier(msg, rareComp?.AccuracyModifier);
 
         // Min Angle — lower is better
         msg.PushNewline();
@@ -152,7 +147,6 @@ public abstract partial class SharedGunSystem
                 ("value", minAngleVal)
             ));
         }
-        PushStatModifier(msg, rareComp?.AccuracyModifier);
 
         // Frontier: separate burst fire calculation
         // Fire Rate — higher is better
@@ -180,7 +174,6 @@ public abstract partial class SharedGunSystem
                     ("value", fireRateVal)
                 ));
             }
-            PushStatModifier(msg, rareComp?.FireRateModifier);
         }
         else
         {
@@ -234,7 +227,6 @@ public abstract partial class SharedGunSystem
                 ("value", muzzleVal)
             ));
         }
-        PushStatModifier(msg, rareComp?.ProjectileSpeedModifier);
         // End Frontier: use nf-prefixed loc strings, no rounding on values
 
         return msg;

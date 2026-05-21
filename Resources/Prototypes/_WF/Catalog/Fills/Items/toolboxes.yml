@@ -1,4 +1,24 @@
 - type: entity
+  id: NightWithTheBoysKitFilled
+  name: night with the boys kit
+  suffix: Filled
+  parent: NightWithTheBoysKit
+  components:
+  - type: StaticPrice
+    price: 200
+  - type: StorageFill
+    contents:
+    - id: CardDeckBlack
+    - id: WhitePokerChip50
+    - id: RedPokerChip50
+    - id: GreenPokerChip50
+    - id: BluePokerChip50
+    - id: DrinkVodkaBottleFull
+    - id: NFWeaponRevolverLucky
+    - id: NFCartridgePistol45
+    - id: CigPackBlue
+
+- type: entity
   id: PokerChipCaseFilled
   description: A sleek metal case, stocked with poker chips for gambling games. Includes all the chips necessary to play, and deck of playing cards.
   name: poker chip case

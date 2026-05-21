@@ -1,7 +1,7 @@
 - type: entity
   id: BaseMagazineGrenade
   name: grenade cartridge
-  parent: [ BaseCartridge, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ BaseCartridge, BaseDDContraband, RecyclableItemPlasticTiny ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseDDContraband, add RecyclableItemPlasticTiny
   abstract: true
   components:
   - type: Tag

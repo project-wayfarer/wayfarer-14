@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseC2ContrabandUnredeemable ]
+  parent: [ ClothingOuterBaseLarge, BaseCGPContraband ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingOuterArmorSrCarapace
   name: "station representative's carapace"
   description: "A premium armored chestpiece that provides above average protection for its size. It offers maximum mobility and flexibility thanks to the premium composite materials. Issued only to the station representative."
@@ -51,7 +51,7 @@
 # Syndicate armored bio suit
 - type: entity
   parent:
-  - BaseC3SyndicateContraband
+  - BaseBMContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   - ClothingOuterBioGeneral
   - ContrabandClothing
   id: ClothingOuterBioArmoredSyndicate
@@ -77,15 +77,15 @@
     damageCoefficient: 0.60
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseC2ContrabandUnredeemable ]
+  parent: [ ClothingOuterBaseLarge, BaseCGPContraband ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingOuterArmorNfsd
   name: CGP armor
   description: Get shot, maybe survive?
   components:
   - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Armor/nfsd_armor.rsi
+    sprite: _WF/Clothing/OuterClothing/Armor/CGP_armor.rsi # Wayfarer: _NF/Clothing/OuterClothing/Armor/nfsd_armor.rsi < _WF/Clothing/OuterClothing/Armor/CGP_armor.rsi
   - type: Clothing
-    sprite: _NF/Clothing/OuterClothing/Armor/nfsd_armor.rsi
+    sprite: _WF/Clothing/OuterClothing/Armor/CGP_armor.rsi # Wayfarer: _NF/Clothing/OuterClothing/Armor/nfsd_armor.rsi < _WF/Clothing/OuterClothing/Armor/CGP_armor.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -102,7 +102,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ BaseC1Contraband, ClothingOuterVestWebMercenary ]
+  parent: ClothingOuterVestWebMercenary # Wayfarer: Removed contraband
   id: ClothingOuterVestWebMercenaryBlack
   components:
   - type: Sprite

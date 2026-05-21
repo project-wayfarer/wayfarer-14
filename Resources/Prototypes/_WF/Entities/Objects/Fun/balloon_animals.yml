@@ -1,0 +1,113 @@
+﻿- type: entity
+  parent: BaseItem
+  id: BalloonEmpty
+  name: long balloon
+  description: A perfect balloon to contort into goofy forms.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+    state: long
+  - type: Item
+    size: Tiny
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
+  - type: BalloonEmpty
+
+- type: entity
+  parent: BaseItem
+  id: BalloonAnimalDog
+  name: balloon dog
+  description: A balloon effigy of the best boy. It cannot truly compare, but it makes an effort.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+    state: dog
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
+  - type: BalloonOnString
+
+- type: entity
+  parent: BaseItem
+  id: BalloonAnimalClown
+  name: balloon clown
+  description: A balloon clown, smiling from ear to ear and beyond!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+    state: clown
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
+  - type: BalloonOnString
+
+- type: entity
+  parent: BaseItem
+  id: BalloonAnimalBanana
+  name: balloon banana
+  description: A balloon banana. This one can't be slipped on. Good for psychological warfare, though.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+    state: banana
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
+  - type: BalloonOnString
+
+- type: entity
+  parent: BaseItem
+  id: BalloonAnimalCat
+  name: balloon cat
+  description: Without the sharp claws, balloon cats are possibly cuter than their live counterparts, though not as relatable, warm and fuzzy.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+    state: cat
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
+  - type: BalloonOnString
+
+- type: entity
+  parent: BaseItem
+  id: BalloonAnimalMoth
+  name: balloon moth
+  description: A balloon effigy of a common member of moth flotillas. Very few of them ever decide to settle on the clown planet, but those who do have the best 'piece-of-cloth-disappearing' acts.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+    state: moth
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/Balloons/balloon_animals.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - Balloon
+  - type: BalloonOnString

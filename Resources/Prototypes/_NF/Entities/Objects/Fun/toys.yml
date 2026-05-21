@@ -1050,7 +1050,7 @@
     clumsyProof: true
 
 - type: entity
-  parent: [BaseC3SyndicateContraband, NFBaseWeaponFrameRevolverFoamForce, NFBaseWeaponRevolverChamber45Cap]
+  parent: [NFBaseWeaponFrameRevolverFoamForce, NFBaseWeaponRevolverChamber45Cap] # Wayfarer: Remove contraband
   id: NFRevolverCapGunFake
   suffix: Fake, Frontier
   name: cap gun
@@ -1064,12 +1064,12 @@
   - type: Item
     sprite: Objects/Fun/capgun.rsi
     heldPrefix: capgun
-  - type: Contraband
-    hideValues: true
+#  - type: Contraband # Wayfarer
+#    hideValues: true
 
 # Grown cap gun, in toys.yml for consistency with fake parent
 - type: entity
-  parent: [BaseC3SyndicateContrabandNoValue, NFRevolverCapGunFake] # Frontier: added BaseC3SyndicateContraband
+  parent: [BaseBMContraband, NFRevolverCapGunFake] # Frontier: added BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContrabandNoValue<BaseBMContraband
   id: NFRevolverCapGunFakeGrown
   categories: [ HideSpawnMenu ]
   suffix: Fake, Grown

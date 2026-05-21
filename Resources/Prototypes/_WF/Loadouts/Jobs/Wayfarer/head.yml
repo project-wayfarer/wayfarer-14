@@ -605,6 +605,7 @@
   price: 1250
   equipment:
     head: ClothingHeadHatJester
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingHeadHatJesterAlt
@@ -617,6 +618,7 @@
   price: 1250
   equipment:
     head: ClothingHeadHatJesterAlt
+  groupBy: "clown"
 
 - type: loadout
   id: WFClothingHeadHatBeret
@@ -655,7 +657,7 @@
   price: 1250
   equipment:
     head: ClothingHeadHatMimesoft
-  groupBy: "caps"
+  groupBy: "mime"
 
 - type: loadout
   id: WFClothingHeadHatPilgrim
@@ -1045,3 +1047,277 @@
   price: 5000
   equipment:
     head: ClothingHeadHatWarden
+
+# Starlight clothing
+- type: loadout
+  id: WFSLClothingHeadBase0121
+  price: 500
+  equipment:
+    head: SLClothingHeadBase0121
+
+- type: loadout
+  id: WFSLRedRegaliaHat
+  price: 1000
+  equipment:
+    head: SLRedRegaliaHat
+
+# Impstation clothing
+- type: loadout
+  id: WFIMPClothingHeadHatCircusClown
+  price: 500
+  equipment:
+    head: IMPClothingHeadHatCircusClown
+  groupBy: "clown"
+
+- type: loadout
+  id: WFIMPClothingHeadJesterEvilHat
+  price: 500
+  equipment:
+    head: IMPClothingHeadJesterEvilHat
+  groupBy: "clown"
+
+- type: loadout
+  id: WFIMPClothingHeadHatMimeBowler
+  price: 500
+  equipment:
+    head: IMPClothingHeadHatMimeBowler
+
+- type: loadout
+  id: WFIMPClothingHeadDeerstalker
+  price: 500
+  equipment:
+    head: IMPClothingHeadDeerstalker
+  groupBy: "caps"
+
+- type: loadout
+  id: WFIMPClothingHeadSailorCap
+  price: 500
+  equipment:
+    head: IMPClothingHeadSailorCap
+  groupBy: "caps"
+
+
+- type: loadout
+  id: WFIMPClothingHeadHatBucketHat
+  price: 500
+  equipment:
+    head: IMPClothingHeadHatBucketHat
+  groupBy: "caps"
+
+- type: loadout
+  id: WFIMPClothingHeadHatCuteTiara
+  price: 1000
+  equipment:
+    head: IMPClothingHeadHatCuteTiara
+  groupBy: "tiara"
+
+- type: loadout
+  id: WFIMPClothingHeadHatSimpleTiara
+  price: 1000
+  equipment:
+    head: IMPClothingHeadHatSimpleTiara
+  groupBy: "tiara"
+
+- type: loadout
+  id: WFIMPClothingHeadHatPrincess
+  price: 1000
+  equipment:
+    head: IMPClothingHeadHatPrincess
+  groupBy: "tiara"
+
+- type: loadout
+  id: WFIMPClothingHeadHatPompombow
+  price: 500
+  equipment:
+    head: IMPClothingHeadHatPompombow
+  groupBy: "pompom"
+
+- type: loadout
+  id: WFIMPClothingHeadHatPompomear
+  price: 500
+  equipment:
+    head: IMPClothingHeadHatPompomear
+  groupBy: "pompom"
+
+- type: loadout
+  id: WFIMPClothingHeadDevilHorns
+  price: 500
+  equipment:
+    head: IMPClothingHeadDevilHorns
+
+- type: loadout
+  id: WFIMPClothingHeadFloatingFloraCrown
+  price: 1000
+  equipment:
+    head: IMPClothingHeadFloatingFloraCrown
+
+- type: loadout
+  id: WFIMPClothingHeadHatGreenEscoffion
+  price: 500
+  equipment:
+    head: IMPClothingHeadHatGreenEscoffion
+
+- type: loadout
+  id: WFIMPClothingHeadHatBlackVeil
+  price: 500
+  equipment:
+    head: IMPClothingHeadHatBlackVeil
+# DeltaV clothing
+- type: loadout
+  id: WFDVClothingHeadHatFedoraBlack
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 650
+  equipment:
+    head: DVClothingHeadHatFedoraBlack
+  groupBy: "fedoras"
+
+- type: loadout
+  id: WFDVClothingHeadHatFedoraChoc
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 650
+  equipment:
+    head: DVClothingHeadHatFedoraChoc
+  groupBy: "fedoras"
+
+- type: loadout
+  id: WFDVClothingHeadHatFedoraWhite
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 650
+  equipment:
+    head: DVClothingHeadHatFedoraWhite
+  groupBy: "fedoras"
+
+- type: loadout
+  id: WFDVClothingHeadPropellerHat
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadPropellerHat
+
+- type: loadout
+  id: WFDVClothingHeadHatReindeer
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatReindeer
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatRedRibbon
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatRedRibbon
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatFestiveHatRed
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatFestiveHatRed
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatFestiveHatGreen
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatFestiveHatGreen
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatCandyCane
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatCandyCane
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatStar
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatStar
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatFestiveLights
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatFestiveLights
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatElf
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 500
+  equipment:
+    head: DVClothingHeadHatElf
+  groupBy: "festive"
+
+- type: loadout
+  id: WFDVClothingHeadHatWrestlingMaskLuchaRed
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 650
+  equipment:
+    head: DVClothingHeadHatWrestlingMaskLuchaRed
+  groupBy: "wrestler"
+
+- type: loadout
+  id: WFDVClothingHeadHatWrestlingMaskLuchaBlue
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 650
+  equipment:
+    head: DVClothingHeadHatWrestlingMaskLuchaBlue
+  groupBy: "wrestler"
+
+- type: loadout
+  id: WFDVClothingHeadHatFlatBlack
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 650
+  equipment:
+    head: DVClothingHeadHatFlatBlack
+  groupBy: "flatcaps"
+
+- type: loadout
+  id: WFDVClothingHeadHatFlatBrown
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
+  price: 650
+  equipment:
+    head: DVClothingHeadHatFlatBrown
+  groupBy: "flatcaps"
