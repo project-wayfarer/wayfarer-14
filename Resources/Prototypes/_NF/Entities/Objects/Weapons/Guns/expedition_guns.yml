@@ -3,7 +3,7 @@
 
 # region Tiered Weapons
 - type: entity
-  parent: BaseC2ExpeditionContraband
+  #parent: BaseC2ExpeditionContraband # Wayfarer
   id: BaseExpeditionWeaponTier1
   abstract: true
   components:
@@ -11,7 +11,7 @@
     price: 1000
 
 - type: entity
-  parent: BaseC2ExpeditionContraband
+  #parent: BaseC2ExpeditionContraband # Wayfarer
   id: BaseExpeditionWeaponTier2
   abstract: true
   components:
@@ -19,7 +19,7 @@
     price: 2000
 
 - type: entity
-  parent: BaseC2ExpeditionContraband
+  #parent: BaseC2ExpeditionContraband # Wayfarer
   id: BaseExpeditionWeaponTier3
   abstract: true
   components:
@@ -27,7 +27,7 @@
     price: 3000
 
 - type: entity
-  parent: BaseC2ExpeditionContraband
+  #parent: BaseC2ExpeditionContraband # Wayfarer
   id: BaseExpeditionWeaponTier4
   abstract: true
   components:
@@ -35,7 +35,7 @@
     price: 5000
 
 - type: entity
-  parent: BaseC3ExpeditionContraband
+  #parent: BaseC3ExpeditionContraband # Wayfarer
   id: BaseExpeditionWeaponTier5
   abstract: true
   components:
