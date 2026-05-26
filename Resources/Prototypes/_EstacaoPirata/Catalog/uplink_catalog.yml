@@ -7,3 +7,10 @@
     Telecrystal: 4 # Frontier: 1<4 (less spam please)
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer

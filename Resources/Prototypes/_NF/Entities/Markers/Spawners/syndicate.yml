@@ -58,21 +58,23 @@
           state: pinpointer-syndicate
     - type: RandomSpawner
       prototypes:
-        - ClothingBackpackDuffelSyndicateEVABundle
-        - ClothingBackpackSyndicate
+        #- ClothingBackpackDuffelSyndicateEVABundle # Wayfarer
+        #- ClothingBackpackSyndicate # Wayfarer
         - ClothingMaskGasSyndicate
-        - SyndieHandyFlag
+        #- SyndieHandyFlag # Wayfarer
         - SyndicatePersonalAI
-        - ClothingBeltSyndieHolster
+        #- ClothingBeltSyndieHolster # Wayfarer
         - ClothingEyesHudSyndicate
-        - ClothingBackpackDuffelSyndicatePyjamaBundle
-        - ClothingBackpackDuffelSyndicateMedicalBundleFilled
+        #- ClothingBackpackDuffelSyndicatePyjamaBundle # Wayfarer
+        #- ClothingBackpackDuffelSyndicateMedicalBundleFilled # Wayfarer
         - EncryptionKeySyndie
         - ClothingShoesBootsMagSyndie
         - ClothingHeadsetAltSyndicate
-        - ToyFigurineNukieElite
+        #- ToyFigurineNukieElite # Wayfarer
         - ToyNuke
-        - PlushieNuke
+        #- PlushieNuke # Wayfarer
+        - ClothingBackpackDuffelSyndicateEliteHardsuitBundle # Wayfarer
+        - ClothingBackpackDuffelSyndicateHardsuitBundle # Wayfarer
       rarePrototypes:
         - PinpointerSyndicatePOI
       rareChance: 0.1

@@ -110,6 +110,13 @@
     Telecrystal: 8
   categories:
   - UplinkWeaponry
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkGlovesKnuckleDusters
@@ -249,18 +256,18 @@
 
 # Explosives
 
-# - type: listing # Frontier
-  # id: UplinkExplosiveGrenade
-  # name: uplink-explosive-grenade-name
-  # description: uplink-explosive-grenade-desc
-  # productEntity: ExGrenade
-  # discountCategory: usualDiscounts
-  # discountDownTo:
-    # Telecrystal: 2
-  # cost:
-    # Telecrystal: 4
-  # categories:
-  # - UplinkExplosives
+- type: listing # Wayfarer: Re-enabled
+  id: UplinkExplosiveGrenade
+  name: uplink-explosive-grenade-name
+  description: uplink-explosive-grenade-desc
+  productEntity: ExGrenade
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkExplosives
 
 - type: listing
   id: UplinkExplosiveGrenadeFlash
@@ -282,18 +289,18 @@
   categories:
   - UplinkExplosives
 
-# - type: listing # Frontier
-  # id: UplinkSyndieMiniBomb
-  # name: uplink-mini-bomb-name
-  # description: uplink-mini-bomb-desc
-  # productEntity: SyndieMiniBomb
-  # discountCategory: veryRareDiscounts
-  # discountDownTo:
-    # Telecrystal: 3
-  # cost:
-    # Telecrystal: 6
-  # categories:
-    # - UplinkExplosives
+- type: listing # Wayfarer: Re-enabled
+  id: UplinkSyndieMiniBomb
+  name: uplink-mini-bomb-name
+  description: uplink-mini-bomb-desc
+  productEntity: SyndieMiniBomb
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 6
+  categories:
+    - UplinkExplosives
 
 # - type: listing # Frontier
 #   id: UplinkSingularityGrenade
@@ -777,15 +784,15 @@
     Telecrystal: 24
   categories:
   - UplinkChemicals
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - NukeOpsUplink
-    - !type:BuyerWhitelistCondition
-      blacklist:
-        components:
-          - SurplusBundle
+#  conditions: # Wayfarer
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - NukeOpsUplink
+#    - !type:BuyerWhitelistCondition
+#      blacklist:
+#        components:
+#          - SurplusBundle
 
 # Deception
 
@@ -872,6 +879,13 @@
     Telecrystal: 1
   categories:
   - UplinkDeception
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkUltrabrightLantern
@@ -898,6 +912,13 @@
     Telecrystal: 4
   categories:
     - UplinkDeception
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 # - type: listing
 #   id: UplinkGigacancerScanner
@@ -951,18 +972,18 @@
   categories:
   - UplinkDisruption
 
-# - type: listing # Frontier
-  # id: UplinkEmag
-  # name: uplink-emag-name
-  # description: uplink-emag-desc
-  # productEntity: Emag
-  # discountCategory: veryRareDiscounts
-  # discountDownTo:
-    # Telecrystal: 3
-  # cost:
-    # Telecrystal: 5
-  # categories:
-  # - UplinkDisruption
+- type: listing # Wayfarer: Re-enabled
+  id: UplinkEmag
+  name: uplink-emag-name
+  description: uplink-emag-desc
+  productEntity: Emag
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkDisruption
 
 - type: listing
   id: UplinkRadioJammer
@@ -1194,6 +1215,13 @@
     Telecrystal: 12
   categories:
     - UplinkDisruption
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkCameraBug
@@ -1378,11 +1406,11 @@
     Telecrystal: 8
   categories:
     - UplinkImplants
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
+#  conditions: # Wayfarer
+#    - !type:StoreWhitelistCondition
+#      blacklist:
+#        tags:
+#          - NukeOpsUplink
 
 - type: listing
   id: UplinkFreedomImplanter
@@ -1576,6 +1604,13 @@
     Telecrystal: 2
   categories:
   - UplinkWearables
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkVoiceMask
@@ -1599,6 +1634,13 @@
     Telecrystal: 1
   categories:
   - UplinkWearables
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkChestRig
@@ -1609,6 +1651,13 @@
     Telecrystal: 1
   categories:
   - UplinkWearables
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkChameleon
@@ -1689,6 +1738,13 @@
     Telecrystal: 2
   categories:
   - UplinkWearables
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkHardsuitCarp
@@ -1790,6 +1846,13 @@
     Telecrystal: 2
   categories:
   - UplinkWearables
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkBackpackSyndicate
@@ -1800,6 +1863,13 @@
     Telecrystal: 2
   categories:
     - UplinkWearables
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
  # Pointless
 
@@ -1812,6 +1882,13 @@
     Telecrystal: 1
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+    # End Wayfarer
 
 # - type: listing # Frontier
   # id: UplinkSnackBox
@@ -1835,6 +1912,13 @@
     Telecrystal: 4
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkSyndicateStamp
@@ -1848,6 +1932,13 @@
     Telecrystal: 2
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkCatEars
@@ -1858,6 +1949,13 @@
     Telecrystal: 26
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkOutlawHat
@@ -1868,6 +1966,13 @@
     Telecrystal: 1
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkOutlawGlasses
@@ -1878,6 +1983,13 @@
     Telecrystal: 1
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkCostumePyjama
@@ -1888,6 +2000,13 @@
     Telecrystal: 4
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 # - type: listing # Frontier
   # id: UplinkCostumeClown
@@ -1918,6 +2037,13 @@
     Telecrystal: 1
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkOperativeSkirt
@@ -1928,6 +2054,13 @@
     Telecrystal: 1
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkBalloon
@@ -1938,6 +2071,13 @@
     Telecrystal: 20
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkScarfSyndieRed
@@ -1948,6 +2088,13 @@
     Telecrystal: 1
   categories:
   - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkScarfSyndieGreen
@@ -1958,6 +2105,13 @@
     Telecrystal: 1
   categories:
     - UplinkPointless
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkSyndicateBusinessCard
@@ -1969,6 +2123,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
 
 # Job Specific
 
@@ -1984,6 +2142,13 @@
     Telecrystal: 10 # Frontier: 6<10 (all the time in the world)
   categories:
   - UplinkWeaponry # Frontier: UplinkJob<UplinkWeaponry
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
   # conditions: # Frontier:
   # - !type:BuyerJobCondition
   #   whitelist:
@@ -2001,6 +2166,13 @@
     Telecrystal: 6
   categories:
     - UplinkWeaponry # Frontier: UplinkJob<UplinkWeaponry
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+      # End Wayfarer
   # conditions: # Frontier: no passengers
   #   - !type:BuyerJobCondition
   #     whitelist:
@@ -2073,6 +2245,13 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry # Frontier: UplinkJob<UplinkWeaponry
+  # Wayfarer
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
   # conditions: # Frontier: no mimes or clowns
   # - !type:BuyerJobCondition
   #   whitelist:
@@ -2293,6 +2472,12 @@
   - !type:BuyerJobCondition
     whitelist:
     - Chaplain
+  # Wayfarer
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
 
 - type: listing
   id: UplinkSawAdvanced
@@ -2308,6 +2493,12 @@
   categories:
   - UplinkWeaponry # Frontier: UplinkJob<UplinkWeaponry
   conditions:
+  # Wayfarer
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  # End Wayfarer
   # - !type:BuyerJobCondition # Frontier
   #   whitelist: # Frontier
   #   - MedicalDoctor # Frontier
