@@ -483,8 +483,9 @@
   - type: ItemSlots
   - type: ContainerContainer
     containers:
-      RegisterCrewConsole-targetId: !type:ContainerSlot {}
-      RegisterCrewConsole-privilegedId: !type:ContainerSlot {}
+      board: !type:Container
+      RegisterCrewConsole-targetId: !type:ContainerSlot
+      RegisterCrewConsole-privilegedId: !type:ContainerSlot
   # End Wayfarer
 
 - type: entity
