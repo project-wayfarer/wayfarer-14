@@ -460,6 +460,32 @@
   - type: GuideHelp
     guides:
     - Forensics
+  # Wayfarer: Register Crew tab ID slots
+  - type: RegisterCrewConsole
+    targetIdSlot:
+      name: register-crew-target-id
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: true
+      whitelist:
+        components:
+        - IdCard
+    privilegedIdSlot:
+      name: register-crew-privileged-id
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - IdCard
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      RegisterCrewConsole-targetId: !type:ContainerSlot {}
+      RegisterCrewConsole-privilegedId: !type:ContainerSlot {}
+  # End Wayfarer
 
 - type: entity
   parent: BaseComputerAiAccess

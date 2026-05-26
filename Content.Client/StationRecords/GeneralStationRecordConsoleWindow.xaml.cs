@@ -6,6 +6,8 @@ using Robust.Shared.Prototypes; // Frontier
 using Content.Shared.Roles; // Frontier
 using Robust.Shared.Utility; // Frontier
 using Content.Client._NF.StationRecords; // Frontier
+using Content.Client.Stylesheets; // Wayfarer
+using Robust.Shared.Timing; // Wayfarer
 
 namespace Content.Client.StationRecords;
 
@@ -13,6 +15,7 @@ namespace Content.Client.StationRecords;
 public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!; // Frontier
+    [Dependency] private readonly IGameTiming _gameTiming = default!; // Wayfarer
 
     public Action<uint?>? OnKeySelected;
 
@@ -26,6 +29,11 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
     private bool _advertisementEdited; // Frontier
     public const int MaxAdvertisementLength = 500; // Frontier
 
+    // Wayfarer: Register-crew tab
+    public event Action? OnRegisterCrew;
+    private TimeSpan? _registerButtonResetOn;
+    // End Wayfarer
+
     private bool _isPopulating;
 
     private StationRecordFilterType _currentFilterType;
@@ -34,6 +42,11 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this); // Frontier
+
+        // Wayfarer: Tab titles
+        Tabs.SetTabTitle(0, Loc.GetString("register-crew-tab-records"));
+        Tabs.SetTabTitle(1, Loc.GetString("register-crew-tab-name"));
+        // End Wayfarer
 
         _currentFilterType = StationRecordFilterType.Name;
 
@@ -107,10 +120,52 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
             AdSubmitButton.Disabled = true;
         };
         // End Frontier: station/ship advertisements
+
+        RegisterButton.OnPressed += _ => OnRegisterPressed(); // Wayfarer
     }
+
+    // Wayfarer: Register button asks "Are you sure?" on first click, registers on second click
+    private void OnRegisterPressed()
+    {
+        if (_registerButtonResetOn is null)
+        {
+            _registerButtonResetOn = _gameTiming.CurTime.Add(TimeSpan.FromSeconds(3));
+            RegisterButton.AddStyleClass(StyleBase.ButtonCaution);
+            RegisterButton.Text = Loc.GetString("register-crew-confirm");
+            return;
+        }
+
+        ResetRegisterButton();
+        OnRegisterCrew?.Invoke();
+    }
+
+    private void ResetRegisterButton()
+    {
+        _registerButtonResetOn = null;
+        RegisterButton.RemoveStyleClass(StyleBase.ButtonCaution);
+        RegisterButton.Text = Loc.GetString("register-crew-button");
+    }
+
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+        if (_registerButtonResetOn != null && _gameTiming.CurTime > _registerButtonResetOn)
+            ResetRegisterButton();
+    }
+    // End Wayfarer
 
     public void UpdateState(GeneralStationRecordConsoleState state)
     {
+        // Wayfarer: Update the Register Crew tab to match what's in the ID slots
+        PrivilegedIdButton.Text = Loc.GetString(state.PrivilegedIdName != null ? "register-crew-eject" : "register-crew-insert");
+        PrivilegedIdLabel.Text = state.PrivilegedIdName ?? string.Empty;
+        TargetIdButton.Text = Loc.GetString(state.TargetIdName != null ? "register-crew-eject" : "register-crew-insert");
+        TargetIdLabel.Text = state.TargetIdName ?? string.Empty;
+        RegisterButton.Disabled = state.TargetIdName == null || state.PrivilegedIdName == null;
+        if (RegisterButton.Disabled)
+            ResetRegisterButton();
+        // End Wayfarer
+
         if (state.Filter != null)
         {
             if (state.Filter.Type != _currentFilterType)
