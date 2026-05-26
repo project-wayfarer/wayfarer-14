@@ -4,10 +4,8 @@ on:
   pull_request:
     types: [opened, edited, reopened, synchronize]
 
-# Wayfarer: Comment out these
-# env:
-#   GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-# End Wayfarer
+env:
+  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
 
 jobs:
   validate-changelog:

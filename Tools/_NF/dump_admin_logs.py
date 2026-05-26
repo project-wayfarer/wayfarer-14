@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Admin log dump script
+# Admin log dump script 
 # Dumps existing logs, optionally compressed, and optionally deletes them
 
 import argparse
@@ -134,7 +134,7 @@ AS
         file_obj = gzip.GzipFile(os.path.join(outdir, f"admin_log_player-{date_suffix}.json.gz"), "w")
     else:
         file_obj = open(os.path.join(outdir, f"admin_log_player-{date_suffix}.json"), "w")
-
+    
     file_obj.write("[".encode("utf-8"))
 
     cur.execute("""
@@ -172,7 +172,7 @@ ORDER BY alp.round_id, alp.log_id
         file_obj = gzip.GzipFile(os.path.join(outdir, f"admin_log-{date_suffix}.json.gz"), "w")
     else:
         file_obj = open(os.path.join(outdir, f"admin_log-{date_suffix}.json"), "w")
-
+    
     file_obj.write("[".encode("utf-8"))
 
     print(f"Dumping admin_log from {start.date()} to {end.date()}...")

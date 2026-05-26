@@ -4,30 +4,37 @@ on:
   pull_request_target:
     types: [opened, ready_for_review]
 
+permissions:
+  pull-requests: write
+  issues: write
+
 jobs:
   auto-assign:
     if: github.repository == 'project-wayfarer/wayfarer-14'
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      issues: write
+
     steps:
       - name: "PR: Auto-assign"
         uses: actions/github-script@v7
         with:
           script: |
             const pr = context.payload.pull_request
+            const author = pr.user.login
+
+            const reviewers = ['drraccoony']
+            const filteredReviewers = reviewers.filter(r => r !== author)
 
             await github.rest.issues.addAssignees({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: pr.number,
-                assignees: [pr.user.login]
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              assignees: [author]
             })
 
-            await github.rest.pulls.requestReviewers({
+            if (filteredReviewers.length > 0)
+              await github.rest.pulls.requestReviewers({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: pr.number,
-                team_reviewers: [process.env.REVIEWERS_TEAM_SLUG ?? 'reviewers']
-            });
+                reviewers: filteredReviewers
+              });

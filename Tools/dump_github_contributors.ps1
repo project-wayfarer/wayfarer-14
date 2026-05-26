@@ -112,20 +112,12 @@ function load_contribs([string] $repo)
     return $r
 }
 
-# Wayfarer: Use list of repo instead
-$repos = @(
-    "space-wizards/RobustToolbox"
-    "space-wizards/space-station-14"
-    "new-frontiers-14/frontier-station-14"
-    "project-wayfarer/wayfarer-14"
-)
+$engineJson = load_contribs("space-wizards/RobustToolbox")
+$contentJson = load_contribs("project-wayfarer/wayfarer-14") # Wayfarer: new-frontiers-14/frontier-station-14<project-wayfarer/wayfarer-14
 
-$allJson = $repos | ForEach-Object { load_contribs($_) }
-
-($allJson).login + ($add) `
+($engineJson).login + ($contentJson).login + ($add) `
     | select -unique `
     | Where-Object { -not $ignore[$_] }`
     | ForEach-Object { if($replacements[$_] -eq $null){ $_ } else { $replacements[$_] }} `
     | Sort-object `
     | Join-String -Separator ", "
-# End Wayfarer
