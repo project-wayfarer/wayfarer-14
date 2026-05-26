@@ -1,0 +1,12 @@
+register-crew-tab-name = Register Crew
+register-crew-tab-records = Records
+register-crew-target-id = Target ID
+register-crew-privileged-id = Authorising ID
+register-crew-button = Register
+register-crew-confirm = Are you sure?
+register-crew-insert = Insert
+register-crew-eject = Eject
+register-crew-custom-job = Job title
+register-crew-custom-job-placeholder = Leave blank to use the job on the ID
+register-crew-no-idcard = Both ID slots must be filled.
+register-crew-not-authorized = The authorising ID lacks ship deed or job-management access for this station.
