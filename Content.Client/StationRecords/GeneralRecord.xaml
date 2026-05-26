@@ -8,6 +8,8 @@
         <Label Name="Gender"/>
         <Label Name="Fingerprint"/>
         <Label Name="Dna"/>
+        <!-- Wayfarer: Remove button -->
+        <Button Visible="False" Name="RemoveCrewButton" Text="{Loc 'register-crew-remove'}"/>
         <Button Visible="False" Name="DeleteButton" Text="{Loc 'general-station-record-console-delete'}"/>
     </BoxContainer>
 </Control>

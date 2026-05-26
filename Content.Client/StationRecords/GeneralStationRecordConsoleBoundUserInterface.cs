@@ -34,6 +34,7 @@ public sealed class GeneralStationRecordConsoleBoundUserInterface : BoundUserInt
         _window.PrivilegedIdButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent(RegisterCrewConsoleComponent.PrivilegedIdSlotId));
         _window.TargetIdButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent(RegisterCrewConsoleComponent.TargetIdSlotId));
         _window.OnRegisterCrew += text => SendMessage(new RegisterCrewMessage(text));
+        _window.OnRemoveCrew += id => SendMessage(new RemoveCrewMessage(id));
         // End Wayfarer
     }
 

@@ -31,6 +31,7 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
 
     // Wayfarer: Register-crew tab
     public event Action<string>? OnRegisterCrew;
+    public event Action<uint>? OnRemoveCrew;
     private TimeSpan? _registerButtonResetOn;
     // End Wayfarer
 
@@ -222,7 +223,7 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
             RecordContainerStatus.Text = state.SelectedKey == null
                 ? Loc.GetString("general-station-record-console-no-record-found")
                 : Loc.GetString("general-station-record-console-select-record-info");
-            PopulateRecordContainer(state.Record, state.CanDeleteEntries, state.SelectedKey);
+            PopulateRecordContainer(state.Record, state.CanDeleteEntries, state.SelectedKey, state.CanRegisterCrew); // Wayfarer: CanRegisterCrew
         }
         else
         {
@@ -248,11 +249,12 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
         RecordListing.SortItemsByText();
     }
 
-    private void PopulateRecordContainer(GeneralStationRecord record, bool enableDelete, uint? id)
+    private void PopulateRecordContainer(GeneralStationRecord record, bool enableDelete, uint? id, bool canRegisterCrew) // Wayfarer: canRegisterCrew
     {
         RecordContainer.RemoveAllChildren();
-        var newRecord = new GeneralRecord(record, enableDelete, id);
+        var newRecord = new GeneralRecord(record, enableDelete, id, canRegisterCrew); // Wayfarer: canRegisterCrew
         newRecord.OnDeletePressed = OnDeleted;
+        newRecord.OnRemoveCrewPressed = OnRemoveCrew; // Wayfarer
 
         RecordContainer.AddChild(newRecord);
     }

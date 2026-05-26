@@ -158,8 +158,10 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
         // Wayfarer
         string? targetIdName = null;
         string? privilegedIdName = null;
+        var canRegisterCrew = false;
         if (TryComp<RegisterCrewConsoleComponent>(uid, out var registerCrew))
         {
+            canRegisterCrew = true;
             if (registerCrew.TargetIdSlot.ContainerSlot?.ContainedEntity is { Valid: true } t)
                 targetIdName = Name(t);
             if (registerCrew.PrivilegedIdSlot.ContainerSlot?.ContainedEntity is { Valid: true } p)
@@ -169,7 +171,7 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
 
         if (!TryComp<StationRecordsComponent>(owningStation, out var stationRecords))
         {
-            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName)); // Frontier: jobList, advertisement. Wayfarer: Register-crew slots
+            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName, canRegisterCrew)); // Frontier: jobList, advertisement. Wayfarer: Register-crew slots
             return;
         }
 
@@ -178,7 +180,7 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
         switch (listing.Count)
         {
             case 0:
-                var consoleState = new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName); // Frontier: jobList, advertisement. Wayfarer: Register-crew slots
+                var consoleState = new GeneralStationRecordConsoleState(null, null, null, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName, canRegisterCrew); // Frontier: jobList, advertisement. Wayfarer: Register-crew slots
                 _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, consoleState);
                 return;
             default:
@@ -189,14 +191,14 @@ public sealed class GeneralStationRecordConsoleSystem : EntitySystem
 
         if (console.ActiveKey is not { } id)
         {
-            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, listing, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName)); // Frontier: jobList, advertisement. Wayfarer: Register-crew slots
+            _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, new GeneralStationRecordConsoleState(null, null, listing, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName, canRegisterCrew)); // Frontier: jobList, advertisement. Wayfarer: Register-crew slots
             return;
         }
 
         var key = new StationRecordKey(id, owningStation.Value);
         _stationRecords.TryGetRecord<GeneralStationRecord>(key, out var record, stationRecords);
 
-        GeneralStationRecordConsoleState newState = new(id, record, listing, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName); // Wayfarer: Register-crew slots
+        GeneralStationRecordConsoleState newState = new(id, record, listing, jobList, console.Filter, ent.Comp.CanDeleteEntries, advertisement, targetIdName, privilegedIdName, canRegisterCrew); // Wayfarer: Register-crew slots
         _ui.SetUiState(uid, GeneralStationRecordConsoleKey.Key, newState);
     }
 }

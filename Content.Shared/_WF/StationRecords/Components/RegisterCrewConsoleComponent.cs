@@ -27,3 +27,14 @@ public sealed class RegisterCrewMessage : BoundUserInterfaceMessage
 
     public readonly string CustomJobTitle;
 }
+
+[Serializable, NetSerializable]
+public sealed class RemoveCrewMessage : BoundUserInterfaceMessage
+{
+    public RemoveCrewMessage(uint recordId)
+    {
+        RecordId = recordId;
+    }
+
+    public readonly uint RecordId;
+}
