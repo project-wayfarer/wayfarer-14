@@ -472,8 +472,8 @@ namespace Content.Server.Lathe
             foreach (var (mat, amount) in recipe.Materials)
             {
                 var adjustedAmount = recipe.ApplyMaterialDiscount
-                    ? (int)(amount * lathe.MaterialUseMultiplier)
-                    : amount;
+                    ? (int)(-amount * lathe.FinalMaterialUseMultiplier) // Frontier: MaterialUseMultiplier<FinalMaterialUseMultiplier
+                    : -amount;
 
                 yield return (mat, adjustedAmount);
             }
@@ -700,35 +700,5 @@ namespace Content.Server.Lathe
         }
         #endregion
         // End Frontier
-
-        #region Wayfarer
-        /// Wayfarer Start
-
-        /// <summary>
-        /// Refunds materials for unprinted items in a batch
-        /// </summary>
-        private void RefundMaterials(EntityUid uid, LatheComponent component, LatheRecipeBatch batch)
-        {
-            if (!_proto.TryIndex(batch.Recipe, out var recipe))
-                return;
-
-            var unprintedCount = batch.ItemsRequested - batch.ItemsPrinted;
-            if (unprintedCount <= 0)
-                return;
-
-            // Refund materials using the same calculation as consumption (but positive to add back)
-            foreach (var (mat, amount) in recipe.Materials)
-            {
-                var adjustedAmount = recipe.ApplyMaterialDiscount
-                    ? (int)(amount * component.FinalMaterialUseMultiplier)
-                    : amount;
-                adjustedAmount *= unprintedCount;
-
-                _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
-            }
-        }
-
-        // End Wayfarer
-        #endregion
     }
 }
