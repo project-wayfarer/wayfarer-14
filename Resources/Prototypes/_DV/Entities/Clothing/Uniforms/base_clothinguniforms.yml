@@ -1,0 +1,19 @@
+- type: entity
+  abstract: true
+  parent: ClothingUniformBase
+  id: DVClothingTurtleneckBase
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/color_turtle.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/color_turtle.rsi
+
+- type: entity
+  abstract: true
+  parent: ClothingUniformSkirtBase
+  id: DVClothingTurtleneckSkirtBase
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/color_turtle.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/color_turtle.rsi

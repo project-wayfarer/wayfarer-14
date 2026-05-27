@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: BaseAction
+  id: ActionJuggle
+  name: juggle
+  description: Toss some items in the air.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: Objects/Fun/Balls/beach_ball.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:JuggleActionEvent {}

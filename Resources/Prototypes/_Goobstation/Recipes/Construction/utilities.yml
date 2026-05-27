@@ -1,0 +1,18 @@
+- type: construction
+  id: HeatExchangerInline
+  graph: GasBinary
+  startNode: start
+  targetNode: inlineradiator
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerInlineBend
+  name: construction-recipe-heat-exchanger-bend
+  graph: GasBinary
+  startNode: start
+  targetNode: bendinlineradiator
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false

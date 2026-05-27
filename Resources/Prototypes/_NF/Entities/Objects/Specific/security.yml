@@ -107,7 +107,7 @@
   parent: DeployableBarrier
   components:
   - type: Sprite
-    sprite: _NF/Objects/Specific/Security/nfsdbarrier.rsi
+    sprite: _WF/Objects/Specific/Security/nfsdbarrier.rsi # Wayfarer: _NF/Objects/Specific/Security/nfsdbarrier.rsi < _WF/Objects/Specific/Security/nfsdbarrier.rsi
     layers:
     - state: idle
     - state: locked

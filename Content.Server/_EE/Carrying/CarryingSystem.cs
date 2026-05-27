@@ -89,6 +89,10 @@ namespace Content.Server.Carrying
                 || args.User == args.Target)
                 return;
 
+            // Wayfarer, adds ability to disable pickup
+            if (TryComp<CarriableComponent>(args.Target, out var carriable) && !carriable.CanPickup)
+                return;
+
             AlternativeVerb verb = new()
             {
                 Act = () =>

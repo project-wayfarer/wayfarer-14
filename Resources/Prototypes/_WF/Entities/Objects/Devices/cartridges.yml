@@ -17,3 +17,19 @@
     - type: CriticalImplantTrackerCartridge
     - type: StaticPrice
       price: 1000
+
+- type: entity
+  parent: NFBasePDACartridge
+  id: OutlawBountyCartridge
+  name: black market bounty cartridge
+  description: A program for browsing the current black market bounty board.
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/cartridge.rsi
+      state: cart-s
+    - type: UIFragment
+      ui: !type:OutlawBountyUi
+    - type: Cartridge
+      programName: outlaw-bounty-program-name
+      icon: _NF/Interface/Pirate/piratelogo.png
+    - type: OutlawBountyCartridge

@@ -138,7 +138,7 @@
     maxContactWalkSlowdown: 0.7
 
 - type: entity
-  parent: [ClothingShoesBaseButcherable, BaseC3Contraband, ContrabandClothing ] # Frontier: BaseMajorContraband<BaseC3Contraband, added ContrabandClothing
+  parent: [ClothingShoesBaseButcherable, BaseBMContraband, ContrabandClothing ] # Frontier: BaseMajorContraband<BaseC3Contraband, added ContrabandClothing # Wayfarer: BaseC2ContrabandUnredeemable<BaseBMContraband
   id: ClothingShoesSpaceNinja
   name: space ninja shoes
   description: A pair of nano-enhanced boots with built-in magnetic suction cups.
@@ -157,7 +157,7 @@
     footstepSoundCollection: null
 
 - type: entity
-  parent: [ClothingShoesBaseButcherable, BaseC2ContrabandUnredeemable] # Frontier: BaseMajorContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingShoesBaseButcherable] # Frontier: BaseMajorContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband
   id: ClothingShoesSwat
   name: swat shoes
   description: When you want to turn up the heat.
@@ -215,7 +215,7 @@
       default: ClothingShoesColorBlack
 
 - type: entity
-  parent: [ClothingShoesChameleon, BaseC3SyndicateContraband] # Frontier: add BaseC3SyndicateContraband
+  parent: [ClothingShoesChameleon, BaseBMContraband] # Frontier: add BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: ClothingShoesChameleonNoSlips
   name: black shoes #actual name and description in uplink_catalog.yml
   suffix: No-slip, Chameleon

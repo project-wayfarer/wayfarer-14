@@ -32,6 +32,7 @@ public sealed class SuitSensorStatus
     public NetCoordinates? Coordinates;
     public int? MapHash; // Frontier - Crew monitor map check
     public string LocationName; // Frontier
+    public bool IsSpaceSleepDisorder; // Wayfarer: Crew monitor SSD indicator
 }
 
 [Serializable, NetSerializable]
@@ -72,6 +73,7 @@ public static class SuitSensorConstants
     public const string NET_SUIT_SENSOR_UID = "uid";
     public const string NET_LOCATION_NAME = "location"; // Frontier
     public const string NET_MAP_HASH = "mapHash"; // Frontier - Crew monitor map check
+    public const string NET_IS_SSD = "ssd"; // Wayfarer
 
     ///Used by the CrewMonitoringServerSystem to send the status of all connected suit sensors to each crew monitor
     public const string NET_STATUS_COLLECTION = "suit-status-collection";

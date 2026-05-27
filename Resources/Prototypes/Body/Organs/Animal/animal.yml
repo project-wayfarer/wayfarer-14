@@ -87,6 +87,23 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Stomach
+    # Wayfarer: Custom digestible system
+    carnivoreDigestible:
+      tags:
+      - Meat
+      - Pill
+      - Crayon
+      - Paper
+    herbivoreDigestible:
+      tags:
+      - Fruit
+      - Vegetable
+      - Flower
+      - Ambrosia
+      - Pill
+      - Crayon
+      - Paper
+    # End Wayfarer
   - type: Metabolizer
     maxReagents: 3
     metabolizerTypes: [ Animal ]

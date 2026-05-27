@@ -1,5 +1,6 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
               MinSize="400 300"
               SetSize="550 550">
     <BoxContainer Orientation="Vertical">
@@ -44,15 +45,32 @@
                 <BoxContainer Name="CommendTab" Orientation="Vertical">
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Orientation="Vertical" Margin="10">
-                            <Label Text="Commend this player" StyleClasses="LabelHeading" HorizontalAlignment="Center" Margin="0 0 0 10"/>
-                            <Label Text="Leave a comment about this player's roleplay:" Margin="0 0 0 5"/>
-                            <LineEdit Name="CommendCommentInput" Access="Public" PlaceHolder="Enter your comment..." Margin="0 0 0 10"/>
-                            <BoxContainer Orientation="Horizontal" Margin="0 0 0 10">
-                                <CheckBox Name="CommendPrivateCheckbox" Access="Public"/>
-                                <Label Text="Make this commend private" Margin="5 0 0 0"/>
+
+                            <!-- Shown when viewing another player -->
+                            <BoxContainer Name="CommendFormSection" Access="Public" Orientation="Vertical">
+                                <Label Text="Commend this player" StyleClasses="LabelHeading" HorizontalAlignment="Center" Margin="0 0 0 10"/>
+                                <Label Text="Leave a comment about this player's roleplay:" Margin="0 0 0 5"/>
+                                <PanelContainer Margin="0 0 0 10">
+                                    <PanelContainer.PanelOverride>
+                                        <gfx:StyleBoxFlat BackgroundColor="#242425"/>
+                                    </PanelContainer.PanelOverride>
+                                    <TextEdit Name="CommendCommentInput" Access="Public" MinHeight="80" HorizontalExpand="True" Margin="5 5"/>
+                                </PanelContainer>
+                                <BoxContainer Orientation="Horizontal" Margin="0 0 0 10">
+                                    <CheckBox Name="CommendPrivateCheckbox" Access="Public"/>
+                                    <Label Text="Make this commend private" Margin="5 0 0 0"/>
+                                </BoxContainer>
+                                <Button Name="SubmitCommendButton" Access="Public" Text="Submit Commend" HorizontalAlignment="Center"/>
+                                <Label Name="CommendsRemainingLabel" Access="Public" Text="You have 1 commend left to give" HorizontalAlignment="Center" Margin="0 10 0 0" FontColorOverride="#AAAAAA"/>
                             </BoxContainer>
-                            <Button Name="SubmitCommendButton" Access="Public" Text="Submit Commend" HorizontalAlignment="Center"/>
-                            <Label Name="CommendsRemainingLabel" Access="Public" Text="You have 1 commend left to give" HorizontalAlignment="Center" Margin="0 10 0 0" FontColorOverride="#AAAAAA"/>
+
+                            <!-- Shown when viewing your own character -->
+                            <BoxContainer Name="SelfCommendSection" Access="Public" Orientation="Vertical" Visible="False">
+                                <Label Text="Your Commends" StyleClasses="LabelHeading" HorizontalAlignment="Center" Margin="0 0 0 10"/>
+                                <Label Name="SelfTotalCommendsLabel" Access="Public" Text="You have received 0 commends." HorizontalAlignment="Center" Margin="0 0 0 10" FontColorOverride="#AAAAAA"/>
+                                <Button Name="ViewMyCommendsButton" Access="Public" Text="View your recent commends" HorizontalAlignment="Center"/>
+                            </BoxContainer>
+
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>

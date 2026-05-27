@@ -102,10 +102,10 @@
   table: !type:GroupSelector
     children:
     # Computers
-    - !type:GroupSelector
-      weight: 0.1
-      children:
-      - id: ComputerIFFCircuitboard
+    # - !type:GroupSelector # Wayfarer
+    #   weight: 0.1
+    #   children:
+    #   - id: ComputerIFFCircuitboard
     # Lathes
     - !type:GroupSelector
       weight: 0.4

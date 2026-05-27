@@ -8,7 +8,7 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterHardsuitBaseNF, BaseC2ContrabandUnredeemable]
+  parent: [ClothingOuterHardsuitBaseNF, BaseCGPContraband] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingOuterHardsuitBaseNFNfsd
   components:
   - type: PressureProtection

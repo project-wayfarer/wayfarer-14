@@ -1,0 +1,22 @@
+- type: entity
+  name: shipyard RPD
+  parent: RPD
+  id: ShipyardRPD
+  description: A device used to rapidly pipe things. It has a slot to swipe ID cards.
+  components:
+  - type: RCD
+    isRpd: true
+    isShipyardRCD: true
+  - type: Sprite
+    sprite: _WF/Objects/Tools/shipyardrpd.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Tools/shipyardrpd.rsi
+  - type: GridAccess
+
+- type: entity
+  id: ShipyardRPDEmpty
+  parent: ShipyardRPD
+  suffix: Empty
+  components:
+    - type: LimitedCharges
+      lastCharges: -1

@@ -14,6 +14,7 @@ namespace Content.Shared.Humanoid.Markings
         Snout,
         SnoutCover,
         Chest,
+        NeckFluff, // The Den - Ovinia Neck Fluff
         UndergarmentTop,
         UndergarmentBottom,
         Genital,
@@ -37,6 +38,7 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.HeadSide => MarkingCategories.HeadSide,
                 HumanoidVisualLayers.Snout => MarkingCategories.Snout,
                 HumanoidVisualLayers.Chest => MarkingCategories.Chest,
+                HumanoidVisualLayers.NeckFluff => MarkingCategories.NeckFluff, // TheDen - Ovinia, for fluff on necks
                 HumanoidVisualLayers.UndergarmentTop => MarkingCategories.UndergarmentTop,
                 HumanoidVisualLayers.UndergarmentBottom => MarkingCategories.UndergarmentBottom,
                 HumanoidVisualLayers.Genital => MarkingCategories.Genital,

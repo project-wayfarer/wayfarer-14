@@ -341,7 +341,7 @@
         amount: 2
 
 - type: entity
-  parent: [ ClothingBackpackDuffelBundle, BaseC3Contraband ] # Frontier BaseMajorContraband<BaseC3Contraband
+  parent: [ ClothingBackpackDuffelBundle, BaseBMContraband ] # Frontier BaseMajorContraband<BaseC3Contraband # Wayfarer: BaseC2ContrabandUnredeemable<BaseBMContraband
   id: ClothingBackpackDuffelAcolyteBundle
   name: acolyte armor bundle
   description: "Contains the Acolyte Armor, the must have of any cult leader."

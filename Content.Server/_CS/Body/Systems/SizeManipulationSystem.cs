@@ -57,6 +57,43 @@ public sealed class SizeManipulationSystem : EntitySystem
     }
 
     /// <summary>
+    /// Applies a size change to the target entity, bypassing the consent check.
+    /// Intended for trait-driven mechanics like Clay Body where consent does not apply.
+    /// </summary>
+    public bool TryChangeSizeForced(EntityUid target, SizeManipulatorMode mode, EntityUid? user = null)
+    {
+        if (!HasComp<MobStateComponent>(target))
+            return false;
+
+        var sizeComp = EnsureComp<SizeAffectedComponent>(target);
+
+        float newScale;
+        if (mode == SizeManipulatorMode.Grow)
+        {
+            newScale = sizeComp.ScaleMultiplier + sizeComp.ScaleChangeAmount;
+            if (newScale > sizeComp.MaxScale)
+                return false;
+        }
+        else
+        {
+            newScale = sizeComp.ScaleMultiplier - sizeComp.ScaleChangeAmount;
+            if (newScale < sizeComp.MinScale)
+                return false;
+        }
+
+        sizeComp.ScaleMultiplier = newScale;
+        Dirty(target, sizeComp);
+        ApplyPhysicsScale(target, newScale, sizeComp.BaseScale);
+
+        var message = mode == SizeManipulatorMode.Grow
+            ? Loc.GetString("size-manipulator-target-grow")
+            : Loc.GetString("size-manipulator-target-shrink");
+        _popup.PopupEntity(message, target, PopupType.Medium);
+
+        return true;
+    }
+
+    /// <summary>
     /// Applies a size change to the target entity
     /// </summary>
     public bool TryChangeSize(EntityUid target, SizeManipulatorMode mode, EntityUid? user = null, bool safetyDisabled = false)

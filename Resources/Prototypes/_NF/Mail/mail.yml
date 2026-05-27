@@ -54,7 +54,7 @@
     - id: Bible
     - id: ClothingHeadHatBishopMitre
     - id: ClothingOuterCoatBishop
-    - id: BibleUserImplanter
+#    - id: BibleUserImplanter # Wayfarer: Faith implanter removed, covered by the existing Pious trait
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -67,7 +67,7 @@
     - id: Weejurnum
     - id: ClothingOuterRobesWeedChurch
     - id: ClothingHeadWeedChurchBishop
-    - id: BibleUserImplanter
+#    - id: BibleUserImplanter # Wayfarer: Faith implanter removed, covered by the existing Pious trait
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -1837,7 +1837,7 @@
         orGroup: Mask
       - id: ClothingMaskScaredMime
         orGroup: Mask
-      - id: MimePowersImplanter
+#      - id: MimePowersImplanter # Wayfarer: Mime vow implanter removed, replaced by the new Mime trait
 
 # Base Nyano mail
 

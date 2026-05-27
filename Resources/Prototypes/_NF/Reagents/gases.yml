@@ -9,11 +9,11 @@
     Poison:
       effects:
       - !type:Oxygenate
-        factor: 1.25
+        factor: 1.5 #Wayfarer: Buffed oxygenation rate
     Gas:
       effects:
       - !type:Oxygenate
-        factor: 1.25
+        factor: 1.5 #Wayfarer: Buffed oxygenation rate
       - !type:ModifyLungGas
         conditions:
         - !type:OrganType

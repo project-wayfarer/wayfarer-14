@@ -2,7 +2,7 @@
   categories: [ HideSpawnMenu ] # Frontier
   name: proto-kinetic accelerator
   id: WeaponProtoKineticAccelerator
-  parent: [WeaponProtoKineticAcceleratorBase, BaseC1Contraband] # Frontier: BaseCargoContraband<BaseC1Contraband
+  parent: WeaponProtoKineticAcceleratorBase # Frontier: BaseCargoContraband<BaseC1Contraband # Wayfarer: Removed contraband
   description: Fires low-damage kinetic bolts at a short range.
   components:
   - type: Sprite

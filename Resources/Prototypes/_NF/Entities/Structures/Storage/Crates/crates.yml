@@ -29,38 +29,38 @@
     sprite: _NF/Structures/Storage/Crates/radiation_secure.rsi
 
 - type: entity
-  parent: CrateSecgear
+  parent: [CrateSecgear, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: CrateNfsdBrigmedic
   name: brigmedic crate
   components:
   - type: Icon
-    sprite: _NF/Structures/Storage/Crates/nfsd_brigmed.rsi
+    sprite: _WF/Structures/Storage/Crates/nfsd_brigmed.rsi # Wayfarer: _NF/Structures/Storage/Crates/nfsd_brigmed.rsi < _WF/Structures/Storage/Crates/nfsd_brigmed.rsi
   - type: Sprite
-    sprite: _NF/Structures/Storage/Crates/nfsd_brigmed.rsi
+    sprite: _WF/Structures/Storage/Crates/nfsd_brigmed.rsi # Wayfarer: _NF/Structures/Storage/Crates/nfsd_brigmed.rsi < _WF/Structures/Storage/Crates/nfsd_brigmed.rsi
   - type: AccessReader
     access: [["Security"]]
 
 - type: entity
-  parent: CrateSecgear
+  parent: [CrateSecgear, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: CrateNfsdSecure1
   name: CGP crate
   components:
   - type: Icon
-    sprite: _NF/Structures/Storage/Crates/nfsd_secure1.rsi
+    sprite: _WF/Structures/Storage/Crates/nfsd_secure1.rsi # Wayfarer: _NF/Structures/Storage/Crates/nfsd_secure1.rsi < _WF/Structures/Storage/Crates/nfsd_secure2.rsi
   - type: Sprite
-    sprite: _NF/Structures/Storage/Crates/nfsd_secure1.rsi
+    sprite: _WF/Structures/Storage/Crates/nfsd_secure2.rsi # Wayfarer: _NF/Structures/Storage/Crates/nfsd_secure1.rsi < _WF/Structures/Storage/Crates/nfsd_secure2.rsi
   - type: AccessReader
     access: [["Security"]]
 
 - type: entity
-  parent: CrateSecgear
+  parent: [CrateSecgear, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: CrateNfsdSecure2
   name: CGP crate
   components:
   - type: Icon
-    sprite: _NF/Structures/Storage/Crates/nfsd_secure2.rsi
+    sprite: _WF/Structures/Storage/Crates/nfsd_secure2.rsi # Wayfarer: _NF/Structures/Storage/Crates/nfsd_secure2.rsi < _WF/Structures/Storage/Crates/nfsd_secure2.rsi
   - type: Sprite
-    sprite: _NF/Structures/Storage/Crates/nfsd_secure2.rsi
+    sprite: _WF/Structures/Storage/Crates/nfsd_secure2.rsi # Wayfarer: _NF/Structures/Storage/Crates/nfsd_secure2.rsi < _WF/Structures/Storage/Crates/nfsd_secure2.rsi
   - type: AccessReader
     access: [["Security"]]
 

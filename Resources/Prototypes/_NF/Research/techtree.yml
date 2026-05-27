@@ -185,6 +185,7 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
+  - ShipyardRPD # Wayfarer
   - ShipyardRCD
   - ShipyardRCDAmmo
   technologyPrerequisites:
@@ -1395,6 +1396,7 @@
   recipeUnlocks:
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
+  - LargeThrusterMachineCircuitboard # Wayfarer
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
   - NFSpaceScanning
@@ -1440,6 +1442,7 @@
   cost: 7500
   recipeUnlocks:
   - HolofanProjector
+  - RadiationBlockingProjector # Far Horizons
 #  - FireExtinguisherBluespace # DeltaV
   technologyPrerequisites:
   - NFAtmosphericTech

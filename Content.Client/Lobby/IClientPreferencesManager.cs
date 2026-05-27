@@ -7,6 +7,9 @@ namespace Content.Client.Lobby
     public interface IClientPreferencesManager
     {
         event Action OnServerDataLoaded;
+        // Wayfarer: fired when the selected character slot changes, used to update Join button cryo state
+        /// <summary>Fired whenever the selected character slot changes (including by the user clicking a different character).</summary>
+        event Action OnCharacterSelected;
 
         bool ServerDataLoaded => Settings != null;
 

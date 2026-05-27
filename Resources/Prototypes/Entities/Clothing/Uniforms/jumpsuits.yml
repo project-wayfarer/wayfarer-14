@@ -639,7 +639,7 @@
   parent: [ClothingUniformBase] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: ClothingUniformJumpsuitSecGrey
   name: grey security jumpsuit
-  description: A tactical relic of years past before officers decided it was cheaper to dye the suits red instead of washing out the blood. # wayfarer edit: remove nanotrasen mention in description
+  description: A tactical relic of years past before officers decided it was cheaper to dye the suits red instead of washing out the blood. # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/security_grey.rsi
@@ -650,7 +650,7 @@
   parent: [ClothingUniformBase] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: ClothingUniformSecurityTrooper
   name: trooper uniform
-  description: A formal uniform issued to the proud troopers, usually it comes with a car. # wayfarer edit: remove nanotrasen mention in description
+  description: A formal uniform issued to the proud troopers, usually it comes with a car. # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/security_trooper.rsi
@@ -661,7 +661,7 @@
   parent: [ClothingUniformBase] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: ClothingUniformJumpsuitWarden
   name: warden's uniform
-  description: A formal security suit for officers complete with a classy belt buckle. # wayfarer edit: remove nanotrasen mention in description
+  description: A formal security suit for officers complete with a classy belt buckle. # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/warden.rsi
@@ -804,8 +804,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitNanotrasen
-  name: deep blue jumpsuit # wayfarer: removed nanotrasen
-  description: A stately blue jumpsuit. # wayfarer: removed nanotrasen
+  name: deep blue jumpsuit # Wayfarer: removed nanotrasen
+  description: A stately blue jumpsuit. # Wayfarer: removed nanotrasen
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/nanotrasen.rsi

@@ -4,14 +4,14 @@ namespace Content.Shared.Clothing.EntitySystems;
 
 /// <summary>
 /// Extends upstream's ToggleableClothingSystem.
-/// 
-/// Provides methods that store and re-equip clothing when toggleable clothing is put on or taken off. 
+///
+/// Provides methods that store and re-equip clothing when toggleable clothing is put on or taken off.
 /// God, I hate naming things.
 /// </summary>
 public sealed partial class ToggleableClothingSystem : EntitySystem
 {
     /// <summary>
-    ///     Tries to store clothing in <see cref="ToggleableClothingComponent.UnderClothingContainer"/> 
+    ///     Tries to store clothing in <see cref="ToggleableClothingComponent.UnderClothingContainer"/>
     /// </summary>
     /// <param name="clothing">The clothing to be stored.</param>
     /// <param name="component">The ToggleableClothingComponent to store the clothing in.</param>
@@ -19,6 +19,10 @@ public sealed partial class ToggleableClothingSystem : EntitySystem
     private bool TryStoreUnderClothing(EntityUid clothing, ToggleableClothingComponent component)
     {
         if (component.UnderClothingContainer == null)
+            return false;
+
+        // Don't allow storing other toggleable clothing's attached equippables
+        if (HasComp<AttachedClothingComponent>(clothing))
             return false;
 
         // There is already something in there? Either way, return false because we

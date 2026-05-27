@@ -164,7 +164,7 @@
 - type: entity
   id: BaseCannonBall
   name: base cannon ball
-  parent: [BaseItem, BaseDDContraband] # Wayfarer: BaseMajorContraband<BaseDDContraband
+  parent: [BaseItem, BaseBMContraband] # Wayfarer: BaseMajorContraband<BaseBMContraband
   abstract: true
   components:
   - type: Tag
@@ -178,7 +178,7 @@
   id: CannonBall
   name: cannonball
   suffix: Pirate
-  parent: [ BaseCannonBall, BaseDDContraband ] # Wayfarer: Add BaseDDContraband
+  parent: [ BaseCannonBall, BaseBMContraband ] # Wayfarer: Add BaseBMContraband
   components:
   - type: CartridgeAmmo
     # proto: NFBulletCannonBall # Frontier

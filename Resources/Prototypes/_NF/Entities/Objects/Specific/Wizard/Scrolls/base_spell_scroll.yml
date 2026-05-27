@@ -1,7 +1,7 @@
 #region rolled scroll
 - type: entity
   abstract: true
-  parent: [ BaseItem, RecyclableItemPaper ]
+  parent: [ BaseItem, RecyclableItemPaper, BaseC3WizardContraband ] # Wayfarer: add BaseC3WizardContraband
   id: SpellScrollRolled
   suffix: Folded
   components:

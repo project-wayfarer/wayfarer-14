@@ -511,3 +511,71 @@
   price: 7500
   equipment:
     neck: ClothingNeckBling
+
+# Starlight clothing
+- type: loadout
+  id: WFSLClothingUniformDama0965
+  price: 500
+  equipment:
+    neck: SLClothingUniformDama0965
+
+- type: loadout
+  id: WFSLClothingUniformShinelVampir
+  price: 500
+  equipment:
+    neck: SLClothingUniformShinelVampir
+
+- type: loadout
+  id: WFSLClothingNeckTieGeoffroyblack12
+  price: 500
+  equipment:
+    neck: SLClothingNeckTieGeoffroyblack12
+  groupBy: "tie"
+
+- type: loadout
+  id: WFSLRedRegaliaCloak
+  price: 1000
+  equipment:
+    neck: SLRedRegaliaCloak
+
+# DeltaV clothing
+- type: loadout
+  id: WFDVClothingNeckTieWhite
+  price: 500
+  equipment:
+    neck: DVClothingNeckTieWhite
+  groupBy: "ties"
+
+- type: loadout
+  id: WFDVClothingNeckTieBlack
+  price: 500
+  equipment:
+    neck: DVClothingNeckTieBlack
+  groupBy: "ties"
+
+- type: loadout
+  id: WFDVClothingNeckTieBrown
+  price: 500
+  equipment:
+    neck: DVClothingNeckTieBrown
+  groupBy: "ties"
+
+- type: loadout
+  id: WFDVClothingNeckTieBlue
+  price: 500
+  equipment:
+    neck: DVClothingNeckTieBlue
+  groupBy: "ties"
+
+- type: loadout
+  id: WFDVClothingNeckTieGreen
+  price: 500
+  equipment:
+    neck: DVClothingNeckTieGreen
+  groupBy: "ties"
+
+- type: loadout
+  id: WFDVClothingNeckCopperNecklace
+  price: 500
+  equipment:
+    neck: DVClothingNeckCopperNecklace

@@ -65,6 +65,13 @@
     bodyType: static
   - type: StaticPrice
     price: 12 # Frontier: 30<12
+  # Starlight Start: RPD
+  - type: RCDDeconstructable
+    cost: 1
+    delay: 2
+    fx: EffectRCDDeconstruct2
+    rpd: true
+  # Starlight End
 
 - type: entity
   abstract: true

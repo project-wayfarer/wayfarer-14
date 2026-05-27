@@ -25,6 +25,7 @@ namespace Content.Shared.Humanoid
         HeadTop,  // top parts (i.e., ears)
         TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
+        NeckFluff, // TheDen - Ovinia, for fluff on necks
         Eyes,
         RArm,
         LArm,

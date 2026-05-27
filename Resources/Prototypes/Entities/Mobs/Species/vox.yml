@@ -60,6 +60,7 @@
     damage:
       types:
         Slash: 5 # Reduce?
+  - type: Carriable # Wayfarer
   - type: Sprite # Need to redefine the whole order to draw the tail over their gas tank
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]

@@ -12,6 +12,7 @@ using Content.Server.Speech.Prototypes;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._WF;
+using Content.Shared._WF.Chat;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -72,6 +73,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int LOOCRange = 15; // how far LOOC goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public const int SubtleLOOCRange = SubtleRange; // how far Subtle LOOC goes in world units
+    public const int ShipOOCRange = 750; // Wayfarer: how far Ship OOC goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
 
@@ -256,7 +258,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // The minimum contrast required by WCAG (Level AA) for text
         var nameHashColor = ColorExtensions.ConsistentRandomSeededColorFromString(entityName, 149);
         var nameColorString = nameHashColor.ToHex();
-        // Wayfarer end
+        // End Wayfarer
 
         // Was there an emote in the message? If so, send it.
         if (player != null && emoteStr != message && emoteStr != null)
@@ -354,6 +356,15 @@ public sealed partial class ChatSystem : SharedChatSystem
                     message,
                     hideChat);
                 break;
+            // Wayfarer
+            case InGameOOCChatType.ShipOoc:
+                SendShipOOC(
+                    source,
+                    player,
+                    message,
+                    hideChat);
+                break;
+            // End Wayfarer
             case InGameOOCChatType.Looc:
                 SendLOOC(
                     source,
@@ -514,11 +525,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         chatColorSemiTransparent.A = 0.5f; // COYOTESTATION ADD - make the chat color semi-transparent, so it looks better
         var chatColorSemiTransparentActually = chatColorSemiTransparent.ToHex(); // COYOTATION ADD - make the chat color semi-transparent, so it looks better
 
+        var appearanceEv = new TransformSpeechAppearanceEvent(); // Wayfarer
+        RaiseLocalEvent(source, appearanceEv); // Wayfarer
+        var fontId = appearanceEv.FontId ?? speech.FontId; // Wayfarer
+        var fontSize = appearanceEv.FontSize ?? speech.FontSize; // Wayfarer
+
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message",
             ("entityName", name),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
-            ("fontType", speech.FontId),
-            ("fontSize", speech.FontSize),
+            ("fontType", fontId), // Wayfarer: use variable above
+            ("fontSize", fontSize), // Wayfarer: use variable above
             ("message", FormattedMessage.EscapeText(message)),
             ("color", chatColor ?? Color.White.ToHex())); // COYOTESTATION ADD - makes the your name color right
         // and the above message, but the font is shrunken by like 20%
@@ -526,8 +542,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         var wrappedMessageSmall = Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message",
             ("entityName", name),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
-            ("fontType", speech.FontId),
-            ("fontSize", Convert.ToInt16(speech.FontSize * 0.7)), // COYOTESTATION ADD - shrunken by 20%
+            ("fontType", fontId), // Wayfarer: use variable above
+            ("fontSize", Convert.ToInt16(fontSize * 0.7)), // COYOTESTATION ADD - shrunken by 20% // Wayfarer: use variable above
             ("message", FormattedMessage.EscapeText(message)),
             ("color", chatColorSemiTransparentActually)); // COYOTESTATION ADD - makes the your name color right
         // COYOTESTATION ADD END
@@ -802,6 +818,52 @@ public sealed partial class ChatSystem : SharedChatSystem
             LogImpact.Low,
             $"SubtleLOOC from {player:Player}: {message}");
     }
+
+    // Wayfarer
+    private void SendShipOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
+    {
+        var name = FormattedMessage.EscapeText(Identity.Name(source, EntityManager));
+        var shipName = Loc.GetString("chat-manager-entity-ship-ooc-unknown");
+
+        if (TryComp(source, out TransformComponent? transform))
+        {
+            if (transform.GridUid is not null && TryComp(transform.GridUid, out MetaDataComponent? metadata))
+            {
+                shipName = metadata.EntityName;
+            }
+        }
+
+        if (_adminManager.IsAdmin(player))
+        {
+            if (!_adminLoocEnabled)
+                return;
+        }
+        else if (!_loocEnabled)
+            return;
+        var wrappedMessage = Loc.GetString(
+            "chat-manager-entity-ship-ooc-wrap-message",
+            ("shipName", shipName),
+            ("entityName", name),
+            ("message", FormattedMessage.EscapeText(message)));
+
+        SendInVoiceRange(
+            ChatChannel.ShipOOC,
+            message,
+            wrappedMessage,
+            source,
+            hideChat
+                ? ChatTransmitRange.HideChat
+                : ChatTransmitRange.NoGhosts,
+            player.UserId,
+            voiceRange: ShipOOCRange,
+            blockedByOcclusion: false,
+            ensmallenedByOcclusion: false);
+        _adminLogger.Add(
+            LogType.Chat,
+            LogImpact.Low,
+            $"ShipOOC from {player:Player}: {message}");
+    }
+    // End Wayfarer
 
     // ReSharper disable once InconsistentNaming
     private void SendLOOC(EntityUid source, ICommonSession player, string message, bool hideChat)
@@ -1288,6 +1350,7 @@ public enum InGameOOCChatType : byte
 {
     Looc,
     SubtleLooc,
+    ShipOoc, // Wayfarer
     Dead
 }
 

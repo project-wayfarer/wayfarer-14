@@ -1,0 +1,33 @@
+﻿- type: vessel
+  id: Uniform
+  parent: BaseVessel
+  name: BAM Uniform
+  description: A medium sized ship for service personal fitted with a kitchen and bar.
+  price:  126000 # (562*50+68785)*1.3 (roles 3: service:kitchen, bar, hydroponics)
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/uniform.yml
+  guidebookPage: ShipyardUniform
+  class:
+  - Botany
+  - Kitchen
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Uniform
+  mapName: 'BAM Uniform'
+  mapPath: /Maps/_WF/Shuttles/Civilian/uniform.yml
+  minPlayers: 0
+  stations:
+    Uniform:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Uniform CIV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

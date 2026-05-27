@@ -261,9 +261,10 @@
   - type: GroupExamine
   - type: IdentityBlocker
     coverage: EYES
+  - type: ThermalSight
   - type: HelmetAccessory # Wayfarer :>
     rsi:
-      sprite: _WF/Clothing/Helmetaddons/Goggles/thermalgoggles.rsi 
+      sprite: _WF/Clothing/Helmetaddons/Goggles/thermalgoggles.rsi
       state: helmet
 
 

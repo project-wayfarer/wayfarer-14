@@ -624,7 +624,7 @@
 
 - type: entity
   id: HappyHonkNukie
-  parent: [HappyHonk, BaseC3SyndicateContrabandUnredeemable] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandUnredeemable
+  parent: [HappyHonk] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandUnredeemable # Wayfarer: Remove contraband
   name: robust nukie meal
   description: A sus meal with a potentially explosive surprise.
   suffix: Toy Unsafe

@@ -69,6 +69,7 @@
 #  - ShipyardSpirit
 #  - ShipyardStasis
 #  - ShipyardStringer
+#  - ShipyardStronghold
 #  - ShipyardSurveyor
 #  - ShipyardTide
 #  - ShipyardVagabond
@@ -353,6 +354,11 @@
   id: ShipyardStringer
   name: guide-entry-shipyard-stringer
   text: "/ServerInfo/_NF/Guidebook/Shipyard/Stringer.xml"
+
+- type: guideEntry
+  id: ShipyardStronghold
+  name: guide-entry-shipyard-stronghold
+  text: "/ServerInfo/_NF/Guidebook/Shipyard/Stronghold.xml"
 
 - type: guideEntry
   id: ShipyardSurveyor

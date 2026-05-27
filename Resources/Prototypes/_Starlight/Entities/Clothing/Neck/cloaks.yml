@@ -1,0 +1,45 @@
+# Starlight clothing.
+
+- type: entity
+  parent: ClothingNeckBase
+  id: SLClothingUniformDama0965
+  name: black fur cloak
+  description: Neat cloak with fur around the neck and hem.
+  components:
+    - type: Sprite
+      sprite: _Starlight/Clothing/Neck/Cloaks/shuba.rsi
+    - type: Clothing
+      sprite: _Starlight/Clothing/Neck/Cloaks/shuba.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: SLClothingUniformShinelVampir
+  name: aristocrat cloak
+  description: A dark leather greatcoat. # wayfarer
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Neck/Cloaks/ari.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Neck/Cloaks/ari.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: SLClothingNeckTieGeoffroyblack12
+  name:  noble mantle
+  description: A light-colored cloak with golden patterns and lush white fur on the shoulders.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Neck/Cloaks/belpero.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Neck/Cloaks/belpero.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: SLRedRegaliaCloak
+  name: red regalia cloak
+  description: A fancy red cloak like a mafiaoso would wear.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Neck/Cloaks/red_regalia.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Neck/Cloaks/red_regalia.rsi

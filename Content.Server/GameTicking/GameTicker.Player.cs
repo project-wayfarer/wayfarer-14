@@ -215,6 +215,10 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(GetStatusMsg(session), client);
             RaiseNetworkEvent(GetInfoMsg(), client);
             RaiseLocalEvent(new PlayerJoinedLobbyEvent(session));
+
+            // Wayfarer: Send cached preferences immediately so the client's character list is populated
+            // as soon as they enter the lobby, without waiting for the async DB refresh from BankSystem.
+            _prefsManager.SendCachedPreferences(session);
         }
 
         private void ReqWindowAttentionAll()

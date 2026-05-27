@@ -45,6 +45,10 @@
       shader: unshaded
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
+    - state: paper # Coyote
+      visible: false
+      sprite: _CS/Objects/Misc/airlock_labels.rsi
+      map: [ "enum.PaperLabelVisuals.Layer" ]
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -79,6 +83,7 @@
   - type: ContainerContainer
     containers:
       board: !type:Container
+      paper_label: !type:ContainerSlot # Coyote
   - type: Weldable
     fuel: 5
     time: 3
@@ -92,6 +97,21 @@
         enum.ElectrifiedLayers.Sparks:
           True: { visible: True }
           False: { visible: False }
+      enum.PaperLabelVisuals.HasLabel: # Coyote
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.DoorVisuals.State: # Coyote
+        enum.PaperLabelVisuals.Layer:
+          Closing: { visible: false }
+          Opening: { visible: false }
+          Open: { visible: false }
+      enum.PaperLabelVisuals.LabelType: # Coyote
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
   - type: WiresVisuals
   - type: ElectrocutionHUDVisuals
   - type: ApcPowerReceiver
@@ -182,6 +202,19 @@
     - Airlocks
     - WirePanels
     - Networking
+  - type: ItemSlots # Wayfarer: Integration tests want this here since PaperLabel adds it if it isn't present
+  - type: PaperLabel # Coyote
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+        components: # Frontier
+        - Blueprint # Frontier
   placement:
     mode: SnapgridCenter
 

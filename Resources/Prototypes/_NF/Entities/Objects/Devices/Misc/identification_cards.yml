@@ -53,25 +53,25 @@
 #  - type: PresetIdCard
 #    job: PublicAffairsLiaison
 #  - type: Sprite
-#    sprite: _NF/Objects/Misc/id_cards.rsi
+#    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
 #    layers:
 #    - state: nfsd
 #    - state: idpublicaffairsliaison
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, BaseCGPContraband] # Wayfarer: added BaseCGPContraband
   id: CadetIDCard
   name: CGP junior peacekeeper ID card
   components:
   - type: PresetIdCard
     job: Cadet
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
     layers:
     - state: nfsd
     - state: idnfsdcadet
   - type: Clothing
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
   - type: Item
     heldPrefix: nfsd
 
@@ -83,7 +83,7 @@
   - type: PresetIdCard
     job: Deputy
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
     layers:
     - state: nfsd
     - state: idnfsddeputy
@@ -96,7 +96,7 @@
   - type: PresetIdCard
     job: Brigmedic
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
     layers:
     - state: nfsd
     - state: idnfsdbrigmed
@@ -109,7 +109,7 @@
   - type: PresetIdCard
     job: SeniorOfficer
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
     layers:
     - state: nfsd
     - state: idnfsdsergeant
@@ -122,7 +122,7 @@
   - type: PresetIdCard
     job: Bailiff
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
     layers:
     - state: nfsd
     - state: idnfsdbailiff
@@ -135,7 +135,7 @@
   - type: PresetIdCard
     job: Sheriff
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
     layers:
     - state: silver
     - state: idnfsdsheriff
@@ -150,7 +150,7 @@
   - type: PresetIdCard
     job: NFDetective
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _WF/Objects/Misc/id_cards.rsi # Wayfarer: _NF/Objects/Misc/id_cards.rsi < _WF/Objects/Misc/id_cards.rsi
     layers:
     - state: nfsd
     - state: idnfsddetective
@@ -207,10 +207,10 @@
 - type: entity
   parent: PassengerIDCard
   id: ContractorIDCard
-  name: contractor ID card
+  name: wayfarer ID card # Wayfarer: contractor < wayfarer
   components:
   - type: PresetIdCard
-    job: Contractor
+    job: Wayfarer # Wayfarer: Contractor < Wayfarer
   - type: Sprite
     sprite: _NF/Objects/Misc/id_cards.rsi
     layers:

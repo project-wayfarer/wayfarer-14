@@ -79,7 +79,7 @@
 - type: entity
   id: NFCartridgePistol35Uranium
   name: cartridge (.35 pistol, uranium)
-  parent: NFBaseCartridgePistol35
+  parent: [NFBaseCartridgePistol35, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: CartridgeAmmo
     proto: NFBulletPistol35Uranium
@@ -192,7 +192,7 @@
 - type: entity
   id: NFCartridgePistol45Uranium
   name: cartridge (.45 pistol, uranium)
-  parent: NFBaseCartridgePistol45
+  parent: [NFBaseCartridgePistol45, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: CartridgeAmmo
     proto: NFBulletPistol45Uranium

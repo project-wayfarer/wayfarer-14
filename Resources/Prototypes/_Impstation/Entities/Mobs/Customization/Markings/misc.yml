@@ -648,27 +648,28 @@
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: voxcocktail4
 
-- type: marking
-  id: VoxTailBalled
-  bodyPart: Tail
-  markingCategory: Tail
-  # speciesRestriction: [ Vox ] -WF
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: voxtailballed
+# Wayfarer Commented out due to being bugged and conflicting with upstream Wizden merges.
+#- type: marking
+#  id: VoxTailBalled
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  # speciesRestriction: [ Vox ] -WF
+#  forcedColoring: true
+#  followSkinColor: true
+#  sprites:
+#  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
+#    state: voxtailballed
 
-- type: marking
-  id: VoxTailSplit
-  bodyPart: Tail
-  markingCategory: Tail
-  # speciesRestriction: [ Vox ] -WF
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: voxtailsplit
+#- type: marking
+#  id: VoxTailSplit
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  # speciesRestriction: [ Vox ] -WF
+#  forcedColoring: true
+#  followSkinColor: true
+#  sprites:
+#  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
+#    state: voxtailsplit
 
 - type: marking
   id: VoxTailStripes

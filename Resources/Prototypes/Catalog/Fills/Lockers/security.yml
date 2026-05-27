@@ -199,7 +199,7 @@
       prob: 0.5
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseC1Contraband ] # Frontier: BaseSecurityContraband<BaseC1Contraband
+  parent: GunSafeBaseSecure # Frontier: BaseSecurityContraband<BaseC1Contraband # Wayfarer: Removed Contraband
   id: GunSafeDisabler
   name: disabler safe
   categories: [ HideSpawnMenu ] # Frontier
@@ -217,7 +217,7 @@
       amount: 5
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: GunSafeBaseSecure # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: GunSafePistolMk58
   name: mk58 safe
   categories: [ HideSpawnMenu ] # Frontier
@@ -237,7 +237,7 @@
       amount: 8
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: GunSafeBaseSecure # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: GunSafeRifleLecter
   name: Lecter safe # Frontier: caps
   categories: [ HideSpawnMenu ] # Frontier
@@ -257,7 +257,7 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: GunSafeBaseSecure # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: GunSafeSubMachineGunDrozd
   name: Drozd safe # Frontier: caps
   categories: [ HideSpawnMenu ] # Frontier
@@ -277,7 +277,7 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: GunSafeBaseSecure # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: GunSafeShotgunEnforcer
   name: Enforcer safe # Frontier: caps
   categories: [ HideSpawnMenu ] # Frontier
@@ -297,7 +297,7 @@
       amount: 4
 
 - type: entity
-  parent: [GunSafeBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: GunSafeBaseSecure # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: GunSafeShotgunKammerer
   name: Kammerer safe # Frontier: caps
   categories: [ HideSpawnMenu ] # Frontier
@@ -319,7 +319,7 @@
 - type: entity
   id: GunSafeSubMachineGunWt550
   suffix: Wt550
-  parent: [GunSafeBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: GunSafeBaseSecure # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   name: WT-550 safe # Frontier: caps
   categories: [ HideSpawnMenu ] # Frontier
   components:

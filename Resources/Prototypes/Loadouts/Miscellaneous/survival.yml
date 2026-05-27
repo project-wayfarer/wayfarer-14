@@ -6,7 +6,7 @@
     species:
     - SlimePerson
     - Vox
-    - OldKinVox
+    - AurelianVox # Wayfarer
 
 - type: loadoutEffectGroup
   id: OxygenBreather
@@ -19,6 +19,7 @@
     - Human
     - Moth
     - Reptilian
+    - Ovinia # The Den
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -26,7 +27,7 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Vox
-    - OldKinVox
+    - AurelianVox # Wayfarer
 
 # Basic
 - type: loadout

@@ -1,5 +1,5 @@
 - type: entity # Base Badge
-  parent: ClothingNeckBase
+  parent: [ClothingNeckBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingNeckNfsdBadge
   name: CGP badge
   description: Here to help.
@@ -37,9 +37,9 @@
   name: CGP corpsman badge
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Neck/Scarfs/nfsd_silvercross_badge.rsi
+    sprite: _WF/Clothing/Neck/Scarfs/CGP_silvercross_badge.rsi # Wayfarer: _NF/Clothing/Neck/Scarfs/nfsd_silvercross_badge.rsi < _WF/Clothing/Neck/Scarfs/CGP_silvercross_badge.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Neck/Scarfs/nfsd_silvercross_badge.rsi
+    sprite: _WF/Clothing/Neck/Scarfs/CGP_silvercross_badge.rsi # Wayfarer: _NF/Clothing/Neck/Scarfs/nfsd_silvercross_badge.rsi < _WF/Clothing/Neck/Scarfs/CGP_silvercross_badge.rsi
 
 - type: entity
   parent: ClothingNeckNfsdBadge

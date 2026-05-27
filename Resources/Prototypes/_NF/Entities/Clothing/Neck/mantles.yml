@@ -37,18 +37,18 @@
       - Plunger
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ClothingNeckBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingNeckMantleSheriff
   name: commodore's mantle
   description: Shootouts with nukies are just another Tuesday for this Commodore. This mantle is a symbol of commitment to the station.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Neck/Mantles/nfsdsheriff.rsi
+    sprite: _WF/Clothing/Neck/Mantles/CGPsheriff.rsi # Wayfarer: _NF/Clothing/Neck/Mantles/nfsdsheriff.rsi < _WF/Clothing/Neck/Mantles/CGPsheriff.rsi
   - type: Clothing
-    sprite: _NF/Clothing/Neck/Mantles/nfsdsheriff.rsi
+    sprite: _WF/Clothing/Neck/Mantles/CGPsheriff.rsi # Wayfarer: _NF/Clothing/Neck/Mantles/nfsdsheriff.rsi < _WF/Clothing/Neck/Mantles/CGPsheriff.rsi
 
 - type: entity
-  parent: ClothingNeckMantleHOP
+  parent: [ClothingNeckMantleHOP, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingNeckMantleSr
   name: station representative's mantle
   description: This mantle protects the station representative's neck and shoulders from vicious papercuts. This mantle is a symbol of Central Command's trust.
@@ -61,7 +61,7 @@
 - type: entity
   id: ClothingNeckMantleBH
   name: "bounty hunter's mantle"
-  parent: [ BaseC1Contraband, ClothingNeckMantleHOS ]
+  parent: ClothingNeckMantleHOS # Wayfarer: Removed contraband
   description: "I can bring you in warm or I can bring you in cold. Or you can outbid the bounty."
   components:
   - type: Sprite

@@ -323,6 +323,7 @@
     - NFMedicalBoards # Frontier
     - NFServiceBoards # Frontier
     - NFEngineeringBoardsCircuitImprinter # Frontier
+    - ReactorCircuitboards # Far Horizons
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
     # - SecurityBoards # Frontier
@@ -708,10 +709,6 @@
   # End Frontier: emag lathe recipes, item mapper
   # Coyote Start: Biogenerator Buffer System
   - type: BiogeneratorBuffer
-    current: 0
-    max: 100
-    regenAmount: 5
-    regenInterval: 15 # Wayfarer: 10<15
   # End Coyote
 
 - type: entity
@@ -836,6 +833,7 @@
     - NFFloorsMiscStatic # Frontier
     - NFFloorTiles # Frontier
     - NFFloorTilesCarpet # Frontier
+    - FloorTilesStaticMonolith # Monolith
     dynamicPacks: # Frontier
     - FauxTiles # Frontier
   - type: EmagLatheRecipes # Frontier

@@ -22,7 +22,7 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
     {
         base.Initialize();
         SubscribeLocalEvent<GetVerbsEvent<Verb>>(OnGetVerbs);
-        SubscribeLocalEvent<ActivateInWorldEvent>(OnActivateInWorld, after: [typeof(StrippableSystem)]);
+        //SubscribeLocalEvent<ActivateInWorldEvent>(OnActivateInWorld, after: [typeof(StrippableSystem)]); # Wayfarer: There's already a right click menu. This isn't needed.
         SubscribeLocalEvent<CustomExamineComponent, AfterAutoHandleStateEvent>(OnStateUpdate);
     }
 
@@ -41,7 +41,7 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
             DoContactInteraction = false
         });
     }
-
+    /* // Wayfarer: Redundant. Removed.
     private void OnActivateInWorld(ActivateInWorldEvent ev)
     {
         // This one works only if user == target, because otherwise it would conflict with stripping ui
@@ -53,6 +53,7 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
 
         OpenUi(ev.Target);
     }
+    */ //End Wayfarer: Redundant. Removed.
 
     private void OnStateUpdate(Entity<CustomExamineComponent> ent, ref AfterAutoHandleStateEvent args)
     {

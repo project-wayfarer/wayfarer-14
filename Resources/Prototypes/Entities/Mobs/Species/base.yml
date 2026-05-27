@@ -9,6 +9,7 @@
   id: BaseMobSpecies
   abstract: true
   components:
+  - type: Carriable # Wayfarer, makes all mobs carriable. Weight still applies.
   - type: Sprite
     layers:
     - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
@@ -222,6 +223,7 @@
     - DoorBumpOpener
     - AnomalyHost
   - type: ModifyUndies  # FLOOF Add
+  - type: DamageCap # Wayfarer
 
 - type: entity
   save: false

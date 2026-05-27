@@ -48,7 +48,7 @@
   categories: [ HideSpawnMenu ] # Frontier
   name: Bulldog
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseItem, BaseGunWieldable, BaseBMContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: WeaponShotgunBulldog
   description: An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses .50 shotgun shells.
   components:
@@ -106,7 +106,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: double-barreled shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC1Contraband] # Frontier: BaseSecurityBartenderZookeeperContraband<BaseC1Contraband
+  parent: [BaseWeaponShotgun, BaseGunWieldable] # Frontier: BaseSecurityBartenderZookeeperContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. A civilian grade shotgun. Uses .50 shotgun shells.
   components:
@@ -142,7 +142,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: Enforcer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseMilitaryContraband] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: WeaponShotgunEnforcer
   description: A premium semi-automatic shotgun, featuring an upgraded clip capacity. Uses .50 shotgun shells. # Frontier: no sec reference
   components: # intend for Enforcer to have wider choke for semi-auto function
@@ -169,7 +169,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: Kammerer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponShotgun, BaseGunWieldable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Remove contraband
   id: WeaponShotgunKammerer
   description: An old yet faithful design, and a favorite among irregular forces on many worlds. Uses .50 shotgun shells. # Frontier: of<on
   components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
@@ -191,7 +191,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: sawn-off shotgun
-  parent: [ BaseWeaponShotgun, BaseC1Contraband ] # Frontier: BaseSecurityBartenderContraband<BaseC1Contraband
+  parent: BaseWeaponShotgun # Frontier: BaseSecurityBartenderContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponShotgunSawn
   description: Groovy! Uses .50 shotgun shells.
   components: # needs to be super inaccurate because you don't need to wield it
@@ -232,7 +232,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: handmade pistol
-  parent: [BaseWeaponShotgun, BaseC1Contraband] # Frontier: BaseMinorContraband<BaseC1Contraband
+  parent: BaseWeaponShotgun # Frontier: BaseMinorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponShotgunHandmade
   description: Looks unreliable, but legal. Uses .50 shotgun shells.
   components:
@@ -278,7 +278,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: improvised shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC1Contraband] # Frontier: BaseMinorContraband<BaseC1Contraband
+  parent: [BaseWeaponShotgun, BaseGunWieldable] # Frontier: BaseMinorContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponShotgunImprovised
   description: A shitty, but legal, hand-made shotgun that uses .50 shotgun shells. It can only hold one round in the chamber.
   components:

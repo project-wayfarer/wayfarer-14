@@ -1,0 +1,12 @@
+- type: job
+  id: Inactive
+  name: job-name-inactive
+  description: job-description-inactive
+  playTimeTracker: JobInactive
+  setPreference: false
+  icon: "JobIconUnknown"
+  supervisors: job-supervisors-hire
+  canBeAntag: false
+
+- type: playTimeTracker
+  id: JobInactive

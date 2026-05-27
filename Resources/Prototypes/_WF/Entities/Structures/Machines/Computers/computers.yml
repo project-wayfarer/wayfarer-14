@@ -1,0 +1,22 @@
+- type: entity
+  id: WFComputerCargoOrdersEdison
+  parent: ComputerCargoOrders
+  name: plant manager's cargo request computer
+  description: Used to purchase restricted engineering supplies.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: request-eng
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: NFCargoOrderConsole
+    allowedGroups: [ "wfengineeringrestricted" ]
+  - type: AccessReader
+    access: [["ChiefEngineer"]]

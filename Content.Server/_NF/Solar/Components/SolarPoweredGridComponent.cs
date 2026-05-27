@@ -37,7 +37,7 @@ public sealed partial class SolarPoweredGridComponent : Component
     /// Useful to keep POIs running where players might not touch the solars.
     /// </summary>
     [DataField]
-    public bool TrackOnInit;
+    public bool TrackOnInit = true; // Wayfarer: Set to true
 
     /// <summary>
     /// If true, this component will not be culled.

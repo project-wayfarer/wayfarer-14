@@ -2,7 +2,7 @@
 - type: entity
   id: NFBaseShellShotgun
   name: shell (.50)
-  parent: [ BaseC1Contraband, BaseShellShotgun ]
+  parent: BaseShellShotgun # Wayfarer: Removed contraband
   abstract: true
   components:
   - type: Tag
@@ -80,7 +80,7 @@
 - type: entity
   id: NFShellShotgunUranium
   name: shell (.50 uranium)
-  parent: NFBaseShellShotgun
+  parent: [NFBaseShellShotgun, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: Sprite
     layers:

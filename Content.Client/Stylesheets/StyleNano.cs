@@ -1584,6 +1584,9 @@ namespace Content.Client.Stylesheets
 
                 Element<Label>().Class(StyleClassLabelSmall)
                  .Prop(Label.StylePropertyFont, notoSans10),
+
+                Element<RichTextLabel>().Class(StyleClassLabelSmall)
+                 .Prop("font", notoSans10),
                 // ---
 
                 // Different Background shapes ---
@@ -1734,6 +1737,13 @@ namespace Content.Client.Stylesheets
 
                 Child().Parent(Element<Button>().Class("ButtonSmall"))
                     .Child(Element<Label>())
+                    .Prop(Label.StylePropertyFont, notoSans8),
+
+                Element<OptionButton>().Class("ButtonSmall")
+                    .Prop(ContainerButton.StylePropertyStyleBox, smallButtonBase),
+
+                Child().Parent(Element<OptionButton>().Class("ButtonSmall"))
+                    .Child(Element<Label>().Class(OptionButton.StyleClassOptionButton))
                     .Prop(Label.StylePropertyFont, notoSans8),
                 // ---
 

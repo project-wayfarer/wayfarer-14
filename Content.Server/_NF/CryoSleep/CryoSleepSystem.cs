@@ -10,6 +10,8 @@ using Content.Server.Ghost;
 using Content.Server.Interaction;
 using Content.Server.Mind;
 using Content.Server.Popups;
+using Content.Server.GameTicking; // Wayfarer
+using Content.Server.Players.PlayTimeTracking; // Wayfarer
 using Content.Server.Station.Systems;
 using Content.Shared._NF.CCVar;
 using Content.Shared._NF.CryoSleep;
@@ -77,6 +79,8 @@ public sealed partial class CryoSleepSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!; //For cryosleep warnings
     [Dependency] private readonly Shared.Roles.SharedRoleSystem _roles = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!; // Wayfarer
+    [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!; // Wayfarer
 
     private readonly Dictionary<NetUserId, List<StoredBody>> _storedBodies = new();
     private EntityUid? _storageMap;
@@ -98,6 +102,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
 
         SubscribeNetworkEvent<GetStoredCharactersRequestMessage>(OnGetStoredCharactersRequest);
         SubscribeNetworkEvent<ResumeCharacterRequestMessage>(OnResumeCharacterRequest);
+        SubscribeNetworkEvent<RemoveStoredCharacterRequestMessage>(OnRemoveStoredCharacterRequest); // Wayfarer
 
         InitReturning();
     }
@@ -530,6 +535,63 @@ public sealed partial class CryoSleepSystem : EntitySystem
         _storedBodies.Clear();
     }
 
+    // Wayfarer
+    private void OnRemoveStoredCharacterRequest(RemoveStoredCharacterRequestMessage msg, EntitySessionEventArgs args)
+    {
+        var userId = args.SenderSession.UserId;
+
+        if (!_storedBodies.TryGetValue(userId, out var storedBodies))
+            return;
+
+        var body = GetEntity(msg.Body);
+
+        StoredBody? toRemove = null;
+        foreach (var sb in storedBodies)
+        {
+            if (sb.Body == body)
+            {
+                toRemove = sb;
+                break;
+            }
+        }
+
+        if (toRemove == null)
+            return;
+
+        storedBodies.Remove(toRemove.Value);
+        if (storedBodies.Count == 0)
+            _storedBodies.Remove(userId);
+
+        // Delete the body entity entirely so it no longer occupies a cryopod.
+        if (Exists(body) && !Deleted(body))
+            QueueDel(body);
+
+        _adminLogger.Add(LogType.Action, LogImpact.Medium,
+            $"{userId} removed their stored cryo character {body}.");
+
+        // Send updated list so the window refreshes.
+        var updatedBodies = _storedBodies.TryGetValue(userId, out var remaining) ? remaining : new List<StoredBody>();
+        var characters = new List<StoredCharacterInfo>();
+        foreach (var sb in updatedBodies)
+        {
+            if (!Exists(sb.Body) || Deleted(sb.Body))
+                continue;
+            var jobName = "Unknown";
+            if (_roles.MindHasRole<JobRoleComponent>(sb.Mind, out var jobRole)
+                && jobRole.Value.Comp1.JobPrototype is {} proto)
+                jobName = proto;
+            characters.Add(new StoredCharacterInfo(
+                GetNetEntity(sb.Body),
+                GetNetEntity(sb.Cryopod),
+                MetaData(sb.Body).EntityName,
+                jobName,
+                sb.StationName,
+                sb.CharacterSlot));
+        }
+        RaiseNetworkEvent(new GetStoredCharactersResponseMessage(characters), args.SenderSession);
+    }
+    // End Wayfarer
+
     private void OnGetStoredCharactersRequest(GetStoredCharactersRequestMessage msg, EntitySessionEventArgs args)
     {
         var userId = args.SenderSession.UserId;
@@ -560,7 +622,8 @@ public sealed partial class CryoSleepSystem : EntitySystem
                         GetNetEntity(cryopod),
                         characterName,
                         jobName,
-                        storedBody.StationName
+                        storedBody.StationName,
+                        storedBody.CharacterSlot // Wayfarer
                     ));
                 }
             }
@@ -632,6 +695,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
                 return;
         }
 
+        // Begin Wayfarer
         // Remove from stored bodies and transfer control to the player
         storedBodies.Remove(storedBody.Value);
         if (storedBodies.Count == 0)
@@ -646,11 +710,15 @@ public sealed partial class CryoSleepSystem : EntitySystem
             bankComp.CharacterSlot = storedBody.Value.CharacterSlot;
         }
 
-        // Tell the client to switch to game state
+        // Wayfarer: Properly transition the player from lobby to game state and refresh playtime tracking.
         if (_player.TryGetSessionById(userId, out var session))
         {
-            RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
+            _gameTicker.PlayerJoinGame(session, silent: true);
+            _playTimeTracking.QueueRefreshTrackers(session);
+            _playTimeTracking.QueueSendTimers(session);
         }
+
+        // End Wayfarer
 
         // Force the mob to sleep
         var sleep = EnsureComp<SleepingComponent>(body);

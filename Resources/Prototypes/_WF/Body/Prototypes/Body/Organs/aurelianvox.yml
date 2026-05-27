@@ -1,0 +1,132 @@
+- type: entity
+  parent: OrganHumanBrain
+  id: OrganAurelianVoxNode
+  name: cortical node
+  description: "A advanced bio-electronic device containing all the memories and identity of a Vox."
+  components:
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Silicon
+          Quantity: 10
+        - ReagentId: GreyMatter
+          Quantity: 5
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Silicon
+          Quantity: 10
+        - ReagentId: GreyMatter
+          Quantity: 5
+
+- type: entity
+  id: OrganAurelianVoxLungs
+  parent: OrganHumanLungs
+  description: "The blue, anaerobic lungs of a vox, they intake nitrogen to breathe. Any form of gaseous oxygen is lethally toxic if breathed in."
+  suffix: "aurelian vox"
+  name: aurelian vox lungs
+  components:
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [ AurelianVox, Vox ]
+  - type: Lung
+    alert: LowNitrogen
+  - type: Item
+    size: Small
+    heldPrefix: lungs
+
+- type: entity
+  parent: OrganHumanStomach
+  id: OrganAurelianVoxStomach
+  name: aurelian vox stomach # DeltaV
+  description: "A stomach that smells of ammonia."
+  components:
+  - type: Metabolizer #Skreeeee!
+    metabolizerTypes: [ AurelianVox, Vox ]
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Trash
+    carnivoreDigestible:
+      tags:
+      - Trash
+    herbivoreDigestible:
+      tags:
+      - Trash
+    isSpecialDigestibleExclusive: false
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+
+- type: entity
+  parent: OrganHumanLiver
+  id: OrganAurelianVoxLiver
+  name: aurelian vox liver
+  description: "Smells flammable."
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ AurelianVox, Vox ]
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+
+- type: entity
+  parent: OrganHumanHeart
+  id: OrganAurelianVoxHeart
+  name: aurelian vox heart
+  description: "The strange heart of a vox."
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ AurelianVox, Vox ]
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+
+- type: entity
+  parent: OrganHumanKidneys
+  id: OrganAurelianVoxKidneys
+  name: aurelian vox kidneys
+  description: "Smells flammable."
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ AurelianVox, Vox ]
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+
+- type: entity
+  id: OrganAurelianVoxEyes
+  parent: OrganHumanEyes
+  name: aurelian vox eyes
+  description: "They shift in strange ways."
+  components:
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+  - type: Item
+    size: Small
+    heldPrefix: eyeballs
+
+- type: entity
+  id: OrganAurelianVoxTongue
+  parent: OrganHumanTongue
+  name: aurelian vox tongue
+  description: "A fleshy meat muscle mostly used for screaming."
+  components:
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+  - type: Item
+    size: Small
+
+- type: entity
+  id: OrganAurelianVoxBrain
+  parent: BaseHumanOrgan
+  name: aurelian vox brain # There still should be one in there.
+  description: "What a Node is attaced to, still just meat."
+  components:
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/organs.rsi
+    state: brain-b
+  - type: Item
+    size: Small

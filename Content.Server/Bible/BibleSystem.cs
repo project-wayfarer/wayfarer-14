@@ -144,23 +144,25 @@ namespace Content.Server.Bible
                 return;
             }
 
+            // Wayfarer: A bible user's heal can no longer injure the target.
             // This only has a chance to fail if the target is not wearing anything on their head and is not a familiar.
-            if (!_invSystem.TryGetSlotEntity(args.Target.Value, "head", out var _) && !HasComp<FamiliarComponent>(args.Target.Value))
-            {
-                if (_random.Prob(component.FailChance))
-                {
-                    var othersFailMessage = Loc.GetString(component.LocPrefix + "-heal-fail-others", ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
-                    _popupSystem.PopupEntity(othersFailMessage, args.User, Filter.PvsExcept(args.User), true, PopupType.SmallCaution);
-
-                    var selfFailMessage = Loc.GetString(component.LocPrefix + "-heal-fail-self", ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
-                    _popupSystem.PopupEntity(selfFailMessage, args.User, args.User, PopupType.MediumCaution);
-
-                    _audio.PlayPvs(component.BibleHitSound, args.User);
-                    _damageableSystem.TryChangeDamage(args.Target.Value, component.DamageOnFail, true, origin: uid);
-                    _delay.TryResetDelay((uid, useDelay));
-                    return;
-                }
-            }
+            //if (!_invSystem.TryGetSlotEntity(args.Target.Value, "head", out var _) && !HasComp<FamiliarComponent>(args.Target.Value))
+            //{
+            //    if (_random.Prob(component.FailChance))
+            //    {
+            //        var othersFailMessage = Loc.GetString(component.LocPrefix + "-heal-fail-others", ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
+            //        _popupSystem.PopupEntity(othersFailMessage, args.User, Filter.PvsExcept(args.User), true, PopupType.SmallCaution);
+            //
+            //        var selfFailMessage = Loc.GetString(component.LocPrefix + "-heal-fail-self", ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
+            //        _popupSystem.PopupEntity(selfFailMessage, args.User, args.User, PopupType.MediumCaution);
+            //
+            //        _audio.PlayPvs(component.BibleHitSound, args.User);
+            //        _damageableSystem.TryChangeDamage(args.Target.Value, component.DamageOnFail, true, origin: uid);
+            //        _delay.TryResetDelay((uid, useDelay));
+            //        return;
+            //    }
+            //}
+            // End Wayfarer
 
             var damage = _damageableSystem.TryChangeDamage(args.Target.Value, component.Damage, true, origin: uid);
 

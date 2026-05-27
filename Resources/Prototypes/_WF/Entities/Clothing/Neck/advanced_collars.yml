@@ -164,7 +164,7 @@
 # Collar Modules
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemPlasticTiny]
   id: BaseAdvCollarModule
   name: collar module
   description: A module that can be installed into an advanced collar.

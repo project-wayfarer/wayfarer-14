@@ -15,3 +15,5 @@ point-disk-ui-total-label = There are {$amount} points on the selected server
 point-disk-ui-print-1k-button = Print Point Disk ({$amount})
 point-disk-ui-print-5k-button = Print Point Disk ({$amount})
 point-disk-ui-print-10k-button = Print Point Disk ({$amount})
+# Wayfarer
+point-disk-ui-print-50k-button = Print Point Disk ({$amount})

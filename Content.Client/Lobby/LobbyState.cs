@@ -32,6 +32,7 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
+        [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!; // Wayfarer;
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
@@ -45,6 +46,9 @@ namespace Content.Client.Lobby
 
         // Track whether the user clicked the Resume button
         private bool _pendingResumeRequest = false;
+
+        // Wayfarer: Tracks which character preference slots currently have a body in cryosleep.
+        private readonly HashSet<int> _cryoCharacterSlots = new();
 
         protected override void Startup()
         {
@@ -88,6 +92,7 @@ namespace Content.Client.Lobby
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
 
             _cryoSleepSystem.OnCharactersResponse += OnGetStoredCharactersResponse;
+            _preferencesManager.OnCharacterSelected += UpdateJoinButtonState; // Wayfarer
         }
 
         protected override void Shutdown()
@@ -107,7 +112,9 @@ namespace Content.Client.Lobby
             Lobby!.ResumeButton.OnPressed -= OnResumePressed;
 
             _cryoSleepSystem.OnCharactersResponse -= OnGetStoredCharactersResponse;
+            _preferencesManager.OnCharacterSelected -= UpdateJoinButtonState; // Wayfarer
 
+            _cryoCharacterSlots.Clear(); // Wayfarer
             Lobby = null;
         }
 
@@ -143,11 +150,22 @@ namespace Content.Client.Lobby
 
         private void OnGetStoredCharactersResponse(GetStoredCharactersResponseMessage msg)
         {
+            // Wayfarer: Update cryo slot set so the Join button can reflect the correct state.
+            _cryoCharacterSlots.Clear();
+            foreach (var c in msg.Characters)
+            {
+                if (c.CharacterSlot >= 0)
+                    _cryoCharacterSlots.Add(c.CharacterSlot);
+            }
+            // End Wayfarer
+
             // Update Resume button visibility
             if (_gameTicker.IsGameStarted && Lobby != null)
             {
                 Lobby.ResumeButton.Visible = msg.Characters.Count > 0;
             }
+
+            UpdateJoinButtonState(); // Wayfarer
 
             // If this was triggered by clicking the Resume button, show the window
             if (_pendingResumeRequest)
@@ -251,8 +269,32 @@ namespace Content.Client.Lobby
 
         private void LobbyLateJoinStatusUpdated()
         {
-            Lobby!.ReadyButton.Disabled = _gameTicker.DisallowedLateJoin;
+            UpdateJoinButtonState(); // Wayfarer
         }
+
+        /// <summary>
+        /// Updates the Join/Ready button's disabled state, combining the DisallowedLateJoin flag
+        /// and whether the currently selected character is already in cryosleep.
+        /// </summary>
+        private void UpdateJoinButtonState()
+        {
+            if (Lobby == null)
+                return;
+
+            var inCryo = _gameTicker.IsGameStarted && IsSelectedCharacterInCryo();
+            Lobby.ReadyButton.Disabled = _gameTicker.DisallowedLateJoin || inCryo;
+            Lobby.ReadyButton.ToolTip = inCryo
+                ? Loc.GetString("lobby-state-join-button-cryo-tooltip")
+                : null;
+        }
+
+        // Wayfarer
+        private bool IsSelectedCharacterInCryo()
+        {
+            var slot = _preferencesManager.Preferences?.SelectedCharacterIndex;
+            return slot.HasValue && _cryoCharacterSlots.Contains(slot.Value);
+        }
+        // End Wayfarer
 
         private void UpdateLobbyUi()
         {

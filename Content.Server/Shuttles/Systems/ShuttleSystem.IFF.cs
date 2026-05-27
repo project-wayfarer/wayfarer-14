@@ -22,7 +22,7 @@ public sealed partial class ShuttleSystem
     {
         UpdateIFFInterfaces(uid, component);
     }
-    // Wayfarer end
+    // End Wayfarer
 
     private void OnGridSplit(ref GridSplitEvent ev)
     {
@@ -115,7 +115,7 @@ public sealed partial class ShuttleSystem
             Flags = IFFFlags.None,
         });
     }
-    // Wayfarer end
+    // End Wayfarer
 
     protected override void UpdateIFFInterfaces(EntityUid gridUid, IFFComponent component)
     {

@@ -68,7 +68,7 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [DataField]
         public float DampingModifier = 0.25f; // Wayfarer: 0<0.25
-        // Wayfarer end
+        // End Wayfarer
 
         /// <summary>
         /// Delay between checks to throw on the E-brake.

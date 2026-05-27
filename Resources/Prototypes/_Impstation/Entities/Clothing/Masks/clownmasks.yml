@@ -1,0 +1,14 @@
+﻿- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskClownNose
+  name: clown nose
+  description: A fashion statement in clown culture.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Mask/clownnose.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Mask/clownnose.rsi
+  - type: BreathMask
+  - type: Tag
+    tags:
+    - ClownMask

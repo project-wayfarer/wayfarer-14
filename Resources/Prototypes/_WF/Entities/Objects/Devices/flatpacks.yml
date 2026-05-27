@@ -8,7 +8,7 @@
     entity: PortableGeneratorBioPacman
 
 - type: entity
-  parent: [ BaseNFFlatpack, BaseDDContraband]
+  parent: [ BaseNFFlatpack, BaseBMContraband ]
   id: ShuttleGunPirateCannonFlatpack
   name: pirate cannon flatpack
   description: A flatpack used for constructing a pirate cannon.

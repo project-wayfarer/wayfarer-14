@@ -37,7 +37,7 @@
         friction: 0.2
 
 - type: entity
-  parent: [ScatteringGrenadeBase, BaseC2ContrabandUnredeemable, RecyclableItemSteelMedium] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable added RecyclableItemSteelMedium
+  parent: [ScatteringGrenadeBase, BaseMilitaryContraband, RecyclableItemSteelMedium] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable added RecyclableItemSteelMedium # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: ClusterBang
   name: clusterbang
   description: Can be used only with flashbangs. Explodes several times.

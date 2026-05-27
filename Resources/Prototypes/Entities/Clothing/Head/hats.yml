@@ -71,7 +71,7 @@
   parent: [ClothingHeadBase] # WF Removed Contraband
   id: ClothingHeadHatSecurityTrooper
   name: trooper hat
-  description: A campaign hat for the troopers. It's supposed to come with a case, too... # wayfarer edit: remove nanotrasen mention in description
+  description: A campaign hat for the troopers. It's supposed to come with a case, too... # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/security_trooper_hat.rsi
@@ -237,7 +237,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretCommand
   name: command beret
-  description: A beret with an aura of authority. # wayfarer edit: remove nanotrasen mention in description
+  description: A beret with an aura of authority. # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/beret_command.rsi

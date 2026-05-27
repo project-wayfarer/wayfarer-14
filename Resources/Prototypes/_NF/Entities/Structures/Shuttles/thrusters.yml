@@ -219,6 +219,10 @@
   parent: ThrusterSecurity
   suffix: CGP
   components:
+  # Wayfarer: Slight CGP Thruster buff
+  - type: Thruster
+    thrustPerPartLevel: [135, 175, 215, 255]
+  # End Wayfarer
   - type: Sprite
     sprite: _WF/Structures/Shuttles/thruster.rsi
     layers: &nfsdThrusterLayers

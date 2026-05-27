@@ -314,6 +314,25 @@ namespace Content.Server.Preferences.Managers
                 _entityManager.EventBus.RaiseLocalEvent(session.AttachedEntity.Value, new PreferencesLoadedEvent(session, prefsData.Prefs));
         }
 
+        // Wayfarer
+        public void SendCachedPreferences(ICommonSession session)
+        {
+            // Wayfarer: Send already-loaded preferences to the client without a DB round-trip.
+            // Used when a player (re-)enters the lobby so they immediately have their character list
+            // without waiting for the async RefreshPreferencesAsync to complete.
+            if (!_cachedPlayerPrefs.TryGetValue(session.UserId, out var prefsData) || prefsData.Prefs == null)
+                return;
+
+            var msg = new MsgPreferencesAndSettings();
+            msg.Preferences = prefsData.Prefs;
+            msg.Settings = new GameSettings
+            {
+                MaxCharacterSlots = MaxCharacterSlots
+            };
+            _netManager.ServerSendMessage(msg, session.Channel);
+        }
+        // End Wayfarer
+
         public void OnClientDisconnected(ICommonSession session)
         {
             _cachedPlayerPrefs.Remove(session.UserId);

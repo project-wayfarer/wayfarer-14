@@ -98,7 +98,7 @@ player-panel-job-whitelists = Role Whitelists
 
 # Mapping
 
-For ship submissons, refer to the [Ship Submission Guidelines](https://wayfarer14.com/wiki/mapping-requirements) on the Wayfarer wiki.
+For ship submissons, refer to the [Ship Submission Requirements](SHIP_SUBMISSION_REQUIREMENTS.md)
 
 In general:
 

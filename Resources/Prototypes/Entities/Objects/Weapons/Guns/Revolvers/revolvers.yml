@@ -55,7 +55,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: Deckard
-  parent: [BaseWeaponRevolver, BaseC1Contraband] # Frontier: BaseSecurityCommandContraband<BaseC1Contraband
+  parent: BaseWeaponRevolver # Frontier: BaseSecurityCommandContraband<BaseC1Contraband # Wayfarer: Removed contraband
   id: WeaponRevolverDeckard
   description: A beautifully machined, custom-built revolver. Used when there is no time for the Voight-Kampff test. Loads 5 rounds of .45 magnum.
   components:
@@ -84,7 +84,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: Inspector
-  parent: [BaseWeaponRevolver, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponRevolver] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Remove contraband
   id: WeaponRevolverInspector
   description: A single-action revolver manufactured by various companies. It is readily available on the civilian market, making it a popular choice among private investigators. You feel lucky just holding it. Loads 6 rounds of .45 magnum.
   components:
@@ -102,7 +102,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: Mateba
-  parent: [BaseWeaponRevolver, BaseC2ContrabandUnredeemable] # Frontier: BaseMajorContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponRevolver] # Frontier: BaseMajorContraband<BaseC2ContrabandUnredeemable # Wayfarer: Remove contraband
   id: WeaponRevolverMateba
   description: A modern revolver used by Nanotrasen’s elite, near mythical ‘Death Squad’ task force. Its unique trigger action and barrel placement enable a high fire rate with minimal muzzle flip. Many have looked down this barrel, but few have lived to tell of it. Loads 6 rounds of .45 magnum.
   components:
@@ -129,7 +129,7 @@
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
   name: Python
-  parent: [BaseWeaponRevolver, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseWeaponRevolver] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: Remove contraband
   id: WeaponRevolverPython
   description: A powerful double-action revolver manufactured by the Syndicate. Loud and flashy, perfect for any agent looking to make a statement. Loads 6 rounds of .45 magnum.
   components:

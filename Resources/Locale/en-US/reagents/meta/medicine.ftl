@@ -26,10 +26,10 @@ reagent-desc-dermaline = An advanced chemical that is more effective at treating
 
 # Wayfarer Start
 reagent-name-dexalin = dexalin
-reagent-desc-dexalin = Used for treating minor oxygen deprivation and bloodloss, mildly toxic to Avali. A required reagent for dexalin plus.
+reagent-desc-dexalin = Used for treating minor oxygen deprivation and bloodloss, mildly toxic to Aurelian Vox and Avali. A required reagent for dexalin plus.
 
 reagent-name-dexalin-plus = dexalin plus
-reagent-desc-dexalin-plus = Used in treatment of extreme cases of oxygen deprivation and bloodloss, toxic to Avali. Flushes heartbreaker toxin out of the blood stream.
+reagent-desc-dexalin-plus = Used in treatment of extreme cases of oxygen deprivation and bloodloss, toxic to Aurelian Vox and Avali. Flushes heartbreaker toxin out of the blood stream.
 
 reagent-name-ruboxadone = ruboxadone
 reagent-desc-ruboxadone = A cryogenics chemical. Heals rot damage caused by unfrozen flesh. Works regardless of the patient being alive or dead.

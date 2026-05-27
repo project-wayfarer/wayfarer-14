@@ -32,6 +32,7 @@
 - type: entity
   id: NFBaseLockerGridInvWallColor
   parent: [ ShelfBaseReinforced, BaseStructureWallmount ]
+  description: A lockable shelving unit for organized storage # Coyote
   suffix: Frontier
   abstract: true
   components:
@@ -48,6 +49,25 @@
   - type: EntityStorageVisuals
     stateDoorOpen: open
     stateDoorClosed: door
+  # Coyote Start: Make them metal
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 4
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  # Coyote End
   - type: Storage
     grid:
     - 0,0,5,6

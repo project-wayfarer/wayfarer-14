@@ -117,7 +117,7 @@
 #Empty black
 - type: entity
   id: JetpackBlack
-  parent: [BaseJetpack, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
+  parent: [BaseJetpack] # Wayfarer: Remove contraband
   name: jetpack
   suffix: Empty
   components:
@@ -132,11 +132,11 @@
     #  - Back
     # End DeltaV modifications
   # Frontier: emaggable jetpacks
-  - type: Tag
-    tags:
-      - DemagImmune
-  - type: Jetpack
-    radarBlip: false
+#  - type: Tag
+#    tags:
+#      - DemagImmune
+#  - type: Jetpack
+#    radarBlip: false
   # End Frontier: emaggable jetpacks
 #  - type: StaticPrice # Frontier
 #    price: 1000 # Frontier
@@ -269,12 +269,12 @@
   - type: GasTank
     outputPressure: 42.6
     air:
-      # 4 minutes of thrust
-      volume: 1.5
+      # 4 minutes of thrust # Wayfarer: switched to 13
+      volume: 5 # Wayfarer: 1.5<5
       temperature: 293.15
       moles:
-      - 0.307706858 # oxygen
-      - 0.307706858 # nitrogen
+      - 1.025689525 # oxygen # Wayfarer: 0.307706858<1.025689525
+      - 1.025689525 # nitrogen # Wayfarer: 0.307706858<1.025689525
 
 #Empty void
 - type: entity

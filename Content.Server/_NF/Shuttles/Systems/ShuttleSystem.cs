@@ -102,7 +102,7 @@ public sealed partial class ShuttleSystem
             _autopilot.DisableAutopilot(transform.GridUid.Value);
             _autopilot.SendShuttleMessage(transform.GridUid.Value, "Autopilot disengaged - manual mode change");
         }
-        // Wayfarer end
+        // End Wayfarer
 
         if (SetInertiaDampening(uid, physicsComponent, shuttleComponent, transform, args.Mode) && args.Mode != InertiaDampeningMode.Query)
             component.DampeningMode = args.Mode;

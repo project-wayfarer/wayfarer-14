@@ -68,20 +68,37 @@
                                VerticalExpand="True"
                                HorizontalAlignment="Center"/>
                     </controls1:StripeBack>
-                    <controls:Button Name="IFFToggle"
-                            Text="{controls:Loc 'shuttle-console-iff-toggle'}"
+                    <controls:BoxContainer Orientation="Horizontal"
+                                  HorizontalAlignment="Stretch"
+                                  HorizontalExpand="True">
+                        <controls:Button Name="IFFToggle"
+                                Text="{controls:Loc 'shuttle-console-iff-toggle'}"
+                                TextAlign="Center"
+                                StyleClasses="OpenRight"
+                                ToggleMode="True"
+                                HorizontalExpand="True"/>
+                        <!-- Frontier: hide player shuttles -->
+                        <controls:Button Name="IFFShuttleToggle"
+                                 Text="{controls:Loc 'shuttle-console-iffshuttles-toggle'}"
+                                 TextAlign="Center"
+                                 StyleClasses="OpenBoth"
+                                 ToggleMode="True"
+                                 HorizontalExpand="True"/>
+                        <!-- End Frontier: hide player shuttles -->
+                        <controls:Button Name="DockToggle"
+                                Text="{controls:Loc 'shuttle-console-dock-toggle'}"
+                                TextAlign="Center"
+                                StyleClasses="OpenLeft"
+                                ToggleMode="True"
+                                HorizontalExpand="True"/>
+                    </controls:BoxContainer>
+
+                    <!-- Wayfarer - Radar Settings -->
+                    <controls:Button Name="NavRadarSettingsButton"
+                            Text="{controls:Loc 'shuttle-console-nav-radar-settings'}"
                             TextAlign="Center"
-                            ToggleMode="True"/>
-                    <!-- Frontier: hide player shuttles -->
-                    <controls:Button Name="IFFShuttleToggle"
-                             Text="{controls:Loc 'shuttle-console-iffshuttles-toggle'}"
-                             TextAlign="Center"
-                             ToggleMode="True"/>
-                    <!-- End Frontier: hide player shuttles -->
-                    <controls:Button Name="DockToggle"
-                            Text="{controls:Loc 'shuttle-console-dock-toggle'}"
-                            TextAlign="Center"
-                            ToggleMode="True"/>
+                            Margin="0 0 0 5"/>
+                       <!-- End Wayfarer -->
                     <!-- Frontier - Inertia dampener controls-->
                     <controls:BoxContainer Name="DampenerModeButtons"
                                   Orientation="Horizontal"

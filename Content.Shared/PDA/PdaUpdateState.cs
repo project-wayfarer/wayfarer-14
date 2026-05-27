@@ -19,7 +19,7 @@ namespace Content.Shared.PDA
         public string? Address;
         public int Balance; // Frontier
         public string? OwnedShipName; // Frontier
-        public TimeSpan? ShiftEndTime; // Duration remaining until shift ends (client will add to its own RealTime)
+        public DateTime? ShiftEndTime; // Absolute UTC wall-clock time when the shift ends (server OS time)
 
         public PdaUpdateState(
             List<NetEntity> programs,
@@ -35,7 +35,7 @@ namespace Content.Shared.PDA
             bool hasUplink = false,
             bool canPlayMusic = false,
             string? address = null,
-            TimeSpan? shiftEndTime = null)
+            DateTime? shiftEndTime = null)
             : base(programs, activeUI)
         {
             FlashlightEnabled = flashlightEnabled;

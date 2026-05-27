@@ -547,8 +547,26 @@
   - type: Icon
     state: pda-tourist
 
+# Abstract: shared CartridgeLoader for outlaw PDAs.
 - type: entity
   parent: ChameleonPDA
+  id: WFOutlawPDABase
+  abstract: true
+  components:
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - BountyContractsCartridge
+    - AstroNavCartridge
+    - NanoChatCartridge
+    - BlipCartridge
+    - OutlawBountyCartridge
+
+- type: entity
+  parent: WFOutlawPDABase
   id: OutlawPDA
   name: wayfarer PDA
   description: Somehow smells of plotting and scheming?
@@ -564,7 +582,7 @@
     state: pda-outlaw
 
 - type: entity
-  parent: ChameleonPDA
+  parent: WFOutlawPDABase
   id: WantedOutlawPDA
   name: wayfarer PDA
   description: Worn by someone who is always on the run.

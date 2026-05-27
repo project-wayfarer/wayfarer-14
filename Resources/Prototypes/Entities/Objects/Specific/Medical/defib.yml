@@ -1,6 +1,6 @@
 - type: entity
   id: BaseDefibrillator
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemDeviceTiny] # Wayfarer: add RecyclableItemDeviceTiny
   name: defibrillator
   description: CLEAR! Zzzzat!
   abstract: true

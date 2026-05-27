@@ -267,7 +267,7 @@
 
 #region Wieldable
 - type: entity
-  parent: [ BaseCrossbowWieldable, BaseC1Contraband ]
+  parent: BaseCrossbowWieldable # Wayfarer: Removed contraband
   id: CrossbowModern
   components:
   - type: UseDelay
@@ -280,7 +280,7 @@
     deconstructionTarget: null
 
 - type: entity
-  parent: [ BaseCrossbowWieldable, BaseC1Contraband ]
+  parent: BaseCrossbowWieldable # Wayfarer: Removed contraband
   id: CrossbowImprovised
   name: impovised crossbow
   components:
@@ -308,7 +308,7 @@
 
 #region Hand xbows
 - type: entity
-  parent: [ NFBaseWeaponEncumbranceCrossbowHand, NFBaseGunMeleeAttackLow, BaseCrossbow, BaseC1Contraband ]
+  parent: [ NFBaseWeaponEncumbranceCrossbowHand, NFBaseGunMeleeAttackLow, BaseCrossbow ] # Wayfarer: Removed contraband
   id: CrossbowModernHand
   name: hand crossbow
   components:
@@ -321,7 +321,7 @@
     node: CrossbowModernHand
 
 - type: entity
-  parent: [ NFBaseWeaponEncumbranceCrossbowHand, NFBaseGunMeleeAttackLow, BaseCrossbow, BaseC1Contraband ]
+  parent: [ NFBaseWeaponEncumbranceCrossbowHand, NFBaseGunMeleeAttackLow, BaseCrossbow ] # Wayfarer: Removed contraband
   id: CrossbowImprovisedHand
   name: impovised hand crossbow
   components:

@@ -54,6 +54,11 @@ namespace Content.Server.Database
         public DbSet<WayfarerRoleplayCommend> WayfarerRoleplayCommends { get; set; } = null!;
         public DbSet<WayfarerCommunityGoal> WayfarerCommunityGoals { get; set; } = null!;
         public DbSet<WayfarerCommunityGoalRequirement> WayfarerCommunityGoalRequirements { get; set; } = null!;
+        public DbSet<WayfarerCommunityGoalContribution> WayfarerCommunityGoalContributions { get; set; } = null!;
+        public DbSet<WayfarerCorporation> WayfarerCorporations { get; set; } = null!;
+        public DbSet<WayfarerCorporationMember> WayfarerCorporationMembers { get; set; } = null!;
+        public DbSet<WayfarerCorporationInvite> WayfarerCorporationInvites { get; set; } = null!;
+        public DbSet<WayfarerCorporationStation> WayfarerCorporationStations { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -398,6 +403,12 @@ namespace Content.Server.Database
             modelBuilder.Entity<WayfarerSafetyDepositBox>()
                 .HasIndex(b => b.OwnerUserId);
 
+            modelBuilder.Entity<WayfarerSafetyDepositBox>()
+                .HasOne(b => b.Profile)
+                .WithMany()
+                .HasForeignKey(b => b.ProfileId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<WayfarerSafetyDepositBoxItem>()
                 .HasOne(i => i.Box)
                 .WithMany(b => b.Items)
@@ -437,6 +448,58 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<WayfarerCommunityGoalRequirement>()
                 .HasIndex(r => r.GoalId);
+
+            modelBuilder.Entity<WayfarerCommunityGoalContribution>()
+                .HasOne(c => c.Requirement)
+                .WithMany(r => r.Contributions)
+                .HasForeignKey(c => c.RequirementId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCommunityGoalContribution>()
+                .HasIndex(c => c.RequirementId);
+
+            modelBuilder.Entity<WayfarerCommunityGoalContribution>()
+                .HasIndex(c => c.PlayerUserId);
+
+            // Wayfarer Corporations configuration
+            modelBuilder.Entity<WayfarerCorporation>()
+                .HasIndex(c => c.Name)
+                .IsUnique();
+
+            modelBuilder.Entity<WayfarerCorporationMember>()
+                .HasOne(m => m.Corporation)
+                .WithMany(c => c.Members)
+                .HasForeignKey(m => m.CorporationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCorporationMember>()
+                .HasIndex(m => m.UserId);
+
+            modelBuilder.Entity<WayfarerCorporationMember>()
+                .HasIndex(m => m.CorporationId);
+
+            modelBuilder.Entity<WayfarerCorporationInvite>()
+                .HasOne(i => i.Corporation)
+                .WithMany(c => c.PendingInvites)
+                .HasForeignKey(i => i.CorporationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCorporationInvite>()
+                .HasIndex(i => i.InviteeUserId);
+
+            modelBuilder.Entity<WayfarerCorporationInvite>()
+                .HasIndex(i => i.CorporationId);
+
+            // Wayfarer Corporation Stations configuration
+            modelBuilder.Entity<WayfarerCorporationStation>()
+                .HasOne(s => s.Corporation)
+                .WithMany()
+                .HasForeignKey(s => s.CorporationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCorporationStation>()
+                .HasIndex(s => s.CorporationId)
+                .IsUnique();
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -1506,6 +1569,14 @@ namespace Content.Server.Database
         public int CharacterIndex { get; set; }
 
         /// <summary>
+        /// Foreign key to the character profile. Null for boxes created before this column was added.
+        /// When the profile is deleted, this box is also deleted via cascade.
+        /// </summary>
+        public int? ProfileId { get; set; }
+
+        public Profile? Profile { get; set; }
+
+        /// <summary>
         /// Display name of the owner when the box was created
         /// </summary>
         [Required]
@@ -1760,5 +1831,159 @@ namespace Content.Server.Database
         /// </summary>
         [Column("current_amount")]
         public long CurrentAmount { get; set; }
+
+        /// <summary>
+        /// Per-character contribution records for this requirement.
+        /// </summary>
+        public List<WayfarerCommunityGoalContribution> Contributions { get; set; } = new();
+    }
+
+    [Table("wayfarer_community_goal_contributions")]
+    public class WayfarerCommunityGoalContribution
+    {
+        [Key, Column("id"), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Foreign key to the requirement this contribution is for.
+        /// </summary>
+        [Column("requirement_id")]
+        public int RequirementId { get; set; }
+
+        public WayfarerCommunityGoalRequirement Requirement { get; set; } = null!;
+
+        /// <summary>
+        /// The account user ID of the contributing player.
+        /// </summary>
+        [Required, Column("player_user_id")]
+        public Guid PlayerUserId { get; set; }
+
+        /// <summary>
+        /// The in-game character name at the time of contribution.
+        /// </summary>
+        [Required, Column("character_name")]
+        public string CharacterName { get; set; } = null!;
+
+        /// <summary>
+        /// The entity prototype ID that was contributed (canonical requirement proto).
+        /// </summary>
+        [Required, Column("entity_prototype_id")]
+        public string EntityPrototypeId { get; set; } = null!;
+
+        /// <summary>
+        /// How much was contributed in this submission.
+        /// </summary>
+        [Column("amount")]
+        public long Amount { get; set; }
+
+        /// <summary>
+        /// The round number in which this contribution was made.
+        /// </summary>
+        [Column("round_id")]
+        public int RoundId { get; set; }
+
+        /// <summary>
+        /// When this contribution was recorded.
+        /// </summary>
+        [Required, Column("contributed_at")]
+        public DateTime ContributedAt { get; set; }
+    }
+
+    [Table("wayfarer_corporations")]
+    public class WayfarerCorporation
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        /// <summary>Unique public name of the corporation.</summary>
+        [Required, Column("name")]
+        public string Name { get; set; } = null!;
+
+        /// <summary>Player-written description.</summary>
+        [Required, Column("description")]
+        public string Description { get; set; } = string.Empty;
+
+        /// <summary>0 = Public, 1 = Private.</summary>
+        [Column("privacy")]
+        public int Privacy { get; set; }
+
+        /// <summary>Corporation bank balance in spesos.</summary>
+        [Column("balance")]
+        public int Balance { get; set; }
+
+        [Required, Column("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        public List<WayfarerCorporationMember> Members { get; set; } = new();
+        public List<WayfarerCorporationInvite> PendingInvites { get; set; } = new();
+    }
+
+    [Table("wayfarer_corporation_members")]
+    public class WayfarerCorporationMember
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        [Column("corporation_id")]
+        public int CorporationId { get; set; }
+
+        public WayfarerCorporation Corporation { get; set; } = null!;
+
+        /// <summary>NetUserId (GUID) of the member.</summary>
+        [Required, Column("user_id")]
+        public Guid UserId { get; set; }
+
+        /// <summary>Character name at time of joining.</summary>
+        [Required, Column("display_name")]
+        public string DisplayName { get; set; } = null!;
+
+        /// <summary>0=Member, 1=Recruiter, 2=Manager, 3=Leader.</summary>
+        [Column("rank")]
+        public int Rank { get; set; }
+
+        [Required, Column("joined_at")]
+        public DateTime JoinedAt { get; set; }
+    }
+
+    [Table("wayfarer_corporation_invites")]
+    public class WayfarerCorporationInvite
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        [Column("corporation_id")]
+        public int CorporationId { get; set; }
+
+        public WayfarerCorporation Corporation { get; set; } = null!;
+
+        /// <summary>NetUserId (GUID) of the invited player.</summary>
+        [Required, Column("invitee_user_id")]
+        public Guid InviteeUserId { get; set; }
+
+        [Required, Column("sent_at")]
+        public DateTime SentAt { get; set; }
+    }
+
+    [Table("wayfarer_corporation_stations")]
+    public class WayfarerCorporationStation
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        [Column("corporation_id")]
+        public int CorporationId { get; set; }
+
+        public WayfarerCorporation Corporation { get; set; } = null!;
+
+        /// <summary>Display name of the station, also used as the FTL beacon label.</summary>
+        [Required, Column("station_name")]
+        public string StationName { get; set; } = null!;
+
+        /// <summary>Relative save path under user data, e.g. "corp_stations/corp_1.yml".</summary>
+        [Required, Column("save_path")]
+        public string SavePath { get; set; } = null!;
+
+        [Required, Column("purchased_at")]
+        public DateTime PurchasedAt { get; set; }
     }
 }

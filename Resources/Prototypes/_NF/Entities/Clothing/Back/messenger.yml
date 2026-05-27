@@ -52,7 +52,7 @@
   parent: ClothingBackpackMessengerContractor
   id: ClothingBackpackMessengerCaptain
   name: captain's messenger bag
-  description: An exclusive messenger bag for captains # wayfarer edit: remove nanotrasen mention in description
+  description: An exclusive messenger bag for captains # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/color.rsi
@@ -87,10 +87,10 @@
         color: "#f6d56a"
 
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerSr
   name: station representative's messenger bag
-  description: An exclusive messenger bag for station representatives. # wayfarer edit: remove nanotrasen mention in description
+  description: An exclusive messenger bag for station representatives. # Wayfarer: remove nanotrasen mention in description
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/color.rsi
@@ -660,9 +660,9 @@
 #region Antagonists / Contraband
 - type: entity
   parent:
-  - BaseC3SyndicateContrabandUnredeemable
+  #- BaseC3SyndicateContrabandUnredeemable # Wayfarer: Removed contraband
   - ClothingBackpackMessengerContractor
-  - ContrabandClothing
+#  - ContrabandClothing
   id: ClothingBackpackMessengerSyndicate
   name: syndicate messenger bag
   description: A robust messenger bag for waging war against oppressors.
@@ -743,7 +743,7 @@
 - type: entity
   id: ClothingBackpackMessengerArcadia
   name: arcadia messenger bag
-  parent: [ ClothingBackpackMessengerContractor, BaseC3ContrabandNoValue, ContrabandClothing ]
+  parent: [ ClothingBackpackMessengerContractor ] # Wayfarer: Removecontraband
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/color.rsi
@@ -912,7 +912,7 @@
 
 #region CGP
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerNfsdBrown
   name: CGP messenger bag
   components:
@@ -957,7 +957,7 @@
         color: "#e1af4e"
 
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerNfsdCream
   name: CGP messenger bag
   components:

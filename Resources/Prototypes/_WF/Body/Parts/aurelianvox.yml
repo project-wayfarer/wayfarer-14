@@ -1,0 +1,109 @@
+- type: entity
+  abstract: true
+  parent: [ BaseItem, BasePart ]
+  id: PartAurelianVox
+  name: "aurelian vox body part"
+  components:
+  - type: Sprite
+    sprite: _WF/Mobs/Species/AurelianVox/parts.rsi
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: AmmoniaBlood
+        Quantity: 10
+
+- type: entity
+  parent: [PartAurelianVox, BaseTorso]
+  id: TorsoAurelianVox
+  name: "aurelian vox torso"
+  components:
+  - type: Sprite
+    state: "torso"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: AmmoniaBlood
+        Quantity: 20
+
+- type: entity
+  parent: [ PartAurelianVox, BaseHead ]
+  id: HeadAurelianVox
+  name: "aurelian vox head"
+  components:
+  - type: Sprite
+    state: "head"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: AmmoniaBlood
+        Quantity: 10
+
+- type: entity
+  parent: [ PartAurelianVox, BaseLeftArm ]
+  id: LeftArmAurelianVox
+  name: "left aurelian vox arm"
+  components:
+  - type: Sprite
+    state: "l_arm"
+
+- type: entity
+  parent: [ PartAurelianVox, BaseRightArm ]
+  id: RightArmAurelianVox
+  name: "right aurelian vox arm"
+  components:
+  - type: Sprite
+    state: "r_arm"
+
+- type: entity
+  parent: [ PartAurelianVox, BaseLeftHand ]
+  id: LeftHandAurelianVox
+  name: "left aurelian vox hand"
+  components:
+  - type: Sprite
+    state: "l_hand"
+
+- type: entity
+  parent: [ PartAurelianVox, BaseRightHand ]
+  id: RightHandAurelianVox
+  name: "right aurelian vox hand"
+  components:
+  - type: Sprite
+    state: "r_hand"
+
+- type: entity
+  parent:  [ PartAurelianVox, BaseLeftLeg ]
+  id: LeftLegAurelianVox
+  name: "left aurelian vox leg"
+  components:
+  - type: Sprite
+    state: "l_leg"
+
+- type: entity
+  parent:  [ PartAurelianVox, BaseRightLeg ]
+  id: RightLegAurelianVox
+  name: "right aurelian vox leg"
+  components:
+  - type: Sprite
+    state: "r_leg"
+
+- type: entity
+  parent: [ PartAurelianVox, BaseLeftFoot ]
+  id: LeftFootAurelianVox
+  name: "left aurelian vox foot"
+  components:
+  - type: Sprite
+    state: "l_foot"
+
+- type: entity
+  parent: [ PartAurelianVox, BaseRightFoot ]
+  id: RightFootAurelianVox
+  name: "right aurelian vox foot"
+  components:
+  - type: Sprite
+    state: "r_foot"

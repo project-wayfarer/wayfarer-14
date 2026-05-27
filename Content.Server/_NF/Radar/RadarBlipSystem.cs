@@ -104,6 +104,14 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
                 continue;
             }
 
+            // Wayfarer: If this blip's parent is itself a blip, the parent already represents it on radar.
+            // Skip to avoid overlapping blips.
+            if (blipXform.ParentUid.IsValid() && HasComp<RadarBlipComponent>(blipXform.ParentUid))
+            {
+                Log.Debug($"Blip {blipUid} skipped: parent already has a blip.");
+                continue;
+            }
+
             if (blipXform.MapID != radarMapId)
             {
                 Log.Debug($"Blip {blipUid} skipped: different map.");

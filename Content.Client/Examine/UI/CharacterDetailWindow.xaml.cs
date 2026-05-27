@@ -22,6 +22,8 @@ public sealed partial class CharacterDetailWindow : FancyWindow
         TabContainer.SetTabTitle(0, Loc.GetString("character-window-tab-description")); // Wayfarer: _tabContainer<TabContainer
         TabContainer.SetTabTitle(1, Loc.GetString("character-window-tab-consent")); // Wayfarer: _tabContainer<TabContainer
         TabContainer.SetTabTitle(2, Loc.GetString("character-window-tab-commend")); // Wayfarer
+
+        CommendCommentInput.Placeholder = new Rope.Leaf(Loc.GetString("character-window-commend-placeholder")); // Wayfarer
     }
 
     // Wayfarer: Switch from jobTitle to RoleplayLevel

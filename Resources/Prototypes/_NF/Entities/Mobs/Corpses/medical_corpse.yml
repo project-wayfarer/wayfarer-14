@@ -73,8 +73,9 @@
 
 - type: randomHumanoidSettings
   id: MedicalBounty
-  speciesBlacklist:
+  speciesBlacklist: # Wayfarer
   - IPC
+  - AurelianVox
   components:
   - type: StinkyTrait
   - type: Carriable # Carrying system from nyanotrasen.

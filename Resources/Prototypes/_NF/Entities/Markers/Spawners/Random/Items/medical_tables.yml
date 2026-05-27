@@ -583,8 +583,8 @@
     - !type:GroupSelector
       weight: 0.3
       children:
-      - id: MimePowersImplanter
-      - id: BibleUserImplanter
+#      - id: MimePowersImplanter # Wayfarer: Mime vow implanter removed.
+#      - id: BibleUserImplanter # Wayfarer: Faith implanter removed.
       - id: DeathAcidifierImplanter
       - id: MicroBombImplanter
       - id: FakeMindShieldImplanter
@@ -1193,7 +1193,7 @@
       children:
       # Computers
       - id: BodyScannerComputerCircuitboard
-      - id: ComputerIFFCircuitboard
+      # - id: ComputerIFFCircuitboard # Wayfarer
       - id: CloningConsoleComputerCircuitboard
       # Machines
       - id: CloningPodMachineCircuitboard

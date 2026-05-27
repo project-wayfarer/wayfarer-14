@@ -1,0 +1,286 @@
+# From Impstation (imp-station-14). Code: AGPL-3.0.
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatJokester
+  name: jokester's coat
+  description: A snazzy, striking red overcoat for professional comedians. The shoulder pads enable higher-brow humor.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/clown_jokestercoat.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/Coats/clown_jokestercoat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatPufferDark
+  name: brown puffer coat
+  description: An oversized puffer coat made of high-quality nylon.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_dark.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_dark.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatPufferRed
+  name: red puffer coat
+  description: An oversized puffer coat made of a high-quality nylon.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_red.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_red.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatPufferBlue
+  name: blue puffer coat
+  description: An oversized puffer coat made of a high-quality nylon.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_blue.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_blue.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatPufferMime
+  name: mime puffer coat
+  description: An oversized puffer coat made of high-quality nothing.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_mime.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_mime.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatPufferSilver
+  name: silver puffer coat
+  description: An oversized puffer coat made of a high-quality nylon.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_silver.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_silver.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatPufferPink
+  name: pink puffer coat
+  description: An oversized puffer coat made of a high-quality nylon.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_pink.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_pink.rsi
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: IMPClothingOuterCoatBomberBlack
+  name: black bomber jacket
+  description: A plain black bomber jacket, worn with the sleeves pushed up. If you're feeling bold, you can loosen how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_black.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_black.rsi
+  - type: Foldable
+    unfoldVerbText: fold-unzip-verb
+    foldVerbText: fold-zip-verb
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Heat: 0.90
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberBlackLoose
+      amount: 1
+
+- type: entity
+  parent: IMPClothingOuterCoatBomberBlack
+  id: IMPClothingOuterCoatBomberBlackLoose
+  name: black bomber jacket (loose)
+  description: A plain black bomber jacket, worn low and loose. If you're feeling modest, you can tighten how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_black_loose.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_black_loose.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberBlack
+      amount: 1
+
+- type: entity
+  parent: IMPClothingOuterCoatBomberBlack
+  id: IMPClothingOuterCoatBomberWhite
+  name: white bomber jacket
+  description: A plain white bomber jacket, worn with the sleeves pushed up. If you're feeling bold, you can loosen how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_white.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_white.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberWhiteLoose
+      amount: 1
+
+- type: entity
+  parent: IMPClothingOuterCoatBomberWhite
+  id: IMPClothingOuterCoatBomberWhiteLoose
+  name: white bomber jacket (loose)
+  description: A plain white bomber jacket, worn low and loose. If you're feeling modest, you can tighten how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_white_loose.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_white_loose.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberWhite
+      amount: 1
+
+- type: entity
+  parent: IMPClothingOuterCoatBomberBlack
+  id: IMPClothingOuterCoatBomberCargo
+  name: cargo bomber jacket
+  description: A brown bomber jacket, worn with the sleeves pushed up. It has plenty of pockets, and a Cargonian C on the back. If you're feeling bold, you can loosen how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_cargo.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_cargo.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberCargoLoose
+      amount: 1
+
+- type: entity
+  parent: IMPClothingOuterCoatBomberCargo
+  id: IMPClothingOuterCoatBomberCargoLoose
+  name: cargo bomber jacket (loose)
+  description: A brown bomber jacket, worn low and loose. It has plenty of pockets, and a Cargonian C on the back. If you're feeling modest, you can tighten how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_cargo_loose.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_cargo_loose.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberCargo
+      amount: 1
+
+- type: entity
+  parent: IMPClothingOuterCoatBomberBlack
+  id: IMPClothingOuterCoatBomberAtmosHolo
+  name: holofan bomber jacket
+  description: A holographic bomber jacket, worn with the sleeves pushed up. Unlike its full counterpart, this does not protect against pressure differences. If you're feeling bold, you can loosen how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos_holo.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos_holo.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberAtmosHoloLoose
+      amount: 1
+
+- type: entity
+  parent: IMPClothingOuterCoatBomberAtmosHolo
+  id: IMPClothingOuterCoatBomberAtmosHoloLoose
+  name: holofan bomber jacket (loose)
+  description: A holographic bomber jacket, worn low and loose. Unlike its full counterpart, this does not protect against pressure differences. If you're feeling modest, you can tighten how it fits with a knife.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos_holo_loose.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos_holo_loose.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: IMPClothingOuterCoatBomberAtmosHolo
+      amount: 1
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatWebSweater
+  name: web sweater
+  description: A soft, comfy sweater made of spider silk. Surprisingly light and breezy. Whoever made this must have put a lot of heart into it.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/websweater.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/Coats/websweater.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialWebSilk1
+      amount: 10
+  - type: FlavorProfile
+    flavors:
+    - cobwebs
+    ignoreReagents:
+    - Fiber
+  # - type: Construction # Wayfarer: Removed construction component.
+  #   graph: WebObjects
+  #   node: websweater
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatMusicianFurCoat
+  name: musician's fur coat
+  description: Seems snazzy, but on closer inspection it's just an old coat covered in white spray-paint.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/mus_furcoat.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/mus_furcoat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: IMPClothingOuterCoatVRexFurCoat
+  name: v-rex fur coat
+  description: The stiff fur of the v-rex makes this more uncomfortable to wear than anything..
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/vrex_fur_coat.rsi
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/vrex_fur_coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.95
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9

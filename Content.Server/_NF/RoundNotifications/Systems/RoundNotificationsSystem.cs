@@ -1,6 +1,5 @@
 using Content.Server.Discord;
 using Content.Shared._NF.CCVar;
-using Content.Server.Maps;
 using Content.Shared.GameTicking;
 using Robust.Shared;
 using Robust.Shared.Configuration;
@@ -17,7 +16,6 @@ namespace Content.Server._NF.RoundNotifications.Systems;
 public sealed class RoundNotificationsSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly IGameMapManager _gameMapManager = default!;
     [Dependency] private readonly DiscordWebhook _discord = default!;
 
     private ISawmill _sawmill = default!;
@@ -64,11 +62,15 @@ public sealed class RoundNotificationsSystem : EntitySystem
         if (_webhookIdentifier == null)
             return;
 
-        var map = _gameMapManager.GetSelectedMap();
-        var mapName = map?.MapName ?? Loc.GetString("discord-round-unknown-map");
+        // Calculate end time: 3 days from now at 10pm CST (UTC-6)
+        var cstOffset = TimeSpan.FromHours(-6);
+        var nowCst = DateTimeOffset.UtcNow.ToOffset(cstOffset);
+        var endTimeCst = new DateTimeOffset(nowCst.Year, nowCst.Month, nowCst.Day, 22, 0, 0, cstOffset).AddDays(3);
+        var endTimeUnix = endTimeCst.ToUnixTimeSeconds().ToString();
+
         var text = Loc.GetString("discord-round-start",
             ("id", e.RoundId),
-            ("map", mapName));
+            ("endTime", endTimeUnix));
 
         SendDiscordMessage(text, false);
     }
@@ -79,10 +81,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
             return;
 
         var text = Loc.GetString("discord-round-end",
-            ("id", e.RoundId),
-            ("hours", Math.Truncate(e.RoundDuration.TotalHours)),
-            ("minutes", e.RoundDuration.Minutes),
-            ("seconds", e.RoundDuration.Seconds));
+            ("id", e.RoundId));
 
         SendDiscordMessage(text, false, 0xB22B27);
     }

@@ -4,6 +4,20 @@
   parent: [BaseMob, MobDamageable, MobCombat, MobAtmosExposed, MobFlammable]
   abstract: true
   components:
+# Wayfarer: This is needed due to the unique base
+    - type: Carriable
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 185
+          mask:
+          - MobMask
+          layer:
+          - MobLayer
+# End Wayfarer
     - type: ContentEye
     - type: CameraRecoil
     - type: Reactive
@@ -178,6 +192,7 @@
         - CanPilot
         - FootstepSound
         - DoorBumpOpener
+        - IPCEmotes # Wayfarer: needed for emote whitelist
     - type: Hands
     - type: Inventory
       templateId: human
@@ -293,7 +308,6 @@
       priority: 1
       lightningExplode: false
     - type: ComplexInteraction
-    - type: Carriable
     - type: Crawler
     - type: InteractionVerbs
       allowedVerbs:

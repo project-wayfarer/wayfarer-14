@@ -1,0 +1,23 @@
+﻿- type: entity
+  parent: DrinkCanBaseFull
+  id: TGDrinkCannedLaughter
+  name: canned laughter
+  description: Exclusively available where funny is the brand.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Laughter
+          Quantity: 30
+      grindable:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 4
+        - ReagentId: Iron
+          Quantity: 1
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/canned_laughter.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/cola.rsi

@@ -1,0 +1,81 @@
+# From Impstation (imp-station-14). Code: AGPL-3.0.
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBase, AllowSuitStorageClothingGasTanks] # WF: removed ClothingUniformFoldableBase, not in Wayfarer
+  id: IMPClothingOuterChapsBrown
+  name: Brown Chaps
+  description: Dress right for the rodeo with these Brown chaps. Just don't forget your pants!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/brown.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/brown.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-OUTERCLOTHING
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBase, AllowSuitStorageClothingGasTanks] # WF: removed ClothingUniformFoldableBase, not in Wayfarer
+  id: IMPClothingOuterChapsWhite
+  name: White Chaps
+  description: Dress right for the rodeo with these White chaps. Just don't forget your pants!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/white.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/white.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-OUTERCLOTHING
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBase, AllowSuitStorageClothingGasTanks] # WF: removed ClothingUniformFoldableBase, not in Wayfarer
+  id: IMPClothingOuterChapsBlack
+  name: Black Chaps
+  description: Dress right for the rodeo with these Black chaps. Just don't forget your pants!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/black.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/black.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-OUTERCLOTHING
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBase, AllowSuitStorageClothingGasTanks] # WF: removed ClothingUniformFoldableBase, not in Wayfarer
+  id: IMPClothingOuterChapsFancy
+  name: Fancy Chaps
+  description: Dress right for the rodeo with these Fancy chaps. Just don't forget your pants!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/fancy.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    slots:
+    - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Misc/cowboy/fancy.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-OUTERCLOTHING
+  - type: StaticPrice
+    price: 0

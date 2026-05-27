@@ -14,6 +14,7 @@ using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Player;
 
 namespace Content.Server._WF.CommunityGoals;
 
@@ -208,12 +209,16 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
 
         // Record each unique prototype contribution in the DB first, then delete.
         // This order ensures items are not lost if the DB write fails.
+        TryComp<ActorComponent>(player, out var actorComp);
+        var playerUserId = actorComp?.PlayerSession.UserId;
+        var characterName = MetaData(player).EntityName;
+
         var totalUpdated = 0;
         try
         {
             foreach (var (protoId, amount) in contributions)
             {
-                var updated = await _goals.RecordContribution(protoId, amount);
+                var updated = await _goals.RecordContribution(protoId, amount, playerUserId, characterName);
                 totalUpdated += updated;
 
                 if (updated > 0)
@@ -308,9 +313,13 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
         }
 
         // Record contribution first, then delete — so items are not lost if the DB write fails.
+        TryComp<ActorComponent>(player, out var actorComp);
+        var playerUserId = actorComp?.PlayerSession.UserId;
+        var characterName = MetaData(player).EntityName;
+
         try
         {
-            await _goals.RecordContributionToRequirement(targetReq.Id, totalAmount);
+            await _goals.RecordContributionToRequirement(targetReq.Id, totalAmount, playerUserId, characterName);
         }
         catch (Exception ex)
         {

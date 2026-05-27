@@ -1,0 +1,7 @@
+- type: entity
+  name: respiron gas miner
+  parent: GasMinerBase
+  id: GasMinerRespiron
+  components:
+    - type: GasMiner
+      spawnGas: Respiron

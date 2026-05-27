@@ -87,16 +87,20 @@
   id: OutlawEncryptionKey
   name: loadout-group-contractor-encryption-key
   minLimit: 0
-  maxLimit: 6
+  maxLimit: 8 # Wayfarer: 6<8
   loadouts:
+  # Wayfarer: Wait, why are these here? Shouldn't this loadout be in the WF loadout groups?
   - WFEncryptionKeyTraffic
   - WFEncryptionKeyMedical
   - WFEncryptionKeyCargo
   - WFEncryptionKeyEngineering
   - WFEncryptionKeyScience
   - EncryptionKeyFreelance
+  - WFEncryptionKeyHorny
+  - WFEncryptionKeyExtremeKink
   fallbacks:
   - WFEncryptionKeyTraffic
+  # End Wayfarer
 
 # Pirate Captain loadouts
 

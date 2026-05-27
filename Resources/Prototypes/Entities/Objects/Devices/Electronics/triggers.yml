@@ -36,6 +36,13 @@
         path: /Audio/Machines/Nuke/general_beep.ogg
         params:
           volume: -2
+  # Wayfarer: added recyclable component
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 150
+    chemicalComposition:
+      Silicon: 15
+  # End Wayfarer
 
 - type: entity
   parent: TimerTrigger
@@ -74,7 +81,7 @@
           volume: -2
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseItem, RecyclableItemPlasticTiny] # Wayfarer: add RecyclableItemPlasticTiny
   id: VoiceTrigger
   name: voice trigger
   description: Adds a machine link that is triggered by vocal keywords.

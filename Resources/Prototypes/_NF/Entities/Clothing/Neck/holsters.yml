@@ -110,7 +110,7 @@
     sprite: _NF/Clothing/Neck/Misc/holster_thigh.rsi
 
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseClothingNeckHolsterThigh ]
+  parent: [ BaseCGPContraband, NFBaseClothingNeckHolsterThigh ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NFBaseClothingNeckHolsterThighNfsd
   name: cgp drop leg holster
   components:
@@ -162,7 +162,7 @@
     sprite: _NF/Clothing/Neck/Misc/holster_thigh_sheath.rsi
 
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseClothingNeckSheathThigh ]
+  parent: [ BaseCGPContraband, NFBaseClothingNeckSheathThigh ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NFBaseClothingNeckSheathThighNfsd
   name: cgp drop leg sheath
   components:

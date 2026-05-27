@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server._NF.Contraband.Components;
 using Content.Server._NF.Pirate.Components;
+using Content.Server._WF.CartridgeLoader.Cartridges; // Wayfarer
 using Content.Server.NameIdentifier;
 using Content.Shared._NF.Bank;
 using Content.Shared._NF.Pirate;
@@ -333,6 +334,9 @@ public sealed partial class NFCargoSystem
 
     public void UpdatePirateBountyConsoles()
     {
+        // Wayfarer: keep outlaw bounty cartridges up to date
+        RaiseLocalEvent(new SectorPirateBountyDatabaseUpdatedEvent());
+
         var query = EntityQueryEnumerator<PirateBountyConsoleComponent, UserInterfaceComponent>();
 
         var serviceId = _sectorService.GetServiceEntity();

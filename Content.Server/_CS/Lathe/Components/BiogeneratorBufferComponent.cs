@@ -15,7 +15,7 @@ public sealed partial class BiogeneratorBufferComponent : Component
     /// Maximum buffer capacity.
     /// </summary>
     [DataField("max")]
-    public int MaxBuffer = 100;
+    public int MaxBuffer = 50;
 
     /// <summary>
     /// Amount of biomass regenerated per interval.
@@ -27,7 +27,7 @@ public sealed partial class BiogeneratorBufferComponent : Component
     /// Time between regeneration ticks.
     /// </summary>
     [DataField("regenInterval")]
-    public TimeSpan RegenInterval = TimeSpan.FromSeconds(10);
+    public TimeSpan RegenInterval = TimeSpan.FromSeconds(30);
 
     /// <summary>
     /// Next time the buffer will be regenerated.

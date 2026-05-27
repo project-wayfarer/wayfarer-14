@@ -39,7 +39,7 @@
     sprite: _NF/Objects/Tanks/emergency_double_o2n2equal.rsi
 
 - type: entity
-  parent: GasTankBase
+  parent: GasTankRoundBase # Wayfarer: GasTankBase<GasTankRoundBase
   id: BluespaceAirTank
   name: bluespace air tank
   description: A bluespace expanded gas tank. Holds 20L of gas
@@ -58,6 +58,7 @@
   - type: Tag # Wayfarer
     tags: # Wayfarer
     - DepositBlacklist # Wayfarer
+    - GasTank # Wayfarer
 
 - type: entity
   parent: DoubleEmergencyAirTank

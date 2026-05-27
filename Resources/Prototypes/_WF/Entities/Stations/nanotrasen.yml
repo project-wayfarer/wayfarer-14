@@ -1,0 +1,7 @@
+- type: entity
+  id: RecordsMarketFrontierOutpost
+  parent:
+  - NFBaseStationCargo
+  - RecordsFrontierOutpost
+  - BaseStationCargoMarket
+  categories: [ HideSpawnMenu ]

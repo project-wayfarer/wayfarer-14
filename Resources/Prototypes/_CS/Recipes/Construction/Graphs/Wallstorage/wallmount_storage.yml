@@ -1,0 +1,128 @@
+- type: constructionGraph
+  id: WallmountStorage
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: frame
+        steps:
+        - material: Steel
+          amount: 15
+          doAfter: 2
+
+    - node: frame
+      entity: LockerWallFrame
+      edges:
+      - to: start
+        steps:
+        - tool: Welding
+          doAfter: 4
+        completed:
+        - !type:GivePrototype
+          prototype: SheetSteel1
+          amount: 15
+        - !type:DeleteEntity {}
+      - to: locker
+        steps:
+        - material: MatterBin
+          store: machine_parts
+          amount: 2
+          doAfter: 1
+        - material: Cable
+          amount: 2
+          doAfter: 1
+        - tool: Screwing
+          doAfter: 2
+      - to: lockerAdvanced
+        steps:
+        - material: AdvancedMatterBin
+          store: machine_parts
+          amount: 2
+          doAfter: 1
+        - material: Cable
+          amount: 2
+          doAfter: 1
+        - tool: Screwing
+          doAfter: 2
+      - to: lockerSuper
+        steps:
+        - material: SuperMatterBin
+          store: machine_parts
+          amount: 2
+          doAfter: 1
+        - material: Cable
+          amount: 2
+          doAfter: 1
+        - tool: Screwing
+          doAfter: 2
+      - to: lockerBluespace
+        steps:
+        - material: BluespaceMatterBin
+          store: machine_parts
+          amount: 1
+          doAfter: 1
+        - material: Cable
+          amount: 2
+          doAfter: 1
+        - tool: Screwing
+          doAfter: 2
+
+    - node: locker
+      entity: LockerWallUpgradableBasic
+      edges:
+      - to: frame
+        completed:
+        - !type:EmptyAllContainers
+          pickup: true
+          emptyAtUser: true
+        - !type:GivePrototype
+          prototype: CableApcStack1
+          amount: 2
+        steps:
+        - tool: Prying
+          doAfter: 4
+
+    - node: lockerAdvanced
+      entity: LockerWallUpgradableAdvanced
+      edges:
+      - to: frame
+        completed:
+        - !type:EmptyAllContainers
+          pickup: true
+          emptyAtUser: true
+        - !type:GivePrototype
+          prototype: CableApcStack1
+          amount: 2
+        steps:
+        - tool: Prying
+          doAfter: 4
+
+    - node: lockerSuper
+      entity: LockerWallUpgradableSuper
+      edges:
+      - to: frame
+        completed:
+        - !type:EmptyAllContainers
+          pickup: true
+          emptyAtUser: true
+        - !type:GivePrototype
+          prototype: CableApcStack1
+          amount: 2
+        steps:
+        - tool: Prying
+          doAfter: 4
+
+    - node: lockerBluespace
+      entity: LockerWallUpgradableBluespace
+      edges:
+      - to: frame
+        completed:
+        - !type:EmptyAllContainers
+          pickup: true
+          emptyAtUser: true
+        - !type:GivePrototype
+          prototype: CableApcStack1
+          amount: 2
+        steps:
+        - tool: Prying
+          doAfter: 4

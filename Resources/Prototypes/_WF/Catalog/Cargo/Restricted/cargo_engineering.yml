@@ -1,0 +1,29 @@
+- type: cargoProduct
+  id: WFEngineeringRCDAmmo
+  icon:
+    sprite: _NF/Objects/Tools/rcd.rsi
+    state: ammo
+  product: CrateRCDAmmo
+  cost: 2500
+  category: cargoproduct-category-name-engineering
+  group: wfengineeringrestricted
+
+- type: cargoProduct
+  id: WFEngineeringRCD
+  icon:
+    sprite: _NF/Objects/Tools/rcd.rsi
+    state: icon
+  product: RCD
+  cost: 3000
+  category: cargoproduct-category-name-engineering
+  group: wfengineeringrestricted
+
+- type: cargoProduct
+  id: WFEngineeringRPD
+  icon:
+    sprite: _Starlight/Objects/Tools/rpd.rsi
+    state: icon
+  product: RPD
+  cost: 3000
+  category: cargoproduct-category-name-engineering
+  group: wfengineeringrestricted

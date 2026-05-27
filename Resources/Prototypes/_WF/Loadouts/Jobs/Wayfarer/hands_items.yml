@@ -180,6 +180,15 @@
     - ShipyardRCD
 
 - type: loadout
+  id: WFShipyardRPD
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  price: 5000
+  inhand:
+    - ShipyardRPD
+
+- type: loadout
   id: WFShipyardDoorRemote
   effects:
   - !type:GroupLoadoutEffect

@@ -3,7 +3,7 @@
 #region Laser
 - type: entity
   id: NFWeaponEnergyRifleSniperCannon
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponEnergyRifleSniperHitScan, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ]
+  parent: [ BaseMilitaryContraband, NFBaseWeaponEnergyRifleSniperHitScan, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   name: laser cannon
   suffix: Frontier
   description: |-
@@ -16,7 +16,7 @@
 
 - type: entity
   id: NFWeaponEnergyRifleSniperXrayCannon
-  parent: [ BaseC3Contraband, NFBaseWeaponEnergyRifleSniperHitScanXray, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ]
+  parent: [ BaseBMContraband, NFBaseWeaponEnergyRifleSniperHitScanXray, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ] # Wayfarer: BaseC3Contraband<BaseBMContraband
   name: x-ray cannon
   suffix: Frontier
   description: |-

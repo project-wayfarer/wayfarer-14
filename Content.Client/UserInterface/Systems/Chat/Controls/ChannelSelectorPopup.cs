@@ -16,6 +16,7 @@ public sealed class ChannelSelectorPopup : Popup
         ChatSelectChannel.Radio,
         ChatSelectChannel.LOOC,
         ChatSelectChannel.SubtleLOOC,
+        ChatSelectChannel.ShipOOC, // Wayfarer
         ChatSelectChannel.OOC,
         ChatSelectChannel.Dead,
         ChatSelectChannel.Admin

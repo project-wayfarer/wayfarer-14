@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _NF/Structures/Machines/computers.rsi
+    sprite: _WF/Structures/Machines/computers.rsi # Wayfarer: _NF/Structures/Machines/computers.rsi < _WF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
       state: computer
@@ -85,7 +85,7 @@
   description: Used to buy CGP patrol vessels.
   components:
   - type: Sprite
-    sprite: _NF/Structures/Machines/computers.rsi
+    sprite: _WF/Structures/Machines/computers.rsi # Wayfarer: _NF/Structures/Machines/computers.rsi < _WF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
       state: computer

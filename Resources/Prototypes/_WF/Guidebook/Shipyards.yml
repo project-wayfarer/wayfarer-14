@@ -36,6 +36,7 @@
   - ShipyardCrescent # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCrossroads # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardDioddef
+  - ShipyardDowntownsuperstar
   - ShipyardDragoon # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGarden # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGasbender # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
@@ -65,8 +66,10 @@
   - ShipyardRetort # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardSkipper # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardStringer # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardStronghold # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardSurveyor # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardSwan
+  - ShipyardUniform
   - ShipyardVagabond # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
 
 # syndicate shipyard commented out due to not knowing what to replace it name wise with.
@@ -139,6 +142,7 @@
   priority: 7
   children:
   - ShipyardHarbormaster # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardMoppet
 
 
 #  priorities of which folder if ship is in multiple shipyards
@@ -166,6 +170,11 @@
   id: ShipyardDagger
   name: guide-entry-shipyard-dagger
   text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Dagger.xml"
+
+- type: guideEntry
+  id: ShipyardDowntownsuperstar
+  name: guide-entry-shipyard-downtownsuperstar
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/DowntownSuperstar.xml"
 
 - type: guideEntry
   id: ShipyardDioddef
@@ -271,3 +280,8 @@
   id: ShipyardSwan
   name: guide-entry-shipyard-swan
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Swan.xml"
+
+- type: guideEntry
+  id: ShipyardMoppet
+  name: guide-entry-shipyard-moppet
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/StaffShipyard/Moppet.xml"

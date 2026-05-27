@@ -1270,3 +1270,539 @@
   - type: Paper
     content: reagent-label-mead
 
+# Coyote: After here there are some drink and ingredient barrels.
+
+
+- type: entity
+  parent: MetalBarrelRed
+  id: ChemicalBarrelJuiceApple
+  suffix: Apple Juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: JuiceApple
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelJuiceApple
+
+- type: entity
+  id: LabelJuiceApple
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-juice-apple
+
+- type: entity
+  parent: MetalBarrelRed
+  id: ChemicalBarrelBbqSauce
+  suffix: BBQ Sauce
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: BbqSauce
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelBbqSauce
+
+- type: entity
+  id: LabelBbqSauce
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-bbq-sauce
+
+- type: entity
+  parent: MetalBarrelRed
+  id: ChemicalBarrelJuiceBerry
+  suffix: Berry Juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: JuiceBerry
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelJuiceBerry
+
+- type: entity
+  id: LabelJuiceBerry
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-juice-berry
+
+- type: entity
+  parent: MetalBarrelBlack
+  id: ChemicalBarrelCoffee
+  suffix: Coffee
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Coffee
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelCoffee
+
+- type: entity
+  id: LabelCoffee
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-coffee
+
+- type: entity
+  parent: MetalBarrelBlack
+  id: ChemicalBarrelCola
+  suffix: Space Cola
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Cola
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelCola
+
+- type: entity
+  id: LabelCola
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-cola
+
+- type: entity
+  parent: MetalBarrelYellow
+  id: ChemicalBarrelCornmeal
+  suffix: Cornmeal
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Cornmeal
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelCornmeal
+
+- type: entity
+  id: LabelCornmeal
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-cornmeal
+
+- type: entity
+  parent: MetalBarrelWhite
+  id: ChemicalBarrelFlour
+  suffix: Flour
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Flour
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelFlour
+
+- type: entity
+  id: LabelFlour
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-flour
+
+- type: entity
+  parent: MetalBarrelGreen
+  id: ChemicalBarrelGreenTea
+  suffix: Green Tea
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: GreenTea
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelGreenTea
+
+- type: entity
+  id: LabelGreenTea
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-green-tea
+
+- type: entity
+  parent: MetalBarrelRed
+  id: ChemicalBarrelGrenadine
+  suffix: Grenadine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Grenadine
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelGrenadine
+
+- type: entity
+  id: LabelGrenadine
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-grenadine
+
+- type: entity
+  parent: MetalBarrelYellow
+  id: ChemicalBarrelHoney
+  suffix: Honey
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Honey
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelHoney
+
+- type: entity
+  id: LabelHoney
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-honey
+
+- type: entity
+  parent: MetalBarrelRed
+  id: ChemicalBarrelHotsauce
+  suffix: Hotsauce #because I know some salvagers are going to dare each other to chug it
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Hotsauce
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelHotsauce
+
+- type: entity
+  id: LabelHotsauce
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-hotsauce
+
+- type: entity
+  parent: MetalBarrelBlue
+  id: ChemicalBarrelIce
+  suffix: Ice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Ice
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelIce
+
+- type: entity
+  id: LabelIce
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-ice
+
+- type: entity
+  parent: MetalBarrelYellow
+  id: ChemicalBarrelJuiceLemon
+  suffix: Lemon Juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: JuiceLemon
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelJuiceLemon
+
+- type: entity
+  id: LabelJuiceLemon
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-juice-lemon
+
+- type: entity
+  parent: MetalBarrelGreen
+  id: ChemicalBarrelJuiceLime
+  suffix: Lime Juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: JuiceLime
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelJuiceLime
+
+- type: entity
+  id: LabelJuiceLime
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-juice-lime
+
+- type: entity
+  parent: MetalBarrelWhite
+  id: ChemicalBarrelMilkSoy
+  suffix: Soy Milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: MilkSoy
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelMilkSoy
+
+- type: entity
+  id: LabelMilkSoy
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-milk-soy
+
+- type: entity
+  parent: MetalBarrelYellow
+  id: ChemicalBarrelJuiceOrange
+  suffix: Orange Juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: JuiceOrange
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelJuiceOrange
+
+- type: entity
+  id: LabelJuiceOrange
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-juice-orange
+
+- type: entity
+  parent: MetalBarrelYellow
+  id: ChemicalBarrelJuicePineapple
+  suffix: Pineapple Juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: JuicePineapple
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelJuicePineapple
+
+- type: entity
+  id: LabelJuicePineapple
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-juice-pineapple
+
+- type: entity
+  parent: MetalBarrelWhite
+  id: ChemicalBarrelRice
+  suffix: Rice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Rice
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelRice
+
+- type: entity
+  id: LabelRice
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-rice
+
+- type: entity
+  parent: MetalBarrelBlack
+  id: ChemicalBarrelRootBeer
+  suffix: Root Beer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: RootBeer
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelRootBeer
+
+- type: entity
+  id: LabelRootBeer
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-root-beer
+
+- type: entity
+  parent: MetalBarrelBlue
+  id: ChemicalBarrelSodaWater
+  suffix: Soda Water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: SodaWater
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelSodaWater
+
+- type: entity
+  id: LabelSodaWater
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-soda-water
+
+- type: entity
+  parent: MetalBarrelBlack
+  id: ChemicalBarrelTea
+  suffix: Tea
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: Tea
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelTea
+
+- type: entity
+  id: LabelTea
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-tea
+
+- type: entity
+  parent: MetalBarrelGreen
+  id: ChemicalBarrelJuiceWatermelon
+  suffix: 
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+          - ReagentId: JuiceWatermelon
+            Quantity: 1000
+  - type: ContainerFill
+    containers:
+      paper_label:
+      - LabelJuiceWatermelon
+
+- type: entity
+  id: LabelJuiceWatermelon
+  parent: Paper
+  categories: [HideSpawnMenu]
+  components:
+  - type: Paper
+    content: reagent-label-juice-watermelon
+
+
+# Coyote - end added juice and ingredient barrels
+
+
+

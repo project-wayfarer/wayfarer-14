@@ -1,0 +1,19 @@
+- type: entity
+  parent: NFBasePDACartridge
+  id: CorporationCartridge
+  name: corporation cartridge
+  description: A business management program for founding and managing player corporations.
+  components:
+    - type: Sprite
+      sprite: _WF/Objects/Devices/cartridge.rsi
+      state: corp-cart
+    - type: UIFragment
+      ui: !type:CorporationUi
+    - type: Cartridge
+      programName: corp-program-name
+      icon:
+        sprite: _WF/Interface/Actions/corpmanager.rsi
+        state: icon
+    - type: CorporationCartridge
+    - type: StaticPrice
+      price: 500

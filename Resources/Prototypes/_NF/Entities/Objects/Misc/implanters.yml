@@ -31,21 +31,23 @@
   - type: Implanter
     implant: GibAcidifierImplantNF
 
-- type: entity
-  id: BibleUserImplanter
-  name: faith implanter
-  parent: BaseImplantOnlyImplanter
-  components:
-  - type: Implanter
-    implant: BibleUserImplant
-
-- type: entity
-  id: MimePowersImplanter
-  name: mime vow implanter
-  parent: BaseImplantOnlyImplanter
-  components:
-  - type: Implanter
-    implant: MimePowersImplant
+# Wayfarer: Faith implanter and mime vow implanter removed. The mime vow is replaced by the new Mime trait. Faith is covered by the existing Pious trait.
+#- type: entity
+#  id: BibleUserImplanter
+#  name: faith implanter
+#  parent: BaseImplantOnlyImplanter
+#  components:
+#  - type: Implanter
+#    implant: BibleUserImplant
+#
+#- type: entity
+#  id: MimePowersImplanter
+#  name: mime vow implanter
+#  parent: BaseImplantOnlyImplanter
+#  components:
+#  - type: Implanter
+#    implant: MimePowersImplant
+# End Wayfarer
 
 # Centcomm implanters
 

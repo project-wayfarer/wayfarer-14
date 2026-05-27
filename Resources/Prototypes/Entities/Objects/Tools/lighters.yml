@@ -517,7 +517,7 @@
     access: [["CentralCommand"]]
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseC3Contraband] # Frontier BaseMajorContraband<BaseC3Contraband
+  parent: [BaseBrandedLighter] # Frontier BaseMajorContraband<BaseC3Contraband # Wayfarer: Removed contraband
   id: SpiderclanFlippo
   name: Spider-Clan lighter
   description: "A high tech jet lighter, engineered to function even in deep space. Runs on a tiny microfusion cell."
@@ -537,7 +537,7 @@
     color: green
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
+  parent: [BaseBrandedLighter] # Wayfarer: Removed contraband
   id: WaffleCoFlippo
   name: Waffle Co. flippo
   description: "A robust mass produced lighter. The Waffle Co. logo turns the spark wheel when pushed up, minimising risk of lighter burns for even the most inept user."

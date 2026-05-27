@@ -1172,3 +1172,214 @@
   equipment:
     outerClothing: ClothingOuterWinterSyndie
   groupBy: "specialcoats"
+
+# Impstation clothing
+- type: loadout
+  id: WFIMPClothingOuterCoatBomberBlack
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatBomberBlack
+  groupBy: "bomber"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatBomberWhite
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatBomberWhite
+  groupBy: "bomber"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatBomberCargo
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatBomberCargo
+  groupBy: "bomber"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatBomberAtmosHolo
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatBomberAtmosHolo
+  groupBy: "bomber"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatPufferDark
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatPufferDark
+  groupBy: "puffer"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatPufferRed
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatPufferRed
+  groupBy: "puffer"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatPufferBlue
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatPufferBlue
+  groupBy: "puffer"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatPufferMime
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatPufferMime
+  groupBy: "puffer"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatPufferSilver
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatPufferSilver
+  groupBy: "puffer"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatPufferPink
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatPufferPink
+  groupBy: "puffer"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatMusicianFurCoat
+  price: 1000
+  equipment:
+    outerClothing: IMPClothingOuterCoatMusicianFurCoat
+  groupBy: "furcoat"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatVRexFurCoat
+  price: 1000
+  equipment:
+    outerClothing: IMPClothingOuterCoatVRexFurCoat
+  groupBy: "furcoat"
+
+- type: loadout
+  id: WFIMPClothingOuterWhitePoncho
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterWhitePoncho
+  groupBy: "poncho"
+
+- type: loadout
+  id: WFIMPClothingOuterQMPoncho
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterQMPoncho
+  groupBy: "poncho"
+
+- type: loadout
+  id: WFIMPClothingOuterBlackPoncho
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterBlackPoncho
+  groupBy: "poncho"
+
+- type: loadout
+  id: WFIMPClothingOuterCowVest
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterCowVest
+  groupBy: "vest"
+
+- type: loadout
+  id: WFIMPClothingOuterBlackVest
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterBlackVest
+  groupBy: "vest"
+
+- type: loadout
+  id: WFIMPClothingOuterChapsBrown
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterChapsBrown
+  groupBy: "chaps"
+
+- type: loadout
+  id: WFIMPClothingOuterChapsWhite
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterChapsWhite
+  groupBy: "chaps"
+
+- type: loadout
+  id: WFIMPClothingOuterChapsBlack
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterChapsBlack
+  groupBy: "chaps"
+
+- type: loadout
+  id: WFIMPClothingOuterChapsFancy
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterChapsFancy
+  groupBy: "chaps"
+
+- type: loadout
+  id: WFIMPClothingOuterCoatJokester
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatJokester
+
+- type: loadout
+  id: WFIMPClothingOuterCoatWebSweater
+  price: 800
+  equipment:
+    outerClothing: IMPClothingOuterCoatWebSweater
+
+- type: loadout
+  id: WFIMPClothingOuterRainCape
+  price: 500
+  equipment:
+    outerClothing: IMPClothingOuterRainCape
+# DeltaV clothing
+- type: loadout
+  id: WFDVClothingOuterCoatOvercoat
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 1000
+  equipment:
+    outerClothing: DVClothingOuterCoatOvercoat
+
+- type: loadout
+  id: WFDVClothingOuterCoatLeatherJacket
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 1000
+  equipment:
+    outerClothing: DVClothingOuterCoatLeatherJacket
+
+- type: loadout
+  id: WFDVClothingOuterDusterCoat
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 1000
+  equipment:
+    outerClothing: DVClothingOuterDusterCoat
+
+- type: loadout
+  id: WFDVClothingOuterCoatNavalCoat
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 1000
+  equipment:
+    outerClothing: DVClothingOuterCoatNavalCoat
+
+- type: loadout
+  id: WFDVClothingOuterClerkVest
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 650
+  equipment:
+    outerClothing: DVClothingOuterClerkVest

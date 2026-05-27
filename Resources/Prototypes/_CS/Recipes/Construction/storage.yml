@@ -1,0 +1,44 @@
+## Wall lockers # Coyote
+- type: construction
+  id: LockerWallUpgradableBasic
+  graph: WallmountStorage
+  startNode: start
+  targetNode: locker
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition
+
+- type: construction
+  id: LockerWallUpgradableAdvanced
+  graph: WallmountStorage
+  startNode: start
+  targetNode: lockerAdvanced
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition
+
+- type: construction
+  id: LockerWallUpgradableSuper
+  graph: WallmountStorage
+  startNode: start
+  targetNode: lockerSuper
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition
+
+- type: construction
+  id: LockerWallUpgradableBluespace
+  graph: WallmountStorage
+  startNode: start
+  targetNode: lockerBluespace
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition

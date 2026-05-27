@@ -158,7 +158,7 @@
     inventory: None # Frontier: Transfer<None
     revertOnCrit: true
     revertOnDeath: true
-    duration: 20
+    duration: 10 # Wayfarer: 20<10
 
 - type: polymorph
   id: ArtifactCluwne
@@ -181,7 +181,7 @@
     inventory: None
     revertOnDeath: true
     revertOnCrit: true
-    duration: 20
+    duration: 10 # Wayfarer: 20<10
 
 - type: polymorph
   id: ArtifactLuminous
@@ -192,7 +192,7 @@
     inventory: None
     revertOnDeath: true
     revertOnCrit: true
-    duration: 20
+    duration: 10 # Wayfarer: 20<10
 
 # Polymorphs for Wizards polymorph self spell
 - type: polymorph
