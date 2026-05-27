@@ -11,6 +11,8 @@ public sealed partial class StencilOverlay
 {
     private List<Entity<MapGridComponent>> _grids = new();
 
+    // Wayfarer: DrawWeather moved to Content.Client/_WF/Overlays/StencilOverlay.WF.cs
+    /*
     private void DrawWeather(in OverlayDrawArgs args, WeatherPrototype weatherProto, float alpha, Matrix3x2 invMatrix)
     {
         var worldHandle = args.WorldHandle;
@@ -67,4 +69,6 @@ public sealed partial class StencilOverlay
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(null);
     }
+    */
+    // End Wayfarer
 }

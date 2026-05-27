@@ -8,6 +8,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: AshfallLight
@@ -19,6 +20,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: AshfallHeavy
@@ -30,6 +32,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: Fallout
@@ -41,6 +44,9 @@
     params:
       loop: true
       volume: -6
+  damage: # Wayfarer
+    types:
+      Radiation: 6
 
 - type: weather
   id: Hail
@@ -53,6 +59,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: Rain
@@ -64,6 +71,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: soundCollection
   id: Rain
@@ -81,6 +89,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SandstormHeavy
@@ -92,6 +101,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SnowfallLight
@@ -103,6 +113,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SnowfallMedium
@@ -114,6 +125,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SnowfallHeavy
@@ -125,6 +137,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: Storm
@@ -136,3 +149,4 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
