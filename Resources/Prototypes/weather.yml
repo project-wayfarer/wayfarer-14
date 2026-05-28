@@ -4,7 +4,7 @@
     sprite: /Textures/Effects/weather.rsi
     state: ashfall
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
@@ -16,7 +16,7 @@
     sprite: /Textures/Effects/weather.rsi
     state: ashfall_light
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
@@ -40,7 +40,7 @@
     sprite: /Textures/Effects/weather.rsi
     state: fallout
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
@@ -85,7 +85,7 @@
     sprite: /Textures/Effects/weather.rsi
     state: sandstorm
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
@@ -109,7 +109,7 @@
     sprite: /Textures/Effects/weather.rsi
     state: snowfall_light
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
@@ -121,7 +121,7 @@
     sprite: /Textures/Effects/weather.rsi
     state: snowfall_med
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
