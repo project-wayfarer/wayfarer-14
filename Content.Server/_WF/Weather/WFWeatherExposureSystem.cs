@@ -47,8 +47,8 @@ public sealed class WFWeatherExposureSystem : EntitySystem
     private void OnBlockWeatherAnchor(Entity<BlockWeatherComponent> ent, ref AnchorStateChangedEvent args)
         => MarkOwningGridDirty(ent.Owner);
 
-    // Walls placed by a yaml map at load time never fire an anchor-changed event. Mark the
-    // grid dirty on map-init so those walls also trigger a rebuild.
+    // Walls drawn on a map at load time do not announce themselves the way a wall built in-game does.
+    // Recheck which tiles are open when the map loads so these walls are counted too.
     private void OnBlockWeatherMapInit(Entity<BlockWeatherComponent> ent, ref MapInitEvent args)
         => MarkOwningGridDirty(ent.Owner);
 

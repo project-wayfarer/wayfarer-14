@@ -83,9 +83,9 @@ public sealed class WFWeatherHazardSystem : EntitySystem
         }
     }
 
-    // On top of the wall and roof check, gas and radiation are also stopped by being in a
-    // sealed pressurised tile. The pressure check is grid-only so dungeon interiors are not
-    // read as vacuum.
+    // Gas and radiation are also stopped by a sealed pressurised tile. The check reads only the
+    // tile's own air, not the space around the grid, or a sealed interior would read as vacuum
+    // and hurt the players inside.
     private bool IsTileAffected(WeatherPrototype proto, EntityUid gridUid, MapGridComponent grid, TileRef tile)
     {
         if (!_weather.CanWeatherAffect(gridUid, grid, tile, proto))

@@ -14,8 +14,8 @@ namespace Content.Client.Overlays;
 
 public sealed partial class StencilOverlay
 {
-    // TagSystem cannot be set up like the other dependencies on this overlay. Looked up from
-    // the entity manager the first time it is used.
+    // The other dependencies on this overlay are filled in automatically, but an entity system
+    // like TagSystem cannot be, so it is fetched by hand the first time it is needed.
     private TagSystem? _tagSystem;
     private TagSystem Tag => _tagSystem ??= _entManager.System<TagSystem>();
 
@@ -56,7 +56,6 @@ public sealed partial class StencilOverlay
                 // ignoreEmpty: false so diagonal walls on empty-space tiles still get their half-tile mask drawn.
                 foreach (var tile in _map.GetTilesIntersecting(grid.Owner, grid, worldAABB, ignoreEmpty: false))
                 {
-                    // Returns true when the tile already gets weather or when a grid-edge diagonal should let weather through its open half.
                     if (HandleStencilTile(grid, tile, worldHandle, roofComp, weatherProto))
                         continue;
 
@@ -84,10 +83,9 @@ public sealed partial class StencilOverlay
     }
 
     /// <summary>
-    /// Masks the covered half of any diagonal wall on the tile. Returns true when the
-    /// full-tile mask should be skipped, either because weather already reaches the tile
-    /// or because the diagonal is at the grid edge and weather should pour through
-    /// its open side.
+    /// Decides whether to skip the full-tile mask for this tile, and draws the half-tile
+    /// mask for any diagonal wall along the way. Returns true to skip when weather already
+    /// reaches the tile, or when a diagonal on the edge of a grid should let weather through its open side.
     /// </summary>
     private bool HandleStencilTile(Entity<MapGridComponent> grid, TileRef tile, DrawingHandleWorld worldHandle, RoofComponent? roofComp, WeatherPrototype proto)
     {
@@ -165,7 +163,7 @@ public sealed partial class StencilOverlay
 
     /// <summary>
     /// Returns true when weather can reach the tile or any of its four cardinal neighbours.
-    /// Lets the caller tell a diagonal at the grid edge (next to lattice or empty space) apart
+    /// Lets the caller tell a diagonal on the edge of a grid (next to lattice or empty space) apart
     /// from a decorative interior one.
     /// </summary>
     private bool IsTileOrNeighborExposed(Entity<MapGridComponent> grid, TileRef tile, RoofComponent? roofComp, WeatherPrototype proto)

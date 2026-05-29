@@ -11,15 +11,18 @@ namespace Content.Client.Weather;
 
 public sealed partial class WeatherSystem
 {
-    // Muffling levels picked by tile distance from the nearest opening to space.
-    private const float WeatherAudioOcclusionSilent = 3f;     // No opening within search range.
-    private const float WeatherAudioOcclusionInterior = 1.5f; // Deeper than the boundary depth.
-    private const float WeatherAudioOcclusionBoundary = 0.7f; // Within boundary depth of an opening.
-    // Boundary level applies out to this many tiles from the nearest opening.
+    // Muffling levels picked by how many tiles the player is from the nearest tile with weather on it.
+    private const float WeatherAudioOcclusionSilent = 3f;     // No tile with weather on it within search range.
+    private const float WeatherAudioOcclusionInterior = 1.5f; // Too far from the weather to hear it clearly.
+    private const float WeatherAudioOcclusionBoundary = 0.7f; // A tile or two in from the weather, muffled against the wall.
+
+    // The muffled-against-the-wall level reaches this many tiles in from the weather.
     private const int WeatherAudioBoundaryDepth = 2;
-    // Stop searching past this many tiles. No opening found in range means silent.
+
+    // Stop searching past this many tiles. If the nearest tile with weather on it is farther than this, the weather is silent.
     private const int WeatherAudioMaxSearchDepth = 16;
-    // How fast the audible volume catches up to the target level. Half-life is ln(2)/rate seconds.
+
+    // How fast the volume catches up as the player moves between more and less sheltered tiles.
     private const float WeatherAudioOcclusionFadeRate = 0.5f;
 
     private static readonly Vector2i[] Cardinals =
@@ -52,8 +55,8 @@ public sealed partial class WeatherSystem
         if (!TryComp(weather.Stream, out AudioComponent? comp))
             return;
 
-        // New audio streams start at full volume. Without this, they would play loud for
-        // several seconds before the smoothing settled to the muffled level.
+        // A new audio stream starts at full volume. Set it to the player's current muffle level
+        // right away, or the weather plays loud for a few seconds before the fade settles.
         if (streamWasNull)
             comp.Occlusion = ComputeOcclusionForLocalPlayer(weatherProto);
 
@@ -85,14 +88,15 @@ public sealed partial class WeatherSystem
 
         weather.Stream = _audio.Stop(weather.Stream);
         weather.Stream = _audio.PlayGlobal(weatherProto.Sound, Filter.Local(), true)?.Entity;
-        // Set the new stream's volume immediately so it does not start loud and fade down.
+        // Changing the weather restarts the audio. A fresh stream starts at full volume, so set
+        // it to the player's current muffle level right away instead of fading down from loud.
         if (TryComp(weather.Stream, out AudioComponent? audio))
             audio.Occlusion = ComputeOcclusionForLocalPlayer(weatherProto);
         return true;
     }
 
-    // Counts tile steps from the player to the nearest exposed tile and picks the audio volume
-    // from that distance (full volume on an exposed tile, three muffled tiers past it).
+    // Counts the tiles from the player to the nearest tile with weather on it and picks the volume from that distance.
+    // Full volume standing in the weather, then three quieter levels further in.
     private float ComputeWeatherOcclusionTier(EntityUid gridId, MapGridComponent grid, EntityCoordinates coordinates, RoofComponent? roofComp, WeatherPrototype proto)
     {
         var seed = _mapSystem.GetTileRef(gridId, grid, coordinates);
@@ -138,15 +142,15 @@ public sealed partial class WeatherSystem
         return null;
     }
 
-    // Exponential fade between tier levels. Half-life is ln(2)/rate seconds.
+    // Eases the volume between levels so it does not jump as the player moves.
     private float SmoothWeatherOcclusion(float current, float target, float frameTime)
     {
         var fadeFactor = 1f - MathF.Exp(-frameTime * WeatherAudioOcclusionFadeRate);
         return current + (target - current) * fadeFactor;
     }
 
-    // Turns the muffling level into a volume multiplier. Squared so standing one tile inside a
-    // window is clearly louder than standing deep in the room.
+    // Converts the muffling level into how loud the weather plays. The volume falls off quickly,
+    // so standing just inside a window is clearly louder than deep in the room.
     private static float GainAttenuationFromOcclusion(float occlusion)
     {
         var clear = Math.Clamp(1f - occlusion / WeatherAudioOcclusionSilent, 0f, 1f);
