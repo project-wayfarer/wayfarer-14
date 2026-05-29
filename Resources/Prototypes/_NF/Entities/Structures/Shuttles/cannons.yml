@@ -1,7 +1,7 @@
 # CGP
 - type: entity
   id: ShuttleGunFriendshipNfsd
-  parent: [BaseStructureDisableToolUse, ShuttleGunFriendship, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
+  parent: [ShuttleGunFriendship, BaseCGPContraband] # Wayfarer: add BaseCGPContraband, remove BaseStructureDisableToolUse
   suffix: CGP
   components:
   - type: Machine
@@ -9,7 +9,7 @@
 
 - type: entity
   id: ShuttleGunDusterNfsd
-  parent: [BaseStructureDisableToolUse, ShuttleGunDuster, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
+  parent: [ShuttleGunDuster, BaseCGPContraband] # Wayfarer: add BaseCGPContraband, remove BaseStructureDisableToolUse
   suffix: CGP
   components:
   - type: Machine
