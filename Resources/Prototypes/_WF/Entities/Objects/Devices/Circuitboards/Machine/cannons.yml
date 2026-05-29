@@ -1,5 +1,5 @@
 - type: entity
-  id: ShuttleGunFriendshipCircuitboardCGP
+  id: ShuttleGunFriendshipCircuitboardNfsd
   parent: [BaseMachineCircuitboard, BaseCGPContraband]
   name: EXP-320g "Friendship" machine board
   description: A machine printed circuit board for an EXP-320g "Friendship".
@@ -18,7 +18,7 @@
       CableHV: 5
 
 - type: entity
-  id: ShuttleGunDusterCircuitboardCGP
+  id: ShuttleGunDusterCircuitboardNfsd
   parent: [BaseMachineCircuitboard, BaseCGPContraband]
   name: EXP-2100g "Duster" machine board
   description: A machine printed circuit board for an EXP-2100g "Duster".

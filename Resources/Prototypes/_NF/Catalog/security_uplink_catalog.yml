@@ -434,9 +434,9 @@
         tags:
           - SecurityUplink
     - !type:BuyerJobCondition
-    whitelist:
-    - Bailiff # Wayfarer
-    - Sheriff
+      whitelist:
+        - Bailiff # Wayfarer
+        - Sheriff
 
 - type: listing
   id: UplinkSecurityKey
@@ -507,10 +507,10 @@
 
 # Wayfarer: Duster
 - type: listing
-  id: ShuttleGunDusterCircuitboardCGP
+  id: ShuttleGunDusterCircuitboardNfsd
   name: uplink-cgp-duster-name
   description: uplink-cgp-duster-desc
-  productEntity: ShuttleGunDusterCircuitboardCGP
+  productEntity: ShuttleGunDusterCircuitboardNfsd
   icon: { sprite: _NF/Objects/Misc/module.rsi, state: nfsd }
   cost:
     FrontierUplinkCoin: 15
@@ -522,16 +522,16 @@
       tags:
       - SecurityUplink
   - !type:BuyerJobCondition
-    whitelist:
-    - Bailiff
-    - Sheriff
+      whitelist:
+      - Bailiff
+      - Sheriff
 
 # Wayfarer: Friendship
 - type: listing
-  id: ShuttleGunFriendshipCircuitboardCGP
+  id: ShuttleGunFriendshipCircuitboardNfsd
   name: uplink-cgp-friendship-name
   description: uplink-cgp-duster-desc
-  productEntity: ShuttleGunFriendshipCircuitboardCGP
+  productEntity: ShuttleGunFriendshipCircuitboardNfsd
   icon: { sprite: _NF/Objects/Misc/module.rsi, state: nfsd }
   cost:
     FrontierUplinkCoin: 15
@@ -543,9 +543,9 @@
       tags:
       - SecurityUplink
   - !type:BuyerJobCondition
-    whitelist:
-    - Bailiff
-    - Sheriff
+      whitelist:
+      - Bailiff
+      - Sheriff
 
 # Wayfarer: Radar
 - type: listing
@@ -564,9 +564,9 @@
       tags:
       - SecurityUplink
   - !type:BuyerJobCondition
-    whitelist:
-    - Bailiff
-    - Sheriff
+      whitelist:
+      - Bailiff
+      - Sheriff
 
 #region magazines
 - type: listing
