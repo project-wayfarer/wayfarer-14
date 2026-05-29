@@ -55,7 +55,7 @@
 - type: entity
   name: explosive grenade
   description: Grenade that creates a small but devastating explosion.
-  parent: [GrenadeBase, BaseMilitaryContraband] # Wayfarer: BaseSyndicateContraband<BaseMilitaryContraband
+  parent: [GrenadeBase, BaseDDContraband] # Wayfarer: BaseSyndicateContraband<BaseDDContraband
   id: ExGrenade
   components:
   - type: ExplodeOnTrigger
@@ -78,7 +78,7 @@
 - type: entity
   name: flashbang
   description: Eeeeeeeeeeeeeeeeeeeeee.
-  parent: [ GrenadeBase, BaseMilitaryContraband ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
+  parent: [ GrenadeBase, BaseDDContraband ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseDDContraband
   id: GrenadeFlashBang
   components:
   - type: Sprite
@@ -422,7 +422,7 @@
 - type: entity
   name: EMP grenade
   description: A grenade designed to wreak havoc on electronic systems.
-  parent: [GrenadeBase, BaseMilitaryContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseMilitaryContraband
+  parent: [GrenadeBase, BaseDDContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseDDContraband
   id: EmpGrenade
   components:
   - type: Sprite
@@ -472,7 +472,7 @@
     price: 10000
 
 - type: entity
-  parent: [ GrenadeBase, BaseMilitaryContraband ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
+  parent: [ GrenadeBase ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed Contraband
   id: SmokeGrenade
   name: smoke grenade
   description: A tactical grenade that releases a large, long-lasting cloud of smoke when used.

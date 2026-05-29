@@ -33,7 +33,7 @@
 # Tools
 
 - type: entity
-  parent: NFBaseBlueprintExpeditionSalvage
+  parent: [NFBaseBlueprintExpeditionSalvage, BaseNotContraband] # Wayfarer: add BaseNotContraband
   id: NFBlueprintEnergyPickaxe
   name: holopickaxe blueprint
   description: A blueprint with a schematic of a holopickaxe. It can be inserted into a protolathe or techfab.

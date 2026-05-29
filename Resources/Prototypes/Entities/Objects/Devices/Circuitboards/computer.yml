@@ -471,7 +471,7 @@
     prototype: ComputerWallmountRadar # Frontier
 
 - type: entity
-  parent: BaseComputerCircuitboard
+  parent: [BaseComputerCircuitboard, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: AdvancedRadarConsoleCircuitboard # Frontier
   name: advanced radar console computer board
   components:

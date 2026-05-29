@@ -434,8 +434,9 @@
         tags:
           - SecurityUplink
     - !type:BuyerJobCondition
-      whitelist:
-        - Sheriff
+    whitelist:
+    - Bailiff # Wayfarer
+    - Sheriff
 
 - type: listing
   id: UplinkSecurityKey
@@ -503,6 +504,69 @@
       whitelist:
         tags:
           - SecurityUplink
+
+# Wayfarer: Duster
+- type: listing
+  id: ShuttleGunDusterCircuitboardCGP
+  name: uplink-cgp-duster-name
+  description: uplink-cgp-duster-desc
+  productEntity: ShuttleGunDusterCircuitboardCGP
+  icon: { sprite: _NF/Objects/Misc/module.rsi, state: nfsd }
+  cost:
+    FrontierUplinkCoin: 15
+  categories:
+  - UplinkSecurityUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
+  - !type:BuyerJobCondition
+    whitelist:
+    - Bailiff
+    - Sheriff
+
+# Wayfarer: Friendship
+- type: listing
+  id: ShuttleGunFriendshipCircuitboardCGP
+  name: uplink-cgp-friendship-name
+  description: uplink-cgp-duster-desc
+  productEntity: ShuttleGunFriendshipCircuitboardCGP
+  icon: { sprite: _NF/Objects/Misc/module.rsi, state: nfsd }
+  cost:
+    FrontierUplinkCoin: 15
+  categories:
+  - UplinkSecurityUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
+  - !type:BuyerJobCondition
+    whitelist:
+    - Bailiff
+    - Sheriff
+
+# Wayfarer: Radar
+- type: listing
+  id: AdvancedRadarConsoleCircuitboard
+  name: uplink-cgp-radar-name
+  description: uplink-cgp-radar-desc
+  productEntity: AdvancedRadarConsoleCircuitboard
+  icon: { sprite: _NF/Objects/Misc/module.rsi, state: nfsd }
+  cost:
+    FrontierUplinkCoin: 8
+  categories:
+  - UplinkSecurityUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
+  - !type:BuyerJobCondition
+    whitelist:
+    - Bailiff
+    - Sheriff
 
 #region magazines
 - type: listing
@@ -813,7 +877,7 @@
   productEntity: ClothingMaskGasSheriff
   icon: { sprite: _NF/Clothing/Mask/nfsd_sheriff.rsi, state: icon}
   cost:
-    FrontierUplinkCoin: 3
+    FrontierUplinkCoin: 1 # Wayfarer: 3<1
   categories:
     - UplinkSecurityUtility
   conditions:

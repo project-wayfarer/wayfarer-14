@@ -28,6 +28,29 @@
   - NFAmmunitionBoxPistol45
   - NFAmmunitionBoxPistol45Overpressure
   - NFAmmunitionBoxPistol45Rubber
+  # Wayfarer: Pre-Loaded mags and colored mags QOL
+  - WFMagazine35ExFilled
+  - WFMagazine35ExFilledRubber
+  - WFMagazine35ExFilledOverpressure
+  - WFMagazine35SMGFilled
+  - WFMagazine35SMGFilledTop
+  - WFMagazine35SMGFilledRubber
+  - WFMagazine35SMGFilledTopRubber
+  - WFMagazine35SMGFilledOverpressure
+  - WFMagazine35SMGFilledTopOverpressure
+  - WFMagazine45Filled
+  - WFSpeedloader45Filled
+  - WFMagazine45FilledRubber
+  - WFSpeedloader45FilledRubber
+  - WFMagazine45FilledOverpressure
+  - WFSpeedloader45FilledOverpressure
+  - WFMagazine20Filled
+  - WFMagazine20FilledRubber
+  - WFMagazine20FilledOverpressure
+  - WFMagazine30Filled
+  - WFMagazine30FilledRubber
+  - WFMagazine30FilledOverpressure
+  # End Wayfarer
 
 - type: latheRecipePack
   id: NfsdToolsStatic
@@ -52,6 +75,9 @@
   - NFClothingNeckCardNfsdWrit
   - NFBaseClothingNeckHolsterThighNfsd
   - NFBaseClothingNeckSheathThighNfsd
+  - NFPouchNfsd # Wayfarer
+  - WFClothingOuterStraightjacket # Wayfarer
+  - WFClothingMaskGasSheriff # Wayfarer
 
 - type: latheRecipePack
   id: NfsdTargetsStatic
@@ -65,15 +91,30 @@
   recipes:
   - NFCombatKnife
   #- WeaponLaserSvalinn # After the changes made to windows shouldn't be that much of an issue now if it's widely available
-  - NFWeaponEnergyPistolLaser
-  - NFWeaponRevolverArgenti
-  - NFWeaponPistolMk58
-  - NFWeaponShotgunDoubleBarreled
-  - NFWeaponRifleAssaultNovaliteC1
-  - NFWeaponRifleAssaultGestio
-  - WeaponPistolPollock
+  #- NFWeaponEnergyPistolLaser # Wayfarer
+  #- NFWeaponRevolverArgenti # Wayfarer
+  #- NFWeaponPistolMk58 # Wayfarer
+  #- NFWeaponShotgunDoubleBarreled # Wayfarer
+  #- NFWeaponRifleAssaultNovaliteC1 # Wayfarer
+  #- NFWeaponRifleAssaultGestio # Wayfarer
+  #- WeaponPistolPollock # Wayfarer
   - NFStunbaton
   - NFWeaponEnergyPistolDisabler
+  # Wayfarer: The good shit
+  - NFWeaponEnergySubMachineGunDisabler
+  - NFWeaponRevolverInspector
+  - NFWeaponPistolUniversalNfsd
+  - WFWeaponLaserSvalinn
+  - WFGrenadeStinger
+  - WFSmokeGrenade
+  - WFEmpGrenade
+  - WFTearGasGrenade
+  - WFGrenadeFlashBang
+  - WFClusterBang
+  - ArmorPlateLight
+  - ArmorPlateMedium
+  - ArmorPlateSteel
+  # End Wayfarer
 
 - type: latheRecipePack
   id: NfsdBoardsStatic
