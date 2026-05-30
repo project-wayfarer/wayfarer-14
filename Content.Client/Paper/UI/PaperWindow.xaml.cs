@@ -319,11 +319,16 @@ namespace Content.Client.Paper.UI
             fm.AddMarkupPermissive(state.Text);
             WrittenTextLabel.SetMessage(fm, _allowedTags, DefaultTextColor);
 
+            // for (var i = 0; i <= state.StampedBy.Count * 3 + 1; i++) // Frontier
+            // { // Frontier
+            //     msg.AddMarkupPermissive("\r\n"); // Frontier
+            // } // Frontier
+
             // Frontier: signatures shouldn't walk off the page
             if (state.StampedBy.Count > 0)
             {
                 for (int i = 0; i < 6; i++)
-                    fm.AddMarkupPermissive("\r\n");
+                    fm.AddMarkupPermissive("\r\n"); // Wayfarer: msg<fm
             }
             // End Frontier
 
