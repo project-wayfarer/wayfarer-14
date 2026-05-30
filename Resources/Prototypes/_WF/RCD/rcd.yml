@@ -1,4 +1,30 @@
 # Electrical
+
+- type: rcd
+  id: BaseAPC
+  category: Electrical
+  sprite:
+    sprite: /Textures/Structures/Power/apc.rsi
+    state: base
+  mode: ConstructObject
+  prototype: BaseAPC
+  cost: 6
+  delay: 2
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: Thruster
+  category: Electrical
+  sprite: /Textures/Interface/Radial/RCD/thruster.png
+  mode: ConstructObject
+  prototype: Thruster
+  cost: 4
+  delay: 2
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct3
+
 - type: rcd
   id: ThrusterNfsd
   category: Electrical
@@ -22,3 +48,207 @@
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct3
+
+- type: rcd
+  id: SMES
+  category: Electrical
+  sprite: /Textures/_WF/Interface/Radial/RCD/smes.png
+  mode: ConstructObject
+  prototype: SMESBasicEmpty
+  cost: 12
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: Substation
+  category: Electrical
+  sprite: /Textures/_WF/Interface/Radial/RCD/substation.png
+  mode: ConstructObject
+  prototype: SubstationBasicEmpty
+  cost: 12
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+# Walls
+- type: rcd
+  id: WallReinforced
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/solid.rsi
+    state: rgeneric
+  mode: ConstructObject
+  prototype: WallReinforced
+  cost: 6
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: WallReinforcedDiagonal
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/reinforced_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: WallReinforcedDiagonal
+  cost: 4
+  delay: 2
+  collisionMask: FullTileMask
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rotation: User
+  fx: EffectRCDConstruct2
+#
+- type: rcd
+  id: WallReinforcedWindow
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/reinforced_window.rsi
+    state: full
+  mode: ConstructObject
+  prototype: ReinforcedWindow
+  cost: 6
+  delay: 2
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: ReinforcedWindowDiagonal
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/reinforced_window_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: ReinforcedWindowDiagonal
+  cost: 4
+  delay: 2
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rotation: User
+  fx: EffectRCDConstruct2
+#
+- type: rcd
+  id: WallShuttle
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/shuttle.rsi
+    state: full
+  mode: ConstructObject
+  prototype: WallShuttle
+  cost: 6
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: WallShuttleDiagonal
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/shuttle_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: WallShuttleDiagonal
+  cost: 4
+  delay: 2
+  collisionMask: FullTileMask
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rotation: User
+  fx: EffectRCDConstruct2
+#
+- type: rcd
+  id: ShuttleWindow
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/shuttle_window.rsi
+    state: full
+  mode: ConstructObject
+  prototype: ShuttleWindow
+  cost: 6
+  delay: 2
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: ShuttleWindowDiagonal
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Walls/shuttle_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: ShuttleWindowDiagonal
+  cost: 4
+  delay: 2
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rotation: User
+  fx: EffectRCDConstruct2
+
+
+# Docking
+
+- type: rcd
+  id: AirlockShuttle
+  category: Airlocks
+  sprite: /Textures/_WF/Interface/Radial/RCD/airlock_shuttle.png
+  mode: ConstructObject
+  prototype: AirlockShuttle
+  cost: 25
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockGlassShuttle
+  category: Airlocks
+  sprite: /Textures/_WF/Interface/Radial/RCD/airlock_glass_shuttle.png
+  mode: ConstructObject
+  prototype: AirlockGlassShuttle
+  cost: 25
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: Gaslock
+  category: Airlocks
+  sprite:
+    sprite: /Textures/_NF/Structures/Piping/Atmospherics/gaslock.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: Gaslock
+  cost: 25
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+# idk
+
+- type: rcd
+  id: AtmosDeviceFanDirectional
+  category: Airlocks
+  sprite: /Textures/_WF/Interface/Radial/RCD/directionalfan.png
+  mode: ConstructObject
+  prototype: AtmosDeviceFanDirectional
+  cost: 25
+  delay: 15
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct4

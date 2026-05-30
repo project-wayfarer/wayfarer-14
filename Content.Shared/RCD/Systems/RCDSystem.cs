@@ -381,7 +381,7 @@ public sealed class RCDSystem : EntitySystem
         var effect = Spawn(effectPrototype, location);
         var ev = new RCDDoAfterEvent(GetNetCoordinates(location), component.ConstructionDirection, placementLayer, component.ProtoId, cost, GetNetEntity(effect));      // Starlight Edit: Include layer as well in snapshot at start so finalize uses consistent placement state.
 
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, target: args.Target, used: uid)
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, delay*component.DelayMultiplier, ev, uid, target: args.Target, used: uid) // Mono - add delay multiplier.
         {
             NeedHand = true,
             BreakOnDamage = true,

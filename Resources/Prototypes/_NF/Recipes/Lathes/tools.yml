@@ -101,8 +101,8 @@
   result: ShipyardRCDAmmo
   completetime: 2.4
   materials:
-    Steel: 500
-    Plastic: 250
+    Steel: 1500 # Wayfarer: 500<1500
+    Plastic: 750 # Wayfarer: 250<750
 
 - type: latheRecipe
   parent: NFBaseToolsRecipe

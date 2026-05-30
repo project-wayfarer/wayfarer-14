@@ -34,14 +34,24 @@
     - MVCable
     - HVCable
     - CableTerminal
-    - ThrusterRogue # Wayfarer
+    # Wayfarer
+    - BaseAPC
+    - SMES
+    - Substation
+    - AirlockShuttle
+    - AirlockGlassShuttle
+    - Gaslock
+    - ThrusterRogue
+    - AtmosDeviceFanDirectional
+    # End Wayfarer
     - Deconstruct
+    delayMultiplier: 0.65 # Mono
   - type: Sprite
     state: icon-shipyard
   - type: GridAccess
 
 - type: entity
-  name: NFSD RCD
+  name: CGP RCD # Wayfarer: NFSD<CGP
   parent: [BaseMilitaryContraband, RCD] #Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
   id: NFSDRCD
   description: A security construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
@@ -71,8 +81,18 @@
     - MVCable
     - HVCable
     - CableTerminal
-    - ThrusterNfsd # Wayfarer
+    # Wayfarer
+    - BaseAPC
+    - SMES
+    - Substation
+    - AirlockShuttle
+    - AirlockGlassShuttle
+    - Gaslock
+    - ThrusterNfsd
+    - AtmosDeviceFanDirectional
+    # End Wayfarer
     - Deconstruct
+    delayMultiplier: 0.65 # Mono
   - type: Sprite
     state: icon-shipyard
   - type: GridAccess
