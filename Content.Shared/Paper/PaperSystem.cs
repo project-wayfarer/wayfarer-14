@@ -66,8 +66,6 @@ public sealed class PaperSystem : EntitySystem
 
         SubscribeLocalEvent<ActivateOnPaperOpenedComponent, PaperWriteEvent>(OnPaperWrite);
 
-        // Umbra - Signing alt verb event listener.
-        SubscribeLocalEvent<PaperComponent, GetVerbsEvent<AlternativeVerb>>(AddSignVerb);
         SubscribeLocalEvent<PaperComponent, PaperSignatureRequestMessage>(OnSignatureRequest); // Starlight-edit
 
         _paperQuery = GetEntityQuery<PaperComponent>();
