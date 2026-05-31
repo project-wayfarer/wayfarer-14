@@ -32,6 +32,20 @@
 
 # Flooring
 
+#- type: rcd # Wayfarer: Moved to _WF/RCD/rcd.yml
+#  id: Plating
+#  name: rcd-component-plating
+#  category: WallsAndFlooring
+#  sprite: /Textures/Interface/Radial/RCD/plating.png
+#  mode: ConstructTile
+#  prototype: Plating
+#  cost: 1
+#  delay: 1
+#  collisionMask: InteractImpassable
+#  rules:
+#  - CanBuildOnEmptyTile
+#  fx: EffectRCDConstruct1
+
 - type: rcd
   id: FloorSteel
   name: rcd-component-floor-steel
