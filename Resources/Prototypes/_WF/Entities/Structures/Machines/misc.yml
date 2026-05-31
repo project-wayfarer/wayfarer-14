@@ -33,8 +33,9 @@
         - MachineMask
         layer:
         - MachineLayer
-  - type: ApcPowerReceiver
-    powerLoad: 10000
+  - type: PowerConsumer
+    voltage: Medium
+    drawRate: 750
   - type: Sprite
     sprite: _Mono/Structures/Shuttles/thruster_large.rsi
     offset: 0.5,-0.5
