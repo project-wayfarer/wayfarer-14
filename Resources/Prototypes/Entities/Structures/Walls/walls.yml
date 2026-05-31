@@ -545,6 +545,10 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+    - type: RCDDeconstructable # Wayfarer
+      deconstructable: true # Wayfarer
+      cost: 8 # Wayfarer
+      delay: 8 # Wayfarer
 
 - type: entity
   parent: WallDiagonalBase
@@ -599,7 +603,9 @@
           sound:
             collection: MetalSlam
   - type: RCDDeconstructable # Frontier
-    deconstructable: false # Frontier
+    deconstructable: true # Frontier # Wayfarer: false<true
+    cost: 8 # Wayfarer
+    delay: 8 # Wayfarer
 
 - type: entity
   parent: BaseWall
