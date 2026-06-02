@@ -194,11 +194,11 @@
           max: 6
           canBeAirSealed: true
         entries:
-        - id: GasDepositPlasmaVerySmall
+        - id: GasDepositPlasmaVeryLarge # Wayfarer: GasDepositPlasmaVerySmall<GasDepositPlasmaVeryLarge
           orGroup: deposit
-        - id: GasDepositMuddlePlasmaVerySmall
+        - id: GasDepositMuddlePlasma # Wayfarer: GasDepositMuddlePlasmaVerySmall<GasDepositMuddlePlasma
           orGroup: deposit
-        - id: GasDepositMuddleEvenVerySmall
+        - id: GasDepositMuddleEvenSmall # Wayfarer: VerySmall<Small
           orGroup: deposit
         - id: GasDepositHelium
           orGroup: deposit
@@ -283,18 +283,20 @@
     - type: RandomEntityPopulator
       entries:
       - params:
-          prob: 0.6
+          prob: 0.8 # Wayfarer: 0.6<0.8
           min: 1
-          max: 1
+          max: 2 # Wayfarer: 1<2
           canBeAirSealed: true
         entries:
-        - id: GasDepositOxygenVeryLarge
-          orGroup: deposit
+#        - id: GasDepositOxygenVeryLarge # Wayfarer
+#          orGroup: deposit
         - id: GasDepositMuddleEvenVeryLarge
           orGroup: deposit
-        - id: GasDepositNitrogenVeryLarge
-          orGroup: deposit
+#        - id: GasDepositNitrogenVeryLarge # Wayfarer
+#          orGroup: deposit
         - id: GasDepositAirVeryLarge
+          orGroup: deposit
+        - id: GasDepositPlasmaVeryLarge # Wayfarer
           orGroup: deposit
 # endregion Chromite Table
 
