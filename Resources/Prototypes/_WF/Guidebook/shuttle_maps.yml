@@ -220,14 +220,14 @@
 
 - type: entity
   parent: PosterBase
-  id: ShuttleMapReclaimer
-  name: "Reclaimer"
-  description: "Detailed map of a Reclaimer shuttle."
+  id: ShuttleMapBehir
+  name: "Behir"
+  description: "Detailed map of a Behir shuttle."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
-    state: reclaimer
+    state: behir
 
 - type: entity
   parent: PosterBase
@@ -253,14 +253,14 @@
 
 - type: entity
   parent: PosterBase
-  id: ShuttleMapBeater
-  name: "Beater"
-  description: "Detailed map of a Beater shuttle."
+  id: ShuttleMapMephit
+  name: "Mephit"
+  description: "Detailed map of a Mephit shuttle."
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
-    state: beater
+    state: mephit
 
 - type: entity
   parent: PosterBase
