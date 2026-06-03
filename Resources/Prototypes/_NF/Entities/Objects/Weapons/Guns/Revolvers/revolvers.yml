@@ -56,8 +56,10 @@
   id: NFWeaponRevolverRitland45
   parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverGorlex ]
   name: ritland-45
+#  description: |-
+#    An illegal revolver favoured by Syndicate agents.
   description: |-
-    An illegal revolver favoured by Syndicate agents.
+    A high quality heavy frame revolver with wooden grip.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
@@ -68,8 +70,8 @@
   id: NFWeaponRevolverPirate
   parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverSteelbolt ]
   name: pirate revolver
-  description: |-
-    An odd, illegal, old-looking revolver, favoured by pirate crews.
+  description: |- # Wayfarer: Change description
+    An odd, old-looking revolver, favoured by pirate crews.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
@@ -80,8 +82,8 @@
   id: NFWeaponPistolFlintlock
   parent: [ NFBaseWeaponFlintlockChamber, NFBaseWeaponFrameRevolverSteelbolt ] # Wayfarer: NFBaseWeaponRevolverChamber60<NFBaseWeaponFlintlockChamber get real lmao
   name: flintlock pistol
-  description: |-
-    A pirate's companion. Yarrr! An illegal weapon often used by pirates.
+  description: |- # Wayfarer: Change description
+    A pirate's companion. Yarrr! A weapon often used by pirates.
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Revolvers/flintlock.rsi

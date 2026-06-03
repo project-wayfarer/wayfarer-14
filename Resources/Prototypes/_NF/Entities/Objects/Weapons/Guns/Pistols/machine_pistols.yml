@@ -27,8 +27,10 @@
   id: NFWeaponPistolViper
   parent: [ NFBaseWeaponPistolChamber35HighCapacity, NFBaseWeaponFrameMachinePistolGorlex ]
   name: viper
-  description: |-
-    A small, easily concealable machine pistol. An illegal firearm often used by Syndicate agents.
+#  description: |-
+#    A small, easily concealable machine pistol. An illegal firearm often used by Syndicate agents.
+  description: |- # Wayfarer: New description
+    A small, lightweight and high quality machine pistol.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
