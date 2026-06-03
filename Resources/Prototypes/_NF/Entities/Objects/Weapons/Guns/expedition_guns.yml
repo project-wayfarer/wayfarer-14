@@ -139,7 +139,7 @@
 
 - type: entity
   parent:
-  - BaseExpeditionWeaponTier1Syndicate
+  - BaseExpeditionWeaponTier1 # Wayfarer: BaseExpeditionWeaponTier1Syndicate<BaseExpeditionWeaponTier1
   - NFWeaponRevolverRitland45
   categories: [ HideSpawnMenu ]
   id: NFWeaponRevolverRitland45Expedition
@@ -147,7 +147,7 @@
 ## Rifles
 - type: entity
   parent:
-  - BaseExpeditionWeaponTier1Syndicate
+  - BaseExpeditionWeaponTier1 # Wayfarer: BaseExpeditionWeaponTier1Syndicate<BaseExpeditionWeaponTier1
   - NFWeaponRifleBarlowsBolt
   categories: [ HideSpawnMenu ]
   id: NFWeaponRifleBarlowsBoltExpedition
@@ -283,7 +283,7 @@
 
 - type: entity
   parent:
-  - BaseExpeditionWeaponTier3Syndicate
+  - BaseMilitaryContraband # Wayfarer: BaseExpeditionWeaponTier3Syndicate<BaseMilitaryContraband
   - NFWeaponRifleAssaultM90GrenadeLauncher
   categories: [ HideSpawnMenu ]
   id: NFWeaponRifleAssaultM90GrenadeLauncherExpedition
@@ -320,7 +320,7 @@
 
 - type: entity
   parent:
-  - BaseExpeditionWeaponTier3Syndicate
+  - BaseMilitaryContraband # Wayfarer: BaseExpeditionWeaponTier3Syndicate<BaseMilitaryContraband
   - NFWeaponSubMachineGunAtreides
   categories: [ HideSpawnMenu ]
   id: NFWeaponSubMachineGunAtreidesExpedition
@@ -351,7 +351,7 @@
 
 - type: entity
   parent:
-  - BaseExpeditionWeaponTier4Syndicate
+  - BaseBMContraband # Wayfarer: BaseExpeditionWeaponTier4Syndicate<BaseBMContraband
   - NFWeaponShotgunBulldog
   categories: [ HideSpawnMenu ]
   id: NFWeaponShotgunBulldogExpedition
@@ -359,7 +359,7 @@
 ## Rifles
 - type: entity
   parent:
-  - BaseExpeditionWeaponTier4Syndicate
+  - BaseMilitaryContraband # Wayfarer: BaseExpeditionWeaponTier4Syndicate<BaseMilitaryContraband
   - NFWeaponRifleAssaultSm
   categories: [ HideSpawnMenu ]
   id: NFWeaponRifleAssaultSmExpedition

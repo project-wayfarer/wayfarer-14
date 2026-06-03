@@ -59,7 +59,7 @@
 #region DeltaV
 - type: entity
   id: NFWeaponRifleAssaultVulcan
-  parent: [ NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ BaseMilitaryContraband, NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ] # Wayfarer: add BaseMilitaryContraband
   name: Vulcan
   description: |-
     One of the heaviest small arms to grace Security's armory, this rifle is a modern take on a classic, informally dubbed the "Right Arm of the Free World".
@@ -91,7 +91,7 @@
 #region DeltaV: Rubber
 - type: entity
   id: NFWeaponRifleAssaultVulcanLessLethal
-  parent: [ NFBaseWeaponRifleAssaultChamber30Rubber, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ BaseMilitaryContraband, NFBaseWeaponRifleAssaultChamber30Rubber, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ] # Wayfarer: add BaseMilitaryContraband
   name: Vulcan
   description: |-
     One of the heaviest small arms to grace Security's armory, this rifle is a modern take on a classic, informally dubbed the "Right Arm of the Free World".
