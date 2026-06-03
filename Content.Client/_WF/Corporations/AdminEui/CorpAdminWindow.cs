@@ -11,7 +11,7 @@ namespace Content.Client._WF.Corporations.AdminEui;
 
 public sealed class CorpAdminWindow : DefaultWindow
 {
-    // ─── Events ──────────────────────────────────────────────────────────────
+    // Events
 
     public event Action? OnRefresh;
     public event Action<int, int>? OnSetBalance;
@@ -27,7 +27,7 @@ public sealed class CorpAdminWindow : DefaultWindow
     public event Action<int, Guid>? OnAddMember;
     public event Action<int, string, string>? OnRecoverStation; // corpId, archiveFileName, stationName
 
-    // ─── Layout ──────────────────────────────────────────────────────────────
+    // Layout
 
     private readonly BoxContainer _corpList;
     private readonly BoxContainer _detailPanel;
@@ -46,7 +46,7 @@ public sealed class CorpAdminWindow : DefaultWindow
             VerticalExpand = true,
         };
 
-        // ── Left: corp list ──────────────────────────────────────────────────
+        // Left: corp list
         var leftPanel = new BoxContainer
         {
             Orientation = LayoutOrientation.Vertical,
@@ -76,7 +76,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         listScroll.AddChild(_corpList);
         leftPanel.AddChild(listScroll);
 
-        // ── Right: detail panel ──────────────────────────────────────────────
+        // Right: detail panel
         var detailScroll = new ScrollContainer
         {
             HorizontalExpand = true,
@@ -91,7 +91,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         };
         detailScroll.AddChild(_detailPanel);
 
-        // ── Separator ────────────────────────────────────────────────────────
+        // Separator
         var separator = new PanelContainer { MinWidth = 1 };
 
         root.AddChild(leftPanel);
@@ -101,7 +101,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         Contents.AddChild(root);
     }
 
-    // ─── State update ─────────────────────────────────────────────────────────
+    // State update
 
     public void UpdateState(CorpAdminEuiState state)
     {
@@ -116,7 +116,7 @@ public sealed class CorpAdminWindow : DefaultWindow
             ClearDetail();
     }
 
-    // ─── Corp list ────────────────────────────────────────────────────────────
+    // Corp list
 
     private void RebuildCorpList()
     {
@@ -140,7 +140,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         }
     }
 
-    // ─── Detail panel ─────────────────────────────────────────────────────────
+    // Detail panel
 
     private void ClearDetail()
     {
@@ -157,7 +157,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         _detailPanel.DisposeAllChildren();
         _detailPanel.RemoveAllChildren();
 
-        // ── Header ──────────────────────────────────────────────────────────
+        // Header
         _detailPanel.AddChild(new Label
         {
             Text = $"[{corp.Id}] {corp.Name}",
@@ -165,7 +165,7 @@ public sealed class CorpAdminWindow : DefaultWindow
             Margin = new Thickness(0, 0, 0, 8),
         });
 
-        // ── Balance ─────────────────────────────────────────────────────────
+        // Balance
         AddSectionHeader("Balance");
         var balanceRow = new BoxContainer { Orientation = LayoutOrientation.Horizontal, Margin = new Thickness(0, 0, 0, 4) };
         var balanceEdit = new LineEdit { Text = corp.Balance.ToString(), MinWidth = 120, Margin = new Thickness(0, 0, 4, 0) };
@@ -180,7 +180,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         balanceRow.AddChild(setBalanceBtn);
         _detailPanel.AddChild(balanceRow);
 
-        // ── Description ─────────────────────────────────────────────────────
+        // Description
         AddSectionHeader("Description");
         var descEdit = new LineEdit { Text = corp.Description, HorizontalExpand = true, Margin = new Thickness(0, 0, 0, 4) };
         var setDescRow = new BoxContainer { Orientation = LayoutOrientation.Horizontal, Margin = new Thickness(0, 0, 0, 4) };
@@ -190,7 +190,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         setDescRow.AddChild(setDescBtn);
         _detailPanel.AddChild(setDescRow);
 
-        // ── Privacy ─────────────────────────────────────────────────────────
+        // Privacy
         AddSectionHeader("Privacy");
         var privacyRow = new BoxContainer { Orientation = LayoutOrientation.Horizontal, Margin = new Thickness(0, 0, 0, 4) };
         var privacyBtn = new OptionButton { Margin = new Thickness(0, 0, 4, 0) };
@@ -205,7 +205,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         privacyRow.AddChild(setPrivacyBtn);
         _detailPanel.AddChild(privacyRow);
 
-        // ── Members ─────────────────────────────────────────────────────────
+        // Members
         AddSectionHeader($"Members ({corp.Members.Count})");
         foreach (var member in corp.Members.OrderByDescending(m => m.Rank))
         {
@@ -252,7 +252,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         };
         _detailPanel.AddChild(addPlayerBtn);
 
-        // ── Station ─────────────────────────────────────────────────────────
+        // Station
         AddSectionHeader("Station");
         if (corp.Station != null)
         {
@@ -297,7 +297,7 @@ public sealed class CorpAdminWindow : DefaultWindow
             _detailPanel.AddChild(grantRow);
         }
 
-        // ── Archived stations ────────────────────────────────────────────────
+        // Archived stations
         if (corp.ArchivedStationFiles.Count > 0)
         {
             AddSectionHeader($"Archived Stations ({corp.ArchivedStationFiles.Count})");
@@ -340,7 +340,7 @@ public sealed class CorpAdminWindow : DefaultWindow
             }
         }
 
-        // ── Danger zone ─────────────────────────────────────────────────────
+        // Danger zone
         AddSectionHeader("Danger Zone");
         var deleteBtn = new ConfirmButton
         {
@@ -351,7 +351,7 @@ public sealed class CorpAdminWindow : DefaultWindow
         _detailPanel.AddChild(deleteBtn);
     }
 
-    // ─── Helpers ─────────────────────────────────────────────────────────────
+    // Helpers
 
     private void AddSectionHeader(string text)
     {

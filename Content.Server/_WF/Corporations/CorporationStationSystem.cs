@@ -178,7 +178,7 @@ public sealed class CorporationStationSystem : EntitySystem
         }
     }
 
-    // ── Public API ────────────────────────────────────────────────────────────
+    // Public API
 
     /// <summary>
     /// Admin shortcut: grants a station to a corporation for free, creating the DB record and spawning the grid.
@@ -265,7 +265,7 @@ public sealed class CorporationStationSystem : EntitySystem
         return _xforms.GetWorldPosition(gridUid);
     }
 
-    // ── Internals ─────────────────────────────────────────────────────────────
+    // Internals
 
     /// <summary>
     /// Loads a corporation station grid into the world.

@@ -15,7 +15,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-    // ─── Events ──────────────────────────────────────────────────────────────
+    // Events
     public event Action? OnRefresh;
     public event Action<CorporationView>? OnNavigate;
     public event Action<string, string, CorporationPrivacy>? OnCreate;
@@ -31,7 +31,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
     public event Action<string>? OnPurchaseStation;
     public event Action? OnToggleStationVisibility;
 
-    // ─── Controls ────────────────────────────────────────────────────────────
+    // Controls
     private readonly Button _backButton;
     private readonly Button _refreshButton;
     private readonly Label _feedbackLabel;
@@ -93,12 +93,12 @@ public sealed partial class CorporationUiFragment : BoxContainer
     private CorporationPrivacy _editPrivacy = CorporationPrivacy.Public;
     private int _descriptionMaxLength;
 
-    // ─── State ───────────────────────────────────────────────────────────────
+    // State 
     private CorporationListUiState? _lastListState;
     private CorporationPrivacy _createPrivacy = CorporationPrivacy.Public;
     private List<string> _inviteCharacters = new();
 
-    // ─── Constructor ─────────────────────────────────────────────────────────
+    // Constructor
     public CorporationUiFragment()
     {
         RobustXamlLoader.Load(this);
@@ -250,7 +250,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         _stationVisibleCheckBox.OnPressed += _ => OnToggleStationVisibility?.Invoke();
     }
 
-    // ─── State update entry points ────────────────────────────────────────────
+    // State update entry points
 
     public void ShowListState(CorporationListUiState state)
     {
@@ -323,7 +323,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         ShowPanel(PanelMode.Invite);
     }
 
-    // ─── Corp detail population ───────────────────────────────────────────────
+    // Corp detail population
 
     private void PopulateMyCorporation(CorporationListUiState state)
     {
@@ -426,7 +426,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
             _publicCorpsList.AddChild(BuildPublicCorpRow(corp));
     }
 
-    // ─── Row builders ─────────────────────────────────────────────────────────
+    // Row builders
 
     private Control BuildInviteRow(CorporationInfo corp)
     {
@@ -612,7 +612,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         return panel;
     }
 
-    // ─── Panel switching ──────────────────────────────────────────────────────
+    // Panel switching
 
     private enum PanelMode { List, Create, Invite, EditDesc }
 
@@ -626,7 +626,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         _backButton.Visible = mode != PanelMode.List;
     }
 
-    // ─── Helpers ─────────────────────────────────────────────────────────────
+    // Helpers
 
     private void UpdatePrivacyButtonText()
     {

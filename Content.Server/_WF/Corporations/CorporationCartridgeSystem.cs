@@ -37,7 +37,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
 
     private ISawmill _log = default!;
 
-    // ─── Lifecycle ───────────────────────────────────────────────────────────
+    // Lifecycle
 
     public override void Initialize()
     {
@@ -48,7 +48,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         SubscribeLocalEvent<CorporationCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
     }
 
-    // ─── Event handlers ──────────────────────────────────────────────────────
+    // Event handlers
 
     private async void OnUiReady(EntityUid uid, CorporationCartridgeComponent comp, CartridgeUiReadyEvent args)
     {
@@ -123,7 +123,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         }
     }
 
-    // ─── Action handlers ─────────────────────────────────────────────────────
+    // Action handlers
 
     private async Task HandleNavigate(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, CorporationView view)
@@ -584,7 +584,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         await UpdateListUi(uid, loader, comp);
     }
 
-    // ─── UI state helpers ────────────────────────────────────────────────────
+    // UI state helpers
 
     private async Task UpdateListUi(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         string? errorLocKey = null)
@@ -667,7 +667,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         };
     }
 
-    // ─── Data query helpers ──────────────────────────────────────────────────
+    // Data query helpers
 
     private static WayfarerCorporationMember? GetMember(WayfarerCorporation? corp, NetUserId userId, string? characterName)
     {

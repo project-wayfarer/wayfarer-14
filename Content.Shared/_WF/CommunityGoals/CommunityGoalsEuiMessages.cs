@@ -3,9 +3,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._WF.CommunityGoals;
 
-// ──────────────────────────────────────────────────────
 //  Serializable data records transferred over the network
-// ──────────────────────────────────────────────────────
 
 [Serializable, NetSerializable]
 public sealed class CommunityGoalRequirementData
@@ -29,9 +27,7 @@ public sealed class CommunityGoalData
     public List<CommunityGoalRequirementData> Requirements = new();
 }
 
-// ──────────────────────────────────────────────────────
 //  EUI State
-// ──────────────────────────────────────────────────────
 
 [Serializable, NetSerializable]
 public sealed class CommunityGoalsEuiState : EuiStateBase
@@ -46,9 +42,7 @@ public sealed class CommunityGoalsEuiState : EuiStateBase
     }
 }
 
-// ──────────────────────────────────────────────────────
 //  EUI Messages (client → server)
-// ──────────────────────────────────────────────────────
 
 [Serializable, NetSerializable]
 public sealed class CreateCommunityGoalMessage : EuiMessageBase
