@@ -34,9 +34,8 @@
         - MachineMask
         layer:
         - MachineLayer
-  - type: PowerConsumer
-    voltage: Medium
-    drawRate: 750
+  - type: ApcPowerReceiver
+    powerLoad: 750
   - type: Sprite
     sprite: _WF/Structures/Machines/radar-dish.rsi
     layers:
