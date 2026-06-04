@@ -14,8 +14,13 @@ namespace Content.Client._NF.Radar;
 public sealed partial class RadarBlipSystem : EntitySystem
 {
     private const double BlipStaleSeconds = 3.0;
+    // Wayfarer: cap how far we extrapolate a blip past its received position so a
+    // stopped or destroyed projectile can't run away from its real location.
+    private const double MaxPredictionSeconds = 1.0;
     private static readonly List<(Vector2, float, Color, RadarBlipShape)> EmptyBlipList = new();
     private static readonly List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> EmptyRawBlipList = new();
+    // Wayfarer: empty list matching the wire-format tuple (which now includes per-blip velocity).
+    private static readonly List<(NetEntity? Grid, Vector2 Position, Vector2 Velocity, float Scale, Color Color, RadarBlipShape Shape)> EmptyReceivedBlipList = new();
     private TimeSpan _lastRequestTime = TimeSpan.Zero;
     // Minimum time between requests.  Slightly larger than the server-side value.
     private static readonly TimeSpan RequestThrottle = TimeSpan.FromMilliseconds(300); // Wayfarer: 1250<300
@@ -23,27 +28,30 @@ public sealed partial class RadarBlipSystem : EntitySystem
     // Maximum distance for blips to be considered visible
     private const float MaxBlipRenderDistance = 256f;
     private const float MaxBlipRenderDistanceSquared = MaxBlipRenderDistance * MaxBlipRenderDistance;
-    // Minimum radar position change to invalidate cache (in units)
-    private const float RadarPositionChangeThreshold = 5f;
-    private const float RadarPositionChangeThresholdSquared = RadarPositionChangeThreshold * RadarPositionChangeThreshold;
 
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     private TimeSpan _lastUpdatedTime;
-    private List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> _blips = new();
+    private List<(NetEntity? Grid, Vector2 Position, Vector2 Velocity, float Scale, Color Color, RadarBlipShape Shape)> _blips = new();
     private Vector2 _radarWorldPosition;
-
-    // Cached filtered results
-    private List<(Vector2, float, Color, RadarBlipShape)> _cachedBlips = new();
-    private List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> _cachedRawBlips = new();
-    private bool _cacheValid = false;
-    private Vector2 _cachedRadarPosition;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeNetworkEvent<GiveBlipsEvent>(HandleReceiveBlips);
+        // Wayfarer: server tells us when a new blip entity appears so we can request a fresh
+        // list immediately instead of waiting on the polling throttle.
+        SubscribeNetworkEvent<RadarBlipsDirtyEvent>(HandleBlipsDirty);
+    }
+
+    /// <summary>
+    /// Wayfarer: drop the request throttle so the next radar frame issues an immediate
+    /// blip request. Useful for instantly showing newly-spawned projectiles.
+    /// </summary>
+    private void HandleBlipsDirty(RadarBlipsDirtyEvent ev, EntitySessionEventArgs args)
+    {
+        _lastRequestTime = TimeSpan.Zero;
     }
 
     /// <summary>
@@ -53,13 +61,11 @@ public sealed partial class RadarBlipSystem : EntitySystem
     {
         if (ev?.Blips == null)
         {
-            _blips = EmptyRawBlipList;
-            _cacheValid = false;
+            _blips = EmptyReceivedBlipList;
             return;
         }
         _blips = ev.Blips;
         _lastUpdatedTime = _timing.CurTime;
-        _cacheValid = false;
     }
 
     /// <summary>
@@ -75,17 +81,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
 
         _lastRequestTime = _timing.CurTime;
 
-        // Cache the radar position for distance culling
-        var newRadarPosition = _xform.GetWorldPosition(console);
-
-        // Invalidate cache if radar moved significantly
-        if (Vector2.DistanceSquared(newRadarPosition, _cachedRadarPosition) > RadarPositionChangeThresholdSquared)
-        {
-            _cacheValid = false;
-            _cachedRadarPosition = newRadarPosition;
-        }
-
-        _radarWorldPosition = newRadarPosition;
+        _radarWorldPosition = _xform.GetWorldPosition(console);
 
         var netConsole = GetNetEntity(console);
         var ev = new RequestBlipsEvent(netConsole);
@@ -94,22 +90,24 @@ public sealed partial class RadarBlipSystem : EntitySystem
 
     /// <summary>
     /// Gets the current blips as world positions with their scale, color and shape.
-    /// This is needed for the legacy radar display that expects world coordinates.
+    /// Wayfarer: positions are extrapolated from the last received server snapshot using the
+    /// per-blip linear velocity, so fast-moving entities like shipgun projectiles get a smooth
+    /// per-frame radar refresh rate instead of stepping every ~250 ms.
     /// </summary>
     public List<(Vector2, float, Color, RadarBlipShape)> GetCurrentBlips()
     {
         if (_timing.CurTime.TotalSeconds - _lastUpdatedTime.TotalSeconds > BlipStaleSeconds)
             return EmptyBlipList;
 
-        if (_cacheValid)
-            return _cachedBlips;
-
-        UpdateCache();
-        return _cachedBlips;
+        var result = new List<(Vector2, float, Color, RadarBlipShape)>(_blips.Count);
+        BuildPredicted(rawOutput: null, worldOutput: result);
+        return result;
     }
 
     /// <summary>
     /// Gets the raw blips data which includes grid information for more accurate rendering.
+    /// Wayfarer: positions are extrapolated using each blip's reported linear velocity so the
+    /// rendered position keeps up with the entity between server snapshots.
     /// </summary>
     public List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> GetRawBlips()
     {
@@ -117,56 +115,61 @@ public sealed partial class RadarBlipSystem : EntitySystem
             return EmptyRawBlipList;
 
         if (_blips.Count == 0)
-            return _blips;
+            return EmptyRawBlipList;
 
-        if (_cacheValid)
-            return _cachedRawBlips;
-
-        UpdateCache();
-        return _cachedRawBlips;
+        var result = new List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)>(_blips.Count);
+        BuildPredicted(rawOutput: result, worldOutput: null);
+        return result;
     }
 
     /// <summary>
-    /// Updates both caches by filtering blips based on distance.
+    /// Builds the predicted blip lists by extrapolating each blip's last known position with
+    /// its linear velocity. Either output list may be null when only one is needed.
     /// </summary>
-    private void UpdateCache()
+    private void BuildPredicted(
+        List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)>? rawOutput,
+        List<(Vector2, float, Color, RadarBlipShape)>? worldOutput)
     {
-        _cachedBlips.Clear();
-        _cachedRawBlips.Clear();
+        // How long since the latest snapshot - capped to keep stale predictions from running away.
+        var elapsed = (_timing.CurTime - _lastUpdatedTime).TotalSeconds;
+        if (elapsed < 0)
+            elapsed = 0;
+        else if (elapsed > MaxPredictionSeconds)
+            elapsed = MaxPredictionSeconds;
+        var dt = (float)elapsed;
 
         foreach (var blip in _blips)
         {
-            Vector2 worldPosition;
+            // Extrapolate in the same coordinate frame the position was sent in
+            // (world if Grid is null, grid-local otherwise).
+            var predictedLocal = blip.Position + blip.Velocity * dt;
 
+            Vector2 worldPosition;
             if (blip.Grid == null)
             {
-                worldPosition = blip.Position;
+                worldPosition = predictedLocal;
 
-                // Distance culling for world position blips
                 if (Vector2.DistanceSquared(worldPosition, _radarWorldPosition) > MaxBlipRenderDistanceSquared)
                     continue;
-
-                _cachedBlips.Add((worldPosition, blip.Scale, blip.Color, blip.Shape));
-                _cachedRawBlips.Add(blip);
-                continue;
             }
-
-            if (TryGetEntity(blip.Grid, out var gridEntity))
+            else if (TryGetEntity(blip.Grid, out var gridEntity))
             {
                 var worldPos = _xform.GetWorldPosition(gridEntity.Value);
                 var gridRot = _xform.GetWorldRotation(gridEntity.Value);
-                var rotatedLocalPos = gridRot.RotateVec(blip.Position);
-                worldPosition = worldPos + rotatedLocalPos;
+                worldPosition = worldPos + gridRot.RotateVec(predictedLocal);
 
-                // Distance culling for grid position blips
                 if (Vector2.DistanceSquared(worldPosition, _radarWorldPosition) > MaxBlipRenderDistanceSquared)
                     continue;
-
-                _cachedBlips.Add((worldPosition, blip.Scale, blip.Color, blip.Shape));
-                _cachedRawBlips.Add(blip);
             }
-        }
+            else
+            {
+                continue;
+            }
 
-        _cacheValid = true;
+            worldOutput?.Add((worldPosition, blip.Scale, blip.Color, blip.Shape));
+            // For raw output, ship the predicted local position so consumers that re-transform
+            // through the current grid matrix still get a smoothly-interpolated blip.
+            rawOutput?.Add((blip.Grid, predictedLocal, blip.Scale, blip.Color, blip.Shape));
+        }
     }
 }

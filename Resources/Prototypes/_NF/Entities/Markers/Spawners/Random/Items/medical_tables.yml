@@ -191,9 +191,13 @@
       - !type:GroupSelector
         children:
         - id: MedkitO2
-          weight: 0.4
+          weight: 0.2 # Wayfarer: 0.4<0.2
         - id: MedkitOxygenFilled
-          weight: 0.6
+          weight: 0.3 # Wayfarer: 0.6<0.3
+        - id: MedkitN2 # Wayfarer
+          weight: 0.2
+        - id: MedkitNitrogenFilled # Wayfarer
+          weight: 0.3
 
 # region Surgery tools
 - type: entityTable

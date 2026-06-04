@@ -6,6 +6,14 @@
   name: base cup
   abstract: true
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/other/Cup/pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/other/Cup/drop.ogg
+  # Wayfarer End
   - type: SolutionContainerManager
     solutions:
       drink:

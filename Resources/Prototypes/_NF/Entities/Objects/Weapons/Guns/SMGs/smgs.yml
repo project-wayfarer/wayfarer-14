@@ -3,8 +3,10 @@
   id: NFWeaponSubMachineGunAtreides
   parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunGorlex ]
   name: Atreides
-  description: |-
-    Pla-ket-ket-ket-ket! An illegal firearm often used by Syndicate agents.
+#  description: |-
+#    Pla-ket-ket-ket-ket! An illegal firearm often used by Syndicate agents.
+  description: |- # Wayfarer: Changed description
+    A high quality machine pistol chambered in .35, used by various PMCs.
   components:
   - type: Gun
     soundGunshot:
@@ -18,8 +20,8 @@
   id: NFWeaponSubMachineGunC20r
   parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunCybersun ]
   name: C-20r
-  description: |-
-    An illegal firearm that is often used by the infamous nuclear operatives.
+  description: |- # Wayfarer: Change description
+    An illegal firearm that is often used by the Coldlight Wolves.
   components:
   - type: Gun
     soundGunshot:

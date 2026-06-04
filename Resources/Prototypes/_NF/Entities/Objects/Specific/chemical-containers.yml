@@ -59,6 +59,7 @@
   id: JugBluespace
   description: Uses bluespace technology to contain an impossible amount of liquid.
   components:
+    - type: WFBluespaceQuirkMessages # WF
     - type: SolutionContainerManager
       solutions:
         beaker:

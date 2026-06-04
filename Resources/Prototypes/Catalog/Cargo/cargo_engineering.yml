@@ -57,7 +57,7 @@
   id: EngineeringElectricalSupplies
   abstract: true # Frontier
   icon:
-    sprite: Objects/Tools/Toolboxes/toolbox_yellow.rsi
+    sprite: _Impstation/Objects/Tools/Toolboxes/toolbox_yellow.rsi #imp edit
     state: icon
   product: CrateEngineeringElectricalSupplies
   cost: 4500
@@ -101,7 +101,7 @@
   id: AirlockKit
   abstract: true # Frontier
   icon:
-    sprite: Objects/Tools/Toolboxes/toolbox_yellow.rsi
+    sprite: _Impstation/Objects/Tools/Toolboxes/toolbox_yellow.rsi #imp edit
     state: icon
   product: CrateAirlockKit
   cost: 1100

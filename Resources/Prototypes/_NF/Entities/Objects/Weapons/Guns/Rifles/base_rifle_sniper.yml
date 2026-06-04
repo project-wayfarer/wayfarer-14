@@ -27,6 +27,17 @@
     pvsIncrease: 1
   - type: NFWeaponDetails
     class: weapon-details-class-sniper
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: SnipersPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: SnipersDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: SnipersDrop
+  # Wayfarer End
 
 #region manufacturer
 - type: entity

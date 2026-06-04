@@ -48,6 +48,14 @@
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
   - type: HelmetAccessoryHolder
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/helmet_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/helmet_drop.ogg
+  # Wayfarer End
 
 #Basic Helmet (Security Helmet)
 - type: entity
