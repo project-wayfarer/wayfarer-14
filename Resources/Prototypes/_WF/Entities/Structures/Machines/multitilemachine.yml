@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseMachine, ConstructibleMachine]
+  parent: [BaseMachinePowered, ConstructibleMachine]
   id: RAEWSdish
   name: raews dish
   description: The Radar Assisted Early Warning System advanced radar dish is capable of deep space doppler for both threat detection and astrological meteorology readouts.
@@ -39,7 +39,7 @@
   - type: Sprite
     sprite: _WF/Structures/Machines/radar-dish.rsi
     layers:
-    - state: base
+    - state: radar-nopower
     - state: broken
       visible: false
     - state: radar-on
@@ -48,6 +48,20 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: Anchorable
     delay: 10
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 3
+    energy: 3.0
+    color: "#f1f4ff"
+  - type: LitOnPowered
   - type: Rotatable
     rotateWhileAnchored: false
     increment: 90
