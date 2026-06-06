@@ -3255,24 +3255,6 @@
 
 - type: entity
   parent: CSClothes
-  id: CSClothesGearHarness
-  name: nudist gear harness
-  description: A nigh-invisible harness for carrying small items, suited for nudists. # Wayfarer
-  components:
-  - type: Sprite
-    overrideDir: South
-    enableOverrideDir: true
-    sprite: _CS/Clothes/cs_uniforms.rsi
-    layers:
-    - state: bean
-  - type: Clothing
-    sprite: _CS/Clothes/cs_uniforms.rsi
-    clothingVisuals:
-      jumpsuit:
-      - state: gearharness
-
-- type: entity
-  parent: CSClothes
   id: CSClothesUNGreentrousersOG107
   name: drab green trousers
   description: A pair of drab green trousers with suspenders. # Wayfarer
