@@ -6,7 +6,7 @@
   parent: ClothingUniformSkirtBase
   id: CSClothes
   name: cool coyote jumpskirt
-  description: A cute jumpskirt template for all Coyote Sector uniforms.
+  description: A cute jumpskirt template for all Coyote Sector uniforms. # Wayfarer
   abstract: true
   components:
   - type: Sprite
@@ -26,7 +26,7 @@
   parent: CSClothes
   id: CSClothesBlackDress
   name: sleek black nightgown
-  description: A sleek black nightgown, suitable for winding down at the end of the day.
+  description: A sleek black nightgown, suitable for winding down at the end of the day. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -44,7 +44,7 @@
   parent: CSClothes
   id: CSClothesBlueDress
   name: flowing blue dress
-  description: A flowing blue dress that hugs the wearer's curves.
+  description: A flowing blue dress that hugs the wearer's curves. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -62,7 +62,7 @@
   parent: CSClothes
   id: CSClothesBlueSkirt
   name: skirt in blue
-  description: A black tee paired with a comfortable blue skirt.
+  description: A black tee paired with a comfortable blue skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -80,7 +80,7 @@
   parent: CSClothes
   id: CSClothesBlueSun
   name: blue sun maid dress
-  description: A blue and white maid's dress with a flared skirt.
+  description: A blue and white maid's dress with a flared skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -98,7 +98,7 @@
   parent: CSClothes
   id: CSClothesBowSun
   name: sun dress with a bow
-  description: A cute sun dress finished with a bow under the bodice.
+  description: A cute sun dress finished with a bow under the bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -116,7 +116,7 @@
   parent: CSClothes
   id: CSClothesDress2
   name: dress 'two'
-  description: A demure blue dress with a white skirt.
+  description: A demure blue dress with a white skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -134,7 +134,7 @@
   parent: CSClothes
   id: CSClothesDress3
   name: dress 'three'
-  description: A demure brown dress with a white skirt.
+  description: A demure brown dress with a white skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -152,7 +152,7 @@
   parent: CSClothes
   id: CSClothesDressBlack
   name: dress in black
-  description: An understated dark grey dress with a comfy bodice.
+  description: An understated dark grey dress with a comfy bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -170,7 +170,7 @@
   parent: CSClothes
   id: CSClothesDress5
   name: dress 'five'
-  description: A demure green dress with a white skirt.
+  description: A demure green dress with a white skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -188,7 +188,7 @@
   parent: CSClothes
   id: CSClothesDress6
   name: dress 'six'
-  description: A loose, billowy red dress with a white skirt.
+  description: A loose, billowy red dress with a white skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -206,7 +206,7 @@
   parent: CSClothes
   id: CSClothesDress7
   name: dress 'seven'
-  description: A demure green utility dress with a flowing skirt.
+  description: A demure green utility dress with a flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -224,7 +224,7 @@
   parent: CSClothes
   id: CSClothesFloofDress
   name: floofy dress
-  description: A floofy, airy dress with room for any frame.
+  description: A floofy, airy dress with room for any frame. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -242,7 +242,7 @@
   parent: CSClothes
   id: CSClothesFlowerDress
   name: flower dress
-  description: A cute dress patterned with flowers, in light breezy fabric.
+  description: A cute dress patterned with flowers, in light breezy fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -260,7 +260,7 @@
   parent: CSClothes
   id: CSClothesGreenAsymmetric
   name: green asymmetric dress
-  description: A halter top paired with a flowing asymmetrical skirt.
+  description: A halter top paired with a flowing asymmetrical skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -278,7 +278,7 @@
   parent: CSClothes
   id: CSClothesPinkDress
   name: dress 'nine'
-  description: A pink utility dress with a flowing skirt.
+  description: A pink utility dress with a flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -296,7 +296,7 @@
   parent: CSClothes
   id: CSClothesPinkSun
   name: pink sun dress
-  description: A pink sun dress with a flowing design, suitable for warm days.
+  description: A pink sun dress with a flowing design, suitable for warm days. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -314,7 +314,7 @@
   parent: CSClothes
   id: CSClothesShortPink
   name: short pink nightgown
-  description: A short pink nightgown, comfortable for sleeping.
+  description: A short pink nightgown, comfortable for sleeping. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -332,7 +332,7 @@
   parent: CSClothes
   id: CSClothesSunSkirt
   name: sun skirt in green
-  description: A green skirt paired with a roomy comfortable top.
+  description: A green skirt paired with a roomy comfortable top. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -350,7 +350,7 @@
   parent: CSClothes
   id: CSClothesSunSkirtGrey
   name: sun skirt in grey
-  description: A grey skirt paired with a roomy comfortable top.
+  description: A grey skirt paired with a roomy comfortable top. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -368,7 +368,7 @@
   parent: CSClothes
   id: CSClothesSundressBlue
   name: sundress in blue
-  description: A blue sundress in light, breathable fabric.
+  description: A blue sundress in light, breathable fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -386,7 +386,7 @@
   parent: CSClothes
   id: CSClothesSundressOrange
   name: sundress in orange
-  description: An orange sundress in light, breathable fabric.
+  description: An orange sundress in light, breathable fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -404,7 +404,7 @@
   parent: CSClothes
   id: CSClothesSundressPurple
   name: sundress in purple
-  description: A purple sundress in light, breathable fabric.
+  description: A purple sundress in light, breathable fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -422,7 +422,7 @@
   parent: CSClothes
   id: CSClothesSundressRed
   name: sundress in red
-  description: A red sundress in light, breathable fabric.
+  description: A red sundress in light, breathable fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -440,7 +440,7 @@
   parent: CSClothes
   id: CSClothesSundressYellow
   name: sundress in yellow
-  description: A yellow sundress in light, breathable fabric.
+  description: A yellow sundress in light, breathable fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -458,7 +458,7 @@
   parent: CSClothes
   id: CSClothesTradwifeBlue
   name: housewife in blue
-  description: A blue housewife dress with a fitted bodice and flowing skirt.
+  description: A blue housewife dress with a fitted bodice and flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -476,7 +476,7 @@
   parent: CSClothes
   id: CSClothesTradwifeOrange
   name: housewife in orange
-  description: An orange housewife dress with a fitted bodice and flowing skirt.
+  description: An orange housewife dress with a fitted bodice and flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -494,7 +494,7 @@
   parent: CSClothes
   id: CSClothesTradwifePurple
   name: housewife in purple
-  description: A purple housewife dress with a fitted bodice and flowing skirt.
+  description: A purple housewife dress with a fitted bodice and flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -512,7 +512,7 @@
   parent: CSClothes
   id: CSClothesTradwifeRed
   name: housewife in red
-  description: A red housewife dress with a fitted bodice and flowing skirt.
+  description: A red housewife dress with a fitted bodice and flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -530,7 +530,7 @@
   parent: CSClothes
   id: CSClothesTradwifeYellow
   name: housewife in yellow
-  description: A yellow housewife dress with a fitted bodice and flowing skirt.
+  description: A yellow housewife dress with a fitted bodice and flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -548,7 +548,7 @@
   parent: CSClothes
   id: CSClothesWhitegown
   name: white gown
-  description: A white gown with a flowing design.
+  description: A white gown with a flowing design. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -566,7 +566,7 @@
   parent: CSClothes
   id: CSClothesWhitesun
   name: white sun dress
-  description: A white sun dress in light fabric, suitable for warm days.
+  description: A white sun dress in light fabric, suitable for warm days. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -585,7 +585,7 @@
   parent: CSClothes
   id: CSClothesBlackTango
   name: tango dress in black
-  description: A sleek black tango dress, suitable for ballroom dancing.
+  description: A sleek black tango dress, suitable for ballroom dancing. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -603,7 +603,7 @@
   parent: CSClothes
   id: CSClothesBlackNGold
   name: black and gold dressrobe
-  description: A luxurious black and gold dressrobe.
+  description: A luxurious black and gold dressrobe. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -621,7 +621,7 @@
   parent: CSClothes
   id: CSClothesBridalBlue
   name: bridal gown in blue
-  description: A blue bridal gown.
+  description: A blue bridal gown. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -639,7 +639,7 @@
   parent: CSClothes
   id: CSClothesBridalOrange
   name: bridal gown in orange
-  description: An orange bridal gown.
+  description: An orange bridal gown. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -657,7 +657,7 @@
   parent: CSClothes
   id: CSClothesBridalPurple
   name: bridal gown in purple
-  description: A purple bridal gown.
+  description: A purple bridal gown. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -675,7 +675,7 @@
   parent: CSClothes
   id: CSClothesBridalRed
   name: bridal gown in red
-  description: A red bridal gown.
+  description: A red bridal gown. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -693,7 +693,7 @@
   parent: CSClothes
   id: CSClothesBridalWhite
   name: bridal gown in white
-  description: A white bridal gown, traditionally worn for weddings.
+  description: A white bridal gown, traditionally worn for weddings. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -711,7 +711,7 @@
   parent: CSClothes
   id: CSClothesCorset
   name: corset
-  description: A laced corset.
+  description: A laced corset. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -729,7 +729,7 @@
   parent: CSClothes
   id: CSClothesCorsetDress
   name: corset dress
-  description: A corset dress with a billowing skirt.
+  description: A corset dress with a billowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -747,7 +747,7 @@
   parent: CSClothes
   id: CSClothesCountess
   name: countess gown
-  description: A luxurious gown with billowing sleeves and a tight bodice.
+  description: A luxurious gown with billowing sleeves and a tight bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -765,7 +765,7 @@
   parent: CSClothes
   id: CSClothesCrinoline
   name: crinoline dress
-  description: A frilly crinoline dress in light, flowing fabric.
+  description: A frilly crinoline dress in light, flowing fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -783,7 +783,7 @@
   parent: CSClothes
   id: CSClothesFormalRedDress
   name: blood red formal dress
-  description: A blood red formal dress with a flowing skirt and fitted bodice.
+  description: A blood red formal dress with a flowing skirt and fitted bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -801,7 +801,7 @@
   parent: CSClothes
   id: CSClothesGoldDress
   name: golden dress
-  description: A shimmering golden dress that catches the light.
+  description: A shimmering golden dress that catches the light. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -819,7 +819,7 @@
   parent: CSClothes
   id: CSClothesGoldWrap
   name: golden wrap
-  description: A shimmering golden wrap that catches the light.
+  description: A shimmering golden wrap that catches the light. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -837,7 +837,7 @@
   parent: CSClothes
   id: CSClothesGothic
   name: gothic dress
-  description: A dark gothic dress with lace, fringes, and fishnet accents.
+  description: A dark gothic dress with lace, fringes, and fishnet accents. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -855,7 +855,7 @@
   parent: CSClothes
   id: CSClothesGothic2
   name: gothic dress 'two'
-  description: A lighter Victorian-gothic grey dress with lace and fringes.
+  description: A lighter Victorian-gothic grey dress with lace and fringes. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -873,7 +873,7 @@
   parent: CSClothes
   id: CSClothesLittleBlackDress
   name: little black dress
-  description: A little black dress with a flowing design.
+  description: A little black dress with a flowing design. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -891,7 +891,7 @@
   parent: CSClothes
   id: CSClothesPromDress
   name: prom dress
-  description: A traditional prom dress, both elegant and comfortable to dance in.
+  description: A traditional prom dress, both elegant and comfortable to dance in. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -909,7 +909,7 @@
   parent: CSClothes
   id: CSClothesPuffyDress
   name: puffy dress
-  description: A puffy strawberry-red dress with a bow under the bodice.
+  description: A puffy strawberry-red dress with a bow under the bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -927,7 +927,7 @@
   parent: CSClothes
   id: CSClothesRedEveningDress
   name: red evening dress
-  description: A red evening dress with a flowing design.
+  description: A red evening dress with a flowing design. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -945,7 +945,7 @@
   parent: CSClothes
   id: CSClothesRevealingDress
   name: revealing dress
-  description: A flowing black dress with a neon cyan bodice.
+  description: A flowing black dress with a neon cyan bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -963,7 +963,7 @@
   parent: CSClothes
   id: CSClothesSheerblue
   name: sheer blue dress
-  description: A transparent blue dress.
+  description: A transparent blue dress. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -981,7 +981,7 @@
   parent: CSClothes
   id: CSClothesSocietyDress
   name: society dress
-  description: A sheer asymmetric lingerie-style society dress.
+  description: A sheer asymmetric lingerie-style society dress. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -999,7 +999,7 @@
   parent: CSClothes
   id: CSClothesVictorianDress
   name: victorian dress
-  description: A demure Victorian dress in light, flowing fabric.
+  description: A demure Victorian dress in light, flowing fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1017,7 +1017,7 @@
   parent: CSClothes
   id: CSClothesVictorianblackdress
   name: victorian black dress
-  description: A demure Victorian dress in black.
+  description: A demure Victorian dress in black. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1035,7 +1035,7 @@
   parent: CSClothes
   id: CSClothesVictorianblred
   name: black and red victorian vestsuit
-  description: A black and red Victorian-style vestsuit, with pants and a vest.
+  description: A black and red Victorian-style vestsuit, with pants and a vest. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1053,7 +1053,7 @@
   parent: CSClothes
   id: CSClothesVictorianlightfire
   name: light fire victorian vestsuit
-  description: A Victorian-style vestsuit in light fire colors.
+  description: A Victorian-style vestsuit in light fire colors. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1071,7 +1071,7 @@
   parent: CSClothes
   id: CSClothesVictorianRedDress
   name: victorian red dress
-  description: A demure Victorian dress in red.
+  description: A demure Victorian dress in red. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1089,7 +1089,7 @@
   parent: CSClothes
   id: CSClothesVictorianRedVest
   name: victorian red vestsuit
-  description: A Victorian vestsuit with a red shirt.
+  description: A Victorian vestsuit with a red shirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1107,7 +1107,7 @@
   parent: CSClothes
   id: CSClothesVictorianVest
   name: victorian vestsuit
-  description: A Victorian vestsuit in rusty eggplant.
+  description: A Victorian vestsuit in rusty eggplant. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1125,7 +1125,7 @@
   parent: CSClothes
   id: CSClothesWaistcoat
   name: waistcoat
-  description: A dapper waistcoat with breakaway trousers.
+  description: A dapper waistcoat with breakaway trousers. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1144,7 +1144,7 @@
   parent: CSClothes
   id: CSClothesArtisan
   name: artisan kimono
-  description: A traditional artisan's kimono.
+  description: A traditional artisan's kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1162,7 +1162,7 @@
   parent: CSClothes
   id: CSClothesBlueKimono
   name: kimono in blue
-  description: A blue kimono with a flowing design.
+  description: A blue kimono with a flowing design. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1180,7 +1180,7 @@
   parent: CSClothes
   id: CSClothesBlueSari
   name: sari in blue
-  description: A blue sari with intricate patterns.
+  description: A blue sari with intricate patterns. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1198,7 +1198,7 @@
   parent: CSClothes
   id: CSClothesCheong
   name: cheong sam
-  description: A traditional cheongsam in light, breathable fabric.
+  description: A traditional cheongsam in light, breathable fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1216,7 +1216,7 @@
   parent: CSClothes
   id: CSClothesCheongRed
   name: cheong sam in red
-  description: A traditional cheongsam in red.
+  description: A traditional cheongsam in red. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1234,7 +1234,7 @@
   parent: CSClothes
   id: CSClothesCheongWhite
   name: cheong sam in white
-  description: A traditional cheongsam in white.
+  description: A traditional cheongsam in white. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1252,7 +1252,7 @@
   parent: CSClothes
   id: CSClothesCheongWhiteShort
   name: cheong sam in white (short)
-  description: A short white cheongsam paired with black shorts.
+  description: A short white cheongsam paired with black shorts. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1270,7 +1270,7 @@
   parent: CSClothes
   id: CSClothesDarkHanfu
   name: dark hanfu
-  description: A dark hanfu, understated and stylish.
+  description: A dark hanfu, understated and stylish. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1288,7 +1288,7 @@
   parent: CSClothes
   id: CSClothesGreenHanfu
   name: green hanfu
-  description: A green hanfu, understated and stylish.
+  description: A green hanfu, understated and stylish. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1306,7 +1306,7 @@
   parent: CSClothes
   id: CSClothesLightHanfu
   name: hanfu in white
-  description: A white hanfu, understated and stylish.
+  description: A white hanfu, understated and stylish. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1324,7 +1324,7 @@
   parent: CSClothes
   id: CSClothesFlowerKimono
   name: flower kimono
-  description: A kimono patterned with flowers, in light breezy fabric.
+  description: A kimono patterned with flowers, in light breezy fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1342,7 +1342,7 @@
   parent: CSClothes
   id: CSClothesHaori
   name: haori
-  description: A traditional haori, often worn over a kimono or yukata.
+  description: A traditional haori, often worn over a kimono or yukata. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1360,7 +1360,7 @@
   parent: CSClothes
   id: CSClothesHaoriSamurai
   name: samurai haori
-  description: A samurai-style haori, with a flowing design.
+  description: A samurai-style haori, with a flowing design. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1378,7 +1378,7 @@
   parent: CSClothes
   id: CSClothesKimonoBlue
   name: blue kimono
-  description: A blue kimono.
+  description: A blue kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1396,7 +1396,7 @@
   parent: CSClothes
   id: CSClothesKimonoEarth
   name: earth kimono
-  description: A brown kimono.
+  description: A brown kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1414,7 +1414,7 @@
   parent: CSClothes
   id: CSClothesKimonoGreen
   name: green kimono
-  description: A green kimono.
+  description: A green kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1432,7 +1432,7 @@
   parent: CSClothes
   id: CSClothesKimonoOrange
   name: orange kimono
-  description: An orange kimono.
+  description: An orange kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1450,7 +1450,7 @@
   parent: CSClothes
   id: CSClothesKimonoPink
   name: pink kimono
-  description: A pink kimono.
+  description: A pink kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1468,7 +1468,7 @@
   parent: CSClothes
   id: CSClothesKimonoPurple
   name: purple kimono
-  description: A purple kimono.
+  description: A purple kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1486,7 +1486,7 @@
   parent: CSClothes
   id: CSClothesKimonoRed
   name: red kimono
-  description: A red kimono.
+  description: A red kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1504,7 +1504,7 @@
   parent: CSClothes
   id: CSClothesKimonoViolet
   name: violet kimono
-  description: A violet kimono.
+  description: A violet kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1522,7 +1522,7 @@
   parent: CSClothes
   id: CSClothesKimonoYellow
   name: yellow kimono
-  description: A yellow kimono.
+  description: A yellow kimono. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1540,7 +1540,7 @@
   parent: CSClothes
   id: CSClothesQipao
   name: qipao
-  description: A traditional qipao.
+  description: A traditional qipao. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1558,7 +1558,7 @@
   parent: CSClothes
   id: CSClothesQipaoNosleeve
   name: qipao sleeveless
-  description: A sleeveless qipao.
+  description: A sleeveless qipao. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1576,7 +1576,7 @@
   parent: CSClothes
   id: CSClothesQipaoRed
   name: qipao in red
-  description: A red qipao.
+  description: A red qipao. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1594,7 +1594,7 @@
   parent: CSClothes
   id: CSClothesQipaoRedNosleeve
   name: qipao sleeveless in red
-  description: A sleeveless red qipao.
+  description: A sleeveless red qipao. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1612,7 +1612,7 @@
   parent: CSClothes
   id: CSClothesQipaoTealNosleeve
   name: qipao sleeveless in teal
-  description: A sleeveless teal qipao.
+  description: A sleeveless teal qipao. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1630,7 +1630,7 @@
   parent: CSClothes
   id: CSClothesQipaoWhite
   name: qipao in white
-  description: A white qipao.
+  description: A white qipao. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1648,7 +1648,7 @@
   parent: CSClothes
   id: CSClothesQipaoWhiteNosleeve
   name: qipao sleeveless in white
-  description: A sleeveless white qipao.
+  description: A sleeveless white qipao. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1666,7 +1666,7 @@
   parent: CSClothes
   id: CSClothesRedSari
   name: red sari
-  description: A red sari.
+  description: A red sari. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1685,7 +1685,7 @@
   parent: CSClothes
   id: CSClothesAcolyte
   name: acolyte garb
-  description: A trim and breezy skirt and top combo.
+  description: A trim and breezy skirt and top combo. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1703,7 +1703,7 @@
   parent: CSClothes
   id: CSClothesAssyrian
   name: village tunic
-  description: A traditional tunic styled after the ancient Assyrian Empire.
+  description: A traditional tunic styled after the ancient Assyrian Empire. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1721,7 +1721,7 @@
   parent: CSClothes
   id: CSClothesBLandschneckt
   name: royal tabard
-  description: A blue and purple tabard, cut for a royal court.
+  description: A blue and purple tabard, cut for a royal court. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1739,7 +1739,7 @@
   parent: CSClothes
   id: CSClothesConquistador
   name: conquistador standard
-  description: A bright red gambeson and chausses, in conquistador style.
+  description: A bright red gambeson and chausses, in conquistador style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1757,7 +1757,7 @@
   parent: CSClothes
   id: CSClothesCustomToga
   name: custom toga
-  description: A custom-tailored toga in light fabric.
+  description: A custom-tailored toga in light fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1775,7 +1775,7 @@
   parent: CSClothes
   id: CSClothesDivineRobe
   name: divine robe
-  description: A robe befitting a religious figure, with an air of pure righteous divinity.
+  description: A robe befitting a religious figure, with an air of pure righteous divinity. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1793,7 +1793,7 @@
   parent: CSClothes
   id: CSClothesDutch
   name: dutch vestsuit
-  description: A Dutch-style vestsuit in durable, rugged fabric.
+  description: A Dutch-style vestsuit in durable, rugged fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1811,7 +1811,7 @@
   parent: CSClothes
   id: CSClothesFlamenco
   name: flamenco dress
-  description: A flamenco dress in light, breathable fabric, with a flowing skirt.
+  description: A flamenco dress in light, breathable fabric, with a flowing skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1829,7 +1829,7 @@
   parent: CSClothes
   id: CSClothesGreatShendyt
   name: great shendyt
-  description: A long, flowing skirt and ornate shawl, in the style of a great shendyt.
+  description: A long, flowing skirt and ornate shawl, in the style of a great shendyt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1847,7 +1847,7 @@
   parent: CSClothes
   id: CSClothesGreekDress
   name: greek dress
-  description: A stiff leather Greek-style dress with thick panels.
+  description: A stiff leather Greek-style dress with thick panels. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1865,7 +1865,7 @@
   parent: CSClothes
   id: CSClothesGreekTunic
   name: greek tunic
-  description: A stiff leather Greek-style tunic with thick panels.
+  description: A stiff leather Greek-style tunic with thick panels. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1883,7 +1883,7 @@
   parent: CSClothes
   id: CSClothesLandschneckt
   name: landschneckt
-  description: A forest green landsknecht, a fancy formal outfit.
+  description: A forest green landsknecht, a fancy formal outfit. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1901,7 +1901,7 @@
   parent: CSClothes
   id: CSClothesRedLandschneckt
   name: landschneckt in red
-  description: A red landsknecht, a fancy formal outfit.
+  description: A red landsknecht, a fancy formal outfit. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1919,7 +1919,7 @@
   parent: CSClothes
   id: CSClothesPharaoh
   name: pharaoh trappings
-  description: A set of regal pharaoh trappings, with a flowing skirt and ornate accents.
+  description: A set of regal pharaoh trappings, with a flowing skirt and ornate accents. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1937,7 +1937,7 @@
   parent: CSClothes
   id: CSClothesShamanblue
   name: shaman in blue
-  description: A blue shaman outfit, understated and stylish.
+  description: A blue shaman outfit, understated and stylish. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1955,7 +1955,7 @@
   parent: CSClothes
   id: CSClothesToga
   name: toga
-  description: A loose, airy toga.
+  description: A loose, airy toga. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1973,7 +1973,7 @@
   parent: CSClothes
   id: CSClothesToga2
   name: toga 'two'
-  description: A loose, airy toga in lighter, more accommodating fabric.
+  description: A loose, airy toga in lighter, more accommodating fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -1992,7 +1992,7 @@
   parent: CSClothes
   id: CSClothesHalfSkirt
   name: blue half skirt
-  description: A blue shawl paired with a wide, short skirt, suitable for desert wear.
+  description: A blue shawl paired with a wide, short skirt, suitable for desert wear. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2010,7 +2010,7 @@
   parent: CSClothes
   id: CSClothesHalfHuipil
   name: half huipil
-  description: A half huipil with a flowing skirt and ornate shawl.
+  description: A half huipil with a flowing skirt and ornate shawl. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2028,7 +2028,7 @@
   parent: CSClothes
   id: CSClothesHuipil
   name: huipil
-  description: A traditional huipil with a flowing skirt and breezy tunic.
+  description: A traditional huipil with a flowing skirt and breezy tunic. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2046,7 +2046,7 @@
   parent: CSClothes
   id: CSClothesHunter
   name: hunter leathers
-  description: A set of tribal hunter's leathers, layered for protection.
+  description: A set of tribal hunter's leathers, layered for protection. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2064,7 +2064,7 @@
   parent: CSClothes
   id: CSClothesHunterBra
   name: hunter garb
-  description: A set of tribal hunter's garb in layered hides.
+  description: A set of tribal hunter's garb in layered hides. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2082,7 +2082,7 @@
   parent: CSClothes
   id: CSClothesIrisTribal
   name: iris dress
-  description: A two-piece dress with a watery blue loincloth and bikini top.
+  description: A two-piece dress with a watery blue loincloth and bikini top. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2100,7 +2100,7 @@
   parent: CSClothes
   id: CSClothesLeavesSkirt
   name: leaves mini skirt
-  description: A short skirt made of synthetic leaves.
+  description: A short skirt made of synthetic leaves. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2118,7 +2118,7 @@
   parent: CSClothes
   id: CSClothesLeavesSkirtLong
   name: leaves skirt
-  description: A longer skirt made of synthetic leaves.
+  description: A longer skirt made of synthetic leaves. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2136,7 +2136,7 @@
   parent: CSClothes
   id: CSClothesLoincloth
   name: DEATHKILLARZ loincloth
-  description: An itchy loincloth lined with replica plastic teeth and a hellpig shawl.
+  description: An itchy loincloth lined with replica plastic teeth and a hellpig shawl. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2154,7 +2154,7 @@
   parent: CSClothes
   id: CSClothesMayanLoincloth
   name: mayan loincloth
-  description: A simple white loincloth, in Mayan style.
+  description: A simple white loincloth, in Mayan style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2172,7 +2172,7 @@
   parent: CSClothes
   id: CSClothesTribalColorful
   name: tribal colorful tribalwear
-  description: A colorful tribal outfit, simple and comfortable.
+  description: A colorful tribal outfit, simple and comfortable. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2190,7 +2190,7 @@
   parent: CSClothes
   id: CSClothesTribalColorfulTop
   name: tribal colorful tribalwear top
-  description: A colorful tribal top, simple and comfortable.
+  description: A colorful tribal top, simple and comfortable. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2209,7 +2209,7 @@
   parent: CSClothes
   id: CSClothesBloodshot
   name: bloodshot gunslinger suit
-  description: A rough gunslinger suit, with a loose top over armor and pants tucked into boots.
+  description: A rough gunslinger suit, with a loose top over armor and pants tucked into boots. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2227,7 +2227,7 @@
   parent: CSClothes
   id: CSClothesBlueRanger
   name: blue ranger uniform
-  description: A blue button-up shirt and khaki pants, in ranger style.
+  description: A blue button-up shirt and khaki pants, in ranger style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2245,7 +2245,7 @@
   parent: CSClothes
   id: CSClothesDressSaloon
   name: short saloonkeeper dress
-  description: A short saloonkeeper's dress, eye-catching and practical, with armor underneath.
+  description: A short saloonkeeper's dress, eye-catching and practical, with armor underneath. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2263,7 +2263,7 @@
   parent: CSClothes
   id: CSClothesFoxFlannel
   name: fox flannel
-  description: A cozy flannel shirt.
+  description: A cozy flannel shirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2281,7 +2281,7 @@
   parent: CSClothes
   id: CSClothesMaurader
   name: maurader suit
-  description: A button-up shirt with suspenders, in marauder style.
+  description: A button-up shirt with suspenders, in marauder style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2299,7 +2299,7 @@
   parent: CSClothes
   id: CSClothesMarlowDuds
   name: marlow duds
-  description: A practical and stylish set of explorer's duds.
+  description: A practical and stylish set of explorer's duds. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2317,7 +2317,7 @@
   parent: CSClothes
   id: CSClothesTexas
   name: texan scrobsuit
-  description: A Texan-style scrobsuit.
+  description: A Texan-style scrobsuit. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2335,7 +2335,7 @@
   parent: CSClothes
   id: CSClothesWestender
   name: westender slingsuit
-  description: A westender slingsuit, designed to repel swamp insects.
+  description: A westender slingsuit, designed to repel swamp insects. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2353,7 +2353,7 @@
   parent: CSClothes
   id: CSClothesWesternBustle
   name: western bustle dress
-  description: A western bustle dress, comfortable and practical for ranch work.
+  description: A western bustle dress, comfortable and practical for ranch work. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2372,7 +2372,7 @@
   parent: CSClothes
   id: CSClothesBrownPunkPants
   name: brown punk pants
-  description: A pair of durable brown punk pants.
+  description: A pair of durable brown punk pants. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2390,7 +2390,7 @@
   parent: CSClothes
   id: CSClothesCyberHell
   name: cyber hell
-  description: A sleek cyberpunk leather harness with pants and a belt.
+  description: A sleek cyberpunk leather harness with pants and a belt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2408,7 +2408,7 @@
   parent: CSClothes
   id: CSClothesFlashyGreenDress
   name: horrible neon green dress
-  description: A garish neon green dress, designed to stand out.
+  description: A garish neon green dress, designed to stand out. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2426,7 +2426,7 @@
   parent: CSClothes
   id: CSClothesFlowRed
   name: horrible neon red dress
-  description: A garish neon red dress, designed to stand out.
+  description: A garish neon red dress, designed to stand out. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2444,7 +2444,7 @@
   parent: CSClothes
   id: CSClothesKeyholeSweater
   name: keyhole sweater
-  description: A stretchy sweater with a keyhole cutout at the chest.
+  description: A stretchy sweater with a keyhole cutout at the chest. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2462,7 +2462,7 @@
   parent: CSClothes
   id: CSClothesLatexHalf
   name: latex singlet
-  description: A latex singlet, stretchy and form-fitting.
+  description: A latex singlet, stretchy and form-fitting. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2480,7 +2480,7 @@
   parent: CSClothes
   id: CSClothesOliveCargoPunk
   name: olive cargopunk pants
-  description: A pair of olive cargo punk pants.
+  description: A pair of olive cargo punk pants. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2498,7 +2498,7 @@
   parent: CSClothes
   id: CSClothesPentatop
   name: pentagram tube top
-  description: A dark skirt paired with a pentagram tube top.
+  description: A dark skirt paired with a pentagram tube top. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2516,7 +2516,7 @@
   parent: CSClothes
   id: CSClothesRattyCyberpunk
   name: ratty cyberpunk
-  description: A short skirt and a stiff plastic crop top, in cyberpunk style.
+  description: A short skirt and a stiff plastic crop top, in cyberpunk style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2534,7 +2534,7 @@
   parent: CSClothes
   id: CSClothesRattySkirtGreen
   name: ratty green skirt
-  description: A miniskirt and tank top with a brown crop-top hoodie.
+  description: A miniskirt and tank top with a brown crop-top hoodie. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2552,7 +2552,7 @@
   parent: CSClothes
   id: CSClothesRattySkirtPink
   name: ratty pink skirt
-  description: A miniskirt and tank top with a black leather crop-top hoodie.
+  description: A miniskirt and tank top with a black leather crop-top hoodie. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2570,7 +2570,7 @@
   parent: CSClothes
   id: CSClothesRattySkirtYellow
   name: ratty yellow skirt
-  description: A miniskirt and tank top with a brown crop-top hoodie.
+  description: A miniskirt and tank top with a brown crop-top hoodie. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2588,7 +2588,7 @@
   parent: CSClothes
   id: CSClothesRippedPunk
   name: ripped punk fishnet pantskini
-  description: Leather pants and a leather bikini top, worn over a fishnet bodysuit.
+  description: Leather pants and a leather bikini top, worn over a fishnet bodysuit. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2607,7 +2607,7 @@
   parent: CSClothes
   id: CSClothesBeggar
   name: beggar rags
-  description: A set of ragged clothes, patched together from scraps.
+  description: A set of ragged clothes, patched together from scraps. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2625,7 +2625,7 @@
   parent: CSClothes
   id: CSClothesBunnySuit
   name: sexy bunny suit
-  description: A black bunny suit with a tail, in waitstaff style.
+  description: A black bunny suit with a tail, in waitstaff style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2643,7 +2643,7 @@
   parent: CSClothes
   id: CSClothesSexyclown
   name: sexy clown outfit
-  description: A clown outfit with a tight bodice and short skirt.
+  description: A clown outfit with a tight bodice and short skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2661,7 +2661,7 @@
   parent: CSClothes
   id: CSClothesDougDimmadome
   name: doug suit
-  description: A dapper suit, in the style of a famous business owner.
+  description: A dapper suit, in the style of a famous business owner. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2679,7 +2679,7 @@
   parent: CSClothes
   id: CSClothesDraculass
   name: draculass slutskirt
-  description: A vampiric outfit with a high collar and dark accents.
+  description: A vampiric outfit with a high collar and dark accents. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2697,7 +2697,7 @@
   parent: CSClothes
   id: CSClothesExplorerStripper
   name: explorer stripper
-  description: A minimal explorer's harness, with anchor points for equipment.
+  description: A minimal explorer's harness, with anchor points for equipment. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2715,7 +2715,7 @@
   parent: CSClothes
   id: CSClothesDomina
   name: domina latex
-  description: A form-fitting latex outfit.
+  description: A form-fitting latex outfit. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2733,7 +2733,7 @@
   parent: CSClothes
   id: CSClothesLeia
   name: leia
-  description: A white loincloth paired with a halter top.
+  description: A white loincloth paired with a halter top. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2751,7 +2751,7 @@
   parent: CSClothes
   id: CSClothesSexyMaid
   name: sexy maid
-  description: A short maid's dress with a frilled apron.
+  description: A short maid's dress with a frilled apron. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2769,7 +2769,7 @@
   parent: CSClothes
   id: CSClothesSexymime
   name: sexy mime outfit
-  description: A mime outfit with a tight bodice and short skirt.
+  description: A mime outfit with a tight bodice and short skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2787,7 +2787,7 @@
   parent: CSClothes
   id: CSClothesSexynursesuit
   name: sexy nurse outfit
-  description: A nurse's outfit with a short skirt.
+  description: A nurse's outfit with a short skirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2805,7 +2805,7 @@
   parent: CSClothes
   id: CSClothesPinkTutu
   name: pink tutu
-  description: An unreasonably cute, short pink tutu.
+  description: An unreasonably cute, short pink tutu. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2823,7 +2823,7 @@
   parent: CSClothes
   id: CSClothesPolyPerformer
   name: polyester performer drapery
-  description: A full-body polyester drapery that wraps around the wearer.
+  description: A full-body polyester drapery that wraps around the wearer. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2841,7 +2841,7 @@
   parent: CSClothes
   id: CSClothesSecstripper
   name: sexy security stripper
-  description: A PVC outfit, vaguely styled after a security uniform.
+  description: A PVC outfit, vaguely styled after a security uniform. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2859,7 +2859,7 @@
   parent: CSClothes
   id: CSClothesSecslutskirtpink
   name: sexy mauvesec skirt
-  description: A mauve security-themed skirt, with a fitted bodice.
+  description: A mauve security-themed skirt, with a fitted bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2877,7 +2877,7 @@
   parent: CSClothes
   id: CSClothesSecslutskirt
   name: sexy redsec skirt
-  description: A red security-themed skirt, with a fitted bodice.
+  description: A red security-themed skirt, with a fitted bodice. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2895,7 +2895,7 @@
   parent: CSClothes
   id: CSClothesHappyVampire
   name: happy vampire vestsuit
-  description: A vestsuit with a vampire motif, with pants and a vest.
+  description: A vestsuit with a vampire motif, with pants and a vest. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2913,7 +2913,7 @@
   parent: CSClothes
   id: CSClothesWhitebunnysuit
   name: white bunnysuit
-  description: A white bunny suit with hardpoints for armor and weaponry.
+  description: A white bunny suit with hardpoints for armor and weaponry. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2932,7 +2932,7 @@
   parent: CSClothes
   id: CSClothesMikuBikini
   name: miku bikini
-  description: A blue bikini, suitable for the beach.
+  description: A blue bikini, suitable for the beach. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2950,7 +2950,7 @@
   parent: CSClothes
   id: CSClothesPinkwshort
   name: pink athletic shorts
-  description: A pair of stretchy pink athletic shorts.
+  description: A pair of stretchy pink athletic shorts. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2968,7 +2968,7 @@
   parent: CSClothes
   id: CSClothesRadkini
   name: radkini
-  description: A two-piece swimsuit in radioactive-themed colors.
+  description: A two-piece swimsuit in radioactive-themed colors. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -2986,7 +2986,7 @@
   parent: CSClothes
   id: CSClothesRedWshort
   name: red athletic shorts
-  description: A pair of stretchy red athletic shorts.
+  description: A pair of stretchy red athletic shorts. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3004,7 +3004,7 @@
   parent: CSClothes
   id: CSClothesShortsBlue
   name: neon blue flashy shorts
-  description: A pair of blue shorts with bright neon cyan stripes.
+  description: A pair of blue shorts with bright neon cyan stripes. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3022,7 +3022,7 @@
   parent: CSClothes
   id: CSClothesShortsRed
   name: blood red breeches
-  description: A pair of blood red breeches.
+  description: A pair of blood red breeches. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3040,7 +3040,7 @@
   parent: CSClothes
   id: CSClothesSwimBlack
   name: one-piece swimsuit in black
-  description: A black one-piece swimsuit, in stretchy fabric.
+  description: A black one-piece swimsuit, in stretchy fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3058,7 +3058,7 @@
   parent: CSClothes
   id: CSClothesSwimBlue
   name: one-piece swimsuit in blue
-  description: A blue one-piece swimsuit, in stretchy fabric.
+  description: A blue one-piece swimsuit, in stretchy fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3076,7 +3076,7 @@
   parent: CSClothes
   id: CSClothesSwimEarth
   name: one-or-more-piece swimsuit in earth
-  description: A multi-piece swimsuit in earth tones.
+  description: A multi-piece swimsuit in earth tones. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3094,7 +3094,7 @@
   parent: CSClothes
   id: CSClothesSwimGreen
   name: one-or-more-piece swimsuit in green
-  description: A multi-piece swimsuit in green.
+  description: A multi-piece swimsuit in green. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3112,7 +3112,7 @@
   parent: CSClothes
   id: CSClothesSwimPurp
   name: one-or-more-piece swimsuit in purp
-  description: A multi-piece swimsuit in purple.
+  description: A multi-piece swimsuit in purple. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3130,7 +3130,7 @@
   parent: CSClothes
   id: CSClothesSwimRed
   name: one-or-more-piece swimsuit in red
-  description: A multi-piece swimsuit in red.
+  description: A multi-piece swimsuit in red. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3148,7 +3148,7 @@
   parent: CSClothes
   id: CSClothesSyclothing
   name: sy-bikini
-  description: A bikini in stretchy, breathable fabric.
+  description: A bikini in stretchy, breathable fabric. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3166,7 +3166,7 @@
   parent: CSClothes
   id: CSClothesYellowwshort
   name: yellow athletic shorts
-  description: A pair of stretchy yellow athletic shorts.
+  description: A pair of stretchy yellow athletic shorts. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3185,7 +3185,7 @@
   parent: CSClothes
   id: CSClothesAfrMerc
   name: khaki mercenary outfit
-  description: A khaki mercenary uniform, with camo pants.
+  description: A khaki mercenary uniform, with camo pants. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3203,7 +3203,7 @@
   parent: CSClothes
   id: CSClothesCartel
   name: tropical runner outfit
-  description: A tropical runner's outfit, cool and breezy with bright colors.
+  description: A tropical runner's outfit, cool and breezy with bright colors. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3221,7 +3221,7 @@
   parent: CSClothes
   id: CSClothesChad
   name: chad
-  description: A bright neon day-glo outfit, garish and confident.
+  description: A bright neon day-glo outfit, garish and confident. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3239,7 +3239,7 @@
   parent: CSClothes
   id: CSClothesUNIrish
   name: drab uniform
-  description: A drab military-style uniform.
+  description: A drab military-style uniform. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3257,7 +3257,7 @@
   parent: CSClothes
   id: CSClothesGearHarness
   name: nudist gear harness
-  description: A nigh-invisible harness for carrying small items, suited for nudists.
+  description: A nigh-invisible harness for carrying small items, suited for nudists. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3275,7 +3275,7 @@
   parent: CSClothes
   id: CSClothesUNGreentrousersOG107
   name: drab green trousers
-  description: A pair of drab green trousers with suspenders.
+  description: A pair of drab green trousers with suspenders. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3293,7 +3293,7 @@
   parent: CSClothes
   id: CSClothesPortugueseSailor1d
   name: portuguese sailor
-  description: A set of Portuguese sailor's clothing, with a low-cut shirt.
+  description: A set of Portuguese sailor's clothing, with a low-cut shirt. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3311,7 +3311,7 @@
   parent: CSClothes
   id: CSClothesTacticoolHawaiianBlue
   name: tacticool hawaiian shirt in blue
-  description: A blue Hawaiian shirt with a floral pattern, in tacticool style.
+  description: A blue Hawaiian shirt with a floral pattern, in tacticool style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3329,7 +3329,7 @@
   parent: CSClothes
   id: CSClothesTacticoolHawaiianOrange
   name: tacticool hawaiian shirt in orange
-  description: An orange Hawaiian shirt with a floral pattern, in tacticool style.
+  description: An orange Hawaiian shirt with a floral pattern, in tacticool style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
@@ -3347,7 +3347,7 @@
   parent: CSClothes
   id: CSClothesTacticoolHawaiianPurple
   name: tacticool hawaiian shirt in purple
-  description: A purple Hawaiian shirt with a floral pattern, in tacticool style.
+  description: A purple Hawaiian shirt with a floral pattern, in tacticool style. # Wayfarer
   components:
   - type: Sprite
     overrideDir: South
