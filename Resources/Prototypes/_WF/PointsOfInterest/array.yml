@@ -1,0 +1,32 @@
+# Author Info: Station made to progress story of the server.
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Notes: not ready for launch, waiting for dish entity.
+# News station with "weather forecast", maybe event gathering point given the giant empty space.
+- type: pointOfInterest
+  id: arraystation
+  parent: BasePOI
+  name: "RAEWS Array"
+  minimumDistance: 350
+  maximumDistance: 600
+  gridPath: /Maps/_WF/POI/array.yml
+  addComponents:
+  - type: StationTransit
+    routes:
+      MinorPointsOfInterest: 20
+
+- type: gameMap
+  id: arraystation
+  mapName: "RAEWS Array"
+  mapPath: /Maps/_WF/POI/array.yml
+  minPlayers: 0
+  stations:
+    arraystation:
+      stationProto: DeadDropFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "News and forecast directly from the RAEWS Array."
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "RAEWS Array"
