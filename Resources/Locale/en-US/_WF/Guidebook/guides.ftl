@@ -52,3 +52,4 @@ guide-entry-shipyard-scryer = Scryer
 guide-entry-shipyard-svalinn = Svalinn
 guide-entry-shipyard-swan = Swan
 guide-entry-shipyard-moppet = Moppet
+guide-entry-shipyard-kobold = Kobold
