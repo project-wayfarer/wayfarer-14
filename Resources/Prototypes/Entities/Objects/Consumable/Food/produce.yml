@@ -36,6 +36,13 @@
   - type: Appearance
   - type: Extractable
     grindableSolutionName: food
+  # Wayfarer: 24h shelf life for produce
+  - type: Perishable
+    rotAfter: 86400
+    molsPerSecondPerUnitMass: 0
+  # Wayfarer: Temperature tracking so cold environments stop rot
+  - type: Temperature
+    currentTemperature: 290
 
 # Subclasses
 
@@ -1370,6 +1377,13 @@
   - type: Tag
     tags:
     - Slice
+  # Wayfarer: 24h shelf life for produce (slices match whole produce)
+  - type: Perishable
+    rotAfter: 86400
+    molsPerSecondPerUnitMass: 0
+  # Wayfarer: temperature tracking so cold environments halt rot
+  - type: Temperature
+    currentTemperature: 290
 
 - type: entity
   name: pineapple slice

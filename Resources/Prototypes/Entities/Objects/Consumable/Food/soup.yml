@@ -24,6 +24,13 @@
           Quantity: 10
   - type: Sprite
     sprite: Objects/Consumable/Food/bowl.rsi
+  # Wayfarer: 8h shelf life for prepared meals
+  - type: Perishable
+    rotAfter: 28800
+    molsPerSecondPerUnitMass: 0
+  # Wayfarer: Temperature tracking so cold environments stop rot
+  - type: Temperature
+    currentTemperature: 290
   - type: DamageOnLand
     damage:
       types:
@@ -615,6 +622,13 @@
           Quantity: 6
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: 8h shelf life for prepared meals
+  - type: Perishable
+    rotAfter: 28800
+    molsPerSecondPerUnitMass: 0
+  # Wayfarer: temperature tracking so cold environments halt rot
+  - type: Temperature
+    currentTemperature: 290
 # Soup
 
 - type: entity

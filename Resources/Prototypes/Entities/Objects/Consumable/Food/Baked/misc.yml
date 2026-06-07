@@ -17,12 +17,19 @@
           Quantity: 5
   - type: Item
     size: Tiny
+  # Wayfarer: 24h shelf life for baked goods
+  - type: Perishable
+    rotAfter: 86400
+    molsPerSecondPerUnitMass: 0
+  # Wayfarer: Temperature tracking so cold environments stop rot
+  - type: Temperature
+    currentTemperature: 290
 
 # Muffins
 
 - type: entity
   name: muffin
-  parent: FoodInjectableBase
+  parent: FoodBakedBase # Wayfarer: was FoodInjectableBase, switched so muffins inherit Perishable
   id: FoodBakedMuffin
   description: A delicious and spongy little cake.
   components:
