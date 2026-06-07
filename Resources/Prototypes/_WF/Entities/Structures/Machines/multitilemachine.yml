@@ -62,6 +62,13 @@
     energy: 3.0
     color: "#f1f4ff"
   - type: LitOnPowered
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -11
+    range: 5
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
   - type: Rotatable
     rotateWhileAnchored: false
     increment: 90
