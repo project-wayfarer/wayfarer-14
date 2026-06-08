@@ -7,7 +7,7 @@
   - type: Tag
     tags:
       - Sushi
-  # Wayfarer Start: 8h shelf life for prepared meals. Covers slices, which parent
+  # Wayfarer: 8h shelf life for prepared meals. Covers slices, which parent
   # [FoodBaseSushi, FoodInjectableBase] and would otherwise miss Perishable.
   - type: Perishable
     rotAfter: 28800
