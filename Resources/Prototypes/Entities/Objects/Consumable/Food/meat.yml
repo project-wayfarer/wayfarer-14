@@ -66,7 +66,7 @@
     tags:
     - Raw
     - Meat
-  # Wayfarer Start: 4h shelf life for raw foods. molsPerSecondPerUnitMass 0
+  # Wayfarer: 4h shelf life for raw foods. molsPerSecondPerUnitMass 0
   # keeps raw meat from giving off ammonia (that's for bodies, not food).
   - type: Perishable
     rotAfter: 14400
