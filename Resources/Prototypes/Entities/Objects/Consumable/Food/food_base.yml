@@ -39,6 +39,11 @@
   - type: RefillableSolution
     solution: food
     preventTransferOut: true # Frontier
+# Start Wayfarer
+  - type: Tag
+    tags:
+      - FoodInjectable
+# End Wayfarer
 
 # usable by any food that can be opened
 # handles appearance with states "icon" and "icon-open"

@@ -17,3 +17,14 @@
     Steel: 300
     Glass: 50
     Plastic: 50
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: CraftCateringBag
+  result: CateringBag
+  categories:
+  - Tools
+  completetime: 2
+  materials:
+    Cloth: 500
+    Steel: 500

@@ -5,13 +5,13 @@
   description: Lets others know if the service is open or closed.
   components:
   - type: Sprite
-    sprite: Objects/Misc/opensign.rsi
+    sprite: _WF/Objects/Misc/opensign.rsi
     layers:
     - state: icon
       map: ["enum.ToggleableVisuals.Layer"]
   - type: Item
     size: Small
-    sprite: Objects/Misc/opensign.rsi
+    sprite: _WF/Objects/Misc/opensign.rsi
     heldPrefix: open
   - type: Appearance
   - type: ItemToggle

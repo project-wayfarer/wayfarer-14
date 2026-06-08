@@ -565,8 +565,10 @@
 - type: Tag
   id: EncryptionService
 
+# Start Wayfarer
 - type: Tag
   id: Envelope
+# End Wayfarer
 
 - type: Tag
   id: Enzyme
@@ -609,6 +611,11 @@
 
 - type: Tag
   id: Folder
+
+# Start Wayfarer
+- type: Tag
+  id: FoodInjectable
+# End Wayfarer
 
 - type: Tag
   id: FoodSnack
