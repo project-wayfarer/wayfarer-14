@@ -21,13 +21,13 @@
           Quantity: 40
         - ReagentId: Vitamin
           Quantity: 10
-  # Wayfarer: 8h shelf life for prepared meals
+  # Wayfarer Start: 8h shelf life for prepared meals
   - type: Perishable
     rotAfter: 28800
     molsPerSecondPerUnitMass: 0
-  # Wayfarer: Temperature tracking so cold environments stop rot
   - type: Temperature
     currentTemperature: 290
+  # Wayfarer End
 
 # Breakfasts
 

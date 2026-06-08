@@ -39,6 +39,7 @@
         restitution: 0.3  # fite me
         friction: 0.2
   # let air cook and freeze meat for cooking and preservation
+  - type: AtmosExposed
   - type: Temperature
     currentTemperature: 290
   # required for cooking to work
@@ -49,11 +50,12 @@
   - type: PhysicalComposition
     materialComposition:
       Meaterial: 300
-  # Wayfarer: 8h shelf life for cooked/cured meat. FoodMeatRawBase overrides
-  # this to 4h so raw meat still rots faster than cooked.
+  # Wayfarer Start: 8h shelf life for cooked/cured meat. FoodMeatRawBase
+  # overrides this to 4h so raw meat still rots faster than cooked.
   - type: Perishable
     rotAfter: 28800
     molsPerSecondPerUnitMass: 0
+  # Wayfarer End
 
 - type: entity
   parent: FoodMeatBase
@@ -64,10 +66,12 @@
     tags:
     - Raw
     - Meat
-  # Wayfarer: 4h shelf life for raw foods
+  # Wayfarer Start: 4h shelf life for raw foods. molsPerSecondPerUnitMass 0
+  # keeps raw meat from giving off ammonia (that's for bodies, not food).
   - type: Perishable
     rotAfter: 14400
     molsPerSecondPerUnitMass: 0
+  # Wayfarer End
   - type: RotInto
     entity: FoodMeatRotten
     # once it would say bloated, turn into the rotten prototype

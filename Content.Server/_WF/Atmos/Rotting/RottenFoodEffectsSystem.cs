@@ -1,4 +1,5 @@
-﻿using Content.Server.Atmos.EntitySystems;
+﻿using Content.Server.Atmos.Components;
+using Content.Server.Atmos.EntitySystems;
 using Content.Server.Nutrition;
 using Content.Server.Temperature.Components;
 using Content.Shared.Atmos.Rotting;
@@ -36,6 +37,10 @@ public sealed class RottenFoodEffectsSystem : EntitySystem
 
     private void OnFoodIsRotting(EntityUid uid, EdibleComponent component, ref IsRottingEvent args)
     {
+        // For anything that has its own AtmosExposed (e.g. for cooking).
+        if (HasComp<AtmosExposedComponent>(uid))
+            return;
+
         if (!TryComp<TemperatureComponent>(uid, out var temp))
             return;
 
