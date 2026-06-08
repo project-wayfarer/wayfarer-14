@@ -110,7 +110,7 @@
     sprite: Objects/Consumable/Food/burger.rsi
     shape:
     - 0,0,1,0
-  # Wayfarer Start: 8h shelf life for prepared meals
+  # Wayfarer: 8h shelf life for prepared meals
   - type: Perishable
     rotAfter: 28800
     molsPerSecondPerUnitMass: 0
