@@ -24,7 +24,7 @@
           Quantity: 10
   - type: Sprite
     sprite: Objects/Consumable/Food/bowl.rsi
-  # Wayfarer Start: 8h shelf life for prepared meals
+  # Wayfarer: 8h shelf life for prepared meals
   - type: Perishable
     rotAfter: 28800
     molsPerSecondPerUnitMass: 0
