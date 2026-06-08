@@ -55,7 +55,7 @@
   - type: Perishable
     rotAfter: 28800
     molsPerSecondPerUnitMass: 0
-  # Wayfarer End
+  # End Wayfarer
 
 - type: entity
   parent: FoodMeatBase
@@ -71,7 +71,7 @@
   - type: Perishable
     rotAfter: 14400
     molsPerSecondPerUnitMass: 0
-  # Wayfarer End
+  # End Wayfarer
   - type: RotInto
     entity: FoodMeatRotten
     # once it would say bloated, turn into the rotten prototype
