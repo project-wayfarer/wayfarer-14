@@ -27,7 +27,7 @@
   - type: Tag
     tags:
     - Cake
-  # Wayfarer Start: 24h shelf life for baked goods (slices inherit via FoodCakeSliceBase parent)
+  # Wayfarer: 24h shelf life for baked goods (slices inherit via FoodCakeSliceBase parent)
   - type: Perishable
     rotAfter: 86400
     molsPerSecondPerUnitMass: 0
