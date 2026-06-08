@@ -23,7 +23,7 @@
     size: Tiny
   - type: StaticPrice # Frontier
     price: 14 # Frontier
-  # Wayfarer Start: 24h shelf life for baked goods (FoodDonutFruitBase inherits)
+  # Wayfarer: 24h shelf life for baked goods (FoodDonutFruitBase inherits)
   - type: Perishable
     rotAfter: 86400
     molsPerSecondPerUnitMass: 0
