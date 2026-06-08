@@ -444,7 +444,7 @@
   - type: Envelope
   - type: ContainerContainer
     containers:
-# Start Wayfarer: Change Container Type        
+# Wayfarer: Change Container Type
       storagebase: !type:Container
   - type: Storage
     maxItemSize: Small
@@ -469,7 +469,7 @@
     interfaces:
       enum.PaperUiKey.Key:
         type: PaperBoundUserInterface
-# Start Wayfarer: Added Storage Interface       
+# Wayfarer: Added Storage Interface
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
 # End Wayfarer        
@@ -479,7 +479,7 @@
     - 0,0,0,0 # Wayfarer-14
   - type: Tag
     tags:
-    - Envelope # Wayfarer add tag
+    - Envelope # Wayfarer
     - Trash
     - Document
   #- type: Appearance, hide stamp marks until we have some kind of displacement
