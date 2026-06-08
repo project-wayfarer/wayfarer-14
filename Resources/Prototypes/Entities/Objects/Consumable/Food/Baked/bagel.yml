@@ -22,7 +22,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
-  # Wayfarer Start: 24h shelf life for baked goods
+  # Wayfarer: 24h shelf life for baked goods
   - type: Perishable
     rotAfter: 86400
     molsPerSecondPerUnitMass: 0
