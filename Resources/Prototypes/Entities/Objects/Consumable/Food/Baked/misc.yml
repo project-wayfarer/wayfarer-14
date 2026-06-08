@@ -29,7 +29,7 @@
 
 - type: entity
   name: muffin
-  parent: FoodBakedBase # Wayfarer: was FoodInjectableBase, switched so muffins inherit Perishable
+  parent: FoodBakedBase # Wayfarer: FoodInjectableBase<FoodBakedBase
   id: FoodBakedMuffin
   description: A delicious and spongy little cake.
   components:
