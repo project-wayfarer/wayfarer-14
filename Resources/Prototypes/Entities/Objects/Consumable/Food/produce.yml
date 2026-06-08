@@ -36,7 +36,7 @@
   - type: Appearance
   - type: Extractable
     grindableSolutionName: food
-  # Wayfarer Start: 24h shelf life for produce
+  # Wayfarer: 24h shelf life for produce
   - type: Perishable
     rotAfter: 86400
     molsPerSecondPerUnitMass: 0
