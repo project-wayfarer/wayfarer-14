@@ -50,7 +50,7 @@
   - type: PhysicalComposition
     materialComposition:
       Meaterial: 300
-  # Wayfarer Start: 8h shelf life for cooked/cured meat. FoodMeatRawBase
+  # Wayfarer: 8h shelf life for cooked/cured meat. FoodMeatRawBase
   # overrides this to 4h so raw meat still rots faster than cooked.
   - type: Perishable
     rotAfter: 28800
