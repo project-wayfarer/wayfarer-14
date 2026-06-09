@@ -1287,56 +1287,56 @@
       tags:
       - OutlawUplinkBase
 
-# Cash Conversion
-- type: listing
-  id: UplinkOutlawCash
-  name: uplink-outlaw-cash-name
-  description: uplink-outlaw-cash-desc
-  productEntity: SpaceCash2500
-  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000 }
-  cost:
-    Doubloon: 1
-  categories:
-  - UplinkOutlawConversion
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
-
-# Cash Conversion 10
-- type: listing
-  id: UplinkOutlawCash10
-  name: uplink-outlaw-cash10-name
-  description: uplink-outlaw-cash10-desc
-  productEntity: SpaceCash25000
-  icon: { sprite: Objects/Economy/cash.rsi, state: cash_10000 }
-  cost:
-    Doubloon: 10
-  categories:
-  - UplinkOutlawConversion
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
-
-# Cash Conversion 100
-- type: listing
-  id: UplinkOutlawCash100
-  name: uplink-outlaw-cash100-name
-  description: uplink-outlaw-cash100-desc
-  productEntity: SpaceCash250000
-  icon: { sprite: Objects/Economy/cash.rsi, state: cash_100000 }
-  cost:
-    Doubloon: 100
-  categories:
-  - UplinkOutlawConversion
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
+## Cash Conversion
+#- type: listing
+#  id: UplinkOutlawCash
+#  name: uplink-outlaw-cash-name
+#  description: uplink-outlaw-cash-desc
+#  productEntity: SpaceCash2500
+#  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000 }
+#  cost:
+#    Doubloon: 1
+#  categories:
+#  - UplinkOutlawConversion
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - OutlawUplinkBase
+#
+## Cash Conversion 10
+#- type: listing
+#  id: UplinkOutlawCash10
+#  name: uplink-outlaw-cash10-name
+#  description: uplink-outlaw-cash10-desc
+#  productEntity: SpaceCash25000
+#  icon: { sprite: Objects/Economy/cash.rsi, state: cash_10000 }
+#  cost:
+#    Doubloon: 10
+#  categories:
+#  - UplinkOutlawConversion
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - OutlawUplinkBase
+#
+## Cash Conversion 100
+#- type: listing
+#  id: UplinkOutlawCash100
+#  name: uplink-outlaw-cash100-name
+#  description: uplink-outlaw-cash100-desc
+#  productEntity: SpaceCash250000
+#  icon: { sprite: Objects/Economy/cash.rsi, state: cash_100000 }
+#  cost:
+#    Doubloon: 100
+#  categories:
+#  - UplinkOutlawConversion
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - OutlawUplinkBase
 
 #Bundles--
 # Paperwork Bundle
