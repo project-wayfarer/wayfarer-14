@@ -79,7 +79,7 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
-  # Start Wayfarer: Allow artifact analyzer to drop its machine board on destruction.
+  # Wayfarer: Allow artifact analyzer to drop its machine board on destruction.
   - type: Destructible
     thresholds:
       - trigger:
@@ -99,7 +99,7 @@
               SheetSteel1:
                 min: 2
                 max: 4
-  # End Wayfarer: Allow artifact analyzer to drop its machine board on destruction.
+  # End Wayfarer
 
 - type: entity
   id: MachineArtifactCrusher
