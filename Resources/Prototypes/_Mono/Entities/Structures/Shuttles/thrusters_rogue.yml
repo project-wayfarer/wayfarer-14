@@ -27,5 +27,7 @@
   components:
   - type: Sprite
     sprite: _Mono/Structures/Shuttles/thrusterrogue_large.rsi
-  - type: Machine # Wayfarer
+  # Wayfarer
+  - type: Machine
     board: LargeThrusterMachineCircuitboardRogue
+    # End Wayfarer
