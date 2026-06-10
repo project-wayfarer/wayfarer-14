@@ -153,7 +153,7 @@
   id: NFVGRoidBlobBasalt
   layers:
   - !type:NoiseDistanceDunGen
-    size: 100, 100 # Wayfarer: 272, 272<100,100
+    size: 272, 272
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.80
     layers:
@@ -173,7 +173,7 @@
   maxOffset: 60
   layers:
   - !type:NoiseDistanceDunGen
-    size: 75, 75 # Wayfarer: 150, 150<75, 75
+    size: 150, 150
     distanceConfig: !type:DunGenEuclideanSquaredDistance
     layers:
     - tile: FloorBasalt

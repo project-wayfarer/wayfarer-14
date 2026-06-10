@@ -21,7 +21,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Timing; // Wayfarer
 using Robust.Shared.Utility;
 
 namespace Content.Server.Procedural;
@@ -40,7 +39,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!; // Wayfarer
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private readonly List<(Vector2i, Tile)> _tiles = new();
@@ -48,7 +46,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
-    private const double DungeonJobTime = 0.002; // Wayfarer: 0.005<0.002
+    private const double DungeonJobTime = 0.001; // Wayfarer: 0.005<0.001
 
     public const int CollisionMask = (int) CollisionGroup.Impassable;
     public const int CollisionLayer = (int) CollisionGroup.Impassable;
@@ -223,7 +221,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             gridUid,
             seed,
             position,
-            _gameTiming.TickPeriod, // Wayfarer
             genID, // Frontier
             coordinates,
             cancelToken.Token);
@@ -259,7 +256,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             gridUid,
             seed,
             position,
-            _gameTiming.TickPeriod, // Wayfarer
             genID, // Frontier
             null,
             cancelToken.Token);

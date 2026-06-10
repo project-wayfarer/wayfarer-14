@@ -1,4 +1,4 @@
-using System; // Wayfarer
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Decals;
@@ -6,7 +6,6 @@ using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Shuttles.Systems;
-using Content.Server.Spawners.EntitySystems; // Wayfarer
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.EntityTable;
 using Content.Shared.Maps;
@@ -23,7 +22,6 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Timing; // Wayfarer
 using Robust.Shared.Utility;
 using IDunGenLayer = Content.Shared.Procedural.IDunGenLayer;
 
@@ -48,7 +46,6 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
     private readonly SharedMapSystem _maps;
     private readonly SharedTransformSystem _transform;
 
-    private EntityQuery<HTNComponent> _htnQuery; // Wayfarer
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -63,7 +60,6 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
 
     private readonly ISawmill _sawmill;
     private readonly string _genID; // Frontier: add ID
-    private readonly TimeSpan _npcWakeDelay; // Wayfarer
 
     public DungeonJob(
         ISawmill sawmill,
@@ -83,7 +79,6 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         EntityUid gridUid,
         int seed,
         Vector2i position,
-        TimeSpan npcWakeDelay, // Wayfarer
         string genID, // Frontier
         EntityCoordinates? targetCoordinates = null,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
@@ -104,7 +99,6 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         _entTable = _entManager.System<EntityTableSystem>();
         _transform = transform;
 
-        _htnQuery = _entManager.GetEntityQuery<HTNComponent>(); // Wayfarer
         _physicsQuery = _entManager.GetEntityQuery<PhysicsComponent>();
         _xformQuery = _entManager.GetEntityQuery<TransformComponent>();
 
@@ -114,7 +108,6 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         _seed = seed;
         _position = position;
         _targetCoordinates = targetCoordinates;
-        _npcWakeDelay = npcWakeDelay; // Wayfarer
         _genID = genID; // Frontier
     }
 
@@ -179,31 +172,8 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         // Tiles we can no longer generate on due to being reserved elsewhere.
         var reservedTiles = new HashSet<Vector2i>();
 
-        // Wayfarer: defer spawner MapInit events, flush one-at-a-time after geometry is placed
-        var conditionalSpawner = _entManager.System<ConditionalSpawnerSystem>();
-        conditionalSpawner.BeginDeferred(_gridUid);
-        // End Wayfarer
         var dungeons = await GetDungeons(position, _gen, _gen.Layers, reservedTiles, _seed, random);
         // To make it slightly more deterministic treat this RNG as separate ig.
-
-        // Wayfarer: Grid was deleted during generation; skip spawner flush and post-processing.
-        if (!ValidateResume())
-        {
-            conditionalSpawner.ClearDeferred(_gridUid);
-            return new List<Dungeon>();
-        }
-
-        while (conditionalSpawner.FlushNext(_gridUid))
-        {
-            await SuspendDungeon();
-            if (!ValidateResume())
-            {
-                conditionalSpawner.ClearDeferred(_gridUid);
-                return new List<Dungeon>();
-            }
-        }
-        conditionalSpawner.ClearDeferred(_gridUid);
-        // End Wayfarer
 
         // Post-processing after finishing loading.
         if (_targetCoordinates != null)
@@ -213,42 +183,18 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
             _entManager.DeleteEntity(oldMap);
         }
 
-        // Wayfare
-        // // Defer splitting so they don't get spammed and so we don't have to worry about tracking the grid along the way.
-        // _grid.CanSplit = true;
-        // _entManager.System<GridFixtureSystem>().CheckSplits(_gridUid);
-        // var npcSystem = _entManager.System<NPCSystem>();
-        // End Wayfarer
-
+        // Defer splitting so they don't get spammed and so we don't have to worry about tracking the grid along the way.
+        _grid.CanSplit = true;
+        _entManager.System<GridFixtureSystem>().CheckSplits(_gridUid);
+        var npcSystem = _entManager.System<NPCSystem>();
         var npcs = new HashSet<Entity<HTNComponent>>();
+
         _lookup.GetChildEntities(_gridUid, npcs);
-        var npcUids = new List<EntityUid>(npcs.Count); // Wayfarer
 
         foreach (var npc in npcs)
         {
-            npcUids.Add(npc.Owner); // Wayfarer
+            npcSystem.WakeNPC(npc.Owner, npc.Comp);
         }
-
-        // Wayfarer: Split first, then wake NPCs on the next tick so HTN planning does not query
-        // a grid while its chunk/fixture state is still being reorganized.
-        _grid.CanSplit = true;
-        _entManager.System<GridFixtureSystem>().CheckSplits(_gridUid);
-        Robust.Shared.Timing.Timer.Spawn(_npcWakeDelay, () =>
-        {
-            if (Cancellation.IsCancellationRequested)
-                return;
-
-            var npcSystem = _entManager.System<NPCSystem>();
-
-            foreach (var npc in npcUids)
-            {
-                if (_entManager.Deleted(npc) || !_htnQuery.TryComp(npc, out var htn))
-                    continue;
-
-                npcSystem.WakeNPC(npc, htn);
-            }
-        }, Cancellation);
-        // End Wayfarer
 
         _sawmill.Info($"Finished generating dungeon {_gen} with seed {_seed}");
         return dungeons;

@@ -37,12 +37,6 @@ public sealed partial class DungeonJob
                 string.Compare(x.ID, y.ID, StringComparison.Ordinal));
         }
 
-        // Wayfarer: yield after room prototype enumeration
-        await SuspendDungeon();
-        if (!ValidateResume())
-            return Dungeon.Empty;
-        // End Wayfarer
-
         var roomProtos = new Dictionary<Vector2i, List<DungeonRoomPrototype>>(_prototype.Count<DungeonRoomPrototype>());
 
         foreach (var proto in _prototype.EnumeratePrototypes<DungeonRoomPrototype>())
@@ -74,12 +68,6 @@ public sealed partial class DungeonJob
             roomA.Sort((x, y) =>
                 string.Compare(x.ID, y.ID, StringComparison.Ordinal));
         }
-
-        // Wayfarer: yield after room prototype enumeration
-        await SuspendDungeon();
-        if (!ValidateResume())
-            return Dungeon.Empty;
-            // End Wayfarer
 
         var tiles = new List<(Vector2i, Tile)>();
         var dungeon = new Dungeon();
@@ -165,12 +153,6 @@ public sealed partial class DungeonJob
             // If we're not the first pack then connect to our edges.
             chosenPacks[i] = pack;
             packTransforms[i] = packTransform;
-
-            // Wayfarer: yield between pack selections
-            await SuspendDungeon();
-            if (!ValidateResume())
-                return Dungeon.Empty;
-            // End Wayfarer
         }
 
         // Then for overlaps choose either 1x1 / 3x1
@@ -247,7 +229,8 @@ public sealed partial class DungeonJob
                 matty = Matrix3x2.Multiply(roomTransform, packTransform);
                 var dungeonMatty = Matrix3x2.Multiply(matty, dungeonTransform);
 
-                await _dungeon.SpawnRoomAsync(_gridUid, _grid, dungeonMatty, room, reservedTiles, SuspendDungeon); // Wayfarer: SpawnRoom<SpawnRoomAsync
+                // The expensive bit yippy.
+                _dungeon.SpawnRoom(_gridUid, _grid, dungeonMatty, room, reservedTiles);
 
                 var roomCenter = (room.Offset + room.Size / 2f) * _grid.TileSize;
                 var roomTiles = new HashSet<Vector2i>(room.Size.X * room.Size.Y);
