@@ -11,3 +11,47 @@
       Capacitor: 6 # Wayfarer: 4<6
     stackRequirements:
       Steel: 20
+
+# Wayfarer: Unique machine board for Outlaw Thrusters
+- type: entity
+  id: ThrusterMachineCircuitboardRogue
+  parent: ThrusterMachineCircuitboard
+  name: outlaw thruster machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: ThrusterRogue
+    requirements:
+      Capacitor: 4
+    stackRequirements:
+      Steel: 5
+
+- type: entity
+  id: LargeThrusterMachineCircuitboardRogue
+  parent: BaseMachineCircuitboard
+  name: outlaw large thruster machine board
+  description: A large circuitboard for a 2x2 machine frame.
+  components:
+  - type: MachineBoard
+    prototype: ThrusterLargeRogue
+    frameSize: 2x2
+    requirements:
+      Capacitor: 6
+    stackRequirements:
+      Steel: 20
+
+- type: entity
+  id: LargeThrusterMachineCircuitboardNfsd
+  parent: BaseMachineCircuitboard
+  name: cgp large thruster machine board
+  description: A large circuitboard for a 2x2 machine frame.
+  components:
+  - type: MachineBoard
+    prototype: ThrusterLargeNfsd
+    frameSize: 2x2
+    requirements:
+      Capacitor: 6
+    stackRequirements:
+      Steel: 20
+# End Wayfarer
