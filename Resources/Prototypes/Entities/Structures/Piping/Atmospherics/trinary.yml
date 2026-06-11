@@ -62,8 +62,6 @@
       enabled: false
       transferRate: 1000
       maxTransferRate: 1000
-          - type: Flippable
-      mirrorEntity: GasFilterFlipped
     - type: Construction
       graph: GasTrinary
       node: filter
