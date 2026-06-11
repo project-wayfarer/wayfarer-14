@@ -97,11 +97,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> NPCJukeCooldownOverride = CVarDef.Create("npc.juke_cooldown_override", -1f);
 
-    /// <summary>
-    /// How often (seconds) the proximity NPC system scans for nearby players.
-    /// Higher values are cheaper but increase the delay before an NPC wakes.
-    /// </summary>
-    public static readonly CVarDef<float> ProximityNPCCheckInterval =
-        CVarDef.Create("misfits.proximity_npc_check_interval", 5f, CVar.SERVER | CVar.SERVERONLY);
-
 }
