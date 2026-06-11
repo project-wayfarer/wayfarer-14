@@ -24,7 +24,7 @@
 #region the mob
 - type: entity
   parent:
-  - BaseC3WizardContraband
+  #- BaseC3WizardContraband # Wayfarer
   - NFInflatableCrate
   - BaseMob
   - MobStaminaFodder

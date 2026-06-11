@@ -1,6 +1,6 @@
 #region staff altar
 - type: entity
-  parent: [ BaseC3WizardContraband, BaseItemRecharger ] # [ BaseMachine, SmallConstructibleMachine ]
+  parent: [ BaseC2WizardContraband, BaseItemRecharger ] # [ BaseMachine, SmallConstructibleMachine ] # Wayfarer: BaseC3WizardContraband<BaseC2WizardContraband
   id: StaffRechargerWizard
   name: wizard staff altar
   description: A magically attuned altar that can replenish arcane energies of wizard staffs.
@@ -46,7 +46,7 @@
 
 #region power generator
 - type: entity
-  parent: [ BaseGenerator, BaseC3WizardContraband ]
+  parent: [ BaseGenerator, BaseC2WizardContraband ] # Wayfarer: BaseC3WizardContraband<BaseC2WizardContraband
   id: NFGeneratorWizardInfernalCore6kW
   name: infernal core
   suffix: 6.66kW, Anchored
@@ -97,7 +97,7 @@
 
 #region singing rock
 - type: entity
-  parent: [ BaseMachine, BaseC3WizardContraband ]
+  parent: [ BaseMachine ] # Wayfarer: Removed BaseC3WizardContraband
   id: SingingRock
   name: singing rock
   description: A rock with charming, melodic voice.
@@ -161,7 +161,7 @@
 
 #region Inf. canisters
 - type: entity
-  parent: [ GasCanister, BaseC3WizardContraband ]
+  parent: [ GasCanister ] # Wayfarer: Removed BaseC3WizardContraband
   id: WizardGasCanisterBottomlessOxygen
   name: bottomless canister
   suffix: Filled, Oxygen
@@ -191,7 +191,7 @@
       price: 1250
 
 - type: entity
-  parent: [ GasCanister, BaseC3WizardContraband ]
+  parent: [ GasCanister ] # Wayfarer: Removed BaseC3WizardContraband
   id: WizardGasCanisterBottomlessNitrogen
   name: bottomless canister
   suffix: Filled, Nitrogen

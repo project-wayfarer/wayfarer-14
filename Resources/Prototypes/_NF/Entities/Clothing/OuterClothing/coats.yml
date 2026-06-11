@@ -175,7 +175,7 @@
     damageCoefficient: 0.60
 
 - type: entity
-  parent: [ ClothingOuterStorageBase, BaseC3WizardContraband ]
+  parent: [ ClothingOuterStorageBase ] # Wayfarer: Removed BaseC3WizardContraband
   id: ClothingOuterWizardBrick
   name: brick wizard coat
   description: ClothingOuterWizardBrick

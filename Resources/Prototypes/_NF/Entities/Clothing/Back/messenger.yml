@@ -701,9 +701,9 @@
 
 - type: entity
   parent:
-  - BaseC3CultContrabandUnredeemable
+  #- BaseC3CultContrabandUnredeemable # Wayfarer
   - ClothingBackpackMessengerContractor
-  - ContrabandClothing
+  #- ContrabandClothing # Wayfarer
   id: ClothingBackpackMessengerBloodCult
   name: cultist messenger bag
   description: A watertight messenger bag for loyal Nar'Sie followers.
@@ -795,9 +795,9 @@
 
 - type: entity
   parent:
-  - BaseC3WizardContrabandUnredeemable
+  #- BaseC3WizardContrabandUnredeemable # Wayfarer
   - ClothingBackpackMessengerContractor
-  - ContrabandClothing
+  #- ContrabandClothing # Wayfarer
   id: ClothingBackpackMessengerWizardBlue
   name: blue wizard messenger bag
   description: A stylish messenger bag fit for a blue wizard.
