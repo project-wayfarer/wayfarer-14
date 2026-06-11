@@ -849,7 +849,7 @@
 
 #region conjured MagiVend
 - type: entity
-  parent: [ BaseC3WizardContraband, VendingMachineMagivend ]
+  parent: [ BaseC2WizardContraband, VendingMachineMagivend ] # Wayfarer: BaseC3WizardContraband<BaseC2WizardContraband
   id: NFVendingMachineMagivend
   suffix: Frontier
   components:

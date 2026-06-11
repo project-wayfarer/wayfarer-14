@@ -1,6 +1,6 @@
 #region blue wizard
 - type: entity
-  parent: [ BaseC3WizardContrabandUnredeemable, ClothingNeckBase, ContrabandClothing ]
+  parent: [ ClothingNeckBase ] # Wayfarer: Removed BaseC3WizardContrabandUnredeemable, ContrabandClothing
   id: ClothingNeckScarfWizardBlue
   name: blue wizard stole
   description: A scarf imbued with minor enchantments to protect the wearer from cold and minor magical effects.
@@ -187,7 +187,7 @@
 
 #region scarf of warmth
 - type: entity
-  parent: [ ClothingNeckScarfWizardPurple, BaseC3WizardContraband ]
+  parent: [ ClothingNeckScarfWizardPurple ] # Wayfarer: Removed BaseC3WizardContraband
   id: ClothingNeckScarfWizardWarmth
   name: wizard scarf of warmth
   description: You don't feel neither cold nor warm wearing it. Wonder if it keeps you safe from plasmafires?

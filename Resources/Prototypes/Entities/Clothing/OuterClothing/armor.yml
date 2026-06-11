@@ -395,7 +395,7 @@
     sprite: Clothing/OuterClothing/Armor/heavyred.rsi
 
 - type: entity
-  parent: [ClothingOuterArmorHeavy, BaseC3CultContraband, ContrabandClothing] # Frontier: added BaseC3CultContraband, ContrabandClothing as parent
+  parent: [ClothingOuterArmorHeavy] # Frontier: added BaseC3CultContraband, ContrabandClothing as parent # Wayfarer: Removed BaseC3WizardContraband, ContrabandClothing
   id: ClothingOuterArmorMagusblue
   name: blue magus armor
   description: An blue armored suit that provides good protection.
@@ -406,7 +406,7 @@
     sprite: Clothing/OuterClothing/Armor/magusblue.rsi
 
 - type: entity
-  parent: [ClothingOuterArmorHeavy, BaseC3WizardContraband, ContrabandClothing] # Frontier: added BaseC3WizardContraband, ContrabandClothing as parent
+  parent: [ClothingOuterArmorHeavy] # Frontier: added BaseC3WizardContraband, ContrabandClothing as parent # Wayfarer: Removed BaseC3WizardContraband, ContrabandClothing
   id: ClothingOuterArmorMagusred
   name: red magus armor
   description: A red armored suit that provides good protection.
