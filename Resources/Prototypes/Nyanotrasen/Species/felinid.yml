@@ -20,11 +20,11 @@
     Tail:
       points: 32 # Wayfarer: 1<32
       required: true
-      defaultMarkings: [ FelinidTailBasic ]
+      defaultMarkings: [ FelinidTailDefault ] # Wayfarer: FelinidTailBasic<FelinidTailDefault
     HeadTop:
       points: 32 # Wayfarer: 1<32
       required: true
-      defaultMarkings: [ FelinidEarsBasic ]
+      defaultMarkings: [ FelinidEarsDefault ] # Wayfarer: FelinidEarsBasic<FelinidEarsDefault
     Chest:
       points: 32 # Wayfarer: 1<32
       required: false
