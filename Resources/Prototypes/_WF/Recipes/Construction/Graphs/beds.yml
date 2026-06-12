@@ -4,11 +4,11 @@
   graph:
   - node: start
     actions:
-    - !type:DestroyEntity {}
+    - !type:DestroyEntity
     edges:
     - to: bunkbed
       completed:
-      - !type:SnapToGrid { }
+      - !type:SnapToGrid
       steps:
       - material: Steel
         amount: 4
