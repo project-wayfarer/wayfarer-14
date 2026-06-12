@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: WFbed
+  id: WFbeds
   start: start
   graph:
   - node: start
@@ -16,10 +16,14 @@
       - material: Cloth
         amount: 2
         doAfter: 1
+
   - node: bunkbed
     entity: BunkBed
     edges:
     - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 1
       completed:
       - !type:SpawnPrototype
         prototype: SheetSteel1
@@ -27,6 +31,3 @@
       - !type:SpawnPrototype
         prototype: MaterialCloth1
         amount: 2
-      steps:
-      - tool: Screwing
-        doAfter: 1
