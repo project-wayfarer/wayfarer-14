@@ -220,7 +220,7 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         // var npcSystem = _entManager.System<NPCSystem>();
         // End Wayfarer
 
-        var npcs = new HashSet<Entity<HTNComponent>>();
+        var npcs = new HashSet<Entity<HTNComponent>>(); // Wayfarer
         _lookup.GetChildEntities(_gridUid, npcs);
         var npcUids = new List<EntityUid>(npcs.Count); // Wayfarer
 

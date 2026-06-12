@@ -116,8 +116,10 @@ namespace Content.Server.Spawners.EntitySystems
 
         private void OnEntityTableSpawnMapInit(Entity<EntityTableSpawnerComponent> ent, ref MapInitEvent args)
         {
-            if (TryDefer(ent)) // Wayfarer - defer on dungeon grids
+            // Wayfarer: defer on dungeon grids
+            if (TryDefer(ent))
                 return;
+            // End Wayfarer
             Spawn(ent);
             if (ent.Comp.DeleteSpawnerAfterSpawn && !TerminatingOrDeleted(ent) && Exists(ent))
                 QueueDel(ent);

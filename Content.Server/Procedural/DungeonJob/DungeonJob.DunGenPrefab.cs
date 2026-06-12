@@ -79,7 +79,7 @@ public sealed partial class DungeonJob
         await SuspendDungeon();
         if (!ValidateResume())
             return Dungeon.Empty;
-            // End Wayfarer
+        // End Wayfarer
 
         var tiles = new List<(Vector2i, Tile)>();
         var dungeon = new Dungeon();
