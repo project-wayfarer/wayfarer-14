@@ -264,8 +264,8 @@
 #    perDungeon: true
 # End Wayfarer
   - !type:MobsDunGen
-    minCount: 16 # Wayfarer: 8<16
-    maxCount: 32 # Wayfarer: 15<32
+    minCount: 12 # Wayfarer: 8<12
+    maxCount: 24 # Wayfarer: 15<24
     contents: NFSpawnMobXenoT2Table
   - !type:MobsDunGen
     minCount: 1 # Wayfarer: 0<1
