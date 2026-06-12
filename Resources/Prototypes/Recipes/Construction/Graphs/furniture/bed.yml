@@ -83,7 +83,7 @@
             - tool: Screwing
               doAfter: 1
     - node: bunkbed
-      entity: Bunkbed
+      entity: BunkBed
       edges:
       - to: start
         completed:
@@ -91,7 +91,7 @@
           prototype: SheetSteel1
           amount: 4
         - !type:SpawnPrototype
-          prototype: MaterialDurathread1
+          prototype: MaterialCloth1
           amount: 2
         steps:
         - tool: Screwing
