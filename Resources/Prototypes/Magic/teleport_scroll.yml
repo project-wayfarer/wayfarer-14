@@ -2,7 +2,7 @@
   id: WizardTeleportScroll
   name: teleport scroll
   suffix: Wizard
-  parent: [ BaseItem, BaseC3WizardContraband ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband
+  parent: [ BaseItem, BaseC2WizardContraband ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband # Wayfarer: BaseC3WizardContraband<BaseC2WizardContraband
   components:
   - type: UserInterface
     interfaces:

@@ -5,7 +5,7 @@
   prototype: MobDiona
   sprites: MobDionaSprites
   defaultSkinTone: "#cdb369"
-  markingLimits: MobHumanMarkingLimits #MobDionaMarkingLimits WF
+  markingLimits: MobDionaMarkingLimits
   dollPrototype: MobDionaDummy
   skinColoration: Hues
   maleFirstNames: NamesDionaFirst
@@ -16,19 +16,17 @@
 - type: speciesBaseSprites
   id: MobDionaSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    Special: MobHumanoidAnyMarking # Wayfarer
+    Hair: MobHumanoidAnyMarking # Wayfarer
+    FacialHair: MobHumanoidAnyMarking # Wayfarer
     Head: MobDionaHead
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking # Wayfarer
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobDionaTorso
     Eyes: MobDionaEyes
     LArm: MobDionaLArm
@@ -39,7 +37,64 @@
     RLeg: MobDionaRLeg
     LFoot: MobDionaLFoot
     RFoot: MobDionaRFoot
+    Tail: MobHumanoidAnyMarking # Wayfarer
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
     RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+
+- type: markingPoints
+  id: MobDionaMarkingLimits
+  onlyWhitelisted: false # Wayfarer: true<false
+  points:
+    Special:
+      points: 32 # Wayfarer
+      required: false
+    Hair:
+      points: 32 # Wayfarer
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer
+      required: false
+    Head:
+      points: 32 # Wayfarer 2<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer 1<32
+      required: false
+    HeadSide:
+      points: 32 # Wayfarer 1<32
+      required: false
+    Snout:
+      points: 32 # Wayfarer
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer 2<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer 2<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer 2<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer
+      required: false
+    UndergarmentTop:
+      points: 32 # Wayfarer 1<32
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer 1<32
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer 1<32
+      required: true
+      defaultMarkings: [ DionaVineOverlay ]
 
 - type: humanoidBaseSprite
   id: MobDionaEyes

@@ -17,19 +17,19 @@
 - type: speciesBaseSprites
   id: MobHumanSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Head: MobHumanHead
+    Special: MobHumanoidAnyMarking # Wayfarer
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
+    Head: MobHumanHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking # Einstein Engines - Oni
     Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobHumanTorso
     Eyes: MobHumanoidEyes
-    HeadTop: MobHumanoidAnyMarking
     LArm: MobHumanLArm
     RArm: MobHumanRArm
     LHand: MobHumanLHand
@@ -39,56 +39,60 @@
     LFoot: MobHumanLFoot
     RFoot: MobHumanRFoot
     Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
-    HeadSide: MobHumanoidAnyMarking # Einstein Engines - Oni
-    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer: Adds Wing Slot
 
 - type: markingPoints
   id: MobHumanMarkingLimits
   points:
     Special:
-      points: 32 # WF
-      required: false
-    Head:
-      points: 32 # WF
-      required: false
-    HeadTop:
-      points: 32 # WF
-      required: false
-    HeadSide:
-      points: 32 # WF
-      required: false
-    Snout:
-      points: 32 # WF
+      points: 32 # Wayfarer: 0<32
       required: false
     Hair:
-      points: 32 # WF
+      points: 32 # Wayfarer: 1<32
       required: false
     FacialHair:
-      points: 32 # WF
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
       required: false
     Chest:
-      points: 32 # WF
+      points: 32 # Wayfarer: 2<32
       required: false
     Legs:
-      points: 32 # WF
+      points: 32 # Wayfarer: 2<32
       required: false
     Arms:
-      points: 32 # WF
+      points: 32 # Wayfarer: 2<32
       required: false
     Tail:
-      points: 32 # WF
+      points: 32 # Wayfarer: 0<32
       required: false
     UndergarmentTop:
-      points: 32 # WF
+      points: 32 # Wayfarer
       required: false
     UndergarmentBottom:
-      points: 32 # WF
+      points: 32 # Wayfarer
       required: false
     Genital:
-      points: 32 # WF
+      points: 32 # Wayfarer
       required: false
     Overlay:
-      points: 32 # WF
+      points: 32 # Wayfarer
       required: false
 
 - type: humanoidBaseSprite

@@ -5,7 +5,7 @@
   prototype: MobMoth
   sprites: MobMothSprites
   defaultSkinTone: "#ffda93"
-  markingLimits: MobHumanMarkingLimits #MobMothMarkingLimits
+  markingLimits: MobMothMarkingLimits
   dollPrototype: MobMothDummy
   skinColoration: Hues
   maleFirstNames: NamesMothFirstMale
@@ -15,19 +15,18 @@
 - type: speciesBaseSprites
   id: MobMothSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    Special: MobHumanoidAnyMarking # Wayfarer
+    Hair: MobHumanoidAnyMarking # Wayfarer
+    FacialHair: MobHumanoidAnyMarking # Wayfarer
     Head: MobMothHead
-    Hair: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking # Wayfarer
+    HeadSide: MobHumanoidAnyMarking # Wayfarer
     Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobMothTorso
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
     Eyes: MobMothEyes
     LArm: MobMothLArm
     RArm: MobMothRArm
@@ -37,6 +36,9 @@
     RLeg: MobMothRLeg
     LFoot: MobMothLFoot
     RFoot: MobMothRFoot
+    Tail: MobHumanoidAnyMarking # Wayfarer
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
     RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot... wait what?
 
 - type: humanoidBaseSprite
@@ -44,6 +46,61 @@
   baseSprite:
     sprite: Mobs/Species/Moth/parts.rsi
     state: eyes
+
+- type: markingPoints
+  id: MobMothMarkingLimits
+  onlyWhitelisted: false # Wayfarer: true<false
+  points:
+    Special:
+      points: 32 # Wayfarer
+      required: false
+    Hair:
+      points: 32 # Wayfarer 0<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer 0<32
+      required: false
+    Head:
+      points: 32 # Wayfarer 4<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer 1<32
+      required: true
+      defaultMarkings: [ MothAntennasDefault ]
+    HeadSide:
+      points: 32 # Wayfarer 1<32
+      required: false
+    Snout:
+      points: 32 # Wayfarer 32<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer 2<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer 2<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer 2<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer 1<32
+      required: true
+      defaultMarkings: [ MothWingsDefault ]
+    UndergarmentTop:
+      points: 32 # Wayfarer 1<32
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer 1<32
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 - type: humanoidBaseSprite
   id: MobMothHead

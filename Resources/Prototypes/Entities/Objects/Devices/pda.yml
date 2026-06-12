@@ -1176,6 +1176,7 @@
        pda-syndi
   - type: PdaBorderColor
     borderColor: "#891417"
+    accentVColor: "#333333" # Wayfarer - Matches better
   - type: Icon
     state: pda-syndi
   - type: CartridgeLoader
@@ -1571,6 +1572,8 @@
        pda-syndi-agent
   - type: PdaBorderColor
     borderColor: "#891417"
+    accentHColor: "#d7d7d0" # Wayfarer - Matches better
+    accentVColor: "#333333" # Wayfarer - Matches better
   - type: Icon
     state: pda-syndi-agent
   - type: CartridgeLoader

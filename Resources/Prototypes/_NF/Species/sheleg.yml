@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobSheleg
   dollPrototype: MobShelegDummy
-  markingLimits: MobHumanMarkingLimits #MobShelegMarkingLimits WF
+  markingLimits: MobShelegMarkingLimits
   sprites: MobShelegSprites
   skinColoration: Hues # Wayfarer: ShelegToned<Hues
   defaultSkinTone: "#2A48CC"
@@ -20,17 +20,18 @@
   id: MobShelegSprites
   sprites:
     Special: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking # Wayfarer: MobShelegHair<MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking # Wayfarer: MobShelegHair<MobHumanoidAnyMarking
     Head: MobShelegHead
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking # Wayfarer
     Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentTop: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentBottom: MobHumanoidAnyMarking # Wayfarer
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobShelegTorso
     Eyes: MobHumanoidEyes
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
     LArm: MobShelegLArm
     RArm: MobShelegRArm
     LHand: MobShelegLHand
@@ -39,7 +40,62 @@
     RLeg: MobShelegRLeg
     LFoot: MobShelegLFoot
     RFoot: MobShelegRFoot
-    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+    Tail: MobHumanoidAnyMarking # Wayfarer
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer
+
+- type: markingPoints
+  id: MobShelegMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer: 8<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 8<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    UndergarmentTop:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 # - type: humanoidBaseSprite
   # id: MobShelegEyes
