@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 06/09/2026 09:22:34
-  entityCount: 1046
+  time: 06/12/2026 00:00:43
+  entityCount: 1049
 maps: []
 grids:
 - 1
@@ -4312,6 +4312,15 @@ entities:
     - type: Transform
       pos: 3.7474651,-9.738324
       parent: 1
+- proto: EnbyFlag
+  entities:
+  - uid: 1048
+    components:
+    - type: Transform
+      pos: 13.5,-11.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: FaxMachineShip
   entities:
   - uid: 554
@@ -5593,6 +5602,15 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
+- proto: GayFlag
+  entities:
+  - uid: 1047
+    components:
+    - type: Transform
+      pos: 10.5,11.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: GravityGeneratorMini
   entities:
   - uid: 708
@@ -5754,6 +5772,15 @@ entities:
     - type: Transform
       pos: 1.5,-10.5
       parent: 1
+- proto: LesbianFlag
+  entities:
+  - uid: 1049
+    components:
+    - type: Transform
+      pos: 11.5,-5.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: LockableButton
   entities:
   - uid: 737
