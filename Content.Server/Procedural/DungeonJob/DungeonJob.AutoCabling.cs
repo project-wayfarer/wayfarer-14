@@ -129,6 +129,8 @@ public sealed partial class DungeonJob
                 lastDirection[neighbor] = dir;
                 frontier.Enqueue(neighbor, gScore);
             }
+
+            await SuspendDungeon(); // Wayfarer: yield each A* iteration to spread the pathfinding cost
         }
 
         foreach (var tile in cableTiles)
@@ -155,6 +157,7 @@ public sealed partial class DungeonJob
                 continue;
 
             _entManager.SpawnEntity(gen.Entity, _maps.GridTileToLocal(_gridUid, _grid, tile));
+            await SuspendDungeon(); // Wayfarer: yield after each cable entity spawn
         }
     }
 }
