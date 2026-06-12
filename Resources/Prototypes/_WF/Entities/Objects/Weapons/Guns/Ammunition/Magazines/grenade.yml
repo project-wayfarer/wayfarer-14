@@ -2,6 +2,7 @@
   id: WFMagazineGrenadeHEAT
   name: HEAT grenade cartridge
   parent: BaseMagazineGrenade
+  abstract: true
   components:
   - type: BallisticAmmoProvider
     proto: WFGrenadeHEAT

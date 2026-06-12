@@ -201,26 +201,15 @@
     Plasma: 1000
 
 - type: latheRecipe
-  id: NFGrenadeEMP
-  result: NFGrenadeEMP
-  categories:
-  - Weapons
-  completetime: 2
-  materials:
-    Steel: 400
-    Plastic: 200
-    Uranium: 200
-
-- type: latheRecipe
   id: NFMagazineGrenadeEMP
   result: NFMagazineGrenadeEMP
   categories:
   - Weapons
   completetime: 4
   materials:
-    Steel: 2000
-    Plastic: 1000
-    Uranium: 1000
+    Steel: 750
+    Plastic: 500
+    Glass: 100
 
 # Pre-filled Magazines QOL
 # 35 # god fucking damnit why are there so many types of 35 magazines
