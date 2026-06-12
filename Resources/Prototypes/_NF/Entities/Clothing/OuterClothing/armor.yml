@@ -77,7 +77,7 @@
     damageCoefficient: 0.60
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseCGPContraband ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
+  parent: [ ClothingOuterVestWebMercenary, BaseCGPContraband ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband | ClothingOuterBaseLarge<ClothingOuterVestWebMercenary
   id: ClothingOuterArmorNfsd
   name: CGP armor
   description: Get shot, maybe survive?
