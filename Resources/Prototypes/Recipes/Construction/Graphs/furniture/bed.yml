@@ -33,16 +33,6 @@
             - material: Durathread
               amount: 2
               doAfter: 1
-        - to: bunkbed
-          completed:
-          - !type:SnapToGrid { }
-          steps:
-          - material: Steel
-            amount: 4
-            doAfter: 1
-          - material: Cloth
-            amount: 2
-            doAfter: 1
     - node: bed
       entity: Bed
       edges:
@@ -82,17 +72,3 @@
           steps:
             - tool: Screwing
               doAfter: 1
-    - node: bunkbed
-      entity: BunkBed
-      edges:
-      - to: start
-        completed:
-        - !type:SpawnPrototype
-          prototype: SheetSteel1
-          amount: 4
-        - !type:SpawnPrototype
-          prototype: MaterialCloth1
-          amount: 2
-        steps:
-        - tool: Screwing
-          doAfter: 1

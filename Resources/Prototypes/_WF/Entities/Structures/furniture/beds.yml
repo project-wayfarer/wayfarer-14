@@ -1,0 +1,12 @@
+# Bunkbed
+- type: entity
+  parent: Bed
+  id: BunkBed
+  name: Bunk Bed
+  description: Two beds stacked ontop of each other to save space while storing more people. Top bunk's mine!
+  components:
+  - type: Sprite
+    state: bunkbed
+  - type: Construction
+    graph: bed
+    node: bunkbed
