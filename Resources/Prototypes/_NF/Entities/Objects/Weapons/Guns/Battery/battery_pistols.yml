@@ -219,8 +219,6 @@
   components:
   - type: Sprite
     sprite: _WF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi   # Wayfarer: The Respritening Phase 1
-  - type: Clothing  # Wayfarer: The Respritening Phase 1
-    sprite: _WF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi   # Wayfarer: The Respritening Phase 1
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -230,6 +228,8 @@
     - state: mode-cyan
       shader: unshaded
       map: [ "Firemode" ]
+  - type: Clothing  # Wayfarer: The Respritening Phase 1
+    sprite: _WF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi   # Wayfarer: The Respritening Phase 1
   - type: Item
     size: Small
     inhandVisuals:
