@@ -28,6 +28,10 @@ public sealed class WFWeatherHazardSystem : EntitySystem
     // When each weather on each map is allowed to deal damage next.
     private readonly Dictionary<(EntityUid Map, string ProtoId), TimeSpan> _nextTick = new();
 
+    private TimeSpan _nextUpdate;
+
+    private static readonly TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
+
     public override void Initialize()
     {
         base.Initialize();
@@ -37,6 +41,10 @@ public sealed class WFWeatherHazardSystem : EntitySystem
     public override void Update(float frameTime)
     {
         var now = _timing.CurTime;
+        if (now < _nextUpdate)
+            return;
+        _nextUpdate = now + UpdateInterval;
+
         var weatherQuery = EntityQueryEnumerator<WeatherComponent, TransformComponent>();
         while (weatherQuery.MoveNext(out var mapUid, out var weatherComp, out var mapXform))
         {

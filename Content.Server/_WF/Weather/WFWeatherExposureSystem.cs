@@ -1,15 +1,19 @@
 ﻿ using Content.Shared._WF.Weather;
 using Content.Shared.Weather;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map.Events;
+using Robust.Shared.Timing;
 
 namespace Content.Server._WF.Weather;
 
 // Tracks which tiles on each grid are open to weather. A tile is open when nothing walls it off
-// from space. Recomputed when walls or floors change.
+// from space. Should only update while a weather is running.
 public sealed class WFWeatherExposureSystem : EntitySystem
 {
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private EntityQuery<BlockWeatherComponent> _blockQuery;
     private EntityQuery<MapGridComponent> _gridQuery;
@@ -18,6 +22,11 @@ public sealed class WFWeatherExposureSystem : EntitySystem
     private readonly List<EntityUid> _rebuildBuffer = new();
     private readonly Queue<Vector2i> _bfsQueue = new();
     private readonly HashSet<Vector2i> _bfsVisited = new();
+
+    private bool _weatherActive;
+    private TimeSpan _nextUpdate;
+
+    private static readonly TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
 
     private static readonly Vector2i[] Cardinals =
     {
@@ -40,17 +49,35 @@ public sealed class WFWeatherExposureSystem : EntitySystem
         SubscribeLocalEvent<BlockWeatherComponent, MapInitEvent>(OnBlockWeatherMapInit);
     }
 
-    private void OnGridInit(GridInitializeEvent ev) => _dirtyGrids.Add(ev.EntityUid);
+    private void OnGridInit(GridInitializeEvent ev)
+    {
+        if (!_weatherActive)
+            return;
+        _dirtyGrids.Add(ev.EntityUid);
+    }
 
-    private void OnTileChanged(ref TileChangedEvent ev) => _dirtyGrids.Add(ev.Entity.Owner);
+    private void OnTileChanged(ref TileChangedEvent ev)
+    {
+        if (!_weatherActive)
+            return;
+        _dirtyGrids.Add(ev.Entity.Owner);
+    }
 
     private void OnBlockWeatherAnchor(Entity<BlockWeatherComponent> ent, ref AnchorStateChangedEvent args)
-        => MarkOwningGridDirty(ent.Owner);
+    {
+        if (!_weatherActive)
+            return;
+        MarkOwningGridDirty(ent.Owner);
+    }
 
     // Walls drawn on a map at load time do not announce themselves the way a wall built in-game does.
     // Recheck which tiles are open when the map loads so these walls are counted too.
     private void OnBlockWeatherMapInit(Entity<BlockWeatherComponent> ent, ref MapInitEvent args)
-        => MarkOwningGridDirty(ent.Owner);
+    {
+        if (!_weatherActive)
+            return;
+        MarkOwningGridDirty(ent.Owner);
+    }
 
     private void MarkOwningGridDirty(EntityUid owner)
     {
@@ -61,6 +88,24 @@ public sealed class WFWeatherExposureSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        var now = _timing.CurTime;
+        if (now < _nextUpdate)
+            return;
+        _nextUpdate = now + UpdateInterval;
+
+        var active = AnyWeatherActive();
+
+        if (active && !_weatherActive)
+            MarkWeatherGridsDirty();
+
+        _weatherActive = active;
+
+        if (!active)
+        {
+            _dirtyGrids.Clear();
+            return;
+        }
+
         if (_dirtyGrids.Count == 0)
             return;
 
@@ -73,6 +118,33 @@ public sealed class WFWeatherExposureSystem : EntitySystem
             if (!_gridQuery.TryGetComponent(gridUid, out var grid))
                 continue;
             Rebuild(gridUid, grid);
+        }
+    }
+
+    private bool AnyWeatherActive()
+    {
+        var query = EntityQueryEnumerator<WeatherComponent>();
+        while (query.MoveNext(out _, out var weather))
+        {
+            if (weather.Weather.Count > 0)
+                return true;
+        }
+        return false;
+    }
+
+    private void MarkWeatherGridsDirty()
+    {
+        var query = EntityQueryEnumerator<WeatherComponent, TransformComponent>();
+        while (query.MoveNext(out _, out var weather, out var xform))
+        {
+            if (weather.Weather.Count == 0)
+                continue;
+            foreach (var grid in _mapManager.GetAllGrids(xform.MapID))
+            {
+                if (MetaData(grid.Owner).EntityPaused)
+                    continue;
+                _dirtyGrids.Add(grid.Owner);
+            }
         }
     }
 
