@@ -101,7 +101,8 @@
     - Deconstruct
     delayMultiplier: 0.65 # Mono
   - type: Sprite
-    state: icon-shipyard
+    sprite: _WF/Objects/Tools/rcdpirate.rsi # Wayfarer: RCD resprite
+    state: icon
   - type: GridAccess
 
 - type: entity
@@ -202,5 +203,6 @@
     - Deconstruct
     delayMultiplier: 0.65 # Mono
   - type: Sprite
-    state: icon-shipyard
+    sprite: _WF/Objects/Tools/rcdmilitary.rsi # Wayfarer: RCD resprite
+    state: icon
   - type: GridAccess

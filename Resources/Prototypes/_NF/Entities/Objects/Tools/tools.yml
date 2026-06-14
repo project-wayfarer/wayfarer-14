@@ -7,7 +7,8 @@
   - type: RCD
     isShipyardRCD: true
   - type: Sprite
-    state: icon-shipyard
+    sprite: _WF/Objects/Tools/rcdshipyard.rsi # Wayfarer: RCD resprite
+    # state: icon-shipyard
   - type: GridAccess
 
 - type: entity
@@ -27,9 +28,10 @@
   - type: RCDAmmo
     isShipyardRCDAmmo: true
   - type: Sprite
-    state: ammo-shipyard
+    sprite: _WF/Objects/Tools/rcdshipyard.rsi # Wayfarer: RCD resprite
+    # state: ammo-shipyard
   - type: Item
-    heldPrefix: ammo-shipyard
+    # heldPrefix: ammo-shipyard
 
 - type: entity
   name: maintenance jack

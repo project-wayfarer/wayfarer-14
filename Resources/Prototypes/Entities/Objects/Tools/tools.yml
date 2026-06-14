@@ -434,12 +434,12 @@
   - type: LimitedCharges
     maxCharges: 90 # Wayfarer: 30<90
   - type: Sprite
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite (Technically not a resprite, I just extricated the old soulful sprite from beneath the new one.)
     state: icon
   - type: Item
     size: Normal
   - type: Clothing
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite (Technically not needed since the onmobs are identical, but meh.)
     quickEquip: false
     slots:
     - Belt
@@ -496,10 +496,10 @@
   components:
   - type: RCDAmmo
   - type: Sprite
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite
     state: ammo
   - type: Item
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite
     heldPrefix: ammo
   - type: PhysicalComposition
     materialComposition:
