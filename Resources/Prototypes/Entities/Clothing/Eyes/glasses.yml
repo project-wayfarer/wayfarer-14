@@ -193,6 +193,7 @@
   - type: Construction
     graph: GlassesSecHUD
     node: glassesSec
+  - type: VisionCorrection
   - type: Tag
     tags:
     - HamsterWearable
@@ -226,6 +227,7 @@
   - type: IdentityBlocker
     coverage: EYES
   - type: ShowJobIcons
+  - type: VisionCorrection
 
 - type: entity
   parent: ClothingEyesBase
@@ -242,6 +244,7 @@
     protectionTime: 5
   - type: IdentityBlocker
     coverage: EYES
+  - type: VisionCorrection
 
 #Make a scanner category when these actually function and we get the trayson
 - type: entity
@@ -266,6 +269,7 @@
     rsi:
       sprite: _WF/Clothing/Helmetaddons/Goggles/thermalgoggles.rsi
       state: helmet
+  - type: VisionCorrection
 
 
 - type: entity
@@ -289,6 +293,7 @@
       rsi:
         sprite: _WF/Clothing/Helmetaddons/Goggles/chemgoggles.rsi
         state: helmet
+    - type: VisionCorrection
 
 
 - type: entity
@@ -323,3 +328,4 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+  - type: VisionCorrection
