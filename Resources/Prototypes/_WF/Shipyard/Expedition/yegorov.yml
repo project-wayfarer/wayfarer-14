@@ -1,0 +1,46 @@
+# Author Info
+# GitHub: SmolGreenBuggo (https://github.com/SmolGreenBuggo)
+# Discord: kazako
+
+# Maintainer Info
+# GitHub: ???
+# Discord: ???
+
+# Shuttle Notes: huge ship fitting a brand new tier that has not existed before. price subject to change
+#
+- type: vessel
+  id: Yegorov
+  parent: BaseVessel
+  name: KAZ Yegorov
+  description: A retired and stripped USSP Navy light cruiser produced by KAZ, once serving in a frontline brawler role, and now serving as a handsome piece of military surplus for the enterprising mercenary. Comes with a refitted hangar for salvage operations and an empty but functional armory. 
+  price: 272000  # 148706  + 60600 = 209306 / x 1.30 = 272097.8
+  category: Large
+  group: Expedition
+  shuttlePath: /Maps/_WF/Shuttles/Expedition/yegorov.yml
+  guidebookPage: ShipyardYegorov
+  class:
+  - Expedition
+  - Salvage
+  - Kitchen
+  engine:
+  - AME
+
+- type: gameMap
+  id: Yegorov
+  mapName: 'KAZ Yegorov'
+  mapPath: /Maps/_WF/Shuttles/Expedition/yegorov.yml
+  minPlayers: 0
+  stations:
+    Yegorov:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Yegorov {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

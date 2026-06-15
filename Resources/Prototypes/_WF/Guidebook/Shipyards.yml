@@ -95,6 +95,7 @@
   - ShipyardPathfinder # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardBehir
   - ShipyardScryer
+  - ShipyardYegorov
 
 - type: guideEntry
   id: MedShipyard
@@ -292,3 +293,8 @@
   id: ShipyardMoppet
   name: guide-entry-shipyard-moppet
   text: "/ServerInfo/_WF/Guidebook/Shipyard/StaffShipyard/Moppet.xml"
+
+- type: guideEntry
+  id: ShipyardYegorov
+  name: guide-entry-shipyard-yegorov
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Yegorov.xml"
