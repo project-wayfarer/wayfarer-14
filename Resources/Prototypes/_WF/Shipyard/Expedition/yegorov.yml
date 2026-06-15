@@ -3,10 +3,10 @@
 # Discord: kazako
 
 # Maintainer Info
-# GitHub: ???
-# Discord: ???
+# GitHub: SmolGreenBuggo (https://github.com/SmolGreenBuggo)
+# Discord: kazako
 
-# Shuttle Notes: huge ship fitting a brand new tier that has not existed before. price subject to change
+# Shuttle Notes:
 #
 - type: vessel
   id: Yegorov
@@ -21,7 +21,6 @@
   class:
   - Expedition
   - Salvage
-  - Kitchen
   engine:
   - AME
 
@@ -31,6 +30,7 @@
   mapPath: /Maps/_WF/Shuttles/Expedition/yegorov.yml
   minPlayers: 0
   stations:
+    Yegorov:
       stationProto: StandardFrontierExpeditionVessel
       components:
       - type: StationNameSetup
