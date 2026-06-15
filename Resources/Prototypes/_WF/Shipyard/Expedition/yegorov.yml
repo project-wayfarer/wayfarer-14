@@ -31,16 +31,13 @@
   mapPath: /Maps/_WF/Shuttles/Expedition/yegorov.yml
   minPlayers: 0
   stations:
-    Yegorov:
       stationProto: StandardFrontierExpeditionVessel
       components:
-        - type: StationNameSetup
-          mapNameTemplate: 'Yegorov {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: '14'
-        - type: StationJobs
-          availableJobs:
-            ContractorInterview: [ 0, 0 ]
-            PilotInterview: [ 0, 0 ]
-            MercenaryInterview: [ 0, 0 ]
+      - type: StationNameSetup
+        mapNameTemplate: 'Yegorov {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
