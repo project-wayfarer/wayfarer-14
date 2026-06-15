@@ -1,0 +1,47 @@
+- type: entity
+  name: cannabis brick
+  parent: [BaseItem, RecyclableItemOrganicLarge]
+  id: CannabisBrick
+  description: "A brick of compressed cannabis."
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: GroundCannabis
+      amount: 8
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Sprite
+    sprite: Objects/Consumable/Food/snacks.rsi
+    state: nutribrick
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 1000
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: CannabisBrick
+  # End Wayfarer
+
+- type: entity
+  name: rainbow cannabis brick
+  parent: [BaseItem, RecyclableItemOrganicLarge]
+  id: RainbowCannabisBrick
+  description: "A brick of compressed rainbow cannabis."
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: GroundCannabisRainbow
+      amount: 8
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Sprite
+    sprite: Objects/Consumable/Food/snacks.rsi
+    state: nutribrick
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 1500
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: RainbowCannabisBrick
+  # End Wayfarer

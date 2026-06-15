@@ -1,0 +1,52 @@
+- type: entity
+  id: OutlawAssembler
+  parent: [ BaseMachinePowered, ConstructibleMachine, KitchenAssembler]
+  name: black-market goods assembler
+  description: A repurposed multi-assembler, ominously painted for assembling things, omniously.
+  components:
+  - type: Microwave
+    validRecipeTypes: OutlawAssembler
+    beginCookingSound: /Audio/Machines/machine_switch.ogg
+    foodDoneSound: /Audio/Effects/Shuttle/radar_ping.ogg
+    loopingSound: /Audio/_NF/Machines/medical-assembler.ogg
+    key: OutlawAssemblerKey
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.VisualState:
+        enum.MicrowaveVisualizerLayers.Base:
+          Idle: { state: "base" }
+          Broken: { state: "base" }
+          Cooking: { state: "base" }
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          Idle: { state: "off-unlit" }
+          Broken: { state: "off-unlit" }
+          Cooking: { state: "on-unlit" }
+      enum.PowerDeviceVisuals.Powered:
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Sprite
+    sprite: _WF/Structures/Machines/blackmarkassembler.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+      map: ["enum.MicrowaveVisualizerLayers.Base"]
+    - state: off-unlit
+      shader: unshaded
+      map: ["enum.MicrowaveVisualizerLayers.BaseUnlit"]
+      visible: false
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: Machine
+    board: MedicalAssemblerMachineCircuitboard
+  - type: ActivatableUI
+    key: enum.MicrowaveUiKey.OutlawAssemblerKey
+  - type: UserInterface
+    interfaces:
+      enum.MicrowaveUiKey.OutlawAssemblerKey:
+        type: AssemblerBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      microwave_entity_container: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container

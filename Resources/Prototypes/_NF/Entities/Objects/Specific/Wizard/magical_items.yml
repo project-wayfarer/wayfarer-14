@@ -165,6 +165,10 @@
   - type: Clothing
     sprite: _NF/Objects/Tanks/wizard.rsi
   - type: CatWearable
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: GasTankWizardBottomless
+  # End Wayfarer
 
 #region Wings
 - type: entity
@@ -194,6 +198,10 @@
       moles:
         - 10.25689525 # oxygen
         - 10.25689525 # nitrogen
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: FairyDragonWings
+  # End Wayfarer
 
 #region Wallet
 - type: entity
@@ -227,6 +235,10 @@
   - type: Dumpable
   - type: MagnetPickup
     magnetEnabled: true
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: ClothingWalletInfiniteGreed
+  # End Wayfarer
 
 # region neck tie
 - type: entity

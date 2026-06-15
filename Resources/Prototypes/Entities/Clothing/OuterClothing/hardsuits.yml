@@ -590,6 +590,10 @@
     - ScurretWearable
   - type: StaticPrice
     price: 5000
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: OutlawBountyClothingOuterHardsuitSyndie
+  # End Wayfarer
 
 # Syndicate Medic Hardsuit
 - type: entity
@@ -618,6 +622,10 @@
         Radiation: 0.5
         Caustic: 0.5
         Poison: 0.5 # Frontier: Added as upgrade over Merc Bio-suit, zombies on Frontier deal direct poison instead of infection chance
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: OutlawBountyClothingOuterHardsuitSyndie
+  # End Wayfarer
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -664,6 +672,10 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: OutlawBountyClothingOuterHardsuitSyndie
+  # End Wayfarer
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -780,6 +792,10 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: ClothingOuterHardsuitWizard
+  # End Wayfarer
 
 #Ling Space Suit
 - type: entity
