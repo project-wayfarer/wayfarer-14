@@ -31,4 +31,17 @@
     Stimulants: 30
   recipeType: OutlawAssembler
 
-# Crates
+# Drinks
+- type: microwaveMealRecipe
+  id: RecipeBloodRedBrew
+  name: blood-red brew can
+  result: DrinkNukieCan
+  time: 5
+  group: OutlawAssembler
+  solids:
+    SheetSteel1: 1
+  reagents:
+    Stimulants: 5
+    NuclearCola: 20
+    Ice: 5
+  recipeType: OutlawAssembler
