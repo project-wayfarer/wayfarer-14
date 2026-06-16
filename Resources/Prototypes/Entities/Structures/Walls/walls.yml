@@ -697,10 +697,12 @@
   - type: IconSmooth
     key: walls
     base: reinf_over
-  - type: RCDDeconstructable #Frontier
-    cost: 6 #Frontier
-    delay: 8 #Frontier
-    fx: EffectRCDDeconstruct8 #Frontier
+  # Wayfarer: RCDDeconstructable
+  - type: RCDDeconstructable
+    cost: 4
+    delay: 8
+    fx: EffectRCDDeconstruct6
+  # End Wayfarer
   - type: Destructible
     thresholds:
     - trigger:
@@ -767,6 +769,12 @@
         acts: ["Destruction"]
   - type: RadiationBlocker
     resistance: 5
+  # Wayfarer: RCDDeconstructable
+  - type: RCDDeconstructable
+    cost: 4
+    delay: 8
+    fx: EffectRCDDeconstruct6
+  # End Wayfarer
 
 # Riveting
 - type: entity
