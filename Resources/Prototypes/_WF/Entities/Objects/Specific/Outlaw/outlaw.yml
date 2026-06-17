@@ -34,7 +34,7 @@
 
 - type: material # This is so unbelievably scuffed what the fuck was I thinking
   id: OutlawData
-  stackEntity: Doubloon
+  stackEntity: Doubloon1
   name: materials-data
   unit: materials-unit-chits
   icon: { sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi, state: chits }
@@ -47,6 +47,7 @@
   suffix: 1 DC
   components:
   - type: Stack
+    stackType: Doubloon
     count: 1
 
 - type: entity
