@@ -1,0 +1,47 @@
+- type: entity
+  parent: NFBaseBlueprintExpedition
+  id: WFBaseBlueprintOutlaw
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: icon-base
+      color: "#d21a1a"
+    - state: icon-text
+      color: "#db7372"
+    - sprite: Objects/Misc/bureaucracy.rsi
+      state: paper_stamp-generic
+      offset: 0.15,-0.1
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+    - sprite: Objects/Misc/bureaucracy.rsi
+      state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-base
+        color: "#d21a1a"
+      - state: inhand-left-text
+        color: "#db7372"
+      right:
+      - state: inhand-right-base
+        color: "#d21a1a"
+      - state: inhand-right-text
+        color: "#db7372"
+  - type: Tag
+    tags:
+    - WFBlueprintOutlaw
+    - Document
+    - Paper
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawViper
+  name: viper blueprint
+  description: An illegal blueprint with a schematic of a viper machine pistol. It can be inserted into an outlaw techfab.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - RecipeWeaponPistolViper

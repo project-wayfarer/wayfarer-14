@@ -50,3 +50,74 @@
       microwave_entity_container: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
+
+- type: entity
+  id: WFOutlawTechfab
+  parent: [ NFBlueprintReceiverBase, BaseLatheLube ]
+  name: outlaw techfab
+  description: Prints the questionably legal items recovered from decrypted black-market data, and a few other things.
+  components:
+  - type: Sprite
+    sprite: _WF/Structures/Machines/techfab.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: outlaw
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: WFOutlawTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+#    staticPacks:
+#    - WFOutlawStatic
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - WFBlueprintOutlaw
+      - NFBlueprintAdvanced
+  - type: OreSiloClient
+
+- type: entity
+  id: WFDataTerminal
+  parent: BaseLathe
+  name: black-market data terminal
+  description: This machine decrypts otherwise unusable black-market data chits.
+  components:
+  - type: Sprite
+    sprite: _WF/Structures/Machines/diskdec.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: powered
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Machine
+    board: NFScrapProcessorCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - DataChit
+  - type: Lathe
+    idleState: base
+    runningState: base
+    unlitIdleState: powered
+    unlitRunningState: working
+    defaultProductionAmount: 1
+    productValueModifier: null
+    staticPacks:
+    - WFDecryptStatic

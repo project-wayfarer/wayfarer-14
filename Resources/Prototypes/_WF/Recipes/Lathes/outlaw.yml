@@ -1,0 +1,48 @@
+- type: entity
+  name: decrypted data (low value)
+  id: SpawnRandomDecryptedBlueprintLow
+  parent: MarkerBasePlaceFree
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi
+      state: chits
+    - sprite: _NF/Markers/general.rsi
+      state: questionmark
+      color: red
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: TableRandomDecryptedBlueprintLow
+
+- type: entityTable
+  id: TableRandomDecryptedBlueprintLow
+  table: !type:GroupSelector
+    children:
+    - id: WFBlueprintOutlawViper
+      weight: 2.25
+
+- type: latheRecipePack
+  id: WFDecryptStatic
+  recipes:
+      - RecipeDecryptLow
+
+- type: latheRecipe
+  id: RecipeDecryptLow
+  result: SpawnRandomDecryptedBlueprintLow
+  completetime: 6
+  categories:
+  - Materials
+  icon:
+    sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi
+    state: chits
+  materials:
+    OutlawData: 1
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: RecipeWeaponPistolViper
+  result: NFWeaponPistolViper
+  materials:
+    Steel: 1500

@@ -23,6 +23,23 @@
   - type: Currency
     price:
       Doubloon: 1
+  # shit to make it work with data terminal, genuine yamlmaxxing
+  - type: Tag
+    tags:
+    - DataChit
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OutlawData: 1
+
+- type: material # This is so unbelievably scuffed what the fuck was I thinking
+  id: OutlawData
+  stackEntity: Doubloon
+  name: materials-data
+  unit: materials-unit-chits
+  icon: { sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi, state: chits }
+  color: "#C0C0C0"
+  price: 1
 
 - type: entity
   parent: Doubloon
