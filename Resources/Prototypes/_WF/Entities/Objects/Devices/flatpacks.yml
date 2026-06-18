@@ -15,3 +15,12 @@
   components:
   - type: Flatpack
     entity: ShuttleGunPirateCannon
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: VendingMachineBaristaFlatpack
+  name: BaristaVend flatpack
+  description: A flatpack used for constructing a BaristaVend.
+  components:
+  - type: Flatpack
+    entity: VendingMachineBarista
