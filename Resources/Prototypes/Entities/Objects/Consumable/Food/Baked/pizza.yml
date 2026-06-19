@@ -34,6 +34,13 @@
     tags:
     - Pizza
     - ReptilianFood
+  # Wayfarer: 24h shelf life for baked goods
+  - type: Perishable
+    rotAfter: 86400
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 - type: entity
   parent: FoodInjectableBase # Not sliceable
@@ -65,6 +72,13 @@
     - Pizza
     - ReptilianFood
     - Slice
+  # Wayfarer: 24h shelf life for baked goods
+  - type: Perishable
+    rotAfter: 86400
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 # Pizza
 

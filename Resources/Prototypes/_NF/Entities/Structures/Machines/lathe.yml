@@ -299,7 +299,7 @@
     - NfsdWeaponsStatic
     - NfsdPracticeStatic
     - NfsdAmmoStatic
-    - NFMercenaryMagazineStatic
+#    - NFMercenaryMagazineStatic # Wayfarer
     - NFMercenaryStorageStatic
     - NfsdToolsStatic
     - NfsdTargetsStatic
@@ -311,6 +311,14 @@
       - NFBlueprintNfsdTechfab
       - NFBlueprintAdvanced
   - type: OreSiloClient
+  # Wayfarer: Didn't inherit properly
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  # End Wayfarer
 
 - type: entity
   id: MercenaryTechFab

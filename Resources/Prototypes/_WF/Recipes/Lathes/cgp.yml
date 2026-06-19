@@ -1,6 +1,6 @@
 # Misc
 
-# ClothingOuterStraightjacket ClothingMaskGasSwat
+# Clothing
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
   id: WFClothingOuterStraightjacket
@@ -14,6 +14,55 @@
   parent: NFBaseMaskArmoredRecipe
   result: ClothingMaskGasSheriff
 
+- type: latheRecipe
+  id: ClothingOuterArmorNfsd
+  parent: NFBaseArmorRecipe
+  result: ClothingOuterArmorNfsd
+
+- type: latheRecipe
+  id: ClothingHeadHelmetNfsd
+  parent: NFBaseHelmetRecipe
+  result: ClothingHeadHelmetNfsd
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdBronze
+  parent: NFBaseHardSuitRecipe
+  result: ClothingOuterHardsuitNfsdBronze
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdSilver
+  parent: NFBaseHardSuitRecipe
+  result: ClothingOuterHardsuitNfsdSilver
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdGold
+  parent: NFBaseHardSuitRecipe
+  result: ClothingOuterHardsuitNfsdGold
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdCombat
+  parent: NFBaseHardSuitArmoredRecipe
+  result: ClothingOuterHardsuitNfsdCombat
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdBrigmedic
+  parent: NFBaseHardSuitArmoredRecipe
+  result: ClothingOuterHardsuitNfsdBrigmedic
+
+- type: latheRecipe
+  id: ClothingShoesBootsMagNfsd
+  parent: NFBaseMagBootsRecipe
+  result: ClothingShoesBootsMagNfsd
+
+- type: latheRecipe
+  id: ClothingShoesBootsMagTacCGP
+  parent: NFBaseMagBootsRecipe
+  result: ClothingShoesBootsMagTacCGP
+  materials:
+    Gold: 500
+    Plasteel: 500
+    Cloth: 400
+
 # Clusterbang
 - type: latheRecipe
   id: WFClusterBang
@@ -25,6 +74,7 @@
     Steel: 300
 
 # Sidearms
+
 - type: latheRecipe
   parent: BaseWeaponRecipeSidearm
   id: NFWeaponRevolverInspector
@@ -47,6 +97,24 @@
     Steel: 2000
     Gold: 500
     Plasma: 300
+
+# Longarms
+- type: latheRecipe
+  id: SecBreachingHammerCGP
+  parent: BaseWeaponRecipeLong
+  result: SecBreachingHammerCGP
+  materials:
+    Steel: 2000
+    Plastic: 50
+
+- type: latheRecipe
+  id: WFWeaponShotgunEnforcer
+  result: NFWeaponShotgunEnforcer
+  parent: BaseWeaponRecipeLong
+  materials:
+    Steel: 2500
+    Plasteel: 1200
+    Plastic: 1500
 
 # Grenades
 - type: latheRecipe
@@ -109,6 +177,39 @@
     Plastic: 500
     Glass: 100
     Plasma: 100
+
+- type: latheRecipe
+  id: WFGrenadeHEAT
+  result: WFGrenadeHEAT
+  categories:
+  - Weapons
+  completetime: 2
+  materials:
+    Steel: 400
+    Plastic: 200
+    Plasma: 200
+
+- type: latheRecipe
+  id: WFMagazineGrenadeHEAT
+  result: WFMagazineGrenadeHEAT
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 2000
+    Plastic: 1000
+    Plasma: 1000
+
+- type: latheRecipe
+  id: NFMagazineGrenadeEMP
+  result: NFMagazineGrenadeEMP
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 750
+    Plastic: 500
+    Glass: 100
 
 # Pre-filled Magazines QOL
 # 35 # god fucking damnit why are there so many types of 35 magazines

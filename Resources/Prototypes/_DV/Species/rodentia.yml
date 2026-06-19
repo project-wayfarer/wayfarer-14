@@ -5,7 +5,7 @@
   prototype: MobRodentia
   sprites: MobRodentiaSprites
   defaultSkinTone: "#747474"
-  markingLimits: MobHumanMarkingLimits #MobRodentiaMarkingLimits WF
+  markingLimits: MobRodentiaMarkingLimits
   dollPrototype: MobRodentiaDummy
   # Coyote: Small enough to fit in a bag
   minHeight: 0.6
@@ -24,20 +24,18 @@
 - type: speciesBaseSprites
   id: MobRodentiaSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Head: MobRodentiaHead
+    Special: MobHumanoidAnyMarking # Wayfarer
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
-    Chest: MobRodentiaTorso
+    Head: MobRodentiaHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentTop: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentBottom: MobHumanoidAnyMarking # Wayfarer
+    Genital: MobHumanoidAnyMarking # Wayfarer
+    Chest: MobRodentiaTorso
     Eyes: MobHumanoidEyes
     LArm: MobRodentiaLArm
     RArm: MobRodentiaRArm
@@ -47,7 +45,64 @@
     RLeg: MobRodentiaRLeg
     LFoot: MobRodentiaLFoot
     RFoot: MobRodentiaRFoot
-    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer
+
+- type: markingPoints
+  id: MobRodentiaMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ RodentiaHeadTopEarDefault ]
+    HeadSide:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 2<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ RodentiaTailDefault ]
+    UndergarmentTop:
+      points: 32 # Wayfarer
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 - type: humanoidBaseSprite
   id: MobRodentiaHead

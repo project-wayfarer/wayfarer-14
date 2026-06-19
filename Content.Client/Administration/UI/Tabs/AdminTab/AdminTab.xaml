@@ -18,6 +18,7 @@
             <cc:CommandButton Command="faxui" Text="{Loc admin-player-actions-window-admin-fax}"/>
             <cc:CommandButton Command="achatwindow" Text="{Loc admin-player-actions-window-admin-chat}"/>
             <Button Name="ShiftPanelButton" Text="{Loc admin-player-actions-window-shift-panel}" />
+            <cc:CommandButton Command="prayerlog" Text="{Loc admin-player-actions-window-prayer-log}"/> <!-- Wayfarer -->
         </GridContainer>
     </BoxContainer>
 </Control>

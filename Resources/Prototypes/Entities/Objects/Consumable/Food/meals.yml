@@ -24,6 +24,13 @@
           Quantity: 15 # Frontier: 20<15
         - ReagentId: Flavorol # Frontier
           Quantity: 10 # Frontier
+  # Wayfarer: 8h shelf life for prepared meals
+  - type: Perishable
+    rotAfter: 28800
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 # Meals
 

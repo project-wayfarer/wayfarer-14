@@ -7,6 +7,14 @@
   - type: Tag
     tags:
       - Sushi
+  # Wayfarer: 8h shelf life for prepared meals. Covers slices, which parent
+  # [FoodBaseSushi, FoodInjectableBase] and would otherwise miss Perishable.
+  - type: Perishable
+    rotAfter: 28800
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 - type: entity
   name: avocado sushi

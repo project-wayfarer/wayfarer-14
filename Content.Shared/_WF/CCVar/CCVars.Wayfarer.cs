@@ -19,4 +19,10 @@ public sealed class WFCVars
     /// </summary>
     public static readonly CVarDef<float> ArtifactPointMultiplier =
     CVarDef.Create("wf.research.artifact_multiplier", 0.90f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Whether an admin client plays a sound when a new prayer or call is sent.
+    /// </summary>
+    public static readonly CVarDef<bool> AdminPrayerAlert =
+        CVarDef.Create("wf.admin.prayer_alert", true, CVar.ARCHIVE | CVar.CLIENT | CVar.REPLICATED);
 }

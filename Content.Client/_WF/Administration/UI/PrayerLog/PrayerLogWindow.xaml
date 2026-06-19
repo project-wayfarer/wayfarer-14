@@ -1,0 +1,22 @@
+﻿<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               Title="{Loc prayer-log-title}"
+               MinSize="800 400">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal" Margin="4">
+            <LineEdit Name="SearchBox" StyleClasses="actionSearchBox"
+                      HorizontalExpand="True"
+                      PlaceHolder="{Loc prayer-log-search-placeholder}"/>
+            <Label Name="CountLabel" Margin="8 0 0 0"/>
+            <CheckBox Name="AlertCheckBox" Margin="8 0 0 0"
+                      Text="{Loc prayer-log-alert-toggle}"
+                      ToolTip="{Loc prayer-log-alert-toggle-tooltip}"/>
+        </BoxContainer>
+        <PanelContainer StyleClasses="LowDivider" Margin="4 0"/>
+        <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+            <BoxContainer Name="ScrollBody" Orientation="Vertical" Margin="4"/>
+        </ScrollContainer>
+        <Label Name="EmptyLabel" Text="{Loc prayer-log-empty}"
+               HorizontalAlignment="Center" Margin="0 4"/>
+    </BoxContainer>
+</DefaultWindow>

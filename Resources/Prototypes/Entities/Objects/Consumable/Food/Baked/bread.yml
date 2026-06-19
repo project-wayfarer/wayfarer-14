@@ -25,6 +25,13 @@
           Quantity: 20
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: 24h shelf life for baked goods (slices inherit via FoodBreadSliceBase parent)
+  - type: Perishable
+    rotAfter: 86400
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 - type: entity
   parent: FoodBreadBase

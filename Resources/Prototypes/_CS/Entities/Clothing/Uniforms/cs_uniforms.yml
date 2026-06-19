@@ -1,0 +1,3344 @@
+# Coyote Sector clothing.
+# Descriptions have been made less lewd, and no longer reference lore outside of Wayfarer.
+
+# == ABSTRACT PARENT
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CSClothes
+  name: cool coyote jumpskirt
+  description: A cute jumpskirt template for all Coyote Sector uniforms. # Wayfarer
+  abstract: true
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: acolyte_d
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: acolyte_d
+
+# == CASUAL DRESSES
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlackDress
+  name: sleek black nightgown
+  description: A sleek black nightgown, suitable for winding down at the end of the day. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: blackdress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: blackdress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlueDress
+  name: flowing blue dress
+  description: A flowing blue dress that hugs the wearer's curves. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bluedress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bluedress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlueSkirt
+  name: skirt in blue
+  description: A black tee paired with a comfortable blue skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: blue_skirt2
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: blue_skirt2
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlueSun
+  name: blue sun maid dress
+  description: A blue and white maid's dress with a flared skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bluesun
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bluesun
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBowSun
+  name: sun dress with a bow
+  description: A cute sun dress finished with a bow under the bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bowsun
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bowsun
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDress2
+  name: dress 'two'
+  description: A demure blue dress with a white skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dress2
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dress2
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDress3
+  name: dress 'three'
+  description: A demure brown dress with a white skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dress3
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dress3
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDressBlack
+  name: dress in black
+  description: An understated dark grey dress with a comfy bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dress_black
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dress_black
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDress5
+  name: dress 'five'
+  description: A demure green dress with a white skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dressg
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dressg
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDress6
+  name: dress 'six'
+  description: A loose, billowy red dress with a white skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dressr
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dressr
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDress7
+  name: dress 'seven'
+  description: A demure green utility dress with a flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: green_dress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: green_dress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFloofDress
+  name: floofy dress
+  description: A floofy, airy dress with room for any frame. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: floofdress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: floofdress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFlowerDress
+  name: flower dress
+  description: A cute dress patterned with flowers, in light breezy fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: flower_dress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: flower_dress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGreenAsymmetric
+  name: green asymmetric dress
+  description: A halter top paired with a flowing asymmetrical skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: greenasym
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: greenasym
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPinkDress
+  name: dress 'nine'
+  description: A pink utility dress with a flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: pink_dress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: pink_dress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPinkSun
+  name: pink sun dress
+  description: A pink sun dress with a flowing design, suitable for warm days. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: pinksun
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: pinksun
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesShortPink
+  name: short pink nightgown
+  description: A short pink nightgown, comfortable for sleeping. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: shortpink
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: shortpink
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSunSkirt
+  name: sun skirt in green
+  description: A green skirt paired with a roomy comfortable top. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sun_skirt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sun_skirt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSunSkirtGrey
+  name: sun skirt in grey
+  description: A grey skirt paired with a roomy comfortable top. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sun_skirt_grey
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sun_skirt_grey
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSundressBlue
+  name: sundress in blue
+  description: A blue sundress in light, breathable fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sundress_blue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sundress_blue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSundressOrange
+  name: sundress in orange
+  description: An orange sundress in light, breathable fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sundress_orange
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sundress_orange
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSundressPurple
+  name: sundress in purple
+  description: A purple sundress in light, breathable fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sundress_purple
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sundress_purple
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSundressRed
+  name: sundress in red
+  description: A red sundress in light, breathable fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sundress_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sundress_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSundressYellow
+  name: sundress in yellow
+  description: A yellow sundress in light, breathable fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sundress_yellow
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sundress_yellow
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTradwifeBlue
+  name: housewife in blue
+  description: A blue housewife dress with a fitted bodice and flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tradwife_blue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tradwife_blue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTradwifeOrange
+  name: housewife in orange
+  description: An orange housewife dress with a fitted bodice and flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tradwife_orange
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tradwife_orange
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTradwifePurple
+  name: housewife in purple
+  description: A purple housewife dress with a fitted bodice and flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tradwife_purple
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tradwife_purple
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTradwifeRed
+  name: housewife in red
+  description: A red housewife dress with a fitted bodice and flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tradwife_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tradwife_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTradwifeYellow
+  name: housewife in yellow
+  description: A yellow housewife dress with a fitted bodice and flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tradwife_yellow
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tradwife_yellow
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesWhitegown
+  name: white gown
+  description: A white gown with a flowing design. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: whitegown
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: whitegown
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesWhitesun
+  name: white sun dress
+  description: A white sun dress in light fabric, suitable for warm days. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: whitesun
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: whitesun
+
+# == FORMAL DRESSES
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlackTango
+  name: tango dress in black
+  description: A sleek black tango dress, suitable for ballroom dancing. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: black_tango
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: black_tango
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlackNGold
+  name: black and gold dressrobe
+  description: A luxurious black and gold dressrobe. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: blackngold
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: blackngold
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBridalBlue
+  name: bridal gown in blue
+  description: A blue bridal gown. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bride_blue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bride_blue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBridalOrange
+  name: bridal gown in orange
+  description: An orange bridal gown. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bride_orange
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bride_orange
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBridalPurple
+  name: bridal gown in purple
+  description: A purple bridal gown. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bride_purple
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bride_purple
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBridalRed
+  name: bridal gown in red
+  description: A red bridal gown. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bride_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bride_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBridalWhite
+  name: bridal gown in white
+  description: A white bridal gown, traditionally worn for weddings. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bride_white
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bride_white
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCorset
+  name: corset
+  description: A laced corset. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: corset
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: corset
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCorsetDress
+  name: corset dress
+  description: A corset dress with a billowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: corsetdress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: corsetdress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCountess
+  name: countess gown
+  description: A luxurious gown with billowing sleeves and a tight bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: countess
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: countess
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCrinoline
+  name: crinoline dress
+  description: A frilly crinoline dress in light, flowing fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: crinoline_dress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: crinoline_dress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFormalRedDress
+  name: blood red formal dress
+  description: A blood red formal dress with a flowing skirt and fitted bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: formalred
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: formalred
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGoldDress
+  name: golden dress
+  description: A shimmering golden dress that catches the light. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: golddress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: golddress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGoldWrap
+  name: golden wrap
+  description: A shimmering golden wrap that catches the light. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: goldwrap
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: goldwrap
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGothic
+  name: gothic dress
+  description: A dark gothic dress with lace, fringes, and fishnet accents. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: gothic
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: gothic
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGothic2
+  name: gothic dress 'two'
+  description: A lighter Victorian-gothic grey dress with lace and fringes. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: gothic2
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: gothic2
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLittleBlackDress
+  name: little black dress
+  description: A little black dress with a flowing design. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: littleblackdress_s
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: littleblackdress_s
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPromDress
+  name: prom dress
+  description: A traditional prom dress, both elegant and comfortable to dance in. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: promdress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: promdress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPuffyDress
+  name: puffy dress
+  description: A puffy strawberry-red dress with a bow under the bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: puffydress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: puffydress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRedEveningDress
+  name: red evening dress
+  description: A red evening dress with a flowing design. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: red_evening_gown
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: red_evening_gown
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRevealingDress
+  name: revealing dress
+  description: A flowing black dress with a neon cyan bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: revealingdress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: revealingdress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSheerblue
+  name: sheer blue dress
+  description: A transparent blue dress. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sheerblue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sheerblue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSocietyDress
+  name: society dress
+  description: A sheer asymmetric lingerie-style society dress. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: societydress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: societydress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesVictorianDress
+  name: victorian dress
+  description: A demure Victorian dress in light, flowing fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: victorian_dress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorian_dress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesVictorianblackdress
+  name: victorian black dress
+  description: A demure Victorian dress in black. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: victorianblackdress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianblackdress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesVictorianblred
+  name: black and red victorian vestsuit
+  description: A black and red Victorian-style vestsuit, with pants and a vest. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: victorianblred
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianblred
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesVictorianlightfire
+  name: light fire victorian vestsuit
+  description: A Victorian-style vestsuit in light fire colors. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: victorianlightfire
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianlightfire
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesVictorianRedDress
+  name: victorian red dress
+  description: A demure Victorian dress in red. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: victorianreddress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianreddress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesVictorianRedVest
+  name: victorian red vestsuit
+  description: A Victorian vestsuit with a red shirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: victorianredvest
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianredvest
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesVictorianVest
+  name: victorian vestsuit
+  description: A Victorian vestsuit in rusty eggplant. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: victorianvest
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianvest
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesWaistcoat
+  name: waistcoat
+  description: A dapper waistcoat with breakaway trousers. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: waistcoat
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: waistcoat
+
+# == ASIAN WEAR
+- type: entity
+  parent: CSClothes
+  id: CSClothesArtisan
+  name: artisan kimono
+  description: A traditional artisan's kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: artisan3
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: artisan3
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlueKimono
+  name: kimono in blue
+  description: A blue kimono with a flowing design. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: blue_kimono
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: blue_kimono
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlueSari
+  name: sari in blue
+  description: A blue sari with intricate patterns. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: blue_sari
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: blue_sari
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCheong
+  name: cheong sam
+  description: A traditional cheongsam in light, breathable fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: cheong
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: cheong
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCheongRed
+  name: cheong sam in red
+  description: A traditional cheongsam in red. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: cheongr
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: cheongr
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCheongWhite
+  name: cheong sam in white
+  description: A traditional cheongsam in white. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: cheongsam_s
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: cheongsam_s
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCheongWhiteShort
+  name: cheong sam in white (short)
+  description: A short white cheongsam paired with black shorts. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: cheongw
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: cheongw
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDarkHanfu
+  name: dark hanfu
+  description: A dark hanfu, understated and stylish. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dark_hanfu
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dark_hanfu
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGreenHanfu
+  name: green hanfu
+  description: A green hanfu, understated and stylish. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: green_hanfu
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: green_hanfu
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLightHanfu
+  name: hanfu in white
+  description: A white hanfu, understated and stylish. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: light_hanfu
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: light_hanfu
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFlowerKimono
+  name: flower kimono
+  description: A kimono patterned with flowers, in light breezy fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: flower_kimono
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: flower_kimono
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesHaori
+  name: haori
+  description: A traditional haori, often worn over a kimono or yukata. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: haori
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: haori
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesHaoriSamurai
+  name: samurai haori
+  description: A samurai-style haori, with a flowing design. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: haori_samurai
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: haori_samurai
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoBlue
+  name: blue kimono
+  description: A blue kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_blue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_blue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoEarth
+  name: earth kimono
+  description: A brown kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_earth
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_earth
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoGreen
+  name: green kimono
+  description: A green kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_green
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_green
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoOrange
+  name: orange kimono
+  description: An orange kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_orange
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_orange
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoPink
+  name: pink kimono
+  description: A pink kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_pink
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_pink
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoPurple
+  name: purple kimono
+  description: A purple kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_purple
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_purple
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoRed
+  name: red kimono
+  description: A red kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoViolet
+  name: violet kimono
+  description: A violet kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_violet
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_violet
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKimonoYellow
+  name: yellow kimono
+  description: A yellow kimono. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: kimono_yellow
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: kimono_yellow
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesQipao
+  name: qipao
+  description: A traditional qipao. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: qipao
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: qipao
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesQipaoNosleeve
+  name: qipao sleeveless
+  description: A sleeveless qipao. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: qipao_nosleeve
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: qipao_nosleeve
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesQipaoRed
+  name: qipao in red
+  description: A red qipao. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: qipao_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: qipao_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesQipaoRedNosleeve
+  name: qipao sleeveless in red
+  description: A sleeveless red qipao. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: qipao_red_nosleeve
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: qipao_red_nosleeve
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesQipaoTealNosleeve
+  name: qipao sleeveless in teal
+  description: A sleeveless teal qipao. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: qipao_teal_nosleeve
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: qipao_teal_nosleeve
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesQipaoWhite
+  name: qipao in white
+  description: A white qipao. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: qipao_white
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: qipao_white
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesQipaoWhiteNosleeve
+  name: qipao sleeveless in white
+  description: A sleeveless white qipao. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: qipao_white_nosleeve
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: qipao_white_nosleeve
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRedSari
+  name: red sari
+  description: A red sari. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: red_sari
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: red_sari
+
+# == HISTORICAL / PERIOD WEAR
+- type: entity
+  parent: CSClothes
+  id: CSClothesAcolyte
+  name: acolyte garb
+  description: A trim and breezy skirt and top combo. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: acolyte_d
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: acolyte_d
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesAssyrian
+  name: village tunic
+  description: A traditional tunic styled after the ancient Assyrian Empire. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: assyrian
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: assyrian
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBLandschneckt
+  name: royal tabard
+  description: A blue and purple tabard, cut for a royal court. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: b_landschneckt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: b_landschneckt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesConquistador
+  name: conquistador standard
+  description: A bright red gambeson and chausses, in conquistador style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: conquistador
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: conquistador
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCustomToga
+  name: custom toga
+  description: A custom-tailored toga in light fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: customtoga
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: customtoga
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDivineRobe
+  name: divine robe
+  description: A robe befitting a religious figure, with an air of pure righteous divinity. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: divine_robes
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: divine_robes
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDutch
+  name: dutch vestsuit
+  description: A Dutch-style vestsuit in durable, rugged fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dutch
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dutch
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFlamenco
+  name: flamenco dress
+  description: A flamenco dress in light, breathable fabric, with a flowing skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: flamenco
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: flamenco
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGreatShendyt
+  name: great shendyt
+  description: A long, flowing skirt and ornate shawl, in the style of a great shendyt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: greatshendyt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: greatshendyt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGreekDress
+  name: greek dress
+  description: A stiff leather Greek-style dress with thick panels. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: greek_dress
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: greek_dress
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesGreekTunic
+  name: greek tunic
+  description: A stiff leather Greek-style tunic with thick panels. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: greek_dress_d
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: greek_dress_d
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLandschneckt
+  name: landschneckt
+  description: A forest green landsknecht, a fancy formal outfit. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: landschneckt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: landschneckt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRedLandschneckt
+  name: landschneckt in red
+  description: A red landsknecht, a fancy formal outfit. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: r_landschneckt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: r_landschneckt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPharaoh
+  name: pharaoh trappings
+  description: A set of regal pharaoh trappings, with a flowing skirt and ornate accents. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: pharaoh
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: pharaoh
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesShamanblue
+  name: shaman in blue
+  description: A blue shaman outfit, understated and stylish. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: shamanblue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: shamanblue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesToga
+  name: toga
+  description: A loose, airy toga. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: toga
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: toga
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesToga2
+  name: toga 'two'
+  description: A loose, airy toga in lighter, more accommodating fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: toga2
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: toga2
+
+# == TRIBAL WEAR
+- type: entity
+  parent: CSClothes
+  id: CSClothesHalfSkirt
+  name: blue half skirt
+  description: A blue shawl paired with a wide, short skirt, suitable for desert wear. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: half_skirt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: half_skirt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesHalfHuipil
+  name: half huipil
+  description: A half huipil with a flowing skirt and ornate shawl. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: halfhuipil
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: halfhuipil
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesHuipil
+  name: huipil
+  description: A traditional huipil with a flowing skirt and breezy tunic. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: huipil
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: huipil
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesHunter
+  name: hunter leathers
+  description: A set of tribal hunter's leathers, layered for protection. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: hunter
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: hunter
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesHunterBra
+  name: hunter garb
+  description: A set of tribal hunter's garb in layered hides. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: hunter_d
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: hunter_d
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesIrisTribal
+  name: iris dress
+  description: A two-piece dress with a watery blue loincloth and bikini top. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: iris_tribal
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: iris_tribal
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLeavesSkirt
+  name: leaves mini skirt
+  description: A short skirt made of synthetic leaves. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: leaves_skirt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: leaves_skirt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLeavesSkirtLong
+  name: leaves skirt
+  description: A longer skirt made of synthetic leaves. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: leaves_skirt_long
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: leaves_skirt_long
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLoincloth
+  name: DEATHKILLARZ loincloth
+  description: An itchy loincloth lined with replica plastic teeth and a hellpig shawl. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: loincloth
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: loincloth
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesMayanLoincloth
+  name: mayan loincloth
+  description: A simple white loincloth, in Mayan style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: mayan_loincloth
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: mayan_loincloth
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTribalColorful
+  name: tribal colorful tribalwear
+  description: A colorful tribal outfit, simple and comfortable. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tribal_colorful
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tribal_colorful
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTribalColorfulTop
+  name: tribal colorful tribalwear top
+  description: A colorful tribal top, simple and comfortable. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tribal_colorful_top
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tribal_colorful_top
+
+# == WESTERN WEAR
+- type: entity
+  parent: CSClothes
+  id: CSClothesBloodshot
+  name: bloodshot gunslinger suit
+  description: A rough gunslinger suit, with a loose top over armor and pants tucked into boots. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bloodshot
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bloodshot
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBlueRanger
+  name: blue ranger uniform
+  description: A blue button-up shirt and khaki pants, in ranger style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: blueranger
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: blueranger
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDressSaloon
+  name: short saloonkeeper dress
+  description: A short saloonkeeper's dress, eye-catching and practical, with armor underneath. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: dress_saloon_s
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: dress_saloon_s
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFoxFlannel
+  name: fox flannel
+  description: A cozy flannel shirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: foxflannel
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: foxflannel
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesMaurader
+  name: maurader suit
+  description: A button-up shirt with suspenders, in marauder style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: marauder
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: marauder
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesMarlowDuds
+  name: marlow duds
+  description: A practical and stylish set of explorer's duds. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: marlowduds
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: marlowduds
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTexas
+  name: texan scrobsuit
+  description: A Texan-style scrobsuit. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: texas
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: texas
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesWestender
+  name: westender slingsuit
+  description: A westender slingsuit, designed to repel swamp insects. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: westender
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: westender
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesWesternBustle
+  name: western bustle dress
+  description: A western bustle dress, comfortable and practical for ranch work. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: western_bustle
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: western_bustle
+
+# == PUNK / STREETWEAR
+- type: entity
+  parent: CSClothes
+  id: CSClothesBrownPunkPants
+  name: brown punk pants
+  description: A pair of durable brown punk pants. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: brownpunkpants
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: brownpunkpants
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCyberHell
+  name: cyber hell
+  description: A sleek cyberpunk leather harness with pants and a belt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: cyberhell
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: cyberhell
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFlashyGreenDress
+  name: horrible neon green dress
+  description: A garish neon green dress, designed to stand out. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: flow_green
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: flow_green
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesFlowRed
+  name: horrible neon red dress
+  description: A garish neon red dress, designed to stand out. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: flow_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: flow_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesKeyholeSweater
+  name: keyhole sweater
+  description: A stretchy sweater with a keyhole cutout at the chest. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: keyholesweater
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: keyholesweater
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLatexHalf
+  name: latex singlet
+  description: A latex singlet, stretchy and form-fitting. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: latex_half
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: latex_half
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesOliveCargoPunk
+  name: olive cargopunk pants
+  description: A pair of olive cargo punk pants. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: olivecargopunk
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: olivecargopunk
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPentatop
+  name: pentagram tube top
+  description: A dark skirt paired with a pentagram tube top. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: pentatop
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: pentatop
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRattyCyberpunk
+  name: ratty cyberpunk
+  description: A short skirt and a stiff plastic crop top, in cyberpunk style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: rattycyberpunk
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: rattycyberpunk
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRattySkirtGreen
+  name: ratty green skirt
+  description: A miniskirt and tank top with a brown crop-top hoodie. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: rattyskirtgreen
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: rattyskirtgreen
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRattySkirtPink
+  name: ratty pink skirt
+  description: A miniskirt and tank top with a black leather crop-top hoodie. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: rattyskirtpink
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: rattyskirtpink
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRattySkirtYellow
+  name: ratty yellow skirt
+  description: A miniskirt and tank top with a brown crop-top hoodie. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: rattyskirtyellow
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: rattyskirtyellow
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRippedPunk
+  name: ripped punk fishnet pantskini
+  description: Leather pants and a leather bikini top, worn over a fishnet bodysuit. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: rippedpunk
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: rippedpunk
+
+# == COSTUMES
+- type: entity
+  parent: CSClothes
+  id: CSClothesBeggar
+  name: beggar rags
+  description: A set of ragged clothes, patched together from scraps. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: beggar_clothing
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: beggar_clothing
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesBunnySuit
+  name: sexy bunny suit
+  description: A black bunny suit with a tail, in waitstaff style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: bunnysuit
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: bunnysuit
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSexyclown
+  name: sexy clown outfit
+  description: A clown outfit with a tight bodice and short skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sexyclown
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sexyclown
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDougDimmadome
+  name: doug suit
+  description: A dapper suit, in the style of a famous business owner. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: doug_dimmadome
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: doug_dimmadome
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDraculass
+  name: draculass slutskirt
+  description: A vampiric outfit with a high collar and dark accents. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: draculass
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: draculass
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesExplorerStripper
+  name: explorer stripper
+  description: A minimal explorer's harness, with anchor points for equipment. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: explorerstripper
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: explorerstripper
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesDomina
+  name: domina latex
+  description: A form-fitting latex outfit. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: domina
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: domina
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesLeia
+  name: leia
+  description: A white loincloth paired with a halter top. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: leia
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: leia
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSexyMaid
+  name: sexy maid
+  description: A short maid's dress with a frilled apron. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: maid_skyrat
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: maid_skyrat
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSexymime
+  name: sexy mime outfit
+  description: A mime outfit with a tight bodice and short skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sexymime
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sexymime
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSexynursesuit
+  name: sexy nurse outfit
+  description: A nurse's outfit with a short skirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: sexynursesuit
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: sexynursesuit
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPinkTutu
+  name: pink tutu
+  description: An unreasonably cute, short pink tutu. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: pinktutu_s
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: pinktutu_s
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPolyPerformer
+  name: polyester performer drapery
+  description: A full-body polyester drapery that wraps around the wearer. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: poly_performer
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: poly_performer
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSecstripper
+  name: sexy security stripper
+  description: A PVC outfit, vaguely styled after a security uniform. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: secstripper
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: secstripper
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSecslutskirtpink
+  name: sexy mauvesec skirt
+  description: A mauve security-themed skirt, with a fitted bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: secslutskirtpink
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: secslutskirtpink
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSecslutskirt
+  name: sexy redsec skirt
+  description: A red security-themed skirt, with a fitted bodice. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: secslutskirt
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: secslutskirt
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesHappyVampire
+  name: happy vampire vestsuit
+  description: A vestsuit with a vampire motif, with pants and a vest. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: gayvampire
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: gayvampire
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesWhitebunnysuit
+  name: white bunnysuit
+  description: A white bunny suit with hardpoints for armor and weaponry. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: whitebunnysuit
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: whitebunnysuit
+
+# == SWIMWEAR
+- type: entity
+  parent: CSClothes
+  id: CSClothesMikuBikini
+  name: miku bikini
+  description: A blue bikini, suitable for the beach. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: miku_bikini
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: miku_bikini
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPinkwshort
+  name: pink athletic shorts
+  description: A pair of stretchy pink athletic shorts. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: pinkwshort
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: pinkwshort
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRadkini
+  name: radkini
+  description: A two-piece swimsuit in radioactive-themed colors. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: radkini
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: radkini
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesRedWshort
+  name: red athletic shorts
+  description: A pair of stretchy red athletic shorts. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: redwshort
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: redwshort
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesShortsBlue
+  name: neon blue flashy shorts
+  description: A pair of blue shorts with bright neon cyan stripes. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: shorts_blue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: shorts_blue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesShortsRed
+  name: blood red breeches
+  description: A pair of blood red breeches. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: shorts_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: shorts_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSwimBlack
+  name: one-piece swimsuit in black
+  description: A black one-piece swimsuit, in stretchy fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: swim_black
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: swim_black
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSwimBlue
+  name: one-piece swimsuit in blue
+  description: A blue one-piece swimsuit, in stretchy fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: swim_blue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: swim_blue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSwimEarth
+  name: one-or-more-piece swimsuit in earth
+  description: A multi-piece swimsuit in earth tones. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: swim_earth
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: swim_earth
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSwimGreen
+  name: one-or-more-piece swimsuit in green
+  description: A multi-piece swimsuit in green. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: swim_green
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: swim_green
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSwimPurp
+  name: one-or-more-piece swimsuit in purp
+  description: A multi-piece swimsuit in purple. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: swim_purp
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: swim_purp
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSwimRed
+  name: one-or-more-piece swimsuit in red
+  description: A multi-piece swimsuit in red. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: swim_red
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: swim_red
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesSyclothing
+  name: sy-bikini
+  description: A bikini in stretchy, breathable fabric. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: syclothing
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: syclothing
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesYellowwshort
+  name: yellow athletic shorts
+  description: A pair of stretchy yellow athletic shorts. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: yellowwshort
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: yellowwshort
+
+# == MISC
+- type: entity
+  parent: CSClothes
+  id: CSClothesAfrMerc
+  name: khaki mercenary outfit
+  description: A khaki mercenary uniform, with camo pants. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: afr_merc
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: afr_merc
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesCartel
+  name: tropical runner outfit
+  description: A tropical runner's outfit, cool and breezy with bright colors. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: cartel1
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: cartel1
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesChad
+  name: chad
+  description: A bright neon day-glo outfit, garish and confident. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: chad
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: chad
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesUNIrish
+  name: drab uniform
+  description: A drab military-style uniform. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: un_irish
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: un_irish
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesUNGreentrousersOG107
+  name: drab green trousers
+  description: A pair of drab green trousers with suspenders. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: us_greentrousers_og107
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: us_greentrousers_og107
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesPortugueseSailor1d
+  name: portuguese sailor
+  description: A set of Portuguese sailor's clothing, with a low-cut shirt. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: portuguese_sailor1_d
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: portuguese_sailor1_d
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTacticoolHawaiianBlue
+  name: tacticool hawaiian shirt in blue
+  description: A blue Hawaiian shirt with a floral pattern, in tacticool style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tacticool_hawaiian_blue
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tacticool_hawaiian_blue
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTacticoolHawaiianOrange
+  name: tacticool hawaiian shirt in orange
+  description: An orange Hawaiian shirt with a floral pattern, in tacticool style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tacticool_hawaiian_orange
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tacticool_hawaiian_orange
+
+- type: entity
+  parent: CSClothes
+  id: CSClothesTacticoolHawaiianPurple
+  name: tacticool hawaiian shirt in purple
+  description: A purple Hawaiian shirt with a floral pattern, in tacticool style. # Wayfarer
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    layers:
+    - state: tacticool_hawaiian_purple
+  - type: Clothing
+    sprite: _CS/Clothes/cs_uniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tacticool_hawaiian_purple

@@ -5,26 +5,25 @@
   prototype: MobSlimePerson
   sprites: MobSlimeSprites
   defaultSkinTone: "#b8b8b8"
-  markingLimits: MobHumanMarkingLimits #MobSlimeMarkingLimits WF
+  markingLimits: MobSlimeMarkingLimits
   dollPrototype: MobSlimePersonDummy
   skinColoration: Hues
 
 - type: speciesBaseSprites
   id: MobSlimeSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Head: MobSlimeHead
+    Special: MobHumanoidAnyMarking # Wayfarer
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
-    Snout: MobSlimeMarkingFollowSkin # Wayfarer: Gives Slimes Snouts
+    Head: MobSlimeHead
+    HeadTop: MobHumanoidAnyMarking # Wayfarer
+    HeadSide: MobHumanoidAnyMarking # Wayfarer
+    Snout: MobSlimeMarkingFollowSkin # Wayfarer
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobSlimeTorso
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
     LArm: MobSlimeLArm
     RArm: MobSlimeRArm
@@ -34,8 +33,62 @@
     RLeg: MobSlimeRLeg
     LFoot: MobSlimeLFoot
     RFoot: MobSlimeRFoot
-    Tail: MobSlimeMarkingFollowSkin # Wayfarer: Gives Slimes Tails
-    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+    Tail: MobSlimeMarkingFollowSkin # Wayfarer
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer
+
+- type: markingPoints
+  id: MobSlimeMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer
+      required: false
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 2<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 3<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer
+      required: false
+    UndergarmentTop:
+      points: 32 # Wayfarer
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin

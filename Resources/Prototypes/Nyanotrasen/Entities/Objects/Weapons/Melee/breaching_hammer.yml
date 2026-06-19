@@ -4,6 +4,18 @@
   id: SecBreachingHammer
   description: A large, heavy hammer with a long handle, used for breaking stones or other heavy material such as the skulls of violent criminals, also perfect for forcing your way through airlocks.
   components:
+  # Wayfarer: Sounds
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/crowbar_pickup.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+      params:
+        volume: -2
+  # End Wayfarer
   - type: Sprite
     sprite: Nyanotrasen/Objects/Weapons/Melee/breaching_hammer.rsi
     state: icon
@@ -15,11 +27,11 @@
     damage:
       types:
         Blunt: 10
-#        Piercing: 3 # WF
-        Structural: 25 # WF 10 to 25
+#        Piercing: 3 # Wayfarer
+        Structural: 25 # Wayfarer: 10<25
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
-    bluntStaminaDamageFactor: 1.0 # WF 1.5 to 1.0 since it's 100% of blunt to stam
+    bluntStaminaDamageFactor: 1.0 # Wayfarer: 1.5<1.0
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.5 #if wielded you will only consume 5
@@ -27,9 +39,9 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 30 # WF 20 to 30
-#        Piercing: 2 # WF
-        Structural: 175 # WF 20 to 175
+        Blunt: 30 # Wayfarer: 20<30
+#        Piercing: 2 # Wayfarer
+        Structural: 175 # Wayfarer: 20<175
   - type: Tool
     qualities:
       - Prying
@@ -46,3 +58,13 @@
     slots:
     - back
     - suitStorage # Frontier - Same as axe
+
+# Wayfarer: CGP variant
+- type: entity
+  name: breaching hammer
+  parent: SecBreachingHammer
+  id: SecBreachingHammerCGP
+  components:
+  - type: Contraband
+    severity: CommandOrCGP
+    allowedDepartments: [ Security, Command ]

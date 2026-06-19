@@ -400,7 +400,7 @@
 
 # Wizards and cultists
 - type: entity
-  parent: [ BaseC3WizardContraband, BaseMachineCircuitboard ]
+  parent: [ BaseMachineCircuitboard ] # Wayfarer: Removed BaseC3WizardContraband
   id: ScrollWizardStaffRechargerAltar
   name: wizard staff altar binding scroll
   description: An odd amalgamation of wizardry and circuitry. Somehow it has a number of ports matching a standard NanoTrasen machine frame.
@@ -432,7 +432,7 @@
       price: 0
 
 - type: entity
-  parent: [ BaseC3CultContraband, ScrollWizardStaffRechargerAltar ]
+  parent: [ BaseC2WizardContraband, ScrollWizardStaffRechargerAltar ] # Wayfarer: BaseC3CultContraband<BaseC2WizardContraband
   id: ScrollCultStaffRechargerAltar
   name: blood cult staff altar binding scroll
   description: An odd amalgamation of eldritch magic and circuitry. Somehow it has a number of ports matching a standard NanoTrasen machine frame.
@@ -477,7 +477,7 @@
         # CableHV: 10
 
 - type: entity
-  parent: [ BaseC3CultContraband, ScrollWizardStaffRechargerAltar ]
+  parent: [ BaseC2WizardContraband, ScrollWizardStaffRechargerAltar ] # Wayfarer: BaseC3CultContraband<BaseC2WizardContraband
   id: ScrollCultForge
   name: cult forge binding scroll
   components:

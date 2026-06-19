@@ -32,6 +32,7 @@
   - JanitorBackpack
   - JanitorNFOuterClothing
   - JanitorNFForcedOuterClothing
+  - WFNeck
   - WFFace
   - WFGlasses
   - WFEars
@@ -50,12 +51,12 @@
 - type: roleLoadout
   id: JobMailCarrier
   groups:
-  - WFNeck
   - MailCarrierJumpsuit
-  - ContractorGloves
+  - WFGloves
   - MailCarrierBackpack
   - MailCarrierOuterClothing
   - MailCarrierForcedOuterClothing
+  - WFNeck
   - WFShoes
   - WFFace
   - WFEars

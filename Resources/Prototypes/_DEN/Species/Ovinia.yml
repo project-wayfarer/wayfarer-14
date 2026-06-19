@@ -17,18 +17,18 @@
 - type: speciesBaseSprites
   id: MobOviniaSprites
   sprites:
-    Head: MobOviniaHead
+    Special: MobHumanoidAnyMarking # Wayfarer
+    Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
+    Head: MobOviniaHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobOviniaTorso
-    NeckFluff: MobHumanoidAnyMarking
-    Hair: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
-    HeadTop: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
     LArm: MobOviniaLArm
     RArm: MobOviniaRArm
@@ -38,29 +38,38 @@
     RLeg: MobOviniaRLeg
     LFoot: MobOviniaLFoot
     RFoot: MobOviniaRFoot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
     RArmExtension: MobHumanoidAnyMarking # Wayfarer: Adds Wing Slot
 
 - type: markingPoints
   id: MobOviniaMarkingLimits
   points:
+    Special:
+      points: 32 # Wayfarer
+      required: false
     Hair:
-      points: 4 # Wayfarer: 1<4
+      points: 32 # Wayfarer: 1<32
       required: false
     FacialHair:
-      points: 4 # Wayfarer: 1<4
+      points: 32 # Wayfarer: 1<32
       required: false
-    Tail:
-      points: 4 # Wayfarer: 1<4
-      required: false
-    NeckFluff:
-      points: 1
+    Head:
+      points: 32 # Wayfarer
       required: false
     HeadTop:
       points: 32 # Wayfarer: 2<32
       required: true
       defaultMarkings: [ OviniaEars ]
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
     Snout:
       points: 32 # Wayfarer: 4<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer 1<32
       required: false
     Chest:
       points: 32 # Wayfarer: 4<32
@@ -70,6 +79,21 @@
       required: false
     Arms:
       points: 32 # Wayfarer: 4<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    UndergarmentTop:
+      points: 32 # Wayfarer
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
       required: false
 
 - type: humanoidBaseSprite

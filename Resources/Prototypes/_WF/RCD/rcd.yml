@@ -103,21 +103,6 @@
   rotation: User
   fx: EffectRCDConstruct2
 #
-- type: rcd
-  id: WallReinforcedWindow
-  category: WindowsAndGrilles
-  sprite:
-    sprite: /Textures/Structures/Windows/reinforced_window.rsi
-    state: full
-  mode: ConstructObject
-  prototype: ReinforcedWindow
-  cost: 6
-  delay: 2
-  collisionMask: Impassable
-  rules:
-  - IsWindow
-  rotation: Fixed
-  fx: EffectRCDConstruct2
 
 - type: rcd
   id: ReinforcedWindowDiagonal
@@ -199,7 +184,7 @@
   fx: EffectRCDConstruct2
 
 
-# Docking
+# Airlocks
 
 - type: rcd
   id: AirlockShuttle
@@ -239,6 +224,121 @@
   rotation: User
   fx: EffectRCDConstruct4
 
+# CGP
+
+- type: rcd
+  id: AirlockNfsdLocked
+  category: Airlocks
+  sprite:
+    sprite: /Textures/_WF/Structures/Doors/Airlocks/Standard/cgp.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockNfsdLocked
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockNfsdGlassLocked
+  category: Airlocks
+  sprite:
+    sprite: /Textures/_WF/Structures/Doors/Airlocks/Glass/cgp.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockNfsdGlassLocked
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockShuttleNfsdLocked
+  category: Airlocks
+  sprite:
+    sprite: /Textures/_WF/Structures/Doors/Airlocks/Standard/dockcgp.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockShuttleNfsdLocked
+  cost: 25
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockGlassShuttleNfsdLocked
+  category: Airlocks
+  sprite:
+    sprite: /Textures/_WF/Structures/Doors/Airlocks/Glass/dockcgp.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockGlassShuttleNfsdLocked
+  cost: 25
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+# Outlaw
+- type: rcd
+  id: AirlockHatchPirateLocked
+  category: Airlocks
+  sprite:
+    sprite: Structures/Doors/Airlocks/Standard/hatch.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockHatchPirateLocked
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockMiningGlassPirateLocked
+  category: Airlocks
+  sprite:
+    sprite: Structures/Doors/Airlocks/Glass/mining.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockMiningGlassPirateLocked
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockShuttleSyndicatePirateLocked
+  category: Airlocks
+  sprite:
+    sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockShuttleSyndicatePirateLocked
+  cost: 25
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockGlassShuttleSyndicatePirateLocked
+  category: Airlocks
+  sprite:
+    sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
+    state: closed
+  mode: ConstructObject
+  prototype: AirlockGlassShuttleSyndicatePirateLocked
+  cost: 25
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: User
+  fx: EffectRCDConstruct4
+
 # idk
 
 - type: rcd
@@ -247,8 +347,8 @@
   sprite: /Textures/_WF/Interface/Radial/RCD/directionalfan.png
   mode: ConstructObject
   prototype: AtmosDeviceFanDirectional
-  cost: 25
-  delay: 15
+  cost: 10
+  delay: 4
   collisionMask: Impassable
   rotation: User
   fx: EffectRCDConstruct4

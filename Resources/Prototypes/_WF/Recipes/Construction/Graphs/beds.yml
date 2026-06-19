@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: WFbeds
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity
+    edges:
+    - to: bunkbed
+      completed:
+      - !type:SnapToGrid
+      steps:
+      - material: Steel
+        amount: 4
+        doAfter: 1
+      - material: Cloth
+        amount: 2
+        doAfter: 1
+
+  - node: bunkbed
+    entity: BunkBed
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 4
+      - !type:SpawnPrototype
+        prototype: MaterialCloth1
+        amount: 2

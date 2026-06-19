@@ -107,9 +107,9 @@
     An older model of civilian-grade laser pistol with two settings: disable and kill.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Weapons/Guns/Battery/laser_pistol.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/laser_pistol.rsi   # Wayfarer: The Respritening Phase 1
   - type: Clothing
-    sprite: _NF/Objects/Weapons/Guns/Battery/laser_pistol.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/laser_pistol.rsi   # Wayfarer: The Respritening Phase 1
   - type: Item
     size: Small
     inhandVisuals:
@@ -147,9 +147,9 @@
     A civilian grade self-defense weapon that exhausts organic targets, weakening them until they collapse.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/disabler.rsi   # Wayfarer: The Respritening Phase 1
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/disabler.rsi   # Wayfarer: The Respritening Phase 1
   - type: Battery # 20 shots
     maxCharge: 1200
     startingCharge: 1200
@@ -218,27 +218,29 @@
     A modification of a civilian-grade laser pistol that can project holoflares onto surfaces.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi   # Wayfarer: The Respritening Phase 1
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-2
+    - state: mag-unshaded-4   # Wayfarer: The Respritening Phase 1
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
     - state: mode-cyan
       shader: unshaded
       map: [ "Firemode" ]
+  - type: Clothing  # Wayfarer: The Respritening Phase 1
+    sprite: _WF/Objects/Weapons/Guns/Battery/holoflare_pistol.rsi   # Wayfarer: The Respritening Phase 1
   - type: Item
     size: Small
     inhandVisuals:
       left:
       - state: inhand-left
-      - state: inhand-left-unshaded
-        shader: unshaded
+      #- state: inhand-left-unshaded  # Wayfarer: The Respritening Phase 1
+      #  shader: unshaded # Wayfarer: The Respritening Phase 1
       right:
       - state: inhand-right
-      - state: inhand-right-unshaded
-        shader: unshaded
+      #- state: inhand-right-unshaded # Wayfarer: The Respritening Phase 1
+      #  shader: unshaded # Wayfarer: The Respritening Phase 1
   - type: Gun
     examineCaliber: gun-examine-energybolt-holoflare
     selectedMode: SemiAuto
