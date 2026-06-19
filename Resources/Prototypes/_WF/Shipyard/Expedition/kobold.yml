@@ -2,8 +2,8 @@
   id: Kobold
   parent: BaseVessel
   name: DIRE Kobold
-  description: A Salvager classic, the Kobold is a modified traditional Salvage Shuttle, heavily used and produced for general station use. Cheap and hardy.
-  price: 38000
+  description: A Salvager classic, the Kobold is a modified traditional Salvage Shuttle. Cheap and hardy.
+  price: 48000
   category: Small
   group: Expedition
   shuttlePath: /Maps/_WF/Shuttles/Expedition/kobold.yml
@@ -12,7 +12,7 @@
   - Salvage
   - Expedition
   engine:
-  - Plasma
+  - Uranium
 
 - type: gameMap
   id: Kobold
@@ -24,7 +24,7 @@
       stationProto: StandardFrontierExpeditionVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Kobold EXP{1}'
+        mapNameTemplate: 'Kobold {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
