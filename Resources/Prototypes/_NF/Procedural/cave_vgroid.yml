@@ -204,44 +204,42 @@
   layers:
   - !type:ExteriorDunGen
     proto: NFSalvageOutpost
-# Wayfarer: Remove floor clutter
-#  - !type:EntityTableDunGen
-#    minCount: 25
-#    maxCount: 40
-#    table: !type:NestedSelector
-#      tableId: SalvageScrapSpawnerCommon
-#    perDungeon: true
-#  - !type:EntityTableDunGen
-#    minCount: 30
-#    maxCount: 40
-#    table: !type:NestedSelector
-#      tableId: SalvageScrapSpawnerValuable
-#    perDungeon: true
-#  - !type:EntityTableDunGen
-#    minCount: 15
-#    maxCount: 25
-#    table: !type:NestedSelector
-#      tableId: SalvageTreasureSpawnerCommon
-#    perDungeon: true
-#  - !type:EntityTableDunGen
-#    minCount: 15
-#    maxCount: 25
-#    table: !type:NestedSelector
-#      tableId: SalvageEquipmentSpawnerCommon
-#    perDungeon: true
-#  - !type:EntityTableDunGen
-#    minCount: 15
-#    maxCount: 20
-#    table: !type:NestedSelector
-#      tableId: SalvageTreasureSpawnerValuable
-#    perDungeon: true
-#  - !type:EntityTableDunGen
-#    minCount: 15
-#    maxCount: 20
-#    table: !type:NestedSelector
-#      tableId: SalvageEquipmentSpawnerValuable
-#    perDungeon: true
-# End Wayfarer
+  - !type:EntityTableDunGen
+    minCount: 25
+    maxCount: 40
+    table: !type:NestedSelector
+      tableId: SalvageScrapSpawnerCommon
+    perDungeon: true
+  - !type:EntityTableDunGen
+    minCount: 30
+    maxCount: 40
+    table: !type:NestedSelector
+      tableId: SalvageScrapSpawnerValuable
+    perDungeon: true
+  - !type:EntityTableDunGen
+    minCount: 15
+    maxCount: 25
+    table: !type:NestedSelector
+      tableId: SalvageTreasureSpawnerCommon
+    perDungeon: true
+  - !type:EntityTableDunGen
+    minCount: 15
+    maxCount: 25
+    table: !type:NestedSelector
+      tableId: SalvageEquipmentSpawnerCommon
+    perDungeon: true
+  - !type:EntityTableDunGen
+    minCount: 15
+    maxCount: 20
+    table: !type:NestedSelector
+      tableId: SalvageTreasureSpawnerValuable
+    perDungeon: true
+  - !type:EntityTableDunGen
+    minCount: 15
+    maxCount: 20
+    table: !type:NestedSelector
+      tableId: SalvageEquipmentSpawnerValuable
+    perDungeon: true
   - !type:MobsDunGen
     minCount: 16 # Wayfarer 8<16
     maxCount: 24 # Wayfarer 15<24

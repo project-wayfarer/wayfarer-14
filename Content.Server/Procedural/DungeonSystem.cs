@@ -48,7 +48,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
-    private const double DungeonJobTime = 0.010; // Wayfarer: 0.005<0.010
+    private const double DungeonJobTime = 0.003; // Wayfarer: 0.005<0.003
 
     public const int CollisionMask = (int) CollisionGroup.Impassable;
     public const int CollisionLayer = (int) CollisionGroup.Impassable;
