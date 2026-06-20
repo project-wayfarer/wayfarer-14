@@ -70,7 +70,7 @@
 
 #region magivend scroll
 - type: entity
-  parent: [ BaseC3WizardContraband, SpellScrollRolled ]
+  parent: [ SpellScrollRolled ] # Wayfarer: Removed BaseC3WizardContraband, as it inherits SpellScrollRolled
   id: SpellScrollRolledMagiVend
   name: scroll of magivend
   description: |-
@@ -92,7 +92,7 @@
       path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  parent: [ BaseC3WizardContraband, SpellScrollBase ]
+  parent: [ SpellScrollBase ] # Wayfarer: Removed BaseC3WizardContraband, as it inherits SpellScrollRolled
   id: SpellScrollMagiVend
   categories: [ HideSpawnMenu ]
   name: scroll of magivend

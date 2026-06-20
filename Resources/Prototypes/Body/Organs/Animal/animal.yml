@@ -17,6 +17,8 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Extractable # Wayfarer
+    grindableSolutionName: food
   - type: FlavorProfile
     flavors:
       - chicken # everything kinda tastes like chicken

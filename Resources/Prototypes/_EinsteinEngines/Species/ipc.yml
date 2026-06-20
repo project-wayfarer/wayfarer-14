@@ -1,12 +1,10 @@
-# please god let me delete this fucking species
-
 - type: species
   id: IPC
   name: species-name-ipc
   roundStart: true
   prototype: MobIPC
   sprites: MobIPCSprites
-  markingLimits: MobHumanMarkingLimits #MobIPCMarkingLimits WF
+  markingLimits: MobIPCMarkingLimits
   dollPrototype: MobIPCDummy
   skinColoration: Hues
   minAge: 1
@@ -19,6 +17,10 @@
   naming: FirstDashLast
   sexes:
   - Unsexed
+  kind:
+  - BasicHumanlike
+  - BasicFurry
+  - BasicRobot
 
 # The lack of a layer means that
 # this person cannot have round-start anything
@@ -36,7 +38,7 @@
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    Hair: MobHumanoidMarkingMatchSkin
+    Hair: MobHumanoidAnyMarking
     Chest: MobIPCTorso
     LArm: MobIPCLArm
     RArm: MobIPCRArm

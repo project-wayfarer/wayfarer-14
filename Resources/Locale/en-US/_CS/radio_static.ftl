@@ -15,6 +15,3 @@ verb-categories-radiovolume = Radio Volume
 radio-volume-verb = VOL: {$volume}
 radio-volume-verb-popup = Radio Volume: {$volume}
 
-trigger-on-mobstate-verb-text = MedImplant: {$state}
-trigger-on-mobstate-verb-popup = Your MedAlert Beacon is set to: {$state}
-

@@ -1,7 +1,7 @@
 using Content.Shared.Electrocution;
 using Content.Shared.Trigger.Components.Effects;
 using Robust.Shared.Containers;
-using Robust.Shared.Timing;
+using Robust.Shared.Timing; // Wayfarer
 
 namespace Content.Shared.Trigger.Systems;
 
@@ -9,7 +9,7 @@ public sealed class ShockOnTriggerSystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedElectrocutionSystem _electrocution = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IGameTiming _timing = default!; // Wayfarer
 
     public override void Initialize()
     {
@@ -22,12 +22,13 @@ public sealed class ShockOnTriggerSystem : EntitySystem
     {
         if (args.Key != null && !ent.Comp.KeysIn.Contains(args.Key))
             return;
-
+        // Wayfarer Start
         var now = _timing.CurTime;
         if (now < ent.Comp.NextTrigger)
             return;
 
         ent.Comp.NextTrigger = now + ent.Comp.Cooldown;
+        // Wayfarer End
 
         EntityUid? target;
         if (ent.Comp.TargetContainer)

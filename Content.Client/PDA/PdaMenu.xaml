@@ -44,9 +44,11 @@
             <ContainerButton Name="StationTimeButton">
                 <RichTextLabel Name="StationTimeLabel" Access="Public"/>
             </ContainerButton>
-            <ContainerButton Name="ShiftEndTimeButton">
-                <RichTextLabel Name="ShiftEndTimeLabel" Access="Public"/>
+            <!-- Frontier -->
+            <ContainerButton Name="RemainingTimeButton">
+                <RichTextLabel Name="RemainingTimeLabel" Access="Public"/>
             </ContainerButton>
+            <!-- End Frontier -->
             <!-- Begin DeltaV changes -->
             <ContainerButton Name="CurrentDateButton">
                 <RichTextLabel Name="CurrentDateLabel" Access="Public"/>

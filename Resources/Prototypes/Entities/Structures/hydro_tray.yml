@@ -23,23 +23,28 @@
       - sprite: _Impstation/Structures/Hydroponics/containers.rsi # Imp
         state: hydrotray # Imp: hydrotray3<hydrotray
       - sprite: _Impstation/Structures/Hydroponics/overlays.rsi # Imp
-        state: lowhealth # Imp: lowhealth3<lowhealth
+        state: lowhealth3
+        shader: unshaded # Imp
         map: [ "health_alert" ]
         visible: false
       - sprite: _Impstation/Structures/Hydroponics/overlays.rsi # Imp
-        state: lowwater # Imp: lowwater3<lowwater
+        state: lowwater3
+        shader: unshaded # Imp
         map: [ "water_alert" ]
         visible: false
       - sprite: _Impstation/Structures/Hydroponics/overlays.rsi # Imp
-        state: lownutri # Imp: lownutri3<lownutri
+        state: lownutri3
+        shader: unshaded # Imp
         map: [ "nutri_alert" ]
         visible: false
       - sprite: _Impstation/Structures/Hydroponics/overlays.rsi # Imp
-        state: alert # Imp: alert3<alert
+        state: alert3
+        shader: unshaded # Imp
         map: [ "undefined_alert" ]
         visible: false
       - sprite: _Impstation/Structures/Hydroponics/overlays.rsi # Imp
-        state: harvest # Imp: harvest3<harvest
+        state: harvest3
+        shader: unshaded # Imp
         map: [ "harvest_alert" ]
         visible: false
   - type: Appearance

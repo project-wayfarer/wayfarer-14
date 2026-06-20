@@ -22,6 +22,13 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
+  # Wayfarer: 24h shelf life for baked goods
+  - type: Perishable
+    rotAfter: 86400
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 - type: entity
   parent: FoodBagelBase

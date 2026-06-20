@@ -37,10 +37,7 @@ namespace Content.Client.PDA
         private string _balance = Loc.GetString("comp-pda-ui-unknown"); // Frontier
         private string _shuttleDeed = Loc.GetString("comp-pda-ui-unknown"); // Frontier
         private string _currentDate = Loc.GetString("comp-pda-ui-unknown"); // DeltaV - PDA date
-
-
-        private DateTime? _shiftEndTime = null; // Absolute UTC wall-clock time when the shift ends
-
+        private TimeSpan? _roundEndTime = null; // Frontier
         private int _currentView;
 
         public event Action<EntityUid>? OnProgramItemPressed;
@@ -204,11 +201,24 @@ namespace Content.Client.PDA
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
                 ("time", $"{stationTime.Days}d {stationTime.Hours:D2}h {stationTime.Minutes:D2}m {stationTime.Seconds:D2}s")));
 
-            // Store the absolute UTC end time received from the server.
-            // The label is kept live by FrameUpdate() using DateTime.UtcNow (OS clock),
-            // so it counts down accurately regardless of server or game-tick slowdowns.
-            _shiftEndTime = state.ShiftEndTime;
-            UpdateShiftEndTimeLabel();
+            // Frontier
+            if (state.RoundEndTime is not null)
+            {
+                // Synchronise ticking of the seconds place of the shift time and the roundend time
+                _roundEndTime = TimeSpan.FromSeconds(Math.Floor(state.RoundEndTime.Value.TotalSeconds))
+                                        .Add(TimeSpan.FromMilliseconds(_gameTicker.RoundStartTimeSpan.Milliseconds));
+
+                var remainingTime = _roundEndTime.Value.Subtract(_gameTiming.CurTime);
+                RemainingTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-remaining-time",
+                    ("time", remainingTime.ToString("hh\\:mm\\:ss"))));
+            }
+            else
+            {
+                _roundEndTime = null;
+            }
+
+            RemainingTimeLabel.Visible = _roundEndTime is not null;
+            // End Frontier
 
             var alertLevel = state.PdaOwnerInfo.StationAlertLevel;
             var alertColor = state.PdaOwnerInfo.StationAlertColor;
@@ -244,28 +254,6 @@ namespace Content.Client.PDA
             LockUplinkButton.Visible = state.HasUplink;
         }
 
-        private void UpdateShiftEndTimeLabel()
-        {
-            if (_shiftEndTime.HasValue)
-            {
-                var timeRemaining = _shiftEndTime.Value - DateTime.UtcNow;
-                if (timeRemaining > TimeSpan.Zero)
-                {
-                    ShiftEndTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-shift-end-time",
-                        ("time", $"{timeRemaining.Days}d {timeRemaining.Hours:D2}h {timeRemaining.Minutes:D2}m {timeRemaining.Seconds:D2}s")));
-                    ShiftEndTimeLabel.Visible = true;
-                }
-                else
-                {
-                    ShiftEndTimeLabel.Visible = false;
-                }
-            }
-            else
-            {
-                ShiftEndTimeLabel.Visible = false;
-            }
-        }
-
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
@@ -274,7 +262,6 @@ namespace Content.Client.PDA
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
                 ("time", $"{stationTime.Days}d {stationTime.Hours:D2}h {stationTime.Minutes:D2}m {stationTime.Seconds:D2}s")));
 
-            UpdateShiftEndTimeLabel();
         }
 
         public void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
@@ -419,6 +406,24 @@ namespace Content.Client.PDA
         protected override void Draw(DrawingHandleScreen handle)
         {
             base.Draw(handle);
+
+            var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+
+            StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
+                ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+
+            // Frontier
+            if (_roundEndTime is not null)
+            {
+                var remainingTime = _roundEndTime.Value.Subtract(_gameTiming.CurTime);
+                RemainingTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-remaining-time",
+                    ("time", remainingTime.ToString("hh\\:mm\\:ss"))));
+                if (remainingTime < TimeSpan.Zero){
+                    RemainingTimeLabel.Visible = false;
+                    _roundEndTime = null;
+                }
+            }
+            // End Frontier
         }
     }
 }

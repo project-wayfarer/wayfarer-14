@@ -1,3 +1,6 @@
+# Wayfarer: This entire file is now an almost identical template to human_inventory_template, save for their disability to wear a lot of masks.
+# Should the default inventory template be modified, copy the changes here.
+
 - type: inventoryTemplate
   id: ipc
   slots:
@@ -22,32 +25,9 @@
       uiWindowPos: 1,1
       strippingWindowPos: 1,2
       displayName: Suit
-      # Underwear
-    # - name: undershirt
-    #   slotTexture: undershirt
-    #   slotFlags: UNDERSHIRT
-    #   stripTime: 8
-    #   uiWindowPos: 4,1
-    #   strippingWindowPos: 3,1
-    #   displayName: Undershirt
-    # - name: underpants
-    #   slotTexture: underpants
-    #   slotFlags: UNDERPANTS
-    #   stripTime: 12
-    #   uiWindowPos: 4,0
-    #   strippingWindowPos: 3,2
-    #   displayName: Underpants
-    # - name: socks
-    #   slotTexture: socks
-    #   slotFlags: SOCKS
-    #   stripTime: 8
-    #   uiWindowPos: 4,2
-    #   strippingWindowPos: 3,3
-    #   displayName: Socks
     - name: gloves
       slotTexture: gloves
       slotFlags: GLOVES
-      stripTime: 3
       uiWindowPos: 2,1
       strippingWindowPos: 2,2
       displayName: Gloves
@@ -58,9 +38,9 @@
       strippingWindowPos: 0,1
       displayName: Neck
     - name: mask
-      uiWindowPos: 1,2
       slotTexture: mask
       slotFlags: MASK
+      uiWindowPos: 1,2
       strippingWindowPos: 1,1
       displayName: Mask
       whitelist:
@@ -72,14 +52,14 @@
       slotTexture: glasses
       slotFlags: EYES
       stripTime: 3
-      uiWindowPos: 0,0
+      uiWindowPos: 0,3
       strippingWindowPos: 0,0
       displayName: Eyes
     - name: ears
       slotTexture: ears
       slotFlags: EARS
       stripTime: 3
-      uiWindowPos: 2,0
+      uiWindowPos: 2,2
       strippingWindowPos: 2,0
       displayName: Ears
     - name: head
@@ -90,6 +70,7 @@
       displayName: Head
     - name: pocket1
       slotTexture: pocket
+      fullTextureName: template_small
       slotFlags: POCKET
       slotGroup: MainHotbar
       stripTime: 3
@@ -100,6 +81,7 @@
       stripHidden: true
     - name: pocket2
       slotTexture: pocket
+      fullTextureName: template_small
       slotFlags: POCKET
       slotGroup: MainHotbar
       stripTime: 3
@@ -116,9 +98,12 @@
       uiWindowPos: 2,0
       strippingWindowPos: 2,5
       dependsOn: outerClothing
+      dependsOnComponents:
+      - type: AllowSuitStorage
       displayName: Suit Storage
     - name: id
       slotTexture: id
+      fullTextureName: template_small
       slotFlags: IDCARD
       slotGroup: SecondHotbar
       stripTime: 6
@@ -128,6 +113,7 @@
       displayName: ID
     - name: belt
       slotTexture: belt
+      fullTextureName: template_small
       slotFlags: BELT
       slotGroup: SecondHotbar
       stripTime: 6
@@ -136,13 +122,17 @@
       displayName: Belt
     - name: back
       slotTexture: back
+      fullTextureName: template_small
       slotFlags: BACK
       slotGroup: SecondHotbar
       stripTime: 6
       uiWindowPos: 3,0
       strippingWindowPos: 0,5
       displayName: Back
-    # Wayfarer: wallet slot
+      blacklist:
+        tags:
+        - PetOnly
+    # Frontier: wallet slot
     - name: wallet
       slotTexture: wallet
       slotFlags: WALLET
@@ -151,4 +141,4 @@
       strippingWindowPos: 2,3
       dependsOn: jumpsuit
       displayName: Wallet
-    # End Wayfarer: wallet slot
+    # End Frontier: wallet slot

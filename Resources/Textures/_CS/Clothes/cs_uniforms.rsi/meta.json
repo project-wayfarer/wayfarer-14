@@ -1,0 +1,770 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/ARF-SS13/coyote-frontier",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "sexyclown",
+      "directions": 4
+    },
+    {
+      "name": "bean"
+    },
+    {
+      "name": "sexymime",
+      "directions": 4
+    },
+    {
+      "name": "black_tango",
+      "directions": 4
+    },
+    {
+      "name": "red_evening_gown",
+      "directions": 4
+    },
+    {
+      "name": "draculass",
+      "directions": 4
+    },
+    {
+      "name": "societydress",
+      "directions": 4
+    },
+    {
+      "name": "green_dress",
+      "directions": 4
+    },
+    {
+      "name": "pink_dress",
+      "directions": 4
+    },
+    {
+      "name": "blackdress",
+      "directions": 4
+    },
+    {
+      "name": "westender",
+      "directions": 4
+    },
+    {
+      "name": "bride_white",
+      "directions": 4
+    },
+    {
+      "name": "promdress",
+      "directions": 4
+    },
+    {
+      "name": "bride_white_s",
+      "directions": 4
+    },
+    {
+      "name": "dress_saloon_s",
+      "directions": 4
+    },
+    {
+      "name": "dress_black",
+      "directions": 4
+    },
+    {
+      "name": "cheongsam_s",
+      "directions": 4
+    },
+    {
+      "name": "flower_dress",
+      "directions": 4
+    },
+    {
+      "name": "flamenco",
+      "directions": 4
+    },
+    {
+      "name": "western_bustle",
+      "directions": 4
+    },
+    {
+      "name": "corset",
+      "directions": 4
+    },
+    {
+      "name": "qipao",
+      "directions": 4
+    },
+    {
+      "name": "qipao_nosleeve",
+      "directions": 4
+    },
+    {
+      "name": "qipao_white",
+      "directions": 4
+    },
+    {
+      "name": "qipao_white_nosleeve",
+      "directions": 4
+    },
+    {
+      "name": "qipao_red",
+      "directions": 4
+    },
+    {
+      "name": "qipao_red_nosleeve",
+      "directions": 4
+    },
+    {
+      "name": "qipao_teal_nosleeve",
+      "directions": 4
+    },
+    {
+      "name": "cheongr",
+      "directions": 4
+    },
+    {
+      "name": "cheongw",
+      "directions": 4
+    },
+    {
+      "name": "cheong",
+      "directions": 4
+    },
+    {
+      "name": "bride_blue",
+      "directions": 4
+    },
+    {
+      "name": "bride_orange",
+      "directions": 4
+    },
+    {
+      "name": "bride_purple",
+      "directions": 4
+    },
+    {
+      "name": "bride_red",
+      "directions": 4
+    },
+    {
+      "name": "keyholesweater",
+      "directions": 4
+    },
+    {
+      "name": "littleblackdress_s",
+      "directions": 4
+    },
+    {
+      "name": "pinktutu_s",
+      "directions": 4
+    },
+    {
+      "name": "victorianblred",
+      "directions": 4
+    },
+    {
+      "name": "victorianredvest",
+      "directions": 4
+    },
+    {
+      "name": "victorianvest",
+      "directions": 4
+    },
+    {
+      "name": "victorianblackdress",
+      "directions": 4
+    },
+    {
+      "name": "victorianreddress",
+      "directions": 4
+    },
+    {
+      "name": "victorianlightfire",
+      "directions": 4
+    },
+    {
+      "name": "dutch",
+      "directions": 4
+    },
+    {
+      "name": "acolyte_d",
+      "directions": 4
+    },
+    {
+      "name": "shamanblue",
+      "directions": 4
+    },
+    {
+      "name": "hunter_d",
+      "directions": 4
+    },
+    {
+      "name": "hunter",
+      "directions": 4
+    },
+    {
+      "name": "foxflannel",
+      "directions": 4
+    },
+    {
+      "name": "blueranger",
+      "directions": 4
+    },
+    {
+      "name": "marlowduds",
+      "directions": 4
+    },
+    {
+      "name": "kimono_red",
+      "directions": 4
+    },
+    {
+      "name": "kimono_orange",
+      "directions": 4
+    },
+    {
+      "name": "kimono_yellow",
+      "directions": 4
+    },
+    {
+      "name": "kimono_green",
+      "directions": 4
+    },
+    {
+      "name": "kimono_blue",
+      "directions": 4
+    },
+    {
+      "name": "kimono_purple",
+      "directions": 4
+    },
+    {
+      "name": "kimono_violet",
+      "directions": 4
+    },
+    {
+      "name": "kimono_pink",
+      "directions": 4
+    },
+    {
+      "name": "kimono_earth",
+      "directions": 4
+    },
+    {
+      "name": "portuguese_sailor1_d",
+      "directions": 4
+    },
+    {
+      "name": "dress2",
+      "directions": 4
+    },
+    {
+      "name": "dress3",
+      "directions": 4
+    },
+    {
+      "name": "toga",
+      "directions": 4
+    },
+    {
+      "name": "toga2",
+      "directions": 4
+    },
+    {
+      "name": "chad",
+      "directions": 4
+    },
+    {
+      "name": "customtoga",
+      "directions": 4
+    },
+    {
+      "name": "pharaoh",
+      "directions": 4
+    },
+    {
+      "name": "halfhuipil",
+      "directions": 4
+    },
+    {
+      "name": "huipil",
+      "directions": 4
+    },
+    {
+      "name": "mayan_loincloth",
+      "directions": 4
+    },
+    {
+      "name": "greatshendyt",
+      "directions": 4
+    },
+    {
+      "name": "dark_hanfu",
+      "directions": 4
+    },
+    {
+      "name": "light_hanfu",
+      "directions": 4
+    },
+    {
+      "name": "green_hanfu",
+      "directions": 4
+    },
+    {
+      "name": "artisan3",
+      "directions": 4
+    },
+    {
+      "name": "dressg",
+      "directions": 4
+    },
+    {
+      "name": "dressr",
+      "directions": 4
+    },
+    {
+      "name": "shorts_blue",
+      "directions": 4
+    },
+    {
+      "name": "shorts_red",
+      "directions": 4
+    },
+    {
+      "name": "haori",
+      "directions": 4
+    },
+    {
+      "name": "haori_samurai",
+      "directions": 4
+    },
+    {
+      "name": "crinoline_dress",
+      "directions": 4
+    },
+    {
+      "name": "leaves_skirt",
+      "directions": 4
+    },
+    {
+      "name": "leaves_skirt_long",
+      "directions": 4
+    },
+    {
+      "name": "beggar_clothing",
+      "directions": 4
+    },
+    {
+      "name": "assyrian",
+      "directions": 4
+    },
+    {
+      "name": "doug_dimmadome",
+      "directions": 4
+    },
+    {
+      "name": "texas",
+      "directions": 4
+    },
+    {
+      "name": "conquistador",
+      "directions": 4
+    },
+    {
+      "name": "landschneckt",
+      "directions": 4
+    },
+    {
+      "name": "b_landschneckt",
+      "directions": 4
+    },
+    {
+      "name": "r_landschneckt",
+      "directions": 4
+    },
+    {
+      "name": "blue_sari",
+      "directions": 4
+    },
+    {
+      "name": "red_sari",
+      "directions": 4
+    },
+    {
+      "name": "tradwife_yellow",
+      "directions": 4
+    },
+    {
+      "name": "tradwife_blue",
+      "directions": 4
+    },
+    {
+      "name": "tradwife_orange",
+      "directions": 4
+    },
+    {
+      "name": "tradwife_purple",
+      "directions": 4
+    },
+    {
+      "name": "tradwife_red",
+      "directions": 4
+    },
+    {
+      "name": "sundress_blue",
+      "directions": 4
+    },
+    {
+      "name": "sundress_yellow",
+      "directions": 4
+    },
+    {
+      "name": "sundress_orange",
+      "directions": 4
+    },
+    {
+      "name": "sundress_purple",
+      "directions": 4
+    },
+    {
+      "name": "sundress_red",
+      "directions": 4
+    },
+    {
+      "name": "doge",
+      "directions": 4
+    },
+    {
+      "name": "waistcoat",
+      "directions": 4
+    },
+    {
+      "name": "victorian_dress",
+      "directions": 4
+    },
+    {
+      "name": "tacticool_hawaiian_orange",
+      "directions": 4
+    },
+    {
+      "name": "tacticool_hawaiian_blue",
+      "directions": 4
+    },
+    {
+      "name": "tacticool_hawaiian_purple",
+      "directions": 4
+    },
+    {
+      "name": "us_greentrousers_og107",
+      "directions": 4
+    },
+    {
+      "name": "cartel1",
+      "directions": 4
+    },
+    {
+      "name": "un_irish",
+      "directions": 4
+    },
+    {
+      "name": "afr_merc",
+      "directions": 4
+    },
+    {
+      "name": "redguard",
+      "directions": 4
+    },
+    {
+      "name": "blue_skirt2",
+      "directions": 4
+    },
+    {
+      "name": "swim_black",
+      "directions": 4
+    },
+    {
+      "name": "swim_blue",
+      "directions": 4
+    },
+    {
+      "name": "swim_green",
+      "directions": 4
+    },
+    {
+      "name": "swim_purp",
+      "directions": 4
+    },
+    {
+      "name": "swim_red",
+      "directions": 4
+    },
+    {
+      "name": "swim_earth",
+      "directions": 4
+    },
+    {
+      "name": "revealingdress",
+      "directions": 4
+    },
+    {
+      "name": "rippedpunk",
+      "directions": 4
+    },
+    {
+      "name": "gothic",
+      "directions": 4
+    },
+    {
+      "name": "formalred",
+      "directions": 4
+    },
+    {
+      "name": "greenasym",
+      "directions": 4
+    },
+    {
+      "name": "cyberhell",
+      "directions": 4
+    },
+    {
+      "name": "floofdress",
+      "directions": 4
+    },
+    {
+      "name": "blackngold",
+      "directions": 4
+    },
+    {
+      "name": "sheerblue",
+      "directions": 4
+    },
+    {
+      "name": "whitegown",
+      "directions": 4
+    },
+    {
+      "name": "pinksun",
+      "directions": 4
+    },
+    {
+      "name": "whitesun",
+      "directions": 4
+    },
+    {
+      "name": "bowsun",
+      "directions": 4
+    },
+    {
+      "name": "bluesun",
+      "directions": 4
+    },
+    {
+      "name": "shortpink",
+      "directions": 4
+    },
+    {
+      "name": "twopiece",
+      "directions": 4
+    },
+    {
+      "name": "gothic2",
+      "directions": 4
+    },
+    {
+      "name": "gayvampire",
+      "directions": 4
+    },
+    {
+      "name": "corsetdress",
+      "directions": 4
+    },
+    {
+      "name": "goldwrap",
+      "directions": 4
+    },
+    {
+      "name": "golddress",
+      "directions": 4
+    },
+    {
+      "name": "countess",
+      "directions": 4
+    },
+    {
+      "name": "maid_skyrat",
+      "directions": 4
+    },
+    {
+      "name": "flower_kimono",
+      "directions": 4
+    },
+    {
+      "name": "puffydress",
+      "directions": 4
+    },
+    {
+      "name": "divine_robes",
+      "directions": 4
+    },
+    {
+      "name": "blue_kimono",
+      "directions": 4
+    },
+    {
+      "name": "miku_bikini",
+      "directions": 4
+    },
+    {
+      "name": "tribal_colorful",
+      "directions": 4
+    },
+    {
+      "name": "tribal_colorful_top",
+      "directions": 4
+    },
+    {
+      "name": "flow_green",
+      "directions": 4
+    },
+    {
+      "name": "flow_red",
+      "directions": 4
+    },
+    {
+      "name": "greek_dress",
+      "directions": 4
+    },
+    {
+      "name": "greek_dress_d",
+      "directions": 4
+    },
+    {
+      "name": "loincloth",
+      "directions": 4
+    },
+    {
+      "name": "marauder",
+      "directions": 4
+    },
+    {
+      "name": "bloodshot",
+      "directions": 4
+    },
+    {
+      "name": "rattyskirtgreen",
+      "directions": 4
+    },
+    {
+      "name": "rattyskirtyellow",
+      "directions": 4
+    },
+    {
+      "name": "rattyskirtpink",
+      "directions": 4
+    },
+    {
+      "name": "rattycyberpunk",
+      "directions": 4
+    },
+    {
+      "name": "brownpunkpants",
+      "directions": 4
+    },
+    {
+      "name": "olivecargopunk",
+      "directions": 4
+    },
+    {
+      "name": "iris_tribal",
+      "directions": 4
+    },
+    {
+      "name": "sun_skirt",
+      "directions": 4
+    },
+    {
+      "name": "sun_skirt_grey",
+      "directions": 4
+    },
+    {
+      "name": "half_skirt",
+      "directions": 4
+    },
+    {
+      "name": "tunic",
+      "directions": 4
+    },
+    {
+      "name": "latex_half",
+      "directions": 4
+    },
+    {
+      "name": "sexynursesuit",
+      "directions": 4
+    },
+    {
+      "name": "secslutskirt",
+      "directions": 4
+    },
+    {
+      "name": "secslutskirtpink",
+      "directions": 4
+    },
+    {
+      "name": "secstripper",
+      "directions": 4
+    },
+    {
+      "name": "bunnysuit",
+      "directions": 4
+    },
+    {
+      "name": "whitebunnysuit",
+      "directions": 4
+    },
+    {
+      "name": "redwshort",
+      "directions": 4
+    },
+    {
+      "name": "yellowwshort",
+      "directions": 4
+    },
+    {
+      "name": "pinkwshort",
+      "directions": 4
+    },
+    {
+      "name": "radkini",
+      "directions": 4
+    },
+    {
+      "name": "syclothing",
+      "directions": 4
+    },
+    {
+      "name": "pentatop",
+      "directions": 4
+    },
+    {
+      "name": "domina",
+      "directions": 4
+    },
+    {
+      "name": "bluedress",
+      "directions": 4
+    },
+    {
+      "name": "poly_performer",
+      "directions": 4
+    },
+    {
+      "name": "leia",
+      "directions": 4
+    },
+    {
+      "name": "explorerstripper",
+      "directions": 4
+    }
+  ]
+}

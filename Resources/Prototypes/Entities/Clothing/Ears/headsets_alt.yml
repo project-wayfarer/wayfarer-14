@@ -158,7 +158,7 @@
       sprite: Clothing/Ears/Headsets/freelance.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseC3WizardContraband, ContrabandClothing] # Frontier: BaseMagicalContraband<BaseC3WizardContraband, add ContrabandClothing
+  parent: [ClothingHeadsetAlt] # Frontier: BaseMagicalContraband<BaseC3WizardContraband, add ContrabandClothing # Wayfarer: Removed BaseC3WizardContraband, ContrabandClothing
   id: ClothingHeadsetAltWizard
   name: wizard's over-ear headset
   components:

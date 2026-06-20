@@ -1,0 +1,56 @@
+- type: entity
+  parent:
+  - MobRogueSiliconBossBase
+  id: MobRogueSiliconDroneBossBase
+  name: elite drone
+  description: Hacked and reprogrammed by a rogue AI departmental drones. Now even deadlier.
+  abstract: true
+  components:
+  - type: Loadout
+    prototypes:
+    - MobRogueSiliconLootT1
+  - type: CanMoveInAir
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30 # Lowered the value, to allow them to fit through the airlocks
+        density: 100
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: DamageStateVisuals
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Bloodstream
+    bloodReagent: WeldingFuel
+    bloodMaxVolume: 6
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      24: Critical
+      72: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      14: 0.7
+      20: 0.5
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.75
+    minAngle: 5
+    maxAngle: 15
+    angleIncrease: 2
+    angleDecay: 3
+    soundGunshot:
+      path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/_NF/Effects/silence.ogg
+  - type: SoundWhileAlive
+  - type: AmbientSound
+    volume: -6
+    range: 5
+    sound: /Audio/_NF/Effects/Scrapbots/thruster-droning.ogg

@@ -937,8 +937,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitNoERP
-  name: "No ERP"
-  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
+  name: "Yes ERP" # Wayfarer: "No ERP"<"Yes ERP"
+  description: "This poster reminds the crew that this isn't a Nanotrasen station and that you can bang, okay." # Wayfarer
   components:
   - type: Sprite
     state: poster34_legit

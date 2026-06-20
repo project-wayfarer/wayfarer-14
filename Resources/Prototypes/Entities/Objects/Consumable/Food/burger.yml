@@ -110,6 +110,13 @@
     sprite: Objects/Consumable/Food/burger.rsi
     shape:
     - 0,0,1,0
+  # Wayfarer: 8h shelf life for prepared meals
+  - type: Perishable
+    rotAfter: 28800
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 # Custom Burger Example
 
@@ -364,7 +371,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 26
+        maxVol: 34 # Frontier
         reagents:
         - ReagentId: Nutriment
           Quantity: 7
@@ -402,7 +409,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 26 # Frontier
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
@@ -559,7 +566,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30 # Frontier
         reagents:
         - ReagentId: Nutriment
           Quantity: 15

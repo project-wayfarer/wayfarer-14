@@ -64,6 +64,13 @@
     shape:
     - 0,0,1,0
     storedOffset: 0,1
+  # Wayfarer: 8h shelf life for prepared meals
+  - type: Perishable
+    rotAfter: 28800
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
   - type: Tag
     tags:
       - Meat

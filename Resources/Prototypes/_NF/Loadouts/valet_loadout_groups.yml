@@ -4,6 +4,8 @@
   loadouts:
   - ValetClothingUniformJumpsuitValet
   - ValetClothingUniformJumpskirtValet
+  subgroups:
+  - WFJumpsuit # Wayfarer
   fallbacks:
   - ValetClothingUniformJumpsuitValet
   - ValetClothingUniformJumpskirtValet
@@ -13,5 +15,7 @@
   name: loadout-group-contractor-outerclothing
   loadouts:
   - ValetClothingOuterVestValet
+  subgroups:
+  - WFOuterClothing # Wayfarer
   fallbacks:
   - ValetClothingOuterVestValet
