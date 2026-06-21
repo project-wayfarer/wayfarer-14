@@ -73,7 +73,7 @@
   rotation: Fixed
   fx: EffectRCDConstruct2
 
-# Walls
+# Reinforced Walls
 - type: rcd
   id: WallReinforced
   category: WallsAndFlooring
@@ -102,8 +102,8 @@
   collisionBounds: "-0.23,-0.49,0.23,-0.36"
   rotation: User
   fx: EffectRCDConstruct2
-#
 
+# Reinforced Windows
 - type: rcd
   id: ReinforcedWindowDiagonal
   category: WindowsAndGrilles
@@ -120,7 +120,8 @@
   collisionBounds: "-0.23,-0.49,0.23,-0.36"
   rotation: User
   fx: EffectRCDConstruct2
-#
+
+# Shuttle Walls
 - type: rcd
   id: WallShuttle
   category: WallsAndFlooring
@@ -149,7 +150,8 @@
   collisionBounds: "-0.23,-0.49,0.23,-0.36"
   rotation: User
   fx: EffectRCDConstruct2
-#
+
+# Shuttle Windows
 - type: rcd
   id: ShuttleWindow
   category: WindowsAndGrilles
@@ -183,6 +185,69 @@
   rotation: User
   fx: EffectRCDConstruct2
 
+# Plastitanium Walls
+- type: rcd
+  id: WallPlastitanium
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/plastitanium.rsi
+    state: full
+  mode: ConstructObject
+  prototype: WallPlastitanium
+  cost: 8
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: WallPlastitaniumDiagonal
+  category: WallsAndFlooring
+  sprite:
+    sprite: /Textures/Structures/Walls/plastitanium_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: WallPlastitaniumDiagonal
+  cost: 6
+  delay: 2
+  collisionMask: FullTileMask
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rotation: User
+  fx: EffectRCDConstruct2
+
+# Plastitanium Windows
+- type: rcd
+  id: PlastitaniumWindow
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/plastitanium_window.rsi
+    state: full
+  mode: ConstructObject
+  prototype: PlastitaniumWindow
+  cost: 6
+  delay: 2
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: PlastitaniumWindowDiagonal
+  category: WindowsAndGrilles
+  sprite:
+    sprite: /Textures/Structures/Windows/plastitanium_window_diagonal.rsi
+    state: state0
+  mode: ConstructObject
+  prototype: PlastitaniumWindowDiagonal
+  cost: 3
+  delay: 2
+  collisionMask: Impassable
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rules:
+  - IsWindow
+  rotation: User
+  fx: EffectRCDConstruct2
 
 # Airlocks
 
@@ -276,63 +341,6 @@
     state: closed
   mode: ConstructObject
   prototype: AirlockGlassShuttleNfsdLocked
-  cost: 25
-  delay: 15
-  collisionMask: FullTileMask
-  rotation: User
-  fx: EffectRCDConstruct4
-
-# Outlaw
-- type: rcd
-  id: AirlockHatchPirateLocked
-  category: Airlocks
-  sprite:
-    sprite: Structures/Doors/Airlocks/Standard/hatch.rsi
-    state: closed
-  mode: ConstructObject
-  prototype: AirlockHatchPirateLocked
-  cost: 4
-  delay: 4
-  collisionMask: FullTileMask
-  rotation: User
-  fx: EffectRCDConstruct4
-
-- type: rcd
-  id: AirlockMiningGlassPirateLocked
-  category: Airlocks
-  sprite:
-    sprite: Structures/Doors/Airlocks/Glass/mining.rsi
-    state: closed
-  mode: ConstructObject
-  prototype: AirlockMiningGlassPirateLocked
-  cost: 4
-  delay: 4
-  collisionMask: FullTileMask
-  rotation: User
-  fx: EffectRCDConstruct4
-
-- type: rcd
-  id: AirlockShuttleSyndicatePirateLocked
-  category: Airlocks
-  sprite:
-    sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
-    state: closed
-  mode: ConstructObject
-  prototype: AirlockShuttleSyndicatePirateLocked
-  cost: 25
-  delay: 15
-  collisionMask: FullTileMask
-  rotation: User
-  fx: EffectRCDConstruct4
-
-- type: rcd
-  id: AirlockGlassShuttleSyndicatePirateLocked
-  category: Airlocks
-  sprite:
-    sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
-    state: closed
-  mode: ConstructObject
-  prototype: AirlockGlassShuttleSyndicatePirateLocked
   cost: 25
   delay: 15
   collisionMask: FullTileMask

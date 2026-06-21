@@ -405,6 +405,7 @@
       - OutlawUplinkBase
 
 #Utility --
+
 # Telescopic Shield
 - type: listing
   id: UplinkOutlawTeleShield
@@ -443,7 +444,7 @@
   id: UplinkOutlawRCD
   name:  uplink-pirate-rcd-name
   description: uplink-pirate-rcd-desc
-  productEntity: PirateRCD
+  productEntity: PirateShipyardRCD
   icon: { sprite: _NF/Objects/Tools/rcd.rsi, state: icon }
   cost:
     Doubloon: 4

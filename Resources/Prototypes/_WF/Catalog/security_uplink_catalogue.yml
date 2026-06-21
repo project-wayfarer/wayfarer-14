@@ -1,11 +1,11 @@
 - type: listing
-  id: UplinkNfsdRCD
+  id: UplinkCGPRCD
   name:  uplink-nfsd-rcd-name
   description: uplink-nfsd-rcd-desc
-  productEntity: NFSDRCD
+  productEntity: CGPRCD
   icon: { sprite: _NF/Objects/Tools/rcd.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 4 # Wayfarer: 10<4
+    FrontierUplinkCoin: 4
   categories:
   - UplinkSecurityUtility
   conditions:
