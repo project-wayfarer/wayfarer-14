@@ -29,7 +29,7 @@
     <GuideEntityEmbed Entity="SalvageTechfabNF" Caption=""/>
   </Box>
 
-  Every standard behir comes equipped with a Salvage Techfab, Mercenary Techfab, Salvage Lockers filled with adequate amenities for Mining and Ship Breaking, and a lounge to maintain comfort during long outings.
+  Every standard Behir comes equipped with a Salvage Techfab, Mercenary Techfab, Salvage Lockers filled with adequate amenities for Mining and Ship Breaking, and a lounge to maintain comfort during long outings.
   <Box>
     <GuideEntityEmbed Entity="ButtonFrameCautionSecurity" Caption="Door Bolt"/>
     <GuideEntityEmbed Entity="ButtonFrameCaution" Caption="Blast Door"/>
@@ -74,7 +74,7 @@
   - Ensure the Generator is firmly anchored to the floor.
   - Add Uranium Fuel to ensure it is adequatelly filled.
   - Ensure Current Output is set to HV.
-  - Turn it on, and ensure it is set to Target Power (kW) 35. Adding machines may raise the poewr draw requirement.
+  - Turn it on, and ensure it is set to Target Power (kW) 35. Adding machines may raise the power draw requirement.
   - Processed Uranium can be also be used to fuel the Generator.
 
   ## 2. Battery units
@@ -85,10 +85,13 @@
   </Box>
 
   - Ensure the SMES and Substation are firmly anchored to the floor.
-  - Observe the Substations. Ensure its Passthroughs IN is Higher tha, or equal to, its OUT.
+  - Observe the Substations. Ensure its Passthroughs IN is Higher than, or equal to, its OUT.
   - Adjust the Generators Target Power to match the Substations OUT Requirements.
   - Ensure every APC in the ship is Toggled ON.
   - Verify each APC unit registers some load, if not this may indicate problems.
+  - Located inside the Command Bay, are buttons for turning the Thrusters ON and OFF.
+  - While the Thrusters have been powered OFF, the required Target Power (kW) may be lowered to 18 (kW), for longevity during downtine, and a lack of need for thrusters.
+  - Ensure the Generators Target Power (kW) is raised back to the Recommended 35 (kW) When travel is to be resumed, and the Thrusters have been Toggled ON.
 
   ## 3. Ship Mobilty and Gravity
   <Box>
@@ -97,9 +100,9 @@
     <GuideEntityEmbed Entity="GravityGeneratorMini" Caption="Gravity Generator"/>
   </Box>
 
-  - Ensure your Mini Gravity Generatory is firmly anchored to the floor, and powered on.
-  - Ensure your Gyroscope's are powered on.
-  - Observe the Thrusters on the outside of the ship, and ensure they are powered and on.
+  - Ensure your Mini Gravity Generatory is firmly anchored to the floor, and powered ON.
+  - Ensure your Gyroscope's are powered ON.
+  - Observe the Thrusters on the outside of the ship, and ensure they are powered and ON.
 
   ## 4. Atmosphere Distribution Network
   <Box>
@@ -112,9 +115,9 @@
 
   - Ensure oxygen and nitrogen canisters are anchored firmly to their connector ports.
   - Verify the Gas Mixer is configured to 79% on its primary port (N2) and 21% on is side port (22). Adjust for comfort of specific species, such as 23-25% (O2) for Harpies.
-  - Set the Output Pressure to 101.3 (kPa), and make sire it is Toggled ON
-  - Observe the Red Gas Pump next to your Gas Mixer. Turn it on, if you wish to expel the gas in the Waste Network.
-  - Ensure Air Alarms are On, and do not display warnings.
+  - Set the Output Pressure to 101.3 (kPa), and make sure it is Toggled ON
+  - Observe the Red Gas Pump next to your Gas Mixer. Turn it ON, if you wish to expel the gas in the Waste Network.
+  - Ensure Air Alarms are ON, and do not display warnings.
 
   [textlink="Preflight Checklist" link="PreflightChecklist"/]
 </Document>

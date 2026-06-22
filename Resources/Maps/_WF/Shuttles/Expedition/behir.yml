@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 06/21/2026 06:31:10
+  time: 06/22/2026 06:52:23
   entityCount: 1051
 maps: []
 grids:
@@ -110,6 +110,12 @@ entities:
             143: 2,-8
             177: 8,-8
             191: 9,13
+        - node:
+            color: '#FFFFFFFF'
+            id: Bot
+          decals:
+            711: 5,7
+            712: 2,-1
         - node:
             color: '#FDFE89FF'
             id: Box
@@ -5829,6 +5835,18 @@ entities:
         948:
         - - Pressed
           - Off
+        942:
+        - - Pressed
+          - Off
+        941:
+        - - Pressed
+          - Off
+        940:
+        - - Pressed
+          - Off
+        939:
+        - - Pressed
+          - Off
     - type: Fixtures
       fixtures: {}
     - type: Label
@@ -5873,6 +5891,18 @@ entities:
         - - Pressed
           - On
         948:
+        - - Pressed
+          - On
+        942:
+        - - Pressed
+          - On
+        941:
+        - - Pressed
+          - On
+        940:
+        - - Pressed
+          - On
+        939:
         - - Pressed
           - On
     - type: Fixtures
