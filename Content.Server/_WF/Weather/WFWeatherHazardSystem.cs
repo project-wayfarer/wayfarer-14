@@ -1,12 +1,10 @@
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.NPC.HTN;
 using Content.Shared.Atmos;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Weather;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -22,12 +20,14 @@ public sealed class WFWeatherHazardSystem : EntitySystem
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
 
     private EntityQuery<MapGridComponent> _gridQuery;
 
     // When each weather on each map is allowed to deal damage next.
     private readonly Dictionary<(EntityUid Map, string ProtoId), TimeSpan> _nextTick = new();
 
+    private bool _weatherActive;
     private TimeSpan _nextUpdate;
 
     private static readonly TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
@@ -45,11 +45,15 @@ public sealed class WFWeatherHazardSystem : EntitySystem
             return;
         _nextUpdate = now + UpdateInterval;
 
+        var active = false;
+
         var weatherQuery = EntityQueryEnumerator<WeatherComponent, TransformComponent>();
         while (weatherQuery.MoveNext(out var mapUid, out var weatherComp, out var mapXform))
         {
             if (weatherComp.Weather.Count == 0)
                 continue;
+
+            active = true;
 
             foreach (var (protoId, _) in weatherComp.Weather)
             {
@@ -66,16 +70,21 @@ public sealed class WFWeatherHazardSystem : EntitySystem
                 ApplyHazard(mapXform.MapID, proto);
             }
         }
+
+        if (!active && _weatherActive)
+            _nextTick.Clear();
+
+        _weatherActive = active;
     }
 
     private void ApplyHazard(MapId mapId, WeatherPrototype proto)
     {
-        var mobQuery = EntityQueryEnumerator<MobStateComponent, DamageableComponent, TransformComponent>();
-        while (mobQuery.MoveNext(out var uid, out _, out _, out var xform))
+        foreach (var session in _player.Sessions)
         {
-            if (HasComp<HTNComponent>(uid))
+            if (session.AttachedEntity is not { } uid)
                 continue;
 
+            var xform = Transform(uid);
             if (xform.MapID != mapId)
                 continue;
             if (xform.GridUid is not { } gridUid)

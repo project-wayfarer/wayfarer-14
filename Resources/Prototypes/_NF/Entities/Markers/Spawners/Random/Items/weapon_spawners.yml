@@ -406,10 +406,10 @@
 # region ammo incendiary
 - type: entity
   parent: MarkerBasePlaceFree
-  id: SpawnDungeonLootAmmoPractice
+  id: SpawnDungeonLootAmmoIncendiary # Wayfarer: SpawnDungeonLootAmmoPractice<SpawnDungeonLootAmmoIncendiary
   categories: [ HideSpawnMenu ]
   name: random ammo
-  suffix: "Loot (Frontier), Ammo, Practice"
+  suffix: "Loot (Frontier), Ammo, Incendiary" # Wayfarer: Fix
   components:
   - type: Sprite
     layers:
@@ -426,10 +426,10 @@
 # region ammo uranium
 - type: entity
   parent: MarkerBasePlaceFree
-  id: SpawnDungeonLootAmmoIncendiary
+  id: SpawnDungeonLootAmmoUranium # Wayfarer: SpawnDungeonLootAmmoIncendiary<SpawnDungeonLootAmmoUranium
   categories: [ HideSpawnMenu ]
   name: random ammo
-  suffix: "Loot (Frontier), Ammo, Incendiary"
+  suffix: "Loot (Frontier), Ammo, Uranium" # Wayfarer: Fix
   components:
   - type: Sprite
     layers:
@@ -446,10 +446,10 @@
 # region ammo practice
 - type: entity
   parent: MarkerBasePlaceFree
-  id: SpawnDungeonLootAmmoUranium
+  id: SpawnDungeonLootAmmoPractice # Wayfarer: SpawnDungeonLootAmmoUranium<SpawnDungeonLootAmmoPractice
   categories: [ HideSpawnMenu ]
   name: random ammo
-  suffix: "Loot (Frontier), Ammo, Uranium"
+  suffix: "Loot (Frontier), Ammo, Practice" # Wayfarer: Fix
   components:
   - type: Sprite
     layers:

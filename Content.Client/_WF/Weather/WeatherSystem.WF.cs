@@ -28,6 +28,15 @@ public sealed partial class WeatherSystem
     private static readonly Vector2i[] Cardinals =
         { new(1, 0), new(-1, 0), new(0, 1), new(0, -1) };
 
+    private readonly Queue<(Vector2i indices, int depth)> _audioFrontier = new();
+    private readonly HashSet<Vector2i> _audioVisited = new();
+
+    private float _audioOcclusionTarget;
+    private float _audioUpdateTimer;
+    private const float AudioUpdateInterval = 0.25f;
+
+    private Vector2i _audioLastTile;
+
     protected override void Run(EntityUid uid, WeatherData weather, WeatherPrototype weatherProto, float frameTime)
     {
         base.Run(uid, weather, weatherProto, frameTime);
@@ -58,17 +67,24 @@ public sealed partial class WeatherSystem
         // A new audio stream starts at full volume. Set it to the player's current muffle level
         // right away, or the weather plays loud for a few seconds before the fade settles.
         if (streamWasNull)
-            comp.Occlusion = ComputeOcclusionForLocalPlayer(weatherProto);
-
-        var occlusion = 0f;
+            comp.Occlusion = _audioOcclusionTarget = ComputeOcclusionForLocalPlayer(weatherProto);
 
         if (TryComp<MapGridComponent>(entXform.GridUid, out var grid))
         {
-            TryComp(entXform.GridUid, out RoofComponent? roofComp);
-            occlusion = ComputeWeatherOcclusionTier(entXform.GridUid.Value, grid, entXform.Coordinates, roofComp, weatherProto);
+            var gridUid = entXform.GridUid.Value;
+            var tile = _mapSystem.TileIndicesFor(gridUid, grid, entXform.Coordinates);
+            _audioUpdateTimer -= frameTime;
+
+            if (tile != _audioLastTile && _audioUpdateTimer <= 0f)
+            {
+                _audioUpdateTimer = AudioUpdateInterval;
+                _audioLastTile = tile;
+                TryComp(gridUid, out RoofComponent? roofComp);
+                _audioOcclusionTarget = ComputeWeatherOcclusionTier(gridUid, grid, entXform.Coordinates, roofComp, weatherProto);
+            }
         }
 
-        var smoothedOcclusion = SmoothWeatherOcclusion(comp.Occlusion, occlusion, frameTime);
+        var smoothedOcclusion = SmoothWeatherOcclusion(comp.Occlusion, _audioOcclusionTarget, frameTime);
 
         var alpha = GetPercent(weather, uid);
         alpha *= SharedAudioSystem.VolumeToGain(weatherProto.Sound.Params.Volume);
@@ -116,11 +132,12 @@ public sealed partial class WeatherSystem
         if (CanWeatherAffect(gridId, grid, seed, proto, roofComp))
             return 0;
 
-        var frontier = new Queue<(Vector2i indices, int depth)>();
-        frontier.Enqueue((seed.GridIndices, 0));
-        var visited = new HashSet<Vector2i> { seed.GridIndices };
+        _audioFrontier.Clear();
+        _audioVisited.Clear();
+        _audioFrontier.Enqueue((seed.GridIndices, 0));
+        _audioVisited.Add(seed.GridIndices);
 
-        while (frontier.TryDequeue(out var entry))
+        while (_audioFrontier.TryDequeue(out var entry))
         {
             if (entry.depth >= WeatherAudioMaxSearchDepth)
                 continue;
@@ -128,14 +145,14 @@ public sealed partial class WeatherSystem
             foreach (var off in Cardinals)
             {
                 var newIdx = entry.indices + off;
-                if (!visited.Add(newIdx))
+                if (!_audioVisited.Add(newIdx))
                     continue;
 
                 var tile = _mapSystem.GetTileRef(gridId, grid, newIdx);
                 if (CanWeatherAffect(gridId, grid, tile, proto, roofComp))
                     return entry.depth + 1;
 
-                frontier.Enqueue((newIdx, entry.depth + 1));
+                _audioFrontier.Enqueue((newIdx, entry.depth + 1));
             }
         }
 

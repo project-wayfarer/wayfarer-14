@@ -25,8 +25,9 @@
     - WindowDirectional
     - WindowReinforcedDirectional
     - ReinforcedWindow
-    - Airlock
-    - AirlockGlass
+    - ReinforcedWindowDiagonal # Wayfarer
+    - AirlockHatchPirateLocked # Wayfarer: Airlock<AirlockHatchPirateLocked
+    - AirlockMiningGlassPirateLocked # Wayfarer: AirlockGlass<AirlockMiningGlassPirateLocked
     - Firelock
     - TubeLight
     - BulbLight
@@ -38,9 +39,8 @@
     - BaseAPC
     - SMES
     - Substation
-    - AirlockShuttle
-    - AirlockGlassShuttle
-    - Gaslock
+    - AirlockShuttleSyndicatePirateLocked
+    - AirlockGlassShuttleSyndicatePirateLocked
     - ThrusterRogue
     - AtmosDeviceFanDirectional
     # PLATING HELL
@@ -107,7 +107,7 @@
 
 - type: entity
   name: CGP RCD # Wayfarer: NFSD<CGP
-  parent: [BaseMilitaryContraband, RCD] #Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
+  parent: [BaseCGPContraband, RCD] #Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NFSDRCD
   description: A security construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
   components:
@@ -127,8 +127,9 @@
     - WindowDirectional
     - WindowReinforcedDirectional
     - ReinforcedWindow
-    - Airlock
-    - AirlockGlass
+    - ReinforcedWindowDiagonal # Wayfarer
+    - AirlockNfsdLocked # Wayfarer: Airlock<AirlockNfsdLocked
+    - AirlockNfsdGlassLocked # Wayfarer: AirlockGlass<AirlockNfsdGlassLocked
     - Firelock
     - TubeLight
     - BulbLight
@@ -140,9 +141,8 @@
     - BaseAPC
     - SMES
     - Substation
-    - AirlockShuttle
-    - AirlockGlassShuttle
-    - Gaslock
+    - AirlockShuttleNfsdLocked
+    - AirlockGlassShuttleNfsdLocked
     - ThrusterNfsd
     - AtmosDeviceFanDirectional
     # PLATING HELL

@@ -133,7 +133,11 @@
 - type: rcd
   id: ReinforcedWindow
   category: WindowsAndGrilles
-  sprite: /Textures/Interface/Radial/RCD/window_reinforced.png
+  # Wayfarer
+  sprite:
+    sprite: /Textures/Structures/Windows/reinforced_window.rsi
+    state: full
+  # End Wayfarer
   mode: ConstructObject
   prototype: ReinforcedWindow
   cost: 4
@@ -192,7 +196,7 @@
   prototype: Firelock
   cost: 4
   delay: 3
-  collisionMask: FullTileMask
+  collisionMask: Impassable # Wayfarer: FullTileMask<Impassable
   rotation: Camera
   fx: EffectRCDConstruct3
 

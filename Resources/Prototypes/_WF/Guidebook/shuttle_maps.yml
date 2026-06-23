@@ -284,4 +284,13 @@
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: moppet
 
-
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapKobold
+  name: "Kobold"
+  description: "Detailed map of a Kobold shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: kobold

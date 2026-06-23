@@ -23029,14 +23029,14 @@ entities:
     - type: Transform
       pos: -9.5,10.5
       parent: 1
-- proto: SurveillanceCameraWirelessRouterEntertainment
+- proto: SurveillanceCameraRouterService
   entities:
   - uid: 3080
     components:
     - type: Transform
       pos: -3.5,-12.5
       parent: 1
-- proto: SurveillanceWirelessCameraAnchoredConstructed
+- proto: SurveillanceWirelessCameraMovableEntertainment
   entities:
   - uid: 3081
     components:
