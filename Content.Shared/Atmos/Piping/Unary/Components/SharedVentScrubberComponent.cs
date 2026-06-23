@@ -38,6 +38,10 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             Gas.AntiNoblium, // Assmos - /tg/ gases
         };
 
+        public static Dictionary<Gas, float> DefaultFilterGasLimits = new()
+        {
+            { Gas.Nitrogen, 80 }
+        };
         // Presets for 'dumb' air alarm modes
 
         public static GasVentScrubberData FilterModePreset = new GasVentScrubberData
