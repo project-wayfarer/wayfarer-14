@@ -145,15 +145,17 @@
         children:
         - id: NFBlueprintHighCapPistol35MagMercenary
         - id: NFBlueprintHighCapRifle20MagMercenary
+      # Wayfarer: Disabled
       # T4 - Epic
-      - !type:GroupSelector
-        weight: 0.15
-        children:
-        - id: NFBlueprintJackdawMercenary
-        - id: NFBlueprintLecterMercenary
-      # T5 - Legendary
-      - !type:GroupSelector
-        weight: 0.05
-        children:
-        - id: NFWeaponSubMachineGunWt550Expedition
-        - id: NFWeaponSubMachineGunDrozdExpedition
+#      - !type:GroupSelector
+#        weight: 0.15
+#        children:
+#        - id: NFBlueprintJackdawMercenary
+#        - id: NFBlueprintLecterMercenary
+#      # T5 - Legendary
+#      - !type:GroupSelector
+#        weight: 0.05
+#        children:
+#        - id: NFWeaponSubMachineGunWt550Expedition
+#        - id: NFWeaponSubMachineGunDrozdExpedition
+      # End Wayfarer

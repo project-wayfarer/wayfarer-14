@@ -52,19 +52,28 @@
       - !type:GroupSelector
         weight: 0.15
         children:
-        - id: NFBlueprintEnergyPickaxe
-        - id: NFBlueprintOreBagOfHolding
-        - id: NFBlueprintConstructionBagOfHolding
-      # T4 - Epic
-      - !type:GroupSelector
-        weight: 0.1
-        children:
+        # Wayfarer: Crusher BPs
+        - id: NFBlueprintWeaponCrusher
+        - id: NFBlueprintWeaponCrusherGlaive
         - id: NFBlueprintWeaponCrusherDagger
-        - id: NFBlueprintMiningDrill
+        # End Wayfarer
+        - id: MiningDrillDiamond # Wayfarer
+#        - id: NFBlueprintEnergyPickaxe # Wayfarer
+#        - id: NFBlueprintOreBagOfHolding # Wayfarer
+#        - id: NFBlueprintConstructionBagOfHolding # Wayfarer
+      # T4 - Epic
+      # Wayfarer: Disabled
+#      - !type:GroupSelector
+#        weight: 0.1
+#        children:
+#        - id: NFBlueprintWeaponCrusherDagger
+#        - id: NFBlueprintMiningDrill
+      # End Wayfarer
       # T5 - Legendary
       - !type:GroupSelector
         weight: 0.05
         children:
-        - id: MiningDrillDiamond
-        - id: NFBlueprintWeaponCrusher
-        - id: NFBlueprintWeaponCrusherGlaive
+        - id: NFBlueprintEnergyPickaxe # Wayfarer
+#        - id: MiningDrillDiamond # Wayfarer
+#        - id: NFBlueprintWeaponCrusher # Wayfarer
+#        - id: NFBlueprintWeaponCrusherGlaive # Wayfarer

@@ -515,10 +515,10 @@
       Text: CyberpunkNeon
   - type: Tag
     tags:
-    - NFBlueprintServiceTechfab
+#    - NFBlueprintServiceTechfab # Wayfarer
     - NFBlueprintMercenaryTechfab
-    - NFBlueprintSalvageTechfab
-    - NFBlueprintAdvanced
+#    - NFBlueprintSalvageTechfab # Wayfarer
+#    - NFBlueprintAdvanced # Wayfarer
     - Document
     - Paper
 
@@ -553,7 +553,7 @@
       - state: inhand-right-text
   - type: Tag
     tags:
-    - NFBlueprintSalvageTechfab
+    - NFBlueprintMercenaryTechfab # Wayfarer: NFBlueprintSalvageTechfab<NFBlueprintMercenaryTechfab
     #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
@@ -596,7 +596,7 @@
       - state: inhand-right-text
   - type: Tag
     tags:
-    - NFBlueprintSalvageTechfab
+    - NFBlueprintMercenaryTechfab # Wayfarer: NFBlueprintSalvageTechfab<NFBlueprintMercenaryTechfab
     #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper
