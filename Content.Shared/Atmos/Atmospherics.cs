@@ -497,6 +497,6 @@ namespace Content.Shared.Atmos
         Halon = 17, // Assmos - /tg/ gases
         Helium = 18, // Assmos - /tg/ gases
         AntiNoblium = 19, // Assmos - /tg/ gases
-        Respiron = 9,
+        Respiron = 20,
     }
 }
