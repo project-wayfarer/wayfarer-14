@@ -2,13 +2,14 @@ using Content.Server.Atmos.Components;
 using Robust.Shared.Spawners;
 using Content.Shared.Atmos;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server._Funkystation.Atmos.Components;
 
 namespace Content.Server.Atmos.EntitySystems;
 
 
 /// <summary>
 /// Assmos - Extinguisher Nozzle
-/// Sets atmospheric temperature to 20C and removes all toxins. 
+/// Sets atmospheric temperature to 20C and removes all toxins.
 /// </summary>
 public sealed class AtmosResinDespawnSystem : EntitySystem
 {

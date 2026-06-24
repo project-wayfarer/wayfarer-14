@@ -1,6 +1,5 @@
 using Content.Shared.Atmos;
 using Content.Shared.Containers.ItemSlots;
-using Content.Server._Funkystation.Atmos.EntitySystems;
 using System.Linq;
 
 namespace Content.Server._Funkystation.Atmos.Components
