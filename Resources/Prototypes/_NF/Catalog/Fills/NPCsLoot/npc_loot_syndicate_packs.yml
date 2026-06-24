@@ -278,8 +278,8 @@
       amount: 2
       prob: 0.1
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: Items
-      prob: 0.05
+#      orGroup: Items
+#      prob: 0.05
 
 # region Medic
 - type: entity
@@ -372,8 +372,8 @@
       orGroup: Items
       prob: 0.3
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: Items
-      prob: 0.05
+#      orGroup: Items
+#      prob: 0.05
 
 # region Tier 3
 - type: entity
@@ -438,8 +438,8 @@
       orGroup: Items
       prob: 0.3
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: Items
-      prob: 0.1
+#      orGroup: Items
+#      prob: 0.1
 
 # region Grenadier
 - type: entity
@@ -500,8 +500,8 @@
       orGroup: Items
       prob: 0.3
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: Items
-      prob: 0.1
+#      orGroup: Items
+#      prob: 0.1
 
 # region Chemwarrior
 - type: entity
@@ -545,8 +545,8 @@
       orGroup: Items
       prob: 0.3
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: Items
-      prob: 0.1
+#      orGroup: Items
+#      prob: 0.1
 
 - type: entity
   parent: NFBaseNpcLootPackSyndicate
@@ -586,8 +586,8 @@
       orGroup: Items
       prob: 0.3
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: Items
-      prob: 0.1
+#      orGroup: Items
+#      prob: 0.1
 
 # region Tier 4 (Boss)
 - type: entity
@@ -649,8 +649,8 @@
       orGroup: Items
       prob: 0.3
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: Items
-      prob: 0.3
+#      orGroup: Items
+#      prob: 0.3
     # BossLoot
     - id: SpawnDungeonLootGunT3
       orGroup: BossLoot
@@ -665,5 +665,5 @@
       orGroup: BossLoot
       prob: 0.05
 #    - id: SpawnDungeonLootNpcSyndicateBlueprints # Wayfarer
-      orGroup: BossLoot
-      prob: 0.3
+#      orGroup: BossLoot
+#      prob: 0.3
