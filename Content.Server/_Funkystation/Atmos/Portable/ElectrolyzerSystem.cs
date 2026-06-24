@@ -291,10 +291,10 @@ public sealed class ElectrolyzerSystem : EntitySystem
 
                 if (ejected != null && args.User != null && TryComp<HandsComponent>(args.User, out var hands))
                 {
-                    var activeHand = _handsSystem.GetActiveHand((args.User.Value, hands));
+                    var activeHand = _handsSystem.GetActiveHand((args.User, hands));
                     if (activeHand != null)
                     {
-                        _handsSystem.TryPickup(args.User, ejected.Value, handName: activeHand, handsComp: hands);
+                        _handsSystem.TryPickup(args.User, ejected.Value, handId: activeHand, handsComp: hands);
                     }
                     else
                     {

@@ -948,8 +948,8 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 zapNumber,
                 lightningPrototypes[zapPower],
                 arcDepth: 0,
-                triggerLightningEvents: true,
-                hitCoordsChance: 0.5f
+                triggerLightningEvents: true
+                //hitCoordsChance: 0.5f
             );
         }
     }
