@@ -247,7 +247,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 20; // Assmos - /tg/ gases
+        public const int TotalNumberOfGases = 21; // Assmos - /tg/ gases
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
