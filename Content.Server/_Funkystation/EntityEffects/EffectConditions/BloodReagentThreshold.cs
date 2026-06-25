@@ -5,13 +5,14 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server.Body.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.EntityEffects.EffectConditions;
 

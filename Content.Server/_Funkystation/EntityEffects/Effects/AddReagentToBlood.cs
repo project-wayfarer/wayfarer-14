@@ -5,9 +5,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Server.Body.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Server.Body.Systems;
+using Content.Shared.Body.Systems;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
@@ -36,7 +37,7 @@ public sealed partial class AddReagentToBlood : EntityEffect
                 var amt = Amount;
                 var solution = new Solution();
                 solution.AddReagent(Reagent, amt);
-                sys.TryAddToChemicals(args.TargetEntity, solution, blood);
+                sys.TryAddToChemicals(args.TargetEntity, solution);
             }
             return;
         }
