@@ -188,6 +188,7 @@ namespace Content.Shared.Atmos
             [Gas.Halon] = Loc.GetString("gas-halon-abbreviation"),
             [Gas.Helium] = Loc.GetString("gas-helium-abbreviation"),
             [Gas.AntiNoblium] = Loc.GetString("gas-anti-noblium-abbreviation"),
+            [Gas.Respiron] = Loc.GetString("gas-respiron-abbreviation"), // Frontier
         };
 
         /// <summary>
@@ -215,6 +216,7 @@ namespace Content.Shared.Atmos
             [Gas.Halon] = Loc.GetString("gases-halon"),
             [Gas.Helium] = Loc.GetString("gases-helium"),
             [Gas.AntiNoblium] = Loc.GetString("gases-anti-noblium"),
+            [Gas.Respiron] = Loc.GetString("gases-respiron"), // Frontier
         };
 
 
@@ -514,17 +516,17 @@ namespace Content.Shared.Atmos
         Ammonia = 6,
         NitrousOxide = 7,
         Frezon = 8,
-        BZ = 9, // Assmos - /tg/ gases
-        Healium = 10, // Assmos - /tg/ gases
-        Nitrium = 11, // Assmos - /tg/ gases
-        Pluoxium = 12, // Assmos - /tg/ gases
-        Hydrogen = 13, // Assmos - /tg/ gases
-        HyperNoblium = 14, // Assmos - /tg/ gases
-        ProtoNitrate = 15, // Assmos - /tg/ gases
-        Zauker = 16, // Assmos - /tg/ gases
-        Halon = 17, // Assmos - /tg/ gases
-        Helium = 18, // Assmos - /tg/ gases
-        AntiNoblium = 19, // Assmos - /tg/ gases
-        Respiron = 20,
+        Respiron = 9, //Frontier
+        BZ = 10, // Assmos - /tg/ gases
+        Healium = 11, // Assmos - /tg/ gases
+        Nitrium = 12, // Assmos - /tg/ gases
+        Pluoxium = 13, // Assmos - /tg/ gases
+        Hydrogen = 14, // Assmos - /tg/ gases
+        HyperNoblium = 15, // Assmos - /tg/ gases
+        ProtoNitrate = 16, // Assmos - /tg/ gases
+        Zauker = 17, // Assmos - /tg/ gases
+        Halon = 18, // Assmos - /tg/ gases
+        Helium = 19, // Assmos - /tg/ gases
+        AntiNoblium = 20, // Assmos - /tg/ gases
     }
 }

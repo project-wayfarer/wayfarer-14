@@ -15,15 +15,15 @@ public sealed partial class GasLeakRuleComponent : Component
 //        Gas.Tritium,
 //        Gas.Frezon,
         Gas.WaterVapor, // the fog
-        Gas.BZ, // Assmos - /tg/ gases
-        Gas.Healium, // Assmos - /tg/ gases
-        Gas.Nitrium, // Assmos - /tg/ gases
+//        Gas.BZ, // Assmos - /tg/ gases
+//        Gas.Healium, // Assmos - /tg/ gases
+//        Gas.Nitrium, // Assmos - /tg/ gases
         Gas.Pluoxium, // Assmos - /tg/ gases
-        Gas.HyperNoblium, // Assmos - /tg/ gases
-        Gas.ProtoNitrate, // Assmos - /tg/ gases
-        Gas.Halon, // Assmos - /tg/ gases
-        Gas.Helium, // Assmos - /tg/ gases
-        Gas.AntiNoblium, // Assmos - /tg/ gases
+//        Gas.HyperNoblium, // Assmos - /tg/ gases
+//        Gas.ProtoNitrate, // Assmos - /tg/ gases
+//        Gas.Halon, // Assmos - /tg/ gases
+//        Gas.Helium, // Assmos - /tg/ gases
+//        Gas.AntiNoblium, // Assmos - /tg/ gases
     };
 
     /// <summary>
