@@ -19,8 +19,10 @@
   - Frontier
   - StationTrafficController
   special:
+  # Wayfarer: STC should have mindshield
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, TrackingImplant ]
+    implants: [ MindShieldImplant, NFSDTrackingImplant ]
+  # End Wayfarer
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift

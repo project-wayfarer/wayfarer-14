@@ -44,12 +44,7 @@ public sealed partial class MechForkComponent : Component
     /// The sound played when a mech is grabbing something
     /// </summary>
     [DataField]
-    public SoundSpecifier GrabSound = new SoundPathSpecifier("/Audio/Mecha/sound_mecha_hydraulic.ogg")
-    // Frontier: Add sound variation
-    {  
-        Params = AudioParams.Default.WithVariation(0.125f)  
-    };
-    // End Frontier
+    public SoundSpecifier GrabSound = new SoundPathSpecifier("/Audio/Mecha/sound_mecha_hydraulic.ogg");
 
     [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? AudioStream;

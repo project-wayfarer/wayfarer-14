@@ -69,8 +69,6 @@
   loadouts:
   - EngineeringClothingOuterVestHazard
   - PlantManagerClothingOuterWinterCE
-  - PlantManagerClothingLongcoatCE
-
 
 - type: loadoutGroup
   id: EngineeringOuterClothing
@@ -135,21 +133,18 @@
 - type: loadoutGroup
   id: PlantManagerEars
   name: loadout-group-contractor-ears
-  hidden: false
+  hidden: true
   loadouts:
   - PlantManagerClothingHeadsetAltEngineeringPlantManager
-  - PlantManagerNFClothingWristsetPlantManager
   fallbacks:
   - PlantManagerClothingHeadsetAltEngineeringPlantManager
 
 - type: loadoutGroup
   id: EngineeringEars
   name: loadout-group-contractor-ears
-  hidden: false
+  hidden: true
   loadouts:
   - EngineeringClothingHeadsetEngineering
-  - EngineeringNFClothingWristsetEngineering
-  - EngineeringNFClothingWristsetAtmospherics
   fallbacks:
   - EngineeringClothingHeadsetEngineering
 

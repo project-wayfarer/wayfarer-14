@@ -272,10 +272,8 @@
     contents:
         - id: NFInflatableWallStack # Frontier: InflatableWallStack<NFInflatableWallStack
           amount: 2
-        - id: NFInflatableDoorStack5 # Frontier: InflatableDoorStack<NFInflatableDoorStack5
-          amount: 1 # Frontier: 2<1
-        - id: NFInflatableWindowStack # Frontier
-          amount: 1 # Frontier
+        - id: NFInflatableDoorStack # Frontier: InflatableDoorStack<NFInflatableDoorStack
+          amount: 2
   - type: Sprite
     layers:
       - state: box

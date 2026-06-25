@@ -791,14 +791,6 @@
   - WFClothingOuterWinterRD
   - WFClothingOuterWinterCMO
   - WFClothingOuterWinterCE
-  - ContractorClothingLongcoatBlack
-  - ContractorClothingLongcoatBrown
-  - ContractorClothingLongcoatNanoTrasen
-  - ContractorClothingLongcoatArashiLabs
-  - ContractorClothingLongcoatQM
-  - ContractorClothingLongcoatRD
-  - ContractorClothingLongcoatCE
-  - ContractorClothingLongcoatCaptain
   - ClothingOuterWinterHoSUnarmored
   - WFClothingOuterWinterWardenUnarmored
   - ClothingOuterWinterSyndie
@@ -941,9 +933,6 @@
   - WFClothingBeltChaplainSash
   - WFClothingBeltChaplainSashFilled
   - WFClothingBeltChaplainDragon
-  - ContractorTrashBagBlue
-  - ContractorTrashBag
-  - ContractorTrashBagBlueFilledTrash
   - WFBooksBag
   - WFChemBag
   - WFOreBag
@@ -1242,23 +1231,6 @@
   - WFClothingHeadsetAltMedicalCommon
   - WFClothingHeadsetAltScienceCommon
   - WFClothingHeadsetAltBloodCommon
-# wristsets
-  - ContractorNFClothingWristsetContractorCommon
-  - ContractorNFClothingWristsetContractorCommonAlt
-  - ContractorNFClothingWristsetCaptainCommon
-  - ContractorNFClothingWristsetCargoCommon
-  - ContractorNFClothingWristsetMiningCommon
-  - ContractorNFClothingWristsetEngineeringCommon
-  - ContractorNFClothingWristsetAtmosphericsCommon
-  - ContractorNFClothingWristsetMedicalCommon
-  - ContractorNFClothingWristsetScienceCommon
-  - ContractorNFClothingWristsetMedicalScienceCommon
-  - ContractorNFClothingWristsetRoboticsCommon
-  - ContractorNFClothingWristsetServiceCommon
-  - ContractorNFClothingWristsetServiceJanitorCommon
-  - ContractorNFClothingWristsetServiceClownCommon
-  - ContractorNFClothingWristsetServiceMimeCommon
-  - ContractorNFClothingWristsetPunkCommon
   fallbacks:
   - WFClothingHeadsetGreyCommon
 
@@ -1572,7 +1544,6 @@
   - WFBeachBall
   - WFCrayonBox
   - WFSoapNT
-  - ContractorClothingHeadHatHairflower
   - PlushieLizard
   - PlushieVox # SKREEEEEEEEEEEE!
   - PlushieExperiment # Wayfarer: EXPIEEEEEEEEE
@@ -1592,7 +1563,6 @@
   - ContractorAccessConfigurator # Coyote: Add Civilian Access Configurator
   # Bureaucracy
   - WFBoxFolderMedicalDoctor
-  - ContractorBoxFolderMixedPapers
   - WFBrbSign
   - WFHandLabeler
   - WFStampsApprovedDenied
@@ -1648,7 +1618,6 @@
   - WFHandheldCrewMonitor
   - WFHypoMini
   - WFBible
-  - ContractorBodycam
 
 # == FACE SLOT
 - type: loadoutGroup
@@ -1717,9 +1686,6 @@
   loadouts:
   - WFClothingWalletLeatherBrown
   - WFClothingWalletLeatherBlack
-  - ContractorClothingWalletLeatherRed
-  - ContractorClothingWalletLeatherBlue
-  - ContractorClothingWalletLeatherGreen
   fallbacks:
   - WFClothingWalletLeatherBrown
 
@@ -1750,6 +1716,5 @@
   # Mime vow and faith implanters removed. The mime vow is replaced by the new Mime trait. Faith is covered by the existing Pious trait.
   #- WFMimePowersImplanter
   #- WFBibleUserImplanter
-  - ContractorWehImplanter
   fallbacks:
   - WFMedicalTrackingImplanter

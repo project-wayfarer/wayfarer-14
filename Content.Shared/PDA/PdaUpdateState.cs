@@ -19,8 +19,7 @@ namespace Content.Shared.PDA
         public string? Address;
         public int Balance; // Frontier
         public string? OwnedShipName; // Frontier
-        public TimeSpan? RoundEndTime; // Frontier
-        public DateTime? ShiftEndTime; // Wayfarer: Absolute UTC wall-clock time when the shift ends (server OS time)
+        public DateTime? ShiftEndTime; // Absolute UTC wall-clock time when the shift ends (server OS time)
 
         public PdaUpdateState(
             List<NetEntity> programs,
@@ -32,12 +31,11 @@ namespace Content.Shared.PDA
             PdaIdInfoText pdaOwnerInfo,
             int balance, // Frontier
             string? ownedShipName, // Frontier
-            TimeSpan? roundEndTime, // Frontier
             string? stationName,
             bool hasUplink = false,
             bool canPlayMusic = false,
             string? address = null,
-            DateTime? shiftEndTime = null) // Wayfarer
+            DateTime? shiftEndTime = null)
             : base(programs, activeUI)
         {
             FlashlightEnabled = flashlightEnabled;
@@ -51,8 +49,7 @@ namespace Content.Shared.PDA
             Address = address;
             Balance = balance; // Frontier
             OwnedShipName = ownedShipName; // Frontier
-            RoundEndTime = roundEndTime; // Frontier
-            ShiftEndTime = shiftEndTime; // Wayfarer
+            ShiftEndTime = shiftEndTime;
         }
     }
 

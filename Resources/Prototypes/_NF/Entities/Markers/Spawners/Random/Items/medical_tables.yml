@@ -501,7 +501,6 @@
       - id: PyraAutoInjector
       - id: EphedrineAutoInjector
       - id: PolyAutoInjector
-      - id: AmbuzolAutoInjector
     # Rare (either good or undesirable)
     - !type:GroupSelector
       weight: 0.05
@@ -512,7 +511,6 @@
       - id: WehMedipen
       - id: EthylredoxrazineAutoInjector
       - id: StimulantAutoInjector
-      - id: AmbuzolPlusAutoInjector
 
 # region Hyposprays
 - type: entityTable
@@ -583,7 +581,6 @@
       - id: LightImplanter
       - id: SadTromboneImplanter
       - id: BikeHornImplanter
-      - id: WehImplanter
       - id: TrackingImplanter
       - id: MindShieldImplanter
     # Uncommon
@@ -606,7 +603,7 @@
       - id: StorageImplanter
       - id: ScramImplanter
       - id: RadioImplanter # Syndicate radio
-      #- id: MacroBombImplanter # Wayfarer: Let's not.
+      - id: MacroBombImplanter
     # Legendary
     - !type:GroupSelector
       weight: 0.001

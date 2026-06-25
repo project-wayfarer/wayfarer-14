@@ -311,8 +311,6 @@
   minLimit: 0
   loadouts:
   - ContractorClothingOuterHardsuitVoidParamed
-  - ContractorClothingOuterCoatRobesGoblin # Goblin specific item
-  - ContractorClothingOuterEVASuitGoblin # Goblin specific item
   - ContractorClothingOuterHoodieGrey
   - ContractorClothingOuterVestHazard
   - ContractorClothingOuterApron
@@ -357,14 +355,6 @@
   - ContractorClothingOuterWinterRD
 #  - ContractorClothingOuterWinterCMO # Temp removed for MOM. Will return if replaced.
   - ContractorClothingOuterWinterCE
-  - ContractorClothingLongcoatBlack
-  - ContractorClothingLongcoatBrown
-  - ContractorClothingLongcoatNanoTrasen
-  - ContractorClothingLongcoatArashiLabs
-  - ContractorClothingLongcoatQM
-  - ContractorClothingLongcoatRD
-  - ContractorClothingLongcoatCE
-  - ContractorClothingLongcoatCaptain
 #  - ContractorClothingOuterCoatLabCmo # Temp removed for MOM. Will return if replaced.
   - ContractorClothingOuterCoatLabSeniorPhysician
   - ContractorClothingOuterCoatRD
@@ -434,9 +424,6 @@
   - ContractorClothingBeltHolster
   - ContractorClothingBeltChaplainSash
   - ContractorClothingBeltChaplainSashFilled
-  - ContractorTrashBagBlue
-  - ContractorTrashBag
-  - ContractorTrashBagBlueFilledTrash
   - ContractorBooksBag
   - ContractorChemBag
   - ContractorOreBag
@@ -600,7 +587,6 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  # headsets
   - ContractorClothingHeadsetGreyCommon
   - ContractorClothingHeadsetCargoCommon
   - ContractorClothingHeadsetMiningCommon
@@ -616,23 +602,6 @@
   - ContractorClothingHeadsetAltEngineeringCommon
   - ContractorClothingHeadsetAltMedicalCommon
   - ContractorClothingHeadsetAltScienceCommon
-  # wristsets
-  - ContractorNFClothingWristsetContractorCommon
-  - ContractorNFClothingWristsetContractorCommonAlt
-  - ContractorNFClothingWristsetCaptainCommon
-  - ContractorNFClothingWristsetCargoCommon
-  - ContractorNFClothingWristsetMiningCommon
-  - ContractorNFClothingWristsetEngineeringCommon
-  - ContractorNFClothingWristsetAtmosphericsCommon
-  - ContractorNFClothingWristsetMedicalCommon
-  - ContractorNFClothingWristsetScienceCommon
-  - ContractorNFClothingWristsetMedicalScienceCommon
-  - ContractorNFClothingWristsetRoboticsCommon
-  - ContractorNFClothingWristsetServiceCommon
-  - ContractorNFClothingWristsetServiceJanitorCommon
-  - ContractorNFClothingWristsetServiceClownCommon
-  - ContractorNFClothingWristsetServiceMimeCommon
-  - ContractorNFClothingWristsetPunkCommon
   fallbacks:
   - ContractorClothingHeadsetGreyCommon
 
@@ -699,6 +668,25 @@
   - ContractorClothingNeckCloakLesbian
   - ContractorClothingNeckCloakPoly # Wayfarer-14
   - ContractorBedsheetRainbow
+  - ClothingNeckLGBTPin
+  - ClothingNeckAllyPin
+  - ClothingNeckAromanticPin
+  - ClothingNeckAsexualPin
+  - ClothingNeckAroacePin
+  - ClothingNeckBisexualPin
+  - ClothingNeckGayPin
+  - ClothingNeckIntersexPin
+  - ClothingNeckLesbianPin
+  - ClothingNeckNonBinaryPin
+  - ClothingNeckPansexualPin
+  - ClothingNeckPluralPin
+  - ClothingNeckOmnisexualPin
+  - ClothingNeckGenderqueerPin
+  - ClothingNeckGenderfluidPin
+  - ClothingNeckTransPin
+  - ClothingNeckAutismPin
+  - ClothingNeckGoldAutismPin
+  - ClothingNeckPolyamoryPin # Wayfarer-14
   - ContractorClothingNeckIFFNeutral
   - ContractorClothingNeckIFFGreen
   - ContractorClothingNeckIFFRed
@@ -840,7 +828,6 @@
   - ContractorBeachBall
   - ContractorCrayonBox
   - ContractorSoapNT
-  - ContractorClothingHeadHatHairflower
   - PlushieLizard
   - ContractorPlushieSharkGrey
   - ContractorPlushieSharkBlue
@@ -854,27 +841,8 @@
   - ContractorHoloGraffitiProjector # Punkish (might be annoying)
   - ContractorCrayonMagic
   - ContractorSprayPainterMagic
-  - ClothingNeckLGBTPin
-  - ClothingNeckAllyPin
-  - ClothingNeckAromanticPin
-  - ClothingNeckAsexualPin
-  - ClothingNeckAroacePin
-  - ClothingNeckBisexualPin
-  - ClothingNeckGayPin
-  - ClothingNeckIntersexPin
-  - ClothingNeckLesbianPin
-  - ClothingNeckNonBinaryPin
-  - ClothingNeckPansexualPin
-  - ClothingNeckPluralPin
-  - ClothingNeckOmnisexualPin
-  - ClothingNeckGenderqueerPin
-  - ClothingNeckGenderfluidPin
-  - ClothingNeckTransPin
-  - ClothingNeckAutismPin
-  - ClothingNeckGoldAutismPin
     # Bureaucracy
   - ContractorBoxFolderMedicalDoctor
-  - ContractorBoxFolderMixedPapers
   - ContractorBrbSign
   - ContractorHandLabeler
   - ContractorStampsApprovedDenied
@@ -921,7 +889,6 @@
   - ContractorHandheldCrewMonitor
   - ContractorHypoMini
   - ContractorBible
-  - ContractorBodycam
 
 - type: loadoutGroup
   id: ContractorFace
@@ -980,9 +947,6 @@
   loadouts:
   - ContractorClothingWalletLeatherBrown
   - ContractorClothingWalletLeatherBlack
-  - ContractorClothingWalletLeatherRed
-  - ContractorClothingWalletLeatherBlue
-  - ContractorClothingWalletLeatherGreen
   fallbacks:
   - ContractorClothingWalletLeatherBrown
 
@@ -1007,7 +971,6 @@
   - ContractorMedicalTrackingImplanter
   - ContractorLightImplanter
   - ContractorBikeHornImplanter
-  - ContractorWehImplanter
   - ContractorSadTromboneImplanter
   #- ContractorMimePowersImplanter # Wayfarer: Mime vow implanter removed, replaced by the new Mime trait
   #- ContractorBibleUserImplanter # Wayfarer: Faith implanter removed, covered by the existing Pious trait

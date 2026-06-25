@@ -35,9 +35,6 @@
             <OptionButton Name="Engines"
                           Prefix="{Loc 'shipyard-console-menu-engine-label'}"
                           HorizontalExpand="True" />
-            <OptionButton Name="SortBy"
-                          Prefix="{Loc 'shipyard-console-menu-sortby-label'}"
-                          HorizontalExpand="True" />
         </BoxContainer>
         <ScrollContainer HorizontalExpand="True"
                          VerticalExpand="True"

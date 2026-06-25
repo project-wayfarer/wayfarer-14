@@ -403,7 +403,7 @@
     table: !type:NestedSelector
       tableId: TableDungeonLootWeaponsAmmunitionRubber
 
-# region ammo practice
+# region ammo incendiary
 - type: entity
   parent: MarkerBasePlaceFree
   id: SpawnDungeonLootAmmoIncendiary # Wayfarer: SpawnDungeonLootAmmoPractice<SpawnDungeonLootAmmoIncendiary
@@ -421,9 +421,9 @@
     offset: 0.1
     deleteSpawnerAfterSpawn: false
     table: !type:NestedSelector
-      tableId: TableDungeonLootWeaponsAmmunitionPractice
+      tableId: TableDungeonLootWeaponsAmmunitionIncendiary
 
-# region ammo incendiary
+# region ammo uranium
 - type: entity
   parent: MarkerBasePlaceFree
   id: SpawnDungeonLootAmmoUranium # Wayfarer: SpawnDungeonLootAmmoIncendiary<SpawnDungeonLootAmmoUranium
@@ -441,9 +441,9 @@
     offset: 0.1
     deleteSpawnerAfterSpawn: false
     table: !type:NestedSelector
-      tableId: TableDungeonLootWeaponsAmmunitionIncendiary
+      tableId: TableDungeonLootWeaponsAmmunitionUranium
 
-# region ammo uranium
+# region ammo practice
 - type: entity
   parent: MarkerBasePlaceFree
   id: SpawnDungeonLootAmmoPractice # Wayfarer: SpawnDungeonLootAmmoUranium<SpawnDungeonLootAmmoPractice
@@ -461,4 +461,4 @@
     offset: 0.1
     deleteSpawnerAfterSpawn: false
     table: !type:NestedSelector
-      tableId: TableDungeonLootWeaponsAmmunitionUranium
+      tableId: TableDungeonLootWeaponsAmmunitionPractice

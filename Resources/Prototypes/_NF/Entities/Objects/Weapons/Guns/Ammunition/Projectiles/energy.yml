@@ -9,7 +9,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 10
+        Heat: 12
 
 # Assault Rifles / Carbines
 - type: entity
@@ -38,18 +38,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 15
-
-- type: entity
-  id: NFBulletLaserRepeater
-  parent: NFBaseBulletLaser
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
-    damage:
-      types:
-        Heat: 12.5
+        Heat: 16
 
 # Rifles
 - type: entity
@@ -61,7 +50,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 17.5
+        Heat: 20
 
 #region Disabler bolts
 - type: entity
@@ -124,7 +113,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 12.5
+        Blunt: 14
         Structural: 30
   - type: Ammo
     muzzleFlash: HitscanEffect
@@ -147,7 +136,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 16.25
+        Blunt: 18
         Structural: 30
 
 - type: entity
@@ -166,7 +155,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 22.5
+        Blunt: 22
         Structural: 35 #Wayfarer 30 -> 35
   - type: PointLight
     color: "#ffffff"

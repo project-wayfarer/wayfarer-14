@@ -194,17 +194,18 @@ public sealed class EmpSystem : SharedEmpSystem
         return msg;
     }
     // End Frontier
-    /*// Wayfarer: Stop EMP disabling radio
-    private void OnRadioSendAttempt(EntityUid uid, EmpDisabledComponent component, ref RadioSendAttemptEvent args)
-    {
-        args.Cancelled = true;
-    }
 
-    private void OnRadioReceiveAttempt(EntityUid uid, EmpDisabledComponent component, ref RadioReceiveAttemptEvent args)
-    {
-        args.Cancelled = true;
-    }
-    */ // Wayfarer End
+    // Wayfarer: Stop EMP disabling radio
+    // private void OnRadioSendAttempt(EntityUid uid, EmpDisabledComponent component, ref RadioSendAttemptEvent args)
+    // {
+    //     args.Cancelled = true;
+    // }
+    //
+    // private void OnRadioReceiveAttempt(EntityUid uid, EmpDisabledComponent component, ref RadioReceiveAttemptEvent args)
+    // {
+    //     args.Cancelled = true;
+    // }
+    // End Wayfarer
 
     //private void OnApcToggleMainBreaker(EntityUid uid, EmpDisabledComponent component, ref ApcToggleMainBreakerAttemptEvent args) // Frontier: Upstream - #28984
     //{

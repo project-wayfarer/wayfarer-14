@@ -1,14 +1,15 @@
 <Document>
   # MCDELIVERY FRANCHISE SHUTTLE
   <Box>
-    <GuideEntityEmbed Entity="ClothingHeadHatMcCrown"/>
-    <GuideEntityEmbed Entity="HappyHonkMcCargo"/>
-    <GuideEntityEmbed Entity="CrateFoodMcCargo"/>    
+  <GuideEntityEmbed Entity="hydroponicsTray"/>
+  <GuideEntityEmbed Entity="KitchenMicrowave"/>
+  <GuideEntityEmbed Entity="KitchenDeepFryer"/>
+  <GuideEntityEmbed Entity="KitchenElectricGrill"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="ShuttleMapMcDelivery" Caption=""/>
+  <GuideEntityEmbed Entity="ShuttleMapBocadillo" Caption=""/>
   </Box>
-  [color=#a4885c]Ship Size:[/color] Micro
+  [color=#a4885c]Ship Size:[/color] Small
 
   [color=#a4885c]Recommended Crew:[/color] 1
 
@@ -16,7 +17,7 @@
 
   # Shuttle Brief
 
-  "A delivery ship build for McCargo. Your meal is approaching. Rapidly."
+  "A delivery ship build for McCargo"
 
   # Ship Functions
 

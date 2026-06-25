@@ -13,8 +13,7 @@
     attackRate: 2
     damage:
       types:
-        Blunt: 10
-        Structural: 10
+        Blunt: 15
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_mace.rsi
     slots:
@@ -30,11 +29,7 @@
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Melee/plasteel_epee.rsi
-    layers:
-    - state: icon
-    - state: icon1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
+    state: icon
   - type: MeleeWeapon
     autoAttack: true
     attackRate: 2
@@ -55,26 +50,6 @@
   - type: Tag
     tags:
     - Sheathable
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        maxVol: 5
-  - type: MeleeChemicalInjector
-    solution: melee
-  - type: RefillableSolution
-    solution: melee
-  - type: InjectableSolution
-    solution: melee
-  - type: SolutionTransfer
-    maxTransferAmount: 1
-  - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 1
-    fillBaseName: icon
-    inHandsFillBaseName: -fill-
-    inHandsMaxFillLevels: 1
-    equippedFillBaseName: -fill-
-    equippedMaxFillLevels: 1
 
 - type: entity
   name: plasteel axe
@@ -85,16 +60,13 @@
   - type: Sprite
     sprite: _NF/Objects/Weapons/Melee/plasteel_axe.rsi
     state: icon
-  - type: Sharp
-  - type: Execution
-  - type: MeleeWeapon  
+  - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
     attackRate: 2
     damage:
       types:
         Slash: 15
-  - type: Prying
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_axe.rsi
     slots:

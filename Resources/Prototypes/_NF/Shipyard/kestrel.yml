@@ -30,7 +30,7 @@
   minPlayers: 0
   stations:
     Kestrel:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Kestrel {1}'
@@ -40,6 +40,3 @@
         - type: StationJobs
           availableJobs:
             WayfarerInterview: [ 0, 0 ]
-            #ContractorInterview: [ 0, 0 ]
-            #PilotInterview: [ 0, 0 ]
-            #MercenaryInterview: [ 0, 0 ]

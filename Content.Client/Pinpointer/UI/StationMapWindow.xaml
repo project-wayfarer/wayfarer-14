@@ -1,12 +1,10 @@
-<!-- Frontier: allow resize -->
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:ui="clr-namespace:Content.Client.Pinpointer.UI"
                       Title="{Loc 'station-map-window-title'}"
-                      Resizable="True"
+                      Resizable="False"
                       SetSize="868 748"
                       MinSize="868 748">
-<!-- End Frontier -->
     <BoxContainer Orientation="Vertical">
         <!-- Station name -->
         <controls:StripeBack>
@@ -15,9 +13,7 @@
             </PanelContainer>
         </controls:StripeBack>
 
-        <!-- Frontier: vertical expand map since its not a set size anymore -->
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
-        <!-- End Frontier -->
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalAlignment="Top">
             <ui:NavMapControl Name="NavMapScreen"/>
 
             <BoxContainer Orientation="Vertical" SetWidth="200">

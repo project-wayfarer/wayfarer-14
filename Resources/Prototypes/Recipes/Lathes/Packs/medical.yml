@@ -78,8 +78,8 @@
 - type: latheRecipePack
   id: MedicalBoardsStatic
   recipes:
-  # - ElectrolysisUnitMachineCircuitboard # Frontier: dynamic
-  # - CentrifugeMachineCircuitboard # Frontier: dynamic
+  - ElectrolysisUnitMachineCircuitboard
+  - CentrifugeMachineCircuitboard
   # - ChemDispenserMachineCircuitboard # Frontier: dynamic
   # - ChemMasterMachineCircuitboard # Frontier: dynamic
   - CondenserMachineCircuitBoard

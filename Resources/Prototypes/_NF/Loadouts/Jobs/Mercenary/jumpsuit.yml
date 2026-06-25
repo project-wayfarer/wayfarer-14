@@ -3,28 +3,24 @@
   price: 0
   equipment:
     jumpsuit: ClothingUniformJumpsuitMercenary
-  groupBy: "UniformJumpsuits"
 
 - type: loadout
   id: MercenaryClothingUniformJumpskirtMercenary
   price: 0
   equipment:
     jumpsuit: ClothingUniformJumpskirtMercenary
-  groupBy: "UniformJumpskirts"
 
 - type: loadout
   id: MercenaryClothingUniformJumpsuitPrivateSec
   price: 0
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrivateSec
-  groupBy: "UniformJumpsuits"
 
 - type: loadout
   id: MercenaryClothingUniformJumpskirtPrivateSec
   price: 0
   equipment:
     jumpsuit: ClothingUniformJumpskirtPrivateSec
-  groupBy: "UniformJumpskirts"
 
 # T3 "Military"
 - type: loadout
@@ -35,7 +31,6 @@
   price: 650
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenary
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: MercenaryClothingUniformJumpsuitMilitaryTurtleneckMercenaryMedic
@@ -45,7 +40,6 @@
   price: 650
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenaryMedic
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: MercenaryClothingUniformJumpsuitMilitaryTurtleneckMercenaryCaptain
@@ -55,7 +49,6 @@
   price: 650
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenaryCaptain
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: MercenaryClothingUniformJumpsuitMilitaryTurtleneckBlueMercenary
@@ -65,7 +58,6 @@
   price: 650
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckBlueMercenary
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: MercenaryClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryMedic
@@ -75,7 +67,6 @@
   price: 650
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryMedic
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: MercenaryClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryCaptain
@@ -85,7 +76,6 @@
   price: 650
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryCaptain
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: MercenaryClothingUniformJumpsuitMilitaryPilot
@@ -95,4 +85,3 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryPilot
-  groupBy: "militaryJumpsuit"

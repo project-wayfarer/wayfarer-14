@@ -1,5 +1,4 @@
-# groupBy types: "CigPacks", "TobaccoPouches", "Lighters", "DrinkFlasks", "ToysBall", "Plushies", "Instruments", "RubberStamps"
-
+# Smokes:
 #T0
 - type: loadout
   id: ContractorCigPackBlue
@@ -7,7 +6,6 @@
   storage:
     back:
     - CigPackBlue
-  groupBy: "CigPacks"
 
 - type: loadout
   id: ContractorCigPackRed
@@ -15,7 +13,6 @@
   storage:
     back:
     - CigPackRed
-  groupBy: "CigPacks"
 
 - type: loadout
   id: ContractorCigPackBlack
@@ -23,7 +20,6 @@
   storage:
     back:
     - CigPackBlack
-  groupBy: "CigPacks"
 
 - type: loadout
   id: ContractorCigPackGreen
@@ -31,7 +27,6 @@
   storage:
     back:
     - CigPackGreen
-  groupBy: "CigPacks"
 
 #T1
 - type: loadout
@@ -43,7 +38,6 @@
   storage:
     back:
     - CigarCase
-  groupBy: "CigPacks"
 
 - type: loadout
   id: ContractorNFAshtray
@@ -85,7 +79,6 @@
   storage:
     back:
     - TobaccoPouchBrownFilled
-  groupBy: "TobaccoPouches"
 
 - type: loadout
   id: ContractorTobaccoPouchBlueFilled
@@ -96,7 +89,6 @@
   storage:
     back:
     - TobaccoPouchBlueFilled
-  groupBy: "TobaccoPouches"
 
 - type: loadout
   id: ContractorTobaccoPouchRedFilled
@@ -107,7 +99,6 @@
   storage:
     back:
     - TobaccoPouchRedFilled
-  groupBy: "TobaccoPouches"
 
 - type: loadout
   id: ContractorTobaccoPouchPurpleFilled
@@ -118,7 +109,6 @@
   storage:
     back:
     - TobaccoPouchPurpleFilled
-  groupBy: "TobaccoPouches"
 
 - type: loadout
   id: ContractorVape
@@ -140,7 +130,6 @@
   storage:
     back:
     - CigarGoldCase
-  groupBy: "CigPacks"
 
 # Lighters:
 #T0
@@ -150,7 +139,6 @@
   storage:
     back:
     - Matchbox
-  groupBy: "Lighters"
 
 #T1
 - type: loadout
@@ -162,7 +150,6 @@
   storage:
     back:
     - Lighter
-  groupBy: "Lighters"
 
 #T2
 - type: loadout
@@ -174,7 +161,6 @@
   storage:
     back:
     - FlippoLighter
-  groupBy: "Lighters"
 
 #T3 for lols
 - type: loadout
@@ -186,7 +172,6 @@
   storage:
     back:
     - FlippoEngravedLighter
-  groupBy: "Lighters"
 
 # Flasks:
 #T0
@@ -196,7 +181,6 @@
   storage:
     back:
     - DrinkFlaskOld
-  groupBy: "DrinkFlasks"
 
 #T1
 - type: loadout
@@ -208,7 +192,6 @@
   storage:
     back:
     - DrinkShinyFlask
-  groupBy: "DrinkFlasks"
 
 #T2
 - type: loadout
@@ -220,7 +203,6 @@
   storage:
     back:
     - DrinkFlask
-  groupBy: "DrinkFlasks"
 
 #T3 for lols
 - type: loadout
@@ -232,7 +214,6 @@
   storage:
     back:
     - DrinkVacuumFlask
-  groupBy: "DrinkFlasks"
 
 # Misc:
 #T0
@@ -256,14 +237,6 @@
   storage:
     back:
     - UrnMortuary
-    
-- type: loadout
-  id: ContractorClothingHeadHatHairflower
-  price: 0
-  storage:
-    back:
-    - ClothingHeadHatHairflower
-
 
 #Start DeltaV
 - type: loadout
@@ -284,7 +257,6 @@
   storage:
     back:
     - Basketball
-  groupBy: "ToysBall"
 
 - type: loadout
   id: ContractorFootball
@@ -295,7 +267,6 @@
   storage:
     back:
     - Football
-  groupBy: "ToysBall"
 
 - type: loadout
   id: ContractorBeachBall
@@ -306,7 +277,6 @@
   storage:
     back:
     - BeachBall
-  groupBy: "ToysBall"
 
 #T2
 - type: loadout
@@ -402,7 +372,6 @@
   storage:
     back:
     - PlushieSharkGrey
-  groupBy: "Plushies"
 
 - type: loadout
   id: ContractorPlushieSharkBlue
@@ -413,7 +382,6 @@
   storage:
     back:
     - PlushieSharkBlue
-  groupBy: "Plushies"
 
 - type: loadout
   id: ContractorPlushieSharkPink
@@ -424,7 +392,6 @@
   storage:
     back:
     - PlushieSharkPink
-  groupBy: "Plushies"
 
 - type: loadout
   id: ContractorHarmonicaInstrument
@@ -435,7 +402,6 @@
   storage:
     back:
     - HarmonicaInstrument
-  groupBy: "Instruments"
 
 - type: loadout
   id: ContractorSaxophoneInstrument
@@ -446,7 +412,6 @@
   storage:
     back:
     - SaxophoneInstrument
-  groupBy: "Instruments"
 
 - type: loadout
   id: ContractorAcousticGuitarInstrument
@@ -457,7 +422,6 @@
   storage:
     back:
     - AcousticGuitarInstrument
-  groupBy: "Instruments"
 
 #T2
 - type: loadout
@@ -480,7 +444,6 @@
   storage:
     back:
     - PlushieRGBee
-  groupBy: "Plushies"
 
 - type: loadout
   id: ContractorMysterySpaceBladeBox
@@ -532,14 +495,6 @@
     - BoxFolderMedicalDoctor
 
 - type: loadout
-  id: ContractorBoxFolderMixedPapers
-  price: 1000
-  name: folder (mixed papers)
-  storage:
-    back:
-    - BoxFolderMixedPapers
-
-- type: loadout
   id: ContractorBrbSign
   price: 500
   storage:
@@ -563,7 +518,6 @@
     back:
     - RubberStampApproved
     - RubberStampDenied
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampClown
@@ -571,7 +525,6 @@
   storage:
     back:
     - RubberStampClown
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampMime
@@ -579,7 +532,6 @@
   storage:
     back:
     - RubberStampMime
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampTrader
@@ -587,7 +539,6 @@
   storage:
     back:
     - RubberStampTrader
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampChaplain
@@ -595,7 +546,6 @@
   storage:
     back:
     - RubberStampChaplain
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampCaptain
@@ -603,7 +553,6 @@
   storage:
     back:
     - RubberStampCaptain
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampLawyer
@@ -611,7 +560,6 @@
   storage:
     back:
     - RubberStampLawyer
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampPsychologist
@@ -619,7 +567,6 @@
   storage:
     back:
     - RubberStampPsychologist
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampDoctor
@@ -627,7 +574,6 @@
   storage:
     back:
     - RubberStampDoctor
-  groupBy: "RubberStamps"
 
 - type: loadout
   id: ContractorRubberStampEngineer
@@ -635,4 +581,3 @@
   storage:
     back:
     - RubberStampEngineer
-  groupBy: "RubberStamps"

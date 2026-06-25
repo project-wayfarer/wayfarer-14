@@ -1,5 +1,7 @@
 - type: loadout
   id: BrigmedicClothingHeadHatBrigmedic
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFHeadwearCapable
   equipment:
     head: ClothingHeadHatNfsdBeretCream
-  groupBy: "HeadHatBeret"

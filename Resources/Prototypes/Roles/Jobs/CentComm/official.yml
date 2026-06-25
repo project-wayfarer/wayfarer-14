@@ -20,17 +20,16 @@
   id: CentcomGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomOfficial
-    back: ClothingBackpackCentcom # Frontier
     shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatCentcomcap # Frontier: ClothingHeadHatCentcom<ClothingHeadHatCentcomcap
+    head: ClothingHeadHatCentcom
     eyes: ClothingEyesGlassesSunglasses
-    gloves: ClothingHandsGlovesCombat # Frontier: ClothingHandsGlovesColorBlack<ClothingHandsGlovesCombat
+    gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorCentcommCarapace
     id: CentcomPDA
     ears: ClothingHeadsetAltCentCom
-    belt: BoxFolderCentComClipboard # Frontier: NFWeaponPistolN1984<BoxFolderCentComClipboard
-    pocket1: NFWeaponPistolN1984 # Frontier: BoxFolderBlack<NFWeaponPistolN1984
-    #pocket2: PenCentcom # Frontier: commented out
+    belt: NFWeaponPistolN1984 # Frontier
+    pocket1: BoxFolderBlack
+    pocket2: PenCentcom
 
 
 - type: chameleonOutfit

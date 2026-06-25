@@ -1,5 +1,6 @@
 #region Base
 - type: entity
+  name: mercenary
   abstract: true
   parent:
   - NFMobNoEquipmentOnGib
@@ -10,7 +11,6 @@
   - MobHumanoidInvetorySimplified
   - MobHumanoidHostileAISimpleRanged
   id: MobMercenaryBase
-  name: mercenary
   description: A mercenary, merc, soldier of fortune, hired gun, dog of war.
   components:
   - type: RandomHumanoidAppearance
@@ -63,13 +63,16 @@
     dataset: mercenaryhumanoidchatter
   - type: AutoWakeUp
 
-# region T1 Melee
+# Variations
+#region Tier 1
 - type: entity
-  parent: [MobMercenaryBase, MobHumanoidHostileAISimpleMelee]
-  id: MobMercenarySoldierKnife
-  categories: [ HideSpawnMenu ]
   name: mercenary soldier
+  parent:
+  - MobMercenaryBase
+  - MobHumanoidHostileAISimpleMelee
+  id: MobMercenarySoldierKnife
   description: Low-ranking soldiers armed with a variety of surplus weapons.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes:
@@ -107,13 +110,14 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
 
-# region T1 Ranged
 - type: entity
-  parent: [MobMovementSpeedModifierRanged, MobMercenaryBase]
-  id: MobMercenarySoldierPistol
-  categories: [ HideSpawnMenu ]
   name: mercenary soldier
+  parent:
+  - MobMovementSpeedModifierRanged
+  - MobMercenaryBase
+  id: MobMercenarySoldierPistol
   description: Low-ranking soldiers armed with a variety of surplus weapons.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes:
@@ -154,13 +158,12 @@
     - FullAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/pistol.ogg
 
-# region T1 Ranged Alt
 - type: entity
-  parent: MobMercenaryBase
-  id: MobMercenarySoldierNovalite
-  categories: [ HideSpawnMenu ]
   name: mercenary soldier
+  parent: MobMercenaryBase
+  id: MobMercenarySoldierNovalite # No mosin: novalite rifle now
   description: Low-ranking soldiers armed with a variety of surplus weapons.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes:
@@ -201,13 +204,15 @@
     - SemiAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
 
-# region T2 Melee
+#region Tier 2
 - type: entity
-  parent: [MobMercenaryBase, MobHumanoidHostileAISimpleMelee]
-  id: MobMercenaryBreacherMachete
-  categories: [ HideSpawnMenu ]
   name: mercenary breacher
+  parent:
+  - MobMercenaryBase
+  - MobHumanoidHostileAISimpleMelee
+  id: MobMercenaryBreacherMachete
   description: Shock troopers that specialize in using the element of surprise and swift, aggressive action to achieve their objectives.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes:
@@ -246,17 +251,68 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
 
-# region T2 Ranged
 - type: entity
-  parent: [MobMovementSpeedModifierRanged, MobMercenaryBase]
-  id: MobMercenaryBreacherShotgun
   name: mercenary breacher
+  parent:
+  - MobMovementSpeedModifierRanged
+  - MobMercenaryBase
+  id: MobMercenarySoldierRevolver
   description: Shock troopers that specialize in using the element of surprise and swift, aggressive action to achieve their objectives.
   categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes:
     - MobHumanoidMercenaryGearRangedT2
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - sprite: _NF/Mobs/Species/Templates/human.rsi
+      state: human
+    - sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+      state: equipped-INNERCLOTHING
+      color: "#3d5c87"
+    - sprite: Clothing/OuterClothing/Coats/hos_trenchcoat.rsi
+      state: equipped-OUTERCLOTHING
+    - sprite: Clothing/Mask/neckgaiter.rsi
+      state: equipped-MASK
+    - sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+      state: equipped-EYES
+    - sprite: Clothing/Head/Hats/hoshat.rsi
+      state: equipped-HELMET
+    - sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
+      state: equipped-NECK-off
+    - sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
+      state: equipped-NECK-on
+      color: "#a9b6bd"
+      shader: unshaded
+  - type: BasicEntityAmmoProvider
+    proto: NFCartridgePistol35Overpressure
+    capacity: 6
+    count: 6
+  - type: Gun
+    showExamineText: false
+    minAngle: 11
+    maxAngle: 25
+    angleIncrease: 3
+    angleDecay: 3
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+
+- type: entity
+  name: mercenary breacher
+  parent:
+  - MobMovementSpeedModifierRanged
+  - MobMercenaryBase
+  id: MobMercenaryBreacherShotgun
+  description: Shock troopers that specialize in using the element of surprise and swift, aggressive action to achieve their objectives.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes:
+    - MobHumanoidMercenaryGearRangedAltT2
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -297,62 +353,15 @@
     - SemiAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
 
-# region T2 Ranged Alt
+#region Tier 3
 - type: entity
-  parent: [MobMovementSpeedModifierRanged, MobMercenaryBase]
-  id: MobMercenarySoldierRevolver
-  name: mercenary gun slinger
-  description: Shock troopers that specialize in using the element of surprise and swift, aggressive action to achieve their objectives.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Loadout
-    prototypes:
-    - MobHumanoidMercenaryGearRangedAltT2
-  - type: Sprite
-    drawdepth: Mobs
-    layers:
-    - sprite: _NF/Mobs/Species/Templates/human.rsi
-      state: human
-    - sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-      state: equipped-INNERCLOTHING
-      color: "#3d5c87"
-    - sprite: Clothing/OuterClothing/Coats/hos_trenchcoat.rsi
-      state: equipped-OUTERCLOTHING
-    - sprite: Clothing/Mask/neckgaiter.rsi
-      state: equipped-MASK
-    - sprite: Clothing/Eyes/Glasses/sunglasses.rsi
-      state: equipped-EYES
-    - sprite: Clothing/Head/Hats/hoshat.rsi
-      state: equipped-HELMET
-    - sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
-      state: equipped-NECK-off
-    - sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
-      state: equipped-NECK-on
-      color: "#a9b6bd"
-      shader: unshaded
-  - type: BasicEntityAmmoProvider
-    proto: NFCartridgePistol35Overpressure
-    capacity: 6
-    count: 6
-  - type: Gun
-    showExamineText: false
-    minAngle: 11
-    maxAngle: 25
-    angleIncrease: 3
-    angleDecay: 3
-    fireRate: 2
-    selectedMode: SemiAuto
-    availableModes:
-    - SemiAuto
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/pistol.ogg
-
-# region T3 Ranged
-- type: entity
-  parent: [MobMovementSpeedModifierRanged, MobMercenaryBase]
-  id: MobMercenarySpecialistMedic
-  categories: [ HideSpawnMenu ]
   name: mercenary paramedic
+  parent:
+  - MobMovementSpeedModifierRanged
+  - MobMercenaryBase
+  id: MobMercenarySpecialistMedic
   description: Experienced mercenaries, specialists are practised and proficient in combat or support roles, possibly both.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes:
@@ -411,16 +420,17 @@
     soundHit:
       path: /Audio/Items/drill_hit.ogg
 
-# region T3 Ranged Alt
 - type: entity
-  parent: [MobMovementSpeedModifierRanged, MobMercenaryBase]
+  name: mercenary ranger
+  parent:
+  - MobMovementSpeedModifierRanged
+  - MobMercenaryBase
   id: MobMercenarySpecialistAssault
   categories: [ HideSpawnMenu ]
-  name: mercenary ranger
   components:
   - type: Loadout
     prototypes:
-    - MobHumanoidMercenaryGearRangedAltT3
+    - MobHumanoidMercenaryGearRangedT3Alt
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -464,17 +474,19 @@
     - Burst
     soundGunshot: /Audio/_NF/Weapons/Guns/Gunshots/rifle.ogg
 
-# region T4 Boss
+#region Tier 4 - Boss
 - type: entity
-  parent: [MobHostileBossBase, MobMercenaryBase]
-  id: MobMercenaryCaptain
-  categories: [ HideSpawnMenu ]
   name: mercenary captain
+  parent:
+   - MobHostileBossBase
+   - MobMercenaryBase
+  id: MobMercenaryCaptain
   description: The leaders of these bands of brigands, a mercenary captain is both cruel and lethally effective. Exercise caution.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes:
-    - MobHumanoidMercenaryGearBoss
+    - MobHumanoidMercenaryGearTier4Captain
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -534,9 +546,9 @@
 
 - type: entity
   id: GunSideArmFan
-  categories: [ HideSpawnMenu ]
   name: trusty Lucky 45
   description: Shoots bullets.
+  categories: [ HideSpawnMenu ]
   components:
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 5
@@ -559,8 +571,8 @@
     projectileSpeed: 30
 
 - type: entity
-  parent: BaseAction
   id: ActionSideArmFan
+  parent: BaseAction
   categories: [ HideSpawnMenu ]
   name: "[color=yellow]Lucky 45[/color]"
   description: "Luck always beats skill, ya weasel. [color=yellow]5 second between ammo recharges.[/color]"
@@ -575,10 +587,10 @@
   - type: WorldTargetAction
     event: !type:ActionGunShootEvent
 
-# region Space T1
+#region Space, Tier 1
 - type: entity
-  abstract: true
   id: MobMercenaryEVAKitTier1
+  abstract: true
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -634,25 +646,34 @@
     netsync: false
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVAMelee, MobMercenaryEVAKitTier1, MobMercenarySoldierKnife]
   id: MobMercenarySoldierEVAKnife
+  parent:
+  - MobMovementSpeedModifierEVAMelee
+  - MobMercenaryEVAKitTier1
+  - MobMercenarySoldierKnife
   categories: [ HideSpawnMenu ]
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVARanged, MobMercenaryEVAKitTier1, MobMercenarySoldierPistol]
   id: MobMercenarySoldierEVAPistol
+  parent:
+  - MobMovementSpeedModifierEVARanged
+  - MobMercenaryEVAKitTier1
+  - MobMercenarySoldierPistol
   categories: [ HideSpawnMenu ]
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVARanged, MobMercenaryEVAKitTier1, MobMercenarySoldierNovalite]
   id: MobMercenarySoldierEVANovalite
+  parent:
+  - MobMovementSpeedModifierEVARanged
+  - MobMercenaryEVAKitTier1
+  - MobMercenarySoldierNovalite
   categories: [ HideSpawnMenu ]
 
-# region Space T2
+#region Space, Tier 2
 - type: entity
-  abstract: true
-  parent: MobMercenaryEVAKitTier1
   id: MobMercenaryEVAKitTier2
+  parent: MobMercenaryEVAKitTier1
+  abstract: true
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -678,25 +699,34 @@
       shader: unshaded
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVAMelee, MobMercenaryEVAKitTier2, MobMercenaryBreacherMachete]
   id: MobMercenaryBreacherEVAMachete
+  parent:
+  - MobMovementSpeedModifierEVAMelee
+  - MobMercenaryEVAKitTier2
+  - MobMercenaryBreacherMachete
   categories: [ HideSpawnMenu ]
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVARanged, MobMercenaryEVAKitTier2, MobMercenarySoldierRevolver]
   id: MobMercenaryBreacherEVARevolver
+  parent:
+  - MobMovementSpeedModifierEVARanged
+  - MobMercenaryEVAKitTier2
+  - MobMercenarySoldierRevolver
   categories: [ HideSpawnMenu ]
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVARanged, MobMercenaryEVAKitTier2, MobMercenaryBreacherShotgun]
   id: MobMercenaryBreacherEVAShotgun
+  parent:
+  - MobMovementSpeedModifierEVARanged
+  - MobMercenaryEVAKitTier2
+  - MobMercenaryBreacherShotgun
   categories: [ HideSpawnMenu ]
 
-# region Space T3
+#region Space, Tier 3
 - type: entity
-  abstract: true
-  parent: MobMercenaryEVAKitTier1
   id: MobMercenaryEVAKitTier3
+  parent: MobMercenaryEVAKitTier1
+  abstract: true
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -722,20 +752,26 @@
       shader: unshaded
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVARanged, MobMercenaryEVAKitTier3, MobMercenarySpecialistMedic]
   id: MobMercenarySpecialistEVAMedic
+  parent:
+  - MobMovementSpeedModifierEVARanged
+  - MobMercenaryEVAKitTier3
+  - MobMercenarySpecialistMedic
   categories: [ HideSpawnMenu ]
 
 - type: entity
-  parent: [MobMovementSpeedModifierEVARanged, MobMercenaryEVAKitTier3, MobMercenarySpecialistAssault]
   id: MobMercenarySpecialistEVAAssault
+  parent:
+  - MobMovementSpeedModifierEVARanged
+  - MobMercenaryEVAKitTier3
+  - MobMercenarySpecialistAssault
   categories: [ HideSpawnMenu ]
 
-#region Space T4 Boss
+#region Space, Tier 4 - Boss
 - type: entity
-  abstract: true
-  parent: MobMercenaryEVAKitTier1
   id: MobMercenaryEVAKitTier4
+  parent: MobMercenaryEVAKitTier1
+  abstract: true
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -764,6 +800,8 @@
       shader: unshaded
 
 - type: entity
-  parent: [MobMercenaryEVAKitTier4, MobMercenaryCaptain]
   id: MobMercenaryCaptainEVA
+  parent:
+  - MobMercenaryEVAKitTier4
+  - MobMercenaryCaptain
   categories: [ HideSpawnMenu ]

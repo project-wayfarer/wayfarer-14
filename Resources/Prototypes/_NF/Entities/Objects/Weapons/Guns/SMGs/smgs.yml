@@ -39,7 +39,7 @@
 
 - type: entity
   id: NFWeaponSubMachineGunDrozd
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen ]
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen ]
   name: Drozd
   description: A fully automatic SMG.
   components: &drozdComponents
@@ -53,7 +53,7 @@
 
 - type: entity
   id: NFWeaponSubMachineGunDrozdLessLethal # Frontier-specific rubber variant
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponSubMachineGunChamber35Rubber, NFBaseWeaponFrameSubMachineGunNanotrasen ]
+  parent: [ NFBaseWeaponSubMachineGunChamber35Rubber, NFBaseWeaponFrameSubMachineGunNanotrasen ]
   name: Drozd
   description: A fully automatic SMG.
   suffix: Frontier, Less-Lethal

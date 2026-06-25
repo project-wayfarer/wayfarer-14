@@ -437,9 +437,9 @@
 
 # region Expedition
 - type: entity
-  abstract: true
-  parent: [ BaseBMContraband, NFBlueprintGeneral ] # Wayfarer: BaseC3Contraband<BaseBMContraband
+  parent: [ BaseBMContraband, NFBaseBlueprint ] # Wayfarer: BaseC3Contraband<BaseBMContraband
   id: NFBaseBlueprintExpedition
+  abstract: true
   components:
   - type: Paper
     stampState: paper_stamp-rd
@@ -452,27 +452,16 @@
     price: 1000
 
 - type: entity
-  abstract: true
-  parent: [ NFBaseBlueprintExpedition, NFBlueprintSalvage ]
+  parent: NFBaseBlueprintExpedition
   id: NFBaseBlueprintExpeditionSalvage
-
-- type: entity
   abstract: true
-  parent: [ NFBaseBlueprintExpedition, NFBlueprintArsenalMercenary ]
-  id: NFBaseBlueprintExpeditionArmory
-
-- type: entity
-  abstract: true
-  parent: NFBaseBlueprintExpedition
-  id: NFBaseBlueprintExpeditionPunk
   components:
   - type: Sprite
     layers:
       - state: icon-base
-        map: [ "blueprintIconBase" ]
+        color: "#a6671a"
       - state: icon-text
-        shader: unshaded
-        map: [ "blueprintIconText" ]
+        color: "#db7372"
       - sprite: Objects/Misc/bureaucracy.rsi
         state: paper_stamp-generic
         offset: 0.15,-0.1
@@ -486,71 +475,14 @@
     inhandVisuals:
       left:
       - state: inhand-left-base
-        map: [ "blueprintInHandLBase" ]
+        color: "#a6671a"
       - state: inhand-left-text
-        shader: unshaded
-        map: [ "blueprintInHandLText" ]
+        color: "#db7372"
       right:
       - state: inhand-right-base
-        map: [ "blueprintInHandRBase" ]
+        color: "#a6671a"
       - state: inhand-right-text
-        shader: unshaded
-        map: [ "blueprintInHandRText" ]
-  - type: RandomSprite
-    available:
-      - blueprintIconBase:
-          icon-base: Base
-        blueprintIconText:
-          icon-text: Text
-        blueprintInHandLBase:
-          inhand-left-base: Base
-        blueprintInHandLText:
-          inhand-left-text: Text
-        blueprintInHandRBase:
-          inhand-right-base: Base
-        blueprintInHandRText:
-          inhand-right-text: Text
-    mappedColors:
-      Base: CyberpunkDark
-      Text: CyberpunkNeon
-  - type: Tag
-    tags:
-    - NFBlueprintServiceTechfab
-    - NFBlueprintMercenaryTechfab
-    - NFBlueprintSalvageTechfab
-    - NFBlueprintAdvanced
-    - Document
-    - Paper
-
-- type: entity
-  abstract: true
-  parent: NFBaseBlueprintExpedition
-  id: NFBaseBlueprintExpeditionMercenary
-  components:
-  - type: Sprite
-    layers:
-      - state: icon-base
-        color: "#7b7b3f"
-      - state: icon-text
-      - sprite: Objects/Misc/bureaucracy.rsi
-        state: paper_stamp-generic
-        offset: 0.15,-0.1
-        map: ["enum.PaperVisualLayers.Stamp"]
-        visible: false
-      - sprite: Objects/Misc/bureaucracy.rsi
-        state: paper_words
-        map: ["enum.PaperVisualLayers.Writing"]
-        visible: false
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-base
-        color: "#7b7b3f"
-      - state: inhand-left-text
-      right:
-      - state: inhand-right-base
-        color: "#7b7b3f"
-      - state: inhand-right-text
+        color: "#db7372"
   - type: Tag
     tags:
     - NFBlueprintSalvageTechfab
@@ -559,44 +491,41 @@
     - Paper
 
 - type: entity
+  parent: NFBaseBlueprintExpedition
+  id: NFBaseBlueprintExpeditionArmory
   abstract: true
-  parent: [ NFBaseBlueprintExpedition, NFBlueprintEngineering ]
-  id: NFBaseBlueprintExpeditionRogueSilicon
-
-- type: entity
-  abstract: true
-  parent: [ BaseC3SyndicateContraband, NFBaseBlueprintExpedition ]
-  id: NFBaseBlueprintExpeditionSyndicate
   components:
   - type: Sprite
     layers:
       - state: icon-base
-        color: "#7f272b"
+        color: "#d21a1a"
       - state: icon-text
+        color: "#db7372"
       - sprite: Objects/Misc/bureaucracy.rsi
         state: paper_stamp-generic
-        color: "#00ff00"
         offset: 0.15,-0.1
         map: ["enum.PaperVisualLayers.Stamp"]
         visible: false
       - sprite: Objects/Misc/bureaucracy.rsi
         state: paper_words
-        color: "#008040"
         map: ["enum.PaperVisualLayers.Writing"]
         visible: false
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-base
-        color: "#7f272b"
+        color: "#d21a1a"
       - state: inhand-left-text
+        color: "#db7372"
       right:
       - state: inhand-right-base
-        color: "#7f272b"
+        color: "#d21a1a"
       - state: inhand-right-text
+        color: "#db7372"
   - type: Tag
     tags:
-    - NFBlueprintSalvageTechfab
+    - NFBlueprintMercenaryTechfab
+    - NFBlueprintNfsdTechfab
     #- NFBlueprintAdvanced # Wayfarer: Omni BP Removal
     - Document
     - Paper

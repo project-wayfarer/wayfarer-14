@@ -93,16 +93,10 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  # headsets
   - MercenaryClothingHeadsetAltMercenaryCommon
   - MercenaryClothingHeadsetSecurityCommon
   - MercenaryClothingHeadsetBrigmedicCommon
   - MercenaryClothingHeadsetAltSecurityCommon
-  # wristsets
-  - MercenaryNFClothingWristsetMercenaryCommon
-  - MercenaryNFClothingWristsetPrivateSecCommon
-  - MercenaryNFClothingWristsetSecurityCommon
-  - MercenaryNFClothingWristsetBrigmedicCommon
   subgroups:
   - PilotEars
   - ContractorEars
@@ -147,7 +141,6 @@
   loadouts:
   - MercenaryClothingMaskGasMercenary
   - MercenaryClothingMaskGasSecurity
-  - MercenaryClothingMaskBalaclavaBlack
   subgroups:
   - PilotFace
   - ContractorFace

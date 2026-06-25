@@ -3,6 +3,7 @@ using Content.Server.Access.Components; // Coyote
 using Content.Server.Access.Systems; // Coyote
 using Content.Server.Administration;
 using Content.Server.EUI;
+using Content.Shared.Medical.SuitSensors; // Coyote
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords;
 using Content.Server.StationRecords.Systems;
@@ -12,14 +13,11 @@ using Content.Shared.CrewManifest;
 using Content.Shared.GameTicking;
 using Content.Shared.Roles;
 using Content.Shared.Station.Components;
-using Content.Shared.StationRecords;
+using Content.Shared.SSDIndicator; // Coyote
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-
-using Content.Shared.Medical.SuitSensors; // Coyote
-using Content.Shared.SSDIndicator; // Coyote
 
 namespace Content.Server.CrewManifest;
 

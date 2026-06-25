@@ -63,9 +63,7 @@ public sealed partial class NFShuttleDockControl : BaseShuttleControl
         _dockSystem = EntManager.System<DockingSystem>();
         _shuttles = EntManager.System<SharedShuttleSystem>();
         _xformSystem = EntManager.System<SharedTransformSystem>();
-
-        // let the map range grow/shrink with the control size instead of scaling up to match the range
-        RescaleMap = false;
+        MinSize = new Vector2(SizeFull, SizeFull);
     }
 
     public void SetViewedDock(DockingPortState? dockState)
@@ -115,10 +113,10 @@ public sealed partial class NFShuttleDockControl : BaseShuttleControl
         var selectedDockToOurGrid = Matrix3Helpers.CreateTransform(_coordinates.Value.Position, Angle.Zero);
         var selectedDockToWorld = Matrix3x2.Multiply(selectedDockToOurGrid, ourGridToWorld);
 
-        Box2 viewBoundsWorld = Matrix3Helpers.TransformBox(selectedDockToWorld, new Box2(-ScaledWorldRange, ScaledWorldRange));
+        Box2 viewBoundsWorld = Matrix3Helpers.TransformBox(selectedDockToWorld, new Box2(-WorldRangeVector, WorldRangeVector));
 
         Matrix3x2.Invert(selectedDockToWorld, out var worldToSelectedDock);
-        var selectedDockToView = Matrix3x2.CreateScale(new Vector2(MinimapScale, -MinimapScale)) * Matrix3x2.CreateTranslation(MidPoint);
+        var selectedDockToView = Matrix3x2.CreateScale(new Vector2(MinimapScale, -MinimapScale)) * Matrix3x2.CreateTranslation(MidPointVector);
 
         // Draw nearby grids
         var controlBounds = PixelSizeBox;
@@ -126,7 +124,7 @@ public sealed partial class NFShuttleDockControl : BaseShuttleControl
         _mapManager.FindGridsIntersecting(gridXform.MapID, viewBoundsWorld, ref _grids);
 
         // offset the dotted-line position to the bounds.
-        Vector2? viewedDockPos = _viewedState != null ? MidPoint : null;
+        Vector2? viewedDockPos = _viewedState != null ? MidPointVector : null;
 
         if (viewedDockPos != null)
         {

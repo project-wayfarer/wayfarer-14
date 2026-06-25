@@ -526,7 +526,7 @@
   - type: ItemToggle
   - type: ProximityBeeper
   - type: ProximityDetector
-    range: 64
+    range: 20
     components:
     - type: GasDeposit
   - type: Beeper

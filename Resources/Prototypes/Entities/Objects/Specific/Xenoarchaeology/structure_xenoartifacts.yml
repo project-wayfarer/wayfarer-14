@@ -37,7 +37,7 @@
         layer: # doesn't collide with artifact storage
         - Opaque
         mask:
-        - CrateMask # Frontier: MachineMask<CrateMask this is so they can go under plastic flaps
+        - MachineMask
 
 - type: entity
   parent: BaseXenoArtifactStructure

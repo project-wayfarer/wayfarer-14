@@ -403,15 +403,13 @@
     Poison:
       metabolismRate: 0.2
       effects:
-# Begin Frontier
-#      - !type:HealthChange
-#        conditions:
-#        - !type:ReagentThreshold
-#          min: 15
-#        damage:
-#          types:
-#            Cellular: 0.5
-# End Frontier
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+        damage:
+          types:
+            Cellular: 0.5
       - !type:Polymorph
         prototype: SmartCorgiMorph
         conditions:

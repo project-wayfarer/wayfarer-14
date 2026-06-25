@@ -15,15 +15,6 @@ namespace Content.Client._NF.Shipyard.UI;
 [GenerateTypedNameReferences]
 public sealed partial class ShipyardConsoleMenu : FancyWindow
 {
-    /// <summary>
-    ///     How the vessels are sorted in the shipyard menu
-    /// </summary>
-    private enum VesselSortBy : byte
-    {
-        Name,
-        Price
-    }
-
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     public event Action<ButtonEventArgs>? OnSellShip;
@@ -32,11 +23,9 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     private readonly List<VesselSize> _categoryStrings = new();
     private readonly List<VesselClass> _classStrings = new();
     private readonly List<VesselEngine> _engineStrings = new();
-    private readonly List<VesselSortBy> _sortByStrings = new();
     private VesselSize? _category;
     private VesselClass? _class;
     private VesselEngine? _engine;
-    private VesselSortBy? _sortby;
 
     private List<string> _lastAvailableProtos = new();
     private List<string> _lastUnavailableProtos = new();
@@ -53,7 +42,6 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
         Categories.OnItemSelected += OnCategoryItemSelected;
         Classes.OnItemSelected += OnClassItemSelected;
         Engines.OnItemSelected += OnEngineItemSelected;
-        SortBy.OnItemSelected += OnSortByItemSelected;
         SellShipButton.OnPressed += (args) => { OnSellShip?.Invoke(args); };
         RenameButton.OnPressed += OnRenameButtonPressed;
     }
@@ -77,7 +65,6 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
         PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
     }
 
-    //Wayfarer Start
     private void OnRenameButtonPressed(ButtonEventArgs args)
     {
         var newName = RenameLineEdit.Text.Trim();
@@ -92,12 +79,6 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
 
         OnRenameShip?.Invoke(newName);
         RenameLineEdit.Text = "";
-    }
-    //Wayfarer End
-    private void OnSortByItemSelected(OptionButton.ItemSelectedEventArgs args)
-    {
-        SetSortByText(args.Id);
-        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
     }
 
     private void OnSearchBarTextChanged(LineEdit.LineEditEventArgs args)
@@ -119,12 +100,6 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     {
         _engine = id == 0 ? null : _engineStrings[id];
         Engines.SelectId(id);
-    }
-
-    private void SetSortByText(int id)
-    {
-        _sortby = id == 0 ? null : _sortByStrings[id];
-        SortBy.SelectId(id);
     }
     /// <summary>
     ///     Populates the list of products that will actually be shown, using the current filters.
@@ -154,19 +129,8 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
             .Where(it => it != null)
             .ToList();
 
-        var sortOrder = _sortby != null ? _sortby! : VesselSortBy.Name;
-
-        switch (sortOrder)
-        {
-            case VesselSortBy.Name:
-                vesselList.Sort((x, y) =>
-                    string.Compare(x!.Name, y!.Name, StringComparison.CurrentCultureIgnoreCase));
-                break;
-
-            case VesselSortBy.Price:
-                vesselList.Sort((x, y) => x!.Price.CompareTo(y!.Price));
-                break;
-        }
+        vesselList.Sort((x, y) =>
+            string.Compare(x!.Name, y!.Name, StringComparison.CurrentCultureIgnoreCase));
         return vesselList;
     }
 
@@ -340,25 +304,6 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                     _engineStrings.Add(cl);
                 }
             }
-        }
-    }
-
-    /// <summary>
-    ///     Populates the sort-by types in the Sort By button
-    /// </summary>
-    public void PopulateSortByTypes()
-    {
-        SortBy.Clear();
-
-        _sortByStrings.Clear();
-        foreach (var sort in Enum.GetValues<VesselSortBy>())
-        {
-            _sortByStrings.Add(sort);
-        }
-
-        foreach (var str in _sortByStrings)
-        {
-            SortBy.AddItem(Loc.GetString($"shipyard-console-sortby-{str}"));
         }
     }
 

@@ -54,8 +54,8 @@
     edges:
     - to: electronics
       steps:
-      - part: Capacitor # Frontier
-        store: machine_parts # Frontier
+      - material: Capacitor
+        store: machine_parts
         amount: 2
         doAfter: 1
       - component: NFWeaponChargerCircuitboard # Frontier: tag<component
@@ -86,7 +86,7 @@
   - node: wall_recharger
     entity: WallWeaponCapacitorRecharger
     edges:
-    - to: wires_mv #Frontier, let's give back MV wires too
+    - to: wires
       conditions:
       - !type:ContainerNotEmpty
         container: machine_board
@@ -95,5 +95,5 @@
         pickup: true
         emptyAtUser: true
       steps:
-      - tool: Prying #Frontier, consistency
+      - tool: Screwing
         doAfter: 2

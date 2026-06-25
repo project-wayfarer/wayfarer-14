@@ -282,7 +282,7 @@
 - type: entity
   parent: BaseCrossbowWieldable # Wayfarer: Removed contraband
   id: CrossbowImprovised
-  name: improvised crossbow
+  name: impovised crossbow
   components:
   - type: UseDelay
     delay: 2
@@ -323,7 +323,7 @@
 - type: entity
   parent: [ NFBaseWeaponEncumbranceCrossbowHand, NFBaseGunMeleeAttackLow, BaseCrossbow ] # Wayfarer: Removed contraband
   id: CrossbowImprovisedHand
-  name: improvised hand crossbow
+  name: impovised hand crossbow
   components:
   - type: UseDelay
     delay: 2

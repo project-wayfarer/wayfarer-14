@@ -1,5 +1,5 @@
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom; // Wayfarer
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Trigger.Components.Effects;
 
@@ -7,7 +7,8 @@ namespace Content.Shared.Trigger.Components.Effects;
 /// Will electrocute the entity when triggered.
 /// If TargetUser is true it will electrocute the user instead.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause] // Wayfarer: Add AutoGenerateComponentPause
+[RegisterComponent, NetworkedComponent]
+[AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class ShockOnTriggerComponent : BaseXOnTriggerComponent
 {
     /// <summary>
@@ -33,7 +34,6 @@ public sealed partial class ShockOnTriggerComponent : BaseXOnTriggerComponent
     [DataField, AutoNetworkedField]
     public TimeSpan Duration = TimeSpan.FromSeconds(2);
 
-    // Wayfarer Start
     /// <summary>
     /// The minimum delay between repeating triggers.
     /// </summary>
@@ -46,5 +46,4 @@ public sealed partial class ShockOnTriggerComponent : BaseXOnTriggerComponent
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan NextTrigger = TimeSpan.Zero;
-    // Wayfarer End
 }

@@ -6,7 +6,6 @@
   price: 0
   equipment:
     outerClothing: ClothingOuterEVASuitEngineer
-  groupBy: "OuterEVASuits"
 
 - type: loadout
   id: EngineeringClothingOuterVestHazard
@@ -16,7 +15,6 @@
   price: 0
   equipment:
     outerClothing: ClothingOuterVestHazard
-  groupBy: "OuterVests"
 
 - type: loadout
   id: PlantManagerClothingOuterWinterCE
@@ -26,14 +24,3 @@
   price: 0
   equipment:
     outerClothing: ClothingOuterWinterCE
-  groupBy: "OuterWinterCoats"
-
-- type: loadout
-  id: PlantManagerClothingLongcoatCE
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 0
-  equipment:
-    outerClothing: ClothingLongcoatCE
-  groupBy: "longcoats"

@@ -56,8 +56,8 @@
 - type: entity
   id: CrateVendingMachineRestockAutoTuneVendFilled
   parent: CratePlasticBiodegradable
-  name: AutoTune restock crate
-  description: Contains two restock boxes for the AutoTune vending machine.
+  name: AutoTuneVend restock crate
+  description: Contains two restock boxes for the AutoTuneVend vending machine.
   components:
   - type: StorageFill
     contents:

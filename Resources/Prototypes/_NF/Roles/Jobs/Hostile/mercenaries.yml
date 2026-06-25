@@ -3,79 +3,72 @@
   id: MobHumanoidMercenaryGearMeleeT1
   equipment:
     gloves: ClothingHandsGlovesColorMercHatchet
-    back: ClothingBeltMercenaryLootMeleeT1
+    pocket1: SpaceCash500
+    pocket2: HydroponicsToolHatchet
     shoes: ClothingShoesBootsMercenary
-    wallet: ClothingWalletMercenaryT1
 
 - type: startingGear
   id: MobHumanoidMercenaryGearRangedT1
   equipment:
     gloves: ClothingHandsGlovesColorMercPistol
-    back: ClothingDuffelMercenaryLootRangedT1
-    belt: ClothingBeltMercenaryLootRangedT1
+    back: ClothingBackpackDuffelMercenaryTier1Pistol
+    belt: ClothingBeltWebbingMercenaryTier1Pistol
     shoes: ClothingShoesBootsMercenary
-    wallet: ClothingWalletMercenaryT1
 
 - type: startingGear
   id: MobHumanoidMercenaryGearRangedAltT1
   equipment:
     gloves: ClothingHandsGlovesColorMercNovalite
-    back: ClothingDuffelMercenaryLootRangedAltT1
-    belt: ClothingBeltMercenaryLootRangedAltT1
+    back: ClothingBackpackDuffelMercenaryTier1Novalite
+    belt: ClothingBeltWebbingMercenaryTier1Novalite
     shoes: ClothingShoesBootsMercenary
-    wallet: ClothingWalletMercenaryT1
 
 # Tier 2
 - type: startingGear
   id: MobHumanoidMercenaryGearMeleeT2
   equipment:
     gloves: ClothingHandsGlovesColorMercMachete
-    back: ClothingDuffelMercenaryLootMeleeT2
+    pocket1: Machete
+    pocket2: SpaceCash1000
     shoes: ClothingShoesBootsCombat
-    wallet: ClothingWalletMercenaryT2
 
 - type: startingGear
   id: MobHumanoidMercenaryGearRangedT2
   equipment:
-    gloves: ClothingHandsGlovesColorMercShotgun
-    back: ClothingDuffelMercenaryLootRangedT2
-    belt: ClothingBeltMercenaryLootRangedT2
+    gloves: ClothingHandsGlovesColorMercRevolvers
+    back: ClothingBackpackDuffelMercenaryTier2Revolver
+    belt: ClothingBeltWebbingMercenaryTier2Revolver
     shoes: ClothingShoesBootsCombat
-    wallet: ClothingWalletMercenaryT1
 
 - type: startingGear
   id: MobHumanoidMercenaryGearRangedAltT2
   equipment:
-    gloves: ClothingHandsGlovesColorMercRevolvers
-    back: ClothingDuffelMercenaryLootRangedAltT2
-    belt: ClothingBeltMercenaryLootRangedAltT2
+    gloves: ClothingHandsGlovesColorMercShotgun
+    back: ClothingBackpackDuffelMercenaryTier2Shotgun
+    belt: ClothingBeltWebbingMercenaryTier2Shotgun
     shoes: ClothingShoesBootsCombat
-    wallet: ClothingWalletMercenaryT2
 
 # Tier 3
 - type: startingGear
   id: MobHumanoidMercenaryGearRangedT3
   equipment:
     gloves: ClothingHandsGlovesColorMercLaserNSaw
-    back: ClothingDuffelMercenaryLootRangedT3
-    belt: ClothingBeltMercenaryLootRangedT3
+    back: ClothingBackpackDuffelMercenaryTier3Medic
+    belt: ClothingBeltMercenaryTier3Medic
     shoes: ClothingShoesBootsCombat
-    wallet: ClothingWalletMercenaryT3
 
 - type: startingGear
-  id: MobHumanoidMercenaryGearRangedAltT3
+  id: MobHumanoidMercenaryGearRangedT3Alt
   equipment:
     gloves: ClothingHandsGlovesColorMercGestio
-    back: ClothingDuffelMercenaryLootRangedAltT3
-    belt: ClothingBeltMercenaryLootRangedAltT3
+    back: ClothingBackpackDuffelMercenaryTier3Assault
+    belt: ClothingBeltMercenaryTier3Assault
     shoes: ClothingShoesBootsCombat
-    wallet: ClothingWalletMercenaryT3
 
 # Tier 4
 - type: startingGear
-  id: MobHumanoidMercenaryGearBoss
+  id: MobHumanoidMercenaryGearTier4Captain
   equipment:
     gloves: ClothingHandsGlovesColorMercRepeater
-    back: ClothingDuffelMercenaryLootBoss
+    back: ClothingBackpackDuffelMercenaryTier4Captain
     shoes: ClothingShoesBootsCombat
-    wallet: ClothingWalletMercenaryBoss

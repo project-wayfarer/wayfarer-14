@@ -149,7 +149,8 @@
   id: TableDungeonLootWeaponsMeleeUnique
   table: !type:GroupSelector
     children:
-    #- id: HyperEutacticBlade # Wayfarer: No. Absolutely not. Admin item.
+    #- id: HyperEutacticBlade WayFarer Players should not have these..
+#    - id: ClothingHandsKnuckleBoneCrushers # Wayfarer: Admeme item
     - id: ArmBlade
     - id: Kanabou
 
@@ -379,9 +380,9 @@
     - !type:NestedSelector
       weight: 0.15
       tableId: TableDungeonLootWeaponsAmmunitionUranium
-   # - !type:NestedSelector
-   #   weight: 0.05
-   #   tableId: TableDungeonLootWeaponsAmmunitionPractice
+#    - !type:NestedSelector # Wayfarer: Disabled
+#      weight: 0.05
+#      tableId: TableDungeonLootWeaponsAmmunitionPractice
 
 # region ammo lethal
 - type: entityTable

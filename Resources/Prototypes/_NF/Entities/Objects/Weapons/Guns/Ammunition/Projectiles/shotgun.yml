@@ -8,7 +8,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
+        Piercing: 4
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -19,7 +19,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6.25
+        Piercing: 6 #Wayfarer 5 -> 6
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -30,8 +30,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 3
-        Heat: 2
+        Blunt: 1.8 #Wayfarer -> 2.4 -> 1.8
+        Heat: 2.2 #Wayfarer 1.6 -> 2.2
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -53,8 +53,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4.4
-        Radiation: 4.4
+        Blunt: 2.5 #Wayfarer
+        Piercing: 3.5
+        Radiation: 1.5 #Wayfarer 3.5 -> 1.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -73,8 +74,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2.5
-        Slash: 2.5
+        Piercing: 2
+        Slash: 2
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -85,7 +86,7 @@
   - type: Projectile
     damage:
       types:
-        Slash: 4.4
+        Slash: 3.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -96,8 +97,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
-        Structural: 6.25
+        Piercing: 4
+        Structural: 5
 
 #region PelletsSpread
 - type: entity
@@ -182,8 +183,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 25
-        Blunt: 6.25
+        Piercing: 32.5 #Wayfarer 30 -> 32.5
+        Blunt: 6 #Wayfarer 5 -> 6
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -194,7 +195,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 12.5
+        Blunt: 9 #Wayfarer 10 -> 9
   - type: StaminaDamageOnCollide
     damage: 25 # 5 hits to stun WF reduction stamina rebalance ##Wayfarer 24 -> 25
 

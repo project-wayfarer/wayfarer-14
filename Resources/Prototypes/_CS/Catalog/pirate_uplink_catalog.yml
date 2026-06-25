@@ -1,0 +1,16 @@
+
+- type: listing #Coyote
+  id: UplinkPirateRCD
+  name:  uplink-pirate-rcd-name
+  description: uplink-pirate-rcd-desc
+  productEntity: PirateRCD
+  icon: { sprite: _NF/Objects/Tools/rcd.rsi, state: icon }
+  cost:
+    Doubloon: 10
+  categories:
+  - UplinkPirateUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - PirateUplink

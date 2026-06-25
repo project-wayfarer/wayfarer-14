@@ -89,8 +89,7 @@ public sealed class CriminalRecordsConsoleSystem : SharedCriminalRecordsConsoleS
     {
         // prevent malf client violating wanted/reason nullability
         if (msg.Status == SecurityStatus.Wanted != (msg.Reason != null) &&
-            msg.Status == SecurityStatus.Suspected != (msg.Reason != null) &&
-            msg.Status == SecurityStatus.Permitted != (msg.Reason != null)) // Frontier
+            msg.Status == SecurityStatus.Suspected != (msg.Reason != null))
             return;
 
         if (!CheckSelected(ent, msg.Actor, out var mob, out var key))
@@ -155,12 +154,6 @@ public sealed class CriminalRecordsConsoleSystem : SharedCriminalRecordsConsoleS
             (_, SecurityStatus.Paroled) => "paroled",
             // prisoner did their time
             (_, SecurityStatus.Discharged) => "released",
-            //Frontier begin 
-            (_, SecurityStatus.Permitted) => "permitted", // Obtained permit
-            (SecurityStatus.Permitted, SecurityStatus.Wanted) => "broke-permit", // Permit conditions violated
-            (SecurityStatus.Permitted, SecurityStatus.None) => "withdrew-permit", // Withdrew permit eg. a second sheriff with different policy stripping existing ones
-            (SecurityStatus.Permitted, _) => "lost-permit", // Any other case from permitted
-            // Frontier end
             // going from any other state to wanted, AOS or prisonbreak / lazy secoff never set them to released and they reoffended
             (_, SecurityStatus.Wanted) => "wanted",
             // person is no longer sus

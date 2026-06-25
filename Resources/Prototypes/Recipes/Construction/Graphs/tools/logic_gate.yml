@@ -46,10 +46,8 @@
         doAfter: 1
     - to: memory_cell
       steps:
-      - part: Manipulator # Frontier
-        store: machine_parts # Frontier
+      - material: Manipulator
         amount: 2
-        doAfter: 1 #Frontier
       - material: Cable
         amount: 2
         doAfter: 1
@@ -99,9 +97,8 @@
       - tool: Prying
         doAfter: 2
       completed:
-      - !type:EmptyAllContainers #Frontier, needs to get these machine parts back
-        pickup: true
-        emptyAtUser: true
+      - !type:SpawnPrototype
+        prototype: MicroManipulatorStockPart
       - !type:SpawnPrototype
         prototype: CableApcStack1
         amount: 2

@@ -1,6 +1,3 @@
-# groupBy types: "OuterEVASuits", "OuterJackets", "OuterVests", "OuterLabCoats", "OuterWinterCoats",
-# "OuterCoats", "OuterCoatPunk", "OuterArmor", "longcoats"
-
 - type: loadout
   id: ContractorForcedClothingOuterEVASuitContractor
   effects:
@@ -9,7 +6,6 @@
   price: 0
   equipment:
     outerClothing: ClothingOuterEVASuitContractor
-  groupBy: "OuterEVASuits"
 
 - type: loadout
   id: ContractorClothingOuterHardsuitVoidParamed
@@ -22,33 +18,6 @@
   price: 1300
   equipment:
     outerClothing: ClothingOuterHardsuitVoidParamed
-  groupBy: "OuterEVASuits"
-
-- type: loadout
-  id: ContractorClothingOuterCoatRobesGoblin
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFIsGoblin
-  price: 200
-  equipment:
-    outerClothing: ClothingOuterCoatRobesGoblin
-  groupBy: "OuterCoats"
-
-- type: loadout
-  id: ContractorClothingOuterEVASuitGoblin
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFIsGoblin
-  price: 1200
-  equipment:
-    outerClothing: ClothingOuterEVASuitGoblin
-  groupBy: "OuterEVASuits"
 
 - type: loadout
   id: ContractorClothingOuterHoodieGrey
@@ -58,7 +27,6 @@
   price: 200
   equipment:
     outerClothing: ClothingOuterHoodieGrey
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterVestHazard
@@ -68,7 +36,6 @@
   price: 200
   equipment:
     outerClothing: ClothingOuterVestHazard
-  groupBy: "OuterVests"
 
 - type: loadout
   id: ContractorClothingOuterApron
@@ -78,7 +45,6 @@
   price: 200
   equipment:
     outerClothing: ClothingOuterApron
-  groupBy: "OuterVests"
 
 - type: loadout
   id: ContractorClothingOuterApronBar
@@ -88,7 +54,6 @@
   price: 200
   equipment:
     outerClothing: ClothingOuterApronBar
-  groupBy: "OuterVests"
 
 - type: loadout
   id: ContractorClothingOuterApronBotanist
@@ -98,7 +63,6 @@
   price: 200
   equipment:
     outerClothing: ClothingOuterApronBotanist
-  groupBy: "OuterVests"
 
 - type: loadout
   id: ContractorClothingOuterApronChef
@@ -108,7 +72,6 @@
   price: 200
   equipment:
     outerClothing: ClothingOuterApronChef
-  groupBy: "OuterVests"
 
 #T1
 - type: loadout
@@ -122,7 +85,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterHoodieBlack
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterCoatJensen
@@ -135,7 +97,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatJensen
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatGentle
@@ -148,7 +109,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatGentle
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterJacketChef
@@ -161,7 +121,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterJacketChef
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterHoodieChaplain
@@ -174,7 +133,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterHoodieChaplain
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterNunRobe
@@ -187,7 +145,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterNunRobe
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterCoatLab
@@ -200,7 +157,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatLab
-  groupBy: "OuterLabCoats"
+  groupBy: "Labcoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatLabGene
@@ -213,7 +170,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatLabGene
-  groupBy: "OuterLabCoats"
+  groupBy: "Labcoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatLabChem
@@ -226,7 +183,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatLabChem
-  groupBy: "OuterLabCoats"
+  groupBy: "Labcoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatRobo
@@ -239,7 +196,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatRobo
-  groupBy: "OuterLabCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatLabViro
@@ -252,7 +208,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatLabViro
-  groupBy: "OuterLabCoats"
+  groupBy: "Labcoat"
 
 - type: loadout
   id: ContractorClothingOuterBioScientist
@@ -265,7 +221,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterBioScientist
-  groupBy: "OuterLabCoats"
 
 - type: loadout
   id: ContractorClothingOuterWinterCoat
@@ -278,7 +233,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterCoat
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterCoatLong
@@ -291,7 +246,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterCoatLong
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterAtmos
@@ -304,7 +259,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterAtmos
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterHydro
@@ -317,7 +272,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterHydro
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterBar
@@ -330,7 +285,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterBar
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterChef
@@ -343,7 +298,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterChef
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterCap
@@ -356,7 +311,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterCap
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterMusician
@@ -369,7 +324,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterMusician
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterCargo
@@ -382,7 +337,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterCargo
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterMiner
@@ -395,7 +350,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterMiner
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterEngi
@@ -408,7 +363,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterEngi
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterMed
@@ -421,7 +376,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterMed
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterChem
@@ -434,7 +389,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterChem
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatParamedicWB
@@ -447,7 +402,6 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterCoatParamedicWB
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterWinterPara
@@ -460,7 +414,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterPara
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterGen
@@ -473,7 +427,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterGen
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterSci
@@ -486,7 +440,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterSci
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterRobo
@@ -499,7 +453,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterRobo
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterViro
@@ -512,7 +466,7 @@
   price: 800
   equipment:
     outerClothing: ClothingOuterWinterViro
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 #T2
 - type: loadout
@@ -526,7 +480,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterWinterClown
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterMime
@@ -539,7 +493,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterWinterMime
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterQM
@@ -552,7 +506,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterWinterQM
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterRD
@@ -565,7 +519,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterWinterRD
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterCMO
@@ -578,7 +532,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterWinterCMO
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterWinterCE
@@ -591,111 +545,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterWinterCE
-  groupBy: "OuterWinterCoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatBlack
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 800
-  equipment:
-    outerClothing: ClothingLongcoatBlack
-  groupBy: "longcoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatBrown
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 800
-  equipment:
-    outerClothing: ClothingLongcoatBrown
-  groupBy: "longcoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatNanoTrasen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 800
-  equipment:
-    outerClothing: ClothingLongcoatNanoTrasen
-  groupBy: "longcoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatArashiLabs
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 800
-  equipment:
-    outerClothing: ClothingLongcoatArashiLabs
-  groupBy: "longcoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatQM
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT2
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 1200
-  equipment:
-    outerClothing: ClothingLongcoatQM
-  groupBy: "longcoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatRD
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT2
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 1200
-  equipment:
-    outerClothing: ClothingLongcoatRD
-  groupBy: "longcoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatCE
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT2
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 1200
-  equipment:
-    outerClothing: ClothingLongcoatCE
-  groupBy: "longcoats"
-
-- type: loadout
-  id: ContractorClothingLongcoatCaptain
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT2
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 1200
-  equipment:
-    outerClothing: ClothingLongcoatCaptain
-  groupBy: "longcoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatLabCmo
@@ -708,7 +558,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatLabCmo
-  groupBy: "OuterLabCoats"
+  groupBy: "Labcoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatLabSeniorPhysician
@@ -721,7 +571,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatLabSeniorPhysician
-  groupBy: "OuterLabCoats"
+  groupBy: "Labcoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatRD
@@ -734,7 +584,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatRD
-  groupBy: "OuterLabCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatLabSeniorResearcher
@@ -747,7 +596,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatLabSeniorResearcher
-  groupBy: "OuterLabCoats"
+  groupBy: "Labcoat"
 
 - type: loadout
   id: ContractorClothingOuterFlannelRed
@@ -760,7 +609,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterFlannelRed
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterFlannelBlue
@@ -773,7 +621,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterFlannelBlue
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterFlannelGreen
@@ -786,7 +633,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterFlannelGreen
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterCoatHyenhSweater
@@ -799,7 +645,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatHyenhSweater
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterCoatInspector
@@ -812,7 +657,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatDetectiveLoadout
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatTrench
@@ -825,7 +669,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatTrench
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterDameDane
@@ -838,7 +681,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterDameDane
-  groupBy: "OuterJackets"
 
 - type: loadout
   id: ContractorClothingOuterWinterCoatPlaid
@@ -851,7 +693,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterWinterCoatPlaid
-  groupBy: "OuterWinterCoats"
+  groupBy: "wintercoat"
 
 - type: loadout
   id: ContractorClothingOuterCoatBomber
@@ -864,7 +706,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatBomber
-  groupBy: "OuterJackets"
+  groupBy: "bomber"
 
 - type: loadout
   id: ContractorClothingOuterPlagueSuit
@@ -877,7 +719,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterPlagueSuit
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatBishop
@@ -890,7 +731,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatBishop
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatWitchHunter
@@ -903,7 +743,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatWitchHunter
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatCardinal
@@ -916,7 +755,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatCardinal
-  groupBy: "OuterCoats"
 
 # Punk stuff
 - type: loadout
@@ -930,7 +768,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatBomberPunkRed
-  groupBy: "OuterCoatPunk"
+  groupBy: "bomber"
 
 - type: loadout
   id: ContractorClothingOuterCoatJacketLeather
@@ -943,7 +781,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatJacketLeather
-  groupBy: "OuterCoatPunk"
 
 - type: loadout
   id: ContractorClothingOuterCoatJacketBiker
@@ -956,7 +793,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatJacketBiker
-  groupBy: "OuterCoatPunk"
 
 - type: loadout
   id: ContractorClothingOuterCoatJacketJamrock
@@ -969,7 +805,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatJacketJamrock
-  groupBy: "OuterCoatPunk"
 
 - type: loadout
   id: ContractorClothingOuterCoatBomberAerostatic
@@ -982,7 +817,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatBomberAerostatic
-  groupBy: "OuterCoatPunk"
+  groupBy: "bomber"
 
 - type: loadout
   id: ContractorClothingOuterCoatJacketLettermanBlue
@@ -995,7 +830,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanBlue
-  groupBy: "OuterCoatPunk"
+  groupBy: "letterman"
 
 - type: loadout
   id: ContractorClothingOuterCoatJacketLettermanBrown
@@ -1008,7 +843,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanBrown
-  groupBy: "OuterCoatPunk"
+  groupBy: "letterman"
 
 - type: loadout
   id: ContractorClothingOuterCoatJacketLettermanRed
@@ -1021,7 +856,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanRed
-  groupBy: "OuterCoatPunk"
+  groupBy: "letterman"
 
 - type: loadout
   id: ContractorClothingOuterCoatJacketLettermanMagenta
@@ -1034,7 +869,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanMagenta
-  groupBy: "OuterCoatPunk"
+  groupBy: "letterman"
 
 - type: loadout
   id: ContractorClothingOuterCoatBomberPinkSleeves
@@ -1047,7 +882,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatBomberPinkSleeves
-  groupBy: "OuterCoatPunk"
+  groupBy: "bomber"
 
 - type: loadout
   id: ContractorClothingOuterCoatBomberRandomized
@@ -1061,7 +896,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatBomberRandomized
-  groupBy: "OuterCoatPunk"
+  groupBy: "bomber"
 
 - type: loadout
   id: ContractorClothingOuterCoatRandomized
@@ -1075,7 +910,6 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatRandomized
-  groupBy: "OuterCoatPunk"
 
 - type: loadout
   id: ContractorClothingOuterCoatAcidRaincoat
@@ -1088,7 +922,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoat
-  groupBy: "OuterCoatPunk"
+  groupBy: "acid"
 
 - type: loadout
   id: ContractorClothingOuterCoatAcidRaincoatBlue
@@ -1101,7 +935,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatBlue
-  groupBy: "OuterCoatPunk"
+  groupBy: "acid"
 
 - type: loadout
   id: ContractorClothingOuterCoatAcidRaincoatGreen
@@ -1114,7 +948,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatGreen
-  groupBy: "OuterCoatPunk"
+  groupBy: "acid"
 
 - type: loadout
   id: ContractorClothingOuterCoatAcidRaincoatMagenta
@@ -1127,7 +961,7 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatMagenta
-  groupBy: "OuterCoatPunk"
+  groupBy: "acid"
 
 - type: loadout
   id: ContractorClothingOuterCoatAcidRaincoatYellow
@@ -1140,7 +974,8 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatYellow
-  groupBy: "OuterCoatPunk"
+  groupBy: "acid"
+
 
 #T3 for lols
 - type: loadout
@@ -1154,7 +989,6 @@
   price: 1200
   equipment:
     outerClothing: WetFloorSign
-  groupBy: "OuterArmor"
 
 - type: loadout
   id: ContractorClothingOuterCoatExpensive
@@ -1167,7 +1001,6 @@
   price: 6000
   equipment:
     outerClothing: ClothingOuterCoatExpensive
-  groupBy: "OuterCoats"
 
 - type: loadout
   id: ContractorClothingOuterCoatSpaceAsshole
@@ -1180,4 +1013,3 @@
   price: 8000
   equipment:
     outerClothing: ClothingOuterCoatSpaceAsshole
-  groupBy: "OuterCoats"

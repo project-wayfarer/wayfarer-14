@@ -10,7 +10,6 @@ using Content.Shared._NF.Roles.Systems;
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.Eui;
-using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
@@ -85,7 +84,7 @@ public sealed class CryoSleepEui : BaseEui
                 slotsComp);
             //Uplink
             string? uplinkWarningLoc = warningMsg.FoundUplink.HasValue
-                ? GetUplinkWarningLocMessage(warningMsg.FoundUplink.Value, slotsComp, warningMsg.UplinkBalance)
+                ? GetUplinkWarningLocMessage(warningMsg.FoundUplink.Value, slotsComp)
                 : null;
             //Items
             string? itemWarningLoc = GetImportantItemWarningLocMessage(warningMsg.ImportantItems, slotsComp);
@@ -109,23 +108,17 @@ public sealed class CryoSleepEui : BaseEui
 
     private string GetStorageName(CryoSleepWarningMessage.NetworkedWarningItem item, InventorySlotsComponent inventoryComp)
     {
-        if (item.Container is not null)
+        if (item.SlotId == null)
         {
             return Identity.Name(_entityManager.GetEntity(item.Container!.Value), _entityManager);
         }
-        else if (item.SlotId is not null)
+        else
         {
             //Lowercase this just to make the name not look weird in the popup
             var returnVal = inventoryComp.SlotData[item.SlotId].SlotDisplayName;
             //I can't execute without assigning it first
             return returnVal.ToLower();
         }
-        else if (item.HandId is not null)
-            //Hand IDs are not human readable, with no reliable way to get a human readable name. This is a bit hardcodey, but it should work in 95% of situations
-            //If someone has a way to convert to a human name, go for it
-            return Loc.GetString("accept-cryo-window-prompt-hand-slot-name");
-
-        return "ERROR";
     }
 
     //All of these message get methods were moved to be separate to make the code less rigid, and easier to read.
@@ -218,20 +211,20 @@ public sealed class CryoSleepEui : BaseEui
     //Grab any needed uplink warnings.
     //Returns null if no warning is needed
     private string? GetUplinkWarningLocMessage(CryoSleepWarningMessage.NetworkedWarningItem foundUplink,
-        InventorySlotsComponent slotsComp,
-        FixedPoint2 balance)
+        InventorySlotsComponent slotsComp)
     {
         var localUplink = _entityManager.GetEntity(foundUplink.Item);
         if (!_entityManager.TryGetComponent<StoreComponent>(localUplink, out var store))
             return null;
         var currencyProtoId = store.Balance.Keys.First();
-        if (balance.Equals(0)
+        var amount = store.Balance[currencyProtoId];
+        if (amount == 0
             || !_prototypeManager.TryIndex(currencyProtoId, out var currencyProto))
             return null;
         return Loc.GetString("accept-cryo-window-prompt-uplink-warning",
             ("uplink", Identity.Name(_entityManager.GetEntity(foundUplink.Item), _entityManager)),
             ("storage", GetStorageName(foundUplink, slotsComp)),
-            ("amount", balance),
+            ("amount", amount),
             ("currency",  Loc.GetString(currencyProto.DisplayName)));
     }
 

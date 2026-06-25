@@ -68,11 +68,6 @@ public interface IBluespaceSpawnGroup
     public float MaximumDistance { get; }
 
     /// <summary>
-    /// Type of bias target to search for to bias the spawning direction.
-    /// </summary>
-    public string? SpawnBiasTarget { get; }
-
-    /// <summary>
     /// A localized name. Overrides other name fields.
     /// </summary>
     public List<LocId> NameLoc { get; }
@@ -131,14 +126,12 @@ public sealed class BluespaceDungeonSpawnGroup : IBluespaceSpawnGroup
     /// </summary>
     public List<ProtoId<DungeonConfigPrototype>> Protos = new();
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Minimum distance from the map's origin to
+    /// </summary>
     public float MinimumDistance { get; }
 
-    /// <inheritdoc />
     public float MaximumDistance { get; }
-
-    /// <inheritdoc />
-    public string? SpawnBiasTarget { get; }
 
     /// <inheritdoc />
     public List<LocId> NameLoc { get; } = new();
@@ -178,8 +171,6 @@ public sealed class BluespaceGridSpawnGroup : IBluespaceSpawnGroup
 
     /// <inheritdoc />
     public float MaximumDistance { get; }
-    /// <inheritdoc />
-    public string? SpawnBiasTarget { get; }
     public List<LocId> NameLoc { get; } = new();
     public ProtoId<LocalizedDatasetPrototype>? NameDataset { get; }
 
