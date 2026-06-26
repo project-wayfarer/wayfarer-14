@@ -39,11 +39,15 @@ public enum RadarBlipShape
 public sealed class GiveBlipsEvent : EntityEventArgs
 {
     /// <summary>
-    /// Blips are now (grid entity, position, scale, color, shape).
-    /// If grid entity is null, position is in world coordinates.
-    /// If grid entity is not null, position is in grid-local coordinates.
+    /// Blips are now (grid entity, position, velocity, scale, color, shape).
+    /// If grid entity is null, position and velocity are in world coordinates.
+    /// If grid entity is not null, position and velocity are in grid-local coordinates.
+    // Wayfarer
+    /// Velocity is used by the client to predict/extrapolate blip motion between
+    /// the relatively-slow server updates (Wayfarer: predictive radar blips).
+    // Wayfarer End
     /// </summary>
-    public readonly List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> Blips;
+    public readonly List<(NetEntity? Grid, Vector2 Position, Vector2 Velocity, float Scale, Color Color, RadarBlipShape Shape)> Blips; // Wayfarer: Add Vector2 Velocity
 
     /// <summary>
     /// Backwards-compatible constructor for legacy blip format.
@@ -51,14 +55,14 @@ public sealed class GiveBlipsEvent : EntityEventArgs
     /// <param name="blips">List of blips as (position, scale, color).</param>
     public GiveBlipsEvent(List<(Vector2, float, Color)> blips)
     {
-        Blips = blips.Select(b => ((NetEntity?)null, b.Item1, b.Item2, b.Item3, RadarBlipShape.Circle)).ToList();
+        Blips = blips.Select(b => ((NetEntity?)null, b.Item1, Vector2.Zero, b.Item2, b.Item3, RadarBlipShape.Circle)).ToList(); // Wayfarer: Add Vector2.Zero
     }
 
     /// <summary>
     /// Constructor for the full blip format.
     /// </summary>
-    /// <param name="blips">List of blips as (grid, position, scale, color, shape).</param>
-    public GiveBlipsEvent(List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> blips)
+    /// <param name="blips">List of blips as (grid, position, velocity, scale, color, shape).</param>
+    public GiveBlipsEvent(List<(NetEntity? Grid, Vector2 Position, Vector2 Velocity, float Scale, Color Color, RadarBlipShape Shape)> blips) // Wayfarer: Add Vector2 Velocity
     {
         Blips = blips;
     }
@@ -85,4 +89,14 @@ public sealed class RequestBlipsEvent : EntityEventArgs
     {
         Radar = radar;
     }
+}
+
+/// <summary>
+/// Wayfarer: Notifies clients that the set of radar blips has changed (e.g. a projectile
+/// has been spawned) and they should issue an immediate blip request so the new blip
+/// shows up without waiting for the regular polling interval.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class RadarBlipsDirtyEvent : EntityEventArgs
+{
 }

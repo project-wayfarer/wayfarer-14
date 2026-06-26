@@ -1,3 +1,5 @@
+# groupBy types: "ShoesColor", "ShoesGimmick", "ShoesBoots", "ShoesBootsWinter", "ShoesBootsCowboy"
+
 - type: loadout
   id: ContractorClothingShoesColorBlack
   hideEffects:
@@ -6,7 +8,7 @@
   price: 0
   equipment:
     shoes: ClothingShoesColorBlack
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesClothwrap
@@ -16,6 +18,7 @@
   price: 50
   equipment:
     shoes: ClothingShoesClothwrap
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoesTourist
@@ -25,6 +28,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesTourist
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoesBootsCombat
@@ -52,6 +56,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesBootsSalvage
+  groupBy: "ShoesBoots"
 
 - type: loadout
   id: ContractorClothingShoesChef
@@ -61,6 +66,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesChef
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesColorBlue
@@ -70,7 +76,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesColorBlue
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesColorOrange
@@ -80,7 +86,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesColorOrange
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesColorPurple
@@ -90,7 +96,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesColorPurple
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesColorRed
@@ -100,7 +106,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesColorRed
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesColorBrown
@@ -110,7 +116,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesColorBrown
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesColorGreen
@@ -120,7 +126,7 @@
   price: 200
   equipment:
     shoes: ClothingShoesColorGreen
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesColorYellow
@@ -130,7 +136,8 @@
   price: 200
   equipment:
     shoes: ClothingShoesColorYellow
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
+
 #T1
 - type: loadout
   id: ContractorClothingShoesColorWhite
@@ -145,7 +152,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesColorWhite
-  groupBy: "basicshoes"
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesBootsMag
@@ -158,6 +165,7 @@
   price: 2000
   equipment:
     shoes: ClothingShoesBootsMag
+  groupBy: "ShoesBoots"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinter
@@ -170,7 +178,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinter
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterAtmos
@@ -183,7 +191,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterAtmos
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterHydro
@@ -196,7 +204,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterHydro
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterCap
@@ -209,7 +217,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterCap
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterCargo
@@ -222,7 +230,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterCargo
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterChef
@@ -235,7 +243,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterChef
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterChem
@@ -248,7 +256,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterChem
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterEngi
@@ -261,7 +269,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterEngi
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterGenetics
@@ -274,7 +282,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterGenetics
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterMiner
@@ -287,7 +295,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterMiner
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterParamedic
@@ -300,7 +308,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterParamedic
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterRobo
@@ -313,7 +321,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterRobo
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterSci
@@ -326,7 +334,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterSci
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterViro
@@ -339,7 +347,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsWinterViro
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsJack
@@ -352,6 +360,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsJack
+  groupBy: "ShoesBoots"
 
 - type: loadout
   id: ContractorClothingShoesLeather
@@ -364,6 +373,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesLeather
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesBootsLaceup
@@ -378,6 +388,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsLaceup
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesSlippers
@@ -390,6 +401,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesSlippers
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoeSlippersDuck
@@ -402,6 +414,7 @@
   price: 600
   equipment:
     shoes: ClothingShoeSlippersDuck
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoesFlippers
@@ -414,6 +427,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesFlippers
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoesBootsPunkRandomized
@@ -427,6 +441,7 @@
   price: 600
   equipment:
     shoes: ClothingShoesBootsPunkRandomized
+  groupBy: "ShoesBoots"
 
 #T2
 - type: loadout
@@ -440,6 +455,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesDameDane
+  groupBy: "ShoesColor"
 
 - type: loadout
   id: ContractorClothingShoesBootsWork
@@ -452,6 +468,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWork
+  groupBy: "ShoesBoots"
 
 - type: loadout
   id: ContractorClothingShoesBootsCowboyBlack
@@ -464,6 +481,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsCowboyBlack
+  groupBy: "ShoesBootsCowboy"
 
 - type: loadout
   id: ContractorClothingShoesBootsCowboyBrown
@@ -476,6 +494,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsCowboyBrown
+  groupBy: "ShoesBootsCowboy"
 
 - type: loadout
   id: ContractorClothingShoesBootsCowboyWhite
@@ -488,6 +507,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsCowboyWhite
+  groupBy: "ShoesBootsCowboy"
 
 - type: loadout
   id: ContractorClothingShoesSnakeskinBoots
@@ -500,6 +520,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesSnakeskinBoots
+  groupBy: "ShoesBootsCowboy"
 
 - type: loadout
   id: ContractorClothingShoesHighheelBoots
@@ -512,6 +533,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesHighheelBoots
+  groupBy: "ShoesBootsCowboy"
 
 - type: loadout
   id: ContractorClothingShoesBootsCowboyFancy
@@ -524,6 +546,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsCowboyFancy
+  groupBy: "ShoesBootsCowboy"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterChiefEngineer
@@ -536,7 +559,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterChiefEngineer
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterCMO
@@ -549,7 +572,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterCMO
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterQM
@@ -562,7 +585,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterQM
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterRD
@@ -575,7 +598,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterRD
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterClown
@@ -588,7 +611,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterClown
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesBootsWinterMime
@@ -601,7 +624,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsWinterMime
-  groupBy: "winterboots"
+  groupBy: "ShoesBootsWinter"
 
 - type: loadout
   id: ContractorClothingShoesClown
@@ -614,6 +637,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesClown
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoesJester
@@ -626,6 +650,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesJester
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoesBootsPerformer
@@ -638,6 +663,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesBootsPerformer
+  groupBy: "ShoesBoots"
 
 - type: loadout
   id: ContractorClothingShoesSkates
@@ -650,6 +676,7 @@
   price: 1200
   equipment:
     shoes: ClothingShoesSkates
+  groupBy: "ShoesGimmick"
 
 #T3 for lols
 - type: loadout
@@ -663,6 +690,7 @@
   price: 7500
   equipment:
     shoes: ClothingShoesClownLarge
+  groupBy: "ShoesGimmick"
 
 - type: loadout
   id: ContractorClothingShoesBling
@@ -675,3 +703,4 @@
   price: 7500
   equipment:
     shoes: ClothingShoesBling
+  groupBy: "ShoesGimmick"

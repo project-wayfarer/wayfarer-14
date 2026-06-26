@@ -8,6 +8,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Shuttles.Components;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Server._NF.Radar;
@@ -26,8 +27,13 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
 
     private Dictionary<NetUserId, TimeSpan> _nextBlipRequestPerUser = new();
 
+    // Wayfarer: rate-limit "blips dirty" pushes so a burst of new projectiles (e.g. grapeshot)
+    // doesn't flood the network. Clients still won't request more often than their own throttle.
+    private TimeSpan _nextDirtyPush = TimeSpan.Zero;
+    private static readonly TimeSpan DirtyPushInterval = TimeSpan.FromMilliseconds(100);
+
     // The minimum amount of time between handled blip requests.
-    private static readonly TimeSpan MinRequestPeriod = TimeSpan.FromMilliseconds(250); // Wayfarer: TimeSpan.FromSeconds(1)<TimeSpan.FromMilliseconds(250) Faster update for tracking shipgun projectiles.
+    private static readonly TimeSpan MinRequestPeriod = TimeSpan.FromMilliseconds(850); // Wayfarer: TimeSpan.FromSeconds(1)<TimeSpan.FromMilliseconds(250) Faster update for tracking shipgun projectiles.
     // Maximum distance for blips to be considered visible
     private const float MaxBlipRenderDistance = 300f;
     // Blink interval for critical state (in seconds)
@@ -39,6 +45,10 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
         SubscribeNetworkEvent<RequestBlipsEvent>(OnBlipsRequested);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
+
+        // Wayfarer: When a new radar blip enters the world (e.g. a fired projectile), tell
+        // active clients to immediately re-request blips instead of waiting on their throttle.
+        SubscribeLocalEvent<RadarBlipComponent, ComponentStartup>(OnBlipStartup);
     }
 
     /// <summary>
@@ -69,16 +79,33 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
     public void OnRoundRestart(RoundRestartCleanupEvent ev)
     {
         _nextBlipRequestPerUser.Clear();
+        _nextDirtyPush = TimeSpan.Zero;
+    }
+
+    /// <summary>
+    /// Wayfarer: notify clients that the blip set has changed so they can fetch the new blip
+    /// without waiting for their normal poll interval. Also clears server-side per-user rate
+    /// limits so the resulting request is honored immediately.
+    /// </summary>
+    private void OnBlipStartup(EntityUid uid, RadarBlipComponent component, ComponentStartup args)
+    {
+        if (_timing.RealTime < _nextDirtyPush)
+            return;
+
+        _nextDirtyPush = _timing.RealTime + DirtyPushInterval;
+        _nextBlipRequestPerUser.Clear();
+        RaiseNetworkEvent(new RadarBlipsDirtyEvent());
     }
 
     /// <summary>
     /// Assembles a list of radar blips visible to the given radar console.
     /// </summary>
-    private List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> AssembleBlipsReport(Entity<RadarConsoleComponent> ent)
+    private List<(NetEntity? Grid, Vector2 Position, Vector2 Velocity, float Scale, Color Color, RadarBlipShape Shape)> AssembleBlipsReport(Entity<RadarConsoleComponent> ent)
     {
         var blips = new List<(
             NetEntity? Grid,
             Vector2 Position,
+            Vector2 Velocity,
             float Scale,
             Color Color,
             RadarBlipShape Shape)>();
@@ -100,7 +127,7 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
         {
             if (!blip.Enabled)
             {
-                Log.Debug($"Blip {blipUid} skipped: not enabled.");
+                // Log.Debug($"Blip {blipUid} skipped: not enabled.");
                 continue;
             }
 
@@ -108,13 +135,13 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
             // Skip to avoid overlapping blips.
             if (blipXform.ParentUid.IsValid() && HasComp<RadarBlipComponent>(blipXform.ParentUid))
             {
-                Log.Debug($"Blip {blipUid} skipped: parent already has a blip.");
+                // Log.Debug($"Blip {blipUid} skipped: parent already has a blip.");
                 continue;
             }
 
             if (blipXform.MapID != radarMapId)
             {
-                Log.Debug($"Blip {blipUid} skipped: different map.");
+                // Log.Debug($"Blip {blipUid} skipped: different map.");
                 continue;
             }
 
@@ -140,12 +167,22 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
                 continue;
             }
 
+            // Wayfarer: capture linear velocity for client-side prediction so fast-moving
+            // entities (e.g. shipgun cannonballs) get smooth blip movement between the
+            // relatively-slow server blip updates.
+            var blipVelocity = Vector2.Zero;
+            if (TryComp<PhysicsComponent>(blipUid, out var blipPhysics))
+                blipVelocity = blipPhysics.LinearVelocity;
+
             // Convert blip position to grid coords if needed.
             NetEntity? blipNetGrid = null;
             if (blipGrid != null)
             {
                 blipNetGrid = GetNetEntity(blipGrid.Value);
                 blipPosition = Vector2.Transform(blipPosition, _xform.GetInvWorldMatrix(blipGrid.Value));
+                // Rotate velocity into the grid's local frame (translation does not affect a velocity vector).
+                var gridInvRot = -_xform.GetWorldRotation(blipGrid.Value);
+                blipVelocity = gridInvRot.RotateVec(blipVelocity);
             }
             var scale = blip.Scale;
             var shape = blip.Shape;
@@ -191,7 +228,7 @@ public sealed partial class RadarBlipSystem : SharedRadarBlipSystem
             //     }
             // }
 
-            blips.Add((blipNetGrid, blipPosition, scale, color, shape));
+            blips.Add((blipNetGrid, blipPosition, blipVelocity, scale, color, shape));
         }
         return blips;
     }

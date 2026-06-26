@@ -50,7 +50,7 @@
 
 #Paramedic
 - type: entity
-  parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
+  parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue # Wayfarer: Removed Contraband
   id: ClothingUniformJumpsuitParamedicSyndie
   name: syndicate paramedic jumpsuit
   description: For some reason, wearing this makes you feel like you're awfully close to violating the Geneva Convention.
@@ -63,7 +63,7 @@
 #HEADS OF STAFF
 #Chief Engineer
 - type: entity
-  parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
+  parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue # Wayfarer: Removed Contraband
   id: ClothingUniformJumpsuitChiefEngineerSyndie
   name: syndicate chief engineer jumpsuit
   description: An evil-looking jumpsuit with a reflective vest & red undershirt. #TODO: Write a better description for this once Ship vs. Ship is real and actual player habits begin forming

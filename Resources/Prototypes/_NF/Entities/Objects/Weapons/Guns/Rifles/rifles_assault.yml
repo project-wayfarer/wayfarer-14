@@ -3,8 +3,10 @@
   id: NFWeaponRifleAssaultSm
   parent: [ NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultCybersun ]
   name: Soland-Moss # Renamed: real brand name
-  description: |-
-    An iconic weapon of war. An illegal firearm often used by Syndicate agents.
+#  description: |-
+#    An iconic weapon of war. An illegal firearm often used by Syndicate agents.
+  description: |- # Wayfarer: Change description
+    A rugged assault rifle chambered in .30, a favorite among many security and military forces.
   components:
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/solandmoss.rsi
@@ -19,8 +21,10 @@
   id: NFWeaponRifleAssaultM90GrenadeLauncher
   parent: [ NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultCybersun ]
   name: M-90gl
-  description: |-
-    An older bullpup carbine model, with an attached underbarrel grenade launcher. An illegal firearm often used by Syndicate agents.
+#  description: |-
+#    An older bullpup carbine model, with an attached underbarrel grenade launcher. An illegal firearm often used by Syndicate agents.
+  description: |- # Wayfarer: Changed description
+    An older bullpup carbine model, with an attached underbarrel grenade launcher. A high quality rifle often employed by various PMCs.
   components:
   - type: Clothing
     sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
@@ -59,7 +63,7 @@
 #region DeltaV
 - type: entity
   id: NFWeaponRifleAssaultVulcan
-  parent: [ NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ BaseMilitaryContraband, NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ] # Wayfarer: add BaseMilitaryContraband
   name: Vulcan
   description: |-
     One of the heaviest small arms to grace Security's armory, this rifle is a modern take on a classic, informally dubbed the "Right Arm of the Free World".
@@ -91,7 +95,7 @@
 #region DeltaV: Rubber
 - type: entity
   id: NFWeaponRifleAssaultVulcanLessLethal
-  parent: [ NFBaseWeaponRifleAssaultChamber30Rubber, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ BaseMilitaryContraband, NFBaseWeaponRifleAssaultChamber30Rubber, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ] # Wayfarer: add BaseMilitaryContraband
   name: Vulcan
   description: |-
     One of the heaviest small arms to grace Security's armory, this rifle is a modern take on a classic, informally dubbed the "Right Arm of the Free World".

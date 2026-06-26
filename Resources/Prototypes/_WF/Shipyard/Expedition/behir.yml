@@ -2,12 +2,12 @@
   id: Behir
   parent: BaseVessel
   name: DIRE Behir
-  description: A somewhat restored cargo vessel, repurposed for planetary and space based asset acquisition.
-  price: 85180
+  description: A restored cargo vessel, repurposed for planetary and space based asset acquisition.
+  price: 90000
   category: Large
   group: Expedition
   shuttlePath: /Maps/_WF/Shuttles/Expedition/behir.yml
-  guidebookPage: ShipyardReclaimer
+  guidebookPage: ShipyardBehir
   class:
   - Cargo
   - Expedition
@@ -24,7 +24,7 @@
       stationProto: StandardFrontierExpeditionVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Behir EXP{1}'
+        mapNameTemplate: 'Behir {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

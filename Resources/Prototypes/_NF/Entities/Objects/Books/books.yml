@@ -19,7 +19,7 @@
     - OffshoreGasMining
 
 - type: entity
-  parent: [ BaseGuidebook, BaseC3CultContraband ]
+  parent: [ BaseGuidebook ] # Wayfarer: Removed BaseC3CultContraband
   id: BookBloodCultStavesGuide
   name: "Tome of Sanguine Rites: Unlocking The Power Of A Staff"
   description: A tome of rites for the staff awakening and empoverment.
@@ -46,7 +46,7 @@
     - BloodCultStavesGuide
 
 - type: entity
-  parent: [ BaseGuidebook, BaseC3WizardContraband ]
+  parent: [ BaseGuidebook ] # Wayfarer: Removed BaseC3WizardContraband
   id: BookWizardStavesGuide
   name: "A Practical Treatise on Wizard's Staff Care and Preservation"
   description: A concise treatise on the care of wizard staves, penned by Borzoi the Wise.

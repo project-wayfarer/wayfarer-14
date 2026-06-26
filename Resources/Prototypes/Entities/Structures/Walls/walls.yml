@@ -10,7 +10,7 @@
     - Wall
   components:
   - type: Anchorable
-    flags:
+    flags: 
     - Anchorable
   - type: Rotatable
   - type: RangedDamageSound
@@ -545,6 +545,10 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+    - type: RCDDeconstructable # Wayfarer
+      deconstructable: true # Wayfarer
+      cost: 8 # Wayfarer
+      delay: 8 # Wayfarer
 
 - type: entity
   parent: WallDiagonalBase
@@ -599,7 +603,9 @@
           sound:
             collection: MetalSlam
   - type: RCDDeconstructable # Frontier
-    deconstructable: false # Frontier
+    deconstructable: true # Frontier # Wayfarer: false<true
+    cost: 8 # Wayfarer
+    delay: 8 # Wayfarer
 
 - type: entity
   parent: BaseWall
@@ -691,10 +697,12 @@
   - type: IconSmooth
     key: walls
     base: reinf_over
-  - type: RCDDeconstructable #Frontier
-    cost: 6 #Frontier
-    delay: 8 #Frontier
-    fx: EffectRCDDeconstruct8 #Frontier
+  # Wayfarer: RCDDeconstructable
+  - type: RCDDeconstructable
+    cost: 4
+    delay: 8
+    fx: EffectRCDDeconstruct6
+  # End Wayfarer
   - type: Destructible
     thresholds:
     - trigger:
@@ -761,6 +769,12 @@
         acts: ["Destruction"]
   - type: RadiationBlocker
     resistance: 5
+  # Wayfarer: RCDDeconstructable
+  - type: RCDDeconstructable
+    cost: 4
+    delay: 8
+    fx: EffectRCDDeconstruct6
+  # End Wayfarer
 
 # Riveting
 - type: entity

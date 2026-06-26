@@ -29,8 +29,8 @@
   id: NFWeaponPistolCobra
   parent: [ NFBaseWeaponPistolChamber45, NFBaseWeaponFramePistolCybersun, BaseBMContraband ] # Wayfarer: add BaseBMContraband
   name: cobra
-  description: |-
-    A rugged, robust operator handgun with inbuilt silencer. An illegal firearm often used by Syndicate agents.
+  description: |- # Wayfarer: Change description
+    A rugged, robust operator handgun with inbuilt silencer. An illegal firearm often used by Coldlight operatives.
   components:
   - type: Gun
     soundGunshot:

@@ -134,6 +134,10 @@
   name: Break Free
   description: Activating your freedom implant will free you from any hand restraints
   components:
+  # Wayfarer Start
+  - type: ConfirmableAction
+    popup: confirm-action-popup
+  # Wayfarer End
   - type: LimitedCharges
     maxCharges: 3
   - type: Action

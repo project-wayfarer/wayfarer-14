@@ -72,6 +72,21 @@
     fx: EffectRCDDeconstruct2
     rpd: true
   # Starlight End
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/wrench_pickup.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/wrench_drop.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnLand
+    sound:
+      collection: PipeDrop
+  # Wayfarer End
 
 - type: entity
   abstract: true

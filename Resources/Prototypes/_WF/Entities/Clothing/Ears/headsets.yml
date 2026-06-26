@@ -13,3 +13,9 @@
       key_slots:
       - EncryptionKeyCommon
 
+- type: entity
+  parent: [ClothingHeadsetCommon, ClothingHeadsetAltSyndicate]
+  id: ClothingHeadsetAltSyndicateCommon
+  name: blood-red over-ear headset
+  description: An updated, modular intercom that fits over the head and takes encryption keys.
+  categories: [ HideSpawnMenu ]

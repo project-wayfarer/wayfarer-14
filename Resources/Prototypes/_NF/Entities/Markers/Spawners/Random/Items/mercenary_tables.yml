@@ -133,6 +133,7 @@
     - id: ClothingHeadHatBH
     - id: ClothingHeadBandMercenary
     - id: ClothingHeadHatBeretMercenary
+    - id: ClothingHeadHatArcadia
 
 - type: entityTable
   id: TableDungeonLootMercenaryClothesJumpsuits
@@ -359,14 +360,14 @@
     - !type:GroupSelector
       weight: 0.15
       children:
-      - id: CrateAmmoBoxRubber20
-      - id: CrateAmmoBoxRubber25
-      - id: CrateAmmoBoxRubber30
-      - id: CrateAmmoBoxRubber35
-      - id: CrateAmmoBoxRubber45
-      - id: CrateAmmoBoxRubberShotgun
+#      - id: CrateAmmoBoxRubber20 # Wayfarer
+#      - id: CrateAmmoBoxRubber25 # Wayfarer
+#      - id: CrateAmmoBoxRubber30 # Wayfarer
+#      - id: CrateAmmoBoxRubber35 # Wayfarer
+#      - id: CrateAmmoBoxRubber45 # Wayfarer
+#      - id: CrateAmmoBoxRubberShotgun # Wayfarer
       - id: CrateAmmoBoxLethal20
-      - id: CrateAmmoBoxLethal25
+#      - id: CrateAmmoBoxLethal25 # Wayfarer
       - id: CrateAmmoBoxLethal30
       - id: CrateAmmoBoxLethal35
       - id: CrateAmmoBoxLethal45
@@ -396,21 +397,23 @@
       weight: 0.15
       children:
       - id: CrateAmmoBoxBigLethal20
-      - id: CrateAmmoBoxBigLethal25
+#      - id: CrateAmmoBoxBigLethal25 # Wayfarer
       - id: CrateAmmoBoxBigLethal30
-      - id: CrateAmmoBoxBigRubber20
-      - id: CrateAmmoBoxBigRubber25
-      - id: CrateAmmoBoxFlareShotgun
+#      - id: CrateAmmoBoxBigRubber20 # Wayfarer
+#      - id: CrateAmmoBoxBigRubber25 # Wayfarer
+#      - id: CrateAmmoBoxFlareShotgun # Wayfarer
     # T5 - Legendary
-    - !type:GroupSelector
-      weight: 0.05
-      children:
-      - id: CrateAmmoBoxPractice20
-      - id: CrateAmmoBoxPractice25
-      - id: CrateAmmoBoxPractice30
-      - id: CrateAmmoBoxPractice35
-      - id: CrateAmmoBoxPractice45
-      - id: CrateAmmoBoxPracticeShotgun
+    # Wayfarer: Disabled
+#    - !type:GroupSelector
+#      weight: 0.05
+#      children:
+#      - id: CrateAmmoBoxPractice20
+#      - id: CrateAmmoBoxPractice25
+#      - id: CrateAmmoBoxPractice30
+#      - id: CrateAmmoBoxPractice35
+#      - id: CrateAmmoBoxPractice45
+#      - id: CrateAmmoBoxPracticeShotgun
+    # End Wayfarer
 
 # region Crates (Armor)
 - type: entityTable

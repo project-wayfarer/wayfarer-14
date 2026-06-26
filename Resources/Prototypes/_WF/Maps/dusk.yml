@@ -41,10 +41,10 @@
           Borg: [ -1, -1 ]
           StationRepresentative: [ 1, 1 ]
           StationTrafficController: [ 1, 1 ]
-          Valet: [ 1, 1 ]
-          NFJanitor: [ 1, 1 ]
-          MailCarrier: [ 2, 2 ]
-          MedicalER: [ 3, 3 ]
+          Valet: [ 3, 3 ]
+          NFJanitor: [ 5, 5 ]
+          MailCarrier: [ 5, 5 ]
+          MedicalER: [ -1, -1 ]
         tags:
         - HeadOfPersonnel
         - HeadOfSecurity

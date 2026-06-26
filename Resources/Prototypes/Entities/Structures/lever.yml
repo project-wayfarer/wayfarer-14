@@ -10,7 +10,7 @@
     - type: InteractionOutline
     - type: Sprite
       drawdepth: FloorObjects
-      sprite: Structures/conveyor.rsi
+      sprite: _Impstation/Structures/conveyor.rsi # Impstation
       layers:
         - state: switch-off
           map: ["enabled", "enum.TwoWayLeverState.Middle"]

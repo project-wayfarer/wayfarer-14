@@ -32,7 +32,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'Eagle {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
+            !type:MedicalNameGenerator # Wayfarer: NanotrasenNameGenerator<MedicalNameGenerator
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:

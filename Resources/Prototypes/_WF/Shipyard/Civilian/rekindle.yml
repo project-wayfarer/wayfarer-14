@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Maintainer Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Rekindle
+  parent: BaseVessel
+  name: SI Rekindle
+  description: A agile search and rescue ship. Basic crew quarters and medical facilities are included.
+  price: 58000
+  category: Small
+  group: Medical
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/rekindle.yml
+  guidebookPage: Null
+  class:
+  - Medical
+  engine:
+  - Biofuel
+
+- type: gameMap
+  id: Rekindle
+  mapName: 'SI Rekindle'
+  mapPath: /Maps/_WF/Shuttles/Civilian/rekindle.yml
+  minPlayers: 0
+  stations:
+    Rekindle:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Rekindle {1}'
+        nameGenerator:
+          !type:MedicalNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

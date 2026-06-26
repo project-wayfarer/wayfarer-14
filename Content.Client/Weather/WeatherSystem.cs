@@ -13,7 +13,7 @@ using AudioComponent = Robust.Shared.Audio.Components.AudioComponent;
 
 namespace Content.Client.Weather;
 
-public sealed class WeatherSystem : SharedWeatherSystem
+public sealed partial class WeatherSystem : SharedWeatherSystem // Wayfarer: partial, Run and SetState moved to _WF/Weather/WeatherSystem.WF.cs
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -26,6 +26,8 @@ public sealed class WeatherSystem : SharedWeatherSystem
         SubscribeLocalEvent<WeatherComponent, ComponentHandleState>(OnWeatherHandleState);
     }
 
+    // Wayfarer: Run and SetState moved to Content.Client/_WF/Weather/WeatherSystem.WF.cs
+    /*
     protected override void Run(EntityUid uid, WeatherData weather, WeatherPrototype weatherProto, float frameTime)
     {
         base.Run(uid, weather, weatherProto, frameTime);
@@ -135,6 +137,8 @@ public sealed class WeatherSystem : SharedWeatherSystem
         weather.Stream = _audio.PlayGlobal(weatherProto.Sound, Filter.Local(), true)?.Entity;
         return true;
     }
+    */
+    // End Wayfarer
 
     private void OnWeatherHandleState(EntityUid uid, WeatherComponent component, ref ComponentHandleState args)
     {

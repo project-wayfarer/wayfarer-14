@@ -7,6 +7,8 @@
   - JanitorNFPlunger
   - JanitorNFClothingHeadHatCone
   - JanitorNFGoldenPlunger
+  subgroups:
+  - WFHead # Wayfarer
 
 - type: loadoutGroup
   id: JanitorNFJumpsuit
@@ -14,6 +16,8 @@
   loadouts:
   - JanitorNFClothingUniformJumpsuitJanitor
   - JanitorNFClothingUniformJumpskirtJanitor
+  subgroups:
+  - WFJumpsuit # Wayfarer
   fallbacks:
   - JanitorNFClothingUniformJumpsuitJanitor
   - JanitorNFClothingUniformJumpskirtJanitor
@@ -26,6 +30,8 @@
   - JanitorNFClothingHandsGlovesJanitor
   - JanitorNFClothingHandsGlovesColorOrange
   - JanitorNFClothingHandsGlovesColorPurple
+  subgroups:
+  - WFGloves # Wayfarer
 
 - type: loadoutGroup
   id: JanitorNFOuterClothing
@@ -34,6 +40,8 @@
   loadouts:
   - JanitorNFClothingOuterWinterJani
   - JanitorNFWetFloorSign
+  subgroups:
+  - WFOuterClothing # Wayfarer
 
 - type: loadoutGroup
   id: JanitorBackpack
@@ -42,6 +50,6 @@
   - JanitorNFClothingBackpackDuffelJanitor
   - JanitorClothingBackpackMessengerJanitor
   subgroups:
-  - ContractorBackpack
+  - WFBackpack # Wayfarer: ContractorBackpack<WFBackpack
   fallbacks:
   - JanitorClothingBackpackMessengerJanitor

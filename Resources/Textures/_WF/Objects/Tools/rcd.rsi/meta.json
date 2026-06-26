@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "All sprites EXCEPT for onbelt state and matter units made by Toriate (Michiyamenotehifunana on Github), originally for CEV-Eris in December 2018. Onbelt state and matter units presumed to be made by Swept based on metadata of Frontier's rcd.rsi.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "ammo"
+        },
+        {
+            "name": "ammo-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "ammo-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "equipped-BELT",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

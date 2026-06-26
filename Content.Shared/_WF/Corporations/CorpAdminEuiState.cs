@@ -3,7 +3,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._WF.Corporations;
 
-// ─── State ───────────────────────────────────────────────────────────────────
+// State
 
 [Serializable, NetSerializable]
 public sealed class CorpAdminEuiState : EuiStateBase
@@ -42,7 +42,7 @@ public sealed class CorpAdminStationData
     public bool ActiveThisRound { get; init; }
 }
 
-// ─── Messages (client → server) ──────────────────────────────────────────────
+// Messages (client → server)
 
 public static class CorpAdminEuiMsg
 {

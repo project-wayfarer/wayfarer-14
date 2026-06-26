@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: MagnusCrowe (https://github.com/magnuscrowe) / Luweth
+# Discord: ??? / Luweth
+
+# Maintainer Info
+# GitHub: Luweth
+# Discord: Luweth
+
+# Shuttle Notes: Vox Bocakillo for Wayfarer. Has the funny thrusters etc.
+#
+- type: vessel
+  id: Bocaskreeo
+  parent: BaseVesselAntag
+  name: Bocaskreeo
+  description: A modified variant of the Bocakillo suited to N2 breathing Outlaws. Has two broadside cannons and a rear-facing disposals launcher. Runs on plasma.
+  price: 27500 # 21680 + (115*50) = 27430 (appraise+tc*50)
+  category: Small
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/bocaskreeo.yml
+  guidebookPage: ShipyardBocaskreeo
+  class:
+  - Pirate
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Bocaskreeo
+  mapName: 'Bocaskreeo'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/bocaskreeo.yml
+  minPlayers: 0
+  stations:
+    Bocaskreeo:
+      stationProto: StandardFrontierAntagVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Bocadillo {1}' #Sneaky spoofed name
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            NFPirate: [ 0, 0 ]

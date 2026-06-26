@@ -21,6 +21,11 @@
   examineText: contraband-examine-text-blackmarket
 
 - type: contrabandSeverity
+  id: CommandOrCGP
+  examineText: contraband-examine-text-commandorcgp
+  showDepartmentsAndJobs: true
+
+- type: contrabandSeverity
   id: CommandOnly
   examineText: contraband-examine-text-commandonly
   showDepartmentsAndJobs: false
@@ -29,3 +34,8 @@
 - type: contrabandSeverity
   id: NotContraband
   examineText: contraband-examine-text-notreal
+
+# Magic
+- type: contrabandSeverity
+  id: Class2Wizard
+  examineText: contraband-examine-text-MagicRestricted

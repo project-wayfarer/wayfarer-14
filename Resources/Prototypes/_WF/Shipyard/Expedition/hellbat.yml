@@ -24,7 +24,7 @@
       stationProto: StandardFrontierExpeditionVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Hellbat EXP{1}'
+        mapNameTemplate: 'Hellbat {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

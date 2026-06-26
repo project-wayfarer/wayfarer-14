@@ -5,7 +5,7 @@
   prototype: MobFeroxi
   sprites: MobFeroxiSprites
   defaultSkinTone: "#8DB9D6"
-  markingLimits: MobHumanMarkingLimits #MobFeroxiMarkingLimits WF
+  markingLimits: MobFeroxiMarkingLimits
   dollPrototype: MobFeroxiDummy
   skinColoration: Hues
   maleFirstNames: NamesVulpkaninMale
@@ -15,20 +15,18 @@
 - type: speciesBaseSprites
   id: MobFeroxiSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Head: MobFeroxiHead
+    Special: MobHumanoidAnyMarking # Wayfarer
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
-    Chest: MobFeroxiTorso
+    Head: MobFeroxiHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
+    Chest: MobFeroxiTorso
     Eyes: MobHumanoidEyes
     LArm: MobFeroxiLArm
     RArm: MobFeroxiRArm
@@ -38,7 +36,65 @@
     RLeg: MobFeroxiRLeg
     LFoot: MobFeroxiLFoot
     RFoot: MobFeroxiRFoot
-    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer
+
+- type: markingPoints
+  id: MobFeroxiMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 3<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ FeroxiEars ]
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 32<32
+      required: true
+      defaultMarkings: [ FeroxiSnout ]
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 3<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ FeroxiTailAndDorsal ]
+    UndergarmentTop:
+      points: 32 # Wayfarer: 3<32
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer: 3<32
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 - type: humanoidBaseSprite
   id: MobFeroxiHead

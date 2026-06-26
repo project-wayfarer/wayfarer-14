@@ -149,8 +149,7 @@
   id: TableDungeonLootWeaponsMeleeUnique
   table: !type:GroupSelector
     children:
-    - id: HyperEutacticBlade
-    - id: ClothingHandsKnuckleBoneCrushers
+    #- id: HyperEutacticBlade # Wayfarer: No. Absolutely not. Admin item.
     - id: ArmBlade
     - id: Kanabou
 
@@ -368,9 +367,9 @@
   id: TableDungeonLootWeaponsAmmunition
   table: !type:GroupSelector
     children:
-    - !type:NestedSelector
-      weight: 0.15
-      tableId: TableDungeonLootWeaponsAmmunitionRubber
+#    - !type:NestedSelector # Wayfarer: Disabled
+#      weight: 0.15
+#      tableId: TableDungeonLootWeaponsAmmunitionRubber
     - !type:NestedSelector
       weight: 0.3
       tableId: TableDungeonLootWeaponsAmmunitionLethal
@@ -380,9 +379,9 @@
     - !type:NestedSelector
       weight: 0.15
       tableId: TableDungeonLootWeaponsAmmunitionUranium
-    - !type:NestedSelector
-      weight: 0.05
-      tableId: TableDungeonLootWeaponsAmmunitionPractice
+   # - !type:NestedSelector
+   #   weight: 0.05
+   #   tableId: TableDungeonLootWeaponsAmmunitionPractice
 
 # region ammo lethal
 - type: entityTable
@@ -394,10 +393,10 @@
       children:
       - id: WeaponCaseShortAmmoBoxLethal20
       - id: WeaponCaseShortAmmoBoxBigLethal20
-    - !type:GroupSelector
-      children:
-      - id: WeaponCaseShortAmmoBoxLethal25
-      - id: WeaponCaseShortAmmoBoxBigLethal25
+#    - !type:GroupSelector # Wayfarer: Disabled
+#      children:
+#      - id: WeaponCaseShortAmmoBoxLethal25
+#      - id: WeaponCaseShortAmmoBoxBigLethal25
     - !type:GroupSelector
       children:
       - id: WeaponCaseShortAmmoBoxLethal30

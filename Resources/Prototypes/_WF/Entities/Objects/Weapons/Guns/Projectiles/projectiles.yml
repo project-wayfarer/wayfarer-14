@@ -1,0 +1,21 @@
+- type: entity
+  id: WFBulletGrenadeHEAT
+  name: HEAT grenade
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: grenade
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 50
+    intensitySlope: 15
+    maxIntensity: 25
+    canCreateVacuum: false
+  - type: RadarBlip
+    scale: 2
+    shape: Triangle
+    visibleFromOtherGrids: true

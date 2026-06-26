@@ -79,6 +79,17 @@
     Cloth: 500
 
 - type: latheRecipe
+  id: NFCookingBag
+  parent: NFBaseToolsRecipe
+  categories:
+  - Tools
+  - KitchenNF
+  result: NFCookingBag
+  materials:
+    Steel: 500
+    Cloth: 500
+
+- type: latheRecipe
   id: PlantBag
   parent: NFBaseToolsRecipe
   result: PlantBag
@@ -101,8 +112,8 @@
   result: ShipyardRCDAmmo
   completetime: 2.4
   materials:
-    Steel: 500
-    Plastic: 250
+    Steel: 1500 # Wayfarer: 500<1500
+    Plastic: 750 # Wayfarer: 250<750
 
 - type: latheRecipe
   parent: NFBaseToolsRecipe

@@ -27,6 +27,7 @@ public sealed class CorpCreateDialog : DefaultWindow
 
         var privacyBtn = new OptionButton { Margin = new Thickness(0, 0, 0, 8) };
         privacyBtn.AddItem("Public", (int) CorporationPrivacy.Public);
+        privacyBtn.AddItem("Unlisted", (int) CorporationPrivacy.Unlisted);
         privacyBtn.AddItem("Private", (int) CorporationPrivacy.Private);
         privacyBtn.OnItemSelected += args => privacyBtn.SelectId(args.Id);
 

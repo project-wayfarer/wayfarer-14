@@ -25,9 +25,9 @@
       stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Pridwen CGP{1}'
+        mapNameTemplate: 'Pridwen {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
+          !type:CGPNameGenerator
           prefixCreator: '14'
       - type: StationJobs
         availableJobs: {}

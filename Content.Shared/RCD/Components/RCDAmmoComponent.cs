@@ -12,7 +12,7 @@ public sealed partial class RCDAmmoComponent : Component
     /// Can be partially transferred into an RCD, until it is empty then it gets deleted.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int Charges = 30;
+    public int Charges = 90; // Wayfarer: 30<90
 
     /// <summary>
     /// ~~~ Frontier ~~~

@@ -1,0 +1,7 @@
+- type: entity
+  id: WFMagazineGrenadeHEAT
+  name: HEAT grenade cartridge
+  parent: BaseMagazineGrenade
+  components:
+  - type: BallisticAmmoProvider
+    proto: WFGrenadeHEAT

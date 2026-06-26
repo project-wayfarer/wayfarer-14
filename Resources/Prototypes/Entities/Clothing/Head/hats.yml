@@ -797,7 +797,7 @@
 
 - type: entity
   abstract: true
-  parent: [ ClothingHeadBase, BaseC3WizardContraband ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband
+  parent: [ ClothingHeadBase ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband # Wayfarer: Removed BaseC3WizardContraband
   id: ClothingHeadHatWizardBase
   components:
   - type: WizardClothes

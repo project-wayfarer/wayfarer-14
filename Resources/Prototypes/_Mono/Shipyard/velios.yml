@@ -30,9 +30,9 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Velios MED{1}'
+          mapNameTemplate: 'Velios {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
+            !type:MedicalNameGenerator # Wayfarer: NanotrasenNameGenerator<MedicalNameGenerator
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:

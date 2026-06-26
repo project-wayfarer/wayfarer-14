@@ -76,16 +76,16 @@
   - type: Clothing
     sprite: _WF/Clothing/Uniforms/Jumpskirt/CGP_skirt_short.rsi # Wayfarer: _NF/Clothing/Uniforms/Jumpskirt/nfsd_skirt_short.rsi < _WF/Clothing/Uniforms/Jumpskirt/CGP_skirt_short.rsi
 
-#- type: entity
-#  parent: ClothingUniformSkirtBase
-#  id: ClothingUniformJumpskirtPublicAffairsLiaison
-#  name: public affairs liaison jumpskirt
-#  description: A starched and pressed skirt suit for the public affairs liaison.
-#  components:
-#  - type: Sprite
-#    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
-#  - type: Clothing
-#    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtPublicAffairsLiaison
+  name: public affairs liaison jumpskirt
+  description: A starched and pressed skirt suit for the public affairs liaison.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/Uniforms/Jumpskirt/public_affairs.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase

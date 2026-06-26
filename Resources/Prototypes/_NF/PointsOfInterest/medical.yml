@@ -45,7 +45,7 @@
         - type: StationJobs
           availableJobs:
             DirectorOfCare: [ 1, 1 ]
-            MedicalER: [ 3, 3]
+            MedicalER: [ -1, -1]
           tags:
           - HeadOfPersonnel
           - HeadOfSecurity

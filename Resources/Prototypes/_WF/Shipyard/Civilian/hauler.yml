@@ -34,7 +34,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Hauler CIV{1}'
+        mapNameTemplate: 'Hauler {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

@@ -3,6 +3,18 @@
   id: BaseItem
   abstract: true
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: GenericPickup
+      params:
+        volume: -7
+  - type: EmitSoundOnDrop
+    sound:
+      collection: GenericDrop
+      params:
+        volume: -7
+  # Wayfarer End
   - type: Item
     size: Small
   - type: Animateable

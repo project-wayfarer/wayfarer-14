@@ -34,6 +34,7 @@
   storage:
     back:
     - PlushieLizard
+  groupBy: "Plushies" # Frontier: add groupBy: "Plushies"
 
 - type: loadout
   id: PlushieSpaceLizard
@@ -232,15 +233,6 @@
     back:
     - ClothingNeckGenderfluidPin
   groupBy: "pin"
-
-#Start Wayfarer-14
-- type: loadout
-  id: ClothingNeckPolyamoryPin
-  storage:
-    back:
-    - ClothingNeckPolyamoryPin
-  groupBy: "pin"
-#End Wayfarer-14
 
 # Canes
 # The white cane is intentionally not included here. Thats for the blind.

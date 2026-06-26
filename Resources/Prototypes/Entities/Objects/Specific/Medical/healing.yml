@@ -4,10 +4,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _DV/Objects/Specific/medical.rsi # DeltaV - Resprited some medical items
   - type: Item
     size: Small
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _DV/Objects/Specific/medical.rsi # DeltaV - Resprited some medical items
     heldPrefix: ointment
   # Inherited
   - type: StaticPrice
@@ -46,6 +46,10 @@
       params:
         volume: 1.0
         variation: 0.125
+    # Wayfarer Start
+    maxHealableDamage:
+      Burn: 150
+    # End Wayfarer
   - type: Stack
     stackType: Ointment
     count: 10
@@ -94,6 +98,10 @@
       params:
         volume: 1.0
         variation: 0.125
+    # Wayfarer Start
+    maxHealableDamage:
+      Burn: 300
+    # End Wayfarer
   - type: Stack
     stackType: RegenerativeMesh
     count: 10
@@ -139,6 +147,10 @@
       params:
         volume: 1.0
         variation: 0.125
+    # Wayfarer Start
+    maxHealableDamage:
+      Brute: 150
+    # End Wayfarer
   - type: Stack
     stackType: Brutepack
     count: 10
@@ -186,6 +198,10 @@
       params:
         volume: 1.0
         variation: 0.125
+    # Wayfarer Start
+    maxHealableDamage:
+      Brute: 300
+    # End Wayfarer
   - type: Stack
     stackType: MedicatedSuture
     count: 10
@@ -316,6 +332,11 @@
       params:
         volume: 1.0
         variation: 0.125
+    # Wayfarer Start
+    maxHealableDamage:
+      Slash: 100
+      Piercing: 100
+    # End Wayfarer
   - type: Stack
     stackType: Gauze
     count: 10

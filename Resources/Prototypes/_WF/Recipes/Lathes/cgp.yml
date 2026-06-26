@@ -1,0 +1,377 @@
+# Misc
+
+# Clothing
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: WFClothingOuterStraightjacket
+  result: ClothingOuterStraightjacket
+  materials:
+    Steel: 200
+    Cloth: 400
+
+- type: latheRecipe
+  id: WFClothingMaskGasSheriff
+  parent: NFBaseMaskArmoredRecipe
+  result: ClothingMaskGasSheriff
+
+- type: latheRecipe
+  id: ClothingOuterArmorNfsd
+  parent: NFBaseArmorRecipe
+  result: ClothingOuterArmorNfsd
+
+- type: latheRecipe
+  id: ClothingHeadHelmetNfsd
+  parent: NFBaseHelmetRecipe
+  result: ClothingHeadHelmetNfsd
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdBronze
+  parent: NFBaseHardSuitRecipe
+  result: ClothingOuterHardsuitNfsdBronze
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdSilver
+  parent: NFBaseHardSuitRecipe
+  result: ClothingOuterHardsuitNfsdSilver
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdGold
+  parent: NFBaseHardSuitRecipe
+  result: ClothingOuterHardsuitNfsdGold
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdCombat
+  parent: NFBaseHardSuitArmoredRecipe
+  result: ClothingOuterHardsuitNfsdCombat
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNfsdBrigmedic
+  parent: NFBaseHardSuitArmoredRecipe
+  result: ClothingOuterHardsuitNfsdBrigmedic
+
+- type: latheRecipe
+  id: ClothingShoesBootsMagNfsd
+  parent: NFBaseMagBootsRecipe
+  result: ClothingShoesBootsMagNfsd
+
+- type: latheRecipe
+  id: ClothingShoesBootsMagTacCGP
+  parent: NFBaseMagBootsRecipe
+  result: ClothingShoesBootsMagTacCGP
+  materials:
+    Gold: 500
+    Plasteel: 500
+    Cloth: 400
+
+# Clusterbang
+- type: latheRecipe
+  id: WFClusterBang
+  result: ClusterBang
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 300
+
+# Sidearms
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: NFWeaponRevolverInspector
+  result: NFWeaponRevolverInspector
+  materials:
+    Steel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: NFWeaponPistolUniversalNfsd
+  result: NFWeaponPistolUniversalNfsd
+  materials:
+    Steel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: WFWeaponLaserSvalinn
+  result: NFWeaponEnergyPistolLaserSvalinn
+  materials:
+    Steel: 2000
+    Gold: 500
+    Plasma: 300
+
+# Longarms
+- type: latheRecipe
+  id: SecBreachingHammerCGP
+  parent: BaseWeaponRecipeLong
+  result: SecBreachingHammerCGP
+  materials:
+    Steel: 2000
+    Plastic: 50
+
+- type: latheRecipe
+  id: WFWeaponShotgunEnforcer
+  result: NFWeaponShotgunEnforcer
+  parent: BaseWeaponRecipeLong
+  materials:
+    Steel: 2500
+    Plasteel: 1200
+    Plastic: 1500
+
+# Grenades
+- type: latheRecipe
+  id: WFGrenadeStinger
+  result: GrenadeStinger
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 500
+    Glass: 100
+    Plasma: 300
+
+- type: latheRecipe
+  id: WFSmokeGrenade
+  result: SmokeGrenade
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 500
+    Glass: 100
+    Plasma: 300
+
+- type: latheRecipe
+  id: WFEmpGrenade
+  result: EmpGrenade
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 500
+    Glass: 100
+    Uranium: 100
+    Plasma: 100
+
+- type: latheRecipe
+  id: WFTearGasGrenade
+  result: TearGasGrenade
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 500
+    Glass: 100
+    Plasma: 100
+
+- type: latheRecipe
+  id: WFGrenadeFlashBang
+  result: GrenadeFlashBang
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 500
+    Glass: 100
+    Plasma: 100
+
+- type: latheRecipe
+  id: WFGrenadeHEAT
+  result: WFGrenadeHEAT
+  categories:
+  - Weapons
+  completetime: 2
+  materials:
+    Steel: 400
+    Plastic: 200
+    Plasma: 200
+
+- type: latheRecipe
+  id: WFMagazineGrenadeHEAT
+  result: WFMagazineGrenadeHEAT
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 2000
+    Plastic: 1000
+    Plasma: 1000
+
+- type: latheRecipe
+  id: NFMagazineGrenadeEMP
+  result: NFMagazineGrenadeEMP
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 750
+    Plastic: 500
+    Glass: 100
+
+# Pre-filled Magazines QOL
+# 35 # god fucking damnit why are there so many types of 35 magazines
+
+# FMJ
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine35ExFilled
+  result: NFMagazineHighCapacityPistol35
+  materials:
+    Steel: 265 # mag 25, 16 [bullets] * 15 [Steel per bullet]
+
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine35SMGFilled
+  result: NFMagazineSubMachineGun35
+  materials:
+    Steel: 475 # mag 25, 30 [bullets] * 15 [Steel per bullet]
+
+- type: latheRecipe
+  parent: WFMagazine35SMGFilled
+  id: WFMagazine35SMGFilledTop
+  result: NFMagazineSubMachineGunTopMounted35
+
+# Rubber
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine35ExFilledRubber
+  result: NFMagazineHighCapacityPistol35Rubber
+  materials:
+    Plastic: 120 # 16 [bullets] * 7.5 [Plastic per bullet]
+    Steel: 145 # mag 25, 16 [bullets] * 7.5 [Steel per bullet]
+
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine35SMGFilledRubber
+  result: NFMagazineSubMachineGun35Rubber
+  materials:
+    Plastic: 225 # 30 [bullets] * 7.5 [Plastic per bullet]
+    Steel: 250 # mag 30, 16 [bullets] * 7.5 [Steel per bullet]
+
+- type: latheRecipe
+  parent: WFMagazine35SMGFilledRubber
+  id: WFMagazine35SMGFilledTopRubber
+  result: NFMagazineSubMachineGunTopMounted35Rubber
+
+# Overpressure
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine35ExFilledOverpressure
+  result: NFMagazineHighCapacityPistol35Overpressure
+  materials:
+    Steel: 360 # mag 25, 16 [bullets] * 22.5 [Steel per bullet]
+
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine35SMGFilledOverpressure
+  result: NFMagazineSubMachineGun35Overpressure
+  materials:
+    Steel: 700 # mag 25, 30 [bullets] * 22.5 [Steel per bullet]
+
+- type: latheRecipe
+  parent: WFMagazine35SMGFilledOverpressure
+  id: WFMagazine35SMGFilledTopOverpressure
+  result: NFMagazineSubMachineGunTopMounted35Overpressure
+
+# 45
+# FMJ
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine45Filled
+  result: NFMagazinePistol45
+  materials:
+    Steel: 145 # mag 25, 8 [bullets] * 15 [Steel per bullet]
+
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFSpeedloader45Filled
+  result: NFSpeedLoaderPistol45
+  materials:
+    Steel: 115 # mag 25, 6 [bullets] * 15 [Steel per bullet]
+
+# Rubber
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine45FilledRubber
+  result: NFMagazinePistol45Rubber
+  materials:
+    Plastic: 85 # 8 [bullets] * 7.5 [Plastic per bullet]
+    Steel: 60 # mag 25, 8 [bullets] * 7.5 [Steel per bullet]
+
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFSpeedloader45FilledRubber
+  result: NFSpeedLoaderPistol45Rubber
+  materials:
+    Plastic: 70 # 6 [bullets] * 7.5 [Plastic per bullet]
+    Steel: 45 # mag 25, 6 [bullets] * 7.5 [Steel per bullet]
+
+# Overpressure
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine45FilledOverpressure
+  result: NFMagazinePistol45Overpressure
+  materials:
+    Steel: 205 # mag 25, 8 [bullets] * 22.5 [Steel per bullet]
+
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFSpeedloader45FilledOverpressure
+  result: NFSpeedLoaderPistol45Overpressure
+  materials:
+    Steel: 160 # mag 25, 6 [bullets] * 22.5 [Steel per bullet]
+
+#20
+# FMJ
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine20Filled
+  result: NFMagazineRifle20
+  materials:
+    Steel: 525 # mag 25, 25 [bullets] * 20 [Steel per bullet]
+
+# Rubber
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine20FilledRubber
+  result: NFMagazineRifle20Rubber
+  materials:
+    Plastic: 250 # 25 [bullets] * 10 [Plastic per bullet]
+    Steel: 275 # mag 25, 25 [bullets] * 10 [Steel per bullet]
+
+# Overpressure
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine20FilledOverpressure
+  result: NFMagazineRifle20Overpressure
+  materials:
+    Steel: 775 # mag 25, 25 [bullets] * 30 [Steel per bullet]
+
+#30
+# FMJ
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine30Filled
+  result: NFMagazineRifle30
+  materials:
+    Steel: 625 # mag 25, 30 [bullets] * 20 [Steel per bullet]
+
+# Rubber
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine30FilledRubber
+  result: NFMagazineRifle30Rubber
+  materials:
+    Plastic: 300 # 30 [bullets] * 10 [Plastic per bullet]
+    Steel: 325 # mag 25, 30 [bullets] * 10 [Steel per bullet]
+
+# Overpressure
+- type: latheRecipe
+  parent: BaseFilledMagazineRecipe
+  id: WFMagazine30FilledOverpressure
+  result: NFMagazineRifle30Overpressure
+  materials:
+    Steel: 900 # mag 25, 30 [bullets] * 30 [Steel per bullet]

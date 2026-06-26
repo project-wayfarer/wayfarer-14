@@ -1,0 +1,10 @@
+- type: entity
+  name: nitrogen deprivation treatment kit
+  description: "A box full of nitrogen goodies."
+  parent: Medkit
+  id: MedkitN2
+  components:
+  - type: Sprite
+    state: n2kit
+  - type: Item
+    heldPrefix: n2kit

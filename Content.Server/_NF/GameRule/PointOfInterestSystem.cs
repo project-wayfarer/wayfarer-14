@@ -11,6 +11,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server._NF.Station.Systems;
+using Robust.Server.GameObjects; // Wayfarer
 using Robust.Shared.EntitySerialization.Systems;
 
 namespace Content.Server._NF.GameRule;
@@ -24,6 +25,7 @@ public sealed class PointOfInterestSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!; // Wayfarer
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly StationRenameWarpsSystems _renameWarps = default!;
@@ -94,7 +96,9 @@ public sealed class PointOfInterestSystem : EntitySystem
                         destComp.DestinationProto = "CargoOther";
                 }
                 depotStations.Add(depot);
-                AddStationCoordsToSet(offset, proto.MinimumClearance); // adjust list of actual station coords
+                // Wayfarer: own-map POIs are not part of sector spacing, so skip shared-map clearance bookkeeping.
+                if (!proto.SpawnOwnMap)
+                    AddStationCoordsToSet(offset, proto.MinimumClearance); // adjust list of actual station coords
             }
         }
     }
@@ -129,7 +133,9 @@ public sealed class PointOfInterestSystem : EntitySystem
             {
                 marketStations.Add(market);
                 marketsAdded++;
-                AddStationCoordsToSet(offset, proto.MinimumClearance);
+                // Wayfarer: own-map POIs are not part of sector spacing, so skip shared-map clearance bookkeeping.
+                if (!proto.SpawnOwnMap)
+                    AddStationCoordsToSet(offset, proto.MinimumClearance);
             }
         }
     }
@@ -163,7 +169,9 @@ public sealed class PointOfInterestSystem : EntitySystem
             if (TrySpawnPoiGrid(mapUid, proto, offset, out var optionalUid) && optionalUid is { Valid: true } uid)
             {
                 optionalStations.Add(uid);
-                AddStationCoordsToSet(offset, proto.MinimumClearance);
+                // Wayfarer: own-map POIs are not part of sector spacing, so skip shared-map clearance bookkeeping.
+                if (!proto.SpawnOwnMap)
+                    AddStationCoordsToSet(offset, proto.MinimumClearance);
             }
         }
     }
@@ -192,7 +200,9 @@ public sealed class PointOfInterestSystem : EntitySystem
             if (TrySpawnPoiGrid(mapUid, proto, offset, out var requiredUid) && requiredUid is { Valid: true } uid)
             {
                 requiredStations.Add(uid);
-                AddStationCoordsToSet(offset, proto.MinimumClearance);
+                // Wayfarer: own-map POIs are not part of sector spacing, so skip shared-map clearance bookkeeping.
+                if (!proto.SpawnOwnMap)
+                    AddStationCoordsToSet(offset, proto.MinimumClearance);
             }
         }
     }
@@ -230,7 +240,9 @@ public sealed class PointOfInterestSystem : EntitySystem
                     if (TrySpawnPoiGrid(mapUid, proto, offset, out var optionalUid) && optionalUid is { Valid: true } uid)
                     {
                         uniqueStations.Add(uid);
-                        AddStationCoordsToSet(offset, proto.MinimumClearance);
+                        // Wayfarer: own-map POIs are not part of sector spacing, so skip shared-map clearance bookkeeping.
+                        if (!proto.SpawnOwnMap)
+                            AddStationCoordsToSet(offset, proto.MinimumClearance);
                         break;
                     }
                 }
@@ -241,7 +253,19 @@ public sealed class PointOfInterestSystem : EntitySystem
     private bool TrySpawnPoiGrid(MapId mapUid, PointOfInterestPrototype proto, Vector2 offset, out EntityUid? gridUid, string? overrideName = null)
     {
         gridUid = null;
-        if (!_map.TryLoadGrid(mapUid, proto.GridPath, out var loadedGrid, offset: offset, rot: _random.NextAngle()))
+
+        var targetMap = mapUid;
+        var targetOffset = offset;
+        // Wayfarer: allow select POIs to spawn on their own map instead of the sector map.
+        if (proto.SpawnOwnMap)
+        {
+            // Wayfarer: mirror standalone map creation patterns (expedition/cryo style) and spawn at map origin.
+            var ownMapUid = _mapSystem.CreateMap(out targetMap);
+            _meta.SetEntityName(ownMapUid, $"{proto.Name} Map");
+            targetOffset = Vector2.Zero;
+        }
+
+        if (!_map.TryLoadGrid(targetMap, proto.GridPath, out var loadedGrid, offset: targetOffset, rot: _random.NextAngle()))
             return false;
         gridUid = loadedGrid.Value;
         List<EntityUid> gridList = [loadedGrid.Value];

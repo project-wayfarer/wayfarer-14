@@ -35,7 +35,7 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Stronghold CIV{1}'
+          mapNameTemplate: 'Stronghold {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

@@ -204,6 +204,12 @@
             max: 25
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Wayfarer: RCDDeconstructable
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct6
+  # End Wayfarer
 
 - type: entity
   parent: [ BaseStructureDynamic, BasePressurePumpGaslock, BaseMachinePowered, ConstructibleMachine ]

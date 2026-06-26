@@ -37,7 +37,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
 
     private ISawmill _log = default!;
 
-    // ─── Lifecycle ───────────────────────────────────────────────────────────
+    // Lifecycle
 
     public override void Initialize()
     {
@@ -48,7 +48,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         SubscribeLocalEvent<CorporationCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
     }
 
-    // ─── Event handlers ──────────────────────────────────────────────────────
+    // Event handlers
 
     private async void OnUiReady(EntityUid uid, CorporationCartridgeComponent comp, CartridgeUiReadyEvent args)
     {
@@ -123,15 +123,16 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         }
     }
 
-    // ─── Action handlers ─────────────────────────────────────────────────────
+    // Action handlers
 
     private async Task HandleNavigate(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, CorporationView view)
     {
         if (view == CorporationView.Invite)
         {
-            var myCorp = await _db.GetCorporationForPlayer(userId.UserId);
-            var myMember = GetMember(myCorp, userId);
+            var characterName = GetCharacterName(actor);
+            var myCorp = await GetCorporationForCharacter(userId, characterName);
+            var myMember = GetMember(myCorp, userId, characterName);
 
             if (myCorp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Recruiter)
             {
@@ -152,8 +153,10 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleCreate(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, CorporationCreateMessage create)
     {
+        var characterName = GetCharacterName(actor);
+
         // Must not already be in a corp
-        if (await _db.GetCorporationForPlayer(userId.UserId) != null)
+        if (await GetCorporationForCharacter(userId, characterName) != null)
         {
             await UpdateListUi(uid, loader, comp, "corp-error-already-member");
             return;
@@ -200,7 +203,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleJoin(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, int corpId)
     {
-        if (await _db.GetCorporationForPlayer(userId.UserId) != null)
+        var characterName = GetCharacterName(actor);
+
+        if (await GetCorporationForCharacter(userId, characterName) != null)
         {
             await UpdateListUi(uid, loader, comp, "corp-error-already-member");
             return;
@@ -213,8 +218,8 @@ public sealed class CorporationCartridgeSystem : EntitySystem
             return;
         }
 
-        // Private corps require an invite
-        if (corp.Privacy == (int)CorporationPrivacy.Private)
+        // Non-public corps require an invite.
+        if (corp.Privacy != (int)CorporationPrivacy.Public)
         {
             if (!await _db.HasCorporationInvite(corpId, userId.UserId))
             {
@@ -234,8 +239,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleLeave(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null)
         {
@@ -267,8 +273,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleDisband(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank != CorporationRank.Leader)
         {
@@ -284,8 +291,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleEditDescription(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, string description)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Manager)
         {
@@ -305,8 +313,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleSetPrivacy(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, CorporationPrivacy privacy)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Manager)
         {
@@ -321,8 +330,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleSendInvite(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, string characterName)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var actorCharacterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, actorCharacterName);
+        var myMember = GetMember(corp, userId, actorCharacterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Recruiter)
         {
@@ -343,7 +353,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         }
 
         // Target must not already be in any corporation
-        if (await _db.GetCorporationForPlayer(targetUserId.UserId) != null)
+        if (await GetCorporationForCharacter(targetUserId, characterName) != null)
         {
             var characters = GetStationCharacterNames(corp);
             _cartridgeLoader.UpdateCartridgeUiState(loader, new CorporationInviteUiState
@@ -385,6 +395,8 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleRespondInvite(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, int corpId, bool accept)
     {
+        var characterName = GetCharacterName(actor);
+
         if (!await _db.HasCorporationInvite(corpId, userId.UserId))
         {
             await UpdateListUi(uid, loader, comp, "corp-error-invite-not-found");
@@ -396,7 +408,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         if (accept)
         {
             // Must not already be in a corp
-            if (await _db.GetCorporationForPlayer(userId.UserId) != null)
+            if (await GetCorporationForCharacter(userId, characterName) != null)
             {
                 await UpdateListUi(uid, loader, comp, "corp-error-already-member");
                 return;
@@ -418,8 +430,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleKick(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, string targetUserIdStr)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Manager)
         {
@@ -456,8 +469,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleChangeRank(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId, string targetUserIdStr, CorporationRank newRank)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Manager)
         {
@@ -516,8 +530,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
             return;
         }
 
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Manager)
         {
@@ -555,8 +570,9 @@ public sealed class CorporationCartridgeSystem : EntitySystem
     private async Task HandleToggleStationVisibility(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         EntityUid actor, NetUserId userId)
     {
-        var corp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(corp, userId);
+        var characterName = GetCharacterName(actor);
+        var corp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(corp, userId, characterName);
 
         if (corp == null || myMember == null || (CorporationRank)myMember.Rank < CorporationRank.Manager)
         {
@@ -568,7 +584,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         await UpdateListUi(uid, loader, comp);
     }
 
-    // ─── UI state helpers ────────────────────────────────────────────────────
+    // UI state helpers
 
     private async Task UpdateListUi(EntityUid uid, EntityUid loader, CorporationCartridgeComponent comp,
         string? errorLocKey = null)
@@ -577,14 +593,15 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         if (session == null)
             return;
 
-        var state = await BuildListState(session.UserId, errorLocKey);
+        var characterName = GetCharacterName(session);
+        var state = await BuildListState(session.UserId, characterName, errorLocKey);
         _cartridgeLoader.UpdateCartridgeUiState(loader, state);
     }
 
-    private async Task<CorporationListUiState> BuildListState(NetUserId userId, string? errorLocKey = null)
+    private async Task<CorporationListUiState> BuildListState(NetUserId userId, string? characterName, string? errorLocKey = null)
     {
-        var myCorp = await _db.GetCorporationForPlayer(userId.UserId);
-        var myMember = GetMember(myCorp, userId);
+        var myCorp = await GetCorporationForCharacter(userId, characterName);
+        var myMember = GetMember(myCorp, userId, characterName);
         var myRank = myMember != null ? (CorporationRank)myMember.Rank : CorporationRank.Member;
         var myStation = myCorp != null ? await _db.GetCorporationStation(myCorp.Id) : null;
 
@@ -598,7 +615,7 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         var allCorps = await _db.GetAllCorporations();
 
         var publicCorps = allCorps
-            .Where(c => c.Privacy == (int)CorporationPrivacy.Public &&
+            .Where(c => c.Privacy != (int)CorporationPrivacy.Unlisted &&
                         (myCorp == null || c.Id != myCorp.Id))
             .Select(c => new CorporationInfo
             {
@@ -650,11 +667,24 @@ public sealed class CorporationCartridgeSystem : EntitySystem
         };
     }
 
-    // ─── Data query helpers ──────────────────────────────────────────────────
+    // Data query helpers
 
-    private static WayfarerCorporationMember? GetMember(WayfarerCorporation? corp, NetUserId userId)
+    private static WayfarerCorporationMember? GetMember(WayfarerCorporation? corp, NetUserId userId, string? characterName)
     {
-        return corp?.Members.FirstOrDefault(m => m.UserId == userId.UserId);
+        if (corp == null)
+            return null;
+
+        return corp.Members.FirstOrDefault(m =>
+            m.UserId == userId.UserId &&
+            (string.IsNullOrWhiteSpace(characterName) || m.DisplayName == characterName));
+    }
+
+    private async Task<WayfarerCorporation?> GetCorporationForCharacter(NetUserId userId, string? characterName)
+    {
+        if (string.IsNullOrWhiteSpace(characterName))
+            return null;
+
+        return await _db.GetCorporationForCharacter(userId.UserId, characterName);
     }
 
     private bool TryGetActorUserId(EntityUid actor, out NetUserId userId)
@@ -664,6 +694,21 @@ public sealed class CorporationCartridgeSystem : EntitySystem
             return false;
         userId = session.UserId;
         return true;
+    }
+
+    private string? GetCharacterName(EntityUid actor)
+    {
+        var name = MetaData(actor).EntityName.Trim();
+        return string.IsNullOrWhiteSpace(name) ? null : name;
+    }
+
+    private string? GetCharacterName(ICommonSession session)
+    {
+        if (session.AttachedEntity is not { } attached)
+            return null;
+
+        var name = MetaData(attached).EntityName.Trim();
+        return string.IsNullOrWhiteSpace(name) ? null : name;
     }
 
     /// <summary>

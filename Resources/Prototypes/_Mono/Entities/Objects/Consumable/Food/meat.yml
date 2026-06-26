@@ -1,8 +1,8 @@
 - type: entity
-  name: raw resomi meat
+  name: raw avali meat # Wayfarer: resomi<avali
   parent: FoodMeatRawBase
   id: FoodMeatResomi
-  description: A slab of raw resomi. Remember to wash your hands!
+  description: A slab of raw avali. Remember to wash your hands! # Wayfarer: resomi<avali
   components:
   - type: Sprite
     sprite: _Mono/Objects/Consumable/Food/meat.rsi
@@ -27,10 +27,10 @@
       - resomi
 
 - type: entity
-  name: breaded resomi
+  name: breaded avali # Wayfarer: resomi<avali
   parent: FoodMeatResomi
   id: FoodMeatResomiBattered
-  description: A resomi fillet dredged in a gloopy flour and egg mixture.
+  description: An avali fillet dredged in a gloopy flour and egg mixture. # Wayfarer: resomi<avali
   components:
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
@@ -46,10 +46,10 @@
       - floury
 
 - type: entity
-  name: cooked resomi steak
+  name: cooked avali steak # Wayfarer: resomi<avali
   parent: FoodMeatResomi
   id: FoodMeatResomiSteak
-  description: A perfectly cooked resomi steak. Surprisingly tender.
+  description: A perfectly cooked avali. Surprisingly tender. # Wayfarer: resomi<avali
   components:
   - type: Sprite
     layers:
@@ -77,10 +77,10 @@
           Quantity: 6
 
 - type: entity
-  name: fried resomi
+  name: fried avali # Wayfarer: resomi<avali
   parent: FoodMeatResomiBattered
   id: FoodMeatResomiFried
-  description: A crispy fried resomi fillet. Tastes like space chicken.
+  description: A crispy fried avali fillet. Tastes like space chicken. # Wayfarer: resomi<avali
   components:
   - type: Sprite
     sprite: _Mono/Objects/Consumable/Food/meat.rsi
@@ -111,10 +111,10 @@
       - resomi
 
 - type: entity
-  name: raw resomi cutlet
+  name: raw avali cutlet # Wayfarer: resomi<avali
   parent: FoodMeatResomi
   id: FoodMeatResomiCutlet
-  description: A thin slice of raw resomi meat, ready for breading or frying.
+  description: A thin slice of raw avali meat, ready for breading or frying. # Wayfarer: resomi<avali
   components:
   - type: Sprite
     layers:
@@ -137,10 +137,10 @@
     defaultTarget: resomi cutlet cooked
 
 - type: entity
-  name: cooked resomi cutlet
+  name: cooked avali cutlet # Wayfarer: resomi<avali
   parent: FoodMeatResomiCutlet
   id: FoodMeatResomiCutletCooked
-  description: A cooked slice of resomi meat, golden and juicy.
+  description: A cooked slice of avali meat, golden and juicy. # Wayfarer: resomi<avali
   components:
   - type: Sprite
     layers:
@@ -169,10 +169,10 @@
     defaultTarget: resomi cutlet cooked
 
 - type: entity
-  name: bucket of fried resomi
+  name: bucket of fried avali # Wayfarer: resomi<avali
   parent: FoodMeatBase
   id: FoodMeatResomiBucket
-  description: A bucket filled with several crispy fried resomi pieces.
+  description: A bucket filled with several crispy fried avali pieces. # Wayfarer: resomi<avali
   components:
   - type: Sprite
     sprite: _Mono/Objects/Consumable/Food/meat.rsi

@@ -57,13 +57,15 @@
 - type: entity
   parent: [ BaseCGPContraband, ClothingMaskGasSwat ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingMaskGasSheriff
-  name: CGP commodore gas mask
-  description: A gas mask worthy of a commodore.
+  name: CGP combat gasmask # Wayfarer: Changed name
+  description: A combat gasmask designed for CGP. Provides eye protection. # Wayfarer: Changed description.
   components:
   - type: Sprite
     sprite: _WF/Clothing/Mask/CGP_sheriff.rsi # Wayfarer: _NF/Clothing/Mask/nfsd_sheriff.rsi < _WF/Clothing/Mask/CGP_sheriff.rsi
   - type: Clothing
     sprite: _WF/Clothing/Mask/CGP_sheriff.rsi # Wayfarer: _NF/Clothing/Mask/nfsd_sheriff.rsi < _WF/Clothing/Mask/CGP_sheriff.rsi
+  - type: FlashImmunity # Wayfarer
+  - type: EyeProtection # Wayfarer
 
 - type: entity
   parent: [ BaseC3CultContrabandUnredeemable, ContrabandClothing, ClothingMaskGasExplorer ]

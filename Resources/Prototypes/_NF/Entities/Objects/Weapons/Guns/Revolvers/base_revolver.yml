@@ -25,6 +25,17 @@
     price: 200
   - type: NFWeaponDetails
     class: weapon-details-class-revolver
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: RevolversPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: RevolversDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: RevolversDrop
+  # Wayfarer End
 
 #region manufacturer
 - type: entity
@@ -57,7 +68,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseBMContraband, NFBaseWeaponFrameRevolver ] # Wayfarer: BaseC3PirateContraband<BaseBMContraband
+  parent: [ NFBaseWeaponFrameRevolver ] # Wayfarer: Remove contraband
   id: NFBaseWeaponFrameRevolverSteelbolt
   components:
   - type: Gun
