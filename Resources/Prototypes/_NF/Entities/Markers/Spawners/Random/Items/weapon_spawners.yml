@@ -403,13 +403,33 @@
     table: !type:NestedSelector
       tableId: TableDungeonLootWeaponsAmmunitionRubber
 
+# region ammo practice
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: SpawnDungeonLootAmmoIncendiary # Wayfarer: SpawnDungeonLootAmmoPractice<SpawnDungeonLootAmmoIncendiary
+  categories: [ HideSpawnMenu ]
+  name: random ammo
+  suffix: "Loot (Frontier), Ammo, Incendiary" # Wayfarer: Fix
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
+      state: icon
+  - type: EntityTableSpawner
+    offset: 0.1
+    deleteSpawnerAfterSpawn: false
+    table: !type:NestedSelector
+      tableId: TableDungeonLootWeaponsAmmunitionPractice
+
 # region ammo incendiary
 - type: entity
   parent: MarkerBasePlaceFree
-  id: SpawnDungeonLootAmmoPractice
+  id: SpawnDungeonLootAmmoUranium # Wayfarer: SpawnDungeonLootAmmoIncendiary<SpawnDungeonLootAmmoUranium
   categories: [ HideSpawnMenu ]
   name: random ammo
-  suffix: "Loot (Frontier), Ammo, Practice"
+  suffix: "Loot (Frontier), Ammo, Uranium" # Wayfarer: Fix
   components:
   - type: Sprite
     layers:
@@ -426,10 +446,10 @@
 # region ammo uranium
 - type: entity
   parent: MarkerBasePlaceFree
-  id: SpawnDungeonLootAmmoIncendiary
+  id: SpawnDungeonLootAmmoPractice # Wayfarer: SpawnDungeonLootAmmoUranium<SpawnDungeonLootAmmoPractice
   categories: [ HideSpawnMenu ]
   name: random ammo
-  suffix: "Loot (Frontier), Ammo, Incendiary"
+  suffix: "Loot (Frontier), Ammo, Practice" # Wayfarer: Fix
   components:
   - type: Sprite
     layers:
@@ -442,23 +462,3 @@
     deleteSpawnerAfterSpawn: false
     table: !type:NestedSelector
       tableId: TableDungeonLootWeaponsAmmunitionUranium
-
-# region ammo practice
-- type: entity
-  parent: MarkerBasePlaceFree
-  id: SpawnDungeonLootAmmoUranium
-  categories: [ HideSpawnMenu ]
-  name: random ammo
-  suffix: "Loot (Frontier), Ammo, Uranium"
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
-      state: icon
-  - type: EntityTableSpawner
-    offset: 0.1
-    deleteSpawnerAfterSpawn: false
-    table: !type:NestedSelector
-      tableId: TableDungeonLootWeaponsAmmunitionPractice

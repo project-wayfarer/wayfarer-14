@@ -94,22 +94,6 @@
         - ReagentId: Dermaline
           Quantity: 30
 
-# Dylovene
-- type: entity
-  id: ChemistryBottleDylovene
-  suffix: dylovene
-  parent: BaseChemistryBottleFilled
-  components:
-  - type: Label
-    currentLabel: reagent-name-dylovene
-  - type: SolutionContainerManager
-    solutions:
-      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
-        maxVol: 30
-        reagents:
-        - ReagentId: Dylovene
-          Quantity: 30
-
 # Hyronalin
 - type: entity
   id: ChemistryBottleHyronalin

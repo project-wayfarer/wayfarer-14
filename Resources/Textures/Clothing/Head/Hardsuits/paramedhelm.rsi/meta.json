@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from paradise station at commit https://github.com/ParadiseSS13/Paradise/commit/e5e584804b4b0b373a6a69d23afb73fd3c094365, redrawn by Ubaser. vox state by Flareguy, icon-flash and light-overlay states by Velken. Dog states modified from base states by Sparlight (GitHub). equipped-avox variants Originally from Tau Ceti station, modified for SS14 by Luweth (github).",
+    "copyright": "Taken from paradise station at commit https://github.com/ParadiseSS13/Paradise/commit/e5e584804b4b0b373a6a69d23afb73fd3c094365, redrawn by Ubaser. vox state by Flareguy, icon-flash and light-overlay states by Velken. Dog states modified from base states by Sparlight (GitHub), equipped-avox variants Originally from Tau Ceti station, modified for SS14 by Luweth (github), cat wearable states made by Zalindae (Github/Discord)",
     "size": {
         "x": 32,
         "y": 32
@@ -46,6 +46,14 @@
         },
         {
             "name": "equipped-head-light-dog",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-cat",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-cat",
             "directions": 4
         },
         {

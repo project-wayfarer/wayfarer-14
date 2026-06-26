@@ -1552,7 +1552,7 @@ Entries:
       message: Chapel to Dusk! Please check this areas for potential bugs
     - type: Tweak
       message: >-
-        Bar, Kitchen, Cryo, Medical, Library have all been tweaked on Dusk. 
+        Bar, Kitchen, Cryo, Medical, Library have all been tweaked on Dusk.
         Please check these areas for potential bugs
   id: 6671
   time: '2026-02-18T23:57:22.0000000+00:00'
@@ -1756,7 +1756,7 @@ Entries:
     - type: Add
       message: >-
         Added the QH Monitor, a mid-sized expeditionary shuttle with salvaging
-        equipment. 
+        equipment.
     - type: Remove
       message: Removed the NT Pathfinder.
   id: 6697
@@ -2670,7 +2670,7 @@ Entries:
     - type: Add
       message: >-
         Adds engi goggles, flowers, cig packs, screwdrivers, lighters, and a few
-        more to the helmet whitelist! 
+        more to the helmet whitelist!
   id: 6801
   time: '2026-05-02T17:55:46.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/752
@@ -4719,3 +4719,76 @@ Entries:
   id: 7046
   time: '2026-06-20T12:31:42.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/1122
+- author: DevArchwave
+  changes:
+    - type: Add
+      message: >-
+        All upstream changes from Frontier until the 31st of May have been
+        added.
+  id: 7047
+  time: '2026-06-25T21:08:09.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1218
+- author: DevArchwave
+  changes:
+    - type: Add
+      message: >-
+        All upstream changes from Frontier until the 31st of May have been
+        added.
+  id: 7048
+  time: '2026-06-25T21:15:32.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1232
+- author: DevArchwave
+  changes:
+    - type: Fix
+      message: Fixed the logprobe's inability to print logs.
+  id: 7049
+  time: '2026-06-25T21:25:28.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1229
+- author: Khaomi
+  changes:
+    - type: Remove
+      message: Removed the ability to eat Uranium rods, plates, ores and etc etc.
+  id: 7050
+  time: '2026-06-26T03:16:56.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1216
+- author: Luweth
+  changes:
+    - type: Add
+      message: Added Vox CGP Combat suit sprites.
+    - type: Add
+      message: Redone Vox CGP masks.
+  id: 7051
+  time: '2026-06-26T03:20:43.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1234
+- author: gaywolfgirl6
+  changes:
+    - type: Add
+      message: MercTechFab to Behir, Hellbat.
+    - type: Tweak
+      message: Behir Guidebook, behir.png
+  id: 7052
+  time: '2026-06-26T03:22:41.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1204
+- author: Rellu225
+  changes:
+    - type: Add
+      message: SI Rekindle paramedic shuttle.
+  id: 7053
+  time: '2026-06-26T03:23:35.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1178
+- author: VVersengt
+  changes:
+    - type: Tweak
+      message: >-
+        vgroids now contain more enemies, and salvager vgroids are now more
+        dangerous.
+  id: 7054
+  time: '2026-06-26T03:24:59.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1159
+- author: amareyeen
+  changes:
+    - type: Add
+      message: PMC armored jackets as alternative loadouts to the Merc web vests
+  id: 7055
+  time: '2026-06-26T04:18:11.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1230

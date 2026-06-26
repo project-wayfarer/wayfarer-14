@@ -9,10 +9,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6
-        Blunt: 6
+        Piercing: 5
+        Blunt: 5
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 5 # 12 hits to slowdown
 
 - type: entity
   id: NFBulletPistol35Overpressure
@@ -23,10 +23,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6.5 #Wayfarer 6 -> 6.5
-        Blunt: 7.5 #Wayfarer 7 -> 7.5
+        Piercing: 5
+        Blunt: 6
   - type: StaminaDamageOnCollide
-    damage: 5 # 12 hits to slowdown
+    damage: 6 # 10 hits to slowdown
 
 - type: entity
   id: NFBulletPistol35Incendiary
@@ -37,10 +37,10 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 7.2 # 0.6 * base total dmg
-        Heat: 5 # 0.4 * base total dmg ##Wayfarer 4.8 -> 5
+        Blunt: 6 # 0.6 * base total dmg
+        Heat: 4 # 0.4 * base total dmg
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 5 # 12 hits to slowdown
 
 - type: entity
   id: NFBulletPistol35Uranium
@@ -51,10 +51,10 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 9.9 # 0.6 * (1.4 * base total dmg)
-        Radiation: 6.6 # 0.4 * (1.4 * base total dmg)
+        Blunt: 8.4 # 0.6 * (1.4 * base total dmg)
+        Radiation: 5.6 # 0.4 * (1.4 * base total dmg)
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 6 # 10 hits to slowdown
 
 - type: entity
   id: NFBulletPistol35Practice
@@ -78,10 +78,10 @@
   - type: Projectile
     damage:
       types:
-        Shock: 6
-        Blunt: 5.5 #Wayfarer 6 -> 5.5
+        Shock: 5
+        Blunt: 5
   - type: StaminaDamageOnCollide
-    damage: 4.5 # 13 hits to slowdown ##Wayfarer 4 -> 4.5
+    damage: 6 # 10 hits to slowdown
 
 - type: entity
   id: NFBulletPistol35Rubber
@@ -106,10 +106,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 22 #Wayfarer 8<22 As John Moses Browning intended
-#        Blunt: 12 #Wayfarer 8 -> 8.5
+        Piercing: 7.5
+        Blunt: 7.5
   - type: StaminaDamageOnCollide
-    damage: 6 # 10 hits to slowdown
+    damage: 8 # ~8 hits to slowdown
 
 - type: entity
   id: NFBulletPistol45Overpressure
@@ -120,10 +120,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30 #Wayfarer 9<30
-#        Blunt: 11 #Wayfarer 10.5 -> 11
+        Piercing: 8
+        Blunt: 9
   - type: StaminaDamageOnCollide
-    damage: 7 # ~9 hits to slowdown
+    damage: 9 # ~7 hits to slowdown
 
 - type: entity
   id: NFBulletPistol45Incendiary
@@ -134,10 +134,10 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 15 # 0.6 * base total dmg ##Wayfarer 8.6<15
-        Heat: 9 # 0.4 * base total dmg ##Wayfarer 7.2 -> 9
+        Blunt: 9 # 0.6 * base total dmg
+        Heat: 6 # 0.4 * base total dmg
   - type: StaminaDamageOnCollide
-    damage: 6 # 10 hits to slowdown
+    damage: 8 # ~8 hits to slowdown
 
 - type: entity
   id: NFBulletPistol45Uranium
@@ -148,10 +148,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20 # 0.6 * (1.4 * base total dmg) #Wayfarer 14.4<20 Blunt<Piercing
-        Radiation: 9.6 # 0.6 * (1.4 * base total dmg)
+        Blunt: 12.6 # 0.6 * (1.4 * base total dmg)
+        Radiation: 8.4 # 0.6 * (1.4 * base total dmg)
   - type: StaminaDamageOnCollide
-    damage: 6 # 10 hits to slowdown
+    damage: 9 # ~7 hits to slowdown
 
 - type: entity
   id: NFBulletPistol45Practice
@@ -175,10 +175,10 @@
   - type: Projectile
     damage:
       types:
-        Shock: 9.5 #Wayfarer 9 -> 9.5
-        Blunt: 8.5 #Wayfarer 9 -> 8.5
+        Shock: 8
+        Blunt: 7
   - type: StaminaDamageOnCollide
-    damage: 6 # 10 hits to slowdown
+    damage: 10 # 6 hits to slowdown
 
 - type: entity
   id: NFBulletPistol45Rubber

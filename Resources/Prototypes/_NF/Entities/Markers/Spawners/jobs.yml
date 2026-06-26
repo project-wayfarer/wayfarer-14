@@ -201,13 +201,13 @@
   - type: SpawnPoint
     job_id: NFDetective
 
-#- type: entity
-#  id: SpawnPointPublicAffairsLiaison
-#  parent: SpawnPointLawyer
-#  name: public affairs liaison
-#  components:
-#  - type: SpawnPoint
-#    job_id: PublicAffairsLiaison
+- type: entity
+  id: SpawnPointPublicAffairsLiaison
+  parent: SpawnPointLawyer
+  name: public affairs liaison
+  components:
+  - type: SpawnPoint
+    job_id: SeniorOfficer # Wayfarer: Changed to generic CGP
 
 - type: entity
   id: NFSpawnPointJanitor

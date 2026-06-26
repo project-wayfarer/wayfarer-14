@@ -150,6 +150,7 @@
   - type: ShipyardSellCondition # Frontier: Teleport to shipyard console on sale
     preserveOnSale: true
   - type: BlipCartridge
+  - type: CleanupImmune # Wayfarer
 
 - type: entity
   parent: BasePDA
@@ -1097,8 +1098,8 @@
   - type: Instrument
     allowPercussion: false
     handheld: true
-    bank: 1
     program: 2
+    bank: 100 # Defined in space-station-14.sf2
 
 - type: entity
   parent: MusicianPDA

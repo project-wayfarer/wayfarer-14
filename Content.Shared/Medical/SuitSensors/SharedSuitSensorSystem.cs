@@ -14,7 +14,6 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
-using Content.Shared.SSDIndicator; // Coyote
 using Content.Shared.Station;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
@@ -26,6 +25,8 @@ using Content.Shared._NF.Medical.SuitSensors; // Frontier
 using Content.Shared.Salvage; // Frontier
 using Content.Shared.Salvage.Expeditions; // Frontier
 using Robust.Shared.Map.Components; // Frontier
+
+using Content.Shared.SSDIndicator; // Coyote
 
 namespace Content.Shared.Medical.SuitSensors;
 

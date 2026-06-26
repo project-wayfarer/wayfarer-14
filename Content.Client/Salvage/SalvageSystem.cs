@@ -50,6 +50,28 @@ public sealed class SalvageSystem : SharedSalvageSystem
 
         ev.Cancelled = true;
     }
+    /* // Wayfarer: Guess we ain't using this?
+    private void SetMusicVolume(float volume)
+    {
+        var expedQuery = EntityQueryEnumerator<SalvageExpeditionComponent>();
+        while (expedQuery.MoveNext(out _, out var comp))
+        {
+            if (comp.Stream != null)
+                _audioSystem.SetVolume(comp.Stream, ConvertSliderValueToVolume(volume));
+        }
+    }
+
+    private float ConvertSliderValueToVolume(float value)
+    {
+        var ret = AudioSystem.GainToVolume(value);
+        if (!float.IsFinite(ret)) // Explicitly handle any odd cases (chiefly NaN)
+            ret = SalvageExpeditionMinMusicVolume;
+        else
+            ret = Math.Clamp(ret, SalvageExpeditionMinMusicVolume, SalvageExpeditionMaxMusicVolume);
+        return ret;
+    }
+    */
+    // End Frontier: stop stream when destroying the expedition
 
     // Frontier: resolve expedition comp
     public override bool ResolveExpedition(EntityUid? uid, ref SharedSalvageExpeditionComponent? component)

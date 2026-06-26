@@ -56,6 +56,17 @@
       Steel: 50
       Plastic: 20
   # End Wayfarer
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+    - Pause
+    - Record
+    - Playback
+    - Rewind
 
 - type: entity
   parent: TapeRecorder

@@ -1,3 +1,5 @@
+# groupBy types: "NeckScarfs", "NeckTies", "NeckMisc", "NeckCloaks", "flagCloaks", "IFFstrobe", "NeckMantles"
+
 #T1
 - type: loadout
   id: ContractorClothingNeckScarfStripedBlack
@@ -7,7 +9,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedBlack
-  groupBy: "scarf"
+  groupBy: "NeckScarfs"
 
 - type: loadout
   id: ContractorClothingNeckScarfStripedBlue
@@ -17,7 +19,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedBlue
-  groupBy: "scarf"
+  groupBy: "NeckScarfs"
 
 - type: loadout
   id: ContractorClothingNeckScarfStripedBrown
@@ -27,7 +29,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedBrown
-  groupBy: "scarf"
+  groupBy: "NeckScarfs"
 
 - type: loadout
   id: ContractorClothingNeckScarfStripedGreen
@@ -37,7 +39,7 @@
   price: 500
   equipment:
     neck: ClothingNeckScarfStripedGreen
-  groupBy: "scarf"
+  groupBy: "NeckScarfs"
 
 - type: loadout
   id: ContractorClothingNeckTieBH
@@ -47,7 +49,7 @@
   price: 500
   equipment:
     neck: ClothingNeckTieBH
-  groupBy: "tie"
+  groupBy: "NeckTies"
 
 - type: loadout
   id: ContractorClothingNeckTieRed
@@ -57,7 +59,7 @@
   price: 500
   equipment:
     neck: ClothingNeckTieRed
-  groupBy: "tie"
+  groupBy: "NeckTies"
 
 - type: loadout
   id: ContractorClothingNeckTieSci
@@ -67,7 +69,7 @@
   price: 500
   equipment:
     neck: ClothingNeckTieSci
-  groupBy: "tie"
+  groupBy: "NeckTies"
 
 - type: loadout
   id: ContractorClothingNeckLawyerbadge
@@ -77,6 +79,7 @@
   price: 500
   equipment:
     neck: ClothingNeckLawyerbadge
+  groupBy: "NeckMisc"
 
 - type: loadout
   id: ContractorClothingMultipleHeadphones
@@ -86,6 +89,7 @@
   price: 500
   equipment:
     neck: ClothingMultipleHeadphones
+  groupBy: "NeckMisc"
 
 - type: loadout
   id: ContractorClothingNeckCrucifix
@@ -95,6 +99,7 @@
   price: 500
   equipment:
     neck: ClothingNeckCrucifix
+  groupBy: "NeckMisc"
 
 - type: loadout
   id: ContractorClothingNeckBellCollar
@@ -104,6 +109,7 @@
   price: 500
   equipment:
     neck: ClothingNeckBellCollar
+  groupBy: "NeckMisc"
 
 - type: loadout
   id: ContractorCDDogtags
@@ -113,6 +119,7 @@
   price: 500
   equipment:
     neck: CDDogtags
+  groupBy: "NeckMisc"
 
 - type: loadout
   id: ContractorClothingNeckStethoscope
@@ -122,6 +129,7 @@
   price: 500
   equipment:
     neck: ClothingNeckStethoscope
+  groupBy: "NeckMisc"
 
 - type: loadout
   id: ContractorClothingOuterPoncho
@@ -131,6 +139,7 @@
   price: 500
   equipment:
     neck: ClothingOuterPoncho
+  groupBy: "NeckMisc"
 
 - type: loadout
   id: ContractorClothingOuterPonchoClassic
@@ -140,6 +149,7 @@
   price: 500
   equipment:
     neck: ClothingOuterPonchoClassic
+  groupBy: "NeckMisc"
 
 #T2
 - type: loadout
@@ -150,6 +160,7 @@
   price: 1000
   equipment:
     neck: ClothingNeckCloakCap
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckCloakMiner
@@ -159,6 +170,7 @@
   price: 1000
   equipment:
     neck: ClothingNeckCloakMiner
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckCloakMoth
@@ -168,6 +180,7 @@
   price: 1000
   equipment:
     neck: ClothingNeckCloakMoth
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckScarfChaplainStole
@@ -177,6 +190,7 @@
   price: 1000
   equipment:
     neck: ClothingNeckScarfChaplainStole
+  groupBy: "NeckScarfs"
 
 - type: loadout
   id: ContractorClothingNeckStoleChaplain
@@ -186,6 +200,7 @@
   price: 1000
   equipment:
     neck: ClothingNeckStoleChaplain
+  groupBy: "NeckScarfs"
 
 - type: loadout
   id: ContractorClothingNeckCloakTrans
@@ -307,6 +322,7 @@
   price: 1000
   equipment:
     neck: BedsheetRainbow
+  groupBy: "flagCloaks"
 
 - type: loadout
   id: ContractorClothingNeckIFFNeutral
@@ -386,6 +402,7 @@
   price: 1000
   equipment:
     neck: ClothingNeckMantleCap
+  groupBy: "NeckMantles"
 
 #T3 for lols
 - type: loadout
@@ -396,6 +413,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckCloakCapFormal
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckCloakQm
@@ -405,6 +423,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckCloakQm
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckMantleQM
@@ -414,6 +433,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckMantleQM
+  groupBy: "NeckMantles"
 
 - type: loadout
   id: ContractorClothingCloakCmo
@@ -423,6 +443,7 @@
   price: 2500
   equipment:
     neck: ClothingCloakCmo
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckMantleCMO
@@ -432,6 +453,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckMantleCMO
+  groupBy: "NeckMantles"
 
 - type: loadout
   id: ContractorClothingNeckCloakRd
@@ -441,6 +463,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckCloakRd
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckMantleRD
@@ -450,6 +473,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckMantleRD
+  groupBy: "NeckMantles"
 
 - type: loadout
   id: ContractorClothingNeckCloakCe
@@ -459,6 +483,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckCloakCe
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckMantleCE
@@ -468,6 +493,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckMantleCE
+  groupBy: "NeckMantles"
 
 - type: loadout
   id: ContractorClothingNeckCloakVoid
@@ -477,6 +503,7 @@
   price: 2500
   equipment:
     neck: ClothingNeckCloakVoid
+  groupBy: "NeckCloaks"
 
 - type: loadout
   id: ContractorClothingNeckBling
@@ -486,3 +513,4 @@
   price: 7500
   equipment:
     neck: ClothingNeckBling
+  groupBy: "NeckMisc"

@@ -23,12 +23,14 @@ public sealed partial class TriggerOnMobstateChangeComponent : BaseTriggerOnXCom
     [DataField, AutoNetworkedField]
     public bool PreventSuicide = false;
 
+    // Floof Start
     /// <summary>
     /// If true, suppresses this trigger when the implanted entity is currently vored,
     /// preventing medical radio pings from firing while inside a predator.
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool PreventVore = false;
+    // Floof End
 
     // Wayfarer Start
     /// <summary>

@@ -48,6 +48,7 @@
       params:
         volume: -5
   # Wayfarer End
+  - type: CleanupImmune # Wayfarer
 
 #IDs with layers
 
@@ -124,7 +125,7 @@
     - state: idintern-service
 
 - type: entity
-  parent: [IDCardStandard] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband
+  parent: [IDCardStandard] # Frontier: Removed BaseSecurityCommandContraband
   id: CaptainIDCard
   name: captain ID card
   components:

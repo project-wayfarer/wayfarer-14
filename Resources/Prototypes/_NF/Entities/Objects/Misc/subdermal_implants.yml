@@ -14,9 +14,10 @@
       mobState:
       - Critical
       - Dead
-      preventVore: true
+      preventVore: true # Floofstation
     - type: RattleOnTrigger
       targetUser: true
+
 
 - type: entity
   parent: NFBaseDeathRattleImplant
@@ -93,34 +94,32 @@
     - HideContextMenu
     - DeathAcidifier
 
-# Wayfarer: Faith implant and mime vow implant removed. The mime vow is replaced by the new Mime trait. Faith is covered by the existing Pious trait.
-#- type: entity
-#  parent: BaseSubdermalImplant
-#  id: BibleUserImplant
-#  name: faith implant
-#  description: This implant binds the user to the gods.
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: SubdermalImplant
-#    permanent: true
-#  - type: AddComponentsImplant
-#    componentsToAdd:
-#      - type: BibleUser
-#
-#- type: entity
-#  parent: BaseSubdermalImplant
-#  id: MimePowersImplant
-#  name: mime vow implant
-#  description: This implant lets the user take the mime's vow.
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: SubdermalImplant
-#    permanent: true
-#  - type: AddComponentsImplant
-#    componentsToAdd:
-#    - type: MimePowers
-#      preventWriting: false # Explicit in case upstream changes its mind on this.
-# End Wayfarer
+- type: entity
+  parent: BaseSubdermalImplant
+  id: BibleUserImplant
+  name: faith implant
+  description: This implant binds the user to the gods.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    permanent: true
+  - type: AddComponentsImplant
+    componentsToAdd:
+      - type: BibleUser
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: MimePowersImplant
+  name: mime vow implant
+  description: This implant lets the user take the mime's vow.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    permanent: true
+  - type: AddComponentsImplant
+    componentsToAdd:
+    - type: MimePowers
+      preventWriting: false # Explicit in case upstream changes its mind on this.
 
 - type: entity
   parent: BaseSubdermalImplant

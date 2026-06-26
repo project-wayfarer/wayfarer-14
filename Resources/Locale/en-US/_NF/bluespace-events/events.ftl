@@ -35,7 +35,7 @@ station-event-bluespace-bloodmoon-start-announcement = Attention all available W
 station-event-bluespace-bloodmoon-warning-announcement = Remote FTL procedures initialized, five minutes until Blood Cult vessel dissipation.
 station-event-bluespace-bloodmoon-end-announcement = In compliance with Concordia Governments FTL traffic patterns, the unknown ship has been dissipated to ensure non-collision.
 
-station-event-bluespace-generic-ftl-start-announcement = Attention all Wayfarers! Concordia's Naval Command has detected an unidentified vessel entering the Zekke Sector. Investigate with caution, NanoTrasen is not liable for damages sustained or loss of life.
+station-event-bluespace-generic-ftl-start-announcement = Attention all Wayfarers! Concordia's Naval Command has detected an unidentified vessel entering the Zekke Sector. Investigate with caution, Concordia is not liable for damages sustained or loss of life.
 station-event-bluespace-generic-ftl-warning-announcement = Remote FTL procedures initialized, five minutes until unidentified vessel dissipation.
 station-event-bluespace-generic-ftl-end-announcement = In compliance with Concordia Governments FTL traffic patterns, the unknown ship has been dissipated to ensure non-collision.
 

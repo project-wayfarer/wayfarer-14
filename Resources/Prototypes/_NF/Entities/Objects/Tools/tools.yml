@@ -92,6 +92,131 @@
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
 
+- type: entity
+  name: pirate shipyard RCD
+  parent: ShipyardRCD
+  id: PirateShipyardRCD
+  description: An advanced construction device which can place/remove walls, floors, and airlocks quickly. It has a slot to swipe ID cards.
+  components:
+  - type: RCD
+    isShipyardRCD: true
+    availablePrototypes:
+    # Walls and flooring
+    - WallMining
+    - WallMiningDiagonal
+    - WallPlastitaniumPirate # Wayfarer
+    - WallPlastitaniumDiagonalPirate # Wayfarer
+    - FloorWood
+    - FloorDark
+    - PiratePlating
+    - PirateCatwalk
+    # Windows and grilles
+    - MiningWindow
+    - MiningWindowDiagonal
+    - ClockworkGrille
+    - ClockworkGrilleDiagonal
+    - PlastitaniumWindowPirate # Wayfarer
+    - PlastitaniumWindowDiagonalPirate # Wayfarer
+    # Airlocks
+    - AirlockHatchPirateLocked
+    - AirlockMiningPirateLocked
+    - AirlockMiningGlassPirateLocked
+    - AirlockShuttleSyndicatePirateLocked
+    - AirlockGlassShuttleSyndicatePirateLocked
+    - AtmosDeviceFanDirectionalPirate # Wayfarer
+    # Lighting
+    - PoweredlightRed
+    - PoweredlightUltraviolet
+    - TubeLight
+    - BulbLight
+    # Electrical
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    # Wayfarer
+    - BaseAPC
+    - SMES
+    - Substation
+    - ThrusterRogue
+    # PLATING HELL
+    - PlatingCornerNE
+    - PlatingCornerNW
+    - PlatingCornerSE
+    - PlatingCornerSW
+    - PlatingHalfV
+    - PlatingHalfH
+    - PlatingWedgeN
+    - PlatingWedgeE
+    - PlatingWedgeS
+    - PlatingWedgeW
+    - PlatingHalfTiltNESLower
+    - PlatingHalfTiltSEWLower
+    - PlatingHalfTiltSWNLower
+    - PlatingHalfTiltNWELower
+    - PlatingHalfTiltNESUpper
+    - PlatingHalfTiltSEWUpper
+    - PlatingHalfTiltSWNUpper
+    - PlatingHalfTiltNWEUpper
+    - PlatingHalfTiltNEWLower
+    - PlatingHalfTiltSENLower
+    - PlatingHalfTiltSWELower
+    - PlatingHalfTiltNWSLower
+    - PlatingHalfTiltNEWUpper
+    - PlatingHalfTiltSENUpper
+    - PlatingHalfTiltSWEUpper
+    - PlatingHalfTiltNWSUpper
+    - Lattice
+    - LatticeCornerNE
+    - LatticeCornerNW
+    - LatticeCornerSE
+    - LatticeCornerSW
+    - LatticeHalfV
+    - LatticeHalfH
+    - LatticeWedgeN
+    - LatticeWedgeE
+    - LatticeWedgeS
+    - LatticeWedgeW
+    - LatticeHalfTiltNESLower
+    - LatticeHalfTiltSEWLower
+    - LatticeHalfTiltSWNLower
+    - LatticeHalfTiltNWELower
+    - LatticeHalfTiltNESUpper
+    - LatticeHalfTiltSEWUpper
+    - LatticeHalfTiltSWNUpper
+    - LatticeHalfTiltNWEUpper
+    - LatticeHalfTiltNEWLower
+    - LatticeHalfTiltSENLower
+    - LatticeHalfTiltSWELower
+    - LatticeHalfTiltNWSLower
+    - LatticeHalfTiltNEWUpper
+    - LatticeHalfTiltSENUpper
+    - LatticeHalfTiltSWEUpper
+    - LatticeHalfTiltNWSUpper
+    # End Wayfarer
+    # Deconstruct
+    - Deconstruct
+    delayMultiplier: 0.65 # Mono
+  - type: Sprite
+    sprite: _WF/Objects/Tools/rcdpirate.rsi # Wayfarer: RCD resprite
+    state: icon
+  - type: Clothing
+    sprite: _WF/Objects/Tools/rcdpirate.rsi # Wayfarer: RCD resprite
+    quickEquip: false
+    slots:
+    - Belt
+  - type: GridAccess
+  - type: RandomMetadata
+    nameSegments: [NamesPirateShipyardRCD]
+
+- type: entity
+  id: PirateShipyardRCDEmpty
+  parent: PirateShipyardRCD
+  suffix: Empty
+  components:
+    - type: LimitedCharges
+      lastCharges: -1
+
 #Other
 - type: entity
   name: the people's shovel
