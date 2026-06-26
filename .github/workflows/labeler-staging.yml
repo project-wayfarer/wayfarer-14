@@ -7,11 +7,6 @@ on:
     branches:
       - 'staging'
 
-# Wayfarer
-permissions:
-  pull-requests: write
-# End Wayfarer
-
 jobs:
   add_label:
     runs-on: ubuntu-latest

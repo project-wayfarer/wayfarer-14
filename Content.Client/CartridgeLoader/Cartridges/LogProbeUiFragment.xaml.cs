@@ -11,16 +11,9 @@ namespace Content.Client.CartridgeLoader.Cartridges;
 [GenerateTypedNameReferences]
 public sealed partial class LogProbeUiFragment : BoxContainer
 {
-    /// <summary>
-    /// Action invoked when the print button gets pressed.
-    /// </summary>
-    public Action? OnPrintPressed;
-
     public LogProbeUiFragment()
     {
         RobustXamlLoader.Load(this);
-
-        PrintButton.OnPressed += _ => OnPrintPressed?.Invoke();
     }
 
     // DeltaV begin - Update to handle both types of data
@@ -36,7 +29,8 @@ public sealed partial class LogProbeUiFragment : BoxContainer
         else
         {
             SetupAccessLogView();
-            DisplayAccessLogs(state.EntityName, state.PulledLogs);
+            if (state.PulledLogs.Count > 0)
+                DisplayAccessLogs(state.PulledLogs);
         }
     }
 
@@ -126,17 +120,12 @@ public sealed partial class LogProbeUiFragment : BoxContainer
     // DeltaV end
 
     // DeltaV - Handle this in a separate method
-    private void DisplayAccessLogs(string name, List<PulledAccessLog> logs)
+    private void DisplayAccessLogs(List<PulledAccessLog> logs)
     {
         //Reverse the list so the oldest entries appear at the bottom
         logs.Reverse();
 
-        EntityName.Text = name;
-        PrintButton.Disabled = string.IsNullOrEmpty(name);
-
-        ProbedDeviceContainer.RemoveAllChildren();
-
-        var count = 1;
+        var count =  1;
         foreach (var log in logs)
         {
             AddAccessLog(log, count);
