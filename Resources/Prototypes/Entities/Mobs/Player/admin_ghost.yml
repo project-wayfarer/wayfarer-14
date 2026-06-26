@@ -117,16 +117,12 @@
   - type: BankAccount # Frontier
   - type: ExplosionResistance
     damageCoefficient: 0
-  # Wayfarer: AGhost Improvements
-  - type: ShowJobIcons
-  - type: ShowHealthBars
-  - type: ShowMindShieldIcons
-  - type: ShowCriminalRecordIcons
+  - type: ShowJobIcons # Wayfarer: Add ShowJobIcons
+  - type: ShowHealthBars # Wayfarer: Add ShowHealthbars
     damageContainers:
     - Biological
     - Inorganic
     - Silicon
-  # End Wayfarer
 
 - type: entity
   abstract: true
