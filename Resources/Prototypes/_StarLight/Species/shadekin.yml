@@ -39,39 +39,60 @@
     RLeg: MobShadekinRLeg
     LFoot: MobShadekinLFoot
     RFoot: MobShadekinRFoot
+    # Wayfarer
+    Genital: MobHumanoidAnyMarking
+    Special: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
+    RArmExtension: MobHumanoidAnyMarking
+    # End Wayfarer
+
 
 - type: markingPoints
   id: MobShadekinMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: false
+    # Wayfarer: BELIEVE ME, YOU DON'T WANT TO SEE SHADEKIN WITH FACIAL HAIR.
     FacialHair:
       points: 0
       required: false
     Tail:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: true
       defaultMarkings: [TailShadekin]
     HeadTop:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: true
       defaultMarkings: [EarsShadekin]
     UndergarmentTop:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: false
     Chest:
-      points: 2
+      points: 32 # Wayfarer: 2<32
       required: false
     Legs:
-      points: 2
+      points: 32 # Wayfarer: 2<32
       required: false
     Arms:
-      points: 2
+      points: 32 # Wayfarer: 2<32
       required: false
+    # Wayfarer
+    Genital:
+      points: 32
+      required: false
+    Special:
+      points: 32
+      required: false
+    NeckFluff:
+      points: 32
+      required: false
+    # End Wayfarer
 
 - type: humanoidBaseSprite
   id: MobShadekinAnyMarkingFollowSkin
