@@ -35,6 +35,7 @@ public sealed partial class MovespeedModifier : EntityEffect
         return Loc.GetString("reagent-effect-guidebook-movespeed-modifier",
             ("chance", Probability),
             ("walkspeed", WalkSpeedModifier),
+            ("sprintspeed", SprintSpeedModifier), //WF change
             ("time", StatusLifetime));
     }
 
