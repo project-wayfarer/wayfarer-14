@@ -6,6 +6,22 @@
   name: svalinn
   description: A cheap and widely used laser pistol.
   components:
+  # Wayfarer: Fuck this thing
+  - type: Gun
+    minAngle: 2.1
+    maxAngle: 10.5
+    angleIncrease: 0.7
+    angleDecay: 2.4
+    fireRate: 2
+  - type: HitscanBatteryAmmoProvider
+    proto: WFHitscanPistolLaser
+    fireCost: 100
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: BatterySelfRecharger # doesn't recharge
+    autoRecharge: false
+  # End Wayfarer
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
   - type: Item
