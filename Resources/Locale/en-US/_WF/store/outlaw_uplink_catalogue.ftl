@@ -82,8 +82,8 @@ uplink-outlaw-iff-desc = A pre-assembled IFF console, procured from the Black Ma
 
 uplink-outlaw-pirateplushie-name = Yarr Moth Plushie
 uplink-outlaw-pirateplushie-desc = It's dastardly and has a dashing cloak. It chitters when you squeeze it!
-uplink-outlaw-card-name = Suspicious Business Card
-uplink-outlaw-card-desc = A blood-red colored business card.
+uplink-outlaw-card-name = Outlaw Business Card
+uplink-outlaw-card-desc = A black business card.
 
 uplink-outlaw-c20-name = C-20r Submachine Gun
 uplink-outlaw-c20-desc = Old faithful: The classic C-20r Submachine Gun

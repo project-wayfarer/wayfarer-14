@@ -536,6 +536,7 @@ namespace Content.Server.Database
         Task<List<WayfarerCorporation>> GetAllCorporations(CancellationToken cancel = default);
         Task<WayfarerCorporation?> GetCorporationById(int id, CancellationToken cancel = default);
         Task<WayfarerCorporation?> GetCorporationForPlayer(Guid userId, CancellationToken cancel = default);
+        Task<WayfarerCorporation?> GetCorporationForCharacter(Guid userId, string displayName, CancellationToken cancel = default);
 
         Task<WayfarerCorporation> CreateCorporation(string name,
             string description,
@@ -1632,6 +1633,11 @@ namespace Content.Server.Database
             public Task<WayfarerCorporation?> GetCorporationForPlayer(Guid userId, CancellationToken cancel = default)
             {
                 return RunDbCommand(() => _db.GetCorporationForPlayer(userId, cancel));
+            }
+
+            public Task<WayfarerCorporation?> GetCorporationForCharacter(Guid userId, string displayName, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.GetCorporationForCharacter(userId, displayName, cancel));
             }
 
             public Task<WayfarerCorporation> CreateCorporation(string name,

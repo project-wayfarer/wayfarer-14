@@ -29,7 +29,7 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Arribane CIV{1}'
+          mapNameTemplate: 'Arribane {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

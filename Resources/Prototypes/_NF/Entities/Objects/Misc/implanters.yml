@@ -8,6 +8,14 @@
     implant: MedicalTrackingImplant
 
 - type: entity
+  id: WehImplanter
+  name: weh implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: WehImplant
+
+- type: entity
   id: FreelanceTrackingImplanter
   name: freelance tracking implanter
   parent: BaseImplantOnlyImplanterSyndi
@@ -31,23 +39,21 @@
   - type: Implanter
     implant: GibAcidifierImplantNF
 
-# Wayfarer: Faith implanter and mime vow implanter removed. The mime vow is replaced by the new Mime trait. Faith is covered by the existing Pious trait.
-#- type: entity
-#  id: BibleUserImplanter
-#  name: faith implanter
-#  parent: BaseImplantOnlyImplanter
-#  components:
-#  - type: Implanter
-#    implant: BibleUserImplant
-#
-#- type: entity
-#  id: MimePowersImplanter
-#  name: mime vow implanter
-#  parent: BaseImplantOnlyImplanter
-#  components:
-#  - type: Implanter
-#    implant: MimePowersImplant
-# End Wayfarer
+- type: entity
+  id: BibleUserImplanter
+  name: faith implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: BibleUserImplant
+
+- type: entity
+  id: MimePowersImplanter
+  name: mime vow implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: MimePowersImplant
 
 # Centcomm implanters
 

@@ -4,7 +4,7 @@ corp-program-name = Corporation Manager
 ## Header label
 corp-section-invites = Pending Invitations
 corp-section-members = Members
-corp-section-public = Public Corporations
+corp-section-public = Corporations
 
 ## Member table columns
 corp-col-rank = Rank
@@ -14,12 +14,13 @@ corp-col-actions = Actions
 ## Status labels
 corp-not-in-corp = You are not in a corporation.
 corp-no-description = No description set.
-corp-no-public-corps = No public corporations found.
+corp-no-public-corps = No corporations found.
 corp-member-self-suffix =  (you)
 corp-member-count = {$count} member(s)
 
 ## Privacy labels
 corp-privacy-public = Public
+corp-privacy-unlisted = Unlisted
 corp-privacy-private = Private
 
 ## Bank
@@ -40,6 +41,7 @@ corp-create-name = Name:
 corp-create-name-placeholder = Corporation name…
 corp-create-name-permanent = ⚠ The corporation name cannot be changed after creation.
 corp-create-description = Description:
+corp-description-limit = {$current}/{$max} characters
 corp-create-privacy = Privacy:
 corp-create-cost = ⚠ Founding a corporation costs $1,000,000 spesos.
 
@@ -53,6 +55,7 @@ corp-btn-found = Found Corporation
 corp-btn-cancel = Cancel
 corp-btn-save = Save
 corp-btn-join = Join
+corp-btn-request-invite = Request Invite
 corp-btn-leave = Leave Corporation
 corp-btn-leave-confirm = Are you sure?
 corp-btn-disband = Disband Corporation
@@ -61,8 +64,7 @@ corp-btn-invite = Invite Member
 corp-btn-send-invite = Send Invitation
 corp-btn-edit-desc = Edit
 corp-btn-toggle-privacy = Change Privacy
-corp-btn-make-public = Make Public
-corp-btn-make-private = Make Private
+corp-btn-cycle-privacy = Cycle Privacy
 corp-btn-promote = Promote
 corp-btn-demote = Demote
 corp-btn-kick = Kick
@@ -81,7 +83,7 @@ corp-error-invalid-name = Corporation name must be between 1 and 40 characters.
 corp-error-name-taken = A corporation with that name already exists.
 corp-error-insufficient-funds = Insufficient funds. You need $1,000,000 spesos.
 corp-error-not-found = Corporation not found.
-corp-error-invite-required = This corporation is private. You need an invite.
+corp-error-invite-required = This corporation requires an invite.
 corp-error-not-in-corp = You are not in a corporation.
 corp-error-leader-cannot-leave = The leader cannot leave while other members remain. Disband or transfer leadership first.
 corp-error-no-permission = You do not have permission to do that.

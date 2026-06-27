@@ -7,7 +7,8 @@ using Content.Shared.Audio;
 using Content.Shared.Audio.Jukebox; // Wayfarer
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
-using Content.Client._Crescent.SpaceBiomes;
+using Content.Client._Crescent.SpaceBiomes; // Monolith
+using Content.Shared.Random.Rules;
 using Robust.Client.Player;
 using Robust.Client.State;
 using Robust.Shared.Audio;

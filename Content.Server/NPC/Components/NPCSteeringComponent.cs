@@ -105,7 +105,7 @@ public sealed partial class NPCSteeringComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)] public float Range = 0.2f;
 
-    // <Monolith> - early port of wizden#38846
+    // Wizden#38846
     /// <summary>
     /// Whether to ignore pathing and just move directly to target.
     /// </summary>
@@ -115,7 +115,7 @@ public sealed partial class NPCSteeringComponent : Component
     /// Up to how fast can we be going before being considered in range, if not null.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)] public float? InRangeMaxSpeed = null;
-    // </Monolith>
+    // End Wizden#38846
 
     /// <summary>
     /// How far does the last node in the path need to be before considering re-pathfinding.

@@ -27,4 +27,13 @@ public sealed partial class RattleOnTriggerComponent : BaseXOnTriggerComponent
         {MobState.Critical, "rattle-on-trigger-critical-message"},
         {MobState.Dead, "rattle-on-trigger-dead-message"}
     };
+
+    // Wayfarer Start
+    /// <summary>
+    /// The delay before the deathrattle implant sends the message again
+    /// </summary>
+    [ViewVariables]
+    [DataField]
+    public TimeSpan RattleRefireDelay = TimeSpan.FromMinutes(20);
+    // Wayfarer End
 }

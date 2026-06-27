@@ -175,6 +175,17 @@
       guides:
       - Security
     # - Antagonists # Frontier: guidebook entry removed
+    # Wayfarer Start
+    - type: EmitSoundOnPickup
+      sound:
+        path: /Audio/_Goobstation/Items/handling/component_pickup.ogg
+    - type: EmitSoundOnDrop
+      sound:
+        path: /Audio/_Goobstation/Items/handling/component_drop.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_Goobstation/Items/handling/component_drop.ogg
+    # Wayfarer End
 
 - type: entity
   name: flash

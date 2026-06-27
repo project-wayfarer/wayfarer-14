@@ -42,6 +42,14 @@
       - state: equipped-head-unshaded-avali
         shader: unshaded
       # Starlight - End
+      # Wayfarer Start
+      head-feroxi:
+      - state: equipped-head-light-feroxi
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-light-vulpkanin
+        shader: unshaded
+      # Wayfarer End
   - type: Clothing
     clothingVisuals:
       head:
@@ -62,6 +70,16 @@
       - state: equipped-head-unshaded-avali
         shader: unshaded
       # Starlight - End
+      # Wayfarer Start
+      head-feroxi:
+      - state: equipped-head-feroxi
+      - state: equipped-head-unshaded-feroxi
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin
+        shader: unshaded
+      # Wayfarer End
   - type: PointLight
     color: "#adffe6"
   - type: PressureProtection
@@ -101,12 +119,15 @@
     clothingVisuals:
       head:
       - state: equipped-head-light
+      - state: equipped-head-unshaded # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
         shader: unshaded
       head-vox:
       - state: equipped-head-light-vox
+      - state: equipped-head-unshaded-vox # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
         shader: unshaded
       head-dog:
       - state: equipped-head-light-dog
+      - state: equipped-head-unshaded-dog # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
         shader: unshaded
       # Starlight - Start
       head-avali:
@@ -114,6 +135,16 @@
       - state: equipped-head-unshaded-avali
         shader: unshaded
       # Starlight - End
+      # Wayfarer Start
+      head-feroxi:
+      - state: equipped-head-light-feroxi
+      - state: equipped-head-unshaded-feroxi # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-light-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
+        shader: unshaded
+      # Wayfarer End
   - type: Clothing
     clothingVisuals:
       head:
@@ -134,6 +165,16 @@
       - state: equipped-head-unshaded-avali
         shader: unshaded
       # Starlight - End
+      # Wayfarer Start
+      head-feroxi:
+      - state: equipped-head-feroxi
+      - state: equipped-head-unshaded-feroxi
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin
+        shader: unshaded
+      # Wayfarer End
   - type: PointLight
     color: "#ffdbad"
   - type: PressureProtection
@@ -430,23 +471,42 @@
     clothingVisuals:
       head:
       - state: equipped-head-light
+      - state: equipped-head-unshaded # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
         shader: unshaded
       head-vox:
       - state: equipped-head-light-vox
+      - state: equipped-head-unshaded-vox # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
         shader: unshaded
       head-dog:
       - state: equipped-head-light-dog
+      - state: equipped-head-unshaded-dog # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
         shader: unshaded
       # Starlight - Start
       head-avali:
       - state: equipped-head-light-avali
         shader: unshaded
       # Starlight - End
+      head-cat:
+      - state: equipped-head-light-cat
+      # Wayfarer Start
+      head-feroxi:
+      - state: equipped-head-light-feroxi
+      - state: equipped-head-unshaded-feroxi # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-light-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin # Wayfarer: Glow over Light (Since Goob made the light the full helmet)
+        shader: unshaded
+      # Wayfarer End
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
+        shader: unshaded
+      head-cat:
+      - state: equipped-head-cat
+      - state: equipped-head-unshaded-cat
         shader: unshaded
       head-vox:
       - state: equipped-head-vox
@@ -458,9 +518,20 @@
         shader: unshaded
       # Starlight - Start
       head-avali:
-      - state: equipped-head-light-avali
+      - state: equipped-head-avali # Wayfarer: added equipped-head-avali
+      - state: equipped-head-unshaded-avali # Wayfarer: changed equipped-head-light-avali to changed equipped-head-unshaded-avali
         shader: unshaded
       # Starlight - End
+      # Wayfarer Start
+      head-feroxi:
+      - state: equipped-head-feroxi
+      - state: equipped-head-unshaded-feroxi
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin
+        shader: unshaded
+      # Wayfarer End
   - type: PointLight
     color: "#daffad"
   - type: PressureProtection
@@ -472,6 +543,7 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
+  - type: CatWearable # Frontier
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -570,7 +642,7 @@
     sprite: Clothing/Head/Hardsuits/syndicate.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/syndicate.rsi
-  - type: ToggleableVisuals # WF - Looks way better with an overlaid light sprite
+  - type: ToggleableVisuals # Wayfarer: Looks way better with an overlaid light sprite
     spriteLayer: light
     clothingVisuals:
       head:
@@ -589,10 +661,28 @@
       - sprite: _WF/Clothing/Head/Hardsuits/syndicate.rsi
         state: on-equipped-HELMET-light-dog
         shader: unshaded
+      # Wayfarer Start
+      head-avali:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndicate.rsi
+        state: on-equipped-HELMET-light-avali
+        shader: unshaded
+      head-avox:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndicate.rsi
+        state: on-equipped-HELMET-light-avox
+        shader: unshaded
+      head-feroxi:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndicate.rsi
+        state: on-equipped-HELMET-light-feroxi
+        shader: unshaded
+      head-reptilian:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndicate.rsi
+        state: on-equipped-HELMET-light-reptilian
+        shader: unshaded
+      # Wayfarer End
   - type: PointLight
     color: green
-    energy: 10 # WF - make the light actually useable
-    radius: 6 # WF - make the light actually useable
+    energy: 10 # Wayfarer: make the light actually useable
+    radius: 6 # Wayfarer: make the light actually useable
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -619,7 +709,7 @@
     sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
-  - type: ToggleableVisuals # WF - Looks way better with an overlaid light sprite
+  - type: ToggleableVisuals # Wayfarer: Looks way better with an overlaid light sprite
     spriteLayer: light
     clothingVisuals:
       head:
@@ -634,10 +724,28 @@
       - sprite: _WF/Clothing/Head/Hardsuits/syndiemedic.rsi
         state: on-equipped-HELMET-light-vulpkanin
         shader: unshaded
+      # Wayfarer Start
+      head-avali:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiemedic.rsi
+        state: on-equipped-HELMET-light-avali
+        shader: unshaded
+      head-avox:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiemedic.rsi
+        state: on-equipped-HELMET-light-avox
+        shader: unshaded
+      head-feroxi:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiemedic.rsi
+        state: on-equipped-HELMET-light-feroxi
+        shader: unshaded
+      head-reptilian:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiemedic.rsi
+        state: on-equipped-HELMET-light-reptilian
+        shader: unshaded
+      # Wayfarer End
   - type: PointLight
     color: green
-    energy: 10 # WF - make the light actually useable
-    radius: 6 # WF - make the light actually useable
+    energy: 10 # Wayfarer: make the light actually useable
+    radius: 6 # Wayfarer: make the light actually useable
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -660,7 +768,7 @@
     sprite: Clothing/Head/Hardsuits/syndieelite.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/syndieelite.rsi
-  - type: ToggleableVisuals # WF - Looks way better with an overlaid light sprite
+  - type: ToggleableVisuals # Wayfarer: Looks way better with an overlaid light sprite
     spriteLayer: light
     clothingVisuals:
       head:
@@ -679,10 +787,28 @@
       - sprite: _WF/Clothing/Head/Hardsuits/syndieelite.rsi
         state: on-equipped-HELMET-light-dog
         shader: unshaded
+      # Wayfarer Start
+      head-avali:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndieelite.rsi
+        state: on-equipped-HELMET-light-avali
+        shader: unshaded
+      head-avox:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndieelite.rsi
+        state: on-equipped-HELMET-light-avox
+        shader: unshaded
+      head-feroxi:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndieelite.rsi
+        state: on-equipped-HELMET-light-feroxi
+        shader: unshaded
+      head-reptilian:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndieelite.rsi
+        state: on-equipped-HELMET-light-reptilian
+        shader: unshaded
+      # Wayfarer End
   - type: PointLight
     color: red
-    energy: 10 # WF - make the light actually useable
-    radius: 6 # WF - make the light actually useable
+    energy: 10 # Wayfarer: make the light actually useable
+    radius: 6 # Wayfarer: make the light actually useable
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -714,7 +840,7 @@
     sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
-  - type: ToggleableVisuals # WF - Looks way better with an overlaid light sprite
+  - type: ToggleableVisuals # Wayfarer: Looks way better with an overlaid light sprite
     spriteLayer: light
     clothingVisuals:
       head:
@@ -733,10 +859,28 @@
       - sprite: _WF/Clothing/Head/Hardsuits/syndiecommander.rsi
         state: on-equipped-HELMET-light-dog
         shader: unshaded
+      # Wayfarer Start
+      head-avali:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiecommander.rsi
+        state: on-equipped-HELMET-light-avali
+        shader: unshaded
+      head-avox:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiecommander.rsi
+        state: on-equipped-HELMET-light-avox
+        shader: unshaded
+      head-feroxi:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiecommander.rsi
+        state: on-equipped-HELMET-light-feroxi
+        shader: unshaded
+      head-reptilian:
+      - sprite: _WF/Clothing/Head/Hardsuits/syndiecommander.rsi
+        state: on-equipped-HELMET-light-reptilian
+        shader: unshaded
+      # Wayfarer End
   - type: PointLight
     color: green
-    energy: 10 # WF - make the light actually useable
-    radius: 6 # WF - make the light actually useable
+    energy: 10 # Wayfarer: make the light actually useable
+    radius: 6 # Wayfarer: make the light actually useable
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -1017,6 +1161,16 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
+    # Wayfarer Start
+      head-feroxi:
+      - state: equipped-head-feroxi
+      - state: equipped-head-unshaded-feroxi
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin
+        shader: unshaded
+    # Wayfarer End
   - type: PointLight
     color: orange
   - type: PressureProtection

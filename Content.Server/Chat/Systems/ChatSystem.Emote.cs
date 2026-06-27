@@ -318,18 +318,18 @@ public sealed class EmoteEvent : HandledEntityEventArgs
     }
 }
 
-// // Frontier: custom emote event
-// /// <summary>
-// ///     Raised on an entity when it sends a custom emote (one with a message but no sound).
-// ///     Handled by holopads.
-// /// </summary>
-// public sealed class NFEntityEmotedEvent : EntityEventArgs
-// {
-//     public readonly string Emote;
-//
-//     public NFEntityEmotedEvent(string emote)
-//     {
-//         Emote = emote;
-//     }
-// }
-// // End Frontier
+// Frontier: custom emote event
+/// <summary>
+///     Raised on an entity when it sends a custom emote (one with a message but no sound).
+///     Handled by holopads.
+/// </summary>
+public sealed class NFEntityEmotedEvent : EntityEventArgs
+{
+    public readonly string Emote;
+
+    public NFEntityEmotedEvent(string emote)
+    {
+        Emote = emote;
+    }
+}
+// End Frontier

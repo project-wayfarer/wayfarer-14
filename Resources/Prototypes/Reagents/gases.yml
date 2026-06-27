@@ -308,7 +308,7 @@
       - !type:HealthChange
         conditions:
         - !type:OrganType
-          type: AurelianVox # Aurelian Vox blood is nitrogen based.
+          type: AurelianVox # Aurelian Vox blood is partly nitrogen based.
         damage:
           types:
             Asphyxiation: -0.5

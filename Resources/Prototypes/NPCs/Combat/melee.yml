@@ -119,7 +119,7 @@
             shutdownState: PlanFinished
             pathfindInPlanning: true
             removeKeyOnFinish: false
-            brakeMaxVelocity: null # Monolith - don't try to brake
+            brakeMaxVelocity: null # don't try to brake # Wizden#38846
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             rangeKey: MeleeRange
@@ -168,7 +168,7 @@
             shutdownState: PlanFinished
             pathfindInPlanning: true
             removeKeyOnFinish: false
-            brakeMaxVelocity: null # Monolith - don't try to brake
+            brakeMaxVelocity: null # don't try to brake # Wizden#38846
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             rangeKey: MeleeRange

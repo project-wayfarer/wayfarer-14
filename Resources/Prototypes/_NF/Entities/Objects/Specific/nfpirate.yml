@@ -83,32 +83,32 @@
 #     tags:
 #     - PirateUplink
 
-# - type: entity
-#   parent: BasePirateUplink
-#   id: BasePirateUplinkRadioDebug
-#   suffix: Pirate, DEBUG
-#   components:
-#   - type: Store
-#     balance:
-#       Doubloon: 99999
+#- type: entity
+#  parent: BasePirateUplink
+#  id: BasePirateUplinkRadioDebug
+#  suffix: DEBUG
+#  components:
+#  - type: Store
+#    balance:
+#      Doubloon: 99999
 
-# - type: entity
-#   parent: BasePirateUplink
-#   id: BasePirateUplinkRadioPirateCaptain
-#   suffix: P. Captain 20
-#   components:
-#   - type: Store
-#     balance:
-#       Doubloon: 20
+#- type: entity
+#  parent: BasePirateUplink
+#  id: BasePirateUplinkRadioPirateCaptain
+#  suffix: 20 DB, P. Captain
+#  components:
+#  - type: Store
+#    balance:
+#      Doubloon: 20
 
-# - type: entity
-#   parent: BasePirateUplink
-#   id: BasePirateUplinkPirateCrew
-#   suffix: Crew 15
-#   components:
-#   - type: Store
-#     balance:
-#       Doubloon: 15
+#- type: entity
+#  parent: BasePirateUplink
+#  id: BasePirateUplinkPirateCrew
+#  suffix: 15 DB, Crew
+#  components:
+#  - type: Store
+#    balance:
+#      Doubloon: 15
 
 # # region Misc Items
 # - type: entity

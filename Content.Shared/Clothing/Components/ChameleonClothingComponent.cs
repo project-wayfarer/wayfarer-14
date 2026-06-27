@@ -42,7 +42,7 @@ public sealed partial class ChameleonClothingComponent : Component
     ///     Will component owner be affected by EMP pulses?
     /// </summary>
     [DataField]
-    public bool AffectedByEmp = true;
+    public bool AffectedByEmp = false; // Wayfarer: Disabled EMPs affecting chameleon clothing by default.
 
     /// <summary>
     ///     Intensity of clothes change on EMP.

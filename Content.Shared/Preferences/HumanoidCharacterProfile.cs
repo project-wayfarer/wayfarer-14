@@ -630,11 +630,15 @@ namespace Content.Shared.Preferences
             var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
             if (FlavorText.Length > maxFlavorTextLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
+                //flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
+                var msg = FormattedMessage.FromMarkupPermissive(FlavorText[..maxFlavorTextLength]); // Wayfarer
+                flavortext = msg.ToMarkup();
             }
             else
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
+                //flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
+                var msg = FormattedMessage.FromMarkupPermissive(FlavorText); // Wayfarer
+                flavortext = msg.ToMarkup();
             }
 
             // Frontier

@@ -248,8 +248,8 @@
     damage:
       types:
         Heat: -0.07
-        Shock: -0.07 # Frontier
-        Cold: -0.07 # Frontier
+        #Shock: -0.07 # Frontier # Wayfarer: Commented.
+        #Cold: -0.07 # Frontier # Wayfarer: Ditto.
       groups:
         Brute: -0.07
   - type: Fingerprint

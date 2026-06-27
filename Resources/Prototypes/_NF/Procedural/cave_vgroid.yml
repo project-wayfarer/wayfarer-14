@@ -241,19 +241,19 @@
       tableId: SalvageEquipmentSpawnerValuable
     perDungeon: true
   - !type:MobsDunGen
-    minCount: 8
-    maxCount: 15
+    minCount: 16 # Wayfarer 8<16
+    maxCount: 24 # Wayfarer 15<24
     contents: SpawnMobExplorerEVAT2Table
   - !type:MobsDunGen
-    minCount: 0
-    maxCount: 1
+    minCount: 1 # Wayfarer 0<1
+    maxCount: 3 # Wayfarer 1<3
     contents: SpawnMobExplorerBossTable # Boss
 
 - type: entityTable
   id: SpawnMobExplorerEVAT2Table
   table: !type:GroupSelector
     children:
-    - id: SpawnMobExplorerEVAT2
+    - id: SpawnMobExplorerEVAT3 # Wayfarer: EVAT2<EVAT3
       amount: 1
 
 - type: entityTable

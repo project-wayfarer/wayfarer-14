@@ -3,6 +3,7 @@
   name: job-name-sheriff
   description: job-description-sheriff
   playTimeTracker: JobHeadOfSecurity
+  whitelisted: true # Wayfarer: Add Whitelist
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden

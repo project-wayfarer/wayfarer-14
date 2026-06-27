@@ -150,7 +150,7 @@
 
 - type: entity
   name: wizard's magical pen
-  parent: [ PenEmbeddable, BaseC3WizardContraband ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband
+  parent: [ PenEmbeddable ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband # Wayfarer: Removed BaseC3WizardContraband
   id: PenWiz
   description: A luxurious fountain pen. Seems to have a magical crystal eraser.
   components:

@@ -1,0 +1,34 @@
+{
+    "version":1,
+    "size":{
+        "x":96,
+        "y":96
+    },
+    "license":"CC-BY-SA-4.0",
+    "copyright":"made by Feathernights for Wayfarer14",
+    "states":[
+        {
+            "name":"radar-on",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "radar-nopower"
+        },
+        {
+            "name": "broken"
+        }
+    ]
+}

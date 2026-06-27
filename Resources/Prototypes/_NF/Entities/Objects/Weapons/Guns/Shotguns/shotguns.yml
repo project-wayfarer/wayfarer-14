@@ -47,7 +47,7 @@
 
 - type: entity
   id: NFWeaponShotgunEnforcer
-  parent: [ NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable, BaseMilitaryContraband ] # Wayfarer: add BaseMilitaryContraband
+  parent: [ NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable ] # Wayfarer: Remove contraband
   name: Enforcer
   description: |-
     A premium semi-automatic shotgun, featuring an upgraded tube capacity.
@@ -110,6 +110,9 @@
     capacity: 2
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-custom-made
+  - type: Tag
+    tags:
+    - Sidearm
 
 - type: entity
   id: NFWeaponShotgunSawnEmpty

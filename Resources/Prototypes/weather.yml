@@ -4,10 +4,11 @@
     sprite: /Textures/Effects/weather.rsi
     state: ashfall
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: AshfallLight
@@ -15,10 +16,11 @@
     sprite: /Textures/Effects/weather.rsi
     state: ashfall_light
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: AshfallHeavy
@@ -30,6 +32,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: Fallout
@@ -37,10 +40,13 @@
     sprite: /Textures/Effects/weather.rsi
     state: fallout
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
+  damage: # Wayfarer
+    types:
+      Radiation: 6
 
 - type: weather
   id: Hail
@@ -53,6 +59,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: Rain
@@ -64,6 +71,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: soundCollection
   id: Rain
@@ -77,10 +85,11 @@
     sprite: /Textures/Effects/weather.rsi
     state: sandstorm
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SandstormHeavy
@@ -92,6 +101,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SnowfallLight
@@ -99,10 +109,11 @@
     sprite: /Textures/Effects/weather.rsi
     state: snowfall_light
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SnowfallMedium
@@ -110,10 +121,11 @@
     sprite: /Textures/Effects/weather.rsi
     state: snowfall_med
   sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    path: /Audio/_WF/Effects/Weather/snowstorm_weak_edit.ogg
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: SnowfallHeavy
@@ -125,6 +137,7 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer
 
 - type: weather
   id: Storm
@@ -136,3 +149,4 @@
     params:
       loop: true
       volume: -6
+  particulate: {} # Wayfarer

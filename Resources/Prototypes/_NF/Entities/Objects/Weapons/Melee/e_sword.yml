@@ -20,7 +20,7 @@
 
 - type: entity
   id: NFEnergyPickaxe
-  parent: EnergySword # Has a reflect chance # Wayfarer: Removed contraband
+  parent: [EnergySword, BaseNotContraband] # Has a reflect chance # Wayfarer: add BaseNotContraband
   name: holopickaxe
   description: A holographic mining tool with blades comprised of hard light. Doesn't pack the same punch as an energy weapon, but more compact than most mining tools when turned off.
   components:

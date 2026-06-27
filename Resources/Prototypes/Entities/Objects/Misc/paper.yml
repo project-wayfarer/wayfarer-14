@@ -84,6 +84,33 @@
         type: PaperBoundUserInterface
   - type: FaxableObject
   - type: PaperVisuals
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/paper_pickup.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/paper_drop.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Goobstation/Items/handling/paper_use.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_Goobstation/Items/handling/paper_drop.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnThrow
+    sound:
+      path: /Audio/_Goobstation/Items/handling/paper_throw.ogg
+      params:
+        volume: -6
+  # Wayfarer End
 
 - type: entity
   name: paper scrap
@@ -418,6 +445,7 @@
   - type: ContainerContainer
     containers:
       letter_slot: !type:ContainerSlot
+      cash_slot: !type:ContainerSlot    # frontier: added another slot for coins/spesos
   - type: ItemSlots
     slots:
       letter_slot:
@@ -425,10 +453,16 @@
         insertSound: /Audio/Effects/packetrip.ogg
         ejectSound: /Audio/Effects/packetrip.ogg
         whitelist:
-          components:
-            - Cash
           tags:
             - Paper
+      cash_slot:              # frontier: added another slot for coins/spesos, and moved the letters to the letter slot, to allow a letter and money to exist all at the same time!
+        name: envelope-cash-slot
+        insertSound: /Audio/Effects/packetrip.ogg
+        ejectSound: /Audio/Effects/packetrip.ogg
+        whitelist:
+          components:
+            - NFCoin
+            - Cash
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
     requiresComplex: false

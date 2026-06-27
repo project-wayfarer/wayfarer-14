@@ -200,15 +200,17 @@
     count: 1
 
 - type: entity
-  parent: [SheetOtherBase, EdibleBase]
+  parent: [SheetOtherBase] # Wayfarer: Removed EdibleBase
   id: SheetUranium
   name: uranium
   suffix: Full
   components:
   - type: Material
-  - type: Edible
-    transferAmount: 10
-  - type: BadFood
+  # Wayfarer: Why???
+  # - type: Edible
+  #   transferAmount: 10
+  # - type: BadFood
+  # End Wayfarer
   - type: PhysicalComposition
     materialComposition:
       Uranium: 100

@@ -10,7 +10,9 @@
     - Window
   components:
   - type: RCDDeconstructable
-    deconstructable: false
+    deconstructable: true # Wayfarer: false<true
+    cost: 8 # Wayfarer
+    delay: 8 # Wayfarer
   - type: MeleeSound
     soundGroups:
       Brute:

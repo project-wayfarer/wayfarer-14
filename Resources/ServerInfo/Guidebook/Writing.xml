@@ -19,4 +19,9 @@ Color supports either hexadecimal or most HTML color names. For example:
 - [color=#ff0000]\[color=#ff0000\]\[\/color\][/color]
 - [color=red]\[color=red\]\[\/color\][/color]
 
+You can also add specialty fields to your forms for an easier way to fill out documents without needing to edit the whole paper every time.
+- [color=tan]\[form\][/color] — Is used to add a section for freeform writing. Allowing for a short answer paragraph.
+- [color=tan]\[signature\][/color] — Is used to add your name and role to a document in a format like "\[Character name\], \[Role\]." Do note this does not perform the character signature submenu verb that finalizes a paper and makes it uneditable, only just fills in their name and role.
+- [color=tan]\[check\][/color] — Is used to make a checkbox to check off for a "yes" or cross out for a "no."
+
 </Document>

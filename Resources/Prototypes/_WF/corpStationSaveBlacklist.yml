@@ -6,7 +6,7 @@
 - type: corpStationSaveBlacklist
   id: Default
 
-  # ── Tags ──────────────────────────────────────────────────────────────────
+  ### Tags
   # Any entity that carries one of these tags is stripped before saving.
   tags:
 
@@ -70,7 +70,7 @@
   - Sidearm             # Holstered sidearm items (pistols/revolvers)
   - Taser               # Stun weapons
 
-  # ── Prototypes ────────────────────────────────────────────────────────────
+  ### Prototypes
   # Specific entity prototype IDs to strip, regardless of tags.
   prototypes:
 

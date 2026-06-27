@@ -1,16 +1,21 @@
 using System.Linq;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._WF.CCVar;
 using Content.Shared._WF.Corporations;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Configuration;
+using Robust.Shared.IoC;
 using Robust.Shared.Utility;
 
 namespace Content.Client._WF.Corporations;
 
 public sealed partial class CorporationUiFragment : BoxContainer
 {
-    // ─── Events ──────────────────────────────────────────────────────────────
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    // Events
     public event Action? OnRefresh;
     public event Action<CorporationView>? OnNavigate;
     public event Action<string, string, CorporationPrivacy>? OnCreate;
@@ -26,7 +31,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
     public event Action<string>? OnPurchaseStation;
     public event Action? OnToggleStationVisibility;
 
-    // ─── Controls ────────────────────────────────────────────────────────────
+    // Controls
     private readonly Button _backButton;
     private readonly Button _refreshButton;
     private readonly Label _feedbackLabel;
@@ -41,7 +46,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
     private readonly Label _corpPrivacyLabel;
     private readonly RichTextLabel _corpDescriptionLabel;
     private readonly Button _editDescriptionButton;
-    private readonly Button _togglePrivacyButton;
+    private readonly OptionButton _privacyOptionButton;
     private readonly Button _inviteMemberButton;
     private readonly BoxContainer _membersList;
     private readonly Label _corpBankBalanceLabel;
@@ -67,6 +72,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
     private readonly BoxContainer _createPanel;
     private readonly LineEdit _corpNameEdit;
     private readonly TextEdit _corpDescEdit;
+    private readonly Label _createDescriptionLimitLabel;
     private readonly Button _privacyToggleButton;
     private readonly Button _foundCorpButton;
     private readonly Button _cancelCreateButton;
@@ -80,18 +86,23 @@ public sealed partial class CorporationUiFragment : BoxContainer
     // Edit description panel
     private readonly BoxContainer _editDescPanel;
     private readonly TextEdit _editDescText;
+    private readonly Label _editDescriptionLimitLabel;
     private readonly Button _saveDescButton;
     private readonly Button _cancelEditDescButton;
+    private bool _suppressPrivacySelectionEvent;
+    private CorporationPrivacy _editPrivacy = CorporationPrivacy.Public;
+    private int _descriptionMaxLength;
 
-    // ─── State ───────────────────────────────────────────────────────────────
+    // State 
     private CorporationListUiState? _lastListState;
-    private bool _isPrivate;
+    private CorporationPrivacy _createPrivacy = CorporationPrivacy.Public;
     private List<string> _inviteCharacters = new();
 
-    // ─── Constructor ─────────────────────────────────────────────────────────
+    // Constructor
     public CorporationUiFragment()
     {
         RobustXamlLoader.Load(this);
+        IoCManager.InjectDependencies(this);
 
         _backButton = FindControl<Button>("BackButton");
         _refreshButton = FindControl<Button>("RefreshButton");
@@ -106,7 +117,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         _corpPrivacyLabel = FindControl<Label>("CorpPrivacyLabel");
         _corpDescriptionLabel = FindControl<RichTextLabel>("CorpDescriptionLabel");
         _editDescriptionButton = FindControl<Button>("EditDescriptionButton");
-        _togglePrivacyButton = FindControl<Button>("TogglePrivacyButton");
+        _privacyOptionButton = FindControl<OptionButton>("PrivacyOptionButton");
         _inviteMemberButton = FindControl<Button>("InviteMemberButton");
         _membersList = FindControl<BoxContainer>("MembersList");
         _corpBankBalanceLabel = FindControl<Label>("CorpBankBalanceLabel");
@@ -131,6 +142,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         _createPanel = FindControl<BoxContainer>("CreatePanel");
         _corpNameEdit = FindControl<LineEdit>("CorpNameEdit");
         _corpDescEdit = FindControl<TextEdit>("CorpDescEdit");
+        _createDescriptionLimitLabel = FindControl<Label>("CreateDescriptionLimitLabel");
         _privacyToggleButton = FindControl<Button>("PrivacyToggleButton");
         _foundCorpButton = FindControl<Button>("FoundCorpButton");
         _cancelCreateButton = FindControl<Button>("CancelCreateButton");
@@ -142,8 +154,14 @@ public sealed partial class CorporationUiFragment : BoxContainer
 
         _editDescPanel = FindControl<BoxContainer>("EditDescPanel");
         _editDescText = FindControl<TextEdit>("EditDescText");
+        _editDescriptionLimitLabel = FindControl<Label>("EditDescriptionLimitLabel");
         _saveDescButton = FindControl<Button>("SaveDescButton");
         _cancelEditDescButton = FindControl<Button>("CancelEditDescButton");
+
+        _descriptionMaxLength = _cfg.GetCVar(WFCCVars.CorporationDescriptionMaxLength);
+
+        InitializePrivacyOptionButton();
+        UpdateDescriptionLengthDisplay();
 
         WireEvents();
     }
@@ -162,23 +180,22 @@ public sealed partial class CorporationUiFragment : BoxContainer
             _corpNameEdit.Clear();
             _corpDescEdit.TextRope = Rope.Leaf.Empty;
             _corpDescEdit.CursorPosition = default;
-            _isPrivate = false;
-            _privacyToggleButton.Pressed = false;
+            _createPrivacy = CorporationPrivacy.Public;
             UpdatePrivacyButtonText();
             ShowPanel(PanelMode.Create);
         };
-        _privacyToggleButton.OnToggled += args =>
+        _privacyToggleButton.OnPressed += _ =>
         {
-            _isPrivate = args.Pressed;
+            _createPrivacy = GetNextPrivacy(_createPrivacy);
             UpdatePrivacyButtonText();
         };
         _foundCorpButton.OnPressed += _ =>
         {
             var name = _corpNameEdit.Text.Trim();
             var desc = Rope.Collapse(_corpDescEdit.TextRope).Trim();
-            var privacy = _isPrivate ? CorporationPrivacy.Private : CorporationPrivacy.Public;
-            OnCreate?.Invoke(name, desc, privacy);
+            OnCreate?.Invoke(name, desc, _createPrivacy);
         };
+        _corpDescEdit.OnTextChanged += _ => UpdateDescriptionLengthDisplay();
         _cancelCreateButton.OnPressed += _ => OnNavigate?.Invoke(CorporationView.List);
 
         // Corp actions
@@ -193,23 +210,21 @@ public sealed partial class CorporationUiFragment : BoxContainer
                 ? new Rope.Leaf(_lastListState.MyCorporation.Description)
                 : Rope.Leaf.Empty;
             _editDescText.CursorPosition = default;
+
+            if (_lastListState?.MyCorporation != null)
+                SetSelectedPrivacyOption(_lastListState.MyCorporation.Privacy);
+
             ShowPanel(PanelMode.EditDesc);
         };
         _saveDescButton.OnPressed += _ =>
         {
             OnEditDescription?.Invoke(Rope.Collapse(_editDescText.TextRope).Trim());
-        };
-        _cancelEditDescButton.OnPressed += _ => OnNavigate?.Invoke(CorporationView.List);
 
-        _togglePrivacyButton.OnPressed += _ =>
-        {
-            if (_lastListState?.MyCorporation == null)
-                return;
-            var newPrivacy = _lastListState.MyCorporation.Privacy == CorporationPrivacy.Public
-                ? CorporationPrivacy.Private
-                : CorporationPrivacy.Public;
-            OnSetPrivacy?.Invoke(newPrivacy);
+            if (_lastListState?.MyCorporation != null && _editPrivacy != _lastListState.MyCorporation.Privacy)
+                OnSetPrivacy?.Invoke(_editPrivacy);
         };
+        _editDescText.OnTextChanged += _ => UpdateDescriptionLengthDisplay();
+        _cancelEditDescButton.OnPressed += _ => OnNavigate?.Invoke(CorporationView.List);
 
         // Invite
         _sendInviteButton.OnPressed += _ =>
@@ -235,7 +250,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         _stationVisibleCheckBox.OnPressed += _ => OnToggleStationVisibility?.Invoke();
     }
 
-    // ─── State update entry points ────────────────────────────────────────────
+    // State update entry points
 
     public void ShowListState(CorporationListUiState state)
     {
@@ -308,7 +323,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         ShowPanel(PanelMode.Invite);
     }
 
-    // ─── Corp detail population ───────────────────────────────────────────────
+    // Corp detail population
 
     private void PopulateMyCorporation(CorporationListUiState state)
     {
@@ -316,9 +331,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         var myRank = state.MyRank;
 
         _corpNameLabel.Text = corp.Name;
-        _corpPrivacyLabel.Text = corp.Privacy == CorporationPrivacy.Private
-            ? Loc.GetString("corp-privacy-private")
-            : Loc.GetString("corp-privacy-public");
+        _corpPrivacyLabel.Text = Loc.GetString(GetPrivacyLocKey(corp.Privacy));
 
         _corpDescriptionLabel.Text = string.IsNullOrWhiteSpace(corp.Description)
             ? Loc.GetString("corp-no-description")
@@ -335,11 +348,6 @@ public sealed partial class CorporationUiFragment : BoxContainer
         _disbandCorpButton.Disabled = corp.Balance > 0;
 
         _corpBankBalanceLabel.Text = Loc.GetString("corp-bank-balance", ("balance", corp.Balance.ToString("N0")));
-
-        // Toggle privacy button label
-        _togglePrivacyButton.Text = corp.Privacy == CorporationPrivacy.Public
-            ? Loc.GetString("corp-btn-make-private")
-            : Loc.GetString("corp-btn-make-public");
 
         // Build members list
         _membersList.DisposeAllChildren();
@@ -418,7 +426,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
             _publicCorpsList.AddChild(BuildPublicCorpRow(corp));
     }
 
-    // ─── Row builders ─────────────────────────────────────────────────────────
+    // Row builders
 
     private Control BuildInviteRow(CorporationInfo corp)
     {
@@ -488,12 +496,16 @@ public sealed partial class CorporationUiFragment : BoxContainer
 
         var joinBtn = new Button
         {
-            Text = Loc.GetString("corp-btn-join"),
+            Text = corp.Privacy == CorporationPrivacy.Private
+                ? Loc.GetString("corp-btn-request-invite")
+                : Loc.GetString("corp-btn-join"),
             Margin = new Thickness(8, 0, 0, 0),
+            Disabled = corp.Privacy == CorporationPrivacy.Private,
         };
 
         var capturedCorpId = corp.Id;
-        joinBtn.OnPressed += _ => OnJoin?.Invoke(capturedCorpId);
+        if (corp.Privacy == CorporationPrivacy.Public)
+            joinBtn.OnPressed += _ => OnJoin?.Invoke(capturedCorpId);
 
         headerRow.AddChild(nameLabel);
         headerRow.AddChild(memberCount);
@@ -600,7 +612,7 @@ public sealed partial class CorporationUiFragment : BoxContainer
         return panel;
     }
 
-    // ─── Panel switching ──────────────────────────────────────────────────────
+    // Panel switching
 
     private enum PanelMode { List, Create, Invite, EditDesc }
 
@@ -614,12 +626,71 @@ public sealed partial class CorporationUiFragment : BoxContainer
         _backButton.Visible = mode != PanelMode.List;
     }
 
-    // ─── Helpers ─────────────────────────────────────────────────────────────
+    // Helpers
 
     private void UpdatePrivacyButtonText()
     {
-        _privacyToggleButton.Text = _isPrivate
-            ? Loc.GetString("corp-privacy-private")
-            : Loc.GetString("corp-privacy-public");
+        _privacyToggleButton.Text = Loc.GetString(GetPrivacyLocKey(_createPrivacy));
+    }
+
+    private void InitializePrivacyOptionButton()
+    {
+        foreach (var privacy in Enum.GetValues<CorporationPrivacy>())
+        {
+            _privacyOptionButton.AddItem(Loc.GetString(GetPrivacyLocKey(privacy)), (int) privacy);
+        }
+
+        _privacyOptionButton.OnItemSelected += args =>
+        {
+            _privacyOptionButton.SelectId(args.Id);
+
+            if (_suppressPrivacySelectionEvent)
+                return;
+
+            _editPrivacy = (CorporationPrivacy) args.Id;
+        };
+    }
+
+    private void SetSelectedPrivacyOption(CorporationPrivacy privacy)
+    {
+        _editPrivacy = privacy;
+        _suppressPrivacySelectionEvent = true;
+        _privacyOptionButton.SelectId((int) privacy);
+        _suppressPrivacySelectionEvent = false;
+    }
+
+    private void UpdateDescriptionLengthDisplay()
+    {
+        var createLength = _corpDescEdit.TextLength;
+        var createOverMax = createLength > _descriptionMaxLength;
+        _createDescriptionLimitLabel.Text = Loc.GetString("corp-description-limit", ("current", createLength), ("max", _descriptionMaxLength));
+        _createDescriptionLimitLabel.FontColorOverride = createOverMax ? Color.Red : Color.FromHex("#AAAAAA");
+        _foundCorpButton.Disabled = createOverMax;
+
+        var editLength = _editDescText.TextLength;
+        var editOverMax = editLength > _descriptionMaxLength;
+        _editDescriptionLimitLabel.Text = Loc.GetString("corp-description-limit", ("current", editLength), ("max", _descriptionMaxLength));
+        _editDescriptionLimitLabel.FontColorOverride = editOverMax ? Color.Red : Color.FromHex("#AAAAAA");
+        _saveDescButton.Disabled = editOverMax;
+    }
+
+    private static CorporationPrivacy GetNextPrivacy(CorporationPrivacy privacy)
+    {
+        return privacy switch
+        {
+            CorporationPrivacy.Public => CorporationPrivacy.Private,
+            CorporationPrivacy.Private => CorporationPrivacy.Unlisted,
+            _ => CorporationPrivacy.Public,
+        };
+    }
+
+    private static string GetPrivacyLocKey(CorporationPrivacy privacy)
+    {
+        return privacy switch
+        {
+            CorporationPrivacy.Public => "corp-privacy-public",
+            CorporationPrivacy.Private => "corp-privacy-private",
+            _ => "corp-privacy-unlisted",
+        };
     }
 }

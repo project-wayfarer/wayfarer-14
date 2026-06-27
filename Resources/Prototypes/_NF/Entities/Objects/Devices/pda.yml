@@ -31,6 +31,7 @@
   - type: BlipCartridge
     enabled: false
 
+# Start Wayfarer - Removed roles, etc.
 #- type: entity
 #  parent: BasePDA
 #  id: MercenaryPDA
@@ -72,6 +73,7 @@
 #    state: pda-pilot
 #  - type: BlipCartridge
 #    defaultPreset: BlipPresetPilot
+# Wayfarer End
 
 - type: entity
   parent: BaseSecurityPDA
@@ -92,6 +94,7 @@
   - type: Icon
     state: pda-stc
 
+# Start Wayfarer - Removed roles, etc.
 #- type: entity
 #  parent: BaseSecurityPDA
 #  id: ERTMailCarrierPDA # WF chamge
@@ -109,6 +112,7 @@
   #  borderColor: "#A32D26"
   #- type: Icon
   #  state: pda-ert
+# Wayfarer End# Wayfarer End
 
 - type: entity
   parent: ERTLeaderPDA
@@ -125,6 +129,7 @@
         tags:
         - Write
 
+# Start Wayfarer - Removed roles, etc.
 #- type: entity
 #  parent: [BaseSecurityPDA, BaseCommandContraband]
 #  id: SheriffPDA
@@ -360,6 +365,7 @@
 #   accentHColor: "#896b49"
 # - type: Icon
 #   state: pda-pal
+# Wayfarer End
 
 - type: entity
   parent: [BaseSecurityPDA, BaseCommandContraband]
@@ -399,36 +405,44 @@
   - type: BlipCartridge
     defaultPreset: BlipPresetCommand
 
-#- type: entity
-#  parent: PiratePDA
-#  id: NFPiratePDA
-#  name: pirate PDA
-#  suffix: Frontier
-#  components:
-#  - type: Pda
-#    id: NFPirateIDCard
-#  - type: Appearance
-#    appearanceDataInit:
-#      enum.PdaVisuals.PdaType:
-#        !type:String
-#        pda-pirate
-#  - type: BlipCartridge
-#    defaultPreset: BlipPresetPirate
+- type: entity
+  parent: PiratePDA
+  id: NFPiratePDA
+  name: pirate PDA
+  suffix: Frontier
+  components:
+  - type: Pda
+    id: NFPirateIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-pirate
+  - type: PdaBorderColor # Wayfarer - Add color so not red
+    borderColor: "#333333"
+    accentVColor: "#d7d7d0"
+  - type: BlipCartridge
+    defaultPreset: BlipPresetPirate
 
-#- type: entity
-#  parent: PiratePDA
-#  id: NFPirateCaptainPDA
-#  name: pirate captain PDA
-#  suffix: Frontier
-#  components:
-#  - type: Pda
-#    id: NFPirateCaptainIDCard
-#  - type: Appearance
-#    appearanceDataInit:
-#      enum.PdaVisuals.PdaType:
-#        !type:String
-#        pda-pirate
+- type: entity
+  parent: PiratePDA
+  id: NFPirateCaptainPDA
+  name: cracked PDA  # Wayfarer - from pirate captain to cracked
+  description: This thing still works, right? # Wayfarer - Added description
+  suffix: Frontier
+  components:
+  - type: Pda
+    id: NFPirateCaptainIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-pirate-alt
+  - type: PdaBorderColor # Wayfarer - Add color so not red
+    borderColor: "#333333"
+    accentVColor: "#d7d7d0"
 
+# Start Wayfarer - Removed roles, etc.
 #- type: entity
 #  parent: PiratePDA
 #  id: NFPirateFirstMatePDA
@@ -496,6 +510,7 @@
 #      enum.PdaVisuals.PdaType:
 #        !type:String
 #        pda
+# Wayfarer End
 
 - type: entity
   parent: ClearPDA

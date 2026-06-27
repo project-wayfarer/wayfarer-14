@@ -493,6 +493,7 @@
   - type: VendingMachineRestock
     canRestock:
     - ChemVendInventory
+    - ChemVendInventorySyndicate # Wayfarer
   - type: Sprite
     layers:
     - state: base

@@ -150,6 +150,7 @@
   - type: ShipyardSellCondition # Frontier: Teleport to shipyard console on sale
     preserveOnSale: true
   - type: BlipCartridge
+  - type: CleanupImmune # Wayfarer
 
 - type: entity
   parent: BasePDA
@@ -721,6 +722,7 @@
   - type: BlipCartridge
     defaultPreset: BlipPresetCommand
 
+# Start Wayfarer
 #- type: entity
 #  parent: BasePDA
 #  id: HoPPDA
@@ -747,6 +749,7 @@
 #    state: pda-hop
 #  - type: BlipCartridge
 #    defaultPreset: BlipPresetCommand
+# Wayfarer End
 
 - type: entity
   parent: BasePDA
@@ -1095,8 +1098,8 @@
   - type: Instrument
     allowPercussion: false
     handheld: true
-    bank: 1
     program: 2
+    bank: 100 # Defined in space-station-14.sf2
 
 - type: entity
   parent: MusicianPDA
@@ -1174,6 +1177,7 @@
        pda-syndi
   - type: PdaBorderColor
     borderColor: "#891417"
+    accentVColor: "#333333" # Wayfarer - Matches better
   - type: Icon
     state: pda-syndi
   - type: CartridgeLoader
@@ -1367,6 +1371,7 @@
   - type: Icon
     state: pda-boxer
 
+# Start Wayfarer
 #- type: entity
 #  parent: BaseSecurityPDA
 #  id: DetectivePDA
@@ -1423,6 +1428,7 @@
 #    - WantedListCartridge
 #    - MedTekCartridge
 #    - NanoChatCartridge # DeltaV
+# Wayfarer End
 
 - type: entity
   parent: ClownPDA
@@ -1567,6 +1573,8 @@
        pda-syndi-agent
   - type: PdaBorderColor
     borderColor: "#891417"
+    accentHColor: "#d7d7d0" # Wayfarer - Matches better
+    accentVColor: "#333333" # Wayfarer - Matches better
   - type: Icon
     state: pda-syndi-agent
   - type: CartridgeLoader

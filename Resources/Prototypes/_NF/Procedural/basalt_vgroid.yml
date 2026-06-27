@@ -143,8 +143,8 @@
     - !type:OreDunGen
       tileMask:
       - FloorBasalt
-      entity: SpawnMobMercenaryEVAT3
-      count: 5
+      entity: SalvageSpawnerMobMiningAsteroid
+      count: 7
       minGroupSize: 1
       maxGroupSize: 1
 
@@ -249,12 +249,12 @@
     maxCount: 15
     contents: SpawnMobMercenaryEVAT2Table
   - !type:MobsDunGen
-    minCount: 1
-    maxCount: 3
+    minCount: 3 # Wayfarer: 1<3
+    maxCount: 5 # Wayfarer: 3<5
     contents: SpawnMobMercenaryEVAT3Table
   - !type:MobsDunGen
-    minCount: 0
-    maxCount: 1
+    minCount: 2 # Wayfarer: 0<2
+    maxCount: 3 # Wayfarer: 1<3
     contents: SpawnMobMercenaryCaptainEVATable
 
 

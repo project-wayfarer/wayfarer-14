@@ -1,0 +1,15 @@
+- type: entity
+  id: MedkitNitrogenFilled
+  suffix: Filled
+  parent: MedkitN2
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        #- id: ElectrodePad #IMP
+        - id: ClothingMaskBreathMedical
+        - id: EmergencyNitrogenTankFilled #IMP; repositioned for inventory's sake
+        - id: EmergencyMedipen
+        - id: SyringeInaprovaline
+        - id: PillCanisterDylovene

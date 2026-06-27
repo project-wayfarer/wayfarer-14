@@ -1,0 +1,38 @@
+- type: entity
+  id: ShuttleGunFriendshipCircuitboardNfsd
+  parent: [BaseMachineCircuitboard, BaseCGPContraband]
+  name: EXP-320g "Friendship" machine board
+  description: A machine printed circuit board for an EXP-320g "Friendship".
+  suffix: DO NOT MAP, Machine Board
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunFriendshipNfsd
+    requirements:
+      MatterBin: 3
+      Manipulator: 2
+    stackRequirements:
+      Steel: 7
+      CableHV: 5
+
+- type: entity
+  id: ShuttleGunDusterCircuitboardNfsd
+  parent: [BaseMachineCircuitboard, BaseCGPContraband]
+  name: EXP-2100g "Duster" machine board
+  description: A machine printed circuit board for an EXP-2100g "Duster".
+  suffix: DO NOT MAP, Machine Board
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunDusterNfsd
+    requirements:
+      MatterBin: 6
+      Manipulator: 4
+    stackRequirements:
+      Steel: 10
+      CableHV: 5
+      Uranium: 2

@@ -7,6 +7,12 @@
     state: icon
   - type: Clothing
     slots: [gloves]
+    # Wayfarer Start
+    equipSound:
+      path: /Audio/_Goobstation/Items/handling/generic_equip2.ogg
+      params:
+        volume: -4
+    # Wayfarer End
   - type: Edible
     requiresSpecialDigestion: true
   - type: Item

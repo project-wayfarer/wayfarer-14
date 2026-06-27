@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
 using Content.Server.DoAfter;
-using Content.Server.Gravity;
+using Content.Server.Gravity; // Wizden#38846
 using Content.Server.NPC.Components;
 using Content.Server.NPC.Events;
 using Content.Server.NPC.Pathfinding;
@@ -61,7 +61,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     [Dependency] private readonly ClimbSystem _climb = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly GravitySystem _gravity = default!;
+    [Dependency] private readonly GravitySystem _gravity = default!; // Wizden#38846
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly PathfindingSystem _pathfindingSystem = default!;
     [Dependency] private readonly PryingSystem _pryingSystem = default!;
@@ -702,17 +702,17 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         var agentRadius = steering.Radius;
         var worldPos = _transform.GetWorldPosition(xform);
         var (layer, mask) = _physics.GetHardCollision(uid);
-
         // Use rotation relative to parent to rotate our context vectors by.
         var offsetRot = -_mover.GetParentGridAngle(mover);
+
         _modifierQuery.TryGetComponent(uid, out var modifier);
         var body = _physicsQuery.GetComponent(uid);
-        // Monolith - early port of wizden#38846
+        // Wizden#38846
         var weightless = _gravity.IsWeightless(uid);
         var moveSpeed = GetSprintSpeed(uid, modifier);
         var acceleration = GetAcceleration((uid, modifier), weightless);
         var friction = GetFriction((uid, modifier), weightless);
-
+        // End Wizden#38846
         var dangerPoints = steering.DangerPoints;
         dangerPoints.Clear();
         Span<float> interest = stackalloc float[InterestDirections];
@@ -725,9 +725,9 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         RaiseLocalEvent(uid, ref ev);
         // If seek has arrived at the target node for example then immediately re-steer.
         var forceSteer = true;
-        var moveMultiplier = 1f; // Monolith - multiplier to acceleration we should actually move with
+        var moveMultiplier = 1f; // multiplier to acceleration we should actually move with // Wizden#38846
 
-        if (steering.CanSeek && !TrySeek(uid, mover, steering, body, xform, offsetRot, moveSpeed, acceleration, friction, interest, frameTime, ref forceSteer, ref moveMultiplier))
+        if (steering.CanSeek && !TrySeek(uid, mover, steering, body, xform, offsetRot, moveSpeed, acceleration, friction, interest, frameTime, ref forceSteer, ref moveMultiplier)) // Wizden#38846
         {
             SetDirection(uid, mover, steering, Vector2.Zero);
             return;
@@ -774,7 +774,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         if (desiredDirection != -1)
         {
-            resultDirection = new Angle(desiredDirection * InterestRadians).ToVec() * moveMultiplier; // Monolith
+            resultDirection = new Angle(desiredDirection * InterestRadians).ToVec() * moveMultiplier; // Wizden#38846
         }
 
         steering.LastSteerDirection = resultDirection;
@@ -884,8 +884,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         return modifier.CurrentSprintSpeed;
     }
-
-    // <Monolith> - early port of wizden#38846
+    // Wizden#38846
     private float GetAcceleration(Entity<MovementSpeedModifierComponent?> ent, bool weightless)
     {
         if (!Resolve(ent, ref ent.Comp, false))
@@ -901,13 +900,5 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         return weightless ? ent.Comp.WeightlessFriction : ent.Comp.Friction;
     }
-    // </Monolith>
-    public override void Shutdown()
-    {
-        base.Shutdown();
-        _player.PlayerStatusChanged -= OnPlayerStatusChanged;
-        _subscribedSessions.Clear();
-        _sharedPaths.Clear();
-        _breakawayUntil.Clear();
-    }
+    // End Wizden#38846
 }

@@ -5,7 +5,7 @@
   roundStart: true
   prototype: MobGoblin
   sprites: MobGoblinSprites
-  markingLimits: MobHumanMarkingLimits #MobGoblinMarkingLimits WF
+  markingLimits: MobGoblinMarkingLimits
   dollPrototype: MobGoblinDummy
   # Coyote: Small enough to fit in a bag
   minHeight: 0.6
@@ -23,18 +23,18 @@
 - type: speciesBaseSprites
   id: MobGoblinSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    Head: MobGoblinHead
+    Special: MobHumanoidAnyMarking # Wayfarer
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
+    Head: MobGoblinHead
+    HeadTop: MobHumanoidAnyMarking # Wayfarer
+    HeadSide: MobHumanoidAnyMarking # Wayfarer
     Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobGoblinTorso
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
     Eyes: MobGoblinEyes
     LArm: MobGoblinLArm
     RArm: MobGoblinRArm
@@ -44,7 +44,64 @@
     RLeg: MobGoblinRLeg
     LFoot: MobGoblinLFoot
     RFoot: MobGoblinRFoot
-    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+    Tail: MobHumanoidAnyMarking # Wayfarer
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer
+
+- type: markingPoints
+  id: MobGoblinMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ GoblinEarsBasic ]
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 2<32
+      required: false
+#      defaultMarkings: [ GoblinNoseBasic ]
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer: 2<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 2<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    UndergarmentTop:
+      points: 32 # Wayfarer
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 - type: humanoidBaseSprite
   id: MobGoblinEyes

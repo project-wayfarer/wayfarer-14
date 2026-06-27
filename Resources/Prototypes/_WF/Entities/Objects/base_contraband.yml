@@ -55,8 +55,16 @@
   abstract: true
   components:
   - type: Contraband
-    severity: CommandOnly
+    severity: CommandOrCGP
     allowedDepartments: [ Security, Command ]
+
+- type: entity
+  id: BaseZekkeContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: CommandOnly
+    allowedDepartments: [ Command ]
 
 - type: entity # This is dumb I know but some things are parented to contraband items and this is easier than rewriting the entire prototype.
   id: BaseNotContraband
@@ -66,3 +74,21 @@
     severity: NotContraband
     hideValues: true
     hideCarryStatus: true
+
+# Magic
+- type: entity
+  id: BaseC2WizardContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Class2Wizard
+    turnInValues:
+      FrontierUplinkCoin: 1
+
+- type: entity
+  parent: BaseC2ContrabandUnredeemable
+  id: BaseC2WizardContrabandUnredeemable
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Class2Wizard

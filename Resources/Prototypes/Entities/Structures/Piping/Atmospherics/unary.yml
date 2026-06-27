@@ -224,7 +224,7 @@
     mode: SnapgridCenter
   components:
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/thermomachine.rsi
+      sprite: _Impstation/Structures/Piping/Atmospherics/thermomachine.rsi # imp
       snapCardinals: true
     - type: Appearance
     - type: PipeColorVisuals
@@ -283,7 +283,14 @@
       granularLayersRendering: true
       layers:
         - state: freezerOff
-          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+          #map: [ "enum.PowerDeviceVisualLayers.Powered" ] # imp
+        # Impstation Start
+        - state: freezerOn
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: freezer-Unshaded
+          shader: unshaded
+          map: ["freezing"]
+        # Impstation End
         - state: freezerPanelOpen
           map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
         - state: pipe
@@ -293,8 +300,15 @@
       visuals:
         enum.PowerDeviceVisuals.Powered:
           enum.PowerDeviceVisualLayers.Powered:
-            True: { state: freezerOn }
-            False: { state: freezerOff }
+          #  True: { state: freezerOn } # imp
+          #  False: { state: freezerOff } # imp
+          # Impstation Start
+            True: { visible: true }
+            False: { visible: false }
+          freezing:
+            True: { visible: true }
+            False: { visible: false }
+          # Impstation End
     - type: GasThermoMachine
       coefficientOfPerformance: -3.9
     - type: ApcPowerReceiver
@@ -305,6 +319,13 @@
       prefix: device-address-prefix-freezer
     - type: StealTarget
       stealGroup: FreezerHeater
+    # Impstation Start
+    - type: LitOnPowered
+    - type: PointLight
+      radius: 1.5
+      energy: 1.5
+      color: "#47bfff"
+    # Impstation End
 
 - type: entity
   parent: GasThermoMachineFreezer
@@ -328,9 +349,16 @@
       granularLayersRendering : true
       layers:
         - state: heaterOff
-          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+          #map: [ "enum.PowerDeviceVisualLayers.Powered" ] # Imp
+        # Impstation Start
+        - state: heaterOn
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: heater-Unshaded
+          shader: unshaded
+          map: ["heating"]
+        # Impstation End
         - state: heaterPanelOpen
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+          map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
         - state: pipe
           map: [ "enum.PipeVisualLayers.Pipe" ]
           renderingStrategy: Default
@@ -338,8 +366,15 @@
       visuals:
         enum.PowerDeviceVisuals.Powered:
           enum.PowerDeviceVisualLayers.Powered:
-            True: { state: heaterOn }
-            False: { state: heaterOff }
+            #True: { state: heaterOn } # imp
+            #False: { state: heaterOff } # imp
+          # Impstation Start
+            True: { visible: true }
+            False: { visible: false }
+          heating:
+            True: { visible: true }
+            False: { visible: false }
+          # Impstation End
     - type: GasThermoMachine
       coefficientOfPerformance: 0.95
     - type: ApcPowerReceiver
@@ -350,6 +385,13 @@
       prefix: device-address-prefix-heater
     - type: StealTarget
       stealGroup: FreezerHeater
+    # Impstation Start
+    - type: LitOnPowered
+    - type: PointLight
+      radius: 1.5
+      energy: 1.5
+      color: "#ffc747"
+    # Impstation End
 
 - type: entity
   parent: GasThermoMachineHeater
@@ -367,7 +409,31 @@
   description: An advanced machine that cools gas in connected pipes. Has the side effect of chilling the surrounding area. Cold as Hell!
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    sprite: _Impstation/Structures/Piping/Atmospherics/hellfirethermomachine.rsi # Imp
+  # Impstation Start
+    granularLayersRendering : true
+    layers:
+      - state: freezerOff
+      - state: freezerOn
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+      - state: freezer-Unshaded
+        shader: unshaded
+        map: ["hellfreezing"]
+      - state: freezerPanelOpen
+        map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      - state: pipe
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+        renderingStrategy: Default
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+        hellfreezing:
+          True: { visible: true }
+          False: { visible: false }
+  # impstation End
   - type: GasThermoMachine
     minTemperature: 23.15
     heatCapacity: 40000
@@ -382,7 +448,31 @@
   description: An advanced machine that heats gas in connected pipes. Has the side effect of leaking heat into the surrounding area. Hot as Hell!
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    sprite: _Impstation/Structures/Piping/Atmospherics/hellfirethermomachine.rsi # Imp
+  # Impstation Start
+    granularLayersRendering : true
+    layers:
+      - state: heaterOff
+      - state: heaterOn
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+      - state: heater-Unshaded
+        shader: unshaded
+        map: ["hellheating"]
+      - state: heaterPanelOpen
+        map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      - state: pipe
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+        renderingStrategy: Default
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+        hellheating:
+          True: { visible: true }
+          False: { visible: false }
+  # Impstation End
   - type: GasThermoMachine
     maxTemperature: 1193.15
     heatCapacity: 40000
