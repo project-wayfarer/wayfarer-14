@@ -90,7 +90,13 @@ public sealed partial class ShadekinSystem : EntitySystem
     {
         new LightCone { Direction = 0, InnerWidth = 30, OuterWidth = 60 },
         new LightCone { Direction = 180, InnerWidth = 30, OuterWidth = 60 }
+    },
+        // Hardlight
+        ["/Textures/_NF/Effects/LightMasks/beam.png"] = new List<LightCone>
+    {
+        new LightCone { Direction = 0, InnerWidth = 7.5f, OuterWidth = 15f }
     }
+        // End Hardlight
     };
 
     public override void Initialize()
