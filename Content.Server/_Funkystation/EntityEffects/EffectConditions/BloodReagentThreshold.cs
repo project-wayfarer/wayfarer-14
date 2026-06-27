@@ -12,7 +12,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Body.Systems;
+using Content.Server.Body.Systems;
 
 namespace Content.Server.EntityEffects.EffectConditions;
 
