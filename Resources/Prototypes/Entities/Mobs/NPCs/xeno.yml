@@ -235,15 +235,38 @@
       500: Dead # Wayfarer: 300<500
   - type: SlowOnDamage
     speedModifierThresholds:
-      250: 0.7 # Wayfarer: 150<250
+      150: 0.7
   - type: MovementSpeedModifier
-  # Wayfarer: Xeno Damage Buff
+    baseSprintSpeed: 5 # Wayfarer
+  # Wayfarer: Xeno Buff
   - type: MeleeWeapon
     damage:
       groups:
         Brute: 12
       types:
         Caustic: 6
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+  - type: RadarConsole
+    maxRange: 512
+    followEntity: true
+    hideCoords: false
+    maxIffRange: null
+  - type: Hands
+    hands:
+      hand_right:
+        location: Right
+      hand_left:
+        location: Left
+    sortedHands:
+    - hand_right
+    - hand_left
   # End Wayfarer
   - type: Fixtures
     fixtures:
@@ -290,7 +313,7 @@
   # End Wayfarer
   - type: SlowOnDamage
     speedModifierThresholds:
-      75: 0.7 # Wayfarer: 50<75
+      50: 0.7
   - type: Fixtures
     fixtures:
       fix1:
