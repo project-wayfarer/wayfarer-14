@@ -6,30 +6,29 @@
   - type: Sprite
     layers:
     - state: icon-base
-      color: "#d21a1a"
+      color: "#7f272b"
     - state: icon-text
-      color: "#db7372"
     - sprite: Objects/Misc/bureaucracy.rsi
       state: paper_stamp-generic
+      color: "#00ff00"
       offset: 0.15,-0.1
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
     - sprite: Objects/Misc/bureaucracy.rsi
       state: paper_words
+      color: "#008040"
       map: ["enum.PaperVisualLayers.Writing"]
       visible: false
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-base
-        color: "#d21a1a"
+        color: "#7f272b"
       - state: inhand-left-text
-        color: "#db7372"
       right:
       - state: inhand-right-base
-        color: "#d21a1a"
+        color: "#7f272b"
       - state: inhand-right-text
-        color: "#db7372"
   - type: Tag
     tags:
     - WFBlueprintOutlaw
@@ -38,10 +37,22 @@
 
 - type: entity
   parent: WFBaseBlueprintOutlaw
-  id: WFBlueprintOutlawViper
-  name: viper blueprint
-  description: An illegal blueprint with a schematic of a viper machine pistol. It can be inserted into an outlaw techfab.
+  id: WFBlueprintC20r
+  categories: [ HideSpawnMenu ]
+  name: c-20r smg blueprint
+  description: A blueprint with a schematic of a C-20r SMG.
   components:
   - type: Blueprint
     providedRecipes:
-    - RecipeWeaponPistolViper
+    - NFWeaponSubMachineGunC20r
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintAtreides
+  categories: [ HideSpawnMenu ]
+  name: atreides smg blueprint
+  description: A blueprint with a schematic of a Atreides SMG.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - NFWeaponSubMachineGunAtreides

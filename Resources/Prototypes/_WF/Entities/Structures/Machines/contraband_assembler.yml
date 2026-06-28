@@ -1,5 +1,5 @@
 - type: entity
-  id: OutlawAssembler
+  id: WFOutlawAssembler
   parent: [ BaseMachinePowered, ConstructibleMachine, KitchenAssembler]
   name: black-market goods assembler
   description: A repurposed multi-assembler, ominously painted for assembling things, omniously.
@@ -38,7 +38,7 @@
   - type: ApcPowerReceiver
     powerLoad: 500
   - type: Machine
-    board: MedicalAssemblerMachineCircuitboard
+    board: WFOutlawAssemblerCircuitboard
   - type: ActivatableUI
     key: enum.MicrowaveUiKey.OutlawAssemblerKey
   - type: UserInterface
@@ -76,8 +76,13 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-#    staticPacks:
-#    - WFOutlawStatic
+    staticPacks:
+    - WFOutlawStatic
+    - NFLightsStatic
+    - NFBasicToolsStatic
+    - NFBasicStorageStatic
+    - NFBasicPartsStatic
+    - NFBasicElectronicsStatic
   - type: MaterialStorage
     whitelist:
       tags:
@@ -88,8 +93,12 @@
     whitelist:
       tags:
       - WFBlueprintOutlaw
-      - NFBlueprintAdvanced
+      - NFBlueprintMercenaryTechfab
   - type: OreSiloClient
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 6
 
 - type: entity
   id: WFDataTerminal
@@ -107,7 +116,10 @@
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: Machine
-    board: NFScrapProcessorCircuitboard
+    board: WFDataTerminalCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
   - type: MaterialStorage
     whitelist:
       tags:

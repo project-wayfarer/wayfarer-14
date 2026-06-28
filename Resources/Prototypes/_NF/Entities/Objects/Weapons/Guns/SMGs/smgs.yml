@@ -16,6 +16,18 @@
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/SMGs/atreides.rsi
 
+# Wayfarer: Printed gun no turn-in
+- type: entity
+  id: NFWeaponSubMachineGunAtreidesPrinted
+  parent: [ NFWeaponSubMachineGunAtreides ]
+  components:
+  - type: Contraband
+    severity: MilitaryGrade
+    allowedDepartments: [ Security, Command ]
+    turnInValues:
+      FrontierUplinkCoin: 0
+      Doubloon: 0
+
 - type: entity
   id: NFWeaponSubMachineGunC20r
   parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunCybersun ]

@@ -507,6 +507,40 @@
   categories:
   - UplinkOutlawUtility
 
+# Techfab
+- type: listing
+  id: UplinkOutlawTechfab
+  name: uplink-outlaw-techfab-name
+  description: uplink-outlaw-techfab-desc
+  productEntity: OutlawTechfabFlatpack
+  icon: { sprite: _NF/Objects/Devices/flatpack.rsi, state: pirate_lathe }
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Assembler
+- type: listing
+  id: UplinkOutlawAssembler
+  name: uplink-outlaw-assembler-name
+  description: uplink-outlaw-assembler-desc
+  productEntity: OutlawAssemblerFlatpack
+  icon: { sprite: _NF/Objects/Devices/flatpack.rsi, state: pirate_lathe }
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 # Ionized Bluespace Dust
 - type: listing
   id: UplinkOutlawIonizedBluespaceDustBag

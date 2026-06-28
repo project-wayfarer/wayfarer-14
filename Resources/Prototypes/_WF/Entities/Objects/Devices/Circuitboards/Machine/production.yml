@@ -24,3 +24,48 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 6
+
+- type: entity
+  id: WFOutlawAssemblerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: black market assembler circuit board
+  description: A machine printed circuit board for a black market multi-assembler.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Misc/module.rsi
+    state: pirate
+  - type: MachineBoard
+    prototype: WFOutlawAssembler
+    requirements:
+      Manipulator: 3
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 6
+
+- type: entity
+  id: WFDataTerminalCircuitboard
+  parent: BaseMachineCircuitboard
+  name: data terminal circuit board
+  description: A machine printed circuit board for a black market data terminal.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Misc/module.rsi
+    state: pirate
+  - type: MachineBoard
+    prototype: WFDataTerminal
+    requirements:
+      Manipulator: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 6
+
