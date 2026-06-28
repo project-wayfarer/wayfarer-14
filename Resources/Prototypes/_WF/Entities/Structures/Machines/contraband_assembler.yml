@@ -120,6 +120,7 @@
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
+      machine_parts: !type:Container # todo: figure out a way to stop this from reducing data cost
   - type: MaterialStorage
     whitelist:
       tags:
