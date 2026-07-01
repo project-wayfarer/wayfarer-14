@@ -58,6 +58,7 @@
   - ShipyardLiquidator # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardLoader # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardLyrae # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardManta # Manta Ship Entry
   - ShipyardMcCargo # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardMcDelivery # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardMjolnir
@@ -243,6 +244,11 @@
   name: guide-entry-shipyard-copperskree
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Copperskree.xml"
 
+- type: guideEntry
+  id: ShipyardManta
+  name: guide-entry-shipyard-manta
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Manta.xml"
+  
 - type: guideEntry
   id: ShipyardMedivac
   name: guide-entry-shipyard-medivac
