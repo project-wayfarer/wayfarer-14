@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobTajaran
   sprites: MobTajaranSprites
-  markingLimits: MobHumanMarkingLimits #MobTajaranMarkingLimits WF
+  markingLimits: MobTajaranMarkingLimits
   dollPrototype: MobTajaranDummy
   skinColoration: Hues
   minHeight: 0.65
@@ -17,21 +17,62 @@
   femaleFirstNames: names_tajaran_first
   lastNames: names_tajaran_last
 
+- type: markingPoints
+  id: MobTajaranMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ TajaranEarsBasic ]
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 2<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ TajaranTailRetro ]
+    Legs:
+      points: 32 # Wayfarer: 8<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 8<32
+      required: false
+
 - type: speciesBaseSprites
   id: MobTajaranSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    Special: MobHumanoidAnyMarking # Wayfarer
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Head: MobTajaranHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentTop: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentBottom: MobHumanoidAnyMarking # Wayfarer
+    Genital: MobHumanoidAnyMarking # Wayfarer
     Chest: MobTajaranTorso
     Eyes: MobTajaranEyes
     LArm: MobTajaranLArm
@@ -40,9 +81,12 @@
     RHand: MobTajaranRHand
     LLeg: MobTajaranLLeg
     RLeg: MobTajaranRLeg
-    Tail: MobHumanoidAnyMarking
     LFoot: MobTajaranLFoot
     RFoot: MobTajaranRFoot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer
 
 - type: humanoidBaseSprite
   id: MobTajaranEyes

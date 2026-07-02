@@ -12,8 +12,6 @@
       stackRequirements:
         # Manipulator: 4 # Frontier
         Glass: 1
-    - type: PirateBountyItem # Wayfarer
-      id: AutolatheMachineCircuitboard # Wayfarer
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -149,8 +147,6 @@
           defaultPrototype: Beaker
     - type: StealTarget
       stealGroup: MedicalTechFabCircuitboard
-    - type: PirateBountyItem # Frontier
-      id: MedicalTechFabCircuitboard # Frontier
 
 - type: entity
   id: CircuitImprinterMachineCircuitboard
@@ -319,8 +315,6 @@
       stackRequirements:
         # Manipulator: 1 # Frontier
         Glass: 5
-    - type: PirateBountyItem # Frontier
-      id: ArtifactAnalyzerMachineCircuitboard # Frontier
 
 - type: entity
   id: ArtifactCrusherMachineCircuitboard
@@ -691,8 +685,6 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-    - type: PirateBountyItem # Wayfarer
-      id: HydroponicsTrayMachineCircuitboard
 
 - type: entity
   id: SeedExtractorMachineCircuitboard
@@ -960,8 +952,6 @@
     stackRequirements:
       # Manipulator: 4 # Frontier
       Steel: 5
-  - type: PirateBountyItem # Wayfarer
-    id: ThrusterMachineCircuitboard
 
 - type: entity
   id: GyroscopeMachineCircuitboard
@@ -978,8 +968,6 @@
     stackRequirements:
       # Manipulator: 3 # Frontier
       Glass: 2
-  - type: PirateBountyItem # Wayfarer
-    id: Gyroscope
 
 - type: entity
   id: PortableGeneratorSuperPacmanMachineCircuitboard
@@ -1060,8 +1048,6 @@
     stackRequirements:
       # Manipulator: 2 # Frontier
       Glass: 1
-  - type: PirateBountyItem # Wayfarer
-    id: HotplateMachineCircuitboard
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1375,8 +1361,6 @@
           GlassBeaker:
             amount: 1
             defaultPrototype: Beaker
-    - type: PirateBountyItem # Wayfarer
-      id: BoozeDispenserMachineCircuitboard
 
 - type: entity
   id: CargoTelepadMachineCircuitboard
@@ -1479,8 +1463,6 @@
       Steel: 5
       CableHV: 5
       Uranium: 2
-  - type: PirateBountyItem # Wayfarer
-    id: GravityGenerator
 
 - type: entity
   parent: BaseMachineCircuitboard

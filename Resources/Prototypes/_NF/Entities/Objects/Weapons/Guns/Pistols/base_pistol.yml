@@ -20,6 +20,17 @@
   - type: NFWeaponDetails
     class: weapon-details-class-pistol
   - type: FireOnLand # DeltaV - gun safety
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: PistolsPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: PistolsDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: PistolsDrop
+  # Wayfarer End
 
 #region manufacturer
 - type: entity

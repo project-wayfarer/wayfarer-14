@@ -117,7 +117,7 @@
       mindRoles:
       - MindRoleNFPirateCaptain
       briefing: &pirateBriefing
-        sound: "/Audio/_NF/Misc/pirate_greeting.ogg"
+    #    sound: "/Audio/_NF/Misc/pirate_greeting.ogg" # Wayfarer - Commented out for obvious reasons.
     # Pirate First Mate role
 #    - prefRoles: [ NFPirateFirstMate ]
 #      max: 999
@@ -199,7 +199,7 @@
     minimumTimeUntilFirstEvent: 1800 # 30 minutes
     minMaxEventTiming:
       min: 7200 # Wayfarer: 14400<7200 | 2 hours between events
-      max: 14400 # Wayfarer: 21600<14400 | 4 hours between events 
+      max: 14400 # Wayfarer: 21600<14400 | 4 hours between events
 
 - type: entityTable
   id: AutoShipsEventsTable

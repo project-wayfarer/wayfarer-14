@@ -1,0 +1,32 @@
+﻿- type: vessel
+  id: Mephit
+  parent: BaseVessel
+  name: DIRE Mephit
+  description: A meteorite that meets the absolute basic minimum standards of what a shuttle is. Not Space Safety Administration approved.
+  price: 12110
+  category: Small
+  group: Scrap
+  shuttlePath: /Maps/_WF/Shuttles/Scrapyard/mephit.yml
+  guidebookPage: ShipyardMephit
+  class:
+  - Scrapyard
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Mephit
+  mapName: 'DIRE Mephit'
+  mapPath: /Maps/_WF/Shuttles/Scrapyard/mephit.yml
+  minPlayers: 0
+  stations:
+    Mephit:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Mephit SCAV{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

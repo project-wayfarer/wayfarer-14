@@ -785,6 +785,49 @@
   equipment:
     outerClothing: ClothingOuterArmorCaptainCarapace
 
+- type: loadout
+  id: MercenaryClothingOuterArmoredJacketPMCBlue
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 2500
+  equipment:
+    outerClothing: ClothingOuterArmoredJacketPMCBlue
+  groupBy: "pmcjacket"
+
+
+- type: loadout
+  id: MercenaryClothingOuterArmoredJacketPMCGreen
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 2500
+  equipment:
+    outerClothing: ClothingOuterArmoredJacketPMCGreen
+  groupBy: "pmcjacket"
+
+
+- type: loadout
+  id: MercenaryClothingOuterArmoredJacketPMCOlive
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 2500
+  equipment:
+    outerClothing: ClothingOuterArmoredJacketPMCOlive
+  groupBy: "pmcjacket"
+
+
+
 # Punk stuff
 - type: loadout
   id: WFClothingOuterCoatBomberPunkRed

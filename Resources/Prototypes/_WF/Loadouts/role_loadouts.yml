@@ -32,6 +32,7 @@
   - JanitorBackpack
   - JanitorNFOuterClothing
   - JanitorNFForcedOuterClothing
+  - WFNeck
   - WFFace
   - WFGlasses
   - WFEars
@@ -50,12 +51,12 @@
 - type: roleLoadout
   id: JobMailCarrier
   groups:
-  - WFNeck
   - MailCarrierJumpsuit
-  - ContractorGloves
+  - WFGloves
   - MailCarrierBackpack
   - MailCarrierOuterClothing
   - MailCarrierForcedOuterClothing
+  - WFNeck
   - WFShoes
   - WFFace
   - WFEars
@@ -133,7 +134,7 @@
   - DocJumpsuit
   - DocGloves
   - DocBackpack
-  - WFOuterClothing
+  - DocOuterClothing
   - DocForcedOuterClothing
   - DocShoes
   - WFFace
@@ -223,7 +224,7 @@
   - NfsdFace
   - NfsdGlasses
   - NfsdBelt
-  - NfsdEarsBrown
+  - NfsdEarsMaster
   - NfsdBoxSurvival
   - JuniorPeacekeeperPDA
   - WFWallet
@@ -233,7 +234,7 @@
   - WFBackpackItems
   - WFHandItems
   - NfsdSpeciesSpecific
-  - WFSidearm
+  - WFSidearmCGP
   - WFLongarm
   - WFAmmo
 
@@ -251,7 +252,7 @@
   - NfsdFace
   - NfsdGlasses
   - NfsdBelt
-  - NfsdEarsBrown
+  - NfsdEarsMaster
   - NfsdBoxSurvival
   - PeacekeeperPDA
   - WFWallet
@@ -261,7 +262,7 @@
   - WFBackpackItems
   - WFHandItems
   - NfsdSpeciesSpecific
-  - WFSidearm
+  - WFSidearmCGP
   - WFLongarm
   - WFAmmo
 
@@ -279,7 +280,7 @@
   - BrigmedicFace
   - BrigmedicGlasses
   - BrigmedicBelt
-  - NfsdEarsCream
+  - NfsdEarsMaster
   - NfsdBoxSurvival
   - CorpsmanPDA
   - WFWallet
@@ -289,7 +290,7 @@
   - WFBackpackItems
   - WFHandItems
   - NfsdSpeciesSpecific
-  - WFSidearm
+  - WFSidearmCGP
   - WFLongarm
   - WFAmmo
 
@@ -307,7 +308,7 @@
   - NfsdFace
   - NfsdGlasses
   - NfsdBelt
-  - NfsdEarsCream
+  - NfsdEarsMaster
   - NfsdBoxSurvival
   - InternalAffairsPDA
   - WFWallet
@@ -317,7 +318,7 @@
   - WFBackpackItems
   - WFHandItems
   - NfsdSpeciesSpecific
-  - WFSidearm
+  - WFSidearmCGP
   - WFLongarm
   - WFAmmo
 
@@ -335,7 +336,7 @@
   - NfsdFace
   - NfsdGlasses
   - NfsdBelt
-  - NfsdEarsAltGreen
+  - SheriffEars
   - NfsdBoxSurvival
   - MasterAtArmsPDA
   - WFWallet
@@ -345,7 +346,7 @@
   - SeniorOfficerBackpackItems
   - WFHandItems
   - NfsdSpeciesSpecific
-  - WFSidearm
+  - WFSidearmCGP
   - WFLongarm
   - WFAmmo
 
@@ -363,7 +364,7 @@
   - NfsdFace
   - NfsdGlasses
   - NfsdBelt
-  - NfsdEarsAltBrown
+  - NfsdEarsMaster
   - NfsdBoxSurvival
   - SeniorPeacekeeperPDA
   - WFWallet
@@ -373,7 +374,7 @@
   - SeniorOfficerBackpackItems
   - WFHandItems
   - NfsdSpeciesSpecific
-  - WFSidearm
+  - WFSidearmCGP
   - WFLongarm
   - WFAmmo
 
@@ -400,6 +401,6 @@
   - SeniorOfficerBackpackItems
   - WFHandItems
   - NfsdSpeciesSpecific
-  - WFSidearm
+  - WFSidearmCGP
   - WFLongarm
   - WFAmmo

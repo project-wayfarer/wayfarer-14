@@ -2,7 +2,7 @@
   id: SyndicateBusinessCard
   name: outlaw business card # Wayfarer: Renamed
   parent: [ Paper ] # Wayfarer: Removed Contraband
-  description: A black card with a depiction of a three headed snake. There's something written on the back. # Wayfarer: Changed Description
+  description: A black card. Smells of crime. There's something written on the back. # Wayfarer: Changed Description
   components:
     - type: Sprite
       sprite: Objects/Misc/bureaucracy.rsi
@@ -19,10 +19,16 @@
       destroyOnFax: true # Frontier: avoid spamming these, they cause lag
       destroyMessage: fax-delete-paper-generic # Frontier
     - type: PaperVisuals
-      headerImagePath: "/Textures/Interface/Paper/paper_heading_syndicate_logo.svg.96dpi.png"
-      headerMargin: 0.0, 0.0, 0.0, 2.0
-      backgroundImagePath: "/Textures/Interface/Paper/paper_background_blood_red.svg.96dpi.png"
+    # Wayfarer: Non-Syndicate Graphics.
+    #  headerImagePath: "/Textures/Interface/Paper/paper_heading_syndicate_logo.svg.96dpi.png"
+    #  headerMargin: 0.0, 0.0, 0.0, 2.0
+    #  backgroundImagePath: "/Textures/Interface/Paper/paper_background_blood_red.svg.96dpi.png"
+    #  backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
+    #  contentMargin: 4.0, 4.0, 4.0, 4.0
+    #  maxWritableArea: 400.0, 256.0
+      backgroundImagePath: "/Textures/_NF/Interface/Paper/business_card_background_white.svg.96dpi.png"
       backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
       contentMargin: 4.0, 4.0, 4.0, 4.0
       maxWritableArea: 400.0, 256.0
+    # Wayfarer End
 

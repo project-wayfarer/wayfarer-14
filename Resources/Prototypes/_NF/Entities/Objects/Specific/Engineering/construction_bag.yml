@@ -61,6 +61,7 @@
   name: construction bag of holding
   description: A robust bag of holding for rich construction specialists and engineers alike to carry large amounts of construction materials. Magnetises any nearby construction materials when attached to a belt.
   components:
+  - type: WFBluespaceQuirkMessages # WF
   - type: MagnetPickup
     range: 2
   - type: Sprite

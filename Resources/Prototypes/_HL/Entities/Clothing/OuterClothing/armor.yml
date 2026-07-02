@@ -1,0 +1,32 @@
+- type: entity
+  parent: [ ClothingOuterVestWebMercenary ] # Wayfarer: removed contraband - just a reskin of the Merc Vest's stats
+  id: ClothingOuterArmoredJacketPMCBlue
+  name: PMC armored jacket
+  description: A high-quality armored jacket made from a tough but flexible synthetic fiber. Gives the user a decent degree of stylish protection.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_blue.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_blue.rsi
+
+- type: entity
+  parent: [ ClothingOuterVestWebMercenary ] # Wayfarer: removed contraband - just a reskin of the Merc Vest's stats
+  id: ClothingOuterArmoredJacketPMCGreen
+  name: PMC armored jacket
+  description: A high-quality armored jacket made from a tough but flexible synthetic fiber. Gives the user a decent degree of stylish protection.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_green.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_green.rsi
+
+- type: entity
+  parent: [ ClothingOuterVestWebMercenary ] # Wayfarer: removed contraband - just a reskin of the Merc Vest's stats
+  id: ClothingOuterArmoredJacketPMCOlive
+  name: PMC armored jacket
+  description: A high-quality armored jacket made from a tough but flexible synthetic fiber. Gives the user a decent degree of stylish protection.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_olive.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_olive.rsi

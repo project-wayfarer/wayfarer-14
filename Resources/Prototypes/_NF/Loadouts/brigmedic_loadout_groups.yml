@@ -4,6 +4,9 @@
   loadouts:
   - BrigmedicClothingUniformJumpsuitBrigmedic
   - BrigmedicClothingUniformJumpskirtBrigmedic
+  - SeniorOfficerClothingUniformJumpsuitSeniorOfficer # Wayfarer
+  - BailiffClothingUniformJumpsuitBailiff # Wayfarer
+  - SheriffClothingUniformJumpsuitSheriff # Wayfarer
   fallbacks:
   - BrigmedicClothingUniformJumpsuitBrigmedic
   - BrigmedicClothingUniformJumpskirtBrigmedic
@@ -22,6 +25,8 @@
   minLimit: 0
   loadouts:
   - BrigmedicClothingHeadHatBrigmedic
+  - SeniorOfficerClothingHeadHatSeniorOfficer # Wayfarer
+  - BailiffClothingHeadHatBailiff # Wayfarer
 
 - type: loadoutGroup
   id: BrigmedicGloves

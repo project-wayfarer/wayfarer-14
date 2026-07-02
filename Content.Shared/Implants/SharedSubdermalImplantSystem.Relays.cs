@@ -2,6 +2,7 @@ using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
+using Content.Shared.Verbs; // Wayfarer
 
 namespace Content.Shared.Implants;
 
@@ -12,6 +13,7 @@ public abstract partial class SharedSubdermalImplantSystem
         SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
         SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
         SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
+        SubscribeLocalEvent<ImplantedComponent, GetVerbsEvent<Verb>>(RelayToImplantEvent); // Wayfarer
     }
 
     /// <summary>

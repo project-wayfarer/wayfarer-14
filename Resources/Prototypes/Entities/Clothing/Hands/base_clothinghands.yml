@@ -7,6 +7,12 @@
     state: icon
   - type: Clothing
     slots: [gloves]
+    # Wayfarer Start
+    equipSound:
+      path: /Audio/_Goobstation/Items/handling/generic_equip2.ogg
+      params:
+        volume: -4
+    # Wayfarer End
   - type: Edible
     requiresSpecialDigestion: true
   - type: Item
@@ -81,8 +87,10 @@
   - type: StaticPrice
     price: 300
   - type: Engraveable # Frontier - base rings may not be metallic
-  - type: PirateBountyItem # Frontier
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
     id: PreciousRings
+  # End Wayfarer
 
 - type: entity
   abstract: true
@@ -93,5 +101,7 @@
   - type: StaticPrice
     price: 275
   - type: Engraveable # Frontier - base rings may not be metallic
-  - type: PirateBountyItem # Frontier
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
     id: PreciousRings
+  # End Wayfarer

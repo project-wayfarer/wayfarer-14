@@ -273,6 +273,7 @@
       - state: equipped-BACKPACK # Frontier
       - state: equipped-BACKPACK-unlit # Frontier
         shader: unshaded # Frontier
+  - type: WFBluespaceQuirkMessages # WF
 
 - type: entity
   parent: [ NFClothingDuffel, BaseCentcommContraband ] # Frontier: ClothingBackpackDuffel<NFClothingDuffel

@@ -3,6 +3,17 @@
   parent: BaseItem
   abstract: true
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  # Wayfarer End
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
   - type: Organ

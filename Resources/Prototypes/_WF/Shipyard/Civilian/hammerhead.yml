@@ -26,9 +26,9 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Hammerhead MED{1}'
+        mapNameTemplate: 'Hammerhead {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
+          !type:MedicalNameGenerator
           prefixCreator: '14'
       - type: StationJobs
         availableJobs:

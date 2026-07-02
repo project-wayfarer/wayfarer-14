@@ -1,0 +1,33 @@
+﻿- type: vessel
+  id: Hellbat
+  parent: BaseVessel
+  name: DIRE Hellbat
+  description: Spare parts amalgamation designed for planetary expedition dives and shipbreaking. To hell and back, you will ride.
+  price: 67310
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/_WF/Shuttles/Expedition/hellbat.yml
+  guidebookPage: Null
+  class:
+  - Cargo
+  - Expedition
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Hellbat
+  mapName: 'Hellbat'
+  mapPath: /Maps/_WF/Shuttles/Expedition/hellbat.yml
+  minPlayers: 0
+  stations:
+    Hellbat:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Hellbat {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

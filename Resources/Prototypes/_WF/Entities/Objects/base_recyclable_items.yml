@@ -1,0 +1,7 @@
+- type: entity
+  id: RecyclableItemOrganicLarge
+  abstract: true
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Biomass: 8

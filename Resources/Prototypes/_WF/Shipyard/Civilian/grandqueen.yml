@@ -34,7 +34,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Grand Queen CIV{1}'
+        mapNameTemplate: 'Grand Queen {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

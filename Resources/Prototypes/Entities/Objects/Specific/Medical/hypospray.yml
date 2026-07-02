@@ -578,6 +578,10 @@
     injectOnly: true
   - type: StaticPrice
     price: 1500
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: Stimpack
+  # End Wayfarer
 
 - type: entity
   name: hyperzine microinjector

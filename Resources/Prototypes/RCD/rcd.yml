@@ -16,7 +16,7 @@
   id: DeconstructLattice   # Hidden prototype - do not add to RCDs
   name: rcd-component-deconstruct
   mode: Deconstruct
-  cost: 2
+  cost: 1 # Wayfarer 2<1
   delay: 0
   rotation: Camera
   fx: EffectRCDConstruct0
@@ -25,25 +25,26 @@
   id: DeconstructTile      # Hidden prototype - do not add to RCDs
   name: rcd-component-deconstruct
   mode: Deconstruct
-  cost: 4
-  delay: 4
+  cost: 2 # Wayfarer: 4<2
+  delay: 2 # Wayfarer: 4<2
   rotation: Camera
   fx: EffectRCDDeconstruct4
 
 # Flooring
-- type: rcd
-  id: Plating
-  name: rcd-component-plating
-  category: WallsAndFlooring
-  sprite: /Textures/Interface/Radial/RCD/plating.png
-  mode: ConstructTile
-  prototype: Plating
-  cost: 1
-  delay: 1
-  collisionMask: InteractImpassable
-  rules:
-    - CanBuildOnEmptyTile
-  fx: EffectRCDConstruct1
+
+#- type: rcd # Wayfarer: Moved to _WF/RCD/rcd.yml
+#  id: Plating
+#  name: rcd-component-plating
+#  category: WallsAndFlooring
+#  sprite: /Textures/Interface/Radial/RCD/plating.png
+#  mode: ConstructTile
+#  prototype: Plating
+#  cost: 1
+#  delay: 1
+#  collisionMask: InteractImpassable
+#  rules:
+#  - CanBuildOnEmptyTile
+#  fx: EffectRCDConstruct1
 
 - type: rcd
   id: FloorSteel
@@ -132,7 +133,11 @@
 - type: rcd
   id: ReinforcedWindow
   category: WindowsAndGrilles
-  sprite: /Textures/Interface/Radial/RCD/window_reinforced.png
+  # Wayfarer
+  sprite:
+    sprite: /Textures/Structures/Windows/reinforced_window.rsi
+    state: full
+  # End Wayfarer
   mode: ConstructObject
   prototype: ReinforcedWindow
   cost: 4
@@ -191,7 +196,7 @@
   prototype: Firelock
   cost: 4
   delay: 3
-  collisionMask: FullTileMask
+  collisionMask: Impassable # Wayfarer: FullTileMask<Impassable
   rotation: Camera
   fx: EffectRCDConstruct3
 
@@ -231,8 +236,8 @@
   prototype: CableApcExtension
   cost: 1
   delay: 0
-  rules:
-  - MustBuildOnSubfloor
+#  rules: # Wayfarer
+#  - MustBuildOnSubfloor
   rotation: Fixed
   fx: EffectRCDConstruct0
 
@@ -244,8 +249,8 @@
   prototype: CableMV
   cost: 1
   delay: 0
-  rules:
-  - MustBuildOnSubfloor
+#  rules: # Wayfarer
+#  - MustBuildOnSubfloor
   rotation: Fixed
   fx: EffectRCDConstruct0
 
@@ -257,8 +262,8 @@
   prototype: CableHV
   cost: 1
   delay: 0
-  rules:
-  - MustBuildOnSubfloor
+#  rules: # Wayfarer
+#  - MustBuildOnSubfloor
   rotation: Fixed
   fx: EffectRCDConstruct0
 

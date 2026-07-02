@@ -87,6 +87,7 @@ namespace Content.Shared.Kitchen
         Oven = 2,
         Assembler = 4,
         MedicalAssembler = 8,
+        OutlawAssembler = 16, // Wayfarer
     }
 
     public sealed class MicrowaveRecipeTypeFlags { }

@@ -21,6 +21,17 @@
     - Burst
   - type: NFWeaponDetails
     class: weapon-details-class-machine-pistol
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: SMGPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: SMGDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: SMGDrop
+  # Wayfarer End
 
 #region manufacturer
 - type: entity
@@ -39,7 +50,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseMilitaryContraband, NFBaseWeaponFrameMachinePistol ] # Wayfarer: BaseC3SyndicateContraband<BaseMilitaryContraband
+  parent: [ NFBaseWeaponFrameMachinePistol ] # Wayfarer: Remove contraband
   id: NFBaseWeaponFrameMachinePistolGorlex
   components:
   - type: Gun

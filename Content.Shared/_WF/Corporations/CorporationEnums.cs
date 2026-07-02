@@ -24,8 +24,11 @@ public enum CorporationPrivacy : byte
     /// <summary>Anyone can join without an invitation.</summary>
     Public = 0,
 
-    /// <summary>Only players with an active invite can join.</summary>
-    Private = 1,
+    /// <summary>Only players with an active invite can join, and the corporation is hidden from the browse list.</summary>
+    Unlisted = 1,
+
+    /// <summary>Only players with an active invite can join, but the corporation is visible in the browse list.</summary>
+    Private = 2,
 }
 
 [Serializable, NetSerializable]

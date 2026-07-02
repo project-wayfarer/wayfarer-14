@@ -72,6 +72,12 @@ public sealed partial class RCDComponent : Component
         }
     }
 
+    /// <summary>
+    /// Mono - delay multiplier for the RCD
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float DelayMultiplier = 1f;
+
     private Direction _constructionDirection = Direction.South;
 
     /// <summary>

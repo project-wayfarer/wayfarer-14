@@ -15,3 +15,30 @@
   components:
   - type: Flatpack
     entity: ShuttleGunPirateCannon
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: VendingMachineBaristaFlatpack
+  name: BaristaVend flatpack
+  description: A flatpack used for constructing a BaristaVend.
+  components:
+  - type: Flatpack
+    entity: VendingMachineBarista
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: OutlawTechfabFlatpack
+  name: outlaw techfab flatpack
+  description: A flatpacked outlaw techfab, ready to be assembled.
+  components:
+  - type: Flatpack
+    entity: WFOutlawTechfab
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: OutlawAssemblerFlatpack
+  name: black market assembler flatpack
+  description: A flatpacked black market assembler.
+  components:
+  - type: Flatpack
+    entity: WFOutlawAssembler

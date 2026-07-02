@@ -100,4 +100,11 @@ public sealed partial class PointOfInterestPrototype : IPrototype, IInheritingPr
     /// </summary>
     [DataField(required: true)]
     public ResPath GridPath { get; private set; } = default!;
+
+    /// <summary>
+    /// If true, this POI is loaded onto its own freshly created map instead of the sector/default map.
+    /// </summary>
+    // Wayfarer
+    [DataField]
+    public bool SpawnOwnMap { get; private set; } = false;
 }

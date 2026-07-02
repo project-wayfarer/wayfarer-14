@@ -35,9 +35,3 @@ pirate-bounty-item-akms = AKMS
 pirate-bounty-item-enforcer = Enforcer
 
 pirate-bounty-description-generic = Go now and find what the buyer wants.
-
-pirate-bounty-item-medhud = Medical HUD
-pirate-bounty-item-rings = Precious Rings
-pirate-bounty-item-anomalycore = Anomaly Core
-pirate-bounty-item-data = Encrypted Data Cache
-pirate-bounty-item-restocks = Vendor Restocks

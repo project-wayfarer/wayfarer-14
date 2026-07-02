@@ -1,4 +1,14 @@
 - type: marking
+  id: AurelianVoxHairSlickQuills
+  bodyPart: Hair
+  markingCategory: Hair
+  canBeDisplaced: false
+  #speciesRestriction: [AurelianVox]
+  sprites:
+    - sprite: _WF/Mobs/Customization/aurelian_hairs.rsi
+      state: slick_s_avox
+
+- type: marking
   id: AurelianVoxHairLongQuills
   bodyPart: Hair
   markingCategory: Hair

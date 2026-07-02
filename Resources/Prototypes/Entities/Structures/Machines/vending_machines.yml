@@ -322,8 +322,8 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: AccessReader
-    access: [["SyndicateAgent"]]
+  #- type: AccessReader # Wayfarer:
+  #  access: [["SyndicateAgent"]]
   - type: GuideHelp
     guides:
     - Bartender
@@ -2004,8 +2004,8 @@
     radius: 1.5
     energy: 3.0
     color: "#d82929"
-  - type: AccessReader
-    access: [["NuclearOperative"], ["SyndicateAgent"]]
+  #- type: AccessReader # Wayfarer
+  #  access: [["NuclearOperative"], ["SyndicateAgent"]]
 
 - type: entity
   parent: VendingMachine
@@ -2259,8 +2259,8 @@
     normalState: normal
     denyState: deny
     ejectDelay: 2
-  - type: AccessReader
-    access: [["SyndicateAgent"]]
+  #- type: AccessReader # Wayfarer
+  #  access: [["SyndicateAgent"]]
 
 # wallmount
 - type: entity

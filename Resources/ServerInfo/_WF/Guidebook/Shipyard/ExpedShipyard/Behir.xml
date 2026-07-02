@@ -1,0 +1,123 @@
+﻿<Document>
+  # BEHIR-CLASS SALVAGE SHUTTLE
+  <Box>
+    <GuideEntityEmbed Entity="WallRockDiamond" Caption="Mine"/>
+    <GuideEntityEmbed Entity="NFMobDragonDungeon" Caption="Expedition"/>
+    <GuideEntityEmbed Entity="WeaponCrusher" Caption="Salvage"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ShuttleMapBehir" Caption=""/>
+  </Box>
+
+  [color=#a4885c]Ship Size:[/color] Medium
+
+  [color=#a4885c]Recommended Crew:[/color] 2-4
+
+  [color=#a4885c]Power Gen Type:[/color] Uranium
+
+  [color=#a4885c]Expedition Capable:[/color] Yes
+
+  # Shuttle Brief
+
+  "A heavily modified long range cargo transport shuttle, purchased by Derelict Industries Reclamation & Enhancement, and heavily modified for planetary based expeditions, large bay doors for ease of access cargo storage, with a small dorm room and comfy lounge. The Behir is designed for Interplanetary asset liquidation, and long range cargo transport."
+
+  "Manufactured by DIRE"
+
+  # Ship Functions
+  <Box>
+    <GuideEntityEmbed Entity="MercenaryTechFab" Caption=""/>
+    <GuideEntityEmbed Entity="SalvageTechfabNF" Caption=""/>
+  </Box>
+
+  Every standard Behir comes equipped with a Salvage Techfab, Mercenary Techfab, Salvage Lockers filled with adequate amenities for Mining and Ship Breaking, and a lounge to maintain comfort during long outings.
+  <Box>
+    <GuideEntityEmbed Entity="ButtonFrameCautionSecurity" Caption="Door Bolt"/>
+    <GuideEntityEmbed Entity="ButtonFrameCaution" Caption="Blast Door"/>
+    <GuideEntityEmbed Entity="ButtonFrameGrey" Caption="Shutters"/>
+  </Box>
+
+  There are buttons placed throughout the ship, marked with unique frames. The Yellow and Black caution framed buttons are for toggling Blast Doors, the Grey framed buttons toggle shutters, and the Red and Black framed button controls Command Bay door bolting.
+
+  # Expeditions
+<Box>
+  <GuideEntityEmbed Entity="ComputerSalvageExpedition" Caption=""/>
+</Box>
+
+  [textlink="Expeditions" link="Expeditions"/]
+
+  # Piloting
+  <Box>
+    <GuideEntityEmbed Entity="ComputerTabletopShuttle" Caption=""/>
+  </Box>
+
+  [textlink="Piloting" link="Piloting"/]
+
+  [textlink="Sector Topology" link="SectorTopology"/]
+
+  # Hiring crew
+  <Box>
+    <GuideEntityEmbed Entity="ComputerStationRecords" Caption=""/>
+  </Box>
+  [textlink="Hiring" link="Hiring"/]
+
+  As a Captain of a Spacefaring vessel, you have the authority to hire, fire, demote, or promote crew members at will.
+
+  # PREFLIGHT CHECKLIST
+
+  ## 1. S.U.P.E.R.P.A.C.M.A.N. Generator
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorSuperPacmanShuttle" Caption="Generator"/>
+    <GuideEntityEmbed Entity="FuelUranium" Caption="Uranium Fuel"/>
+    <GuideEntityEmbed Entity="SheetUranium" Caption="Processed Uranium"/>
+  </Box>
+
+  - Ensure the Generator is firmly anchored to the floor.
+  - Add Uranium Fuel to ensure it is adequatelly filled.
+  - Ensure Current Output is set to HV.
+  - Turn it on, and ensure it is set to Target Power (kW) 35. Adding machines may raise the power draw requirement.
+  - Processed Uranium can be also be used to fuel the Generator.
+
+  ## 2. Battery units
+  <Box>
+    <GuideEntityEmbed Entity="SMESBasic"/>
+    <GuideEntityEmbed Entity="SubstationBasic" Caption="Substation"/>
+    <GuideEntityEmbed Entity="APCBasic"/>
+  </Box>
+
+  - Ensure the SMES and Substation are firmly anchored to the floor.
+  - Observe the Substations. Ensure its Passthroughs IN is Higher than, or equal to, its OUT.
+  - Adjust the Generators Target Power to match the Substations OUT Requirements.
+  - Ensure every APC in the ship is Toggled ON.
+  - Verify each APC unit registers some load, if not this may indicate problems.
+  - Located inside the Command Bay, are buttons for turning the Thrusters ON and OFF.
+  - While the Thrusters have been powered OFF, the required Target Power (kW) may be lowered to 18 (kW), for longevity during downtine, and a lack of need for thrusters.
+  - Ensure the Generators Target Power (kW) is raised back to the Recommended 35 (kW) When travel is to be resumed, and the Thrusters have been Toggled ON.
+
+  ## 3. Ship Mobilty and Gravity
+  <Box>
+    <GuideEntityEmbed Entity="Thruster" Caption="Thruster"/>
+    <GuideEntityEmbed Entity="Gyroscope" Caption="Gyroscope"/>
+    <GuideEntityEmbed Entity="GravityGeneratorMini" Caption="Gravity Generator"/>
+  </Box>
+
+  - Ensure your Mini Gravity Generatory is firmly anchored to the floor, and powered ON.
+  - Ensure your Gyroscope's are powered ON.
+  - Observe the Thrusters on the outside of the ship, and ensure they are powered and ON.
+
+  ## 4. Atmosphere Distribution Network
+  <Box>
+    <GuideEntityEmbed Entity="GasMixer" Caption="Gas Mixer"/>
+    <GuideEntityEmbed Entity="OxygenCanister" Caption="O2 Canister"/>
+    <GuideEntityEmbed Entity="NitrogenCanister" Caption="N2 Canister"/>
+    <GuideEntityEmbed Entity="GasPressurePumpAlt1" Caption="Dispo Pump"/>
+    <GuideEntityEmbed Entity="AirAlarm" Caption="Air Alarm"/>
+  </Box>
+
+  - Ensure oxygen and nitrogen canisters are anchored firmly to their connector ports.
+  - Verify the Gas Mixer is configured to 79% on its primary port (N2) and 21% on is side port (22). Adjust for comfort of specific species, such as 23-25% (O2) for Harpies.
+  - Set the Output Pressure to 101.3 (kPa), and make sure it is Toggled ON
+  - Observe the Red Gas Pump next to your Gas Mixer. Turn it ON, if you wish to expel the gas in the Waste Network.
+  - Ensure Air Alarms are ON, and do not display warnings.
+
+  [textlink="Preflight Checklist" link="PreflightChecklist"/]
+</Document>

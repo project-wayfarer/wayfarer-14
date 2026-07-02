@@ -8,7 +8,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
+        Piercing: 4 # Wayfarer 5<4
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -19,7 +19,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6 #Wayfarer 5 -> 6
+        Piercing: 6 # Wayfarer 6.25<6
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -30,8 +30,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 1.8 #Wayfarer -> 2.4 -> 1.8
-        Heat: 2.2 #Wayfarer 1.6 -> 2.2
+        Blunt: 1.8 # Wayfarer 3<1.8
+        Heat: 2.2 # Wayfarer 2<2.2
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -53,9 +53,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2.5 #Wayfarer
-        Piercing: 3.5
-        Radiation: 1.5 #Wayfarer 3.5 -> 1.5
+        Blunt: 2.5 # Wayfarer
+        Piercing: 3.5 # Wayfarer 4.4<3.5
+        Radiation: 1.5 # Wayfarer 4.4<1.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -74,8 +74,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2
-        Slash: 2
+        Piercing: 2 # Wayfarer 2.5<2
+        Slash: 2 # Wayfarer 2.5<2
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -86,7 +86,7 @@
   - type: Projectile
     damage:
       types:
-        Slash: 3.5
+        Slash: 3.5 # Wayfarer 4.4<3.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -97,8 +97,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
-        Structural: 5
+        Piercing: 4 # Wayfarer 5<4
+        Structural: 5 # Wayfarer 6.25<5
 
 #region PelletsSpread
 - type: entity
@@ -183,8 +183,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 32.5 #Wayfarer 30 -> 32.5
-        Blunt: 6 #Wayfarer 5 -> 6
+        Piercing: 32.5 # Wayfarer 25<32.5
+        Blunt: 6 # Wayfarer 6.25<6
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -195,9 +195,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 9 #Wayfarer 10 -> 9
+        Blunt: 9 # Wayfarer 12.5<9
   - type: StaminaDamageOnCollide
-    damage: 25 # 5 hits to stun WF reduction stamina rebalance ##Wayfarer 24 -> 25
+    damage: 30 # 4 hits to stun
 
 - type: entity
   categories: [ HideSpawnMenu ]

@@ -2713,6 +2713,15 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == userId), cancel);
         }
 
+        public async Task<WayfarerCorporation?> GetCorporationForCharacter(Guid userId, string displayName, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.WayfarerCorporations
+                .Include(c => c.Members)
+                .Include(c => c.PendingInvites)
+                .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == userId && m.DisplayName == displayName), cancel);
+        }
+
         public async Task<WayfarerCorporation> CreateCorporation(string name, string description, int privacy, Guid founderUserId, string founderDisplayName, CancellationToken cancel = default)
         {
             await using var db = await GetDb(cancel);

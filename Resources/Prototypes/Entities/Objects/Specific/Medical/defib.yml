@@ -40,8 +40,6 @@
     - type: GuideHelp
       guides:
       - MedicalDoctor
-    - type: PirateBountyItem # Frontier
-      id: Defibrillator # Frontier
 
 - type: entity
   id: Defibrillator
@@ -74,7 +72,7 @@
   description: Now in fun size!
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/defibsmall.rsi
+    sprite: _Impstation/Objects/Specific/Medical/defibinterdyne.rsi # Imp
     layers:
       - state: icon
       - state: screen
@@ -104,7 +102,7 @@
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/defibsyndi.rsi
+    sprite: _Impstation/Objects/Specific/Medical/defibsyndi.rsi # Imp
     layers:
       - state: icon
       - state: screen

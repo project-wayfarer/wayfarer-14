@@ -199,16 +199,10 @@ namespace Content.Server.Lathe
             if (!CanProduce(uid, recipe, quantity, component))
                 return false;
 
-            foreach (var (mat, amount) in recipe.Materials)
-            {
-                var adjustedAmount = recipe.ApplyMaterialDiscount
-                    ? (int)(-amount * component.FinalMaterialUseMultiplier) // Frontier: MaterialUseMultiplier<FinalMaterialUseMultiplier
-                    : -amount;
-                adjustedAmount *= quantity;
-
-                _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
-            }
+            foreach (var (mat, amount) in GetAdjustedAmount(component, recipe))
+                   _materialStorage.TryChangeMaterialAmount(uid, mat, -amount * quantity);
             */
+
             if (!CheckMaterialAvailability(uid, component, recipe, quantity)) // Coyote: Check material availability (including buffer)
                 return false;
             if (!DeductMaterials(uid, component, recipe, quantity)) // Coyote: deduct materials (buffer first, then storage)
@@ -469,6 +463,48 @@ namespace Content.Server.Lathe
             return GetAvailableRecipes(uid, component).Contains(recipe.ID);
         }
 
+        /// <summary>
+        /// Iterator returning adjusted amount of material needed to
+        /// produce a given recipe
+        /// </summary>
+        private static IEnumerable<(ProtoId<MaterialPrototype> mat, int amount)> GetAdjustedAmount(LatheComponent lathe, LatheRecipePrototype recipe)
+        {
+            foreach (var (mat, amount) in recipe.Materials)
+            {
+                var adjustedAmount = recipe.ApplyMaterialDiscount
+                    ? (int)(amount * lathe.FinalMaterialUseMultiplier) // Frontier: MaterialUseMultiplier<FinalMaterialUseMultiplier
+                    : amount;
+
+                yield return (mat, adjustedAmount);
+            }
+        }
+
+        /// <summary>
+        /// Refunds the material cost of the currently running recipe,
+        /// without cancelling production
+        /// </summary>
+        private void RefundCurrentRecipe(EntityUid uid, LatheComponent lathe)
+        {
+            _proto.Resolve(lathe.CurrentRecipe, out var recipe);
+
+            foreach (var (mat, amount) in GetAdjustedAmount(lathe, recipe!))
+                _materialStorage.TryChangeMaterialAmount(uid, mat, amount);
+        }
+
+        /// <summary>
+        /// Refunds the material cost of a given batch,
+        /// without deleting it
+        /// </summary>
+        private void RefundBatch(EntityUid uid, LatheComponent lathe, LatheRecipeBatch batch)
+        {
+            var delta = batch.ItemsRequested - batch.ItemsPrinted;
+
+            _proto.Resolve(batch.Recipe, out var recipe);
+
+            foreach (var (mat, amount) in GetAdjustedAmount(lathe, recipe!))
+                _materialStorage.TryChangeMaterialAmount(uid, mat, amount * delta);
+        }
+
         public void AbortProduction(EntityUid uid, LatheComponent? component = null)
         {
             if (!Resolve(uid, ref component))
@@ -491,6 +527,7 @@ namespace Content.Server.Lathe
                     }
                 }
 
+                RefundCurrentRecipe(uid, component);
                 component.CurrentRecipe = null;
             }
             RemCompDeferred<LatheProducingComponent>(uid);
@@ -544,7 +581,7 @@ namespace Content.Server.Lathe
                 LogImpact.Low,
                 $"{ToPrettyString(args.Actor):player} deleted a lathe job for ({batch.ItemsPrinted}/{batch.ItemsRequested}) {GetRecipeName(batch.Recipe)} at {ToPrettyString(uid):lathe}");
 
-            RefundMaterials(uid, component, batch); // Wayfarer
+            RefundBatch(uid, component, batch);
             component.Queue.Remove(node);
             UpdateUserInterfaceState(uid, component);
         }
@@ -603,20 +640,7 @@ namespace Content.Server.Lathe
                 LogImpact.Low,
                 $"{ToPrettyString(args.Actor):player} aborted printing {GetRecipeName(component.CurrentRecipe.Value)} at {ToPrettyString(uid):lathe}");
 
-            // Wayfarer: Refund materials for the current recipe being aborted
-            if (_proto.TryIndex(component.CurrentRecipe.Value, out var recipe))
-            {
-                foreach (var (mat, amount) in recipe.Materials)
-                {
-                    var adjustedAmount = recipe.ApplyMaterialDiscount
-                        ? (int)(amount * component.FinalMaterialUseMultiplier)
-                        : amount;
-
-                    _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
-                }
-            }
-            // End Wayfarer
-
+            RefundCurrentRecipe(uid, component);
             component.CurrentRecipe = null;
             FinishProducing(uid, component);
         }
@@ -676,35 +700,5 @@ namespace Content.Server.Lathe
         }
         #endregion
         // End Frontier
-
-        #region Wayfarer
-        /// Wayfarer Start
-
-        /// <summary>
-        /// Refunds materials for unprinted items in a batch
-        /// </summary>
-        private void RefundMaterials(EntityUid uid, LatheComponent component, LatheRecipeBatch batch)
-        {
-            if (!_proto.TryIndex(batch.Recipe, out var recipe))
-                return;
-
-            var unprintedCount = batch.ItemsRequested - batch.ItemsPrinted;
-            if (unprintedCount <= 0)
-                return;
-
-            // Refund materials using the same calculation as consumption (but positive to add back)
-            foreach (var (mat, amount) in recipe.Materials)
-            {
-                var adjustedAmount = recipe.ApplyMaterialDiscount
-                    ? (int)(amount * component.FinalMaterialUseMultiplier)
-                    : amount;
-                adjustedAmount *= unprintedCount;
-
-                _materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount);
-            }
-        }
-
-        // End Wayfarer
-        #endregion
     }
 }

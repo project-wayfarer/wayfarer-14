@@ -41,8 +41,8 @@
         variation: 0.125
     activatedDamage:
       types:
-        Slash: 15
-        Heat: 15
+        Slash: 13 # Wayfarer: 15<13
+        Heat: 13 # Wayfarer: 15<13
         Structural: 20
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -392,7 +392,7 @@
     size: Small
     sprite: Objects/Weapons/Melee/hypereutactic_blade_inhands.rsi
   - type: Reflect
-    reflectProb: 1.0
+    reflectProb: .75 #Frontier: 1 < 0.75, total reflection is too OP, already changed on upstream
     spread: 75
 
 # Borgs

@@ -26,6 +26,17 @@
     startingCharge: 1000
   - type: StaticPrice
     price: 500
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: LasersPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: LasersDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: LasersDrop
+  # Wayfarer End
 
 - type: entity
   id: BaseWeaponPowerCell

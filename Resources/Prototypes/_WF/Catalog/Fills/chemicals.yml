@@ -24,8 +24,8 @@
     currentLabel: reagent-name-moonshine
   - type: SolutionContainerManager
     solutions:
-      injector:
-        maxVol: 15
+      drink:
+        maxVol: 150
         reagents:
         - ReagentId: Moonshine
           Quantity: 150
@@ -92,22 +92,6 @@
         maxVol: 30
         reagents:
         - ReagentId: Dermaline
-          Quantity: 30
-
-# Dylovene
-- type: entity
-  id: ChemistryBottleDylovene
-  suffix: dylovene
-  parent: BaseChemistryBottleFilled
-  components:
-  - type: Label
-    currentLabel: reagent-name-dylovene
-  - type: SolutionContainerManager
-    solutions:
-      drink: # This solution name and target volume is hard-coded in ChemMasterComponent
-        maxVol: 30
-        reagents:
-        - ReagentId: Dylovene
           Quantity: 30
 
 # Hyronalin

@@ -1,5 +1,6 @@
 // Wayfarer: Added character resume from cryosleep feature - multiple stored characters per user, station name storage
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Numerics;
 using Content.Server._NF.Bank;
 using Content.Server._NF.Shipyard.Systems;
@@ -7,6 +8,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.DoAfter;
 using Content.Server.EUI;
 using Content.Server.Ghost;
+using Content.Server.Hands.Systems;
 using Content.Server.Interaction;
 using Content.Server.Mind;
 using Content.Server.Popups;
@@ -28,6 +30,7 @@ using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
 using Content.Shared.Examine;
+using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction.Events;
@@ -77,8 +80,11 @@ public sealed partial class CryoSleepSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; //For cryosleep warnings
-    [Dependency] private readonly Shared.Roles.SharedRoleSystem _roles = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
+
+
+    [Dependency] private readonly Shared.Roles.SharedRoleSystem _roles = default!; // Wayfarer
+    [Dependency] private readonly StationSystem _station = default!; // Wayfarer
     [Dependency] private readonly GameTicker _gameTicker = default!; // Wayfarer
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!; // Wayfarer
 
@@ -316,7 +322,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
     }
 
     /// <summary>
-    /// Scans the inventory of an entity about to cryo in order to contrusct a warning message of all appropriate items.
+    /// Scans the inventory of an entity about to cryo in order to construct a warning message of all appropriate items.
     /// </summary>
     /// <returns>A warning message to be used with CryoSleepEui</returns>
     private CryoSleepWarningMessage? GetWarningMessages(EntityUid entity)
@@ -324,31 +330,46 @@ public sealed partial class CryoSleepSystem : EntitySystem
         if (!TryComp<InventoryComponent>(entity, out var inventoryComp))
             return null;
         //Items check
-        SlotDefinition[] slotsToCheck = inventoryComp.Slots;
+        var slotsToCheck = inventoryComp.Slots;
         List<WarningItem> warningItemsList = [];
         //Doing the conversion to WarningItem all at once makes more sense to me
-        List<StorageHelper.FoundItem> unconvertedFoundItem = [];
+        List<StorageHelper.FoundItem> unconvertedFoundItems = [];
         foreach (var slotDefinition in slotsToCheck)
         {
             //The ID is manually checked for a shuttle deed later, and since your PDA *technically* has an uplink in it, this has to be skipped manually.
             if (slotDefinition.Name == "id")
                 continue;
-            //TODO: Check hand slots for important items
             if (_inventory.TryGetSlotEntity(entity, slotDefinition.Name, out var slotItem))
             {
                 if (ShouldItemWarnOnCryo(slotItem.Value))
-                    warningItemsList.Add(new WarningItem(slotDefinition.Name, null, slotItem.Value));
+                    warningItemsList.Add(new WarningItem(slotDefinition.Name, null, null, slotItem.Value));
                 else if (_entityManager.HasComponent<StorageComponent>(slotItem.Value))
-                    StorageHelper.ScanStorageForCondition(slotItem.Value, ShouldItemWarnOnCryo, ref unconvertedFoundItem);
+                    StorageHelper.ScanStorageForCondition(slotItem.Value, ShouldItemWarnOnCryo, ref unconvertedFoundItems);
             }
         }
-        //Convert all FoundItem to a WarningItem
-        foreach (var found in unconvertedFoundItem)
+        //Check hands (Thank you Alkheemist for the original form of this code)
+        if (TryComp<HandsComponent>(entity, out var handsComp))
         {
-            warningItemsList.Add(new WarningItem(null, found.Container, found.Item));
+            foreach (var hand in handsComp.Hands)
+            {
+                if (!_hands.TryGetHeldItem(entity, hand.Key, out var heldEntity))
+                    continue;
+
+                if (ShouldItemWarnOnCryo(heldEntity.Value))
+                    warningItemsList.Add(new WarningItem(null, null, hand.Key, heldEntity.Value));
+                else if (_entityManager.HasComponent<StorageComponent>(heldEntity))
+                    StorageHelper.ScanStorageForCondition(heldEntity.Value, ShouldItemWarnOnCryo, ref unconvertedFoundItems);
+            }
+        }
+
+        //Convert all FoundItem to a WarningItem
+        foreach (var found in unconvertedFoundItems)
+        {
+            warningItemsList.Add(new WarningItem(null, found.Container, null, found.Item));
         }
         //Now, we extract the uplinks and shuttle deeds.
         WarningItem? uplink = null;
+        FixedPoint2 currencyAmount = 0;
         WarningItem? backpackShuttleDeed = null;
         //Listing every point where a shuttle deed was found runs you out of space very fast.
         var foundMoreShuttles = false;
@@ -368,10 +389,13 @@ public sealed partial class CryoSleepSystem : EntitySystem
 
                 warningItemsList.RemoveAt(i);
             }
-            else if (HasComp<StoreComponent>(itemStruct.Item) && !uplink.HasValue)
+            else if (TryComp<StoreComponent>(itemStruct.Item, out var uplinkComp) && !uplink.HasValue)
             {
                 uplink = itemStruct;
                 warningItemsList.RemoveAt(i);
+                var currencyProtoId = uplinkComp.Balance.Keys.First();
+                currencyAmount = uplinkComp.Balance[currencyProtoId];
+
             }
         }
 
@@ -385,6 +409,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
             nwBackpackShuttleDeed,
             foundMoreShuttles,
             nwUplink,
+            currencyAmount,
             networkedWarningItems);
     }
 
@@ -411,11 +436,12 @@ public sealed partial class CryoSleepSystem : EntitySystem
         return false;
     }
 
-    private readonly struct WarningItem(string? slotId, EntityUid? container, EntityUid item)
+    private readonly struct WarningItem(string? slotId, EntityUid? container, string? handId, EntityUid item)
     {
-        //Exactly one of these two values should be null
+        //Exactly one of these three values should not be null
         public readonly string? SlotId = slotId;
         public readonly EntityUid? Container = container;
+        public readonly string? HandId = handId;
 
         public readonly EntityUid Item = item;
 
@@ -423,6 +449,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
         {
             return new CryoSleepWarningMessage.NetworkedWarningItem(SlotId,
                 manager.GetNetEntity(Container),
+                HandId,
                 manager.GetNetEntity(Item));
         }
     }

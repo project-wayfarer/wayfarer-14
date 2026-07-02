@@ -13,7 +13,8 @@ trait-scandinavian-name = Scandinavian accent
 trait-scandinavian-desc = You have to assemble the sentence yourself.
 
 trait-pious-name = Pious
-trait-pious-desc = You are in touch with the gods, but your vows keep you from striking in anger.
+# Wayfarer: Changed Desc
+trait-pious-desc = You are more in touch with the gods than others.
 
 trait-streetpunk-accent-name = Streetpunk accent
 trait-streetpunk-accent-desc = Ya were born in a sprawlin' megacity an' never went to school. An' it shows, choom.

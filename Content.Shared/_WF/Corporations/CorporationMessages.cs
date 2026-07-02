@@ -4,7 +4,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._WF.Corporations;
 
-// ─── Network-safe transfer objects ──────────────────────────────────────────
+// Network-safe transfer objects
 
 /// <summary>
 /// Lightweight summary of a corporation sent over the network.
@@ -37,7 +37,7 @@ public sealed class CorporationMemberInfo
     public CorporationRank Rank { get; init; }
 }
 
-// ─── BoundUserInterfaceState subclasses ──────────────────────────────────────
+// BoundUserInterfaceState subclasses
 
 /// <summary>
 /// Main overview state sent when the cartridge opens or after any action.
@@ -54,7 +54,7 @@ public sealed class CorporationListUiState : BoundUserInterfaceState
     /// <summary>Full member list for the player's corporation. Only populated when MyCorporation != null.</summary>
     public List<CorporationMemberInfo> Members { get; init; } = new();
 
-    /// <summary>Public corporations the player can join (excludes their own).</summary>
+    /// <summary>Listed corporations (public and private) excluding unlisted corporations and the player's own corporation.</summary>
     public List<CorporationInfo> PublicCorporations { get; init; } = new();
 
     /// <summary>Corporations that have sent this player an invite.</summary>
@@ -80,7 +80,7 @@ public sealed class CorporationInviteUiState : BoundUserInterfaceState
     public string? ErrorMessage { get; init; }
 }
 
-// ─── CartridgeMessageEvent subclasses (client → server) ─────────────────────
+// CartridgeMessageEvent subclasses (client → server)
 
 [Serializable, NetSerializable]
 public sealed class CorporationRefreshMessage : CartridgeMessageEvent { }

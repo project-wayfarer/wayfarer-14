@@ -48,8 +48,6 @@
     - WhitelistChameleon
   - type: StaticPrice # Frontier
     price: 30 # Frontier
-  - type: PirateBountyItem # Wayfarer
-    id: ClothingEyesHudMedical
 
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: Removed contraband

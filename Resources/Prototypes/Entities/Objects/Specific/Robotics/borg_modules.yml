@@ -1384,8 +1384,8 @@
 
 #syndicate modules
 - type: entity
-  id: BorgModuleSyndicateWeapon
   parent: [ BaseBorgModule, BaseProviderBorgModule, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
+  id: BorgModuleSyndicateWeapon
   name: weapon cyborg module
   components:
   - type: Sprite

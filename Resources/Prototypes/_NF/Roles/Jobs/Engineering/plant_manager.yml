@@ -6,7 +6,7 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # Frontier - 20 hrs (the real condition here is the whitelist)
-  whitelisted: false # Wayfarer: true<false
+  whitelisted: true # Wayfarer: false<true # WHITELIST REQUIREMENTS: BUILD A FUNCTIONAL TESLA, TEG OR NUCLEAR REACTOR
   startingGear: PlantManagerGear
   alwaysUseSpawner: true
   icon: "JobIconPlantManager"

@@ -35,3 +35,17 @@
     BucketPaper: 1
   recipeType:
   - Assembler
+
+- type: microwaveMealRecipe
+  id: RecipeBiscuitSimple
+  name: simple cookie recipe
+  result: FoodBakedBiscuitSimple
+  resultCount: 4 # Frontier
+  time: 10 # Frontier - 5<10
+  group: BarsAndCookies
+  reagents:
+    Flour: 10
+    Milk: 5
+  solids:
+    FoodButterSlice: 1
+  recipeType: Oven # Frontier

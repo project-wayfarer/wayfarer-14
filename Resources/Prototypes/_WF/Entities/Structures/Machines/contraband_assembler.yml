@@ -1,0 +1,136 @@
+- type: entity
+  id: WFOutlawAssembler
+  parent: [ BaseMachinePowered, ConstructibleMachine, KitchenAssembler]
+  name: black-market goods assembler
+  description: A repurposed multi-assembler, ominously painted for assembling things, omniously.
+  components:
+  - type: Microwave
+    validRecipeTypes: OutlawAssembler
+    beginCookingSound: /Audio/Machines/machine_switch.ogg
+    foodDoneSound: /Audio/Effects/Shuttle/radar_ping.ogg
+    loopingSound: /Audio/_NF/Machines/medical-assembler.ogg
+    key: OutlawAssemblerKey
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.VisualState:
+        enum.MicrowaveVisualizerLayers.Base:
+          Idle: { state: "base" }
+          Broken: { state: "base" }
+          Cooking: { state: "base" }
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          Idle: { state: "off-unlit" }
+          Broken: { state: "off-unlit" }
+          Cooking: { state: "on-unlit" }
+      enum.PowerDeviceVisuals.Powered:
+        enum.MicrowaveVisualizerLayers.BaseUnlit:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Sprite
+    sprite: _WF/Structures/Machines/blackmarkassembler.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+      map: ["enum.MicrowaveVisualizerLayers.Base"]
+    - state: off-unlit
+      shader: unshaded
+      map: ["enum.MicrowaveVisualizerLayers.BaseUnlit"]
+      visible: false
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: Machine
+    board: WFOutlawAssemblerCircuitboard
+  - type: ActivatableUI
+    key: enum.MicrowaveUiKey.OutlawAssemblerKey
+  - type: UserInterface
+    interfaces:
+      enum.MicrowaveUiKey.OutlawAssemblerKey:
+        type: AssemblerBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      microwave_entity_container: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container
+
+- type: entity
+  id: WFOutlawTechfab
+  parent: [ NFBlueprintReceiverBase, BaseLatheLube ]
+  name: outlaw techfab
+  description: Prints the questionably legal items recovered from decrypted black-market data, and a few other things.
+  components:
+  - type: Sprite
+    sprite: _WF/Structures/Machines/techfab.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: outlaw
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: WFOutlawTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticPacks:
+    - WFOutlawStatic
+    - NFLightsStatic
+    - NFBasicToolsStatic
+    - NFBasicStorageStatic
+    - NFBasicPartsStatic
+    - NFBasicElectronicsStatic
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - WFBlueprintOutlaw
+      - NFBlueprintMercenaryTechfab
+  - type: OreSiloClient
+  - type: Contraband
+    severity: BlackMarket
+    turnInValues:
+      FrontierUplinkCoin: 6
+
+- type: entity
+  id: WFDataTerminal
+  parent: BaseLathe
+  name: black-market data terminal
+  description: This machine decrypts otherwise unusable black-market data chits.
+  components:
+  - type: Sprite
+    sprite: _WF/Structures/Machines/diskdec.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: powered
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Machine
+    board: WFDataTerminalCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container # todo: figure out a way to stop this from reducing data cost
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - DataChit
+  - type: Lathe
+    idleState: base
+    runningState: base
+    unlitIdleState: powered
+    unlitRunningState: working
+    defaultProductionAmount: 1
+    productValueModifier: null
+    staticPacks:
+    - WFDecryptStatic

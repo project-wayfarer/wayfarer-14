@@ -52,7 +52,7 @@ public sealed partial class MimePowersComponent : Component
     /// How long it takes the mime to get their powers back
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan VowCooldown = TimeSpan.FromMinutes(5);
+    public TimeSpan VowCooldown = TimeSpan.FromMinutes(30); // Wayfarer: 5<30
 
     [DataField]
     public ProtoId<AlertPrototype> VowAlert = "VowOfSilence";

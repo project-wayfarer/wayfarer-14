@@ -32,12 +32,14 @@
   - ShipyardChisel # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardComet # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCopperhead # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardCopperskree
   - ShipyardCourier # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCrescent # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCrossroads # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardDioddef
   - ShipyardDowntownsuperstar
   - ShipyardDragoon # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardFirefighter # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGarden # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGasbender # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGaslight # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
@@ -47,10 +49,12 @@
   - ShipyardHammer # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardHauler # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardHonker # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardHound # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardInvestigator # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardIzakaya # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardKestrel # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardKilderkin # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardLanternMk2 # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardLiquidator # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardLoader # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardLyrae # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
@@ -69,6 +73,7 @@
   - ShipyardStronghold # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardSurveyor # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardSwan
+  - ShipyardTakeaway # MonolithShip
   - ShipyardUniform
   - ShipyardVagabond # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
 
@@ -92,8 +97,9 @@
   - ShipyardBrigand # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCharon # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardPathfinder # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardReclaimer
+  - ShipyardBehir
   - ShipyardScryer
+  - ShipyardKobold
 
 - type: guideEntry
   id: MedShipyard
@@ -121,6 +127,8 @@
   children:
   - ShipyardDagger
   - ShipyardLooter
+  - ShipyardBocaskreeo
+  - ShipyardVeliola
 
 - type: guideEntry
   id: ScrapShipyard
@@ -128,7 +136,7 @@
   text: "/ServerInfo/_WF/Guidebook/Shipyard/ScrapShipyard.xml"
   priority: 7
   children:
-  - ShipyardBeater
+  - ShipyardMephit
   - ShipyardConstruct # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardGeode # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardIcarus
@@ -157,9 +165,9 @@
     #  example you have a staff ship that also is in the civilian ship yard the files would go to civilian
 
 - type: guideEntry
-  id: ShipyardBeater
-  name: guide-entry-shipyard-beater
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/ScrapShipyard/Beater.xml"
+  id: ShipyardMephit
+  name: guide-entry-shipyard-mephit
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/ScrapShipyard/Mephit.xml"
 
 - type: guideEntry
   id: ShipyardBuckler
@@ -227,6 +235,16 @@
   text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Looter.xml"
 
 - type: guideEntry
+  id: ShipyardBocaskreeo
+  name: guide-entry-shipyard-bocaskreeo
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Bocaskreeo.xml"
+
+- type: guideEntry
+  id: ShipyardCopperskree
+  name: guide-entry-shipyard-copperskree
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Copperskree.xml"
+
+- type: guideEntry
   id: ShipyardMedivac
   name: guide-entry-shipyard-medivac
   text: "/ServerInfo/_WF/Guidebook/Shipyard/MedShipyard/Medivac.xml"
@@ -262,9 +280,9 @@
   text: "/ServerInfo/_WF/Guidebook/Shipyard/ScrapShipyard/Ratrod.xml"
 
 - type: guideEntry
-  id: ShipyardReclaimer
-  name: guide-entry-shipyard-reclaimer
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Reclaimer.xml"
+  id: ShipyardBehir
+  name: guide-entry-shipyard-behir
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Behir.xml"
 
 - type: guideEntry
   id: ShipyardScryer
@@ -285,3 +303,13 @@
   id: ShipyardMoppet
   name: guide-entry-shipyard-moppet
   text: "/ServerInfo/_WF/Guidebook/Shipyard/StaffShipyard/Moppet.xml"
+
+- type: guideEntry
+  id: ShipyardKobold
+  name: guide-entry-shipyard-kobold
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Kobold.xml"
+
+- type: guideEntry
+  id: ShipyardVeliola
+  name: guide-entry-shipyard-veliola
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Veliola.xml"

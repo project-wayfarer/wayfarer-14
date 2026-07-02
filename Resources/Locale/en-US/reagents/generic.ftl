@@ -9,3 +9,6 @@ generic-reagent-effect-parched = You feel parched.
 generic-reagent-effect-thirsty = You feel thirsty.
 generic-reagent-effect-sick = You feel sick after consuming that...
 generic-reagent-effect-slicing-insides = You feel an incredibly sharp pain in your gut!
+
+### Wayfarer
+generic-reagent-effect-tired = You feel tiredness wash over you as the stimulant wears off.

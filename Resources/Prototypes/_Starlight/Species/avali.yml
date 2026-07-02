@@ -51,6 +51,7 @@
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
     Genital: MobHumanoidAnyMarking
     RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot, this will look weird as fuck
     # End Wayfarer
@@ -83,6 +84,9 @@
       required: true
       defaultMarkings: [ AvaliTailBase ]
     Snout:
+      points: 32 # Wayfarer
+      required: false
+    NeckFluff:
       points: 32 # Wayfarer
       required: false
     HeadTop:

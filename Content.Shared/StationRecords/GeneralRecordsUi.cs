@@ -42,9 +42,15 @@ public sealed class GeneralStationRecordConsoleState : BoundUserInterfaceState
     public readonly StationRecordsFilter? Filter;
     public readonly bool CanDeleteEntries;
     public readonly string? Advertisement; // Frontier
+    // Wayfarer
+    public readonly string? TargetIdName;
+    public readonly string? PrivilegedIdName;
+    public readonly bool CanRegisterCrew;
+    // End Wayfarer
 
     public GeneralStationRecordConsoleState(uint? key, GeneralStationRecord? record,
-        Dictionary<uint, string>? recordListing, IReadOnlyDictionary<ProtoId<JobPrototype>, int?>? jobList, StationRecordsFilter? newFilter, bool canDeleteEntries, string? advertisement) // Frontier: add jobList, advertisement
+        Dictionary<uint, string>? recordListing, IReadOnlyDictionary<ProtoId<JobPrototype>, int?>? jobList, StationRecordsFilter? newFilter, bool canDeleteEntries, string? advertisement, // Frontier: add jobList, advertisement
+        string? targetIdName = null, string? privilegedIdName = null, bool canRegisterCrew = false) // Wayfarer: Register-crew slots and Remove-button flag
     {
         SelectedKey = key;
         Record = record;
@@ -53,6 +59,9 @@ public sealed class GeneralStationRecordConsoleState : BoundUserInterfaceState
         JobList = jobList; // Frontier
         CanDeleteEntries = canDeleteEntries;
         Advertisement = advertisement; // Frontier
+        TargetIdName = targetIdName; // Wayfarer
+        PrivilegedIdName = privilegedIdName; // Wayfarer
+        CanRegisterCrew = canRegisterCrew; // Wayfarer
     }
 
     public GeneralStationRecordConsoleState() : this(null, null, null, null, null, false, string.Empty)

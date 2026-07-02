@@ -7628,7 +7628,7 @@ entities:
       nextSound: -1386.6096672
     - type: Physics
       canCollide: False
-- proto: WallPlastitanium
+- proto: WallReinforced
   entities:
   - uid: 516
     mapInit: true
@@ -7763,7 +7763,7 @@ entities:
     - type: Transform
       pos: 8.5,10.5
       parent: 1
-- proto: WallPlastitaniumDiagonal
+- proto: WallReinforcedDiagonal
   entities:
   - uid: 535
     mapInit: true

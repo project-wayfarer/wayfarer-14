@@ -34,7 +34,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SI Lamplight{1}'
+        mapNameTemplate: 'Lamplight {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

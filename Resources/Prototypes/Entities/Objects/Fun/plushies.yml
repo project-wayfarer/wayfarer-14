@@ -48,7 +48,8 @@
     tags:
     - Payload
     - ClothMade
-#  - type: MothFood # WF removed - Stops plushies eaten by random moth spawns
+  #- type: MothFood # Frontier # WF removed - Stops plushies eaten by random moth spawns
+  - type: NFPlushie # Frontier
 
 - type: entity
   parent: BasePlushie

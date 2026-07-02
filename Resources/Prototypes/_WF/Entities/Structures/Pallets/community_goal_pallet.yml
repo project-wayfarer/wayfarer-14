@@ -7,12 +7,12 @@
   - type: CommunityGoalPallet
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: Structures/cargo_pallets.rsi
+    sprite: _WF/Structures/community_goal_pallets.rsi
     layers:
-    - state: cargo_pallet_sell
+    - state: community_goal_pallet
   - type: Icon
-    sprite: Structures/cargo_pallets.rsi
-    state: cargo_pallet_sell
+    sprite: _WF/Structures/community_goal_pallets.rsi
+    state: community_goal_pallet
   - type: IconSmooth
     key: community_goal_pallet
-    base: cargo_pallet_sell_
+    base: community_goal_pallet_

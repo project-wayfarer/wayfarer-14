@@ -1,0 +1,86 @@
+- type: entity
+  name: decrypted data (low value)
+  id: SpawnRandomDecryptedBlueprintLow
+  parent: MarkerBasePlaceFree
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi
+      state: chits
+    - sprite: _NF/Markers/general.rsi
+      state: questionmark
+      color: red
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: TableRandomDecryptedBlueprintLow
+
+- type: entityTable
+  id: TableRandomDecryptedBlueprintLow
+  table: !type:GroupSelector
+    children:
+    - id: WFBlueprintC20r # replace this with something else when off break
+      weight: 2.25
+
+- type: latheRecipe
+  id: RecipeDecryptLow
+  result: SpawnRandomDecryptedBlueprintLow
+  completetime: 6
+  categories:
+  - Materials
+  icon:
+    sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi
+    state: chits
+  materials:
+    OutlawData: 1
+
+# Gun
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: RecipeWeaponPistolViper
+  result: NFWeaponPistolViper
+  materials:
+    Steel: 1500
+
+# Blueprints
+
+- type: latheRecipe
+  id: BaseDecryptRecipe
+  result: SpawnRandomDecryptedBlueprintLow
+  completetime: 6
+  categories:
+  - Materials
+  icon:
+    sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi
+    state: chits
+  materials:
+    OutlawData: 1
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptIncendiaryAmmo
+  result: NFBlueprintAmmoIncendiarySyndicate
+  materials:
+    OutlawData: 8
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptUraniumAmmo
+  result: NFBlueprintAmmoUraniumSyndicate
+  materials:
+    OutlawData: 12
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptC20
+  result: WFBlueprintC20r
+  materials:
+    OutlawData: 20
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptAtreides
+  result: WFBlueprintAtreides
+  materials:
+    OutlawData: 20

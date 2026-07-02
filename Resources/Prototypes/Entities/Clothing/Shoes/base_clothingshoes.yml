@@ -3,9 +3,32 @@
   parent: [Clothing, RecyclableItemClothSmall] # Frontier: added RecyclableItemClothSmall
   id: ClothingShoesBase
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/generic_small_pickup.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/shoes_drop.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/boots_drop.ogg
+      params:
+        volume: -5
+  # Wayfarer End
   - type: Clothing
     slots:
     - FEET
+  # Wayfarer Start
+    equipSound:
+      collection: GenericEquip
+      params:
+        volume: -5
+  # Wayfarer End
   - type: Sprite
     state: icon
   - type: Item

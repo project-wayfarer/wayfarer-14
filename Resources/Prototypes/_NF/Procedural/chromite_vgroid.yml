@@ -241,28 +241,28 @@
       tableId: SalvageEquipmentSpawnerValuable
     perDungeon: true
   - !type:MobsDunGen
-    minCount: 1
-    maxCount: 2
+    minCount: 2 # Wayfarer: 1<2
+    maxCount: 4 # Wayfarer: 2<4
     contents: SpawnMobBloodCultistPriestTable
   - !type:MobsDunGen
-    minCount: 1
-    maxCount: 2
+    minCount: 2 # Wayfarer: 1<2
+    maxCount: 4 # Wayfarer: 2<4
     contents: SpawnMobBloodCultistAcolyteTable
   - !type:MobsDunGen
-    minCount: 1
-    maxCount: 2
+    minCount: 2 # Wayfarer: 1<2
+    maxCount: 4 # Wayfarer: 2<4
     contents: SpawnMobBloodCultistZealotMeleeTable
   - !type:MobsDunGen
-    minCount: 1
-    maxCount: 2
+    minCount: 2 # Wayfarer: 1<2
+    maxCount: 4 # Wayfarer: 2<4
     contents: SpawnMobBloodCultistZealotRangedTable
   - !type:MobsDunGen
-    minCount: 1
-    maxCount: 2
+    minCount: 2 # Wayfarer: 1<2
+    maxCount: 4 # Wayfarer: 2<4
     contents: SpawnMobBloodCultistCasterTable
   - !type:MobsDunGen
-    minCount: 0
-    maxCount: 1
+    minCount: 1 # Wayfarer: 0<1
+    maxCount: 2 # Wayfarer: 1<2
     contents: SpawnMobBloodCultistAscendedTable # Boss
   # - !type:MobsDunGen # Dies to barotrauma - equip it for space if you want this restored
   #   minCount: 1

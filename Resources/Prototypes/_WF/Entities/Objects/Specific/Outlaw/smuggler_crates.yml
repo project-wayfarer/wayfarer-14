@@ -1,0 +1,75 @@
+- type: entity
+  name: Outlaw Smuggling Crate Spawner
+  suffix: Debug
+  id: SpawnOutlawContrabandCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Storage/Crates/generic.rsi
+      state: icon
+  - type: RandomSpawner
+    prototypes:
+    - CrateTradeContrabandOutlawOrgans
+
+- type: entity
+  parent: CrateTradeBaseSecureContraband
+  id: CrateTradeContrabandOutlaw
+  name: packaged contraband crate
+  description: A crate full of various illicit goods, made in the Zekke sector, ready to be smuggled to a cargo depot for profit. MAKE SURE THE CRATE IS INTACT.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 200
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: Icon
+    sprite: _NF/Structures/Storage/Crates/contraband1_crate.rsi
+  - type: Sprite
+    sprite: _NF/Structures/Storage/Crates/contraband1_crate.rsi
+    layers:
+    - state: icon
+    - sprite: _NF/Interface/Misc/cargo_destination_icons.rsi
+      state: cargo_other
+      offset: 0.275,-0.265
+      map: ["enum.TradeCrateVisualLayers.Icon"]
+      visible: false
+    - sprite: _NF/Interface/Misc/cargo_destination_icons.rsi
+      state: cargo_priority_inactive
+      offset: 0.025,-0.265
+      map: ["enum.TradeCrateVisualLayers.Priority"]
+      visible: false
+    - state: paper
+      sprite: Structures/Storage/Crates/labels.rsi
+      offset: "-0.5,0"
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: TradeCrate
+    valueAtDestination: 5000
+    valueElsewhere: 2500
+  - type: Contraband
+    turnInValues:
+      FrontierUplinkCoin: 3
+  - type: ShipyardSellCondition
+    blockSale: true
+    reason: shipyard-console-contraband-onboard
+    allowedShipyardTypes:
+    - Syndicate
+    - BlackMarket
+  - type: AdditionalPalletCurrency
+    currency: Doubloon
+    amount: 2
+
+- type: entity
+  parent: CrateTradeContrabandOutlaw
+  id: CrateTradeContrabandOutlawOrgans
+  name: harvested organs crate
+  description: A hermetically sealed crate full of harvested organs, ready to be smuggled to a cargo depot for profit. MAKE SURE THE CRATE IS INTACT.
+  categories: [ HideSpawnMenu ]

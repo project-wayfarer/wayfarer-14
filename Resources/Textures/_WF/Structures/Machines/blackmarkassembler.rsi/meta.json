@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "All sprites by Toriate, created for Versengt for use in Wayfarer.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "off-unlit"
+        },
+        {
+            "name": "on-unlit",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "icon"
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBarista
+  name: Barista Vendor
+  description: Sells a variety of coffees, teas, and pastries.
+  suffix: POI
+  components:
+  - type: VendingMachine
+    pack: BaristaVendInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    # ejectState: eject-unshaded
+    # denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 1
+  - type: MarketModifier
+    mod: 8
+  - type: DatasetVocalizer # Wayfarer
+    dataset: BaristaAds # Wayfarer
+  #- type: Advertise
+  #  pack: BaristaAds
+  - type: SpeakOnUIClosed
+    pack: BaristaGoodbyes
+  - type: Sprite
+    sprite: _Mono/Structures/Machines/VendingMachines/barista.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#D82929"
+
+
+- type: entity
+  parent: VendingMachineBarista
+  id: VendingMachineBaristaShip
+  name: Barista Vendor
+  description: Sells a variety of coffees, teas, and pastries.
+  suffix: "0.35%"
+  components:
+  - type: VendingMachine
+    pack: BaristaVendInventory
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    # ejectState: eject-unshaded
+    # denyState: deny-unshaded
+    ejectDelay: 1.9
+    initialStockQuality: 0.35

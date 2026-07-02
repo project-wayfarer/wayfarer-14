@@ -1,0 +1,76 @@
+- type: entity
+  parent: [BaseMachinePowered, ConstructibleMachine]
+  id: RAEWSdish
+  name: raews dish
+  description: The Radar Assisted Early Warning System advanced radar dish is capable of deep space doppler for both threat detection and astrological meteorology readouts.
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Machine
+    board: RAEWSMachineCircuitboard
+  - type: Construction
+    graph: Machine3x3
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 4500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-1.45,1.45,0.45"
+        density: 1750
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: ApcPowerReceiver
+    powerLoad: 750
+  - type: Sprite
+    sprite: _WF/Structures/Machines/radar-dish.rsi
+    layers:
+    - state: radar-nopower
+    - state: broken
+      visible: false
+    - state: radar-on
+      shader: unshaded
+      visible: false
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Anchorable
+    delay: 10
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 3
+    energy: 3.0
+    color: "#f1f4ff"
+  - type: LitOnPowered
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -11
+    range: 5
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
+  - type: Rotatable
+    rotateWhileAnchored: false
+    increment: 90
+  - type: StaticPrice
+    price: 15000

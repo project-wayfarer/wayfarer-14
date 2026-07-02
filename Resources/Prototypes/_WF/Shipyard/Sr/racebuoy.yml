@@ -1,0 +1,34 @@
+# comment line change to what you want
+- type: vessel
+  id: RaceBuoy
+  parent: BaseVessel
+  name: CNS Racing Buoy  # AAA is the industry name make your own I'm using BAM or Big Aim Machinery name work in progress...
+  description: The Concordia National Shipyard's simple Racing Buoy is meant for helping space racer's to navigate the course! Atmospherics not included.
+  price: 7700 # (gridtc *50 + appraisegrid ) * 1.(15*roles)
+  category: Small #Small Medium Large
+  group: Sr #Shipyard, Security, Expedition, BlackMarket, Scrap
+  shuttlePath: /Maps/_WF/Shuttles/Sr/racebuoy.yml
+  guidebookPage: Null #can also use "Null" if you want to skip the guide book making
+  class:
+  - Civilian
+  # - civilian
+  engine:
+  - Welding
+  # - power type
+
+- type: gameMap
+  id: RaceBuoy
+  mapName: 'CNS Race Buoy'
+  mapPath: /Maps/_WF/Shuttles/Sr/racebuoy.yml
+  minPlayers: 0
+  stations:
+    RaceBuoy:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Race Buoy {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: {}

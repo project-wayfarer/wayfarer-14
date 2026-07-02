@@ -4,6 +4,9 @@
   loadouts:
   - DeputyClothingUniformJumpsuitDeputy
   - DeputyClothingUniformJumpskirtDeputy
+  - SeniorOfficerClothingUniformJumpsuitSeniorOfficer # Wayfarer
+  - BailiffClothingUniformJumpsuitBailiff # Wayfarer
+  - SheriffClothingUniformJumpsuitSheriff # Wayfarer
   fallbacks:
   - DeputyClothingUniformJumpsuitDeputy
   - DeputyClothingUniformJumpskirtDeputy
@@ -14,6 +17,8 @@
   minLimit: 0
   loadouts:
   - NfsdOuterClothing
+  - SeniorOfficerOuterClothing # Wayfarer
+  - CGPBomberClothing # Wayfarer
   - CGPPatrolSuitBronze # Wayfarer
 
 - type: loadoutGroup
@@ -22,6 +27,9 @@
   minLimit: 0
   loadouts:
   - DeputyClothingHeadHatDeputy
+  - BrigmedicClothingHeadHatBrigmedic # Wayfarer
+  - SeniorOfficerClothingHeadHatSeniorOfficer # Wayfarer
+  - BailiffClothingHeadHatBailiff # Wayfarer
 
 - type: loadoutGroup
   id: DeputyNeck

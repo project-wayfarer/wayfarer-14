@@ -3,6 +3,8 @@ using Robust.Client.UserInterface;
 using Content.Shared._NF.StationRecords; // Frontier
 using Content.Shared.Roles; // Frontier
 using Robust.Shared.Prototypes; // Frontier
+using Content.Shared._WF.StationRecords.Components; // Wayfarer
+using Content.Shared.Containers.ItemSlots; // Wayfarer
 
 namespace Content.Client.StationRecords;
 
@@ -28,6 +30,12 @@ public sealed class GeneralStationRecordConsoleBoundUserInterface : BoundUserInt
         _window.OnJobSubtract += OnJobsSubtract; // Frontier: job modification buttons
         _window.OnDeleted += id => SendMessage(new DeleteStationRecord(id));
         _window.OnAdvertisementChanged += OnAdvertisementChanged; // Frontier: job modification buttons
+        // Wayfarer: Register Crew tab buttons
+        _window.PrivilegedIdButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent(RegisterCrewConsoleComponent.PrivilegedIdSlotId));
+        _window.TargetIdButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent(RegisterCrewConsoleComponent.TargetIdSlotId));
+        _window.OnRegisterCrew += text => SendMessage(new RegisterCrewMessage(text));
+        _window.OnRemoveCrew += id => SendMessage(new RemoveCrewMessage(id));
+        // End Wayfarer
     }
 
     // Frontier: job modification buttons, ship advertisements

@@ -1,0 +1,19 @@
+- type: cargoProduct
+  id: ServiceBaristavendFlatpack
+  icon:
+    sprite: _Mono/Structures/Machines/VendingMachines/barista.rsi
+    state: off
+  product: VendingMachineBaristaFlatpack
+  cost: 20000
+  category: cargoproduct-category-name-service
+  group: market
+
+- type: cargoProduct
+  id: ServiceBaristavendRestock
+  icon:
+    sprite: _Mono/Objects/Specific/Service/vending_machine_restock.rsi
+    state: base
+  product: VendingMachineRestockBarista
+  cost: 5000
+  category: cargoproduct-category-name-service
+  group: market

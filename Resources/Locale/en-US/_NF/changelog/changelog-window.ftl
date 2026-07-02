@@ -1,1 +1,1 @@
-changelog-tab-title-Wayfarer = Wayfarer
+changelog-tab-title-Frontier = Frontier

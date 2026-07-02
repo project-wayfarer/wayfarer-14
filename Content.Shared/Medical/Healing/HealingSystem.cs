@@ -18,7 +18,7 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared.Medical.Healing;
 
-public sealed class HealingSystem : EntitySystem
+public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Partial
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
@@ -198,6 +198,14 @@ public sealed class HealingSystem : EntitySystem
             _popupSystem.PopupClient(Loc.GetString("medical-item-cant-use", ("item", healing.Owner)), healing, user);
             return false;
         }
+
+        // Wayfarer: block healing if the damage is a big ouch owie (too severe)
+        if (IsHealingThresholdExceeded(healing, target!))
+        {
+            _popupSystem.PopupClient(Loc.GetString("medical-item-too-severe", ("item", healing.Owner)), healing, user);
+            return false;
+        }
+        // End Wayfarer
 
         _audio.PlayPredicted(healing.Comp.HealingBeginSound, healing, user);
 

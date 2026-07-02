@@ -4,6 +4,8 @@
   loadouts:
   - BailiffClothingUniformJumpsuitBailiff
   - BailiffClothingUniformJumpskirtBailiff
+  - SeniorOfficerClothingUniformJumpsuitSeniorOfficer # Wayfarer
+  - SheriffClothingUniformJumpsuitSheriff # Wayfarer
   fallbacks:
   - BailiffClothingUniformJumpsuitBailiff
   - BailiffClothingUniformJumpskirtBailiff
@@ -14,6 +16,8 @@
   minLimit: 0
   loadouts:
   - BailiffOuterClothing
+  - SeniorOfficerOuterClothing # Wayfarer
+  - CGPBomberClothing # Wayfarer
   - CGPPatrolSuitGold # Wayfarer
 
 - type: loadoutGroup
@@ -22,6 +26,8 @@
   minLimit: 0
   loadouts:
   - BailiffClothingHeadHatBailiff
+  - SeniorOfficerClothingHeadHatSeniorOfficer # Wayfarer
+  - BrigmedicClothingHeadHatBrigmedic # Wayfarer
 
 - type: loadoutGroup
   id: BailiffNeck

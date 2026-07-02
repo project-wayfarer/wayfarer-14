@@ -186,7 +186,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                 {
                     role = ev.JobId;
                 }
-                
+
                 _players[mobUid] = new PlayerRoundBankInformation(ev.Profile.BankBalance, MetaData(mobUid).EntityName, ev.Player.UserId, role);
             }
         }
@@ -241,6 +241,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
         List<PointOfInterestPrototype> marketProtos = new();
         List<PointOfInterestPrototype> requiredProtos = new();
         List<PointOfInterestPrototype> optionalProtos = new();
+        List<PointOfInterestPrototype> mooringProtos = new(); // Wayfarer
         Dictionary<string, List<PointOfInterestPrototype>> remainingUniqueProtosBySpawnGroup = new();
 
         var currentPreset = _ticker.CurrentPreset?.ID ?? _fallbackPresetID;
@@ -259,6 +260,8 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                 requiredProtos.Add(location);
             else if (location.SpawnGroup == "Optional")
                 optionalProtos.Add(location);
+            else if (location.SpawnGroup == "MooringPoint")
+                mooringProtos.Add(location); // Wayfarer
             else // the remainder are done on a per-poi-per-group basis
             {
                 if (!remainingUniqueProtosBySpawnGroup.ContainsKey(location.SpawnGroup))
@@ -270,6 +273,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
         _poi.GenerateMarkets(mapUid, marketProtos, out component.MarketStations);
         _poi.GenerateRequireds(mapUid, requiredProtos, out component.RequiredPois);
         _poi.GenerateOptionals(mapUid, optionalProtos, out component.OptionalPois);
+        _poi.GenerateMooringPointsSemiRandom(mapUid, mooringProtos, out component.MooringPoints); // Wayfarer
         _poi.GenerateUniques(mapUid, remainingUniqueProtosBySpawnGroup, out component.UniquePois);
 
         base.Started(uid, component, gameRule, args);
@@ -425,7 +429,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
         try
         {
             _sawmill.Info("SaveRoundSummaryToDatabase: Starting...");
-            
+
             var gameTicker = _entSys.GetEntitySystemOrNull<GameTicker>();
             if (gameTicker == null)
             {
@@ -457,7 +461,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                     continue;
 
                 var profit = endBalance - playerInfo.StartBalance;
-                
+
                 // Get username from NetUserId
                 var username = playerInfo.UserId.ToString();
                 if (_player.TryGetSessionById(playerInfo.UserId, out var session))
@@ -488,12 +492,12 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                     { "characterName", playerInfo.Name },
                     { "role", playerInfo.Role }
                 };
-                
+
                 if (profileId.HasValue)
                 {
                     manifestEntry["profileId"] = profileId.Value;
                 }
-                
+
                 playerManifestData.Add(manifestEntry);
             }
 
@@ -502,11 +506,11 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
             // Serialize to JSON documents
             var profitLossJson = JsonDocument.Parse(JsonSerializer.Serialize(profitLossData));
             var playerManifestJson = JsonDocument.Parse(JsonSerializer.Serialize(playerManifestData));
-            
+
             // Get player stories from CustomObjectiveSummarySystem
             var playerStoriesData = new List<Dictionary<string, object>>();
             var rawPlayerStories = _customObjectiveSummary.GetPlayerStories();
-            
+
             foreach (var (userId, storyData) in rawPlayerStories)
             {
                 // Get username from NetUserId
@@ -515,7 +519,7 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                 {
                     username = session.Name;
                 }
-                
+
                 var storyEntry = new Dictionary<string, object>
                 {
                     { "username", username },
@@ -523,18 +527,18 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
                     { "story", storyData.Story },
                     { "roleName", storyData.RoleName }
                 };
-                
+
                 // Add profileId if available
                 if (storyData.ProfileId.HasValue)
                 {
                     storyEntry["profileId"] = storyData.ProfileId.Value;
                 }
-                
+
                 playerStoriesData.Add(storyEntry);
             }
-            
+
             var playerStoriesJson = JsonDocument.Parse(JsonSerializer.Serialize(playerStoriesData));
-            
+
             _sawmill.Info($"SaveRoundSummaryToDatabase: Player stories count: {playerStoriesData.Count}");
 
             // Collect Mail Metrics data from SectorLogisticStatsComponent

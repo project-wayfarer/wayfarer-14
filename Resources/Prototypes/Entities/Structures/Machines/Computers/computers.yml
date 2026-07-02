@@ -460,6 +460,33 @@
   - type: GuideHelp
     guides:
     - Forensics
+  # Wayfarer: Register Crew tab ID slots
+  - type: RegisterCrewConsole
+    targetIdSlot:
+      name: register-crew-target-id
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: true
+      whitelist:
+        components:
+        - IdCard
+    privilegedIdSlot:
+      name: register-crew-privileged-id
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - IdCard
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+      RegisterCrewConsole-targetId: !type:ContainerSlot
+      RegisterCrewConsole-privilegedId: !type:ContainerSlot
+  # End Wayfarer
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -901,7 +928,7 @@
   id: ComputerCargoOrders
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseComputerAiAccess] # Frontier: add BaseStructureDisableToolUse, BaseStructureIndestructible
   name: cargo request computer
-  description: Used to purchase supplies in from central command. # Frontier
+  description: Used to order supplies and approve requests.
   components:
   - type: Sprite
     layers:
@@ -1295,8 +1322,8 @@
 - type: entity
   id: ComputerSalvageExpedition
   parent: BaseComputerAiAccess
-  name: expedition console # Frontier: salvage expeditions computer<expedition console
-  description: Used to go on expeditions, if you're tough enough. # Frontier: "accept salvage missions"<"go on expeditions"
+  name: salvage expeditions computer
+  description: Used to accept salvage missions, if you're tough enough.
   components:
     - type: Sprite
       layers:

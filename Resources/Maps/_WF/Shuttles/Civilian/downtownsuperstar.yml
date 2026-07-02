@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 05/12/2026 21:50:35
+  time: 06/20/2026 19:22:02
   entityCount: 1685
 maps: []
 grids:
@@ -1389,70 +1389,70 @@ entities:
     - type: Transform
       pos: 8.5,-1.5
       parent: 1
-  - uid: 33
+  - uid: 18
     components:
     - type: Transform
       pos: 7.5,-7.5
       parent: 1
 - proto: AirlockEngineering
   entities:
-  - uid: 18
+  - uid: 19
     components:
     - type: Transform
       pos: -6.5,-7.5
       parent: 1
 - proto: AirlockExternal
   entities:
-  - uid: 19
+  - uid: 20
     components:
     - type: Transform
       pos: 0.5,-17.5
       parent: 1
 - proto: AirlockGlass
   entities:
-  - uid: 20
+  - uid: 21
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,-15.5
       parent: 1
-  - uid: 21
+  - uid: 22
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 1.5,-15.5
       parent: 1
-  - uid: 22
+  - uid: 23
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,-9.5
       parent: 1
-  - uid: 23
+  - uid: 24
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 6.5,-9.5
       parent: 1
-  - uid: 24
+  - uid: 25
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,-9.5
       parent: 1
-  - uid: 25
+  - uid: 26
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,-9.5
       parent: 1
-  - uid: 26
+  - uid: 27
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,-14.5
       parent: 1
-  - uid: 27
+  - uid: 28
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -1460,31 +1460,31 @@ entities:
       parent: 1
 - proto: AirlockGlassShuttle
   entities:
-  - uid: 28
+  - uid: 29
     components:
     - type: Transform
       pos: 1.5,-23.5
       parent: 1
-  - uid: 29
+  - uid: 30
     components:
     - type: Transform
       pos: -0.5,-23.5
       parent: 1
 - proto: AirlockMercenary
   entities:
-  - uid: 30
+  - uid: 31
     components:
     - type: Transform
       pos: -7.5,-16.5
       parent: 1
-  - uid: 31
+  - uid: 32
     components:
     - type: Transform
       pos: 8.5,-16.5
       parent: 1
 - proto: AirlockSalvage
   entities:
-  - uid: 32
+  - uid: 33
     components:
     - type: Transform
       pos: -7.5,-1.5
@@ -1732,58 +1732,49 @@ entities:
   - uid: 66
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-8.5
+      pos: 0.5,-8.5
       parent: 1
   - uid: 67
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      pos: -0.5,-10.5
+      parent: 1
+  - uid: 68
+    components:
+    - type: Transform
       pos: 0.5,-9.5
       parent: 1
     - type: PointLight
       radius: 2
       enabled: True
-  - uid: 68
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-10.5
-      parent: 1
   - uid: 69
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 0.5,-8.5
+      pos: -0.5,-8.5
       parent: 1
   - uid: 70
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5,-8.5
+      pos: -0.5,-9.5
       parent: 1
   - uid: 71
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-9.5
+      pos: 1.5,-8.5
       parent: 1
   - uid: 72
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 0.5,-10.5
       parent: 1
   - uid: 73
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 1.5,-9.5
       parent: 1
   - uid: 74
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 1.5,-10.5
       parent: 1
 - proto: APCBasic
@@ -9729,10 +9720,10 @@ entities:
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        29:
+        30:
         - - Pressed
           - DoorBolt
-        28:
+        29:
         - - Pressed
           - DoorBolt
     - type: Fixtures
