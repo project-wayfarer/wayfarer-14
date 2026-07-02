@@ -37,6 +37,12 @@
     proto: ShellShotgun
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+    # Mono: Rack Sounds
+    soundRack:
+      path: /Audio/_Mono/Weapons/Guns/Cock/shotgun_cock.ogg
+      params:
+        volume: -3
+    # End Mono
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -120,6 +126,7 @@
   - type: GunSpreadModifier
     spread: 0.6
   - type: BallisticAmmoProvider
+    soundRack: /Audio/Weapons/Guns/Cock/smg_cock.ogg #Mono
     capacity: 2
   - type: Construction
     graph: ShotgunSawn
@@ -187,6 +194,8 @@
   - type: Tag
     tags:
     - WeaponShotgunKammerer
+  - type: BallisticAmmoProvider # Goobstation
+    autoCycle: false
 
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
@@ -209,6 +218,7 @@
   - type: GunSpreadModifier
     spread: 1.4
   - type: BallisticAmmoProvider
+    soundRack: /Audio/Weapons/Guns/Cock/smg_cock.ogg #Mono
     capacity: 2
   - type: Construction
     graph: ShotgunSawn
@@ -249,6 +259,7 @@
   - type: Gun
     fireRate: 4
   - type: BallisticAmmoProvider
+    soundRack: /Audio/Weapons/Guns/Cock/smg_cock.ogg #Mono
     capacity: 1
   - type: Construction
     graph: ShotgunSawn
@@ -271,6 +282,7 @@
   - type: Gun
     fireRate: 2
   - type: BallisticAmmoProvider
+    soundRack: /Audio/Weapons/Guns/Cock/smg_cock.ogg #Mono
     capacity: 1
   - type: StaticPrice
     price: 0
@@ -292,6 +304,7 @@
   - type: Gun
     fireRate: 4 #No reason to stifle the firerate since you have to manually reload every time anyways.
   - type: BallisticAmmoProvider
+    soundRack: /Audio/Weapons/Guns/Cock/smg_cock.ogg #Mono
     capacity: 1
     proto: null
   # - type: Construction # Frontier

@@ -16,6 +16,7 @@
   - type: GunSpreadModifier
     spread: 1.1
   - type: Gun
+    fireRate: 2 # Wayfarer
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -52,6 +53,15 @@
   description: |-
     A premium semi-automatic shotgun, featuring an upgraded tube capacity.
   components:
+  # Wayfarer: Add sounds
+  - type: BallisticAmmoProvider
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+    soundRack:
+      path: /Audio/_Mono/Weapons/Guns/Cock/shotgun_cock.ogg
+      params:
+        volume: -3
+  # End Wayfarer
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Clothing
@@ -81,8 +91,19 @@
     sprite: _NF/Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
   - type: GunSpreadModifier
     spread: 0.7
+  # Wayfarer: Shotgun Tweaks, *snarky comment about parenting and making an entirely new prototype*
   - type: BallisticAmmoProvider
+    autoCycle: false
     capacity: 5
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+    soundRack:
+      path: /Audio/_Mono/Weapons/Guns/Cock/shotgun_cock.ogg
+      params:
+        volume: -3
+  - type: Gun
+    fireRate: 2
+  # End Wayfarer
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
   - type: Tag
