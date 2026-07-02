@@ -118,10 +118,10 @@
       - !type:GroupSelector
         weight: 0.3
         children:
-        - id: NFBlueprintRogueSiliconAdvancedTools
-        - id: NFBlueprintRogueSiliconSuperCapacitor
-        - id: NFBlueprintRogueSiliconSuperMatterBin
-        - id: NFBlueprintRogueSiliconSuperManipulator
+#        - id: NFBlueprintRogueSiliconAdvancedTools # Wayfarer
+#        - id: NFBlueprintRogueSiliconSuperCapacitor # Wayfarer
+#        - id: NFBlueprintRogueSiliconSuperMatterBin # Wayfarer
+#        - id: NFBlueprintRogueSiliconSuperManipulator # Wayfarer
         - id: NFBlueprintRogueSiliconPowerCellHyper
       # T3 - Rare
       - !type:GroupSelector
@@ -129,25 +129,27 @@
         children:
         - id: NFBlueprintRogueSiliconRPED
         - id: NFBlueprintRogueSiliconShipyardRCD
-        - id: NFBlueprintOreBagOfHolding
-        - id: NFBlueprintConstructionBagOfHolding
+#        - id: NFBlueprintOreBagOfHolding # Wayfarer
+#        - id: NFBlueprintConstructionBagOfHolding # Wayfarer
         # - id: NFBlueprintRogueSiliconPistolLaserSvalinn # TODO: restore the blueprint when the weapon is fixed
       # T4 - Epic
       - !type:GroupSelector
         weight: 0.1
         children:
-        - id: NFBlueprintRogueSiliconRipley
-        - id: NFBlueprintRogueSiliconMechEquipmentFork
-        - id: NFBlueprintRogueSiliconMechEquipmentGrabber
+#        - id: NFBlueprintRogueSiliconRipley # Wayfarer
+#        - id: NFBlueprintRogueSiliconMechEquipmentFork # Wayfarer
+#        - id: NFBlueprintRogueSiliconMechEquipmentGrabber # Wayfarer
         - id: NFBlueprintRogueSiliconEnergyRifleCarbine
         - id: NFBlueprintRogueSiliconPistolLaserAdvanced
       # T5 - Legendary
-      - !type:GroupSelector
-        weight: 0.05
-        children:
-        - id: NFBlueprintRogueSiliconHonker
-        - id: NFBlueprintRogueSiliconBluespaceBags
-        - id: NFBlueprintRogueSiliconEnergySubMachineGunDeltaV
+      # Wayfarer: Disabled
+#      - !type:GroupSelector
+#        weight: 0.05
+#        children:
+#        - id: NFBlueprintRogueSiliconHonker
+#        - id: NFBlueprintRogueSiliconBluespaceBags
+#        - id: NFBlueprintRogueSiliconEnergySubMachineGunDeltaV
+      # End Wayfarer
       # Unique
       - !type:GroupSelector
         weight: 0.01

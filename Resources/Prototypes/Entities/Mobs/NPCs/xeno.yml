@@ -81,9 +81,13 @@
      collection: AlienClaw
     animation: WeaponArcClaw # WF ArcBite to WeaponArcClaw
     wideAnimation: WeaponArcClaw # WF ArcBite to WeaponArcClaw
+    # Wayfarer: Xeno Buff
     damage:
       groups:
-        Brute: 6
+        Brute: 9
+      types:
+        Caustic: 2
+   # End Wayfarer
   - type: DamageStateVisuals
     states:
       Alive:
@@ -142,12 +146,22 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      300: Dead # Wayfarer: 100<300 They're BIG
   - type: Stamina
     critThreshold: 300
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7
+  # Wayfarer: Xeno Buff
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 12
+      types:
+        Caustic: 4
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4.5
+  # End Wayfarer
   - type: Fixtures
     fixtures:
       fix1:
@@ -180,10 +194,14 @@
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.7
+  # Wayfarer: Xeno Damage Buff
   - type: MeleeWeapon
     damage:
       groups:
-        Brute: 6
+        Brute: 9
+      types:
+        Caustic: 2
+  # End Wayfarer
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: Fixtures
@@ -214,15 +232,42 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Dead
+      500: Dead # Wayfarer: 300<500
   - type: SlowOnDamage
     speedModifierThresholds:
       150: 0.7
   - type: MovementSpeedModifier
+    baseSprintSpeed: 5 # Wayfarer
+  # Wayfarer: Xeno Buff
   - type: MeleeWeapon
     damage:
-     groups:
-       Brute: 12
+      groups:
+        Brute: 12
+      types:
+        Caustic: 6
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+  - type: RadarConsole
+    maxRange: 512
+    followEntity: true
+    hideCoords: false
+    maxIffRange: null
+  - type: Hands
+    hands:
+      hand_right:
+        location: Right
+      hand_left:
+        location: Left
+    sortedHands:
+    - hand_right
+    - hand_left
+  # End Wayfarer
   - type: Fixtures
     fixtures:
       fix1:
@@ -254,13 +299,18 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      150: Dead # Wayfarer: 100<150
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
+  # Wayfarer: Xeno Damage Buff
   - type: MeleeWeapon
     damage:
-     groups:
-       Brute: 10
+      groups:
+        Brute: 9
+      types:
+        Caustic: 3
+    attackRate: 1.25
+  # End Wayfarer
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7
@@ -291,10 +341,15 @@
       state: running
   - type: MovementSpeedModifier
     baseSprintSpeed: 6.0
+  # Wayfarer: Xeno Damage Buff
   - type: MeleeWeapon
     damage:
-     groups:
-       Brute: 5
+      groups:
+        Brute: 6
+      types:
+        Caustic: 1
+    attackRate: 2
+  # End Wayfarer
   - type: Fixtures
     fixtures:
       fix1:

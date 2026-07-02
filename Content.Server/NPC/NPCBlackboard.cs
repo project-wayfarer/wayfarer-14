@@ -36,6 +36,7 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         // #Misfits Change — slightly widen default detection bands so hostiles start reacting a bit earlier at player view edges.
         {"VisionRadius", 14f},
         {"AggroVisionRadius", 14f},
+        {"TurretRange", 20f}, // Wayfarer
     };
 
     /// <summary>

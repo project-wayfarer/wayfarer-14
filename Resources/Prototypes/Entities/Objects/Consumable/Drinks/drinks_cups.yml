@@ -69,6 +69,10 @@
     materialComposition:
       Gold: 100
   - type: NFTreasure # Frontier
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: Trophies
+  # End Wayfarer
 
 - type: entity
   parent: DrinkBaseCup

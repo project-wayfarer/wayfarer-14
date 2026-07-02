@@ -45,6 +45,17 @@
     spawned:
     - id: SpawnDungeonLootNpcXenoQueen
       amount: 1
+  # Wayfarer: Regen
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 500
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+        Airloss: -1
+  # End Wayfarer
   - type: ReplacementAccent
     accent: xeno
   - type: GhostRole

@@ -141,18 +141,24 @@
     - type: RandomEntityPopulator
       entries:
       - params:
-          prob: 0.33
+          prob: 0.6 #Wayfarer: 0.33<0.6
           min: 1
-          max: 1
+          max: 3 #Wayfarer: 1<3
           canBeAirSealed: true
         entries:
         - id: GasDepositNitrousOxide
           orGroup: deposit
         - id: GasDepositCarbonDioxide
           orGroup: deposit
-        - id: GasDepositAmmonia
+        - id: GasDepositCarbonDioxideLarge #Wayfarer: GasDepositAmmonia<GasDepositCarbonDioxideLarge
           orGroup: deposit
+#        - id: GasDepositAmmonia #Wayfarer
+#          orGroup: deposit
         - id: GasDepositHelium
+          orGroup: deposit
+        - id: GasDepositMuddlePlasma # Wayfarer
+          orGroup: deposit
+        - id: GasDepositPlasma #Wayfarer
           orGroup: deposit
 
 # endregion Andesite Table
@@ -285,18 +291,16 @@
       - params:
           prob: 0.8 # Wayfarer: 0.6<0.8
           min: 1
-          max: 2 # Wayfarer: 1<2
+          max: 1
           canBeAirSealed: true
         entries:
-#        - id: GasDepositOxygenVeryLarge # Wayfarer
-#          orGroup: deposit
+        - id: GasDepositOxygenVeryLarge # Wayfarer
+          orGroup: deposit
         - id: GasDepositMuddleEvenVeryLarge
           orGroup: deposit
 #        - id: GasDepositNitrogenVeryLarge # Wayfarer
 #          orGroup: deposit
         - id: GasDepositAirVeryLarge
-          orGroup: deposit
-        - id: GasDepositPlasmaVeryLarge # Wayfarer
           orGroup: deposit
 # endregion Chromite Table
 

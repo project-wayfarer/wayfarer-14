@@ -43,5 +43,5 @@ public sealed partial class SectorPirateBountyDatabaseComponent : Component
     /// The time between cancelling bounties.
     /// </summary>
     [DataField]
-    public TimeSpan CancelDelay = TimeSpan.FromMinutes(30); // Wayfarer: 1<30 (30 default)
+    public TimeSpan CancelDelay = TimeSpan.FromMinutes(15); // Wayfarer: 1<30 (30 default)
 }

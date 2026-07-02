@@ -6,6 +6,36 @@
   name: svalinn
   description: A cheap and widely used laser pistol.
   components:
+  # Wayfarer: Fuck this thing
+  - type: Gun
+    minAngle: 2.1
+    maxAngle: 10.5
+    angleIncrease: 0.7
+    angleDecay: 2.4
+    fireRate: 2
+  - type: HitscanBatteryAmmoProvider
+    proto: WFHitscanPistolLaser
+    fireCost: 60
+  - type: Battery
+    maxCharge: 20
+    startingCharge: 20
+  - type: BatterySelfRecharger # doesn't recharge
+    autoRecharge: false
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: Magazine
+        startingItem: PowerCellMedium
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+          - PowerCell
+          - PowerCellSmall
+  - type: StaticPrice
+    price: 2500
+    vendPrice: 2500
+  # End Wayfarer
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
   - type: Item

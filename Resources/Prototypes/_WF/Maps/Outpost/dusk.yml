@@ -1,6 +1,6 @@
 - type: gameMap
   id: Dusk
-  mapName: 'Dusk Station' # WF
+  mapName: 'Dusk Station'
   mapPath: /Maps/_WF/Outpost/dusk.yml
   minPlayers: 0
   maxPlayers: 100
@@ -14,14 +14,17 @@
         ambientMusicPrototype: ColossusCentralMusic
       - type: VesselInfo # WF
         description: "From the Dusk begins a new dawn."
+      - type: SolarPoweredGrid
+        trackOnInit: true
+        doNotCull: true
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Dusk Station' # WF
+        mapNameTemplate: 'Dusk Station'
       #          nameGenerator:
       #            !type:NanotrasenNameGenerator
       #            prefixCreator: '14'
       - type: ExtraStationInformation
-        iconPath: /Textures/_WF/Logo/icon/icon-256x256.png # Wayfarer: change to _WF
+        iconPath: /Textures/_WF/Logo/icon/icon-256x256.png
         stationSubtext: 'frontier-lobby-frontier-subtext'
         stationDescription: 'frontier-lobby-frontier-description'
         lobbySortOrder: 1
@@ -30,9 +33,6 @@
           SpawnPoints: 20
       - type: StationDeadDrop
         maxDeadDrops: 8 # big station
-      - type: SolarPoweredGrid
-        trackOnInit: true
-        doNotCull: true
       - type: TradeCrateDestination
         destinationProto: Trade
       - type: StationJobs

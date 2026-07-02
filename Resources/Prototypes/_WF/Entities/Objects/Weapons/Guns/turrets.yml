@@ -16,7 +16,7 @@
     mask: /Textures/_NF/Effects/LightMasks/beam.png
     color: "#990000"
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

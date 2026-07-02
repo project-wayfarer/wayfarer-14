@@ -30,6 +30,13 @@ namespace Content.Client._NF.Kitchen.UI
                 _menuTitle = "assembler-menu-medical-title";
                 _leftFlavorText = "assembler-menu-medical-footer-flavor-left";
             }
+            // Wayfarer: Add Outlaw Assembler Key
+            else if ((MicrowaveUiKey)uiKey == MicrowaveUiKey.OutlawAssemblerKey)
+            {
+                _menuTitle = "assembler-menu-outlaw-title";
+                _leftFlavorText = "assembler-menu-outlaw-flavor-left";
+            }
+            // End Wayfarer
             else
             {
                 _menuTitle = "assembler-menu-title";

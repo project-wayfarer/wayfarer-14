@@ -147,6 +147,9 @@
       - SyndicateVictimInsaneGear
   - type: InputMover
   - type: MobMover
+  - type: HTN
+    rootTask:
+      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
   - type: NFSalvageMobRestrictions
     despawnIfOffLinkedGrid: false
     addComponentsOnDeath: []

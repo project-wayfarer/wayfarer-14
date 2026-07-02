@@ -1,7 +1,7 @@
 - type: entity
   id: ClothingWebbingArcadia
   name: arcadia webbing
-  parent: [ NFClothingBeltStorageBase ] # Wayfarer: Removecontraband
+  parent: [ CSClothingBeltStorageHolsterBase ] # Wayfarer: Removecontraband # Coyote: NFClothingBeltStorageBase<CSClothingBeltStorageHolsterBase
   description: Webbing created by Arcadia Industries. Seems very capable of fitting many items.
   components:
   - type: Sprite
@@ -12,7 +12,7 @@
 - type: entity
   id: ClothingBeltArcadia
   name: arcadia belt
-  parent: [ NFClothingBeltStorageBase ] # Wayfarer: Removecontraband
+  parent: [ CSClothingBeltStorageHolsterBase ] # Wayfarer: Removecontraband # Coyote: NFClothingBeltStorageBase<CSClothingBeltStorageHolsterBase
   description: A belt created by Arcadia Industries. Seems very capable of fitting many items.
   components:
   - type: Sprite
@@ -63,7 +63,7 @@
   - type: Appearance
 
 - type: entity
-  parent: NFClothingBeltStorageBase
+  parent: CSClothingBeltStorageHolsterBase # Coyote: NFClothingBeltStorageBase<CSClothingBeltStorageHolsterBase
   id: ClothingBeltPilot
   name: pilot webbing
   description: A webbing designed for someone seating a lot.

@@ -9,4 +9,8 @@ public sealed partial class NFAdventureRuleComponent : Component
     public List<EntityUid> RequiredPois = new();
     public List<EntityUid> OptionalPois = new();
     public List<EntityUid> UniquePois = new();
+
+    // Wayfarer: mooring point stations
+    public List<EntityUid> MooringPoints = new();
+    // End Wayfarer
 }

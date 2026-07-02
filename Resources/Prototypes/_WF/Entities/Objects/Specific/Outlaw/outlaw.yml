@@ -23,6 +23,23 @@
   - type: Currency
     price:
       Doubloon: 1
+  # shit to make it work with data terminal, genuine yamlmaxxing
+  - type: Tag
+    tags:
+    - DataChit
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OutlawData: 1
+
+- type: material # This is so unbelievably scuffed what the fuck was I thinking
+  id: OutlawData
+  stackEntity: Doubloon1
+  name: materials-data
+  unit: materials-unit-chits
+  icon: { sprite: _Mono/Objects/Specific/Rogue/rogue_chits.rsi, state: chits }
+  color: "#C0C0C0"
+  price: 1
 
 - type: entity
   parent: Doubloon
@@ -30,6 +47,7 @@
   suffix: 1 DC
   components:
   - type: Stack
+    stackType: Doubloon
     count: 1
 
 - type: entity
@@ -106,7 +124,7 @@
     falloff: 30
 
 - type: entity
-  id: PirateUplinkSpriteKiara # Its her favorite color and she requested it for gcp. I think its funny to call it a pirate uplink
+  id: PirateUplinkSpriteOrange
   abstract: true
   components:
   - type: Sprite
@@ -114,7 +132,7 @@
     layers:
     - state: icon
       scale: 0.7, 0.7
-    - state: icon-overlay-kiara
+    - state: icon-overlay-orange
       scale: 0.7, 0.7
       shader: unshaded
   - type: PointLight
@@ -243,9 +261,9 @@
   suffix: Red, DEBUG
 
 - type: entity
-  parent: [PirateUplinkSpriteKiara, PirateUplinkAmountDebug, BasePirateUplink]
-  id: PirateUplinkKiaraDebug
-  suffix: Kiara, DEBUG
+  parent: [PirateUplinkSpriteOrange, PirateUplinkAmountDebug, BasePirateUplink]
+  id: PirateUplinkOrangeDebug
+  suffix: Orange, DEBUG
 
 - type: entity
   parent: [PirateUplinkSpriteGreen, PirateUplinkAmountDebug, BasePirateUplink]
@@ -279,9 +297,9 @@
   categories: [ HideSpawnMenu ]
 
 - type: entity
-  parent: [PirateUplinkSpriteKiara, PirateUplinkAmount50, BasePirateUplink]
-  id: PirateUplinkKiara50
-  suffix: Kiara, 50 DC
+  parent: [PirateUplinkSpriteOrange, PirateUplinkAmount50, BasePirateUplink]
+  id: PirateUplinkOrange50
+  suffix: Orange, 50 DC
   categories: [ HideSpawnMenu ]
 
 - type: entity
@@ -321,9 +339,9 @@
   categories: [ HideSpawnMenu ]
 
 - type: entity
-  parent: [PirateUplinkSpriteKiara, PirateUplinkAmount20, BasePirateUplink]
-  id: PirateUplinkKiara20
-  suffix: Kiara, 20 DC
+  parent: [PirateUplinkSpriteOrange, PirateUplinkAmount20, BasePirateUplink]
+  id: PirateUplinkOrange20
+  suffix: Orange, 20 DC
   categories: [ HideSpawnMenu ]
 
 - type: entity

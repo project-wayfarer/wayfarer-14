@@ -32,6 +32,7 @@
   - ShipyardChisel # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardComet # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCopperhead # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardCopperskree
   - ShipyardCourier # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCrescent # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardCrossroads # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
@@ -127,6 +128,7 @@
   - ShipyardDagger
   - ShipyardLooter
   - ShipyardBocaskreeo
+  - ShipyardVeliola
 
 - type: guideEntry
   id: ScrapShipyard
@@ -238,6 +240,11 @@
   text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Bocaskreeo.xml"
 
 - type: guideEntry
+  id: ShipyardCopperskree
+  name: guide-entry-shipyard-copperskree
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Copperskree.xml"
+
+- type: guideEntry
   id: ShipyardMedivac
   name: guide-entry-shipyard-medivac
   text: "/ServerInfo/_WF/Guidebook/Shipyard/MedShipyard/Medivac.xml"
@@ -301,3 +308,8 @@
   id: ShipyardKobold
   name: guide-entry-shipyard-kobold
   text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Kobold.xml"
+
+- type: guideEntry
+  id: ShipyardVeliola
+  name: guide-entry-shipyard-veliola
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Veliola.xml"

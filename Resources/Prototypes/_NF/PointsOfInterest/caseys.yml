@@ -8,29 +8,29 @@
 
 # Notes:
 # Down at your local saloon
-- type: pointOfInterest
-  id: CaseysCasino
-  parent: BasePOI
-  name: "Crazy Casey's Casino"
-  minimumDistance: 3250
-  maximumDistance: 5600
-  gridPath: /Maps/_NF/POI/caseyscasino.yml
-  addComponents:
-  - type: StationTransit
-    routes:
-      MinorPointsOfInterest: 20
-
-- type: gameMap
-  id: CaseysCasino
-  mapName: "Crazy Casey's Casino"
-  mapPath: /Maps/_NF/POI/caseyscasino.yml
-  minPlayers: 0
-  stations:
-    CaseysCasino:
-      stationProto: DeadDropFrontierOutpost
-      gridComponents:
-      - type: VesselInfo # WF
-        description: "The only sure thing about luck is that it will change."
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Crazy Casey's Casino"
+#- type: pointOfInterest
+#  id: CaseysCasino
+#  parent: BasePOI
+#  name: "Crazy Casey's Casino"
+#  minimumDistance: 3250
+#  maximumDistance: 5600
+#  gridPath: /Maps/_NF/POI/caseyscasino.yml
+#  addComponents:
+#  - type: StationTransit
+#    routes:
+#      MinorPointsOfInterest: 20
+#
+#- type: gameMap
+#  id: CaseysCasino
+#  mapName: "Crazy Casey's Casino"
+#  mapPath: /Maps/_NF/POI/caseyscasino.yml
+#  minPlayers: 0
+#  stations:
+#    CaseysCasino:
+#      stationProto: DeadDropFrontierOutpost
+#      gridComponents:
+#      - type: VesselInfo # WF
+#        description: "The only sure thing about luck is that it will change."
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: "Crazy Casey's Casino"

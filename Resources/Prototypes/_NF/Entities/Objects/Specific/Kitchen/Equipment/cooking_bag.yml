@@ -2,10 +2,17 @@
   name: cooking bag
   id: NFCookingBag
   parent: NFBaseClothingBeltStorageBag
-  description: A bag for Cheffs to Keep their food off the floor.
+  description: A bag for storing foods, beverages, dishes and utensils. Self-cooled, too! # Wayfarer: Changed desc
   components:
   - type: Sprite
-    sprite: _NF/Objects/Specific/Kitchen/Equipment/cooking_bag.rsi
+    sprite: _WF/Objects/Specific/Kitchen/Equipment/cooking_bag.rsi # Wayfarer: _NF < _WF
+    # Wayfarer Start
+    layers:
+    - state: icon
+    - state: icon-on
+      visible: false
+      map: [ "enum.ToggleableVisuals.Layer" ]
+    # End Wayfarer
   - type: Item
     size: Ginormous
   - type: Clothing
@@ -21,6 +28,11 @@
     whitelist:
       components:
         - Food
+        # Wayfarer: Food doesn't work anymore for these things. Edible component is the way to go.
+        - Edible # Wayfarer
+        - Drink # Wayfarer
+        - NFCookware # Wayfarer
+        - Utensil # Wayfarer
       tags:
         - Ingredient
     blacklist:
@@ -30,3 +42,27 @@
         - Seed
   - type: AntiRottingContainer
   - type: Dumpable
+  # Wayfarer Start: Magnet
+  - type: MagnetPickup
+    magnetEnabled: false
+    magnetCanBeEnabled: false
+  - type: ItemToggle
+    soundActivate: &soundActivate
+      collection: sparks
+      params:
+        variation: 0.25
+    soundDeactivate: *soundActivate
+    onUse: false
+    onAltUse: true
+    onActivate: false
+  - type: ItemToggleExamine
+    on: item-toggle-examine-magnet-on
+    off: item-toggle-examine-magnet-off
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: True }
+          False: { visible: False }
+  # End Wayfarer

@@ -1,0 +1,15 @@
+- type: hitscan
+  id: WFHitscanPistolLaser
+  damage:
+    types:
+      Heat: 6
+  muzzleFlash: &lightMuzzleFlash
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_laser
+  travelFlash: &lightTravelFlash
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam
+  impactFlash: &lightImpactFlash
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_laser
+  maxLength: 21

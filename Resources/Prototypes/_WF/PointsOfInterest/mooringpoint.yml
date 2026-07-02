@@ -1,0 +1,29 @@
+- type: pointOfInterest
+  id: MooringPoint
+  parent: BasePOI
+  name: "Mooring Point"
+  minimumDistance: 2500
+  maximumDistance: 10000
+  spawnGroup: MooringPoint
+  gridPath: /Maps/_WF/POI/mooringpoint.yml
+  addComponents:
+  - type: ProtectedGrid
+    preventArtifactTriggers: true
+  - type: SolarPoweredGrid
+    trackOnInit: true
+    doNotCull: true
+
+- type: gameMap
+  id: MooringPoint
+  mapName: "Mooring Point"
+  mapPath: /Maps/_WF/POI/mooringpoint.yml
+  minPlayers: 0
+  stations:
+    MooringPoint:
+      stationProto: DeadDropFrontierOutpost
+      gridComponents:
+      - type: VesselInfo
+        description: "Respite, far away."
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Mooring Point"

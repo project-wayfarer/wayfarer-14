@@ -37,7 +37,7 @@
   - type: CombatMode
     toggleMouseRotator: false
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic # Wayfarer: Inorganic<StructuralInorganic
   - type: Destructible
     thresholds:
       - trigger:
@@ -65,13 +65,19 @@
     rootTask:
       task: N14TurretCompound # Wayfarer: TurretCompount<N14TurretCompound
     blackboard:
+      # Wayfarer: Increase Turret Range
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        20
+      # End Wayfarer
       RotateSpeed: !type:Single
-        3.141
+        1.57 # Mono: 3.141<1.57
       SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
   - type: MouseRotator
     angleTolerance: 5
-    rotationSpeed: 180
+    rotationSpeed: 90 # Mono: 180<90
     simple4DirMode: false
   - type: NoRotateOnInteract
   - type: NoRotateOnMove

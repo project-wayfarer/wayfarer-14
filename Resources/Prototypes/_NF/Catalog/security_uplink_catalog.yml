@@ -812,21 +812,21 @@
 #        tags:
 #          - SecurityUplink
 
-- type: listing
-  id: UplinkSecurityArmingSword
-  name:  uplink-security-armingsword-name
-  description: uplink-security-armingsword-desc
-  productEntity: PlasteelArmingSword
-  icon: { sprite: _NF/Objects/Weapons/Melee/armingsword.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 2
-  categories:
-    - UplinkSecurityWeapons
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
+#- type: listing # Wayfarer: Moved to Lathe
+#  id: UplinkSecurityArmingSword
+#  name:  uplink-security-armingsword-name
+#  description: uplink-security-armingsword-desc
+#  productEntity: PlasteelArmingSword
+#  icon: { sprite: _NF/Objects/Weapons/Melee/armingsword.rsi, state: icon }
+#  cost:
+#    FrontierUplinkCoin: 2
+#  categories:
+#    - UplinkSecurityWeapons
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
 
 - type: listing
   id: UplinkSecurityCaptainSword

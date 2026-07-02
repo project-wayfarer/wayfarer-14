@@ -19,7 +19,7 @@ namespace Content.Server._NF.GameRule;
 /// <summary>
 /// This handles the dungeon and trading post spawning, as well as round end capitalism summary
 /// </summary>
-public sealed class PointOfInterestSystem : EntitySystem
+public sealed partial class PointOfInterestSystem : EntitySystem // Wayfarer: Add Partial
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;

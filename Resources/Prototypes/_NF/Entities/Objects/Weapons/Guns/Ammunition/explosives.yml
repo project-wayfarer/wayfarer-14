@@ -133,9 +133,9 @@
   - type: CartridgeAmmo
     proto: NFBulletGrenadeEMP
   - type: EmpDescription
-    range: 8 #Wayfarer 5<8 # Makes them not useless
+    range: 6 # Wayfarer 8<6
     energyConsumption: 2700000
-    disableDuration: 30 #Wayfarer 10<30
+    disableDuration: 12.5 # Wayfarer 30<12.5
 
 # Cannon Balls
 

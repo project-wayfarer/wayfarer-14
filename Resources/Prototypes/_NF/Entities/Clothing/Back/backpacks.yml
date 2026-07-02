@@ -44,6 +44,8 @@
   components:
   - type: Sprite
     sprite: _WF/Clothing/Back/Backpacks/CGP_brown.rsi # Wayfarer: _NF/Clothing/Back/Backpacks/nfsd_brown.rsi < _WF/Clothing/Back/Backpacks/CGP_brown.rsi
+  - type: ExplosionResistance # Wayfarer: Item protection
+    damageCoefficient: 0.1  # Wayfarer: Item protection
 
 - type: entity
   parent: ClothingBackpackNfsdBrown
