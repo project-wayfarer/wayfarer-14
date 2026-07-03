@@ -225,7 +225,7 @@
   suffix: Frontier
   components:
   - type: PresetIdCard
-    job: NFPirate
+    job: Wayfarer # Wayfarer: NFPirate < Wayfarer
   - type: Sprite
     sprite: _NF/Objects/Misc/id_cards.rsi
     layers:
@@ -241,7 +241,7 @@
   description: Ahoy, see how it glistens!
   components:
   - type: PresetIdCard
-    job: NFPirateCaptain
+    job: Wayfarer # Wayfarer: NFPirateCaptain < Wayfarer
   - type: Sprite
     sprite: _NF/Objects/Misc/id_cards.rsi
     layers:
@@ -254,7 +254,7 @@
   name: pirate first mate ID card
   components:
   - type: PresetIdCard
-    job: NFPirateFirstMate
+    job: # Wayfarer: NFPirateFirstMate < Wayfarer
   - type: Sprite
     sprite: _NF/Objects/Misc/id_cards.rsi
     layers:

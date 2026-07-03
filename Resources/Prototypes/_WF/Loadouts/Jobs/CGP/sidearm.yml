@@ -1,0 +1,21 @@
+- type: loadoutGroup
+  id: WFSidearmCGP
+  name: loadout-group-CGP-sidearm
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - WFSidearmUniversalCGP
+  - WFSidearmFlareGun
+  - WFSidearmLaserPistol
+  - WFSidearmDisabler
+  - WFSidearmSvalinn
+  - WFSidearmRitland45
+  - WFSidearmEnergyRevolver
+
+# Loadouts
+- type: loadout
+  id: WFSidearmUniversalCGP
+  price: 0
+  storage:
+    back:
+    - NFWeaponPistolUniversalNfsd

@@ -955,6 +955,8 @@
         color: "#c2ae98"
       - state: clasp-inhand-right
         color: "#e1af4e"
+  - type: ExplosionResistance # Wayfarer: Item protection
+    damageCoefficient: 0.1  # Wayfarer: Item protection
 
 - type: entity
   parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
@@ -1000,6 +1002,8 @@
         color: "#47603b"
       - state: clasp-inhand-right
         color: "#e1af4e"
+  - type: ExplosionResistance # Wayfarer: Item protection
+    damageCoefficient: 0.1  # Wayfarer: Item protection
 
 #region Security
 - type: entity

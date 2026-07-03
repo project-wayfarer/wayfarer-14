@@ -46,7 +46,7 @@
   parent: [ ShuttleGunBase, ConstructibleMachine]
   name: LSE-400c "Svalinn machine gun"
   description: Basic stationary laser unit. Effective against live targets and electronics. Uses regular power cells to fire, and has an extremely high rate of fire.
-  categories: [ DoNotMap ]
+  # categories: [ DoNotMap ] # Wayfarer: Not anymore.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shuttles/laser.rsi

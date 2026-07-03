@@ -55,3 +55,4 @@ guide-entry-shipyard-swan = Swan
 guide-entry-shipyard-moppet = Moppet
 guide-entry-shipyard-kobold = Kobold
 guide-entry-shipyard-manta = Manta
+guide-entry-shipyard-veliola = Veliola

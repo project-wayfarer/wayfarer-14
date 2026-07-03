@@ -129,6 +129,7 @@
   - ShipyardDagger
   - ShipyardLooter
   - ShipyardBocaskreeo
+  - ShipyardVeliola
 
 - type: guideEntry
   id: ScrapShipyard
@@ -313,3 +314,8 @@
   id: ShipyardKobold
   name: guide-entry-shipyard-kobold
   text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Kobold.xml"
+
+- type: guideEntry
+  id: ShipyardVeliola
+  name: guide-entry-shipyard-veliola
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Veliola.xml"

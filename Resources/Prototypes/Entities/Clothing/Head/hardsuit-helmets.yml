@@ -531,6 +531,8 @@
       - state: equipped-head-vulpkanin
       - state: equipped-head-unshaded-vulpkanin
         shader: unshaded
+  - type: FlashImmunity # Wayfarer
+  - type: EyeProtection # Wayfarer
       # Wayfarer End
   - type: PointLight
     color: "#daffad"
@@ -577,6 +579,10 @@
     sprite: Clothing/Head/Hardsuits/rd.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/rd.rsi
+  # Wayfarer Start
+  - type: FlashImmunity # Wayfarer
+  - type: EyeProtection # Wayfarer
+  # End Wayfarer
   - type: PointLight
     color: "#d6adff"
   - type: PressureProtection

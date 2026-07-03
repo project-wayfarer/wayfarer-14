@@ -8,34 +8,34 @@
 
 # Notes:
 # Down at your local saloon
-- type: pointOfInterest
-  id: Grifty
-  parent: BasePOI
-  name: "Grifty's Gas n Grub"
-  minimumDistance: 3250
-  maximumDistance: 5600
-  spawnGroup: Scrapyard
-  gridPath: /Maps/_NF/POI/grifty.yml
-  addComponents:
-  - type: StationTransit
-    routes:
-      SpawnPoints: 50
-  - type: SolarPoweredGrid
-    trackOnInit: true
-    doNotCull: true
-
-- type: gameMap
-  id: Grifty
-  mapName: "Grifty's Gas n Grub"
-  mapPath: /Maps/_NF/POI/grifty.yml
-  minPlayers: 0
-  stations:
-    Grifty:
-      stationProto: DeadDropRecordsFrontierOutpost
-      gridComponents:
-      - type: VesselInfo # WF
-        description: "Life is not a tour of gas stations."
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Grifty's Gas n Grub"
-        - type: BindToStationVariationPassExemption
+#- type: pointOfInterest
+#  id: Grifty
+#  parent: BasePOI
+#  name: "Grifty's Gas n Grub"
+#  minimumDistance: 3250
+#  maximumDistance: 5600
+#  spawnGroup: Scrapyard
+#  gridPath: /Maps/_NF/POI/grifty.yml
+#  addComponents:
+#  - type: StationTransit
+#    routes:
+#      SpawnPoints: 50
+#  - type: SolarPoweredGrid
+#    trackOnInit: true
+#    doNotCull: true
+#
+#- type: gameMap
+#  id: Grifty
+#  mapName: "Grifty's Gas n Grub"
+#  mapPath: /Maps/_NF/POI/grifty.yml
+#  minPlayers: 0
+#  stations:
+#    Grifty:
+#      stationProto: DeadDropRecordsFrontierOutpost
+#      gridComponents:
+#      - type: VesselInfo # WF
+#        description: "Life is not a tour of gas stations."
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: "Grifty's Gas n Grub"
+#        - type: BindToStationVariationPassExemption

@@ -8,33 +8,33 @@
 
 # Notes:
 #
-- type: pointOfInterest
-  id: Courthouse
-  parent: BasePOI
-  name: "Courthouse"
-  minimumDistance: 1150
-  maximumDistance: 2050
-  spawnGroup: Required
-  gridPath: /Maps/_NF/POI/courthouse.yml
-  addComponents:
-  - type: IFF
-    color: "#ae7d57"
-  - type: StationTransit
-    routes:
-      MinorPointsOfInterest: 30
-
-- type: gameMap
-  id: Courthouse
-  mapName: "Courthouse"
-  mapPath: /Maps/_NF/POI/courthouse.yml
-  minPlayers: 0
-  stations:
-    Courthouse:
-      stationProto: StandardFrontierOutpost
-      gridComponents:
-      - type: VesselInfo # WF
-        description: "Fiat justitia ruat caelum." # Let justice be done, though the heavens fall
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Courthouse"
-        - type: StationDeadDropHintExempt
+#- type: pointOfInterest
+#  id: Courthouse
+#  parent: BasePOI
+#  name: "Courthouse"
+#  minimumDistance: 1150
+#  maximumDistance: 2050
+#  spawnGroup: Required
+#  gridPath: /Maps/_NF/POI/courthouse.yml
+#  addComponents:
+#  - type: IFF
+#    color: "#ae7d57"
+#  - type: StationTransit
+#    routes:
+#      MinorPointsOfInterest: 30
+#
+#- type: gameMap
+#  id: Courthouse
+#  mapName: "Courthouse"
+#  mapPath: /Maps/_NF/POI/courthouse.yml
+#  minPlayers: 0
+#  stations:
+#    Courthouse:
+#      stationProto: StandardFrontierOutpost
+#      gridComponents:
+#      - type: VesselInfo # WF
+#        description: "Fiat justitia ruat caelum." # Let justice be done, though the heavens fall
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: "Courthouse"
+#        - type: StationDeadDropHintExempt

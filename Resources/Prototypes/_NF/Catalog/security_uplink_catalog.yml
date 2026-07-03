@@ -812,21 +812,21 @@
 #        tags:
 #          - SecurityUplink
 
-- type: listing
-  id: UplinkSecurityArmingSword
-  name:  uplink-security-armingsword-name
-  description: uplink-security-armingsword-desc
-  productEntity: PlasteelArmingSword
-  icon: { sprite: _NF/Objects/Weapons/Melee/armingsword.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 2
-  categories:
-    - UplinkSecurityWeapons
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
+#- type: listing # Wayfarer: Moved to Lathe
+#  id: UplinkSecurityArmingSword
+#  name:  uplink-security-armingsword-name
+#  description: uplink-security-armingsword-desc
+#  productEntity: PlasteelArmingSword
+#  icon: { sprite: _NF/Objects/Weapons/Melee/armingsword.rsi, state: icon }
+#  cost:
+#    FrontierUplinkCoin: 2
+#  categories:
+#    - UplinkSecurityWeapons
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
 
 - type: listing
   id: UplinkSecurityCaptainSword
@@ -929,11 +929,44 @@
 #        tags:
 #          - SecurityUplink
 
+#- type: listing
+#  id: UplinkSecuritySpeedloader
+#  name:  uplink-security-speedloader-name
+#  description: uplink-security-speedloader-desc
+#  productEntity: NFSpeedLoaderPistol45Overpressure
+#  icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol45/speed_loader.rsi, state: icon-overpressure }
+#  cost:
+#    FrontierUplinkCoin: 1
+#  categories:
+#     - UplinkSecurityAmmo
+#   conditions:
+#     - !type:StoreWhitelistCondition
+#       whitelist:
+#         tags:
+#           - SecurityUplink
+
+# - type: listing
+#   id: UplinkSecuritySpeedloaderRubber
+#   name:  uplink-security-speedloaderrubber-name
+#   description: uplink-security-speedloaderrubber-desc
+#   productEntity: NFSpeedLoaderPistol45Rubber
+#   icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol45/speed_loader.rsi, state: icon-rubber }
+#   cost:
+#     FrontierUplinkCoin: 1
+#   categories:
+#     - UplinkSecurityAmmo
+#   conditions:
+#     - !type:StoreWhitelistCondition
+#       whitelist:
+#         tags:
+#           - SecurityUplink
+
+# Start Wayfarer
 - type: listing
-  id: UplinkSecuritySpeedloader
-  name:  uplink-security-speedloader-name
-  description: uplink-security-speedloader-desc
-  productEntity: NFSpeedLoaderPistol45Overpressure
+  id: UplinkSecuritySpeedloaderBox
+  name:  uplink-security-speedloaderbox-name
+  description: uplink-security-speedloaderbox-desc
+  productEntity: NFBoxMagazineSpeedLoaderPistol45Overpressure
   icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol45/speed_loader.rsi, state: icon-overpressure }
   cost:
     FrontierUplinkCoin: 1
@@ -946,10 +979,10 @@
           - SecurityUplink
 
 - type: listing
-  id: UplinkSecuritySpeedloaderRubber
-  name:  uplink-security-speedloaderrubber-name
-  description: uplink-security-speedloaderrubber-desc
-  productEntity: NFSpeedLoaderPistol45Rubber
+  id: UplinkSecuritySpeedloaderRubberBox
+  name:  uplink-security-speedloaderrubberbox-name
+  description: uplink-security-speedloaderrubberbox-desc
+  productEntity: NFBoxMagazineSpeedLoaderPistol45Rubber
   icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol45/speed_loader.rsi, state: icon-rubber }
   cost:
     FrontierUplinkCoin: 1
@@ -960,6 +993,7 @@
       whitelist:
         tags:
           - SecurityUplink
+# end Wayferer
 
 - type: listing
   id: UplinkSecurityShotLethal

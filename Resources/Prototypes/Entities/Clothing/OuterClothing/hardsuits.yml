@@ -31,8 +31,8 @@
         Heat: 0.8
         Radiation: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.8 # Wayfarer: 0.7 < 0.8
+    sprintModifier: 0.8 # Wayfarer: 0.7 < 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmos
@@ -68,8 +68,8 @@
         Caustic: 0.5
         Radiation: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.8 # Wayfarer: 0.7 < 0.8
+    sprintModifier: 0.8 # Wayfarer: 0.7 < 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineering
@@ -366,6 +366,9 @@
     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+  # Wayfarer Start
+  - type: Insulated # Wayfarer: Make it a little more special.
+  # End Wayfarer
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -383,8 +386,8 @@
         Radiation: 0.05 # Frontier - 0<0.05
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.85 # Wayfarer: 0.8 < 0.85
+    sprintModifier: 0.85 # Wayfarer: 0.8 < 0.85
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
@@ -458,8 +461,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.8 # Wayfarer: 0.75 < 0.8
+    sprintModifier: 0.8 # Wayfarer: 0.75 < 0.8
   - type: HeldSpeedModifier
   - type: Item
     size: Huge

@@ -85,20 +85,20 @@
 - type: entity
   parent: BaseSecurityUplinkRadio
   id: BaseSecurityUplinkRadioSheriff
-  suffix: 20 FUC, Sheriff
+  suffix: 30 FUC, Sheriff # Wayfarer 20 FUC, Sheriff < 30 FUC, Sheriff
   components:
   - type: Store
     balance:
-      FrontierUplinkCoin: 20
+      FrontierUplinkCoin: 30 # Wayfarer 20 < 30
 
 - type: entity
   parent: BaseSecurityUplinkRadio
   id: BaseSecurityUplinkRadioOfficer
-  suffix: 15 FUC, Officer
+  suffix: 20 FUC, Officer # Wayfarer 15 FUC, Officer < 20 FUC, Officer
   components:
   - type: Store
     balance:
-      FrontierUplinkCoin: 15
+      FrontierUplinkCoin: 20 # Wayfarer 15 < 20
 
 - type: entity
   name: CGP deployable barrier

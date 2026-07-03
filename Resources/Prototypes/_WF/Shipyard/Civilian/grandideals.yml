@@ -25,7 +25,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Grand Ideals Civ{1}'
+        mapNameTemplate: 'Grand Ideals {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
