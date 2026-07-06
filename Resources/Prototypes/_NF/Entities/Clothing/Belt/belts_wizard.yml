@@ -1,6 +1,6 @@
 - type: entity
   id: ClothingBeltWizardBlue
-  parent: [ ClothingBeltStorageBase, RecyclableItemClothBasic, BaseC3WizardContraband, ContrabandClothing ]
+  parent: [ ClothingBeltStorageBase, RecyclableItemClothBasic ] # Wayfarer: Removed BaseC3WizardContraband, ContrabandClothing
   name: blue wizard sash
   description: A magical sash without visible pockets yet capable of storing items.
   components:

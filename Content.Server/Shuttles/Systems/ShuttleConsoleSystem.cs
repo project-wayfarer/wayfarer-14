@@ -435,6 +435,9 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, GetNetCoordinates(coordinates), angle, docks, InertiaDampeningMode.Dampen, ServiceFlags.None, null, NetEntity.Invalid, true); // Frontier: add inertial dampening, target
 
         var autopilotState = WfGetAutopilotState(entity); // Wayfarer
+        var target = TryGetNetEntity(entity.Comp1.TargetEntity, out var targetEntity)
+            ? targetEntity.Value
+            : NetEntity.Invalid;
 
         return new NavInterfaceState(
             entity.Comp1.MaxRange,
@@ -444,7 +447,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             _shuttle.NfGetInertiaDampeningMode(entity), // Frontier
             _shuttle.NfGetServiceFlags(entity), // Frontier
             entity.Comp1.Target, // Frontier
-            GetNetEntity(entity.Comp1.TargetEntity), // Frontier
+            target, // Frontier
             entity.Comp1.HideTarget, // Frontier
             autopilotState.Enabled, // Wayfarer
             autopilotState.HasServer); // Wayfarer

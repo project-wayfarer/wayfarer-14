@@ -16,6 +16,12 @@
             HorizontalAlignment="Stretch"
             MinHeight="100"/>
 
+        <!-- Wayfarer: character counter -->
+        <Label Name="CharacterCount"
+            HorizontalAlignment="Right"
+            StyleClasses="LabelSecondaryColor"/>
+        <!-- End Wayfarer -->
+
         <!-- ButtonsPart -->
         <BoxContainer Orientation="Vertical"
             VerticalAlignment="Bottom"

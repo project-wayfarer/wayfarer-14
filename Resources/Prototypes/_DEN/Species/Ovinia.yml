@@ -1,0 +1,181 @@
+- type: species
+  id: Ovinia
+  name: species-name-ovinia
+  roundStart: true
+  prototype: MobOvinia
+  sprites: MobOviniaSprites
+  defaultSkinTone: "#ffffff"
+  markingLimits: MobOviniaMarkingLimits
+  dollPrototype: MobOviniaDummy
+  skinColoration: Hues
+  maleFirstNames: NamesFirstMale
+  femaleFirstNames: NamesFirstFemale
+  lastNames: NamesLast
+  minHeight: 0.6 # Wayfarer: 0.8<0.6
+  maxHeight: 1.1 # Wayfarer: 1.05<1.1
+
+- type: speciesBaseSprites
+  id: MobOviniaSprites
+  sprites:
+    Special: MobHumanoidAnyMarking # Wayfarer
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Head: MobOviniaHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
+    Chest: MobOviniaTorso
+    Eyes: MobHumanoidEyes
+    LArm: MobOviniaLArm
+    RArm: MobOviniaRArm
+    LHand: MobOviniaLHand
+    RHand: MobOviniaRHand
+    LLeg: MobOviniaLLeg
+    RLeg: MobOviniaRLeg
+    LFoot: MobOviniaLFoot
+    RFoot: MobOviniaRFoot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer: Adds Wing Slot
+
+- type: markingPoints
+  id: MobOviniaMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 2<32
+      required: true
+      defaultMarkings: [ OviniaEars ]
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer 1<32
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 4<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    UndergarmentTop:
+      points: 32 # Wayfarer
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobOviniaHead
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobOviniaHeadMale
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobOviniaHeadFemale
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobOviniaTorso
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobOviniaTorsoMale
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobOviniaTorsoFemale
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobOviniaLLeg
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobOviniaLHand
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobOviniaLArm
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobOviniaLFoot
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobOviniaRLeg
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobOviniaRHand
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobOviniaRArm
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobOviniaRFoot
+  baseSprite:
+    sprite: _DEN/Mobs/Species/Ovinia/parts.rsi
+    state: r_foot

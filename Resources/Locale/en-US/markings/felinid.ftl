@@ -3,6 +3,10 @@ marking-FelinidEarsBasic = [ Felinid ] Basic Ears
 marking-FelinidEarsBasic-basic_outer = [ Felinid ] Outer Ear
 marking-FelinidEarsBasic-basic_inner = [ Felinid ] Inner Ear
 
+marking-FelinidEarsDefault = [ Felinid ] Default Ears
+marking-FelinidEarsDefault-basic_outer = [ Felinid ] Outer Ear
+marking-FelinidEarsDefault-basic_inner = [ Felinid ] Inner Ear
+
 marking-FelinidEarsCurled = [ Felinid ] Curled Ears
 marking-FelinidEarsCurled-curled_outer = [ Felinid ] Outer Ear
 marking-FelinidEarsCurled-curled_inner = [ Felinid ] Inner Ear
@@ -36,6 +40,11 @@ marking-FelinidTailBasic = [ Felinid ] Basic Tail
 marking-FelinidTailBasic-basic_tail_tip = [ Felinid ] Tail Tip
 marking-FelinidTailBasic-basic_tail_stripes_even = [ Felinid ] Tail Stripes, Even
 marking-FelinidTailBasic-basic_tail_stripes_odd = [ Felinid ] Tail Stripes, Odd
+
+marking-FelinidTailDefault = [ Felinid ] Default Tail
+marking-FelinidTailDefault-basic_tail_tip = [ Felinid ] Tail Tip
+marking-FelinidTailDefault-basic_tail_stripes_even = [ Felinid ] Tail Stripes, Even
+marking-FelinidTailDefault-basic_tail_stripes_odd = [ Felinid ] Tail Stripes, Odd
 
 marking-FelinidTailBasicWithBow = [ Felinid ] Basic Tail with Bow
 marking-FelinidTailBasicWithBow-basic_tail_tip = [ Felinid ] Tail Tip

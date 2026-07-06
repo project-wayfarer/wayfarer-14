@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2025 Avalon
+# SPDX-FileCopyrightText: 2025 Junerisms
+# SPDX-FileCopyrightText: 2025 Redrover1760
+#
+# SPDX-License-Identifier: MPL-2.0
+
+- type: vessel
+  id: Hermes
+  parent: BaseVessel
+  name: TPC Hermes # Wayfarer, name correction
+  description: The mailing segment of the combined service ship, designed for speed above all. This one is designed and produced by The Pantheon Collective.
+  price: 37500
+  category: Small
+  group: Sr
+  access: Mail
+  shuttlePath: /Maps/_Mono/Shuttles/hermes.yml
+  guidebookPage: Null
+  class:
+  - Cargo
+  engine:
+  - Uranium # Wayfarer
+
+- type: gameMap
+  id: Hermes
+  mapName: 'TPC Hermes'
+  mapPath: /Maps/_Mono/Shuttles/hermes.yml
+  minPlayers: 0
+  stations:
+    Hermes:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hermes SRV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}

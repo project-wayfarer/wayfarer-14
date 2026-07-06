@@ -80,7 +80,7 @@
 - type: entity
   id: NFShellShotgunUranium
   name: shell (.50 uranium)
-  parent: NFBaseShellShotgun
+  parent: [NFBaseShellShotgun, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: Sprite
     layers:

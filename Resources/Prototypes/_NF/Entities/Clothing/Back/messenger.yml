@@ -87,7 +87,7 @@
         color: "#f6d56a"
 
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerSr
   name: station representative's messenger bag
   description: An exclusive messenger bag for station representatives. # Wayfarer: remove nanotrasen mention in description
@@ -701,9 +701,9 @@
 
 - type: entity
   parent:
-  - BaseC3CultContrabandUnredeemable
+  #- BaseC3CultContrabandUnredeemable # Wayfarer
   - ClothingBackpackMessengerContractor
-  - ContrabandClothing
+  #- ContrabandClothing # Wayfarer
   id: ClothingBackpackMessengerBloodCult
   name: cultist messenger bag
   description: A watertight messenger bag for loyal Nar'Sie followers.
@@ -795,9 +795,9 @@
 
 - type: entity
   parent:
-  - BaseC3WizardContrabandUnredeemable
+  #- BaseC3WizardContrabandUnredeemable # Wayfarer
   - ClothingBackpackMessengerContractor
-  - ContrabandClothing
+  #- ContrabandClothing # Wayfarer
   id: ClothingBackpackMessengerWizardBlue
   name: blue wizard messenger bag
   description: A stylish messenger bag fit for a blue wizard.
@@ -912,7 +912,7 @@
 
 #region CGP
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerNfsdBrown
   name: CGP messenger bag
   components:
@@ -920,44 +920,46 @@
     sprite: _NF/Clothing/Back/Messenger/color.rsi
     layers:
     - state: icon-base
-      color: "#63492a"
+      color: "#373737" # Wayfarer 63492a < 373737
     - state: icon-base-top
-      color: "#c2ae98"
+      color: "#b6b6b6" # Wayfarer c2ae98 < b6b6b6
     - state: icon-sling
-      color: "#47603b"
+      color: "#cf7332" # Wayfarer 47603b < cf7332
     - state: icon-clasp
-      color: "#e1af4e"
+      color: "#f2b833" # Wayfarer e1af4e < fcba03
   - type: Clothing
     sprite: _NF/Clothing/Back/Messenger/color.rsi
     clothingVisuals:
       back:
       - state: base-equipped-BACKPACK
-        color: "#63492a"
+        color: "#373737" # Wayfarer 63492a < 373737
       - state: base-top-equipped-BACKPACK
-        color: "#c2ae98"
+        color: "#b6b6b6" # Wayfarer c2ae98 < b6b6b6
       - state: sling-equipped-BACKPACK
-        color: "#47603b"
+        color: "#cf7332" # Wayfarer 47603b < cf7332
       - state: clasp-equipped-BACKPACK
-        color: "#e1af4e"
+        color: "#f2b833" # Wayfarer e1af4e < fcba03
   - type: Item
     inhandVisuals:
       left:
       - state: base-inhand-left
-        color: "#63492a"
+        color: "#373737" # Wayfarer 63492a < 373737
       - state: base-top-inhand-left
-        color: "#c2ae98"
+        color: "#b6b6b6" # Wayfarer c2ae98 < b6b6b6
       - state: clasp-inhand-left
-        color: "#e1af4e"
+        color: "#f2b833" # Wayfarer e1af4e < fcba03
       right:
       - state: base-inhand-right
-        color: "#63492a"
+        color: "#373737" # Wayfarer 63492a < 373737
       - state: base-top-inhand-right
-        color: "#c2ae98"
+        color: "#b6b6b6" # Wayfarer c2ae98 < b6b6b6
       - state: clasp-inhand-right
-        color: "#e1af4e"
+        color: "#f2b833" # Wayfarer e1af4e < fcba03
+  - type: ExplosionResistance # Wayfarer: Item protection
+    damageCoefficient: 0.1  # Wayfarer: Item protection
 
 - type: entity
-  parent: ClothingBackpackMessengerContractor
+  parent: [ClothingBackpackMessengerContractor, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackMessengerNfsdCream
   name: CGP messenger bag
   components:
@@ -965,41 +967,43 @@
     sprite: _NF/Clothing/Back/Messenger/color.rsi
     layers:
     - state: icon-base
-      color: "#c2ae98"
+      color: "#373737" # Wayfarer c2ae98 < 373737
     - state: icon-decor
-      color: "#47603b"
+      color: "#b6b6b6" # Wayfarer 47603b < b6b6b6
     - state: icon-sling
-      color: "#47603b"
+      color: "#cf7332" # Wayfarer 47603b < cf7332
     - state: icon-clasp
-      color: "#e1af4e"
+      color: "#f2b833" # Wayfarer e1af4e < fcba03
   - type: Clothing
     sprite: _NF/Clothing/Back/Messenger/color.rsi
     clothingVisuals:
       back:
       - state: base-equipped-BACKPACK
-        color: "#c2ae98"
+        color: "#373737" # Wayfarer c2ae98 < 373737
       - state: decor-equipped-BACKPACK
-        color: "#47603b"
+        color: "#b6b6b6" # Wayfarer 47603b < b6b6b6
       - state: sling-equipped-BACKPACK
-        color: "#47603b"
+        color: "#cf7332" # Wayfarer 47603b < cf7332
       - state: clasp-equipped-BACKPACK
-        color: "#e1af4e"
+        color: "#f2b833" # Wayfarer e1af4e < fcba03
   - type: Item
     inhandVisuals:
       left:
       - state: base-inhand-left
-        color: "#c2ae98"
+        color: "#373737" # Wayfarer c2ae98 < 373737
       - state: decor-inhand-left
-        color: "#47603b"
+        color: "#b6b6b6" # Wayfarer 47603b < b6b6b6
       - state: clasp-inhand-left
-        color: "#e1af4e"
+        color: "#f2b833" # Wayfarer e1af4e < fcba03
       right:
       - state: base-inhand-right
-        color: "#c2ae98"
+        color: "#373737" # Wayfarer c2ae98 < 373737
       - state: decor-inhand-right
-        color: "#47603b"
+        color: "#b6b6b6" # Wayfarer 47603b < b6b6b6
       - state: clasp-inhand-right
-        color: "#e1af4e"
+        color: "#f2b833" # Wayfarer e1af4e < fcba03
+  - type: ExplosionResistance # Wayfarer: Item protection
+    damageCoefficient: 0.1  # Wayfarer: Item protection
 
 #region Security
 - type: entity

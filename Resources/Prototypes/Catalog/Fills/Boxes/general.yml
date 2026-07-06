@@ -4,6 +4,23 @@
   id: BoxCardboard
   description: A cardboard box for storing things.
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/cardboardbox_pickup.ogg
+      params:
+        volume: -3
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/cardboardbox_drop.ogg
+      params:
+        volume: -3
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/cardboardbox_drop.ogg
+      params:
+        volume: -3
+  # Wayfarer End
   - type: Item
     size: Normal # Frontier Large<Normal
     shape:
@@ -255,8 +272,10 @@
     contents:
         - id: NFInflatableWallStack # Frontier: InflatableWallStack<NFInflatableWallStack
           amount: 2
-        - id: NFInflatableDoorStack # Frontier: InflatableDoorStack<NFInflatableDoorStack
-          amount: 2
+        - id: NFInflatableDoorStack5 # Frontier: InflatableDoorStack<NFInflatableDoorStack5
+          amount: 1 # Frontier: 2<1
+        - id: NFInflatableWindowStack # Frontier
+          amount: 1 # Frontier
   - type: Sprite
     layers:
       - state: box

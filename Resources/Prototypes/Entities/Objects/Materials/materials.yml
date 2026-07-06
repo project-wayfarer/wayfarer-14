@@ -345,6 +345,10 @@
     energy: 2.7
     color: "#4faffb"
     slots:
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: MaterialHideBear
+  # End Wayfarer
 
 - type: entity
   parent: MaterialBase
@@ -683,6 +687,10 @@
   - type: Tag
     tags:
     - ToothSpaceCarp
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: CarpTeeth
+  # End Wayfarer
 
 - type: entity
   parent: MaterialToothSpaceCarp
@@ -726,6 +734,10 @@
     tags:
     - Knife
     - ToothSharkminnow
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: CarpTeeth
+  # End Wayfarer
 
 - type: entity
   parent: MaterialToothSharkminnow

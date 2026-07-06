@@ -8,33 +8,33 @@
 
 # Notes:
 # Down at your local saloon
-- type: pointOfInterest
-  id: Tinnia
-  parent: BasePOI
-  name: "Tinnia's Rest"
-  minimumDistance: 1200
-  maximumDistance: 2900
-  spawnGroup: RestStop
-  gridPath: /Maps/_NF/POI/tinnia.yml
-  addComponents:
-  - type: StationTransit
-    routes:
-      MinorPointsOfInterest: 10
-  - type: SolarPoweredGrid
-    trackOnInit: true
-    doNotCull: true
-
-- type: gameMap
-  id: Tinnia
-  mapName: "Tinnia's Rest"
-  mapPath: /Maps/_NF/POI/tinnia.yml
-  minPlayers: 0
-  stations:
-    Tinnia:
-      stationProto: DeadDropFrontierOutpost
-      gridComponents:
-      - type: VesselInfo # WF
-        description: "It's five o'clock somewhere."
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Tinnia's Rest"
+#- type: pointOfInterest
+#  id: Tinnia
+#  parent: BasePOI
+#  name: "Tinnia's Rest"
+#  minimumDistance: 1200
+#  maximumDistance: 2900
+#  spawnGroup: RestStop
+#  gridPath: /Maps/_NF/POI/tinnia.yml
+#  addComponents:
+#  - type: StationTransit
+#    routes:
+#      MinorPointsOfInterest: 10
+#  - type: SolarPoweredGrid
+#    trackOnInit: true
+#    doNotCull: true
+#
+#- type: gameMap
+#  id: Tinnia
+#  mapName: "Tinnia's Rest"
+#  mapPath: /Maps/_NF/POI/tinnia.yml
+#  minPlayers: 0
+#  stations:
+#    Tinnia:
+#      stationProto: DeadDropFrontierOutpost
+#      gridComponents:
+#      - type: VesselInfo # WF
+#        description: "It's five o'clock somewhere."
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: "Tinnia's Rest"

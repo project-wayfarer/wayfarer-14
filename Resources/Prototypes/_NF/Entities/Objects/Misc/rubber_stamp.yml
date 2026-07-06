@@ -1,6 +1,6 @@
 - type: entity
   name: station representative's rubber stamp
-  parent: [RubberStampHop, BaseCommandContraband]
+  parent: [RubberStampHop, BaseCGPContraband] # Wayfarer: BaseCommandContraband<BaseCGPContraband
   id: RubberStampSr
   components:
   - type: Stamp
@@ -13,7 +13,7 @@
 
 - type: entity
   name: station traffic controller's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: RubberStampStc
   categories: [ DoNotMap ]
   components:
@@ -27,7 +27,7 @@
 
 - type: entity
   name: commodore's rubber stamp
-  parent: [RubberStampBase, BaseCommandContraband]
+  parent: [RubberStampBase, BaseCGPContraband] # Wayfarer: BaseCommandContraband<BaseCGPContraband
   id: RubberStampSheriff
   categories: [ DoNotMap ]
   components:
@@ -68,7 +68,7 @@
 
 - type: entity
   name: internal affairs agent's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: RubberStampPal
   categories: [ DoNotMap ]
   components:
@@ -82,7 +82,7 @@
 
 - type: entity
   name: director of care's rubber stamp
-  parent: [RubberStampBase, BaseCommandContraband]
+  parent: [RubberStampBase, BaseCGPContraband] # Wayfarer: BaseCommandContraband<BaseCGPContraband
   id: RubberStampDoc
   categories: [ DoNotMap ]
   components:
@@ -96,7 +96,7 @@
 
 - type: entity
   name: master at arms's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: RubberStampBailiff
   categories: [ DoNotMap ]
   components:

@@ -108,8 +108,6 @@
     fiberMaterial: fibers-durathread
     fiberColor: fibers-regal-blue
   - type: FingerprintMask
-  - type: PirateBountyItem # Frontier
-    id: ClothingHandsGlovesCaptain # Frontier
 
 - type: entity
   parent: ClothingHandsBase
@@ -641,6 +639,7 @@
   parent: ClothingHandsKnuckleDusters
   id: ClothingHandsKnuckleBoneCrushers
   name: bone crushers
+  suffix: Admeme # Frontier
   description: "Blessed by the Gods to break all those who don't obey."
   components:
   - type: Sprite

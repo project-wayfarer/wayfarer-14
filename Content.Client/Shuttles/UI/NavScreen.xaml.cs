@@ -34,6 +34,8 @@ public sealed partial class NavScreen : BoxContainer
         DockToggle.OnToggled += OnDockTogglePressed;
         DockToggle.Pressed = NavRadar.ShowDocks;
 
+        NavRadarSettingsButton.OnPressed += OnNavRadarSettingsPressed;
+
         NfInitialize(); // Frontier Initialization for the NavScreen
         WfInitialize(); // Wayfarer Initialization for the NavScreen
     }
@@ -81,6 +83,12 @@ public sealed partial class NavScreen : BoxContainer
     {
         NavRadar.ShowDocks ^= true;
         args.Button.Pressed = NavRadar.ShowDocks;
+    }
+
+    private void OnNavRadarSettingsPressed(BaseButton.ButtonEventArgs args)
+    {
+        var settingsWindow = new NavRadarSettingsWindow();
+        settingsWindow.OpenCentered();
     }
 
     public void UpdateState(NavInterfaceState scc)

@@ -1,7 +1,7 @@
 - type: accessLevel
   id: Sergeant
   name: id-card-access-level-sergeant
-  
+
 - type: accessLevel
   id: Bailiff
   name: id-card-access-level-bailiff
@@ -17,13 +17,13 @@
   - External
   - Security
   - Brig
-  
+
 - type: accessGroup
   id: GeneralNfsdAccess
   tags:
   - Maintenance
   - External
-  - Command
+  # - Command # Wayfarer: Removed, command access is for heads of departments.
   - Brig
   - Security
   - Mercenary

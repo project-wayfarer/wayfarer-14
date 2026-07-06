@@ -31,7 +31,7 @@
       state: helmet
 
 - type: entity
-  parent: ClothingEyesGlassesSecurity
+  parent: [ClothingEyesGlassesSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingEyesGlassesNfsd
   name: CGP glasses
   description: Upgraded sunglasses that provide flash immunity and a security HUD.

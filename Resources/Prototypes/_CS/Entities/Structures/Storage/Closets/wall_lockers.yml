@@ -1,0 +1,209 @@
+- type: entity
+  abstract: true
+  id: LockerWallFrameBase
+  name: locker frame
+  description: An incomplete storage locker.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: Clickable
+  - type: Tag
+    tags:
+    - Structure
+  - type: Sprite
+    drawdepth: WallMountedItems
+  - type: Transform
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 4
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: WallMount
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      machine_parts: !type:Container
+
+- type: entity
+  id: LockerWallFrame
+  parent: [ LockerWallFrameBase, BaseStructureWallmount ]
+  name: locker frame
+  suffix: Frontier
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Storage/wall_locker_color.rsi
+    layers:
+    - state: base
+    - state: door
+  - type: Construction
+    graph: WallmountStorage
+    node: frame
+
+- type: entity
+  id: LockerWallUpgradableBasic
+  description: A simple lockable shelving unit for organized storage.
+  parent: NFBaseLockerGridInvWallColor
+  name: basic wall locker
+  suffix: Upgradable, Basic
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+      color: "#707070"
+    - state: fillGeneric-0
+      map: ["enum.StorageFillLayers.Fill"]
+    - state: door
+      map: ["enum.StorageVisualLayers.Door"]
+      color: "#909090"
+    - state: door-decal-line-02
+      map: [ decal1 ]
+      color: "#fff4e2"
+    - state: door-decal-null
+      map: [ decal2 ]
+      color: "#fff4e2"
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: StorageFillVisualizer
+    maxFillLevels: 9
+    fillBaseName: fillGeneric
+  - type: Storage
+    grid:
+    - 0,0,5,6
+  - type: Construction
+    graph: WallmountStorage
+    node: locker
+
+- type: entity
+  id: LockerWallUpgradableAdvanced
+  description: An expanded lockable shelving unit for organized storage.
+  parent: LockerWallUpgradableBasic
+  name: expanded wall locker
+  suffix: Upgradable, Advanced
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+      color: "#707070"
+    - state: fillGeneric-0
+      map: ["enum.StorageFillLayers.Fill"]
+    - state: door
+      map: ["enum.StorageVisualLayers.Door"]
+      color: "#909090"
+    - state: door-decal-line-02
+      map: [ decal1 ]
+      color: "#b22c20"
+    - state: door-decal-null
+      map: [ decal2 ]
+      color: "#820a16"
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: StorageFillVisualizer
+    maxFillLevels: 9
+    fillBaseName: fillGeneric
+  - type: Storage
+    grid:
+    - 0,0,5,8
+  - type: Construction
+    graph: WallmountStorage
+    node: lockerAdvanced
+
+- type: entity
+  id: LockerWallUpgradableSuper
+  description: An robust lockable shelving unit for organized storage.
+  parent: LockerWallUpgradableBasic
+  name: deep wall locker
+  suffix: Upgradable, Super
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+      color: "#707070"
+    - state: fillGeneric-0
+      map: ["enum.StorageFillLayers.Fill"]
+    - state: door
+      map: ["enum.StorageVisualLayers.Door"]
+      color: "#909090"
+    - state: door-decal-line-02
+      map: [ decal1 ]
+      color: "#00ff00"
+    - state: door-decal-null
+      map: [ decal2 ]
+      color: "#7dab8c"
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: StorageFillVisualizer
+    maxFillLevels: 9
+    fillBaseName: fillGeneric
+  - type: Storage
+    grid:
+    - 0,0,7,9
+  - type: Construction
+    graph: WallmountStorage
+    node: lockerSuper
+
+- type: entity
+  id: LockerWallUpgradableBluespace
+  description: An otherworldy lockable shelving unit for organized storage. Bigger on the inside.
+  parent: LockerWallUpgradableBasic
+  name: bluespace wall locker
+  suffix: Upgradable, Bluespace
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+      color: "#707070"
+    - state: fillGeneric-0
+      map: ["enum.StorageFillLayers.Fill"]
+    - state: door
+      map: ["enum.StorageVisualLayers.Door"]
+      color: "#909090"
+    - state: door-decal-line-02
+      map: [ decal1 ]
+      color: "#00dfdf"
+    - state: door-decal-null
+      map: [ decal2 ]
+      color: "#006666"
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: StorageFillVisualizer
+    maxFillLevels: 9
+    fillBaseName: fillGeneric
+  - type: Storage
+    grid:
+    - 0,0,11,15
+  - type: Construction
+    graph: WallmountStorage
+    node: lockerBluespace

@@ -32,7 +32,6 @@ construction-graph-tag-sun-glasses = sun glasses
 construction-graph-tag-security-helmet = security helmet
 
 # materials
-construction-graph-tag-manipulator = modular machine part
 construction-graph-tag-voice-trigger = a voice trigger
 construction-graph-tag-signal-trigger = a signal trigger
 construction-graph-tag-proximity-sensor = proximity sensor
@@ -82,6 +81,10 @@ construction-graph-tag-ectoplasm = ectoplasm
 construction-graph-tag-lizard-plushie = lizard plushie
 # Start Wayfarer-14
 construction-graph-tag-candle = a candle
+construction-graph-tag-candle-red = a red candle
+construction-graph-tag-candle-blue = a blue candle
+construction-graph-tag-candle-green = a green candle
+construction-graph-tag-candle-purple = a purple candle
 # End Wayfarer-14
 
 # carpet

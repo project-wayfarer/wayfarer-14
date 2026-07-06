@@ -137,7 +137,7 @@
 - type: entity
   id: NFMagazineRifle30Uranium
   name: magazine (.30 rifle, uranium)
-  parent: NFBaseMagazineRifle30
+  parent: [NFBaseMagazineRifle30, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: BallisticAmmoProvider
     proto: NFCartridgeRifle30Uranium
@@ -285,7 +285,7 @@
 - type: entity
   id: NFMagazineLowCapacityRifle30Uranium
   name: low cap magazine (.30 rifle, uranium)
-  parent: NFBaseMagazineLowCapacityRifle30
+  parent: [NFBaseMagazineLowCapacityRifle30, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: BallisticAmmoProvider
     proto: NFCartridgeRifle30Uranium

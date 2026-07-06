@@ -79,6 +79,28 @@
         amount: 3
 
 - type: entity
+  name: box of SMG (.35 pistol, overpressure) magazines
+  parent: BoxMagazine
+  id: NFBoxMagazinePistolSubMachineGun35Overpressure
+  description: A box full of SMG (.35 pistol, overpressure) magazines.
+  components:
+  - type: StorageFill
+    contents:
+      - id: NFMagazineSubMachineGun35Overpressure
+        amount: 3
+
+- type: entity
+  name: box of top-mounted SMG (.35 pistol, overpressure) magazines
+  parent: BoxMagazine
+  id: NFBoxMagazineTopMountedSubMachineGun35Overpressure
+  description: A box full of top-mounted SMG (.35 pistol, overpressure) magazines.
+  components:
+  - type: StorageFill
+    contents:
+      - id: NFMagazineSubMachineGunTopMounted35Overpressure
+        amount: 3
+
+- type: entity
   name: box of pistol (.35 pistol, overpressure) magazines
   parent: BoxMagazine
   id: NFBoxMagazineHighCapacityPistol35Overpressure
@@ -88,6 +110,7 @@
     contents:
       - id: NFMagazineHighCapacityPistol35Overpressure
         amount: 4
+
 - type: entity
   name: box of WT550 (.35 pistol, overpressure) magazines
   parent: BoxMagazine
@@ -98,3 +121,25 @@
     contents:
       - id: NFMagazineSubMachineGunTopMounted35Overpressure
         amount: 3
+
+- type: entity
+  name: box of pistol (.45 pistol, overpressure) speed loaders
+  parent: BoxMagazine
+  id: NFBoxMagazineSpeedLoaderPistol45Overpressure
+  description: A box full of pistol (.45 pistol, overpressure) speed loaders.
+  components:
+  - type: StorageFill
+    contents:
+      - id: NFSpeedLoaderPistol45Overpressure
+        amount: 8
+
+- type: entity
+  name: box of pistol (.45 pistol, rubber) speed loaders
+  parent: BoxMagazine
+  id: NFBoxMagazineSpeedLoaderPistol45Rubber
+  description: A box full of pistol (.45 pistol, rubber) speed loaders.
+  components:
+  - type: StorageFill
+    contents:
+      - id: NFSpeedLoaderPistol45Rubber
+        amount: 8

@@ -36,5 +36,10 @@ namespace Content.Server.Carrying
         [DataField]
         public float MaxPickupDuration = 6.0f;
         // End Frontier
+
+        // Wayfarer, adds ability to disable the component
+        [DataField]
+        public bool CanPickup = true;
+
     }
 }

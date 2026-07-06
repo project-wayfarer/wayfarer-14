@@ -41,12 +41,20 @@
             <ContainerButton Name="StationAlertLevelButton">
                 <RichTextLabel Name="StationAlertLevelLabel" Access="Public"/>
             </ContainerButton>
+            <!-- Wayfarer: alert reason -->
+            <ContainerButton Name="StationAlertReasonButton">
+                <RichTextLabel Name="StationAlertReasonLabel" Access="Public"/>
+            </ContainerButton>
+            <!-- End Wayfarer -->
             <ContainerButton Name="StationTimeButton">
                 <RichTextLabel Name="StationTimeLabel" Access="Public"/>
             </ContainerButton>
+            <!-- Frontier -->
+            <!-- Wayfarer: Renamed RemainingTimeButton and Label to ShiftEndTimeButton and Label -->
             <ContainerButton Name="ShiftEndTimeButton">
                 <RichTextLabel Name="ShiftEndTimeLabel" Access="Public"/>
             </ContainerButton>
+            <!-- End Frontier -->
             <!-- Begin DeltaV changes -->
             <ContainerButton Name="CurrentDateButton">
                 <RichTextLabel Name="CurrentDateLabel" Access="Public"/>

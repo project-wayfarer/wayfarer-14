@@ -1,0 +1,127 @@
+- type: marking
+  id: synthliz_basic
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_basic
+
+- type: marking
+  id: synthliz_long
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_long
+
+- type: marking
+  id: synthliz_thick
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_thick
+
+- type: marking
+  id: synthliz_thicklong
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_thicklong
+
+- type: marking
+  id: synthliz_under
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_under_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_under_secondary
+
+- type: marking
+  id: synthliz_over
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_over_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_over_secondary
+
+- type: marking
+  id: synthliz_tert
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_tert_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_tert_secondary
+
+- type: marking
+  id: synthliz_tertunder
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_tertunder_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_tertunder_secondary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_tertunder_tertiary
+
+- type: marking
+  id: synthliz_barless_basic
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_basic
+
+- type: marking
+  id: synthliz_barless_under
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_under_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_under_secondary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_under_tertiary
+
+- type: marking
+  id: synthliz_barless_over
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_over_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_over_secondary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_over_tertiary
+
+- type: marking
+  id: synthliz_barless_tert
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_tert_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_tert_tertiary
+
+- type: marking
+  id: synthliz_barless_tertunder
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_tertunder_primary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_tertunder_secondary
+  - sprite: _WF/Mobs/Customization/synthliz.rsi
+    state: m_snout_synthliz_barless_tertunder_tertiary

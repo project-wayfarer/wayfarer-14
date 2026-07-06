@@ -12,7 +12,7 @@ using Content.Server._NF.SectorServices; // Frontier
 
 namespace Content.Server.AlertLevel;
 
-public sealed class AlertLevelSystem : EntitySystem
+public sealed partial class AlertLevelSystem : EntitySystem // Wayfarer: Add Partial
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -38,6 +38,8 @@ public sealed class AlertLevelSystem : EntitySystem
 
         while (query.MoveNext(out var station, out var alert))
         {
+            UpdateAlertReminder(alert, time); // Wayfarer
+
             if (alert.CurrentDelay <= 0)
             {
                 if (alert.ActiveDelay)
@@ -178,7 +180,8 @@ public sealed class AlertLevelSystem : EntitySystem
     /// <param name="force">Force the alert change. This applies if the alert level is not selectable or not.</param>
     /// <param name="locked">Will it be possible to change level by crew.</param>
     public void SetLevel(EntityUid station, string level, bool playSound, bool announce, bool force = false,
-        bool locked = false, MetaDataComponent? dataComponent = null, AlertLevelComponent? component = null)
+        bool locked = false, MetaDataComponent? dataComponent = null, AlertLevelComponent? component = null,
+        string? reason = null) // Wayfarer
     {
         // Frontier: sector-wide alerts
         EntityUid sectorEnt = _sectorService.GetServiceEntity();
@@ -229,6 +232,8 @@ public sealed class AlertLevelSystem : EntitySystem
         // The full announcement to be spat out into chat.
         var announcementFull = Loc.GetString("alert-level-announcement", ("name", name), ("announcement", announcement));
 
+        announcementFull = ApplyAlertReason(component, level, reason, announcementFull); // Wayfarer
+
         var playDefault = false;
         if (playSound)
         {
@@ -250,14 +255,14 @@ public sealed class AlertLevelSystem : EntitySystem
             // Wayfarer: sector-wide alert announcements
             var filter = Filter.Empty();
             filter.AddInMap(_ticker.DefaultMap, EntityManager);
-            
+
             string? senderName = null;
             if (Resolve(station, ref dataComponent, false))
             {
                 senderName = dataComponent.EntityName;
             }
-            
-            _chatSystem.DispatchFilteredAnnouncement(filter, announcementFull, station, 
+
+            _chatSystem.DispatchFilteredAnnouncement(filter, announcementFull, station,
                 sender: senderName, playSound: playDefault, colorOverride: detail.Color);
             // End Wayfarer
         }

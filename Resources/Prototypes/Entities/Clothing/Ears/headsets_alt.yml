@@ -125,7 +125,7 @@
   parent: [ClothingHeadsetAlt] # WF Removed Contraband
   id: ClothingHeadsetAltSyndicate
   name: blood-red over-ear headset
-  description: An updated, modular syndicate intercom that fits over the head and takes encryption keys (there are 5 key slots.).
+  description: An updated, modular syndicate intercom that fits over the head and takes encryption keys. # Wayfarer - More slots, fix description. Removed: (there are 5 key slots.).
   components:
 #  - type: Headset # Frontier: Use 10 from base
 #  - type: EncryptionKeyHolder # Frontier: Use 10 from base
@@ -158,7 +158,7 @@
       sprite: Clothing/Ears/Headsets/freelance.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseC3WizardContraband, ContrabandClothing] # Frontier: BaseMagicalContraband<BaseC3WizardContraband, add ContrabandClothing
+  parent: [ClothingHeadsetAlt] # Frontier: BaseMagicalContraband<BaseC3WizardContraband, add ContrabandClothing # Wayfarer: Removed BaseC3WizardContraband, ContrabandClothing
   id: ClothingHeadsetAltWizard
   name: wizard's over-ear headset
   components:

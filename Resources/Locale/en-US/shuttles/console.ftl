@@ -25,9 +25,20 @@ shuttle-console-exclusion = Exclusion area
 # Buttons
 shuttle-console-strafing = Strafing mode
 shuttle-console-nav-settings = Settings
-shuttle-console-iff-toggle = Show IFF
-shuttle-console-dock-toggle = Show docks
-shuttle-console-iffshuttles-toggle = Show shuttles
+shuttle-console-nav-radar-settings = Nav Radar Settings
+shuttle-console-iff-toggle = IFF
+shuttle-console-dock-toggle = Docks
+shuttle-console-iffshuttles-toggle = Shuttles
+
+# Nav Radar Settings Window
+nav-radar-settings-window-title = Nav Radar Settings
+nav-radar-settings-iff-grouping = IFF Grouping:
+nav-radar-settings-label-font-size = Label Font Size:
+nav-radar-settings-hide-edge-labels = Hide Edge Labels
+# Wayfarer
+nav-radar-settings-ignore-edge-inactive-shuttles = Ignore Edge Inactive Shuttles
+nav-radar-settings-apply = Apply
+nav-radar-settings-close = Close
 
 # MAP
 

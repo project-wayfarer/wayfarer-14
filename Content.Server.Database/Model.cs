@@ -55,6 +55,10 @@ namespace Content.Server.Database
         public DbSet<WayfarerCommunityGoal> WayfarerCommunityGoals { get; set; } = null!;
         public DbSet<WayfarerCommunityGoalRequirement> WayfarerCommunityGoalRequirements { get; set; } = null!;
         public DbSet<WayfarerCommunityGoalContribution> WayfarerCommunityGoalContributions { get; set; } = null!;
+        public DbSet<WayfarerCorporation> WayfarerCorporations { get; set; } = null!;
+        public DbSet<WayfarerCorporationMember> WayfarerCorporationMembers { get; set; } = null!;
+        public DbSet<WayfarerCorporationInvite> WayfarerCorporationInvites { get; set; } = null!;
+        public DbSet<WayfarerCorporationStation> WayfarerCorporationStations { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -456,6 +460,46 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<WayfarerCommunityGoalContribution>()
                 .HasIndex(c => c.PlayerUserId);
+
+            // Wayfarer Corporations configuration
+            modelBuilder.Entity<WayfarerCorporation>()
+                .HasIndex(c => c.Name)
+                .IsUnique();
+
+            modelBuilder.Entity<WayfarerCorporationMember>()
+                .HasOne(m => m.Corporation)
+                .WithMany(c => c.Members)
+                .HasForeignKey(m => m.CorporationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCorporationMember>()
+                .HasIndex(m => m.UserId);
+
+            modelBuilder.Entity<WayfarerCorporationMember>()
+                .HasIndex(m => m.CorporationId);
+
+            modelBuilder.Entity<WayfarerCorporationInvite>()
+                .HasOne(i => i.Corporation)
+                .WithMany(c => c.PendingInvites)
+                .HasForeignKey(i => i.CorporationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCorporationInvite>()
+                .HasIndex(i => i.InviteeUserId);
+
+            modelBuilder.Entity<WayfarerCorporationInvite>()
+                .HasIndex(i => i.CorporationId);
+
+            // Wayfarer Corporation Stations configuration
+            modelBuilder.Entity<WayfarerCorporationStation>()
+                .HasOne(s => s.Corporation)
+                .WithMany()
+                .HasForeignKey(s => s.CorporationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WayfarerCorporationStation>()
+                .HasIndex(s => s.CorporationId)
+                .IsUnique();
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -1843,5 +1887,103 @@ namespace Content.Server.Database
         /// </summary>
         [Required, Column("contributed_at")]
         public DateTime ContributedAt { get; set; }
+    }
+
+    [Table("wayfarer_corporations")]
+    public class WayfarerCorporation
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        /// <summary>Unique public name of the corporation.</summary>
+        [Required, Column("name")]
+        public string Name { get; set; } = null!;
+
+        /// <summary>Player-written description.</summary>
+        [Required, Column("description")]
+        public string Description { get; set; } = string.Empty;
+
+        /// <summary>0 = Public, 1 = Private.</summary>
+        [Column("privacy")]
+        public int Privacy { get; set; }
+
+        /// <summary>Corporation bank balance in spesos.</summary>
+        [Column("balance")]
+        public int Balance { get; set; }
+
+        [Required, Column("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        public List<WayfarerCorporationMember> Members { get; set; } = new();
+        public List<WayfarerCorporationInvite> PendingInvites { get; set; } = new();
+    }
+
+    [Table("wayfarer_corporation_members")]
+    public class WayfarerCorporationMember
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        [Column("corporation_id")]
+        public int CorporationId { get; set; }
+
+        public WayfarerCorporation Corporation { get; set; } = null!;
+
+        /// <summary>NetUserId (GUID) of the member.</summary>
+        [Required, Column("user_id")]
+        public Guid UserId { get; set; }
+
+        /// <summary>Character name at time of joining.</summary>
+        [Required, Column("display_name")]
+        public string DisplayName { get; set; } = null!;
+
+        /// <summary>0=Member, 1=Recruiter, 2=Manager, 3=Leader.</summary>
+        [Column("rank")]
+        public int Rank { get; set; }
+
+        [Required, Column("joined_at")]
+        public DateTime JoinedAt { get; set; }
+    }
+
+    [Table("wayfarer_corporation_invites")]
+    public class WayfarerCorporationInvite
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        [Column("corporation_id")]
+        public int CorporationId { get; set; }
+
+        public WayfarerCorporation Corporation { get; set; } = null!;
+
+        /// <summary>NetUserId (GUID) of the invited player.</summary>
+        [Required, Column("invitee_user_id")]
+        public Guid InviteeUserId { get; set; }
+
+        [Required, Column("sent_at")]
+        public DateTime SentAt { get; set; }
+    }
+
+    [Table("wayfarer_corporation_stations")]
+    public class WayfarerCorporationStation
+    {
+        [Key, Column("id")]
+        public int Id { get; set; }
+
+        [Column("corporation_id")]
+        public int CorporationId { get; set; }
+
+        public WayfarerCorporation Corporation { get; set; } = null!;
+
+        /// <summary>Display name of the station, also used as the FTL beacon label.</summary>
+        [Required, Column("station_name")]
+        public string StationName { get; set; } = null!;
+
+        /// <summary>Relative save path under user data, e.g. "corp_stations/corp_1.yml".</summary>
+        [Required, Column("save_path")]
+        public string SavePath { get; set; } = null!;
+
+        [Required, Column("purchased_at")]
+        public DateTime PurchasedAt { get; set; }
     }
 }

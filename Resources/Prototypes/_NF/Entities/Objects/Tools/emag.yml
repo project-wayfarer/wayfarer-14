@@ -15,7 +15,7 @@
     size: Tiny
 
 - type: entity
-  parent: [BaseItem, BaseCommandContraband]
+  parent: [BaseItem, BaseCGPContraband] # Wayfarer: BaseCommandContraband<BaseCGPContraband
   id: DemagUnlimited
   name: cryptographic resequencer
   suffix: Unlimited

@@ -23,7 +23,7 @@
       stationProto: StandardFrontierVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Mjolnir CIV{1}'
+        mapNameTemplate: 'Mjolnir {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

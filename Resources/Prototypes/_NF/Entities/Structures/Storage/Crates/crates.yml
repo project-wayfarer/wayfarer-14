@@ -29,7 +29,7 @@
     sprite: _NF/Structures/Storage/Crates/radiation_secure.rsi
 
 - type: entity
-  parent: CrateSecgear
+  parent: [CrateSecgear, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: CrateNfsdBrigmedic
   name: brigmedic crate
   components:
@@ -41,7 +41,7 @@
     access: [["Security"]]
 
 - type: entity
-  parent: CrateSecgear
+  parent: [CrateSecgear, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: CrateNfsdSecure1
   name: CGP crate
   components:
@@ -53,7 +53,7 @@
     access: [["Security"]]
 
 - type: entity
-  parent: CrateSecgear
+  parent: [CrateSecgear, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: CrateNfsdSecure2
   name: CGP crate
   components:

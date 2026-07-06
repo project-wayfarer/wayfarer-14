@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Maintainer Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Moppet
+  parent: BaseVessel
+  name: ZKW Moppet
+  description: A robust Janitorial ship commissioned by Zekke's Maid Guild to become the new workhorse of cleaning services in the sector.
+  price: 27500
+  category: Small
+  group: Sr
+  access: Janitor
+  shuttlePath: /Maps/_WF/Shuttles/Staff/moppet.yml
+  guidebookPage: ShipyardMoppet
+  class:
+  - Civilian
+  engine:
+  - Biofuel
+
+- type: gameMap
+  id: Moppet
+  mapName: 'Moppet'
+  mapPath: /Maps/_WF/Shuttles/Staff/moppet.yml
+  minPlayers: 0
+  stations:
+    Moppet:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Moppet SR{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator  
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            WayfarerInterview: [ 0, 0 ]

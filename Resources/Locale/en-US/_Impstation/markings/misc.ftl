@@ -207,10 +207,11 @@ marking-VoxCheeks = [ Vox ] Cheeks
 marking-VoxCheeks-voxcheeks = [ Vox ] Cheeks
 marking-VoxBelly = [ Vox ] Belly
 marking-VoxBelly-voxbelly = [ Vox ] Belly
-marking-VoxTailBalled = [ Vox ] Thrasher
-marking-VoxTailBalled-voxtailballed = [ Vox ] Thrasher
-marking-VoxTailSplit = [ Vox ] Twinned
-marking-VoxTailSplit-voxtailsplit = [ Vox ] Twinned
+# marking-VoxTailBalled = [ Vox ] Thrasher
+# marking-VoxTailBalled-voxtailballed = [ Vox ] Thrasher
+# marking-VoxTailSplit = [ Vox ] Twinned
+# marking-VoxTailSplit-voxtailsplit = [ Vox ] Twinned
+# Wayfarer - Causing issues with upstream merges. Commented out for now.
 
 # upstream vox markings dont have localized names. lmfao
 # these are just straight up broken and shouldnt be visible from the markings menu period but ALAS im not skilled enough to remove them so you get this stupid botch job instead

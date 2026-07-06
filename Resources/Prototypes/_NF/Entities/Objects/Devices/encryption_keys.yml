@@ -17,7 +17,7 @@
     - state: stc_label
 
 - type: entity
-  parent: EncryptionKey
+  parent: [EncryptionKey, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: EncryptionKeyNfsd
   name: CGP encryption key
   categories: [ DoNotMap ]
@@ -28,15 +28,15 @@
     - Nfsd
     defaultChannel: Nfsd
   - type: Item
-    sprite: _NF/Objects/Devices/encryption_keys.rsi
+    sprite: _WF/Objects/Devices/encryption_keys.rsi # Wayfarer _NF/Objects/Devices/encryption_keys.rsi < _WF/Objects/Devices/encryption_keys.rsi
   - type: Sprite
-    sprite: _NF/Objects/Devices/encryption_keys.rsi
+    sprite: _WF/Objects/Devices/encryption_keys.rsi # Wayfarer _NF/Objects/Devices/encryption_keys.rsi < _WF/Objects/Devices/encryption_keys.rsi
     layers:
-    - state: crypt_gray
-    - state: nfsd_label
+    - state: crypt_cgp # Wayfarer crypt_gray < crypt_cgp
+    - state: cgp_label # Wayfarer nfsd_label < cgp_label
 
 - type: entity
-  parent: EncryptionKey
+  parent: [EncryptionKey, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: EncryptionKeyDoc
   name: medical dispatch encryption key
   categories: [ DoNotMap ]

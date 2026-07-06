@@ -6,39 +6,37 @@
   sprites: MobHumanSprites
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
-  skinColoration: HumanToned
+  skinColoration: Hues # Wayfarer: HumanToned<Hues
 
 - type: markingPoints
   id: MobFelinidMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: false
     FacialHair:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: false
     Tail:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: true
-      defaultMarkings: [ FelinidTailBasic ]
+      defaultMarkings: [ FelinidTailDefault ] # Wayfarer: FelinidTailBasic<FelinidTailDefault
     HeadTop:
-      points: 1
+      points: 32 # Wayfarer: 1<32
       required: true
-      defaultMarkings: [ FelinidEarsBasic ]
+      defaultMarkings: [ FelinidEarsDefault ] # Wayfarer: FelinidEarsBasic<FelinidEarsDefault
     Chest:
-      points: 4 # Frontier 1<4
+      points: 32 # Wayfarer: 1<32
       required: false
     Legs:
-      points: 8 # Frontier 2<8
+      points: 32 # Wayfarer: 2<32
       required: false
     Arms:
-      points: 8 # Frontier 2<8
+      points: 32 # Wayfarer: 2<32
       required: false
-    # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
-      points: 3
+      points: 32 # Wayfarer: 3<32
       required: false
     UndergarmentBottom:
-      points: 3
+      points: 32 # Wayfarer: 3<32
       required: false
-    # End Frontier

@@ -30,6 +30,7 @@ using Content.Shared._NF.Bank.Components; // Frontier
 using Content.Shared._NF.Shipyard.Components; // Frontier
 using Content.Server._NF.Shipyard.Systems; // Frontier
 using Content.Server._NF.SectorServices; // Frontier
+using Content.Server.RoundEnd; // Frontier
 
 namespace Content.Server.PDA
 {
@@ -49,8 +50,11 @@ namespace Content.Server.PDA
 
         private static DateTime ServerDate; // DeltaV - PDA
         [Dependency] private readonly SectorServiceSystem _sectorService = default!;
-        [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly GameTicker _gameTicker = default!;
+        [Dependency] private readonly RoundEndSystem _roundEndSystem = default!; // Frontier
+
+
+        [Dependency] private readonly IGameTiming _timing = default!; // Wayfarer
+        [Dependency] private readonly GameTicker _gameTicker = default!; // Wayfarer
 
         public override void Initialize()
         {
@@ -246,7 +250,7 @@ namespace Content.Server.PDA
             if (TryComp<ShuttleDeedComponent>(pda.ContainedId, out var shuttleDeedComp))
                 ownedShipName = ShipyardSystem.GetFullName(shuttleDeedComp);
             // End Frontier: balance & ship deeds
-
+            // Wayfarer Start
             // Send the absolute UTC wall-clock time when the shift ends.
             // Using DateTime.UtcNow (OS time) avoids any game-tick drift that occurs
             // when the server runs slower than real-time under heavy load.
@@ -259,6 +263,7 @@ namespace Content.Server.PDA
                     shiftEndTime = DateTime.UtcNow + timeRemaining;
                 }
             }
+            // End Wayfarer
 
             var state = new PdaUpdateState(
                 programs,
@@ -274,10 +279,12 @@ namespace Content.Server.PDA
                     JobTitle = id?.LocalizedJobTitle,
                     CurrentDate = pda.CurrentDate, // DeltaV - PDA date
                     StationAlertLevel = pda.StationAlertLevel,
-                    StationAlertColor = pda.StationAlertColor
+                    StationAlertColor = pda.StationAlertColor,
+                    StationAlertReason = pda.StationAlertReason // Wayfarer
                 },
                 balance, // Frontier
                 ownedShipName, // Frontier
+                _roundEndSystem.GetAutoCallTime(), // Frontier
                 pda.StationName,
                 showUplink,
                 hasInstrument,
@@ -372,6 +379,7 @@ namespace Content.Server.PDA
                 alertComp.AlertLevels == null)
                 return;
             pda.StationAlertLevel = alertComp.CurrentLevel;
+            pda.StationAlertReason = alertComp.CurrentReason; // Wayfarer
             if (alertComp.AlertLevels.Levels.TryGetValue(alertComp.CurrentLevel, out var details))
                 pda.StationAlertColor = details.Color;
         }

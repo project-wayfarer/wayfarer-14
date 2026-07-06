@@ -2683,5 +2683,258 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
 
         #endregion
+
+        #region Wayfarer Corporations
+
+        public async Task<List<WayfarerCorporation>> GetAllCorporations(CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.WayfarerCorporations
+                .Include(c => c.Members)
+                .Include(c => c.PendingInvites)
+                .ToListAsync(cancel);
+        }
+
+        public async Task<WayfarerCorporation?> GetCorporationById(int id, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.WayfarerCorporations
+                .Include(c => c.Members)
+                .Include(c => c.PendingInvites)
+                .FirstOrDefaultAsync(c => c.Id == id, cancel);
+        }
+
+        public async Task<WayfarerCorporation?> GetCorporationForPlayer(Guid userId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.WayfarerCorporations
+                .Include(c => c.Members)
+                .Include(c => c.PendingInvites)
+                .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == userId), cancel);
+        }
+
+        public async Task<WayfarerCorporation?> GetCorporationForCharacter(Guid userId, string displayName, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.WayfarerCorporations
+                .Include(c => c.Members)
+                .Include(c => c.PendingInvites)
+                .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == userId && m.DisplayName == displayName), cancel);
+        }
+
+        public async Task<WayfarerCorporation> CreateCorporation(string name, string description, int privacy, Guid founderUserId, string founderDisplayName, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var corp = new WayfarerCorporation
+            {
+                Name = name,
+                Description = description,
+                Privacy = privacy,
+                CreatedAt = DateTime.UtcNow,
+                Members = new List<WayfarerCorporationMember>
+                {
+                    new WayfarerCorporationMember
+                    {
+                        UserId = founderUserId,
+                        DisplayName = founderDisplayName,
+                        Rank = 3, // Leader
+                        JoinedAt = DateTime.UtcNow,
+                    }
+                },
+            };
+            db.DbContext.WayfarerCorporations.Add(corp);
+            await db.DbContext.SaveChangesAsync(cancel);
+            return corp;
+        }
+
+        public async Task<WayfarerCorporation> AdminCreateCorporation(string name, string description, int privacy, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var corp = new WayfarerCorporation
+            {
+                Name = name,
+                Description = description,
+                Privacy = privacy,
+                CreatedAt = DateTime.UtcNow,
+                Members = new List<WayfarerCorporationMember>(),
+            };
+            db.DbContext.WayfarerCorporations.Add(corp);
+            await db.DbContext.SaveChangesAsync(cancel);
+            return corp;
+        }
+
+        public async Task UpdateCorporationDescription(int corporationId, string description, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var corp = await db.DbContext.WayfarerCorporations.FindAsync(new object[] { corporationId }, cancel);
+            if (corp == null) return;
+            corp.Description = description;
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task UpdateCorporationPrivacy(int corporationId, int privacy, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var corp = await db.DbContext.WayfarerCorporations.FindAsync(new object[] { corporationId }, cancel);
+            if (corp == null) return;
+            corp.Privacy = privacy;
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task DeleteCorporation(int corporationId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var corp = await db.DbContext.WayfarerCorporations
+                .Include(c => c.Members)
+                .Include(c => c.PendingInvites)
+                .FirstOrDefaultAsync(c => c.Id == corporationId, cancel);
+            if (corp == null) return;
+            db.DbContext.WayfarerCorporations.Remove(corp);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task AddCorporationMember(int corporationId, Guid userId, string displayName, int rank, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            db.DbContext.WayfarerCorporationMembers.Add(new WayfarerCorporationMember
+            {
+                CorporationId = corporationId,
+                UserId = userId,
+                DisplayName = displayName,
+                Rank = rank,
+                JoinedAt = DateTime.UtcNow,
+            });
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task RemoveCorporationMember(int corporationId, Guid userId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var member = await db.DbContext.WayfarerCorporationMembers
+                .FirstOrDefaultAsync(m => m.CorporationId == corporationId && m.UserId == userId, cancel);
+            if (member == null) return;
+            db.DbContext.WayfarerCorporationMembers.Remove(member);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task UpdateCorporationMemberRank(int corporationId, Guid userId, int rank, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var member = await db.DbContext.WayfarerCorporationMembers
+                .FirstOrDefaultAsync(m => m.CorporationId == corporationId && m.UserId == userId, cancel);
+            if (member == null) return;
+            member.Rank = rank;
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task AddCorporationInvite(int corporationId, Guid inviteeUserId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            db.DbContext.WayfarerCorporationInvites.Add(new WayfarerCorporationInvite
+            {
+                CorporationId = corporationId,
+                InviteeUserId = inviteeUserId,
+                SentAt = DateTime.UtcNow,
+            });
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task RemoveCorporationInvite(int corporationId, Guid inviteeUserId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var invite = await db.DbContext.WayfarerCorporationInvites
+                .FirstOrDefaultAsync(i => i.CorporationId == corporationId && i.InviteeUserId == inviteeUserId, cancel);
+            if (invite == null) return;
+            db.DbContext.WayfarerCorporationInvites.Remove(invite);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task<bool> HasCorporationInvite(int corporationId, Guid inviteeUserId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.WayfarerCorporationInvites
+                .AnyAsync(i => i.CorporationId == corporationId && i.InviteeUserId == inviteeUserId, cancel);
+        }
+
+        public async Task<int?> GetCorporationBalance(int corporationId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var corp = await db.DbContext.WayfarerCorporations
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == corporationId, cancel);
+            return corp?.Balance;
+        }
+
+        public async Task<bool> TryDepositToCorporation(int corporationId, int amount, CancellationToken cancel = default)
+        {
+            if (amount <= 0)
+                return false;
+            await using var db = await GetDb(cancel);
+            var corp = await db.DbContext.WayfarerCorporations
+                .FirstOrDefaultAsync(c => c.Id == corporationId, cancel);
+            if (corp == null)
+                return false;
+            corp.Balance += amount;
+            await db.DbContext.SaveChangesAsync(cancel);
+            return true;
+        }
+
+        public async Task<bool> TryWithdrawFromCorporation(int corporationId, int amount, CancellationToken cancel = default)
+        {
+            if (amount <= 0)
+                return false;
+            await using var db = await GetDb(cancel);
+            var corp = await db.DbContext.WayfarerCorporations
+                .FirstOrDefaultAsync(c => c.Id == corporationId, cancel);
+            if (corp == null || corp.Balance < amount)
+                return false;
+            corp.Balance -= amount;
+            await db.DbContext.SaveChangesAsync(cancel);
+            return true;
+        }
+
+        public async Task SetCorporationBalance(int corporationId, int balance, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var corp = await db.DbContext.WayfarerCorporations
+                .FirstOrDefaultAsync(c => c.Id == corporationId, cancel);
+            if (corp == null) return;
+            corp.Balance = Math.Max(0, balance);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task<WayfarerCorporationStation?> GetCorporationStation(int corporationId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.WayfarerCorporationStations
+                .FirstOrDefaultAsync(s => s.CorporationId == corporationId, cancel);
+        }
+
+        public async Task<WayfarerCorporationStation> CreateCorporationStation(int corporationId, string stationName, string savePath, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var station = new WayfarerCorporationStation
+            {
+                CorporationId = corporationId,
+                StationName = stationName,
+                SavePath = savePath,
+                PurchasedAt = DateTime.UtcNow,
+            };
+            db.DbContext.WayfarerCorporationStations.Add(station);
+            await db.DbContext.SaveChangesAsync(cancel);
+            return station;
+        }
+
+        public async Task DeleteCorporationStation(int corporationId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var station = await db.DbContext.WayfarerCorporationStations
+                .FirstOrDefaultAsync(s => s.CorporationId == corporationId, cancel);
+            if (station == null) return;
+            db.DbContext.WayfarerCorporationStations.Remove(station);
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        #endregion
     }
 }

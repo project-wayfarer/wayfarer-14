@@ -1,0 +1,47 @@
+- type: gameMap
+  id: Dusk
+  mapName: 'Dusk Station'
+  mapPath: /Maps/_WF/Outpost/dusk.yml
+  minPlayers: 0
+  maxPlayers: 100
+  randomRotation: false
+  maxRandomOffset: 0
+  stations:
+    Dusk:
+      stationProto: StandardFrontierStation
+      gridComponents:
+      - type: VesselMusic
+        ambientMusicPrototype: ColossusCentralMusic
+      - type: VesselInfo # WF
+        description: "From the Dusk begins a new dawn."
+      - type: SolarPoweredGrid
+        trackOnInit: true
+        doNotCull: true
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Dusk Station'
+      #          nameGenerator:
+      #            !type:NanotrasenNameGenerator
+      #            prefixCreator: '14'
+      - type: ExtraStationInformation
+        iconPath: /Textures/_WF/Logo/icon/icon-256x256.png
+        stationSubtext: 'frontier-lobby-frontier-subtext'
+        stationDescription: 'frontier-lobby-frontier-description'
+        lobbySortOrder: 1
+      - type: StationTransit
+        routes:
+          SpawnPoints: 20
+      - type: StationJobs
+        availableJobs:
+          Wayfarer: [ -1, -1 ]
+          Borg: [ -1, -1 ]
+          StationRepresentative: [ 1, 1 ]
+          StationTrafficController: [ 1, 1 ]
+          Valet: [ 3, 3 ]
+          NFJanitor: [ 5, 5 ]
+          MailCarrier: [ 5, 5 ]
+          DirectorOfCare: [ 1, 1 ] ## temporary bandaid
+          MedicalER: [ -1, -1 ]
+        tags:
+        - HeadOfPersonnel
+        - HeadOfSecurity

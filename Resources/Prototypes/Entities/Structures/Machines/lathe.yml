@@ -56,6 +56,19 @@
   - type: TechnologyDatabase
   - type: MaterialStorageMagnetPickup # Frontier
     range: 0.30 # Frontier
+  # Goobstation - random lathe sounds
+  - type: SpamEmitSound
+    minInterval: 300
+    maxInterval: 900
+    sound:
+      collection: RandomLatheSounds
+      params:
+        volume: -12 # Ambient
+        maxDistance: 10
+        variation: 0.05
+  - type: SpamEmitSoundRequirePower
+  # Goobstation End
+
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -174,8 +187,6 @@
   - type: EmptyOnMachineDeconstruct
     containers:
     - blueprint
-  - type: PirateBountyItem # Frontier
-    id: Autolathe # Frontier
 
 - type: entity
   id: AutolatheHyperConvection
@@ -323,6 +334,7 @@
     - NFMedicalBoards # Frontier
     - NFServiceBoards # Frontier
     - NFEngineeringBoardsCircuitImprinter # Frontier
+    - ReactorCircuitboards # Far Horizons
     - WFServiceBoards # Wayfarer
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
@@ -560,6 +572,7 @@
     - NFBasicEVAToolsStatic # Frontier
     - ReportingStatic # DeltaV
     - NFPaperAndPaperAccessories # Frontier
+    - NFMedicalBoards # Frontier
     - NFMedicalStatic # Frontier
     - NFMedicalClothingStatic # Frontier
     - NFChemistryBasicStatic # Frontier
@@ -709,10 +722,6 @@
   # End Frontier: emag lathe recipes, item mapper
   # Coyote Start: Biogenerator Buffer System
   - type: BiogeneratorBuffer
-    current: 0
-    max: 100
-    regenAmount: 5
-    regenInterval: 15 # Wayfarer: 10<15
   # End Coyote
 
 - type: entity
@@ -837,6 +846,7 @@
     - NFFloorsMiscStatic # Frontier
     - NFFloorTiles # Frontier
     - NFFloorTilesCarpet # Frontier
+    - FloorTilesStaticMonolith # Monolith
     dynamicPacks: # Frontier
     - FauxTiles # Frontier
   - type: EmagLatheRecipes # Frontier

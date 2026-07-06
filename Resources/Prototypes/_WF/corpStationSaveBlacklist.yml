@@ -1,0 +1,255 @@
+# Corp Station Save Blacklist
+# Entities matching these prototypes or tags will be deleted from corporation
+# player stations before the grid is saved at round end / autosave.
+# Contributors: add entries to either list freely and keep entries grouped/commented.
+
+- type: corpStationSaveBlacklist
+  id: Default
+
+  ### Tags
+  # Any entity that carries one of these tags is stripped before saving.
+  tags:
+
+  # Syndicate / high-risk items
+  - Syndicate          # Uplinks, syndicate-branded gear
+  - HighRiskItem       # Nuke disk, captain's ID, etc.
+  - NukeOpsUplink
+
+  # Firearms & ranged weapons
+  - Cartridge          # All live ballistic rounds (broad catch-all)
+  - CartridgePistol
+  - CartridgeMagnum
+  - CartridgeRifle
+  - CartridgeLightRifle
+  - CartridgeHeavyRifle
+  - CartridgeCaselessRifle
+  - CartridgeAntiMateriel
+  - CartridgeRocket
+  # NF ammo tags
+  - NFCartridgePistol35
+  - NFCartridgePistol45
+  - NFCartridgeRifle10
+  - NFCartridgeRifle20
+  - NFCartridgeRifle25
+  - NFCartridgeRifle30
+  - NFCartridgeRifle60
+  - NFCartridgeRocket
+
+  # Magazines
+  - MagazinePistol
+  - MagazineMagnum
+  - MagazineRifle
+  - MagazineLightRifle
+  - MagazineHeavyRifle
+  - MagazineShotgun
+  - MagazineCaselessRifle
+  - MagazineGrenade
+  # NF magazine tags
+  - NFMagazinePistol35
+  - NFMagazinePistol45
+  - NFMagazineRifle20
+  - NFMagazineRifle30
+  - NFMagazineSubMachineGunPistol35
+  - NFMagazineSubMachineGunPistol45
+
+  # Shotgun shells
+  - ShellShotgun
+
+  # Grenades & explosives
+  - Grenade
+  - GrenadeFlashBang
+  - HandGrenade
+  - MacroBomb
+  - MicroBomb
+  - Payload             # Grenade/bomb crafting components
+
+  # Implants (loose — not inside someone)
+  - SubdermalImplant
+
+  # Misc dangerous
+  - Sidearm             # Holstered sidearm items (pistols/revolvers)
+  - Taser               # Stun weapons
+
+  ### Prototypes
+  # Specific entity prototype IDs to strip, regardless of tags.
+  prototypes:
+
+  # Emags & demags
+  - Emag
+  - EmagUnlimited
+  - EmagPass
+  - Demag
+  - DemagUnlimited
+  - Pmag
+  - PmagUnlimited
+
+  # ID Cards (loose — would let corps accumulate access cards)
+  - IDCardStandard
+  - AgentIDCard
+  - NukieAgentIDCard
+  - SyndicateIDCard
+  - CaptainIDCard
+  - CentcomIDCard
+  - ERTLeaderIDCard
+  - ERTSecurityIDCard
+  - ERTEngineerIDCard
+  - ERTMedicIDCard
+  - ERTJanitorIDCard
+  - ERTChaplainIDCard
+  - CentcomIDCardDeathsquad
+  - UniversalIDCard
+
+  # Syndicate gadgets
+  - CameraBug
+  - SingularityBeacon
+  - ReinforcementRadioSyndicate
+  - ReinforcementRadioSyndicateNukeops
+  - ReinforcementRadioSyndicateAncestor
+  - ReinforcementRadioSyndicateAncestorNukeops
+  - ReinforcementRadioSyndicateSyndiCat
+  - ReinforcementRadioSyndicateCyborgAssault
+  - NukeOpsDeclarationOfWar
+  - HoloparasiteInjector
+  - HoloClownInjector
+
+  # Telecrystals / uplink currency
+  - Telecrystal
+  - Telecrystal1
+  - Telecrystal5
+  - Telecrystal10
+
+  # Syndicate implants (when loose/in implanters)
+  - UplinkImplant
+  - UplinkImplanter
+  - FreedomImplant
+  - FreedomImplanter
+  - MacroBombImplant
+  - MacroBombImplanter
+  - MicroBombImplant
+  - MicroBombImplanter
+  - EmpImplant
+  - EmpImplanter
+  - ScramImplant
+  - ScramImplanter
+  - DnaScramblerImplant
+  - DnaScramblerImplanter
+  - FakeMindShieldImplant
+  - FakeMindShieldImplanter
+  - DeathAcidifierImplant
+  - DeathAcidifierImplanter
+  - ChameleonControllerImplant
+  - ChameleonControllerImplanter
+
+  # Firearms — ballistic pistols/revolvers
+  - WeaponPistolMk58
+  - WeaponPistolViper
+  - WeaponPistolCobra
+  - WeaponPistolN1984
+  - WeaponPistolEchis
+  - WeaponRevolverPython
+  - WeaponRevolverPythonAP
+  - WeaponRevolverMateba
+  - WeaponRevolverMatebaAP
+  - WeaponRevolverDeckard
+  - WeaponRevolverInspector
+  - WeaponRevolverPirate
+  - WeaponRevolverPirateEmpty
+
+  # Firearms — SMGs
+  - WeaponSubMachineGunC20r
+  - WeaponSubMachineGunC20rROW
+  - WeaponSubMachineGunDrozd
+  - WeaponSubMachineGunWt550
+  - WeaponSubMachineGunAtreides
+
+  # Firearms — rifles
+  - WeaponRifleLecter
+  - WeaponRifleAk
+  - WeaponRifleEstoc
+  - WeaponRifleM90GrenadeLauncher
+
+  # Firearms — shotguns
+  - WeaponShotgunBulldog
+  - WeaponShotgunKammerer
+  - WeaponShotgunEnforcer
+  - WeaponShotgunDoubleBarreled
+  - WeaponShotgunSawn
+  - WeaponShotgunSawnEmpty
+  - WeaponShotgunImprovised
+  - WeaponShotgunImprovisedLoaded
+  - WeaponShotgunHandmade
+  - WeaponShotgunBlunderbuss
+
+  # Firearms — snipers
+  - WeaponSniperHristov
+  - WeaponSniperMosin
+
+  # Firearms — LMGs/HMGs
+  - WeaponLightMachineGunL6
+  - WeaponLightMachineGunL6C
+  - WeaponMinigun
+
+  # Energy weapons (combat-grade)
+  - WeaponLaserCannon
+  - WeaponPulseCarbine
+  - WeaponPulseRifle
+  - WeaponPulsePistol
+  - WeaponXrayCannon
+  - WeaponTeslaGun
+  - WeaponAdvancedLaser
+  - WeaponParticleDecelerator
+  - WeaponPistolCHIMP
+  - WeaponPistolCHIMPUpgraded
+  - WeaponPistolCHIMPUpgradeKit
+  - WeaponDisablerSMG
+  - WeaponTaserSuper
+  - WeaponLaserSvalinn
+  - WeaponEnergyShotgun
+
+  # Launchers
+  - WeaponLauncherChinaLake
+  - WeaponLauncherHydra
+  - WeaponLauncherRocket
+  - WeaponLauncherMultipleRocket
+
+  # Grenades & bombs
+  - ExGrenade
+  - SyndieMiniBomb
+  - SyndieTrickyBomb
+  - NuclearGrenade
+  - SingularityGrenade
+  - WhiteholeGrenade
+  - ModularGrenade
+  - GrenadeIncendiary
+  - GrenadeShrapnel
+  - GrenadeStinger
+  - ClusterGrenade
+  - ClusterBang
+  - ClusterBangFull
+  - EmpGrenade
+  - PipeBomb
+  - PipeBombGunpowder
+  - PipeBombCable
+  - FireBomb
+  - FireBombEmpty
+
+  # Dangerous melee
+  - ArmBlade
+  - EnergyKatana
+  - Chainsaw
+  - Claymore
+  - EldritchBlade
+  - UnholyHalberd
+  - RitualDagger
+
+  # NF mines
+  - NFConcealedMineExplosive
+  - NFConcealedMineCryo
+  - NFConcealedMineFire
+  - NFToolboxMineExplosive
+  - NFWetFloorSignMineExplosive
+  - NFPlushieMineExplosive
+  - NFBoxMineExplosive
+  - NFTrashMineExplosive
+  - NFScrapMineExplosive
+

@@ -9,6 +9,7 @@ using Content.Shared.Anomaly.Components;
 using Content.Shared.Anomaly.Effects;
 using Content.Shared.Body.Components;
 using Content.Shared.Chat;
+using Content.Shared.Damage; // Wayfarer
 using Content.Shared.Database;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
@@ -34,6 +35,7 @@ public sealed class InnerBodyAnomalySystem : SharedInnerBodyAnomalySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly StunSystem _stun = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!; // Wayfarer;
 
     private readonly Color _messageColor = Color.FromSrgb(new Color(201, 22, 94));
 
@@ -134,7 +136,8 @@ public sealed class InnerBodyAnomalySystem : SharedInnerBodyAnomalySystem
         if (!TryComp<BodyComponent>(ent, out var body))
             return;
 
-        _body.GibBody(ent, true, body, splatModifier: 5f);
+        _damageable.TryChangeDamage(ent, ent.Comp.DamageOnSuperCrit, true); // Wayfarer
+        //_body.GibBody(ent, true, body, splatModifier: 5f); // Wayfarer: Commented out
     }
 
     private void OnSeverityChanged(Entity<InnerBodyAnomalyComponent> ent, ref AnomalySeverityChangedEvent args)

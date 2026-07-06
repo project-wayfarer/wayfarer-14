@@ -1,0 +1,46 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'nav-radar-settings-window-title'}"
+                      MinSize="300 240"
+                      SetSize="300 240">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8">
+        <GridContainer Columns="2" HorizontalExpand="True">
+            <Label Text="{Loc 'nav-radar-settings-iff-grouping'}" 
+                   HorizontalExpand="True" 
+                   StyleClasses="StatusFieldTitle"
+                   Margin="0 0 8 8"/>
+            <OptionButton Name="IFFGroupingDropdown" 
+                         HorizontalExpand="True"
+                         Margin="0 0 0 8"/>
+            
+            <Label Text="{Loc 'nav-radar-settings-label-font-size'}" 
+                   HorizontalExpand="True" 
+                   StyleClasses="StatusFieldTitle"
+                   Margin="0 0 8 8"/>
+            <OptionButton Name="LabelFontSizeDropdown" 
+                         HorizontalExpand="True"
+                         Margin="0 0 0 8"/>
+        </GridContainer>
+        
+        <CheckBox Name="HideEdgeLabelsCheckBox"
+                 Text="{Loc 'nav-radar-settings-hide-edge-labels'}"
+                 Margin="0 0 0 8"/>
+
+       <!-- Wayfarer: hide inactive (gray) shuttle edge indicators. -->
+       <CheckBox Name="IgnoreEdgeInactiveShuttlesCheckBox"
+               Text="{Loc 'nav-radar-settings-ignore-edge-inactive-shuttles'}"
+               Margin="0 0 0 8"/>
+        
+        <BoxContainer Orientation="Horizontal" 
+                     HorizontalAlignment="Right"
+                     Margin="0 8 0 0">
+            <Button Name="SettingsApplyButton" 
+                   Text="{Loc 'nav-radar-settings-apply'}"
+                   MinWidth="80"/>
+            <Button Name="SettingsCloseButton" 
+                   Text="{Loc 'nav-radar-settings-close'}"
+                   MinWidth="80"
+                   Margin="8 0 0 0"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

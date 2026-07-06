@@ -12,9 +12,9 @@
       message: smuggling-report-nfsd-alternative
     - type: DeadDropStation
       message: smuggling-report-nfsd-specific
-  - prob: 0.8
-    minDelay: 14
-    maxDelay: 16
+  - prob: 1.0 # Wayfarer: 0.8<1.0 # frag nation
+    minDelay: 6 # Wayfarer: 14<6
+    maxDelay: 8 # Wayfarer: 16<8
     messages:
     - type: PodLocation
       message: smuggling-report-nfsd-pod
@@ -25,7 +25,7 @@
   channel: Freelance
   messageSets:
   - prob: 1.0 # Wayfarer: 0.333<1.0 I wanna see what happens
-    minDelay: 4 # Wayfarer: 14<4
+    minDelay: 6 # Wayfarer: 14<6
     maxDelay: 8 # Wayfarer: 16<8
     messages:
     - type: PodLocation

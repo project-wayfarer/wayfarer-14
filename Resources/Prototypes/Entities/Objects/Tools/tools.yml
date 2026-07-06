@@ -4,6 +4,14 @@
   id: Wirecutter
   description: This kills the wire.
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/wirecutter_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/wirecutter_drop.ogg
+  # Wayfarer End
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/wirecutter_drop.ogg
@@ -50,6 +58,14 @@
   id: Screwdriver
   description: Industrial grade torque in a small screwdriving package.
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/screwdriver_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/screwdriver_drop.ogg
+  # Wayfarer End
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg
@@ -98,6 +114,18 @@
   id: Wrench
   description: 'A common tool for assembly and disassembly. Remember: lefty latchy, righty removey.'
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/wrench_pickup.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/wrench_drop.ogg
+      params:
+        volume: -2
+  # Wayfarer End
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/wrench_drop.ogg
@@ -140,6 +168,14 @@
   id: Multitool
   description: An advanced tool to copy, store, and send electrical pulses and signals through wires and machines.
   components:
+  # Wayfarer Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/multitool_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/multitool_drop.ogg
+  # Wayfarer End
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/multitool_drop.ogg
@@ -297,7 +333,7 @@
 
 - type: entity
   id: RCD
-  parent: BaseItem # Frontier: remove BaseEngineeringContraband
+  parent: [ BaseItem, BaseZekkeContraband] # Frontier: remove BaseEngineeringContraband # Wayfarer: Add BaseZekkeContraband
   name: RCD
   description: The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
   components:
@@ -321,16 +357,88 @@
     - MVCable
     - HVCable
     - CableTerminal
+    # Wayfarer
+    - BaseAPC
+    - SMES
+    - Substation
+    - WallReinforced
+    - WallReinforcedDiagonal
+    - ReinforcedWindowDiagonal
+    - WallShuttle
+    - WallShuttleDiagonal
+    - ShuttleWindow
+    - ShuttleWindowDiagonal
+    - AirlockShuttle
+    - AirlockGlassShuttle
+    - Gaslock
+    - Thruster
+    - AtmosDeviceFanDirectional
+    # PLATING HELL
+    - PlatingCornerNE
+    - PlatingCornerNW
+    - PlatingCornerSE
+    - PlatingCornerSW
+    - PlatingHalfV
+    - PlatingHalfH
+    - PlatingWedgeN
+    - PlatingWedgeE
+    - PlatingWedgeS
+    - PlatingWedgeW
+    - PlatingHalfTiltNESLower
+    - PlatingHalfTiltSEWLower
+    - PlatingHalfTiltSWNLower
+    - PlatingHalfTiltNWELower
+    - PlatingHalfTiltNESUpper
+    - PlatingHalfTiltSEWUpper
+    - PlatingHalfTiltSWNUpper
+    - PlatingHalfTiltNWEUpper
+    - PlatingHalfTiltNEWLower
+    - PlatingHalfTiltSENLower
+    - PlatingHalfTiltSWELower
+    - PlatingHalfTiltNWSLower
+    - PlatingHalfTiltNEWUpper
+    - PlatingHalfTiltSENUpper
+    - PlatingHalfTiltSWEUpper
+    - PlatingHalfTiltNWSUpper
+    - Lattice
+    - LatticeCornerNE
+    - LatticeCornerNW
+    - LatticeCornerSE
+    - LatticeCornerSW
+    - LatticeHalfV
+    - LatticeHalfH
+    - LatticeWedgeN
+    - LatticeWedgeE
+    - LatticeWedgeS
+    - LatticeWedgeW
+    - LatticeHalfTiltNESLower
+    - LatticeHalfTiltSEWLower
+    - LatticeHalfTiltSWNLower
+    - LatticeHalfTiltNWELower
+    - LatticeHalfTiltNESUpper
+    - LatticeHalfTiltSEWUpper
+    - LatticeHalfTiltSWNUpper
+    - LatticeHalfTiltNWEUpper
+    - LatticeHalfTiltNEWLower
+    - LatticeHalfTiltSENLower
+    - LatticeHalfTiltSWELower
+    - LatticeHalfTiltNWSLower
+    - LatticeHalfTiltNEWUpper
+    - LatticeHalfTiltSENUpper
+    - LatticeHalfTiltSWEUpper
+    - LatticeHalfTiltNWSUpper
+    # End Wayfarer
     - Deconstruct
+    delayMultiplier: 0.65 # Mono
   - type: LimitedCharges
-    maxCharges: 30
+    maxCharges: 90 # Wayfarer: 30<90
   - type: Sprite
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite (Technically not a resprite, I just extricated the old soulful sprite from beneath the new one.)
     state: icon
   - type: Item
     size: Normal
   - type: Clothing
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite (Technically not needed since the onmobs are identical, but meh.)
     quickEquip: false
     slots:
     - Belt
@@ -365,7 +473,7 @@
   suffix: AutoRecharge
   components:
   - type: LimitedCharges
-    maxCharges: 20
+    maxCharges: 60 # Wayfarer: 20<60
   - type: AutoRecharge
     rechargeDuration: 10
 
@@ -387,10 +495,10 @@
   components:
   - type: RCDAmmo
   - type: Sprite
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite
     state: ammo
   - type: Item
-    sprite: _NF/Objects/Tools/rcd.rsi # Frontier
+    sprite: _WF/Objects/Tools/rcd.rsi # Wayfarer: RCD resprite
     heldPrefix: ammo
   - type: PhysicalComposition
     materialComposition:

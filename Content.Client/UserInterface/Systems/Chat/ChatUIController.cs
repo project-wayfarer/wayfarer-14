@@ -84,6 +84,7 @@ public sealed partial class ChatUIController : UIController
         {SharedChatSystem.ConsolePrefix, ChatSelectChannel.Console},
         {SharedChatSystem.LOOCPrefix, ChatSelectChannel.LOOC},
         {SharedChatSystem.SubtleLOOCPrefix, ChatSelectChannel.SubtleLOOC},
+        {SharedChatSystem.ShipOOCPrefix, ChatSelectChannel.ShipOOC}, // Wayfarer
         {SharedChatSystem.OOCPrefix, ChatSelectChannel.OOC},
         {SharedChatSystem.EmotesPrefix, ChatSelectChannel.Emotes},
         {SharedChatSystem.EmotesAltPrefix, ChatSelectChannel.Emotes},
@@ -100,7 +101,7 @@ public sealed partial class ChatUIController : UIController
         {ChatSelectChannel.Console, SharedChatSystem.ConsolePrefix},
         {ChatSelectChannel.LOOC, SharedChatSystem.LOOCPrefix},
         {ChatSelectChannel.SubtleLOOC, SharedChatSystem.SubtleLOOCPrefix},
-        {ChatSelectChannel.ShipOOC, default}, // Wayfarer: no prefix
+        {ChatSelectChannel.ShipOOC, SharedChatSystem.ShipOOCPrefix}, // Wayfarer
         {ChatSelectChannel.OOC, SharedChatSystem.OOCPrefix},
         {ChatSelectChannel.Emotes, SharedChatSystem.EmotesPrefix},
         {ChatSelectChannel.Subtle, SharedChatSystem.SubtlePrefix}, // Floofstation

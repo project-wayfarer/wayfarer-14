@@ -71,6 +71,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     private EntityQuery<MapGridComponent> _gridQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<TransformComponent> _xformQuery;
+    private readonly Dictionary<EntityUid, float> _ftlDampingBackup = new();
 
     public override void Initialize()
     {
@@ -89,8 +90,8 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         SubscribeLocalEvent<ShuttleComponent, ComponentStartup>(OnShuttleStartup);
         SubscribeLocalEvent<ShuttleComponent, ComponentShutdown>(OnShuttleShutdown);
         SubscribeLocalEvent<ShuttleComponent, TileFrictionEvent>(OnTileFriction);
-        // SubscribeLocalEvent<ShuttleComponent, FTLStartedEvent>(OnFTLStarted); // Wayfarer: Disable for now
-        // SubscribeLocalEvent<ShuttleComponent, FTLCompletedEvent>(OnFTLCompleted); // Wayfarer: Disable for now
+        SubscribeLocalEvent<ShuttleComponent, FTLStartedEvent>(OnFTLStarted);
+        SubscribeLocalEvent<ShuttleComponent, FTLCompletedEvent>(OnFTLCompleted);
 
         SubscribeLocalEvent<GridInitializeEvent>(OnGridInit);
         NfInitialize(); // Frontier
@@ -182,6 +183,8 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         if (Comp<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.Terminating)
             return;
 
+        _ftlDampingBackup.Remove(uid);
+
         Disable(uid);
     }
 
@@ -190,16 +193,15 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         args.Modifier *= ent.Comp.DampingModifier;
     }
 
-    // Wayfarer start: Getting rid of this for now, since we don't have FTL
-    // We can replace this with a simple bool flag if we need it later
-    // private void OnFTLStarted(Entity<ShuttleComponent> ent, ref FTLStartedEvent args)
-    // {
-    //     ent.Comp.DampingModifier = 0f;
-    // }
-    //
-    // private void OnFTLCompleted(Entity<ShuttleComponent> ent, ref FTLCompletedEvent args)
-    // {
-    //     ent.Comp.DampingModifier = ent.Comp.BodyModifier;
-    // }
-    // End Wayfarer
+    private void OnFTLStarted(Entity<ShuttleComponent> ent, ref FTLStartedEvent args)
+    {
+        _ftlDampingBackup[ent.Owner] = ent.Comp.DampingModifier;
+        ent.Comp.DampingModifier = 0f;
+    }
+
+    private void OnFTLCompleted(Entity<ShuttleComponent> ent, ref FTLCompletedEvent args)
+    {
+        if (_ftlDampingBackup.Remove(ent.Owner, out var previousDamping))
+            ent.Comp.DampingModifier = previousDamping;
+    }
 }

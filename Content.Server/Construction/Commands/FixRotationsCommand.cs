@@ -1,6 +1,7 @@
 using Content.Server.Administration;
 using Content.Server.Power.Components;
 using Content.Shared.Administration;
+using Content.Shared.Atmos.Components; // Wayfarer
 using Content.Shared.Construction;
 using Content.Shared.Tag;
 using Robust.Shared.Console;
@@ -77,6 +78,13 @@ public sealed class FixRotationsCommand : IConsoleCommand
             {
                 continue;
             }
+            // Wayfarer Start
+            //Pipe devices. We shouldn't rotate these.
+            if (_entManager.HasComponent<AtmosPipeLayersComponent>(child))
+            {
+                continue;
+            }
+            // Wayfarer End
 
             var valid = false;
 

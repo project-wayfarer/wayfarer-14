@@ -1,0 +1,194 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              Orientation="Vertical"
+              HorizontalExpand="True"
+              VerticalExpand="True"
+              Margin="1 0 2 0">
+
+    <PanelContainer StyleClasses="BackgroundDark"/>
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+
+        <!-- Header bar -->
+        <controls:StripeBack>
+            <PanelContainer>
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <Button Name="BackButton" Text="Back" MinWidth="70" Visible="False"/>
+                    <Label Text="{Loc 'corp-program-name'}" Align="Center" HorizontalExpand="True" StyleClasses="LabelBig"/>
+                    <Button Name="RefreshButton" Text="Refresh" MinWidth="60"/>
+                </BoxContainer>
+            </PanelContainer>
+        </controls:StripeBack>
+
+        <!-- Upkeep warning banner -->
+        <PanelContainer Name="UpkeepWarningBanner" Visible="False" Margin="0,0,0,0">
+            <BoxContainer Orientation="Horizontal" Margin="8,4,8,4">
+                <Label Text="⚠" Margin="0,0,6,0" FontColorOverride="#FF4444"/>
+                <Label Text="{Loc 'corp-banner-upkeep-warning'}" HorizontalExpand="True" FontColorOverride="#FF4444" StyleClasses="LabelSmall"/>
+            </BoxContainer>
+        </PanelContainer>
+
+        <!-- Error / feedback message -->
+        <Label Name="FeedbackLabel" Margin="4,2,4,2" Visible="False" HorizontalAlignment="Center"/>
+
+        <!-- ════════ LIST VIEW ════════ -->
+        <ScrollContainer Name="ListPanel" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8,8,8,8">
+
+                <!-- Pending invitations section -->
+                <BoxContainer Name="InvitesSection" Orientation="Vertical" Visible="False">
+                    <Label Text="{Loc 'corp-section-invites'}" StyleClasses="LabelBig" Margin="0,0,0,4"/>
+                    <BoxContainer Name="InvitesList" Orientation="Vertical"/>
+                    <PanelContainer StyleClasses="LowDivider" Margin="0,8,0,8"/>
+                </BoxContainer>
+
+                <!-- IN CORP: corporation panel -->
+                <BoxContainer Name="MyCorporationSection" Orientation="Vertical" Visible="False">
+                    <!-- Corp header -->
+                    <BoxContainer Orientation="Horizontal" Margin="0,0,0,2">
+                        <Label Name="CorpNameLabel" StyleClasses="LabelBig" HorizontalExpand="True"/>
+                        <Label Name="CorpPrivacyLabel" Margin="4,0,0,0" VerticalAlignment="Center"/>
+                    </BoxContainer>
+
+                    <BoxContainer Orientation="Horizontal" Margin="0,0,0,2">
+                        <Control HorizontalExpand="True"/>
+                        <Button Name="EditDescriptionButton" Text="{Loc 'corp-btn-edit-desc'}" MinWidth="80" Visible="False"/>
+                    </BoxContainer>
+
+                    <!-- Description row -->
+                    <RichTextLabel Name="CorpDescriptionLabel" HorizontalExpand="True" StyleClasses="LabelSmall" ModulateSelfOverride="#AAAAAA" Margin="0,0,0,4"/>
+
+                    <!-- Corp bank balance -->
+                    <Label Name="CorpBankBalanceLabel" StyleClasses="LabelSmall" Margin="0,0,0,4"/>
+
+                    <!-- Recruiter+ invite button -->
+                    <!-- Members list -->
+                    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0,4,0,2">
+                        <Label Text="{Loc 'corp-section-members'}" StyleClasses="LabelBig" HorizontalExpand="True"/>
+                        <Button Name="InviteMemberButton" Text="{Loc 'corp-btn-invite'}" Visible="False"/>
+                    </BoxContainer>
+                    <!-- Table header -->
+                    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="2,0,2,2">
+                        <Label Text="{Loc 'corp-col-rank'}" MinWidth="100" FontColorOverride="#AAAAAA" StyleClasses="LabelSmall"/>
+                        <Label Text="{Loc 'corp-col-name'}" HorizontalExpand="True" FontColorOverride="#AAAAAA" StyleClasses="LabelSmall"/>
+                        <Label Text="{Loc 'corp-col-actions'}" MinWidth="120" FontColorOverride="#AAAAAA" StyleClasses="LabelSmall"/>
+                    </BoxContainer>
+                    <PanelContainer StyleClasses="LowDivider" Margin="0,0,0,2"/>
+                    <BoxContainer Name="MembersList" Orientation="Vertical"/>
+
+                    <!-- Leave / Disband -->
+                    <BoxContainer Orientation="Horizontal" Margin="0,16,0,0">
+                        <controls:ConfirmButton Name="LeaveCorpButton" Text="{Loc 'corp-btn-leave'}" ConfirmationText="{Loc 'corp-btn-leave-confirm'}" Margin="0,0,8,0"/>
+                        <controls:ConfirmButton Name="DisbandCorpButton" Text="{Loc 'corp-btn-disband'}" ConfirmationText="{Loc 'corp-btn-disband-confirm'}" Visible="False"/>
+                    </BoxContainer>
+
+                    <!-- Station -->
+                    <PanelContainer StyleClasses="LowDivider" Margin="0,12,0,8"/>
+                    <Label Name="StationSectionLabel" Text="{Loc 'corp-section-station'}" StyleClasses="LabelBig" Margin="0,0,0,4"/>
+                    <!-- Existing station display -->
+                    <BoxContainer Name="StationExistsBox" Orientation="Vertical" Visible="False">
+                        <BoxContainer Orientation="Horizontal">
+                            <Label Text="{Loc 'corp-station-label'}" FontColorOverride="#AAAAAA" StyleClasses="LabelSmall" Margin="0,0,4,0"/>
+                            <Label Name="StationNameLabel" StyleClasses="LabelSmall"/>
+                        </BoxContainer>
+                        <Label Name="StationCoordsLabel" StyleClasses="LabelSmall" FontColorOverride="#AAAAAA" Margin="0,2,0,0"/>
+                        <Label Name="StationUpkeepLabel" StyleClasses="LabelSmall" FontColorOverride="#AAAAAA" Margin="0,2,0,0"/>
+                        <Label Name="StationUpkeepWarning" StyleClasses="LabelSmall" FontColorOverride="#FF4444" Margin="0,2,0,0" Visible="False"/>
+                        <CheckBox Name="StationVisibleCheckBox" Text="{Loc 'corp-station-scanner-visible'}" Margin="0,4,0,0"/>
+                    </BoxContainer>
+                    <!-- Purchase station form (Manager+, no station yet) -->
+                    <BoxContainer Name="StationPurchaseBox" Orientation="Vertical" Visible="False">
+                        <Label Name="StationPurchaseStatusLabel" Text="{Loc 'corp-station-none'}" FontColorOverride="#AAAAAA" StyleClasses="LabelSmall" Margin="0,0,0,4"/>
+                        <BoxContainer Name="StationPurchaseInputRow" Orientation="Horizontal">
+                            <Label Text="{Loc 'corp-create-station-name'}" Margin="0,0,4,0" VerticalAlignment="Center"/>
+                            <PanelContainer StyleClasses="Inset" HorizontalExpand="True">
+                                <LineEdit Name="StationNameEdit" HorizontalExpand="True" PlaceHolder="{Loc 'corp-create-station-placeholder'}"/>
+                            </PanelContainer>
+                        </BoxContainer>
+                        <Button Name="PurchaseStationButton" Text="{Loc 'corp-btn-purchase-station'}" HorizontalAlignment="Left" Margin="0,4,0,0"/>
+                    </BoxContainer>
+                </BoxContainer>
+
+                <!-- NOT IN CORP -->
+                <BoxContainer Name="NoCorporationSection" Orientation="Vertical" Visible="False">
+                    <Label Text="{Loc 'corp-not-in-corp'}" Margin="0,0,0,8"/>
+                    <Button Name="CreateCorpButton"
+                            Text="{Loc 'corp-btn-create'}"
+                            HorizontalAlignment="Left"
+                            Margin="0,0,0,12"/>
+                    <PanelContainer StyleClasses="LowDivider" Margin="0,0,0,8"/>
+                    <Label Text="{Loc 'corp-section-public'}" StyleClasses="LabelBig" Margin="0,0,0,4"/>
+                    <BoxContainer Name="PublicCorpsList" Orientation="Vertical"/>
+                </BoxContainer>
+
+            </BoxContainer>
+        </ScrollContainer>
+
+        <!-- ════════ CREATE VIEW ════════ -->
+        <BoxContainer Name="CreatePanel" Orientation="Vertical" HorizontalExpand="True" Visible="False" Margin="8,8,8,8">
+            <Label Text="{Loc 'corp-create-title'}" StyleClasses="LabelBig" Margin="0,0,0,8"/>
+
+            <BoxContainer Orientation="Horizontal" Margin="0,0,0,4">
+                <Label Text="{Loc 'corp-create-name'}" MinWidth="100"/>
+                <LineEdit Name="CorpNameEdit" HorizontalExpand="True"
+                          PlaceHolder="{Loc 'corp-create-name-placeholder'}"/>
+            </BoxContainer>
+            <Label Text="{Loc 'corp-create-name-permanent'}" FontColorOverride="#AAAAAA" StyleClasses="LabelSmall" Margin="100,0,0,4"/>
+
+            <BoxContainer Orientation="Vertical" Margin="0,0,0,4">
+                <Label Text="{Loc 'corp-create-description'}"/>
+                <PanelContainer StyleClasses="Inset">
+                    <TextEdit Name="CorpDescEdit" MinHeight="72" HorizontalExpand="True"/>
+                </PanelContainer>
+                <Label Name="CreateDescriptionLimitLabel" StyleClasses="LabelSmall" FontColorOverride="#AAAAAA" HorizontalAlignment="Right" Margin="0,2,0,0"/>
+            </BoxContainer>
+
+            <BoxContainer Orientation="Horizontal" Margin="0,0,0,8">
+                <Label Text="{Loc 'corp-create-privacy'}" MinWidth="100"/>
+                <Button Name="PrivacyToggleButton" Text="{Loc 'corp-privacy-public'}" MinWidth="90"/>
+            </BoxContainer>
+
+            <Label Text="{Loc 'corp-create-cost'}" Margin="0,0,0,8"/>
+
+            <BoxContainer Orientation="Horizontal">
+                <Button Name="FoundCorpButton" Text="{Loc 'corp-btn-found'}" Margin="0,0,8,0"/>
+                <Button Name="CancelCreateButton" Text="{Loc 'corp-btn-cancel'}"/>
+            </BoxContainer>
+        </BoxContainer>
+
+        <!-- ════════ INVITE VIEW ════════ -->
+        <BoxContainer Name="InvitePanel" Orientation="Vertical" HorizontalExpand="True" Visible="False" Margin="8,8,8,8">
+            <Label Text="{Loc 'corp-invite-title'}" StyleClasses="LabelBig" Margin="0,0,0,8"/>
+
+            <BoxContainer Orientation="Horizontal" Margin="0,0,0,8">
+                <Label Text="{Loc 'corp-invite-character'}" MinWidth="100"/>
+                <OptionButton Name="CharacterSelector" HorizontalExpand="True"/>
+            </BoxContainer>
+
+            <RichTextLabel Text="{Loc 'corp-invite-warning'}" HorizontalExpand="True" StyleClasses="LabelSmall" ModulateSelfOverride="#FFAA44" Margin="0,0,0,8"/>
+
+            <BoxContainer Orientation="Horizontal">
+                <Button Name="SendInviteButton" Text="{Loc 'corp-btn-send-invite'}" Margin="0,0,8,0"/>
+                <Button Name="CancelInviteButton" Text="{Loc 'corp-btn-cancel'}"/>
+            </BoxContainer>
+        </BoxContainer>
+
+        <!-- ════════ EDIT DESCRIPTION VIEW ════════ -->
+        <BoxContainer Name="EditDescPanel" Orientation="Vertical" HorizontalExpand="True" Visible="False" Margin="8,8,8,8">
+            <Label Text="{Loc 'corp-editdesc-title'}" StyleClasses="LabelBig" Margin="0,0,0,8"/>
+            <BoxContainer Orientation="Horizontal" Margin="0,0,0,8">
+                <Label Text="{Loc 'corp-editdesc-privacy'}" MinWidth="100" VerticalAlignment="Center"/>
+                <OptionButton Name="PrivacyOptionButton" HorizontalExpand="True"/>
+            </BoxContainer>
+            <PanelContainer StyleClasses="Inset">
+                <TextEdit Name="EditDescText" MinHeight="80" HorizontalExpand="True"/>
+            </PanelContainer>
+            <Label Name="EditDescriptionLimitLabel" StyleClasses="LabelSmall" FontColorOverride="#AAAAAA" HorizontalAlignment="Right" Margin="0,2,0,0"/>
+            <BoxContainer Orientation="Horizontal" Margin="0,8,0,0">
+                <Button Name="SaveDescButton" Text="{Loc 'corp-btn-save'}" Margin="0,0,8,0"/>
+                <Button Name="CancelEditDescButton" Text="{Loc 'corp-btn-cancel'}"/>
+            </BoxContainer>
+        </BoxContainer>
+
+    </BoxContainer>
+</BoxContainer>

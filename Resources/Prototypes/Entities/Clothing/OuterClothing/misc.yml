@@ -184,7 +184,7 @@
 
 - type: entity
   abstract: true
-  parent: [ ClothingOuterBase, AllowSuitStorageClothingGasTanks, BaseC3WizardContraband ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband
+  parent: [ ClothingOuterBase, AllowSuitStorageClothingGasTanks ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband # Wayfarer: Removed BaseC3WizardContraband
   id: ClothingOuterWizardBase
   components:
   - type: WizardClothes

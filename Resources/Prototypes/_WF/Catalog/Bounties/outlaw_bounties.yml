@@ -1,0 +1,281 @@
+# Armor Plates
+- type: pirateBounty
+  id: OutlawBountyArmorPlateMedium
+  reward: 12
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: outlaw-bounty-ceramic-plates
+    amount: 16
+    id: ArmorPlateMedium
+
+- type: pirateBounty
+  id: OutlawBountyArmorPlateTactical
+  reward: 16
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: outlaw-bounty-plasteel-plates
+    amount: 16
+    id: ArmorPlateTactical
+
+# Hardsuits
+- type: pirateBounty
+  id: OutlawBountyClothingOuterHardsuitSyndie
+  reward: 24
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-syndie-hardsuit
+    amount: 4
+    id: OutlawBountyClothingOuterHardsuitSyndie
+
+- type: pirateBounty
+  id: OutlawBountyClothingOuterHardsuitWizard
+  reward: 8
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-wizard-hardsuit
+    amount: 1
+    id: ClothingOuterHardsuitWizard
+
+- type: pirateBounty
+  id: OutlawBountyClothingOuterHardsuitScaf
+  reward: 12
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-scafsuit
+    amount: 3
+    id: ClothingOuterHardsuitScaf
+
+- type: pirateBounty
+  id: OutlawBountyClothingOuterHardsuitRd
+  reward: 12
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-rdsuit
+    amount: 3
+    id: ClothingOuterHardsuitRd
+
+# Wizard UIV
+- type: pirateBounty
+  id: OutlawBountyNFGeneratorWizardInfernalCore6kW
+  reward: 8
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-wizardinfernalcore
+    amount: 2
+    id: NFGeneratorWizardInfernalCore6kW
+
+- type: pirateBounty
+  id: OutlawBountyNFRavenbar
+  reward: 6
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-ravenbar
+    amount: 1
+    id: NFRavenbar
+
+- type: pirateBounty
+  id: OutlawBountyScroll
+  reward: 16
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: outlaw-bounty-item-scrolls
+    amount: 8
+    id: MagicScroll
+
+- type: pirateBounty
+  id: OutlawBountyWallet
+  reward: 8
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-wallet
+    amount: 1
+    id: ClothingWalletInfiniteGreed
+
+- type: pirateBounty
+  id: OutlawBountyGasTankWizardBottomless
+  reward: 6
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-gastank
+    amount: 1
+    id: GasTankWizardBottomless
+
+- type: pirateBounty
+  id: OutlawBountyFairyDragonWings
+  reward: 8
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-fairydragonwings
+    amount: 1
+    id: FairyDragonWings
+
+#Anomaly Core
+- type: pirateBounty
+  id: OutlawBountyAnomalyCore
+  reward: 12
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-anomalycore
+    amount: 1
+    id: AnomalyCore
+
+#Treasure
+- type: pirateBounty
+  id: OutlawBountyRings
+  reward: 6
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: outlaw-bounty-item-rings
+    amount: 12
+    id: PreciousRings
+
+- type: pirateBounty
+  id: OutlawBountyTrophies
+  reward: 6
+  description: pirate-bounty-description-generic
+  spawnChest: true
+  entries:
+  - name: outlaw-bounty-item-trophies
+    amount: 12
+    id: Trophies
+
+- type: pirateBounty
+  id: OutlawBountyData
+  reward: 4
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-data
+    amount: 2
+    id: EncryptedData
+
+- type: pirateBounty
+  id: OutlawBountyDiamond
+  reward: 12
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-diamond
+    amount: 30
+    id: MaterialDiamond
+
+- type: pirateBounty
+  id: OutlawBountyGold
+  reward: 4
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-gold
+    amount: 100
+    id: Gold
+
+- type: pirateBounty
+  id: OutlawBountyPlutonium
+  reward: 6
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-plutonium
+    amount: 10
+    id: IngotPlutonium
+
+- type: pirateBounty
+  id: OutlawBountyBearHide
+  reward: 4
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-bearhide
+    amount: 4
+    id: MaterialHideBear
+
+- type: pirateBounty
+  id: OutlawBountyCarpTeeth
+  reward: 6
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-carpteeth
+    amount: 16
+    id: CarpTeeth
+
+
+#RTGs
+- type: pirateBounty
+  id: OutlawBountyRTG
+  reward: 12
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-rtg
+    amount: 3
+    id: GeneratorRTG
+
+#Contraband Crates
+- type: pirateBounty
+  id: OutlawBountyContraCrate
+  reward: 12
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-contracrate
+    amount: 4
+    id: ContrabandCrate
+
+#Vending Machines
+- type: pirateBounty
+  id: OutlawBountyVendingMachine
+  reward: 6
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-vendingmachine
+    amount: 3
+    id: VendingMachine
+
+#Medical
+- type: pirateBounty
+  id: OutlawBountyHypo
+  reward: 6
+  description: pirate-bounty-description-generic
+  spawnChest: false
+  entries:
+  - name: outlaw-bounty-item-hypo
+    amount: 4
+    id: HypoMini
+
+- type: pirateBounty
+  id: OutlawBountyCannabisBrick
+  reward: 6
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-cannabisbrick
+    amount: 4
+    id: CannabisBrick
+
+- type: pirateBounty
+  id: OutlawBountyRainbowCannabisBrick
+  reward: 8
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-rainbowcannabisbrick
+    amount: 4
+    id: RainbowCannabisBrick
+
+- type: pirateBounty
+  id: OutlawBountyHyperzineInjector
+  reward: 10
+  description: pirate-bounty-description-generic
+  entries:
+  - name: outlaw-bounty-item-stimpack
+    amount: 8
+    id: Stimpack

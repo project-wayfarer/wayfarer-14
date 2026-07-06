@@ -25,7 +25,7 @@ namespace Content.Client.Communications.UI
         public TimeSpan? CountdownEnd;
 
         public event Action? OnEmergencyLevel;
-        public event Action<string>? OnAlertLevel;
+        public event Action<string, string>? OnAlertLevel; // Wayfarer: reason
         public event Action<string>? OnAnnounce;
         public event Action<string>? OnBroadcast;
 
@@ -37,8 +37,13 @@ namespace Content.Client.Communications.UI
             MessageInput.Placeholder = new Rope.Leaf(_loc.GetString("comms-console-menu-announcement-placeholder"));
 
             var maxAnnounceLength = _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength);
+            CharacterCount.Text = $"0/{maxAnnounceLength}"; // Wayfarer
             MessageInput.OnTextChanged += (args) =>
             {
+                // Wayfarer: character counter
+                CharacterCount.Text = $"{args.Control.TextLength}/{maxAnnounceLength}";
+                CharacterCount.FontColorOverride = args.Control.TextLength > maxAnnounceLength ? Color.Red : null;
+                // End Wayfarer
                 if (args.Control.TextLength > maxAnnounceLength)
                 {
                     AnnounceButton.Disabled = true;
@@ -63,7 +68,12 @@ namespace Content.Client.Communications.UI
                 var metadata = AlertLevelButton.GetItemMetadata(args.Id);
                 if (metadata != null && metadata is string cast)
                 {
+                    // Wayfarer
+                    /*
                     OnAlertLevel?.Invoke(cast);
+                    */
+                    OnAlertLevel?.Invoke(cast, Rope.Collapse(MessageInput.TextRope));
+                    // End Wayfarer
                 }
             };
 

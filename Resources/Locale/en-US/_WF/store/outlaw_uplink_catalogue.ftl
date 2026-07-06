@@ -79,11 +79,15 @@ uplink-outlaw-bundle-kidnap-desc = Contains a set of restraints, a stun baton an
 
 uplink-outlaw-iff-name = IFF Console Flatpack
 uplink-outlaw-iff-desc = A pre-assembled IFF console, procured from the Black Market. Don't get caught!
+uplink-outlaw-techfab-name = Outlaw Techfab
+uplink-outlaw-techfab-desc = Prints the questionably legal items recovered from decrypted black-market data, and a few other things.
+uplink-outlaw-assembler-name = Black Market Assembler
+uplink-outlaw-assembler-desc = A repurposed multi-assembler, ominously painted for assembling things, omniously.
 
 uplink-outlaw-pirateplushie-name = Yarr Moth Plushie
 uplink-outlaw-pirateplushie-desc = It's dastardly and has a dashing cloak. It chitters when you squeeze it!
-uplink-outlaw-card-name = Suspicious Business Card
-uplink-outlaw-card-desc = A blood-red colored business card.
+uplink-outlaw-card-name = Outlaw Business Card
+uplink-outlaw-card-desc = A black business card.
 
 uplink-outlaw-c20-name = C-20r Submachine Gun
 uplink-outlaw-c20-desc = Old faithful: The classic C-20r Submachine Gun

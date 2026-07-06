@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Ported from Monkestation https://github.com/Monkestation/Monkestation2.0/blob/6e764ebfefc5fc676bf7fda128485c5f05d2d38f/icons/mob/clothing/hands.dmi and https://github.com/Monkestation/Monkestation2.0/blob/6e764ebfefc5fc676bf7fda128485c5f05d2d38f/icons/obj/clothing/gloves.dmi",
+    "copyright": "Ported from Monkestation https://github.com/Monkestation/Monkestation2.0/blob/6e764ebfefc5fc676bf7fda128485c5f05d2d38f/icons/mob/clothing/hands.dmi and https://github.com/Monkestation/Monkestation2.0/blob/6e764ebfefc5fc676bf7fda128485c5f05d2d38f/icons/obj/clothing/gloves.dmi. equipped-avox variants Originally from Tau Ceti station, modified for SS14 by Luweth (github).",
     "size": {
         "x": 32,
         "y": 32
@@ -39,6 +39,10 @@
                     0.15
                 ]
             ]
-        }
+        },
+		{
+			"name": "equipped-HAND-avox",
+			"directions": 4
+		}
     ]
 }

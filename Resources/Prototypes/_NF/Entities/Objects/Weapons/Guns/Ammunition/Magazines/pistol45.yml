@@ -145,7 +145,7 @@
 - type: entity
   id: NFMagazinePistol45Uranium
   name: pistol magazine (.45 pistol, uranium)
-  parent: NFBaseMagazinePistol45
+  parent: [NFBaseMagazinePistol45, BaseBMContrabandNoValue] # Wayfarer: add BaseBMContrabandNoValue
   components:
   - type: BallisticAmmoProvider
     proto: NFCartridgePistol45Uranium

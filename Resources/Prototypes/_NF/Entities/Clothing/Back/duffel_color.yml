@@ -336,7 +336,7 @@
       - state: inhand-right-zipper
 
 - type: entity
-  parent: NFClothingDuffel
+  parent: [NFClothingDuffel, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackDuffelSr
   name: station representative duffel
   description: No expense was spared in crafting of this premium duffelbag.
@@ -392,7 +392,7 @@
   parent: NFClothingDuffel
   id: ClothingBackpackDuffelTrauma
   name: trauma duffel
-  description: A duffelbag produced for an ERT specialist.
+  description: A duffelbag produced for emergency response specialists.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Duffels/color.rsi
@@ -924,9 +924,9 @@
 #region wizard
 - type: entity
   parent:
-  - BaseC3WizardContrabandUnredeemable
+  #- BaseC3WizardContrabandUnredeemable # Wayfarer
   - NFClothingDuffel
-  - ContrabandClothing
+  #- ContrabandClothing # Wayfarer
   id: NFClothingBackpackDuffelWizardBlue
   name: blue wizard duffel
   description: A robust duffelbag produced for a magic user favoring blue tones of color.

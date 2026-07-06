@@ -107,8 +107,7 @@
 
 - type: entity
   name: Cybersun pen
-  # parent: [BaseAdvancedPen, BaseC3SyndicateContraband] # Frontier
-  parent: [NFBaseUnprotectedAdvancedPen, BaseBMContraband] # Frontier # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
+  parent: [BaseAdvancedPen, BaseBMContraband] # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: CyberPen
   description: A high-tech pen straight from Cybersun's legal department, capable of refracting hard-light at impossible angles through its diamond tip in order to write. So powerful, it's even able to rewrite officially stamped documents should the need arise.
   components:
@@ -150,7 +149,7 @@
 
 - type: entity
   name: wizard's magical pen
-  parent: [ PenEmbeddable, BaseC3WizardContraband ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband
+  parent: [ PenEmbeddable ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband # Wayfarer: Removed BaseC3WizardContraband
   id: PenWiz
   description: A luxurious fountain pen. Seems to have a magical crystal eraser.
   components:

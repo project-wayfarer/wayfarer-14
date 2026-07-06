@@ -85,7 +85,7 @@ entities:
         nodes:
         - node:
             angle: 3.141592653589793 rad
-            color: '#FFA71AFF'
+            color: '#CF7332FF'
             id: Arrows
           decals:
             50: 2.9674835,0.034020424
@@ -134,7 +134,7 @@ entities:
           decals:
             52: 7,2
         - node:
-            color: '#FFA71BFF'
+            color: '#CF7332FF'
             id: DiagonalOverlay
           decals:
             5: 7,-2
@@ -182,37 +182,37 @@ entities:
             78: 5,-2
             79: 5,-6
         - node:
-            color: '#FFA61CFF'
+            color: '#CF7332FF'
             id: stencilC
           decals:
             61: 1,-1
         - node:
-            color: '#FFA61CFF'
+            color: '#CF7332FF'
             id: stencilG
           decals:
             62: 2,-1
         - node:
-            color: '#FFA61CFF'
+            color: '#CF7332FF'
             id: stencilP
           decals:
             63: 3,-1
         - node:
-            color: '#FFA71AFF'
+            color: '#CF7332FF'
             id: tile_diagonal_corner
           decals:
             75: 3,2
         - node:
-            color: '#FFA71AFF'
+            color: '#CF7332FF'
             id: tile_diagonal_corner_180
           decals:
             76: 3,2
         - node:
-            color: '#FFA71AFF'
+            color: '#CF7332FF'
             id: tile_diagonal_corner_270
           decals:
             74: 3,2
         - node:
-            color: '#FFA71AFF'
+            color: '#CF7332FF'
             id: tile_diagonal_corner_90
           decals:
             73: 3,2
@@ -1277,7 +1277,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.5,-5.5
       parent: 1
-- proto: SmallGyroscopeNfsd
+- proto: GyroscopeNfsd
   entities:
   - uid: 142
     components:

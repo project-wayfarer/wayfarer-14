@@ -1,0 +1,48 @@
+- type: entity
+  id: CorporationATMBase
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseComputer]
+  abstract: true
+  components:
+  - type: ActivatableUIRequiresPower
+  - type: ActivatableUI
+    key: enum.CorporationAtmUiKey.Key
+    singleUser: true
+  - type: Computer
+    board: Null
+  - type: CorporationAtm
+    cashSlot:
+      name: corp-ATM-cashSlot
+      insertSound: /Audio/Machines/scanning.ogg
+      ejectSound: /Audio/Machines/tray_eject.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+          - Cash
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+      corp-ATM-cashSlot: !type:ContainerSlot
+  - type: UserInterface
+    interfaces:
+      enum.CorporationAtmUiKey.Key:
+        type: CorporationAtmBoundUserInterface
+  - type: Anchorable
+  - type: Pullable
+
+- type: entity
+  id: CorporationATM
+  name: corporation ATM
+  parent: CorporationATMBase
+  description: A special ATM for managing your corporation's funds. Anyone can deposit; only managers and the leader can withdraw.
+  components:
+  - type: Sprite
+    netsync: false
+    noRot: true
+    sprite: _WF/Structures/Machines/corpatm/depositatm.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: icon
+    - map: ["computerLayerScreen"]
+      state: unshaded

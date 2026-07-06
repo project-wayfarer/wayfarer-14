@@ -7,7 +7,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsConcussiveGauntlets
   name: concussive gauntlets
-  description: A pair of gauntlets designed for mining usage, delivering shocks to shatter anyhting in their path. Rare and powerful
+  description: A pair of gauntlets designed for mining usage, delivering shocks to shatter anything in their path. Expensive and powerful
   components:
   - type: Sprite
     sprite: _Mono/Clothing/Hands/Gloves/concussive_gauntlets.rsi
@@ -16,18 +16,19 @@
     sprite: _Mono/Clothing/Hands/Gloves/concussive_gauntlets.rsi
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 2.0
+    attackRate: 2.0 # Wayfarer: 2.5<2.0
     damage:
       types:
-        Blunt: 6
-        Structural: 40
+        Blunt: 6 # Wayfarer: 15<6
+        Shock: 5 # Wayfarer
+        Structural: 40 # Wayfarer: 50<40
     soundHit:
       collection: ExplosionSmall
   - type: Tag
     tags:
     - Pickaxe
-    - DepositBlacklist
+    - DepositBlacklist # Wayfarer
   - type: MiningGatheringHard
   - type: StaticPrice
-    price: 15000
+    price: 2000 # Wayfarer: 15000<2000
     vendPrice: 50000

@@ -11,7 +11,7 @@
       - EncryptionKeyCommon
 
 - type: entity
-  parent: ClothingHeadset
+  parent: [ClothingHeadset, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingHeadsetNfsdBrown
   name: CGP headset
   components:

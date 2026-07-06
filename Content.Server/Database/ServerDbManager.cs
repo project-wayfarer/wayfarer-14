@@ -34,6 +34,7 @@ namespace Content.Server.Database
         void Shutdown();
 
         #region Preferences
+
         Task<PlayerPreferences> InitPrefsAsync(
             NetUserId userId,
             ICharacterProfile defaultProfile,
@@ -45,21 +46,26 @@ namespace Content.Server.Database
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
 
-        Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites);
+        Task SaveConstructionFavoritesAsync(NetUserId userId,
+            List<ProtoId<ConstructionPrototype>> constructionFavorites);
 
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
         Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
         Task<int?> GetProfileIdAsync(NetUserId userId, int slot); // Wayfarer (NEW) - Get database profile ID
+
         #endregion
 
         #region User Ids
+
         // Username assignment (for guest accounts, so they persist GUID)
         Task AssignUserIdAsync(string name, NetUserId userId);
         Task<NetUserId?> GetAssignedUserIdAsync(string name);
+
         #endregion
 
         #region Bans
+
         /// <summary>
         ///     Looks up a ban by id.
         ///     This will return a pardoned ban as well.
@@ -99,7 +105,7 @@ namespace Content.Server.Database
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
             ImmutableArray<ImmutableArray<byte>>? modernHWIds,
-            bool includeUnbanned=true);
+            bool includeUnbanned = true);
 
         Task AddServerBanAsync(ServerBanDef serverBan);
         Task AddServerUnbanAsync(ServerUnbanDef serverBan);
@@ -131,6 +137,7 @@ namespace Content.Server.Database
         #endregion
 
         #region Role Bans
+
         /// <summary>
         ///     Looks up a role ban by id.
         ///     This will return a pardoned role ban as well.
@@ -167,6 +174,7 @@ namespace Content.Server.Database
             DateTimeOffset? expiration,
             Guid editedBy,
             DateTimeOffset editedAt);
+
         #endregion
 
         #region Playtime
@@ -188,16 +196,20 @@ namespace Content.Server.Database
         #endregion
 
         #region Player Records
+
         Task UpdatePlayerRecordAsync(
             NetUserId userId,
             string userName,
             IPAddress address,
             ImmutableTypedHwid? hwId);
+
         Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default);
         Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default);
+
         #endregion
 
         #region Connection Logs
+
         /// <returns>ID of newly inserted connection log row.</returns>
         Task<int> AddConnectionLogAsync(
             NetUserId userId,
@@ -213,6 +225,7 @@ namespace Content.Server.Database
         #endregion
 
         #region Admin Ranks
+
         Task<Admin?> GetAdminDataForAsync(NetUserId userId, CancellationToken cancel = default);
         Task<AdminRank?> GetAdminRankAsync(int id, CancellationToken cancel = default);
 
@@ -236,6 +249,7 @@ namespace Content.Server.Database
         Task RemoveAdminRankAsync(int rankId, CancellationToken cancel = default);
         Task AddAdminRankAsync(AdminRank rank, CancellationToken cancel = default);
         Task UpdateAdminRankAsync(AdminRank rank, CancellationToken cancel = default);
+
         #endregion
 
         #region Rounds
@@ -303,9 +317,32 @@ namespace Content.Server.Database
 
         #region Admin Notes
 
-        Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime);
-        Task<int> AddAdminWatchlist(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime);
-        Task<int> AddAdminMessage(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime);
+        Task<int> AddAdminNote(int? roundId,
+            Guid player,
+            TimeSpan playtimeAtNote,
+            string message,
+            NoteSeverity severity,
+            bool secret,
+            Guid createdBy,
+            DateTimeOffset createdAt,
+            DateTimeOffset? expiryTime);
+
+        Task<int> AddAdminWatchlist(int? roundId,
+            Guid player,
+            TimeSpan playtimeAtNote,
+            string message,
+            Guid createdBy,
+            DateTimeOffset createdAt,
+            DateTimeOffset? expiryTime);
+
+        Task<int> AddAdminMessage(int? roundId,
+            Guid player,
+            TimeSpan playtimeAtNote,
+            string message,
+            Guid createdBy,
+            DateTimeOffset createdAt,
+            DateTimeOffset? expiryTime);
+
         Task<AdminNoteRecord?> GetAdminNote(int id);
         Task<AdminWatchlistRecord?> GetAdminWatchlist(int id);
         Task<AdminMessageRecord?> GetAdminMessage(int id);
@@ -315,9 +352,27 @@ namespace Content.Server.Database
         Task<List<IAdminRemarksRecord>> GetVisibleAdminNotes(Guid player);
         Task<List<AdminWatchlistRecord>> GetActiveWatchlists(Guid player);
         Task<List<AdminMessageRecord>> GetMessages(Guid player);
-        Task EditAdminNote(int id, string message, NoteSeverity severity, bool secret, Guid editedBy, DateTimeOffset editedAt, DateTimeOffset? expiryTime);
-        Task EditAdminWatchlist(int id, string message, Guid editedBy, DateTimeOffset editedAt, DateTimeOffset? expiryTime);
-        Task EditAdminMessage(int id, string message, Guid editedBy, DateTimeOffset editedAt, DateTimeOffset? expiryTime);
+
+        Task EditAdminNote(int id,
+            string message,
+            NoteSeverity severity,
+            bool secret,
+            Guid editedBy,
+            DateTimeOffset editedAt,
+            DateTimeOffset? expiryTime);
+
+        Task EditAdminWatchlist(int id,
+            string message,
+            Guid editedBy,
+            DateTimeOffset editedAt,
+            DateTimeOffset? expiryTime);
+
+        Task EditAdminMessage(int id,
+            string message,
+            Guid editedBy,
+            DateTimeOffset editedAt,
+            DateTimeOffset? expiryTime);
+
         Task DeleteAdminNote(int id, Guid deletedBy, DateTimeOffset deletedAt);
         Task DeleteAdminWatchlist(int id, Guid deletedBy, DateTimeOffset deletedAt);
         Task DeleteAdminMessage(int id, Guid deletedBy, DateTimeOffset deletedAt);
@@ -395,8 +450,16 @@ namespace Content.Server.Database
 
         #region Wayfarer Safety Deposit Box
 
-        Task<WayfarerSafetyDepositBox> PurchaseSafetyDepositBox(Guid ownerUserId, int characterIndex, string ownerName, string boxSize, CancellationToken cancel = default);
-        Task<List<WayfarerSafetyDepositBox>> GetPlayerSafetyDepositBoxes(Guid ownerUserId, int characterIndex, CancellationToken cancel = default);
+        Task<WayfarerSafetyDepositBox> PurchaseSafetyDepositBox(Guid ownerUserId,
+            int characterIndex,
+            string ownerName,
+            string boxSize,
+            CancellationToken cancel = default);
+
+        Task<List<WayfarerSafetyDepositBox>> GetPlayerSafetyDepositBoxes(Guid ownerUserId,
+            int characterIndex,
+            CancellationToken cancel = default);
+
         Task<WayfarerSafetyDepositBox?> GetSafetyDepositBox(Guid boxId, CancellationToken cancel = default);
         Task DepositSafetyDepositBoxItems(Guid boxId, List<string> entityDataList, CancellationToken cancel = default);
         Task UpdateSafetyDepositBoxNickname(Guid boxId, string? nickname, CancellationToken cancel = default);
@@ -409,9 +472,27 @@ namespace Content.Server.Database
         #region Wayfarer Roleplay Leveling
 
         Task<WayfarerRoleplayLevel> GetOrCreateRoleplayLevel(Guid userId, CancellationToken cancel = default);
-        Task UpdateRoleplayLevel(Guid userId, int level, long experience, long experienceToNextLevel, int totalCommends, CancellationToken cancel = default);
-        Task AddRoleplayCommend(int roundId, int recipientProfileId, Guid recipientUserId, int giverProfileId, Guid giverUserId, string? comment, bool isPrivate, CancellationToken cancel = default);
-        Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(Guid userId, bool includePrivate = false, CancellationToken cancel = default);
+
+        Task UpdateRoleplayLevel(Guid userId,
+            int level,
+            long experience,
+            long experienceToNextLevel,
+            int totalCommends,
+            CancellationToken cancel = default);
+
+        Task AddRoleplayCommend(int roundId,
+            int recipientProfileId,
+            Guid recipientUserId,
+            int giverProfileId,
+            Guid giverUserId,
+            string? comment,
+            bool isPrivate,
+            CancellationToken cancel = default);
+
+        Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(Guid userId,
+            bool includePrivate = false,
+            CancellationToken cancel = default);
+
         Task<int> GetRoundCommendsGivenByPlayer(Guid giverUserId, int roundId, CancellationToken cancel = default);
         Task<string?> GetCharacterNameByProfileIdAsync(int profileId, CancellationToken cancel = default);
 
@@ -421,1182 +502,1514 @@ namespace Content.Server.Database
 
         Task<List<WayfarerCommunityGoal>> GetAllCommunityGoals(CancellationToken cancel = default);
         Task<List<WayfarerCommunityGoal>> GetActiveCommunityGoals(int roundId, CancellationToken cancel = default);
-        Task<WayfarerCommunityGoal> CreateCommunityGoal(string title, string description, int? startRound, int? endRound, CancellationToken cancel = default);
-        Task UpdateCommunityGoal(int goalId, string title, string description, int? startRound, int? endRound, bool isActive, CancellationToken cancel = default);
+
+        Task<WayfarerCommunityGoal> CreateCommunityGoal(string title,
+            string description,
+            int? startRound,
+            int? endRound,
+            CancellationToken cancel = default);
+
+        Task UpdateCommunityGoal(int goalId,
+            string title,
+            string description,
+            int? startRound,
+            int? endRound,
+            bool isActive,
+            CancellationToken cancel = default);
+
         Task DeleteCommunityGoal(int goalId, CancellationToken cancel = default);
-        Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId, string entityPrototypeId, string? displayName, long requiredAmount, CancellationToken cancel = default);
+
+        Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId,
+            string entityPrototypeId,
+            string? displayName,
+            long requiredAmount,
+            CancellationToken cancel = default);
+
         Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default);
         Task UpdateCommunityGoalRequirement(int requirementId, long requiredAmount, CancellationToken cancel = default);
         Task AddCommunityGoalContribution(int requirementId, long amount, Guid? playerUserId = null, string? characterName = null, string? entityPrototypeId = null, int roundId = 0, CancellationToken cancel = default);
+
+        #endregion
+
+        #region Wayfarer Corporations
+
+        Task<List<WayfarerCorporation>> GetAllCorporations(CancellationToken cancel = default);
+        Task<WayfarerCorporation?> GetCorporationById(int id, CancellationToken cancel = default);
+        Task<WayfarerCorporation?> GetCorporationForPlayer(Guid userId, CancellationToken cancel = default);
+        Task<WayfarerCorporation?> GetCorporationForCharacter(Guid userId, string displayName, CancellationToken cancel = default);
+
+        Task<WayfarerCorporation> CreateCorporation(string name,
+            string description,
+            int privacy,
+            Guid founderUserId,
+            string founderDisplayName,
+            CancellationToken cancel = default);
+
+        Task<WayfarerCorporation> AdminCreateCorporation(string name,
+            string description,
+            int privacy,
+            CancellationToken cancel = default);
+
+        Task UpdateCorporationDescription(int corporationId, string description, CancellationToken cancel = default);
+        Task UpdateCorporationPrivacy(int corporationId, int privacy, CancellationToken cancel = default);
+        Task DeleteCorporation(int corporationId, CancellationToken cancel = default);
+
+        Task AddCorporationMember(int corporationId,
+            Guid userId,
+            string displayName,
+            int rank,
+            CancellationToken cancel = default);
+
+        Task RemoveCorporationMember(int corporationId, Guid userId, CancellationToken cancel = default);
+        Task UpdateCorporationMemberRank(int corporationId, Guid userId, int rank, CancellationToken cancel = default);
+        Task AddCorporationInvite(int corporationId, Guid inviteeUserId, CancellationToken cancel = default);
+        Task RemoveCorporationInvite(int corporationId, Guid inviteeUserId, CancellationToken cancel = default);
+        Task<bool> HasCorporationInvite(int corporationId, Guid inviteeUserId, CancellationToken cancel = default);
+        Task<int?> GetCorporationBalance(int corporationId, CancellationToken cancel = default);
+        Task<bool> TryDepositToCorporation(int corporationId, int amount, CancellationToken cancel = default);
+        Task<bool> TryWithdrawFromCorporation(int corporationId, int amount, CancellationToken cancel = default);
+        Task SetCorporationBalance(int corporationId, int balance, CancellationToken cancel = default);
+
+        Task<WayfarerCorporationStation?> GetCorporationStation(int corporationId, CancellationToken cancel = default);
+        Task<WayfarerCorporationStation> CreateCorporationStation(int corporationId, string stationName, string savePath, CancellationToken cancel = default);
+        Task DeleteCorporationStation(int corporationId, CancellationToken cancel = default);
 
         #endregion
     }
 
     /// <summary>
     /// Represents a notification sent between servers via the database layer.
-    /// </summary>
-    /// <remarks>
-    /// <para>
-    /// Database notifications are a simple system to broadcast messages to an entire server group
-    /// backed by the same database. For example, this is used to notify all servers of new ban records.
-    /// </para>
-    /// <para>
-    /// They are currently implemented  by the PostgreSQL <c>NOTIFY</c> and <c>LISTEN</c> commands.
-    /// </para>
-    /// </remarks>
-    public struct DatabaseNotification
-    {
-        /// <summary>
-        /// The channel for the notification. This can be used to differentiate notifications for different purposes.
         /// </summary>
-        public required string Channel { get; set; }
-
-        /// <summary>
-        /// The actual contents of the notification. Optional.
-        /// </summary>
-        public string? Payload { get; set; }
-    }
-
-    public sealed class ServerDbManager : IServerDbManager
-    {
-        public static readonly Counter DbReadOpsMetric = Metrics.CreateCounter(
-            "db_read_ops",
-            "Amount of read operations processed by the database manager.");
-
-        public static readonly Counter DbWriteOpsMetric = Metrics.CreateCounter(
-            "db_write_ops",
-            "Amount of write operations processed by the database manager.");
-
-        public static readonly Gauge DbActiveOps = Metrics.CreateGauge(
-            "db_executing_ops",
-            "Amount of active database operations. Note that some operations may be waiting for a database connection.");
-
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IResourceManager _res = default!;
-        [Dependency] private readonly ILogManager _logMgr = default!;
-
-        private ServerDbBase _db = default!;
-        private LoggingProvider _msLogProvider = default!;
-        private ILoggerFactory _msLoggerFactory = default!;
-        private ISawmill _sawmill = default!;
-
-        private bool _synchronous;
-        // When running in integration tests, we'll use a single in-memory SQLite database connection.
-        // This is that connection, close it when we shut down.
-        private SqliteConnection? _sqliteInMemoryConnection;
-
-        private readonly List<Action<DatabaseNotification>> _notificationHandlers = [];
-
-        public void Init()
+        /// <remarks>
+        /// <para>
+        /// Database notifications are a simple system to broadcast messages to an entire server group
+        /// backed by the same database. For example, this is used to notify all servers of new ban records.
+        /// </para>
+        /// <para>
+        /// They are currently implemented  by the PostgreSQL <c>NOTIFY</c> and <c>LISTEN</c> commands.
+        /// </para>
+        /// </remarks>
+        public struct DatabaseNotification
         {
-            _msLogProvider = new LoggingProvider(_logMgr);
-            _msLoggerFactory = LoggerFactory.Create(builder =>
-            {
-                builder.AddProvider(_msLogProvider);
-            });
-            _sawmill = _logMgr.GetSawmill("db.manager");
+            /// <summary>
+            /// The channel for the notification. This can be used to differentiate notifications for different purposes.
+            /// </summary>
+            public required string Channel { get; set; }
 
-            _synchronous = _cfg.GetCVar(CCVars.DatabaseSynchronous);
+            /// <summary>
+            /// The actual contents of the notification. Optional.
+            /// </summary>
+            public string? Payload { get; set; }
+        }
 
-            var engine = _cfg.GetCVar(CCVars.DatabaseEngine).ToLower();
-            var opsLog = _logMgr.GetSawmill("db.op");
-            var notifyLog = _logMgr.GetSawmill("db.notify");
-            switch (engine)
+        public sealed class ServerDbManager : IServerDbManager
+        {
+            public static readonly Counter DbReadOpsMetric = Metrics.CreateCounter(
+                "db_read_ops",
+                "Amount of read operations processed by the database manager.");
+
+            public static readonly Counter DbWriteOpsMetric = Metrics.CreateCounter(
+                "db_write_ops",
+                "Amount of write operations processed by the database manager.");
+
+            public static readonly Gauge DbActiveOps = Metrics.CreateGauge(
+                "db_executing_ops",
+                "Amount of active database operations. Note that some operations may be waiting for a database connection.");
+
+            [Dependency] private readonly IConfigurationManager _cfg = default!;
+            [Dependency] private readonly IResourceManager _res = default!;
+            [Dependency] private readonly ILogManager _logMgr = default!;
+
+            private ServerDbBase _db = default!;
+            private LoggingProvider _msLogProvider = default!;
+            private ILoggerFactory _msLoggerFactory = default!;
+            private ISawmill _sawmill = default!;
+
+            private bool _synchronous;
+
+            // When running in integration tests, we'll use a single in-memory SQLite database connection.
+            // This is that connection, close it when we shut down.
+            private SqliteConnection? _sqliteInMemoryConnection;
+
+            private readonly List<Action<DatabaseNotification>> _notificationHandlers = [];
+
+            public void Init()
             {
-                case "sqlite":
-                    SetupSqlite(out var contextFunc, out var inMemory);
-                    _db = new ServerDbSqlite(contextFunc, inMemory, _cfg, _synchronous, opsLog);
-                    break;
-                case "postgres":
-                    var (pgOptions, conString) = CreatePostgresOptions();
-                    _db = new ServerDbPostgres(pgOptions, conString, _cfg, opsLog, notifyLog);
-                    break;
-                default:
-                    throw new InvalidDataException($"Unknown database engine {engine}.");
+                _msLogProvider = new LoggingProvider(_logMgr);
+                _msLoggerFactory = LoggerFactory.Create(builder =>
+                {
+                    builder.AddProvider(_msLogProvider);
+                });
+                _sawmill = _logMgr.GetSawmill("db.manager");
+
+                _synchronous = _cfg.GetCVar(CCVars.DatabaseSynchronous);
+
+                var engine = _cfg.GetCVar(CCVars.DatabaseEngine).ToLower();
+                var opsLog = _logMgr.GetSawmill("db.op");
+                var notifyLog = _logMgr.GetSawmill("db.notify");
+                switch (engine)
+                {
+                    case "sqlite":
+                        SetupSqlite(out var contextFunc, out var inMemory);
+                        _db = new ServerDbSqlite(contextFunc, inMemory, _cfg, _synchronous, opsLog);
+                        break;
+                    case "postgres":
+                        var (pgOptions, conString) = CreatePostgresOptions();
+                        _db = new ServerDbPostgres(pgOptions, conString, _cfg, opsLog, notifyLog);
+                        break;
+                    default:
+                        throw new InvalidDataException($"Unknown database engine {engine}.");
+                }
+
+                _db.OnNotificationReceived += HandleDatabaseNotification;
             }
 
-            _db.OnNotificationReceived += HandleDatabaseNotification;
-        }
+            public void Shutdown()
+            {
+                _db.OnNotificationReceived -= HandleDatabaseNotification;
 
-        public void Shutdown()
-        {
-            _db.OnNotificationReceived -= HandleDatabaseNotification;
+                _sqliteInMemoryConnection?.Dispose();
+                _db.Shutdown();
+            }
 
-            _sqliteInMemoryConnection?.Dispose();
-            _db.Shutdown();
-        }
-
-        public Task<PlayerPreferences> InitPrefsAsync(
-            NetUserId userId,
-            ICharacterProfile defaultProfile,
-            CancellationToken cancel)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.InitPrefsAsync(userId, defaultProfile));
-        }
-
-        public Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SaveSelectedCharacterIndexAsync(userId, index));
-        }
-
-        public Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SaveCharacterSlotAsync(userId, profile, slot));
-        }
-
-        public Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DeleteSlotAndSetSelectedIndex(userId, deleteSlot, newSlot));
-        }
-
-        public Task SaveAdminOOCColorAsync(NetUserId userId, Color color)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
-        }
-
-        public Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SaveConstructionFavoritesAsync(userId, constructionFavorites));
-        }
-
-        public Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayerPreferencesAsync(userId, cancel));
-        }
-
-        // Wayfarer (NEW) - Get database profile ID wrapper
-        public Task<int?> GetProfileIdAsync(NetUserId userId, int slot)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetProfileIdAsync(userId, slot));
-        }
-
-        public Task AssignUserIdAsync(string name, NetUserId userId)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AssignUserIdAsync(name, userId));
-        }
-
-        public Task<NetUserId?> GetAssignedUserIdAsync(string name)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAssignedUserIdAsync(name));
-        }
-
-        public Task<ServerBanDef?> GetServerBanAsync(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetServerBanAsync(id));
-        }
-
-        public Task<ServerBanDef?> GetServerBanAsync(
-            IPAddress? address,
-            NetUserId? userId,
-            ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetServerBanAsync(address, userId, hwId, modernHWIds));
-        }
-
-        public Task<List<ServerBanDef>> GetServerBansAsync(
-            IPAddress? address,
-            NetUserId? userId,
-            ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
-            bool includeUnbanned=true)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetServerBansAsync(address, userId, hwId, modernHWIds, includeUnbanned));
-        }
-
-        public Task AddServerBanAsync(ServerBanDef serverBan)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddServerBanAsync(serverBan));
-        }
-
-        public Task AddServerUnbanAsync(ServerUnbanDef serverUnban)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddServerUnbanAsync(serverUnban));
-        }
-
-        public Task EditServerBan(int id, string reason, NoteSeverity severity, DateTimeOffset? expiration, Guid editedBy, DateTimeOffset editedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.EditServerBan(id, reason, severity, expiration, editedBy, editedAt));
-        }
-
-        public Task UpdateBanExemption(NetUserId userId, ServerBanExemptFlags flags)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateBanExemption(userId, flags));
-        }
-
-        public Task<ServerBanExemptFlags> GetBanExemption(NetUserId userId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetBanExemption(userId, cancel));
-        }
-
-        #region Role Ban
-        public Task<ServerRoleBanDef?> GetServerRoleBanAsync(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetServerRoleBanAsync(id));
-        }
-
-        public Task<List<ServerRoleBanDef>> GetServerRoleBansAsync(
-            IPAddress? address,
-            NetUserId? userId,
-            ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
-            bool includeUnbanned = true)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetServerRoleBansAsync(address, userId, hwId, modernHWIds, includeUnbanned));
-        }
-
-        public Task<ServerRoleBanDef> AddServerRoleBanAsync(ServerRoleBanDef serverRoleBan)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddServerRoleBanAsync(serverRoleBan));
-        }
-
-        public Task AddServerRoleUnbanAsync(ServerRoleUnbanDef serverRoleUnban)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddServerRoleUnbanAsync(serverRoleUnban));
-        }
-
-        public Task EditServerRoleBan(int id, string reason, NoteSeverity severity, DateTimeOffset? expiration, Guid editedBy, DateTimeOffset editedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.EditServerRoleBan(id, reason, severity, expiration, editedBy, editedAt));
-        }
-        #endregion
-
-        #region Playtime
-
-        public Task<List<PlayTime>> GetPlayTimes(Guid player, CancellationToken cancel)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayTimes(player, cancel));
-        }
-
-        public Task UpdatePlayTimes(IReadOnlyCollection<PlayTimeUpdate> updates)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdatePlayTimes(updates));
-        }
-
-        #endregion
-
-        public Task UpdatePlayerRecordAsync(
-            NetUserId userId,
-            string userName,
-            IPAddress address,
-            ImmutableTypedHwid? hwId)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdatePlayerRecord(userId, userName, address, hwId));
-        }
-
-        public Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayerRecordByUserName(userName, cancel));
-        }
-
-        public Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayerRecordByUserId(userId, cancel));
-        }
-
-        public Task<int> AddConnectionLogAsync(
-            NetUserId userId,
-            string userName,
-            IPAddress address,
-            ImmutableTypedHwid? hwId,
-            float trust,
-            ConnectionDenyReason? denied,
-            int serverId)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddConnectionLogAsync(userId, userName, address, hwId, trust, denied, serverId));
-        }
-
-        public Task AddServerBanHitsAsync(int connection, IEnumerable<ServerBanDef> bans)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddServerBanHitsAsync(connection, bans));
-        }
-
-        public Task<Admin?> GetAdminDataForAsync(NetUserId userId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminDataForAsync(userId, cancel));
-        }
-
-        public Task<AdminRank?> GetAdminRankAsync(int id, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminRankDataForAsync(id, cancel));
-        }
-
-        public Task<((Admin, string? lastUserName)[] admins, AdminRank[])> GetAllAdminAndRanksAsync(
-            CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAllAdminAndRanksAsync(cancel));
-        }
-
-        public Task RemoveAdminAsync(NetUserId userId, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveAdminAsync(userId, cancel));
-        }
-
-        public Task AddAdminAsync(Admin admin, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddAdminAsync(admin, cancel));
-        }
-
-        public Task UpdateAdminAsync(Admin admin, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateAdminAsync(admin, cancel));
-        }
-
-        public Task UpdateAdminDeadminnedAsync(NetUserId userId, bool deadminned, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateAdminDeadminnedAsync(userId, deadminned, cancel));
-        }
-
-        public Task RemoveAdminRankAsync(int rankId, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveAdminRankAsync(rankId, cancel));
-        }
-
-        public Task AddAdminRankAsync(AdminRank rank, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddAdminRankAsync(rank, cancel));
-        }
-
-        public Task<int> AddNewRound(Server server, params Guid[] playerIds)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddNewRound(server, playerIds));
-        }
-
-        public Task<Round> GetRound(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetRound(id));
-        }
-
-        public Task AddRoundPlayers(int id, params Guid[] playerIds)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddRoundPlayers(id, playerIds));
-        }
-
-        public Task UpdateAdminRankAsync(AdminRank rank, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateAdminRankAsync(rank, cancel));
-        }
-
-        public async Task<Server> AddOrGetServer(string serverName)
-        {
-            var (server, existed) = await RunDbCommand(() => _db.AddOrGetServer(serverName));
-            if (existed)
-                DbReadOpsMetric.Inc();
-            else
+            public Task<PlayerPreferences> InitPrefsAsync(
+                NetUserId userId,
+                ICharacterProfile defaultProfile,
+                CancellationToken cancel)
+            {
                 DbWriteOpsMetric.Inc();
-
-            return server;
-        }
-
-        public Task AddAdminLogs(List<AdminLog> logs)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddAdminLogs(logs));
-        }
-
-        public IAsyncEnumerable<string> GetAdminLogMessages(LogFilter? filter = null)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminLogMessages(filter));
-        }
-
-        public IAsyncEnumerable<SharedAdminLog> GetAdminLogs(LogFilter? filter = null)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminLogs(filter));
-        }
-
-        public IAsyncEnumerable<JsonDocument> GetAdminLogsJson(LogFilter? filter = null)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminLogsJson(filter));
-        }
-
-        public Task<int> CountAdminLogs(int round)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.CountAdminLogs(round));
-        }
-
-        public Task<bool> GetWhitelistStatusAsync(NetUserId player)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetWhitelistStatusAsync(player));
-        }
-
-        public Task AddToWhitelistAsync(NetUserId player)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddToWhitelistAsync(player));
-        }
-
-        public Task RemoveFromWhitelistAsync(NetUserId player)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveFromWhitelistAsync(player));
-        }
-
-        public Task<bool> GetBlacklistStatusAsync(NetUserId player)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetBlacklistStatusAsync(player));
-        }
-
-        public Task AddToBlacklistAsync(NetUserId player)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddToBlacklistAsync(player));
-        }
-
-        public Task RemoveFromBlacklistAsync(NetUserId player)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveFromBlacklistAsync(player));
-        }
-
-        public Task AddUploadedResourceLogAsync(NetUserId user, DateTimeOffset date, string path, byte[] data)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddUploadedResourceLogAsync(user, date, path, data));
-        }
-
-        public Task PurgeUploadedResourceLogAsync(int days)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.PurgeUploadedResourceLogAsync(days));
-        }
-
-        public Task<DateTimeOffset?> GetLastReadRules(NetUserId player)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetLastReadRules(player));
-        }
-
-        public Task SetLastReadRules(NetUserId player, DateTimeOffset? time)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SetLastReadRules(player, time));
-        }
-
-        public Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)
-        {
-            DbWriteOpsMetric.Inc();
-            var note = new AdminNote
-            {
-                RoundId = roundId,
-                CreatedById = createdBy,
-                LastEditedById = createdBy,
-                PlayerUserId = player,
-                PlaytimeAtNote = playtimeAtNote,
-                Message = message,
-                Severity = severity,
-                Secret = secret,
-                CreatedAt = createdAt.UtcDateTime,
-                LastEditedAt = createdAt.UtcDateTime,
-                ExpirationTime = expiryTime?.UtcDateTime
-            };
-
-            return RunDbCommand(() => _db.AddAdminNote(note));
-        }
-
-        public Task<int> AddAdminWatchlist(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)
-        {
-            DbWriteOpsMetric.Inc();
-            var note = new AdminWatchlist
-            {
-                RoundId = roundId,
-                CreatedById = createdBy,
-                LastEditedById = createdBy,
-                PlayerUserId = player,
-                PlaytimeAtNote = playtimeAtNote,
-                Message = message,
-                CreatedAt = createdAt.UtcDateTime,
-                LastEditedAt = createdAt.UtcDateTime,
-                ExpirationTime = expiryTime?.UtcDateTime
-            };
-
-            return RunDbCommand(() => _db.AddAdminWatchlist(note));
-        }
-
-        public Task<int> AddAdminMessage(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)
-        {
-            DbWriteOpsMetric.Inc();
-            var note = new AdminMessage
-            {
-                RoundId = roundId,
-                CreatedById = createdBy,
-                LastEditedById = createdBy,
-                PlayerUserId = player,
-                PlaytimeAtNote = playtimeAtNote,
-                Message = message,
-                CreatedAt = createdAt.UtcDateTime,
-                LastEditedAt = createdAt.UtcDateTime,
-                ExpirationTime = expiryTime?.UtcDateTime
-            };
-
-            return RunDbCommand(() => _db.AddAdminMessage(note));
-        }
-
-        public Task<AdminNoteRecord?> GetAdminNote(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminNote(id));
-        }
-        public Task<AdminWatchlistRecord?> GetAdminWatchlist(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminWatchlist(id));
-        }
-        public Task<AdminMessageRecord?> GetAdminMessage(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAdminMessage(id));
-        }
-
-        public Task<ServerBanNoteRecord?> GetServerBanAsNoteAsync(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetServerBanAsNoteAsync(id));
-        }
-
-        public Task<ServerRoleBanNoteRecord?> GetServerRoleBanAsNoteAsync(int id)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetServerRoleBanAsNoteAsync(id));
-        }
-
-        public Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAllAdminRemarks(player));
-        }
-
-        public Task<List<IAdminRemarksRecord>> GetVisibleAdminNotes(Guid player)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetVisibleAdminRemarks(player));
-        }
-
-        public Task<List<AdminWatchlistRecord>> GetActiveWatchlists(Guid player)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetActiveWatchlists(player));
-        }
-
-        public Task<List<AdminMessageRecord>> GetMessages(Guid player)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetMessages(player));
-        }
-        public Task EditAdminNote(int id, string message, NoteSeverity severity, bool secret, Guid editedBy, DateTimeOffset editedAt, DateTimeOffset? expiryTime)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.EditAdminNote(id, message, severity, secret, editedBy, editedAt, expiryTime));
-        }
-
-        public Task EditAdminWatchlist(int id, string message, Guid editedBy, DateTimeOffset editedAt, DateTimeOffset? expiryTime)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.EditAdminWatchlist(id, message, editedBy, editedAt, expiryTime));
-        }
-
-        public Task EditAdminMessage(int id, string message, Guid editedBy, DateTimeOffset editedAt, DateTimeOffset? expiryTime)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.EditAdminMessage(id, message, editedBy, editedAt, expiryTime));
-        }
-
-        public Task DeleteAdminNote(int id, Guid deletedBy, DateTimeOffset deletedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DeleteAdminNote(id, deletedBy, deletedAt));
-        }
-
-        public Task DeleteAdminWatchlist(int id, Guid deletedBy, DateTimeOffset deletedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DeleteAdminWatchlist(id, deletedBy, deletedAt));
-        }
-
-        public Task DeleteAdminMessage(int id, Guid deletedBy, DateTimeOffset deletedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DeleteAdminMessage(id, deletedBy, deletedAt));
-        }
-
-        public Task HideServerBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.HideServerBanFromNotes(id, deletedBy, deletedAt));
-        }
-
-        public Task HideServerRoleBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.HideServerRoleBanFromNotes(id, deletedBy, deletedAt));
-        }
-
-        public Task MarkMessageAsSeen(int id, bool dismissedToo)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.MarkMessageAsSeen(id, dismissedToo));
-        }
-        public Task SavePlayerConsentSettingsAsync(NetUserId userId, PlayerConsentSettings consentSettings) // Floofstation
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SavePlayerConsentSettingsAsync(userId, consentSettings));
-        }
-
-        public Task SavePlayerConsentSettingsAsync(NetUserId userId, PlayerConsentSettings consentSettings, int characterSlot) // Floofstation
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SavePlayerConsentSettingsAsync(userId, consentSettings, characterSlot));
-        }
-
-        public Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId) // Floofstation
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayerConsentSettingsAsync(userId));
-        }
-
-        public Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId, int characterSlot) // Floofstation
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayerConsentSettingsAsync(userId, characterSlot));
-        }
-
-        public Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddJobWhitelist(player, job));
-        }
-
-        public Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetJobWhitelists(player, cancel));
-        }
-
-        public Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.IsJobWhitelisted(player, job));
-        }
-
-        public Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
-        }
-
-        // Frontier: ghost role DB ops
-        public Task AddGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddGhostRoleWhitelist(player, ghostRole));
-        }
-
-        public Task<bool> IsGhostRoleWhitelisted(Guid player, ProtoId<GhostRolePrototype> ghostRole)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.IsGhostRoleWhitelisted(player, ghostRole));
-        }
-        public Task<bool> RemoveGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveGhostRoleWhitelist(player, ghostRole));
-        }
-        // End Frontier
-
-        public Task<bool> UpsertIPIntelCache(DateTime time, IPAddress ip, float score)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpsertIPIntelCache(time, ip, score));
-        }
-
-        public Task<IPIntelCache?> GetIPIntelCache(IPAddress ip)
-        {
-            return RunDbCommand(() => _db.GetIPIntelCache(ip));
-        }
-
-        public Task<bool> CleanIPIntelCache(TimeSpan range)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.CleanIPIntelCache(range));
-        }
-
-        public Task AddWayfarerRoundSummary(
-            int roundNumber,
-            DateTime roundStartTime,
-            DateTime roundEndTime,
-            JsonDocument? profitLossData,
-            JsonDocument? playerStories,
-            JsonDocument? playerManifest,
-            JsonDocument? mailMetricsData,
-            JsonDocument? spesosFlowData)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddWayfarerRoundSummary(
-                roundNumber,
-                roundStartTime,
-                roundEndTime,
-                profitLossData,
-                playerStories,
-                playerManifest,
-                mailMetricsData,
-                spesosFlowData));
-        }
-
-        public void SubscribeToNotifications(Action<DatabaseNotification> handler)
-        {
-            lock (_notificationHandlers)
-            {
-                _notificationHandlers.Add(handler);
+                return RunDbCommand(() => _db.InitPrefsAsync(userId, defaultProfile));
             }
-        }
 
-        public void InjectTestNotification(DatabaseNotification notification)
-        {
-            HandleDatabaseNotification(notification);
-        }
+            public Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SaveSelectedCharacterIndexAsync(userId, index));
+            }
 
-        public Task SendNotification(DatabaseNotification notification)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SendNotification(notification));
-        }
+            public Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SaveCharacterSlotAsync(userId, profile, slot));
+            }
 
-        #region Wayfarer Safety Deposit Box
+            public Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteSlotAndSetSelectedIndex(userId, deleteSlot, newSlot));
+            }
 
-        public Task<WayfarerSafetyDepositBox> PurchaseSafetyDepositBox(Guid ownerUserId, int characterIndex, string ownerName, string boxSize, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.PurchaseSafetyDepositBox(ownerUserId, characterIndex, ownerName, boxSize, cancel));
-        }
+            public Task SaveAdminOOCColorAsync(NetUserId userId, Color color)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
+            }
 
-        public Task<List<WayfarerSafetyDepositBox>> GetPlayerSafetyDepositBoxes(Guid ownerUserId, int characterIndex, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayerSafetyDepositBoxes(ownerUserId, characterIndex, cancel));
-        }
+            public Task SaveConstructionFavoritesAsync(NetUserId userId,
+                List<ProtoId<ConstructionPrototype>> constructionFavorites)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SaveConstructionFavoritesAsync(userId, constructionFavorites));
+            }
 
-        public Task<WayfarerSafetyDepositBox?> GetSafetyDepositBox(Guid boxId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetSafetyDepositBox(boxId, cancel));
-        }
+            public Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayerPreferencesAsync(userId, cancel));
+            }
 
-        public Task DepositSafetyDepositBoxItems(Guid boxId, List<string> entityDataList, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DepositSafetyDepositBoxItems(boxId, entityDataList, cancel));
-        }
+            // Wayfarer (NEW) - Get database profile ID wrapper
+            public Task<int?> GetProfileIdAsync(NetUserId userId, int slot)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetProfileIdAsync(userId, slot));
+            }
 
-        public Task UpdateSafetyDepositBoxNickname(Guid boxId, string? nickname, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateSafetyDepositBoxNickname(boxId, nickname, cancel));
-        }
+            public Task AssignUserIdAsync(string name, NetUserId userId)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AssignUserIdAsync(name, userId));
+            }
 
-        public Task ClearSafetyDepositBoxItems(Guid boxId, int roundId, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.ClearSafetyDepositBoxItems(boxId, roundId, cancel));
-        }
+            public Task<NetUserId?> GetAssignedUserIdAsync(string name)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAssignedUserIdAsync(name));
+            }
 
-        public Task<int> DeleteStaleSafetyDepositBoxes(int daysStale, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DeleteStaleSafetyDepositBoxes(daysStale, cancel));
-        }
+            public Task<ServerBanDef?> GetServerBanAsync(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetServerBanAsync(id));
+            }
 
-        public Task DeleteSafetyDepositBox(Guid boxId, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DeleteSafetyDepositBox(boxId, cancel));
-        }
+            public Task<ServerBanDef?> GetServerBanAsync(
+                IPAddress? address,
+                NetUserId? userId,
+                ImmutableArray<byte>? hwId,
+                ImmutableArray<ImmutableArray<byte>>? modernHWIds)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetServerBanAsync(address, userId, hwId, modernHWIds));
+            }
 
-        #endregion
+            public Task<List<ServerBanDef>> GetServerBansAsync(
+                IPAddress? address,
+                NetUserId? userId,
+                ImmutableArray<byte>? hwId,
+                ImmutableArray<ImmutableArray<byte>>? modernHWIds,
+                bool includeUnbanned = true)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetServerBansAsync(address, userId, hwId, modernHWIds, includeUnbanned));
+            }
 
-        #region Wayfarer Roleplay Leveling
+            public Task AddServerBanAsync(ServerBanDef serverBan)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddServerBanAsync(serverBan));
+            }
 
-        public Task<WayfarerRoleplayLevel> GetOrCreateRoleplayLevel(Guid userId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetOrCreateRoleplayLevel(userId, cancel));
-        }
+            public Task AddServerUnbanAsync(ServerUnbanDef serverUnban)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddServerUnbanAsync(serverUnban));
+            }
 
-        public Task UpdateRoleplayLevel(Guid userId, int level, long experience, long experienceToNextLevel, int totalCommends, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateRoleplayLevel(userId, level, experience, experienceToNextLevel, totalCommends, cancel));
-        }
+            public Task EditServerBan(int id,
+                string reason,
+                NoteSeverity severity,
+                DateTimeOffset? expiration,
+                Guid editedBy,
+                DateTimeOffset editedAt)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.EditServerBan(id, reason, severity, expiration, editedBy, editedAt));
+            }
 
-        public Task AddRoleplayCommend(int roundId, int recipientProfileId, Guid recipientUserId, int giverProfileId, Guid giverUserId, string? comment, bool isPrivate, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddRoleplayCommend(roundId, recipientProfileId, recipientUserId, giverProfileId, giverUserId, comment, isPrivate, cancel));
-        }
+            public Task UpdateBanExemption(NetUserId userId, ServerBanExemptFlags flags)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateBanExemption(userId, flags));
+            }
 
-        public Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(Guid userId, bool includePrivate = false, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayerCommends(userId, includePrivate, cancel));
-        }
+            public Task<ServerBanExemptFlags> GetBanExemption(NetUserId userId, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetBanExemption(userId, cancel));
+            }
 
-        public Task<int> GetRoundCommendsGivenByPlayer(Guid giverUserId, int roundId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetRoundCommendsGivenByPlayer(giverUserId, roundId, cancel));
-        }
+            #region Role Ban
 
-        public Task<string?> GetCharacterNameByProfileIdAsync(int profileId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetCharacterNameByProfileIdAsync(profileId, cancel));
-        }
+            public Task<ServerRoleBanDef?> GetServerRoleBanAsync(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetServerRoleBanAsync(id));
+            }
 
-        #endregion
+            public Task<List<ServerRoleBanDef>> GetServerRoleBansAsync(
+                IPAddress? address,
+                NetUserId? userId,
+                ImmutableArray<byte>? hwId,
+                ImmutableArray<ImmutableArray<byte>>? modernHWIds,
+                bool includeUnbanned = true)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.GetServerRoleBansAsync(address, userId, hwId, modernHWIds, includeUnbanned));
+            }
 
-        #region Wayfarer Community Goals
+            public Task<ServerRoleBanDef> AddServerRoleBanAsync(ServerRoleBanDef serverRoleBan)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddServerRoleBanAsync(serverRoleBan));
+            }
 
-        public Task<List<WayfarerCommunityGoal>> GetAllCommunityGoals(CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetAllCommunityGoals(cancel));
-        }
+            public Task AddServerRoleUnbanAsync(ServerRoleUnbanDef serverRoleUnban)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddServerRoleUnbanAsync(serverRoleUnban));
+            }
 
-        public Task<List<WayfarerCommunityGoal>> GetActiveCommunityGoals(int roundId, CancellationToken cancel = default)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetActiveCommunityGoals(roundId, cancel));
-        }
+            public Task EditServerRoleBan(int id,
+                string reason,
+                NoteSeverity severity,
+                DateTimeOffset? expiration,
+                Guid editedBy,
+                DateTimeOffset editedAt)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.EditServerRoleBan(id, reason, severity, expiration, editedBy, editedAt));
+            }
 
-        public Task<WayfarerCommunityGoal> CreateCommunityGoal(string title, string description, int? startRound, int? endRound, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.CreateCommunityGoal(title, description, startRound, endRound, cancel));
-        }
+            #endregion
 
-        public Task UpdateCommunityGoal(int goalId, string title, string description, int? startRound, int? endRound, bool isActive, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateCommunityGoal(goalId, title, description, startRound, endRound, isActive, cancel));
-        }
+            #region Playtime
 
-        public Task DeleteCommunityGoal(int goalId, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.DeleteCommunityGoal(goalId, cancel));
-        }
+            public Task<List<PlayTime>> GetPlayTimes(Guid player, CancellationToken cancel)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayTimes(player, cancel));
+            }
 
-        public Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId, string entityPrototypeId, string? displayName, long requiredAmount, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.AddCommunityGoalRequirement(goalId, entityPrototypeId, displayName, requiredAmount, cancel));
-        }
+            public Task UpdatePlayTimes(IReadOnlyCollection<PlayTimeUpdate> updates)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdatePlayTimes(updates));
+            }
 
-        public Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.RemoveCommunityGoalRequirement(requirementId, cancel));
-        }
+            #endregion
 
-        public Task UpdateCommunityGoalRequirement(int requirementId, long requiredAmount, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.UpdateCommunityGoalRequirement(requirementId, requiredAmount, cancel));
-        }
+            public Task UpdatePlayerRecordAsync(
+                NetUserId userId,
+                string userName,
+                IPAddress address,
+                ImmutableTypedHwid? hwId)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdatePlayerRecord(userId, userName, address, hwId));
+            }
 
+            public Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayerRecordByUserName(userName, cancel));
+            }
+
+            public Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayerRecordByUserId(userId, cancel));
+            }
+
+            public Task<int> AddConnectionLogAsync(
+                NetUserId userId,
+                string userName,
+                IPAddress address,
+                ImmutableTypedHwid? hwId,
+                float trust,
+                ConnectionDenyReason? denied,
+                int serverId)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.AddConnectionLogAsync(userId, userName, address, hwId, trust, denied, serverId));
+            }
+
+            public Task AddServerBanHitsAsync(int connection, IEnumerable<ServerBanDef> bans)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddServerBanHitsAsync(connection, bans));
+            }
+
+            public Task<Admin?> GetAdminDataForAsync(NetUserId userId, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminDataForAsync(userId, cancel));
+            }
+
+            public Task<AdminRank?> GetAdminRankAsync(int id, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminRankDataForAsync(id, cancel));
+            }
+
+            public Task<((Admin, string? lastUserName)[] admins, AdminRank[])> GetAllAdminAndRanksAsync(
+                CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAllAdminAndRanksAsync(cancel));
+            }
+
+            public Task RemoveAdminAsync(NetUserId userId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveAdminAsync(userId, cancel));
+            }
+
+            public Task AddAdminAsync(Admin admin, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddAdminAsync(admin, cancel));
+            }
+
+            public Task UpdateAdminAsync(Admin admin, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateAdminAsync(admin, cancel));
+            }
+
+            public Task UpdateAdminDeadminnedAsync(NetUserId userId,
+                bool deadminned,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateAdminDeadminnedAsync(userId, deadminned, cancel));
+            }
+
+            public Task RemoveAdminRankAsync(int rankId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveAdminRankAsync(rankId, cancel));
+            }
+
+            public Task AddAdminRankAsync(AdminRank rank, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddAdminRankAsync(rank, cancel));
+            }
+
+            public Task<int> AddNewRound(Server server, params Guid[] playerIds)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddNewRound(server, playerIds));
+            }
+
+            public Task<Round> GetRound(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetRound(id));
+            }
+
+            public Task AddRoundPlayers(int id, params Guid[] playerIds)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddRoundPlayers(id, playerIds));
+            }
+
+            public Task UpdateAdminRankAsync(AdminRank rank, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateAdminRankAsync(rank, cancel));
+            }
+
+            public async Task<Server> AddOrGetServer(string serverName)
+            {
+                var (server, existed) = await RunDbCommand(() => _db.AddOrGetServer(serverName));
+                if (existed)
+                    DbReadOpsMetric.Inc();
+                else
+                    DbWriteOpsMetric.Inc();
+
+                return server;
+            }
+
+            public Task AddAdminLogs(List<AdminLog> logs)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddAdminLogs(logs));
+            }
+
+            public IAsyncEnumerable<string> GetAdminLogMessages(LogFilter? filter = null)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminLogMessages(filter));
+            }
+
+            public IAsyncEnumerable<SharedAdminLog> GetAdminLogs(LogFilter? filter = null)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminLogs(filter));
+            }
+
+            public IAsyncEnumerable<JsonDocument> GetAdminLogsJson(LogFilter? filter = null)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminLogsJson(filter));
+            }
+
+            public Task<int> CountAdminLogs(int round)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.CountAdminLogs(round));
+            }
+
+            public Task<bool> GetWhitelistStatusAsync(NetUserId player)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetWhitelistStatusAsync(player));
+            }
+
+            public Task AddToWhitelistAsync(NetUserId player)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddToWhitelistAsync(player));
+            }
+
+            public Task RemoveFromWhitelistAsync(NetUserId player)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveFromWhitelistAsync(player));
+            }
+
+            public Task<bool> GetBlacklistStatusAsync(NetUserId player)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetBlacklistStatusAsync(player));
+            }
+
+            public Task AddToBlacklistAsync(NetUserId player)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddToBlacklistAsync(player));
+            }
+
+            public Task RemoveFromBlacklistAsync(NetUserId player)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveFromBlacklistAsync(player));
+            }
+
+            public Task AddUploadedResourceLogAsync(NetUserId user, DateTimeOffset date, string path, byte[] data)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddUploadedResourceLogAsync(user, date, path, data));
+            }
+
+            public Task PurgeUploadedResourceLogAsync(int days)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.PurgeUploadedResourceLogAsync(days));
+            }
+
+            public Task<DateTimeOffset?> GetLastReadRules(NetUserId player)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetLastReadRules(player));
+            }
+
+            public Task SetLastReadRules(NetUserId player, DateTimeOffset? time)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SetLastReadRules(player, time));
+            }
+
+            public Task<int> AddAdminNote(int? roundId,
+                Guid player,
+                TimeSpan playtimeAtNote,
+                string message,
+                NoteSeverity severity,
+                bool secret,
+                Guid createdBy,
+                DateTimeOffset createdAt,
+                DateTimeOffset? expiryTime)
+            {
+                DbWriteOpsMetric.Inc();
+                var note = new AdminNote
+                {
+                    RoundId = roundId,
+                    CreatedById = createdBy,
+                    LastEditedById = createdBy,
+                    PlayerUserId = player,
+                    PlaytimeAtNote = playtimeAtNote,
+                    Message = message,
+                    Severity = severity,
+                    Secret = secret,
+                    CreatedAt = createdAt.UtcDateTime,
+                    LastEditedAt = createdAt.UtcDateTime,
+                    ExpirationTime = expiryTime?.UtcDateTime
+                };
+
+                return RunDbCommand(() => _db.AddAdminNote(note));
+            }
+
+            public Task<int> AddAdminWatchlist(int? roundId,
+                Guid player,
+                TimeSpan playtimeAtNote,
+                string message,
+                Guid createdBy,
+                DateTimeOffset createdAt,
+                DateTimeOffset? expiryTime)
+            {
+                DbWriteOpsMetric.Inc();
+                var note = new AdminWatchlist
+                {
+                    RoundId = roundId,
+                    CreatedById = createdBy,
+                    LastEditedById = createdBy,
+                    PlayerUserId = player,
+                    PlaytimeAtNote = playtimeAtNote,
+                    Message = message,
+                    CreatedAt = createdAt.UtcDateTime,
+                    LastEditedAt = createdAt.UtcDateTime,
+                    ExpirationTime = expiryTime?.UtcDateTime
+                };
+
+                return RunDbCommand(() => _db.AddAdminWatchlist(note));
+            }
+
+            public Task<int> AddAdminMessage(int? roundId,
+                Guid player,
+                TimeSpan playtimeAtNote,
+                string message,
+                Guid createdBy,
+                DateTimeOffset createdAt,
+                DateTimeOffset? expiryTime)
+            {
+                DbWriteOpsMetric.Inc();
+                var note = new AdminMessage
+                {
+                    RoundId = roundId,
+                    CreatedById = createdBy,
+                    LastEditedById = createdBy,
+                    PlayerUserId = player,
+                    PlaytimeAtNote = playtimeAtNote,
+                    Message = message,
+                    CreatedAt = createdAt.UtcDateTime,
+                    LastEditedAt = createdAt.UtcDateTime,
+                    ExpirationTime = expiryTime?.UtcDateTime
+                };
+
+                return RunDbCommand(() => _db.AddAdminMessage(note));
+            }
+
+            public Task<AdminNoteRecord?> GetAdminNote(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminNote(id));
+            }
+
+            public Task<AdminWatchlistRecord?> GetAdminWatchlist(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminWatchlist(id));
+            }
+
+            public Task<AdminMessageRecord?> GetAdminMessage(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAdminMessage(id));
+            }
+
+            public Task<ServerBanNoteRecord?> GetServerBanAsNoteAsync(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetServerBanAsNoteAsync(id));
+            }
+
+            public Task<ServerRoleBanNoteRecord?> GetServerRoleBanAsNoteAsync(int id)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetServerRoleBanAsNoteAsync(id));
+            }
+
+            public Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAllAdminRemarks(player));
+            }
+
+            public Task<List<IAdminRemarksRecord>> GetVisibleAdminNotes(Guid player)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetVisibleAdminRemarks(player));
+            }
+
+            public Task<List<AdminWatchlistRecord>> GetActiveWatchlists(Guid player)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetActiveWatchlists(player));
+            }
+
+            public Task<List<AdminMessageRecord>> GetMessages(Guid player)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetMessages(player));
+            }
+
+            public Task EditAdminNote(int id,
+                string message,
+                NoteSeverity severity,
+                bool secret,
+                Guid editedBy,
+                DateTimeOffset editedAt,
+                DateTimeOffset? expiryTime)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.EditAdminNote(id, message, severity, secret, editedBy, editedAt, expiryTime));
+            }
+
+            public Task EditAdminWatchlist(int id,
+                string message,
+                Guid editedBy,
+                DateTimeOffset editedAt,
+                DateTimeOffset? expiryTime)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.EditAdminWatchlist(id, message, editedBy, editedAt, expiryTime));
+            }
+
+            public Task EditAdminMessage(int id,
+                string message,
+                Guid editedBy,
+                DateTimeOffset editedAt,
+                DateTimeOffset? expiryTime)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.EditAdminMessage(id, message, editedBy, editedAt, expiryTime));
+            }
+
+            public Task DeleteAdminNote(int id, Guid deletedBy, DateTimeOffset deletedAt)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteAdminNote(id, deletedBy, deletedAt));
+            }
+
+            public Task DeleteAdminWatchlist(int id, Guid deletedBy, DateTimeOffset deletedAt)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteAdminWatchlist(id, deletedBy, deletedAt));
+            }
+
+            public Task DeleteAdminMessage(int id, Guid deletedBy, DateTimeOffset deletedAt)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteAdminMessage(id, deletedBy, deletedAt));
+            }
+
+            public Task HideServerBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.HideServerBanFromNotes(id, deletedBy, deletedAt));
+            }
+
+            public Task HideServerRoleBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.HideServerRoleBanFromNotes(id, deletedBy, deletedAt));
+            }
+
+            public Task MarkMessageAsSeen(int id, bool dismissedToo)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.MarkMessageAsSeen(id, dismissedToo));
+            }
+
+            public Task SavePlayerConsentSettingsAsync(NetUserId userId,
+                PlayerConsentSettings consentSettings) // Floofstation
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SavePlayerConsentSettingsAsync(userId, consentSettings));
+            }
+
+            public Task SavePlayerConsentSettingsAsync(NetUserId userId,
+                PlayerConsentSettings consentSettings,
+                int characterSlot) // Floofstation
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SavePlayerConsentSettingsAsync(userId, consentSettings, characterSlot));
+            }
+
+            public Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId) // Floofstation
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayerConsentSettingsAsync(userId));
+            }
+
+            public Task<PlayerConsentSettings>
+                GetPlayerConsentSettingsAsync(NetUserId userId, int characterSlot) // Floofstation
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayerConsentSettingsAsync(userId, characterSlot));
+            }
+
+            public Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddJobWhitelist(player, job));
+            }
+
+            public Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetJobWhitelists(player, cancel));
+            }
+
+            public Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.IsJobWhitelisted(player, job));
+            }
+
+            public Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
+            }
+
+            // Frontier: ghost role DB ops
+            public Task AddGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddGhostRoleWhitelist(player, ghostRole));
+            }
+
+            public Task<bool> IsGhostRoleWhitelisted(Guid player, ProtoId<GhostRolePrototype> ghostRole)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.IsGhostRoleWhitelisted(player, ghostRole));
+            }
+
+            public Task<bool> RemoveGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveGhostRoleWhitelist(player, ghostRole));
+            }
+            // End Frontier
+
+            public Task<bool> UpsertIPIntelCache(DateTime time, IPAddress ip, float score)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpsertIPIntelCache(time, ip, score));
+            }
+
+            public Task<IPIntelCache?> GetIPIntelCache(IPAddress ip)
+            {
+                return RunDbCommand(() => _db.GetIPIntelCache(ip));
+            }
+
+            public Task<bool> CleanIPIntelCache(TimeSpan range)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.CleanIPIntelCache(range));
+            }
+
+            public Task AddWayfarerRoundSummary(
+                int roundNumber,
+                DateTime roundStartTime,
+                DateTime roundEndTime,
+                JsonDocument? profitLossData,
+                JsonDocument? playerStories,
+                JsonDocument? playerManifest,
+                JsonDocument? mailMetricsData,
+                JsonDocument? spesosFlowData)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddWayfarerRoundSummary(
+                    roundNumber,
+                    roundStartTime,
+                    roundEndTime,
+                    profitLossData,
+                    playerStories,
+                    playerManifest,
+                    mailMetricsData,
+                    spesosFlowData));
+            }
+
+            public void SubscribeToNotifications(Action<DatabaseNotification> handler)
+            {
+                lock (_notificationHandlers)
+                {
+                    _notificationHandlers.Add(handler);
+                }
+            }
+
+            public void InjectTestNotification(DatabaseNotification notification)
+            {
+                HandleDatabaseNotification(notification);
+            }
+
+            public Task SendNotification(DatabaseNotification notification)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.SendNotification(notification));
+            }
+
+            #region Wayfarer Safety Deposit Box
+
+            public Task<WayfarerSafetyDepositBox> PurchaseSafetyDepositBox(Guid ownerUserId,
+                int characterIndex,
+                string ownerName,
+                string boxSize,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.PurchaseSafetyDepositBox(ownerUserId, characterIndex, ownerName, boxSize, cancel));
+            }
+
+            public Task<List<WayfarerSafetyDepositBox>> GetPlayerSafetyDepositBoxes(Guid ownerUserId,
+                int characterIndex,
+                CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayerSafetyDepositBoxes(ownerUserId, characterIndex, cancel));
+            }
+
+            public Task<WayfarerSafetyDepositBox?> GetSafetyDepositBox(Guid boxId, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetSafetyDepositBox(boxId, cancel));
+            }
+
+            public Task DepositSafetyDepositBoxItems(Guid boxId,
+                List<string> entityDataList,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DepositSafetyDepositBoxItems(boxId, entityDataList, cancel));
+            }
+
+            public Task UpdateSafetyDepositBoxNickname(Guid boxId, string? nickname, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateSafetyDepositBoxNickname(boxId, nickname, cancel));
+            }
+
+            public Task ClearSafetyDepositBoxItems(Guid boxId, int roundId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.ClearSafetyDepositBoxItems(boxId, roundId, cancel));
+            }
+
+            public Task<int> DeleteStaleSafetyDepositBoxes(int daysStale, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteStaleSafetyDepositBoxes(daysStale, cancel));
+            }
+
+            public Task DeleteSafetyDepositBox(Guid boxId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteSafetyDepositBox(boxId, cancel));
+            }
+
+            #endregion
+
+            #region Wayfarer Roleplay Leveling
+
+            public Task<WayfarerRoleplayLevel> GetOrCreateRoleplayLevel(Guid userId, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetOrCreateRoleplayLevel(userId, cancel));
+            }
+
+            public Task UpdateRoleplayLevel(Guid userId,
+                int level,
+                long experience,
+                long experienceToNextLevel,
+                int totalCommends,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.UpdateRoleplayLevel(userId, level, experience, experienceToNextLevel, totalCommends, cancel));
+            }
+
+            public Task AddRoleplayCommend(int roundId,
+                int recipientProfileId,
+                Guid recipientUserId,
+                int giverProfileId,
+                Guid giverUserId,
+                string? comment,
+                bool isPrivate,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddRoleplayCommend(roundId,
+                    recipientProfileId,
+                    recipientUserId,
+                    giverProfileId,
+                    giverUserId,
+                    comment,
+                    isPrivate,
+                    cancel));
+            }
+
+            public Task<List<WayfarerRoleplayCommend>> GetPlayerCommends(Guid userId,
+                bool includePrivate = false,
+                CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetPlayerCommends(userId, includePrivate, cancel));
+            }
+
+            public Task<int> GetRoundCommendsGivenByPlayer(Guid giverUserId,
+                int roundId,
+                CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetRoundCommendsGivenByPlayer(giverUserId, roundId, cancel));
+            }
+
+            public Task<string?> GetCharacterNameByProfileIdAsync(int profileId, CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetCharacterNameByProfileIdAsync(profileId, cancel));
+            }
+
+            #endregion
+
+            #region Wayfarer Community Goals
+
+            public Task<List<WayfarerCommunityGoal>> GetAllCommunityGoals(CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetAllCommunityGoals(cancel));
+            }
+
+            public Task<List<WayfarerCommunityGoal>> GetActiveCommunityGoals(int roundId,
+                CancellationToken cancel = default)
+            {
+                DbReadOpsMetric.Inc();
+                return RunDbCommand(() => _db.GetActiveCommunityGoals(roundId, cancel));
+            }
+
+            public Task<WayfarerCommunityGoal> CreateCommunityGoal(string title,
+                string description,
+                int? startRound,
+                int? endRound,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.CreateCommunityGoal(title, description, startRound, endRound, cancel));
+            }
+
+            public Task UpdateCommunityGoal(int goalId,
+                string title,
+                string description,
+                int? startRound,
+                int? endRound,
+                bool isActive,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.UpdateCommunityGoal(goalId, title, description, startRound, endRound, isActive, cancel));
+            }
+
+            public Task DeleteCommunityGoal(int goalId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteCommunityGoal(goalId, cancel));
+            }
+
+            public Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId,
+                string entityPrototypeId,
+                string? displayName,
+                long requiredAmount,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.AddCommunityGoalRequirement(goalId, entityPrototypeId, displayName, requiredAmount, cancel));
+            }
+
+            public Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveCommunityGoalRequirement(requirementId, cancel));
+            }
+
+            public Task UpdateCommunityGoalRequirement(int requirementId,
+                long requiredAmount,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateCommunityGoalRequirement(requirementId, requiredAmount, cancel));
+            }
+
+            public Task AddCommunityGoalContribution(int requirementId, long amount, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddCommunityGoalContribution(requirementId, amount, cancel: cancel));
+            }
+
+            #endregion
+
+            #region Wayfarer Corporations
+
+            public Task<List<WayfarerCorporation>> GetAllCorporations(CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.GetAllCorporations(cancel));
+            }
+
+            public Task<WayfarerCorporation?> GetCorporationById(int id, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.GetCorporationById(id, cancel));
+            }
+
+            public Task<WayfarerCorporation?> GetCorporationForPlayer(Guid userId, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.GetCorporationForPlayer(userId, cancel));
+            }
+
+            public Task<WayfarerCorporation?> GetCorporationForCharacter(Guid userId, string displayName, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.GetCorporationForCharacter(userId, displayName, cancel));
+            }
+
+            public Task<WayfarerCorporation> CreateCorporation(string name,
+                string description,
+                int privacy,
+                Guid founderUserId,
+                string founderDisplayName,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() =>
+                    _db.CreateCorporation(name, description, privacy, founderUserId, founderDisplayName, cancel));
+            }
+
+            public Task<WayfarerCorporation> AdminCreateCorporation(string name,
+                string description,
+                int privacy,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AdminCreateCorporation(name, description, privacy, cancel));
+            }
+
+            public Task UpdateCorporationDescription(int corporationId,
+                string description,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateCorporationDescription(corporationId, description, cancel));
+            }
+
+            public Task UpdateCorporationPrivacy(int corporationId, int privacy, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateCorporationPrivacy(corporationId, privacy, cancel));
+            }
+
+            public Task DeleteCorporation(int corporationId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.DeleteCorporation(corporationId, cancel));
+            }
+
+            public Task AddCorporationMember(int corporationId,
+                Guid userId,
+                string displayName,
+                int rank,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddCorporationMember(corporationId, userId, displayName, rank, cancel));
+            }
+
+            public Task RemoveCorporationMember(int corporationId, Guid userId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveCorporationMember(corporationId, userId, cancel));
+            }
+
+            public Task UpdateCorporationMemberRank(int corporationId,
+                Guid userId,
+                int rank,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.UpdateCorporationMemberRank(corporationId, userId, rank, cancel));
+            }
+
+            public Task AddCorporationInvite(int corporationId, Guid inviteeUserId, CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.AddCorporationInvite(corporationId, inviteeUserId, cancel));
+            }
+
+            public Task RemoveCorporationInvite(int corporationId,
+                Guid inviteeUserId,
+                CancellationToken cancel = default)
+            {
+                DbWriteOpsMetric.Inc();
+                return RunDbCommand(() => _db.RemoveCorporationInvite(corporationId, inviteeUserId, cancel));
+            }
+
+            public Task<bool> HasCorporationInvite(int corporationId,
+                Guid inviteeUserId,
+                CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.HasCorporationInvite(corporationId, inviteeUserId, cancel));
+            }
+
+            public Task<int?> GetCorporationBalance(int corporationId, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.GetCorporationBalance(corporationId, cancel));
+            }
+
+            public Task<bool> TryDepositToCorporation(int corporationId, int amount, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.TryDepositToCorporation(corporationId, amount, cancel));
+            }
+
+            public Task<bool> TryWithdrawFromCorporation(int corporationId, int amount, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.TryWithdrawFromCorporation(corporationId, amount, cancel));
+            }
+
+            public Task SetCorporationBalance(int corporationId, int balance, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.SetCorporationBalance(corporationId, balance, cancel));
+            }
+
+            public Task<WayfarerCorporationStation?> GetCorporationStation(int corporationId, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.GetCorporationStation(corporationId, cancel));
+            }
+
+            public Task<WayfarerCorporationStation> CreateCorporationStation(int corporationId, string stationName, string savePath, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.CreateCorporationStation(corporationId, stationName, savePath, cancel));
+            }
+
+            public Task DeleteCorporationStation(int corporationId, CancellationToken cancel = default)
+            {
+                return RunDbCommand(() => _db.DeleteCorporationStation(corporationId, cancel));
+            }
         public Task AddCommunityGoalContribution(int requirementId, long amount, Guid? playerUserId = null, string? characterName = null, string? entityPrototypeId = null, int roundId = 0, CancellationToken cancel = default)
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.AddCommunityGoalContribution(requirementId, amount, playerUserId, characterName, entityPrototypeId, roundId, cancel));
         }
 
-        #endregion
+            #endregion
 
-        private async void HandleDatabaseNotification(DatabaseNotification notification)
-        {
-            lock (_notificationHandlers)
+            private async void HandleDatabaseNotification(DatabaseNotification notification)
             {
-                foreach (var handler in _notificationHandlers)
+                lock (_notificationHandlers)
                 {
-                    handler(notification);
+                    foreach (var handler in _notificationHandlers)
+                    {
+                        handler(notification);
+                    }
                 }
             }
-        }
 
-        // Wrapper functions to run DB commands from the thread pool.
-        // This will avoid SynchronizationContext capturing and avoid running CPU work on the main thread.
-        // For SQLite, this will also enable read parallelization (within limits).
-        //
-        // If we're configured to be synchronous (for integration tests) we shouldn't thread pool it,
-        // as that would make things very random and undeterministic.
-        // That only works on SQLite though, since SQLite is internally synchronous anyways.
+            // Wrapper functions to run DB commands from the thread pool.
+            // This will avoid SynchronizationContext capturing and avoid running CPU work on the main thread.
+            // For SQLite, this will also enable read parallelization (within limits).
+            //
+            // If we're configured to be synchronous (for integration tests) we shouldn't thread pool it,
+            // as that would make things very random and undeterministic.
+            // That only works on SQLite though, since SQLite is internally synchronous anyways.
 
-        private async Task<T> RunDbCommand<T>(Func<Task<T>> command)
-        {
-            using var _ = DbActiveOps.TrackInProgress();
-
-            if (_synchronous)
-                return await RunDbCommandCoreSync(command);
-
-            return await Task.Run(command);
-        }
-
-        private async Task RunDbCommand(Func<Task> command)
-        {
-            using var _ = DbActiveOps.TrackInProgress();
-
-            if (_synchronous)
+            private async Task<T> RunDbCommand<T>(Func<Task<T>> command)
             {
-                await RunDbCommandCoreSync(command);
-                return;
+                using var _ = DbActiveOps.TrackInProgress();
+
+                if (_synchronous)
+                    return await RunDbCommandCoreSync(command);
+
+                return await Task.Run(command);
             }
 
-            await Task.Run(command);
-        }
-
-        private static T RunDbCommandCoreSync<T>(Func<T> command) where T : IAsyncResult
-        {
-            var task = command();
-            if (!task.IsCompleted)
+            private async Task RunDbCommand(Func<Task> command)
             {
-                // We can't just do BlockWaitOnTask here, because that could cause deadlocks.
-                // This flag is only intended for integration tests. If we trip this, it's a bug.
-                throw new InvalidOperationException(
-                    "Database task is running asynchronously. " +
-                    "This should be impossible when the database is set to synchronous.");
+                using var _ = DbActiveOps.TrackInProgress();
+
+                if (_synchronous)
+                {
+                    await RunDbCommandCoreSync(command);
+                    return;
+                }
+
+                await Task.Run(command);
             }
 
-            return task;
-        }
-
-        private IAsyncEnumerable<T> RunDbCommand<T>(Func<IAsyncEnumerable<T>> command)
-        {
-            var enumerable = command();
-            if (_synchronous)
-                return new SyncAsyncEnumerable<T>(enumerable);
-
-            return enumerable;
-        }
-
-        private (DbContextOptions<PostgresServerDbContext> options, string connectionString) CreatePostgresOptions()
-        {
-            var host = _cfg.GetCVar(CCVars.DatabasePgHost);
-            var port = _cfg.GetCVar(CCVars.DatabasePgPort);
-            var db = _cfg.GetCVar(CCVars.DatabasePgDatabase);
-            var user = _cfg.GetCVar(CCVars.DatabasePgUsername);
-            var pass = _cfg.GetCVar(CCVars.DatabasePgPassword);
-
-            var builder = new DbContextOptionsBuilder<PostgresServerDbContext>();
-            var connectionString = new NpgsqlConnectionStringBuilder
+            private static T RunDbCommandCoreSync<T>(Func<T> command) where T : IAsyncResult
             {
-                Host = host,
-                Port = port,
-                Database = db,
-                Username = user,
-                Password = pass
-            }.ConnectionString;
+                var task = command();
+                if (!task.IsCompleted)
+                {
+                    // We can't just do BlockWaitOnTask here, because that could cause deadlocks.
+                    // This flag is only intended for integration tests. If we trip this, it's a bug.
+                    throw new InvalidOperationException(
+                        "Database task is running asynchronously. " +
+                        "This should be impossible when the database is set to synchronous.");
+                }
 
-            _sawmill.Debug($"Using Postgres \"{host}:{port}/{db}\"");
+                return task;
+            }
 
-            builder.UseNpgsql(connectionString);
-            SetupLogging(builder);
-            return (builder.Options, connectionString);
-        }
+            private IAsyncEnumerable<T> RunDbCommand<T>(Func<IAsyncEnumerable<T>> command)
+            {
+                var enumerable = command();
+                if (_synchronous)
+                    return new SyncAsyncEnumerable<T>(enumerable);
 
-        private void SetupSqlite(out Func<DbContextOptions<SqliteServerDbContext>> contextFunc, out bool inMemory)
-        {
+                return enumerable;
+            }
+
+            private (DbContextOptions<PostgresServerDbContext> options, string connectionString) CreatePostgresOptions()
+            {
+                var host = _cfg.GetCVar(CCVars.DatabasePgHost);
+                var port = _cfg.GetCVar(CCVars.DatabasePgPort);
+                var db = _cfg.GetCVar(CCVars.DatabasePgDatabase);
+                var user = _cfg.GetCVar(CCVars.DatabasePgUsername);
+                var pass = _cfg.GetCVar(CCVars.DatabasePgPassword);
+
+                var builder = new DbContextOptionsBuilder<PostgresServerDbContext>();
+                var connectionString = new NpgsqlConnectionStringBuilder
+                {
+                    Host = host,
+                    Port = port,
+                    Database = db,
+                    Username = user,
+                    Password = pass
+                }.ConnectionString;
+
+                _sawmill.Debug($"Using Postgres \"{host}:{port}/{db}\"");
+
+                builder.UseNpgsql(connectionString);
+                SetupLogging(builder);
+                return (builder.Options, connectionString);
+            }
+
+            private void SetupSqlite(out Func<DbContextOptions<SqliteServerDbContext>> contextFunc, out bool inMemory)
+            {
 #if USE_SYSTEM_SQLITE
             SQLitePCL.raw.SetProvider(new SQLitePCL.SQLite3Provider_sqlite3());
 #endif
 
-            // Can't re-use the SqliteConnection across multiple threads, so we have to make it every time.
+                // Can't re-use the SqliteConnection across multiple threads, so we have to make it every time.
 
-            Func<SqliteConnection> getConnection;
+                Func<SqliteConnection> getConnection;
 
-            var configPreferencesDbPath = _cfg.GetCVar(CCVars.DatabaseSqliteDbPath);
-            inMemory = _res.UserData.RootDir == null;
+                var configPreferencesDbPath = _cfg.GetCVar(CCVars.DatabaseSqliteDbPath);
+                inMemory = _res.UserData.RootDir == null;
 
-            if (!inMemory)
-            {
-                var finalPreferencesDbPath = Path.Combine(_res.UserData.RootDir!, configPreferencesDbPath);
-                _sawmill.Debug($"Using SQLite DB \"{finalPreferencesDbPath}\"");
-                getConnection = () => new SqliteConnection($"Data Source={finalPreferencesDbPath}");
-            }
-            else
-            {
-                _sawmill.Debug("Using in-memory SQLite DB");
-                _sqliteInMemoryConnection = new SqliteConnection("Data Source=:memory:");
-                // When using an in-memory DB we have to open it manually
-                // so EFCore doesn't open, close and wipe it every operation.
-                _sqliteInMemoryConnection.Open();
-                getConnection = () => _sqliteInMemoryConnection;
-            }
-
-            contextFunc = () =>
-            {
-                var builder = new DbContextOptionsBuilder<SqliteServerDbContext>();
-                builder.UseSqlite(getConnection());
-                SetupLogging(builder);
-                return builder.Options;
-            };
-        }
-
-        private void SetupLogging(DbContextOptionsBuilder builder)
-        {
-            builder.UseLoggerFactory(_msLoggerFactory);
-        }
-
-        private sealed class LoggingProvider : ILoggerProvider
-        {
-            private readonly ILogManager _logManager;
-
-            public LoggingProvider(ILogManager logManager)
-            {
-                _logManager = logManager;
-            }
-
-            public void Dispose()
-            {
-            }
-
-            public ILogger CreateLogger(string categoryName)
-            {
-                return new MSLogger(_logManager.GetSawmill("db.ef"));
-            }
-        }
-
-        private sealed class MSLogger : ILogger
-        {
-            private readonly ISawmill _sawmill;
-
-            public MSLogger(ISawmill sawmill)
-            {
-                _sawmill = sawmill;
-            }
-
-            public void Log<TState>(MSLogLevel logLevel, EventId eventId, TState state, Exception? exception,
-                Func<TState, Exception?, string> formatter)
-            {
-                var lvl = logLevel switch
+                if (!inMemory)
                 {
-                    MSLogLevel.Trace => LogLevel.Debug,
-                    MSLogLevel.Debug => LogLevel.Debug,
-                    // EFCore feels the need to log individual DB commands as "Information" so I'm slapping debug on it.
-                    MSLogLevel.Information => LogLevel.Debug,
-                    MSLogLevel.Warning => LogLevel.Warning,
-                    MSLogLevel.Error => LogLevel.Error,
-                    MSLogLevel.Critical => LogLevel.Fatal,
-                    MSLogLevel.None => LogLevel.Debug,
-                    _ => LogLevel.Debug
+                    var finalPreferencesDbPath = Path.Combine(_res.UserData.RootDir!, configPreferencesDbPath);
+                    _sawmill.Debug($"Using SQLite DB \"{finalPreferencesDbPath}\"");
+                    getConnection = () => new SqliteConnection($"Data Source={finalPreferencesDbPath}");
+                }
+                else
+                {
+                    _sawmill.Debug("Using in-memory SQLite DB");
+                    _sqliteInMemoryConnection = new SqliteConnection("Data Source=:memory:");
+                    // When using an in-memory DB we have to open it manually
+                    // so EFCore doesn't open, close and wipe it every operation.
+                    _sqliteInMemoryConnection.Open();
+                    getConnection = () => _sqliteInMemoryConnection;
+                }
+
+                contextFunc = () =>
+                {
+                    var builder = new DbContextOptionsBuilder<SqliteServerDbContext>();
+                    builder.UseSqlite(getConnection());
+                    SetupLogging(builder);
+                    return builder.Options;
                 };
-
-                _sawmill.Log(lvl, formatter(state, exception));
             }
 
-            public bool IsEnabled(MSLogLevel logLevel)
+            private void SetupLogging(DbContextOptionsBuilder builder)
             {
-                return true;
+                builder.UseLoggerFactory(_msLoggerFactory);
             }
 
-            public IDisposable? BeginScope<TState>(TState state) where TState : notnull
+            private sealed class LoggingProvider : ILoggerProvider
             {
-                // TODO: this
-                return null;
+                private readonly ILogManager _logManager;
+
+                public LoggingProvider(ILogManager logManager)
+                {
+                    _logManager = logManager;
+                }
+
+                public void Dispose()
+                {
+                }
+
+                public ILogger CreateLogger(string categoryName)
+                {
+                    return new MSLogger(_logManager.GetSawmill("db.ef"));
+                }
+            }
+
+            private sealed class MSLogger : ILogger
+            {
+                private readonly ISawmill _sawmill;
+
+                public MSLogger(ISawmill sawmill)
+                {
+                    _sawmill = sawmill;
+                }
+
+                public void Log<TState>(MSLogLevel logLevel,
+                    EventId eventId,
+                    TState state,
+                    Exception? exception,
+                    Func<TState, Exception?, string> formatter)
+                {
+                    var lvl = logLevel switch
+                    {
+                        MSLogLevel.Trace => LogLevel.Debug,
+                        MSLogLevel.Debug => LogLevel.Debug,
+                        // EFCore feels the need to log individual DB commands as "Information" so I'm slapping debug on it.
+                        MSLogLevel.Information => LogLevel.Debug,
+                        MSLogLevel.Warning => LogLevel.Warning,
+                        MSLogLevel.Error => LogLevel.Error,
+                        MSLogLevel.Critical => LogLevel.Fatal,
+                        MSLogLevel.None => LogLevel.Debug,
+                        _ => LogLevel.Debug
+                    };
+
+                    _sawmill.Log(lvl, formatter(state, exception));
+                }
+
+                public bool IsEnabled(MSLogLevel logLevel)
+                {
+                    return true;
+                }
+
+                public IDisposable? BeginScope<TState>(TState state) where TState : notnull
+                {
+                    // TODO: this
+                    return null;
+                }
+            }
+        }
+
+        public sealed record PlayTimeUpdate(NetUserId User, string Tracker, TimeSpan Time);
+
+        internal sealed class SyncAsyncEnumerable<T> : IAsyncEnumerable<T>
+        {
+            private readonly IAsyncEnumerable<T> _enumerable;
+
+            public SyncAsyncEnumerable(IAsyncEnumerable<T> enumerable)
+            {
+                _enumerable = enumerable;
+            }
+
+            public IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken = default)
+            {
+                return new Enumerator(_enumerable.GetAsyncEnumerator(cancellationToken));
+            }
+
+            private sealed class Enumerator : IAsyncEnumerator<T>
+            {
+                private readonly IAsyncEnumerator<T> _enumerator;
+
+                public Enumerator(IAsyncEnumerator<T> enumerator)
+                {
+                    _enumerator = enumerator;
+                }
+
+                public ValueTask DisposeAsync()
+                {
+                    var task = _enumerator.DisposeAsync();
+                    if (!task.IsCompleted)
+                        throw new InvalidOperationException("DisposeAsync did not complete synchronously.");
+
+                    return task;
+                }
+
+                public ValueTask<bool> MoveNextAsync()
+                {
+                    var task = _enumerator.MoveNextAsync();
+                    if (!task.IsCompleted)
+                        throw new InvalidOperationException("MoveNextAsync did not complete synchronously.");
+
+                    return task;
+                }
+
+                public T Current => _enumerator.Current;
             }
         }
     }
-
-    public sealed record PlayTimeUpdate(NetUserId User, string Tracker, TimeSpan Time);
-
-    internal sealed class SyncAsyncEnumerable<T> : IAsyncEnumerable<T>
-    {
-        private readonly IAsyncEnumerable<T> _enumerable;
-
-        public SyncAsyncEnumerable(IAsyncEnumerable<T> enumerable)
-        {
-            _enumerable = enumerable;
-        }
-
-        public IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken = default)
-        {
-            return new Enumerator(_enumerable.GetAsyncEnumerator(cancellationToken));
-        }
-
-        private sealed class Enumerator : IAsyncEnumerator<T>
-        {
-            private readonly IAsyncEnumerator<T> _enumerator;
-
-            public Enumerator(IAsyncEnumerator<T> enumerator)
-            {
-                _enumerator = enumerator;
-            }
-
-            public ValueTask DisposeAsync()
-            {
-                var task = _enumerator.DisposeAsync();
-                if (!task.IsCompleted)
-                    throw new InvalidOperationException("DisposeAsync did not complete synchronously.");
-
-                return task;
-            }
-
-            public ValueTask<bool> MoveNextAsync()
-            {
-                var task = _enumerator.MoveNextAsync();
-                if (!task.IsCompleted)
-                    throw new InvalidOperationException("MoveNextAsync did not complete synchronously.");
-
-                return task;
-            }
-
-            public T Current => _enumerator.Current;
-        }
-    }
-}

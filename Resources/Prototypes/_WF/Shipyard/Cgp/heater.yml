@@ -27,9 +27,9 @@
       stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Heater CGP{1}'
+        mapNameTemplate: 'Heater {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
+          !type:CGPNameGenerator
           prefixCreator: '14'
       - type: StationJobs
         availableJobs: {}

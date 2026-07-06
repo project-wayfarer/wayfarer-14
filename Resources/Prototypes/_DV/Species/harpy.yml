@@ -4,27 +4,25 @@
   roundStart: true
   prototype: MobHarpy
   sprites: MobHarpySprites
-  markingLimits: MobHumanMarkingLimits #MobHarpyMarkingLimits WF
+  markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
-  skinColoration: HumanToned
+  skinColoration: Hues # Wayfarer: HumanToned<Hues
 
 - type: speciesBaseSprites
   id: MobHarpySprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Head: MobHarpyHead
+    Special: MobHumanoidAnyMarking # Wayfarer
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
-    Chest: MobHarpyTorso
+    Head: MobHarpyHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
+    Chest: MobHarpyTorso
     Eyes: MobHumanoidEyes
     LArm: MobHarpyLArm
     RArm: MobHarpyRArm
@@ -34,7 +32,66 @@
     RLeg: MobHarpyRLeg
     LFoot: MobHarpyLFoot
     RFoot: MobHarpyRFoot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
     RArmExtension: MobHumanoidAnyMarking # Frontier
+
+- type: markingPoints
+  id: MobHarpyMarkingLimits
+  points:
+    Special:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ HarpyEarsDefault ]
+    HeadSide:
+      points: 32 # Wayfarer
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ HarpyChestDefault ]
+    Legs:
+      points: 32 # Wayfarer: 2<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 1<32
+      required: false
+      defaultMarkings: [ HarpyWingDefaultHuescale ]
+    Tail:
+      points: 32 # Wayfarer: 1<32
+      required: true
+      defaultMarkings: [ HarpyTailPhoenix ]
+    UndergarmentTop:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 - type: humanoidBaseSprite
   id: MobHarpyHead

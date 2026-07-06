@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ClothingBackpackSecurity, BaseCGPContraband]
+  id: ClothingBackpackCGPCombat
+  name: CGP Combat backpack
+  components:
+  - type: Sprite
+    sprite: _WF/Clothing/Back/Backpacks/CGP_ert.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1

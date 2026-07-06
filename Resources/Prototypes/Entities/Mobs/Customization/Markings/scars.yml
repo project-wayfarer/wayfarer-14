@@ -19,6 +19,26 @@
     state: scar_eye_left
 
 - type: marking
+  id: ScarEyeRightSmall
+  bodyPart: Head
+  markingCategory: Head
+  # speciesRestriction: [Human, Dwarf, SlimePerson, Goblin, Sheleg, Felinid, Harpy, Oni, Vulpkanin, Rodentia, Feroxi, Tajaran] # Frontier: added Goblin and afterwards, Rodentia & Feroxi from DeltaV, EE - Tajaran -WF
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/scars.rsi
+    state: scar_eye_right_small
+
+- type: marking
+  id: ScarEyeLeftSmall
+  bodyPart: Head
+  markingCategory: Head
+  # speciesRestriction: [Human, Dwarf, SlimePerson, Goblin, Sheleg, Felinid, Harpy, Oni, Vulpkanin, Rodentia, Feroxi, Tajaran] # Frontier: added Goblin and afterwards, Rodentia & Feroxi from DeltaV, EE - Tajaran -WF
+  followSkinColor: true
+  sprites:
+  - sprite: Mobs/Customization/scars.rsi
+    state: scar_eye_left_small
+
+- type: marking
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest

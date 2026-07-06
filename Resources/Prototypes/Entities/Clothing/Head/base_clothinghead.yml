@@ -6,6 +6,10 @@
   - type: Clothing
     slots:
     - HEAD
+  # Wayfarer Start
+    equipSound:
+      collection: GenericEquip
+  # Wayfarer End
   - type: Sprite
     state: icon
   - type: Item

@@ -225,6 +225,7 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
         );
     }
 
+    // Wayfarer
     private string FormatShiftTime(TimeSpan time)
     {
         // Format time to show days if the shift is longer than 24 hours
@@ -234,4 +235,5 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
         }
         return time.ToString(@"hh\:mm");
     }
+    // End Wayfarer
 }

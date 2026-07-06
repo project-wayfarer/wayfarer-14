@@ -1,0 +1,17 @@
+- type: entity
+  id: RAEWSMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: radar assisted early warning system machine board
+  description: A large circuitboard for a 3x3 machine frame.
+  components:
+  - type: MachineBoard
+    prototype: RAEWSdish
+    frameSize: 3x3
+    requirements:
+      Capacitor: 10
+    stackRequirements:
+      Steel: 20
+      Plasteel: 10
+      Glass: 15
+      CableMV: 10
+      CableHV: 10

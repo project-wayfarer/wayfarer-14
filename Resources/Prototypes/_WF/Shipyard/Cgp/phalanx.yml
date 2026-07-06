@@ -28,9 +28,9 @@
       stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Phalanx CGP{1}'
+        mapNameTemplate: 'Phalanx {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
+          !type:CGPNameGenerator
           prefixCreator: '14'
       - type: StationJobs
         availableJobs: {}

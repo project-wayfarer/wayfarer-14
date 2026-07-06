@@ -35,10 +35,12 @@ namespace Content.Shared.Communications
     public sealed class CommunicationsConsoleSelectAlertLevelMessage : BoundUserInterfaceMessage
     {
         public readonly string Level;
+        public readonly string Reason; // Wayfarer
 
-        public CommunicationsConsoleSelectAlertLevelMessage(string level)
+        public CommunicationsConsoleSelectAlertLevelMessage(string level, string reason) // Wayfarer: reason
         {
             Level = level;
+            Reason = reason; // Wayfarer
         }
     }
 

@@ -24,7 +24,7 @@
     sprite: _NF/Clothing/Neck/Scarfs/pilot.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ClothingNeckBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingNeckScarfNfsdGreen
   name: CGP striped green scarf
   description: A stylish CGP officer green scarf, smells like marshmallows and Cappy.
@@ -35,7 +35,7 @@
       sprite: _WF/Clothing/Neck/Scarfs/CGP_green_scarf.rsi # Wayfarer: _NF/Clothing/Neck/Scarfs/nfsd_green_scarf.rsi < _WF/Clothing/Neck/Scarfs/CGP_green_scarf.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ClothingNeckBase, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingNeckScarfNfsdBrown
   name: CGP striped brown scarf
   description: A stylish CGP officer brown scarf, smells like hot chocolate and Cappy.

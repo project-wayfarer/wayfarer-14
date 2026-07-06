@@ -1,0 +1,24 @@
+- type: entity
+  id: BorgModuleUtility
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: utility cyborg module
+  description: Gives a cyborg a pair of hands and a back, ID, and wallet slot.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-template
+  - type: BorgModuleIcon
+    icon: { sprite: _WF/Interface/Actions/borg_modules.rsi, state: utility-module }
+  - type: ItemBorgModule
+    moduleId: WFUtility
+    hands:
+    - hand: {}
+      forceRemovable: true
+    - hand: {}
+      forceRemovable: true
+  - type: WFBorgInventorySlotModule
+    templateMap:
+      borgShort: borgShortUtility
+      borgTall: borgTallUtility
+      borgDutch: borgDutchUtility

@@ -1,5 +1,6 @@
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
+using Content.Server._WF.Administration.PrayerLog; // Wayfarer
 using Content.Server.Bible.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.Popups;
@@ -58,7 +59,12 @@ public sealed class PrayerSystem : EntitySystem
                 {
                     // Make sure the player's entity and the Prayable entity+component still exist
                     if (actor?.PlayerSession != null && HasComp<PrayableComponent>(uid))
+                    {
                         Pray(actor.PlayerSession, comp, message);
+                        // Wayfarer
+                        RaiseLocalEvent(new AdminPrayerEvent(actor.PlayerSession, uid, comp.NotificationPrefix, message));
+                        // End Wayfarer
+                    }
                 });
             },
             Impact = LogImpact.Low,

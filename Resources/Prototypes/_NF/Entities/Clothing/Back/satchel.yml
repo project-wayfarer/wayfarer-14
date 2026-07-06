@@ -26,12 +26,14 @@
     sprite: _NF/Clothing/Back/Satchels/pilot.rsi
 
 - type: entity
-  parent: ClothingBackpackSatchelSecurity
+  parent: [ClothingBackpackSatchelSecurity, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
   id: ClothingBackpackSatchelNfsdBrown
   name: CGP satchel
   components:
   - type: Sprite
     sprite: _WF/Clothing/Back/Satchels/CGP_brown.rsi # Wayfarer: _NF/Clothing/Back/Satchels/nfsd_brown.rsi<_WF/Clothing/Back/Duffels/CGP_brown.rsi
+  - type: ExplosionResistance # Wayfarer: Item protection
+    damageCoefficient: 0.1  # Wayfarer: Item protection
 
 - type: entity
   parent: ClothingBackpackSatchelNfsdBrown

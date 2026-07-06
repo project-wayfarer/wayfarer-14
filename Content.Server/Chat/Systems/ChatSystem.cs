@@ -9,7 +9,6 @@ using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Speech.Prototypes;
-using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._WF;
 using Content.Shared._WF.Chat;
@@ -719,7 +718,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // Frontier: send custom emotes through custom event
         if (!emoteEventInvoked)
         {
-            var ev = new NFEntityEmotedEvent(source, action);
+            var ev = new NFEntityEmotedEvent(action);
             RaiseLocalEvent(source, ev, true);
         }
         // End Frontier
@@ -1312,23 +1311,6 @@ public sealed class EntitySpokeEvent : EntityEventArgs
         ObfuscatedMessage = obfuscatedMessage;
     }
 }
-
-// Frontier: emote event
-/// <summary>
-///     Raised on an entity when it sends a custom emote (one with a message but no sound).
-/// </summary>
-public sealed class NFEntityEmotedEvent : EntityEventArgs
-{
-    public readonly EntityUid Source;
-    public readonly string Emote;
-
-    public NFEntityEmotedEvent(EntityUid source, string emote)
-    {
-        Source = source;
-        Emote = emote;
-    }
-}
-// End Frontier
 
 /// <summary>
 ///     InGame IC chat is for chat that is specifically ingame (not lobby) but is also in character, i.e. speaking.

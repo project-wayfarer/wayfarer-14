@@ -10,7 +10,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Weather;
 
-public abstract class SharedWeatherSystem : EntitySystem
+public abstract partial class SharedWeatherSystem : EntitySystem // Wayfarer: partial, CanWeatherAffect moved to _WF/Weather/SharedWeatherSystem.WF.cs
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly IPrototypeManager ProtoMan = default!;
@@ -40,6 +40,8 @@ public abstract class SharedWeatherSystem : EntitySystem
         }
     }
 
+    // Wayfarer: CanWeatherAffect moved to Content.Shared/_WF/Weather/SharedWeatherSystem.WF.cs
+    /*
     public bool CanWeatherAffect(EntityUid uid, MapGridComponent grid, TileRef tileRef, RoofComponent? roofComp = null)
     {
         if (tileRef.Tile.IsEmpty)
@@ -62,8 +64,9 @@ public abstract class SharedWeatherSystem : EntitySystem
         }
 
         return true;
-
     }
+    */
+    // End Wayfarer
 
     public float GetPercent(WeatherData component, EntityUid mapUid)
     {

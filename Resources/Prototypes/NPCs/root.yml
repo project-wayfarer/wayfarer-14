@@ -8,7 +8,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
             proto: NearbyGunTargets
-        
+
         - !type:HTNPrimitiveTask
           preconditions:
             - !type:KeyExistsPrecondition
@@ -32,7 +32,7 @@
     - tasks:
         - !type:HTNCompoundTask
           task: IdleSpinCompound
-          
+
 - type: htnCompound
   id: EnergyTurretCompound
   branches:
@@ -40,7 +40,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
             proto: NearbyGunTargets
-        
+
         - !type:HTNPrimitiveTask
           preconditions:
             - !type:KeyExistsPrecondition
@@ -52,10 +52,10 @@
             - !type:TargetInLOSPrecondition
               targetKey: Target
               rangeKey: RangedRange
-              opaqueKey: true
+#              opaqueKey: true # Mono
           operator: !type:GunOperator
             targetKey: Target
-            opaqueKey: true
+#            opaqueKey: true # Mono
           services:
             - !type:UtilityService
               id: RangedService

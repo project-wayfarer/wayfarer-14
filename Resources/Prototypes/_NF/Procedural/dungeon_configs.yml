@@ -40,7 +40,7 @@
     tile: FloorSteel
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorSteel
     contents: NFBaseAirlock
 
@@ -116,7 +116,7 @@
     tile: FloorSteel
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorSteel
     contents: NFBaseAirlock
 
@@ -217,7 +217,7 @@
     tile: FloorDark
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorDark
     contents: NFBaseAirlock
 
@@ -295,7 +295,7 @@
     tile: FloorCaveDrought
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorCaveDrought
     contents: NFBaseWoodSupport
 
@@ -353,7 +353,7 @@
     tile: FloorSteel
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorSteel
     contents: NFBaseAirlock
 
@@ -466,7 +466,7 @@
     tile: FloorSteel
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorSteel
     contents: NFBaseAirlock
 
@@ -555,7 +555,7 @@
     tile: FloorWhite
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorWhite
     contents: NFBaseAirlock
 
@@ -632,7 +632,7 @@
     tile: FloorDark
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorDark
     contents: NFBaseAirlock
 
@@ -709,7 +709,7 @@
     tile: FloorDark
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorDark
     contents: NFMercenaryAirlock
 
@@ -786,7 +786,7 @@
     tile: FloorSteel
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorSteel
     contents: NFVirologyAirlock
 
@@ -838,7 +838,7 @@
     tile: FloorDark
 
   - !type:DungeonEntranceDunGen
-    count: 2
+    count: 3 # Wayfarer: 2<3
     tile: FloorDark
     contents: NFMiningAirlock
 
@@ -864,7 +864,7 @@
     tile: FloorDark
 
   - !type:JunctionDunGen
-    width: 1
+    width: 3 # Wayfarer: 1<3
     tile: FloorDark
     contents: NFBaseAirlock
 

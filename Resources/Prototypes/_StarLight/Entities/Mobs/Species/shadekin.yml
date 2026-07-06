@@ -1,0 +1,166 @@
+- type: entity
+  save: false
+  name: Urist McShadow
+  parent: [MobBloodstream, MobAtmosStandard, MobFlammable, BaseMobSpecies] # Wayfarer: Removed BaseSpeciesPickupableHuge
+  id: BaseMobShadekin
+  abstract: true
+  components:
+    - type: Carriable # Wayfarer
+    # - type: LanguageKnowledge
+    #   speaks:
+    #     - GalacticCommon
+    #     - Marish
+    #   understands:
+    #     - GalacticCommon
+    #     - Marish
+    #     - Empathy
+    - type: Inventory
+      speciesId: shadekin
+    - type: Shadekin
+      thresholds:
+        0.8: Low
+        5: Annoying
+        10: High
+        15: Extreme
+    # - type: Absorbable # Wayfarer
+    - type: Hunger
+    - type: Thirst
+    - type: HumanoidAppearance
+      species: Shadekin
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+      state: full
+    - type: Body
+      prototype: Shadekin
+      requiredLegs: 2
+    - type: Speech
+      allowedEmotes: ["Marr", "Wurble", "Hisses", "Growl", "Purr"]
+    - type: Vocal
+      sounds:
+        Male: MaleShadekin
+        Female: FemaleShadekin
+        Unsexed: MaleShadekin
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      angle: 30
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5
+    - type: Damageable
+      damageContainer: Biological
+      damageModifierSet: Shadekin
+    - type: Deathgasp
+      # damageType: Bloodloss # Wayfarer: No damageType
+    - type: Reactive
+      groups:
+        Flammable: [Touch]
+        Extinguish: [Touch]
+        Acidic: [ Touch, Ingestion ]
+      reactions:
+        - reagents: [Water, SpaceCleaner]
+          methods: [Touch]
+          effects:
+            - !type:WashCreamPieReaction # Wayfarer: WashCreampie<WashCreampieReaction
+            - !type:Emote
+              emote: Hisses
+              showInChat: false
+    - type: Bloodstream
+      bloodlossDamage:
+        types:
+          Bloodloss: 1
+      bloodlossHealDamage:
+        types:
+          Bloodloss: -0.25
+      bloodReagent: DarkBlood # Wayfarer: Wait for upstream to use bloodReferenceSolution
+      # Wayfarer
+        # reagents:
+        #   - ReagentId: DarkBlood
+        #     Quantity: 300
+      # End Wayfarer
+    - type: Flammable
+      damage:
+        types:
+          Heat: 1.5
+    - type: TypingIndicator
+      proto: alien
+    - type: PassiveDamage
+      allowedStates:
+        - Alive
+      damageCap: 20
+      damage:
+        groups:
+          Brute: -0.07
+          Burn: -0.07
+    # Wayfarer
+    # - type: Destructible
+    #   thresholds:
+    #     - trigger: !type:DamageTypeTrigger
+    #         damageType: Blunt
+    #         damage: 400
+    #       behaviors:
+    #         - !type:GibBehavior {}
+    #         - !type:SpawnEntitiesBehavior
+    #           spawn:
+    #             ShadekinShadow:
+    #               min: 1
+    #               max: 1
+    #     - trigger: !type:DamageTypeTrigger
+    #         damageType: Heat
+    #         damage: 1500
+    #       behaviors:
+    #         - !type:SpawnEntitiesBehavior
+    #           spawnInContainer: true
+    #           spawn:
+    #             Ash:
+    #               min: 1
+    #               max: 1
+    #             ShadekinShadow:
+    #               min: 1
+    #               max: 1
+    #         - !type:BurnBodyBehavior {}
+    # End Wayfarer
+
+    # BaseMobSpeciesOrganic // Because we dont want respirator to be used.
+    - type: Barotrauma
+      damage:
+        types:
+          Blunt: 0.85 #per second, scales with pressure and other constants.
+          Heat: 0.1
+    - type: Fingerprint
+    - type: Blindable
+    # - type: DarkenedVision # Wayfarer
+    # Other
+    - type: Temperature # Wayfarer: TemperatureDamage<Temperature, Merged with Temperature
+      currentTemperature: 310.15
+      specificHeat: 42
+      heatDamageThreshold: 325
+      coldDamageThreshold: 260
+      coldDamage:
+        types:
+          Cold: 0.1 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat: 1.5 #per second, scales with temperature & other constants
+    - type: TemperatureSpeed
+      thresholds:
+        293: 0.8
+        280: 0.6
+        260: 0.4
+    - type: ThermalRegulator
+      metabolismHeat: 800
+      radiatedHeat: 100
+      implicitHeatRegulation: 500
+      sweatHeatRegulation: 2000
+      shiveringHeatRegulation: 2000
+      normalBodyTemperature: 310.15
+      thermalRegulationTemperatureThreshold: 2
+    - type: Perishable
+    - type: Butcherable
+      butcheringType: Spike # TODO human.
+      spawned:
+        - id: FoodMeat
+          amount: 5
+    - type: FireVisuals
+      alternateState: Standing

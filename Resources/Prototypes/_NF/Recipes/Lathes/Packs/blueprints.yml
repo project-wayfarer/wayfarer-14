@@ -80,7 +80,9 @@
   - PortableGeneratorJrPacmanMachineCircuitboard
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
+  - SolarAssemblyFlatpack
   - EmitterCircuitboard
+  - PowerComputerCircuitboard
   # AtmosphericTech
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
@@ -97,6 +99,7 @@
   # Shuttlecraft
   - ShuttleConsoleCircuitboard
   - ThrusterMachineCircuitboard
+  - LargeThrusterMachineCircuitboard # Mono
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
   - MiniStationAnchorCircuitboard
@@ -107,16 +110,18 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
+  - AlertsComputerCircuitboard
+  - AtmosMonitoringComputerCircuitboard
   # AdvancedToolsTechnology
   - WelderExperimental
   - PowerDrill
   - JawsOfLife
   - ClothingBeltChiefEngineer
   - BorgModuleAdvancedTool
+  - BorgModuleUtility # Wayfarer
   # PortableFission
   - PortableGeneratorDKJrMachineCircuitboard
   # RapidConstruction
-  - ShipyardRPD # Wayfarer
   - ShipyardRCD
   - ShipyardRCDAmmo
   # ConstructionBags
@@ -139,6 +144,10 @@
   # PersonalPropulsion
   - JetpackBlue
   - JetpackCaptain
+  # Wayfarer
+  - ShipyardRPD
+  # Far Horizons
+  - RadiationBlockingProjector
 
 # region Medical
 - type: latheRecipePack
@@ -178,6 +187,8 @@
   # IndustrialMedicine
   - MedicalAssemblerMachineCircuitboard
   - HotplateMachineCircuitboard
+  - ElectrolysisUnitMachineCircuitboard
+  - CentrifugeMachineCircuitboard
   - DefibrillatorCompact
   # SyringeGun
   - LauncherSyringe
@@ -230,6 +241,7 @@
   - JetpackSecurity
   # AdvancedPersonalPropulsion
   - JetpackVoid
+  - NFClothingShoesBootsJetpack
   # HardsuitsExperimentalIndustrial
   - ClothingOuterHardsuitMaximPrototype
 
@@ -244,8 +256,6 @@
   # NFBasicShuttleArmament
   - NFGrenadeFlash
   - NFGrenadeEMP
-  # PersonalPropulsion
-  - JetpackNfsd
 
 # region Salvage
 - type: latheRecipePack
@@ -267,6 +277,7 @@
   - JetpackCaptain
   # AdvancedPersonalPropulsion
   - JetpackVoid
+  - NFClothingShoesBootsJetpack
   # BluespaceGasTanks
   - BluespaceAirTank
   - SmallBluespaceAirTank
@@ -281,6 +292,7 @@
   - HandHeldMassScanner
   # AdvancedToolsTechnology
   - BorgModuleAdvancedTool
+  - BorgModuleUtility # Wayfarer
   # MassExcavation
   - OreBagOfHolding
   - MiningDrillDiamond
@@ -345,6 +357,7 @@
   - ProtolatheHyperConvectionMachineCircuitboard
   # AdvancedToolsTechnology
   - BorgModuleAdvancedTool
+  - BorgModuleUtility # Wayfarer
 
 # region Service
 - type: latheRecipePack
@@ -401,6 +414,7 @@
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
   - ImpCoffeeMachineCircuitboard
+  - NFCookingBag
   # MiscellaneousItemsOrganization
   - NFPouchUtility
   - NFPouchEngineering

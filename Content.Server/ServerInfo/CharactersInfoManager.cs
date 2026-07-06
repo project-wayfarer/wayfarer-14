@@ -1,14 +1,19 @@
+using System;
 using System.Linq;
 using System.Net;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using Content.Server.Database;
+using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Server.Preferences.Managers;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Preferences;
 using Robust.Server.Player;
 using Robust.Server.ServerStatus;
+using Robust.Shared.Asynchronous;
 using Robust.Shared.Player;
+using Robust.Shared.Timing;
 
 namespace Content.Server.ServerInfo;
 
@@ -22,10 +27,15 @@ public sealed class CharactersInfoManager
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
+    [Dependency] private readonly ITaskManager _taskManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public void Initialize()
     {
         _statusHost.AddHandler(HandleCharactersRequest);
+        // Wayfarer
+        _statusHost.AddHandler(HandleShiftTimeRemainingRequest);
+        // End Wayfarer
     }
 
     private async Task<bool> HandleCharactersRequest(IStatusHandlerContext context)
@@ -89,5 +99,73 @@ public sealed class CharactersInfoManager
 
         await context.RespondAsync(jObject.ToJsonString(), HttpStatusCode.OK, "application/json");
         return true;
+    }
+
+    // Wayfarer
+    private async Task<bool> HandleShiftTimeRemainingRequest(IStatusHandlerContext context)
+    {
+        if (!context.IsGetLike || context.Url.AbsolutePath != "/shift-time-remaining")
+        {
+            return false;
+        }
+
+        var responseData = await RunOnMainThread(() =>
+        {
+            var ticker = _entityManager.System<GameTicker>();
+
+            var hasShiftEndTime = ticker.RunLevel == GameRunLevel.InRound && ticker.ShiftEndTime.HasValue;
+            var timeRemaining = TimeSpan.Zero;
+            DateTime? shiftEndTimeUtc = null;
+
+            if (hasShiftEndTime)
+            {
+                var remaining = ticker.ShiftEndTime!.Value - _timing.RealTime;
+                if (remaining > TimeSpan.Zero)
+                {
+                    timeRemaining = remaining;
+                    shiftEndTimeUtc = DateTime.UtcNow + remaining;
+                }
+                else
+                {
+                    shiftEndTimeUtc = DateTime.UtcNow;
+                }
+            }
+
+            return (hasShiftEndTime, timeRemaining, shiftEndTimeUtc);
+        });
+
+        var jObject = new JsonObject
+        {
+            ["hasShiftEndTime"] = responseData.hasShiftEndTime,
+            ["timeRemainingSeconds"] = (int) Math.Ceiling(responseData.timeRemaining.TotalSeconds),
+            ["shiftEndTimeUtc"] = responseData.shiftEndTimeUtc?.ToString("o")
+        };
+
+        context.ResponseHeaders["Content-Type"] = "application/json";
+        context.ResponseHeaders["Access-Control-Allow-Origin"] = "*";
+        context.ResponseHeaders["Access-Control-Allow-Methods"] = "GET, OPTIONS";
+        context.ResponseHeaders["Access-Control-Allow-Headers"] = "Content-Type";
+
+        await context.RespondAsync(jObject.ToJsonString(), HttpStatusCode.OK, "application/json");
+        return true;
+    }
+    // End Wayfarer
+
+    private async Task<T> RunOnMainThread<T>(Func<T> func)
+    {
+        var taskCompletionSource = new TaskCompletionSource<T>();
+        _taskManager.RunOnMainThread(() =>
+        {
+            try
+            {
+                taskCompletionSource.TrySetResult(func());
+            }
+            catch (Exception e)
+            {
+                taskCompletionSource.TrySetException(e);
+            }
+        });
+
+        return await taskCompletionSource.Task;
     }
 }

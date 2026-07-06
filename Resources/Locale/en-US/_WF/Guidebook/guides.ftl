@@ -1,6 +1,8 @@
 # Base entries
 guide-entry-wayfarer-rules = Server Rules
 guide-entry-community-goals = Community Goals
+guide-entry-consent = Consent
+guide-entry-contraband = Contraband
 
 # Rules entries
 guide-entry-wayfarer-rule-a0 = Rule A0: Storytelling First
@@ -24,7 +26,7 @@ guide-entry-medshipyard = Medical Shipyard
 guide-entry-outlawshipyard = Outlaw Shipyard
 guide-entry-scrapshipyard = Scrap Shipyard
 guide-entry-staffshipyard = Staff Shipyard
-guide-entry-shipyard-beater = Beater
+guide-entry-shipyard-mephit = Mephit
 guide-entry-shipyard-buckler = Buckler
 guide-entry-shipyard-dagger = Dagger
 guide-entry-shipyard-dioddef = Dioddef
@@ -37,6 +39,8 @@ guide-entry-shipyard-heater = Heater
 guide-entry-shipyard-icarus = Icarus
 guide-entry-shipyard-kite = Kite
 guide-entry-shipyard-looter = Looter
+guide-entry-shipyard-bocaskreeo = Bocaskreeo
+guide-entry-shipyard-copperskree = Copperskree
 guide-entry-shipyard-medivac = Medivac
 guide-entry-shipyard-mjolnir = Mjolnir
 guide-entry-shipyard-parma = Parma
@@ -44,7 +48,11 @@ guide-entry-shipyard-phalanx = Phalanx
 guide-entry-shipyard-pridwen = Pridwen
 guide-entry-shipyard-qauata = Qauata
 guide-entry-shipyard-ratrod = Ratrod
-guide-entry-shipyard-reclaimer = Reclaimer
+guide-entry-shipyard-behir = Behir
 guide-entry-shipyard-scryer = Scryer
 guide-entry-shipyard-svalinn = Svalinn
 guide-entry-shipyard-swan = Swan
+guide-entry-shipyard-moppet = Moppet
+guide-entry-shipyard-kobold = Kobold
+guide-entry-shipyard-manta = Manta
+guide-entry-shipyard-veliola = Veliola

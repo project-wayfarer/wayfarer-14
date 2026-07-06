@@ -1,7 +1,8 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="{Loc 'general-station-record-console-window-title'}"
-               MinSize="800 500"> <!-- Frontier: width 750<800, add graphics namespace -->
+               MinSize="800 540"> <!-- Frontier: width 750<800, add graphics namespace -->  <!-- Wayfarer: height 500<540 for tab bar -->
+<TabContainer Name="Tabs"> <!-- Wayfarer: Tab container for Records and Register Crew -->
     <BoxContainer Orientation="Vertical">
         <BoxContainer Margin="5 5 5 10" HorizontalExpand="True">
             <OptionButton Name="StationRecordsFilterType" MinWidth="200" Margin="0 0 10 0"/>
@@ -57,4 +58,21 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
+    <!-- Wayfarer: Register Crew tab -->
+    <BoxContainer Name="RegisterCrewTab" Orientation="Vertical" Margin="10">
+        <GridContainer Columns="3" HorizontalExpand="True" Margin="0 5 0 5">
+            <Label Text="{Loc 'register-crew-privileged-id'}" />
+            <Button Name="PrivilegedIdButton" Access="Public" />
+            <Label Name="PrivilegedIdLabel" />
+            <Label Text="{Loc 'register-crew-target-id'}" />
+            <Button Name="TargetIdButton" Access="Public" />
+            <Label Name="TargetIdLabel" />
+        </GridContainer>
+        <BoxContainer Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Text="{Loc 'register-crew-custom-job'}" />
+            <LineEdit Name="CustomJobTitleEdit" Access="Public" PlaceHolder="{Loc 'register-crew-custom-job-placeholder'}" HorizontalExpand="True" />
+        </BoxContainer>
+        <Button Name="RegisterButton" Access="Public" Text="{Loc 'register-crew-button'}" Margin="0 10 0 0" Disabled="True" />
+    </BoxContainer>
+</TabContainer> <!-- End Wayfarer -->
 </DefaultWindow>

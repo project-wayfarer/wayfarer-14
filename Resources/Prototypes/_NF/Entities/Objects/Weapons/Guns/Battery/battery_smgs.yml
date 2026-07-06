@@ -2,15 +2,15 @@
 #region Laser
 - type: entity
   id: NFWeaponEnergySubMachineGunDeltaV
-  parent: [ NFBaseWeaponEnergySubMachineGunFireModes, NFBaseWeaponFrameEnergySubMachineGunNanotrasen ]
+  parent: [ NFBaseWeaponEnergySubMachineGunFireModes, NFBaseWeaponFrameEnergySubMachineGunNanotrasen, BaseMilitaryContraband ] # Wayfarer: add BaseMilitaryContraband
   name: energy submachine gun
   description: |-
     An advanced hybrid energy submachine gun with two settings: disable and kill. On the handle is a label that says 'for authorized use only.'
   components:
   - type: Sprite
-    sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/energygun.rsi   # Wayfarer: The Respritening Phase 1
   - type: Clothing
-    sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/energygun.rsi   # Wayfarer: The Respritening Phase 1
 
 #region Diasblers
 - type: entity
@@ -22,6 +22,6 @@
     Advanced weapon that exhausts organic targets, weakening them until they collapse. On the handle is a label that says 'for authorized use only.'
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/disabler_smg.rsi   # Wayfarer: The Respritening Phase 1
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    sprite: _WF/Objects/Weapons/Guns/Battery/disabler_smg.rsi   # Wayfarer: The Respritening Phase 1

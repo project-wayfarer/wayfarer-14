@@ -1,0 +1,21 @@
+- type: pointOfInterest
+  id: WFCentComm
+  parent: BasePOI
+  name: 'Central Command'
+  minimumDistance: 2000 
+  maximumDistance: 3000
+  spawnGroup: Required
+  spawnOwnMap: true
+  gridPath: /Maps/_WF/POI/wfcentcomm.yml
+
+- type: gameMap
+  id: WFCentComm
+  mapName: 'Central Command'
+  mapPath: /Maps/_WF/POI/wfcentcomm.yml
+  minPlayers: 0
+  stations:
+    WFCentComm:
+      stationProto: NanotrasenCentralCommand
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Central Command'

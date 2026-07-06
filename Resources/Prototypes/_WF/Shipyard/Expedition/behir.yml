@@ -1,0 +1,33 @@
+﻿- type: vessel
+  id: Behir
+  parent: BaseVessel
+  name: DIRE Behir
+  description: A restored cargo vessel, repurposed for planetary and space based asset acquisition.
+  price: 90000
+  category: Large
+  group: Expedition
+  shuttlePath: /Maps/_WF/Shuttles/Expedition/behir.yml
+  guidebookPage: ShipyardBehir
+  class:
+  - Cargo
+  - Expedition
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Behir
+  mapName: 'Behir'
+  mapPath: /Maps/_WF/Shuttles/Expedition/behir.yml
+  minPlayers: 0
+  stations:
+    Behir:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Behir {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

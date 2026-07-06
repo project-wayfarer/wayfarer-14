@@ -25,9 +25,9 @@
       stationProto: StandardFrontierSecurityVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Buckler CGP{1}'
+        mapNameTemplate: 'Buckler {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
+          !type:CGPNameGenerator
           prefixCreator: '14'
       - type: StationJobs
         availableJobs: {}

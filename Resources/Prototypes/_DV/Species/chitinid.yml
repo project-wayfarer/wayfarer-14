@@ -5,7 +5,7 @@
   prototype: MobChitinid
   sprites: MobChitinidSprites
   defaultSkinTone: "#ffda93"
-  markingLimits: MobHumanMarkingLimits #MobChitinidMarkingLimits WF
+  markingLimits: MobChitinidMarkingLimits
   dollPrototype: MobChitinidDummy
   skinColoration: Hues
   maleFirstNames: NamesChitinidFirstMale
@@ -15,20 +15,18 @@
 - type: speciesBaseSprites
   id: MobChitinidSprites
   sprites:
-    Special: MobHumanoidAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    Special: MobHumanoidAnyMarking # Wayfarer
+    Hair: MobHumanoidAnyMarking # Wayfarer
+    FacialHair: MobHumanoidAnyMarking # Wayfarer
     Head: MobChitinidHead
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
-    Chest: MobChitinidTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking # Wayfarer
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking # Wayfarer
+    Chest: MobChitinidTorso
     Eyes: MobChitinidEyes
     LArm: MobChitinidLArm
     RArm: MobChitinidRArm
@@ -38,13 +36,71 @@
     RLeg: MobChitinidRLeg
     LFoot: MobChitinidLFoot
     RFoot: MobChitinidRFoot
-    RArmExtension: MobHumanoidAnyMarking # Adds Wing Slot
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Wayfarer
+    TailOversuit: MobHumanoidAnyMarking # Wayfarer
+    RArmExtension: MobHumanoidAnyMarking # Wayfarer: Adds Wing Slot
 
 - type: humanoidBaseSprite
   id: MobChitinidEyes
   baseSprite:
     sprite: _DV/Mobs/Species/Chitinid/parts.rsi
     state: eyes
+
+- type: markingPoints
+  id: MobChitinidMarkingLimits
+  onlyWhitelisted: false # Wayfarer: true<false
+  points:
+    Special:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Hair:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    FacialHair:
+      points: 32 # Wayfarer: 0<32
+      required: false
+    Head:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    HeadTop:
+      points: 32 # Wayfarer: 1<32
+      required: false # Wayfarer: true<false
+      defaultMarkings: [ ChitinidAntennasDefault ]
+    HeadSide:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Snout:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    NeckFluff:
+      points: 32 # Wayfarer
+      required: false
+    Chest:
+      points: 32 # Wayfarer: 1<32
+      required: false
+    Legs:
+      points: 32 # Wayfarer: 6<32
+      required: false
+    Arms:
+      points: 32 # Wayfarer: 6<32
+      required: false
+    Tail:
+      points: 32 # Wayfarer: 1<32
+      required: false # Wayfarer: true<false
+      defaultMarkings: [ ChitinidWingsDefault ]
+    UndergarmentTop:
+      points: 32 # Wayfarer: 3<32
+      required: false
+    UndergarmentBottom:
+      points: 32 # Wayfarer: 3<32
+      required: false
+    Genital:
+      points: 32 # Wayfarer
+      required: false
+    Overlay:
+      points: 32 # Wayfarer
+      required: false
 
 - type: humanoidBaseSprite
   id: MobChitinidHead

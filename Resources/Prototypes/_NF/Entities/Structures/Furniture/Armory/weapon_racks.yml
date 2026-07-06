@@ -55,11 +55,11 @@
   - type: Sprite
     layers:
     - state: base-pistol
-      color: "#323232" # Wayfarer: #56422b<#323232
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-pistol-decal
-      color: "#f1b223"
+      color: "#cf7332" # Wayfarer f1b223 < cf7332
     - state: pistol-0
     - map: ["enum.StorageFillLayers.Fill"]
     - state: locked
@@ -78,11 +78,11 @@
   - type: Sprite
     layers:
     - state: base-pistol-wall
-      color: "#56422b"
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-pistol-wall-decal
-      color: "#f1b223"
+      color: "#cf7332" # Wayfarer f1b223 < cf7332
     - state: pistol-0
     - map: ["enum.StorageFillLayers.Fill"]
     - state: locked
@@ -255,11 +255,11 @@
   - type: Sprite
     layers:
     - state: base-gun
-      color: "#56422b"
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-gun-decal
-      color: "#537045"
+      color: "#cf7332" # Wayfarer 537045 < cf7332
     - state: locked
       map: [ enum.LockVisualLayers.Lock ]
       shader: unshaded
@@ -284,11 +284,11 @@
   - type: Sprite
     layers:
     - state: base-gun-wall
-      color: "#56422b"
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-gun-wall-decal
-      color: "#537045"
+      color: "#cf7332" # Wayfarer 537045 < cf7332
     - state: locked
       map: [ enum.LockVisualLayers.Lock ]
       shader: unshaded
@@ -314,11 +314,11 @@
   - type: Sprite
     layers:
     - state: base-melee
-      color: "#56422b"
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-melee-decal
-      color: "#537045"
+      color: "#cf7332" # Wayfarer 537045 < cf7332
     - state: locked
       map: [ enum.LockVisualLayers.Lock ]
       shader: unshaded
@@ -343,11 +343,11 @@
   - type: Sprite
     layers:
     - state: base-melee-wall
-      color: "#56422b"
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-melee-wall-decal
-      color: "#537045"
+      color: "#cf7332" # Wayfarer 537045 < cf7332
     - state: locked
       map: [ enum.LockVisualLayers.Lock ]
       shader: unshaded
@@ -373,11 +373,11 @@
   - type: Sprite
     layers:
     - state: base-pistol
-      color: "#56422b"
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-pistol-decal
-      color: "#537045"
+      color: "#cf7332" # Wayfarer 537045 < cf7332
     - state: locked
       map: [ enum.LockVisualLayers.Lock ]
       shader: unshaded
@@ -401,11 +401,11 @@
   - type: Sprite
     layers:
     - state: base-pistol-wall
-      color: "#56422b"
+      color: "#373737" # Wayfarer 56422b < 373737
     - state: lock
-      color: "#1f6626"
+      color: "#404040" # Wayfarer 1f6626 < 404040
     - state: base-pistol-wall-decal
-      color: "#537045"
+      color: "#cf7332" # Wayfarer 537045 < cf7332
     - state: locked
       map: [ enum.LockVisualLayers.Lock ]
       shader: unshaded

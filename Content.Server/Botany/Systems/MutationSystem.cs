@@ -103,7 +103,7 @@ public sealed class MutationSystem : EntitySystem
 
         // Hybrids have a high chance of being seedless. Balances very
         // effective hybrid crossings.
-        if (a.Name != result.Name && Random(0.7f))
+        if (a.Name != result.Name && Random(0.15f)) // Wayfarer: 0.7f<0.15f
         {
             result.Seedless = true;
         }

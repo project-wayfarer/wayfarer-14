@@ -1,0 +1,13 @@
+<!-- Copy of AgentIDCardWindow.xaml, bbut with only job name and icons.-->
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               Title="{Loc 'job-select-card-menu-title'}">
+    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
+        <Label Name="CurrentJob" Text="{Loc 'job-select-card-current-job'}" />
+        <LineEdit Name="JobLineEdit" />
+        <Label Text="{Loc 'job-select-card-job-icon-label'}"/>
+        <GridContainer Name="IconGrid" Columns="10">
+            <!-- Job icon buttons are generated in code -->
+        </GridContainer>
+    </BoxContainer>
+</DefaultWindow>

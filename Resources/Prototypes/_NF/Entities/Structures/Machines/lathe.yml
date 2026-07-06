@@ -198,8 +198,11 @@
     - NFEngineeringStructureBoardsStatic
     - NFEngineeringMaterialsStatic
     - NFInflatablesStatic
-    - CSPlumbingStatic # CS - showers, sinks, drains
     - NFEngineeringArchetypeStatic
+    # Coyote Sector
+    - CSPlumbingStatic # Showers, sinks, drains
+    # Far Horizons
+    - ReactorPartsBasic
 
   - type: BlueprintReceiver
     whitelist:
@@ -296,17 +299,27 @@
     - NfsdWeaponsStatic
     - NfsdPracticeStatic
     - NfsdAmmoStatic
-    - NFMercenaryMagazineStatic
+#    - NFMercenaryMagazineStatic # Wayfarer
     - NFMercenaryStorageStatic
+    - NFMercenaryArchetypeMeleeStatic # Wayfarer
     - NfsdToolsStatic
     - NfsdTargetsStatic
     - NfsdBoardsStatic
+    - NfsdReportingStatic
   - type: BlueprintReceiver
     whitelist:
       tags:
       - NFBlueprintNfsdTechfab
       - NFBlueprintAdvanced
   - type: OreSiloClient
+  # Wayfarer: Didn't inherit properly
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  # End Wayfarer
 
 - type: entity
   id: MercenaryTechFab

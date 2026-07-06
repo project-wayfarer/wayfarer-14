@@ -148,11 +148,12 @@ public sealed partial class DungeonJob
                         groupSize--;
                     }
                 }
-
-                if (groupSize > 0)
-                {
-                    _sawmill.Warning($"Found remaining group size for ore veins of {gen.Entity}!"); // Frontier: 'gen.Replacement ?? "null"'<gen.Entity - replace with output, input is nontrivial to print
-                }
+                // Wayfarer: Supress warning spam to see if it reduces packet load
+                // if (groupSize > 0)
+                // {
+                //     _sawmill.Warning($"Found remaining group size for ore veins of {gen.Entity}!"); // Frontier: 'gen.Replacement ?? "null"'<gen.Entity - replace with output, input is nontrivial to print
+                // }
+                // End Wayfarer
             }
         }
     }
