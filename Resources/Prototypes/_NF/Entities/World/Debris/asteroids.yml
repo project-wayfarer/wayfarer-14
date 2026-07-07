@@ -85,12 +85,12 @@
     - type: RandomEntityPopulator
       entries:
       - params:
-          prob: 0.66
+          prob: 0.72 # Wayfarer 0.66<0.72
           min: 1
           max: 4
           canBeAirSealed: true
         entries:
-        - id: GasDepositOxygen
+        - id: GasDepositOxygenVeryLarge # Wayfarer GasDepositOxygen<GasDepositOxygenVeryLarge
           orGroup: deposit
         - id: GasDepositOxygenLarge
           orGroup: deposit
@@ -98,7 +98,7 @@
           orGroup: deposit
         - id: GasDepositNitrogenLarge
           orGroup: deposit
-        - id: GasDepositAir
+        - id: GasDepositAirVeryLarge # Wayfarer GasDepositAir<GasDepositAirVeryLarge
           orGroup: deposit
         - id: GasDepositAirLarge
           orGroup: deposit
