@@ -1,0 +1,34 @@
+- type: vessel
+  id: Freebird
+  parent: BaseVessel
+  name: ZKW Freebird
+  description: A medium sized chemist shop with intigrated park and hotspring to promote holistic healing of both body and mind. 
+  price: 84642
+  category: Large
+  group: Medical
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/freebird.yml
+  #guidebookPage: ShipyardFreebird
+  class:
+  - Chemistry
+  - Botany
+  engine:
+  - Uranium
+  - Solar
+
+- type: gameMap
+  id: Freebird
+  mapName: 'ZKW Freebird'
+  mapPath: /Maps/_WF/Shuttles/Civilian/freebird.yml
+  minPlayers: 0
+  stations:
+    Freebird:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Freebird {1}'
+        nameGenerator:
+          !type:MedicalNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
