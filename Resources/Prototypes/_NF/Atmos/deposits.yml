@@ -2,7 +2,7 @@
 - type: gasDeposit
   id: AirLike
   gases:
-  -  7500,  10000 # oxygen Wayfarer: 5000,  7500<7500,  10000
+  -  6500,  9000 # oxygen Wayfarer: 5000,  7500<6500,  9000
   - 15000, 20000  # nitrogen
   -     0,  1500  # carbon dioxide
   -     0,   200  # plasma
@@ -32,7 +32,7 @@
 - type: gasDeposit
   id: MostlyOxygen
   gases:
-  - 25000, 30000  # oxygen Wayfarer: 20000,  25000<25000,  30000
+  - 21000, 26000  # oxygen Wayfarer: 20000,  25000<21000,  26000
   -     0,  2000  # nitrogen
   -     0,  1500  # carbon dioxide
   -     0,   200  # plasma
@@ -49,7 +49,7 @@
   gases:
   -     0,  2000  # oxygen
   -     0,  1500  # nitrogen
-  - 20000, 25000  # carbon dioxide
+  - 25000, 30000  # carbon dioxide Wayfarer: 20000,  25000<25000,  30000
   -     0,   200  # plasma
   -     0,    50  # tritium
   -     0,   500  # water vapor
