@@ -1,0 +1,53 @@
+# Drugs
+- type: microwaveMealRecipe
+  id: RecipeCannabisBrick
+  name: cannabis brick recipe
+  result: CannabisBrick
+  time: 10
+  group: OutlawAssembler
+  solids:
+    LeavesCannabis: 8
+  recipeType: OutlawAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeRainbowCannabisBrick
+  name: cannabis brick recipe
+  result: RainbowCannabisBrick
+  time: 10
+  group: OutlawAssembler
+  solids:
+    LeavesCannabisRainbow: 8
+  recipeType: OutlawAssembler
+
+- type: microwaveMealRecipe
+  id: RecipePenHyperzine
+  name: hyperzine auto-injector
+  result: Stimpack
+  time: 5
+  group: OutlawAssembler
+  solids:
+    BlankMediPen: 1
+  reagents:
+    Stimulants: 30
+  recipeType: OutlawAssembler
+
+# Drinks
+- type: microwaveMealRecipe
+  id: RecipeBloodRedBrew
+  name: blood-red brew can
+  result: DrinkNukieCan
+  time: 5
+  group: OutlawAssembler
+  solids:
+    SheetSteel1: 1
+  reagents:
+    Stimulants: 5
+    NuclearCola: 20
+    Ice: 5
+  recipeType: OutlawAssembler
+
+# Equipment
+#todo
+#inhalers (like medipens but cooler)
+#high end weapons
+#contraband crates

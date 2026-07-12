@@ -32,6 +32,7 @@ namespace Content.Client.PDA
         private string _jobTitle = Loc.GetString("comp-pda-ui-unassigned");
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
+        private string _alertReason = Loc.GetString("comp-pda-ui-unknown"); // Wayfarer
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
 
         private string _balance = Loc.GetString("comp-pda-ui-unknown"); // Frontier
@@ -120,6 +121,13 @@ namespace Content.Client.PDA
             {
                 _clipboard.SetText(_alertLevel);
             };
+
+            // Wayfarer
+            StationAlertReasonButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_alertReason);
+            };
+            // End Wayfarer
 
             // Frontier
             BalanceButton.OnPressed += _ =>
@@ -241,6 +249,14 @@ namespace Content.Client.PDA
                 ("color", alertColor),
                 ("level", _alertLevel)
             ));
+            // Wayfarer
+            _alertReason = state.PdaOwnerInfo.StationAlertReason ?? "";
+            StationAlertReasonLabel.SetMarkup(Loc.GetString(
+                "comp-pda-ui-station-alert-level-reason",
+                ("reason", FormattedMessage.EscapeText(_alertReason))
+            ));
+            StationAlertReasonButton.Visible = !string.IsNullOrEmpty(_alertReason);
+            // End Wayfarer
             _instructions = Loc.GetString($"{alertLevelKey}-instructions");
             StationAlertLevelInstructions.SetMarkup(Loc.GetString(
                 "comp-pda-ui-station-alert-level-instructions",

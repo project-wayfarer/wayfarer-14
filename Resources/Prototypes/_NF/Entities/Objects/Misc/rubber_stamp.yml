@@ -33,7 +33,7 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-hos
-    stampedColor: "#4c653a"
+    stampedColor: "#b55c1d" # Wayfarer 4c653a<b55c1d
     stampState: "paper_stamp-nf-sheriff"
     protected: True
   - type: Sprite
@@ -102,7 +102,7 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-bailiff
-    stampedColor: "#51703b"
+    stampedColor: "#cf7332" # Wayfarer 51703b<cf7332
     stampState: "paper_stamp-nf-bailiff"
   - type: Sprite
     sprite: _WF/Objects/Misc/stamps.rsi # Wayfarer: _NF/Objects/Misc/stamps.rsi < _WF/Objects/Misc/stamps.rsi

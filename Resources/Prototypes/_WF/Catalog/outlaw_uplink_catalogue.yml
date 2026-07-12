@@ -507,6 +507,40 @@
   categories:
   - UplinkOutlawUtility
 
+# Techfab
+- type: listing
+  id: UplinkOutlawTechfab
+  name: uplink-outlaw-techfab-name
+  description: uplink-outlaw-techfab-desc
+  productEntity: OutlawTechfabFlatpack
+  icon: { sprite: _NF/Objects/Devices/flatpack.rsi, state: pirate_lathe }
+  cost:
+    Doubloon: 8
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
+# Assembler
+- type: listing
+  id: UplinkOutlawAssembler
+  name: uplink-outlaw-assembler-name
+  description: uplink-outlaw-assembler-desc
+  productEntity: OutlawAssemblerFlatpack
+  icon: { sprite: _NF/Objects/Devices/flatpack.rsi, state: pirate_lathe }
+  cost:
+    Doubloon: 4
+  categories:
+  - UplinkOutlawUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - OutlawUplinkBase
+
 # Ionized Bluespace Dust
 - type: listing
   id: UplinkOutlawIonizedBluespaceDustBag
@@ -655,22 +689,22 @@
       - OutlawUplinkBase
 
 #Ammo --
-#35 Stendos
-- type: listing
-  id: UplinkOutlawBox35Ext
-  name: uplink-outlaw-box35ext-name
-  description: uplink-outlaw-box35ext-desc
-  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
-  productEntity: MagBox35Ext
-  cost:
-    Doubloon: 1
-  categories:
-  - UplinkOutlawAmmo
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
+#35 Stendos Commented out in favour of OverP
+#- type: listing
+#  id: UplinkOutlawBox35Ext
+#  name: uplink-outlaw-box35ext-name
+#  description: uplink-outlaw-box35ext-desc
+#  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+#  productEntity: MagBox35Ext
+#  cost:
+#    Doubloon: 1
+#  categories:
+#  - UplinkOutlawAmmo
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - OutlawUplinkBase
 
 #35 Stendos Rubber
 - type: listing
@@ -697,7 +731,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox35ExtOverpressure
   cost:
-    Doubloon: 2
+    Doubloon: 1 #WF: 2>1
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -714,7 +748,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox35ExtIncendiary
   cost:
-    Doubloon: 3
+    Doubloon: 2 #WF: 3>2
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -731,7 +765,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox35ExtUranium
   cost:
-    Doubloon: 5
+    Doubloon: 4 #WF: 4>3
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -774,22 +808,22 @@
       tags:
       - OutlawUplinkBase
 
-#45 Speedloader
-- type: listing
-  id: UplinkOutlawBox45Speedloader
-  name: uplink-outlaw-box45speedloader-name
-  description: uplink-outlaw-box45speedloader-desc
-  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
-  productEntity: MagBox45Speedloader
-  cost:
-    Doubloon: 1
-  categories:
-  - UplinkOutlawAmmo
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - OutlawUplinkBase
+#45 Speedloader WF: comment out
+#- type: listing
+#  id: UplinkOutlawBox45Speedloader
+#  name: uplink-outlaw-box45speedloader-name
+#  description: uplink-outlaw-box45speedloader-desc
+#  icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
+#  productEntity: MagBox45Speedloader
+#  cost:
+#    Doubloon: 1
+#  categories:
+#  - UplinkOutlawAmmo
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - OutlawUplinkBase
 
 #45 Speedloader Rubber
 - type: listing
@@ -816,7 +850,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox45SpeedloaderOverpressure
   cost:
-    Doubloon: 2
+    Doubloon: 1 #WF: 2>1
   categories:
   - UplinkOutlawAmmo
   conditions:
@@ -850,7 +884,7 @@
   icon: { sprite: _NF/Objects/Storage/boxes.rsi, state: icon-magazine }
   productEntity: MagBox45SpeedloaderUranium
   cost:
-    Doubloon: 5
+    Doubloon: 4 #WF: 5>4
   categories:
   - UplinkOutlawAmmo
   conditions:

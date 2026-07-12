@@ -51,7 +51,8 @@
       collection: MetalThud
 
 - type: entity
-  name: syndicate jaws of life
+#  name: syndicate jaws of life # Wayfarer: Changed Name
+  name: advanced jaws of life
   parent: [JawsOfLife, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SyndicateJawsOfLife
   description: Useful for entering the station or its departments.

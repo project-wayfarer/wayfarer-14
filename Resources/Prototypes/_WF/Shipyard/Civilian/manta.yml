@@ -1,0 +1,38 @@
+# Maintainer Info
+# GitHub: Possumongus 
+# Discord: Possumongus
+
+# Shuttle Notes:Made by possum with deep thanks to rellu for interior help and thruster setup.
+#
+- type: vessel
+  id: Manta
+  parent: BaseVessel
+  name: GGG Manta
+  description: The Manta is the ship for those that gives atmospherics and offshore gas mining the respect it deserves. Manufactured by GGG, the Manta doesn't hold your hand, rather respecting you as an engineer. Features a vast open cargo area, a large expandable atmospheric playground and an innovative on and off thruster system.
+  price: 279000 # ~279471
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/manta.yml
+  guidebookPage: ShipyardManta
+  class:
+  - Atmospherics
+  engine:
+  - AME
+
+- type: gameMap
+  id: Manta
+  mapName: 'GGG Manta'
+  mapPath: /Maps/_WF/Shuttles/Civilian/manta.yml
+  minPlayers: 0
+  stations:
+    Manta:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Manta {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            WayfarerInterview: [ 0, 0 ]

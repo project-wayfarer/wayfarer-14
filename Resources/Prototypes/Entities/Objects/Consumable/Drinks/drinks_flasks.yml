@@ -6,7 +6,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 30
+        maxVol: 60 # Wayfarer: 30<60
   - type: Sprite
     state: icon
     sprite: Objects/Consumable/Drinks/flask.rsi

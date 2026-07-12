@@ -64,6 +64,7 @@ namespace Content.Shared.PDA
         public string? JobTitle;
         public string? StationAlertLevel;
         public Color StationAlertColor;
+        public string? StationAlertReason; // Wayfarer
         public DateTime? CurrentDate; // DeltaV - PDA date
     }
 }

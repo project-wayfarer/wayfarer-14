@@ -375,3 +375,42 @@
   result: NFMagazineRifle30Overpressure
   materials:
     Steel: 900 # mag 25, 30 [bullets] * 30 [Steel per bullet]
+
+- type: latheRecipe
+  id: WFContrabandForensicsModule
+  result: ContrabandForensicsModule
+  categories:
+  - Tools
+  completetime: 4
+  materials:
+    Glass: 500
+    Steel: 500
+    Plastic: 300
+
+- type: latheRecipe
+  id: WFForensicScanner
+  result: ForensicScanner
+  categories:
+  - Tools
+  completetime: 4
+  materials:
+    Glass: 500
+    Steel: 500
+    Plastic: 300
+
+- type: latheRecipe
+  id: WFLargeThrusterMachineCircuitboardNfsd
+  parent: [BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory]
+  result: LargeThrusterMachineCircuitboardNfsd
+  materials:
+    Steel: 1200
+    Glass: 2200
+
+- type: latheRecipe
+  id: WFCartridgeRocketEmp
+  result: NFCartridgeRocketEmp
+  completetime: 3
+  materials:
+    Steel: 450
+    Plastic: 150
+    Glass: 50

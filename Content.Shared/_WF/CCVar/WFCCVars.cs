@@ -34,4 +34,10 @@ public sealed class WFCCVars
     /// </summary>
     public static readonly CVarDef<bool> CorporationStationPurchaseEnabled =
         CVarDef.Create("wf.corporation.station_purchase_enabled", false, CVar.SERVER);
+
+    /// <summary>
+    /// If a character is SSD, wait this many minutes before reopening their job.
+    /// </summary>
+    public static readonly CVarDef<float> SSDJobReopenMinutes =
+        CVarDef.Create("wf.ssd_job_reopen_minutes", 120f, CVar.SERVER);
 }

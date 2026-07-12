@@ -7,18 +7,11 @@
   components:
     - type: InputMover
     - type: MobMover
-  # // Wayfarer - Use new N14HostileCompound preset
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
       blackboard:
-        NavSmash: !type:Bool
-          true
-        NavPry: !type:Bool
-          true
-        MeleeRange: !type:Single
-          1.5
-    # // Wayfarer
+        NavSmash: !type:Bool true
     - type: NpcFactionMember
       factions:
         - Dragon
@@ -67,9 +60,8 @@
           maxAmount: 4
     - type: MeleeWeapon
       altDisarm: false
-      angle: 10 # Mobs use wideswing instead of aimbot
-      animation: WeaponArcThrust
-      wideAnimation: WeaponArcThrust
+      angle: 0
+      animation: WeaponArcBite
       soundHit:
         path: /Audio/Effects/bite.ogg
       damage:

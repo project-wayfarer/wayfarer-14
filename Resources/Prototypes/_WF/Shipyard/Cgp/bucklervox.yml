@@ -1,0 +1,33 @@
+- type: vessel
+  id: BucklerV
+  parent: BaseVessel
+  name: UCA Buckler-V
+  description: A CGP Fighter, designed for short term missions and disabling targets as part of a larger fleet. Refitted to use N2 as its atmosphere.
+  price: 26590
+  category: Small
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/bucklervox.yml
+  guidebookPage: ShipyardBucklerV
+  class:
+  - Pursuit
+  - Fighter
+  engine:
+  - APU
+
+- type: gameMap
+  id: BucklerV
+  mapName: 'Buckler-V'
+  mapPath: /Maps/_WF/Shuttles/Cgp/bucklervox.yml
+  minPlayers: 0
+  stations:
+    BucklerV:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Buckler {1}'
+        nameGenerator:
+          !type:CGPNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: {}

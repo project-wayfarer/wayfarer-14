@@ -11,7 +11,7 @@
   components:
   - type: HTN
     rootTask:
-      task: N14TurretCompound # Wayfarer: TurretCompount<N14TurretCompound
+      task: StunTurretCompound
     blackboard:
       RotateSpeed: !type:Single
         3.141

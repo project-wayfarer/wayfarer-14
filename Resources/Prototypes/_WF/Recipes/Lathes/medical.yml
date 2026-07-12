@@ -1,0 +1,26 @@
+- type: latheRecipe
+  parent: BaseSurgicalRecipe
+  id: BruteSurgeryKit
+  result: BruteSurgeryKit
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 100
+
+- type: latheRecipe
+  parent: BaseSurgicalRecipe
+  id: BurnSurgeryKit
+  result: BurnSurgeryKit
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 100
+
+- type: latheRecipe
+  parent: BaseSurgicalRecipe
+  id: ToxinSurgeryKit
+  result: ToxinSurgeryKit
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 100 

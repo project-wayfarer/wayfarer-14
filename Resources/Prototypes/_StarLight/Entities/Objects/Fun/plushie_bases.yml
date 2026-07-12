@@ -1,0 +1,63 @@
+- type: entity
+  parent: BasePlushie
+  id: BasePlushieVocalizer
+  abstract: true
+  components:
+    - type: Vocalizer
+      minVocalizeInterval: 120
+      maxVocalizeInterval: 240
+
+- type: entity
+  parent: BasePlushieVocalizer
+  id: BaseAvaliPlushie
+  abstract: true
+  components:
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Starlight/Voice/Avali/avali_2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Starlight/Voice/Avali/avali_2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Starlight/Voice/Avali/avali_2.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_Starlight/Effects/avali_scream.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+  - type: Edible
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/_Starlight/Effects/avali_scream.ogg
+
+- type: entity
+  parent: BasePlushieVocalizer
+  id: BaseShadekinPlushie
+  abstract: true
+  components:
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg
+  - type: Edible
+    requiresSpecialDigestion: true
+    useSound:
+      collection: FelionoidScreams

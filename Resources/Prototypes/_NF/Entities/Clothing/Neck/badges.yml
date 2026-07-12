@@ -12,6 +12,11 @@
     layers: []
   - type: Clothing
     sprite: _NF/Clothing/Neck/Scarfs/nfsd_bronze_badge.rsi
+# Wayfarer Start
+  - type: Tag
+    tags:
+    - WhitelistWallet
+# end Wayfarer
 
 - type: entity
   parent: ClothingNeckNfsdBadge

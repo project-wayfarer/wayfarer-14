@@ -17,7 +17,7 @@
     - type: MobMover
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound<N14HostileCompound
+        task: SimpleHostileCompound
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -149,7 +149,7 @@
         - SimpleHostile
     - type: HTN
       rootTask:
-        task: N14RangedHostileCompound
+        task: SimpleRangedHostileCompound
     - type: Sprite
       drawdepth: Mobs
       sprite: _NF/Mobs/ArcadiaIndustries/arcind_blasters.rsi

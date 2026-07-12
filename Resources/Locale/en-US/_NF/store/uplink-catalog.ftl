@@ -176,6 +176,12 @@ uplink-security-speedloader-desc = A revolver speed loader that comes pre-loaded
 uplink-security-speedloaderrubber-name = .45 Pistol Rubber Speed Loader
 uplink-security-speedloaderrubber-desc = A revolver speed loader that comes pre-loaded with .45 rubber cartridges.
 
+uplink-security-speedloaderbox-name = .45 Pistol Speed Loaders
+uplink-security-speedloaderbox-desc = A box of revolver speed loaders that come pre-loaded with .45 pistol cartridges.
+
+uplink-security-speedloaderrubberbox-name = .45 Pistol Rubber Speed Loaders
+uplink-security-speedloaderrubberbox-desc = A box of revolver speed loaders that come pre-loaded with .45 rubber cartridges.
+
 uplink-security-shotlethal-name = Lethal Shotgun Shells
 uplink-security-shotlethal-desc = A box of lethal .50 calibre buckshot shotgun shells.
 

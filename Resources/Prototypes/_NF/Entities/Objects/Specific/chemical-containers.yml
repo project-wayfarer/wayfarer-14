@@ -9,7 +9,7 @@
     - type: SolutionContainerManager
       solutions:
         beaker:
-          maxVol: 400
+          maxVol: 420 # Wayfarer: 400<420
     - type: Sprite
       sprite: _NF/Objects/Specific/Chemistry/reinforced_jug.rsi
       layers:
@@ -374,7 +374,7 @@
       beaker:
         reagents:
         - ReagentId: Carbon
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -389,7 +389,7 @@
       beaker:
         reagents:
         - ReagentId: Chlorine
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -404,7 +404,7 @@
       beaker:
         reagents:
         - ReagentId: Ethanol
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -419,7 +419,7 @@
       beaker:
         reagents:
         - ReagentId: Sugar
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -434,7 +434,7 @@
       beaker:
         reagents:
         - ReagentId: Hydrogen
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -449,7 +449,7 @@
       beaker:
         reagents:
         - ReagentId: Lithium
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -464,7 +464,7 @@
       beaker:
         reagents:
         - ReagentId: Nitrogen
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -479,7 +479,7 @@
       beaker:
         reagents:
         - ReagentId: Oxygen
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -494,7 +494,7 @@
       beaker:
         reagents:
         - ReagentId: Phosphorus
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -509,7 +509,7 @@
       beaker:
         reagents:
         - ReagentId: Potassium
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420
 
 - type: entity
   parent: ReinforcedJug
@@ -524,4 +524,4 @@
       beaker:
         reagents:
         - ReagentId: Silicon
-          Quantity: 400
+          Quantity: 420 # Wayfarer: 400<420

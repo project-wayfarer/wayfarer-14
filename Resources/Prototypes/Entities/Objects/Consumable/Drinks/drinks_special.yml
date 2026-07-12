@@ -7,7 +7,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 100
+        maxVol: 120 # Wayfarer: 100<120
   - type: MixableSolution
     solution: drink
   - type: Drink

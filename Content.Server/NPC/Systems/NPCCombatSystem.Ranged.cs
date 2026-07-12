@@ -72,9 +72,9 @@ public sealed partial class NPCCombatSystem
 
             if (_steeringQuery.TryGetComponent(uid, out var steering) && steering.Status == SteeringStatus.NoPath)
             {
-                // Steering is blocked but we may still have line of sight — request a new path
-                // and let the LOS check below decide whether to shoot.
-                steering.ForceMove = true;
+                comp.Status = CombatStatus.TargetUnreachable;
+                comp.ShootAccumulator = 0f;
+                continue;
             }
 
             if (!_xformQuery.TryGetComponent(comp.Target, out var targetXform) ||
@@ -124,7 +124,7 @@ public sealed partial class NPCCombatSystem
 
             var worldPos = _transform.GetWorldPosition(xform);
             var targetPos = _transform.GetWorldPosition(targetXform);
-
+            
             // Frontier -- Ranged NPC miss chance
             if (_random.Prob(comp.MissChance))
             {
@@ -143,7 +143,8 @@ public sealed partial class NPCCombatSystem
                 comp.LOSAccumulator += UnoccludedCooldown;
 
                 // For consistency with NPC steering.
-                comp.TargetInLOS = _interaction.InRangeUnobstructed(uid, comp.Target, distance + 0.1f);
+                var collisionGroup = comp.UseOpaqueForLOSChecks ? CollisionGroup.Opaque : (CollisionGroup.Impassable | CollisionGroup.InteractImpassable);
+                comp.TargetInLOS = _interaction.InRangeUnobstructed(uid, comp.Target, distance + 0.1f, collisionGroup);
             }
 
             if (!comp.TargetInLOS)

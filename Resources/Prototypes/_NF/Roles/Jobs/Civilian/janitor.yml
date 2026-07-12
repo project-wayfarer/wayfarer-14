@@ -22,6 +22,11 @@
     prototype: NFWeaponRevolverInspector
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  # Wayfarer
+  - !type:AddComponentSpecial
+    components:
+      - type: PreventShipyardTitleOverwrite
+  # End Wayfarer
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift

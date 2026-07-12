@@ -26,9 +26,6 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         public HashSet<Gas> FilterGases = new(GasVentScrubberData.DefaultFilterGases);
 
         [DataField]
-        public Dictionary<Gas, float> FilterGasLimits = new(GasVentScrubberData.DefaultFilterGasLimits);
-
-        [DataField]
         public ScrubberPumpDirection PumpDirection { get; set; } = ScrubberPumpDirection.Scrubbing;
 
         /// <summary>
@@ -63,7 +60,6 @@ namespace Content.Server.Atmos.Piping.Unary.Components
                 Enabled = Enabled,
                 Dirty = IsDirty,
                 FilterGases = FilterGases,
-                FilterGasLimits = FilterGasLimits,
                 PumpDirection = PumpDirection,
                 VolumeRate = TransferRate,
                 WideNet = WideNet
@@ -83,13 +79,6 @@ namespace Content.Server.Atmos.Piping.Unary.Components
                 FilterGases.Clear();
                 foreach (var gas in data.FilterGases)
                     FilterGases.Add(gas);
-            }
-
-            if (!data.FilterGasLimits.SequenceEqual(FilterGasLimits))
-            {
-                FilterGasLimits.Clear();
-                foreach (var gas in data.FilterGasLimits.Keys)
-                    FilterGasLimits[gas] = data.FilterGasLimits[gas];
             }
         }
     }

@@ -42,8 +42,8 @@
 - type: entity
   parent: NFBaseDeathRattleImplant
   id: NFSDTrackingImplant
-  name: nfsd tracking implant
-  description: This implant has a condition monitor for the NFSD radio channel.
+  name: CGP tracking implant # Wayfarer nfsd tracking implant<CGP tracking implant
+  description: This implant has a condition monitor for the CGP radio channel. # wayfarer This implant has a condition monitor for the NFSD radio channel.<This implant has a condition monitor for the CGP radio channel.
   categories: [ HideSpawnMenu ]
   components:
   - type: RattleOnTrigger

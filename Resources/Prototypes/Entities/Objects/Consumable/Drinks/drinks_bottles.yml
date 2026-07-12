@@ -99,7 +99,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 50
+        maxVol: 60 # Wayfarer: 50<60
   - type: Sprite
     sprite: Objects/Consumable/Drinks/beer.rsi
   - type: DamageOnLand
@@ -723,7 +723,7 @@
       drink:
         reagents:
         - ReagentId: Water
-          Quantity: 30
+          Quantity: 60 # Wayfarer: 30<60
   - type: Sprite
     sprite: Objects/Consumable/Drinks/waterbottle.rsi
   - type: Label

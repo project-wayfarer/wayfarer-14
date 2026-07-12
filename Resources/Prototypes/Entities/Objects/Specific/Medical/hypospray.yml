@@ -578,6 +578,10 @@
     injectOnly: true
   - type: StaticPrice
     price: 1500
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: Stimpack
+  # End Wayfarer
 
 - type: entity
   name: hyperzine microinjector
@@ -691,11 +695,6 @@
     handle: false # don't want the sound to stop the self-inject from triggering
   - type: Contraband # Frontier
     hideValues: true # Frontier - stealthy
-  # Wayfarer: Deposit blacklist tag
-  - type: Tag
-    tags:
-    - DepositBlacklist
-  # End Wayfarer
 
 - type: entity
   parent: [ BaseItem, BaseBMContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband

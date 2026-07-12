@@ -832,6 +832,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 }
             }
 
+            // Wayfarer
+            if (voucher?.ShipWhitelist is { } whitelist && !whitelist.Contains(vessel.ID))
+                hasAccess = false;
+            // End Wayfarer
+
             // Check that the listing contains the shuttle or that the shuttle is in the group that the console is looking for
             if (listing?.Shuttles.Contains(vessel.ID) ?? false ||
                 key != null && key != ShipyardConsoleUiKey.Custom &&

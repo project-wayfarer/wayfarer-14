@@ -1041,12 +1041,12 @@
   - type: Sprite
     layers:
     - state: base
-      color: "#384d2f"
+      color: "#373737" # Wayfarer 384d2f < 373737
     - state: closed
       map: ["closeLayer"]
-      color: "#a9947d"
+      color: "#cf7332" # Wayfarer a9947d < cf7332
     - state: open
-      color: "#a9947d"
+      color: "#cf7332" # Wayfarer a9947d < cf7332
       map: ["openLayer"]
       visible: false
     - state: inside
@@ -1066,23 +1066,23 @@
       visible: false
     - state: decal-shield
       map: [ "decal1" ]
-      color: "#f2b833"
+      color: "#fcba03" # Wayfarer f2b833 < fcba03
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#a9947d"
+        color: "#cf7332" # Wayfarer a9947d < cf7332
       right:
       - state: inhand-right
-        color: "#a9947d"
+        color: "#cf7332" # Wayfarer a9947d < cf7332
   - type: Clothing
     clothingVisuals:
       belt:
       - state: equipped-BELT
-        color: "#a9947d"
+        color: "#cf7332" # Wayfarer a9947d < cf7332
       pocket:
       - state: equipped-BELT
-        color: "#a9947d"
+        color: "#cf7332" # Wayfarer a9947d < cf7332
 
 #region pirate
 - type: entity

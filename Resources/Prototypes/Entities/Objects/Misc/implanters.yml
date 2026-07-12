@@ -299,7 +299,7 @@
 - type: entity
   id: FakeMindShieldImplanter
   name: fake mindshield implanter
-  parent: BaseImplantOnlyImplanterSyndi
+  parent: [BaseBMContraband, BaseImplantOnlyImplanterSyndi] # Wayfarer: Add BaseBMContraband
   components:
   - type: Implanter
     implant: FakeMindShieldImplant
@@ -309,7 +309,7 @@
 - type: entity
   id: MindShieldImplanter
   name: mindshield implanter
-  parent: [ BaseMilitaryContraband, BaseImplantOnlyImplanter ] # Frontier: add BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
+  parent: [ BaseCGPContraband, BaseImplantOnlyImplanter ] # Frontier: add BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   suffix: mindshield
   components:
   - type: Implanter

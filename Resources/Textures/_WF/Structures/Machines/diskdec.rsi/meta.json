@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "All sprites by Toriate (Michiyamenotehifunana on Github), originally created for Versengt on Wayfarer.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "icon"
+        },
+        {
+            "name": "powered"
+        },
+        {
+            "name": "disk"
+        },
+        {
+            "name": "working",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        }
+    ]
+}

@@ -87,8 +87,10 @@
   - type: StaticPrice
     price: 300
   - type: Engraveable # Frontier - base rings may not be metallic
-  - type: PirateBountyItem # Frontier
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
     id: PreciousRings
+  # End Wayfarer
 
 - type: entity
   abstract: true
@@ -99,5 +101,7 @@
   - type: StaticPrice
     price: 275
   - type: Engraveable # Frontier - base rings may not be metallic
-  - type: PirateBountyItem # Frontier
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
     id: PreciousRings
+  # End Wayfarer

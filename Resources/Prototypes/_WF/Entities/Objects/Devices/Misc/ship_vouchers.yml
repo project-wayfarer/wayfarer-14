@@ -16,3 +16,21 @@
     consoleType: BlackMarket
     access:
     - Pirate
+
+- type: entity
+  parent: BaseShipVoucher
+  id: ShipVoucherBuoy
+  name: buoy voucher
+  description: A voucher for redeeming one free buoy.
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: Item
+    heldPrefix: blue
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: Sr
+    shipWhitelist:
+    - MooringBuoy
+    - RaceBuoy

@@ -2079,13 +2079,6 @@ entities:
     - type: Transform
       pos: 0.5,-10.5
       parent: 1
-- proto: MailTeleporter
-  entities:
-  - uid: 269
-    components:
-    - type: Transform
-      pos: 2.5,-7.5
-      parent: 1
 - proto: Multitool
   entities:
   - uid: 270

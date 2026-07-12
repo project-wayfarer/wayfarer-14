@@ -62,6 +62,10 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: ArmorPlateMedium
+  # End Wayfarer
 
 # Plasteel
 - type: entity
@@ -94,6 +98,10 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: ArmorPlateTactical
+  # End Wayfarer
 
 # Plastitanium
 - type: entity

@@ -39,6 +39,10 @@
     energy: 0.8
     castShadows: false
     color: "#22bbff"
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: IngotPlutonium
+  # End Wayfarer
 
 - type: entity
   parent: IngotPlutonium

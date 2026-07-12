@@ -9,18 +9,9 @@
   - type: NpcFactionMember
     factions:
     - Xeno
-  # // Wayfarer - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14RangedHostileCompound # Wayfarer: SimpleHostileCompound<N14RangedHostileCompound
-    blackboard:
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
-        true
-      MeleeRange: !type:Single
-        1.5
-  # // Wayfarer
+      task: SimpleHostileCompound #todo custom argocyte AI
   - type: Sprite
     sprite: Mobs/Aliens/Argocyte/argocyte_common.rsi
   - type: SolutionContainerManager
@@ -40,6 +31,8 @@
   - type: Insulated
   - type: CombatMode
   - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
     damage:
       types:
         Slash: 5

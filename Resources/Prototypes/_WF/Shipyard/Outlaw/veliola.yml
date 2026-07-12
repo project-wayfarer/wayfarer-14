@@ -1,0 +1,38 @@
+# Original Author Info
+# GitHub: whythelettuce
+# Discord: whythelettuce
+
+# Modified by Luweth and Archie
+
+- type: vessel
+  id: Veliola
+  parent: BaseVesselAntag
+  name: WLV-Veliola
+  description: A medical vessel designed for multifunction capabilities. Includes a medbay, cryogenics setup, surgery room, and a rescue supply room. While large in size and reinforced with plastitanium walls, the thrusters still provide enough speed for rapid response to medical calls.
+  price: 45000 # 251 tiles * 50 + 28347 = ~41000 So we round it up to 45000 for a nice even number.
+  category: Medium
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/veliola.yml
+  guidebookPage: ShipyardVeliola
+  class:
+  - Pirate
+  engine:
+  - AME
+
+- type: gameMap
+  id: Veliola
+  mapName: 'WLV-Veliola'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/veliola.yml
+  minPlayers: 0
+  stations:
+    Veliola:
+      stationProto: StandardFrontierAntagVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Velios {1}'
+          nameGenerator:
+            !type:MedicalNameGenerator # Wayfarer: NanotrasenNameGenerator<MedicalNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            NFPirate: [ 0, 0 ]

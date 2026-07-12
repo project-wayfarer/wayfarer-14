@@ -48,6 +48,7 @@
     tags:
     - Payload
     - ClothMade
+    - DepositWhitelist # Wayfarer
   #- type: MothFood # Frontier # WF removed - Stops plushies eaten by random moth spawns
   - type: NFPlushie # Frontier
 
@@ -689,6 +690,7 @@
     - PlushieSharkBlue
     - Payload
     - ClothMade
+    - DepositWhitelist # wayfarer
 
 - type: entity
   parent: PlushieSharkBlue
@@ -709,6 +711,7 @@
     - PlushieSharkPink
     - Payload
     - ClothMade
+    - DepositWhitelist # wayfarer
 
 - type: entity
   parent: PlushieSharkBlue
@@ -729,6 +732,7 @@
     - PlushieSharkGrey
     - Payload
     - ClothMade
+    - DepositWhitelist # wayfarer
 
 - type: entity
   parent: BasePlushie
@@ -813,6 +817,7 @@
     - Payload
     - ClothMade
     - PlushieCarp
+    - DepositWhitelist # wayfarer
 
 - type: entity
   parent: PlushieCarp
@@ -836,6 +841,7 @@
     - Payload
     - ClothMade
     - PlushieCarpMagi
+    - DepositWhitelist # wayfarer
 
 - type: entity
   parent: PlushieCarp
@@ -881,6 +887,7 @@
     - Payload
     - ClothMade
     - PlushieCarpHolo
+    - DepositWhitelist # wayfarer
 
 - type: entity
   parent: BasePlushie

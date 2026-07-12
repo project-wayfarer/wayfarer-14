@@ -51,6 +51,7 @@
   cost: 5000
   recipeUnlocks:
   - AutolatheHyperConvectionMachineCircuitboard
+  - SheetifierMachineCircuitboard # Wayfarer
   - ProtolatheHyperConvectionMachineCircuitboard
   - CircuitImprinterHyperConvectionMachineCircuitboard
   technologyPrerequisites:
@@ -218,6 +219,7 @@
   cost: 2500
   recipeUnlocks:
   - BorgModuleAdvancedTool
+  - BorgModuleUtility # Wayfarer
   technologyPrerequisites:
   - NFAdvancedToolsTechnology
   position: 3, 4

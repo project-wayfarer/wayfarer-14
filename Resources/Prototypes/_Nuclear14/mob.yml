@@ -1,9 +1,0 @@
-- type: htnCompound
-  id: N14HostileCompound
-  branches:
-    - tasks:
-        - !type:HTNCompoundTask
-          task: N14MeleeCombatCompound
-    - tasks: # Wayfarer - Added Idle
-      - !type:HTNCompoundTask
-        task: IdleCompound

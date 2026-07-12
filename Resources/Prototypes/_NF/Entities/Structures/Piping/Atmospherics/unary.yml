@@ -85,9 +85,9 @@
   - type: Machine
     board: GasMiningDrillMachineCircuitboard
   - type: GasDepositExtractor
-    baseExtractionRate: 50 # 50 mol/s => 20 kmol in ~6.6 min
-    extractionRate: 50
-    extractionRateMultiplier: 1.2 # max rate: 86.4 mol/s => 20 kmol in ~3.9 min
+    baseExtractionRate: 75 # Wayfarer: 50<75
+    extractionRate: 75 # Wayfarer: 50<75
+    extractionRateMultiplier: 1.2 
     port: outlet
   - type: Fixtures
     fixtures:

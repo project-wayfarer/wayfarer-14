@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -168,7 +168,7 @@ namespace Content.Shared.Atmos
             switch (ratio)
             {
                 case <= 0:
-                    return new GasMixture(Volume) { Temperature = Temperature };
+                    return new GasMixture(Volume){Temperature = Temperature};
                 case > 1:
                     ratio = 1;
                     break;

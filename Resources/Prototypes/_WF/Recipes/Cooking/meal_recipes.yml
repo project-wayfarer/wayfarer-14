@@ -1,0 +1,157 @@
+﻿# sausages keeping them hidden to not overfill the guidebook.
+
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachAnimal
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganAnimalStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachDwarf
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganDwarfStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachChitinid
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganChitinidStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachAvali
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganAvaliStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachArachnid
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganArachnidStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachShadekin
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganShadekinStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+# questionable stomachs below maybe later do a special recipe and items for them?
+
+# vox stomach, make a good sausage?
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachVox
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganVoxStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+#vox stomach 2
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachAurelianVox
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganAurelianVoxStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+#Sheleg should be an Iced/melted sausage?
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachSheleg
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganShelegStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true
+
+# Diona a Vegetarian sausage?
+- type: microwaveMealRecipe
+  id: RecipeSausageRawStomachDiona
+  name: raw stomach sausage recipe
+  result: FoodSausageRaw
+  resultCount: 3
+  time: 10
+  group: Savory # TODO: move to ingredients
+  solids:
+    OrganDionaStomach: 1
+  reagents:
+    UncookedAnimalProteins: 9
+  recipeType:
+  - Assembler
+  hideInGuidebook: true

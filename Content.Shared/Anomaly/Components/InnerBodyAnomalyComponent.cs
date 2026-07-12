@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Anomaly.Effects;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Damage; // Wayfarer
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -70,6 +71,17 @@ public sealed partial class InnerBodyAnomalyComponent : Component
     /// </summary>
     [DataField]
     public string LayerMap = "inner_anomaly_layer";
+
+    // Wayfarer: Damage on anomaly infection supercrit
+    [DataField]
+    public DamageSpecifier DamageOnSuperCrit = new()
+    {
+        DamageDict = new ()
+        {
+            { "Heat", 500 },
+        }
+    };
+    // End Wayfarer
 }
 
 /// <summary>

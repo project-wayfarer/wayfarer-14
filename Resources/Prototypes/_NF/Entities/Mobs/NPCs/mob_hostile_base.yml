@@ -121,16 +121,18 @@
     addComponentsLeaveGrid:
     - type: TimedDespawn
       lifetime: 15
-    - type: PassiveDamage
-      allowedStates:
-      - Alive
-      damage:
-        types:
-          Cellular: 1
+# Wayfarer: This disabled boss health regen entirely (dumb)
+#    - type: PassiveDamage
+#      allowedStates:
+#      - Alive
+#      damage:
+#        types:
+#          Cellular: 1
+# End Wayfarer
     - type: Pacified
     removeComponentsReturnGrid:
     - type: TimedDespawn
-    - type: PassiveDamage
+#    - type: PassiveDamage # Wayfarer
     - type: Pacified
 
 - type: entity
@@ -233,20 +235,20 @@
   id: MobEnhancedMovement
   abstract: true
   components:
-#  - type: MovementAlwaysTouching - Wayfarer
-#  - type: MovementIgnoreGravity - Wayfarer
-#  - type: NoSlip - Wayfarer
+  - type: MovementAlwaysTouching
+  - type: MovementIgnoreGravity
+  - type: NoSlip
   - type: ProtectedFromStepTriggers
   - type: Climbing
   - type: Tool
-    speedModifier: 3 # 1.5<3 Mono
+    speedModifier: 1.5
     qualities:
       - Prying
     hideQualities: true
   - type: Prying
     pryPowered: true
     force: true
-    speedModifier: 3 # 1.5<3 Mono
+    speedModifier: 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Access
@@ -375,10 +377,9 @@
   id: MobHumanoidHostileAISimpleMelee
   abstract: true
   components:
-  # // Wayfarer - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14HostileCompound # Wayfarer: SimpleHostileCompound<N14HostileCompound
+       task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
         false
@@ -386,20 +387,16 @@
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool
+      NavSmash: !type:Bool # They use this option too much for my liking, but I'll keep it here as an option
         true
-      MeleeRange: !type:Single
-        1.5
-  # // Wayfarer
 
 - type: entity
   id: MobHumanoidHostileAISimpleRanged
   abstract: true
   components:
-  # // Wayfarer - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14RangedHostileCompound # Wayfarer: SimpleRangedHostileCompound<N14RangedHostileCompound
+       task: SimpleRangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
         false
@@ -407,33 +404,25 @@
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool
+      NavSmash: !type:Bool # They use this option too much for my liking, but I'll keep it here as an option
         true
-      MeleeRange: !type:Single
-        1.5
-  # // Wayfarer
 
 - type: entity
   id: MobHumanoidHostileAIComplex
   abstract: true
   components:
-  # // Wayfarer - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14RangedHostileCompound # Wayfarer: SimpleHumanoidHostileCompound<N14RangedHostileCompound
+       task: SimpleHumanoidHostileCompound
     blackboard:
-      #NavClimb: !type:Bool # Commented out because it made them trip over tables and it was really funny but they didn't stand up
-        #true
+      NavClimb: !type:Bool
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool
-        true
-      MeleeRange: !type:Single
-        1.5
-  # // Wayfarer
-
+#      NavSmash: !type:Bool # They use this option too much for my liking, but I'll keep it here as an option
+#        true
 #endregion
 
 #region NPC types

@@ -34,6 +34,6 @@ public sealed partial class RattleOnTriggerComponent : BaseXOnTriggerComponent
     /// </summary>
     [ViewVariables]
     [DataField]
-    public TimeSpan RattleRefireDelay = TimeSpan.FromMinutes(20);
+    public TimeSpan RattleRefireDelay = TimeSpan.FromMinutes(8);
     // Wayfarer End
 }

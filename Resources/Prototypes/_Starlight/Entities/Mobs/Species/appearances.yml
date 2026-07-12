@@ -8,3 +8,13 @@
       species: Avali
       undergarmentTop: UndergarmentTopTanktopAvali
       undergarmentBottom: UndergarmentBottomBoxersAvali
+
+- type: entity
+  save: false
+  parent: BaseSpeciesDummy
+  id: AppearanceShadekin
+  categories: [HideSpawnMenu]
+  description: A dummy shadekin meant to be used in character setup.
+  components:
+    - type: HumanoidAppearance
+      species: Shadekin

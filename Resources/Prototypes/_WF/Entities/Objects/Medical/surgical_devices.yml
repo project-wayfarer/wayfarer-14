@@ -1,0 +1,120 @@
+
+- type: entity
+  name: major trauma surgery kit
+  description: A set of surgical tools for regenerating major brute injuries.
+  parent: BaseHealingItem
+  id: BruteSurgeryKit
+  components:
+  - type: Tag
+    tags:
+    - SurgeryTool
+  - type: Sprite
+    sprite: _WF/Objects/Medical/surgical_devices.rsi
+    state: BruteSurgeryKit
+  - type: Item
+    sprite: _WF/Objects/Medical/surgical_devices.rsi
+    size: Normal
+    shape: 
+    - 0,0,2,1
+    storedRotation: 90
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Brute: -300 # 100 for each type in the group
+      types:
+        Cellular: 5 #annoying 'scar' damage that will need chemical treatment - but small enough to be ignored short term.
+        Poison: 10 # easy to treat - encourages moving to medbed for recovery.
+    delay: 20 # Surgery takes time - but this can be reduced by equipment (e.g. mask, gloves, bed)
+    selfHealPenaltyMultiplier: 3
+    healingBeginSound:
+      path: "/Audio/_WF/Items/SurgicalDevices/scalpel2.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/_WF/Items/SurgicalDevices/bone_setter.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+
+- type: entity
+  name: skin graft surgery kit
+  description: A set of surgical tools for replacing large patches of burnt flesh.
+  parent: BaseHealingItem
+  id: BurnSurgeryKit
+  components:
+  - type: Tag
+    tags:
+    - SurgeryTool
+  - type: Sprite
+    sprite: _WF/Objects/Medical/surgical_devices.rsi
+    state: BurnSurgeryKit
+  - type: Item
+    sprite: _WF/Objects/Medical/surgical_devices.rsi
+    size: Normal
+    shape: 
+    - 0,0,2,1
+    storedRotation: 90
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Burn: -400 # 100 for each type in the group
+      types:
+        Cellular: 5 #annoying 'scar' damage that will need chemical treatment - but small enough to be ignored short term.
+        Slash: 10 #easy to treat, encourages moving to medbed for recovery.
+    delay: 20 # Surgery takes time
+    selfHealPenaltyMultiplier: 3
+    healingBeginSound:
+      path: "/Audio/_WF/Items/SurgicalDevices/retractor1.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/_WF/Items/SurgicalDevices/retractor2.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+
+- type: entity
+  name: toxin cleansing surgery kit
+  description: A set of surgical tools for purging the body of toxins.
+  parent: BaseHealingItem
+  id: ToxinSurgeryKit
+  components:
+  - type: Tag
+    tags:
+    - SurgeryTool
+  - type: Sprite
+    sprite: _WF/Objects/Medical/surgical_devices.rsi
+    state: ToxinSurgeryKit
+  - type: Item
+    sprite: _WF/Objects/Medical/surgical_devices.rsi
+    size: Normal
+    shape: 
+    - 0,0,2,1
+    storedRotation: 90
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Toxin: -200 # 100 for each type in the group
+      types:
+        Cellular: 5 #annoying 'scar' damage that will need chemical treatment - but small enough to be ignored short term.
+        Cold: 10 #Surgical devices cause damage
+    delay: 20 # Surgery takes time
+    selfHealPenaltyMultiplier: 3
+    healingBeginSound:
+      path: "/Audio/_WF/Items/SurgicalDevices/organ2.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125
+    healingEndSound:
+      path: "/Audio/_WF/Items/SurgicalDevices/cautery1.ogg"
+      params:
+        volume: 1.0
+        variation: 0.125

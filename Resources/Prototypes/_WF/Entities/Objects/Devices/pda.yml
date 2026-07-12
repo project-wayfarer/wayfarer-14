@@ -26,7 +26,8 @@
         pda-commodore
   - type: PdaBorderColor
     borderColor: "#23262A"
-    accentHColor: "#ffa71a"
+    accentHColor: "#cf7332"
+    accentVColor: "#447987"
   - type: Icon
     state: pda-commodore
   - type: CartridgeLoader # Extended with the ledger
@@ -63,7 +64,8 @@
         pda-corpsman
   - type: PdaBorderColor
     borderColor: "#23262A"
-    accentHColor: "#ffa71a"
+    accentHColor: "#447987"
+    accentVColor: "#447987"
   - type: Icon
     state: pda-corpsman
 
@@ -105,7 +107,14 @@
   description: Well worn and seen many fights protecting others.
   components:
   - type: Pda
-    id: SeniorOfficerIDCard
+    id: SergeantIDCard
+    bookSlot:
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
@@ -113,7 +122,8 @@
        pda-seniorpeacekeeper
   - type: PdaBorderColor
     borderColor: "#23262A"
-    accentHColor: "#ffa71a"
+    accentHColor: "#cf7332"
+    accentVColor: "#cf7332"
   - type: Icon
     state: pda-seniorpeacekeeper
 
@@ -139,7 +149,8 @@
         pda-masteratarms
   - type: PdaBorderColor
     borderColor: "#23262A"
-    accentHColor: "#ffa71a"
+    accentHColor: "#cf7332"
+    accentVColor: "#cf7332"
   - type: Icon
     state: pda-masteratarms
 
@@ -165,7 +176,7 @@
         pda-peacekeeper
   - type: PdaBorderColor
     borderColor: "#23262A"
-    accentHColor: "#ffa71a"
+    accentVColor: "#cf7332"
   - type: Icon
     state: pda-peacekeeper
 
@@ -191,7 +202,7 @@
         pda-juniorpeacekeeper
   - type: PdaBorderColor
     borderColor: "#23262A"
-    accentHColor: "#ffa71a"
+    accentHColor: "#cf7332"
   - type: Icon
     state: pda-juniorpeacekeeper
 

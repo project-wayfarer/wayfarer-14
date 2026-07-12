@@ -25,22 +25,9 @@
         - SalvageSpecialistGear
     - type: InputMover
     - type: MobMover
-  # // Wayfarer - Use new N14HostileCompound preset
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound<N14HostileCompound
-      blackboard:
-        NavClimb: !type:Bool
-          true
-        NavInteract: !type:Bool
-          true
-        NavPry: !type:Bool
-          true
-        NavSmash: !type:Bool
-          false
-        MeleeRange: !type:Single
-          1.5
-  # // Wayfarer
+        task: SimpleHumanoidHostileCompound
 
 - type: entity
   name: spirate
@@ -56,22 +43,9 @@
       - PirateGear
   - type: InputMover
   - type: MobMover
-  # // Wayfarer - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
-    blackboard:
-      NavClimb: !type:Bool
-        true
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
-        false
-      MeleeRange: !type:Single
-        1.5
-  # // Wayfarer
+      task: SimpleHumanoidHostileCompound
 
 - type: entity
   name: syndicate footsoldier
@@ -86,22 +60,9 @@
         - SyndicateFootsoldierGearRuin
     - type: InputMover
     - type: MobMover
-  # // Wayfarer - Use new N14HostileCompound preset
     - type: HTN
       rootTask:
-        task: N14RangedHostileCompound # Wayfarer: SimpleHumanoidHostileCompound<N14RangedHostileCompound
-      blackboard:
-        #NavClimb: !type:Bool # Commented out because it made them trip over tables and it was really funny but they didn't stand up
-        #true
-        NavInteract: !type:Bool
-          true
-        NavPry: !type:Bool
-          true
-        NavSmash: !type:Bool
-          true
-        MeleeRange: !type:Single
-          1.5
-  # // Wayfarer
+        task: SimpleHumanoidHostileCompound
 
 - type: entity
   name: syndicate shuttle pilot

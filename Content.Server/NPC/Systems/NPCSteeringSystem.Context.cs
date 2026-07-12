@@ -168,6 +168,7 @@ public sealed partial class NPCSteeringSystem
 
         // Grab the target position, either the next path node or our end goal..
         var targetCoordinates = steering.DirectMove ? steering.Coordinates : GetTargetCoordinates(steering);
+        // End Wizden#38846
 
         if (!targetCoordinates.IsValid(EntityManager))
         {
@@ -191,13 +192,6 @@ public sealed partial class NPCSteeringSystem
             }
         }
 
-        // If coordinates are still invalid (e.g. path empty or target entity deleted), bail out.
-        if (!targetCoordinates.IsValid(EntityManager))
-        {
-            steering.Status = SteeringStatus.NoPath;
-            return false;
-        }
-
         // Check if mapids match.
         var targetMap = _transform.ToMapCoordinates(targetCoordinates);
         var ourMap = _transform.ToMapCoordinates(ourCoordinates);
@@ -219,13 +213,11 @@ public sealed partial class NPCSteeringSystem
             // If it's a pathfinding node it might be different to the destination.
             arrived = direction.Length() <= steering.Range;
         }
-        // #Misfits Fix — Use distance-based check (half the node's smallest dimension) instead
-        // of strict box containment.  Box containment fails when the NPC's physics body keeps
-        // it from fully entering the box, causing it to orbit the node edge forever.
+        // If next node is a free tile then get within its bounds.
+        // This is to avoid popping it too early
         else if (steering.CurrentPath.TryPeek(out var node) && IsFreeSpace(uid, steering, node))
         {
-            var nodeHalfMin = MathF.Min(node.Box.Width, node.Box.Height) * 0.5f;
-            arrived = direction.Length() <= nodeHalfMin;
+            arrived = node.Box.Contains(ourCoordinates.Position);
         }
         // Try getting into blocked range I guess?
         // TODO: Consider melee range or the likes.
@@ -269,7 +261,6 @@ public sealed partial class NPCSteeringSystem
                         return false;
                     case SteeringObstacleStatus.Continuing:
                         CheckPath(uid, steering, xform, needsPath, targetDistance);
-                        SetDirection(uid, mover, steering, Vector2.Zero);
                         return true;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -306,16 +297,7 @@ public sealed partial class NPCSteeringSystem
 
                 // Gonna resume now business as usual
                 direction = targetMap.Position - ourMap.Position;
-
-                // #Misfits Fix — Only reset the stuck timer when the NPC has actually moved
-                // a meaningful distance since the last stuck checkpoint. Without this gate,
-                // popping a node (even without real movement) resets the timer and prevents
-                // the anti-stuck repath from ever triggering when the NPC orbits in place.
-                if (ourCoordinates.TryDistance(EntityManager, steering.LastStuckCoordinates, out var movedDist)
-                    && movedDist >= NPCSteeringComponent.StuckDistance * 0.5f)
-                {
-                    ResetStuck(steering, ourCoordinates);
-                }
+                ResetStuck(steering, ourCoordinates);
             }
             else
             {
@@ -324,14 +306,7 @@ public sealed partial class NPCSteeringSystem
         }
         // Stuck detection
         // Check if we have moved further than the movespeed * stuck time.
-        // #Misfits Fix — Skip anti-stuck while a path is already being awaited.
-        // Previously the stuck timer accumulated during the path-wait freeze, firing
-        // SteeringStatus.NoPath after ~3 s and triggering HTN replan → new path request
-        // → another freeze, looping every ~4-5 s (the "freeze-unfreeze" symptom).
-        // If Pathfind is true the NPC is deliberately stalled waiting for the queue;
-        // it is not stuck, so don't penalise it.
-        else if (!steering.Pathfind &&
-                 AntiStuck &&
+        else if (AntiStuck &&
                  ourCoordinates.TryDistance(EntityManager, steering.LastStuckCoordinates, out var stuckDistance) &&
                  stuckDistance < NPCSteeringComponent.StuckDistance)
         {
@@ -497,8 +472,6 @@ public sealed partial class NPCSteeringSystem
         // Request the new path.
         if (needsPath)
         {
-            if (TryReuseSharedPath(uid, steering, xform))
-                return;
             RequestPath(uid, steering, xform, targetDistance);
         }
     }

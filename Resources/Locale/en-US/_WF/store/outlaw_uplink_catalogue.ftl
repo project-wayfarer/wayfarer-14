@@ -37,8 +37,8 @@ uplink-outlaw-box35extincendiary-name = .35 Extended Incendiary Magazines
 uplink-outlaw-box35extincendiary-desc = A box full of extended pistol (.35 pistol, incendiary) magazines.
 uplink-outlaw-box35exturanium-name = .35 Extended Uranium Magazines
 uplink-outlaw-box35exturanium-desc = A box full of extended pistol (.35 pistol, uranium) magazines.
-uplink-outlaw-box35smg-name = .35 SMG Magazines
-uplink-outlaw-box35smg-desc = A box full of smg (.35 pistol) magazines.
+uplink-outlaw-box35smg-name = .35 SMG (Overpressure) Magazines
+uplink-outlaw-box35smg-desc = A box full of smg (.35 pistol, Overpressure) magazines.
 uplink-outlaw-box35smgrubber-name = .35 SMG ( Rubber ) Magazines
 uplink-outlaw-box35smgrubber-desc = A box full of smg (.35 pistol, rubber) magazines.
 
@@ -79,6 +79,10 @@ uplink-outlaw-bundle-kidnap-desc = Contains a set of restraints, a stun baton an
 
 uplink-outlaw-iff-name = IFF Console Flatpack
 uplink-outlaw-iff-desc = A pre-assembled IFF console, procured from the Black Market. Don't get caught!
+uplink-outlaw-techfab-name = Outlaw Techfab
+uplink-outlaw-techfab-desc = Prints the questionably legal items recovered from decrypted black-market data, and a few other things.
+uplink-outlaw-assembler-name = Black Market Assembler
+uplink-outlaw-assembler-desc = A repurposed multi-assembler, ominously painted for assembling things, omniously.
 
 uplink-outlaw-pirateplushie-name = Yarr Moth Plushie
 uplink-outlaw-pirateplushie-desc = It's dastardly and has a dashing cloak. It chitters when you squeeze it!

@@ -24,7 +24,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 50
+        maxVol: 60 # Wayfarer: 50<60
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -229,7 +229,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 100
+        maxVol: 120 # Wayfarer: 100<120
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
@@ -259,7 +259,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60
+        maxVol: 90 # Wayfarer: 60<90
         canReact: false
 
 - type: entity

@@ -199,12 +199,12 @@
     maxCount: 2
     contents: SpawnMobZombieRandomSpecial # Special
   - !type:MobsDunGen
-    minCount: 2 # Wayfarer: 0<2
-    maxCount: 3 # Wayfarer: 1<3
+    minCount: 1 # Wayfarer: 0<1
+    maxCount: 1
     contents: SpawnMobZombieOdysseusTable # Boss
   - !type:MobsDunGen
     minCount: 1
-    maxCount: 2
+    maxCount: 1 # Wayfarer: 2<1
     contents: SpawnMobZombiePileTable # Infinite Spawner (Timed)
 
 - type: entityTable

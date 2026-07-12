@@ -271,6 +271,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdCombat
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: StaminaResistance # Wayfarer
+    damageCoefficient: 0.75
   - type: Armor
     modifiers:
       coefficients:
@@ -281,8 +283,8 @@
         Radiation: 0.4
         Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.75
+    walkModifier: 0.90 # Wayfarer: 0.85<0.90
+    sprintModifier: 0.85 # Wayfarer: 0.75<0.85
 
 #Security Command Hardsuit
 - type: entity
@@ -299,6 +301,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdCommand
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: StaminaResistance # Wayfarer
+    damageCoefficient: 0.75
   - type: Armor
     modifiers:
       coefficients:
@@ -309,8 +313,8 @@
         Radiation: 0.4
         Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.75
+    walkModifier: 0.90 # Wayfarer: 0.85<0.90
+    sprintModifier: 0.85 # Wayfarer: 0.75<0.85
 
 # SCAF hardsuit
 - type: entity
@@ -320,7 +324,7 @@
   description: A green and brown combat hardsuit. Old yet sturdy nonetheless.
   components:
   - type: Sprite
-    sprite: _NF/Clothing/OuterClothing/Hardsuits/scaf.rsi 
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/scaf.rsi
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Hardsuits/scaf.rsi
   - type: Armor # Kept original scaf stats
@@ -393,6 +397,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitPirateElite
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: StaminaResistance # Wayfarer
+    damageCoefficient: 0.80
   - type: Armor
     modifiers:
       coefficients:

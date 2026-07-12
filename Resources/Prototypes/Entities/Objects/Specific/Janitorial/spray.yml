@@ -23,7 +23,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Wayfarer: 100<120
   - type: RefillableSolution
     solution: spray
   - type: DrainableSolution
@@ -57,7 +57,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 250
+        maxVol: 300 # Wayfarer: 250<300
   - type: Spray
     transferAmount: 15
     sprayedPrototype: BigVapor
@@ -78,10 +78,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Wayfarer: 100<120
         reagents:
         - ReagentId: Water
-          Quantity: 100
+          Quantity: 120 # Wayfarer: 100<120
 
 - type: entity
   name: space cleaner
@@ -93,10 +93,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Wayfarer: 100<120
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 100
+          Quantity: 120 # Wayfarer: 100<120
   - type: Tag
     tags:
       - Spray

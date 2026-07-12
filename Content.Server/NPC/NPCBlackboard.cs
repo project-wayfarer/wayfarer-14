@@ -33,9 +33,8 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         {"MovementRange", 1.5f},
         {"RangedRange", 10f},
         {"RotateSpeed", float.MaxValue},
-        // #Misfits Change — slightly widen default detection bands so hostiles start reacting a bit earlier at player view edges.
-        {"VisionRadius", 14f},
-        {"AggroVisionRadius", 14f},
+        {"VisionRadius", 10f},
+        {"AggroVisionRadius", 10f},
     };
 
     /// <summary>

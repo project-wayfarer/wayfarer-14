@@ -8,7 +8,7 @@
   id: WFClearNFPDA
   price: 0
   equipment:
-    id: ClearPDA
+    id: ClearNFPDA
 
 - type: loadout
   id: WFSalvagePDA
@@ -390,7 +390,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: WFT3
-  price: 20000
+  price: 10000
   equipment:
     id: SyndiAgentPDA
 
@@ -399,6 +399,24 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: WFT3
-  price: 20000
+  price: 10000
   equipment:
     id: SyndiPDA
+
+- type: loadout
+  id: WFPiratePDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1000
+  equipment:
+    id: NFPiratePDA
+
+- type: loadout
+  id: WFCrackedPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT3
+  price: 1000
+  equipment:
+    id: NFPirateCaptainPDA

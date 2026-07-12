@@ -9,7 +9,7 @@
   components:
   - type: HTN
     rootTask:
-       task: N14HostileCompound # Wayfarer: SimpleHostileCompound<N14HostileCompound
+       task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
         false

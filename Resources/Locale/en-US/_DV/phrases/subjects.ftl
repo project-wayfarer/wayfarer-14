@@ -64,7 +64,6 @@ phrase-nitrogen = nitrogen
 phrase-oxygen = oxygen
 phrase-rcd = RCD
 phrase-rtg = RTG
-phrase-scrub = scrub
 phrase-scrubber = scrubber
 phrase-singulo = singularity
 phrase-smes = SMES

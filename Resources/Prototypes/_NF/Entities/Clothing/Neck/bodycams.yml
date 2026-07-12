@@ -1,7 +1,7 @@
 - type: entity
   id: ClothingNeckBodyCameraNFSD
   parent: ClothingNeckBodyCamera
-  name: NFSD body camera
+  name: CGP body camera # Wayfarer NFSD body camera < CGP body camera
   description: A body mounted camera. It's watching you.
   components:
     - type: DeviceNetwork

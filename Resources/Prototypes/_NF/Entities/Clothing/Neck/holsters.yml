@@ -112,25 +112,25 @@
 - type: entity
   parent: [ BaseCGPContraband, NFBaseClothingNeckHolsterThigh ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NFBaseClothingNeckHolsterThighNfsd
-  name: cgp drop leg holster
+  name: CGP drop leg holster
   components:
   - type: Sprite
     layers:
     - state: icon
-      color: "#493926"
+      color: "#373737" # Wayfarer 493926 < 373737
   - type: Clothing
     clothingVisuals:
       neck:
       - state: equipped-NECK
-        color: "#493926"
+        color: "#373737" # Wayfarer 493926 < 373737
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#493926"
+        color: "#373737" # Wayfarer 493926 < 373737
       right:
       - state: inhand-right
-        color: "#493926"
+        color: "#373737" # Wayfarer 493926 < 373737
 
 # region thigh sheath
 - type: entity
@@ -164,22 +164,22 @@
 - type: entity
   parent: [ BaseCGPContraband, NFBaseClothingNeckSheathThigh ] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: NFBaseClothingNeckSheathThighNfsd
-  name: cgp drop leg sheath
+  name: CGP drop leg sheath
   components:
   - type: Sprite
     layers:
     - state: icon
-      color: "#493926"
+      color: "#373737" # Wayfarer 493926 < 373737
   - type: Clothing
     clothingVisuals:
       neck:
       - state: equipped-NECK
-        color: "#493926"
+        color: "#373737" # Wayfarer 493926 < 373737
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#493926"
+        color: "#373737" # Wayfarer 493926 < 373737
       right:
       - state: inhand-right
-        color: "#493926"
+        color: "#373737" # Wayfarer 493926 < 373737

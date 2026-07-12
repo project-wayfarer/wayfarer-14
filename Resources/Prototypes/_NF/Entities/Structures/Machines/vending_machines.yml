@@ -382,7 +382,7 @@
 - type: entity
   parent: [BaseStructureDisableAnchoring, VendingMachine]
   id: VendingMachineNfsdDrobe
-  name: NFSDDrobe
+  name: CGPDrobe # Wayfarer NFSDDrobe<CGPDrobe
   description: A vending machine for CGP and CGP clothing!
   components:
   - type: VendingMachine
@@ -432,7 +432,7 @@
 - type: entity
   parent: [BaseStructureDisableAnchoring, VendingMachine]
   id: VendingMachineNfsdTech
-  name: NFSDTech
+  name: CGPTech # Wayfarer NFSDTech<CGPTech
   description: A vending machine for CGP and CGP tech!
   components:
   - type: VendingMachine

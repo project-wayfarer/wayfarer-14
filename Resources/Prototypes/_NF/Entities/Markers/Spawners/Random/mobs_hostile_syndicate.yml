@@ -196,8 +196,8 @@
   - type: RandomSpawner
     prototypes:
     - MobSyndicateNavalGrenadierB
-#    - MobSyndicateNavalGrenadierC # Wayfarer: ONLY BLAST
-#    - MobSyndicateNavalGrenadierD
+    - MobSyndicateNavalGrenadierC
+    - MobSyndicateNavalGrenadierD
     chance: 1
     offset: 0.0
     rarePrototypes:

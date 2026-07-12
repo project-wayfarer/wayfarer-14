@@ -76,7 +76,7 @@
     state: uranium_crab
   - type: HTN
     rootTask:
-      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+      task: SimpleHostileCompound
   - type: MeleeWeapon
     hidden: true
     soundHit:

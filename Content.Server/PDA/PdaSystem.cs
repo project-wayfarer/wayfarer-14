@@ -279,7 +279,8 @@ namespace Content.Server.PDA
                     JobTitle = id?.LocalizedJobTitle,
                     CurrentDate = pda.CurrentDate, // DeltaV - PDA date
                     StationAlertLevel = pda.StationAlertLevel,
-                    StationAlertColor = pda.StationAlertColor
+                    StationAlertColor = pda.StationAlertColor,
+                    StationAlertReason = pda.StationAlertReason // Wayfarer
                 },
                 balance, // Frontier
                 ownedShipName, // Frontier
@@ -378,6 +379,7 @@ namespace Content.Server.PDA
                 alertComp.AlertLevels == null)
                 return;
             pda.StationAlertLevel = alertComp.CurrentLevel;
+            pda.StationAlertReason = alertComp.CurrentReason; // Wayfarer
             if (alertComp.AlertLevels.Levels.TryGetValue(alertComp.CurrentLevel, out var details))
                 pda.StationAlertColor = details.Color;
         }

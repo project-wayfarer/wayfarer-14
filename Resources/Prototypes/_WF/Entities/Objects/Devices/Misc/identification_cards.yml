@@ -11,3 +11,25 @@
     - state: default
     - state: idcontractor # Frontier: idpassenger<idcontractor
       sprite: _NF/Objects/Misc/id_cards.rsi # Frontier
+
+- type: entity
+  parent: PassengerIDCard
+  id: FlexibleJobIDCard
+  name: flexible job ID card
+  description: Allows one to change their job title on the fly. Ask a station rep to put your name on it!
+  components:
+  - type: PresetIdCard
+    job: Wayfarer
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idintern-service
+  - type: AgentIDCard
+  - type: ActivatableUI
+    key: enum.AgentIDCardUiKey.Key
+    inHandsOnly: true
+    verbText: job-select-card-open-ui-verb
+  - type: UserInterface
+    interfaces:
+      enum.AgentIDCardUiKey.Key:
+        type: JobSelectBoundUserInterface

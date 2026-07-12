@@ -585,15 +585,15 @@
       - id: BikeHornImplanter
       - id: WehImplanter
       - id: TrackingImplanter
-      - id: MindShieldImplanter
+    #  - id: MindShieldImplanter # Wayfarer: Command/CGP only.
     # Uncommon
     - !type:GroupSelector
       weight: 0.3
       children:
-#      - id: MimePowersImplanter # Wayfarer: Mime vow implanter removed.
-#      - id: BibleUserImplanter # Wayfarer: Faith implanter removed.
-      - id: DeathAcidifierImplanter
-      - id: MicroBombImplanter
+    #  - id: MimePowersImplanter # Wayfarer: Mime vow implanter removed.
+    #  - id: BibleUserImplanter # Wayfarer: Faith implanter removed.
+    #  - id: DeathAcidifierImplanter # Wayfarer: RR Concerns
+    #  - id: MicroBombImplanter # Wayfarer: RR Concerns
       - id: FakeMindShieldImplanter
       - id: DeathRattleImplanter
       - id: EmpImplanter
@@ -606,7 +606,7 @@
       - id: StorageImplanter
       - id: ScramImplanter
       - id: RadioImplanter # Syndicate radio
-      #- id: MacroBombImplanter # Wayfarer: Let's not.
+    #  - id: MacroBombImplanter # Wayfarer: RR Concerns.
     # Legendary
     - !type:GroupSelector
       weight: 0.001

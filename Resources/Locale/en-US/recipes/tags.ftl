@@ -81,6 +81,10 @@ construction-graph-tag-ectoplasm = ectoplasm
 construction-graph-tag-lizard-plushie = lizard plushie
 # Start Wayfarer-14
 construction-graph-tag-candle = a candle
+construction-graph-tag-candle-red = a red candle
+construction-graph-tag-candle-blue = a blue candle
+construction-graph-tag-candle-green = a green candle
+construction-graph-tag-candle-purple = a purple candle
 # End Wayfarer-14
 
 # carpet

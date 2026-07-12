@@ -9,31 +9,31 @@
 # Notes:
 # Dumping ground of broken dreams and broken ships.
 # Based on the McCargo built by Dvir01 (https://github.com/dvir001) and ruined with drunken pride by Tych0.
-- type: pointOfInterest
-  id: McHobo
-  parent: BasePOI
-  name: Derelict McCargo
-  minimumDistance: 3250
-  maximumDistance: 5600
-  spawnGroup: Scrapyard
-  gridPath: /Maps/_NF/POI/mchobo.yml
-  addComponents:
-  - type: StationTransit
-    routes:
-      SpawnPoints: 50
-
-- type: gameMap
-  id: McHobo
-  mapName: "Derelict McCargo"
-  mapPath: /Maps/_NF/POI/mchobo.yml
-  minPlayers: 0
-  stations:
-    McHobo:
-      stationProto: DeadDropRecordsFrontierOutpost
-      gridComponents:
-      - type: VesselInfo # WF
-        description: "Home of the McGuffin. May we take your order?"
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Derelict McCargo"
-        - type: BindToStationVariationPassExemption
+#- type: pointOfInterest
+#  id: McHobo
+#  parent: BasePOI
+#  name: Derelict McCargo
+#  minimumDistance: 3250
+#  maximumDistance: 5600
+#  spawnGroup: Scrapyard
+#  gridPath: /Maps/_NF/POI/mchobo.yml
+#  addComponents:
+#  - type: StationTransit
+#    routes:
+#      SpawnPoints: 50
+#
+#- type: gameMap
+#  id: McHobo
+#  mapName: "Derelict McCargo"
+#  mapPath: /Maps/_NF/POI/mchobo.yml
+#  minPlayers: 0
+#  stations:
+#    McHobo:
+#      stationProto: DeadDropRecordsFrontierOutpost
+#      gridComponents:
+#      - type: VesselInfo # WF
+#        description: "Home of the McGuffin. May we take your order?"
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: "Derelict McCargo"
+#        - type: BindToStationVariationPassExemption

@@ -15,7 +15,7 @@
   minimumDistance: 4000
   maximumDistance: 5000
   spawnGroup: CargoDepot
-  gridPath: /Maps/_NF/POI/cargodepot.yml
+  gridPath: /Maps/_CS/POI/cargodepot.yml # Coyote
   addComponents: &cargoComponents
   - type: IFF
     color: "#37C837"
@@ -39,7 +39,7 @@
   minimumDistance: 4000
   maximumDistance: 5000
   spawnGroup: CargoDepot
-  gridPath: /Maps/_NF/POI/cargodepotalt.yml
+  gridPath: /Maps/_CS/POI/cargodepotalt.yml # Coyote
   addComponents: *cargoComponents
 
 - type: gameMap
@@ -49,7 +49,7 @@
   minPlayers: 0
   stations:
     CargoDepot:
-      stationProto: StandardFrontierOutpost
+      stationProto: RecordsMarketFrontierOutpost #Wayfarer: StandardFrontierOutpost<RecordsMarketFrontierOutpost
       components: &cargoStationComponents
         - type: StationNameSetup
           mapNameTemplate: 'Cargo Depot' # Has a letter appended in PointOfInterestSystem
@@ -59,9 +59,9 @@
 - type: gameMap
   id: CargoDepotAlt
   mapName: 'Cargo Depot' # Has a letter appended in PointOfInterestSystem
-  mapPath: /Maps/_NF/POI/cargodepotalt.yml
+  mapPath: /Maps/_CS/POI/cargodepotalt.yml # Coyote
   minPlayers: 0
   stations:
     CargoDepotAlt:
-      stationProto: StandardFrontierOutpost
+      stationProto: RecordsMarketFrontierOutpost #Wayfarer: StandardFrontierOutpost<RecordsMarketFrontierOutpost
       components: *cargoStationComponents

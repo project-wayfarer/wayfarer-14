@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 06/26/2026 04:13:21
-  entityCount: 20474
+  time: 07/02/2026 18:26:23
+  entityCount: 20477
 maps:
 - 1
 grids:
@@ -62494,6 +62494,11 @@ entities:
     - type: Transform
       pos: 15.5,-5.5
       parent: 2
+  - uid: 8832
+    components:
+    - type: Transform
+      pos: 12.5,-17.5
+      parent: 2
 - proto: ComputerCriminalRecords
   entities:
   - uid: 8807
@@ -62654,10 +62659,11 @@ entities:
       parent: 2
 - proto: ComputerShipyardMedical
   entities:
-  - uid: 8832
+  - uid: 16975
     components:
     - type: Transform
-      pos: 12.5,-17.5
+      rot: 1.5707963267948966 rad
+      pos: 8.5,-30.5
       parent: 2
 - proto: ComputerShipyardScrap
   entities:
@@ -67439,11 +67445,6 @@ entities:
     - type: Transform
       pos: 10.438729,-22.449768
       parent: 2
-  - uid: 9645
-    components:
-    - type: Transform
-      pos: 8.4328985,4.793501
-      parent: 2
   - uid: 9646
     components:
     - type: Transform
@@ -67472,6 +67473,13 @@ entities:
     components:
     - type: Transform
       pos: -0.61921,-75.364525
+      parent: 2
+- proto: DrinkHotCoffee
+  entities:
+  - uid: 20477
+    components:
+    - type: Transform
+      pos: 8.660734,4.480465
       parent: 2
 - proto: DrinkIceBucket
   entities:
@@ -107256,6 +107264,11 @@ entities:
     - type: Transform
       pos: 13.5,-8.5
       parent: 2
+  - uid: 20476
+    components:
+    - type: Transform
+      pos: 13.5,-30.5
+      parent: 2
 - proto: MachineOutpostCore
   entities:
   - uid: 14765
@@ -110787,6 +110800,13 @@ entities:
     components:
     - type: Transform
       pos: 34.505672,-98.35275
+      parent: 2
+- proto: PlushieMoth8
+  entities:
+  - uid: 9645
+    components:
+    - type: Transform
+      pos: 8.316984,4.55859
       parent: 2
 - proto: PlushieSharkBlue
   entities:
@@ -121422,10 +121442,10 @@ entities:
       parent: 2
 - proto: SpawnPointDirectorOfCare
   entities:
-  - uid: 16975
+  - uid: 18895
     components:
     - type: Transform
-      pos: 10.5,-12.5
+      pos: 13.5,-19.5
       parent: 2
 - proto: SpawnPointLatejoin
   entities:
@@ -124903,17 +124923,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,-71.5
       parent: 2
-- proto: VendingMachineCuddlyCritterVend
+- proto: VendingMachineCuddlyCritterVendPOI
   entities:
   - uid: 17487
     components:
     - type: Transform
       pos: -10.5,-1.5
       parent: 2
-    missingComponents:
-    - PotentialDeadDrop
-- proto: VendingMachineCuddlyCritterVendPOI
-  entities:
   - uid: 17488
     components:
     - type: Transform

@@ -15,10 +15,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Wayfarer: 100<120
         reagents:
         - ReagentId: Water
-          Quantity: 100
+          Quantity: 120 # Wayfarer: 100<120
   - type: RefillableSolution
     solution: spray
   - type: DrainableSolution
@@ -74,8 +74,6 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
-  - type: PirateBountyItem # Frontier
-    id: FireExtinguisher # Frontier
 
 - type: entity
   parent: FireExtinguisher

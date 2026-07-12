@@ -21,16 +21,9 @@
     defaultRotation: 90
     horizontalRotation: 90
   - type: GhostTakeoverAvailable
-  # // Wayfarer - Use new N14HostileCompound preset
   - type: HTN
     rootTask:
-      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
-    blackboard:
-      NavSmash: !type:Bool
-        true
-      MeleeRange: !type:Single
-        1.5
-  # // Wayfarer
+      task: SimpleHostileCompound
   - type: NpcFactionMember
     factions:
       - SimpleHostile

@@ -17,7 +17,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 20
+        maxVol: 25 # Wayfarer: 20<25
   - type: MixableSolution
     solution: drink
   - type: FitsInDispenser
@@ -69,6 +69,10 @@
     materialComposition:
       Gold: 100
   - type: NFTreasure # Frontier
+  # Wayfarer: Bounty Item
+  - type: PirateBountyItem
+    id: Trophies
+  # End Wayfarer
 
 - type: entity
   parent: DrinkBaseCup

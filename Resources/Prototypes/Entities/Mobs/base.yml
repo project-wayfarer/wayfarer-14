@@ -12,7 +12,6 @@
   - type: GravityAffected
   - type: Physics
     bodyType: KinematicController
-  - type: ProximityNPC # Misfits Add — sleep distant NPCs to reduce tick load
   - type: Fixtures
     fixtures:
       fix1:
@@ -148,9 +147,6 @@
   - type: CombatMode
   - type: MeleeWeapon
     hidden: true
-# // WF - Use new values
-    attackRate: 1 # WF
-    range: 1.5 # WF
     soundHit:
       collection: MetalThud
     damage:

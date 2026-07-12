@@ -1,3 +1,4 @@
+using Content.Shared._WF.CCVar; // Wayfarer
 using Content.Shared.CCVar;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Configuration;
@@ -10,7 +11,7 @@ namespace Content.Shared.SSDIndicator;
 /// <summary>
 ///     Handle changing player SSD indicator status
 /// </summary>
-public sealed class SSDIndicatorSystem : EntitySystem
+public sealed partial class SSDIndicatorSystem : EntitySystem // Wayfarer: Add Partial
 {
     public static readonly EntProtoId StatusEffectSSDSleeping = "StatusEffectSSDSleeping";
 
@@ -29,11 +30,13 @@ public sealed class SSDIndicatorSystem : EntitySystem
 
         _cfg.OnValueChanged(CCVars.ICSSDSleep, obj => _icSsdSleep = obj, true);
         _cfg.OnValueChanged(CCVars.ICSSDSleepTime, obj => _icSsdSleepTime = obj, true);
+        _cfg.OnValueChanged(WFCCVars.SSDJobReopenMinutes, obj => _jobReopenMinutes = obj, true); // Wayfarer
     }
 
     private void OnPlayerAttached(EntityUid uid, SSDIndicatorComponent component, PlayerAttachedEvent args)
     {
         component.IsSSD = false;
+        component.WentSSDAt = TimeSpan.Zero; // Wayfarer
 
         // Removes force sleep and resets the time to zero
         if (_icSsdSleep)
@@ -48,6 +51,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
     private void OnPlayerDetached(EntityUid uid, SSDIndicatorComponent component, PlayerDetachedEvent args)
     {
         component.IsSSD = true;
+        component.WentSSDAt = _timing.CurTime; // Wayfarer
 
         // Sets the time when the entity should fall asleep
         if (_icSsdSleep)
@@ -72,6 +76,8 @@ public sealed class SSDIndicatorSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        PeriodicSSDCheckForJobReopening(); // Wayfarer hook to check if we can open a job.
 
         if (!_icSsdSleep)
             return;

@@ -248,8 +248,6 @@
   - type: Tag # Frontier
     tags: # Frontier
     - SmallThrusterMachineCircuitboard # Frontier
-  - type: PirateBountyItem # Wayfarer
-    id: ThrusterMachineCircuitboard
 
 # Gyroscope
 - type: entity
@@ -266,8 +264,6 @@
       Capacitor: 1
     stackRequirements:
       Glass: 2
-  - type: PirateBountyItem # Wayfarer
-    id: Gyroscope
 
 - type: entity
   id: SmallGyroscopeSecurityMachineCircuitboard

@@ -17,6 +17,11 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, NFSDTrackingImplant ]
+  # Wayfarer
+  - !type:AddComponentSpecial
+    components:
+      - type: PreventShipyardTitleOverwrite
+  # End Wayfarer
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
