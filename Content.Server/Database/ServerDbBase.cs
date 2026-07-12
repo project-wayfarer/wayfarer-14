@@ -2117,11 +2117,11 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         #region Library
 
         public async Task AddLibraryBookAsync(
-            int serverId, 
-            string title, 
-            string author, 
-            string content, 
-            string date, 
+            int serverId,
+            string title,
+            string author,
+            string content,
+            string date,
             string authorCKey)
         {
             await using var db = await GetDb();
@@ -2138,12 +2138,11 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
-        public async Task<List<LibraryBook>> GetLibraryBooksAsync(int serverId)
+        public async Task<List<LibraryBook>> GetLibraryBooksAsync()
         {
             await using var db = await GetDb();
 
             return await db.DbContext.LibraryBooks
-                .Where(b => b.ServerId == serverId)
                 .ToListAsync();
         }
 
