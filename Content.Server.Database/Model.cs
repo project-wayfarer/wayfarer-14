@@ -2020,7 +2020,7 @@ namespace Content.Server.Database
 
         [Required] public string Content { get; set; } = string.Empty;
 
-        [Required] public string Date { get; set; } = string.Empty;
+        [Required] public DateTime Date { get; set; }
 
         [Required] public Guid AuthorPlayerUserId { get; set; }
     }
