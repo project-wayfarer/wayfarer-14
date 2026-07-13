@@ -47,8 +47,7 @@ namespace Content.Server.Database
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
-        //Frontier
-        public DbSet<LibraryBook> NFLibraryBook { get; set; } = null!;
+        public DbSet<LibraryBook> NFLibraryBook { get; set; } = null!; // Frontier
         // Wayfarer
         public DbSet<WayfarerRoundSummary> WayfarerRoundSummaries { get; set; } = null!;
         public DbSet<WayfarerSafetyDepositBox> WayfarerSafetyDepositBox { get; set; } = null!;
@@ -62,6 +61,7 @@ namespace Content.Server.Database
         public DbSet<WayfarerCorporationMember> WayfarerCorporationMembers { get; set; } = null!;
         public DbSet<WayfarerCorporationInvite> WayfarerCorporationInvites { get; set; } = null!;
         public DbSet<WayfarerCorporationStation> WayfarerCorporationStations { get; set; } = null!;
+        // End Wayfarer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
