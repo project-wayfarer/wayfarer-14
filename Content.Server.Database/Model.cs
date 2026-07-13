@@ -47,7 +47,7 @@ namespace Content.Server.Database
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
-        public DbSet<LibraryBook> NFLibraryBook { get; set; } = null!; // Frontier
+        public DbSet<NFLibraryBook> NFLibraryBook { get; set; } = null!; // Frontier
         // Wayfarer
         public DbSet<WayfarerRoundSummary> WayfarerRoundSummaries { get; set; } = null!;
         public DbSet<WayfarerSafetyDepositBox> WayfarerSafetyDepositBox { get; set; } = null!;
@@ -2006,8 +2006,8 @@ namespace Content.Server.Database
         public DateTime PurchasedAt { get; set; }
     }
 
-    [Table("library_book")]
-    public sealed class LibraryBook
+    [Table("nf_library_book")]
+    public sealed class NFLibraryBook
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("library_book_id")]
