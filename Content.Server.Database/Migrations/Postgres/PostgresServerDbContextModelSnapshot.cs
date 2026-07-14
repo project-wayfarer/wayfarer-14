@@ -760,12 +760,12 @@ namespace Content.Server.Database.Migrations.Postgres
 
             modelBuilder.Entity("Content.Server.Database.NFLibraryBook", b =>
                 {
-                    b.Property<int>("RoundId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnName("round_id");
+                        .HasColumnName("nf_library_book_id");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RoundId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Author")
                         .IsRequired()
@@ -785,9 +785,9 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("date");
 
-                    b.Property<int>("Id")
+                    b.Property<int>("RoundId")
                         .HasColumnType("integer")
-                        .HasColumnName("nf_library_book_id");
+                        .HasColumnName("round_id");
 
                     b.Property<int>("ServerId")
                         .HasColumnType("integer")
@@ -798,8 +798,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("title");
 
-                    b.HasKey("RoundId")
+                    b.HasKey("Id")
                         .HasName("PK_nf_library_book");
+
+                    b.HasIndex("RoundId")
+                        .HasDatabaseName("IX_nf_library_book_round_id");
 
                     b.HasIndex("ServerId")
                         .HasDatabaseName("IX_nf_library_book_server_id");
@@ -2394,12 +2397,21 @@ namespace Content.Server.Database.Migrations.Postgres
 
             modelBuilder.Entity("Content.Server.Database.NFLibraryBook", b =>
                 {
+                    b.HasOne("Content.Server.Database.Round", "Round")
+                        .WithMany()
+                        .HasForeignKey("RoundId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_nf_library_book_round_round_id");
+
                     b.HasOne("Content.Server.Database.Server", "Server")
                         .WithMany()
                         .HasForeignKey("ServerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_nf_library_book_server_server_id");
+
+                    b.Navigation("Round");
 
                     b.Navigation("Server");
                 });
