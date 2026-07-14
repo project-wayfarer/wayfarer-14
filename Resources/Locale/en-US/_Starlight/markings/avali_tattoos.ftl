@@ -1,4 +1,4 @@
-marking-AvaliTattooEyeLeft-eye_left = Eye (Left)
-marking-AvaliTattooEyeLeft = Eye (Left)
-marking-AvaliTattooEyeRight-eye_right = Eye (Right)
-marking-AvaliTattooEyeRight = Eye (Right)
+marking-AvaliTattooEyeLeft-eye_left = [ Avali ] Eye (Left)
+marking-AvaliTattooEyeLeft = [ Avali ] Eye (Left)
+marking-AvaliTattooEyeRight-eye_right = [ Avali ] Eye (Right)
+marking-AvaliTattooEyeRight = [ Avali ] Eye (Right)
