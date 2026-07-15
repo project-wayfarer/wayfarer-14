@@ -2,8 +2,7 @@
   id: WFHitscanPistolLaser
   damage:
     types:
-      Heat: 14 # 6 --> 14
-      Shock: 2 # 0 -->2
+      Heat: 10 # 6 --> 10
   muzzleFlash: &lightMuzzleFlash
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
