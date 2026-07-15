@@ -89,15 +89,15 @@
     back:
     - NFWeaponPistolPollock
 
-- type: loadout
-  id: WFSidearmSvalinn
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WFT3
-  price: 3000
-  storage:
-    back:
-    - NFWeaponEnergyPistolLaserSvalinn
+ #- type: loadout
+  #id: WFSidearmSvalinn
+  #effects:
+  #- !type:GroupLoadoutEffect
+  #  proto: WFT3
+  #price: 6000
+  #storage:
+  #  back:
+  #  - NFWeaponEnergyPistolLaserSvalinn
 
 #CGP time to unlock guns (200 hours)
 - type: loadout
