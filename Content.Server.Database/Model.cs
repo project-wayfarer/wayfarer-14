@@ -2010,6 +2010,10 @@ namespace Content.Server.Database
     [Table("nf_library_book")]
     public sealed class NFLibraryBook
     {
+        public const int MaxTitleLength = 128;
+        public const int MaxAuthorLength = 128;
+        public const int MaxContentLength = 32_768;
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -2027,15 +2031,15 @@ namespace Content.Server.Database
         /// <summary>
         /// Title of the book
         /// </summary>
-        [Required] public string Title { get; set; } = string.Empty;
+        [Required, MaxLength(MaxTitleLength)] public string Title { get; set; } = string.Empty;
         /// <summary>
         /// Display Author of the book, not the Guid
         /// </summary>
-        [Required] public string Author { get; set; } = string.Empty;
+        [Required, MaxLength(MaxAuthorLength)] public string Author { get; set; } = string.Empty;
         /// <summary>
         /// Text contained within the book
         /// </summary>
-        [Required] public string Content { get; set; } = string.Empty;
+        [Required, MaxLength(MaxContentLength)] public string Content { get; set; } = string.Empty;
         /// <summary>
         /// Date the book was uploaded
         /// </summary>
