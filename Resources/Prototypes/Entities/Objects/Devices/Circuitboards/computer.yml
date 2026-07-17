@@ -571,7 +571,7 @@
       prototype: ComputerTabletopCloningConsole # Frontier
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseMilitaryContraband ] # Wayfarer: Added BaseMilitaryContraband Contraband
+  parent: [ BaseComputerCircuitboard, BaseCGPContraband ] # Wayfarer: Added BaseCGPContraband
   id: ComputerIFFCircuitboard
   name: IFF console board
   description: Allows you to control the IFF characteristics of this vessel.

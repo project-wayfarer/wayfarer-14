@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/12/2026 17:55:38
+  time: 07/12/2026 22:04:08
   entityCount: 214
 maps: []
 grids:
@@ -73,7 +73,6 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      dampingModifier: 0.25
     - type: ImplicitRoof
     - type: GridPathfinding
     - type: Gravity
@@ -317,6 +316,8 @@ entities:
       - 75
       - 103
       - 107
+    - type: Fixtures
+      fixtures: {}
 - proto: AirlockExternalGlassNfsdLocked
   entities:
   - uid: 3
@@ -372,6 +373,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,0.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: AtmosDeviceFanDirectional
   entities:
   - uid: 11
@@ -714,14 +717,17 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-4.5
       parent: 1
-- proto: ExtinguisherCabinet
+    - type: Fixtures
+      fixtures: {}
+- proto: ExtinguisherCabinetFilled
   entities:
   - uid: 72
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 1.5,0.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: FaxMachineBase
   entities:
   - uid: 73
@@ -1077,6 +1083,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-1.5
       parent: 1
+- proto: GyroscopeNfsd
+  entities:
+  - uid: 142
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,0.5
+      parent: 1
 - proto: HyperlinkBookNfsdSop
   entities:
   - uid: 115
@@ -1223,6 +1237,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-4.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: ShuttleGunDusterNfsd
   entities:
   - uid: 137
@@ -1252,6 +1268,8 @@ entities:
         34:
         - - Pressed
           - Toggle
+    - type: Fixtures
+      fixtures: {}
   - uid: 139
     components:
     - type: Transform
@@ -1263,6 +1281,8 @@ entities:
         137:
         - - Pressed
           - Trigger
+    - type: Fixtures
+      fixtures: {}
 - proto: SignNfsd
   entities:
   - uid: 140
@@ -1271,20 +1291,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,-5.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
   - uid: 141
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 6.5,-5.5
       parent: 1
-- proto: GyroscopeNfsd
-  entities:
-  - uid: 142
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,0.5
-      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: StructureGunRackWallmountedNfsd
   entities:
   - uid: 143

@@ -126,6 +126,7 @@
   - ShipyardSpirit # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardStasis # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
   - ShipyardTyne # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
+  - ShipyardVelios
   - ShipyardVitalis # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
 
 - type: guideEntry
@@ -263,7 +264,7 @@
   id: ShipyardManta
   name: guide-entry-shipyard-manta
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Manta.xml"
-  
+
 - type: guideEntry
   id: ShipyardMedivac
   name: guide-entry-shipyard-medivac
@@ -328,6 +329,11 @@
   id: ShipyardKobold
   name: guide-entry-shipyard-kobold
   text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Kobold.xml"
+
+- type: guideEntry
+  id: ShipyardVelios
+  name: guide-entry-shipyard-velios
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/MedShipyard/Velios.xml"
 
 - type: guideEntry
   id: ShipyardVeliola

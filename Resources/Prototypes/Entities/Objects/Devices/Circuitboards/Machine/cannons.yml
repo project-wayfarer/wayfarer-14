@@ -2,7 +2,7 @@
 
 - type: entity
   id: ShuttleGunSvalinnMachineGunCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [BaseMachineCircuitboard, BaseMilitaryContraband] # Wayfarer: Add BaseMilitaryContraband
   name: LSE-400c "Svalinn machine gun" machine board
   description: A machine printed circuit board for an LSE-400c "Svalinn machine gun".
   suffix: DO NOT MAP, Machine Board

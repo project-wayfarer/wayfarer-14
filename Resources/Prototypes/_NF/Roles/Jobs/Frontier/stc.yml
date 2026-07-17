@@ -36,7 +36,19 @@
     - BoxFolderStc
     - ShipVoucherFrontierStc
   encryptionKeys:
-  - EncryptionKeyStationMaster
+  # Wayfarer Start
+  # - EncryptionKeyStationMaster # Wayfarer STC should not have CGP channels.
+    - EncryptionKeyCommon
+    - EncryptionKeyCommand
+    - EncryptionKeyEngineering
+    - EncryptionKeyMedical
+    - EncryptionKeyScience
+    - EncryptionKeyService
+    - EncryptionKeyCargo
+    - EncryptionKeyTraffic
+    - EncryptionKeyGreeting
+    - EncryptionKeySecurity
+    # End Wayfarer
 
 - type: chameleonOutfit
   id: StationTrafficControllerChameleonOutfit

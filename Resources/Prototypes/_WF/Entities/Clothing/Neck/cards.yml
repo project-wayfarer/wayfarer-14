@@ -1,0 +1,51 @@
+# region Dusk writ/permit
+- type: entity
+  parent: NFBaseClothingNeckCard
+  id: NFClothingNeckCardDuskWrit
+  name: dusk permit card
+  description: A permit card issued by Dusk Station. Includes a slot for inserting paperwork.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon-base
+      color: "#696E7D"
+    - state: icon-unshaded
+      map: ["cardUnshadedIconDocument"]
+      color: "#62B56D"
+      shader: unshaded
+    - state: icon-unshaded
+      map: ["cardUnshadedIconEmpty"]
+      color: "#5E6661"
+      shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        color: "#63492a"
+      - state: equipped-NECK-unshaded
+        shader: unshaded
+        color: "#ab6722" # 59784b
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals: # Ideally there'd be a visualizer that changes equipped layers, but atm those doesn't exist afaik
+      enum.PaperLabelVisuals.HasLabel:
+        cardUnshadedIconDocument:
+          True: { visible: true }
+          False: { visible: false }
+        cardUnshadedIconEmpty:
+          True: { visible: false }
+          False: { visible: true }
+  - type: PaperLabel
+    labelSlot:
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+        components:
+        - Blueprint
+  - type: ItemSlots

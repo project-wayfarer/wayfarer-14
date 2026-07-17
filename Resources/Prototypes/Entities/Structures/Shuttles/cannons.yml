@@ -43,7 +43,7 @@
 
 - type: entity
   id: ShuttleGunSvalinnMachineGun
-  parent: [ ShuttleGunBase, ConstructibleMachine]
+  parent: [ ShuttleGunBase, ConstructibleMachine, BaseMilitaryContraband] # Wayfarer: Add BaseMilitaryContraband
   name: LSE-400c "Svalinn machine gun"
   description: Basic stationary laser unit. Effective against live targets and electronics. Uses regular power cells to fire, and has an extremely high rate of fire.
   # categories: [ DoNotMap ] # Wayfarer: Not anymore.
@@ -96,12 +96,12 @@
             - PowerCell
             - PowerCellSmall
   - type: HitscanBatteryAmmoProvider
-    proto: NFRedLightLaser # Frontier: use NF prefix
+    proto: NFRedHeavyLaser # Frontier: use NF prefix # Wayfarer: NFRedLightLaser<NFRedHeavyLaser
     fireCost: 50
 
 - type: entity
   id: ShuttleGunPerforator
-  parent: [ ShuttleGunBase, ConstructibleMachine]
+  parent: [ ShuttleGunBase, ConstructibleMachine, BaseCGPContraband] # Wayfarer: Add BaseCGPContraband
   name: LSE-1200c "Perforator"
   description: Advanced stationary laser unit. Annihilates electronics and is extremely dangerous to health! Uses the power cage to fire.
   categories: [ DoNotMap ]
@@ -216,7 +216,7 @@
 
 - type: entity
   id: ShuttleGunDuster
-  parent: [ShuttleGunBase, ConstructibleMachine]
+  parent: [ShuttleGunBase, ConstructibleMachine, BaseCGPContraband] # Wayfarer: Add BaseCGPContraband
   name: EXP-2100g "Duster"
   description: A powerful stationary grenade launcher. A cartridge is required for use.
   categories: [ DoNotMap ]

@@ -234,13 +234,13 @@
       150: 0.7
   - type: MovementSpeedModifier
     baseSprintSpeed: 5 # Wayfarer
-  # Wayfarer: Xeno Buff
   - type: MeleeWeapon
     damage:
       groups:
         Brute: 12
+  # Wayfarer: Xeno Buff
       types:
-        Caustic: 6
+        Caustic: 4
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:

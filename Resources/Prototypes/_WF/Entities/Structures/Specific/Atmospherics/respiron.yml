@@ -1,0 +1,55 @@
+# Almost a carbon copy of the vox one. Almost. Same problems, same issues.
+- type: entity
+  abstract: true
+  parent: AirSensorBase
+  id: AirSensorRespironBase
+  suffix: Respiron Atmosphere
+  components:
+  - type: AtmosMonitor
+    gasThresholdPrototypes:
+      Oxygen: stationNO
+      Nitrogen: stationNO
+      CarbonDioxide: stationCO2
+      Plasma: stationPlasma
+      Tritium: stationTritium
+      WaterVapor: stationWaterVapor
+      Ammonia: stationAmmonia
+      NitrousOxide: stationNO
+      Frezon: danger
+      Respiron: voxNitrogen
+      Helium: stationHe
+
+- type: entity
+  parent: [AirSensorRespironBase, AirSensor]
+  id: AirSensorRespiron
+
+- type: entity
+  parent: [AirSensorRespironBase, GasVentPump]
+  id: GasVentPumpRespiron
+
+- type: entity
+  parent: [AirSensorRespironBase, GasVentScrubber]
+  id: GasVentScrubberRespiron
+  components:
+  - type: GasVentScrubber
+    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
+    filterGases:
+    - Oxygen
+    - Nitrogen
+    - CarbonDioxide
+    - Plasma
+    - Tritium
+    - WaterVapor
+    - Ammonia
+    - NitrousOxide
+    - Frezon
+    - Helium
+
+# use this to prevent overriding filters with hardcoded defaults
+- type: entity
+  parent: AirAlarm
+  id: AirAlarmRespiron
+  suffix: Respiron Atmosphere, auto mode disabled
+  components:
+  - type: AirAlarm
+    autoMode: false

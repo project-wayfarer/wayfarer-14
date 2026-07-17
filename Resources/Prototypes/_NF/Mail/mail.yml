@@ -1499,6 +1499,9 @@
     - id: ReagentGrinderIndustrialMachineCircuitboard
       orGroup: Board
       prob: 0.5
+    - id: JuicerIndustrialMachineCircuitboard # Wayfarer
+      orGroup: Board
+      prob: 0.5
     - id: SurveillanceWirelessCameraMovableCircuitboard
       orGroup: Board
       prob: 0.5
