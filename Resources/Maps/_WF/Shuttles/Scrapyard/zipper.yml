@@ -21,10 +21,10 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: zipper
+      name: Zipper
     - type: Transform
       pos: 0,0
-      parent: invalid
+      parent: 
     - type: MapGrid
       chunks:
         0,0:
