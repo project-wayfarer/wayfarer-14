@@ -1,0 +1,34 @@
+
+- type: vessel
+  id: Inquiry
+  parent: BaseVessel
+  name: MYD Inquiry
+  description: An affordable medium-sized civilian vessel with office space designed for independent investigators, journalists, and lawyer types who operate on a shoe-string budget but still be taken seriously.
+  price: 59400 # (gridtc *50 + appraisegrid ) * 1.(15*roles)
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/inquiry.yml
+  guidebookPage: #ShipyardInquiry
+  class:
+  - Civilian
+  engine:
+  - Plasma
+  - Solar
+
+- type: gameMap
+  id: Inquiry
+  mapName: 'MYD Inquiry'
+  mapPath: /Maps/_WF/Shuttles/Civilian/inquiry.yml
+  minPlayers: 0
+  stations:
+    Inquiry:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Inquiry {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
