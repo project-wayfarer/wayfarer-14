@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 07/16/2026 04:29:58
-  entityCount: 33
+  time: 07/18/2026 04:14:30
+  entityCount: 39
 maps: []
 grids:
 - 1
@@ -23,8 +23,7 @@ entities:
     - type: MetaData
       name: Zipper
     - type: Transform
-      pos: 0,0
-      parent: 
+      parent:
     - type: MapGrid
       chunks:
         0,0:
@@ -92,7 +91,7 @@ entities:
     - type: GasTileOverlay
 - proto: AirGrenade
   entities:
-  - uid: 31
+  - uid: 2
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -100,31 +99,63 @@ entities:
       parent: 1
 - proto: AtmosDeviceFanDirectional
   entities:
-  - uid: 2
+  - uid: 3
     components:
     - type: Transform
       pos: 0.5,-2.5
       parent: 1
+- proto: AtmosFixBlockerMarker
+  entities:
+  - uid: 34
+    components:
+    - type: Transform
+      pos: -1.5,-0.5
+      parent: 1
+  - uid: 35
+    components:
+    - type: Transform
+      pos: -1.5,-1.5
+      parent: 1
+  - uid: 36
+    components:
+    - type: Transform
+      pos: -1.5,-2.5
+      parent: 1
+  - uid: 37
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 38
+    components:
+    - type: Transform
+      pos: 2.5,-1.5
+      parent: 1
+  - uid: 39
+    components:
+    - type: Transform
+      pos: 2.5,-2.5
+      parent: 1
 - proto: CableApcExtension
   entities:
-  - uid: 21
+  - uid: 4
     components:
     - type: Transform
       pos: 0.5,0.5
       parent: 1
-  - uid: 22
+  - uid: 5
     components:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
-  - uid: 24
+  - uid: 6
     components:
     - type: Transform
       pos: 0.5,-1.5
       parent: 1
 - proto: ChairFolding
   entities:
-  - uid: 29
+  - uid: 7
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -132,7 +163,7 @@ entities:
       parent: 1
 - proto: ClosetWallO2N2FilledRandom
   entities:
-  - uid: 26
+  - uid: 8
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -162,122 +193,122 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 27
-          - 28
+          - 10
+          - 9
     - type: Fixtures
       fixtures: {}
 - proto: ComputerShuttle
   entities:
-  - uid: 16
+  - uid: 11
     components:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        32:
+        27:
         - - device-button-1
           - Toggle
-        33:
+        28:
         - - device-button-1
           - Toggle
-        30:
+        26:
         - - device-button-1
           - Toggle
 - proto: GlowstickBase
   entities:
-  - uid: 28
+  - uid: 9
     components:
     - type: Transform
-      parent: 26
+      parent: 8
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
 - proto: GlowstickRed
   entities:
-  - uid: 27
+  - uid: 10
     components:
     - type: Transform
-      parent: 26
+      parent: 8
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
 - proto: GravityGeneratorMini
   entities:
-  - uid: 25
+  - uid: 12
     components:
     - type: Transform
       pos: -1.5,-1.5
       parent: 1
 - proto: NFInflatableDock
   entities:
-  - uid: 7
+  - uid: 13
     components:
     - type: Transform
       pos: 0.5,-2.5
       parent: 1
 - proto: NFInflatableWall
   entities:
-  - uid: 12
+  - uid: 14
     components:
     - type: Transform
       pos: -0.5,-1.5
       parent: 1
-  - uid: 14
+  - uid: 15
     components:
     - type: Transform
       pos: 1.5,-2.5
       parent: 1
-  - uid: 15
+  - uid: 16
     components:
     - type: Transform
       pos: -0.5,-2.5
       parent: 1
 - proto: NFInflatableWindow
   entities:
-  - uid: 3
+  - uid: 17
     components:
     - type: Transform
       pos: 1.5,-0.5
       parent: 1
-  - uid: 5
+  - uid: 18
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-  - uid: 6
+  - uid: 19
     components:
     - type: Transform
       pos: -0.5,1.5
       parent: 1
-  - uid: 8
+  - uid: 20
     components:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-  - uid: 9
+  - uid: 21
     components:
     - type: Transform
       pos: 1.5,1.5
       parent: 1
-  - uid: 10
+  - uid: 22
     components:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
-  - uid: 11
+  - uid: 23
     components:
     - type: Transform
       pos: 1.5,-1.5
       parent: 1
-  - uid: 13
+  - uid: 24
     components:
     - type: Transform
       pos: -0.5,0.5
       parent: 1
 - proto: PortableSMES
   entities:
-  - uid: 4
+  - uid: 25
     components:
     - type: Transform
       pos: 0.5,0.5
@@ -287,19 +318,19 @@ entities:
       maxCharge: 24000000
 - proto: PoweredStrobeRed
   entities:
-  - uid: 30
+  - uid: 26
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,-0.5
       parent: 1
-  - uid: 32
+  - uid: 27
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -1.5,-0.5
       parent: 1
-  - uid: 33
+  - uid: 28
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -307,7 +338,7 @@ entities:
       parent: 1
 - proto: SmallGyroscope
   entities:
-  - uid: 19
+  - uid: 29
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -315,24 +346,24 @@ entities:
       parent: 1
 - proto: SmallThruster
   entities:
-  - uid: 17
+  - uid: 30
     components:
     - type: Transform
       pos: -1.5,-0.5
       parent: 1
-  - uid: 18
+  - uid: 31
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,-2.5
       parent: 1
-  - uid: 20
+  - uid: 32
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,-0.5
       parent: 1
-  - uid: 23
+  - uid: 33
     components:
     - type: Transform
       rot: 3.141592653589793 rad
