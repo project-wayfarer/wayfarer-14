@@ -18,9 +18,15 @@
     contents:
     - id: PaperWrittenDuskEmployment
     - id: PaperWrittenDuskMACPermit
+    - id: PaperWrittenDuskIDForm
     - id: PaperWrittenDuskRPA
     - id: PaperWrittenDuskRentalFAQ
     - id: PaperWrittenDuskEvictionNotice
+    - id: PaperWrittenDuskMGPermit
+    - id: PaperWrittenDuskMoonlight
+    - id: PaperWrittenDuskMarriage
+    - id: PaperWrittenDuskFundTransfer
+    - id: PaperWrittenDuskSRFAQ
     - id: Paper
       prob: 0.5
     - id: Paper
@@ -28,6 +34,36 @@
     - id: Paper
       prob: 0.5
     - id: Paper
+      prob: 0.5
+
+- type: entity
+  id: BoxFolderDuskStc
+  parent: BoxFolderClipboard
+  name: ticket clipboard
+  description: A clipboard filled with dock tickets and warnings, for your STC needs.
+  suffix: Forms
+  components:
+  - type: StorageFill
+    contents:
+    - id: PaperWrittenDuskDockWarning
+    - id: PaperWrittenDuskDockWarning
+    - id: PaperWrittenDuskDockWarning
+    - id: PaperWrittenDuskDockWarning
+    - id: PaperWrittenDuskDockWarning
+    - id: PaperWrittenDuskDockWarning
+    - id: PaperWrittenDuskDockViolation
+    - id: PaperWrittenDuskDockViolation
+    - id: PaperWrittenDuskDockViolation
+    - id: PaperWrittenDuskDockViolation
+    - id: PaperWrittenDuskDockViolation
+    - id: PaperWrittenDuskDockViolation
+    - id: Paper
+      prob: 0.5
+    - id: Paper
+      prob: 0.5
+    - id: PaperDyedPink
+      prob: 0.5
+    - id: PaperDyedPink
       prob: 0.5
 
 # Forms
@@ -41,24 +77,26 @@
     content: |2
            [color=Gold][mono][head=3]▲[/head][/mono][/color]
       [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
-           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                        [color=DarkSlateGray][mono]Crew Payroll Outline[/mono][/color]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                        [mono]Crew Payroll Outline[/mono]
       [color=#275387]══════════════════════════════════════════[/color]
 
-      [bold]Name:[/bold]
-      [bold]Species:[/bold]
+      [bold]Name:[/bold] [signature]
+      [bold]Species:[/bold] [form]
 
       [bold]Occupation[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
-      \[ ] Bartender  [color=SlateGray]|[/color]  \[ ] Companion  [color=SlateGray]|[/color]  \[ ] Chef  [color=SlateGray]|[/color]  \[ ] Engineer
-      \[ ] Janitor  [color=SlateGray]|[/color]  \[ ] Librarian  [color=SlateGray]|[/color]  \[ ] Medical Staff  [color=SlateGray]|[/color]  \[ ] Musician
-      \[ ] Other:
+      [check] Bartender  [color=SlateGray]|[/color]  [check] Botanist  [color=SlateGray]|[/color]  [check] Companion  [color=SlateGray]|[/color]  [check] Chef
+      [check] Engineer  [color=SlateGray]|[/color]  [check] Entertainer  [color=SlateGray]|[/color]  [check] Janitor  [color=SlateGray]|[/color]  [check] Librarian
+      [check] Mail Carrier  [color=SlateGray]|[/color]  [check] Medical Staff
+      [check] Other:
 
-      [bold]Hours Worked[/bold] [italic][color=SlateGray](estimated)[/color][/italic][bold]:[/bold]
+      [bold]Hours Worked[/bold] [italic][color=SlateGray](estimated)[/color][/italic][bold]:[/bold] [form]
       [bold]Pay Rate:[/bold] $15,000/hr
-      [bold]Total Due:[/bold]
+      [bold]Bonus Pay:[/bold] [form]
 
+      [bold]Total Due:[/bold] [form]
 
-      [bold]Station Representative:[/bold]
-      [bold]Shift Time:[/bold]
+      [bold]Station Representative:[/bold] [signature]
+      [bold]Shift Time:[/bold] [form]
 
       [italic][color=#AAAAAA]This Outline is null and void without the signature of both parties and the stamp of the acting Representative of the station.[/color][/italic]
 
@@ -72,25 +110,25 @@
     content: |2
            [color=Gold][mono][head=3]▲[/head][/mono][/color]
       [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
-           [color=Gold][mono][head=3]▼[/head][/mono][/color]                [color=DarkSlateGray][mono]Major Alteration Construction Permit[/mono][/color]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                [mono]Major Alteration Construction Permit[/mono]
       [color=#275387]══════════════════════════════════════════[/color]
 
-      [bold]Name:[/bold]
-      [bold]Species:[/bold]
+      [bold]Name:[/bold] [signature]
+      [bold]Species:[/bold] [form]
       [bold]Construction Crew:[/bold]
-      -
-      -
-      -
+      - [form]
+      - [form]
+      - [form]
 
       [italic][color=#AAAAAA](The following below is to be filled out by Issuer of this Agreement.)[/color][/italic]
 
-      [bold]Station Representative:[/bold]
-      [bold]Shift Time:[/bold]
+      [bold]Station Representative:[/bold] [signature]
+      [bold]Shift Time:[/bold] [form]
 
       [bold]Construction Planned:[/bold]
-      -
-      -
-      -
+      - [form]
+      - [form]
+      - [form]
 
 
       [italic][color=SlateGray]This Major Alteration Construction (MAC) Permit allows for major changes described in the list above. These changes are allowed to be made ONLY by the Permit holder and the crew members listed in the Construction Crew. Changes that deviate outside of what was outlined may void this permit and render the Permit holder and their crew subject to being charged for Vandalism.[/color]
@@ -107,38 +145,293 @@
     content: |2
            [color=Gold][mono][head=3]▲[/head][/mono][/color]
       [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
-           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                 [color=DarkSlateGray][mono]Rental Parcel Agreement[/mono][/color]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                 [mono]Rental Parcel Agreement[/mono]
       [color=#275387]══════════════════════════════════════════[/color]
 
-      [bold]Name:[/bold]
-      [bold]Species:[/bold]
+      [bold]Name:[/bold] [signature]
+      [bold]Species:[/bold] [form]
 
       [bold]Rental Parcel[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
-      \[ ] [mono]Small ($10,000)[/mono]
-      \[ ] [mono]Medium ($25,000)[/mono]
-      \[ ] [mono]Large ($50,000)[/mono]
+      [check] [mono]Small ($10,000)[/mono]
+      [check] [mono]Medium ($25,000)[/mono]
+      [check] [mono]Large ($50,000)[/mono]
 
       [bold]Usage[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
-      \[ ] [mono]Commercial[/mono]
-      \[ ] [mono]Service[/mono]
-      \[ ] [mono]Social[/mono]
-      \[ ] [mono]Other[/mono]
-      If Other, Please Specify:
+      [check] [mono]Commercial[/mono]
+      [check] [mono]Service[/mono]
+      [check] [mono]Social[/mono]
+      [check] [mono]Other[/mono]
+      If Other, Please Specify: [form]
 
       [italic][color=#AAAAAA](The following below is to be filled out by Issuer of this Agreement.)[/color][/italic]
 
-      [bold]Station Representative:[/bold]
-      [bold]Shift Time:[/bold]
+      [bold]Station Representative:[/bold] [signature]
+      [bold]Shift Time:[/bold] [form]
 
       [bold]Parcel Pricing[/bold] [italic][color=SlateGray](Choose One)[/color][/italic][bold]:[/bold]
-      \[ ] [mono]Introductory ($0)[/mono]
-      \[ ] [mono]Standard Rate[/mono]
-      \[ ] [mono]Double Rate[/mono]
+      [check] [mono]Introductory ($0)[/mono]
+      [check] [mono]Standard Rate[/mono]
+      [check] [mono]Double Rate[/mono]
 
       [italic][color=#AAAAAA]This agreement is null and void without the signature of both parties and the stamp of the acting Representative of the station.
 
       The acting Representative may revoke this agreement if you are late on your payment or if you violate the Dusk Renter's Agreement.[/color][/italic]
 
+- type: entity
+  id: PaperWrittenDuskMGPermit
+  name: military grade permit
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                      [mono]Military Grade Permit[/mono]
+      [color=#275387]══════════════════════════════════════════[/color]
+      [color=#AAAAAA][italic]This Form may be only issued in the absence of a Commodore or
+      Senior Peacekeeper, or with permission by the active Commodore.[/italic][/color]
+
+      [bold]Name:[/bold] [signature]
+      [bold]Species:[/bold] [form]
+      [bold]Age:[/bold] [form]
+      [bold]Ship IFF:[/bold] [form]
+
+      [bold]Station Representative:[/bold] [signature]
+      [bold]Shift Time:[/bold] [form]
+
+      This Permit allows the Holder, as listed above, to possess and
+      use Military Grade (C2) equipment.
+      Non-compliance with a Contraband Amnesty Agreement or
+      unlawful use of Military Grade (C2) equipment may void this
+      permit.
+      Refer to the CGP GO-RP for a definition of Military Grade (C2)
+      equipment.
+
+      [color=#AAAAAA][italic]This Permit is void without the signature of the Holder and the
+      signature and stamp of the acting Representative of the station.[/italic][/color]
+
+- type: entity
+  id: PaperWrittenDuskIDForm
+  name: ID card form
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                                            [mono]ID Card Form[/mono]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [bold]Current Name:[/bold] [form]
+      [bold]Current Job Title:[/bold] [form]
+
+      [bold]Check the following Reason(s):[/bold]
+      [check] Lost ID  [color=SlateGray]|[/color]  [check] Spare ID  [color=SlateGray]|[/color]  [check] Blank ID
+      [check] Job Title Change  [color=SlateGray]|[/color]  [check] Name Change
+
+      [bold]Desired Name[/bold] [italic][color=SlateGray](If Applicable)[/color][/italic] [bold]:[/bold] [form]
+      [bold]Desired Job Title[/bold] [italic][color=SlateGray](If Applicable)[/color][/italic] [bold]:[/bold] [form]
+
+      [bold]Desired Clearance:[/bold]
+      [check] Captain  [color=SlateGray]|[/color]  [check] Engineering  [color=SlateGray]|[/color]  [check] External
+      [check] Janitor  [color=SlateGray]|[/color]  [check] Mail  [color=SlateGray]|[/color]  [check] Maintenance
+      [check] Medical  [color=SlateGray]|[/color]  [check] Mercenary  [color=SlateGray]|[/color]  [check] Security
+      [check] Service  [color=SlateGray]|[/color]  [check] Wayfarer
+
+      [bold]Station Representative:[/bold] [signature]
+      [bold]Shift Time:[/bold] [form]
+
+      [italic][color=#AAAAAA]This Form is null and void without the signature of both parties and the stamp of the acting Representative of the station.
+
+      Additionally, the receiving party will be charged an additional $5,000 for the issuance of a new ID, should they request one through the Lost or Spare ID option.[/color][/italic]
+
+- type: entity
+  id: PaperWrittenDuskMoonlight
+  name: moonlight permit
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                                  [mono]Moonlight Permit[/mono]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [bold]Name:[/bold] [signature]
+      [bold]Species:[/bold] [form]
+      [bold]Ship IFF:[/bold] [form]
+
+      This Permit recognizes that the Holder, as listed above, is
+      cleared for uncommon acts and practices that may alarm or
+      otherwise send false positives to emergency systems,
+      either as the receiver or provider of this act. By signing this,
+      you recognize that:
+
+      [bold][bullet][/bold] You understand the risks of the actions you will be taking.
+      [bold][bullet][/bold] You or your partner are capable of Medical care.
+      [bold][bullet][/bold] Will take all steps to ensure that Medical and CGP
+      are not made aware of these activities. [italic](ie. No non-consenting
+      witnesses, turning your suit sensors/tracking implant off, etc.)[/italic]
+      [bold][bullet][/bold] Your partner(s) is also a Moonlight Permit holder, and you
+      both consent.
+
+      Failure to uphold these conditions may result in the
+      revocation of this permit and any criminal charges
+      this permit would have waived being pressed.
+
+      [italic][color=#AAAAAA]This Permit is null and void without the signature of both parties
+      and the stamp of the acting Representative of the station.[/color][/italic]
+
+- type: entity
+  id: PaperWrittenDuskFundTransfer
+  name: transfer of funds
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                                [mono]Transfer of Funds[/mono]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [bold]Sender Name:[/bold] [signature]
+      [bold]Sender Species:[/bold] [form]
+
+      This is a notice for a transfer of funds to the following person:
+
+      [bold]Recipient Name:[/bold] [form]
+      [bold]Recipient Species:[/bold] [form]
+
+      In the amount of: [mono]$[form][/mono]
+
+      [bold]Station Representative:[/bold] [signature]
+      [bold]Shift Time:[/bold] [form]
+
+      The funds will be held within an envelope marked with the Sender and Recipient's names, signed and stamped by the acting Representative of the station.
+
+      [italic][color=#AAAAAA]This Transfer is null and void without the signature of the Sender and the signature and stamp of the acting Representative of the station. The transfer is considered complete upon receiving the Recipient's signature and an Approval stamp from the acting Representative of the station.[/color][/italic]
+
+# Notices
+- type: entity
+  id: PaperWrittenDuskEvictionNotice
+  name: eviction notice
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+                                                              [color=Gold][mono][head=2]▲[/head][/mono][/color]
+                                                        [color=Gold][mono][head=2]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]
+                                                              [color=Gold][mono][head=2]▼[/head][/mono][/color]
+
+                  [head=1][color=#154A8A]- \[ EVICTION NOTICE ] -[/color][/head]
+
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [head=3]Time of Issuance: [form][/head]
+
+      This is a formal notice of Eviction. You are being evicted from the premises for the following reason(s):
+
+      [check] [bold]Unauthorized Shuttle Docking/Loitering[/bold] - Your craft will be undocked and towed, regardless of persons in it.
+
+      [check] [bold]Renter's Agreement Violation[/bold] - You must evacuate all belongings from the Rental Parcel and cease operations and/or use of this property immediately. Violation of this notice will result in forfeiture of any leftover property to be dispersed at the acting Representative's discretion.
+
+      [check] [bold]Criminal Activity[/bold] - You are formally unwelcome on Dusk Station. Staff are encouraged to deny services, and you will be considered trespassing if seen on these premises for the remainder of the shift.
+
+      [italic][color=#AAAAAA]The penalty specified will be enacted either immediately or up to an hour from issuance, per the discretion of the acting Representative. If you believe this to be in error, contact us immediately at the Station Representative Office.[/color][/italic]
+
+- type: entity
+  id: PaperWrittenDuskDockWarning
+  name: dock warning
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+                                                              [color=Gold][mono][head=2]▲[/head][/mono][/color]
+                                                        [color=Gold][mono][head=2]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]
+                                                              [color=Gold][mono][head=2]▼[/head][/mono][/color]
+
+                      [head=1][color=#154A8A]- \[ DOCK WARNING ] -[/color][/head]
+
+      [color=#275387]══════════════════════════════════════════[/color]
+
+      [head=3]This is a warning to let you know that your shuttle will be towed soon if you do not move or relocate.
+
+          If you believe this to be in error, contact the
+                 Station Representative immediately.[/head]
+
+      [bold]Time of Issuance:[/bold] [form]
+      [bold]Station Representative:[/bold] [form]
+
+      [italic][color=#AAAAAA]This penalty will be enacted in, at minimum, thirty (30) minutes from the time of issuance. This may be forgone in the cases of an emergency.[/color][/italic]
+
+
+- type: entity
+  id: PaperWrittenDuskDockViolation
+  name: docking violation
+  parent: PaperDyedPink
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+                                                              [color=Gold][mono][head=2]▲[/head][/mono][/color]
+                                                        [color=Gold][mono][head=2]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]
+                                                              [color=Gold][mono][head=2]▼[/head][/mono][/color]
+
+            [head=1][color=#FFFFFF]- \[ DOCKING VIOLATION ] -[/color][/head]
+
+      [color=#FFFFFF]══════════════════════════════════════════[/color]
+
+          [head=3]This is a notice to let you know your shuttle is
+               being towed due to Docking Violations.
+
+         Repeated offenses may lead to Dock Loitering
+                                      (SM03) charges.[/head]
+
+
+      [bold]Time of Issuance:[/bold] [form]
+      [bold]Station Representative:[/bold] [form]
+
+      [italic][color=#B21F75]You are responsible for the state of fuel and flight capabilities of your shuttle. If you believe this towing to be in error, contact us immediately at the Station Representative Office.[/color][/italic]
+
+# Fun Stuff
+- type: entity
+  id: PaperWrittenDuskMarriage
+  name: marriage certificate
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                        [mono]Marriage Certificate[/mono]
+      [color=#275387]══════════════════════════════════════════[/color]
+
+                                                 This certifies that
+
+                                              [head=3]Your Name Here[/head]
+                                                            [mono]- & -[/mono]
+                                              [head=3]Your Name Here[/head]
+
+                               were joined together in marriage on
+                                                       DATE HERE
+                                          at Dusk Station's Chapel.
+
+                May these comets burn ever-bright across the stars.
+
+
+      [bold]Officiator:[/bold]
+      [bold]Station Representative:[/bold]
+
+      [color=#AAAAAA][italic]This Certificate is only valid with the signatures of both married parties and the acting Representative of the station, and the signature and stamp of the Officiator of the marriage.[/italic][/color]
+
+# FAQs/Misc.
 - type: entity
   id: PaperWrittenDuskRentalFAQ
   name: renter's agreement
@@ -149,7 +442,7 @@
     content: |2
            [color=Gold][mono][head=3]▲[/head][/mono][/color]
       [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
-           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                   [color=DarkSlateGray][mono]Renter's Agreement/FAQ[/mono][/color]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                   [mono]Renter's Agreement/FAQ[/mono]
       [color=#275387]══════════════════════════════════════════[/color]
 
       [bold]1. Sizes and Prices[/bold]
@@ -209,31 +502,54 @@
 
       Failure to follow these guidelines will result in eviction, your Rental Parcel Agreement being null and void, and the likelihood of you being processed as an accomplice to any crimes committed by the perpetrator.
 
-# Notices
 - type: entity
-  id: PaperWrittenDuskEvictionNotice
-  name: eviction notice
+  id: PaperWrittenDuskSRFAQ
+  name: SR FAQ
   parent: Paper
   categories: [ HideSpawnMenu ]
   components:
   - type: Paper
+    stampState: paper_stamp-centcom
+    stampedBy:
+    - stampedColor: '#006600FF'
+      stampedName: CentComm
     content: |2
-                                                            [color=Gold][mono][head=2]▲[/head][/mono][/color]
-                                                      [color=Gold][mono][head=2]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]
-                                                            [color=Gold][mono][head=2]▼[/head][/mono][/color]
-
-                [head=1][color=#154A8A]- \[ EVICTION NOTICE ] -[/color][/head]
-
+           [color=Gold][mono][head=3]▲[/head][/mono][/color]
+      [color=Gold][mono][head=3]◄ [color=LemonChiffon]◊[/color] ►[/head][/mono][/color]                                                           [head=2][color=#154A8A]DUSK STATION[/color][/head]
+           [color=Gold][mono][head=3]▼[/head][/mono][/color]                                                        [mono]Station Rep Services[/mono]
       [color=#275387]══════════════════════════════════════════[/color]
 
-      [head=3]Time of Issuance: [FILL HERE][/head]
+      The Station Representative can offer the following:
 
-      This is a formal notice of Eviction. You are being evicted from the premises for the following reason(s):
+      [head=3]Services[/head]
 
-      \[ ] [bold]Unauthorized Shuttle Docking/Loitering[/bold] - Your craft will be undocked and towed, regardless of persons in it.
+      [bold]Bounty Highlight[/bold] [color=DimGray]- $5,000[/color]
+      [italic]A bounty may be highlighted using the Announcements panel for a small fee.[/italic]
 
-      \[ ] [bold]Renter's Agreement Violation[/bold] - You must evacuate all belongings from the Rental Parcel and cease operations and/or use of this property immediately. Violation of this notice will result in forfeiture of any leftover property to be dispersed at the acting Representative's discretion.
+      [bold]Bounty Fulfillment[/bold] [color=DimGray]- $10,000[/color]
+      [italic]A bounty may be placed and fulfilled for you through Dusk Station. This will cost more, but reminders will be placed and can be fulfilled while you are indisposed, such as SSD. Fulfilled bounties may be picked up at the Office.[/italic]
 
-      \[ ] [bold]Criminal Activity[/bold] - You are formally unwelcome on Dusk Station. Staff are encouraged to deny services, and you will be considered trespassing if seen on these premises for the remainder of the shift.
+      [bold]Transfer of Funds[/bold] [color=DimGray]- $1,000 per $10,000 transferred[/color]
+      [italic]Funds may be transferred from one Wayfarer to another at a fee. A minimum of $10,000 may be transferred, and the maximum amount of money allowed per Wayfarer per shift is $100,000. (NOTE: Funds not collected by the end of the shift are donated to the Station's fund).[/italic]
 
-      [italic][color=#AAAAAA]The penalty specified will be enacted either immediately or up to an hour from issuance, per the discretion of the acting Representative. If you believe this to be in error, contact us immediately at the Station Representative Office.[/color][/italic]
+      [head=3]Permits/Clerical[/head]
+
+      [bold]MAC Permit[/bold] [color=DimGray]- $10,000[/color]
+      [italic]A Major Alteration Construction (MAC) Permit allows you to legally make larger changes to POIs across the sector. One MAC Permit can be active per crew, per POI at a time.[/italic]
+
+      [bold]Military Grade Permit[/bold] [color=DimGray]- $30,000[/color]
+      [italic]Allows you to handle Military Grade (C2) equipment. May only be issued in the absence of a Commodore, or with the Commodore's approval.[/italic]
+
+      [bold]Moonlight Permit[/bold] [color=DimGray]- $5,000[/color]
+      [italic]Allows for consenting parties to participate in uncommon activities that may alert the emergency systems of the CGP or Medics.[/italic]
+
+      [bold]Name/Job Title/ID Changes[/bold] [color=DimGray]- $5,000 to $10,000[/color]
+      [italic]Change your Name or Job Title or gain new access clearance. For an additional $5,000, you can also get a spare ID for a spare shuttle or other purposes.[/italic]
+
+      [bold]Parcel Rentals[/bold] [color=DimGray]- $10,000 to $50,000[/color]
+      [italic]Rent one of the many Parcels (our Vendor space) on Dusk Station for a variety of needs. Ask to see our Rental Agreement for more info.[/italic]
+
+      [bold]Other Clerical Needs/Permits[/bold] [color=DimGray]- $10,000 and up[/color]
+      [italic]Other clerical needs and permits, be it honorary or custom, may be performed at the acting Representative's discretion for the listed price or higher.[/italic]
+
+      [italic][color=#AAAAAA]Note: the acting Representative of the station may deny any of these services without a valid reason.[/color][/italic]

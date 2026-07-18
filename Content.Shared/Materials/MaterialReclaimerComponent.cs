@@ -178,6 +178,14 @@ public sealed partial class MaterialReclaimerComponent : Component
     [DataField]
     public bool SpillExcessBuffer = true;
     // End Frontier
+
+    // Wayfarer: Adds industrial juicer
+    /// <summary>
+    /// If true, machine will produce juice from juice-able entities
+    /// </summary>
+    [DataField]
+    public bool OnlyReclaimJuices = false;
+    // End Wayfarer
 }
 
 [NetSerializable, Serializable]

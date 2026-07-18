@@ -69,3 +69,16 @@
     turnInValues:
       FrontierUplinkCoin: 6
 
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: JuicerIndustrialMachineCircuitboard
+  name: industrial juicer machine board
+  components:
+  - type: MachineBoard
+    prototype: JuicerIndustrial
+    requirements: # Frontier
+      MatterBin: 1 # Frontier
+      Manipulator: 3 # Frontier
+    stackRequirements:
+      # Manipulator: 4 # Frontier
+      Glass: 1

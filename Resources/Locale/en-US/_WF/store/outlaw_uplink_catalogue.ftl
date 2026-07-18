@@ -2,6 +2,8 @@ uplink-outlaw-hardsuit-name = Outlaw Hardsuit
 uplink-outlaw-hardsuit-desc = A rugged, lightly armored combat hardsuit used by Outlaws.
 uplink-outlaw-hardsuitcombat-name = Outlaw Combat Hardsuit
 uplink-outlaw-hardsuitcombat-desc = A heavy combat hardsuit used by Outlaws.
+uplink-pirate-hardsuit-name = Pirate Softsuit
+uplink-pirate-hardsuit-desc = Hailed from the depths of the ocean, more suitable for water than for space.
 
 uplink-outlaw-tacvest-name = Tactical Vest
 uplink-outlaw-tacvest-desc = A tactical vest procured from the Black Market. Sturdy materials provide good protection.

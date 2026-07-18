@@ -29,6 +29,7 @@ using System.Linq;
 using Content.Shared.Humanoid;
 using Content.Shared.Stacks; // Frontier
 using Content.Shared.Construction.Components; // Frontier
+using Content.Shared.Kitchen.Components; // Wayfarer
 
 namespace Content.Server.Materials;
 
@@ -315,6 +316,20 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
                 totalChemicals.AddSolution(drainableSolution, _prototype);
             }
         }
+        // Wayfarer: Add juice-extraction capability for industrial juicer
+        else if (reclaimerComponent.OnlyReclaimJuices)
+        {
+            var juiceSolution = CompOrNull<ExtractableComponent>(item)?.JuiceSolution;
+            var solutionScale = efficiency;
+            if (TryComp<StackComponent>(item, out var stack))
+                solutionScale *= stack.Count;
+            if (juiceSolution != null)
+            {
+                juiceSolution.ScaleSolution(solutionScale);
+                totalChemicals.AddSolution(juiceSolution, _prototype);
+            }
+        }
+        // End Wayfarer
         else
         {
             // Are we an industrial reagent grinder? Use extractable solution.

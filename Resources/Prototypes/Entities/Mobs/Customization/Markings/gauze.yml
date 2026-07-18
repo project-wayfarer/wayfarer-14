@@ -1,7 +1,7 @@
 - type: marking
   id: GauzeLefteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Dwarf, Human, Arachnid, Goblin, Sheleg, Felinid, Oni, Vulpkanin, Rodentia, Feroxi, Tajaran] # Frontier - added Goblin and afterwards, Rodentia & Feroxi from DeltaV, EE - Tajaran -WF
   coloring:
     default:
@@ -15,7 +15,7 @@
 - type: marking
   id: GauzeLefteyePad
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Goblin, Sheleg, Felinid, Oni, Vulpkanin, Rodentia, Feroxi, Tajaran] # Frontier - added Goblin and afterwards, Rodentia & Feroxi from DeltaV, EE - Tajaran -WF
   coloring:
     default:
@@ -29,7 +29,7 @@
 - type: marking
   id: GauzeRighteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Dwarf, Human, Arachnid, Goblin, Sheleg, Felinid, Oni, Vulpkanin, Rodentia, Feroxi, Tajaran] # Frontier - added Goblin and afterwards, Rodentia & Feroxi from DeltaV, EE - Tajaran -WF
   coloring:
     default:
@@ -43,7 +43,7 @@
 - type: marking
   id: GauzeRighteyePad
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Goblin, Sheleg, Felinid, Oni, Vulpkanin, Rodentia, Feroxi, Tajaran] # Frontier - added Goblin and afterwards, Rodentia & Feroxi from DeltaV, EE - Tajaran -WF
   coloring:
     default:
@@ -57,7 +57,7 @@
 - type: marking
   id: GauzeBlindfold
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Dwarf, Human, Arachnid, Goblin, Sheleg, Felinid, Oni, Harpy, Vulpkanin, Rodentia, Feroxi, Tajaran] # Frontier - added Goblin and afterwards, Rodentia & Feroxi from DeltaV, EE - Tajaran -WF
   coloring:
     default:
@@ -240,7 +240,7 @@
 - type: marking
   id: GauzeLizardLefteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Reptilian] -WF
   coloring:
     default:
@@ -254,7 +254,7 @@
 - type: marking
   id: GauzeLizardRighteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Reptilian] -WF
   coloring:
     default:
@@ -296,7 +296,7 @@
 - type: marking
   id: GauzeLizardBlindfold
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Reptilian] -WF
   coloring:
     default:
@@ -311,7 +311,7 @@
 - type: marking
   id: GauzeMothBlindfold
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid -WF
   coloring:
     default:
@@ -353,7 +353,7 @@
 - type: marking
   id: GauzeMothLeftEyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid -WF
   coloring:
     default:
@@ -367,7 +367,7 @@
 - type: marking
   id: GauzeMothLeftEyePad
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid -WF
   coloring:
     default:
@@ -381,7 +381,7 @@
 - type: marking
   id: GauzeMothRightEyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid -WF
   coloring:
     default:
@@ -395,7 +395,7 @@
 - type: marking
   id: GauzeMothRightEyePad
   bodyPart: Eyes
-  markingCategory: Overlay
+  markingCategory: Head # WF - Allows you to change layering, for eye markings
   # speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid -WF
   coloring:
     default:

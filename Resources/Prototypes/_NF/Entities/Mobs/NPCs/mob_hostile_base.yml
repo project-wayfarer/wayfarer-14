@@ -121,18 +121,16 @@
     addComponentsLeaveGrid:
     - type: TimedDespawn
       lifetime: 15
-# Wayfarer: This disabled boss health regen entirely (dumb)
-#    - type: PassiveDamage
-#      allowedStates:
-#      - Alive
-#      damage:
-#        types:
-#          Cellular: 1
-# End Wayfarer
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      damage:
+        types:
+          Cellular: 1
     - type: Pacified
     removeComponentsReturnGrid:
     - type: TimedDespawn
-#    - type: PassiveDamage # Wayfarer
+    - type: PassiveDamage
     - type: Pacified
 
 - type: entity
