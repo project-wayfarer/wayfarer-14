@@ -43,7 +43,7 @@ public sealed partial class AtmosphereSystem
            return;
        }
 
-       var mixtures = new GasMixture[13]; // Add one per added array. // Frontier:9<13
+       var mixtures = new GasMixture[14]; // Add one per added array. // Frontier:9<13 // Wayfarer: 13<14
        for (var i = 0; i < mixtures.Length; i++)
            mixtures[i] = new GasMixture(Atmospherics.CellVolume) { Temperature = Atmospherics.T20C };
 
@@ -93,6 +93,10 @@ public sealed partial class AtmosphereSystem
        mixtures[12].AdjustMoles(Gas.Nitrogen, Atmospherics.NitrogenMolesStandard);
        mixtures[12].AdjustMoles(Gas.WaterVapor, Atmospherics.NitrogenMolesStandard);
        mixtures[12].Temperature = 340f; // Sauna
+
+       // Wayfarer - 13: Respiron (101kpa)
+       // God I hate this is an array, actually. If this is ever in a merge conflict, and you feel like changing the mixtures number, make sure to also change the mode in id: AtmosFixRespironMarker
+       mixtures[13].AdjustMoles(Gas.Respiron, Atmospherics.MolesCellStandard);
 
        foreach (var arg in args)
        {

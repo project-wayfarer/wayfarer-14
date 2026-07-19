@@ -96,7 +96,7 @@
             - PowerCell
             - PowerCellSmall
   - type: HitscanBatteryAmmoProvider
-    proto: NFRedLightLaser # Frontier: use NF prefix
+    proto: NFRedHeavyLaser # Frontier: use NF prefix # Wayfarer: NFRedLightLaser<NFRedHeavyLaser
     fireCost: 50
 
 - type: entity
