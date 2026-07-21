@@ -1,19 +1,20 @@
-
+# comment line change to what you want
 - type: vessel
   id: Inquiry
   parent: BaseVessel
   name: MYD Inquiry
   description: An affordable medium-sized civilian vessel with office space designed for independent investigators, journalists, and lawyer types who operate on a shoe-string budget but still be taken seriously.
-  price: 59400 # (gridtc *50 + appraisegrid ) * 1.(15*roles)
+  price: 57700 # (gridtc *50 + appraisegrid ) * 1.(15*roles)
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_WF/Shuttles/Civilian/inquiry.yml
-  guidebookPage: #ShipyardInquiry
+  guidebookPage: Null #can also use "Null" if you want to skip the guide book making
   class:
   - Civilian
+# - civilian
   engine:
   - Plasma
-  - Solar
+# - Solar
 
 - type: gameMap
   id: Inquiry
