@@ -70,6 +70,8 @@ uplink-outlaw-vialthc-name = Vial (THC)
 uplink-outlaw-vialthc-desc = The main psychoactive compound in cannabis.
 uplink-outlaw-vialspacedrugs-name = Vial (Space Mirage)
 uplink-outlaw-vialspacedrugs-desc = An illegal compound which induces a number of effects such as loss of balance and visual artefacts.
+uplink-outlaw-uncockedmedipen-name = Uncocked Combat Medipen
+uplink-outlaw-uncockedmedipen-desc = A combat medipen, ready to be primed in the outlaw assembler.
 
 uplink-outlaw-voucher-name = Black Market ship voucher
 uplink-outlaw-voucher-desc = A voucher card allowing the redemption of a ship from the black market shipyard.

@@ -1,0 +1,43 @@
+﻿# Author Info
+# GitHub: Goodfaun
+# Discord: Goodfaun
+
+# Maintainer Info
+# GitHub: Goodfaun
+# Discord: Goodfaun
+
+# Shuttle Notes:
+# A biodome Shuttle
+- type: vessel
+  id: Sanctuary
+  parent: BaseVessel
+  name: BAM Sanctuary
+  description: A luxury grand cruiseliner, comes with a spa full kitchen, and a front row seat.
+  price: 121000 # 648 *50 appraised 60200 *1.30 (service: kitchen, bar, botany) 120380
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/sanctuary.yml
+  guidebookPage: null #ShipyardSanctuary
+  class:
+  - Civilian
+  - Kitchen
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Sanctuary
+  mapName: 'Sanctuary'
+  mapPath: /Maps/_WF/Shuttles/Civilian/sanctuary.yml
+  minPlayers: 0
+  stations:
+    Sanctuary:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Sanctuary {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

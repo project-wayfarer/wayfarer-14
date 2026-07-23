@@ -74,6 +74,15 @@ uplink-security-energygun-desc = A semi-automatic energy gun capable of firing b
 uplink-security-emprpg-name = EMP Rocket Launcher
 uplink-security-emprpg-desc = A rocket propelled grenade launcher. Comes with 1 EMP round.
 
+uplink-security-sniper-name = Sniper Bundle
+# Wayfarer Start
+# uplink-security-sniper-desc = "Aspect" sniper rifle provided with non lethal .60 rounds for long range support on the field, for lethal ammunition ask your higher ups. < Changed
+uplink-security-sniper-desc = "Aspect" sniper rifle provided with .60 rounds for breaching and support.
+
+uplink-security-eshotty-name = Experimental Energy Shotgun
+uplink-security-eshotty-desc = Experimental Energy Shotgun with three different firing modes. Wide, which fires more shots. Narrow, which decreases spread. And disabler, which fires disabling energy bolts.
+# Wayfarer End
+
 uplink-security-empgrenade-name = EMP Grenade
 uplink-security-empgrenade-desc = A handheld grenade that emits a high energy pulse that disrupts electronics and power systems in a moderately large radius.
 
@@ -118,6 +127,12 @@ uplink-security-30riflemagazine-desc = A box containing 4 filled .30 rifle (over
 
 uplink-security-30riflemagazine-rubber-name = .30 Rifle Rubber Magazines
 uplink-security-30riflemagazine-rubber-desc = a Box containing 4 filled .30 rifle (rubber) magazines.
+
+uplink-security-60sniperbox-name = .60 Rifle Box
+uplink-security-60sniperbox-desc = a Box containing 30 rounds of .60 rifle bullets.
+
+uplink-security-60sniperbox-rubber-name = .60 Rifle Rubber Box
+uplink-security-60sniperbox-rubber-desc = a Box containing 30 rounds of .60 rifle (rubber) bullets.
 
 uplink-security-wt550magazine-name = .35 +P Top-mounted Magazines
 uplink-security-wt550magazine-desc = A box containing 3 filled .35 pistol (overpressure) top-mounted magazines.

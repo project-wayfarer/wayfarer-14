@@ -13,6 +13,7 @@
       Heat: 5
       Blunt: 5
       Piercing: 5
+      Structural: 25 #WF: Add structural
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
@@ -27,7 +28,7 @@
       Heat: 3
       Blunt: 3
       Piercing: 3
-      Structural: 50
+      Structural: 75 #WF: 50<75
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 0, 10, 30 ]
   tileBreakRerollReduction: 20

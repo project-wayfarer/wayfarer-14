@@ -49,6 +49,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 # Outlaw Hardsuit
 - type: listing
@@ -83,6 +88,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 # Wearables  --
 
@@ -187,6 +197,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 # Magboots
 - type: listing
@@ -386,6 +401,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 # Pirate ShipCannon
 - type: listing
@@ -439,7 +459,8 @@
     whitelist:
       tags:
       - OutlawUplinkBase
-
+      
+# Outlaw RCD
 - type: listing
   id: UplinkOutlawRCD
   name:  uplink-pirate-rcd-name
@@ -481,7 +502,7 @@
   productEntity: ComputerIFFFlatpack
   icon: { sprite: _NF/Objects/Devices/flatpack.rsi, state: pirate_lathe }
   cost:
-    Doubloon: 8
+    Doubloon: 8 
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -591,6 +612,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 # Access Breaker
 - type: listing
@@ -607,6 +633,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 # EMAG, my beloved
 - type: listing
@@ -909,6 +940,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 - type: listing
   id: UplinkOutlawNFCannonBallEmp
@@ -1156,9 +1192,9 @@
 #Combat Medipen
 - type: listing
   id: UplinkOutlawCombatMedipen
-  name: uplink-combat-medipen-name
-  description: uplink-combat-medipen-desc
-  productEntity: CombatMedipen
+  name: uplink-outlaw-uncockedmedipen-name
+  description: uplink-outlaw-uncockedmedipen-desc
+  productEntity: UncockedCombatPen
   cost:
     Doubloon: 8
   categories:
@@ -1168,6 +1204,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 #Hyperzine Pen
 - type: listing
@@ -1184,6 +1225,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 #Interdynes
 - type: listing
@@ -1269,6 +1315,11 @@
     whitelist:
       tags:
       - OutlawUplinkBase
+    #Wayfarer: Start of WO and O separation. TO BE DELETED
+  - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+    #Wayfarer: end of WO and O separation. TO BE DELETED
 
 #Vouchers--
 - type: listing
@@ -1278,7 +1329,7 @@
   productEntity: ShipVoucherOutlaw
   icon: { sprite: _Mono/Objects/Misc/lpc.rsi, state: ltech, stripepdv }
   cost:
-    Doubloon: 15
+    Doubloon: 10 #Moving down to 10, ships are expendable
   categories:
   - UplinkOutlawVouchers
   conditions:

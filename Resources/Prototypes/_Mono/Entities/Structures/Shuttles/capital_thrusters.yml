@@ -13,7 +13,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 4500
+        damage: 2500 #WF: 4500<2500
       behaviors:
         - !type:DoActsBehavior
           acts: ["Destruction"]

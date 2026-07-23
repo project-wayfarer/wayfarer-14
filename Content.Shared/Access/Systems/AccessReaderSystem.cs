@@ -97,7 +97,7 @@ public sealed class AccessReaderSystem : EntitySystem
 
         args.Repeatable = true;
         args.Handled = true;
-        accessReader.Value.Comp.AccessLists.Clear();
+//      accessReader.Value.Comp.AccessLists.Clear(); Wayfarer: Access now opens without breaking the accesslist
         accessReader.Value.Comp.AccessLog.Clear();
         Dirty(uid, reader);
     }

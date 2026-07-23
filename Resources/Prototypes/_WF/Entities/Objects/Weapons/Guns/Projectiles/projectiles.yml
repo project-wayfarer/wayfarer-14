@@ -10,10 +10,10 @@
     - state: grenade
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    totalIntensity: 50
+    explosionType: DemolitionCharge
+    totalIntensity: 35 #50<35
     intensitySlope: 15
-    maxIntensity: 25
+    maxIntensity: 20 #25<20
     canCreateVacuum: false
   - type: RadarBlip
     scale: 2

@@ -294,3 +294,14 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: kobold
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapZipper
+  name: "Zipper"
+  description: "Detailed map of a Zipper shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: zipper

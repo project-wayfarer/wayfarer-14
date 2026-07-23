@@ -188,7 +188,7 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    projectileSpeed: 80
+    projectileSpeed: 90 #WF 80<90
     fireRate: 1
     angleDecay: 45
     minAngle: 0
@@ -243,7 +243,7 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    projectileSpeed: 40
+    projectileSpeed: 65 #WF: 40<65
     fireRate: 0.3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
@@ -300,7 +300,7 @@
     layers:
     - state: base
   - type: Gun
-    projectileSpeed: 40 # Wayfarer: Increase projectile velocity
+    projectileSpeed: 65 #WF: 40<65
     fireRate: 1
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
