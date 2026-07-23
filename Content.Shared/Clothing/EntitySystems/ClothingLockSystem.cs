@@ -51,7 +51,7 @@ public sealed class ClothingLockSystem : EntitySystem
         // If LockedSlots is null or empty, lock all clothing
         if (ent.Comp.LockedSlots == null || ent.Comp.LockedSlots.Count == 0)
         {
-            args.Args.Reason = ent.Comp.BlockOthers == false ? "clothing-lock-prevent-removal-self" : "clothing-lock-prevent-removal";
+            args.Args.Reason = ent.Comp.BlockOthers == false ? "clothing-lock-prevent-removal-self" : "clothing-lock-prevent-removal"; // WF psychic collar lock
             args.Args.Cancel();
             return;
         }
@@ -61,7 +61,7 @@ public sealed class ClothingLockSystem : EntitySystem
         {
             if (ent.Comp.LockedSlots.Contains(slotDef.Name))
             {
-                args.Args.Reason = ent.Comp.BlockOthers == false ? "clothing-lock-prevent-removal-self" : "clothing-lock-prevent-removal";
+                args.Args.Reason = ent.Comp.BlockOthers == false ? "clothing-lock-prevent-removal-self" : "clothing-lock-prevent-removal"; // WF psychic collar lock
                 args.Args.Cancel();
             }
         }
