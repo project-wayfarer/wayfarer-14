@@ -1,12 +1,8 @@
-using Content.Shared._WF.Chat;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Database;
 using Content.Shared.Examine;
-using Content.Shared.Inventory;
-using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Clothing.EntitySystems;
 

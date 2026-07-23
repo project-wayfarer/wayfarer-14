@@ -1,16 +1,6 @@
-using Content.Server._CD.Engraving;
 using Content.Server.Chat.Systems;
 using Content.Shared.Clothing.Components;
-using Content.Shared.Damage;
-using Content.Shared.Database;
-using Content.Shared.Examine;
 using Content.Shared.Inventory;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Popups;
-using Content.Shared.Verbs;
-using JetBrains.FormatRipper.Elf;
-using Robust.Shared.Utility;
-using System.Linq;
 using System.Text.RegularExpressions;
 using static Content.Shared.Inventory.InventorySystem;
 
