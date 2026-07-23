@@ -20,4 +20,12 @@ public sealed partial class ClothingLockComponent : Component
     [DataField]
     [AutoNetworkedField]
     public List<string>? LockedSlots;
+
+    // WF Psychic clothing lock
+    /// <summary>
+    /// Whether to block unequipping by others or only by wearer
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public bool? BlockOthers;
 }
