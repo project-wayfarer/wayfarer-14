@@ -23,4 +23,4 @@ clothing-lock-prevent-removal-self = You can't bring yourself to remove that!
 collar-speech-examine = [color=red]While worn, you will not be able to speak normally. It is currently set to {$mode} mode.[/color]
 collar-speech-select = Select Type
 collar-speech-set = Set to {$key} mode.
-collar-speech-unknown
+collar-speech-unknown = Unknown
