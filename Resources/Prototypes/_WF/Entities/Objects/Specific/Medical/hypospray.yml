@@ -2,7 +2,7 @@
   name: dylovene auto-injector
   parent: NFChemicalMedipen
   id: DyloveneAutoInjector
-  description: A rapid dose of dylovene inteded to get someone up quickly of the vox species.
+  description: A rapid dose of dylovene and saline inteded to get someone up quickly of the vox species.
   components:
   - type: Item
     inhandVisuals:
@@ -24,14 +24,16 @@
   - type: SolutionContainerVisuals
     emptySpriteName: dylovenepen_empty
   - type: Hypospray
-    transferAmount: 15
+    transferAmount: 35
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 15
+        maxVol: 35
         reagents:
         - ReagentId: Dylovene
           Quantity: 15
+        - ReagentId: Saline
+          Quantity: 20
 
 - type: entity
   name: amoxla auto-injector
