@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 07/23/2026 16:15:03
-  entityCount: 554
+  time: 07/27/2026 08:32:45
+  entityCount: 558
 maps: []
 grids:
 - 1
@@ -93,9 +93,6 @@ entities:
     components:
     - type: MetaData
       name: SI Rekindle
-    - type: Transform
-      pos: -0.66333145,1.3186469
-      parent: invalid
     - type: BecomesStation
       id: rekindle
     - type: MapGrid
@@ -130,7 +127,6 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      dampingModifier: 0.2
     - type: ImplicitRoof
     - type: GridPathfinding
     - type: Gravity
@@ -2053,6 +2049,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,7.5
       parent: 1
+- proto: ComputerWallmountWithdrawBankATM
+  entities:
+  - uid: 555
+    components:
+    - type: Transform
+      pos: -5.5,1.5
+      parent: 1
+  - uid: 556
+    components:
+    - type: Transform
+      pos: 9.5,1.5
+      parent: 1
 - proto: CrateMedicalRollerBeds
   entities:
   - uid: 214
@@ -3083,6 +3091,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,5.5
       parent: 1
+  - uid: 557
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -5.5,-1.5
+      parent: 1
+  - uid: 558
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,-1.5
+      parent: 1
 - proto: LockerWoodenGeneric
   entities:
   - uid: 337
@@ -3762,7 +3782,6 @@ entities:
   - uid: 415
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,-0.5
       parent: 1
 - proto: StasisBed
@@ -3824,7 +3843,6 @@ entities:
   - uid: 425
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,7.5
       parent: 1
 - proto: Thruster
