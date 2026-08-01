@@ -79,6 +79,7 @@
   - ShipyardSwan
   - ShipyardTakeaway # MonolithShip
   - ShipyardUniform
+  - ShipyardFatbears
   - ShipyardVagabond # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
 
 # syndicate shipyard commented out due to not knowing what to replace it name wise with.
@@ -340,6 +341,11 @@
   id: ShipyardVeliola
   name: guide-entry-shipyard-veliola
   text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Veliola.xml"
+
+- type: guideEntry
+  id: ShipyardFatbears
+  name: guide-entry-shipyard-fatbears
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Fatbears.xml"
 
 - type: guideEntry
   id: ShipyardZipper

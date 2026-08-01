@@ -1,0 +1,33 @@
+- type: vessel
+  id: Fatbears
+  parent: BaseVessel
+  name: ZKW Fatbears
+  description: A completely rundown diner lookin for new owners to breath life into it. It was at one point the finest eating establishement for eating
+  price: 251400
+  category: Large
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/fatbears.yml
+  guidebookPage: ShipyardFatbears
+  class:
+  - Kitchen
+  engine:
+  - Solar
+  - Uranium
+
+- type: gameMap
+  id: Fatbears
+  mapName: 'ZKW Fatbears'
+  mapPath: /Maps/_WF/Shuttles/Civilian/fatbears.yml
+  minPlayers: 0
+  stations:
+    Fatbears:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Fatbears {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
