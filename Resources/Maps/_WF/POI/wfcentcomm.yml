@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 07/29/2026 10:26:55
+  time: 08/01/2026 09:23:58
   entityCount: 4994
 maps: []
 grids:
@@ -85,8 +85,6 @@ entities:
     components:
     - type: MetaData
       name: Central Command
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2203,6 +2201,7 @@ entities:
             1947: 7,-4
             1948: 7,-2
             1950: -11,2
+            1951: 0,-10
         - node:
             color: '#FFFFFFFF'
             id: ShiptestSplineNorthWestCorner
@@ -3822,7 +3821,7 @@ entities:
       pos: 6.5,-1.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -57362.4
+      secondsUntilStateChange: -57642.547
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -3834,7 +3833,7 @@ entities:
       pos: -1.5,3.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -36763.234
+      secondsUntilStateChange: -37043.383
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4224,7 +4223,7 @@ entities:
       pos: 0.5,7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -55634.832
+      secondsUntilStateChange: -55914.98
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4236,7 +4235,7 @@ entities:
       pos: -1.5,7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -55643.7
+      secondsUntilStateChange: -55923.848
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4248,7 +4247,7 @@ entities:
       pos: -0.5,7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -55635.863
+      secondsUntilStateChange: -55916.01
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -34584,6 +34583,6 @@ entities:
       pos: 4.5,24.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -53421.867
+      secondsUntilStateChange: -53702.016
       state: Opening
 ...
