@@ -34,6 +34,15 @@
   - type: Construction # Frontier
     graph: FiresGraph # Frontier
     node: BonfireNode # Frontier
+# Start Wayfarer
+  - type: EntityHeater
+  - type: ItemPlacer
+    maxEntities: 4
+    whitelist:
+      components:
+      - Temperature
+  - type: PlaceableSurface
+# End Wayfarer
 
 - type: entity
   id: LegionnaireBonfire
