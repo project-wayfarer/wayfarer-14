@@ -19,6 +19,7 @@
   parent: [BaseItem, RecyclableItemPlasticTiny] # Frontier: added RecyclableItemPlasticTiny
   abstract: true
   components:
+  - type: CleanupImmune # WF: Prevent cleanup from deleting tabletop pieces
   - type: TabletopDraggable
   - type: Sprite
     noRot: true
