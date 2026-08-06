@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -33,6 +33,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> SeparatedScreenChatSize =
         CVarDef.Create("ui.separated_chat_size", "0.6,0", CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// The maximum number of lines to expand the chatbar vertically
+    /// </summary>
+    public static readonly CVarDef<int> ChatLines =
+        CVarDef.Create("ui.chat-lines", 10, CVar.CLIENTONLY | CVar.ARCHIVE); // WF - Multiline chatobox
 
     public static readonly CVarDef<bool> OutlineEnabled =
         CVarDef.Create("outline.enabled", true, CVar.CLIENTONLY);

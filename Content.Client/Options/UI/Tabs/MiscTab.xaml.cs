@@ -69,6 +69,7 @@ public sealed partial class MiscTab : Control
 
         Control.AddOptionDropDown(CVars.InterfaceTheme, DropDownHudTheme, themeEntries);
         Control.AddOptionDropDown(CCVars.UILayout, DropDownHudLayout, layoutEntries);
+        Control.AddOptionSlider(CCVars.ChatLines, SliderLineMax, 5, 20); // WF - Multiline Chatbox
         Control.AddOptionDropDown<int>(EECVars.ChatStackLastLines, ChatStackLastLines, chatStackEntries); // EE - Chat stacking
 
         Control.AddOptionCheckBox(CVars.DiscordEnabled, DiscordRich);
