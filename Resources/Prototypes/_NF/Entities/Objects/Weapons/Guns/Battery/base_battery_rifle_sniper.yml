@@ -1,7 +1,7 @@
 #region frame
 - type: entity
   abstract: true
-  parent: [ NFBaseWeaponEncumbranceLauncher, NFBaseGunMeleeAttackHigh, BaseWeaponBattery ]
+  parent: [ NFBaseWeaponEncumbranceSniper, NFBaseGunMeleeAttackHigh, BaseWeaponBattery ] # Wayfarer: NFBaseWeaponEncumberanceLauncher<NFBaseWeaponEncumbranceSniper
   id: NFBaseWeaponFrameEnergyRifleSniper
   suffix: Frontier
   components:
@@ -28,9 +28,11 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-  - type: SpeedModifiedOnWield
-    walkModifier: 0.1
-    sprintModifier: 0.1
+    # Start Wayfarer: Speed modifier compounds with NFBaseWeaponEncumberanceSniper
+    # - type: SpeedModifiedOnWield
+    # walkModifier: 0.1
+    # sprintModifier: 0.1
+    # End Wayfarer
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 10

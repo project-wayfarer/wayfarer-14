@@ -79,7 +79,7 @@
     proto: NFCartridgeRocketEmp
 
 - type: entity
-  parent: [ NFWeaponLauncherChinaLake ] # Wayfarer: Removed contraband
+  parent: [ NFWeaponLauncherChinaLake, BaseNotContraband] # Wayfarer: Add BaseNotContraband
   id: NFWeaponLauncherMail
   name: RPDS
   description: The Rapid Parcel Delivery System, a mail carrier's right hand. Launches mail capsules.

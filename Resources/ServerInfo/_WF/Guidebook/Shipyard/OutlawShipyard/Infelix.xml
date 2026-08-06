@@ -1,0 +1,81 @@
+<Document>
+  # INFELIX-CLASS OUTLAW SHUTTLE
+  <!-- replace poster with any entity you want. -->
+  <!-- TODO: make add a maid Dress
+  <Box>
+    <GuideEntityEmbed Entity="PosterLegitBuild" Caption="Shipmaking is fun"/>
+  </Box>
+  -->
+  <Box>
+    <GuideEntityEmbed Entity="ShuttleMapInfelix" Caption="Ill Fortune for Miners"/>
+  </Box>
+  <!-- ShuttleMapXXXXX this is where you put your shipname this is gonna be your little map of the ship. -->
+  [color=#a4885c]Ship Size:[/color] Small
+
+  [color=#a4885c]Recommended Crew:[/color] 1-2
+
+  [color=#a4885c]Power Gen Type:[/color] Solar + Plasma
+
+  # Shuttle Brief
+
+  A small solar-powered outlaw vessel.
+
+  # Ship Functions
+  
+  The Infelix ditches the expensive mining gear, replacing them with cargo racks ideal for plunder or smuggling. The salvage bay doors now hide a deadly cannon.
+  
+  Note that the solar array is not guaranteed to produce sufficient power for continuous thruster operation. Use the thruster power toggle button on the bridge to disable thrusters when docked if attempting to operate without consuming biofuel.
+
+  # Button Configuration
+
+  The ship console has buttons mapped:
+  
+    [bullet/] [bold]1:[/bold] Turn thrusters+gyro on.
+	
+    [bullet/] [bold]2:[/bold] Turn thrusters+gyro off.
+	
+    [bullet/] [bold]3:[/bold] Toggle bridge windows.
+	
+    [bullet/] [bold]4:[/bold] Docking port bolt toggle.
+	
+    [bullet/] [bold]5:[/bold] Open gun port doors.
+	
+    [bullet/] [bold]6:[/bold] Close gun port doors.
+	
+    [bullet/] [bold]7:[/bold] Fire cannon (with door safety check).
+	
+    [bullet/] [bold]8:[/bold] Fire cannon (override door safety check).
+
+  # Upgrade Requirements
+  
+  The Infelix has 8 thrusters, requiring a total of 32 capacitors.
+  
+  Its generator and gyro together require 2 capacitors and 2 manipulators.
+  
+  Its SMES requires 1 capacitor and 4 power cells (or 2 capacitors and 8 power cells for advanced SMES).
+  
+  Its autolathe requires 1 manipulator and 3 matter bins.
+  
+  It has 25 solar panels, requiring a total of 50 glass.
+  
+  Overall, this means its full upgrade (including advanced SMES) requires: [bold]36[/bold] capacitors, [bold]3[/bold] manipulators, [bold]3[/bold] matter bins, [bold]8[/bold] power cells, and [bold]50[/bold] glass.
+
+  # Piloting
+
+  [textlink="Piloting" link="Piloting"/]
+
+  [textlink="Sector Topology" link="SectorTopology"/]
+
+  # Hiring crew
+
+  [textlink="Hiring" link="Hiring"/]
+
+  As a Captain of a Spacefaring vessel, you have the authority to hire, fire, demote, or promote crew members at will.
+
+  # PREFLIGHT CHECKLIST
+
+  [textlink="Preflight Checklist" link="PreflightChecklist"/]
+  
+  For ideal performance, make sure to synchronize your solar array tracking speed to the value found at solar-powered stations at the beginning of each shift.
+  
+</Document>

@@ -72,6 +72,23 @@
 
 # Not a duffelbag, but stored with other uplink-related backpacks
 - type: entity
+  parent: BriefcaseBrown
+  id: BriefcaseBrownNfsdSniperBundle
+  suffix: CGP, Sniper Bundle
+  description: "An Aspect AMR with ammo, perfect for breaching and penetrating heavy armor."
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFWeaponRifleSniperAspect
+    # Wayfarer Start
+    #- id: Binoculars < Removed
+    - id: NFAmmunitionBoxRifle60
+      amount: 2
+    # Wayfarer End
+    - id: NFAmmunitionBoxRifle60Rubber
+      amount: 2
+
+- type: entity
   parent: ClothingBackpackSatchelLeather
   id: ClothingBackpackPirateBundle
   suffix: Filled, Pirate

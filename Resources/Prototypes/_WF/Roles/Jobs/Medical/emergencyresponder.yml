@@ -18,8 +18,6 @@
   accessGroups:
   - GeneralAccess
   special:
-  - !type:AddImplantSpecial
-    implants: [ TrackingImplant ]
   - !type:AddComponentSpecial
     components:
       - type: PreventShipyardTitleOverwrite

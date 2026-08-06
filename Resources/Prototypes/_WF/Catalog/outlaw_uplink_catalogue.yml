@@ -439,7 +439,8 @@
     whitelist:
       tags:
       - OutlawUplinkBase
-
+      
+# Outlaw RCD
 - type: listing
   id: UplinkOutlawRCD
   name:  uplink-pirate-rcd-name
@@ -481,7 +482,7 @@
   productEntity: ComputerIFFFlatpack
   icon: { sprite: _NF/Objects/Devices/flatpack.rsi, state: pirate_lathe }
   cost:
-    Doubloon: 8
+    Doubloon: 6 
   categories:
   - UplinkOutlawUtility
   conditions:
@@ -1156,9 +1157,9 @@
 #Combat Medipen
 - type: listing
   id: UplinkOutlawCombatMedipen
-  name: uplink-combat-medipen-name
-  description: uplink-combat-medipen-desc
-  productEntity: CombatMedipen
+  name: uplink-outlaw-uncockedmedipen-name
+  description: uplink-outlaw-uncockedmedipen-desc
+  productEntity: UncockedCombatPen
   cost:
     Doubloon: 8
   categories:
@@ -1278,7 +1279,7 @@
   productEntity: ShipVoucherOutlaw
   icon: { sprite: _Mono/Objects/Misc/lpc.rsi, state: ltech, stripepdv }
   cost:
-    Doubloon: 15
+    Doubloon: 10 #Moving down to 10, ships are expendable
   categories:
   - UplinkOutlawVouchers
   conditions:

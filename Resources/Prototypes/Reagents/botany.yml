@@ -227,6 +227,20 @@
           types:
             Caustic: 1
     # Wayfarer start
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4 # same as water
+        conditions:
+        - !type:OrganType
+          type: Avali
+          shouldHave: true
+      - !type:SatiateThirst
+        factor: 1 # same as welding fuel
+        conditions:
+        - !type:OrganType
+          type: Vox
+          shouldHave: true
     Medicine:
       effects:
       - !type:HealthChange

@@ -1,0 +1,77 @@
+<Document>
+  # FELIX-CLASS MINING SHUTTLE
+  <!-- replace poster with any entity you want. -->
+  <!-- TODO: make add a maid Dress
+  <Box>
+    <GuideEntityEmbed Entity="PosterLegitBuild" Caption="Shipmaking is fun"/>
+  </Box>
+  -->
+  <Box>
+    <GuideEntityEmbed Entity="ShuttleMapFelix" Caption="Good Fortune for Miners"/>
+  </Box>
+  <!-- ShuttleMapXXXXX this is where you put your shipname this is gonna be your little map of the ship. -->
+  [color=#a4885c]Ship Size:[/color] Small
+
+  [color=#a4885c]Recommended Crew:[/color] 1-2
+
+  [color=#a4885c]Power Gen Type:[/color] Solar + Plasma
+
+  # Shuttle Brief
+
+  A small solar-powered mining vessel.
+
+  # Ship Functions
+  
+  The Felix comes standard with a full suite of mining equipment, although it can be a bit cramped for extended salvaging.
+  
+  Note that the solar array is not guaranteed to produce sufficient power for continuous thruster operation. Use the thruster power toggle button on the bridge to disable thrusters when docked if attempting to operate without consuming biofuel.
+
+  # Button Configuration
+
+  The ship console has buttons mapped:
+  
+    [bullet/] [bold]1:[/bold] Turn thrusters+gyro on.
+	
+    [bullet/] [bold]2:[/bold] Turn thrusters+gyro off.
+	
+    [bullet/] [bold]3:[/bold] Toggle bridge windows.
+	
+    [bullet/] [bold]4:[/bold] Docking port bolt toggle.
+
+  # Upgrade Requirements
+  
+  The Felix has 8 thrusters, requiring a total of 32 capacitors.
+  
+  Its generator and gyro together require 2 capacitors and 2 manipulators.
+  
+  Its SMES requires 1 capacitor and 4 power cells (or 2 capacitors and 8 power cells for advanced SMES).
+  
+  Its fab and processing machinery together require 9 manipulators and 5 matter bins.
+  
+  It has 25 solar panels, requiring a total of 50 glass.
+  
+  Overall, this means its full upgrade (including advanced SMES) requires: [bold]36[/bold] capacitors, [bold]11[/bold] manipulators, [bold]5[/bold] matter bins, [bold]8[/bold] power cells, and [bold]50[/bold] glass.
+
+  # Mining
+
+  [textlink="Mining" link="Mining"/]
+
+  # Piloting
+
+  [textlink="Piloting" link="Piloting"/]
+
+  [textlink="Sector Topology" link="SectorTopology"/]
+
+  # Hiring crew
+
+  [textlink="Hiring" link="Hiring"/]
+
+  As a Captain of a Spacefaring vessel, you have the authority to hire, fire, demote, or promote crew members at will.
+
+  # PREFLIGHT CHECKLIST
+
+  [textlink="Preflight Checklist" link="PreflightChecklist"/]
+  
+  For ideal performance, make sure to synchronize your solar array tracking speed to the value found at solar-powered stations at the beginning of each shift.
+  
+</Document>

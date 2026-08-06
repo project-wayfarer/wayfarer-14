@@ -16,7 +16,7 @@
   access:
   - Sergeant
   accessGroups:
-  - GeneralNfsdAccess
+  - CGPCommand #Wayfarer: GeneralNfsdAccess<CGPCommand
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, NFSDTrackingImplant ]

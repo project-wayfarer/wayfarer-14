@@ -20,7 +20,8 @@ using Content.Shared.Tag; // Wayfarer
 using Robust.Shared.Serialization.TypeSerializers.Implementations; // Wayfarer
 using Content.Shared.Inventory; // Wayfarer
 using Content.Shared.Buckle; // Wayfarer
-using Content.Shared.Buckle.Components; // Wayfarer
+using Content.Shared.Buckle.Components;
+using Content.Shared.Silicons.Borgs.Components; // Wayfarer
 
 namespace Content.Shared.Medical.Healing;
 
@@ -330,6 +331,16 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
                         surgicalEnvironmentPoints += 2;
                     }
                 }
+            }
+        }
+        //Cyborg - as borgs cant wear clothes, they get seperate bonuses to make medical cyborgs viable. 
+
+        if (TryComp<BorgSwitchableTypeComponent>(user, out var chassis) && chassis is not null)
+        {
+            surgicalEnvironmentPoints += 2; //any cyborg is as good as a humanoid with non-sterile gloves and a mask
+            if (chassis.SelectedBorgType == "medical")
+            {
+                surgicalEnvironmentPoints += 3; //medical cyborgs are as good as a humanoid with full surgical gear on. 
             }
         }
 

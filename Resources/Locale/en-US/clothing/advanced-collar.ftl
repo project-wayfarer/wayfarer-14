@@ -17,3 +17,10 @@ advanced-collar-remove-modules-verb = Remove Modules
 # Clothing Lock Component
 clothing-lock-examine = [color=red]While worn, this prevents all clothing from being removed.[/color]
 clothing-lock-prevent-removal = You cannot remove any clothing while someone is wearing a clothing lock!
+clothing-lock-prevent-removal-self = You can't bring yourself to remove that!
+
+# Speech Modifier
+collar-speech-examine = [color=red]While worn, you will not be able to speak normally. It is currently set to {$mode} mode.[/color]
+collar-speech-select = Select Type
+collar-speech-set = Set to {$key} mode.
+collar-speech-unknown = Unknown

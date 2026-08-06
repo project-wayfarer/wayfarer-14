@@ -35,6 +35,8 @@
     - Document
     - Paper
 
+#Guns
+
 - type: entity
   parent: WFBaseBlueprintOutlaw
   id: WFBlueprintC20r
@@ -56,3 +58,20 @@
   - type: Blueprint
     providedRecipes:
     - NFWeaponSubMachineGunAtreides
+
+#ShipToShip
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintCannonballs
+  categories: [ HideSpawnMenu ]
+  name: Cannon Munitions
+  description: A blueprint with the schematics of the various available cannonballs.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - WFCannonballRegularRecipe    
+    - WFCannonballEMPRecipe    
+    - WFCannonballGlassRecipe    
+    - WFCannonballGrapeshotRecipe    
+    

@@ -25,6 +25,9 @@ gun-examine-energybolt-medium = 1100J energy beam
 gun-examine-hitscan-high = 1400J energy beam
 gun-examine-hitscan-high-p = 1900J energy beam
 gun-examine-hitscan-xray = 1900J X-ray beam
+# Wayfarer Start
+gun-examine-energybolt-low-disabler-shotgun = 500J energy/disabler bolt
+# Wayfarer End
 gun-examine-energybolt-low = 750J energy bolt
 gun-examine-energybolt-low-disabler-pistol = 750J energy/disabler bolt
 gun-examine-energybolt-low-disabler-repeater = 940J energy/disabler bolt

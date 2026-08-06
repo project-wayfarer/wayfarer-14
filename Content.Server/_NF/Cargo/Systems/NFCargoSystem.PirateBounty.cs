@@ -497,6 +497,14 @@ public sealed partial class NFCargoSystem
             var stackUid = _stack.Spawn(amount, "Doubloon", Transform(args.Actor).Coordinates);
             if (!_hands.TryPickupAnyHand(args.Actor, stackUid))
                 _transform.SetLocalRotation(stackUid, Angle.Zero);
+			
+		    //WF start: Credits per Doubloon
+		    var WFcreditAmount = amount * 2000;
+            var WFcreditStack = _stack.Spawn(WFcreditAmount, "Credit", Transform(args.Actor).Coordinates);
+            if (!_hands.TryPickupAnyHand(args.Actor, WFcreditStack))
+                _transform.SetLocalRotation(WFcreditStack, Angle.Zero);
+			//WF end: Credits per Doubloon
+			
             _audio.PlayPvs(component.AcceptSound, uid);
             _popup.PopupEntity(Loc.GetString("pirate-bounty-redemption-success", ("bounties", redeemedBounties), ("amount", amount)), args.Actor);
         }

@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Maintainer Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Poppet
+  parent: BaseVesselAntag
+  name: RBS Poppet
+  description: A robust Janitorial ship commissioned by Zekke's Maid Guild to become the new workhorse of cleaning services in the sector - but used for crime instead.
+  price: 41000
+  category: Small
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/poppet.yml
+  guidebookPage: ShipyardPoppet
+  class:
+  - Pirate
+  engine:
+  - Biofuel
+  - Solar
+
+- type: gameMap
+  id: Poppet
+  mapName: 'RBS Poppet'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/poppet.yml
+  minPlayers: 0
+  stations:
+    Poppet:
+      stationProto: StandardFrontierAntagVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Moppet {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            NFPirate: [ 0, 0 ]

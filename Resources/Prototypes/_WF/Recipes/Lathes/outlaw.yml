@@ -42,6 +42,38 @@
   result: NFWeaponPistolViper
   materials:
     Steel: 1500
+    
+# Cannon Ammo
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: WFCannonballRegularRecipe
+  result: NFCannonBall
+  materials:
+    Steel: 1500 
+    Plasteel: 1500 
+    
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: WFCannonballEMPRecipe
+  result: NFCannonBallEmp
+  materials:
+    Steel: 1000 
+    Silver: 500
+    Plastic: 500     
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: WFCannonballGlassRecipe
+  result: NFCannonBallGlassshot
+  materials:
+    Glass: 500 # cheap bullshit
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: WFCannonballGrapeshotRecipe
+  result: NFCannonBallGrapeshot
+  materials:
+    Steel: 1500 
 
 # Blueprints
 
@@ -84,3 +116,10 @@
   result: WFBlueprintAtreides
   materials:
     OutlawData: 20
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: WFRecipeDecryptCannonAmmo
+  result: WFBlueprintCannonballs
+  materials:
+    OutlawData: 25

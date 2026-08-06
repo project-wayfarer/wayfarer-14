@@ -96,7 +96,7 @@ public abstract class SharedFlashSystem : EntitySystem
     // TODO: This is awful and all the different components for toggleable lights need to be unified and changed to use Itemtoggle
     private void OnLightToggle(Entity<FlashComponent> ent, ref LightToggleEvent args)
     {
-        if (!args.IsOn || !UseFlash(ent, null))
+        if (!ent.Comp.FlashOnToggle || !args.IsOn || !UseFlash(ent, null)) ///Wayfarer add !ent.Comp.FlashOnToggle
             return;
 
         FlashArea(ent.Owner, null, ent.Comp.Range, ent.Comp.AoeFlashDuration, ent.Comp.SlowTo, true, ent.Comp.Probability);
