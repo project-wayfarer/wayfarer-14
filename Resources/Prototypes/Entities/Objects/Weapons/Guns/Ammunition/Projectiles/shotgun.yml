@@ -247,7 +247,12 @@
     damage:
       types:
         Piercing: 25
-        Structural: 5
+        Structural: 200 #WF: 5<200 Airlock cracker
+    #Wayfarer add a radar blip: Do note if this starts lagging the server to remove it, system SHOULD be able to handle it and the C code mentions grapeshot as handeable
+  - type: RadarBlip
+    scale: 1
+    shape: Triangle
+    visibleFromOtherGrids: true
 
 - type: entity
   id: PelletGrapeshotSpread

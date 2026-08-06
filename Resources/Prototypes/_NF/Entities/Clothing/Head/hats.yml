@@ -301,7 +301,7 @@
     sprite: _NF/Clothing/Head/Hats/Wizard/wizard-fake.rsi
 
 - type: entity
-  parent: [ ClothingHeadBaseButcherable, BaseC3ContrabandNoValue, ContrabandClothing ]
+  parent: [ ClothingHeadBaseButcherable ] # Wayfarer: Removed BaseC3ContrabandNoValue, ContrabandClothing
   id: ClothingHeadHatArcadia
   name: arcadia beret
   description: A beret produced by Arcadia Industries.

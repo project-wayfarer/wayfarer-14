@@ -1,0 +1,46 @@
+- type: latheRecipe
+  id: ServicePitcher
+  result: Pitcher
+  parent: BaseServiceItemsRecipe
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugBlack
+  result: DrinkMugBlack
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugBlue
+  result: DrinkMugBlue
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugGreen
+  result: DrinkMugGreen
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugHeart
+  result: DrinkMugHeart
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugMoebius
+  result: DrinkMugMoebius
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugOne
+  result: DrinkMugOne
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugRainbow
+  result: DrinkMugRainbow
+
+- type: latheRecipe
+  parent: BaseGlasswareRecipe
+  id: DrinkMugRed
+  result: DrinkMugRed

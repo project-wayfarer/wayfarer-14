@@ -1,0 +1,37 @@
+- type: entity
+  id: ToGoEmpty
+  parent: HappyHonk
+  name: to-go box
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Storage/togo1.rsi
+    state: box
+  - type: Item
+    sprite: _WF/Objects/Storage/togo1.rsi
+    inhandVisuals:
+      left:
+      - state: box-inhand-left
+      right:
+      - state: box-inhand-right
+  - type: StorageFill
+    contents: []
+
+- type: entity
+  id: ToGoEmpty2
+  parent: HappyHonk
+  name: to-go box
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Storage/togo2.rsi
+    state: box
+  - type: Item
+    sprite: _WF/Objects/Storage/togo2.rsi
+    inhandVisuals:
+      left:
+      - state: box-inhand-left
+      right:
+      - state: box-inhand-right
+  - type: StorageFill
+    contents: []

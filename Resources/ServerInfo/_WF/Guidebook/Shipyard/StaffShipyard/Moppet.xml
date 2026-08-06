@@ -7,7 +7,7 @@
   </Box>
   -->
   <Box>
-    <GuideEntityEmbed Entity="ShuttleMapMoppet" Caption="Maid for the Future"/>
+    <GuideEntityEmbed Entity="ShuttleMapMoppet" Caption="Maid for Cleaning"/>
   </Box>
   <!-- ShuttleMapXXXXX this is where you put your shipname this is gonna be your little map of the ship. -->
   [color=#a4885c]Ship Size:[/color] Small
@@ -25,6 +25,32 @@
   The Moppet comes standard with a material reclaimer, service fab, shower, sink, drains, mobile pump, various janitorial essentials, and of course a free Janitorial Maid Dress!
   
   Note that the solar array does not produce sufficient power for continuous thruster operation. Use the thruster power toggle button on the bridge to disable thrusters when docked if attempting to operate without consuming biofuel.
+
+  # Button Configuration
+
+  The ship console has buttons mapped:
+  
+    [bullet/] [bold]1:[/bold] Turn thrusters+gyro on.
+	
+    [bullet/] [bold]2:[/bold] Turn thrusters+gyro off.
+	
+    [bullet/] [bold]3:[/bold] Toggle bridge windows.
+	
+    [bullet/] [bold]4:[/bold] Docking port bolt toggle.
+
+  # Upgrade Requirements
+  
+  The Moppet has 10 thrusters, requiring a total of 40 capacitors.
+  
+  Its generator and gyro together require 2 capacitors and 2 manipulators.
+  
+  Its SMES requires 1 capacitor and 4 power cells (or 2 capacitors and 8 power cells for advanced SMES).
+  
+  Its fab and material reclaimer together require 4 manipulators and 2 matter bins.
+  
+  It has 30 solar panels, requiring a total of 60 glass.
+  
+  Overall, this means its full upgrade (including advanced SMES) requires: [bold]44[/bold] capacitors, [bold]6[/bold] manipulators, [bold]2[/bold] matter bins, [bold]8[/bold] power cells, and [bold]60[/bold] glass.
 
   # Janitor
 

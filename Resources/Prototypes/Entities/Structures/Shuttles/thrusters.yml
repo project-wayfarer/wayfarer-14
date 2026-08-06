@@ -31,11 +31,24 @@
     - type: Damageable
       damageContainer: StructuralInorganic
       damageModifierSet: Electronic
+    #WF: Make thrusters get hit start
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          density: 60
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+    #WF: Make thrusters get hit end          
     - type: Destructible
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 300  # Changed 100->300 because impact damage is real
+          damage: 200  # Changed 100->300 because impact damage is real wf: 300<200
         behaviors:
           - !type:DoActsBehavior
             acts: ["Destruction"]
@@ -67,7 +80,7 @@
           acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 300 # WF: 300<200
       behaviors:
         - !type:DoActsBehavior
           acts: ["Destruction"]

@@ -1,0 +1,28 @@
+# For use for outlaw items.
+#Uncocked Combat Medipen
+- type: entity
+  name: Uncocked Combat Medipen
+  parent: BaseItem
+  description: An uncocked Combat Medipen. Insert into an assembler to prime it.
+  id: UncockedCombatPen
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Medical/outlaw_pen.rsi
+    state: uncocked_state
+  - type: Item
+    sprite: _WF/Objects/Medical/outlaw_pen.rsi
+    inhandVisuals:
+      left:
+      - state: base-needle-inhand-left
+      - state: base-colorA-inhand-left
+        color: "#7FC9AA"
+      - state: base-colorB-inhand-left
+      right:
+      - state: base-needle-inhand-right
+      - state: base-colorA-inhand-right
+        color: "#7FC9AA"
+      - state: base-colorB-inhand-right
+  # Frontier: whitelist medipens
+  - type: Tag
+    tags:
+    - NFEmptyMedipen

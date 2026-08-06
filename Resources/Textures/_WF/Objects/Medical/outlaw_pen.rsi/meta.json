@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "tgstation at 986af32e22a88dae14fd147d812a5a4d27c1bc30 | Nearly all resprited by joshepvodkain and SeamLess, -hand sprites by SeamLesss (github). Based on the previously stated, sprites for pen done by possum for WF14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "uncocked_state"
+    },
+    {
+      "name": "base-needle-inhand-left",
+        "directions": 4
+    },
+    {
+      "name": "base-needle-inhand-right",
+        "directions": 4
+    },
+    {
+      "name": "base-colorA-inhand-left",
+        "directions": 4
+    },
+    {
+      "name": "base-colorA-inhand-right",
+        "directions": 4
+    },
+    {
+      "name": "base-colorB-inhand-left",
+        "directions": 4
+    },
+    {
+      "name": "base-colorB-inhand-right",
+        "directions": 4
+    }
+  ]
+}

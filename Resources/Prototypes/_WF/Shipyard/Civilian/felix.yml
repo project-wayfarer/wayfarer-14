@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Maintainer Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Felix
+  parent: BaseVessel
+  name: RBS Felix
+  description: A small, solar powered mining vessel.
+  price: 39000
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/felix.yml
+  guidebookPage: ShipyardFelix
+  class:
+  - Civilian
+  engine:
+  - Plasma
+  - Solar
+
+- type: gameMap
+  id: Felix
+  mapName: 'RBS Felix'
+  mapPath: /Maps/_WF/Shuttles/Civilian/felix.yml
+  minPlayers: 0
+  stations:
+    Felix:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Felix {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            WayfarerInterview: [ 0, 0 ]

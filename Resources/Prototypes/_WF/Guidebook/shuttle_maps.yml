@@ -33,6 +33,17 @@
 
 - type: entity
   parent: PosterBase
+  id: ShuttleMapFelix
+  name: "Felix"
+  description: "Detailed map of a Felix shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: felix
+
+- type: entity
+  parent: PosterBase
   id: ShuttleMapHeater
   name: "Heater"
   description: "Detailed map of a Heater shuttle."
@@ -52,6 +63,17 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: hauler
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapInfelix
+  name: "Infelix"
+  description: "Detailed map of an Infelix shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: infelix
 
 - type: entity
   parent: PosterBase
@@ -88,6 +110,17 @@
 
 - type: entity
   parent: PosterBase
+  id: ShuttleMapMoppet
+  name: "Moppet"
+  description: "Detailed map of a Moppet shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: moppet
+
+- type: entity
+  parent: PosterBase
   id: ShuttleMapParma
   name: "Parma"
   description: "Detailed map of a Parma shuttle."
@@ -107,6 +140,17 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: phalanx
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapPoppet
+  name: "Poppet"
+  description: "Detailed map of a Poppet shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: poppet
 
 - type: entity
   parent: PosterBase
@@ -275,17 +319,6 @@
 
 - type: entity
   parent: PosterBase
-  id: ShuttleMapMoppet
-  name: "Moppet"
-  description: "Detailed map of a Moppet shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
-    state: moppet
-
-- type: entity
-  parent: PosterBase
   id: ShuttleMapKobold
   name: "Kobold"
   description: "Detailed map of a Kobold shuttle."
@@ -294,3 +327,14 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: kobold
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapZipper
+  name: "Zipper"
+  description: "Detailed map of a Zipper shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: zipper

@@ -24,6 +24,8 @@
   - type: VendingMachineRestock
     canRestock:
     - AmmoVendInventory
+    - WeaponryWorksVendInventory # Wayfarer
+    - WeaponryWorksVendPOIInventory # Wayfarer
   - type: Sprite
     layers:
     - state: base

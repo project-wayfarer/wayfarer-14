@@ -1,0 +1,48 @@
+#region frame
+- type: entity
+  abstract: true
+  parent: [ NFBaseWeaponEncumbranceRifle, NFBaseGunMeleeAttackMedium, BaseWeaponBattery ]
+  id: WFBaseWeaponFrameEnergyShotgun
+  suffix: Wayfarer
+  components:
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: 0
+    maxAngle: 0
+  - type: Gun
+    minAngle: 3.4
+    maxAngle: 17
+    angleIncrease: 0.9
+    angleDecay: 4.5
+    fireRate: 2.0
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: Battery
+    maxCharge: 1200
+    startingCharge: 1200
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 24
+  - type: NFWeaponDetails
+    class: weapon-details-class-shotgun
+      
+#region chamber
+- type: entity
+  id: WFBaseWeaponEnergyShotgunFireModes
+  abstract: true
+  components:
+  - type: Gun
+    examineCaliber: gun-examine-energybolt-low-disabler-shotgun
+  - type: ProjectileBatteryAmmoProvider
+    proto: WFBulletLaserShotgunWide
+    fireCost: 150
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: WFBulletLaserShotgunWide
+      fireCost: 150
+    - proto: WFBulletLaserShotgunNarrow
+      fireCost: 200
+    - proto: WFBulletDisablerShotgun
+      fireCost: 120

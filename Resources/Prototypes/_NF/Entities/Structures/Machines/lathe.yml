@@ -105,6 +105,8 @@
     - NFServiceArchetypeStatic
     - NFPietyStatic
     - NFCandlesStatic
+    - WFServiceStatic # Wayfarer
+    - WFServiceStorage # Wayfarer
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFServiceTechfabEmagStatic
@@ -157,6 +159,8 @@
     - NFLightsColoredStatic
     - NFServiceArchetypeStatic
     - NFMcServiceTechfabStatic
+    - WFServiceStatic # Wayfarer
+    - WFServiceStorage # Wayfarer
 
 - type: entity
   parent: [ NFBlueprintReceiverBase, BaseLatheLube ]

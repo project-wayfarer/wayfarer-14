@@ -1,0 +1,24 @@
+- type: microwaveMealRecipe
+  id: RecipePenAmoxla
+  name: amoxla auto-injector
+  result: AmoxlaAutoInjector
+  time: 5
+  group: Medicinal
+  solids:
+    BlankMediPen: 1
+  reagents:
+    Amoxla: 15
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipePenDylovene
+  name: dylovene auto-injector
+  result: DyloveneAutoInjector
+  time: 5
+  group: Medicinal
+  solids:
+    BlankMediPen: 1
+  reagents:
+    Dylovene: 15
+    Saline: 20
+  recipeType: MedicalAssembler

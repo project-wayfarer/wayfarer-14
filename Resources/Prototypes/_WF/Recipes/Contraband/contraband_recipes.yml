@@ -31,6 +31,17 @@
     Stimulants: 30
   recipeType: OutlawAssembler
 
+#Combat Medipen Cocking
+- type: microwaveMealRecipe
+  id: RecipeCombatMedipen
+  name: Combat Medipen
+  result: CombatMedipen
+  time: 5
+  group: OutlawAssembler
+  solids:
+    UncockedCombatPen: 1
+  recipeType: OutlawAssembler
+
 # Drinks
 - type: microwaveMealRecipe
   id: RecipeBloodRedBrew

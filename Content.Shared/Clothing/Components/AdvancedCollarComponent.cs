@@ -24,7 +24,7 @@ public sealed partial class AdvancedCollarComponent : Component
     /// Maximum number of modules that can be installed.
     /// </summary>
     [DataField]
-    public int MaxModules = 3;
+    public int MaxModules = 5; // WF more modules by default
 
     /// <summary>
     /// Sound played when a module is extracted.

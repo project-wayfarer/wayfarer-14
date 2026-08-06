@@ -1,0 +1,79 @@
+<Document>
+  # POPPET-CLASS OUTLAW SHUTTLE
+  <!-- replace poster with any entity you want. -->
+  <!-- TODO: make add a maid Dress
+  <Box>
+    <GuideEntityEmbed Entity="PosterLegitBuild" Caption="Shipmaking is fun"/>
+  </Box>
+  -->
+  <Box>
+    <GuideEntityEmbed Entity="ShuttleMapPoppet" Caption="Maid for Crime"/>
+  </Box>
+  <!-- ShuttleMapXXXXX this is where you put your shipname this is gonna be your little map of the ship. -->
+  [color=#a4885c]Ship Size:[/color] Small
+
+  [color=#a4885c]Recommended Crew:[/color] 1-3
+
+  [color=#a4885c]Power Gen Type:[/color] Solar + Biofuel
+
+  # Shuttle Brief
+
+  A ship once designed for cleaning up messes, now repurposed for making them.
+
+  # Ship Functions
+  
+  The Poppet ditches most of its janitorial trappings for a small cargo bay and hidden gun port.
+  
+  Note that the solar array does not produce sufficient power for continuous thruster operation. Use the thruster power toggle button on the bridge to disable thrusters when docked if attempting to operate without consuming biofuel.
+
+  # Button Configuration
+
+  The ship console has buttons mapped:
+  
+    [bullet/] [bold]1:[/bold] Turn thrusters+gyro on.
+	
+    [bullet/] [bold]2:[/bold] Turn thrusters+gyro off.
+	
+    [bullet/] [bold]3:[/bold] Toggle bridge windows.
+	
+    [bullet/] [bold]4:[/bold] Gun deck inner window/door bolt toggle.
+	
+    [bullet/] [bold]5:[/bold] Open gun port doors.
+	
+    [bullet/] [bold]6:[/bold] Close gun port doors.
+	
+    [bullet/] [bold]7:[/bold] Fire cannon (with door safety check).
+	
+    [bullet/] [bold]8:[/bold] Fire cannon (override door safety check).
+
+  # Upgrade Requirements
+  
+  The Poppet has 10 thrusters, requiring a total of 40 capacitors.
+  
+  Its generator and gyro together require 2 capacitors and 2 manipulators.
+  
+  Its SMES requires 1 capacitor and 4 power cells (or 2 capacitors and 8 power cells for advanced SMES).
+  
+  It has 30 solar panels, requiring a total of 60 glass.
+  
+  Overall, this means its full upgrade (including advanced SMES) requires: [bold]44[/bold] capacitors, [bold]4[/bold] manipulators, [bold]8[/bold] power cells, and [bold]60[/bold] glass.
+
+  # Piloting
+
+  [textlink="Piloting" link="Piloting"/]
+
+  [textlink="Sector Topology" link="SectorTopology"/]
+
+  # Hiring crew
+
+  [textlink="Hiring" link="Hiring"/]
+
+  As a Captain of a Spacefaring vessel, you have the authority to hire, fire, demote, or promote crew members at will.
+
+  # PREFLIGHT CHECKLIST
+
+  [textlink="Preflight Checklist" link="PreflightChecklist"/]
+  
+  For ideal performance, make sure to synchronize your solar array tracking speed to the value found at solar-powered stations at the beginning of each shift.
+  
+</Document>

@@ -1,0 +1,32 @@
+﻿- type: vessel
+  id: Zipper
+  parent: BaseVessel
+  name: ZKW Zipper
+  description: An emergancy life raft for the stranded wayfarer, will get you home and no where else
+  price:  4000
+  category: Micro #inflation, not just for fun
+  group: Scrap
+  shuttlePath: /Maps/_WF/Shuttles/Scrapyard/zipper.yml
+  guidebookPage: ShipyardZipper
+  class:
+  - Scrapyard
+  engine:
+  - Welding
+
+- type: gameMap
+  id: Zipper
+  mapName: 'ZKW Zipper'
+  mapPath: /Maps/_WF/Shuttles/Scrapyard/zipper.yml
+  minPlayers: 0
+  stations:
+    Zipper:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Zipper SOS{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

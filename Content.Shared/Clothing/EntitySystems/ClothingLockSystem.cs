@@ -35,10 +35,23 @@ public sealed class ClothingLockSystem : EntitySystem
         if (args.Args.Equipment == ent.Owner)
             return;
 
+        // WF support Psychic clothing lock
+        TryComp<TransformComponent>(ent.Owner, out var comp);
+        if (comp == null)
+        {
+            return;
+        }
+
+        // If being removed by someone else, and not configured to block others, short circuit
+        if (args.Args.Unequipee != comp.ParentUid && ent.Comp.BlockOthers == false)
+        {
+            return;
+        }
+
         // If LockedSlots is null or empty, lock all clothing
         if (ent.Comp.LockedSlots == null || ent.Comp.LockedSlots.Count == 0)
         {
-            args.Args.Reason = "clothing-lock-prevent-removal";
+            args.Args.Reason = ent.Comp.BlockOthers == false ? "clothing-lock-prevent-removal-self" : "clothing-lock-prevent-removal"; // WF psychic collar lock
             args.Args.Cancel();
             return;
         }
@@ -48,7 +61,7 @@ public sealed class ClothingLockSystem : EntitySystem
         {
             if (ent.Comp.LockedSlots.Contains(slotDef.Name))
             {
-                args.Args.Reason = "clothing-lock-prevent-removal";
+                args.Args.Reason = ent.Comp.BlockOthers == false ? "clothing-lock-prevent-removal-self" : "clothing-lock-prevent-removal"; // WF psychic collar lock
                 args.Args.Cancel();
             }
         }

@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Maintainer Info
+# GitHub: nnelg
+# Discord: nnelg
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Infelix
+  parent: BaseVesselAntag
+  name: RBS Infelix
+  description: A small, solar powered smuggling vessel.
+  price: 38000
+  category: Small
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/infelix.yml
+  guidebookPage: ShipyardInfelix
+  class:
+  - Pirate
+  engine:
+  - Plasma
+  - Solar
+
+- type: gameMap
+  id: Infelix
+  mapName: 'RBS Infelix'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/infelix.yml
+  minPlayers: 0
+  stations:
+    Infelix:
+      stationProto: StandardFrontierAntagVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Felix {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            NFPirate: [ 0, 0 ]

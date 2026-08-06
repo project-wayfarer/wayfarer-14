@@ -12,7 +12,7 @@
     - type: Clothing
       sprite: Floof/Clothing/Neck/collar_black.rsi
     - type: AdvancedCollar
-      maxModules: 3
+      maxModules: 5 # WF 3 > 5
     - type: ContainerContainer
       containers:
         collar_module_container: !type:Container
@@ -243,6 +243,47 @@
         - shoes
         - jumpsuit
         - gloves
+      blockOthers: true # WF 
+# WF Begin
+# Clothing Lock Module - prevents specific clothing slots from removal while worn
+- type: entity
+  parent: BaseAdvCollarModule
+  id: AdvCollarModulePsychicClothingLock
+  name: Collar psychic clothing lock module
+  description: An advanced module that locks specific clothing slots (head, feet, jumpsuit, and gloves), preventing removal by the wearer only.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: radio_mini
+    - type: AdvancedCollarModule
+      componentToAdd: ClothingLock
+      moduleDescription: Locks head, feet, jumpsuit, and gloves
+    # Store the component configuration that will be added to the collar
+    - type: ClothingLock
+      lockedSlots:
+        - head
+        - shoes
+        - jumpsuit
+        - gloves
+      blockOthers: false
+
+# Speech Modifier Module - forces the wearer to speak a certain way
+- type: entity
+  parent: BaseAdvCollarModule
+  id: AdvCollarModuleSpeechModifier
+  name: Collar speech modifier module
+  description: An advanced module that forces the user to speak in certain ways, or not at all.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: harddisk_micro
+    - type: AdvancedCollarModule
+      componentToAdd: CollarSpeechModifier
+      moduleDescription: Modifies the wearer's speech
+    # Store the component configuration that will be added to the collar
+    - type: CollarSpeechModifier
+      selectedType: Off
+# WF end
 
 # Jingling Module - makes jingle sounds when the wearer moves
 - type: entity
