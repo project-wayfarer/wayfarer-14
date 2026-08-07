@@ -3,7 +3,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
-using System.Text.RegularExpressions;
+using System.Text.RegularExpressions; // Wayfarer
 using Content.Client.Chat.Managers;
 using Content.Client.Chat.TypingIndicator;
 using Content.Client.Chat.UI;
@@ -716,7 +716,9 @@ public sealed partial class ChatUIController : UIController
 
     public void UpdateSelectedChannel(ChatBox box)
     {
-        var (prefixChannel, _, radioChannel) = SplitInputContents(Rope.Collapse(box.ChatInput.Input.TextRope).ToLower()); // WF - Multiline chatobox
+        // var (prefixChannel, _, radioChannel) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
+        var (prefixChannel, _, radioChannel) = SplitInputContents(Rope.Collapse(box.ChatInput.Input.TextRope).ToLower()); 
+        // Wayfarer - Multiline chatbox
 
         if (prefixChannel == ChatSelectChannel.None)
             box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null);
@@ -767,13 +769,15 @@ public sealed partial class ChatUIController : UIController
     {
         _typingIndicator?.ClientSubmittedChatText();
 
-        // WF - Multiline chatobox
+        // var text = box.ChatInput.Input.Text;
+        // box.ChatInput.Input.Clear();
+        // Wayfarer - Multiline chatbox
         var text = Rope.Collapse(box.ChatInput.Input.TextRope);
         // Clean up message and prevent massive amounts of newlines
         text = new Regex("\n\n\n*").Replace(text, "\n\n").Trim();
         box.ChatInput.Input.TextRope = new Rope.Leaf("");
         box.ChatInput.Input.SetHeight = 22;
-        // End WF
+        // End Wayfarer
         box.ChatInput.Input.ReleaseKeyboardFocus();
         UpdateSelectedChannel(box);
 
@@ -808,7 +812,9 @@ public sealed partial class ChatUIController : UIController
         if (chatBox == null)
             return;
 
-        var msg = Rope.Collapse(chatBox.ChatInput.Input.TextRope).TrimEnd(); // WF - Multiline chatobox
+        // var msg = chatBox.ChatInput.Input.Text.TrimEnd();
+        var msg = Rope.Collapse(chatBox.ChatInput.Input.TextRope).TrimEnd(); 
+        // Wayfarer - Multiline chatbox
         // Don't send on OOC/LOOC obviously!
 
         // we need to handle selected channel
@@ -836,10 +842,12 @@ public sealed partial class ChatUIController : UIController
             : Loc.GetString(forceSay.ForceSayMessageWrapNoSuffix,
                 ("message", msg));
 
+        // chatBox.ChatInput.Input.SetText(modifiedText);
+        // chatBox.ChatInput.Input.ForceSubmitText();
         // WF - Multiline chatobox
         chatBox.ChatInput.Input.TextRope = new Rope.Leaf(modifiedText);
         chatBox.Submit();
-        // End WF
+        // End Wayfarer
     }
 
     private void OnChatMessage(MsgChatMessage message)

@@ -1,7 +1,7 @@
-using Content.Client._WF.Helpers;
+using Content.Client._WF.Helpers; // Wayfarer
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared._EE.CCVars; // EE - chat stacking
-using Content.Shared.CCVar;
+using Content.Shared.CCVar; // Wayfarer
 using Content.Shared.Chat;
 using Content.Shared.Input;
 using Robust.Client.Audio;
@@ -13,11 +13,11 @@ using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input;
 using Robust.Shared.Player;
-using Robust.Shared.Timing;
+using Robust.Shared.Timing; // Wayfarer
 using Robust.Shared.Utility;
-using System.Linq;
+using System.Linq; // Wayfarer
 using static Robust.Client.UserInterface.Controls.LineEdit;
-using static Robust.Client.UserInterface.Controls.TextEdit;
+using static Robust.Client.UserInterface.Controls.TextEdit; // Wayfarer
 
 namespace Content.Client.UserInterface.Systems.Chat.Widgets;
 
@@ -43,20 +43,24 @@ public partial class ChatBox : UIWidget
     private List<ChatStackData> _chatStackList;
     // End EE - Chat stacking
 
-    // WF - Multiline chatobox
+    // Wayfarer - Multiline chatbox
     private List<Rope.Node> _chatHistory = new();
     private int _historyPosition = 0;
     private const int MaxHistorySize = 100;
     private bool _focused = false;
-    // End WF
+    // End Wayfarer
 
     public ChatBox()
     {
         RobustXamlLoader.Load(this);
         _sawmill = _log.GetSawmill("chat");
+        // ChatInput.Input.OnTextEntered += OnTextEntered; - Wayfarer
         ChatInput.Input.OnKeyBindDown += OnInputKeyBindDown;
         ChatInput.Input.OnTextChanged += OnTextChanged;
-        _cfg.OnCVarValueChanged += OnConfigUpdated; // WF - Multiline chatobox
+        // ChatInput.Input.OnFocusEnter += OnFocusEnter;
+        // ChatInput.Input.OnFocusExit += OnFocusExit;
+        _cfg.OnCVarValueChanged += OnConfigUpdated; 
+        // Wayfarer - Multiline chatbox
         ChatInput.ChannelSelector.OnChannelSelect += OnChannelSelect;
         ChatInput.FilterButton.Popup.OnChannelFilter += OnChannelFilter;
         ChatInput.FilterButton.Popup.OnNewHighlights += OnNewHighlights;
@@ -71,7 +75,7 @@ public partial class ChatBox : UIWidget
         // End EE - Chat stacking
     }
 
-    // WF - Multiline chatobox
+    // Wayfarer - Multiline chatbox
     // Keep the typing indicator synced
     protected override void FrameUpdate(FrameEventArgs args)
     {
@@ -102,7 +106,7 @@ public partial class ChatBox : UIWidget
             SetInputHeight();
         }
     }
-    // End WF
+    // End Wayfarer
 
     // EE - Chat stacking
     private void UpdateChatStack(int value)
@@ -111,7 +115,12 @@ public partial class ChatBox : UIWidget
         Repopulate();
     }
 
+    // private void OnTextEntered(LineEditEventArgs args)
+    // {
+    //     _controller.SendMessage(this, SelectedChannel);
+    // }
     private void OnMessageAdded(ChatMessage msg)
+    // Wayfarer
     {
         _sawmill.Debug($"{msg.Channel}: {msg.Message}");
         if (!ChatInput.FilterButton.Popup.IsActive(msg.Channel))
@@ -246,12 +255,13 @@ public partial class ChatBox : UIWidget
         if (channel != null)
             ChatInput.ChannelSelector.Select(channel.Value);
 
+        // input.IgnoreNext = true; - Wayfarer
         input.GrabKeyboardFocus();
 
-        // WF - Multiline chatobox
+        // Wayfarer - Multiline chatbox
         input.CursorPosition = new CursorPos(input.TextLength, LineBreakBias.Bottom);
         input.SelectionStart = new CursorPos(selectStart.GetOffset(input.TextLength), LineBreakBias.Bottom);
-        // End WF
+        // End Wayfarer
     }
 
     public void CycleChatChannel(bool forward)
@@ -279,10 +289,11 @@ public partial class ChatBox : UIWidget
 
     private void OnInputKeyBindDown(GUIBoundKeyEventArgs args)
     {
-        // WF - Multiline chatobox
+        // Wayfarer - Multiline chatbox
         if (args.Function == EngineKeyFunctions.TextReleaseFocus)
         {
             ChatInput.Input.ReleaseKeyboardFocus();
+            // ChatInput.Input.Clear();
             ChatInput.Input.TextRope = new Rope.Leaf("");
             args.Handle();
             return;
@@ -323,7 +334,7 @@ public partial class ChatBox : UIWidget
             args.Handle();
             return;
         }
-        // End WF
+        // End Wayfarer
 
         if (args.Function == ContentKeyFunctions.CycleChatChannelForward)
         {
@@ -455,14 +466,19 @@ public partial class ChatBox : UIWidget
         _controller.NotifySpecificChatTextChange(SelectedChannel); // DeltaV - Alt Chat Indicators
     }
 
+    // private void OnFocusEnter(LineEditEventArgs args)
     private int GetLineBreaks()
     {
+        // _controller.CurrentChannel = SelectedChannel; // DeltaV - Alt Chat Indicators
+        // _controller.NotifyChatFocus(true);
         return GetLineBreaks(out var _);
 
     }
 
+    // private void OnFocusExit(LineEditEventArgs args)
     private int GetLineBreaks(out int cursorLine)
     {
+        // _controller.NotifyChatFocus(false);
         var font = StylePropertyDefault("font", UserInterfaceManager.ThemeDefaults.DefaultFont);
         var scale = UIScale;
 
@@ -538,7 +554,7 @@ public partial class ChatBox : UIWidget
             return 0;
         }
     }
-    // End WF
+    // End Wayfarer
 
     protected override void Dispose(bool disposing)
     {
@@ -546,6 +562,7 @@ public partial class ChatBox : UIWidget
 
         if (!disposing) return;
         _controller.UnregisterChat(this);
+        // ChatInput.Input.OnTextEntered -= OnTextEntered; - Wayfarer
         ChatInput.Input.OnKeyBindDown -= OnInputKeyBindDown;
         ChatInput.Input.OnTextChanged -= OnTextChanged;
         ChatInput.ChannelSelector.OnChannelSelect -= OnChannelSelect;

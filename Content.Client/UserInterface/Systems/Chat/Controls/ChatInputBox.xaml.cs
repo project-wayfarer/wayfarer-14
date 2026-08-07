@@ -2,7 +2,7 @@ using Content.Client.Stylesheets;
 using Content.Shared.Chat;
 using Content.Shared.Input;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Utility;
+using Robust.Shared.Utility; // Wayfarer
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
@@ -10,7 +10,9 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls;
 public class ChatInputBox : PanelContainer
 {
     public readonly ChannelSelectorButton ChannelSelector;
-    public readonly TextEdit Input; // WF - Multiline chatobox
+    // public readonly HistoryLineEdit Input;
+    public readonly TextEdit Input; 
+    // Wayfarer - Multiline chatbox
     public readonly ChannelFilterButton FilterButton;
     protected readonly BoxContainer Container;
     protected ChatChannel ActiveChannel { get; private set; } = ChatChannel.Local;
@@ -32,7 +34,7 @@ public class ChatInputBox : PanelContainer
             MinWidth = 75
         };
         Container.AddChild(ChannelSelector);
-        // WF - Multiline chatobox
+        // Wayfarer - Multiline chatbox
         Input = new TextEdit 
         {
             Name = "Input",
@@ -42,7 +44,7 @@ public class ChatInputBox : PanelContainer
             StyleClasses = {"chatLineEdit"}
         };
         Input.SetHeight = 22;
-        // WF END
+        // Wayfarer End
         Container.AddChild(Input);
         FilterButton = new ChannelFilterButton
         {
