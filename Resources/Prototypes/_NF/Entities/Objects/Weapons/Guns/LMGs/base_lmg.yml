@@ -42,7 +42,7 @@
 #region manufacturer
 - type: entity
   abstract: true
-  parent: [ BaseBMContraband, NFBaseWeaponFrameLightMachineGun ] # Wayfarer: BaseC3SyndicateContraband<BaseMilitaryContraband
+  parent: [ BaseBMContraband, NFBaseWeaponFrameLightMachineGun ] # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: NFBaseWeaponFrameLightMachineGunGorlex
   components:
   - type: Gun
