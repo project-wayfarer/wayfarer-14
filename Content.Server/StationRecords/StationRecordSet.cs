@@ -34,7 +34,7 @@ public sealed partial class StationRecordSet
     /// Dictionary between a record's type and then each record indexed by id.
     /// </summary>
     [DataField]
-    private Dictionary<Type, Dictionary<uint, object>> _tables = new();
+    private Dictionary<string, Dictionary<uint, object>> _tables = new(); // Wayfarer - Fix Savegrid
 
     /// <summary>
     ///     Gets all records of a specific type stored in the record set.
@@ -43,12 +43,12 @@ public sealed partial class StationRecordSet
     /// <returns>An enumerable object that contains a pair of both a station key, and the record associated with it.</returns>
     public IEnumerable<(uint, T)> GetRecordsOfType<T>()
     {
-        if (!_tables.ContainsKey(typeof(T)))
+        if (!_tables.ContainsKey(typeof(T).Name)) // Wayfarer - Fix Savegrid
         {
             yield break;
         }
 
-        foreach (var (key, entry) in _tables[typeof(T)])
+        foreach (var (key, entry) in _tables[typeof(T).Name]) // Wayfarer - Fix Savegrid
         {
             if (entry is not T cast)
             {
@@ -89,7 +89,7 @@ public sealed partial class StationRecordSet
             return;
 
         Keys.Add(key);
-        _tables.GetOrNew(typeof(T))[key] = entry;
+        _tables.GetOrNew(typeof(T).Name)[key] = entry; // Wayfarer - Fix Savegrid
     }
 
     /// <summary>
@@ -104,7 +104,7 @@ public sealed partial class StationRecordSet
         entry = default;
 
         if (!Keys.Contains(key)
-            || !_tables.TryGetValue(typeof(T), out var table)
+            || !_tables.TryGetValue(typeof(T).Name, out var table) // Wayfarer - Fix Savegrid
             || !table.TryGetValue(key, out var entryObject))
         {
             return false;
@@ -125,7 +125,7 @@ public sealed partial class StationRecordSet
     public bool HasRecordEntry<T>(uint key)
     {
         return Keys.Contains(key)
-               && _tables.TryGetValue(typeof(T), out var table)
+               && _tables.TryGetValue(typeof(T).Name, out var table) // Wayfarer - Fix Savegrid
                && table.ContainsKey(key);
     }
 

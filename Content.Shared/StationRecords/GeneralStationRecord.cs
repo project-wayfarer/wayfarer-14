@@ -6,9 +6,10 @@ namespace Content.Shared.StationRecords;
 /// <summary>
 ///     General station record. Indicates the crewmember's name and job.
 /// </summary>
-[Serializable, NetSerializable]
-public sealed record GeneralStationRecord
+[Serializable, NetSerializable, DataDefinition] // Wayfarer - Fix Savegrid
+public sealed partial record GeneralStationRecord
 {
+    public GeneralStationRecord() { }
     /// <summary>
     ///     Name tied to this station record.
     /// </summary>
