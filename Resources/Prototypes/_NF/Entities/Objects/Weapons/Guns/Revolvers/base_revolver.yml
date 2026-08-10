@@ -9,7 +9,7 @@
     - state: icon
       map: ["enum.GunVisualLayers.Base"]
   - type: Gun
-    projectileSpeed: 22.5
+    projectileSpeed: 100 # Wayfarer 22.5 > 100
     minAngle: 2.3
     maxAngle: 11.5
     angleIncrease: 0.6
