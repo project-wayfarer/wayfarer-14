@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 08/07/2026 11:04:45
+  time: 08/10/2026 13:38:32
   entityCount: 214
 maps: []
 grids:
@@ -506,7 +506,7 @@ entities:
       parent: 1
 - proto: BoxFolderNfsdForms
   entities:
-  - uid: 68
+  - uid: 35
     components:
     - type: Transform
       pos: 7.6939397,-1.5666801
@@ -683,7 +683,7 @@ entities:
       parent: 1
 - proto: ComputerTabletopAdvancedRadar
   entities:
-  - uid: 116
+  - uid: 68
     components:
     - type: Transform
       pos: 7.5,-0.5
@@ -741,7 +741,7 @@ entities:
     - type: Transform
       pos: 4.5,-3.5
       parent: 1
-- proto: GasMixer
+- proto: GasMixerOn
   entities:
   - uid: 76
     components:
@@ -749,9 +749,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,-1.5
       parent: 1
-    - type: GasMixer
-      inletTwoConcentration: 0.76
-      inletOneConcentration: 0.24
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -1085,7 +1082,7 @@ entities:
       parent: 1
 - proto: HyperlinkBookNfsdSop
   entities:
-  - uid: 35
+  - uid: 116
     components:
     - type: Transform
       pos: 7.303314,-1.5510551
