@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 08/10/2026 07:13:07
+  time: 08/10/2026 08:04:20
   entityCount: 1771
 maps: []
 grids:
@@ -6675,8 +6675,8 @@ entities:
       pos: 0.5,-8.5
       parent: 1
     - type: GasMixer
-      inletTwoConcentration: 0.20999998
-      inletOneConcentration: 0.79
+      inletTwoConcentration: 0.79
+      inletOneConcentration: 0.21
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasPassiveVent
