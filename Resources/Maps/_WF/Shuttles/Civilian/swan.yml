@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 08/11/2026 04:56:55
+  time: 08/11/2026 14:33:02
   entityCount: 1772
 maps: []
 grids:
@@ -57,9 +57,6 @@ entities:
     components:
     - type: MetaData
       name: Swan
-    - type: Transform
-      pos: -1.484375,-0.5
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -9451,7 +9448,7 @@ entities:
     - type: Transform
       pos: -2.472507,28.441042
       parent: 1
-- proto: PortableGeneratorDK
+- proto: PortableGeneratorDKJrShuttle
   entities:
   - uid: 1087
     components:
