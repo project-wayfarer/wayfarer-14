@@ -41,7 +41,7 @@
   suffix: Forms, Brown
 
 # Forms
-- type: entity # Creator: Kwentov (Vica) Last updated 2026-07-22
+- type: entity # Search Warrant - Creator: Kwentov (Vica) Last updated 2026-07-22
   id: PaperWrittenNfsdWarrant
   name: search warrant
   parent: Paper
@@ -81,7 +81,7 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
 
-- type: entity # Creator: Starly (Shaw Clifflower) Last updated 2026-07-22
+- type: entity # After Action Report - Creator: Starly (Shaw Clifflower) Last updated 2026-08-14
   id: PaperWrittenNfsdReport
   name: after action report
   parent: Paper
@@ -98,9 +98,10 @@
       [color=#CF7332][bold]Offending Vessel:[/bold][/color] [form]
 
       [color=#ff0000]*[/color][color=#CF7332][bold]Suspects:[/bold][/color]
-      [form]
+
+
       [color=#ff0000]*[/color][color=#CF7332][bold]Charges:[/bold][/color]  [color=#AAAAAA](List any escalations, and which suspect if needed)[/color]
-      [form]
+
 
       [color=#CF7332][bold]Responding Vessel:[/bold][/color] [form]
       [color=#ff0000]*[/color][color=#CF7332][bold]Time of Incident:[/bold][/color] [form]
@@ -108,16 +109,16 @@
 
       [color=#ff0000]*[/color][color=#CF7332][head=3]Evidence Collected[/head][/color]
       [color=#AAAAAA]List all evidence collected below and the guardian in possession.[/color]
-      [form]
+
 
       [color=#ff0000]*[/color][color=#CF7332][head=3]Incident Summary[/head][/color]
-      [form]
+
 
       [color=#CF7332][head=3]Commendations[/head][/color]
-      [form]
+
 
       [color=#CF7332][head=3]Recommendations[/head][/color]
-      [form]
+
 
 
       [color=#AAAAAA] The requested signatories confirm all information on this report is accurate and correct to the best of their knowledge at the time of signing. Any details proven incorrect, falsified, or exaggerated may result in charges and/or this document being void.
@@ -135,7 +136,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Last updated 2026-07-22
+- type: entity # Arrest Warrant - Last updated 2026-07-22
   id: PaperWrittenNfsdArrestWarrant
   name: arrest warrant
   parent: Paper
@@ -180,7 +181,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Creator: Kwentov (Vica) Last updated 2026-07-22
+- type: entity # Arrest Report - Creator: Kwentov (Vica) Last updated 2026-08-14
   id: PaperWrittenNfsdArrestReport
   name: arrest report
   parent: Paper
@@ -198,7 +199,7 @@
       [color=#ff0000]*[/color][color=#CF7332][bold]Time of Arrest:[/bold][/color] [form]
       [color=#ff0000]*[/color][color=#CF7332][bold]Location of Arrest:[/bold][/color] [form]
       [color=#ff0000]*[/color][color=#CF7332][bold]Charges:[/bold][/color]
-      [form]
+
 
       [head=2]Arrested Person(s)[/head]
       [color=#ff0000]*[/color][color=#CF7332][bold]Name:[/bold][/color] [form]
@@ -230,7 +231,7 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
 
-- type: entity # Last updated 2026-07-22
+- type: entity # Duty Log - Last updated 2026-08-14
   id: PaperWrittenNfsdDutyLog
   name: duty log
   categories: [ HideSpawnMenu ]
@@ -246,30 +247,18 @@
       [color=#ff0000]*[/color][color=#CF7332][bold]Position:[/bold][/color] [form]
 
       [color=#AAAAAA](Times in D:HH:MM:SS. Round to nearest 15 minutes.)[/color]
-      [bold]Day One:[/bold]
-      [color=#ff0000]*[/color][color=#CF7332][bold]Sign On Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Break Time:[/bold][/color] [form]
-      [color=#ff0000]*[/color][color=#CF7332][bold]Sign Off Time:[/bold][/color] [form]
-      [color=#ff0000]*[/color][color=#CF7332][bold]Subtotal Time:[/bold][/color] [form]
-
-      [bold]Day Two:[/bold]
-      [color=#CF7332][bold]Sign On Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Break Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Sign Off Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Subtotal Time:[/bold][/color] [form]
-
-      [bold]Day Three:[/bold]
-      [color=#CF7332][bold]Sign On Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Break Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Sign Off Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Subtotal Time:[/bold][/color] [form]
-
-      [color=#ff0000]*[/color][color=#CF7332][bold]Total Hours Earned:[/bold][/color] [form]
-
-      [color=#AAAAAA](For each day, Sign Off Time minus Sign On Time, minus Break Time to get hours for that day's subtotal. Add all subtotals for the total.)[/color]
+      [bold]Hours Worked:[/bold]
+      Start Time | End Time | Hours Accrued | Paid? | Paying Officer
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
 
       [color=#CF7332][bold]Expenditures for the Duty Period:[/bold][/color] [color=#AAAAAA](List all funds paid by you for CGP benefit, eg. paid out contraband turnin if no CGP officer present to take funds from CGP account.)[/color]
-      [form]
+
 
       [color=#AAAAAA] The requested signatories confirm all information on this report is accurate and correct to the best of their knowledge at the time of signing. Any details proven incorrect, falsified, or exaggerated may result in charges and/or this document being void.
       This document is void without the signatures of ticked parties: (NB: Some parties may be the same person, only one signature is needed from the person in that case.)[/color]
@@ -287,7 +276,7 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
 
-- type: entity # Based on form made by Blumbee (Aki Suboshi) Last updated 2026-07-22
+- type: entity # Contraband Turnover - Based on form made by Blumbee (Aki Suboshi) Last updated 2026-07-22
   id: PaperWrittenNfsdContrabandTurnover
   name: contraband turnover receipt
   categories: [ HideSpawnMenu ]
@@ -333,7 +322,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Based on form made by Blumbee (Aki Suboshi) Last updated 2026-08-13
+- type: entity # Contraband Amnesty -  Based on form made by Blumbee (Aki Suboshi) Last updated 2026-08-13
   id: PaperWrittenNfsdContrabandAmnesty
   name: contraband amnesty agreement
   categories: [ HideSpawnMenu ]
@@ -379,7 +368,7 @@
 
       [color=#AAAAAA]This form is void without the signatures of both Parties and a stamp of Concordian Command (Master at Arms, Commodore or Station Representative).[/color]
 
-- type: entity # Based on form made by Blumbee (Aki Suboshi) Last updated 2026-08-13
+- type: entity # C2 Permit - Based on form made by Blumbee (Aki Suboshi) Last updated 2026-08-13
   id: PaperWrittenNfsdContrabandPermit
   name: military class contraband permit
   categories: [ HideSpawnMenu ]
@@ -418,7 +407,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Based on form made by Starly (Shaw Clifflower) Last updated 2026-07-22
+- type: entity # Auth for Bluespace Threats - Based on form made by Starly (Shaw Clifflower) Last updated 2026-07-22
   id: PaperWrittenNfsdAuthorization
   name: authorization for bluespace threats
   parent: Paper
@@ -474,7 +463,7 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
       [color=#AAAAAA]This Form is void without the signatures of both the permitted Captain and the issuing Commanding Guardian, as well as their stamp when one is available at their rank.[/color]
 
-- type: entity # Created by Experiment621 Last updated 2026-08-13
+- type: entity # Training Checklist - Created by Experiment621 Last updated 2026-08-13
   id: PaperWrittenCGPTrainingChecklist
   name: junior peacekeeper training checklist
   parent: Paper
@@ -545,7 +534,7 @@
 
       Get the recruit paid in order to end on a high note: ([check])
 
-- type: entity # Last updated 2026-08-13
+- type: entity # C3 Permit - Last updated 2026-08-13
   id: PaperWrittenCGPBMContrabandPermit
   name: black market contraband permit
   categories: [ HideSpawnMenu ]
