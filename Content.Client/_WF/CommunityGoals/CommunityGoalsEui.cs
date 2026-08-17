@@ -24,8 +24,8 @@ public sealed class CommunityGoalsEui : BaseEui
         _window.OnDeleteGoal += id =>
             SendMessage(new DeleteCommunityGoalMessage(id));
 
-        _window.OnAddRequirement += (goalId, protoId, displayName, amount) =>
-            SendMessage(new AddCommunityGoalRequirementMessage(goalId, protoId, displayName, amount));
+        _window.OnAddRequirement += (goalId, protoId, tagId, isKillOrder, displayName, amount) =>
+            SendMessage(new AddCommunityGoalRequirementMessage(goalId, protoId, tagId, isKillOrder, displayName, amount));
 
         _window.OnRemoveRequirement += requirementId =>
             SendMessage(new RemoveCommunityGoalRequirementMessage(requirementId));

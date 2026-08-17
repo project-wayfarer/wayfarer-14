@@ -28,6 +28,22 @@
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
+# Wayfarer Start
+    charon:
+      announcement: alert-level-charon-announcement
+      sound: /Audio/Misc/bluealert.ogg
+      color: Mediumvioletred
+      emergencyLightColor: Mediumvioletred
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
+    poseidon:
+      announcement: alert-level-poseidon-announcement
+      sound: /Audio/Misc/bluealert.ogg
+      color: '#FFFF39FF'
+      emergencyLightColor: '#FFFF39FF'
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
+# Wayfarer End
     red:
       announcement: alert-level-red-announcement
       sound: /Audio/Misc/redalert.ogg
@@ -35,38 +51,89 @@
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
       shuttleTime: 600 #No reduction in time as we don't have swiping for red alert like in /tg/. Shuttle times are intended to create friction, so having a way to brainlessly bypass that would be dumb.
-    gamma:
-      announcement: alert-level-gamma-announcement
+# Wayfarer Start
+    orange:
+      announcement: alert-level-orange-announcement
+      sound: /Audio/Misc/notice1.ogg
+      color: Orange
+      emergencyLightColor: Orange
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
+    orion:
+      announcement: alert-level-orion-announcement
+      sound: /Audio/Misc/bluealert.ogg
+      color: Darkorange
+      emergencyLightColor: Darkorange
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
+#    gamma:
+#      announcement: alert-level-gamma-announcement
+#      selectable: false
+#      sound:
+#        path: /Audio/Misc/gamma.ogg
+#        params:
+#          volume: -2
+#      disableSelection: true
+#      color: PaleVioletRed
+#      emergencyLightColor: PaleVioletRed
+#      forceEnableEmergencyLights: true
+    typhon:
+      announcement: alert-level-typhon-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/gamma.ogg
+        path: /Audio/Misc/redalert.ogg
         params:
           volume: -2
       disableSelection: true
-      color: PaleVioletRed
-      emergencyLightColor: PaleVioletRed
+      color: Orangered
+      emergencyLightColor: Orangered
       forceEnableEmergencyLights: true
-    delta:
-      announcement: alert-level-delta-announcement
+#    delta:
+#      announcement: alert-level-delta-announcement
+#      selectable: false
+#      sound:
+#        path: /Audio/Misc/delta.ogg
+#        params:
+#          volume: -3
+#      disableSelection: true
+#      color: DarkRed
+#      emergencyLightColor: Orange
+#      forceEnableEmergencyLights: true
+#      shuttleTime: 1200
+    abaddon:
+      announcement: alert-level-abaddon-announcement
       selectable: false
       sound:
         path: /Audio/Misc/delta.ogg
         params:
           volume: -3
       disableSelection: true
-      color: DarkRed
-      emergencyLightColor: Orange
+      color: Tomato
+      emergencyLightColor: Tomato
       forceEnableEmergencyLights: true
       shuttleTime: 1200
-    epsilon:
-      announcement: alert-level-epsilon-announcement
+#    epsilon:
+#      announcement: alert-level-epsilon-announcement
+#      selectable: false
+#      sound:
+#        path: /Audio/Misc/epsilon.ogg
+#        params:
+#          volume: -2
+#      disableSelection: true
+#      color: DarkViolet
+#      emergencyLightColor: DarkViolet
+#      forceEnableEmergencyLights: true
+#      shuttleTime: 1200
+    gideon:
+      announcement: alert-level-gideon-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/epsilon.ogg
+        path: /Audio/Misc/delta.ogg
         params:
           volume: -2
       disableSelection: true
-      color: DarkViolet
-      emergencyLightColor: DarkViolet
+      color: Darkred
+      emergencyLightColor: Darkred
       forceEnableEmergencyLights: true
       shuttleTime: 1200
+# Wayfarer End

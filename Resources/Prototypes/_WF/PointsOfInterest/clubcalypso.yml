@@ -1,0 +1,31 @@
+# Author Info: Lewed POI for whoever wanted a safe space for this.
+# GitHub: Rellu225
+# Discord: zuma0050
+# additional contributors: Chews-The-Wires, Possumongus, Goodfaun
+
+- type: pointOfInterest
+  id: clubcalypso
+  parent: BasePOI
+  name: "Club Calypso"
+  minimumDistance: 3500
+  maximumDistance: 4000
+  gridPath: /Maps/_WF/POI/clubcalypso.yml
+  addComponents:
+  - type: StationTransit
+    routes:
+      MinorPointsOfInterest: 20
+
+- type: gameMap
+  id: clubcalypso
+  mapName: "Club Calypso"
+  mapPath: /Maps/_WF/POI/clubcalypso.yml
+  minPlayers: 0
+  stations:
+    clubcalypso:
+      stationProto: StandardFrontierOutpost
+      gridComponents:
+      - type: VesselInfo # WF
+        description: "Is nude or nothing"
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Club Calypso"

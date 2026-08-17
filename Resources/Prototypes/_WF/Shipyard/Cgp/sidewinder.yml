@@ -1,0 +1,41 @@
+# Author Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Maintainer Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+- type: vessel
+  id: sidewinder
+  parent: BaseVessel
+  name: SI Sidewinder
+  description: A medium sized attack craft comes with basic brig, crew quarters, two friendship cannons, and a small armory.
+  price: 78000
+  category: Medium
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/sidewinder.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  - Fighter
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: sidewinder
+  mapName: 'Sidewinder'
+  mapPath: /Maps/_WF/Shuttles/Cgp/sidewinder.yml
+  minPlayers: 0
+  stations:
+    sidewinder:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Sidewinder {1}'
+        nameGenerator:
+          !type:CGPNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: {}

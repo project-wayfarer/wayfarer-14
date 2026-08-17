@@ -272,7 +272,14 @@ public sealed class BlipCartridgeSystem : EntitySystem
         // a few settings: Toggle the blip, change the preset, change the color, change the shape, change the scale
         // lets fucking do it
         var blipData = ent.Comp;
-        var radBlip = EnsureComp<RadarBlipComponent>(ent.Owner);
+        // Wayfarer: seed a newly-created blip's Enabled from the cartridge's own default instead of
+        // RadarBlipComponent's hardcoded true, so PDAs like NFAdminPDA that set enabled: false stay off
+        // the first time their verbs are checked.
+        if (!TryComp<RadarBlipComponent>(ent.Owner, out var radBlip))
+        {
+            radBlip = EnsureComp<RadarBlipComponent>(ent.Owner);
+            radBlip.Enabled = blipData.Enabled; // Wayfarer
+        }
         // the toggle blip verb
         var toggleBlipVerb = new Verb()
         {

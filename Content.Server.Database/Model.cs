@@ -1810,12 +1810,28 @@ namespace Content.Server.Database
 
         /// <summary>
         /// The entity prototype ID to track (e.g. "SpaceCash", "Ingot_Gold", "Plasteel").
+        /// Null when <see cref="TagId"/> is set instead.
         /// </summary>
-        [Required, Column("entity_prototype_id")]
-        public string EntityPrototypeId { get; set; } = null!;
+        [Column("entity_prototype_id")]
+        public string? EntityPrototypeId { get; set; }
 
         /// <summary>
-        /// Optional human-readable display name override. Falls back to prototype name if null.
+        /// Tag prototype ID to match (e.g. "Trash"). When set, any item entity that has this
+        /// tag satisfies the requirement regardless of its prototype.
+        /// Mutually exclusive with <see cref="EntityPrototypeId"/>.
+        /// </summary>
+        [Column("tag_id")]
+        public string? TagId { get; set; }
+
+        /// <summary>
+        /// When true, this requirement is satisfied by killing entities of <see cref="EntityPrototypeId"/>
+        /// rather than by delivering them to a community goal console/pallet.
+        /// </summary>
+        [Required, Column("is_kill_order")]
+        public bool IsKillOrder { get; set; }
+
+        /// <summary>
+        /// Optional human-readable display name override. Falls back to prototype/tag name if null.
         /// </summary>
         [Column("display_name")]
         public string? DisplayName { get; set; }
