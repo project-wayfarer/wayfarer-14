@@ -443,6 +443,8 @@
   - type: Construction
     graph: Tortilla
     node: flat
+    # Wayfayer14
+    # add nutriment reagent, set to 5.
     type: SolutionContainerManager
     solutions:
       food:
@@ -450,7 +452,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
-
+    # End Wayfayer14
 - type: entity
   parent: FoodBakingBase
   id: FoodDoughCotton
