@@ -443,6 +443,13 @@
   - type: Construction
     graph: Tortilla
     node: flat
+    type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
 
 - type: entity
   parent: FoodBakingBase
