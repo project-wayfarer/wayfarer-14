@@ -443,6 +443,13 @@
   - type: Construction
     graph: Tortilla
     node: flat
+  - type: SolutionContainerManager # WF14 added nutri and set to 5 to fix nutri stats per issue #1419.
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
 
 - type: entity
   parent: FoodBakingBase
