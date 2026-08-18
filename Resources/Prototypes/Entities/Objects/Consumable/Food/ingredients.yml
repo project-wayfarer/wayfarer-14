@@ -443,6 +443,13 @@
   - type: Construction
     graph: Tortilla
     node: flat
+  - type: SolutionContainerManager # WF14, nutri was 15 from parent, gave reagent and set to 5.
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5 # WF14 end.
 
 - type: entity
   parent: FoodBakingBase
