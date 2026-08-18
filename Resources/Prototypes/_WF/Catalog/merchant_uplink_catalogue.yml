@@ -50,6 +50,23 @@
       tags:
       - WFMerchantUplink
 
+#Medical Techfab
+- type: listing
+  id: UplinkMerchantTechfabMedCircuit
+  name: uplink-merchant-techfabMedCircuit-name
+  description: uplink-merchant-techfabMedCircuit-desc
+  productEntity: MedicalTechFabCircuitboard
+  icon: { sprite: Structures/Machines/techfab.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 180
+  categories:
+  - UplinkMerchantsMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
 # Engineering  --
 
 # RTG flatpack
@@ -112,6 +129,23 @@
   icon: { sprite: Clothing/Shoes/Boots/magboots-advanced.rsi, state: icon }
   cost:
     WayfarerMerchantToken: 50
+  categories:
+  - UplinkMerchantsEngineering
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#Engineering Techfab
+- type: listing
+  id: UplinkMerchantTechfabEngCircuit
+  name: uplink-merchant-techfabEngCircuit-name
+  description: uplink-merchant-techfabEngCircuit-desc
+  productEntity: EngineeringTechFabCircuitboard
+  icon: { sprite: Structures/Machines/techfab.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 100
   categories:
   - UplinkMerchantsEngineering
   conditions:
@@ -208,6 +242,71 @@
       tags:
       - WFMerchantUplink
 
+#Cargo Techfabs
+- type: listing
+  id: UplinkMerchantTechfabCargoCircuit
+  name: uplink-merchant-techfabCargoCircuit-name
+  description: uplink-merchant-techfabCargoCircuit-desc
+  productEntity: CargoTechFabCircuitboardNF
+  icon: { sprite: Structures/Machines/techfab.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 100
+  categories:
+  - UplinkMerchantMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+- type: listing
+  id: UplinkMerchantTechfabSalvCircuit
+  name: uplink-merchant-techfabSalvCircuit-name
+  description: uplink-merchant-techfabSalvCircuit-desc
+  productEntity: SalvageTechFabCircuitboardNF
+  icon: { sprite: Structures/Machines/techfab.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 101
+  categories:
+  - UplinkMerchantMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+- type: listing
+  id: UplinkMerchantTechfabMercCircuit
+  name: uplink-merchant-techfabMercCircuit-name
+  description: uplink-merchant-techfabMercCircuit-desc
+  productEntity: MercenaryTechFabCircuitboardNF
+  icon: { sprite: Structures/Machines/techfab.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 150
+  categories:
+  - UplinkMerchantMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+- type: listing
+  id: UplinkMerchantTechfabAmmoCircuit
+  name: uplink-merchant-techfabAmmoCircuit-name
+  description: uplink-merchant-techfabAmmoCircuit-desc
+  productEntity:  AmmoTechFabCircuitboard
+  icon: { sprite: Structures/Machines/techfab.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 50
+  categories:
+  - UplinkMerchantMisc
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
 #Outlaw --
 
 - type: listing
@@ -252,7 +351,7 @@
   id: UplinkMerchantCoatMerchant
   name:  uplink-merchant-coatmerchant-name
   description: uplink-merchant-coatmerchant-desc
-  productEntity: ClothingHeadHatMerchantBeret
+  productEntity: ClothingOuterArmoredWinterMerchant
   icon: { sprite: _WF/Clothing/OuterClothing/Misc/merchant_armored_coat.rsi, state: icon }
   cost:
     WayfarerMerchantToken: 500

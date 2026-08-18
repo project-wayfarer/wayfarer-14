@@ -47,3 +47,16 @@ uplink-merchant-coatmerchant-name = Merchant Armored Coat
 uplink-merchant-coatmerchant-desc = Those that endure the waves of the stars, deserve a warm thanks.
 uplink-merchant-cloak-name = Merchant's Cloak
 uplink-merchant-cloak-desc = All held the merchant and infinite as unrelated. None could foresee that the history of the two would become one.
+
+uplink-merchant-techfabMedCircuit-name = Medical Techfab Circuit
+uplink-merchant-techfabMedCircuit-desc = A circuit for a medical techfab
+uplink-merchant-techfabEngCircuit-name = Engineering Techfab Circuit
+uplink-merchant-techfabEngCircuit-desc = A circuit for an engineering techfab
+uplink-merchant-techfabCargoCircuit-name = Cargo Techfab Circuit
+uplink-merchant-techfabCargoCircuit-desc = A circuit for a cargo techfab
+uplink-merchant-techfabSalvCircuit-name = Salvage Techfab Circuit
+uplink-merchant-techfabSalvCircuit-desc = A circuit for a salvage techfab
+uplink-merchant-techfabMercCircuit-name = Mercenary Techfab Circuit
+uplink-merchant-techfabMercCircuit-desc = A circuit for a mercary techfab
+uplink-merchant-techfabAmmoCircuit-name = Ammo Techfab Circuit
+uplink-merchant-techfabAmmoCircuit-desc = A circuit for an ammo techfab

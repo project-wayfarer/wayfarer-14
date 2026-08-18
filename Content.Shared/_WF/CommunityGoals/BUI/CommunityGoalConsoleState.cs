@@ -43,10 +43,17 @@ public sealed class CommunityGoalConsoleState : BoundUserInterfaceState
     /// </summary>
     public List<StagedItemData> PalletItems;
 
-    public CommunityGoalConsoleState(List<CommunityGoalData> activeGoals, List<StagedItemData> stagedItems, List<StagedItemData> palletItems)
+    /// <summary>
+    /// Requirement keys (proto ID or "tag:X") that are currently satisfied by at least one
+    /// staged or pallet item. Used by the UI to enable per-requirement contribute buttons.
+    /// </summary>
+    public List<string> StagedRequirementKeys;
+
+    public CommunityGoalConsoleState(List<CommunityGoalData> activeGoals, List<StagedItemData> stagedItems, List<StagedItemData> palletItems, List<string> stagedRequirementKeys)
     {
         ActiveGoals = activeGoals;
         StagedItems = stagedItems;
         PalletItems = palletItems;
+        StagedRequirementKeys = stagedRequirementKeys;
     }
 }

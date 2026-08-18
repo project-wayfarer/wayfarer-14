@@ -520,9 +520,10 @@ namespace Content.Server.Database
         Task DeleteCommunityGoal(int goalId, CancellationToken cancel = default);
 
         Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId,
-            string entityPrototypeId,
-            string? displayName,
+            string? entityPrototypeId,
+            string? tagId, string? displayName,
             long requiredAmount,
+            bool isKillOrder = false,
             CancellationToken cancel = default);
 
         Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default);
@@ -1586,14 +1587,15 @@ namespace Content.Server.Database
             }
 
             public Task<WayfarerCommunityGoalRequirement> AddCommunityGoalRequirement(int goalId,
-                string entityPrototypeId,
-                string? displayName,
+                string? entityPrototypeId,
+                string? tagId, string? displayName,
                 long requiredAmount,
+                bool isKillOrder = false,
                 CancellationToken cancel = default)
             {
                 DbWriteOpsMetric.Inc();
                 return RunDbCommand(() =>
-                    _db.AddCommunityGoalRequirement(goalId, entityPrototypeId, displayName, requiredAmount, cancel));
+                    _db.AddCommunityGoalRequirement(goalId, entityPrototypeId, tagId, displayName, requiredAmount, isKillOrder, cancel));
             }
 
             public Task RemoveCommunityGoalRequirement(int requirementId, CancellationToken cancel = default)

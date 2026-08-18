@@ -59,6 +59,8 @@ public sealed class CommunityGoalsEui : BaseEui
         {
             Id = r.Id,
             EntityPrototypeId = r.EntityPrototypeId,
+            TagId = r.TagId,
+            IsKillOrder = r.IsKillOrder,
             DisplayName = r.DisplayName,
             RequiredAmount = r.RequiredAmount,
             CurrentAmount = r.CurrentAmount,
@@ -116,8 +118,9 @@ public sealed class CommunityGoalsEui : BaseEui
                 break;
 
             case AddCommunityGoalRequirementMessage addReq:
-                await _db.AddCommunityGoalRequirement(addReq.GoalId, addReq.EntityPrototypeId, addReq.DisplayName, addReq.RequiredAmount);
-                _sawmill.Info($"Admin {Player.Name} added requirement '{addReq.EntityPrototypeId}' to goal #{addReq.GoalId}");
+                await _db.AddCommunityGoalRequirement(addReq.GoalId, addReq.EntityPrototypeId, addReq.TagId, addReq.DisplayName, addReq.RequiredAmount, addReq.IsKillOrder);
+                var addReqLabel = addReq.IsKillOrder ? $"kill:{addReq.EntityPrototypeId}" : addReq.EntityPrototypeId ?? ("tag:" + addReq.TagId);
+                _sawmill.Info($"Admin {Player.Name} added requirement '{addReqLabel}' to goal #{addReq.GoalId}");
                 break;
 
             case RemoveCommunityGoalRequirementMessage removeReq:

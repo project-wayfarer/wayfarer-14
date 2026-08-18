@@ -26,4 +26,20 @@ public sealed partial class ShuttleCrewStatusComponent : Component
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan NextCheck = TimeSpan.Zero;
+
+    /// <summary>
+    /// The time the grid was first observed to have no active (non-ghost) players aboard,
+    /// with no active players aboard since. Null while the grid is occupied.
+    /// Used to require a sustained empty period before marking the shuttle inactive.
+    /// </summary>
+    [DataField]
+    public TimeSpan? EmptySince;
+
+    /// <summary>
+    /// The time the grid was first observed to have an active (non-ghost) player aboard,
+    /// with an active player aboard continuously since. Null while the grid is empty.
+    /// Used to require a sustained occupied period before marking the shuttle active.
+    /// </summary>
+    [DataField]
+    public TimeSpan? OccupiedSince;
 }

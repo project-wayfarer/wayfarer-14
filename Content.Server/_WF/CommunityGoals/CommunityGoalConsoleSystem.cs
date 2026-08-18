@@ -44,6 +44,10 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
         _palletScanTimer = PalletScanInterval;
 
         // Periodically refresh open console UIs so pallet item changes appear live.
+        // This is also what propagates CommunityGoalsUpdatedEvent (contributions, kills,
+        // admin edits, round start) to consoles other than the one that caused the change —
+        // deliberately debounced to this interval instead of refreshing immediately per event,
+        // since kill-order contributions can fire in bursts (e.g. an AOE killing many mobs at once).
         var query = EntityQueryEnumerator<CommunityGoalConsoleComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -64,26 +68,11 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
         SubscribeLocalEvent<CommunityGoalConsoleComponent, CommunityGoalCommitMessage>(OnCommit);
         SubscribeLocalEvent<CommunityGoalConsoleComponent, CommunityGoalClearStagingMessage>(OnClearStaging);
         SubscribeLocalEvent<CommunityGoalConsoleComponent, CommunityGoalContributeToRequirementMessage>(OnContributeToRequirement);
-        SubscribeLocalEvent<CommunityGoalsUpdatedEvent>(OnGoalsUpdated);
     }
 
     private void OnInit(EntityUid uid, CommunityGoalConsoleComponent comp, ComponentInit args)
     {
         _containers.EnsureContainer<Container>(uid, CommunityGoalConsoleComponent.StagingContainerId);
-    }
-
-    /// <summary>
-    /// Whenever the active goals list changes (contribution, admin edit, round start),
-    /// push fresh state to every community goal console that has open UIs.
-    /// </summary>
-    private void OnGoalsUpdated(CommunityGoalsUpdatedEvent ev)
-    {
-        var query = EntityQueryEnumerator<CommunityGoalConsoleComponent>();
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (_uiSystem.IsUiOpen(uid, CommunityGoalConsoleUiKey.Key))
-                UpdateUI(uid, comp);
-        }
     }
 
     private void OnUIOpened(EntityUid uid, CommunityGoalConsoleComponent comp, BoundUIOpenedEvent args)
@@ -119,11 +108,9 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
             return;
         }
 
-        // Match by exact proto OR shared stack type (e.g. SheetSteel10 matches a SheetSteel requirement)
-        var itemStackType = TryComp<StackComponent>(item, out var sc) ? sc.StackTypeId : null;
+        // Match by prototype, stack type, or tag
         var matched = _goals.ActiveGoals
-            .Any(g => g.Requirements.Any(r =>
-                _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId)));
+            .Any(g => g.Requirements.Any(r => _goals.EntityMatchesRequirement(item, r)));
 
         if (!matched)
         {
@@ -175,39 +162,10 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
             return;
         }
 
-        // Aggregate contributions from both staged items and pallet items,
-        // normalizing each item's proto to the matching requirement's proto.
-        // e.g. SheetSteel10 → records as SheetSteel (whatever the requirement is defined as).
-        var contributions = new Dictionary<string, long>();
-        var names = new Dictionary<string, string>();
-
         var allItems = container.ContainedEntities.ToList();
         allItems.AddRange(palletItems);
 
-        foreach (var ent in allItems)
-        {
-            var protoId = MetaData(ent).EntityPrototype?.ID;
-            if (protoId == null)
-                continue;
-
-            long amount = GetItemAmount(ent);
-            var itemStackType = TryComp<StackComponent>(ent, out var stackComp) ? stackComp.StackTypeId : null;
-
-            // Find the requirement proto this item maps to (for canonical recording).
-            var reqProtoId = _goals.ActiveGoals
-                .SelectMany(g => g.Requirements)
-                .FirstOrDefault(r => _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId))
-                ?.EntityPrototypeId ?? protoId;
-
-            if (contributions.TryGetValue(reqProtoId, out var existing))
-                contributions[reqProtoId] = existing + amount;
-            else
-                contributions[reqProtoId] = amount;
-
-            names[reqProtoId] = Name(ent);
-        }
-
-        // Record each unique prototype contribution in the DB first, then delete.
+        // Record each item's contribution in the DB first, then delete.
         // This order ensures items are not lost if the DB write fails.
         TryComp<ActorComponent>(player, out var actorComp);
         var playerUserId = actorComp?.PlayerSession.UserId;
@@ -216,9 +174,11 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
         var totalUpdated = 0;
         try
         {
-            foreach (var (protoId, amount) in contributions)
+            foreach (var ent in allItems)
             {
-                var updated = await _goals.RecordContribution(protoId, amount, playerUserId, characterName);
+                var protoId = MetaData(ent).EntityPrototype?.ID ?? "unknown";
+                long amount = GetItemAmount(ent);
+                var updated = await _goals.RecordContributionByEntity(ent, amount, playerUserId, characterName);
                 totalUpdated += updated;
 
                 if (updated > 0)
@@ -245,7 +205,7 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
 
         _audio.PlayPvs(comp.CommitSound, uid);
         _popup.PopupEntity(
-            Loc.GetString("community-goal-console-committed", ("types", contributions.Count)),
+            Loc.GetString("community-goal-console-committed", ("types", allItems.Count)),
             uid, player);
 
         UpdateUI(uid, comp);
@@ -288,16 +248,11 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
         var palletItems = GetPalletItems(uid);
         var toConsume = new List<EntityUid>();
         long totalAmount = 0;
-        var itemName = targetReq.DisplayName ?? targetReq.EntityPrototypeId;
+        var itemName = targetReq.DisplayName ?? targetReq.EntityPrototypeId ?? targetReq.TagId ?? "items";
 
         foreach (var ent in container.ContainedEntities.Concat(palletItems))
         {
-            var protoId = MetaData(ent).EntityPrototype?.ID;
-            if (protoId == null)
-                continue;
-
-            var itemStackType = TryComp<StackComponent>(ent, out var sc) ? sc.StackTypeId : null;
-            if (!_goals.MatchesRequirement(protoId, itemStackType, targetReq.EntityPrototypeId))
+            if (!_goals.EntityMatchesRequirement(ent, targetReq))
                 continue;
 
             long amount = GetItemAmount(ent);
@@ -319,7 +274,17 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
 
         try
         {
-            await _goals.RecordContributionToRequirement(targetReq.Id, totalAmount, playerUserId, characterName);
+            foreach (var ent in toConsume)
+            {
+                var protoId = MetaData(ent).EntityPrototype?.ID ?? "unknown";
+                long amount = GetItemAmount(ent);
+                var updated = await _goals.RecordContributionByEntity(ent, amount, playerUserId, characterName);
+                if (updated > 0)
+                {
+                    _adminLog.Add(LogType.Action, LogImpact.Low,
+                        $"{ToPrettyString(player)} contributed {amount}x {protoId} to {updated} community goal requirement(s) via targeted contribute.");
+                }
+            }
         }
         catch (Exception ex)
         {
@@ -376,10 +341,12 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
     private void UpdateUI(EntityUid uid, CommunityGoalConsoleComponent comp)
     {
         var staged = new List<StagedItemData>();
+        var stagedReqKeys = new HashSet<string>();
 
         if (_containers.TryGetContainer(uid, CommunityGoalConsoleComponent.StagingContainerId, out var container))
         {
-            // Group staged items by their matched requirement proto ID for consistent display.
+            // Group by proto ID for display (one row per unique item type).
+            // Separately track which requirement keys are satisfied (for isStaged checks).
             var groups = new Dictionary<string, (long amount, string name)>();
 
             foreach (var ent in container.ContainedEntities)
@@ -389,23 +356,28 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
                     continue;
 
                 long amount = GetItemAmount(ent);
-                var itemStackType = TryComp<StackComponent>(ent, out var stackComp) ? stackComp.StackTypeId : null;
                 var display = Name(ent);
 
-                // Normalize to requirement proto so variants (SheetSteel10 etc.) merge correctly.
-                var groupKey = _goals.ActiveGoals
-                    .SelectMany(g => g.Requirements)
-                    .FirstOrDefault(r => _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId))
-                    ?.EntityPrototypeId ?? protoId;
-
-                if (groups.TryGetValue(groupKey, out var existing))
-                    groups[groupKey] = (existing.amount + amount, display);
+                // Display: one row per proto ID
+                if (groups.TryGetValue(protoId, out var existing))
+                    groups[protoId] = (existing.amount + amount, display);
                 else
-                    groups[groupKey] = (amount, display);
+                    groups[protoId] = (amount, display);
+
+                // Requirement keys: track all requirements this item satisfies
+                foreach (var req in _goals.ActiveGoals.SelectMany(g => g.Requirements))
+                {
+                    if (!_goals.EntityMatchesRequirement(ent, req))
+                        continue;
+                    var key = req.EntityPrototypeId
+                        ?? (req.TagId != null ? $"tag:{req.TagId}" : null)
+                        ?? protoId;
+                    stagedReqKeys.Add(key);
+                }
             }
 
-            foreach (var (protoId, (amount, display)) in groups)
-                staged.Add(new StagedItemData(protoId, display, amount));
+            foreach (var (key, (amount, display)) in groups)
+                staged.Add(new StagedItemData(key, display, amount));
         }
 
         // Collect items currently sitting on nearby donation pallets.
@@ -419,24 +391,28 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
                 continue;
 
             long amount = GetItemAmount(ent);
-            var itemStackType = TryComp<StackComponent>(ent, out var stackComp2) ? stackComp2.StackTypeId : null;
             var display = Name(ent);
 
-            var groupKey = _goals.ActiveGoals
-                .SelectMany(g => g.Requirements)
-                .FirstOrDefault(r => _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId))
-                ?.EntityPrototypeId ?? protoId;
-
-            if (palletGroups.TryGetValue(groupKey, out var existingPallet))
-                palletGroups[groupKey] = (existingPallet.amount + amount, display);
+            if (palletGroups.TryGetValue(protoId, out var existing))
+                palletGroups[protoId] = (existing.amount + amount, display);
             else
-                palletGroups[groupKey] = (amount, display);
+                palletGroups[protoId] = (amount, display);
+
+            foreach (var req in _goals.ActiveGoals.SelectMany(g => g.Requirements))
+            {
+                if (!_goals.EntityMatchesRequirement(ent, req))
+                    continue;
+                var key = req.EntityPrototypeId
+                    ?? (req.TagId != null ? $"tag:{req.TagId}" : null)
+                    ?? protoId;
+                stagedReqKeys.Add(key);
+            }
         }
 
-        foreach (var (protoId, (amount, display)) in palletGroups)
-            palletStaged.Add(new StagedItemData(protoId, display, amount));
+        foreach (var (key, (amount, display)) in palletGroups)
+            palletStaged.Add(new StagedItemData(key, display, amount));
 
-        var state = new CommunityGoalConsoleState(_goals.ActiveGoals.ToList(), staged, palletStaged);
+        var state = new CommunityGoalConsoleState(_goals.ActiveGoals.ToList(), staged, palletStaged, stagedReqKeys.ToList());
         _uiSystem.SetUiState(uid, CommunityGoalConsoleUiKey.Key, state);
     }
 
@@ -476,9 +452,8 @@ public sealed class CommunityGoalConsoleSystem : EntitySystem
                 if (protoId == null)
                     continue;
 
-                var itemStackType = TryComp<StackComponent>(ent, out var sc) ? sc.StackTypeId : null;
                 var matches = _goals.ActiveGoals.Any(g =>
-                    g.Requirements.Any(r => _goals.MatchesRequirement(protoId, itemStackType, r.EntityPrototypeId)));
+                    g.Requirements.Any(r => _goals.EntityMatchesRequirement(ent, r)));
 
                 if (matches)
                     seen.Add(ent);
