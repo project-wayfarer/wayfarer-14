@@ -10,18 +10,18 @@
   components:
   - type: StorageFill
     contents:
-    - id: PaperWrittenNfsdWarrant
     - id: PaperWrittenNfsdReport
-    - id: PaperWrittenNfsdArrestWarrant
     - id: PaperWrittenNfsdArrestReport
-    - id: PaperWrittenNfsdDutyLog
+    - id: PaperWrittenNfsdArrestWarrant
     - id: PaperWrittenNfsdAuthorization
+    - id: PaperWrittenCGPBMContrabandPermit
     - id: PaperWrittenNfsdContrabandAmnesty
     - id: PaperWrittenNfsdContrabandTurnover
-    - id: PaperWrittenNfsdContrabandPermit
-    - id: PaperWrittenCGPBMContrabandPermit
-    - id: PaperWrittenCGPTrainingChecklist
+    - id: PaperWrittenNfsdDutyLog
     - id: PaperWrittenCGPEContrabandPermit
+    - id: PaperWrittenCGPTrainingChecklist
+    - id: PaperWrittenNfsdContrabandPermit
+    - id: PaperWrittenNfsdWarrant
     - id: Paper
       prob: 0.5
     - id: Paper
@@ -431,6 +431,8 @@
       [color=#ff0000]*[/color][bold]Shift Time:[/bold] [form]
       [bold]Ship Crew:[/bold]
       [form]
+      [form]
+      [form]
 
       [head=3][bold]Issuing Concordian Authority[/bold][/head]
       [color=#ff0000]*[/color][color=#cf7332][bold]Authorising Guardian Name:[/bold][/color] [form]
@@ -596,18 +598,17 @@
       [color=#AAAAAA]Suggested fee for issue: 30,000.[/color]
 
       [color=#ff0000]*[/color][bold]Permit Holder:[/bold] [form]
-      [color=#ff0000]*[/color][bold]Item Name:[/bold] [form]
-      [color=#ff0000]*[/color][bold]Item Serial #:[/bold] [form]
-      [color=#cf7332](CGP must verify Serial # before approval.)[/color]
-      [color=#AAAAAA](If you are having trouble coming up with a serial for the labeller, the suggested format is: First three letters of the permit's name, First three of the Issuer's name, round time {Day Hour Minute Seconds}.
-
-      Example: "ECL-VAS-2143252")[/color]
+      [color=#ff0000]*[/color][bold]Vessel:[/bold] [form]
+      [color=#ff0000]*[/color][bold]Crew:[/bold]
+      [form]
+      [form]
+      [form]
 
       [color=#ff0000]*[/color][color=#CF7332][bold]Shift Time:[/bold][/color] [form]
 
-      This Permit allows the Holder, as listed above, to [bold]possess and use a single class 3E contraband item[/bold]. This Permit [bold]CANNOT be issued alongside a Black Market (C3) Contraband Permit.[/bold] The Holder agrees to not flaunt, wear, wield, or brandish this item in public areas such as Dusk Station. The serialized item is the responsibility of the Holder, and if it is found in the possesion of another, or used during any crime, CGP may press charges against the Holder.
+      This Permit allows the Holder and crew, as listed above, to [bold]possess and use class 3E contraband items[/bold]. This Permit [bold]CANNOT be issued alongside a Black Market (C3) Contraband Permit.[/bold] The Holder agrees to not flaunt, wear, wield, or brandish esoteric items in public areas such as Dusk Station. Esoteric items are the responsibility of the Holder.
 
-      Additionally, all Esoteric items, even used for research purposes, come with risks. By using them under the permit, Concordia is not liable to any self-inflicted harms caused by Esoteric items, and the Holder will be held fully liable and chargeable for any laws broken by this serialised item in any hands, especially harm to others.
+      Additionally, all Esoteric items, even used for research purposes, come with risks. By using them under the permit, Concordia is not liable to any self-inflicted harms caused by Esoteric items, and the Holder may be held fully liable and chargeable for any laws broken by esoteric items transferred to others, especially harm to others.
 
       Non-compliance with a Contraband Amnesty agreement or Bluespace Threats permit voids this Permit.
 
