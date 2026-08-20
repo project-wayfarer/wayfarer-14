@@ -11,15 +11,25 @@ param(
 $scriptDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 . $(join-path $scriptDir contribs_shared.ps1)
 
-$engine = & "$PSScriptRoot\dump_commits_since.ps1" -repo space-wizards/RobustToolbox -since $since -until $until
-$content = & "$PSScriptRoot\dump_commits_since.ps1" -repo space-wizards/space-station-14 -since $since -until $until
+# Wayfarer: Use repo list instead
+$repos = @(
+    "space-wizards/RobustToolbox"
+    "space-wizards/space-station-14"
+    "new-frontiers-14/frontier-station-14"
+    "project-wayfarer/wayfarer-14"
+)
 
-$contribs = ($content + $engine) `
+$allCommits = $repos | ForEach-Object {
+    & "$PSScriptRoot\dump_commits_since.ps1" -repo $_ -since $since -until $until
+}
+
+$contribs = ($allCommits) `
     | Select-Object -ExpandProperty author `
     | Select-Object -ExpandProperty login -Unique `
     | Where-Object { -not $ignore[$_] }`
     | ForEach-Object { if($replacements[$_] -eq $null){ $_ } else { $replacements[$_] }} `
     | Sort-Object `
+# End Wayfarer
 
 $contribs = $contribs -join ", "
 Write-Host $contribs

@@ -5,12 +5,12 @@ body:
     attributes:
       value: |
         Thank you for taking the time to fill out an issue. This template is intended for any issues related to mapping.
-        For feedback or help running Frontier Station, please join our [Discord](https://discord.gg/rKNHDAGPvd).
+        For feedback or help running Wayfarer 14, please join our [Discord](https://discord.gg/QpVfma2eAp).
   - type: input
     attributes:
       label: What version did the issue occur in?
       description: You can find the version by opening the changelog in-game and looking at the bottom right corner of the changelog window.
-      placeholder: Frontier/aa1337b
+      placeholder: wayfarer14/db344d2
     validations:
       required: false
   - type: input
