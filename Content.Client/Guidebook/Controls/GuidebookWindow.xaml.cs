@@ -230,7 +230,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         {
             // TODO GUIDEBOOK Maybe allow duplicate entries?
             // E.g., for adding medicine under both chemicals & the chemist job
-            _sawmill.Error($"Adding duplicate guide entry: {id}");
+            _sawmill.Warning($"Skipping duplicate guide entry: {id}");
             return null;
         }
 
