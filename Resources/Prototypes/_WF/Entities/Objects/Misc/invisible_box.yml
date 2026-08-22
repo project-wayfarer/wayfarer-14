@@ -1,0 +1,16 @@
+﻿- type: entity
+  parent: BaseStorageItem
+  id: WFMimeInvisibleBox
+  name: invisible box
+  description: An invisible box.
+  components:
+  - type: InvisibleBox
+  - type: Sprite
+    sprite: _WF/Interface/Actions/mime.rsi
+    state: invisible-box
+  - type: Item
+    size: Huge
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Huge

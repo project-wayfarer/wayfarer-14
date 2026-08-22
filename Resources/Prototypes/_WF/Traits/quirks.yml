@@ -55,3 +55,7 @@
     components:
     - type: MimePowers
       preventWriting: true
+    - type: MimeAbilities
+      actions:
+      - ActionMimeInvisibleBox
+      - ActionMimeFingerGun

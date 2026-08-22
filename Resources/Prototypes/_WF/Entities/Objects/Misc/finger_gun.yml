@@ -1,0 +1,44 @@
+﻿- type: entity
+  parent: BaseItem
+  id: WFMimeFingerGun
+  name: finger gun
+  description: Finger guns (9MM)
+  components:
+  - type: FingerGun
+  - type: Sprite
+    sprite: _WF/Interface/Actions/mime.rsi
+    state: finger-gun
+  - type: Gun
+    fireRate: 2
+    projectileSpeed: 25
+    soundGunshot: null
+  # No count or capacity, so it never runs out.
+  - type: BasicEntityAmmoProvider
+    proto: WFMimeFingerGunBullet
+
+- type: entity
+  parent: BaseBullet
+  id: WFMimeFingerGunBullet
+  name: finger gun shot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    visible: false
+  - type: Ammo
+    muzzleFlash: null
+  - type: FingerGunBullet
+    hitColor: red
+    # How much of the effect one hit adds.
+    hitIntensity: 0.34
+    # Seconds the effect takes to increase to where a hit put it.
+    riseSeconds: 0.4
+    # Seconds a full strength effect takes to go away.
+    fadeSeconds: 24
+  - type: Projectile
+    deleteOnCollide: true
+    impactEffect: null
+    damage:
+      types:
+        Piercing: 0
+    soundHit:
+      collection: MeatBulletImpact
