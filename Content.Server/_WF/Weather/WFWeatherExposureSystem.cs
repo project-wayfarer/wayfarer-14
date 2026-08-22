@@ -20,7 +20,7 @@ public sealed class WFWeatherExposureSystem : EntitySystem
     private readonly Queue<Vector2i> _bfsQueue = new();
     private readonly HashSet<Vector2i> _bfsVisited = new();
 
-    private bool _weatherActive;
+    private readonly HashSet<EntityUid> _weatherMaps = new();
     private TimeSpan _nextUpdate;
 
     private static readonly TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
@@ -55,14 +55,14 @@ public sealed class WFWeatherExposureSystem : EntitySystem
 
     private void OnGridInit(GridInitializeEvent ev)
     {
-        if (!_weatherActive)
+        if (_weatherMaps.Count == 0)
             return;
         _dirtyGrids.Add(ev.EntityUid);
     }
 
     private void OnTileChanged(ref TileChangedEvent ev)
     {
-        if (!_weatherActive)
+        if (_weatherMaps.Count == 0)
             return;
 
         var gridUid = ev.Entity.Owner;
@@ -88,7 +88,7 @@ public sealed class WFWeatherExposureSystem : EntitySystem
 
     private void OnBlockWeatherAnchor(Entity<BlockWeatherComponent> ent, ref AnchorStateChangedEvent args)
     {
-        if (!_weatherActive)
+        if (_weatherMaps.Count == 0)
             return;
 
         var xform = args.Transform;
@@ -101,7 +101,7 @@ public sealed class WFWeatherExposureSystem : EntitySystem
 
     private void OnBlockWeatherMapInit(Entity<BlockWeatherComponent> ent, ref MapInitEvent args)
     {
-        if (!_weatherActive)
+        if (_weatherMaps.Count == 0)
             return;
 
         var xform = Transform(ent.Owner);
@@ -131,18 +131,15 @@ public sealed class WFWeatherExposureSystem : EntitySystem
             return;
         _nextUpdate = now + UpdateInterval;
 
-        var active = AnyWeatherActive();
+        var hadWeather = _weatherMaps.Count > 0;
+        MarkNewWeatherMaps();
 
-        if (active && !_weatherActive)
-            MarkWeatherGridsDirty();
-
-        if (!active && _weatherActive)
-            ClearAll();
-
-        _weatherActive = active;
-
-        if (!active)
+        if (_weatherMaps.Count == 0)
+        {
+            if (hadWeather)
+                ClearAll();
             return;
+        }
 
         foreach (var (gridUid, changes) in _pendingChanges)
         {
@@ -335,24 +332,16 @@ public sealed class WFWeatherExposureSystem : EntitySystem
         }
     }
 
-    private bool AnyWeatherActive()
+    private void MarkNewWeatherMaps()
     {
-        var query = EntityQueryEnumerator<WeatherComponent>();
-        while (query.MoveNext(out _, out var weather))
-        {
-            if (weather.Weather.Count > 0)
-                return true;
-        }
-        return false;
-    }
+        _weatherMaps.RemoveWhere(uid => !TryComp<WeatherComponent>(uid, out var weather) || weather.Weather.Count == 0);
 
-    private void MarkWeatherGridsDirty()
-    {
         var query = EntityQueryEnumerator<WeatherComponent, TransformComponent>();
-        while (query.MoveNext(out _, out var weather, out var xform))
+        while (query.MoveNext(out var uid, out var weather, out var xform))
         {
-            if (weather.Weather.Count == 0)
+            if (weather.Weather.Count == 0 || !_weatherMaps.Add(uid))
                 continue;
+
             foreach (var grid in _mapManager.GetAllGrids(xform.MapID))
             {
                 if (MetaData(grid.Owner).EntityPaused)
