@@ -11,6 +11,7 @@
   components:
   - type: Occluder
   - type: IsRoof
+  - type: BlockWeather # Wayfarer
   - type: PlacementReplacement
     key: walls
   - type: Tag

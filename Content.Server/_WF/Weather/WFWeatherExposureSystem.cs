@@ -1,44 +1,51 @@
+using System.Runtime.InteropServices;
 using Content.Shared._WF.Weather;
 using Content.Shared.Weather;
-using Robust.Shared.Map;
+using Robust.Shared.Enums;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+using static Content.Shared._WF.Weather.WFExposureComponent;
 
 namespace Content.Server._WF.Weather;
 
 public sealed class WFWeatherExposureSystem : EntitySystem
 {
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
+
+    private const int MaxRecountsPerUpdate = 2;
+    private const int PruneWindowSeconds = 300;
+    private const int MaxSealedRegionTiles = 4096;
+
+    private static readonly TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
+    private static readonly TimeSpan PruneInterval = TimeSpan.FromSeconds(30);
+
+    private TimeSpan _nextUpdate;
+    private TimeSpan _nextPrune;
 
     private EntityQuery<BlockWeatherComponent> _blockQuery;
     private EntityQuery<MapGridComponent> _gridQuery;
+    private EntityQuery<WFExposureComponent> _exposureQuery;
 
-    private readonly HashSet<EntityUid> _dirtyGrids = new();
-    private readonly List<EntityUid> _rebuildBuffer = new();
-    private readonly Queue<Vector2i> _bfsQueue = new();
-    private readonly HashSet<Vector2i> _bfsVisited = new();
+    private readonly HashSet<EntityUid> _weatherMaps = new();
+    private readonly Dictionary<EntityUid, List<ICommonSession>> _mapWatchers = new();
 
-    private bool _weatherActive;
-    private TimeSpan _nextUpdate;
+    private readonly Queue<Vector2i> _searchQueue = new();
+    private readonly Dictionary<Vector2i, ulong> _visited = new();
+    private readonly Dictionary<Vector2i, ulong> _reachesOutside = new();
+    private readonly List<Vector2i> _regionScratch = new();
+    private readonly Dictionary<Vector2i, WFExposureChunk> _countScratch = new();
 
-    private static readonly TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
+    // The list of maps with weather is only refreshed once a second, so weather that has just started is not noticed straight away.
+    private bool AnyWeatherRunning => _weatherMaps.Count > 0;
 
-    private const int MaxRebuildsPerUpdate = 2;
-    private readonly Dictionary<EntityUid, HashSet<Vector2i>> _builtFromEmpty = new();
-    private readonly HashSet<EntityUid> _baselined = new();
-    private readonly HashSet<Vector2i> _oldExposed = new();
-
-    private readonly Dictionary<EntityUid, List<(Vector2i Pos, bool Opened)>> _pendingChanges = new();
-
-    private static readonly Vector2i[] Cardinals =
-    {
-        new(1, 0),
-        new(-1, 0),
-        new(0, 1),
-        new(0, -1),
-    };
+    // Without this the tiles kept for each grid are never thrown away once the last weather ends.
+    private bool _hadWeather;
 
     public override void Initialize()
     {
@@ -46,82 +53,74 @@ public sealed class WFWeatherExposureSystem : EntitySystem
 
         _blockQuery = GetEntityQuery<BlockWeatherComponent>();
         _gridQuery = GetEntityQuery<MapGridComponent>();
+        _exposureQuery = GetEntityQuery<WFExposureComponent>();
 
-        SubscribeLocalEvent<GridInitializeEvent>(OnGridInit);
         SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
         SubscribeLocalEvent<BlockWeatherComponent, AnchorStateChangedEvent>(OnBlockWeatherAnchor);
         SubscribeLocalEvent<BlockWeatherComponent, MapInitEvent>(OnBlockWeatherMapInit);
+        SubscribeLocalEvent<WFExposureComponent, ComponentGetState>(OnGetState);
+        SubscribeLocalEvent<WFExposureComponent, ComponentGetStateAttemptEvent>(OnGetStateAttempt);
+
+        _player.PlayerStatusChanged += OnPlayerStatusChanged;
     }
 
-    private void OnGridInit(GridInitializeEvent ev)
+    public override void Shutdown()
     {
-        if (!_weatherActive)
-            return;
-        _dirtyGrids.Add(ev.EntityUid);
+        base.Shutdown();
+        _player.PlayerStatusChanged -= OnPlayerStatusChanged;
     }
 
+    private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs args)
+    {
+        if (args.NewStatus != SessionStatus.Disconnected)
+            return;
+
+        var query = AllEntityQuery<WFExposureComponent>();
+        while (query.MoveNext(out _, out var comp))
+            comp.DropCopy(args.Session);
+    }
+
+    // A grid being deleted still reports its tiles going away, so nothing here can assume it still has a position.
     private void OnTileChanged(ref TileChangedEvent ev)
     {
-        if (!_weatherActive)
+        if (!AnyWeatherRunning || !TryComp<WFExposureComponent>(ev.Entity.Owner, out var comp))
             return;
-
-        var gridUid = ev.Entity.Owner;
 
         foreach (var change in ev.Changes)
         {
             if (!change.EmptyChanged)
                 continue;
 
-            QueueChange(gridUid, change.GridIndices, true);
-
-            if (change.OldTile.IsEmpty && !change.NewTile.IsEmpty)
-            {
-                if (!_builtFromEmpty.TryGetValue(gridUid, out var built))
-                {
-                    built = new HashSet<Vector2i>();
-                    _builtFromEmpty[gridUid] = built;
-                }
-                built.Add(change.GridIndices);
-            }
+            comp.Pending.Add((change.GridIndices,
+                change.OldTile.IsEmpty ? WFTileChange.Created : WFTileChange.Removed));
         }
     }
 
     private void OnBlockWeatherAnchor(Entity<BlockWeatherComponent> ent, ref AnchorStateChangedEvent args)
     {
-        if (!_weatherActive)
+        if (!AnyWeatherRunning)
             return;
 
-        var xform = args.Transform;
-        if (xform.GridUid is not { } gridUid || !_gridQuery.TryGetComponent(gridUid, out var grid))
-            return;
-
-        var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
-        QueueChange(gridUid, pos, !args.Anchored);
+        QueueBlockerChange(args.Transform, args.Anchored ? WFTileChange.Blocked : WFTileChange.Unblocked);
     }
 
     private void OnBlockWeatherMapInit(Entity<BlockWeatherComponent> ent, ref MapInitEvent args)
     {
-        if (!_weatherActive)
+        if (!AnyWeatherRunning)
             return;
 
-        var xform = Transform(ent.Owner);
-        if (xform.GridUid is not { } gridUid || !_gridQuery.TryGetComponent(gridUid, out var grid))
-            return;
-        if (!xform.Anchored)
-            return;
-
-        var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
-        QueueChange(gridUid, pos, false);
+        if (Transform(ent.Owner) is { Anchored: true } xform)
+            QueueBlockerChange(xform, WFTileChange.Blocked);
     }
 
-    private void QueueChange(EntityUid gridUid, Vector2i pos, bool opened)
+    private void QueueBlockerChange(TransformComponent xform, WFTileChange change)
     {
-        if (!_pendingChanges.TryGetValue(gridUid, out var list))
-        {
-            list = new List<(Vector2i, bool)>();
-            _pendingChanges[gridUid] = list;
-        }
-        list.Add((pos, opened));
+        if (xform.GridUid is not { } gridUid
+            || !TryComp<WFExposureComponent>(gridUid, out var comp)
+            || !_gridQuery.TryGetComponent(gridUid, out var grid))
+            return;
+
+        comp.Pending.Add((_mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates), change));
     }
 
     public override void Update(float frameTime)
@@ -131,335 +130,507 @@ public sealed class WFWeatherExposureSystem : EntitySystem
             return;
         _nextUpdate = now + UpdateInterval;
 
-        var active = AnyWeatherActive();
+        _weatherMaps.Clear();
 
-        if (active && !_weatherActive)
-            MarkWeatherGridsDirty();
+        // Paused maps are skipped below, so a map that pauses drops out of this list on its own.
+        var weatherQuery = EntityQueryEnumerator<WFWeatherComponent>();
+        while (weatherQuery.MoveNext(out var mapUid, out var weather))
+        {
+            if (weather.Weather.Count > 0)
+                _weatherMaps.Add(mapUid);
+        }
 
-        if (!active && _weatherActive)
-            ClearAll();
-
-        _weatherActive = active;
-
-        if (!active)
+        if (!AnyWeatherRunning && !_hadWeather)
             return;
 
-        foreach (var (gridUid, changes) in _pendingChanges)
+        _hadWeather = AnyWeatherRunning;
+
+        var gridQuery = AllEntityQuery<MapGridComponent, TransformComponent>();
+        while (gridQuery.MoveNext(out var gridUid, out _, out var xform))
         {
-            if (_dirtyGrids.Contains(gridUid))
-                continue;
-            if (!_gridQuery.TryGetComponent(gridUid, out var grid))
-                continue;
-            if (!TryComp<WFExposureComponent>(gridUid, out var comp))
+            if (xform.MapUid is { } mapUid && _weatherMaps.Contains(mapUid))
+                EnsureComp<WFExposureComponent>(gridUid);
+            else if (_exposureQuery.HasComponent(gridUid))
+                RemCompDeferred<WFExposureComponent>(gridUid);
+        }
+
+        if (!AnyWeatherRunning)
+        {
+            // Otherwise the watcher lists hold on to players long after the weather has ended.
+            _mapWatchers.Clear();
+            return;
+        }
+
+        SendToPlayersMissingTiles();
+        DrainPending();
+
+        if (now >= _nextPrune)
+        {
+            _nextPrune = now + PruneInterval;
+            PruneLogs();
+        }
+
+        Recount();
+    }
+
+    private void DrainPending()
+    {
+        var tick = _timing.CurTick;
+        var query = AllEntityQuery<WFExposureComponent, MapGridComponent>();
+        while (query.MoveNext(out var gridUid, out var comp, out var grid))
+        {
+            if (comp.Pending.Count == 0)
                 continue;
 
+            // A grid still waiting for its tiles to be worked out takes tile changes anyway, because roofs cannot be worked out later.
+            var counting = !comp.Counted;
             var changed = false;
-            foreach (var (pos, opened) in changes)
+
+            _searchQueue.Clear();
+            _visited.Clear();
+
+            // Every tile that opened this second is searched together, or ground appearing on a planet would start thousands of searches.
+            foreach (var (pos, change) in comp.Pending)
             {
-                if (opened)
-                    changed |= Expand(gridUid, grid, comp, pos);
-                else
-                    changed |= Shrink(gridUid, grid, comp, pos);
+                switch (change)
+                {
+                    case WFTileChange.Created when !_mapSystem.GetTileRef(gridUid, grid, pos).Tile.IsEmpty:
+                        changed |= comp.SetOpenOverhead(pos, tick);
+                        if (!counting)
+                            SeedOpening(gridUid, grid, comp, pos);
+                        break;
+
+                    case WFTileChange.Removed when _mapSystem.GetTileRef(gridUid, grid, pos).Tile.IsEmpty:
+                        // Without this a tile that has stopped existing can still have weather.
+                        changed |= comp.Close(pos, tick);
+                        if (!counting)
+                            SeedNeighbors(gridUid, grid, pos);
+                        break;
+
+                    case WFTileChange.Unblocked when !counting && !_mapSystem.GetTileRef(gridUid, grid, pos).Tile.IsEmpty:
+                        SeedOpening(gridUid, grid, comp, pos);
+                        break;
+                }
             }
+
+            if (!counting)
+            {
+                changed |= RunOpening(gridUid, grid, comp, tick);
+
+                foreach (var (pos, change) in comp.Pending)
+                {
+                    if (change != WFTileChange.Blocked)
+                        continue;
+
+                    changed |= SealAt(gridUid, grid, comp, pos, tick);
+                }
+            }
+
+            comp.Pending.Clear();
 
             if (changed)
                 Dirty(gridUid, comp);
         }
-        _pendingChanges.Clear();
+    }
 
-        if (_dirtyGrids.Count == 0)
+    private void SeedOpening(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp, Vector2i pos)
+    {
+        if (IsBlocked(gridUid, grid, pos))
             return;
-
-        _rebuildBuffer.Clear();
-        _rebuildBuffer.AddRange(_dirtyGrids);
-
-        var rebuilt = 0;
-        foreach (var gridUid in _rebuildBuffer)
-        {
-            if (rebuilt >= MaxRebuildsPerUpdate)
-                break;
-            _dirtyGrids.Remove(gridUid);
-            if (!_gridQuery.TryGetComponent(gridUid, out var grid))
-                continue;
-            Rebuild(gridUid, grid);
-            rebuilt++;
-        }
-    }
-
-    private bool Expand(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp, Vector2i pos)
-    {
-        var tile = _mapSystem.GetTileRef(gridUid, grid, pos);
-
-        if (!tile.Tile.IsEmpty)
-        {
-            var connected = false;
-            for (var i = 0; i < Cardinals.Length; i++)
-            {
-                var neighbor = pos + Cardinals[i];
-                if (comp.Exposed.Contains(neighbor) || _mapSystem.GetTileRef(gridUid, grid, neighbor).Tile.IsEmpty)
-                {
-                    connected = true;
-                    break;
-                }
-            }
-
-            if (!connected)
-                return false;
-        }
-
-        _bfsQueue.Clear();
-        _bfsVisited.Clear();
-
-        if (tile.Tile.IsEmpty)
-        {
-            for (var i = 0; i < Cardinals.Length; i++)
-            {
-                var neighbor = pos + Cardinals[i];
-                var neighborTile = _mapSystem.GetTileRef(gridUid, grid, neighbor);
-                if (neighborTile.Tile.IsEmpty || IsBlocked(gridUid, grid, neighbor))
-                    continue;
-                if (_bfsVisited.Add(neighbor))
-                    _bfsQueue.Enqueue(neighbor);
-            }
-        }
-        else if (!IsBlocked(gridUid, grid, pos))
-        {
-            _bfsQueue.Enqueue(pos);
-            _bfsVisited.Add(pos);
-        }
-
-        var changed = false;
-        while (_bfsQueue.TryDequeue(out var current))
-        {
-            if (comp.Exposed.Add(current))
-            {
-                changed = true;
-
-                if (_baselined.Contains(gridUid))
-                {
-                    _builtFromEmpty.TryGetValue(gridUid, out var built);
-                    if (built == null || !built.Contains(current))
-                        comp.Rooved.Add(current);
-                }
-            }
-
-            for (var i = 0; i < Cardinals.Length; i++)
-            {
-                var next = current + Cardinals[i];
-                if (!_bfsVisited.Add(next))
-                    continue;
-                if (comp.Exposed.Contains(next))
-                    continue;
-                var nextTile = _mapSystem.GetTileRef(gridUid, grid, next);
-                if (nextTile.Tile.IsEmpty)
-                    continue;
-                if (IsBlocked(gridUid, grid, next))
-                    continue;
-                _bfsQueue.Enqueue(next);
-            }
-        }
-
-        return changed;
-    }
-
-    private bool Shrink(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp, Vector2i pos)
-    {
-        if (!comp.Exposed.Remove(pos))
-            return false;
-
-        var changed = true;
 
         for (var i = 0; i < Cardinals.Length; i++)
         {
             var neighbor = pos + Cardinals[i];
-            if (!comp.Exposed.Contains(neighbor))
+            if (!comp.IsExposed(neighbor) && !_mapSystem.GetTileRef(gridUid, grid, neighbor).Tile.IsEmpty)
                 continue;
 
-            if (CanReachEdge(gridUid, grid, comp, neighbor, pos))
-                continue;
+            if (SetBit(_visited, pos))
+                _searchQueue.Enqueue(pos);
+            return;
+        }
+    }
 
-            RemoveRegion(comp, neighbor, pos);
+    private void SeedNeighbors(EntityUid gridUid, MapGridComponent grid, Vector2i pos)
+    {
+        for (var i = 0; i < Cardinals.Length; i++)
+        {
+            var neighbor = pos + Cardinals[i];
+            if (!_mapSystem.GetTileRef(gridUid, grid, neighbor).Tile.IsEmpty
+                && !IsBlocked(gridUid, grid, neighbor)
+                && SetBit(_visited, neighbor))
+                _searchQueue.Enqueue(neighbor);
+        }
+    }
+
+    private bool RunOpening(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp, GameTick tick)
+    {
+        var changed = false;
+
+        while (_searchQueue.TryDequeue(out var current))
+        {
+            changed |= comp.SetOpenToOutside(current, tick);
+
+            for (var i = 0; i < Cardinals.Length; i++)
+            {
+                var next = current + Cardinals[i];
+                if (SetBit(_visited, next) && !comp.IsExposed(next)
+                    && !_mapSystem.GetTileRef(gridUid, grid, next).Tile.IsEmpty && !IsBlocked(gridUid, grid, next))
+                    _searchQueue.Enqueue(next);
+            }
         }
 
         return changed;
     }
 
-    private bool CanReachEdge(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp, Vector2i start, Vector2i avoid)
+    private bool SealAt(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp, Vector2i pos, GameTick tick)
     {
-        _bfsQueue.Clear();
-        _bfsVisited.Clear();
-        _bfsQueue.Enqueue(start);
-        _bfsVisited.Add(start);
-        _bfsVisited.Add(avoid);
+        // Whatever was blocking this tile may already be gone, and sealing it then would shut weather out of a tile standing open.
+        if (!IsBlocked(gridUid, grid, pos))
+            return false;
 
-        while (_bfsQueue.TryDequeue(out var current))
+        var wasOpen = comp.IsExposed(pos);
+        var changed = comp.Seal(pos, tick);
+
+        if (!wasOpen)
+            return changed;
+
+        _reachesOutside.Clear();
+
+        for (var i = 0; i < Cardinals.Length; i++)
         {
+            var neighbor = pos + Cardinals[i];
+            if (!comp.IsExposed(neighbor) || HasBit(_reachesOutside, neighbor))
+                continue;
+
+            changed |= CloseRegionIfSealed(gridUid, grid, comp, neighbor, pos, tick);
+        }
+
+        return changed;
+    }
+
+    private bool CloseRegionIfSealed(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp,
+        Vector2i start, Vector2i avoid, GameTick tick)
+    {
+        _searchQueue.Clear();
+        _visited.Clear();
+        _regionScratch.Clear();
+        _searchQueue.Enqueue(start);
+        SetBit(_visited, start);
+        SetBit(_visited, avoid);
+        _regionScratch.Add(start);
+
+        var seen = 2;
+
+        while (_searchQueue.TryDequeue(out var current))
+        {
+            // On a planet the search would cross everything loaded looking for an opening, so an area this large keeps its weather.
+            if (seen > MaxSealedRegionTiles)
+            {
+                MarkReachesOutside();
+                return false;
+            }
+
             for (var i = 0; i < Cardinals.Length; i++)
             {
                 var next = current + Cardinals[i];
                 if (_mapSystem.GetTileRef(gridUid, grid, next).Tile.IsEmpty)
-                    return true;
+                {
+                    MarkReachesOutside();
+                    return false;
+                }
 
-                if (!_bfsVisited.Add(next))
+                if (!SetBit(_visited, next))
                     continue;
-                if (!comp.Exposed.Contains(next))
-                    continue;
-                _bfsQueue.Enqueue(next);
+
+                seen++;
+
+                if (comp.IsExposed(next))
+                {
+                    _searchQueue.Enqueue(next);
+                    _regionScratch.Add(next);
+                }
             }
         }
 
-        return false;
+        var changed = false;
+        foreach (var tile in _regionScratch)
+            changed |= comp.Close(tile, tick);
+
+        return changed;
     }
 
-    private void RemoveRegion(WFExposureComponent comp, Vector2i start, Vector2i avoid)
+    // The whole area the search covered keeps its weather, so the other sides of the tile do not need their own search.
+    private void MarkReachesOutside()
     {
-        _bfsQueue.Clear();
-        _bfsVisited.Clear();
-        _bfsQueue.Enqueue(start);
-        _bfsVisited.Add(start);
-        _bfsVisited.Add(avoid);
-
-        while (_bfsQueue.TryDequeue(out var current))
+        foreach (var (chunk, mask) in _visited)
         {
-            comp.Exposed.Remove(current);
-
-            for (var i = 0; i < Cardinals.Length; i++)
-            {
-                var next = current + Cardinals[i];
-                if (!_bfsVisited.Add(next))
-                    continue;
-                if (!comp.Exposed.Contains(next))
-                    continue;
-                _bfsQueue.Enqueue(next);
-            }
+            ref var reaches = ref CollectionsMarshal.GetValueRefOrAddDefault(_reachesOutside, chunk, out _);
+            reaches |= mask;
         }
     }
 
-    private bool AnyWeatherActive()
+    private void Recount()
     {
-        var query = EntityQueryEnumerator<WeatherComponent>();
-        while (query.MoveNext(out _, out var weather))
+        var recounted = 0;
+        var query = AllEntityQuery<WFExposureComponent, MapGridComponent>();
+        while (recounted < MaxRecountsPerUpdate && query.MoveNext(out var gridUid, out var comp, out var grid))
         {
-            if (weather.Weather.Count > 0)
-                return true;
-        }
-        return false;
-    }
-
-    private void MarkWeatherGridsDirty()
-    {
-        var query = EntityQueryEnumerator<WeatherComponent, TransformComponent>();
-        while (query.MoveNext(out _, out var weather, out var xform))
-        {
-            if (weather.Weather.Count == 0)
+            if (comp.Counted)
                 continue;
-            foreach (var grid in _mapManager.GetAllGrids(xform.MapID))
-            {
-                if (MetaData(grid.Owner).EntityPaused)
-                    continue;
-                _dirtyGrids.Add(grid.Owner);
-            }
+
+            // A paused grid has its tiles worked out once it starts again.
+            if (Paused(gridUid))
+                continue;
+
+            RecountGrid(gridUid, grid, comp);
+            recounted++;
         }
     }
 
-    private void Rebuild(EntityUid gridUid, MapGridComponent grid)
+    private void RecountGrid(EntityUid gridUid, MapGridComponent grid, WFExposureComponent comp)
     {
-        var comp = EnsureComp<WFExposureComponent>(gridUid);
+        _countScratch.Clear();
+        _searchQueue.Clear();
+        _visited.Clear();
 
-        _oldExposed.Clear();
-        _oldExposed.UnionWith(comp.Exposed);
-
-        comp.Exposed.Clear();
-        _bfsQueue.Clear();
-        _bfsVisited.Clear();
-
-        foreach (var tileRef in _mapSystem.GetAllTiles(gridUid, grid))
+        // Tiles with something on them are thrown out further down, so checking in this loop as well would look at every tile twice.
+        var tiles = _mapSystem.GetAllTilesEnumerator(gridUid, grid);
+        while (tiles.MoveNext(out var tileRef))
         {
-            var pos = tileRef.GridIndices;
+            var pos = tileRef.Value.GridIndices;
+
+            if (HasEmptyNeighbor(gridUid, grid, pos) && SetBit(_visited, pos))
+                _searchQueue.Enqueue(pos);
+        }
+
+        while (_searchQueue.TryDequeue(out var pos))
+        {
             if (IsBlocked(gridUid, grid, pos))
                 continue;
-            for (var i = 0; i < Cardinals.Length; i++)
-            {
-                var neighbour = _mapSystem.GetTileRef(gridUid, grid, pos + Cardinals[i]);
-                if (!neighbour.Tile.IsEmpty)
-                    continue;
-                _bfsVisited.Add(pos);
-                _bfsQueue.Enqueue(pos);
-                break;
-            }
-        }
 
-        while (_bfsQueue.TryDequeue(out var pos))
-        {
-            comp.Exposed.Add(pos);
+            var (chunk, bit) = GetChunkBit(pos);
+            ref var entry = ref CollectionsMarshal.GetValueRefOrAddDefault(_countScratch, chunk, out _);
+            entry.OpenToOutside |= bit;
+
             for (var i = 0; i < Cardinals.Length; i++)
             {
                 var next = pos + Cardinals[i];
-                if (!_bfsVisited.Add(next))
-                    continue;
-                var tile = _mapSystem.GetTileRef(gridUid, grid, next);
-                if (tile.Tile.IsEmpty)
-                    continue;
-                if (IsBlocked(gridUid, grid, next))
-                    continue;
-                _bfsQueue.Enqueue(next);
+                if (SetBit(_visited, next) && !_mapSystem.GetTileRef(gridUid, grid, next).Tile.IsEmpty)
+                    _searchQueue.Enqueue(next);
             }
         }
 
-        var oldRoovedCount = comp.Rooved.Count;
+        StoreCount(gridUid, comp);
+    }
 
-        RecordBreaches(gridUid, comp);
+    private void StoreCount(EntityUid gridUid, WFExposureComponent comp)
+    {
+        var tick = _timing.CurTick;
+        var changed = false;
 
-        if (!comp.Exposed.SetEquals(_oldExposed) || comp.Rooved.Count != oldRoovedCount)
+        foreach (var (chunk, _) in comp.Chunks)
+        {
+            if (!_countScratch.ContainsKey(chunk))
+                _countScratch[chunk] = default;
+        }
+
+        foreach (var (chunk, fresh) in _countScratch)
+        {
+            comp.Chunks.TryGetValue(chunk, out var old);
+
+            // A roof cannot be seen from the tiles alone, so a tile only counts as rooved once it has been walled in.
+            var overhead = comp.Counted
+                ? old.OpenOverhead & ~(old.OpenToOutside & ~fresh.OpenToOutside)
+                : fresh.OpenToOutside;
+
+            if (old.OpenToOutside == fresh.OpenToOutside && old.OpenOverhead == overhead)
+                continue;
+
+            if (fresh.OpenToOutside == 0 && overhead == 0)
+                comp.Chunks.Remove(chunk);
+            else
+                comp.Chunks[chunk] = new WFExposureChunk { OpenToOutside = fresh.OpenToOutside, OpenOverhead = overhead };
+
+            comp.Stamp(chunk, tick);
+            changed = true;
+        }
+
+        comp.Counted = true;
+
+        if (changed)
             Dirty(gridUid, comp);
     }
 
-    private void RecordBreaches(EntityUid gridUid, WFExposureComponent comp)
+    private void PruneLogs()
     {
-        _builtFromEmpty.TryGetValue(gridUid, out var built);
+        var curTick = _timing.CurTick;
+        var window = (uint) (PruneWindowSeconds * _timing.TickRate);
+        var before = curTick.Value > window ? new GameTick(curTick.Value - window) : GameTick.Zero;
 
-        if (_baselined.Add(gridUid))
+        var query = AllEntityQuery<WFExposureComponent>();
+        while (query.MoveNext(out _, out var comp))
+            comp.PruneLog(before);
+    }
+
+    // Nothing tells the server when a player starts seeing a map, so anyone missing this grid's tiles has to be found by looking.
+    private void SendToPlayersMissingTiles()
+    {
+        foreach (var (mapUid, watchers) in _mapWatchers)
         {
-            built?.Clear();
+            if (_weatherMaps.Contains(mapUid))
+                watchers.Clear();
+            else
+                _mapWatchers.Remove(mapUid);
+        }
+
+        foreach (var session in _player.Sessions)
+        {
+            foreach (var mapUid in _weatherMaps)
+            {
+                if (CanSeeMap(session, mapUid))
+                    _mapWatchers.GetOrNew(mapUid).Add(session);
+            }
+        }
+
+        var query = AllEntityQuery<WFExposureComponent, TransformComponent>();
+        while (query.MoveNext(out var gridUid, out var comp, out var xform))
+        {
+            if (xform.MapUid is not { } mapUid || !_mapWatchers.TryGetValue(mapUid, out var watchers))
+                continue;
+
+            foreach (var session in watchers)
+            {
+                if (comp.HasCopy(session))
+                    continue;
+
+                Dirty(gridUid, comp);
+                break;
+            }
+        }
+    }
+
+    private void OnGetState(Entity<WFExposureComponent> ent, ref ComponentGetState args)
+    {
+        var comp = ent.Comp;
+
+        // With no player to send to there is no way to know what they already have, so send everything.
+        if (args.Player is not { } player)
+        {
+            args.State = FullState(comp);
             return;
         }
 
-        foreach (var pos in comp.Exposed)
+        // Keep sending the copy until the player confirms it, or a lost packet leaves them nothing to update.
+        var now = _timing.CurTick;
+        var sentAt = comp.MarkCopySent(player, now);
+
+        // A player seeing the grid for the first time, or too far behind, gets the full list of tiles.
+        if (args.FromTick < sentAt || args.FromTick <= comp.CreationTick || args.FromTick <= comp.LastPrune)
         {
-            if (_oldExposed.Contains(pos))
-                continue;
-            if (built != null && built.Contains(pos))
-                continue;
-            comp.Rooved.Add(pos);
+            args.State = FullState(comp);
+            return;
         }
 
-        built?.Clear();
+        var start = FirstRecordAtOrAfter(comp.Log, args.FromTick);
+        var open = new Dictionary<Vector2i, ulong>(comp.Log.Count - start);
+        var covered = new Dictionary<Vector2i, ulong>();
+
+        for (var i = start; i < comp.Log.Count; i++)
+            Encode(comp, comp.Log[i].Chunk, open, covered);
+
+        args.State = new WFExposureDeltaState(open, covered);
     }
 
-    private void ClearAll()
+    private static WFExposureState FullState(WFExposureComponent comp)
     {
-        _dirtyGrids.Clear();
-        _rebuildBuffer.Clear();
-        _bfsQueue.Clear();
-        _bfsVisited.Clear();
-        _oldExposed.Clear();
-        _baselined.Clear();
-        _builtFromEmpty.Clear();
-        _pendingChanges.Clear();
+        var open = new Dictionary<Vector2i, ulong>(comp.Chunks.Count);
+        var covered = new Dictionary<Vector2i, ulong>();
 
-        var query = AllEntityQuery<WFExposureComponent>();
-        while (query.MoveNext(out var uid, out _))
+        foreach (var (chunk, entry) in comp.Chunks)
         {
-            RemCompDeferred<WFExposureComponent>(uid);
+            // A chunk where no tile can have weather answers no everywhere, so the client is never told about it.
+            if (entry.OpenToOutside != 0)
+                Encode(comp, chunk, open, covered);
         }
+
+        return new WFExposureState(open, covered);
     }
+
+    // A chunk that has gone gets a zero, which is how the client is told to drop it.
+    private static void Encode(WFExposureComponent comp, Vector2i chunk,
+        Dictionary<Vector2i, ulong> open, Dictionary<Vector2i, ulong> covered)
+    {
+        comp.Chunks.TryGetValue(chunk, out var entry);
+        open[chunk] = entry.OpenToOutside;
+
+        var mask = entry.OpenToOutside & ~entry.OpenOverhead;
+        if (mask != 0)
+            covered[chunk] = mask;
+    }
+
+    // Several changes can share a tick, and a plain search would pick any one of them instead of the first.
+    private static int FirstRecordAtOrAfter(List<(GameTick Tick, Vector2i Chunk)> log, GameTick tick)
+    {
+        var low = 0;
+        var high = log.Count;
+
+        while (low < high)
+        {
+            var mid = (low + high) / 2;
+            if (log[mid].Tick < tick)
+                low = mid + 1;
+            else
+                high = mid;
+        }
+
+        return low;
+    }
+
+    private void OnGetStateAttempt(Entity<WFExposureComponent> ent, ref ComponentGetStateAttemptEvent args)
+    {
+        if (args.Player is not { } player)
+            return;
+
+        if (_transform.GetMap(ent.Owner) is { } mapUid && CanSeeMap(player, mapUid))
+            return;
+
+        // Forgetting the player is what gets them everything again if they come back.
+        ent.Comp.DropCopy(player);
+        args.Cancelled = true;
+    }
+
+    // Checks every eye a player has, not just their body, so a view onto another map still gets weather.
+    private bool CanSeeMap(ICommonSession player, EntityUid mapUid)
+    {
+        if (IsOnMap(player.AttachedEntity, mapUid))
+            return true;
+
+        foreach (var viewer in player.ViewSubscriptions)
+        {
+            if (IsOnMap(viewer, mapUid))
+                return true;
+        }
+
+        return false;
+    }
+
+    private bool IsOnMap(EntityUid? uid, EntityUid mapUid)
+        => uid is { } value && _transform.GetMap(value) == mapUid;
 
     private bool IsBlocked(EntityUid gridUid, MapGridComponent grid, Vector2i pos)
     {
         var anchored = _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos);
         while (anchored.MoveNext(out var ent))
-        {
             if (_blockQuery.HasComponent(ent.Value))
+                return true;
+        return false;
+    }
+
+    private bool HasEmptyNeighbor(EntityUid gridUid, MapGridComponent grid, Vector2i pos)
+    {
+        for (var i = 0; i < Cardinals.Length; i++)
+        {
+            if (_mapSystem.GetTileRef(gridUid, grid, pos + Cardinals[i]).Tile.IsEmpty)
                 return true;
         }
         return false;
