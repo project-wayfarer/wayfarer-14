@@ -86,8 +86,6 @@ public sealed class TracerSystem : EntitySystem
 
     public void Draw(DrawingHandleWorld handle, MapId currentMap)
     {
-        var query = EntityQueryEnumerator<TracerComponent, TransformComponent>();
-
         foreach (var trace in _traces) // Wayfarer - Tracers
         {
             if (trace.Value.MapId != currentMap) // Wayfarer - Tracers
