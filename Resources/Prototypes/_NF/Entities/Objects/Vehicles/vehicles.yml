@@ -178,6 +178,10 @@
           collection: MetalBreak
   - type: ItemSlots
     slots: {} # no keys required
+  # Wayfarer
+  - type: StaticPrice
+    vendPrice: 1000
+  # End Wayfarer
 
 - type: entity
   parent: VehicleUnicycle

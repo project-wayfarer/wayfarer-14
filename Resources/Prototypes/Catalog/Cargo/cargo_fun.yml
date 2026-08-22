@@ -198,12 +198,14 @@
 
 - type: cargoProduct
   id: FunToyBox
-  abstract: true # Frontier
+# Wayfarer
+#  abstract: true # Frontier
+# End Wayfarer
   icon:
     sprite: Structures/Storage/Crates/toybox.rsi
     state: crate_icon
   product: CrateFunToyBox
-  cost: 900
+  cost: 5000 # Wayfarer: 900<5000
   category: cargoproduct-category-name-fun
   group: market
 

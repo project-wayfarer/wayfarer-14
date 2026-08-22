@@ -665,3 +665,23 @@
   storage:
     back:
     - CrazyGlue
+
+- type: loadout
+  id: WFVehicleUnicycleFolded
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 1000
+  storage:
+    back:
+    - VehicleUnicycleFolded
+
+- type: loadout
+  id: WFDrinkSpaceLube
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - DrinkSpaceLube
