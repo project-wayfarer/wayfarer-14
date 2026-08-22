@@ -1,16 +1,12 @@
-﻿using System;
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Shared._WF.Clown;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
-using Robust.Shared.IoC;
-using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
 namespace Content.Client._WF.Clown;
@@ -41,6 +37,8 @@ public sealed class JugglingOverlay : Overlay
     {
         var handle = args.WorldHandle;
         var curTime = (float)_timing.CurTime.TotalSeconds;
+        var rotation = args.Viewport.Eye?.Rotation ?? Angle.Zero;
+        var rotationMatrix = Matrix3Helpers.CreateRotation(-rotation);
 
         var enumerator = _entities.EntityQueryEnumerator<JugglingActiveComponent, TransformComponent>();
         while (enumerator.MoveNext(out _, out var active, out var xform))
@@ -49,62 +47,53 @@ public sealed class JugglingOverlay : Overlay
                 continue;
 
             var worldPos = xform.WorldPosition;
-            var startTime = (float)active.StartTime.TotalSeconds;
-            var elapsed = curTime - startTime;
+            var elapsed = curTime - (float)active.StartTime.TotalSeconds;
             var n = active.JuggledItems.Count;
+
+            var worldMatrix = Matrix3Helpers.CreateTranslation(worldPos);
+            handle.SetTransform(Matrix3x2.Multiply(rotationMatrix, worldMatrix));
 
             for (var i = 0; i < n; i++)
             {
                 // Stagger items evenly through the cycle so they do not overlap.
-                var phase = i * (Cycle / n);
-                var itemPos = ComputeItemPos(worldPos, elapsed, phase, Cycle);
+                var itemPos = ComputeItemPos(elapsed + i * (Cycle / n));
 
-                if (!_entities.TryGetEntity(active.JuggledItems[i], out var itemEnt))
-                    continue;
-
-                if (!_metaQuery.TryGetComponent(itemEnt.Value, out var meta) || meta.EntityPrototype == null)
+                if (!_entities.TryGetEntity(active.JuggledItems[i], out var itemEnt)
+                    || !_metaQuery.TryGetComponent(itemEnt.Value, out var meta) || meta.EntityPrototype == null)
                     continue;
 
                 // The item is in the hidden juggle container, so the game is not drawing its
                 // sprite. Its own icon is drawn here instead.
                 var texture = _sprites.Frame0(meta.EntityPrototype);
-                var halfSize = texture.Size / (2f * EyeManager.PixelsPerMeter) * ItemScale;
 
                 var spinDir = (i % 2 == 0) ? 1.0 : -1.0;
                 var spin = new Angle(elapsed * 1.5 * spinDir + i * 2.3);
 
-                var box = new Box2(itemPos.X - halfSize.X, itemPos.Y - halfSize.Y, itemPos.X + halfSize.X, itemPos.Y + halfSize.Y);
+                var box = Box2.CenteredAround(itemPos, texture.Size / EyeManager.PixelsPerMeter * ItemScale);
                 handle.DrawTextureRect(texture, new Box2Rotated(box, spin, itemPos));
             }
         }
+
+        handle.SetTransform(Matrix3x2.Identity);
     }
 
     // Each item rises in a tall arc from one hand to the other, then makes a quick low pass back.
-    private static Vector2 ComputeItemPos(Vector2 center, float elapsed, float phase, float cycle)
+    // Positions are offsets from the player.
+    private static Vector2 ComputeItemPos(float time)
     {
-        var tNorm = ((elapsed + phase) % cycle) / cycle;
+        var tNorm = (time % Cycle) / Cycle;
         if (tNorm < 0f) tNorm += 1f;
 
-        var left  = center + new Vector2(-0.35f, 0f);
-        var right = center + new Vector2( 0.35f, 0f);
+        const float left = -0.35f;
+        const float right = 0.35f;
 
-        float x, y;
-        if (tNorm < 0.55f)
-        {
-            // Tall arc from right hand to left hand. Peak height 0.9 tiles.
-            var u = tNorm / 0.55f;
-            x = MathHelper.Lerp(right.X, left.X, u);
-            y = center.Y + 0.9f * MathF.Sin(MathF.PI * u);
-        }
-        else
-        {
-            // Short low pass from left hand back to right hand. Peak height 0.18 tiles.
-            var u = (tNorm - 0.55f) / 0.45f;
-            x = MathHelper.Lerp(left.X, right.X, u);
-            y = center.Y + 0.18f * MathF.Sin(MathF.PI * u);
-        }
+        // A tall arc from right hand to left for most of the cycle, then a short low pass back.
+        var (from, to, height, start, span) = tNorm < 0.55f
+            ? (right, left, 0.9f, 0f, 0.55f)
+            : (left, right, 0.18f, 0.55f, 0.45f);
 
-        return new Vector2(x, y);
+        var u = (tNorm - start) / span;
+        return new Vector2(MathHelper.Lerp(from, to, u), height * MathF.Sin(MathF.PI * u));
     }
 }
 
@@ -152,11 +141,7 @@ public sealed class JugglingVisualsSystem : EntitySystem
 
     private void ApplyWalk(EntityUid uid, bool walking)
     {
-        if (Deleted(uid))
-            return;
-        if (!TryComp<InputMoverComponent>(uid, out var mover))
-            return;
-
-        _mover.SetSprinting((uid, mover), 0, walking);
+        if (TryComp<InputMoverComponent>(uid, out var mover))
+            _mover.SetSprinting((uid, mover), 0, walking);
     }
 }

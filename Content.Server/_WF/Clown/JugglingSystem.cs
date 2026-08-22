@@ -12,7 +12,6 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Timing;
@@ -31,7 +30,7 @@ public sealed class JugglingSystem : EntitySystem
 
     private const string JuggleContainerId = "juggle";
     private const string NoGravityMsg = "juggling-no-gravity";
-    private const int MaxJuggledItems = 10;
+    private const int MaxJuggledItems = 3;
 
     public override void Initialize()
     {
@@ -93,23 +92,11 @@ public sealed class JugglingSystem : EntitySystem
             return;
         }
 
-        // Items in the hidden "juggle" container are not in hands, so the player cannot use them, attack with them, or pass them.
-        var container = _containers.EnsureContainer<Container>(uid, JuggleContainerId);
         var active = AddComp<JugglingActiveComponent>(uid);
         active.StartTime = _timing.CurTime;
 
         foreach (var item in held)
-        {
-            if (active.JuggledItems.Count >= MaxJuggledItems)
-                break;
-
-            if (_containers.TryGetContainingContainer(item, out var handContainer))
-                _containers.Remove(item, handContainer, force: true);
-
-            // Stored as NetEntity so the client can resolve each item locally.
-            if (_containers.Insert(item, container))
-                active.JuggledItems.Add(GetNetEntity(item));
-        }
+            TryInsertItem((uid, active), item);
 
         // Send the juggling state to every client so other players see the items in the air.
         Dirty(uid, active);
@@ -135,45 +122,46 @@ public sealed class JugglingSystem : EntitySystem
         RemComp<JugglingActiveComponent>(uid);
     }
 
-    // Server half of the forced walk. The player is put into walk mode when
-    // juggling starts. The client half is in JugglingVisualsSystem.
     private void OnActiveInit(Entity<JugglingActiveComponent> ent, ref ComponentInit args)
-    {
-        if (TryComp<InputMoverComponent>(ent.Owner, out var mover))
-            _mover.SetSprinting((ent.Owner, mover), 0, true);
-    }
+        => SetWalking(ent.Owner, true);
 
-    // Server half of the forced walk. The player returns to normal running when
-    // juggling ends.
     private void OnActiveShutdown(Entity<JugglingActiveComponent> ent, ref ComponentShutdown args)
+        => SetWalking(ent.Owner, false);
+
+    // Server half of the forced walk, on while juggling. The client half is in JugglingVisualsSystem.
+    private void SetWalking(EntityUid uid, bool walking)
     {
-        if (TryComp<InputMoverComponent>(ent.Owner, out var mover))
-            _mover.SetSprinting((ent.Owner, mover), 0, false);
+        if (TryComp<InputMoverComponent>(uid, out var mover))
+            _mover.SetSprinting((uid, mover), 0, walking);
     }
 
     private void OnDidEquipHand(Entity<JugglingActiveComponent> ent, ref DidEquipHandEvent args)
     {
-        var item = args.Equipped;
+        if (TryInsertItem(ent, args.Equipped))
+            Dirty(ent, ent.Comp);
+    }
+
+    // Items in the hidden "juggle" container are not in hands, so the player cannot use them, attack with them, or pass them.
+    private bool TryInsertItem(Entity<JugglingActiveComponent> ent, EntityUid item)
+    {
+        // Stored as NetEntity so the client can resolve each item locally.
         var netItem = GetNetEntity(item);
 
         // An item already being juggled can pass back through the hand for a moment while it is
         // being moved into the hidden container, so ignore items that are already in the rotation.
-        if (ent.Comp.JuggledItems.Contains(netItem))
-            return;
-
-        if (ent.Comp.JuggledItems.Count >= MaxJuggledItems)
-            return;
+        if (ent.Comp.JuggledItems.Contains(netItem) || ent.Comp.JuggledItems.Count >= MaxJuggledItems)
+            return false;
 
         var container = _containers.EnsureContainer<Container>(ent.Owner, JuggleContainerId);
 
-        if (_containers.TryGetContainingContainer(item, out var handContainer))
-            _containers.Remove(item, handContainer, force: true);
+        // Insert only removes the item from its hand without force, so force it out first.
+        _containers.TryRemoveFromContainer(item, force: true);
 
-        if (_containers.Insert(item, container))
-        {
-            ent.Comp.JuggledItems.Add(netItem);
-            Dirty(ent, ent.Comp);
-        }
+        if (!_containers.Insert(item, container))
+            return false;
+
+        ent.Comp.JuggledItems.Add(netItem);
+        return true;
     }
 
     private void OnDamaged(Entity<JugglingActiveComponent> ent, ref DamageChangedEvent args)

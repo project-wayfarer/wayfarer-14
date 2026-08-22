@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using Content.Shared.Actions;
-using Robust.Shared.GameObjects;
+﻿using Content.Shared.Actions;
 using Robust.Shared.GameStates;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared._WF.Clown;
 
@@ -40,10 +37,5 @@ public sealed partial class JugglingActiveComponent : Component
 public sealed class JuggleWalkBlocker : InputCmdHandler
 {
     public override bool HandleCmdMessage(IEntityManager entManager, ICommonSession? session, IFullInputCmdMessage message)
-    {
-        if (session?.AttachedEntity is not { } player)
-            return false;
-
-        return entManager.HasComponent<JugglingActiveComponent>(player);
-    }
+        => session?.AttachedEntity is { } player && entManager.HasComponent<JugglingActiveComponent>(player);
 }
