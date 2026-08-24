@@ -1,0 +1,31 @@
+- type: constructionGraph
+  id: NFMorgueShip
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: NFMorgueShip
+          steps:
+            - material: Plasteel
+              amount: 15
+            - material: Cable
+              amount: 5
+              doAfter: 5
+
+
+    - node: NFMorgueShip
+      entity: NFMorgueShip
+      edges:
+        - to: start
+          steps:
+            - tool: Welding
+              doAfter: 5
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlasteel1
+              amount: 15
+            - !type:SpawnPrototype
+              prototype: CableApcStack1
+              amount: 5
+            - !type:EmptyAllContainers
+            - !type:DeleteEntity

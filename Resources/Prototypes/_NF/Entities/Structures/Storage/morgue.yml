@@ -21,7 +21,7 @@
       - !type:EmptyAllContainersBehaviour
       - !type:SpawnEntitiesBehavior
         spawn:
-          SheetSteel1:
+          SheetPlasteel1: # Wayfarer: SheetSteel1 < SheetPlasteel1
             min: 3
             max: 5
       - !type:PlaySoundBehavior
@@ -31,3 +31,9 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Wayfarer
+  - type: Construction
+    graph: NFMorgueShip
+    node: NFMorgueShip
+  - type: Rotatable
+  # End Wayfarer
