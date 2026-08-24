@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesCentcomNaval
+  name: nanotrasen naval gloves
+  description: A high quality pair of thick gloves covered in gold stitching, given to Nanotrasen's Naval Commanders.
+  components:
+  - type: Sprite
+    sprite: _Corvax/Clothing/Hands/Gloves/centcom_naval.rsi
+  - type: Clothing
+    sprite: _Corvax/Clothing/Hands/Gloves/centcom_naval.rsi
+# Wayfarer
+#  - type: GloveHeatResistance
+#    heatResistance: 1400
+# End Wayfarer
+  - type: Insulated

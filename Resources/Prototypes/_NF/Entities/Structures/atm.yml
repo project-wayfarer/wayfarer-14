@@ -213,7 +213,7 @@
       board: !type:Container
       station-bank-ATM-cashSlot: !type:ContainerSlot
   - type: AccessReader
-    access: [["HeadOfPersonnel"], ["HeadOfSecurity"]]
+    access: [["HeadOfPersonnel"], ["HeadOfSecurity"], ["Detective"]] # Wayfarer: Added Detective
 
 - type: entity
   parent: BaseStationAdminBankATM

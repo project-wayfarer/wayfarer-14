@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretHoSCentcom
+  name: centcom head of security beret
+  description: A stylish black beret with a green badge, showing who keeps order around here.
+  components:
+  - type: Sprite
+    sprite: _Backmen/Clothing/Head/Hats/cchos_beret.rsi
+  - type: Clothing
+    sprite: _Backmen/Clothing/Head/Hats/cchos_beret.rsi

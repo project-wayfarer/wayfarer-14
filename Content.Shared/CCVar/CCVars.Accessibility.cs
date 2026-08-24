@@ -19,6 +19,12 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> ReducedMotion =
         CVarDef.Create("accessibility.reduced_motion", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    /// Removes the noise from the night vision overlay.
+    /// </summary>
+    public static readonly CVarDef<bool> DisableNightVisionNoise =
+        CVarDef.Create("accessibility.disable_nv_noise", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
     public static readonly CVarDef<bool> ChatEnableColorName =
         CVarDef.Create("accessibility.enable_color_name",
             true,

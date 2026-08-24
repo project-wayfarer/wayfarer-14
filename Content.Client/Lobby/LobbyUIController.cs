@@ -122,10 +122,15 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 _profileEditor.RefreshSpecies();
             }
 
+            // Wayfarer
+            // Trait refresh is handled by the new traits tab
+            /*
             if (obj.WasModified<TraitPrototype>())
             {
                 _profileEditor.RefreshTraits();
             }
+            */
+            // End Wayfarer
         }
     }
 

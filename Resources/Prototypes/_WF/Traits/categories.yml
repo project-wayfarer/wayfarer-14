@@ -1,4 +1,10 @@
 - type: traitCategory
+  id: Quirks
+  name: trait-category-quirks
+  priority: 10
+
+- type: traitCategory
   id: Digestions
   name: trait-category-digestions
-  maxTraitPoints: 1
+  priority: 35
+  maxPoints: 1

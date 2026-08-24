@@ -1,20 +1,4 @@
 ﻿# sausages keeping them hidden to not overfill the guidebook.
-
-- type: microwaveMealRecipe
-  id: RecipeSausageRawStomachAnimal
-  name: raw stomach sausage recipe
-  result: FoodSausageRaw
-  resultCount: 3
-  time: 10
-  group: Savory # TODO: move to ingredients
-  solids:
-    OrganAnimalStomach: 1
-  reagents:
-    UncookedAnimalProteins: 9
-  recipeType:
-  - Assembler
-  hideInGuidebook: true
-
 - type: microwaveMealRecipe
   id: RecipeSausageRawStomachDwarf
   name: raw stomach sausage recipe

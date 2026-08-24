@@ -43,7 +43,20 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         SubscribeLocalEvent<EmbeddableProjectileComponent, ComponentShutdown>(OnEmbeddableCompShutdown);
 
         SubscribeLocalEvent<EmbeddedContainerComponent, EntityTerminatingEvent>(OnEmbeddableTermination);
+
+        // Subscribe to ensure MetaDataComponent on projectile entities for networking
+        SubscribeLocalEvent<ProjectileComponent, ComponentStartup>(OnProjectileMetaStartup); // Wayfarer
     }
+
+    // Wayfarer - Raytraced Projectiles
+    /// <summary>
+    /// Ensures that a MetaDataComponent exists on projectiles for network serialization.
+    /// </summary>
+    private void OnProjectileMetaStartup(EntityUid uid, ProjectileComponent component, ComponentStartup args)
+    {
+        EnsureComp<MetaDataComponent>(uid);
+    }
+    // End Wayfarer
 
     private void OnEmbedActivate(Entity<EmbeddableProjectileComponent> embeddable, ref ActivateInWorldEvent args)
     {

@@ -1990,7 +1990,12 @@ namespace Content.Client.Stylesheets
                 Element<PanelContainer>()
                     .Class(StyleClassInset)
                     .Prop(PanelContainer.StylePropertyPanel, insetBack),
+            // Wayfarer
+            /*
             }).ToList());
+            */
+            }).Concat(Content.Client._WF.Stylesheets.WFTraitStyles.GetRules(resCache)).ToList());
+            // End Wayfarer
         }
     }
 }

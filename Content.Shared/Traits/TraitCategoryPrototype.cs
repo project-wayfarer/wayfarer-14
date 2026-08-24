@@ -2,6 +2,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Traits;
 
+// Wayfarer
+// Replaced by the DeltaV trait system in Content.Shared._DV.Traits
+/*
 /// <summary>
 /// Traits category with general settings. Allows you to limit the number of taken traits in one category
 /// </summary>
@@ -26,3 +29,5 @@ public sealed partial class TraitCategoryPrototype : IPrototype
     [DataField]
     public int? MaxTraitPoints;
 }
+*/
+// End Wayfarer

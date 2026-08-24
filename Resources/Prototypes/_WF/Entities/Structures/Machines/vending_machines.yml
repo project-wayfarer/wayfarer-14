@@ -1,0 +1,31 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineMayla
+  name: MaylaVend
+  description: Vends Maylas... wait what?
+  components:
+  - type: VendingMachine
+    pack: MaylaVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: MaylaAds
+  - type: SpeakOnUIClosed
+    pack: MaylaGoodbyes
+  - type: Sprite
+    sprite: _WF/Minimayla/maylavend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"

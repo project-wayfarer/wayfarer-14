@@ -1,4 +1,3 @@
-
 - type: entity
   name: telecrystal
   parent: [BaseItem, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
@@ -22,6 +21,11 @@
   - type: Currency
     price:
       Telecrystal: 1
+# Wayfarer: Add tag whitelist
+  - type: Tag
+    tags:
+    - WhitelistWallet
+# End Wayfarer
 
 - type: entity
   parent: Telecrystal
@@ -39,7 +43,7 @@
   components:
   - type: Stack
     count: 2
-# end Wayfarer
+# End Wayfarer
 
 - type: entity
   parent: Telecrystal

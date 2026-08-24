@@ -17,7 +17,8 @@
     tags:
     - Recyclable
     - WhitelistChameleon
-    - WhitelistWallet # Wayfarer
+    - FitsWallet
+    - WalletPaper
 
 # region reporter
 - type: entity
@@ -30,16 +31,9 @@
     layers:
     - state: icon-base
       color: "#9fed58"
-    # Wayfarer Start
     - state: icon-unshaded
-      map: [ "cardUnshadedIconDocument" ]
       color: "#96A3B0"
       shader: unshaded
-    - state: icon-unshaded
-      map: [ "cardUnshadedIconEmpty" ]
-      color: "#35383B"
-      shader: unshaded
-    # End Wayfarer
   - type: Clothing
     clothingVisuals:
       neck:
@@ -48,32 +42,6 @@
       - state: equipped-NECK-unshaded
         shader: unshaded
         color: "#96A3B0"
-  # Wayfarer Start
-  - type: ContainerContainer
-    containers:
-      paper_label: !type:ContainerSlot
-  - type: Appearance
-  - type: GenericVisualizer
-    visuals: # Ideally there'd be a visualizer that changes equipped layers, but atm those doesn't exist afaik
-      enum.PaperLabelVisuals.HasLabel:
-        cardUnshadedIconDocument:
-          True: { visible: true }
-          False: { visible: false }
-        cardUnshadedIconEmpty:
-          True: { visible: false }
-          False: { visible: true }
-  - type: PaperLabel
-    labelSlot:
-      whitelist:
-        components:
-        - Paper
-      blacklist:
-        tags:
-        - Book
-        components:
-        - Blueprint
-  - type: ItemSlots
-  # End Wayfarer
 
 # region medic
 - type: entity
@@ -85,16 +53,9 @@
   - type: Sprite
     layers:
     - state: icon-base
-    # Wayfarer Start
     - state: icon-unshaded
-      map: [ "cardUnshadedIconDocument" ]
       color: "#5b97bc"
       shader: unshaded
-    - state: icon-unshaded
-      map: [ "cardUnshadedIconEmpty" ]
-      color: "#62717a"
-      shader: unshaded
-    # End Wayfarer
   - type: Clothing
     clothingVisuals:
       neck:
@@ -102,39 +63,13 @@
       - state: equipped-NECK-unshaded
         shader: unshaded
         color: "#5b97bc"
-  # Wayfarer Start
-  - type: ContainerContainer
-    containers:
-      paper_label: !type:ContainerSlot
-  - type: Appearance
-  - type: GenericVisualizer
-    visuals: # Ideally there'd be a visualizer that changes equipped layers, but atm those doesn't exist afaik
-      enum.PaperLabelVisuals.HasLabel:
-        cardUnshadedIconDocument:
-          True: { visible: true }
-          False: { visible: false }
-        cardUnshadedIconEmpty:
-          True: { visible: false }
-          False: { visible: true }
-  - type: PaperLabel
-    labelSlot:
-      whitelist:
-        components:
-        - Paper
-      blacklist:
-        tags:
-        - Book
-        components:
-        - Blueprint
-  - type: ItemSlots
-  # End Wayfarer
 
 # region nfsd writ/permit
 - type: entity
   parent: NFBaseClothingNeckCard
   id: NFClothingNeckCardNfsdWrit
-  name: CGP permit card
-  description: A permit card issued by the CGP. Includes a slot for inserting paperwork. # Wayfarer: Shortened the description, removing "Property of the CGP; contents are not to be tampered with by the holder.."
+  name: nfsd permit card
+  description: A permit card issued by the NFSD. Includes a slot for inserting official paperwork. Property of the NFSD; contents are not to be tampered with by the holder.
   components:
   - type: Sprite
     layers:
@@ -142,7 +77,7 @@
       color: "#63492a"
     - state: icon-unshaded
       map: ["cardUnshadedIconDocument"]
-      color: "#ab6722" # Wayfarer: Changed #59784b<#ab6722
+      color: "#59784b"
       shader: unshaded
     - state: icon-unshaded
       map: ["cardUnshadedIconEmpty"]
@@ -155,7 +90,7 @@
         color: "#63492a"
       - state: equipped-NECK-unshaded
         shader: unshaded
-        color: "#ab6722" # Wayfarer: Changed #59784b<#ab6722
+        color: "#59784b"
   - type: ContainerContainer
     containers:
       paper_label: !type:ContainerSlot

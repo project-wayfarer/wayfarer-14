@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [BaseCentcommContraband, NFClothingMessenger]
+  id: GSClothingBackpackMessengerCentcomm
+  name: centcomm messenger bag
+  description: A robust bag made for Nanotrasen high-ranking officials.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    layers:
+    - state: icon-base
+      color: "#49813a"
+    - state: icon-sling
+      color: "#194214"
+    - state: icon-clasp
+      color: "#c0a500"
+  - type: Clothing
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#49813a"
+      - state: sling-equipped-BACKPACK
+        color: "#194214"
+      - state: clasp-equipped-BACKPACK
+        color: "#c0a500"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#49813a"
+      - state: clasp-inhand-left
+        color: "#c0a500"
+      right:
+      - state: base-inhand-right
+        color: "#49813a"
+      - state: clasp-inhand-right
+        color: "#c0a500"

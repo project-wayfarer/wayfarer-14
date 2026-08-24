@@ -1,0 +1,23 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetCentcom
+  name: centcom security helmet
+  description: A modified security helmet, made for guarding Central Command stations.
+  components:
+  - type: Sprite
+    sprite: _Backmen/Clothing/Head/Helmets/centcom_sec_helmet.rsi
+  - type: Clothing
+    sprite: _Backmen/Clothing/Head/Helmets/centcom_sec_helmet.rsi
+  - type: Armor
+# Wayfarer
+#    coverage:
+#    - Head
+# End Wayfarer
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8

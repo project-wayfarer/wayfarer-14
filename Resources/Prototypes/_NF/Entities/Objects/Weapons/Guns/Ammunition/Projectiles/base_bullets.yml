@@ -16,7 +16,7 @@
       shader: unshaded
   - type: Tracer
     color: "#ddddddFF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletTrigger
@@ -35,7 +35,7 @@
       shader: unshaded
   - type: Tracer
     color: "#ddddddFF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBasePellet
@@ -52,7 +52,7 @@
       shader: unshaded
   - type: Tracer
     color: "#ddddddFF"
-    length: 1
+    length: 50 # Wayfarer - Tracers
 
 #region Bullets
 - type: entity
@@ -70,7 +70,8 @@
       shader: unshaded
   - type: Tracer
     color: "#ff8d00FF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
+    lifetime: 1 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletIncendiary
@@ -96,7 +97,8 @@
     ignited: true
   - type: Tracer
     color: "#ff0000FF"
-    length: 1.5
+    length: 150 # Wayfarer - Tracers
+    lifetime: 1 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletUranium
@@ -118,7 +120,7 @@
     energy: 3.0
   - type: Tracer
     color: "#00ff00FF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletPractice
@@ -135,7 +137,7 @@
       shader: unshaded
   - type: Tracer
     color: "#ddddddFF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletEmp
@@ -157,7 +159,7 @@
     energy: 3.0
   - type: Tracer
     color: "#00ffffFF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletRubber
@@ -182,7 +184,7 @@
     damage: 15
   - type: Tracer
     color: "#00b0ffFF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletExplosive
@@ -211,7 +213,7 @@
     energy: 3.0
   - type: Tracer
     color: "#ffff00FF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletAP
@@ -233,7 +235,7 @@
     ignoreResistances: true
   - type: Tracer
     color: "#666666FF"
-    length: 1.5
+    length: 50 # Wayfarer - Tracers
 
 #region AntiMateriel
 - type: entity
@@ -251,7 +253,7 @@
     - Structural
   - type: Tracer
     color: "#ddddddFF"
-    length: 3
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBaseBulletAntiMaterielRubber
@@ -266,7 +268,7 @@
     damage: 61 #Wayfarer 60 -> 61
   - type: Tracer
     color: "#00b0ffFF"
-    length: 3
+    length: 50 # Wayfarer - Tracers
 
 #region Pellets
 - type: entity
@@ -284,7 +286,7 @@
       shader: unshaded
   - type: Tracer
     color: "#ff8d00FF"
-    length: 1
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBasePelletIncendiary
@@ -310,7 +312,7 @@
     ignited: true
   - type: Tracer
     color: "#ff0000FF"
-    length: 1
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBasePelletUranium
@@ -332,7 +334,7 @@
     energy: 1.0
   - type: Tracer
     color: "#00ff00FF"
-    length: 1
+    length: 50 # Wayfarer - Tracers
 
 - type: entity
   id: NFBasePelletPractice
@@ -349,4 +351,4 @@
       shader: unshaded
   - type: Tracer
     color: "#ddddddFF"
-    length: 1
+    length: 50 # Wayfarer - Tracers

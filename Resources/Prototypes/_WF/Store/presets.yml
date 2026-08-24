@@ -22,7 +22,7 @@
     - Doubloon
     balance:
       Doubloon: 0
-      
+
 #Merchant Uplink
 - type: entity
   id: StorePresetMerchantUplink
@@ -38,6 +38,9 @@
     - UplinkMerchantsCGP
     - UplinkMerchantsOutlaw
     - UplinkMerchantsFun
+    - UplinkMerchantsFood
+    - UplinkMerchantsRestock
+    - UplinkMerchantsTool
     currencyWhitelist:
     - WayfarerMerchantToken
     balance:

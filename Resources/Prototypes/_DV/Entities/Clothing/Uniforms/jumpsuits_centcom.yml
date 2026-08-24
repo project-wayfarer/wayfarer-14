@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: DVClothingUniformJumpsuitCentcomDirector
+  name: director's jumpsuit
+  description: A sharp and professional jumpsuit worn by a high-ranking member of Central Command.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi

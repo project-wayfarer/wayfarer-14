@@ -1,0 +1,17 @@
+- type: tile
+  id: FloorAsteroidBluespace
+  name: tiles-asteroid-bluespace
+  sprite: /Textures/_WF/Tiles/bluespaceasteroid.png
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Space
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true

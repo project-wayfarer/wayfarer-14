@@ -39,11 +39,12 @@
   name:  uplink-merchant-chemvendrestock-name
   description: uplink-merchant-chemvendrestock-desc
   productEntity: VendingMachineRestockChemVend
-  icon: { sprite: Objects/Specific/Service/vending_machine_restock.rsi, state: base }
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: chemvend_restockicon }
   cost:
-    WayfarerMerchantToken: 90
+    WayfarerMerchantToken: 50
   categories:
   - UplinkMerchantsMedical
+  - UplinkMerchantsRestock
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:
@@ -180,11 +181,30 @@
   name:  uplink-merchant-chefvendrestock-name
   description: uplink-merchant-chefvendrestock-desc
   productEntity: VendingMachineRestockChefvend
-  icon: { sprite: Objects/Specific/Service/vending_machine_restock.rsi, state: base }
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: chef_restockicon }
   cost:
     WayfarerMerchantToken: 50
   categories:
   - UplinkMerchantMisc
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#handheld uplink
+- type: listing
+  id: UplinkMerchantMerchantUplinkRadio
+  name:  uplink-merchant-handheldradio-name
+  description: uplink-merchant-handheldradio-desc
+  productEntity: MerchantUplinkRadio
+  icon: { sprite: Objects/Devices/communication.rsi, state: walkietalkie }
+  cost:
+    WayfarerMerchantToken: 200
+  categories:
+  - UplinkMerchantMisc
+  - UplinkMerchantsTool
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:
@@ -266,7 +286,7 @@
   productEntity: SalvageTechFabCircuitboardNF
   icon: { sprite: Structures/Machines/techfab.rsi, state: icon }
   cost:
-    WayfarerMerchantToken: 101
+    WayfarerMerchantToken: 100
   categories:
   - UplinkMerchantMisc
   conditions:
@@ -374,6 +394,520 @@
     WayfarerMerchantToken: 1000
   categories:
   - UplinkMerchantsFun
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#hoverbike flatpack
+- type: listing
+  id: UplinkMerchantHoverbike
+  name:  uplink-merchant-hoverbike-name
+  description: uplink-merchant-hoverbike-desc
+  productEntity: HoverbikeFlatpack
+  icon: { sprite: _NF/Objects/Vehicles/hoverbike.rsi, state: vehicle }
+  cost:
+    WayfarerMerchantToken: 60
+  categories:
+  - UplinkMerchantsFun
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#magic crayon
+- type: listing
+  id: UplinkMerchantMagicCrayon
+  name:  uplink-merchant-magiccrayon-name
+  description: uplink-merchant-magiccrayon-desc
+  productEntity: CrayonMagic
+  icon: { sprite: _NF/Objects/Fun/magic_crayon.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFun
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#magic spraypainter
+- type: listing
+  id: UplinkMerchantMagicSprayPainter
+  name:  uplink-merchant-magicspraypainter-name
+  description: uplink-merchant-magicspraypainter-desc
+  productEntity: SprayPainterMagic
+  icon: { sprite: _NF/Objects/Fun/magic_spraypainter.rsi, state: icon }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFun
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#food --
+#flour barrel
+- type: listing
+  id: UplinkMerchantFlourbarrel
+  name:  uplink-merchant-flourbarrel-name
+  description: uplink-merchant-flourbarrel-desc
+  productEntity: ChemicalBarrelFlour
+  icon: { sprite: Objects/Consumable/Food/ingredients.rsi, state: flour-big }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#freezer biomass
+- type: listing
+  id: UplinkMerchantFreezerBiomass
+  name:  uplink-merchant-freezerbiomass-name
+  description: uplink-merchant-freezerbiomass-desc
+  productEntity: CrateMaterialBiomass
+  icon: { sprite: Objects/Misc/monkeycube.rsi, state: cube, color: "#8A9A5B" }
+  cost:
+    WayfarerMerchantToken: 20
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#fortune cookie
+- type: listing
+  id: UplinkMerchantFortuneCookie
+  name:  uplink-merchant-fortunecookie-name
+  description: uplink-merchant-fortunecookie-desc
+  productEntity: FoodSnackCookieFortune
+  icon: { sprite: Objects/Consumable/Food/snacks.rsi, state: cookie_fortune }
+  cost:
+    WayfarerMerchantToken: 2
+  categories:
+  - UplinkMerchantsFood
+  - UplinkMerchantsFun
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#Foods - Seeds--
+#nettle
+- type: listing
+  id: UplinkMerchantNettleSeed
+  name:  uplink-merchant-nettleseed-name
+  description: uplink-merchant-nettleseed-desc
+  productEntity: NettleSeeds
+  icon: { sprite: Objects/Specific/Hydroponics/nettle.rsi, state: seed }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#lemoon
+- type: listing
+  id: UplinkMerchantLemoonSeed
+  name:  uplink-merchant-lemoonseed-name
+  description: uplink-merchant-lemoonseed-desc
+  productEntity: LemoonSeeds
+  icon: { sprite: Objects/Specific/Hydroponics/lemoon.rsi, state: seed }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#cannabis
+- type: listing
+  id: UplinkMerchantCannabisSeed
+  name:  uplink-merchant-cannabisseed-name
+  description: uplink-merchant-cannabisseed-desc
+  productEntity: CannabisSeeds
+  icon: { sprite: Objects/Specific/Hydroponics/cannabis.rsi, state: seed }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#spaceman
+- type: listing
+  id: UplinkMerchantSpacemansTrumpetSeed
+  name:  uplink-merchant-spacemanstrumpetseed-name
+  description: uplink-merchant-spacemanstrumpetseed-desc
+  productEntity: SpacemansTrumpetSeeds
+  icon: { sprite: Objects/Specific/Hydroponics/spacemans_trumpet.rsi, state: seed }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#rainbow cannabis
+- type: listing
+  id: UplinkMerchantRainbowCannabisSeed
+  name:  uplink-merchant-rainbowcannabisseed-name
+  description: uplink-merchant-rainbowcannabisseed-desc
+  productEntity: RainbowCannabisSeeds
+  icon: { sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi, state: seed }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#special orange
+- type: listing
+  id: UplinkMerchantExtradimensionalOrangeSeed
+  name:  uplink-merchant-extradimensionalorangeseed-name
+  description: uplink-merchant-extradimensionalrangeseed-desc
+  productEntity: ExtradimensionalOrangeSeeds
+  icon: { sprite: Objects/Specific/Hydroponics/extradimensional_orange.rsi, state: seed }
+  cost:
+    WayfarerMerchantToken: 40
+  categories:
+  - UplinkMerchantsFood
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#tools --
+#microreactor
+- type: listing
+  id: UplinkMerchantPowerCellMicroreactor
+  name:  uplink-merchant-powercellmicroreactor-name
+  description: uplink-merchant-powercellmicroreactor-desc
+  productEntity: PowerCellMicroreactor
+  icon: { sprite: Objects/Power/power_cells.rsi, state: microreactor }
+  cost:
+    WayfarerMerchantToken: 50
+  categories:
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#antique power cell
+- type: listing
+  id: UplinkMerchantPowerCellAntiqueProto
+  name:  uplink-merchant-powercellantiqueProto-name
+  description: uplink-merchant-powercellantiqueProto-desc
+  productEntity: PowerCellAntiqueProto
+  icon: { sprite: Objects/Power/power_cells.rsi, state: antique }
+  cost:
+    WayfarerMerchantToken: 80
+  categories:
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#bluespace
+- type: listing
+  id: UplinkMerchantBluespaceParts
+  name:  uplink-merchant-bluespaceparts-name
+  description: uplink-merchant-bluespaceparts-desc
+  productEntity: BoxT4ComponentsAssorted
+  icon: { sprite: Objects/Misc/stock_parts.rsi, state: femto_mani }
+  cost:
+    WayfarerMerchantToken: 100
+  categories:
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#ripley
+- type: listing
+  id: UplinkMerchantMechRipley
+  name:  uplink-merchant-mechripley-name
+  description: uplink-merchant-mechripley-desc
+  productEntity: MechRipley
+  icon: { sprite: Objects/Specific/Mech/mecha.rsi, state: ripley }
+  cost:
+    WayfarerMerchantToken: 70
+  categories:
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#hydraulic clamp
+- type: listing
+  id: UplinkMerchantHydraulicClamp
+  name:  uplink-merchant-hydraulicclamp-name
+  description: uplink-merchant-hydraulicclamp-desc
+  productEntity: MechEquipmentGrabber
+  icon: { sprite: Objects/Specific/Mech/mecha_equipment.rsi, state: mecha_clamp }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#power lift
+- type: listing
+  id: UplinkMerchantPowerFork
+  name:  uplink-merchant-powerfork-name
+  description: uplink-merchant-powerfork-desc
+  productEntity: MechEquipmentFork
+  icon: { sprite: _NF/Objects/Specific/Mech/mecha_equipment.rsi, state: mecha_fork }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#emu
+- type: listing
+  id: UplinkMerchantEmu
+  name:  uplink-merchant-emu-name
+  description: uplink-merchant-emu-desc
+  productEntity: MechEmuCargo
+  icon: { sprite: _NF/Objects/Specific/Mech/mecha.rsi, state: emu }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsTool
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#restocks --
+#Autodrobe
+- type: listing
+  id: UplinkMerchantAutodrobeRestock
+  name:  uplink-merchant-autodroberestock-name
+  description: uplink-merchant-autodroberestock-desc
+  productEntity: VendingMachineRestockCostumes
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: autodrobe_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#Autotune
+- type: listing
+  id: UplinkMerchantAutoTuneRestock
+  name:  uplink-merchant-autotunerestock-name
+  description: uplink-merchant-autotunerestock-desc
+  productEntity: VendingMachineRestockAutoTuneVend
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: autotune_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#Booze-o-mat
+- type: listing
+  id: UplinkMerchantBoozeRestock
+  name:  uplink-merchant-boozerestock-name
+  description: uplink-merchant-boozerestock-desc
+  productEntity: VendingMachineRestockBooze
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: booze_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsFood
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+
+#cuddly critter
+- type: listing
+  id: UplinkMerchantCuddlyCriterRestock
+  name:  uplink-merchant-cuddlycriterrestock-name
+  description: uplink-merchant-cuddlycriterrestock-desc
+  productEntity: VendingMachineRestockCuddlyCritterVend
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: cuddlecritter_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#good clean fun
+- type: listing
+  id: UplinkMerchantGamesRestock
+  name:  uplink-merchant-gamesrestock-name
+  description: uplink-merchant-gamesrestock-desc
+  productEntity: VendingMachineRestockGames
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: games_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#ptech
+- type: listing
+  id: UplinkMerchantPTechRestock
+  name:  uplink-merchant-ptechrestock-name
+  description: uplink-merchant-ptechrestock-desc
+  productEntity: VendingMachineRestockPTech
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: ptech_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#pride
+- type: listing
+  id: UplinkMerchantPrideRestock
+  name:  uplink-merchant-priderestock-name
+  description: uplink-merchant-priderestock-desc
+  productEntity: VendingMachineRestockPride
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: pride_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#shady cig
+- type: listing
+  id: UplinkMerchantSmokesRestock
+  name:  uplink-merchant-smokerestock-name
+  description: uplink-merchant-smokerestock-desc
+  productEntity: VendingMachineRestockSmokes
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: shadycig_restockicon }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#solar
+- type: listing
+  id: UplinkMerchantHotdrinksRestock
+  name:  uplink-merchant-hotdrinksrestock-name
+  description: uplink-merchant-hotdrinksrestock-desc
+  productEntity: VendingMachineRestockHotDrinks
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: hotdrink_restockicon }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsFood
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#beverage
+- type: listing
+  id: UplinkMerchantSoftdrinksRestock
+  name:  uplink-merchant-softdrinksrestock-name
+  description: uplink-merchant-softdrinksrestock-desc
+  productEntity: VendingMachineRestockRobustSoftdrinks
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: beverage_restockicon }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsFood
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#condiments
+- type: listing
+  id: UplinkMerchantCondimentRestock
+  name:  uplink-merchant-condimentrestock-name
+  description: uplink-merchant-condimentrestock-desc
+  productEntity: VendingMachineRestockCondimentStation
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: condiment_restockicon }
+  cost:
+    WayfarerMerchantToken: 15
+  categories:
+  - UplinkMerchantsFood
+  - UplinkMerchantsRestock
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - WFMerchantUplink
+#wardrobe
+- type: listing
+  id: UplinkMerchantClothesRestock
+  name:  uplink-merchant-clothesrestock-name
+  description: uplink-merchant-clothesrestock-desc
+  productEntity: VendingMachineRestockClothes
+  icon: { sprite: _WF/Objects/Specific/Service/restockicon.rsi, state: wardrobe_restockicon }
+  cost:
+    WayfarerMerchantToken: 30
+  categories:
+  - UplinkMerchantsRestock
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:

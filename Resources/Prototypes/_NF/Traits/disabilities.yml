@@ -5,15 +5,22 @@
   name: trait-stinky-name
   description: trait-stinky-desc
   category: Disabilities
-  components:
+  # Wayfarer
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: StinkyTrait
+  # End Wayfarer
 
 - type: trait
   id: Clumsy
   name: trait-clumsy-name
   description: trait-clumsy-desc
   category: Disabilities
-  components:
+  # Wayfarer
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Clumsy
       gunShootFailDamage:
         types:
@@ -21,14 +28,19 @@
           Piercing: 4
         groups:
           Burn: 3
+  # End Wayfarer
 
 - type: trait
   id: Unclonable
   name: trait-unclonable-name
   description: trait-unclonable-desc
   category: Disabilities
-  components:
+  # Wayfarer
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Unclonable
+  # End Wayfarer
 
 # Upstream
 - type: trait
@@ -36,10 +48,15 @@
   name: trait-wheelchair-bound-name
   description: trait-wheelchair-bound-desc
   category: Disabilities
-  blacklist:
+  # Wayfarer
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:AddCompsEffect
     components:
-      - BorgChassis
-  components:
     - type: BuckleOnMapInit
       prototype: VehicleWheelchair
     - type: LegsParalyzed
+  # End Wayfarer

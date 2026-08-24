@@ -1,0 +1,25 @@
+- type: entity
+  parent: [ClothingHeadBase, BaseCentcommContraband]
+  id: DVClothingHeadHatCentcommCavalier
+  name: centcomm cavalier hat
+  description: A well-made cavalier hat made of the finest materials for all your flamboyant needs.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/centcommcavalier.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/centcommcavalier.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.12"
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DVClothingHeadHatBeretCentcomm
+  name: CentComm beret
+  description: A green beret with an admiral's rank emblem.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/beret_cent.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/beret_cent.rsi

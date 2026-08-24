@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseFigurine
+  id: ToyFigurineMayla
+  name: mini mayla
+  description: A figurine of MAYLA.
+  components:
+  - type: Sprite
+    sprite: _WF/Minimayla/minimayla.rsi
+    state: mayla
+  - type: SpeakOnTrigger
+    pack: FigurinesMayla

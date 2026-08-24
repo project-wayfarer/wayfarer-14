@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: SLClothingUniformJumpsuitCentcomAdmiral
+  name: admiral's uniform
+  description: A uniform worn by those with the rank of Admiral in the Navy.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: SLClothingAltUniformJumpsuitCentcomOfficial
+  name: CentComm officer's jumpsuit
+  description: It's a jumpsuit worn by CentComm officers.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/centcom_official.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/Jumpsuit/centcom_official.rsi

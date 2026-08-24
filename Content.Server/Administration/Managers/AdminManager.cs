@@ -389,9 +389,14 @@ namespace Content.Server.Administration.Managers
             };
 
             _admins.Add(session, reg);
-
-            var contentData = session.ContentData();
-            if (contentData?.Stealthed == true)
+            // Frontier begin
+            var contentdata = session.ContentData();
+            if (contentdata == null)
+            {
+                return;
+            }
+            // Frontier end
+            if (contentdata.Stealthed) // Frontier session.ContentData()!<contentdata
                 reg.Data.Stealth = true;
 
             if (reg.Data.Active)

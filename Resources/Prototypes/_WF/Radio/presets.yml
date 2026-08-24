@@ -1,0 +1,410 @@
+﻿# --- Pass-through and drums --------------------------------------------------
+
+- type: radioPreset
+  id: Daw
+  name: wf-radio-preset-daw
+  category: Special
+  priority: 10
+  passthrough: true
+
+- type: radioPreset
+  id: Drums
+  name: wf-radio-preset-drums
+  category: Special
+  priority: 30
+  drumsOnly: true
+
+# --- Strings -----------------------------------------------------------------
+
+- type: radioPreset
+  id: AcousticGuitar
+  name: wf-radio-preset-acoustic-guitar
+  category: Strings
+  priority: 10
+  program: 24  # Acoustic Guitar (Nylon)
+
+- type: radioPreset
+  id: AcousticGuitarSteel
+  name: wf-radio-preset-acoustic-guitar-steel
+  category: Strings
+  priority: 20
+  program: 25  # Acoustic Guitar (Steel)
+
+- type: radioPreset
+  id: ElectricGuitarClean
+  name: wf-radio-preset-electric-guitar-clean
+  category: Strings
+  priority: 30
+  program: 27  # Electric Guitar (Clean)
+
+- type: radioPreset
+  id: ElectricGuitarJazz
+  name: wf-radio-preset-electric-guitar-jazz
+  category: Strings
+  priority: 40
+  program: 26  # Electric Guitar (Jazz)
+
+- type: radioPreset
+  id: ElectricGuitarMuted
+  name: wf-radio-preset-electric-guitar-muted
+  category: Strings
+  priority: 50
+  program: 28  # Electric Guitar (Muted)
+
+- type: radioPreset
+  id: RockGuitarOverdrive
+  name: wf-radio-preset-rock-guitar-overdrive
+  category: Strings
+  priority: 60
+  program: 29  # Overdrive Guitar
+
+- type: radioPreset
+  id: RockGuitarDistortion
+  name: wf-radio-preset-rock-guitar-distortion
+  category: Strings
+  priority: 70
+  program: 30  # Distortion Guitar
+
+- type: radioPreset
+  id: RockGuitarHarmonics
+  name: wf-radio-preset-rock-guitar-harmonics
+  category: Strings
+  priority: 80
+  program: 31  # Guitar Harmonics
+
+- type: radioPreset
+  id: BassGuitar
+  name: wf-radio-preset-bass-guitar
+  category: Strings
+  priority: 90
+  program: 33  # Electric Bass (Fingered)
+
+- type: radioPreset
+  id: BassGuitarPick
+  name: wf-radio-preset-bass-guitar-pick
+  category: Strings
+  priority: 100
+  program: 34  # Electric Bass (Pick)
+
+- type: radioPreset
+  id: BassGuitarSlap
+  name: wf-radio-preset-bass-guitar-slap
+  category: Strings
+  priority: 110
+  program: 36  # Slap Bass 1
+
+- type: radioPreset
+  id: BassGuitarSlapFunky
+  name: wf-radio-preset-bass-guitar-slap-funky
+  category: Strings
+  priority: 120
+  program: 37  # Slap Bass 2
+
+- type: radioPreset
+  id: Violin
+  name: wf-radio-preset-violin
+  category: Strings
+  priority: 130
+  program: 40  # Violin
+
+- type: radioPreset
+  id: ViolinBluegrass
+  name: wf-radio-preset-violin-bluegrass
+  category: Strings
+  priority: 140
+  program: 110 # Fiddle
+
+- type: radioPreset
+  id: Viola
+  name: wf-radio-preset-viola
+  category: Strings
+  priority: 150
+  program: 41  # Viola
+
+- type: radioPreset
+  id: Cello
+  name: wf-radio-preset-cello
+  category: Strings
+  priority: 160
+  program: 42  # Cello
+
+- type: radioPreset
+  id: Contrabass
+  name: wf-radio-preset-contrabass
+  category: Strings
+  priority: 170
+  program: 43  # Contrabass
+
+- type: radioPreset
+  id: Harp
+  name: wf-radio-preset-harp
+  category: Strings
+  priority: 180
+  program: 46  # Orchestral Harp
+
+- type: radioPreset
+  id: Banjo
+  name: wf-radio-preset-banjo
+  category: Strings
+  priority: 190
+  program: 105 # Banjo
+
+# --- Brass -------------------------------------------------------------------
+
+- type: radioPreset
+  id: Trumpet
+  name: wf-radio-preset-trumpet
+  category: Brass
+  priority: 10
+  program: 56  # Trumpet (Standard)
+
+- type: radioPreset
+  id: TrumpetMuted
+  name: wf-radio-preset-trumpet-muted
+  category: Brass
+  priority: 20
+  program: 59  # Muted Trumpet
+
+- type: radioPreset
+  id: Trombone
+  name: wf-radio-preset-trombone
+  category: Brass
+  priority: 30
+  program: 57  # Trombone
+
+- type: radioPreset
+  id: Tuba
+  name: wf-radio-preset-tuba
+  category: Brass
+  priority: 40
+  program: 58  # Tuba
+
+- type: radioPreset
+  id: FrenchHorn
+  name: wf-radio-preset-french-horn
+  category: Brass
+  priority: 50
+  program: 60  # French Horn
+
+# --- Woodwind ----------------------------------------------------------------
+
+- type: radioPreset
+  id: Harmonica
+  name: wf-radio-preset-harmonica
+  category: Woodwind
+  priority: 10
+  program: 22  # Harmonica
+
+- type: radioPreset
+  id: SaxophoneSoprano
+  name: wf-radio-preset-saxophone-soprano
+  category: Woodwind
+  priority: 20
+  program: 64  # Soprano Sax
+
+- type: radioPreset
+  id: SaxophoneAlto
+  name: wf-radio-preset-saxophone-alto
+  category: Woodwind
+  priority: 30
+  program: 65  # Alto Sax
+
+- type: radioPreset
+  id: Saxophone
+  name: wf-radio-preset-saxophone
+  category: Woodwind
+  priority: 40
+  program: 66  # Tenor Sax
+
+- type: radioPreset
+  id: SaxophoneBaritone
+  name: wf-radio-preset-saxophone-baritone
+  category: Woodwind
+  priority: 50
+  program: 67  # Baritone Sax
+
+- type: radioPreset
+  id: Clarinet
+  name: wf-radio-preset-clarinet
+  category: Woodwind
+  priority: 60
+  program: 71  # Clarinet
+
+- type: radioPreset
+  id: Flute
+  name: wf-radio-preset-flute
+  category: Woodwind
+  priority: 70
+  program: 73  # Flute
+
+- type: radioPreset
+  id: Recorder
+  name: wf-radio-preset-recorder
+  category: Woodwind
+  priority: 80
+  program: 74  # Recorder
+
+- type: radioPreset
+  id: PanFlute
+  name: wf-radio-preset-pan-flute
+  category: Woodwind
+  priority: 90
+  program: 75  # Pan Flute
+
+- type: radioPreset
+  id: Ocarina
+  name: wf-radio-preset-ocarina
+  category: Woodwind
+  priority: 100
+  program: 79  # Whistle (used by ocarina in-game)
+
+- type: radioPreset
+  id: Bagpipe
+  name: wf-radio-preset-bagpipe
+  category: Woodwind
+  priority: 110
+  program: 109 # Bag Pipe
+
+# --- Keyed -------------------------------------------------------------------
+
+- type: radioPreset
+  id: Piano
+  name: wf-radio-preset-piano
+  category: Keyed
+  priority: 10
+  program: 1   # Bright Acoustic Piano
+
+- type: radioPreset
+  id: UprightPiano
+  name: wf-radio-preset-upright-piano
+  category: Keyed
+  priority: 20
+  program: 3   # Honky-tonk Piano
+
+- type: radioPreset
+  id: ChurchOrgan
+  name: wf-radio-preset-church-organ
+  category: Keyed
+  priority: 30
+  program: 19  # Church Organ
+
+- type: radioPreset
+  id: Accordion
+  name: wf-radio-preset-accordion
+  category: Keyed
+  priority: 40
+  program: 21  # Accordion (Standard)
+
+- type: radioPreset
+  id: AccordionTango
+  name: wf-radio-preset-accordion-tango
+  category: Keyed
+  priority: 50
+  program: 23  # Tango Accordion
+
+- type: radioPreset
+  id: Synthesizer
+  name: wf-radio-preset-synthesizer
+  category: Keyed
+  priority: 60
+  program: 62  # Synth Brass 1 (Electro)
+
+- type: radioPreset
+  id: SynthesizerBubbles
+  name: wf-radio-preset-synthesizer-bubbles
+  category: Keyed
+  priority: 70
+  program: 63  # Synth Brass 2 (Bubbles)
+
+- type: radioPreset
+  id: Minimoog
+  name: wf-radio-preset-minimoog
+  category: Keyed
+  priority: 80
+  program: 81  # Lead 2 (sawtooth)
+
+- type: radioPreset
+  id: Kalimba
+  name: wf-radio-preset-kalimba
+  category: Keyed
+  priority: 90
+  program: 108 # Kalimba
+
+# --- Tuned percussion --------------------------------------------------------
+
+- type: radioPreset
+  id: Glockenspiel
+  name: wf-radio-preset-glockenspiel
+  category: TunedPercussion
+  priority: 10
+  program: 9   # Glockenspiel
+
+- type: radioPreset
+  id: MusicBox
+  name: wf-radio-preset-music-box
+  category: TunedPercussion
+  priority: 20
+  program: 10  # Music Box
+
+- type: radioPreset
+  id: Vibraphone
+  name: wf-radio-preset-vibraphone
+  category: TunedPercussion
+  priority: 30
+  program: 11  # Vibraphone
+
+- type: radioPreset
+  id: Marimba
+  name: wf-radio-preset-marimba
+  category: TunedPercussion
+  priority: 40
+  program: 12  # Marimba
+
+- type: radioPreset
+  id: Xylophone
+  name: wf-radio-preset-xylophone
+  category: TunedPercussion
+  priority: 50
+  program: 13  # Xylophone
+
+- type: radioPreset
+  id: Timpani
+  name: wf-radio-preset-timpani
+  category: TunedPercussion
+  priority: 60
+  program: 47  # Timpani
+
+- type: radioPreset
+  id: Microphone
+  name: wf-radio-preset-microphone
+  category: TunedPercussion
+  priority: 70
+  program: 52  # Choir Aahs
+
+- type: radioPreset
+  id: MicrophoneOoh
+  name: wf-radio-preset-microphone-ooh
+  category: TunedPercussion
+  priority: 80
+  program: 53  # Voice Oohs
+
+- type: radioPreset
+  id: Woodblock
+  name: wf-radio-preset-woodblock
+  category: TunedPercussion
+  priority: 90
+  program: 115 # Woodblock
+
+- type: radioPreset
+  id: Taiko
+  name: wf-radio-preset-taiko
+  category: TunedPercussion
+  priority: 100
+  program: 116 # Taiko Drum
+
+- type: radioPreset
+  id: TomDrums
+  name: wf-radio-preset-tom-drums
+  category: TunedPercussion
+  priority: 110
+  program: 117 # Melodic Tom

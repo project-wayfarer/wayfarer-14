@@ -97,6 +97,7 @@
     - NFServiceToolsStatic
     - NFServiceEvaPackStatic
     - NFServiceKitchenStatic
+    - NFServiceToysStatic
     - NFServiceStatic
     - NFPaperAndPaperAccessories
     - ReportingStatic # DeltaV
@@ -309,7 +310,7 @@
     - NfsdToolsStatic
     - NfsdTargetsStatic
     - NfsdBoardsStatic
-    - NfsdReportingStatic
+    - ReportingStatic
   - type: BlueprintReceiver
     whitelist:
       tags:

@@ -1,0 +1,20 @@
+﻿- type: trait
+  id: Snoring
+  name: trait-snoring-name
+  description: trait-snoring-desc
+  category: Quirks
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Snoring
+
+- type: trait
+  id: GermanAccent
+  name: trait-german-name
+  description: trait-german-desc
+  category: Accents
+  cost: 1
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: GermanAccent

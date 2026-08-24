@@ -6,6 +6,7 @@ public sealed class FrontierConstants
     {
         "Dusk", // Wayfarer: check Dusk map
         "Frontier",
-        "NFDev"
+        "NFDev",
+        "MiniCentcomm"
     };
 }

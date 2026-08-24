@@ -22,6 +22,11 @@
   - type: Currency
     price:
       FrontierUplinkCoin: 1
+# Wayfarer: Add tag whitelist
+  - type: Tag
+    tags:
+    - WhitelistWallet
+# End Wayfarer
 
 - type: entity
   parent: FrontierUplinkCoin

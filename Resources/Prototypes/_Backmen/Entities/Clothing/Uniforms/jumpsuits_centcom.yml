@@ -1,0 +1,60 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomMilitary
+  name: centcom head of security military uniform
+  description: A loose and sturdy uniform of the CentCom special forces.
+  components:
+  - type: Sprite
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-military.rsi
+  - type: Clothing
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-military.rsi
+  - type: Armor
+# Wayfarer
+#    coverage:
+#    - Groin
+#    - Chest
+#    - Arm
+#    - Hand
+#    - Leg
+#    - Foot
+#    - Tail
+# End Wayfarer
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomPrivateOfficer
+  name: centcom security private officer uniform
+  description: Field uniform of a CentCom security private officer.
+  components:
+  - type: Sprite
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-private_officer.rsi
+  - type: Clothing
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-private_officer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitseniorofficer
+  name: centcom senior officer uniform
+  description: Field uniform of a CentCom senior officer.
+  components:
+  - type: Sprite
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer.rsi
+  - type: Clothing
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitseniorofficeruniform
+  name: centcom senior officer dress uniform
+  description: Dress uniform of a CentCom senior officer.
+  components:
+  - type: Sprite
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer_uniform.rsi
+  - type: Clothing
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer_uniform.rsi

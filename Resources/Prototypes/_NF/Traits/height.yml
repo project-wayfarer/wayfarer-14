@@ -36,8 +36,12 @@
   name: trait-fluffy-name
   description: trait-fluffy-desc
   category: Height
-  components:
-    - type: DisableDisplacements
-  whitelist:
+  # Wayfarer
+  conditions:
+  - !type:HasCompCondition
+    component: FluffyWhitelist
+  effects:
+  - !type:AddCompsEffect
     components:
-      - FluffyWhitelist
+    - type: DisableDisplacements
+  # End Wayfarer

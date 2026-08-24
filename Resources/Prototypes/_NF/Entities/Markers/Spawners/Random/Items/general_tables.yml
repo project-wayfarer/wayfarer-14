@@ -569,7 +569,9 @@
       - id: VendingMachineAutoTuneVend
       - id: VendingMachinePottedPlantVend
       - id: WaterCooler
-      - id: VendingMachineBarista # Mono
+      - id: VendingMachinePosterPrinter
+      - id: VendingMachinePosterPrinterNanotrasen
+      - id: VendingMachinePaintingPrinter
       # No food vendomats in expeds - buy from food ships or die
 #      - id: VendingMachineChang
 #      - id: VendingMachineDonut
@@ -596,6 +598,7 @@
       - id: VendingMachineClothingPunk
       - id: VendingMachineBountyVendPunk
       - id: VendingMachineSyndieContraband
+      - id: VendingMachinePosterPrinterSyndicate
 
 # region Flatpacks
 - type: entityTable
@@ -625,7 +628,7 @@
       children:
       - id: HoverbikeFlatpack
       - id: JukeboxFlatpack
-      # - id: ComputerIFFFlatpack # Wayfarer
+      - id: ComputerIFFFlatpack
 
 #region Circuit Boards
 - type: entityTable
@@ -876,7 +879,6 @@
   id: TableDungeonLootGeneralRestocksStuff
   table: !type:GroupSelector
     children:
-    - id: VendingMachineRestockBarista # Mono
     - id: VendingMachineRestockBooze
     - id: VendingMachineRestockChefvend
     - id: VendingMachineRestockCondimentStation

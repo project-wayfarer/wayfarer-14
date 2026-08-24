@@ -366,6 +366,18 @@
     containers:
       borg_brain:
       - PositronicBrain
+      # Wayfarer
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyBinary
+      - EncryptionKeyScience
+      - EncryptionKeyEngineering
+      - EncryptionKeyMedical
+      - EncryptionKeyService
+      - EncryptionKeyCargo
+      - EncryptionKeyTraffic
+      - EncryptionKeyGreeting
+      # End Wayfarer
   - type: ItemSlots
     slots:
       cell_slot:

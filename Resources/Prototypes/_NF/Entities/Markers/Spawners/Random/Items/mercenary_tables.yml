@@ -360,14 +360,14 @@
     - !type:GroupSelector
       weight: 0.15
       children:
-#      - id: CrateAmmoBoxRubber20 # Wayfarer
-#      - id: CrateAmmoBoxRubber25 # Wayfarer
-#      - id: CrateAmmoBoxRubber30 # Wayfarer
-#      - id: CrateAmmoBoxRubber35 # Wayfarer
-#      - id: CrateAmmoBoxRubber45 # Wayfarer
-#      - id: CrateAmmoBoxRubberShotgun # Wayfarer
+      - id: CrateAmmoBoxRubber20
+      - id: CrateAmmoBoxRubber25
+      - id: CrateAmmoBoxRubber30
+      - id: CrateAmmoBoxRubber35
+      - id: CrateAmmoBoxRubber45
+      - id: CrateAmmoBoxRubberShotgun
       - id: CrateAmmoBoxLethal20
-#      - id: CrateAmmoBoxLethal25 # Wayfarer
+      - id: CrateAmmoBoxLethal25
       - id: CrateAmmoBoxLethal30
       - id: CrateAmmoBoxLethal35
       - id: CrateAmmoBoxLethal45
@@ -397,23 +397,24 @@
       weight: 0.15
       children:
       - id: CrateAmmoBoxBigLethal20
-#      - id: CrateAmmoBoxBigLethal25 # Wayfarer
+      - id: CrateAmmoBoxBigLethal25
       - id: CrateAmmoBoxBigLethal30
-#      - id: CrateAmmoBoxBigRubber20 # Wayfarer
-#      - id: CrateAmmoBoxBigRubber25 # Wayfarer
-#      - id: CrateAmmoBoxFlareShotgun # Wayfarer
+      - id: CrateAmmoBoxBigLethal35
+      - id: CrateAmmoBoxBigLethal45
+      - id: CrateAmmoBoxBigLethalShotgun
+      - id: CrateAmmoBoxBigRubber20
+      - id: CrateAmmoBoxBigRubber25
+      - id: CrateAmmoBoxFlareShotgun
     # T5 - Legendary
-    # Wayfarer: Disabled
-#    - !type:GroupSelector
-#      weight: 0.05
-#      children:
-#      - id: CrateAmmoBoxPractice20
-#      - id: CrateAmmoBoxPractice25
-#      - id: CrateAmmoBoxPractice30
-#      - id: CrateAmmoBoxPractice35
-#      - id: CrateAmmoBoxPractice45
-#      - id: CrateAmmoBoxPracticeShotgun
-    # End Wayfarer
+    # - !type:GroupSelector
+    #   weight: 0.05
+    #   children:
+    #   - id: CrateAmmoBoxPractice20
+    #   - id: CrateAmmoBoxPractice25
+    #   - id: CrateAmmoBoxPractice30
+    #   - id: CrateAmmoBoxPractice35
+    #   - id: CrateAmmoBoxPractice45
+    #   - id: CrateAmmoBoxPracticeShotgun
 
 # region Crates (Armor)
 - type: entityTable
@@ -513,5 +514,5 @@
       weight: 0.3
     - id: MercenaryTechFabCircuitboardHackedNF
       weight: 0.1
-    # - id: ComputerIFFCircuitboard # Wayfarer
-    #   weight: 0.1
+    - id: ComputerIFFCircuitboard
+      weight: 0.1

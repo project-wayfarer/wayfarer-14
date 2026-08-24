@@ -12,7 +12,7 @@
     stackRequirements:
       Steel: 20
 
-# Wayfarer: Unique machine board for Faction Thrusters
+# Wayfarer: Unique machine board for Outlaw Thrusters
 - type: entity
   id: ThrusterMachineCircuitboardRogue
   parent: ThrusterMachineCircuitboard
@@ -44,12 +44,9 @@
 - type: entity
   id: LargeThrusterMachineCircuitboardNfsd
   parent: BaseMachineCircuitboard
-  name: CGP large thruster machine board
+  name: cgp large thruster machine board
   description: A large circuitboard for a 2x2 machine frame.
   components:
-  - type: Sprite
-    sprite: _NF/Objects/Misc/module.rsi
-    state: nfsd
   - type: MachineBoard
     prototype: ThrusterLargeNfsd
     frameSize: 2x2

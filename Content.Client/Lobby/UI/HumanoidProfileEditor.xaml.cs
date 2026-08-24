@@ -135,6 +135,8 @@ namespace Content.Client.Lobby.UI
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
 
+            Traits.OnTraitsChanged += OnTraitsSelectionChanged; // Wayfarer
+
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
 
@@ -438,7 +440,13 @@ namespace Content.Client.Lobby.UI
 
             //TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier
 
+            // Wayfarer
+            /*
             RefreshTraits();
+            */
+            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-traits-tab"));
+            UpdateTraitsSelection();
+            // End Wayfarer
 
             #region Markings
 
@@ -517,6 +525,8 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        // Wayfarer
+        /*
         /// <summary>
         /// Refreshes traits selector
         /// </summary>
@@ -628,6 +638,8 @@ namespace Content.Client.Lobby.UI
                 }
             }
         }
+        */
+        // End Wayfarer
 
         /// <summary>
         /// Refreshes the species selector.
@@ -811,7 +823,12 @@ namespace Content.Client.Lobby.UI
             RefreshJobs();
             RefreshLoadouts();
             RefreshSpecies();
+            // Wayfarer
+            /*
             RefreshTraits();
+            */
+            UpdateTraitsSelection();
+            // End Wayfarer
             RefreshFlavorText();
             ReloadPreview();
 
@@ -1294,7 +1311,12 @@ namespace Content.Client.Lobby.UI
             // In case there's species restrictions for loadouts
             RefreshLoadouts();
             // Frontier: In case there's species restrictions for traits
+            // Wayfarer
+            /*
             RefreshTraits(); // Frontier
+            */
+            UpdateTraitsSelection();
+            // End Wayfarer
             UpdateSexControls(); // update sex for new species
             UpdateSpeciesGuidebookIcon();
             ReloadPreview();

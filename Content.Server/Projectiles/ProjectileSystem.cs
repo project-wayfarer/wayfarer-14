@@ -7,8 +7,14 @@ using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
+using Robust.Shared.Physics; // Wayfarer
+using Robust.Shared.Physics.Components; // Wayfarer
+using Robust.Shared.Physics.Dynamics; // Wayfarer
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Physics.Systems; // Wayfarer
 using Robust.Shared.Player;
+using Robust.Shared.Timing; // Wayfarer
+using System.Linq; // Wayfarer
 
 namespace Content.Server.Projectiles;
 
@@ -20,12 +26,30 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    // Wayfarer - Raytraced projectiles (Adapted from Mono)
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
+    private EntityQuery<PhysicsComponent> _physQuery;
+    private EntityQuery<FixturesComponent> _fixQuery;
+
+    /// <summary>
+    /// Minimum velocity for a projectile to be considered for raycast hit detection.
+    /// Projectiles slower than this will rely on standard StartCollideEvent.
+    /// </summary>
+    private const float MinRaycastVelocity = 75f;
+    // End Wayfarer
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
+
+        // Wayfarer - Raytraced projectiles
+        _physQuery = GetEntityQuery<PhysicsComponent>();
+        _fixQuery = GetEntityQuery<FixturesComponent>();
+        // End Wayfarer
     }
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
@@ -126,4 +150,81 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
         }
     }
+
+    // Wayfarer - Raytraced Projectiles
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<ProjectileComponent, PhysicsComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var projectileComp, out var physicsComp, out var xform))
+        {
+            if (projectileComp.ProjectileSpent)
+                continue;
+
+            var currentVelocity = physicsComp.LinearVelocity;
+            if (currentVelocity.Length() < MinRaycastVelocity)
+                continue;
+
+            var lastPosition = _transformSystem.GetWorldPosition(xform);
+            var rayDirection = currentVelocity.Normalized();
+            // Ensure rayDistance is not zero to prevent issues with IntersectRay if frametime or velocity is zero.
+            var rayDistance = currentVelocity.Length() * frameTime;
+            if (rayDistance <= 0f)
+                continue;
+
+            if (!_fixQuery.TryComp(uid, out var fix) || !fix.Fixtures.TryGetValue(ProjectileFixture, out var projFix))
+                return;
+
+            var hits = _physics.IntersectRay(xform.MapID,
+                new CollisionRay(lastPosition, rayDirection, projFix.CollisionMask),
+                rayDistance,
+                uid, // Entity to ignore (self)
+                false) // IncludeNonHard = false
+                .ToList();
+
+            hits.RemoveAll(hit => {
+                var hitEnt = hit.HitEntity;
+
+                if (!_physQuery.TryComp(hitEnt, out var otherBody) || !_fixQuery.TryComp(hitEnt, out var otherFix))
+                    return true;
+
+                Fixture? hitFix = null;
+                foreach (var kv in otherFix.Fixtures)
+                {
+                    if (kv.Value.Hard)
+                    {
+                        hitFix = kv.Value;
+                        break;
+                    }
+                }
+                if (hitFix == null)
+                    return true;
+
+                // this is cursed but necessary
+                var ourEv = new PreventCollideEvent(uid, hitEnt, physicsComp, otherBody, projFix, hitFix);
+                RaiseLocalEvent(uid, ref ourEv);
+                if (ourEv.Cancelled)
+                    return true;
+
+                var otherEv = new PreventCollideEvent(hitEnt, uid, otherBody, physicsComp, hitFix, projFix);
+                RaiseLocalEvent(hitEnt, ref otherEv);
+                return otherEv.Cancelled;
+            });
+
+            if (hits.Count > 0)
+            {
+                // Process the closest hit
+                // IntersectRay results are not guaranteed to be sorted by distance, so we sort them.
+                hits.Sort((a, b) => a.Distance.CompareTo(b.Distance));
+                var closestHit = hits.First();
+
+                // teleport us so we hit it
+                // this is cursed but i don't think there's a better way to force a collision here
+                _transformSystem.SetWorldPosition(uid, _transformSystem.GetWorldPosition(closestHit.HitEntity));
+                continue;
+            }
+        }
+    }
+    // End Wayfarer
 }

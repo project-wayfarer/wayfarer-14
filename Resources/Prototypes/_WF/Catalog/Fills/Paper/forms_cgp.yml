@@ -10,17 +10,18 @@
   components:
   - type: StorageFill
     contents:
-    - id: PaperWrittenNfsdWarrant
     - id: PaperWrittenNfsdReport
-    - id: PaperWrittenNfsdArrestWarrant
     - id: PaperWrittenNfsdArrestReport
-    - id: PaperWrittenNfsdDutyLog
+    - id: PaperWrittenNfsdArrestWarrant
     - id: PaperWrittenNfsdAuthorization
+    - id: PaperWrittenCGPBMContrabandPermit
     - id: PaperWrittenNfsdContrabandAmnesty
     - id: PaperWrittenNfsdContrabandTurnover
+    - id: PaperWrittenNfsdDutyLog
+    - id: PaperWrittenCGPEContrabandPermit
+    - id: PaperWrittenCGPTrainingChecklist
     - id: PaperWrittenNfsdContrabandPermit
-    - id: PaperWrittenCGPBMContrabandPermit
-#    - id: PaperWrittenNFSDWritOfTheFrontier
+    - id: PaperWrittenNfsdWarrant
     - id: Paper
       prob: 0.5
     - id: Paper
@@ -41,7 +42,7 @@
   suffix: Forms, Brown
 
 # Forms
-- type: entity # Creator: Kwentov (Vica) Last updated 2026-07-22
+- type: entity # Search Warrant - Creator: Kwentov (Vica) Last updated 2026-07-22
   id: PaperWrittenNfsdWarrant
   name: search warrant
   parent: Paper
@@ -81,7 +82,7 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
 
-- type: entity # Creator: Starly (Shaw Clifflower) Last updated 2026-07-22
+- type: entity # After Action Report - Creator: Starly (Shaw Clifflower) Last updated 2026-08-14
   id: PaperWrittenNfsdReport
   name: after action report
   parent: Paper
@@ -98,9 +99,10 @@
       [color=#CF7332][bold]Offending Vessel:[/bold][/color] [form]
 
       [color=#ff0000]*[/color][color=#CF7332][bold]Suspects:[/bold][/color]
-      [form]
+
+
       [color=#ff0000]*[/color][color=#CF7332][bold]Charges:[/bold][/color]  [color=#AAAAAA](List any escalations, and which suspect if needed)[/color]
-      [form]
+
 
       [color=#CF7332][bold]Responding Vessel:[/bold][/color] [form]
       [color=#ff0000]*[/color][color=#CF7332][bold]Time of Incident:[/bold][/color] [form]
@@ -108,16 +110,16 @@
 
       [color=#ff0000]*[/color][color=#CF7332][head=3]Evidence Collected[/head][/color]
       [color=#AAAAAA]List all evidence collected below and the guardian in possession.[/color]
-      [form]
+
 
       [color=#ff0000]*[/color][color=#CF7332][head=3]Incident Summary[/head][/color]
-      [form]
+
 
       [color=#CF7332][head=3]Commendations[/head][/color]
-      [form]
+
 
       [color=#CF7332][head=3]Recommendations[/head][/color]
-      [form]
+
 
 
       [color=#AAAAAA] The requested signatories confirm all information on this report is accurate and correct to the best of their knowledge at the time of signing. Any details proven incorrect, falsified, or exaggerated may result in charges and/or this document being void.
@@ -135,7 +137,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Last updated 2026-07-22
+- type: entity # Arrest Warrant - Last updated 2026-07-22
   id: PaperWrittenNfsdArrestWarrant
   name: arrest warrant
   parent: Paper
@@ -180,7 +182,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Creator: Kwentov (Vica) Last updated 2026-07-22
+- type: entity # Arrest Report - Creator: Kwentov (Vica) Last updated 2026-08-14
   id: PaperWrittenNfsdArrestReport
   name: arrest report
   parent: Paper
@@ -198,7 +200,7 @@
       [color=#ff0000]*[/color][color=#CF7332][bold]Time of Arrest:[/bold][/color] [form]
       [color=#ff0000]*[/color][color=#CF7332][bold]Location of Arrest:[/bold][/color] [form]
       [color=#ff0000]*[/color][color=#CF7332][bold]Charges:[/bold][/color]
-      [form]
+
 
       [head=2]Arrested Person(s)[/head]
       [color=#ff0000]*[/color][color=#CF7332][bold]Name:[/bold][/color] [form]
@@ -230,7 +232,7 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
 
-- type: entity # Last updated 2026-07-22
+- type: entity # Duty Log - Last updated 2026-08-18
   id: PaperWrittenNfsdDutyLog
   name: duty log
   categories: [ HideSpawnMenu ]
@@ -246,29 +248,22 @@
       [color=#ff0000]*[/color][color=#CF7332][bold]Position:[/bold][/color] [form]
 
       [color=#AAAAAA](Times in D:HH:MM:SS. Round to nearest 15 minutes.)[/color]
-      [bold]Day One:[/bold]
-      [color=#ff0000]*[/color][color=#CF7332][bold]Sign On Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Break Time:[/bold][/color] [form]
-      [color=#ff0000]*[/color][color=#CF7332][bold]Sign Off Time:[/bold][/color] [form]
-      [color=#ff0000]*[/color][color=#CF7332][bold]Subtotal Time:[/bold][/color] [form]
-
-      [bold]Day Two:[/bold]
-      [color=#CF7332][bold]Sign On Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Break Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Sign Off Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Subtotal Time:[/bold][/color] [form]
-
-      [bold]Day Three:[/bold]
-      [color=#CF7332][bold]Sign On Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Break Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Sign Off Time:[/bold][/color] [form]
-      [color=#CF7332][bold]Subtotal Time:[/bold][/color] [form]
-
-      [color=#ff0000]*[/color][color=#CF7332][bold]Total Hours Earned:[/bold][/color] [form]
-
-      [color=#AAAAAA](For each day, Sign Off Time minus Sign On Time, minus Break Time to get hours for that day's subtotal. Add all subtotals for the total.)[/color]
+      [bold]Hours Worked:[/bold]
+      Start Time | End Time | Hours Accrued | Paid? | Paying Officer
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
+      [form] | [form] | [form] | [check] | [signature]
 
       [color=#CF7332][bold]Expenditures for the Duty Period:[/bold][/color] [color=#AAAAAA](List all funds paid by you for CGP benefit, eg. paid out contraband turnin if no CGP officer present to take funds from CGP account.)[/color]
+      [form]
+      [form]
+      [form]
+      [form]
+      [form]
       [form]
 
       [color=#AAAAAA] The requested signatories confirm all information on this report is accurate and correct to the best of their knowledge at the time of signing. Any details proven incorrect, falsified, or exaggerated may result in charges and/or this document being void.
@@ -287,7 +282,7 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
 
-- type: entity # Based on form made by Blumbee (Aki Suboshi) Last updated 2026-07-22
+- type: entity # Contraband Turnover - Based on form made by Blumbee (Aki Suboshi) Last updated 2026-07-22
   id: PaperWrittenNfsdContrabandTurnover
   name: contraband turnover receipt
   categories: [ HideSpawnMenu ]
@@ -333,7 +328,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Based on form made by Blumbee (Aki Suboshi) Last updated 2026-07-22
+- type: entity # Contraband Amnesty -  Based on form made by Blumbee (Aki Suboshi) Last updated 2026-08-13
   id: PaperWrittenNfsdContrabandAmnesty
   name: contraband amnesty agreement
   categories: [ HideSpawnMenu ]
@@ -344,6 +339,7 @@
       [color=#cf7332]◥[bold]CGP[/bold]◣ [bold]Concordia's Guardians of Peace[/bold][/color]
       [color=#cf7332]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
       [head=2]Contraband Amnesty Agreement[/head]
+      [color=#AAAAAA]Suggested fee for issue: 10,000.[/color]
 
       [head=3]Contraband Holder[/head]
          [color=#ff0000]*[/color][bold]Name:[/bold] [form]
@@ -368,7 +364,7 @@
       ☑ [color=#AAAAAA]The Named Person/Persons
       And a stamp from any of the below ticked ranks:[/color]
       ☐ [color=#AAAAAA]CGP IAA[/color]
-      ☐ [color=#AAAAAA]CGP Senior Peacekeeper[/color]
+      ☑ [color=#AAAAAA]CGP Senior Peacekeeper[/color]
       ☑ [color=#AAAAAA]CGP Master At Arms[/color]
       ☑ [color=#AAAAAA]CGP Commodore
       If none are available, then a stamp is required from the Dusk Station Representative, and this paperwork is to be presented to the CGP as soon as possible for approval or denial, else it will be void and charges will be raised.[/color]
@@ -378,7 +374,7 @@
 
       [color=#AAAAAA]This form is void without the signatures of both Parties and a stamp of Concordian Command (Master at Arms, Commodore or Station Representative).[/color]
 
-- type: entity # Based on form made by Blumbee (Aki Suboshi) Last updated 2026-07-22
+- type: entity # C2 Permit - Based on form made by Blumbee (Aki Suboshi) Last updated 2026-08-13
   id: PaperWrittenNfsdContrabandPermit
   name: military class contraband permit
   categories: [ HideSpawnMenu ]
@@ -388,7 +384,8 @@
     content: |2
       [color=#cf7332]◥[bold]CGP[/bold]◣ [bold]Concordia's Guardians of Peace[/bold][/color]
       [color=#cf7332]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
-      [head=2]Military Class Contraband Permit[/head]
+      [head=2]Military Class (C2) Contraband Permit[/head]
+      [color=#AAAAAA]Suggested fee for issue: 10,000.[/color]
 
       [color=#ff0000]*[/color][bold]Permit Holder:[/bold] [form]
       [color=#ff0000]*[/color][bold]Ship IFF:[/bold] [form]
@@ -416,7 +413,7 @@
       Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
 
-- type: entity # Based on form made by Starly (Shaw Clifflower) Last updated 2026-07-22
+- type: entity # Auth for Bluespace Threats - Based on form made by Starly (Shaw Clifflower) Last updated 2026-07-22
   id: PaperWrittenNfsdAuthorization
   name: authorization for bluespace threats
   parent: Paper
@@ -427,11 +424,14 @@
       [color=#cf7332]◥[bold]CGP[/bold]◣ [bold]Concordia's Guardians of Peace[/bold][/color]
       [color=#cf7332]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
       [head=2]Authorization for Bluespace Threats[/head]
+      [color=#AAAAAA]Suggested fee for issue: 10,000.[/color]
 
       [color=#ff0000]*[/color][bold]Ship Captain:[/bold] [form]
       [color=#ff0000]*[/color][bold]Ship IFF:[/bold] [form]
       [color=#ff0000]*[/color][bold]Shift Time:[/bold] [form]
       [bold]Ship Crew:[/bold]
+      [form]
+      [form]
       [form]
 
       [head=3][bold]Issuing Concordian Authority[/bold][/head]
@@ -462,7 +462,7 @@
       ☑ [color=#AAAAAA]The Named Person/Persons
       And a stamp from any of the below ticked ranks:[/color]
       ☐ [color=#AAAAAA]CGP IAA[/color]
-      ☐ [color=#AAAAAA]CGP Senior Peacekeeper[/color]
+      ☑ [color=#AAAAAA]CGP Senior Peacekeeper[/color]
       ☑ [color=#AAAAAA]CGP Master At Arms[/color]
       ☑ [color=#AAAAAA]CGP Commodore
       If none are available, then a stamp is required from the Dusk Station Representative, and this paperwork is to be presented to the CGP as soon as possible for approval or denial, else it will be void and charges will be raised.[/color]
@@ -471,60 +471,78 @@
       Items with [color=#ff0000]*[/color] are mandatory.[/color]
       [color=#AAAAAA]This Form is void without the signatures of both the permitted Captain and the issuing Commanding Guardian, as well as their stamp when one is available at their rank.[/color]
 
-#- type: entity # Based on form made by Red - Currently Redundant
-#  id: PaperWrittenNFSDWritOfTheFrontier
-#  name: authorization for bluespace threats
-#  parent: Paper
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: Paper
-#    content: |2
-#      [color=#cf7332]◥[bold]CGP[/bold]◣ [bold]Concordia's Guardians of Peace[/bold][/color]
-#      [color=#cf7332]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
-#      [head=2]Authorization for Bluespace Threats[/head]
-#
-#      [head=3]Contraband Holder[/head]
-#          [bold]Name:[/bold]
-#          [bold]Species:[/bold]
-#          [bold]Vessel IFF:[/bold]
-#
-#      [bold]Holder Crew:[/bold]
-#          [bullet/]
-#          [bullet/]
-#          [bullet/]
-#
-#      [bold]Payout per FUC:[/bold] [color=#ff0000]$2,000[/color]
-#      [bold]Shift Time:[/bold]
-#
-#      This document is a contract between the above Contraband Holder and Concordia Command.
-#
-#      Any crimes of contraband possession for the Contraband Holder will be waived so long as all class 3 contraband items, and any class 2 contraband items not subject to a Class 2 Contraband Permit are turned in within reasonable time (subject to the clause below), and not used for malicious purposes. Noncompliance with this document results in voiding any standing Class 2 Contraband Permits.
-#
-#      If the Contraband Holder is not paid in full at the above rate for any contraband turned in, they may remain in possession of the contraband without penalty at their discretion.
-#
-#      This Permit allows the Holder and crew, as listed above, to possess and use class 2 contraband.
-#      Non-compliance with a Contraband Amnesty agreement voids this Permit.
-#      Refer to §6.1.4 of Space Law for a full definition of class 2 contraband.
-#
-#      This document authorizes the above vessel and its captain to assist and cooperate with the CGP and Concordia authorities in neutralizing hostile bluespace threats to Concordia. These include, but are not limited to:
-#         [bullet] Cultist vessels
-#         [bullet] Syndicate vessels
-#         [bullet] Wizard Federation vessels
-#         [bullet] Arcadia Industries vessels
-#
-#      This document does NOT deputize the authorized party. The authorized party is not granted special privileges to arrest, detain, and prosecute individuals associated with Concordia.
-#
-#      [bold]Any contraband seized during operations aboard hostile vessels must be surrendered, either to the CGP or the Station Representative, for a cash bounty. Failure to surrender contraband will lead to the forfeiture of this agreement, and the authorized party may be liable for criminal charges.[/bold]
-#
-#      The authorized party is to keep a copy of this document for inspection. The authorized party is expected to maintain contact with CGP command and/or the Station Representative to minimize casualties.
-#
-#      Before engaging with hostile vessels, the authorized party is expected to follow any instructions given by the CGP for staging or other preparation prior to boarding.
-#
-#
-#
-#      [color=#AAAAAA]This Permit is void without the signature of the Holder and the signature and stamp of the Master-at-Arms or Commodore.[/color]
+- type: entity # Training Checklist - Created by Experiment621 Last updated 2026-08-13
+  id: PaperWrittenCGPTrainingChecklist
+  name: junior peacekeeper training checklist
+  parent: Paper
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: |2
+      [color=#cf7332]◥[bold]CGP[/bold]◣ [bold]Concordia's Guardians of Peace[/bold][/color]
+      [color=#cf7332]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
+      [head=2]Junior Peacekeeper Training Checklist[/head]
 
-- type: entity # Last updated 2026-07-22
+      Junior Peacekeeper Name: [form]
+
+      [head=3]Basic Orientation[/head]
+      The very basics of the job.
+      [bullet]Teach the recruit about duty papers: ([check])
+      [bullet]Have the recruit fill out their duty paper correctly: ([check])
+      [bullet]Tour of the outpost: ([check])
+      [bullet]Teach the recruit about Zekke Credits: ([check])
+      [bullet]Show the recruit a uplink: ([check])
+      [bullet]Have the recruit display or talk through appropriate escalation: ([check])
+
+      [head=3]Gear Orientation[/head]
+      What they need in order not to be killed in 5 seconds.
+      [bullet]Teach the recruit about their patrol suit: ([check])
+      [bullet]Teach the recruit about the combat suit: ([check])
+      [bullet]Teach the recruit appropriate times for standard gear and combat gear: ([check])
+      [bullet]Teach the recruit about the importance of plates: ([check])
+      [bullet]Teach the recruit about requesting weapons from MAA: ([check])
+      [bullet]Teach the recruit the importance of backup weapons, typically in case of EMP: ([check])
+      [bullet]Teach the recruit about explosive safety: ([check])
+      [bullet]Teach the recruit about meds and what they need: ([check])
+      [bullet]Let the recruit make their own combat bag: ([check])
+      [bullet]Check recruit's combat bag, ask for reasons, offer suggestions if needed: ([check])
+      [bullet]Teach the recruit about pin pointers: ([check])
+      [bullet]Have the tag their ID: ([check])
+
+      [head=3]Basic Ground Combat Orientation[/head]
+      The fun part.
+      [bullet]Teach the recruit fire positions, prone/standing: ([check])
+      [bullet]Teach the recruit corner peeking and give examples on both sides: ([check])
+      [bullet]Teach the recruit distance bias, with an example: ([check])
+      [bullet]Teach the recruit the importance of teamwork and coordination: ([check])
+      [bullet]Teach the recruit Disable, Open, Entry on an example area, alongside others: ([check])
+
+      [head=3]Basic Document Orientation[/head]
+      Paperwork is dull, but is proof of what you did. Never lie on it.
+      [bullet]Teach the recruit after-action reports and arrest warrants: ([check])
+      [bullet]Teach the recruit about contraband turn ins and permits, alongside permit fees: ([check])
+
+      [head=3]Basic Anti-Smuggling and Forensics Orientation[/head]
+      Scan them and detonate them.
+      [bullet]Teach the recruit about paper reports turned into CGP: ([check])
+      [bullet]Teach the recruit about the scanner and the logprobe: ([check])
+      [bullet]Teach the recruit how to deal with dead drops: ([check])
+      [bullet]Teach the recruit about radio scanner calls: ([check])
+      [bullet]Teach the recruit how to deal with pods and how to dispose of pods: ([check])
+
+      [head=3]Basic Ship Orientation[/head]
+      Don't crash into Dusk.
+      [bullet]Teach the recruit different ships: ([check])
+      [bullet]Teach the recruit about upgrades: ([check])
+      [bullet]Equip the recruit for space EVA combat: ([check])
+      [bullet]Teach the recruit space EVA combat: ([check])
+      [bullet]Teach the recruit about ship-to-ship combat: ([check])
+      [bullet]Teach the recruit about ship inspections and search: ([check])
+      [bullet]Teach the recruit about safety aboard ships, and ship weapon safety: ([check])
+
+      Get the recruit paid in order to end on a high note: ([check])
+
+- type: entity # C3 Permit - Last updated 2026-08-18
   id: PaperWrittenCGPBMContrabandPermit
   name: black market contraband permit
   categories: [ HideSpawnMenu ]
@@ -534,16 +552,20 @@
     content: |2
       [color=#cf7332]◥[bold]CGP[/bold]◣ [bold]Concordia's Guardians of Peace[/bold][/color]
       [color=#cf7332]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
-      [head=2]Black Market Class Contraband Permit[/head]
+      [head=2]Black Market Class (C3) Contraband Permit[/head]
+      [color=#AAAAAA]Suggested fee for issue: 30,000.[/color]
 
       [color=#ff0000]*[/color][bold]Permit Holder:[/bold] [form]
       [color=#ff0000]*[/color][bold]Item Name:[/bold] [form]
       [color=#ff0000]*[/color][bold]Item Serial #:[/bold] [form]
       [color=#cf7332](CGP must verify Serial # before approval.)[/color]
+      [color=#AAAAAA](If you are having trouble coming up with a serial for the labeller, the suggested format is: First three letters of the permit's name, First three of the Issuer's name, round time {Day Hour Minute Seconds}.
+
+      Example: "ECL-VAS-2143252")[/color]
 
       [color=#ff0000]*[/color][color=#CF7332][bold]Shift Time:[/bold][/color] [form]
 
-      This Permit allows the Holder, as listed above, to [bold]possess and use a single class 3 contraband item[/bold]. The Holder agrees to not flaunt, wear, wield, or brandish this item in public areas such as Dusk Station. The serialized item is the responsibility of the Holder, and if it is found in the possesion of another, or used during any crime, CGP may press charges against the Holder.
+      This Permit allows the Holder, as listed above, to [bold]possess and use a single class 3 contraband item[/bold]. This Permit [bold]CANNOT be issued alongside a Esoteric (C3E) Contraband Permit.[/bold] The Holder agrees to not flaunt, wear, wield, or brandish this item in public areas such as Dusk Station. The serialized item is the responsibility of the Holder, and if it is found in the possesion of another, or used during any crime, CGP may press charges against the Holder.
 
       Non-compliance with a Contraband Amnesty agreement or Bluespace Threats permit voids this Permit.
 
@@ -555,7 +577,50 @@
       And a stamp from any of the below ticked ranks:[/color]
       ☐ [color=#AAAAAA]CGP IAA[/color]
       ☐ [color=#AAAAAA]CGP Senior Peacekeeper[/color]
-      ☐ [color=#AAAAAA]CGP Master At Arms[/color]
+      ☑ [color=#AAAAAA]CGP Master At Arms[/color]
+      ☑ [color=#AAAAAA]CGP Commodore
+      If none are available, then a stamp is required from the Dusk Station Representative, and this paperwork is to be presented to the CGP as soon as possible for approval or denial, else it will be void and charges will be raised.[/color]
+      ☒ [color=#AAAAAA]If there is a cross in this box, a Dusk Station Representative [bold]cannot[/bold] authorise this form.
+      Items in [color=#CF7332]orange[/color] are to be filled out by CGP personnel.
+      Items with [color=#ff0000]*[/color] are mandatory.[/color]
+
+- type: entity # C3E Permit - Alteration of C3 permit by Hawk - Last updated 2026-08-18
+  id: PaperWrittenCGPEContrabandPermit
+  name: esoteric contraband permit
+  categories: [ HideSpawnMenu ]
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [color=#cf7332]◥[bold]CGP[/bold]◣ [bold]Concordia's Guardians of Peace[/bold][/color]
+      [color=#cf7332]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
+      [head=2]Esoteric Class (C3E) Contraband Permit[/head]
+      [color=#AAAAAA]Suggested fee for issue: 30,000.[/color]
+
+      [color=#ff0000]*[/color][bold]Permit Holder:[/bold] [form]
+      [color=#ff0000]*[/color][bold]Vessel:[/bold] [form]
+      [color=#ff0000]*[/color][bold]Crew:[/bold]
+      [form]
+      [form]
+      [form]
+
+      [color=#ff0000]*[/color][color=#CF7332][bold]Shift Time:[/bold][/color] [form]
+
+      This Permit allows the Holder and crew, as listed above, to [bold]possess and use class 3E contraband items[/bold]. This Permit [bold]CANNOT be issued alongside a Black Market (C3) Contraband Permit.[/bold] The Holder agrees to not flaunt, wear, wield, or brandish esoteric items in public areas such as Dusk Station. Esoteric items are the responsibility of the Holder.
+
+      Additionally, all Esoteric items, even used for research purposes, come with risks. By using them under the permit, Concordia is not liable to any self-inflicted harms caused by Esoteric items, and the Holder may be held fully liable and chargeable for any laws broken by esoteric items transferred to others, especially harm to others.
+
+      Non-compliance with a Contraband Amnesty agreement or Bluespace Threats permit voids this Permit.
+
+      [color=#AAAAAA] The requested signatories confirm all information on this report is accurate and correct to the best of their knowledge at the time of signing. Any details proven incorrect, falsified, or exaggerated may result in charges and/or this document being void.
+      This document is void without the signatures of ticked parties: (NB: Some parties may be the same person, only one signature is needed from the person in that case.)[/color]
+      ☑ [color=#AAAAAA]The Author[/color]
+      ☑ [color=#AAAAAA]The Approver[/color]
+      ☐ [color=#AAAAAA]The Named Person/Persons
+      And a stamp from any of the below ticked ranks:[/color]
+      ☐ [color=#AAAAAA]CGP IAA[/color]
+      ☐ [color=#AAAAAA]CGP Senior Peacekeeper[/color]
+      ☑ [color=#AAAAAA]CGP Master At Arms[/color]
       ☑ [color=#AAAAAA]CGP Commodore
       If none are available, then a stamp is required from the Dusk Station Representative, and this paperwork is to be presented to the CGP as soon as possible for approval or denial, else it will be void and charges will be raised.[/color]
       ☒ [color=#AAAAAA]If there is a cross in this box, a Dusk Station Representative [bold]cannot[/bold] authorise this form.

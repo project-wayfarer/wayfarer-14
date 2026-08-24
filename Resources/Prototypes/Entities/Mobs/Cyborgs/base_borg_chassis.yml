@@ -122,6 +122,7 @@
       cell_slot: !type:ContainerSlot { }
       borg_module: !type:Container { }
       part-container: !type:Container
+      key_slots: !type:Container # Wayfarer
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true

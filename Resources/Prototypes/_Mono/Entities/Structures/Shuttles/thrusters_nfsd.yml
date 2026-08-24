@@ -1,11 +1,11 @@
 - type: entity
   id: ThrusterLargeNfsd
   parent: ThrusterLarge
-  suffix: CGP # Wayfarer light blue < CGP
+  suffix: light blue
   components:
   - type: Sprite
     sprite: _Mono/Structures/Shuttles/thrusternfsd_large.rsi
-    # Wayfarer Start
+  # Wayfarer
   - type: Machine
     board: LargeThrusterMachineCircuitboardNfsd
     # End Wayfarer

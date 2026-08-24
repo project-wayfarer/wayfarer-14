@@ -1,0 +1,69 @@
+- type: entity
+  parent: BaseWall
+  id: BluespaceDenseWall
+  name: dense bluespace wall
+#  suffix: Interior
+  components:
+#  - type: RCDDeconstructable
+#    cost: 6
+#    delay: 8
+#    fx: EffectRCDDeconstruct8
+#  - type: Destructible
+#   thresholds:
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 400
+#      behaviors:
+#      - !type:DoActsBehavior
+#        acts: ["Destruction"]
+#      - !type:PlaySoundBehavior
+#        sound:
+#          collection: MetalSlam
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 200
+#      behaviors:
+#      - !type:PlaySoundBehavior
+#        sound:
+#          collection: MetalSlam
+#      - !type:ChangeConstructionNodeBehavior
+#        node: girder
+#      - !type:DoActsBehavior
+#        acts: ["Destruction"]
+  - type: Sprite
+    sprite: _WF/Structures/Walls/densebluespace.rsi
+  - type: Icon
+    sprite: _WF/Structures/Walls/densebluespace.rsi
+#  - type: Construction
+#    graph: Girder
+#    node: shuttleInteriorWall
+  - type: IconSmooth
+    key: walls
+    base: state
+
+- type: entity
+  parent: BluespaceDenseWall
+  id: BluespaceSparseWall
+  name: sparse bluespace wall
+  components:
+#  - type: Construction
+#    graph: Girder
+#    node: shuttleInteriorWall
+  - type: Occluder
+    enabled: false
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+  - type: Sprite
+    sprite: _WF/Structures/Walls/sparsebluespace.rsi
+  - type: Icon
+    sprite: _WF/Structures/Walls/sparsebluespace.rsi
+  - type: IconSmooth
+    key: walls
+    base: state

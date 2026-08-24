@@ -63,11 +63,15 @@
   - type: Tag
     tags:
     - BypassInteractionRangeChecks
-  - type: PointLight
+  - type: NightVision
     netsync: false
-    radius: 6
-    castShadows: false
     enabled: false
+    prioritized: false
+    relayOverlay: false # In case default values change
+    lightingColor: '#FFFFFF20'
+    overlayColor: '#FFFFFF00'
+    noiseAmount: 0 # In case default values change
+    noiseMultiplier: 0 # In case default values change
   # Frontier: changes to the prototype so it can access radars
   - type: UserInterface
     interfaces:

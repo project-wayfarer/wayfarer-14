@@ -31,6 +31,31 @@
     inherentRadioChannels:
     - Common
     - Binary
+    # Wayfarer
+    - Science
+    - Engineering
+    - Medical
+    - Service
+    - Supply
+    - Traffic
+    - Greeting
+  - type: Stripping
+  - type: EncryptionKeyHolder
+    keySlots: 14
+    keysExtractionMethod: Cutting
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyBinary
+      - EncryptionKeyScience
+      - EncryptionKeyEngineering
+      - EncryptionKeyMedical
+      - EncryptionKeyService
+      - EncryptionKeyCargo
+      - EncryptionKeyTraffic
+      - EncryptionKeyGreeting
+  # End Wayfarer
   - type: BankAccount #Wayfarer gives the borg the ability to deposit money into it's account
 
 - type: entity

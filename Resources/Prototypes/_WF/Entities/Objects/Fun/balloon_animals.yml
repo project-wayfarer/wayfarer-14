@@ -111,3 +111,21 @@
     tags:
     - Balloon
   - type: BalloonOnString
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxBalloon
+  name: box of balloons
+  description: A box of balloons to be contorted into various forms.
+  components:
+  - type: Sprite
+    layers:
+    - state: box
+    - sprite: Objects/Fun/Balloons/balloon_animals.rsi
+      state: banana
+      scale: 0.48, 0.48
+      offset: -0.06, -0.07
+  - type: StorageFill
+    contents:
+    - id: BalloonEmpty
+      amount: 10

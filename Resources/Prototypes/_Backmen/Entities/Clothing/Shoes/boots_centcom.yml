@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingShoesBase # Wayfarer: ClothingShoesBootsSpetsnaz<ClothingShoesBase
+  id: ClothingShoesBootsCentcom
+  name: centcom hobnailed boots
+  description: Special footwear for Central Command personnel.
+  components:
+  - type: Sprite
+    sprite: _Backmen/Clothing/Shoes/Boots/centcom_jackboots.rsi
+  - type: Clothing
+    sprite: _Backmen/Clothing/Shoes/Boots/centcom_jackboots.rsi
+  - type: NoSlip

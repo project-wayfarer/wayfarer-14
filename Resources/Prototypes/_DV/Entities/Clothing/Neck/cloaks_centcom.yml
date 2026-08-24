@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: DVClothingNeckCentcommCloakBoat
+  name: central command boat cloak
+  description: A emerald greeen durathread boat cloak with a red felt lining and gold trim. Somehow, it's even more expensive than it looks.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Neck/Cloaks/boatcloakcc.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Neck/Cloaks/boatcloakcc.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

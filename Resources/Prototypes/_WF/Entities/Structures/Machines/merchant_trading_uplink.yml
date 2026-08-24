@@ -38,7 +38,31 @@
     key: enum.StoreUiKey.Key
   - type: Store
     balance:
-      WayfarerMerchantToken: 0 
+      WayfarerMerchantToken: 0
+  - type: Tag
+    tags:
+    - WFMerchantUplink
+
+- type: entity
+  parent: [ BaseItem, StorePresetMerchantUplink ]
+  id: MerchantUplinkRadio
+  name: Merchant Handheld uplink
+  description: Tried and tested Bluespace Technology in the palm of your hand.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: walkietalkie
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: walkietalkie
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
   - type: Tag
     tags:
     - WFMerchantUplink

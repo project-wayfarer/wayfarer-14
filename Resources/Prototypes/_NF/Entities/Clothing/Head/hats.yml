@@ -150,6 +150,9 @@
   - type: Clothing
     sprite: _WF/Clothing/Head/Hats/CGP_beret_green.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_green.rsi < _WF/Clothing/Head/Hats/CGP_beret_green.rsi
   - type: CatWearable
+  - type: Tag
+    tags:
+    - HamsterWearable
 
 - type: entity
   parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
@@ -162,6 +165,9 @@
   - type: Clothing
     sprite: _WF/Clothing/Head/Hats/CGP_beret_brown.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_brown.rsi < _WF/Clothing/Head/Hats/CGP_beret_brown.rsi
   - type: CatWearable
+  - type: Tag
+    tags:
+    - HamsterWearable
 
 - type: entity
   parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
@@ -174,6 +180,9 @@
   - type: Clothing
     sprite: _WF/Clothing/Head/Hats/CGP_beret_cream.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_beret_cream.rsi < _WF/Clothing/Head/Hats/CGP_beret_cream.rsi
   - type: CatWearable
+  - type: Tag
+    tags:
+    - HamsterWearable
 
 - type: entity
   parent: [ClothingHeadBaseButcherable, BaseCGPContraband] # Wayfarer: add BaseCGPContraband
@@ -228,6 +237,9 @@
   - type: Clothing
     sprite: _WF/Clothing/Head/Hats/CGP_campaign_small.rsi # Wayfarer: _NF/Clothing/Head/Hats/nfsd_campaign_small.rsi < _WF/Clothing/Head/Hats/CGP_campaign_small.rsi
   - type: CatWearable
+  - type: Tag
+    tags:
+    - HamsterWearable
   - type: PirateBountyItem
     id: CampaignHat
 
@@ -311,3 +323,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Head/Hats/beret_arcadia.rsi
   - type: CatWearable
+  - type: Tag
+    tags:
+      - HamsterWearable

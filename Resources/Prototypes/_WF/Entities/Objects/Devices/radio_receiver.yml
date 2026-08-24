@@ -1,0 +1,38 @@
+﻿- type: entity
+  parent: BaseItem
+  id: WFRadioReceiver
+  name: portable radio
+  description: A portable radio that lets you listen to radio stations. Manufactured by Freddy's Electronics.
+  components:
+  - type: RadioReceiver
+  # Lets voices come out of the radio.
+  - type: Speech
+    speechVerb: Robotic
+  - type: Sprite
+    sprite: _WF/Objects/Devices/boombox.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: boombox
+    - map: ["radioSpeaker"]
+      state: boombox_speaker
+      shader: unshaded
+      visible: false
+  - type: Item
+    size: Normal
+    heldPrefix: off
+  - type: StaticPrice
+    price: 5000
+    vendPrice: 10000
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.RadioReceiverVisuals.PoweredOn:
+        radioSpeaker:
+          True: { visible: true, shader: unshaded }
+          False: { visible: false }
+  - type: ActivatableUI
+    key: enum.RadioReceiverUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.RadioReceiverUiKey.Key:
+        type: RadioReceiverBoundUserInterface

@@ -110,6 +110,13 @@
     sprite: Objects/Consumable/Food/burger.rsi
     shape:
     - 0,0,1,0
+  # Wayfarer: 8h shelf life for prepared meals
+  - type: Perishable
+    rotAfter: 28800
+    molsPerSecondPerUnitMass: 0
+  - type: Temperature
+    currentTemperature: 290
+  # End Wayfarer
 
 # Custom Burger Example
 

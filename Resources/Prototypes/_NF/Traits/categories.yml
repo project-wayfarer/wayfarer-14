@@ -1,4 +1,5 @@
 - type: traitCategory
   id: Height
   name: trait-category-height
-  maxTraitPoints: 1
+  priority: 25 # Wayfarer
+  maxPoints: 1 # Wayfarer: maxTraitPoints<maxPoints
