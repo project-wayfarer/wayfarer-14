@@ -109,7 +109,7 @@
     - NFWeaponRifleAssaultGestio
 
 - type: loadout
-  id: WFLongarmTypewriter
+  id: WFLongarmTypewriter #WF14 Atredies>Typerwriter, because Typewriter is legal.
   effects:
   - !type:GroupLoadoutEffect
     proto: WFT4
