@@ -34,7 +34,8 @@ public sealed class PlantAnalyzerSystem : EntitySystem
         if (args.Target == null || !args.CanReach || !_cell.HasActivatableCharge(ent, user: args.User))
             return;
 
-        _doAfterSystem.Cancel(ent.Comp.DoAfter); //This might log an error if we were assigned an Id but the DoAfter was never queued
+        if (ent.Comp.DoAfter != null)
+            return;
 
         if (HasComp<SeedComponent>(args.Target) || TryComp<PlantHolderComponent>(args.Target, out var plantHolder) && plantHolder.Seed != null)
         {

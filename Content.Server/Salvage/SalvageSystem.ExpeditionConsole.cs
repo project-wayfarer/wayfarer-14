@@ -64,19 +64,18 @@ public sealed partial class SalvageSystem
         #region Frontier FTL changes
         // until FTL changes for us in some way.
 
-
-        if (Transform(uid).GridUid is not { Valid: true } ourGrid
-            || !TryComp<MapGridComponent>(ourGrid, out var gridComp))
-        {
-            PlayDenySound((uid, component));
-            _popupSystem.PopupEntity(Loc.GetString("shuttle-ftl-invalid"), uid, PopupType.MediumCaution);
-            UpdateConsoles((station.Value, data));
-            return;
-        }
-
         // Run a proximity check (unless using a debug console)
         if (_salvage.ProximityCheck && !component.Debug)
         {
+            if (!TryComp<StationDataComponent>(station, out var stationData)
+                || _station.GetLargestGrid((station.Value, stationData)) is not { Valid: true } ourGrid
+                || !TryComp<MapGridComponent>(ourGrid, out var gridComp))
+            {
+                PlayDenySound((uid, component));
+                _popupSystem.PopupEntity(Loc.GetString("shuttle-ftl-invalid"), uid, PopupType.MediumCaution);
+                UpdateConsoles((station.Value, data));
+                return;
+            }
 
             if (HasComp<FTLComponent>(ourGrid))
             {
@@ -106,7 +105,7 @@ public sealed partial class SalvageSystem
                 return;
             }
         }
-        SpawnMission(missionparams, station.Value, ourGrid, null);
+        SpawnMission(missionparams, station.Value, null);
         #endregion Frontier FTL changes
         // End Frontier
 
@@ -235,7 +234,9 @@ public sealed partial class SalvageSystem
         }
 
         // Frontier: if we have a lingering FTL component, we cannot start a new mission
-        if (HasComp<FTLComponent>(Transform(component.Owner).GridUid))
+        if (!TryComp<StationDataComponent>(station, out var stationData) ||
+                _station.GetLargestGrid((station.Value, stationData)) is not { Valid: true } grid ||
+                HasComp<FTLComponent>(grid))
         {
             state.Cooldown = true; //Hack: disable buttons
         }

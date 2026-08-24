@@ -470,12 +470,12 @@ namespace Content.Shared.Preferences
             // Category not found so dump it.
             TraitCategoryPrototype? traitCategory = null;
 
-            if (!protoManager.Resolve(category, out traitCategory)) // DeltaV 13/01/26 - Traits: Category is no longer nullable
+            if (category != null && !protoManager.TryIndex(category, out traitCategory))
                 return new(this);
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
 
-            if (traitCategory.MaxPoints < 0) // DeltaV 13/01/26 - Traits: Changed to MaxPoints
+            if (traitCategory == null || traitCategory.MaxTraitPoints < 0)
             {
                 return new(this)
                 {
@@ -496,7 +496,7 @@ namespace Content.Shared.Preferences
                 count += otherProto.Cost;
             }
 
-            if (count > traitCategory.MaxPoints && traitProto.Cost != 0) // DeltaV 13/01/26 - Traits: Changed to MaxPoints
+            if (count > traitCategory.MaxTraitPoints && traitProto.Cost != 0)
             {
                 return new(this);
             }
@@ -762,21 +762,21 @@ namespace Content.Shared.Preferences
                     continue;
 
                 // Always valid.
-                // if (traitProto.Category == null) // DeltaV 13/01/26 - Traits rework
-                // {
-                //     result.Add(trait);
-                //     continue;
-                // }
+                if (traitProto.Category == null)
+                {
+                    result.Add(trait);
+                    continue;
+                }
 
                 // No category so dump it.
-                if (!protoManager.Resolve(traitProto.Category, out var category))
+                if (!protoManager.TryIndex(traitProto.Category, out var category))
                     continue;
 
                 var existing = groups.GetOrNew(category.ID);
                 existing += traitProto.Cost;
 
                 // Too expensive.
-                if (existing > category.MaxPoints) // DeltaV 13/01/26 - Traits:  Was MaxTraitPoints
+                if (existing > category.MaxTraitPoints)
                     continue;
 
                 groups[category.ID] = existing;

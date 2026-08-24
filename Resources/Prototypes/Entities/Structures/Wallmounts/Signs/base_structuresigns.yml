@@ -22,7 +22,3 @@
     price: 20
   - type: Transform
     anchored: false
-  # Frontier: suppress "<sign> is unanchored from the floor!" text on examine
-  - type: Anchorable
-    flags: None
-  # End Frontier

@@ -16,10 +16,12 @@ using Content.Shared.Timing; // Frontier
 using Content.Shared.Access.Systems; // Frontier
 using Content.Shared.Verbs; // Frontier
 using Content.Shared.Ghost; // Frontier
-using Content.Shared.IdentityManagement; // RMC14
-using Content.Shared.IdentityManagement.Components; // RMC14
-using Content.Shared.Mind.Components; // RMC14
-using Content.Shared.Roles; // RMC14
+// Starlight-start
+using Content.Shared.IdentityManagement;
+using Content.Shared.IdentityManagement.Components;
+using Content.Shared.Mind.Components;
+using Content.Shared.Roles;
+// Starlight-end
 
 namespace Content.Shared.Paper;
 
@@ -36,12 +38,12 @@ public sealed class PaperSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!; // Frontier
+    [Dependency] private readonly SharedIdentitySystem _identitySystem = default!; // Starlight-edit
 
     private const int ReapplyLimit = 10; // Frontier: limits on reapplied stamps
     private const int StampLimit = 100; // Frontier: limits on total stamps on a page (should be able to get a signature from everybody on the server on a page)
     private static readonly ProtoId<TagPrototype> NFPaperStampProtectedTag = "NFPaperStampProtected"; // Frontier
     private static readonly ProtoId<TagPrototype> NFWriteIgnoreUnprotectedStampsTag = "NFWriteIgnoreUnprotectedStamps"; // Frontier
-    [Dependency] private readonly SharedIdentitySystem _identitySystem = default!; // RMC14
 
     private static readonly ProtoId<TagPrototype> WriteIgnoreStampsTag = "WriteIgnoreStamps";
     private static readonly ProtoId<TagPrototype> WriteTag = "Write";
@@ -63,7 +65,8 @@ public sealed class PaperSystem : EntitySystem
         SubscribeLocalEvent<RandomPaperContentComponent, MapInitEvent>(OnRandomPaperContentMapInit);
 
         SubscribeLocalEvent<ActivateOnPaperOpenedComponent, PaperWriteEvent>(OnPaperWrite);
-        SubscribeLocalEvent<PaperComponent, PaperSignatureRequestMessage>(OnSignatureRequest); // RMC14
+
+        SubscribeLocalEvent<PaperComponent, PaperSignatureRequestMessage>(OnSignatureRequest); // Starlight-edit
 
         _paperQuery = GetEntityQuery<PaperComponent>();
     }
@@ -319,14 +322,13 @@ public sealed class PaperSystem : EntitySystem
         if (CanStamp(stampInfo, entity.Comp)) // Frontier: !entity.Comp.StampedBy.Contains(stampInfo) < CanStamp(stampInfo, entity.Comp)
         {
             entity.Comp.StampedBy.Add(stampInfo);
-            // Begin RMC14
-            // Clean unfilled form and signature tags when stamping to finalize the document
+
+            // Starlight-start: Clean unfilled form and signature tags when stamping to finalize the document
             var cleanedContent = CleanUnfilledTags(entity.Comp.Content);
             if (cleanedContent != entity.Comp.Content)
-            {
                 SetContent(entity, cleanedContent);
-            }
-            // End RMC14
+            // Starlight-end
+
             Dirty(entity);
             if (entity.Comp.StampState == null && TryComp<AppearanceComponent>(entity, out var appearance))
             {
@@ -497,7 +499,8 @@ public sealed class PaperSystem : EntitySystem
         _uiSystem.SetUiState(entity.Owner, PaperUiKey.Key, new PaperBoundUserInterfaceState(entity.Comp.Content, entity.Comp.StampedBy, entity.Comp.Mode));
     }
 
-    // Begin RMC14
+    # region Starlight
+
     private void OnSignatureRequest(Entity<PaperComponent> entity, ref PaperSignatureRequestMessage args)
     {
         var signature = GetPlayerSignature(args.Actor);
@@ -587,6 +590,7 @@ public sealed class PaperSystem : EntitySystem
 
         return text;
     }
+
     /// <summary>
     /// Removes any unfilled [form] and [signature] tags, and converts [check] tags to ☐.
     /// Called when the paper is stamped to finalize the document.
@@ -599,7 +603,9 @@ public sealed class PaperSystem : EntitySystem
                   .Replace("[signature]", string.Empty)
                   .Replace("[check]", "☐");
     }
-    // End RMC14
+
+    # endregion
+
 }
 
 /// <summary>

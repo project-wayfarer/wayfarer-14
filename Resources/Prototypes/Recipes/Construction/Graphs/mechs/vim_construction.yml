@@ -7,7 +7,7 @@
     - to: vim
       steps:
       - assemblyId: Vim
-        guideString: nf-vim-construction-guide-string # Frontier
+        guideString: mech-construction-guide-string
 
       - tag: VoiceTrigger
         name: construction-graph-tag-voice-trigger

@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: BB Baroness
   description: A small luxury cruiser for one or two people, with a lounge, a private bedroom, and a hell of a cockpit view.
-  price: 27000 # 25261 0.06 
+  price: 29700 # 22872 0.05 24015.6
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/baroness.yml
@@ -39,6 +39,4 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            Contractor: [ 0, 0 ]
-            Pilot: [ 0, 0 ]
-            Mercenary: [ 0, 0 ]
+            WayfarerInterview: [ 0, 0 ]

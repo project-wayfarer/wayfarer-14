@@ -37,10 +37,10 @@
     children:
     - !type:NestedSelector
       tableId: TableDungeonLootEngineeringClutter
-      weight: 0.98
+      weight: 0.95
     - !type:NestedSelector
-      tableId: TableDungeonLootEngineeringConcealedLandmines
-      weight: 0.01
+      tableId: TableDungeonLootEngineeringToolboxesMines
+      weight: 0.05
 
 #region Tools
 - type: entityTable
@@ -243,48 +243,16 @@
 #        weight: 80
 
 - type: entityTable
-  id: TableDungeonLootEngineeringConcealedLandmines
+  id: TableDungeonLootEngineeringToolboxesMines
   table: !type:GroupSelector
     children:
-    # Traped toolbox
+    # Trap
     - !type:GroupSelector
-      weight: 0.85
+      weight: 4
       children:
       - id: NFToolboxMineCryo
       - id: NFToolboxMineExplosive
       - id: NFToolboxMineFire
-      - id: NFToolboxMineEmp
-      - id: NFToolboxMineFlash
-      - id: NFToolboxMineSmoke
-      - id: NFToolboxMineStinger
-      - id: NFToolboxMineShrapnel
-      - id: NFToolboxMineShrapnelIncendiary
-    # Traped box
-    - !type:GroupSelector
-      weight: 0.1
-      children:
-      - id: NFBoxMineCryo
-      - id: NFBoxMineExplosive
-      - id: NFBoxMineFire
-      - id: NFBoxMineEmp
-      - id: NFBoxMineFlash
-      - id: NFBoxMineSmoke
-      - id: NFBoxMineStinger
-      - id: NFBoxMineShrapnel
-      - id: NFBoxMineShrapnelIncendiary
-    # Traped scrap
-    - !type:GroupSelector
-      weight: 0.05
-      children:
-      - id: NFScrapMineCryo
-      - id: NFScrapMineExplosive
-      - id: NFScrapMineFire
-      - id: NFScrapMineEmp
-      - id: NFScrapMineFlash
-      - id: NFScrapMineSmoke
-      - id: NFScrapMineStinger
-      - id: NFScrapMineShrapnel
-      - id: NFScrapMineShrapnelIncendiary
 
 # region Parts
 - type: entityTable

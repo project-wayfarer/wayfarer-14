@@ -23,7 +23,7 @@ namespace Content.Client.HealthAnalyzer.UI
 
             _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
 
-            _window.GetAnalyzerControl().OnPrintPatientRecord += () => SendMessage(new HealthAnalyzerPrintPatientRecordMessage()); // Frontier
+            _window.OnPrintPatientRecord += () => SendMessage(new HealthAnalyzerPrintPatientRecordMessage()); // Frontier
         }
 
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)

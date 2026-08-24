@@ -57,8 +57,6 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
     private readonly SalvageSystem _salvage; // Frontier
 
     public readonly EntityUid Station;
-
-    public readonly EntityUid Shuttle; // Frontier
     public readonly EntityUid? CoordinatesDisk;
     private readonly SalvageMissionParams _missionParams;
 
@@ -86,7 +84,6 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         ShuttleSystem shuttleSystem, // Frontier
         SalvageSystem salvageSystem, // Frontier
         EntityUid station,
-        EntityUid shuttle, // Frontier
         EntityUid? coordinatesDisk,
         SalvageMissionParams missionParams,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
@@ -103,7 +100,6 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         _shuttle = shuttleSystem; // Frontier
         _salvage = salvageSystem; // Frontier
         Station = station;
-        Shuttle = shuttle; // Frontier
         CoordinatesDisk = coordinatesDisk;
         _missionParams = missionParams;
         _sawmill = logManager.GetSawmill("salvage_job");
@@ -254,9 +250,8 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         var stationData = _entManager.GetComponent<StationDataComponent>(Station);
 
         // Get ship bounding box relative to largest grid coords
-        var shuttleUid = Shuttle;
-
-        var shuttleBox = new Box2();
+        var shuttleUid = _station.GetLargestGrid((Station, stationData));
+        Box2 shuttleBox = new Box2();
 
         if (shuttleUid is { Valid: true } vesselUid &&
             _entManager.TryGetComponent<MapGridComponent>(vesselUid, out var gridComp))
@@ -397,8 +392,8 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         // Frontier: delay ship FTL
         if (shuttleUid is { Valid: true })
         {
-            var shuttleComp = _entManager.GetComponent<ShuttleComponent>(shuttleUid);
-            _shuttle.FTLToCoordinates(shuttleUid, shuttleComp, new EntityCoordinates(mapUid, coords), 0f, 5.5f, _salvage.TravelTime);
+            var shuttle = _entManager.GetComponent<ShuttleComponent>(shuttleUid.Value);
+            _shuttle.FTLToCoordinates(shuttleUid.Value, shuttle, new EntityCoordinates(mapUid, coords), 0f, 5.5f, _salvage.TravelTime);
         }
         // End Frontier
 

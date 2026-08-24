@@ -1,21 +1,14 @@
-- type: entityTable
-  id: TableStorageFillBlueprintsCase
-  table: !type:GroupSelector
-    children:
-    - id: NFBlueprintWeaponLaserCannon
-    - id: NFBlueprintWeaponXrayCannon
-    - id: NFBlueprintWeaponTemperatureGun
-
 - type: entity
-  abstract: true
-  id: StorageFillWeaponCaseShortDocuments
-  suffix: Blueprints, Random
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:NestedSelector
-        tableId: TableStorageFillBlueprintsCase
-
-- type: entity
-  parent: [ StorageFillWeaponCaseShortDocuments, WeaponCaseShortDocuments ]
+  parent: WeaponCaseShortDocuments
   id: WeaponCaseShortDocumentsFilled
+  suffix: Dungeon, Blueprints
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: NFBlueprintWeaponLaserCannon
+      orGroup: Blueprints
+    - id: NFBlueprintWeaponXrayCannon
+      orGroup: Blueprints
+    - id: NFBlueprintWeaponTemperatureGun
+      orGroup: Blueprints

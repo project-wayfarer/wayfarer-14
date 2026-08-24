@@ -19,8 +19,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server._NF.Medical; // Frontier
-using Content.Server._NF.Traits.Assorted;
-using Content.Server.Body.Systems; // Frontier
+using Content.Server._NF.Traits.Assorted; // Frontier
 
 namespace Content.Server.Medical;
 
@@ -35,7 +34,6 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
 
     public override void Initialize()
     {
@@ -202,34 +200,15 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="scanMode">True makes the UI show ACTIVE, False makes the UI show INACTIVE</param>
     public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode)
     {
-        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key)
-            || !HasComp<DamageableComponent>(target))
+        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key))
             return;
 
-        var uiState = GetHealthAnalyzerUiState(healthAnalyzer, target);
-        uiState.ScanMode = scanMode;
+        if (!HasComp<DamageableComponent>(target))
+            return;
 
-        _uiSystem.ServerSendUiMessage(
-            healthAnalyzer,
-            HealthAnalyzerUiKey.Key,
-            new HealthAnalyzerScannedUserMessage(uiState)
-        );
-    }
-
-    /// <summary>
-    /// Creates a HealthAnalyzerState based on the current state of an entity.
-    /// </summary>
-    /// <param name="target">The entity being scanned</param>
-    /// <returns></returns>
-    public HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid healthAnalyzer, EntityUid? target)
-    {
-        if (!target.HasValue || !HasComp<DamageableComponent>(target))
-            return new HealthAnalyzerUiState();
-
-        var entity = target.Value;
         var bodyTemperature = float.NaN;
 
-        if (TryComp<TemperatureComponent>(entity, out var temp))
+        if (TryComp<TemperatureComponent>(target, out var temp))
             bodyTemperature = temp.CurrentTemperature;
 
         var bloodAmount = float.NaN;
@@ -237,15 +216,15 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         var unrevivable = false;
         var unclonable = false; // Frontier
 
-        if (TryComp<BloodstreamComponent>(entity, out var bloodstream) &&
-            _solutionContainerSystem.ResolveSolution(entity, bloodstream.BloodSolutionName,
+        if (TryComp<BloodstreamComponent>(target, out var bloodstream) &&
+            _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName,
                 ref bloodstream.BloodSolution, out var bloodSolution))
         {
-            bloodAmount = _bloodstreamSystem.GetBloodLevelPercentage(entity); // Frontier TODO: Using BloodLevelPercentage instead of GetBloodLevel because we don't have upstream's shared bloodstream update (upstream's PR #38690). Replace this once said PR's merged in.
+            bloodAmount = bloodSolution.FillFraction;
             bleeding = bloodstream.BleedAmount > 0;
         }
 
-        if (TryComp<UnrevivableComponent>(entity, out var unrevivableComp) && unrevivableComp.Analyzable)
+        if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
         // Frontier: add unclonable
@@ -255,19 +234,15 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
         var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
 
-        var state = new HealthAnalyzerUiState(
-            GetNetEntity(entity),
+        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
+            GetNetEntity(target),
             bodyTemperature,
             bloodAmount,
-            null,
+            scanMode,
             bleeding,
             unrevivable,
             unclonable, // Frontier
             printable // Frontier
-        );
-
-        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(state));
-
-        return state;
+        ));
     }
 }

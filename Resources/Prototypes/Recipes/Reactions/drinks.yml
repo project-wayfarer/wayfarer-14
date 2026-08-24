@@ -831,8 +831,9 @@
 - type: reaction
   id: Mead
   reactants:
-    Honey: #Frontier Sugar<Honey
+    Sugar:
       amount: 1
+      # TODO replace Sugar with Honey once added
     Enzyme:
       amount: 1
   products:

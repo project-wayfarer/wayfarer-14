@@ -24,13 +24,6 @@
           Quantity: 15 # Frontier: 20<15
         - ReagentId: Flavorol # Frontier
           Quantity: 10 # Frontier
-  # Wayfarer: 8h shelf life for prepared meals
-  - type: Perishable
-    rotAfter: 28800
-    molsPerSecondPerUnitMass: 0
-  - type: Temperature
-    currentTemperature: 290
-  # End Wayfarer
 
 # Meals
 
@@ -444,8 +437,7 @@
       - bacon
       - bun
   - type: Sprite
-    sprite: _NF/Objects/Consumable/Food/omelette.rsi
-    state: eggs_benedict # Frontier eggs_benedict < benedict
+    state: benedict
   - type: SolutionContainerManager
     solutions:
       food:
@@ -463,8 +455,8 @@
 # Tastes like eggs, bacon, bun.
 
 - type: entity
-  parent: FoodMealOmelette
-  id: FoodMealCheeseOmelette # NF: FoodMealCheeseOmelette < FoodMealOmelette
+  parent: FoodMealBase
+  id: FoodMealOmelette
   name: cheese omelette
   description: Cheesy.
   components:
@@ -475,7 +467,6 @@
       - egg
       - cheesy
   - type: Sprite
-    sprite: Objects/Consumable/Food/meals.rsi
     state: omelette
   - type: SolutionContainerManager
     solutions:
@@ -486,6 +477,9 @@
           Quantity: 9
         - ReagentId: Flavorol
           Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
 # Tastes like egg, cheese.
 
 - type: entity
@@ -509,7 +503,7 @@
         maxVol: 10
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 2
         - ReagentId: TableSalt
           Quantity: 1
         - ReagentId: Blackpepper

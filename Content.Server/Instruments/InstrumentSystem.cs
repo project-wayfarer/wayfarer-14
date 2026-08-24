@@ -12,7 +12,6 @@ using Content.Shared.Instruments;
 using Content.Shared.Instruments.UI;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
-using Content.Shared._WF.Radio;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Midi;
@@ -318,11 +317,6 @@ public sealed partial class InstrumentSystem : SharedInstrumentSystem
     {
         if (!Resolve(uid, ref instrument))
             return;
-
-        // Wayfarer: Skip the reset while a radio console is broadcasting. The song must keep playing after the player walks away.
-        if (TryComp<RadioBroadcastConsoleComponent>(uid, out var console) && console.Broadcasting)
-            return;
-        // End Wayfarer
 
         if (instrument.Playing)
         {
