@@ -13,7 +13,7 @@
   - WFLongarmNovaliteC1
   - WFLongarmGestio
   - WFLongarmJackdaw
-  - WFLongarmAtreides
+  - WFLongarmTypewriter
   - WFLongarmEnforcer
   - WFLauncherCreamPie
 
@@ -109,14 +109,14 @@
     - NFWeaponRifleAssaultGestio
 
 - type: loadout
-  id: WFLongarmAtreides
+  id: WFLongarmTypewriter
   effects:
   - !type:GroupLoadoutEffect
     proto: WFT4
   price: 200000
   storage:
     back:
-    - NFWeaponSubMachineGunAtreides
+    - NFWeaponSubMachineGunTypewriter
 
 - type: loadout
   id: WFLongarmEnforcer
