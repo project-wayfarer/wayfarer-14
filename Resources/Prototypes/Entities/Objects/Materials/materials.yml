@@ -773,13 +773,15 @@
   - type: Appearance
   - type: Edible
   - type: BadFood
-  # - type: SolutionContainerManager # Frontier: no eating bones
-  #   solutions: # Frontier
-  #     food: # Frontier
-  #       maxVol: 5 # Frontier
-  #       reagents: # Frontier
-  #       - ReagentId: Vitamin # Frontier
-  #         Quantity: 3 # Frontier
+# Start Wayfarer
+  - type: SolutionContainerManager # Frontier: no eating bones # Wayfarer... Uh yes, we want gelatin. So eat bones!
+     solutions: # Frontier
+       food: # Frontier
+         maxVol: 5 # Frontier
+         reagents: # Frontier
+         - ReagentId: Vitamin # Frontier
+           Quantity: 3 # Frontier
+# End Wayfarer
   - type: Item
     heldPrefix: bones
 

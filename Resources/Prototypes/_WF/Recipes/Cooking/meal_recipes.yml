@@ -139,3 +139,31 @@
   recipeType:
   - Assembler
   hideInGuidebook: true
+
+# Breads
+- type: microwaveMealRecipe
+  id: RecipeGrahamCracker
+  name: graham cracker recipe
+  result: FoodBakedGraham
+  time: 10
+  group: Breads
+  solids:
+    FoodDoughFlat: 1
+  reagents:
+    Honey: 5
+  recipeType:
+  - Oven
+
+# Deserts
+- type: microwaveMealRecipe
+  id: RecipeMarshmallow
+  name: marshmallow recipe
+  result: FoodMarshmallowTray
+  time: 10
+  group: Dessert
+  solids:
+    FoodDoughFlat: 1
+  reagents:
+    Honey: 5
+  recipeType:
+  - Oven

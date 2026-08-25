@@ -1,0 +1,110 @@
+- type: entity
+  name: graham cracker #TODO honey
+  parent: FoodBakedBase
+  id: FoodBakedGrahamCracker
+  description: A tasty cracker baked with honey.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/misc.rsi
+    state: graham-cracker
+  - type: FlavorProfile # Frontier
+    flavors: # Frontier
+    - honey # Frontier
+    - bread # Frontier
+
+- type: entity
+  name: marshmallow tray
+  parent: FoodBakedBase
+  id: FoodMarshmallowTray
+  description: A tray of soft sugary gelatin that has the most plush feel to it.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - sublime
+  - type: SliceableFood
+    count: 5
+    slice: FoodMarshmallow
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
+    state: marshmallow
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Sugar
+          Quantity: 10
+
+- type: entity
+  name: marshmallow
+  parent: FoodBakedBase
+  id: FoodMarshmallow
+  description: A light, fluffy, and sugary gelatin that has some of the softest squish around.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - sublime
+  - type: Sprite
+    sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
+    state: marshmallow-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Sugar
+          Quantity: 2
+
+- type: entity
+  name: toasted marshmallow
+  parent: FoodMarshmallow
+  id: FoodMarshmallowToasted
+  description: Lightly roasted from a campfire, this is the perfect way to consume a marshmallow.
+- type: SolutionContainerManager
+  solutions:
+    food:
+      maxVol: 13
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 6
+      - ReagentId: Sugar
+        Quantity: 4
+
+- type: entity
+  name: burnt marshmallow
+  parent: FoodMarshmallow
+  id: FoodMarshmallowBurnt
+  description: Oops, this looks kinda burnt. Yuck! Unless... You like your marshmallows with a bit of char.
+- type: SolutionContainerManager
+  solutions:
+    food:
+      maxVol: 9
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Sugar
+        Quantity: 1
+
+- type: entity
+  name: marshmallow on a stick
+  parent: FoodMarshmallow
+  id: FoodMarshmallowStick
+  description: A little gelatinous guy on a stick. I can only assume to go get toasted on a fire.
+
+- type: entity
+  name: burnt marshmallow
+  parent: FoodMarshmallowStickToasted
+  id: FoodMarshmallowBurnt
+  description: Lightly roasted from a campfire, it's perfect! Any longer in the fire and you're gonna burn it!
+
+- type: entity
+  name: burnt marshmallow
+  parent: FoodMarshmallowBurnt
+  id: FoodMarshmallowStickBurnt
+  description: Oops, this looks kinda burnt. Yuck! Unless... You like your marshmallows with a bit of char.
