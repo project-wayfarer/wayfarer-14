@@ -35,7 +35,10 @@ public sealed class SSDIndicatorSystem : EntitySystem
             TryComp<MindContainerComponent>(uid, out var mindContainer) &&
             mindContainer.ShowExamineInfo)
         {
-            args.StatusIcons.Add(_prototype.Index(component.Icon));
+            // Persistence: Support for SSD command
+            args.StatusIcons.Add(component.ManualSSD
+                ? _prototype.Index(component.ManualIcon)
+                : _prototype.Index(component.Icon));
         }
     }
 }
