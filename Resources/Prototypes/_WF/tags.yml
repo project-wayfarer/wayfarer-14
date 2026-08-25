@@ -1,10 +1,23 @@
 # Wayfarer Tags
+# Please be sure to add your tags in alphabetical order.
 
 - type: Tag
-  id: OutlawUplinkBase # Used for uplink whitelists - This tag is to denote items any outlaw can purchase
+  id: CandleBlack
 
 - type: Tag
-  id: SafetyDepositBox
+  id: CandleBlue
+
+- type: Tag
+  id: CandleGreen
+
+- type: Tag
+  id: CandlePurple
+
+- type: Tag
+  id: CandleRed
+
+- type: Tag
+  id: DataChit
 
 - type: Tag
   id: DepositBlacklist
@@ -13,10 +26,28 @@
   id: DepositWhitelist
 
 - type: Tag
+  id: LightReplacerTool
+
+- type: Tag
+  id: Key
+
+- type: Tag
+  id: OutlawUplinkBase # Used for uplink whitelists - This tag is to denote items any outlaw can purchase
+
+- type: Tag
+  id: PaperLantern
+
+- type: Tag
+  id: PokerChip
+
+- type: Tag
+  id: SafetyDepositBox
+
+- type: Tag
   id: WFBlueprintOutlaw
 
 - type: Tag
-  id: DataChit
-  
-- type: Tag
   id: WFMerchantUplink # Denoted for use within the merchant uplink
+
+- type: Tag
+  id: WhitelistWallet
