@@ -1,3 +1,4 @@
+using Content.Shared._WF.CCVar; // Wayfarer
 using Content.Shared.CCVar;
 using Content.Shared.Movement.Events; // Persistence: SSD Command
 using Content.Shared.StatusEffectNew;
@@ -39,36 +40,11 @@ public sealed partial class SSDIndicatorSystem : EntitySystem // Wayfarer: Add P
 
     private void OnPlayerAttached(EntityUid uid, SSDIndicatorComponent component, PlayerAttachedEvent args)
     {
-        component.IsSSD = false;
-        component.WentSSDAt = TimeSpan.Zero; // Wayfarer
-
-        // Removes force sleep and resets the time to zero
-        if (_icSsdSleep)
-        {
-            component.FallAsleepTime = TimeSpan.Zero;
-            _statusEffects.TryRemoveStatusEffect(uid, StatusEffectSSDSleeping);
-        }
-
-        Dirty(uid, component);
-    }
-    {
         // Persistence: SSD Command
         StopSSD(uid, component);
     }
 
     private void OnPlayerDetached(EntityUid uid, SSDIndicatorComponent component, PlayerDetachedEvent args)
-    {
-        component.IsSSD = true;
-        component.WentSSDAt = _timing.CurTime; // Wayfarer
-
-        // Sets the time when the entity should fall asleep
-        if (_icSsdSleep)
-        {
-            component.FallAsleepTime = _timing.CurTime + TimeSpan.FromSeconds(_icSsdSleepTime);
-        }
-
-        Dirty(uid, component);
-    }
     {
         // Persistence: SSD Command
         component.ManualSSD = false;
