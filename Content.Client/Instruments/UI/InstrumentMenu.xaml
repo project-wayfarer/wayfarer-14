@@ -21,6 +21,19 @@
             <Button Name="StopButton" Text="{Loc 'instruments-component-menu-stop-button'}" TextAlign="Center" HorizontalExpand="True"
                     SizeFlagsStretchRatio="1" />
         </BoxContainer>
+        <!-- Wayfarer: playlist button row -->
+        <BoxContainer Orientation="Horizontal" VerticalExpand="True">
+            <Button Name="PrevTrackButton" Text="{Loc 'instruments-component-menu-prev-button'}"
+                    TextAlign="Center" HorizontalExpand="True" SizeFlagsStretchRatio="1" />
+            <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.5" />
+            <Button Name="PlaylistButton" Text="{Loc 'instruments-component-menu-playlist-button'}"
+                    ToolTip="{Loc 'instruments-component-menu-playlist-tooltip'}"
+                    TextAlign="Center" HorizontalExpand="True" SizeFlagsStretchRatio="1" />
+            <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.5" />
+            <Button Name="NextTrackButton" Text="{Loc 'instruments-component-menu-next-button'}"
+                    TextAlign="Center" HorizontalExpand="True" SizeFlagsStretchRatio="1" />
+        </BoxContainer>
+        <!-- End Wayfarer -->
         <BoxContainer Orientation="Horizontal" VerticalExpand="True">
             <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.125" />
             <Slider Name="PlaybackSlider" HorizontalExpand="True" />

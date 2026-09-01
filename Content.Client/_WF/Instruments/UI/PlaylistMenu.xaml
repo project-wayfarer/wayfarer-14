@@ -1,0 +1,21 @@
+﻿<DefaultWindow xmlns="https://spacestation14.io"
+               Title="{Loc 'instruments-playlist-menu-title'}"
+               MinSize="360 250">
+    <BoxContainer Orientation="Vertical" SeparationOverride="5">
+        <ItemList Name="TrackList" VerticalExpand="True" />
+        <BoxContainer Orientation="Horizontal" SeparationOverride="5">
+            <Button Name="AddButton" Text="{Loc 'instruments-playlist-menu-add'}" HorizontalExpand="True" />
+            <Button Name="SaveButton"
+                    Text="{Loc 'instruments-playlist-menu-save'}"
+                    ToolTip="{Loc 'instruments-playlist-menu-save-tooltip'}"
+                    HorizontalExpand="True" />
+            <Button Name="LoadButton" Text="{Loc 'instruments-playlist-menu-load'}" HorizontalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal" SeparationOverride="5">
+            <Button Name="RenameButton" Text="{Loc 'instruments-playlist-menu-rename'}" HorizontalExpand="True" />
+            <Button Name="RemoveButton" Text="{Loc 'instruments-playlist-menu-remove'}" HorizontalExpand="True" />
+            <Button Name="ClearButton" Text="{Loc 'instruments-playlist-menu-clear'}" HorizontalExpand="True" />
+        </BoxContainer>
+        <Button Name="PlayButton" Text="{Loc 'instruments-playlist-menu-play'}" />
+    </BoxContainer>
+</DefaultWindow>

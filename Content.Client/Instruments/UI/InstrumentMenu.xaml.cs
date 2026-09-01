@@ -47,8 +47,9 @@ namespace Content.Client.Instruments.UI
             StopButton.OnPressed += MidiStopButtonOnPressed;
             PlaybackSlider.OnValueChanged += PlaybackSliderSeek;
             PlaybackSlider.OnKeyBindUp += PlaybackSliderKeyUp;
+            InitializePlaylist(); // Wayfarer
 
-            MinSize = SetSize = new Vector2(400, 150);
+            MinSize = SetSize = new Vector2(400, 200); // Wayfarer: 150<200
         }
 
         public void SetInstrument(Entity<InstrumentComponent> entity)
@@ -99,6 +100,11 @@ namespace Content.Client.Instruments.UI
 
         private void InstrumentOnMidiPlaybackEnded()
         {
+            // Wayfarer: When a playlist is active the handler queues the next track and returns true
+            // so the upstream code below does not disable the playback buttons between songs.
+            if (OnPlaylistPlaybackEnded())
+                return;
+            // End Wayfarer
             MidiPlaybackSetButtonsDisabled(true);
         }
 
@@ -150,6 +156,11 @@ namespace Content.Client.Instruments.UI
             {
                 return;
             }
+
+            // Wayfarer: Picking a single file from the dialog overrides any active playlist,
+            // otherwise the playback-ended event would advance back into the queued tracks.
+            DeactivatePlaylist();
+            // End Wayfarer
 
             if (!_entManager.System<InstrumentSystem>()
                     .OpenMidi(Entity,
@@ -218,6 +229,10 @@ namespace Content.Client.Instruments.UI
 
         private void MidiStopButtonOnPressed(ButtonEventArgs? obj)
         {
+            // Wayfarer: An explicit Stop press should also end the playlist. Without this the
+            // CloseMidi call below would raise the playback-ended event and queue the next track.
+            DeactivatePlaylist();
+            // End Wayfarer
             MidiPlaybackSetButtonsDisabled(true);
 
             _entManager.System<InstrumentSystem>().CloseMidi(Entity, false);
@@ -256,6 +271,12 @@ namespace Content.Client.Instruments.UI
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
+
+            // Wayfarer: Skip the slider and button reset between playlist tracks, otherwise
+            // the brief IsMidiOpen=false gap while waiting for the server echo causes a visual flicker.
+            if (_playlistAdvancing)
+                return;
+            // End Wayfarer
 
             if (!_entManager.TryGetComponent(Entity, out InstrumentComponent? instrument))
                 return;
