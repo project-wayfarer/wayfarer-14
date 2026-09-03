@@ -43,7 +43,21 @@ public sealed partial class RadioChannelPrototype : IPrototype
     [DataField, ViewVariables]
     public bool ShowFrequency = false;
     // End Frontier
-    
+
+    // Wayfarer
+    /// <summary>
+    /// If true, the radio channel will use RAEWS for transmission instead of Telecom server, which allows for it to transmit across the map
+    /// </summary>
+    [DataField("useRAEWS"), ViewVariables]
+    public bool UseRAEWS = false;
+
+    /// <summary>
+    /// The amount of RAEWS needed to transmit the message
+    /// </summary>
+    [DataField("RAEWSPower"), ViewVariables]
+    public int RAEWSPower = 5;
+    // End Wayfarer
+
     /// <summary>
     /// Maximum distance in meters this channel can transmit. If 0 or null, range is unlimited except by map boundaries.
     /// </summary>

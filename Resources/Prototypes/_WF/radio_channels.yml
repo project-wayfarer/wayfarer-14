@@ -11,3 +11,11 @@
   keycode: 'k'
   frequency: 1470
   color: "#cc0066"
+
+- type: radioChannel
+  id: Interstellar
+  name: chat-radio-interstellar
+  keycode: 'i'
+  frequency: 1471
+  color: "#ffffff"
+  useRAEWS: true

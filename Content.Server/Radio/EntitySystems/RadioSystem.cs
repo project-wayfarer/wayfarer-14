@@ -47,6 +47,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using System.Linq; // Wayfarer
+using Content.Shared._WF.Radio.Components; // Wayfarer
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -204,24 +206,29 @@ public sealed class RadioSystem : EntitySystem
             if (!HasComp<GhostComponent>(receiver) && GetFrequency(receiver, channel) != frequency) // Nuclear-14
                 continue; // Nuclear-14
 
-            if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive)
+            if (!channel.UseRAEWS && !channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive) // Wayfarer: Add RAEWS check
                 continue;
-                
+
             // Check if within range for range-limited channels
-            if (channel.MaxRange.HasValue && channel.MaxRange.Value > 0)
+            if (!channel.UseRAEWS && channel.MaxRange.HasValue && channel.MaxRange.Value > 0) // Wayfarer: Add RAEWS check
             {
                 var sourcePos = Transform(radioSource).WorldPosition;
                 var targetPos = transform.WorldPosition;
-                
+
                 // Check distance between sender and receiver
                 if ((sourcePos - targetPos).Length() > channel.MaxRange.Value)
                     continue;
             }
 
             // don't need telecom server for long range channels or handheld radios and intercoms
-            var needServer = !channel.LongRange && !sourceServerExempt;
+            var needServer = !channel.UseRAEWS && !channel.LongRange && !sourceServerExempt; // Wayfarer: Add RARWS check
             if (needServer && !hasActiveServer)
                 continue;
+
+            // Wayfarer: Add RAEWS check
+            if (channel.UseRAEWS && CountRAEWS() > channel.RAEWSPower)
+                continue;
+            // End Wayfarer
 
             // check if message can be sent to specific receiver
             var attemptEv = new RadioReceiveAttemptEvent(channel, radioSource, receiver);
@@ -258,4 +265,22 @@ public sealed class RadioSystem : EntitySystem
         }
         return false;
     }
+
+    // Wayfarer
+    private int CountRAEWS()
+    {
+        int poweredCount = 0;
+        var query = EntityQueryEnumerator<RAEWSDishComponent, ApcPowerReceiverComponent>();
+
+        while (query.MoveNext(out var _, out var __, out var powerReceiver))
+        {
+            if (!powerReceiver.Powered)
+                continue;
+
+            poweredCount++;
+        }
+
+        return poweredCount;
+    }
+    // End Wayfarer
 }

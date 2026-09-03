@@ -33,3 +33,22 @@
     layers:
     - state: crypt_extreme
     - state: extreme_label
+
+- type: entity
+  parent: [EncryptionKey]
+  id: EncryptionKeyInterstellar
+  name: interstellar encryption key
+  description: An encryption key for the Interstellar channel. For communication between a solar body and space. Requires the RAEWS Relay system to be active and operational to use.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Interstellar
+    defaultChannel: Interstellar
+  - type: Item
+    sprite: _WF/Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: _WF/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_silver
+    - state: interstellar_label
+
