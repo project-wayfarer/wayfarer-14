@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Maintainer Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+- type: vessel
+  id: Plug
+  parent: BaseVesselAntag
+  name: SI Plug
+  description: A large freighter retrofited with a kitchen and botany.
+  price: 138000 # 612 * 50 + 64135 = 94735 * 1.45 = 137.365.75 rounded to 138.000
+  category: Large
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/plug.yml
+  guidebookPage: Null
+  class:
+  - Pirate
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Plug
+  mapName: 'Plug'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/plug.yml
+  minPlayers: 0
+  stations:
+    Plug:
+      stationProto: StandardFrontierAntagVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Plug {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: 
+         NFPirate: [ 0, 0 ]
