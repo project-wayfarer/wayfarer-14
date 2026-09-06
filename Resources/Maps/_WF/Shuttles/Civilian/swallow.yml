@@ -48,8 +48,6 @@ entities:
     components:
     - type: MetaData
       name: swallow
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
