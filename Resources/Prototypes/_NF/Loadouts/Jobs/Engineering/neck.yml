@@ -6,8 +6,22 @@
   groupBy: "NeckMantles"
 
 - type: loadout
+  id: PlantManagerClothingNeckMantleWhiteCE
+  price: 0
+  equipment:
+    neck: ClothingNeckMantleWhiteCE
+  groupBy: "NeckMantles"
+
+- type: loadout
   id: PlantManagerClothingNeckCloakCe
   price: 0
   equipment:
     neck: ClothingNeckCloakCe
+  groupBy: "NeckCloaks"
+
+- type: loadout
+  id: PlantManagerClothingNeckCloakWhiteCe
+  price: 0
+  equipment:
+    neck: ClothingNeckCloakWhiteCe
   groupBy: "NeckCloaks"
