@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 09/06/2026 20:39:23
-  entityCount: 6053
+  time: 09/06/2026 21:05:21
+  entityCount: 6054
 maps: []
 grids:
 - 1
@@ -3160,6 +3160,18 @@ entities:
       - 3811
     - type: Fixtures
       fixtures: {}
+  - uid: 6054
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 46.5,-18.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 3810
+      - 3849
+    - type: Fixtures
+      fixtures: {}
 - proto: AirCanister
   entities:
   - uid: 29
@@ -3669,7 +3681,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -23184.816
+      secondsUntilStateChange: -23219.62
       state: Opening
   - uid: 109
     components:
@@ -3681,7 +3693,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -23186.05
+      secondsUntilStateChange: -23220.854
       state: Opening
   - uid: 110
     components:
@@ -3693,7 +3705,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -23185.55
+      secondsUntilStateChange: -23220.354
       state: Opening
 - proto: AirSensor
   entities:
@@ -16936,7 +16948,7 @@ entities:
       pos: 14.5,-12.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -20155.521
+      secondsUntilStateChange: -20190.324
       state: Opening
 - proto: filingCabinetDrawer
   entities:
@@ -26559,6 +26571,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 47.5,-20.5
       parent: 1
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 6054
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasVentScrubber
@@ -27035,6 +27052,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 50.5,-20.5
       parent: 1
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 6054
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
     - type: AtmosPipeColor
