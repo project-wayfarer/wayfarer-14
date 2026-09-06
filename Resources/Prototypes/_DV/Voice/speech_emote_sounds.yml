@@ -107,9 +107,9 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      collection: VulpkaninScreams #WF, unnerfing vulp
     Laugh:
-      collection: MaleLaugh
+      collection: VulpkaninGekkers  #WF, Unnerfing vulp
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -123,7 +123,7 @@
     Sigh:
       collection: MaleSigh
     Crying:
-      collection: MaleCry
+      collection: VulpkaninCries
     Whistle:
       collection: Whistles
     Weh:
@@ -157,9 +157,9 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams # RodentiaScreams -> FemaleScreams - Wayfarer
+      collection: VulpkaninScreams #WF, unnerfing vulp
     Laugh:
-      collection: FemaleLaugh
+      collection: VulpkaninGekkers #WF, unnerfing vulp
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -173,7 +173,7 @@
     Sigh:
       collection: FemaleSigh
     Crying:
-      collection: FemaleCry
+      collection: VulpkaninCries
     Whistle:
       collection: Whistles
     Weh:
@@ -227,7 +227,7 @@
     Scream:
       collection: RodentiaScreams # Floof
     Laugh:
-      collection: MaleLaugh
+      collection: RodentiaLaugh #WF buffing rodentia laughs
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -247,7 +247,7 @@
     Weh:
       collection: Weh
     Squeak:
-      path: /Audio/Animals/mouse_squeak.ogg
+      collection: RodentiaSqueak #WF refactor. Using a collection for everything
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -263,7 +263,7 @@
     Scream:
       path: /Audio/Animals/mouse_squeak.ogg
     Laugh:
-      collection: FemaleLaugh
+      collection: RodentiaLaugh #WF buffing rodentia laughs
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -283,7 +283,7 @@
     Weh:
       collection: Weh
     Squeak:
-      path: /Audio/Animals/mouse_squeak.ogg
+      collection: RodentiaSqueak #WF refactor. Using a collection for everything
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
