@@ -3,6 +3,7 @@ using System;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    partial class SqliteServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260716121914_LibraryBookLengthLimits")]
+    partial class LibraryBookLengthLimits
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -597,61 +600,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("connection_log", (string)null);
                 });
 
-            modelBuilder.Entity("Content.Server.Database.ConsentSettings", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("consent_settings_id");
-
-                    b.Property<string>("ConsentFreetext")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("consent_freetext");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("user_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_consent_settings");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("consent_settings", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.ConsentToggle", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("consent_toggle_id");
-
-                    b.Property<int>("ConsentSettingsId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("consent_settings_id");
-
-                    b.Property<string>("ToggleProtoId")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("toggle_proto_id");
-
-                    b.Property<string>("ToggleProtoState")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("toggle_proto_state");
-
-                    b.HasKey("Id")
-                        .HasName("PK_consent_toggle");
-
-                    b.HasIndex("ConsentSettingsId", "ToggleProtoId")
-                        .IsUnique();
-
-                    b.ToTable("consent_toggle", (string)null);
-                });
-
             modelBuilder.Entity("Content.Server.Database.IPIntelCache", b =>
                 {
                     b.Property<int>("Id")
@@ -894,20 +842,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("bank_balance");
 
-                    b.Property<string>("CharacterConsentFreetext")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("character_consent_freetext");
-
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("char_name");
-
-                    b.Property<string>("Customspeciesname")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("customspeciesname");
 
                     b.Property<string>("EyeColor")
                         .IsRequired()
@@ -944,14 +882,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_name");
 
-                    b.Property<float>("Height")
-                        .HasColumnType("REAL")
-                        .HasColumnName("height");
-
-                    b.Property<bool>("HideFromPlayerlist")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("hide_from_playerlist");
-
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
@@ -986,10 +916,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
-
-                    b.Property<float>("Width")
-                        .HasColumnType("REAL")
-                        .HasColumnName("width");
 
                     b.HasKey("Id")
                         .HasName("PK_profile");
@@ -1057,11 +983,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER")
                         .HasColumnName("profile_role_loadout_id");
-
-                    b.Property<string>("CrimeReason")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("crime_reason");
 
                     b.Property<string>("EntityName")
                         .HasMaxLength(256)
@@ -1471,511 +1392,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("uploaded_resource_log", (string)null);
                 });
 
-            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoal", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("description");
-
-                    b.Property<int?>("EndRound")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("end_round");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("is_active");
-
-                    b.Property<int?>("StartRound")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("start_round");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("title");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_community_goals");
-
-                    b.HasIndex("IsActive");
-
-                    b.ToTable("wayfarer_community_goals", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalContribution", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<long>("Amount")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("amount");
-
-                    b.Property<string>("CharacterName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("character_name");
-
-                    b.Property<DateTime>("ContributedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("contributed_at");
-
-                    b.Property<string>("EntityPrototypeId")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("entity_prototype_id");
-
-                    b.Property<Guid>("PlayerUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("player_user_id");
-
-                    b.Property<int>("RequirementId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("requirement_id");
-
-                    b.Property<int>("RoundId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("round_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_community_goal_contributions");
-
-                    b.HasIndex("PlayerUserId");
-
-                    b.HasIndex("RequirementId")
-                        .HasDatabaseName("IX_wayfarer_community_goal_contributions_requirement_id");
-
-                    b.ToTable("wayfarer_community_goal_contributions", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalRequirement", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<long>("CurrentAmount")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("current_amount");
-
-                    b.Property<string>("DisplayName")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("display_name");
-
-                    b.Property<string>("EntityPrototypeId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("entity_prototype_id");
-
-                    b.Property<int>("GoalId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("goal_id");
-
-                    b.Property<bool>("IsKillOrder")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("is_kill_order");
-
-                    b.Property<long>("RequiredAmount")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("required_amount");
-
-                    b.Property<string>("TagId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("tag_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_community_goal_requirements");
-
-                    b.HasIndex("GoalId")
-                        .HasDatabaseName("IX_wayfarer_community_goal_requirements_goal_id");
-
-                    b.ToTable("wayfarer_community_goal_requirements", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<int>("Balance")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("balance");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("description");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("name");
-
-                    b.Property<int>("Privacy")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("privacy");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_corporations");
-
-                    b.HasIndex("Name")
-                        .IsUnique();
-
-                    b.ToTable("wayfarer_corporations", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporationInvite", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<int>("CorporationId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("corporation_id");
-
-                    b.Property<Guid>("InviteeUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("invitee_user_id");
-
-                    b.Property<DateTime>("SentAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("sent_at");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_corporation_invites");
-
-                    b.HasIndex("CorporationId")
-                        .HasDatabaseName("IX_wayfarer_corporation_invites_corporation_id");
-
-                    b.HasIndex("InviteeUserId");
-
-                    b.ToTable("wayfarer_corporation_invites", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporationMember", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<int>("CorporationId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("corporation_id");
-
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("display_name");
-
-                    b.Property<DateTime>("JoinedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("joined_at");
-
-                    b.Property<int>("Rank")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("rank");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("user_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_corporation_members");
-
-                    b.HasIndex("CorporationId")
-                        .HasDatabaseName("IX_wayfarer_corporation_members_corporation_id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("wayfarer_corporation_members", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporationStation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<int>("CorporationId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("corporation_id");
-
-                    b.Property<DateTime>("PurchasedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("purchased_at");
-
-                    b.Property<string>("SavePath")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("save_path");
-
-                    b.Property<string>("StationName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("station_name");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_corporation_stations");
-
-                    b.HasIndex("CorporationId")
-                        .IsUnique()
-                        .HasDatabaseName("IX_wayfarer_corporation_stations_corporation_id");
-
-                    b.ToTable("wayfarer_corporation_stations", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerRoleplayCommend", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("comment");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("created_at");
-
-                    b.Property<int>("GiverProfileId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("giver_profile_id");
-
-                    b.Property<Guid>("GiverUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("giver_user_id");
-
-                    b.Property<bool>("IsPrivate")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("is_private");
-
-                    b.Property<int>("RecipientProfileId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("recipient_profile_id");
-
-                    b.Property<Guid>("RecipientUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("recipient_user_id");
-
-                    b.Property<int>("RoundId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("round_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_roleplay_commends");
-
-                    b.HasIndex("GiverUserId");
-
-                    b.HasIndex("RecipientUserId");
-
-                    b.HasIndex("RoundId");
-
-                    b.ToTable("wayfarer_roleplay_commends", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerRoleplayLevel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("created_at");
-
-                    b.Property<long>("Experience")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("experience");
-
-                    b.Property<long>("ExperienceToNextLevel")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("experience_to_next_level");
-
-                    b.Property<DateTime>("LastUpdated")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("last_updated");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("level");
-
-                    b.Property<int>("TotalCommends")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("total_commends");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("user_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_roleplay_levels");
-
-                    b.HasIndex("Level");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("wayfarer_roleplay_levels", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerRoundSummary", b =>
-                {
-                    b.Property<int>("RoundNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("round_number");
-
-                    b.Property<byte[]>("MailMetricsData")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("mail_metrics_data");
-
-                    b.Property<byte[]>("PlayerManifest")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("player_manifest");
-
-                    b.Property<byte[]>("PlayerStories")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("player_stories");
-
-                    b.Property<byte[]>("ProfitLossData")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("profit_loss_data");
-
-                    b.Property<DateTime>("RoundEndTime")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("round_end_time");
-
-                    b.Property<DateTime>("RoundStartTime")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("round_start_time");
-
-                    b.Property<byte[]>("SpesosFlowData")
-                        .HasColumnType("jsonb")
-                        .HasColumnName("spesos_flow_data");
-
-                    b.HasKey("RoundNumber")
-                        .HasName("PK_wayfarer_round_summaries");
-
-                    b.ToTable("wayfarer_round_summaries", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("wayfarer_safety_deposit_box_id");
-
-                    b.Property<Guid>("BoxId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("box_id");
-
-                    b.Property<string>("BoxSize")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("box_size");
-
-                    b.Property<int>("CharacterIndex")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("character_index");
-
-                    b.Property<DateTime?>("LastWithdrawn")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("last_withdrawn");
-
-                    b.Property<int?>("LastWithdrawnRoundId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("last_withdrawn_round_id");
-
-                    b.Property<string>("Nickname")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("nickname");
-
-                    b.Property<string>("OwnerName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("owner_name");
-
-                    b.Property<Guid>("OwnerUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("owner_user_id");
-
-                    b.Property<int?>("ProfileId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("profile_id");
-
-                    b.Property<DateTime>("PurchaseDate")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("purchase_date");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_safety_deposit_box");
-
-                    b.HasIndex("BoxId")
-                        .IsUnique();
-
-                    b.HasIndex("OwnerUserId");
-
-                    b.HasIndex("ProfileId")
-                        .HasDatabaseName("IX_wayfarer_safety_deposit_box_profile_id");
-
-                    b.ToTable("wayfarer_safety_deposit_box", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBoxItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("wayfarer_safety_deposit_box_item_id");
-
-                    b.Property<int>("BoxId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("box_id");
-
-                    b.Property<DateTime>("DepositDate")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("deposit_date");
-
-                    b.Property<string>("EntityData")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("entity_data");
-
-                    b.HasKey("Id")
-                        .HasName("PK_wayfarer_safety_deposit_box_item");
-
-                    b.HasIndex("BoxId")
-                        .HasDatabaseName("IX_wayfarer_safety_deposit_box_item_box_id");
-
-                    b.ToTable("wayfarer_safety_deposit_box_item", (string)null);
-                });
-
             modelBuilder.Entity("Content.Server.Database.Whitelist", b =>
                 {
                     b.Property<Guid>("UserId")
@@ -2265,18 +1681,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("HWId");
 
                     b.Navigation("Server");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.ConsentToggle", b =>
-                {
-                    b.HasOne("Content.Server.Database.ConsentSettings", "ConsentSettings")
-                        .WithMany("ConsentToggles")
-                        .HasForeignKey("ConsentSettingsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_consent_toggle_consent_settings_consent_settings_id");
-
-                    b.Navigation("ConsentSettings");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Job", b =>
@@ -2585,89 +1989,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalContribution", b =>
-                {
-                    b.HasOne("Content.Server.Database.WayfarerCommunityGoalRequirement", "Requirement")
-                        .WithMany("Contributions")
-                        .HasForeignKey("RequirementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_wayfarer_community_goal_contributions_wayfarer_community_goal_requirements_requirement_id");
-
-                    b.Navigation("Requirement");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalRequirement", b =>
-                {
-                    b.HasOne("Content.Server.Database.WayfarerCommunityGoal", "Goal")
-                        .WithMany("Requirements")
-                        .HasForeignKey("GoalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_wayfarer_community_goal_requirements_wayfarer_community_goals_goal_id");
-
-                    b.Navigation("Goal");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporationInvite", b =>
-                {
-                    b.HasOne("Content.Server.Database.WayfarerCorporation", "Corporation")
-                        .WithMany("PendingInvites")
-                        .HasForeignKey("CorporationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_wayfarer_corporation_invites_wayfarer_corporations_corporation_id");
-
-                    b.Navigation("Corporation");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporationMember", b =>
-                {
-                    b.HasOne("Content.Server.Database.WayfarerCorporation", "Corporation")
-                        .WithMany("Members")
-                        .HasForeignKey("CorporationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_wayfarer_corporation_members_wayfarer_corporations_corporation_id");
-
-                    b.Navigation("Corporation");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporationStation", b =>
-                {
-                    b.HasOne("Content.Server.Database.WayfarerCorporation", "Corporation")
-                        .WithMany()
-                        .HasForeignKey("CorporationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_wayfarer_corporation_stations_wayfarer_corporations_corporation_id");
-
-                    b.Navigation("Corporation");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
-                {
-                    b.HasOne("Content.Server.Database.Profile", "Profile")
-                        .WithMany()
-                        .HasForeignKey("ProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .HasConstraintName("FK_wayfarer_safety_deposit_box_profile_profile_id");
-
-                    b.Navigation("Profile");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBoxItem", b =>
-                {
-                    b.HasOne("Content.Server.Database.WayfarerSafetyDepositBox", "Box")
-                        .WithMany("Items")
-                        .HasForeignKey("BoxId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_wayfarer_safety_deposit_box_item_wayfarer_safety_deposit_box_box_id");
-
-                    b.Navigation("Box");
-                });
-
             modelBuilder.Entity("PlayerRound", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", null)
@@ -2705,11 +2026,6 @@ namespace Content.Server.Database.Migrations.Sqlite
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Navigation("BanHits");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.ConsentSettings", b =>
-                {
-                    b.Navigation("ConsentToggles");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Player", b =>
@@ -2799,28 +2115,6 @@ namespace Content.Server.Database.Migrations.Sqlite
             modelBuilder.Entity("Content.Server.Database.ServerRoleBan", b =>
                 {
                     b.Navigation("Unban");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoal", b =>
-                {
-                    b.Navigation("Requirements");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCommunityGoalRequirement", b =>
-                {
-                    b.Navigation("Contributions");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerCorporation", b =>
-                {
-                    b.Navigation("Members");
-
-                    b.Navigation("PendingInvites");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.WayfarerSafetyDepositBox", b =>
-                {
-                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

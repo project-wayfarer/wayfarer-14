@@ -47,6 +47,8 @@ namespace Content.Server.Database
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
+        public DbSet<NFLibraryBook> NFLibraryBook { get; set; } = null!; // Frontier
+        // Wayfarer
         public DbSet<WayfarerRoundSummary> WayfarerRoundSummaries { get; set; } = null!;
         public DbSet<WayfarerSafetyDepositBox> WayfarerSafetyDepositBox { get; set; } = null!;
         public DbSet<WayfarerSafetyDepositBoxItem> WayfarerSafetyDepositBoxItem { get; set; } = null!;
@@ -59,6 +61,7 @@ namespace Content.Server.Database
         public DbSet<WayfarerCorporationMember> WayfarerCorporationMembers { get; set; } = null!;
         public DbSet<WayfarerCorporationInvite> WayfarerCorporationInvites { get; set; } = null!;
         public DbSet<WayfarerCorporationStation> WayfarerCorporationStations { get; set; } = null!;
+        // End Wayfarer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -2002,4 +2005,49 @@ namespace Content.Server.Database
         [Required, Column("purchased_at")]
         public DateTime PurchasedAt { get; set; }
     }
+
+    // Frontier
+    [Table("nf_library_book")]
+    public sealed class NFLibraryBook
+    {
+        public const int MaxTitleLength = 128;
+        public const int MaxAuthorLength = 128;
+        public const int MaxContentLength = 32_768;
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [ForeignKey("Round")]
+        public int RoundId { get; set; }
+
+        [Required]
+        public Round Round { get; set; } = default!;
+
+        /// <summary>
+        /// Which Server the book belongs to.
+        /// </summary>
+        [Required] public int ServerId { get; set; }
+        [Required] public Server Server { get; set; } = default!;
+        /// <summary>
+        /// Title of the book
+        /// </summary>
+        [Required, MaxLength(MaxTitleLength)] public string Title { get; set; } = string.Empty;
+        /// <summary>
+        /// Display Author of the book, not the Guid
+        /// </summary>
+        [Required, MaxLength(MaxAuthorLength)] public string Author { get; set; } = string.Empty;
+        /// <summary>
+        /// Text contained within the book
+        /// </summary>
+        [Required, MaxLength(MaxContentLength)] public string Content { get; set; } = string.Empty;
+        /// <summary>
+        /// Date the book was uploaded
+        /// </summary>
+        [Required] public DateTime Date { get; set; }
+        /// <summary>
+        /// Guid of the player who uploaded the book
+        /// </summary>
+        [Required] public Guid AuthorPlayerUserId { get; set; }
+    }
+    //End Frontier
 }
