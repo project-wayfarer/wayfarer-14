@@ -15,7 +15,7 @@
     size: Small
   - type: TapeRecorder
   - type: ActiveListener
-    range: 4
+    range: 7 #wf increased pickup range 4 --> 7
   - type: UseDelay
     delay: 1
   - type: Speech
