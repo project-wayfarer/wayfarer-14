@@ -35,7 +35,6 @@ using Content.Server.Examine;
 using Robust.Server.GameObjects;
 using Content.Shared._Starlight.Shadekin.Components;
 using Content.Shared.Body.Events;
-using Content.Shared.Overlays; // Wayfarer
 // using Content.Shared._Starlight.Overlay.Components; // Wayfarer
 // using Content.Shared._Starlight.NullSpace.Components; // Wayfarer
 // using Content.Server._Starlight.Shadekin.Components; // Wayfarer
@@ -306,21 +305,23 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
     }
 
-    private void ToggleNightVision(EntityUid uid, ShadekinState shadekinState)
-    {
-        var nightVision = EnsureComp<NightVisionComponent>(uid);
-        var shouldBeActive = shadekinState == ShadekinState.Dark;
+    // Wayfarer: No NightVision
+    // private void ToggleNightVision(EntityUid uid, ShadekinState shadekinState)
+    // {
+    //     var nightVision = EnsureComp<NightVisionComponent>(uid);
+    //     var shouldBeActive = shadekinState == ShadekinState.Dark;
 
-        // avoid dirtying if we don't need to
-        if (nightVision.Enabled == shouldBeActive) // Wayfarer: Active<Enabled
-            return;
+    //     // avoid dirtying if we don't need to
+    //     if (nightVision.Active == shouldBeActive)
+    //         return;
 
         // update whether or not nightVision should be active based on light level
-        nightVision.Enabled = shouldBeActive; // Wayfarer: Active<Enabled
+        // nightVision.Enabled = shouldBeEnabled; // Wayfarer
 
-        // ensure nightVision updates to reflect the new state
-        Dirty(uid, nightVision);
-    }
+    //     // ensure nightVision updates to reflect the new state
+    //     Dirty(uid, nightVision);
+    // }
+    // End Wayfarer
 
     private void CheckThresholds(EntityUid uid, ShadekinComponent component, float lightExposure)
     {
@@ -403,7 +404,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             CheckThresholds(uid, component, lightExposure);
 
-            ToggleNightVision(uid, component.CurrentState);
+            // ToggleNightVision(uid, component.CurrentState); // Wayfarer: No Nightvision
             SetPassiveBuff(uid, component.CurrentState);
             _speed.RefreshMovementSpeedModifiers(uid);
 
