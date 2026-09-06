@@ -1,0 +1,24 @@
+- type: entity
+  name: CGP Requisitions Console
+  suffix: Wallmount
+  description: For when you want your Zekke Credits to work for you! - Supplies provided by Central Requisitions.
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseStructureComputerWallmount, StorePresetSecurityUplink]
+  id: ComputerWallmountCGPUplink
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _WF/Structures/Machines/atm/wall_atm_cgp_term.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: icon
+    - map: ["computerLayerScreen"]
+      state: unshaded
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Tag
+    tags:
+    - SecurityUplink
