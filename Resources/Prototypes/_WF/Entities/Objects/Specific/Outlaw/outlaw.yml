@@ -75,6 +75,33 @@
   - type: Stack
     count: 50
 
+#Wall Mounted Pirate Uplink
+- type: entity
+  name: Black Market Terminal
+  suffix: Wallmount
+  description: Data-Chits in, Crimes out- From Perdition's stockpile to your hands. Please use responsibly!
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseStructureComputerWallmount, StorePresetOutlawUplink]
+  id: ComputerWallmountOutlawUplink
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _NF/Structures/Machines/atm/wall_illegal_atm.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: icon
+    - map: ["computerLayerScreen"]
+      state: unshaded
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Tag
+    tags:
+    - OutlawUplinkBase
+
+
 # region Base Uplink
 - type: entity
   parent: [ BaseItem, StorePresetOutlawUplink ]
