@@ -42,6 +42,19 @@
   - type: StealTarget
     stealGroup: HeadCloak
 
+
+
+- type: entity  #Ported from Goob 
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakWhiteCe
+  name: chief engineer's white cloak
+  description: A white cloak with orange adornments, given to those who proved themselves to master the precise art of engineering.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Neck/whitece.rsi # Goob Station - cloak resprite
+  - type: StealTarget
+    stealGroup: HeadCloak
+
 - type: entity
   parent: ClothingNeckBase # Frontier: removed BaseCommandContraband
   id: ClothingCloakCmo
