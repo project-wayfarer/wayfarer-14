@@ -21,6 +21,17 @@
     sprite: Clothing/Neck/mantles/cemantle.rsi
 
 - type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleWhiteCE
+  name: chief engineer's white mantle
+  description: High visibility, check. RIG system, check. High capacity cell, check. Everything a chief engineer could need in a stylish mantle.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Neck/whitecemantle.rsi # Goob Station - mantle resprite
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Neck/whitecemantle.rsi # Goob Station - mantle resprite
+
+- type: entity
   parent: ClothingNeckBase # Frontier: removed BaseCommandContraband
   id: ClothingNeckMantleCMO
   name: chief medical officer's mantle
