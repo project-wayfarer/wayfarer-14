@@ -1,3 +1,196 @@
+# Please Keep This Alphabetical as we add/port more clothing items from other forks.
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineCoyote
+  name: CoyoteDrobe
+  description: A boutique vending machine that offers clothing from a sector named Coyote.
+  components:
+  - type: VendingMachine
+    pack: CoyoteVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: CoyoteAds
+  - type: SpeakOnUIClosed
+    pack: CoyoteGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/coyote.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDeltaV
+  name: DeltaV-Drobe
+  description: A boutique vending machine that offers clothing from a sector named DeltaV.
+  components:
+  - type: VendingMachine
+    pack: DeltaVVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: DeltaVAds
+  - type: SpeakOnUIClosed
+    pack: DeltaVGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/deltav.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineDen
+  name: DenDrobe
+  description: A boutique vending machine that offers clothing from a sector named Den.
+  components:
+  - type: VendingMachine
+    pack: DenVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: DenAds
+  - type: SpeakOnUIClosed
+    pack: DenGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/den.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineGoob
+  name: GoobDrobe
+  description: A boutique vending machine that offers clothing from a sector named Goob.
+  components:
+  - type: VendingMachine
+    pack: GoobVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: GoobAds
+  - type: SpeakOnUIClosed
+    pack: GoobGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/goob.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineHardlight
+  name: HardlightDrobe
+  description: A boutique vending machine that offers clothing from a sector named Hardlight.
+  components:
+  - type: VendingMachine
+    pack: HardlightVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: HardlightAds
+  - type: SpeakOnUIClosed
+    pack: HardlightGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/hardlight.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineImp
+  name: ImpDrobe
+  description: A boutique vending machine that offers clothing from a sector named Imp.
+  components:
+  - type: VendingMachine
+    pack: ImpVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: ImpAds
+  - type: SpeakOnUIClosed
+    pack: ImpGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/imp.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
 - type: entity
   parent: VendingMachine
   id: VendingMachineMayla
@@ -17,6 +210,102 @@
     pack: MaylaGoodbyes
   - type: Sprite
     sprite: _WF/Minimayla/maylavend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineMonolith
+  name: MonolithDrobe
+  description: A boutique vending machine that offers clothing from a sector named Monolith.
+  components:
+  - type: VendingMachine
+    pack: MonolithVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: MonolithAds
+  - type: SpeakOnUIClosed
+    pack: MonolithGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/monolith.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineStarlight
+  name: StarlightDrobe
+  description: A boutique vending machine that offers clothing from a sector named Starlight.
+  components:
+  - type: VendingMachine
+    pack: StarlightVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: StarlightAds
+  - type: SpeakOnUIClosed
+    pack: StarlightGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/starlight.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#326e3f"
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineWayfarer
+  name: WayfarerDrobe
+  description: A boutique vending machine that offers clothing from a multiversal sector named Zekke.
+  components:
+  - type: VendingMachine
+    pack: WayfarerVendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#    ejectState: eject-unshaded
+    ejectDelay: 1.8
+  - type: DatasetVocalizer
+    dataset: WayfarerAds
+  - type: SpeakOnUIClosed
+    pack: WayfarerGoodbyes
+  - type: Sprite
+    sprite: _WF/Structures/Machines/VendingMachines/wayfarer.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
