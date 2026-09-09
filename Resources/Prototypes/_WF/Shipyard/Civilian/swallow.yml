@@ -1,0 +1,32 @@
+- type: vessel
+  id: Swallow
+  parent: BaseVessel
+  name: ZKW Swallow
+  description: A compact food truck, I wouldnt trust it.
+  price: 24000
+  category: Small
+  group: Shipyard
+  # shuttlePath: /Maps/_WF/Shuttles/Civilian/hamger.yml
+  # guidebookPage:
+  class:
+  - Kitchen
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Swallow
+  mapName: 'ZKW Swallow'
+  mapPath: /Maps/_WF/Shuttles/Civilian/swallow.yml
+  minPlayers: 0
+  stations:
+    Swallow:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Swallow {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
