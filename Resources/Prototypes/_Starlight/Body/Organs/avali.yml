@@ -7,22 +7,15 @@
   components:
   - type: Stomach
     # Wayfarer: Use our digestable:tm: system!
-    carnivoreDigestible:
-      tags:
-      - Meat
-      - Pill
-      - Crayon
-      - Paper
-      - AvianFood
-    herbivoreDigestible:
+    carnivoreIndigestible:
       tags:
       - Fruit
       - Vegetable
       - Flower
       - Ambrosia
-      - Pill
-      - Crayon
-      - Paper
+    herbivoreIndigestible:
+      tags:
+      - Meat
     # End Wayfarer
   - type: SolutionContainerManager
     solutions:

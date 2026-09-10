@@ -443,13 +443,15 @@
   - type: Construction
     graph: Tortilla
     node: flat
-  - type: SolutionContainerManager # WF14, nutri was 15 from parent, gave reagent and set to 5.
+  # Wayfarer: nutri was 15 from parent, gave reagent and set to 5.
+  - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 6
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5 # WF14 end.
+          Quantity: 5
+  # End Wayfarer
 
 - type: entity
   parent: FoodBakingBase
@@ -884,6 +886,11 @@
   - type: SliceableFood
     count: 3
     slice: FoodTofuSlice
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   parent: FoodBakingBase
@@ -910,6 +917,7 @@
   - type: Tag
     tags:
     - Slice
+    - Vegetable # Wayfarer
 
 - type: entity
   name: burned mess
@@ -966,6 +974,7 @@
   - type: Tag
     tags:
       - Ingredient
+      - Fruit
 
 - type: entity
   parent: FoodBakingBase

@@ -41,6 +41,11 @@
       - potatoes
   - type: Sprite
     state: loadedbakedpotato
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like potato.
 
 - type: entity
@@ -57,6 +62,11 @@
       - salty
   - type: Sprite
     state: fries
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like fries, salt.
 
 - type: entity
@@ -74,6 +84,11 @@
       - cheesy
   - type: Sprite
     state: fries-cheesy
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like fries, cheese.
 
 - type: entity
@@ -93,6 +108,7 @@
   - type: Tag
     tags:
     - CarrotFries
+    - Vegetable # Wayfarer
   - type: SolutionContainerManager
     solutions:
       food:
@@ -190,6 +206,11 @@
           Quantity: 5
         - ReagentId: Flavorol # Frontier
           Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like nachos, hot pepper.
 
 - type: entity
@@ -243,6 +264,7 @@
   - type: Tag
     tags:
     - Fruit
+    - Vegetable # Wayfarer
 # Tastes like eggplant, cheese.
 
 - type: entity
@@ -259,6 +281,11 @@
       - potatoes
   - type: Sprite
     state: yakiimo
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like sweet potato.
 
 - type: entity
@@ -295,6 +322,7 @@
     tags:
     - CubanCarp
     - Meat
+    - Vegetable # Wayfarer
 # Tastes like fish, batter, hot peppers.
 
 - type: entity
@@ -325,6 +353,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable
 # Tastes like meat, cabbage.
 
 - type: entity
@@ -528,6 +557,11 @@
       - chocolate
   - type: Sprite
     state: milkape
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 # Tastes like milk, chocolate, the jungle.
 
 - type: entity
@@ -553,6 +587,11 @@
           Quantity: 10
         - ReagentId: Allicin
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like pain.
 
 - type: entity
@@ -581,6 +620,12 @@
           Quantity: 3
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Meat
+  # End Wayfarer
 # Tastes awesome.
 
 - type: entity
@@ -654,6 +699,7 @@
     - type: Tag
       tags:
       - Meat
+      - Vegetable # Wayfarer
 # What do Europeans eat instead of enchiladas? 25.4 millimeter-iladas.
 
 - type: entity
@@ -719,3 +765,9 @@
           Quantity: 4
         - ReagentId: Flavorol # Frontier
           Quantity: 4 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Meat
+  # End Wayfarer

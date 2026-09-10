@@ -29,7 +29,7 @@
 
 - type: entity
   name: uncooked jelly donut
-  parent: FoodDonutBase
+  parent: FoodDonutFruitBase # Wayfarer: FoodDonutBase<FoodDonutFruitBase
   id: FoodDonutUncookedJelly
   components:
   - type: FlavorProfile

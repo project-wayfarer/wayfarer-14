@@ -54,10 +54,15 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/burger.rsi
     state: plainred
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+  # End Wayfarer
 
 - type: entity
   name: orange pretty burger
-  parent: FoodBurgerBase
+  parent: [ FoodBurgerBase, PrettyBurgerRed ] # Wayfarer: add PrettyBurgerRed
   id: PrettyBurgerOrange
   description: It's pretty... orange?
   components:
@@ -67,7 +72,7 @@
 
 - type: entity
   name: yellow pretty burger
-  parent: FoodBurgerBase
+  parent: [ FoodBurgerBase, PrettyBurgerRed ] # Wayfarer: add PrettyBurgerRed
   id: PrettyBurgerYellow
   description: It's pretty... yellow?
   components:
@@ -77,7 +82,7 @@
 
 - type: entity
   name: green pretty burger
-  parent: FoodBurgerBase
+  parent: [ FoodBurgerBase, PrettyBurgerRed ] # Wayfarer: add PrettyBurgerRed
   id: PrettyBurgerGreen
   description: It's pretty... green?
   components:
@@ -87,7 +92,7 @@
 
 - type: entity
   name: blue pretty burger
-  parent: FoodBurgerBase
+  parent: [ FoodBurgerBase, PrettyBurgerRed ] # Wayfarer: add PrettyBurgerRed
   id: PrettyBurgerBlue
   description: It's pretty... blue?
   components:
@@ -97,7 +102,7 @@
 
 - type: entity
   name: purple pretty burger
-  parent: FoodBurgerPlain
+  parent: [ FoodBurgerPlain, PrettyBurgerRed ] # Wayfarer: add PrettyBurgerRed
   id: PrettyBurgerPurple
   description: It's pretty... purple?
   components:
@@ -107,7 +112,7 @@
 
 - type: entity
   name: black pretty burger
-  parent: FoodBurgerPlain
+  parent: [ FoodBurgerPlain, PrettyBurgerRed ] # Wayfarer: add PrettyBurgerRed
   id: PrettyBurgerBlack
   description: It's pretty... black?
   components:
@@ -117,7 +122,7 @@
 
 - type: entity
   name: white pretty burger
-  parent: FoodBurgerPlain
+  parent: [ FoodBurgerPlain, PrettyBurgerRed ] # Wayfarer: add PrettyBurgerRed
   id: PrettyBurgerWhite
   description: It's pretty... white?
   components:

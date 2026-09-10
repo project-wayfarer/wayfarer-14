@@ -208,6 +208,12 @@
           Quantity: 15
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+  # End Wayfarer
 # Tastes like bread, banana, nut.
 
 - type: entity
@@ -232,6 +238,13 @@
           Quantity: 3
         - ReagentId: Flavorol
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+    - Slice
+  # End Wayfarer
 
 - type: entity
   name: cream cheese bread
@@ -380,6 +393,12 @@
           Quantity: 5
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Bread
+  # End Wayfarer
 # Tastes like bread, cheese.
 
 - type: entity
@@ -410,6 +429,13 @@
           Quantity: 1
         - ReagentId: Flavorol
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Bread
+    - Slice
+  # End Wayfarer
 
 - type: entity
   name: bread
@@ -590,6 +616,12 @@
           Quantity: 12
         - ReagentId: Flavorol # Frontier
           Quantity: 8 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+  # End Wayfarer
 # Tastes like bread, tofu.
 
 - type: entity
@@ -616,6 +648,13 @@
           Quantity: 2.4
         - ReagentId: Flavorol # Frontier
           Quantity: 1.6 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+    - Slice
+  # End Wayfarer
 
 - type: entity
   name: xeno meat bread
@@ -873,6 +912,13 @@
           Quantity: 2
         - ReagentId: Flavorol
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+    - Bread
+    - Slice
+  # End Wayfarer
 # Tastes like bread, butter.
 
 - type: entity
@@ -899,6 +945,13 @@
           Quantity: 5
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+    - Slice
+  # End Wayfarer
 # Tastes like garlic, Italy.
 
 - type: entity

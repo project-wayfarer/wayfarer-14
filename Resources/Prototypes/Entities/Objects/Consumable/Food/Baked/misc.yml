@@ -124,6 +124,11 @@
           Quantity: 2
         - ReagentId: CocoaPowder
           Quantity: 2
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: banana muffin
@@ -189,6 +194,11 @@
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 2
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+  # End Wayfarer
 
 # Cookies
 
@@ -200,6 +210,11 @@
   components:
   - type: Sprite
     state: COOKIE!!!
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: oatmeal cookie
@@ -468,6 +483,12 @@
           Quantity: 5
         - ReagentId: Theobromine
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Pancake
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: waffles
@@ -511,6 +532,11 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: soylent waffles
@@ -580,6 +606,11 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: dumplings
@@ -691,6 +722,11 @@
   - type: SliceableFood
     count: 6
     slice: FoodBakedBrownie
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: brownie
@@ -718,6 +754,7 @@
   - type: Tag
     tags:
     - Slice
+    - Fruit # Wayfarer
 
 - type: entity
   parent: FoodBakedBase
@@ -750,6 +787,11 @@
   - type: SliceableFood
     count: 6
     slice: FoodBakedCannabisBrownie
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   parent: FoodBakedBase
@@ -779,6 +821,7 @@
   - type: Tag
     tags:
     - Slice
+    - Fruit # Wayfarer
 
 - type: entity
   name: onion rings
@@ -803,6 +846,12 @@
             Quantity: 1
           - ReagentId: Vitamin
             Quantity: 1
+  # Wayfarer: Ingestion tweaks
+    - type: Tag
+      tags:
+      - Meat
+      - Vegetable
+  # End Wayfarer
 
 - type: entity
   parent: FoodBakedBase

@@ -53,12 +53,17 @@
     specialDigestible:
       tags:
       - Trash
-    carnivoreDigestible:
+    # Wayfarer: Custom digestible system
+    carnivoreIndigestible:
       tags:
-      - Trash
-    herbivoreDigestible:
+      - Fruit
+      - Vegetable
+      - Flower
+      - Ambrosia
+    herbivoreIndigestible:
       tags:
-      - Trash
+      - Meat
+    # End Wayfarer
     isSpecialDigestibleExclusive: false
   - type: Sprite
     sprite: _WF/Mobs/Species/AurelianVox/organs.rsi

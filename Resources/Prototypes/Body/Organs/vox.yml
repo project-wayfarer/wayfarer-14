@@ -29,12 +29,15 @@
       tags:
       - Trash
     # Wayfarer: mmmm food
-    carnivoreDigestible:
+    carnivoreIndigestible:
       tags:
-      - Trash
-    herbivoreDigestible:
+      - Fruit
+      - Vegetable
+      - Flower
+      - Ambrosia
+    herbivoreIndigestible:
       tags:
-      - Trash
+      - Meat
     # End Wayfarer
     isSpecialDigestibleExclusive: false
   - type: Sprite
