@@ -73,6 +73,11 @@
     - rice
     - icecream
     - bungo
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: cherry mochi
@@ -98,6 +103,11 @@
     - rice
     - icecream
     - cherry
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: chocolate mochi
@@ -123,6 +133,11 @@
     - rice
     - icecream
     - chocolate
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: fiber mochi
@@ -175,6 +190,11 @@
     - rice
     - icecream
     - pink
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: cinnamon mochi
@@ -252,6 +272,11 @@
     - rice
     - icecream
     - antiseptic
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Flower
+  # End Wayfarer
 
 - type: entity
   name: pumpkin mochi
@@ -283,6 +308,11 @@
     butcheringType: Knife
     spawned:
     - id: FoodFrozenMochiCarvedPumpkin
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: carved pumpkin mochi
@@ -310,3 +340,9 @@
     - rice
     - icecream
     - spooky
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+    - Vegetable
+  # End Wayfarer

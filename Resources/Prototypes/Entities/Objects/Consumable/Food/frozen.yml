@@ -33,6 +33,11 @@
     flavors: # Frontier
     - sweet # Frontier
     - icecream # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   parent: FoodFrozenBase
@@ -50,6 +55,11 @@
     - sweet # Frontier
     - berry # Frontier
     - icecream # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: space freezy
@@ -64,6 +74,11 @@
     - sweet # Frontier
     - blueraspberry # Frontier
     - icecream # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: ice cream sundae # Frontier: no hyphen
@@ -77,6 +92,11 @@
     flavors: # Frontier
     - sweet # Frontier
     - icecream # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: choco horn # Frontier: strawberry ice-cream sandwich<choco horn
@@ -102,6 +122,11 @@
     - sweet # Frontier
     - icecream # Frontier
     - chocolate # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 # Popsicle
 
@@ -182,6 +207,11 @@
     - sweet # Frontier
     - icecream # Frontier
     - chocolate # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 
 # Snowcone
 

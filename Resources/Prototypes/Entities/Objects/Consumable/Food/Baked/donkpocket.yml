@@ -59,7 +59,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
 
 - type: entity
@@ -97,7 +97,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 4
 
 - type: entity
@@ -131,7 +131,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
   - type: Sprite
     state: spicy
@@ -167,7 +167,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
 
 - type: entity
@@ -190,6 +190,13 @@
           Quantity: 10
   - type: Sprite
     state: pizza
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - DonkPocket
+    - Meat
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: warm pizza-pocket
@@ -209,7 +216,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 15
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
 
 - type: entity
@@ -251,7 +258,7 @@
           Quantity: 10
         - ReagentId: Honk
           Quantity: 1
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
 
 - type: entity
@@ -272,6 +279,12 @@
           Quantity: 5
   - type: Sprite
     state: berry
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - DonkPocket
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: warm berry-pocket
@@ -289,7 +302,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
         - ReagentId: Sugar
           Quantity: 2
@@ -328,7 +341,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
 
 - type: entity
@@ -365,7 +378,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2
 
 - type: entity
@@ -388,6 +401,12 @@
           Quantity: 1
   - type: Sprite
     state: dink
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - DonkPocket
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: moth-pocket
@@ -430,5 +449,5 @@
           Quantity: 10
         - ReagentId: Fiber
           Quantity: 5
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 2

@@ -204,21 +204,21 @@ public sealed partial class IngestionSystem : EntitySystem
                 continue;
 
             var whitelistToUse =
-                isCarnivore ? stomach.Comp1.CarnivoreDigestible :
-                isHerbivore ? stomach.Comp1.HerbivoreDigestible :
+                isCarnivore ? stomach.Comp1.CarnivoreIndigestible :
+                isHerbivore ? stomach.Comp1.HerbivoreIndigestible :
                 null;
 
             if (ev.SpecialDigestion)
             {
                 if (whitelistToUse != null &&
-                    _whitelistSystem.IsWhitelistPass(whitelistToUse, food))
-                    return true;
+                    _whitelistSystem.IsWhitelistPass(stomach.Comp1.SpecialDigestible, food))
+                    return _whitelistSystem.IsBlacklistFail(whitelistToUse, food);
             }
             else
             {
                 if (whitelistToUse == null
-                    || !stomach.Comp1.IsSpecialDigestibleExclusive
-                    || _whitelistSystem.IsWhitelistPass(whitelistToUse, food))
+                    && !stomach.Comp1.IsSpecialDigestibleExclusive
+                    || _whitelistSystem.IsBlacklistFail(whitelistToUse, food))
                     return true;
             }
 
@@ -282,24 +282,25 @@ public sealed partial class IngestionSystem : EntitySystem
         if (isCarnivore || isHerbivore)
         {
             var whitelistToUse =
-                isCarnivore ? stomach.Comp1.CarnivoreDigestible :
-                isHerbivore ? stomach.Comp1.HerbivoreDigestible :
+                isCarnivore ? stomach.Comp1.CarnivoreIndigestible :
+                isHerbivore ? stomach.Comp1.HerbivoreIndigestible :
                 null;
 
             if (whitelistToUse is not null)
             {
-                if (ev.SpecialDigestion)
+                if (ev.SpecialDigestion &&
+                    _whitelistSystem.IsWhitelistPass(stomach.Comp1.SpecialDigestible, food))
                 {
-                    return _whitelistSystem.IsWhitelistPass(whitelistToUse, food);
+                    return _whitelistSystem.IsBlacklistFail(whitelistToUse, food);
                 }
-
                 if (whitelistToUse == null
-                    || !stomach.Comp1.IsSpecialDigestibleExclusive
-                    || _whitelistSystem.IsWhitelistPass(whitelistToUse, food))
+                         && !stomach.Comp1.IsSpecialDigestibleExclusive
+                         && _whitelistSystem.IsBlacklistFail(whitelistToUse, food))
                 {
                     return true;
                 }
             }
+
         }
         // End Wayfarer
 
