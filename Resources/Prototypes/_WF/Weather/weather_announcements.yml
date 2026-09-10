@@ -1,0 +1,12 @@
+﻿# The upstream weather prototypes only cover what a weather looks like, sounds like and does.
+# A wfWeatherAnnouncement wraps one of them with what the scheduler announces before it arrives and before it clears, and how far ahead each message goes out.
+# To add one, point weather at an id from Resources/Prototypes/weather.yml and list it in a schedule in weather_schedules.yml.
+
+- type: wfWeatherAnnouncement
+  id: WFWeatherFallout
+  weather: Fallout
+  sender: wf-weather-sender-raews
+  startAnnouncement: wf-weather-fallout-start
+  endAnnouncement: wf-weather-fallout-end
+  startLead: 300 # 5 minutes
+  endLead: 300 # 5 minutes

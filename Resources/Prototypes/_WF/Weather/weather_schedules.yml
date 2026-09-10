@@ -1,0 +1,18 @@
+﻿# Each map runs its own schedule, so different maps can have different weather at the same time.
+# A schedule with no maps listed waits for a map to ask for it, which is how procedural maps will get their weather schedule.
+
+- type: wfWeatherSchedule
+  id: DuskSchedule
+  maps: [ Dusk ]
+  weathers:
+  - weather: WFWeatherFallout
+    weight: 1
+    duration:
+      min: 1200 # 20 minutes
+      max: 2100 # 35 minutes
+  timeUntilFirstWeather: 1800 # 30 minutes
+  gap:
+    min: 3600 # 1 hour
+    max: 7200 # 2 hours
+  defaultOn: false
+  announce: true
