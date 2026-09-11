@@ -1,0 +1,15 @@
+﻿- type: guideEntry
+  id: ShipyardCross
+  name: guide-entry-shipyard-cross
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CgpShipyard/Cross.xml"
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapCross
+  name: "Cross"
+  description: "Detailed map of a Cross shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/CompanyATL/128x96.rsi
+    state: cross
