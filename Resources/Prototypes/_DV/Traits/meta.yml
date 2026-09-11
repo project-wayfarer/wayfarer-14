@@ -1,0 +1,46 @@
+﻿# Wayfarer: Wayfarer's objective system doesn't read TargetObjectiveImmune
+#- type: trait
+#  id: MarkedAsProtected
+#  name: trait-protected-name
+#  description: trait-protected-desc
+#  category: Meta
+#  conditions:
+#  - !type:InDepartmentCondition
+#    department: Command
+#    invert: true
+#  - !type:InDepartmentCondition
+#    department: Security
+#    invert: true
+#  - !type:IsAntagEligibleCondition
+#    antag: Thief
+#    invert: true
+#  - !type:IsAntagEligibleCondition
+#    antag: Traitor
+#    invert: true
+#  - !type:IsAntagEligibleCondition
+#    antag: TraitorSleeper
+#    invert: true
+#  effects:
+#  - !type:AddCompsEffect
+#    components:
+#    - type: TargetObjectiveImmune
+# End Wayfarer
+
+# Wayfarer: Wayfarer's paradox clone system doesn't read NoParadoxClone
+#- type: trait
+#  id: NoParadoxClone
+#  name: trait-no-paradox-clone-name
+#  description: trait-no-paradox-clone-desc
+#  category: Meta
+#  conditions:
+#  - !type:InDepartmentCondition
+#    department: Command
+#    invert: true
+#  - !type:InDepartmentCondition
+#    department: Security
+#    invert: true
+#  effects:
+#  - !type:AddCompsEffect
+#    components:
+#    - type: NoParadoxClone
+# End Wayfarer

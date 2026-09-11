@@ -3,7 +3,8 @@
          xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
-         HorizontalExpand="True">
+         HorizontalExpand="True"
+         xmlns:traits="clr-namespace:Content.Client._DV.Traits.UI"> <!-- Wayfarer -->
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
             <!-- Middle container -->
@@ -166,9 +167,14 @@
                 End Frontier -->
                 <BoxContainer Orientation="Vertical" Margin="10">
                     <!-- Traits -->
+                    <!-- Wayfarer -->
+                    <!--
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Name="TraitsList" Orientation="Vertical" />
                     </ScrollContainer>
+                    -->
+                    <traits:TraitsTab Name="Traits" HorizontalExpand="True" VerticalExpand="True" />
+                    <!-- End Wayfarer -->
                 </BoxContainer>
                 <BoxContainer Name="MarkingsTab" Orientation="Vertical" Margin="10">
                     <!-- Markings -->

@@ -5,7 +5,9 @@
   name: trait-clowntraining-name
   description: trait-clowntraining-desc
   category: Quirks
-  components:
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: ClownTraining
     - type: Juggling
     - type: SpeakFontOverride
@@ -17,7 +19,9 @@
   description: trait-carnivore-desc
   category: Digestions
   cost: 1
-  components:
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Carnivore
 
 - type: trait
@@ -26,7 +30,9 @@
   description: trait-herbivore-desc
   category: Digestions
   cost: 1
-  components:
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Herbivore
 
 - type: trait
@@ -34,7 +40,9 @@
   name: trait-claybody-name
   description: trait-claybody-desc
   category: Quirks
-  components:
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: WFClayBody
 
 - type: trait
@@ -42,6 +50,8 @@
   name: trait-mime-name
   description: trait-mime-desc
   category: Quirks
-  components:
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: MimePowers
       preventWriting: true

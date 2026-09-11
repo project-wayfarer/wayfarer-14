@@ -4,8 +4,12 @@
   description: trait-theobromine-intolerance-desc
   category: Disabilities
   cost: 1
-  components:
-  - type: TheobromineIntolerance
+  # Wayfarer
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: TheobromineIntolerance
+  # End Wayfarer
 
 - type: trait
   id: AllicinIntoleranceTrait
@@ -13,6 +17,9 @@
   description: trait-allicin-intolerance-desc
   category: Disabilities
   cost: 1
-  components:
-  - type: AllicinIntolerance
-
+  # Wayfarer
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: AllicinIntolerance
+  # End Wayfarer
