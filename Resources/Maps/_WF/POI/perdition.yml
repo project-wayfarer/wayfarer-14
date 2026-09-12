@@ -32187,6 +32187,8 @@ entities:
     - type: Transform
       pos: 37.5,-9.5
       parent: 1
+    - type: Store
+      balance: {Telecrystal: 0}
 - proto: VendingMachineTankDispenserEVAPOI
   entities:
   - uid: 4659
