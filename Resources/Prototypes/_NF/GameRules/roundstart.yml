@@ -14,8 +14,8 @@
       tableId: MajorBluespaceEventsTable
     minimumTimeUntilFirstEvent: 7200 # Wayfarer: 45 minutes < 2 hours
     minMaxEventTiming:
-      min: 7200 # Wayfarer: 45 minutes < 2 hours between events
-      max: 10800 # Wayfarer: 75 minutes < 3 hours between events
+      min: 5400 # Wayfarer: 45 minutes < 1 1/2 hours between events
+      max: 7200 # Wayfarer: 75 minutes < 2 hours between events
 
 - type: entityTable
   id: MajorBluespaceEventsTable
@@ -40,8 +40,8 @@
       tableId: DungeonBluespaceEventsTable
     minimumTimeUntilFirstEvent: 3600 # Wayfarer: 10 minutes < 1 hour
     minMaxEventTiming:
-      min: 5400 # Wayfarer: 35 minutes < 90 minutes between events
-      max: 6600 # Wayfarer: 40 minutes < 110 minutes between events
+      min: 3300 # Wayfarer: 35 minutes < 55 minutes between events
+      max: 4500 # Wayfarer: 40 minutes < 75 minutes between events
 
 - type: entityTable
   id: DungeonBluespaceEventsTable
