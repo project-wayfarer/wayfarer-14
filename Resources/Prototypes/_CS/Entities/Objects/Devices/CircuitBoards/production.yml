@@ -1,0 +1,8 @@
+- type: entity
+  id: EdisonTechFabCircuitboard
+  parent: EngineeringTechFabCircuitboard
+  name: edison engineering techfab machine board
+  description: A machine printed circuit board for an edison engineering techfab
+  components:
+    - type: MachineBoard
+      prototype: EdisonTechFab

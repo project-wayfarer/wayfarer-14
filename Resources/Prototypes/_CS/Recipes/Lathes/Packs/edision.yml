@@ -1,0 +1,20 @@
+
+- type: latheRecipePack
+  id: CSEdisonEngineeringMachineBoardsStatic
+  recipes:
+  - EmitterCircuitboard
+
+- type: latheRecipePack
+  id: CSEdisionEngineeringThrusterPack
+  recipes:
+#  - SlowWeakThrusterMachineCircuitboard # Wayfarer
+#  - SlowStrongThrusterMachineCircuitboard # Wayfarer
+  - SmallThrusterMachineCircuitboard
+  - ThrusterMachineCircuitboard
+  - LargeThrusterMachineCircuitboard # Wayfarer
+#  - FastWeakThrusterMachineCircuitboard # Wayfarer
+
+- type: latheRecipePack
+  id: CSEdisionEngineeringMachineMiscPack
+  recipes:
+  - PowerCellHigh
