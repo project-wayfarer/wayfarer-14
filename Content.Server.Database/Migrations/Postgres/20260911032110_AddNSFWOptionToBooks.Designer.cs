@@ -6,6 +6,7 @@ using System.Text.Json;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using NpgsqlTypes;
@@ -15,9 +16,11 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    partial class PostgresServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260911032110_AddNSFWOptionToBooks")]
+    partial class AddNSFWOptionToBooks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -791,10 +794,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("boolean")
                         .HasColumnName("is_nsf_w");
 
-                    b.Property<bool>("IsPublished")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_published");
-
                     b.Property<int>("RoundId")
                         .HasColumnType("integer")
                         .HasColumnName("round_id");
@@ -808,11 +807,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)")
                         .HasColumnName("title");
-
-                    b.Property<string>("Warnings")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("warnings");
 
                     b.HasKey("Id")
                         .HasName("PK_nf_library_book");

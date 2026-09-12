@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Shared._NF.Library;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Consent; // Floofstation
 using Content.Shared.Construction.Prototypes;
@@ -2113,6 +2114,157 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
 
         #endregion
+
+        #region Library
+
+        public async Task AddNFLibraryBookAsync(
+            int roundId,
+            int serverId,
+            string title,
+            string author,
+            string content,
+            // Wayfarer
+            string warnings,
+            bool isNsfw,
+            bool isPublished,
+            // End Wayfarer
+            DateTime date,
+            Guid authorPlayerUserId)
+        {
+            if (title.Length > LibraryBookLimits.MaxTitleLength)
+                throw new ArgumentException($"Title exceeds max length of {LibraryBookLimits.MaxTitleLength}.", nameof(title));
+
+            if (author.Length > LibraryBookLimits.MaxAuthorLength)
+                throw new ArgumentException($"Author exceeds max length of {LibraryBookLimits.MaxAuthorLength}.", nameof(author));
+
+            if (content.Length > LibraryBookLimits.MaxContentLength)
+                throw new ArgumentException($"Content exceeds max length of {LibraryBookLimits.MaxContentLength}.", nameof(content));
+
+            await using var db = await GetDb();
+
+            db.DbContext.NFLibraryBook.Add(new NFLibraryBook
+            {
+                RoundId = roundId,
+                ServerId = serverId,
+                Title = title,
+                Author = author,
+                Content = content,
+                // Wayfarer
+                Warnings = warnings,
+                IsNSFW = isNsfw,
+                IsPublished = isPublished,
+                // End Wayfarer
+                Date = date,
+                AuthorPlayerUserId = authorPlayerUserId,
+            });
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<NFLibraryBook>> GetNFLibraryBooksAsync()
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.NFLibraryBook
+                .ToListAsync();
+        }
+
+        // Wayfarer
+        public async Task<NFLibraryBook?> GetNFLibraryBookByIdAsync(int id)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.NFLibraryBook
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<List<NFLibraryBook?>> GetRandomPublishedNFLibraryBooksAsync(int count = 1)
+        {
+            await using var db = await GetDb();
+
+            List<NFLibraryBook?> books = await db.DbContext.NFLibraryBook
+                .Where(x => x.IsPublished)
+                .OrderBy(x => EF.Functions.Random()) // Order randomly
+                .Take(count) // Select random
+                .Cast<NFLibraryBook?>()
+                .ToListAsync();
+            // Pad list until it reaches required length
+            var random = new Random();
+            while (books.Count < count)
+            {
+                books.Add(null);
+                books.Add(books.RemoveSwap(random.Next(books.Count))); // Shuffle new element randomly
+            }
+            return books;
+        }
+
+        public async Task<bool> UpdateNFBookContentAsync(int bookId, string content)
+        {
+            await using var db = await GetDb();
+
+            var book = await db.DbContext.NFLibraryBook
+                .FirstOrDefaultAsync(x => x.Id == bookId);
+
+            if (book == null)
+            {
+                return false;
+            }
+
+            book.Content = content;
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+        // End Wayfarer
+
+        public async Task<bool> DeleteNFLibraryBookAsync(int bookId)
+        {
+            await using var db = await GetDb();
+
+            var book = await db.DbContext.NFLibraryBook
+                .SingleOrDefaultAsync(b => b.Id == bookId);
+
+            if (book == null)
+                return false;
+
+            db.DbContext.NFLibraryBook.Remove(book);
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        // Wayfarer
+        public async Task<bool> ToggleNSFWNFLibraryBookAsync(int bookId)
+        {
+            await using var db = await GetDb();
+
+            var book = await db.DbContext.NFLibraryBook
+                .SingleOrDefaultAsync(b => b.Id == bookId);
+
+            if (book == null)
+                return false;
+
+            book.IsNSFW = !book.IsNSFW;
+
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> TogglePublishedNFLibraryBookAsync(int bookId)
+        {
+            await using var db = await GetDb();
+
+            var book = await db.DbContext.NFLibraryBook
+                .SingleOrDefaultAsync(b => b.Id == bookId);
+
+            if (book == null)
+                return false;
+
+            book.IsPublished = !book.IsPublished;
+
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+        // End Wayfarer
+
+        #endregion Library
 
         #region Wayfarer Round Summaries
 
