@@ -1,0 +1,107 @@
+# Sausage recipes
+- type: entity
+  name: raw corndog
+  parent: FoodSausageRawBattered
+  id: FoodCorndogBattered
+  description: Now with a stick in it!
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Consumable/Food/ingredients.rsi
+    state: corndog-raw
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - raw-egg
+    - chalky
+  - type: Construction
+    graph: RawCorndog
+    node: sticked-corndog
+  - type: DeepFrySpawn
+    cycles: 2
+    output: FoodMealCorndog
+
+- type: entity
+  name: fried sausage
+  parent: FoodSausageRawBattered
+  id: FoodSausageFried
+  description: A juicy sausage coated with a crispy fried breading. Great with chips!
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Consumable/Food/meals.rsi
+    state: sausage-fried
+  - type: FlavorProfile
+    flavors:
+    - oily
+    - salty
+    - meaty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Flavorol
+          Quantity: 5
+
+
+- type: entity
+  name: corndog
+  parent: FoodCorndogBattered
+  id: FoodMealCorndog
+  description: A Space Fair classic. Just don't go on any rides afterwards!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - oily
+    - salty
+    - meaty
+  - type: Sprite
+    sprite: _WF/Objects/Consumable/Food/meals.rsi
+    state: corndog
+  - type: Edible
+    trash:
+    - FoodFrozenPopsicleTrash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Flavorol
+          Quantity: 5
+
+- type: entity
+  name: bangers and mash
+  parent: FoodMealBase
+  id: FoodMealBangersAndMash
+  description: Sausages served on a bed of mashed potatoes. The King of British comfort food.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - potatoes
+  - type: Sprite
+    sprite: _WF/Objects/Consumable/Food/meals.rsi
+    state: bangersandmash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Flavorol
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Edible
+    trash:
+    - FoodPlateSmall
+  - type: Tag
+    tags:
+    - Meat
+    - Vegetable

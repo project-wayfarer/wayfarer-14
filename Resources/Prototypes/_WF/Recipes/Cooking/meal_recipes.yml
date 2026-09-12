@@ -139,3 +139,49 @@
   recipeType:
   - Assembler
   hideInGuidebook: true
+
+# Sausage Dishes
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSausageRawBattered
+  name: battered raw sausage recipe
+  result: FoodSausageRawBattered
+  resultCount: 1
+  time: 5
+  group: Savory # TODO: move to ingredients
+  reagents:
+    Flour: 1.5
+    Egg: 2
+  solids:
+    FoodSausageRaw: 1
+  recipeType:
+  - Assembler
+
+- type: microwaveMealRecipe
+  id: RecipeFoodMealPigblanket
+  name: pig in a blanket recipe
+  result: FoodMealPigblanket
+  resultCount: 1
+  time: 15
+  group: Savory
+  solids:
+    FoodSausageRaw: 1
+    FoodCroissantRaw: 1
+  recipeType:
+  - Oven
+
+- type: microwaveMealRecipe
+  id: RecipeFoodMealBangersAndMash
+  name: bangers and mash recipe
+  result: FoodMealBangersAndMash
+  time: 15
+  group: Savory
+  reagents:
+    TableSalt: 1
+    Blackpepper: 1
+  solids:
+    FoodSausageRaw: 2
+    FoodPotatoMashed: 1
+    FoodPlateSmall: 1
+  recipeType:
+  - Oven

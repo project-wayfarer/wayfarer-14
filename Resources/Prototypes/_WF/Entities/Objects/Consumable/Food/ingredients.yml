@@ -1,0 +1,43 @@
+- type: entity
+  name: battered raw sausage
+  parent: FoodSausageRaw
+  id: FoodSausageRawBattered
+  description: A raw sausage, battered up and ready to fry. Try not to squint at it.
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Consumable/Food/ingredients.rsi
+    state: sausage-battered
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - raw-egg
+    - chalky
+  - type: Tag
+    tags:
+    - Meat
+  - type: Construction
+    graph: RawCorndog
+    node: start
+  - type: DeepFrySpawn
+    cycles: 2
+    output: FoodSausageFried
+
+- type: entity
+  name: mashed potato
+  parent: FoodProduceBase
+  id: FoodPotatoMashed
+  description: Once a solid potato, now mashed into a pulp.
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Consumable/Food/ingredients.rsi
+    state: potato-mashed
+  - type: FlavorProfile
+    flavors:
+    - potatoes
+  - type: Tag
+    tags:
+    - Potato
+    - Vegetable
+  - type: Construction
+    graph: PotatoMashed
+    node: mashed
