@@ -161,8 +161,8 @@
     earliestStart: 80
     minimumPlayers: 15
     weight: 1
-    duration: 1800
-    maxDuration: 2400
+    duration: 900 # Wayfarer 1800 < 900
+    maxDuration: 1200 # Wayfarer 2400 < 1200
     reoccurrenceDelay: 360 # 6 hours
   - type: BluespaceErrorRule
     groups:
@@ -239,8 +239,8 @@
     earliestStart: 80
     minimumPlayers: 15
     weight: 4 # Wayfarer 1<4
-    duration: 1800
-    maxDuration: 2400
+    duration: 900 # Wayfarer 1800 < 900
+    maxDuration: 1200 # Wayfarer 2400 < 1200
     reoccurrenceDelay: 360 # 6 hours
   - type: BluespaceErrorRule
     groups:
