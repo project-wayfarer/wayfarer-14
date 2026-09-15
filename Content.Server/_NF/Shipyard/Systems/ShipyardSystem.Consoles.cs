@@ -173,7 +173,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             // Wayfarer
             voucherValue = voucher!.MaxValue;
 
-            if (voucherValue >= 0 && vessel.Price > voucherValue)
+            if (voucherValue > 0 && vessel.Price > voucherValue)
             {
                 ConsolePopup(player, Loc.GetString("shipyard-console-invalid-voucher-value"));
                 PlayDenySound(player, shipyardConsoleUid, component);
