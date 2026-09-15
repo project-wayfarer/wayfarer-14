@@ -55,7 +55,7 @@
   name: french garlic bread
   parent: FoodBreadBase
   id: FoodBreadGarlicBaguette
-  description: Garlic? Melted cheese on a baguette!? The only thing missing here is more even garlic. 
+  description: Garlic? Melted cheese on a baguette!? The only thing missing here is more even garlic.
   components:
   - type: FlavorProfile
     flavors:
@@ -79,6 +79,12 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/Baked/bread.rsi
     state: garlicbread
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+  # End Wayfarer
 
 - type: entity
   name: french garlic bread slice
@@ -105,6 +111,13 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/Baked/bread.rsi
     state: garlicbreadslice
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+    - Slice
+  # End Wayfarer
 
 - type: entity
   name: texas toast
@@ -131,3 +144,10 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/Baked/bread.rsi
     state: texastoast
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+    - Slice
+  # End Wayfarer

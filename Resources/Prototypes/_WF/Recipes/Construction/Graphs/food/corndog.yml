@@ -1,0 +1,16 @@
+# Stick the Sausage
+- type: constructionGraph
+  id: RawCorndog
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sticked-corndog
+      steps:
+      - tag: WFStickFood
+        name: construction-graph-tag-rawcorndog
+        completed:
+        - !type:PlaySound
+          sound: /Audio/Effects/Fluids/blood2.ogg
+  - node: sticked-corndog
+    entity: FoodCorndogBattered

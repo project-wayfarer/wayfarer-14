@@ -1,0 +1,17 @@
+# Mashing Potatoes
+- type: constructionGraph
+  id: PotatoMashed
+  start: start
+  graph:
+  - node: start
+    entity: FoodPotato
+    edges:
+    - to: mashed
+      steps:
+      - tool: Rolling
+        doAfter: 1
+        completed:
+        - !type:PlaySound
+          sound: /Audio/_Shitmed/Medical/Surgery/organ1.ogg
+  - node: mashed
+    entity: FoodPotatoMashed

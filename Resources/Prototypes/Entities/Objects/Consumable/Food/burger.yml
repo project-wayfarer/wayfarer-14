@@ -129,6 +129,11 @@
     - state: custburg-filling
       color: red
     - state: custburg-top
+    # Wayfarer: Ingestion tweaks
+    - type: Tag
+      tags:
+      - Meat
+    # End Wayfarer
 
 # Burger
 
@@ -284,6 +289,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 # Tastes like bun, silver, magic.
 
 - type: entity
@@ -541,6 +547,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 
 - type: entity
   parent: FoodBurgerBase
@@ -655,6 +662,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 
 # Tastes like bun, HEAT.
 
@@ -785,6 +793,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 # Tastes like bun, pork patty.
 
 - type: entity
@@ -927,6 +936,11 @@
           Quantity: 5
         - ReagentId: Flavorol # Frontier
           Quantity: 5 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like bun, redditors.
 
 - type: entity
@@ -997,6 +1011,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable
 # Tastes like bun, diabetes.
 
 - type: entity
@@ -1022,6 +1037,11 @@
           Quantity: 3
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like bun, tofu.
 
 - type: entity

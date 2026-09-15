@@ -95,6 +95,11 @@
           Quantity: 30 # Frontier: 70<30
         - ReagentId: Flavorol # Frontier
           Quantity: 30 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+  # End Wayfarer
 # Tastes like pasta, bad humor.
 
 - type: entity
@@ -152,6 +157,11 @@
           Quantity: 6
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+  # End Wayfarer
 # Tastes like pasta, meat.
 
 - type: entity
@@ -181,6 +191,11 @@
           Quantity: 15 # Frontier: 20<15
         - ReagentId: Flavorol # Frontier
           Quantity: 15 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+  # End Wayfarer
 # Tastes like pasta, tomato.
 
 - type: entity

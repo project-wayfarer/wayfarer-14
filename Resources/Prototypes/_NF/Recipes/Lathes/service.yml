@@ -466,7 +466,7 @@
   id: CandleSmall
   result: CandleSmall
 
-#Paper Bucket - Mono
+# Paper Bucket - Mono
 - type: latheRecipe
   id: BucketPaper
   result: BucketPaper
@@ -475,3 +475,15 @@
   materials:
     Paper: 50
     Plastic: 10
+
+# Books
+
+- type: latheRecipe
+  id: BookRandomSimpleRecipe
+  result: BookRandomSimple
+  categories:
+  - General
+  completetime: 2
+  materials:
+    Paper: 200
+    Cloth: 50

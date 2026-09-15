@@ -45,6 +45,12 @@
   - type: Edible
     trash:
     - FoodPacketBoritosTrash
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: C&Ds
@@ -62,6 +68,12 @@
   - type: Edible
     trash:
     - FoodPacketCnDsTrash
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Fruit
+  # End Wayfarer
 
 - type: entity
   name: cheesie honkers
@@ -99,6 +111,12 @@
   - type: Edible
     trash:
     - FoodPacketChipsTrash
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   parent: BaseItem
@@ -143,6 +161,7 @@
     tags:
       - FoodSnack
       - ReptilianFood
+      - Fruit
   - type: SolutionContainerManager
     solutions:
       food:
@@ -190,6 +209,12 @@
   - type: Item
     heldPrefix: energybar-open
     storedOffset: 0,-2
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   parent: FoodSnackBase
@@ -232,6 +257,12 @@
   - type: Edible
     trash:
     - FoodPacketPopcornTrash
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: 4no raisins
@@ -335,6 +366,12 @@
   - type: Item
     heldPrefix: ramen
     storedOffset: 0,-1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   parent: DrinkRamen

@@ -95,6 +95,12 @@
           Quantity: 5
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 # Salad
 
 - type: entity
@@ -119,7 +125,7 @@
           Quantity: 8
         - ReagentId: Vitamin
           Quantity: 6
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 8
         - ReagentId: Flavorol
           Quantity: 5
@@ -160,6 +166,7 @@
   - type: Tag
     tags:
     - Fruit
+    - Vegetable # Wayfarer
     - Soup
 
 - type: entity
@@ -225,6 +232,12 @@
           Quantity: 8
         - ReagentId: Flavorol # Frontier
           Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: caesar salad
@@ -253,6 +266,12 @@
           Quantity: 15 # Frontier: 30<15
         - ReagentId: Flavorol # Frontier
           Quantity: 15 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: kimchi salad
@@ -282,6 +301,12 @@
           Quantity: 2
         - ReagentId: Flavorol # Frontier
           Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: fruit salad
@@ -395,10 +420,16 @@
           Quantity: 8
         - ReagentId: Vitamin
           Quantity: 5
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 5
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Soup
+  # End Wayfarer
 # Rice
 
 - type: entity
@@ -443,6 +474,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
     - Soup
 
 - type: entity
@@ -541,6 +573,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
     - Soup
 
 # Misc
@@ -615,6 +648,12 @@
           Quantity: 6
         - ReagentId: Flavorol
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 # Soup
 
 - type: entity
@@ -646,6 +685,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
     - Soup
 
 - type: entity
@@ -734,6 +774,12 @@
           Quantity: 10
         - ReagentId: Flavorol # Frontier
           Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: clown's tears
@@ -763,6 +809,13 @@
           Quantity: 5
         - ReagentId: Razorium
           Quantity: 1 # silly
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Fruit
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: vegetable soup
@@ -793,6 +846,12 @@
           Quantity: 4
         - ReagentId: Flavorol # Frontier
           Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: nettle soup
@@ -818,12 +877,18 @@
           Quantity: 10 # Frontier: 15<10
         - ReagentId: Water
           Quantity: 5
-        - ReagentId: Ichor # WF - Omnizine > Ichor replacement
+        - ReagentId: Ichor # Wayfarer: Omnizine<Ichor replacement
           Quantity: 5
         - ReagentId: Histamine
           Quantity: 4
         - ReagentId: Flavorol
           Quantity: 10 # Frontier: 15<10
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: mystery soup
@@ -870,6 +935,8 @@
   - type: Tag
     tags:
     - ChiliBowl
+    - Meat # Wayfarer
+    - Vegetable # Wayfarer
 
 
 - type: entity
@@ -900,6 +967,8 @@
   - type: Tag
     tags:
     - ChiliBowl
+    - Meat # Wayfarer
+    - Vegetable # Wayfarer
 
 - type: entity
   name: chili con carnival
@@ -935,6 +1004,8 @@
   - type: Tag
     tags:
     - ChiliBowl
+    - Meat # Wayfarer
+    - Vegetable # Wayfarer
 
 - type: entity
   name: monkey's delight
@@ -968,6 +1039,7 @@
   - type: Tag
     tags:
     - Meat
+    - Fruit # Wayfarer
     - Soup
 
 - type: entity
@@ -1064,6 +1136,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
     - Soup
 
 - type: entity
@@ -1094,6 +1167,12 @@
             Quantity: 5
           - ReagentId: Flavorol # Frontier
             Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: beet soup
@@ -1118,6 +1197,12 @@
             Quantity: 5
           - ReagentId: Flavorol
             Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 # Tastes like borsch, bortsch, borstch, borsh, borshch, borscht.
 
 - type: entity
@@ -1141,6 +1226,12 @@
             Quantity: 12.5 # Frontier: 15<12.5
           - ReagentId: Flavorol # Frontier
             Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 # Tastes like beet.
 
 - type: entity
@@ -1175,6 +1266,7 @@
     tags:
     - Meat
     - Fruit
+    - Vegetable # Wayfarer
     - Soup
 
 - type: entity
@@ -1229,6 +1321,12 @@
             Quantity: 5
           - ReagentId: Flavorol # Frontier
             Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Soup
+  # End Wayfarer
 
 - type: entity
   name: bisque
@@ -1258,6 +1356,13 @@
             Quantity: 5
           - ReagentId: Flavorol # Frontier
             Quantity: 10 # Frontier
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Meat
+    - Soup
+  # End Wayfarer
 # Tastes like crab.
 
 - type: entity
@@ -1320,6 +1425,7 @@
   - type: Tag
     tags:
     - Fruit
+    - Vegetable # Wayfarer
     - Soup
 # Tastes like bungo, hot curry.
 
@@ -1353,4 +1459,5 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
     - Soup

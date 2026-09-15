@@ -619,6 +619,12 @@
       right:
       - state: alpha-inhand-right
         color: "#ba672e"
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Cake
+  # End Wayfarer
 
 - type: entity
   name: slice of chocolate cake
@@ -650,6 +656,13 @@
       right:
       - state: alpha-slice-inhand-right
         color: "#ba672e"
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Cake
+    - Slice
+  # End Wayfarer
 # Tastes like sweetness, cake, chocolate.
 
 - type: entity
@@ -1036,6 +1049,12 @@
           Quantity: 15
   - type: Item
     heldPrefix: trumpet
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Flower
+    - Cake
+  # End Wayfarer
 
 - type: entity
   name: slice of spaceman's cake
@@ -1058,6 +1077,13 @@
           Quantity: 3
   - type: Item
     heldPrefix: trumpet-slice
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Flower
+    - Cake
+    - Slice
+  # End Wayfarer
 # Tastes like sweetness, cake, jam.
 
 - type: entity
@@ -1133,6 +1159,8 @@
     - VimPilot
     - DoorBumpOpener
     - Cake
+    - Fruit # Wayfarer
+    - Meat # Wayfarer
   - type: CanEscapeInventory
     baseResistTime: 2
   - type: Puller

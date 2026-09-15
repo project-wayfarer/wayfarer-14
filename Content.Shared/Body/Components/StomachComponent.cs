@@ -63,16 +63,16 @@ namespace Content.Shared.Body.Components
         // Wayfarer: Our custom:tm Digestion!
 
         /// <summary>
-        ///     A whitelist for what foods this stomach is capable of eating when having Carnivore trait.
+        ///     A whitelist for what foods this stomach is capable of NOT eating when having Carnivore trait.
         /// </summary>
         [DataField]
-        public EntityWhitelist? CarnivoreDigestible = null;
+        public EntityWhitelist? CarnivoreIndigestible = null;
 
         /// <summary>
-        ///     A whitelist for what foods this stomach is capable of eating when having Herbivore trait.
+        ///     A whitelist for what foods this stomach is capable of NOT eating when having Herbivore trait.
         /// </summary>
         [DataField]
-        public EntityWhitelist? HerbivoreDigestible = null;
+        public EntityWhitelist? HerbivoreIndigestible = null;
 
         // End Wayfarer
 

@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 08/01/2026 09:23:58
-  entityCount: 4994
+  time: 09/11/2026 06:36:24
+  entityCount: 4995
 maps: []
 grids:
 - 1
@@ -6010,6 +6010,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-7.5
+      parent: 1
+- proto: BaseComputerLibrary
+  entities:
+  - uid: 4995
+    components:
+    - type: Transform
+      pos: 30.5,0.5
       parent: 1
 - proto: Bed
   entities:

@@ -14,12 +14,15 @@
       - MothFood
       # End Frontier: general moth digestion
     # Wayfarer: mmmm food
-    carnivoreDigestible:
-      components:
-      - MothFood
-    herbivoreDigestible:
-      components:
-      - MothFood
+    carnivoreIndigestible:
+      tags:
+      - Fruit
+      - Vegetable
+      - Flower
+      - Ambrosia
+    herbivoreIndigestible:
+      tags:
+      - Meat
     # End Wayfarer
     isSpecialDigestibleExclusive: false # Frontier
   - type: SolutionContainerManager

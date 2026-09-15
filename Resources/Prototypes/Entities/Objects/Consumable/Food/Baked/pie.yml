@@ -345,6 +345,7 @@
   - type: Tag
     tags:
     - Pie
+    - Vegetable # Wayfarer
 
 - type: entity
   name: slice of pumpkin pie
@@ -362,6 +363,7 @@
     tags:
     - Pie
     - Slice
+    - Vegetable # Wayfarer
 
 - type: entity
   name: xeno pie
@@ -419,6 +421,12 @@
     - state: frosty
   - type: SliceableFood
     slice: FoodPieFrostySlice
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Pie
+  # End Wayfarer
 
 - type: entity
   name: slice of frosty pie
@@ -433,6 +441,13 @@
     - state: plain-slice
     - state: alpha-slice-filling
       color: blue
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Pie
+    - Slice
+  # End Wayfarer
 # Tastes like pie, mint.
 
 - type: entity
@@ -450,6 +465,12 @@
     heldPrefix: mime
   - type: SliceableFood
     slice: FoodTartMimeSlice
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+  # End Wayfarer
 
 - type: entity
   name: slice of mime tart
@@ -464,6 +485,13 @@
     - state: mimetart-slice
   - type: Item
     heldPrefix: mime
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+    - Slice
+  # End Wayfarer
 # Tastes like nothing.
 
 # No Slice
@@ -492,6 +520,12 @@
           Quantity: 4
         - ReagentId: Flavorol
           Quantity: 6
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Pie
+  # End Wayfarer
 # Tastes like pie, mushrooms.
 
 - type: entity
@@ -505,6 +539,12 @@
       - mushroom
   - type: Sprite
     state: plump
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Pie
+  # End Wayfarer
 # Tastes like pie, mushrooms.
 
 # Tart
@@ -578,4 +618,10 @@
           Quantity: 13 # Frontier
         - ReagentId: Flavorol
           Quantity: 15
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+  # End Wayfarer
 # Tastes like tart, dark chocolate.

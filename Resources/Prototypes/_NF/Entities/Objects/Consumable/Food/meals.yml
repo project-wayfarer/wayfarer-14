@@ -67,6 +67,7 @@
     baseSprintSpeed : 5
   - type: Tag
     tags:
+    - Meat # Wayfarer
     - VimPilot
     - DoorBumpOpener
   - type: CanEscapeInventory
@@ -188,6 +189,12 @@
           Quantity: 7
         - ReagentId: Ketchup
           Quantity: 5
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: avocado toast
@@ -213,6 +220,13 @@
           Quantity: 5
         - ReagentId: Flavorol
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Vegetable
+    - Bread
+    - Slice
+  # End Wayfarer
 
 - type: entity
   name: breakfast bagel
@@ -240,6 +254,12 @@
           Quantity: 5
         - ReagentId: Flavorol
           Quantity: 1
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: poppyseed breakfast bagel
@@ -272,6 +292,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 
 - type: entity
   name: cucumber sandwich
@@ -301,6 +322,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 
 - type: entity
   name: greek salad
@@ -489,6 +511,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 
 - type: entity
   name: shio noodles
@@ -639,6 +662,12 @@
   - type: DeepFrySpawn
     cycles: 2
     output: FoodSlicedTofuFried
+  # Wayfarer: Ingestion tweaks
+  - type: Tag
+    tags:
+    - Meat
+    - Vegetable
+  # End Wayfarer
 
 - type: entity
   name: fried tofu
@@ -649,6 +678,8 @@
   - type: Tag
     tags:
     - Cooked
+    - Meat # Wayfarer
+    - Vegetable # Wayfarer
   - type: FlavorProfile
     flavors:
     - oily
@@ -695,6 +726,7 @@
   - type: Tag
     tags:
     - Meat
+    - Vegetable # Wayfarer
 
 - type: entity
   parent: FoodMealBase
@@ -704,6 +736,7 @@
   components:
   - type: Tag
     tags:
+    - Meat # Wayfarer
     - Cooked
     - NFHotdog
   - type: FlavorProfile
@@ -733,6 +766,7 @@
   components:
   - type: Tag
     tags:
+    - Meat # Wayfarer
     - Cooked
   - type: FlavorProfile
     flavors:
@@ -753,7 +787,7 @@
   - type: Construction
     graph: NFHotdog
     node: hotteddog
-    
+
 - type: entity
   parent: FoodMealBase
   id: FoodMealPoutine
@@ -763,6 +797,7 @@
   - type: Tag
     tags:
     - Cooked
+    - Vegetable # Wayfarer
   - type: FlavorProfile
     flavors:
       - potatoes
