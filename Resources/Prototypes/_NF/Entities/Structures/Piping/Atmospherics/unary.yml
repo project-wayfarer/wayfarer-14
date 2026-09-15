@@ -294,9 +294,26 @@
   - type: GasSpawnPowerConsumer
     spawnMixture:
       moles:
-      - 0.22 # Oxygen
-      - 0.78 # Nitrogen
+      # Wayfarer Begin
+      # oh god gas mixtures use positional definitions defined by the id property of gasses
+      - 0.0 # Oxygen
+      - 0.0 # Nitrogen
+      - 0.0 # CO2
+      - 0.0 # Plasma
+      - 0.0 # Tritium
+      - 0.0 # Water Vapor
+      - 0.0 # Ammonia
+      - 0.0 # Nitrous Oxide
+      - 0.0 # Frezon
+      - 1.0 # Respiron
+      # End Wayfarer
       temperature: 5273 # ~ 5000 deg C, roughly when plasma turns back into gas
+    # Wayfarer Begin
+    energyPerMole: 10000 # 10 kJ/mol, 1 MW will fill ~1 tile/sec at normal temp/pressure
+    # linearRate is seemingly unused, but putting it in anyways just in case...
+    linearRate: 0.00001 # 10 kJ/mol 
+    linearMaxValue: 10000000 # cap power draw at 10MW
+    # End Wayfarer
   - type: GasCanister
     gasMixture:
       volume: 10000 # big tank to store backup
