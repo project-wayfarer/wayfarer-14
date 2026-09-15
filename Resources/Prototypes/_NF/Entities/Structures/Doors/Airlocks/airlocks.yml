@@ -73,21 +73,21 @@
 
 - type: entity
   parent: AirlockGlassShuttle
-  id: AirlockExternalGlassStationTransitTradeExpress
+  id: AirlockExternalGlassStationTransitCalypsoExpress
   suffix: Ext, Bus (R2), Exclusive, Glass, Docking
   components:
   - type: PriorityDock
-    tag: DockTransitTradeExpress
+    tag: DockTransitCalypsoExpress
   - type: Docking
     dockType: Transit
 
 - type: entity
   parent: AirlockExternalGlassShuttleTransit
-  id: AirlockExternalGlassShuttleTransitTradeExpress
+  id: AirlockExternalGlassShuttleTransitCalypsoExpress
   suffix: Ext, Bus (R2), Glass, Docking
   components:
   - type: PriorityDock
-    tag: DockTransitTradeExpress
+    tag: DockTransitCalypsoExpress
 
 - type: entity
   parent: AirlockExternalGlassShuttleTransit
