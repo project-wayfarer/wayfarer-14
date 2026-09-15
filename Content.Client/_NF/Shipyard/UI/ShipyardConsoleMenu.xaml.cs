@@ -41,6 +41,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     private List<string> _lastAvailableProtos = new();
     private List<string> _lastUnavailableProtos = new();
     private bool _freeListings = false;
+    private uint _maxFreeValue = 0; // Wayfarer
     private bool _validId = false;
     private ConfirmButton? _currentlyConfirmingButton = null;
 
@@ -62,19 +63,19 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
     {
         SetCategoryText(args.Id);
-        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
+        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _maxFreeValue, _validId); // Wayfarer
     }
 
     private void OnClassItemSelected(OptionButton.ItemSelectedEventArgs args)
     {
         SetClassText(args.Id);
-        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
+        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _maxFreeValue, _validId); // Wayfarer
     }
 
     private void OnEngineItemSelected(OptionButton.ItemSelectedEventArgs args)
     {
         SetEngineText(args.Id);
-        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
+        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _maxFreeValue, _validId); // Wayfarer
     }
 
     //Wayfarer Start
@@ -97,12 +98,12 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     private void OnSortByItemSelected(OptionButton.ItemSelectedEventArgs args)
     {
         SetSortByText(args.Id);
-        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
+        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _maxFreeValue, _validId); // Wayfarer
     }
 
     private void OnSearchBarTextChanged(LineEdit.LineEditEventArgs args)
     {
-        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
+        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _maxFreeValue, _validId); // Wayfarer
     }
 
     private void SetCategoryText(int id)
@@ -129,17 +130,17 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     /// <summary>
     ///     Populates the list of products that will actually be shown, using the current filters.
     /// </summary>
-    public void PopulateProducts(List<string> availablePrototypes, List<string> unavailablePrototypes, bool free, bool canPurchase)
+    public void PopulateProducts(List<string> availablePrototypes, List<string> unavailablePrototypes, bool free, uint maxFreeValue, bool canPurchase) // Wayfarer
     {
         Vessels.RemoveAllChildren();
 
         var search = SearchBar.Text.Trim().ToLowerInvariant();
 
         var newVessels = GetVesselPrototypesFromIds(availablePrototypes);
-        AddVesselsToControls(newVessels, search, free, canPurchase);
+        AddVesselsToControls(newVessels, search, free, maxFreeValue, canPurchase); // Wayfarer
 
         var newUnavailableVessels = GetVesselPrototypesFromIds(unavailablePrototypes);
-        AddVesselsToControls(newUnavailableVessels, search, free, false);
+        AddVesselsToControls(newUnavailableVessels, search, free, maxFreeValue, false); // Wayfarer
 
         _lastAvailableProtos = availablePrototypes;
         _lastUnavailableProtos = unavailablePrototypes;
@@ -173,7 +174,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     /// <summary>
     /// Adds all vessels in a given list of prototypes as VesselRows in the UI.
     /// </summary>
-    private void AddVesselsToControls(IEnumerable<VesselPrototype?> vessels, string search, bool free, bool canPurchase)
+    private void AddVesselsToControls(IEnumerable<VesselPrototype?> vessels, string search, bool free, uint maxFreeValue, bool canPurchase) // Wayfarer
     {
         foreach (var prototype in vessels)
         {
@@ -188,7 +189,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                 continue;
 
             string priceText;
-            if (free)
+            if (free && (maxFreeValue) == 0 || prototype!.Price <= maxFreeValue) // Wayfarer
                 priceText = Loc.GetString("shipyard-console-menu-listing-free");
             else
                 priceText = BankSystemExtensions.ToSpesoString(prototype!.Price);
@@ -391,7 +392,8 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
             DeedTitle.Text = $"None";
         }
         _freeListings = state.FreeListings;
+        _maxFreeValue = state.MaxFreeValue; // Wayfarer
         _validId = state.IsTargetIdPresent;
-        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
+        PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _maxFreeValue, _validId); // Wayfarer
     }
 }

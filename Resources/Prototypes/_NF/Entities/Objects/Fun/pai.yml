@@ -1,11 +1,11 @@
 - type: entity
   parent: PersonalAI
   id: GreenhornPAI
-  name: Greenhorn personal ai device
+  name: rookie personal ai device # Wayfarer
   description: Your electronic pal conceived to guide you!
                Activate it in hand to request the download of an AI.
                Please be patient, as AI's are not always available.
-               Good luck and enjoy your personal Greenhorn AI
+               Good luck and enjoy your personal AI # Wayfarer
   components:
   - type: Sprite
     sprite: _NF/Objects/Fun/pai.rsi

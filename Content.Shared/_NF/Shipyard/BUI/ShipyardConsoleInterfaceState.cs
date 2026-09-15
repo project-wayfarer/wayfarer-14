@@ -15,6 +15,7 @@ public sealed class ShipyardConsoleInterfaceState : BoundUserInterfaceState
     public readonly (List<string> available, List<string> unavailable) ShipyardPrototypes;
     public readonly string ShipyardName;
     public readonly bool FreeListings;
+    public readonly uint MaxFreeValue; // Wayfarer
     public readonly float SellRate;
 
     public ShipyardConsoleInterfaceState(
@@ -27,6 +28,7 @@ public sealed class ShipyardConsoleInterfaceState : BoundUserInterfaceState
         (List<string> available, List<string> unavailable) shipyardPrototypes,
         string shipyardName,
         bool freeListings,
+        uint maxFreeValue, // Wayfarer
         float sellRate)
     {
         Balance = balance;
@@ -38,6 +40,7 @@ public sealed class ShipyardConsoleInterfaceState : BoundUserInterfaceState
         ShipyardPrototypes = shipyardPrototypes;
         ShipyardName = shipyardName;
         FreeListings = freeListings;
+        MaxFreeValue = maxFreeValue; // Wayfarer
         SellRate = sellRate;
     }
 }

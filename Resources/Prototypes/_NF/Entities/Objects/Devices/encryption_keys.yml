@@ -59,9 +59,9 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyGreeting
-  name: greeting encryption key
+  name: rookie encryption key # Wayfarer
   categories: [ DoNotMap ]
-  description: An encryption key for the Frontier Outpost intercom.
+  description: An encryption key for helping new Wayfarers, or getting help from experienced Wayfarers # Wayfarer
   components:
   - type: EncryptionKey
     channels:
