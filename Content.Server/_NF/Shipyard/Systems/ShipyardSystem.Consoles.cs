@@ -148,6 +148,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         // Keep track of whether or not a voucher was used.
         // TODO: voucher purchase should be done in a separate function.
         bool voucherUsed = false;
+        uint voucherValue = 0; // Wayfarer
         if (voucher is not null)
         {
             if (voucher!.RedemptionsLeft <= 0)
@@ -168,8 +169,18 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 return;
             }
 
-            voucher.RedemptionsLeft--;
             voucherUsed = true;
+            // Wayfarer
+            voucherValue = voucher!.MaxValue;
+
+            if (voucherValue > 0 && vessel.Price > voucherValue)
+            {
+                ConsolePopup(player, Loc.GetString("shipyard-console-invalid-voucher-value"));
+                PlayDenySound(player, shipyardConsoleUid, component);
+                return;
+            }
+            voucher.RedemptionsLeft--;
+            // End Wayfarer
         }
         else
         {
@@ -335,7 +346,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             sellValue,
             targetId,
             (ShipyardConsoleUiKey)args.UiKey,
-            voucherUsed);
+            voucherUsed,
+            voucherValue); // Wayfarer
     }
 
     private void TryParseShuttleName(ShuttleDeedComponent deed, string name)
@@ -496,7 +508,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             refreshId = null;
         }
 
-        RefreshState(uid, bank.Balance, true, null, 0, refreshId, (ShipyardConsoleUiKey)args.UiKey, voucherUsed);
+        RefreshState(uid, bank.Balance, true, null, 0, refreshId, (ShipyardConsoleUiKey)args.UiKey, voucherUsed, 0); // Wayfarer
     }
 
     private void OnConsoleUIOpened(EntityUid uid, ShipyardConsoleComponent component, BoundUIOpenedEvent args)
@@ -529,6 +541,13 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
 
         var voucherUsed = HasComp<ShipyardVoucherComponent>(targetId);
+        // Wayfarer
+        uint maxValue = 0;
+        if (voucherUsed)
+        {
+            maxValue = Comp<ShipyardVoucherComponent>(targetId!.Value).MaxValue;
+        }
+        // End Wayfarer
 
         int sellValue = 0;
         if (deed?.ShuttleUid != null)
@@ -545,7 +564,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             sellValue,
             targetId,
             (ShipyardConsoleUiKey)args.UiKey,
-            voucherUsed);
+            voucherUsed,
+            maxValue); // Wayfarer
     }
 
     private void ConsolePopup(EntityUid uid, string text)
@@ -656,6 +676,13 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             }
 
             var voucherUsed = HasComp<ShipyardVoucherComponent>(targetId);
+            // Wayfarer
+            uint maxValue = 0;
+            if (voucherUsed)
+            {
+                maxValue = Comp<ShipyardVoucherComponent>(targetId!.Value).MaxValue;
+            }
+            // End Wayfarer
 
             int sellValue = 0;
             if (deed?.ShuttleUid != null)
@@ -672,7 +699,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 sellValue,
                 targetId,
                 (ShipyardConsoleUiKey)uiComp.Key,
-                voucherUsed);
+                voucherUsed,
+                maxValue); // Wayfarer
 
         }
     }
@@ -859,7 +887,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         int shipSellValue,
         EntityUid? targetId,
         ShipyardConsoleUiKey uiKey,
-        bool freeListings)
+        bool freeListings,
+        uint maxFreeValue) // Wayfarer
     {
         var newState = new ShipyardConsoleInterfaceState(
             balance,
@@ -871,6 +900,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             GetAvailableShuttles(uid, uiKey, targetId: targetId),
             uiKey.ToString(),
             freeListings,
+            maxFreeValue, // Wayfarer
             CalculateSellRate(uid));
 
         _ui.SetUiState(uid, uiKey, newState);
@@ -993,6 +1023,16 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
+        // Wayfarer
+        bool voucherUsed = false;
+        uint voucherValue = 0;
+        if (TryComp<ShipyardVoucherComponent>(targetId, out var voucher))
+        {
+            voucherUsed = true;
+            voucherValue = voucher.MaxValue;
+        }
+        // End Wayfarer
+
         // Validate the new name
         var newName = args.NewName.Trim();
         if (string.IsNullOrEmpty(newName))
@@ -1041,7 +1081,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 originalSellValue,
                 targetId,
                 (ShipyardConsoleUiKey)args.UiKey,
-                false);
+                voucherUsed, // Wayfarer
+                voucherValue); // Wayfarer
 
             _adminLogger.Add(LogType.ShipYardUsage,
                 LogImpact.Low,

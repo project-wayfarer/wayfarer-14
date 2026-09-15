@@ -10,6 +10,15 @@
   - EncryptionKeyTraffic
 
 - type: loadout
+  id: WFEncryptionKeyGreeting
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WFT50hr
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyGreeting
+
+- type: loadout
   id: WFEncryptionKeyMedical
   hideEffects:
   - !type:GroupLoadoutEffect

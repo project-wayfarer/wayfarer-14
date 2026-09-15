@@ -154,3 +154,23 @@
   - type: ShipyardVoucher
     access:
     - StationTrafficController
+
+# Wayfarer
+- type: entity
+  parent: BaseShipVoucher
+  id: ShipVoucherRookie
+  name: rookie ship voucher
+  description: Allows for one free basic ship from a standard shipyard console. Hold onto this after you redeem your ship! You'll need it to manage/sell the ship you got.
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - state: voucherrookie
+  - type: Item
+    heldPrefix: blue
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: Shipyard
+    redemptionsLeft: 99 # Give them a chance to try out a bunch of ships
+    maxValue: 50000
+# End Wayfarer

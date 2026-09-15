@@ -13,6 +13,14 @@ public sealed partial class ShipyardVoucherComponent : Component
     [DataField]
     public uint RedemptionsLeft = 1;
 
+    // Wayfarer
+    /// <summary>
+    ///  Number of redeemable ships that this voucher can still be used for. Decremented on purchase.
+    /// </summary>
+    [DataField]
+    public uint MaxValue = 0;
+    // End Wayfarer
+
     /// <summary>
     ///  If true, card will be destroyed when no redemptions are left. Checked at time of sale.
     /// </summary>
