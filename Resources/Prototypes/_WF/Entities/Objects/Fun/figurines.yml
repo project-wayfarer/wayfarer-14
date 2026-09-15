@@ -9,3 +9,58 @@
     state: mayla
   - type: SpeakOnTrigger
     pack: FigurinesMayla
+
+- type: entity
+  parent: ToyFigurineMayla
+  id: ToyFigurineMaylaBusiness
+  name: business mini mayla
+  description: A entrepreneurial figurine of MAYLA.
+  components:
+  - type: Sprite
+    state: businessmayla
+  - type: SpeakOnTrigger
+    pack: FigurinesMaylaBusiness
+
+- type: entity
+  parent: ToyFigurineMayla
+  id: ToyFigurineMaylaChef
+  name: chef mini mayla
+  description: A culinary figurine of MAYLA.
+  components:
+  - type: Sprite
+    state: chefmayla
+  - type: SpeakOnTrigger
+    pack: FigurinesMaylaChef
+
+- type: entity
+  parent: ToyFigurineMayla
+  id: ToyFigurineMaylaDetective
+  name: detective mini mayla
+  description: Am investigative figurine of MAYLA.
+  components:
+  - type: Sprite
+    state: detectivemayla
+  - type: SpeakOnTrigger
+    pack: FigurinesMaylaDetective
+
+- type: entity
+  parent: ToyFigurineMayla
+  id: ToyFigurineMaylaMaid
+  name: maid mini mayla
+  description: A figurine of MAIDLA.
+  components:
+  - type: Sprite
+    state: maidla
+  - type: SpeakOnTrigger
+    pack: FigurinesMaylaMaid
+
+- type: entity
+  parent: ToyFigurineMayla
+  id: ToyFigurineMaylaNude
+  name: anatomoically correct mini mayla
+  description: A provocative figurine of MAYLA.
+  components:
+  - type: Sprite
+    state: anatomicallycorrectmayla
+  - type: SpeakOnTrigger
+    pack: FigurinesMaylaNude
