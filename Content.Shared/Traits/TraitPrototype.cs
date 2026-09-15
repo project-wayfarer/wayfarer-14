@@ -3,6 +3,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Traits;
 
+// Wayfarer
+// Replaced by the DeltaV trait system in Content.Shared._DV.Traits
+/*
 /// <summary>
 /// Describes a trait.
 /// </summary>
@@ -61,3 +64,5 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
 }
+*/
+// End Wayfarer

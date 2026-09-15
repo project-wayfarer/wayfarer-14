@@ -10,6 +10,9 @@ namespace Content.Server.Traits;
 
 public sealed class TraitSystem : EntitySystem
 {
+    // Wayfarer
+    // Replaced by the DeltaV trait system in Content.Server._DV.Traits
+    /*
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
@@ -62,4 +65,6 @@ public sealed class TraitSystem : EntitySystem
                 handsComp: handsComponent);
         }
     }
+    */
+    // End Wayfarer
 }

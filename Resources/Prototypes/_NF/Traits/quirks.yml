@@ -5,7 +5,12 @@
   name: trait-pious-name
   description: trait-pious-desc
   category: Quirks
-  traitGear: Bible
-  components:
+  # Wayfarer
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: BibleUser
   #  - type: Pacified # Wayfarer
+  - !type:SpawnItemInHandEffect
+    item: Bible
+  # End Wayfarer
