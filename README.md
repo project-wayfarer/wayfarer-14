@@ -1,20 +1,15 @@
 <div class="header" align="center">
-<img alt="Grounded Station" height="300" />
+<img alt="Wayfarer Station" height="300" src="Resources/Textures/_WF/Logo/logo.png?raw=true" />
 </div>
 
-Grounded 14 is a fork of [Wayfarer 14](https://github.com/project-wayfarer/wayfarer-14) which itself is a fork of [Frontier Station](https://github.com/new-frontiers-14/frontier-station-14), which itself is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14) that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
+Wayfarer 14 is a fork of [Frontier Station](https://github.com/new-frontiers-14/frontier-station-14), which itself is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14) that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
 
 
-This is the primary repo for Grounded 14.
+This is the primary repo for Wayfarer 14.
 
-If you want to host or create content for Grounded 14, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
+If you want to host or create content for Wayfarer 14, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
 
 ## Links
-#### Grounded 14
-<div class="header" align="center">
-
-[Discord](https://discord.gg/9U4Qyukhj)
-</div>
 
 #### Wayfarer 14
 <div class="header" align="center">
