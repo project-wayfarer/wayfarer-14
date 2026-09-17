@@ -51,6 +51,9 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: marshmallow-slice
+  - type: Construction
+    graph: MarshmallowOnStick
+    node: sticked-marshmallow
   - type: SolutionContainerManager
     solutions:
       food:
@@ -66,30 +69,32 @@
   parent: FoodMarshmallow
   id: FoodMarshmallowToasted
   description: Lightly roasted from a campfire, this is the perfect way to consume a marshmallow.
-- type: SolutionContainerManager
-  solutions:
-    food:
-      maxVol: 13
-      reagents:
-      - ReagentId: Nutriment
-        Quantity: 6
-      - ReagentId: Sugar
-        Quantity: 4
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Sugar
+          Quantity: 4
 
 - type: entity
   name: burnt marshmallow
   parent: FoodMarshmallow
   id: FoodMarshmallowBurnt
   description: Oops, this looks kinda burnt. Yuck! Unless... You like your marshmallows with a bit of char.
-- type: SolutionContainerManager
-  solutions:
-    food:
-      maxVol: 9
-      reagents:
-      - ReagentId: Nutriment
-        Quantity: 5
-      - ReagentId: Sugar
-        Quantity: 1
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 1
 
 - type: entity
   name: marshmallow on a stick
@@ -98,9 +103,9 @@
   description: A little gelatinous guy on a stick. I can only assume to go get toasted on a fire.
 
 - type: entity
-  name: burnt marshmallow
-  parent: FoodMarshmallowStickToasted
-  id: FoodMarshmallowBurnt
+  name: toasted marshmallow
+  parent: FoodMarshmallowToasted
+  id: FoodMarshmallowStickToasted
   description: Lightly roasted from a campfire, it's perfect! Any longer in the fire and you're gonna burn it!
 
 - type: entity

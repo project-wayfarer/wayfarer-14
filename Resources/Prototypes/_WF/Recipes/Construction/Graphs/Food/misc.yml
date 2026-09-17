@@ -1,0 +1,61 @@
+# Sticking a Marshmallow
+- type: constructionGraph
+  id: MarshmallowOnStick
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sticked-marshmallow
+      steps:
+      - tag: WFStickFood
+        name: construction-graph-tag-marshmallow
+        completed:
+        - !type:PlaySound
+          sound: /Audio/Effects/sizzle.ogg
+  - node: sticked-marshmallow
+    entity: FoodMarshmallowStick
+
+- type: constructionGraph
+  id: ToastedMarshmallowOnStick
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sticked-marshmallow-toasted
+      steps:
+      - tag: WFStickFood
+        name: construction-graph-tag-marshmallow-toasted
+        completed:
+        - !type:PlaySound
+          sound: /Audio/Effects/sizzle.ogg
+  - node: sticked-marshmallow-toasted
+    entity: FoodMarshmallowStickToasted
+
+- type: constructionGraph
+  id: MarshmallowOnStick
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sticked-marshmallow-burnt
+      steps:
+      - tag: WFStickFood
+        name: construction-graph-tag-smore
+        completed:
+        - !type:PlaySound
+          sound: /Audio/Effects/sizzle.ogg
+  - node: sticked-marshmallow-burnt
+    entity: FoodMarshmallowStickBurnt
+
+- type: constructionGraph
+  id: Smore
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sticked-marshmallow-burnt
+      steps:
+      - tag: WFStickFood
+        name: construction-graph-tag-smore-burnt
+  - node: sticked-marshmallow-burnt
+    entity: FoodMarshmallowStickBurnt
