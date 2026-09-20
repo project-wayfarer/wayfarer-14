@@ -11,3 +11,18 @@
       machine_board: !type:Container
       machine_parts: !type:Container
       body_container: !type:ContainerSlot # Wayfarer
+  - type: Sprite
+    sprite: _WF/Structures/Power/borg_hybernation_charger.rsi
+    layers:
+    - state: borgcharger-u1
+      map: ["base"]
+    - state: borgcharger0
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      shader: "unshaded"
+    - state: borgcharger1
+      map: ["charged"]
+      shader: "unshaded"
+      visible: false
+    - state: borgdecon1
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      visible: false
