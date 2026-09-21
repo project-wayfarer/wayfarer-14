@@ -237,11 +237,11 @@
   spritePath: _Goobstation/Mobs/Silicon/Service/cricket.rsi
   dummyPrototype: BorgChassisServiceCricket
 
-- type: borgSubtype
-  parentBorgType: service
-  id: service_kent
-  spritePath: _Goobstation/Mobs/Silicon/Service/kent.rsi
-  dummyPrototype: BorgChassisServiceKent
+# - type: borgSubtype       #Wayfarer Removed - report that sprite is broken.
+#   parentBorgType: service
+#   id: service_kent
+#   spritePath: _Goobstation/Mobs/Silicon/Service/kent.rsi
+#   dummyPrototype: BorgChassisServiceKent
 
 - type: borgSubtype
   parentBorgType: service
