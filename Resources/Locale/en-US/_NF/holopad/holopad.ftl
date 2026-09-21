@@ -16,5 +16,6 @@ nf-holopad-general-medical-dispatch-doc = Medical Dispatch - DoC's Office
 nf-holopad-general-nfsd-sheriff-office = CGP - Sheriff's Office
 nf-holopad-general-nfsd-reception = CGP - Reception
 nf-holopad-general-nfsd-lobby = CGP - Main Lobby
-nf-holopad-general-edison-reception = Edison Power Plant - Reception
+# WF Renamed
+nf-holopad-general-edison-reception = Edison Shipyard - Reception
 nf-holopad-general-tinnia = Tinnia's Rest
