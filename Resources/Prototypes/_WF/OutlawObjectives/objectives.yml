@@ -1,0 +1,82 @@
+# To add an objective, write a trait in the category below with hidden: true, so it stays off the
+# traits tab and doesn't contribute to trait limits. Put that trait's id in the objective's trait field.
+#
+# The current objective completion triggers are:
+#   Critical  Pays the outlaw responsible for the target reaching critical condition. Stops being
+#             listed once the target is dead.
+#   Gibbed    Pays the outlaw responsible for destroying the body.
+#   ItemSold  Pays when an outlaw sells the objective's item on a contraband pad.
+# Anything else needs a new trigger added to the payout system.
+
+- type: traitCategory
+  id: WFOutlawObjectives
+  name: humanoid-profile-editor-outlaw-objectives-tab
+
+- type: trait
+  id: WFTraitOutlawCritical
+  category: WFOutlawObjectives
+  name: outlaw-objectives-critical
+  description: outlaw-objectives-note
+  hidden: true
+
+- type: trait
+  id: WFTraitOutlawRoundRemoval
+  category: WFOutlawObjectives
+  name: outlaw-objectives-round-removal
+  description: outlaw-objectives-note
+  hidden: true
+
+- type: trait
+  id: WFTraitOutlawTheft
+  category: WFOutlawObjectives
+  name: outlaw-objectives-theft
+  description: outlaw-objectives-note
+  hidden: true
+
+- type: outlawObjective
+  id: WFOutlawObjectiveCritical
+  rewardDC: 15
+  rewardSpesos: 100000
+  trigger: Critical
+  trait: WFTraitOutlawCritical
+  title: outlaw-objectives-critical-title
+  description: outlaw-objectives-critical-description
+
+- type: outlawObjective
+  id: WFOutlawObjectiveRoundRemoval
+  rewardDC: 30
+  rewardSpesos: 250000
+  trigger: Gibbed
+  trait: WFTraitOutlawRoundRemoval
+  title: outlaw-objectives-round-removal-title
+  description: outlaw-objectives-round-removal-description
+
+- type: outlawObjective
+  id: WFOutlawObjectiveTheft
+  rewardDC: 20
+  rewardSpesos: 150000
+  trigger: ItemSold
+  trait: WFTraitOutlawTheft
+  item: WFOutlawObjectiveDataDrive
+  title: outlaw-objectives-theft-title
+  description: outlaw-objectives-theft-description
+
+# Renamed after its owner when it spawns. turnInValues has to name the contraband pad's own currency
+# or the pad refuses to take it, and the zero is what stops the pad paying for it on top of the objective reward.
+- type: entity
+  parent: BaseItem
+  id: WFOutlawObjectiveDataDrive
+  name: data drive
+  description: This looks important.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: harddisk_micro
+    scale: -1, 1
+  - type: Item
+    size: Tiny
+  - type: Contraband
+    severity: PirateTarget
+    turnInValues:
+      Doubloon: 0
+    hideValues: true

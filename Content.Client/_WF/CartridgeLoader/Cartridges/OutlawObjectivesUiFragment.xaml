@@ -1,0 +1,12 @@
+<cartridges:OutlawObjectivesUiFragment xmlns:cartridges="clr-namespace:Content.Client._WF.CartridgeLoader.Cartridges"
+                                      xmlns="https://spacestation14.io"
+                                      Orientation="Vertical"
+                                      HorizontalExpand="True"
+                                      VerticalExpand="True"
+                                      Margin="1 0 2 0">
+    <PanelContainer StyleClasses="BackgroundDark" HorizontalExpand="True" VerticalExpand="True">
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer Name="ObjectiveList" Orientation="Vertical" HorizontalExpand="True" Margin="8 8 8 8"/>
+        </ScrollContainer>
+    </PanelContainer>
+</cartridges:OutlawObjectivesUiFragment>

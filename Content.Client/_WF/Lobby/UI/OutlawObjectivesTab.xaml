@@ -1,0 +1,29 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Vertical"
+              HorizontalExpand="True"
+              VerticalExpand="True">
+
+    <ScrollContainer VerticalExpand="True"
+                     HScrollEnabled="False">
+        <BoxContainer Orientation="Vertical"
+                      HorizontalExpand="True"
+                      Margin="12 10">
+
+            <RichTextLabel Name="IntroLabel"
+                           Margin="0 0 0 10"/>
+
+            <BoxContainer Name="ObjectiveList"
+                          Orientation="Vertical"
+                          HorizontalExpand="True"
+                          SeparationOverride="10"/>
+
+            <PanelContainer StyleClasses="AngleRect"
+                            HorizontalAlignment="Center"
+                            Margin="0 16 0 0">
+                <RichTextLabel Name="NoteLabel"
+                               MaxWidth="500"
+                               Margin="8 6"/>
+            </PanelContainer>
+        </BoxContainer>
+    </ScrollContainer>
+</BoxContainer>

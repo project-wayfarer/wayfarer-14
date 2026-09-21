@@ -461,6 +461,8 @@ namespace Content.Client.Lobby.UI
 
             RefreshFlavorText();
 
+            InitializeOutlawObjectives(); // Wayfarer
+
             #region Dummy
 
             SpriteRotateLeft.OnPressed += _ =>
@@ -828,6 +830,7 @@ namespace Content.Client.Lobby.UI
             RefreshTraits();
             */
             UpdateTraitsSelection();
+            UpdateOutlawObjectivesSelection();
             // End Wayfarer
             RefreshFlavorText();
             ReloadPreview();

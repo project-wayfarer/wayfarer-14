@@ -1,0 +1,31 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                StyleClasses="PdaBorderRect"
+                HorizontalExpand="True"
+                Margin="0 0 0 6">
+
+    <BoxContainer Orientation="Horizontal"
+                  HorizontalExpand="True"
+                  Margin="10 5 8 5">
+
+        <Label Name="SsdMarker"
+               StyleClasses="LabelSubText"
+               FontColorOverride="#09A909"
+               MinSize="26 0"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+        <BoxContainer Orientation="Vertical"
+                      HorizontalExpand="True">
+
+            <RichTextLabel Name="Title"
+                           HorizontalExpand="True"/>
+
+            <RichTextLabel Name="Description"
+                           StyleClasses="LabelSubText"
+                           HorizontalExpand="True"/>
+
+            <RichTextLabel Name="Reward"
+                           HorizontalExpand="True"/>
+        </BoxContainer>
+    </BoxContainer>
+</PanelContainer>

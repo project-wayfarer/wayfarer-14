@@ -31,3 +31,19 @@
       programName: outlaw-bounty-program-name
       icon: _NF/Interface/Pirate/piratelogo.png
     - type: OutlawBountyCartridge
+
+- type: entity
+  parent: NFBasePDACartridge
+  id: OutlawObjectivesCartridge
+  name: black market jobs cartridge
+  description: A program listing jobs from the black market.
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/cartridge.rsi
+      state: cart-s
+    - type: UIFragment
+      ui: !type:OutlawObjectivesUi
+    - type: Cartridge
+      programName: outlaw-objectives-program-name
+      icon: _NF/Interface/Pirate/piratelogo.png
+    - type: OutlawObjectivesCartridge

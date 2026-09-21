@@ -16,6 +16,7 @@ using Content.Shared.Mobs.Components;
 using Robust.Shared.Prototypes;
 using Content.Server._NF.Cargo.Systems;
 using Content.Server.Hands.Systems;
+using Content.Server._WF.OutlawObjectives; // Wayfarer
 
 namespace Content.Server._NF.Contraband.Systems;
 
@@ -106,7 +107,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
         return pads;
     }
 
-    private void SellPallets(EntityUid gridUid, ContrabandPalletConsoleComponent component, EntityUid? station, out int amount)
+    private void SellPallets(EntityUid gridUid, ContrabandPalletConsoleComponent component, EntityUid? station, EntityUid seller, out int amount) // Wayfarer: seller
     {
         station ??= _station.GetOwningStation(gridUid);
         GetPalletGoods(gridUid, component, out var toSell, out amount);
@@ -121,6 +122,11 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
 
         foreach (var ent in toSell)
         {
+            // Wayfarer
+            var soldEv = new ContrabandSoldEvent(seller);
+            RaiseLocalEvent(ent, ref soldEv);
+            // End Wayfarer
+
             Del(ent);
         }
     }
@@ -201,7 +207,12 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
             return;
         }
 
+        // Wayfarer
+        /*
         SellPallets(gridUid, component, null, out var price);
+        */
+        SellPallets(gridUid, component, null, player, out var price);
+        // End Wayfarer
 
         var stackPrototype = _protoMan.Index<StackPrototype>(component.RewardType);
         var stackUid = _stack.Spawn(price, stackPrototype, args.Actor.ToCoordinates());

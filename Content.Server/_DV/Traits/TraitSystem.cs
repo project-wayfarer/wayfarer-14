@@ -123,7 +123,12 @@ public sealed class TraitSystem : EntitySystem
             var rejectionReasons = new List<string>();
 
             // Check global trait count limit
+            // Wayfarer
+            /*
             if (traitCount >= _maxTraitCount)
+            */
+            if (!trait.Hidden && traitCount >= _maxTraitCount)
+            // End Wayfarer
             {
                 Log.Warning($"Trait {traitId} rejected: global trait count limit ({_maxTraitCount}) exceeded");
                 rejectionReasons.Add(Loc.GetString("disabled-traits-reason-global-limit"));
@@ -194,7 +199,13 @@ public sealed class TraitSystem : EntitySystem
             // Trait is valid, add it
             validTraits.Add(traitId);
             totalPoints += trait.Cost;
+            // Wayfarer
+            /*
             traitCount++;
+            */
+            if (!trait.Hidden)
+                traitCount++;
+            // End Wayfarer
 
             // Update category tracking
             categoryTraitCounts.TryGetValue(trait.Category, out var catCount);

@@ -89,9 +89,17 @@ public sealed partial class TraitsTab : BoxContainer
             .ThenBy(c => Loc.GetString(c.Name))
             .ToList();
 
+        // Wayfarer
+        /*
         var traitsByCategory = _prototype.EnumeratePrototypes<TraitPrototype>()
             .GroupBy(t => t.Category)
             .ToDictionary(g => g.Key, g => g.OrderBy(t => Loc.GetString(t.Name)).ToList());
+        */
+        var traitsByCategory = _prototype.EnumeratePrototypes<TraitPrototype>()
+            .Where(t => !t.Hidden)
+            .GroupBy(t => t.Category)
+            .ToDictionary(g => g.Key, g => g.OrderBy(t => Loc.GetString(t.Name)).ToList());
+        // End Wayfarer
 
         foreach (var category in categories)
         {
