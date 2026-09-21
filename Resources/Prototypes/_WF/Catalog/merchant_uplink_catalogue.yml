@@ -1463,7 +1463,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#cornmeal food
+#cornmeal
 - type: listing
   id: UplinkMerchantBarrelCornmeal
   name:  uplink-merchant-barrelcornmeal-name
@@ -1704,7 +1704,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#rice food
+#rice
 - type: listing
   id: UplinkMerchantBarrelRice
   name:  uplink-merchant-barrelrice-name
@@ -1769,7 +1769,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#soy milk food
+#soy milk
 - type: listing
   id: UplinkMerchantBarrelMilkSoy
   name:  uplink-merchant-barrelmilksoy-name
@@ -1834,7 +1834,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#sugar food
+#sugar
 - type: listing
   id: UplinkMerchantBarrelSugar
   name:  uplink-merchant-barrelsugar-name
@@ -1966,7 +1966,7 @@
       - WFMerchantUplink
 
 #bulk food crates--
-#variant cubebox mt 15
+#variant cubebox
 - type: listing
   id: UplinkMerchantVariantCubeBox
   name:  uplink-merchant-variantcubebox-name
@@ -1982,7 +1982,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#ruminant cubeboxes mt 15
+#ruminant cubeboxes
 - type: listing
   id: UplinkMerchantRuminantCubeBox
   name:  uplink-merchant-ruminantcubebox-name
@@ -1998,7 +1998,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#poultry cubebox mt 15
+#poultry cubebox
 - type: listing
   id: UplinkMerchantPoultryCubeBox
   name:  uplink-merchant-poultrycubebox-name
@@ -2014,7 +2014,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#monkye cubebox mt 15
+#monkye cubebox
 - type: listing
   id: UplinkMerchantMonkeyCubeBox
   name:  uplink-merchant-monkeycubebox-name
@@ -2030,7 +2030,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#kobold cubeboxes mt 15
+#kobold cubeboxes
 - type: listing
   id: UplinkMerchantKoboldCubeBox
   name:  uplink-merchant-koboldcubebox-name
@@ -2046,7 +2046,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#farm cubebox mt 15
+#farm cubebox
 - type: listing
   id: UplinkMerchantFarmCubeBox
   name:  uplink-merchant-farmcubebox-name
@@ -2062,7 +2062,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#smart fridge flatpack mt60
+#smart fridge flatpack
 - type: listing
   id: UplinkMerchantSmartFridgeFlatpack
   name:  uplink-merchant-smartfridgeflatpack-name
@@ -2080,7 +2080,7 @@
       tags:
       - WFMerchantUplink
 
-#xenomeat 10 mt20
+#xenomeat
 - type: listing
   id: UplinkMerchantCrateMeatXeno
   name:  uplink-merchant-cratemeatxeno-name
@@ -2096,7 +2096,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#carpmeat 15 mt 20
+#carpmeat
 - type: listing
   id: UplinkMerchantCrateMeatFish
   name:  uplink-merchant-cratemeatfish-name
@@ -2112,7 +2112,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#expensive dragon meat 5 mt 30
+#dragon meat
 - type: listing
   id: UplinkMerchantCrateMeatDragon
   name:  uplink-merchant-cratemeatdragon-name
@@ -2128,24 +2128,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#avali meat 30 mt20 weird frost chicken meat
-- type: listing
-  id: UplinkMerchantCrateMeatResomi
-  name:  uplink-merchant-cratemeatresomi-name
-  description: uplink-merchant-cratemeatresomi-desc
-  productEntity: CrateMeatResomi
-  icon: { sprite: _Mono/Objects/Consumable/Food/meat.rsi, state: bird-resomi }
-  cost:
-    WayfarerMerchantToken: 20
-  categories:
-  - UplinkMerchantsFood
-  - UplinkMerchantsOutlaw
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - WFMerchantUplink
-#meat crate 30 price 15
+#Raw Meat
 - type: listing
   id: UplinkMerchantCrateMeat
   name:  uplink-merchant-cratemeat-name
@@ -2161,7 +2144,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#chicken 30 mt15
+#chicken
 - type: listing
   id: UplinkMerchantCrateMeatChicken
   name:  uplink-merchant-cratemeatchicken-name
@@ -2177,7 +2160,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#egg crate 10 cartons mt 15
+#egg carton crate
 - type: listing
   id: UplinkMerchantCrateContainerEgg
   name:  uplink-merchant-cratecontaineregg-name
@@ -2193,7 +2176,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#butter 20 mt 20
+#butter
 - type: listing
   id: UplinkMerchantCrateButter
   name:  uplink-merchant-cratebutter-name
@@ -2209,7 +2192,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#cheese wheel 15 mt 20
+#cheese wheel
 - type: listing
   id: UplinkMerchantCrateCheese
   name:  uplink-merchant-cratecheese-name
@@ -2225,7 +2208,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#bacon 30 mt 15
+#bacon
 - type: listing
   id: UplinkMerchantCrateBacon
   name:  uplink-merchant-cratebacon-name
@@ -2241,9 +2224,8 @@
     whitelist:
       tags:
       - WFMerchantUplink
-
 #extra misc--
-#foam force crate mt 5
+#foam force crate
 - type: listing
   id: UplinkMerchantFunFoamGuns
   name:  uplink-merchant-funfoamguns-name
@@ -2259,7 +2241,7 @@
     whitelist:
       tags:
       - WFMerchantUplink
-#magic candles mt 40 (create box of magic candles and then crate them)
+#magic candles
 - type: listing
   id: UplinkMerchantCrateCandlesInfinite
   name:  uplink-merchant-cratecandlesinfinite-name

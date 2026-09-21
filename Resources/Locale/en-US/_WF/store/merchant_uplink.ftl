@@ -244,7 +244,7 @@ uplink-merchant-barrelspacecleaner-name = Barrel of Space Cleaner
 uplink-merchant-barrelspacecleaner-desc = 1000 units of Space Cleaner
 uplink-merchant-barrelcola-name = Barrel of Space Cola
 uplink-merchant-barrelcola-desc = 1000 units of Space Cola
- uplink-merchant-barrelspacelube-name = Barrel of Space Lube
+uplink-merchant-barrelspacelube-name = Barrel of Space Lube
 uplink-merchant-barrelspacelube-desc = 1000 units of Space Lube
 uplink-merchant-barrelsugar-name = Barrel of Sugar
 uplink-merchant-barrelsugar-desc = 1000 units of Sugar
@@ -282,8 +282,6 @@ uplink-merchant-cratemeatfish-name = Raw Fish Carp
 uplink-merchant-cratemeatfish-desc =  Freezer of 30 Raw Fish carp
 uplink-merchant-cratemeatdragon-name = Dragon Meat!
 uplink-merchant-cratemeatdragon-desc = Freezer of 5 slabs of Dragon meat
-uplink-merchant-cratemeatresomi-name = Raw Blue Chicken?
-uplink-merchant-cratemeatresomi-desc = Freezer of 30 Raw chicken- blue chicken... blue frost chicken meat
 uplink-merchant-cratemeat-name = Raw Meat
 uplink-merchant-cratemeat-desc = Freezer of 30 Raw meat
 uplink-merchant-cratemeatchicken-name = Raw Chicken
@@ -302,12 +300,3 @@ uplink-merchant-cratecandlesinfinite-name = Crate of Magic Candles
 uplink-merchant-cratecandlesinfinite-desc = Crate of 2 boxes of big candles and 2 boxes of small candles that last pretty much forever.
 uplink-merchant-plushiethrongler-name = 100% REAL THRONGLER
 uplink-merchant-plushiethrongler-desc = THATS RIGHT THIS IS A 100% cot- mean Real throngler this plushi- this weapon can swing and hit hard. ready to become unstoppable? Disclaimer there are no refunds, and this is a 100% plushie replica of the REAL THRONGLER.
-
-
-
-
-
-
-
-
-
