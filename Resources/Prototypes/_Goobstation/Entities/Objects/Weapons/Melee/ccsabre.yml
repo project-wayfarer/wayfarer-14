@@ -11,11 +11,14 @@
     attackRate: 1.6
     damage:
       types:
-        Slash: 20 # Frontier change from 30 to 20, slight upgrade to the captain's sabre. 
+        Slash: 11 # Wayfarer: 20 < 11
+        Piercing: 11 # Wayfarer
+        Structural: 15 # Wayfarer
+        
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    reflectProb: .1 # Frontier change from .6 to .1 to match captain's sabre 
+    reflectProb: .25 # Wayfarer: .1 < .25
     spread: 90
 #    swingLeft: true # Frontier Todo: fix when we get swingLeft
   - type: Item

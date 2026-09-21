@@ -113,9 +113,13 @@
         map: ["enum.PowerDeviceVisualLayers.Powered"]
         shader: unshaded
   - type: MeleeWeapon
+    attackRate: .7 # Wayfarer
     damage:
       types:
         Blunt: 8
+  - type: PowerCellDraw
+    drawRate: 50
+    
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/Items/Defib/defib_zap.ogg

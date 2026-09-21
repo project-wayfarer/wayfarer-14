@@ -10,10 +10,10 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 2
+    attackRate: 1.5 # Wayfarer: 2 < 1.5
     damage:
       types:
-        Blunt: 10
+        Blunt: 15 # Wayfarer: 10 < 15
         Structural: 10
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_mace.rsi
@@ -37,11 +37,11 @@
       visible: false
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 2
+    attackRate: 1.25 # Wayfarer: 2 < 1.25
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 15
+        Piercing: 20 # Wayfarer: 15 < 20
     angle: 0
     animation: WeaponArcThrust
     soundHit:
@@ -90,10 +90,10 @@
   - type: MeleeWeapon  
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 2
+    attackRate: 1.5 # Wayfarer: 2 < 1.5
     damage:
       types:
-        Slash: 15
+        Slash: 16 # Wayfarer: 15 < 16
   - type: Prying
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_axe.rsi
@@ -112,6 +112,19 @@
     sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi
     state: spear
   - type: MeleeWeapon
+    # Wayfarer Start
     autoAttack: true
+    damage:
+      types:
+        Piercing: 15
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 15
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 45
+    # Wayfarer End
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/plasteel_spear.rsi

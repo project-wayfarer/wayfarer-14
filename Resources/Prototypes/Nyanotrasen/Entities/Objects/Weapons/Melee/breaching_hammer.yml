@@ -22,7 +22,7 @@
   - type: Item
     size: Huge
   - type: MeleeWeapon
-    attackRate: 0.4
+    attackRate: 0.5 # Wayfarer: 0.4 < 0.5
     range: 1.70
     damage:
       types:
@@ -41,7 +41,7 @@
       types:
         Blunt: 30 # Wayfarer: 20<30
 #        Piercing: 2 # Wayfarer
-        Structural: 175 # Wayfarer: 20<175
+        Structural: 225 # Wayfarer: 20<225
   - type: Tool
     qualities:
       - Prying

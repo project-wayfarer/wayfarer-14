@@ -11,7 +11,7 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
       types:
-        Heat: 3
+        Shock: 3 # Wayfarer: Heat < Shock
         Structural: 30
   - type: StaminaDamageOnHit
     damage: 22 # Wayfarer: 17<22 5 hits
@@ -36,7 +36,7 @@
     activatedDamage:
         types: # Slightly less total damage than wielded crusher glaive has
           Heat: 8
-          Piercing: 2
+          Piercing: 8 # Wayfarer: 2 < 8
           Structural: 40 # +10 damage compared to crusher glaive
     deactivatedSecret: true
   - type: Sprite
@@ -68,7 +68,7 @@
       - state: inhand-right-blade
         shader: unshaded
   - type: Reflect # Explicitly specified the value (the default one from the parent might be too high)
-    reflectProb: 0.05
+    reflectProb: 0.1 # Wayfarer: .05 < .1
   - type: Tag
     tags:
     - Pickaxe
