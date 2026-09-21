@@ -142,7 +142,6 @@ public sealed class WFWeatherExposureSystem : EntitySystem
 
         if (!AnyWeatherRunning && !_hadWeather)
             return;
-        }
 
         _hadWeather = AnyWeatherRunning;
 
