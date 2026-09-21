@@ -6536,3 +6536,79 @@ Entries:
   id: 7244
   time: '2026-09-15T00:54:37.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/1575
+- author: lucentlavender
+  changes:
+    - type: Tweak
+      message: Renamed "greenhorn pAI" to "rookie pAI" and resprited it accordingly
+    - type: Tweak
+      message: Renamed "Greeting" radio channel to "Rookie"
+    - type: Add
+      message: >-
+        Players with at least 50 hours of playtime can add the Rookie channel to
+        their loadout, to help new players with questions.
+    - type: Add
+      message: >-
+        New players now spawn with a "rookie voucher" that will give a free ship
+        from the standard shipyard of 50,000 or less value.
+  id: 7245
+  time: '2026-09-21T02:48:29.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1583
+- author: lucentlavender
+  changes:
+    - type: Add
+      message: 4 new mini mayla models
+    - type: Add
+      message: 1 new SECRET mini mayla
+  id: 7246
+  time: '2026-09-21T02:58:21.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1584
+- author: cyanfoot
+  changes:
+    - type: Tweak
+      message: Converted the TradeExpress bus to the Calypso Express
+  id: 7247
+  time: '2026-09-21T03:04:01.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1582
+- author: RoY7x
+  changes:
+    - type: Fix
+      message: The other missing staging PR's have been re-added
+    - type: Fix
+      message: Clown updates, radio broadcast consoles and boom boxes are now available
+  id: 7248
+  time: '2026-09-21T03:07:25.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1585
+- author: RoY7x
+  changes:
+    - type: Add
+      message: Finger gun ability to the mime trait.
+    - type: Add
+      message: Invisible box ability to the mime trait.
+  id: 7249
+  time: '2026-09-21T03:15:04.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1586
+- author: RoY7x
+  changes:
+    - type: Tweak
+      message: Some optimisations to weather code.
+  id: 7250
+  time: '2026-09-21T03:18:46.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1587
+- author: Cat-With-A-Computer
+  changes:
+    - type: Add
+      message: >-
+        Wiping, dying, or otherwise being left behind on expeditions will damage
+        you and bring you back to your ship!
+  id: 7251
+  time: '2026-09-21T03:23:36.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1590
+- author: Whisper
+  changes:
+    - type: Tweak
+      message: >-
+        Increased protein gained from blood comsumption back to 1u = 0.1u (prior
+        was 10x less)
+  id: 7252
+  time: '2026-09-21T03:41:01.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1589

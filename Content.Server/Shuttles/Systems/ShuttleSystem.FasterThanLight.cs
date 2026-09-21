@@ -10,7 +10,10 @@ using Content.Shared.Body.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared.Implants;
+using Content.Shared.Implants.Components;
 using Content.Shared.Maps;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Parallax;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -571,6 +574,23 @@ public sealed partial class ShuttleSystem
 
         var ftlEvent = new FTLCompletedEvent(uid, _mapSystem.GetMap(mapId));
         RaiseLocalEvent(uid, ref ftlEvent, true);
+
+        // COYOTE: when the shuttle arrives, go through all the mobs on the grid
+        // and attempt to set off their deathrattle implants
+        var shuttleGridId = xform.GridUid;
+        var implantedQuery = EntityQueryEnumerator<ImplantedComponent, MobStateComponent, TransformComponent>();
+        while (implantedQuery.MoveNext(
+           out var mobUid,
+           out var implanted,
+           out var mobState,
+           out var mobXform))
+        {
+            if (mobXform.GridUid != shuttleGridId)
+                continue;
+            // Wayfarer Start - I'm not competent enough with C# to make the radio message work properly. Needs to be done later
+            // var deathrattleEvent = new ReTriggerRattleImplantEvent(mobUid, mobState.CurrentState);
+            // RaiseLocalEvent(mobUid, deathrattleEvent);
+        }
     }
 
     private void UpdateFTLCooldown(Entity<FTLComponent, ShuttleComponent> entity)

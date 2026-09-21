@@ -1,0 +1,45 @@
+﻿- type: entity
+  parent: BaseComputer
+  id: WFRadioBroadcastConsole
+  name: radio broadcast console
+  description: A console that lets you broadcast a radio station. Manufactured by Freddy's Electronics.
+  components:
+  - type: Computer
+    board: WFRadioBroadcastConsoleCircuitboard
+  - type: RadioBroadcastConsole
+  - type: Instrument
+    allowPercussion: true
+    allowProgramChange: true
+    respectMidiLimits: false
+  - type: ActivatableUI
+    key: enum.InstrumentUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+      enum.RadioBroadcastConsoleUiKey.Key:
+        type: RadioBroadcastConsoleBoundUserInterface
+  - type: Sprite
+    sprite: _WF/Structures/Machines/Computers/broadcast_console.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: broadcast_console
+    - map: ["computerLayerScreen"]
+      state: monitor
+      shader: unshaded
+    - map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      sprite: Structures/Machines/computers.rsi
+      state: generic_panel_open
+  - type: Appearance
+
+  - type: GenericVisualizer
+    visuals:
+      enum.ComputerVisuals.Powered:
+        computerLayerScreen:
+          True: { visible: true, shader: unshaded }
+          False: { visible: false }
+      enum.WiresVisuals.MaintenancePanelState:
+        enum.WiresVisualLayers.MaintenancePanel:
+          True: { visible: false }
+          False: { visible: true }

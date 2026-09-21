@@ -2,6 +2,7 @@ using Content.Shared.Actions;
 using Content.Shared.Implants.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
+// using Content.Shared.Mobs; Wayfarer
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -22,6 +23,7 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
         SubscribeLocalEvent<SubdermalImplantComponent, EntGotInsertedIntoContainerMessage>(OnInsert);
         SubscribeLocalEvent<SubdermalImplantComponent, ContainerGettingRemovedAttemptEvent>(OnRemoveAttempt);
         SubscribeLocalEvent<SubdermalImplantComponent, EntGotRemovedFromContainerMessage>(OnRemove);
+        // SubscribeLocalEvent<ImplantedComponent, ReTriggerRattleImplantEvent>(RelayToImplantEvent); Wayfarer
     }
 
     private void OnInsert(Entity<SubdermalImplantComponent> ent, ref EntGotInsertedIntoContainerMessage args)
@@ -196,3 +198,17 @@ public readonly record struct ImplantRemovedEvent
         Implanted = implanted;
     }
 }
+
+/// <summary>
+/// Event used to re-trigger implant events, if needed.
+/// Raised on the implanted entity.
+/// </summary>
+// Wayfarer Start - Depreciated
+// public sealed class ReTriggerRattleImplantEvent(
+//     EntityUid implanted,
+//     MobState currentState) : EventArgs
+// {
+//     public readonly EntityUid Implanted = implanted;
+//    public readonly MobState CurrentState = currentState;
+//}
+// Wayfarer End

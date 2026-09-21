@@ -634,6 +634,16 @@
     - ClownRecorder
 
 - type: loadout
+  id: WFBoxBalloon
+  effects:
+  - !type:TraitLoadoutEffect
+    trait: ClownTraining
+  price: 500
+  storage:
+    back:
+    - BoxBalloon
+
+- type: loadout
   id: WFWhoopieCushion
   effects:
   - !type:TraitLoadoutEffect

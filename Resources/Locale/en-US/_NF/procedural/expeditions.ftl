@@ -11,6 +11,8 @@ salvage-expedition-announcement-elimination = { $count ->
 salvage-expedition-announcement-destruction-entity-fallback = structure
 salvage-expedition-announcement-elimination-entity-fallback = target
 
+salvage-expedition-abort-wipe = [color=Red]Oh dear, everyone's dead.[/color] Aborting mission and recovering the bodies! Shuttle will depart in {$departTime} seconds.
+
 salvage-expedition-shuttle-not-found = Cannot locate shuttle.
 salvage-expedition-not-everyone-aboard = Not all crew aboard! {CAPITALIZE(THE($target))} is still out there!
 salvage-expedition-failed = Expedition is failed.
@@ -62,7 +64,6 @@ salvage-expedition-megafauna-remaining = {$count ->
 
 salvage-expedition-type-Destruction = Destruction
 salvage-expedition-type-Elimination = Elimination
-
 # Restored the lines, removed from Resources\Locale\en-US\procedural\expeditions.ftl
 salvage-expedition-structure-examine = This is a [color=#B02E26]destruction[/color] objective
 salvage-expedition-structure-remaining = {$count ->

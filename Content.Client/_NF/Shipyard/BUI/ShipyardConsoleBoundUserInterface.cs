@@ -44,12 +44,12 @@ public sealed class ShipyardConsoleBoundUserInterface : BoundUserInterface
         }
     }
 
-    private void Populate(List<string> availablePrototypes, List<string> unavailablePrototypes, bool freeListings, bool validId)
+    private void Populate(List<string> availablePrototypes, List<string> unavailablePrototypes, bool freeListings, uint maxFreeValue, bool validId) // Wayfarer
     {
         if (_menu == null)
             return;
 
-        _menu.PopulateProducts(availablePrototypes, unavailablePrototypes, freeListings, validId);
+        _menu.PopulateProducts(availablePrototypes, unavailablePrototypes, freeListings, maxFreeValue, validId); // Wayfarer
         _menu.PopulateCategories(availablePrototypes, unavailablePrototypes);
         _menu.PopulateClasses(availablePrototypes, unavailablePrototypes);
         _menu.PopulateEngines(availablePrototypes, unavailablePrototypes);
@@ -66,7 +66,7 @@ public sealed class ShipyardConsoleBoundUserInterface : BoundUserInterface
         Balance = cState.Balance;
         ShipSellValue = cState.ShipSellValue;
         var castState = (ShipyardConsoleInterfaceState) state;
-        Populate(castState.ShipyardPrototypes.available, castState.ShipyardPrototypes.unavailable, castState.FreeListings, castState.IsTargetIdPresent);
+        Populate(castState.ShipyardPrototypes.available, castState.ShipyardPrototypes.unavailable, castState.FreeListings, castState.MaxFreeValue, castState.IsTargetIdPresent); // Wayfarer
         _menu?.UpdateState(castState);
     }
 

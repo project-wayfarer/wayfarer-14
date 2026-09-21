@@ -31,10 +31,10 @@
 - type: entity
   parent: BusSchedule
   id: BusScheduleRoute2
-  suffix: Route 2, Trade Express
+  suffix: Route 2, Calypso Express # Wayfarer Trade Express<Calypso Express
   components:
   - type: BusSchedule
-    routeId: TradeExpress
+    routeId: CalypsoExpress # Wayfarer TradeExpress<CalypsoExpress
 
 - type: entity
   parent: BusSchedule

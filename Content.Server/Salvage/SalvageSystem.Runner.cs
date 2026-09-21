@@ -16,7 +16,22 @@ using Robust.Shared.Map; // Frontier
 using Content.Server.GameTicking; // Frontier
 using Content.Server._NF.Salvage.Expeditions.Structure; // Frontier
 using Content.Server._NF.Salvage.Expeditions;
-using Content.Shared.Salvage; // Frontier
+using Content.Server.Body.Components;
+using Content.Server.Buckle.Systems;
+using Content.Server.Temperature.Components;
+using Content.Server.Temperature.Systems;
+using Content.Shared.Atmos;
+using Content.Shared.Buckle.Components;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.EntityEffects;
+using Content.Shared.Mind.Components;
+using Content.Shared.Salvage;
+using Content.Shared.Warps;
+using Robust.Server.Player;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Enums; // Frontier
 
 namespace Content.Server.Salvage;
 
@@ -28,6 +43,10 @@ public sealed partial class SalvageSystem
 
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!; // Frontier
+    [Dependency] private readonly BuckleSystem _buckle = default!;
+    [Dependency] private readonly IPlayerManager _players = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly TemperatureSystem _temperature = default!;
 
     private void InitializeRunner()
     {
@@ -196,6 +215,8 @@ public sealed partial class SalvageSystem
             var remaining = comp.EndTime - _timing.CurTime;
             var audioLength = _audio.GetAudioLength(comp.SelectedSong);
 
+            AbortIfWiped(uid, comp); // Frontier
+
             if (comp.Stage < ExpeditionStage.FinalCountdown && remaining < TimeSpan.FromSeconds(45))
             {
                 comp.Stage = ExpeditionStage.FinalCountdown;
@@ -249,7 +270,38 @@ public sealed partial class SalvageSystem
                                 continue;
                             }
 
-                            // Destination generator parameters (move to CVAR?)
+                            // rescue all the losers on the map who arent on the ship for whatever reason
+                            var shuttleGrid = shuttleXform.GridUid;
+                            DestinationPriority? deadLoserDestinations = null;
+                            if (shuttleGrid != null)
+                            {
+                                var mobQuery = EntityQueryEnumerator<MindContainerComponent, TransformComponent>();
+                                while (mobQuery.MoveNext(
+                                       out var mobUid,
+                                       out var mindC,
+                                       out var mobXform))
+                                {
+                                    if (mobXform.MapUid != uid)
+                                        continue;
+                                    if (mobXform.GridUid == shuttleGrid)
+                                        continue; // they're already on the shuttle
+                                    // only count creatures that have at one point had a player controlling them
+                                    if (!mindC.HasMind)
+                                        continue;
+                                    // move them to the shuttle
+                                    deadLoserDestinations ??= GetDeadLoserDestinations(shuttleGrid.Value);
+                                    RescueDork(
+                                        mobUid,
+                                        deadLoserDestinations,
+                                        shuttleGrid.Value);
+                                    Spawn("EffectSparks", Transform(mobUid).Coordinates);
+                                    Spawn("EffectGravityPulse", Transform(mobUid).Coordinates);
+                                    SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_CS/ExpedReturnToBed.ogg");
+                                    _audio.PlayPvs(Sound, mobUid);
+                                }
+                            }
+
+                                // Destination generator parameters (move to CVAR?)
                             int numRetries = 20; // Maximum number of retries
                             float minDistance = 200f; // Minimum distance from another object, in meters
                             float minRange = 750f; // Minimum distance from sector centre, in meters
@@ -284,7 +336,13 @@ public sealed partial class SalvageSystem
                                 dropLocation = _random.NextVector2(minRange, maxRange);
                             }
 
-                            _shuttle.FTLToCoordinates(shuttleUid, shuttle, new EntityCoordinates(mapUid.Value, dropLocation), 0f, ftlTime, TravelTime);
+                            _shuttle.FTLToCoordinates(
+                                shuttleUid,
+                                shuttle,
+                                new EntityCoordinates(mapUid.Value, dropLocation),
+                                0f,
+                                ftlTime,
+                                TravelTime);
                             // End Frontier:  try to find a potential destination for ship that doesn't collide with other grids.
                             //_shuttle.FTLToDock(shuttleUid, shuttle, member, ftlTime); // Frontier: use above instead
                         }
@@ -362,5 +420,279 @@ public sealed partial class SalvageSystem
             }
         }
         // End Frontier: mission-specific logic
+    }
+
+    /// <summary>
+    /// Takes a mob, and puts them onto this shuttle.
+    /// </summary>
+    private void RescueDork(
+        EntityUid mobUid,
+        DestinationPriority possibleDestinations,
+        EntityUid shuttleGrid)
+    {
+        TendToDork(mobUid);
+        Spawn("EffectGravityPulse", Transform(mobUid).Coordinates);
+        Spawn("EffectSparks", Transform(mobUid).Coordinates);
+        // unbuckle them if they are buckled
+        _buckle.TryUnbuckle(mobUid, null);
+        // try beds first
+        foreach (var bedUid in possibleDestinations.Beds)
+        {
+            if (TryTeleportToStrap(mobUid, bedUid))
+                return;
+        }
+        // then chairs
+        foreach (var chairUid in possibleDestinations.Chairs)
+        {
+            if (TryTeleportToStrap(mobUid, chairUid))
+                return;
+        }
+        // then consoles
+        foreach (var consoleUid in possibleDestinations.Consoles)
+        {
+            var consoleXform = Transform(consoleUid);
+            var mobXform = Transform(mobUid);
+            _transform.SetCoordinates(mobUid, consoleXform.Coordinates);
+            _transform.AttachToGridOrMap(mobUid, mobXform);
+            return;
+        }
+        // then fallback
+        foreach (var fallbackUid in possibleDestinations.Fallback)
+        {
+            var fallbackXform = Transform(fallbackUid);
+            var mobXform = Transform(mobUid);
+            _transform.SetCoordinates(mobUid, fallbackXform.Coordinates);
+            _transform.AttachToGridOrMap(mobUid, mobXform);
+            return;
+        }
+    }
+
+    /// <summary>
+    /// Gets a list of possible destinations for dead/dying crew to be rescued to.
+    /// Tries to find a location based on a list of priorities.
+    /// HERES THE PRIORITIES:
+    /// 2: Beds with no mobs in them.
+    /// 3: Chairs with no mobs in them.
+    /// 4: I dunno the console I guess
+    /// </summary>
+    private DestinationPriority GetDeadLoserDestinations(EntityUid shuttleGrid)
+    {
+        DestinationPriority destinations = new();
+        // first, find the exped consoles on the grid
+        var destQuery = EntityQueryEnumerator<SalvageExpeditionConsoleComponent, TransformComponent>();
+        while (destQuery.MoveNext(
+                   out var uid,
+                   out var _,
+                   out var xform))
+        {
+            if (xform.GridUid != shuttleGrid)
+                continue;
+            destinations.Add(uid, DestinationType.Console);
+        }
+        // then, all beds / chairs (theyre both strap components)
+        var strapQuery = EntityQueryEnumerator<StrapComponent, TransformComponent>();
+        while (strapQuery.MoveNext(
+                   out var uid,
+                   out var strap,
+                   out var xform))
+        {
+            if (xform.GridUid != shuttleGrid)
+                continue;
+            destinations.Add(uid, strap.Position == StrapPosition.Stand ? DestinationType.Chair : DestinationType.Bed);
+        }
+        // then some fallback stuff, find the warp point
+        // worst case, we just teleport them to the center of the grid. hope its not in a wall!!
+        var warpQuery = EntityQueryEnumerator<WarpPointComponent, TransformComponent>();
+        while (warpQuery.MoveNext(
+                   out var uid,
+                   out var _,
+                   out var xform))
+        {
+            if (xform.GridUid != shuttleGrid)
+                continue;
+            destinations.Add(uid, DestinationType.Fallback);
+        }
+        return destinations;
+    }
+
+    /// <summary>
+    /// Beats the heck out of the dork
+    /// Then extinguishes them and caps their Heat to 300ish if above that.
+    /// </summary>
+    private void TendToDork(EntityUid mobUid)
+    {
+        // Wayfarer Start - Make anybody recovered take extra damage, not just alive/crit people
+        var random = new Random();
+        var hurtEmThisMuch = new DamageSpecifier()
+        {
+            DamageDict = { ["Slash"] = random.Next(0, 201), ["Piercing"] = random.Next(0, 201), ["Cellular"] = random.Next(50, 76), ["Asphyxiation"] = random.Next(200, 301) }
+        };
+        _damageable.TryChangeDamage(
+            mobUid,
+            hurtEmThisMuch,
+            true);
+        // Wayfarer End
+        // okay, extinguish them, and clamp their burn damages to a max of 300
+        // fire sucks, i hate this game
+        var ev = new ExtinguishEvent
+        {
+            FireStacksAdjustment = 1000,
+        };
+        RaiseLocalEvent(mobUid, ref ev);
+        if (TryComp<DamageableComponent>(mobUid, out var damageable)
+            && damageable.Damage.DamageDict.TryGetValue("Heat", out var burnAmount)
+            && burnAmount > 300)
+        {
+            var reduceBy = burnAmount - 300;
+            var burnDamageSpecifier = new DamageSpecifier()
+            {
+                DamageDict = { ["Heat"] = -reduceBy }
+            };
+            _damageable.TryChangeDamage(
+                mobUid,
+                burnDamageSpecifier,
+                true);
+        }
+        if (!TryComp<TemperatureComponent>(mobUid, out var comp))
+            return;
+        if (TryComp<ThermalRegulatorComponent>(
+                mobUid,
+                out var regulator)) // Frontier: Look for normal body temperature and use it
+        {
+            _temperature.ForceChangeTemperature(
+                mobUid,
+                regulator.NormalBodyTemperature,
+                comp);
+        }
+        else
+        {
+            _temperature.ForceChangeTemperature(
+                mobUid,
+                Atmospherics.T20C,
+                comp);
+        }
+        // FIRE SUCKSSSSSSSSSS
+    }
+
+    /// <summary>
+    /// Tries to teleport the mob to the strap and buckle them in.
+    /// Returns true on success.
+    /// </summary>
+    private bool TryTeleportToStrap(EntityUid mobUid, EntityUid strapUid)
+    {
+        if (!TryComp<BuckleComponent>(mobUid, out var buckle))
+            return false;
+        if (!TryComp<StrapComponent>(strapUid, out var strap))
+            return false;
+        if (strap.BuckledEntities.Count > 0)
+            return false; // already occupied
+        var strapXform = Transform(strapUid);
+        var mobXform = Transform(mobUid);
+        _transform.SetCoordinates(mobUid, strapXform.Coordinates);
+        _transform.AttachToGridOrMap(mobUid, mobXform);
+        return _buckle.TryBuckle(
+            mobUid,
+            null,
+            strapUid);
+    }
+
+    // class that holds a set of destinations with a priority
+    private sealed class DestinationPriority
+    {
+        public List<EntityUid> Beds = new();
+        public List<EntityUid> Chairs = new();
+        public List<EntityUid> Consoles = new();
+        public List<EntityUid> Fallback = new();
+        public void Add(EntityUid uid, DestinationType type)
+        {
+            switch (type)
+            {
+                case DestinationType.Bed:
+                    Beds.Add(uid);
+                    break;
+                case DestinationType.Chair:
+                    Chairs.Add(uid);
+                    break;
+                case DestinationType.Console:
+                    Consoles.Add(uid);
+                    break;
+                default:
+                case DestinationType.Fallback:
+                    Fallback.Add(uid);
+                    break;
+            }
+        }
+    }
+
+    // enum for destination types
+    private enum DestinationType
+    {
+        Bed,
+        Chair,
+        Console,
+        Fallback,
+    }
+
+    /// <summary>
+    /// Checks if everyone on the map worth caring about is dead, and aborts the expedition if so.
+    /// Honestly, as long as one person is not in crit and not SSD, we consider the expedition salvageable.
+    /// </summary>
+    private void AbortIfWiped(EntityUid mapUid, SalvageExpeditionComponent component)
+    {
+        // give it a 30 second grade after first check to avoid instant aborts
+        if (component.NextAutoAbortCheck == TimeSpan.Zero)
+        {
+            component.NextAutoAbortCheck = _timing.CurTime + TimeSpan.FromSeconds(30);
+            return;
+        }
+        // its an entity query and idk how expensive it is, so, cooldown
+        if (_timing.CurTime < component.NextAutoAbortCheck)
+            return;
+        component.NextAutoAbortCheck = _timing.CurTime + TimeSpan.FromSeconds(15);
+        var query =
+            EntityQueryEnumerator<
+                HumanoidAppearanceComponent,
+                MindContainerComponent,
+                MobStateComponent,
+                TransformComponent>();
+        // prevent abort if:
+        // - anyone is alive AND connected
+        while (query.MoveNext(
+                   out var uid,
+                   out _,
+                   out var mindC,
+                   out var mobState,
+                   out var xform))
+        {
+            if (xform.MapUid != mapUid)
+                continue;
+            // unidentified humans (loot) dont count
+            if (!mindC.HasMind)
+                continue;
+            // if anyone is alive and not in crit, we are good
+            if (_mobState.IsAlive(uid, mobState))
+            {
+                // okay weve got something alive, is their session?
+                _players.TryGetSessionByEntity(uid, out var session);
+                // if no session, check if they are SSD
+                if (session == null)
+                    continue;
+                if (session.Status == SessionStatus.Disconnected)
+                    continue;
+                return; // alive and connected player found, expedition is salvageable
+            }
+        }
+        // everyone is dead or ssd, abort the expedition
+        const int departTime = 20;
+        Announce(mapUid, Loc.GetString("salvage-expedition-abort-wipe", ("departTime", departTime)));
+        component.NextAutoAbortCheck = TimeSpan.FromDays(1); // prevent further checks
+        var newEndTime = _timing.CurTime + TimeSpan.FromSeconds(departTime);
+
+        if (component.EndTime <= newEndTime)
+            return;
+
+        component.Stage = ExpeditionStage.FinalCountdown;
+        component.EndTime = newEndTime;
+
     }
 }

@@ -1615,6 +1615,7 @@
   - WFHonkCoFlippo
   - WFBikeHorn
   - WFClownRecorder
+  - WFBoxBalloon
   - WFWhoopieCushion
   - WFToyHammer
   - WFCrazyGlue
@@ -1641,6 +1642,7 @@
   - WFPickaxe
   - WFHandheldGPSBasic
   - WFRadioHandheld
+  - WFPortableRadio
   - WFNetworkConfigurator
   - WFHandheldHealthAnalyzerUnpowered
   - WFAnomalyScanner
@@ -1707,6 +1709,7 @@
   maxLimit: 7
   loadouts:
   - WFEncryptionKeyTraffic
+  - WFEncryptionKeyGreeting
   - WFEncryptionKeyMedical
   - WFEncryptionKeyCargo
   - WFEncryptionKeyEngineering
@@ -1734,14 +1737,14 @@
   id: WFCartridge
   name: loadout-group-contractor-cartridge
   minLimit: 0
-  maxLimit: 5
+  maxLimit: 6
   loadouts:
   - WFAppraisalCartridge
   - WFMedTekCartridge
   - WFCriticalImplantTrackerCartridge
   - WFNetProbeCartridge
   - WFLogProbeCartridge
-  - WFCorpCartridge
+  - WFCorporationCartridge
 
 # == IMPLANTERS
 - type: loadoutGroup

@@ -16,6 +16,15 @@
       !type:OverallPlaytimeRequirement
       time: 43200 # 12 hrs
 
+# Tier 4 generic playtime
+- type: loadoutEffectGroup
+  id: WFT50hr
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 180000 # 12 hrs
+
 # CGP playtime
 - type: loadoutEffectGroup
   id: CGPT1

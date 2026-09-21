@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: BaseComputerCircuitboard
+  id: WFRadioBroadcastConsoleCircuitboard
+  name: radio broadcast console board
+  description: A computer printed circuit board for a radio broadcast console. Manufactured by Freddy's Electronics.
+  components:
+  - type: ComputerBoard
+    prototype: WFRadioBroadcastConsole
+  - type: Sprite
+    sprite: _WF/Objects/Misc/radio_broadcast_console_board.rsi
+    state: radio_broadcast_console_board

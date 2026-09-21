@@ -73,21 +73,21 @@
 
 - type: entity
   parent: AirlockGlassShuttle
-  id: AirlockExternalGlassStationTransitTradeExpress
+  id: AirlockExternalGlassStationTransitCalypsoExpress # Wayfarer AirlockExternalGlassStationTransitTradeExpress<AirlockExternalGlassStationTransitCalypsoExpress
   suffix: Ext, Bus (R2), Exclusive, Glass, Docking
   components:
   - type: PriorityDock
-    tag: DockTransitTradeExpress
+    tag: DockTransitCalypsoExpress # Wayfarer DockTransitTradeExpress<DockTransitCalypsoExpress
   - type: Docking
     dockType: Transit
 
 - type: entity
   parent: AirlockExternalGlassShuttleTransit
-  id: AirlockExternalGlassShuttleTransitTradeExpress
+  id: AirlockExternalGlassShuttleTransitCalypsoExpress # Wayfarer AirlockExternalGlassShuttleTransitTradeExpress<AirlockExternalGlassShuttleTransitCalypsoExpress
   suffix: Ext, Bus (R2), Glass, Docking
   components:
   - type: PriorityDock
-    tag: DockTransitTradeExpress
+    tag: DockTransitCalypsoExpress # Wayfarer DockTransitTradeExpress<DockTransitCalypsoExpress
 
 - type: entity
   parent: AirlockExternalGlassShuttleTransit
