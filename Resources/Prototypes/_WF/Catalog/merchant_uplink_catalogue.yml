@@ -357,7 +357,7 @@
   productEntity: ClothingHeadHatMerchantBeret
   icon: { sprite: _WF/Clothing/Head/Hats/merchants_beret.rsi, state: icon }
   cost:
-    WayfarerMerchantToken: 100
+    WayfarerMerchantToken: 200 # 2x 100 normal, 200 express
   categories:
   - UplinkMerchantsFun
   conditions:
@@ -374,7 +374,7 @@
   productEntity: ClothingOuterArmoredWinterMerchant
   icon: { sprite: _WF/Clothing/OuterClothing/Misc/merchant_armored_coat.rsi, state: icon }
   cost:
-    WayfarerMerchantToken: 500
+    WayfarerMerchantToken: 1000 # 2x 500 normal, 1000 express
   categories:
   - UplinkMerchantsFun
   conditions:
@@ -391,7 +391,7 @@
   productEntity: ClothingNeckMerchant
   icon: { sprite: _WF/Clothing/Neck/Cloaks/merchant.rsi, state: icon }
   cost:
-    WayfarerMerchantToken: 1000
+    WayfarerMerchantToken: 2000 # 2x 1000 normal, 2000 express
   categories:
   - UplinkMerchantsFun
   conditions:
