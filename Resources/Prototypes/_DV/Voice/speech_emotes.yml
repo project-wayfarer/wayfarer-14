@@ -216,6 +216,37 @@
     - awooing
     - awooed
 
+- type: emote
+  id: Gekker
+  name: delta-chat-emote-name-gekker
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [gekkers.]
+  chatTriggers:
+    - gekker
+    - gekkers
+    - gek
+
+- type: emote
+  id: FoxCry
+  name: delta-chat-emote-name-foxcry
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [cries.]
+  chatTriggers:
+  - fox cry
 # Feroxi
 - type: emote
   id: Gnash
@@ -250,3 +281,19 @@
     - gnashed her teeth
     - gnashed his teeth
     - gnashed its teeth
+  
+# Rodentia
+- type: emote
+  id: FerretLaugh
+  name: delta-chat-emote-name-ferretlaugh
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["laughs"]
+  chatTriggers:
+  - ferret laugh
