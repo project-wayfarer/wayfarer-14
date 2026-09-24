@@ -1,0 +1,230 @@
+﻿- type: constructionGraph
+  id: WFCrystal
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CrystalBlue
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - tag: CrystalBlue
+              name: construction-graph-tag-blue-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalBlue
+              name: construction-graph-tag-blue-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+        - to: CrystalBlack
+          completed:
+          - !type:SnapToGrid
+          steps:
+            - tag: CrystalBlack
+              name: construction-graph-tag-black-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalBlack
+              name: construction-graph-tag-black-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+        - to: CrystalCyan
+          completed:
+          - !type:SnapToGrid
+          steps:
+            - tag: CrystalCyan
+              name: construction-graph-tag-cyan-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalCyan
+              name: construction-graph-tag-cyan-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+        - to: CrystalGreen
+          completed:
+          - !type:SnapToGrid
+          steps:
+            - tag: CrystalGreen
+              name: construction-graph-tag-green-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalGreen
+              name: construction-graph-tag-green-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+        - to: CrystalOrange
+          completed:
+          - !type:SnapToGrid
+          steps:
+            - tag: CrystalOrange
+              name: construction-graph-tag-orange-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalOrange
+              name: construction-graph-tag-orange-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+        - to: CrystalPink
+          completed:
+          - !type:SnapToGrid
+          steps:
+            - tag: CrystalPink
+              name: construction-graph-tag-pink-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalPink
+              name: construction-graph-tag-pink-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+        - to: CrystalRed
+          completed:
+          - !type:SnapToGrid
+          steps:
+            - tag: CrystalRed
+              name: construction-graph-tag-red-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalRed
+              name: construction-graph-tag-red-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+        - to: CrystalYellow
+          completed:
+          - !type:SnapToGrid
+          steps:
+            - tag: CrystalYellow
+              name: construction-graph-tag-yellow-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+            - tag: CrystalYellow
+              name: construction-graph-tag-yellow-crystal-shard
+              icon:
+                sprite: Objects/Materials/Shards/crystal.rsi
+                state: shard1
+              doAfter: 1
+    - node: CrystalBlue
+      entity: CrystalBlue
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalBlue
+              amount: 2
+            - !type:DeleteEntity {}
+    - node: CrystalBlack
+      entity: CrystalBlack
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalBlack
+              amount: 2
+            - !type:DeleteEntity {}
+    - node: CrystalCyan
+      entity: CrystalCyan
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalCyan
+              amount: 2
+            - !type:DeleteEntity {}
+    - node: CrystalGreen
+      entity: CrystalGreen
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalGreen
+              amount: 2
+            - !type:DeleteEntity {}
+    - node: CrystalOrange
+      entity: CrystalOrange
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalOrange
+              amount: 2
+            - !type:DeleteEntity {}
+    - node: CrystalPink
+      entity: CrystalPink
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalPink
+              amount: 2
+            - !type:DeleteEntity {}
+    - node: CrystalRed
+      entity: CrystalGrey
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalRed
+              amount: 2
+            - !type:DeleteEntity {}
+    - node: CrystalYellow
+      entity: CrystalYellow
+      edges:
+        - to: start
+          steps:
+          - tool: Prying
+            doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: ShardCrystalYellow
+              amount: 2
+            - !type:DeleteEntity {}

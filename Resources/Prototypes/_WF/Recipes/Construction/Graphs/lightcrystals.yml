@@ -1,0 +1,202 @@
+﻿- type: constructionGraph
+  id: WFSmallLightCrystal
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: SmallLightCrystalBlue
+      completed:
+      - !type:SnapToGrid
+      steps:
+        - material: Steel
+          amount: 1
+          doAfter: 2
+        - tag: CrystalBlue
+          name: construction-graph-tag-blue-crystal-shard
+          icon:
+            sprite: Objects/Materials/Shards/crystal.rsi
+            state: shard1
+          doAfter: 2
+    - to: SmallLightCrystalCyan
+      completed:
+      - !type:SnapToGrid
+      steps:
+        - material: Steel
+          amount: 1
+          doAfter: 2
+        - tag: CrystalCyan
+          name: construction-graph-tag-cyan-crystal-shard
+          icon:
+            sprite: Objects/Materials/Shards/crystal.rsi
+            state: shard1
+          doAfter: 2
+    - to: SmallLightCrystalGreen
+      completed:
+      - !type:SnapToGrid
+      steps:
+        - material: Steel
+          amount: 1
+          doAfter: 2
+        - tag: CrystalGreen
+          name: construction-graph-tag-green-crystal-shard
+          icon:
+            sprite: Objects/Materials/Shards/crystal.rsi
+            state: shard1
+          doAfter: 2
+    - to: SmallLightCrystalOrange
+      completed:
+      - !type:SnapToGrid
+      steps:
+        - material: Steel
+          amount: 1
+          doAfter: 2
+        - tag: CrystalOrange
+          name: construction-graph-tag-orange-crystal-shard
+          icon:
+            sprite: Objects/Materials/Shards/crystal.rsi
+            state: shard1
+          doAfter: 2
+    - to: SmallLightCrystalPink
+      completed:
+      - !type:SnapToGrid
+      steps:
+        - material: Steel
+          amount: 1
+          doAfter: 2
+        - tag: CrystalPink
+          name: construction-graph-tag-pink-crystal-shard
+          icon:
+            sprite: Objects/Materials/Shards/crystal.rsi
+            state: shard1
+          doAfter: 2
+    - to: SmallLightCrystalRed
+      completed:
+      - !type:SnapToGrid
+      steps:
+        - material: Steel
+          amount: 1
+          doAfter: 2
+        - tag: CrystalRed
+          name: construction-graph-tag-red-crystal-shard
+          icon:
+            sprite: Objects/Materials/Shards/crystal.rsi
+            state: shard1
+          doAfter: 2
+    - to: SmallLightCrystalYellow
+      completed:
+      - !type:SnapToGrid
+      steps:
+        - material: Steel
+          amount: 1
+          doAfter: 2
+        - tag: CrystalYellow
+          name: construction-graph-tag-yellow-crystal-shard
+          icon:
+            sprite: Objects/Materials/Shards/crystal.rsi
+            state: shard1
+          doAfter: 2
+  - node: SmallLightCrystalBlue
+    entity: SmallLightCrystalBlue
+    edges:
+    - to: start
+      steps:
+        - tool: Screwing
+          doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: ShardCrystalBlue
+              amount: 1
+            - !type:DeleteEntity {}
+  - node: SmallLightCrystalCyan
+    entity: SmallLightCrystalCyan
+    edges:
+    - to: start
+      steps:
+        - tool: Screwing
+          doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: ShardCrystalCyan
+              amount: 1
+            - !type:DeleteEntity {}
+  - node: SmallLightCrystalGreen
+    entity: SmallLightCrystalGreen
+    edges:
+    - to: start
+      steps:
+        - tool: Screwing
+          doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: ShardCrystalGreen
+              amount: 1
+            - !type:DeleteEntity {}
+  - node: SmallLightCrystalOrange
+    entity: SmallLightCrystalOrange
+    edges:
+    - to: start
+      steps:
+        - tool: Screwing
+          doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: ShardCrystalOrange
+              amount: 1
+            - !type:DeleteEntity {}
+  - node: SmallLightCrystalPink
+    entity: SmallLightCrystalPink
+    edges:
+    - to: start
+      steps:
+        - tool: Screwing
+          doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: ShardCrystalPink
+              amount: 1
+            - !type:DeleteEntity {}
+  - node: SmallLightCrystalRed
+    entity: SmallLightCrystalRed
+    edges:
+    - to: start
+      steps:
+        - tool: Screwing
+          doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: ShardCrystalRed
+              amount: 1
+            - !type:DeleteEntity {}
+  - node: SmallLightCrystalYellow
+    entity: SmallLightCrystalYellow
+    edges:
+    - to: start
+      steps:
+        - tool: Screwing
+          doAfter: 2.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: ShardCrystalYellow
+              amount: 1
+            - !type:DeleteEntity {}

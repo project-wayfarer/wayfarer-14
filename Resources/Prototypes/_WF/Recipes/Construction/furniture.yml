@@ -20,3 +20,192 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+#crystals
+- type: construction
+  id: CrystalBlue
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalBlue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CrystalBlack
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalBlack
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CrystalCyan
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalCyan
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CrystalGreen
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalGreen
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CrystalOrange
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalOrange
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CrystalPink
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalPink
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CrystalRed
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalRed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: CrystalYellow
+  graph: WFCrystal
+  startNode: start
+  targetNode: CrystalYellow
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+#crystal lights
+- type: construction
+  id: SmallLightCrystalBlue
+  graph: WFSmallLightCrystal
+  startNode: start
+  targetNode: SmallLightCrystalBlue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: SmallLightCrystalCyan
+  graph: WFSmallLightCrystal
+  startNode: start
+  targetNode: SmallLightCrystalCyan
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: SmallLightCrystalGreen
+  graph: WFSmallLightCrystal
+  startNode: start
+  targetNode: SmallLightCrystalGreen
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: SmallLightCrystalOrange
+  graph: WFSmallLightCrystal
+  startNode: start
+  targetNode: SmallLightCrystalOrange
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: SmallLightCrystalPink
+  graph: WFSmallLightCrystal
+  startNode: start
+  targetNode: SmallLightCrystalPink
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: SmallLightCrystalRed
+  graph: WFSmallLightCrystal
+  startNode: start
+  targetNode: SmallLightCrystalRed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: SmallLightCrystalYellow
+  graph: WFSmallLightCrystal
+  startNode: start
+  targetNode: SmallLightCrystalYellow
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

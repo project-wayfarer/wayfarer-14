@@ -232,6 +232,9 @@
   description: An always powered magical light.
   suffix: Always Powered, Green
   components:
+    - type: Construction # Wayfarer
+      graph: WFSmallLightCrystal # Wayfarer
+      node: SmallLightCrystalGreen # Wayfarer
     - type: Reflect
       reflectProb: 0.5
       reflects:
@@ -285,6 +288,9 @@
   id: SmallLightCrystalPink
   suffix: Always Powered, Pink
   components:
+    - type: Construction # Wayfarer
+      graph: WFSmallLightCrystal # Wayfarer
+      node: SmallLightCrystalPink # Wayfarer
     - type: Sprite
       sprite: _NF/Structures/Specific/Wizard/light_small.rsi
       state: base
@@ -317,6 +323,9 @@
   id: SmallLightCrystalRed
   suffix: Always Powered, Red
   components:
+    - type: Construction # Wayfarer
+      graph: WFSmallLightCrystal # Wayfarer
+      node: SmallLightCrystalRed # Wayfarer
     - type: Sprite
       sprite: _NF/Structures/Specific/Wizard/light_small.rsi
       state: base
@@ -349,6 +358,9 @@
   id: SmallLightCrystalOrange
   suffix: Always Powered, Orange
   components:
+    - type: Construction # Wayfarer
+      graph: WFSmallLightCrystal # Wayfarer
+      node: SmallLightCrystalOrange # Wayfarer
     - type: Sprite
       sprite: _NF/Structures/Specific/Wizard/light_small.rsi
       state: base
@@ -381,6 +393,9 @@
   id: SmallLightCrystalBlue
   suffix: Always Powered, Blue
   components:
+    - type: Construction # Wayfarer
+      graph: WFSmallLightCrystal # Wayfarer
+      node: SmallLightCrystalBlue # Wayfarer
     - type: Sprite
       sprite: _NF/Structures/Specific/Wizard/light_small.rsi
       state: base
@@ -413,6 +428,9 @@
   id: SmallLightCrystalYellow
   suffix: Always Powered, Yellow
   components:
+    - type: Construction # Wayfarer
+      graph: WFSmallLightCrystal # Wayfarer
+      node: SmallLightCrystalYellow # Wayfarer
     - type: Sprite
       sprite: _NF/Structures/Specific/Wizard/light_small.rsi
       state: base
@@ -445,6 +463,9 @@
   id: SmallLightCrystalCyan
   suffix: Always Powered, Cyan
   components:
+    - type: Construction # Wayfarer
+      graph: WFSmallLightCrystal # Wayfarer
+      node: SmallLightCrystalCyan # Wayfarer
     - type: Sprite
       sprite: _NF/Structures/Specific/Wizard/light_small.rsi
       state: base

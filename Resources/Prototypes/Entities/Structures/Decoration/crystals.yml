@@ -5,6 +5,9 @@
   name: crystal
   description: A crystaline solid.
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalGreen # Wayfarer
     - type: Sprite
       sprite: Structures/Decoration/crystal.rsi
       state: crystal_grey
@@ -62,6 +65,9 @@
   parent: CrystalGreen
   suffix: pink
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalPink # Wayfarer
     - type: Sprite
       color: "#ff66cc"
     - type: PointLight
@@ -90,6 +96,9 @@
   parent: CrystalGreen
   suffix: red
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalRed # Wayfarer
     - type: Sprite
       state: crystal_grey
       color: "#fb4747"
@@ -117,6 +126,9 @@
   parent: CrystalGreen
   suffix: orange
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalOrange # Wayfarer
     - type: Sprite
       color: "#ff8227"
     - type: PointLight
@@ -145,6 +157,9 @@
   parent: CrystalGreen
   suffix: black
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalBlack # Wayfarer
     - type: Sprite
       color: "#363636"
     - type: PointLight
@@ -173,6 +188,9 @@
   parent: CrystalGreen
   suffix: blue
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalBlue # Wayfarer
     - type: Sprite
       color: "#39a1ff"
     - type: PointLight
@@ -201,6 +219,9 @@
   parent: CrystalGreen
   suffix: yellow
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalYellow # Wayfarer
     - type: Sprite
       color: "#ffde46"
     - type: PointLight
@@ -229,6 +250,9 @@
   parent: CrystalGreen
   suffix: cyan
   components:
+    - type: Construction # Wayfarer
+      graph: WFCrystal # Wayfarer
+      node: CrystalCyan # Wayfarer
     - type: Sprite
       color: "#47f8ff"
     - type: PointLight
