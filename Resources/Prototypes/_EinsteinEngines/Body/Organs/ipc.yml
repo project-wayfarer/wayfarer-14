@@ -74,3 +74,61 @@
   #   - id: Medicine
   #   - id: Poison
   #   - id: Narcotic
+
+
+- type: entity      #Wayfarer: Custom IPC Stomach, included via trait.
+  id: OrganIPCStomach
+  parent: BaseIPCOrgan
+  name: IPC Bio-Generator
+  description: "A synthetic 'Stomach', that breaks down food and drink into usable biofuel and then energy"
+  components:
+  - type: Sprite
+    state: heart-on
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Stomach
+    # Wayfarer: Custom digestible system
+    carnivoreIndigestible:
+      tags:
+      - Fruit
+      - Vegetable
+      - Flower
+      - Ambrosia
+    herbivoreIndigestible:
+      tags:
+      - Meat
+    # End Wayfarer
+  # The stomach metabolizes stuff like foods and drinks.
+  # TODO: Have it work off of the ent's solution container, and move this
+  # to intestines instead.
+  - type: Metabolizer
+    # mm yummy
+    maxReagents: 3
+    metabolizerTypes: [Human]
+    removeEmpty: true
+    groups:
+    - id: Food
+      skipEffects: true
+    - id: Drink
+      skipEffects: true
+    - id: Drink
+      skipEffects: true
+    - id: Alcohol
+      skipEffects: true
+    - id: Medicine
+      skipEffects: true
+    - id: Narcotic
+      skipEffects: true
+    - id: Cryogenic
+      skipEffects: true
+    - id: Poison
+      skipEffects: true
+
+

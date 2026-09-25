@@ -182,6 +182,12 @@
     #   damage:
     #     types:
     #       Blunt: 0.28 #per second, scales with pressure and other constants.
+    # Wayfarer: this is needed for implanted stomachs (like the IPC Bio-Generator) to work. 
+    - type: SolutionContainerManager
+      solutions:
+        chemicals:
+          maxVol: 25
+    #End Wayfarer
     - type: Identity
     #  soundHit:
     #    path: /Audio/Effects/metalbreak.ogg
