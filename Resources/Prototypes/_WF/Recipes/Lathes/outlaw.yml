@@ -20,7 +20,7 @@
   id: TableRandomDecryptedBlueprintLow
   table: !type:GroupSelector
     children:
-    - id: WFBlueprintC20r # replace this with something else when off break
+    - id: WFBlueprintOutlawSMG
       weight: 2.25
 
 - type: latheRecipe
@@ -42,6 +42,221 @@
   result: NFWeaponPistolViper
   materials:
     Steel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: NFWeaponPistolCobraRecipe
+  result: NFWeaponPistolCobra
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    Plastic: 500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: NFWeaponRevolverPirateRecipe
+  result: NFWeaponRevolverPirate
+  materials:
+    Steel: 700
+    Wood: 400
+    Gold: 100
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: NFWeaponRevolverRitland45Recipe
+  result: NFWeaponRevolverRitland45
+  materials:
+    Steel: 1200
+    Plasteel: 200
+    Wood: 200
+    
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponRifleMusketRecipe
+  result: NFWeaponRifleMusket
+  materials:
+    Steel: 1800
+    Wood: 800
+    Plasteel: 300
+    
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponSubMachineGunC20rRecipe
+  result: NFWeaponSubMachineGunC20r
+  materials:
+    Steel: 2000
+    Plastic: 1500
+    Plasteel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponSubMachineGunAtreidesRecipe
+  result: NFWeaponSubMachineGunAtreides
+  materials:
+    Steel: 2000
+    Plastic: 1500
+    Plasteel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponRifleAssaultSmRecipe
+  result: NFWeaponRifleAssaultSm
+  materials:
+    Steel: 2500
+    Plastic: 1000
+    Plasteel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponRifleAssaultM90GrenadeLauncherRecipe
+  result: NFWeaponRifleAssaultM90GrenadeLauncher
+  materials:
+    Steel: 2500
+    Plastic: 1000
+    Plasteel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponEnergyPistolLaserAdvancedRecipe
+  result: NFWeaponEnergyPistolLaserAdvanced
+  materials:
+    Steel: 1000
+    Plastic: 1500
+    Plasma: 5000
+    Glass: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponEnergyRifleSniperXrayCannonRecipe
+  result: NFWeaponEnergyRifleSniperXrayCannon
+  materials:
+    OutlawData: 1
+    Steel: 1200
+    Plastic: 2000
+    Plasteel: 1200
+    Plasma: 1500
+    Uranium: 1500
+    Glass: 1000
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponEnergyRifleTemperatureRecipe
+  result: NFWeaponEnergyRifleTemperature
+  materials:
+    OutlawData: 1
+    Steel: 1500
+    Plastic: 2000
+    Plasteel: 1500
+    Plasma: 3000
+    Glass: 1000
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponShotgunBulldogRecipe
+  result: NFWeaponShotgunBulldog
+  materials:
+    OutlawData: 1
+    Steel: 2500
+    Plastic: 1500
+    Plasteel: 1500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponRifleSniperHristovRecipe
+  result: NFWeaponRifleSniperHristov
+  materials:
+    OutlawData: 3
+    Steel: 3000
+    Plastic: 1000
+    Plasteel: 2000
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: NFWeaponLauncherPirateCannonRecipe
+  result: NFWeaponLauncherPirateCannon
+  materials:
+    OutlawData: 1
+    Plasteel: 2000
+    Steel: 2000
+    Wood: 1000
+
+# Melee
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: EnergyDaggerLoudRecipe
+  result: EnergyDaggerLoud
+  materials:
+    Steel: 200
+    Plastic: 800
+    Plasteel: 200
+    Plasma: 1000
+    ReinforcedPlasmaGlass: 100
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: EnergyDaggerRecipe
+  result: EnergyDaggerBox
+  materials:
+    OutlawData: 1
+    Steel: 200
+    Plastic: 800
+    Plasteel: 200
+    Plasma: 1000
+    ReinforcedPlasmaGlass: 100
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: EnergyCutlassRecipe
+  result: EnergyCutlass
+  materials:
+    Steel: 1000
+    Plasteel: 800
+    Plasma: 2000
+    ReinforcedPlasmaGlass: 200
+
+- type: latheRecipe
+  parent: BaseShieldRecipe
+  id: EnergyShieldRecipe
+  result: EnergyShield
+  materials:
+    OutlawData: 1
+    Steel: 800
+    Plasteel: 800
+    Plasma: 3000
+    ReinforcedPlasmaGlass: 300
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: EnergySwordRecipe
+  result: EnergySword
+  materials:
+    OutlawData: 1
+    Steel: 800
+    Plasteel: 800
+    Plasma: 3000
+    ReinforcedPlasmaGlass: 300
+    
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: ThrowingKnifeRecipe
+  result: ThrowingKnife
+  materials:
+    Steel: 200
+    Plastic: 100
+    
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: ClothingHandsKnuckleDustersSyndicateRecipe
+  result: ClothingHandsKnuckleDustersSyndicate
+  materials:
+    Plasteel: 600
+    Steel: 600
+    Plasma: 200
+  
+- type: latheRecipe
+  parent: SecBreachingHammerCGP
+  id: SecBreachingHammerOutlawRecipe
+  result: SecBreachingHammer
     
 # Cannon Ammo
 - type: latheRecipe
@@ -75,6 +290,279 @@
   materials:
     Steel: 1500 
 
+# Ammo
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: NFMagazineShotgunDrumEmptyRecipe
+  result: NFMagazineShotgunDrumEmpty
+  materials:
+    Steel: 500
+    Plastic: 250
+
+# Ship Guns
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: ShuttleGunSvalinnLaserFlatpackRecipe
+  result: ShuttleGunSvalinnLaserFlatpack
+  materials:
+    Steel: 5000
+    Plasteel: 2500
+    Plasma: 2000
+    Uranium: 2000
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: ShuttleGunPirateCannonFlatpackRecipe
+  result: ShuttleGunPirateCannonFlatpack
+  materials:
+    Steel: 8000
+    Plasteel: 4000
+    Wood: 2000
+
+# Tools
+
+- type: latheRecipe
+  parent: NFBaseToolsRecipe
+  id: SyndicateJawsOfLifeRecipe
+  result: SyndicateJawsOfLife
+  materials:
+    Steel: 1200
+    Plasteel: 600
+    Plastic: 600
+    Plasma: 200
+    Uranium: 200
+
+- type: latheRecipe
+  parent: NFBaseToolsRecipe
+  id: RadioJammerRecipe
+  result: RadioJammer
+  materials:
+    Steel: 1200
+    Plasteel: 600
+    Plastic: 600
+    Plasma: 200
+    Uranium: 200
+
+- type: latheRecipe
+  parent: NFBaseToolsRecipe
+  id: PinpointerScannerRecipe
+  result: PinpointerScanner
+  materials:
+    Plastic: 200
+    Wood: 200
+    Silver: 100
+    Gold: 100
+    
+- type: latheRecipe
+  parent: NFBaseToolsRecipe
+  id: IonizedBluespaceDustBagRecipe
+  result: IonizedBluespaceDustBag
+  materials:
+    Bluespace: 100
+    Cloth: 200
+
+# Medical
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: SawAdvancedRecipe
+  result: SawAdvanced
+  materials:
+    Steel: 800
+    Diamond: 20
+    Plastic: 200
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: DefibrillatorSyndicateRecipe
+  result: DefibrillatorSyndicate
+  materials:
+    Steel: 600
+    Plastic: 400
+    Glass: 200
+    Plasma: 4500
+
+# Hypos
+
+- type: latheRecipe
+  parent: NFBaseToolsRecipe
+  id: SyndiHypoRecipe
+  result: SyndiHypo
+  materials:
+    OutlawData: 2
+    Steel: 300
+    Plastic: 1000
+    Plasteel: 300
+    Plasma: 1000
+    Uranium: 1000
+
+- type: latheRecipe
+  parent: NFBaseToolsRecipe
+  id: HypopenRecipe
+  result: Hypopen
+  materials:
+    OutlawData: 1
+    Steel: 200
+    Plastic: 800
+    Plasteel: 200
+    Plasma: 600
+    Uranium: 600
+
+# Armor
+
+- type: latheRecipe
+  parent: NFBaseArmorRecipe
+  id: ClothingOuterVestWebRecipe
+  result: ClothingOuterVestWeb
+  materials:
+    Durathread: 2000
+    Plasteel: 1000
+    Silver: 500
+
+- type: latheRecipe
+  parent: NFBaseArmorRecipe
+  id: ClothingOuterVestWebEliteRecipe
+  result: ClothingOuterVestWebElite
+  materials:
+    OutlawData: 1
+    Durathread: 2000
+    Plasteel: 1000
+    ReinforcedUraniumGlass: 500
+    ReinforcedPlasmaGlass: 500
+
+- type: latheRecipe
+  parent: NFBaseHardSuitRecipe
+  id: ClothingOuterHardsuitSyndieRecipe
+  result: ClothingOuterHardsuitSyndie
+  materials:
+    OutlawData: 3
+    Durathread: 2000
+    Plasteel: 2000
+    Plastic: 2000
+    Glass: 500
+    Silver: 1500
+    Gold: 1000
+
+- type: latheRecipe
+  parent: NFBaseHardSuitRecipe
+  id: ClothingOuterHardsuitSyndieMedicRecipe
+  result: ClothingOuterHardsuitSyndieMedic
+  materials:
+    OutlawData: 3
+    Durathread: 2000
+    Plasteel: 2000
+    Plastic: 2000
+    Glass: 500
+    Silver: 1500
+    Gold: 1000
+
+- type: latheRecipe
+  parent: NFBaseHardSuitRecipe
+  id: ClothingOuterHardsuitSyndieEliteRecipe
+  result: ClothingOuterHardsuitSyndieElite
+  materials:
+    CGPCredit: 1
+    Glass: 1000
+    Plastic: 2000
+    Durathread: 2000
+    ReinforcedUraniumGlass: 1000
+    ReinforcedPlasmaGlass: 1000
+    Gold: 1000
+    Silver: 1000
+
+- type: latheRecipe
+  parent: NFBaseHardSuitRecipe
+  id: ClothingOuterEVASuitPirateRecipe
+  result: ClothingOuterEVASuitPirate
+  materials:
+    Durathread: 500
+    Plastic: 300
+    Cloth: 300
+
+- type: latheRecipe
+  parent: NFBaseHardSuitRecipe
+  id: ClothingOuterOutlawHardsuitRecipe
+  result: ClothingOuterOutlawHardsuit
+  materials:
+    Durathread: 1000
+    Glass: 500
+    Plastic: 1000
+    Plasteel: 1000
+
+- type: latheRecipe
+  parent: ClothingOuterOutlawHardsuitRecipe
+  id: ClothingOuterHardsuitPirateCapRecipe
+  result: ClothingOuterHardsuitPirateCap
+
+- type: latheRecipe
+  parent: ClothingOuterOutlawHardsuitRecipe
+  id: ClothingOuterHardsuitRogueRecipe
+  result: ClothingOuterHardsuitRogue
+
+- type: latheRecipe
+  parent: NFBaseHardSuitRecipe
+  id: ClothingOuterOutlawHardsuitCombatRecipe
+  result: ClothingOuterOutlawHardsuitCombat
+  materials:
+    OutlawData: 1
+    Glass: 500
+    Plastic: 2000
+    Plasteel: 2000
+    Durathread: 2000
+    Silver: 1000
+    Gold: 1000
+    
+- type: latheRecipe
+  parent: ClothingOuterOutlawHardsuitCombatRecipe
+  id: ClothingOuterHardsuitPirateEliteRecipe
+  result: ClothingOuterHardsuitPirateElite
+
+- type: latheRecipe
+  parent: NFBaseArmorRecipe
+  id: ClothingOuterArmorHeavyTacticalRecipe
+  result: ClothingOuterArmorHeavyTactical
+  materials:
+    Durathread: 3000
+    Plasteel: 1000
+
+- type: latheRecipe
+  parent: ClothingOuterVestWebRecipe
+  id: ClothingOuterArmorBulletproofBMRecipe
+  result: ClothingOuterArmorBulletproofBM
+ 
+- type: latheRecipe
+  parent: NFBaseArmorRecipe
+  id: ClothingHeadHelmetBMRecipe
+  result: ClothingHeadHelmetBM
+  materials:
+    Durathread: 500
+    Plasteel: 1000
+    Steel: 1000
+
+# Other wearables
+
+- type: latheRecipe
+  parent: NFBaseArmorRecipe
+  id: JetpackBMRecipe
+  result: JetpackBM
+  materials:
+    Steel: 1000
+    Plasteel: 500
+    Plastic: 500
+  
+- type: latheRecipe
+  parent: ClothingShoesBootsMagTacCGP
+  id: ClothingShoesBootsMagTacOutlawRecipe
+  result: ClothingShoesBootsMagTac
+
+- type: latheRecipe
+  parent: WFClothingMaskGasSheriff
+  id: ClothingMaskGasSyndicateRecipe
+  result: ClothingMaskGasSyndicate
+  
+
 # Blueprints
 
 - type: latheRecipe
@@ -91,29 +579,43 @@
 
 - type: latheRecipe
   parent: BaseDecryptRecipe
-  id: RecipeDecryptIncendiaryAmmo
-  result: NFBlueprintAmmoIncendiarySyndicate
-  materials:
-    OutlawData: 8
-
-- type: latheRecipe
-  parent: BaseDecryptRecipe
-  id: RecipeDecryptUraniumAmmo
-  result: NFBlueprintAmmoUraniumSyndicate
-  materials:
-    OutlawData: 12
-
-- type: latheRecipe
-  parent: BaseDecryptRecipe
-  id: RecipeDecryptC20
-  result: WFBlueprintC20r
+  id: RecipeDecryptOutlawAmmo
+  result: WFBlueprintOutlawAmmo
   materials:
     OutlawData: 20
 
 - type: latheRecipe
   parent: BaseDecryptRecipe
-  id: RecipeDecryptAtreides
-  result: WFBlueprintAtreides
+  id: RecipeDecryptSMG
+  result: WFBlueprintOutlawSMG
+  materials:
+    OutlawData: 15
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptRifles
+  result: WFBlueprintOutlawRifles
+  materials:
+    OutlawData: 15
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptLasers
+  result: WFBlueprintOutlawLasers
+  materials:
+    OutlawData: 25
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptHeavy
+  result: WFBlueprintOutlawHeavyWeapons
+  materials:
+    OutlawData: 35
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptCannons
+  result: WFBlueprintShipGuns
   materials:
     OutlawData: 20
 
@@ -122,4 +624,53 @@
   id: WFRecipeDecryptCannonAmmo
   result: WFBlueprintCannonballs
   materials:
-    OutlawData: 25
+    OutlawData: 20
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptJaws
+  result: WFBlueprintAdvancedJaws
+  materials:
+    OutlawData: 8
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptJammer
+  result: WFBlueprintRadioJammer
+  materials:
+    OutlawData: 12
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptMedical
+  result: WFBlueprintOutlawMedical
+  materials:
+    OutlawData: 12
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptHyposprays
+  result: WFBlueprintOutlawHyposprays
+  materials:
+    OutlawData: 12
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptEnergy
+  result: WFBlueprintOutlawEnergyWeapons
+  materials:
+    OutlawData: 16
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptVests
+  result: WFBlueprintOutlawWebVests
+  materials:
+    OutlawData: 10
+
+- type: latheRecipe
+  parent: BaseDecryptRecipe
+  id: RecipeDecryptArmor
+  result: WFBlueprintOutlawSpinelSuits
+  materials:
+    OutlawData: 20

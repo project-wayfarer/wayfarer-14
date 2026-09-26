@@ -2,12 +2,20 @@
   id: WFDecryptStatic
   recipes:
 #  - RecipeDecryptLow
-  - RecipeDecryptIncendiaryAmmo
-  - RecipeDecryptUraniumAmmo
-  - RecipeDecryptC20
-  - RecipeDecryptAtreides
+  - RecipeDecryptEnergy
+  - RecipeDecryptSMG
+  - RecipeDecryptRifles
+  - RecipeDecryptLasers
+  - RecipeDecryptHeavy
+  - RecipeDecryptCannons
   - WFRecipeDecryptCannonAmmo
-
+  - RecipeDecryptOutlawAmmo
+  - RecipeDecryptJaws
+  - RecipeDecryptJammer
+  - RecipeDecryptMedical
+  - RecipeDecryptHyposprays
+  - RecipeDecryptVests
+  - RecipeDecryptArmor
 
 - type: latheRecipePack
   id: WFOutlawStatic
@@ -56,4 +64,30 @@
   - NFAmmunitionBoxPistol45
   - NFAmmunitionBoxPistol45Overpressure
   - NFAmmunitionBoxPistol45Rubber
+  - NFAmmunitionBoxRifle60
+  - NFAmmunitionBoxRifle60Rubber
+  - NFMagazineShotgunDrumEmptyRecipe
+  - ClothingOuterArmorHeavyTacticalRecipe
+  - ClothingOuterArmorBulletproofBMRecipe
+  - ClothingHeadHelmetBMRecipe
+  - JetpackBMRecipe
+  - ClothingShoesBootsMagTacOutlawRecipe
+  - ClothingMaskGasSyndicateRecipe
+  - PinpointerScannerRecipe
+  - IonizedBluespaceDustBagRecipe
+  - ClothingOuterEVASuitPirateRecipe
+  - ClothingOuterOutlawHardsuitRecipe
+  - ClothingOuterHardsuitPirateCapRecipe
+  - ClothingOuterHardsuitRogueRecipe
+  - ClothingOuterOutlawHardsuitCombatRecipe
+  - ClothingOuterHardsuitPirateEliteRecipe
+  - NFTruncheon
+  - ThrowingKnifeRecipe
+  - SecBreachingHammerOutlawRecipe
+  - ClothingHandsKnuckleDustersSyndicateRecipe
+  - RecipeWeaponPistolViper
+  - NFWeaponRevolverPirateRecipe
+  - NFWeaponRevolverRitland45Recipe
+  - NFWeaponRifleMusketRecipe
+  - NFWeaponLauncherPirateCannonRecipe
   - Signaller

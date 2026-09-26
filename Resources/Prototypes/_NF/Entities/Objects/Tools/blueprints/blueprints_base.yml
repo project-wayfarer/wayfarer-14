@@ -438,7 +438,7 @@
 # region Expedition
 - type: entity
   abstract: true
-  parent: [ BaseBMContraband, NFBlueprintGeneral ] # Wayfarer: BaseC3Contraband<BaseBMContraband
+  parent: [ NFBlueprintGeneral ] # Wayfarer: Remove BaseC3Contraband
   id: NFBaseBlueprintExpedition
   components:
   - type: Paper

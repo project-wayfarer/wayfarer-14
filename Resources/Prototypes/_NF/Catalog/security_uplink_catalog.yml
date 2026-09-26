@@ -127,21 +127,21 @@
       whitelist:
         - Sheriff
 
-- type: listing
-  id: UplinkSecurityHardsuitSyndieReverseEngineered
-  name:  uplink-security-hardsuit-experimental-name
-  description: uplink-security-hardsuit-experimental-desc
-  productEntity: ClothingOuterHardsuitNfsdExperimental
-  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_experimental.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 50
-  categories:
-    - UplinkSecurityHardsuits
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
+#- type: listing # Wayfarer: Moved to Lathe
+#  id: UplinkSecurityHardsuitSyndieReverseEngineered
+#  name:  uplink-security-hardsuit-experimental-name
+#  description: uplink-security-hardsuit-experimental-desc
+#  productEntity: ClothingOuterHardsuitNfsdExperimental
+#  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_experimental.rsi, state: icon }
+#  cost:
+#    FrontierUplinkCoin: 50
+#  categories:
+#    - UplinkSecurityHardsuits
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
 
 #region weapons
 #- type: listing # Wayfarer: Moved to Lathe

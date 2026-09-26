@@ -1,5 +1,5 @@
 - type: entity
-  parent: NFBaseBlueprintExpedition
+  parent: [ NFBaseBlueprintExpedition, BaseBMContraband ] 
   id: WFBaseBlueprintOutlaw
   abstract: true
   components:
@@ -36,28 +36,66 @@
     - Paper
 
 #Guns
-
+ 
 - type: entity
   parent: WFBaseBlueprintOutlaw
-  id: WFBlueprintC20r
+  id: WFBlueprintCobra
   categories: [ HideSpawnMenu ]
-  name: c-20r smg blueprint
-  description: A blueprint with a schematic of a C-20r SMG.
+  name: cobra blueprint
+  description: A blueprint with a schematic of a cobra silenced pistol.
   components:
   - type: Blueprint
     providedRecipes:
-    - NFWeaponSubMachineGunC20r
-
+    - NFWeaponPistolCobraRecipe
+    
 - type: entity
   parent: WFBaseBlueprintOutlaw
-  id: WFBlueprintAtreides
+  id: WFBlueprintOutlawSMG
   categories: [ HideSpawnMenu ]
-  name: atreides smg blueprint
-  description: A blueprint with a schematic of a Atreides SMG.
+  name: smg blueprint
+  description: A blueprint with a schematic of various SMG's.
   components:
   - type: Blueprint
     providedRecipes:
-    - NFWeaponSubMachineGunAtreides
+    - NFWeaponSubMachineGunC20rRecipe
+    - NFWeaponSubMachineGunAtreidesRecipe
+   
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawRifles
+  categories: [ HideSpawnMenu ]
+  name: rifle blueprint
+  description: A blueprint with a schematic of various rifles.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - NFWeaponRifleAssaultSmRecipe
+    - NFWeaponRifleAssaultM90GrenadeLauncherRecipe
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawLasers
+  categories: [ HideSpawnMenu ]
+  name: advanced laser weapons blueprint
+  description: A blueprint with a schematic of various laser weapons.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - NFWeaponEnergyPistolLaserAdvancedRecipe
+    - NFWeaponEnergyRifleSniperXrayCannonRecipe
+    - NFWeaponEnergyRifleTemperatureRecipe
+    
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawHeavyWeapons
+  categories: [ HideSpawnMenu ]
+  name: heavy weapons blueprint
+  description: A blueprint with a schematic of a bulldog, and a hristov.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - NFWeaponShotgunBulldogRecipe
+    - NFWeaponRifleSniperHristovRecipe
 
 #ShipToShip
 
@@ -65,7 +103,7 @@
   parent: WFBaseBlueprintOutlaw
   id: WFBlueprintCannonballs
   categories: [ HideSpawnMenu ]
-  name: Cannon Munitions
+  name: cannon munitions
   description: A blueprint with the schematics of the various available cannonballs.
   components:
   - type: Blueprint
@@ -74,4 +112,129 @@
     - WFCannonballEMPRecipe    
     - WFCannonballGlassRecipe    
     - WFCannonballGrapeshotRecipe    
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintShipGuns
+  categories: [ HideSpawnMenu ]
+  name: ship weapons
+  description: A blueprint with the schematics of various available ship weapons.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - ShuttleGunPirateCannonFlatpackRecipe
+    - ShuttleGunSvalinnLaserFlatpackRecipe
+
+#Tools
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintAdvancedJaws
+  categories: [ HideSpawnMenu ]
+  name: advanced jaws of life blueprint
+  description: A blueprint with a schematic of a pair of advanced jaws of life.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - SyndicateJawsOfLifeRecipe
     
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintRadioJammer
+  categories: [ HideSpawnMenu ]
+  name: radio jammer blueprint
+  description: A blueprint with a schematic of a radio jammer.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - RadioJammerRecipe
+    
+#Medical
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawMedical
+  categories: [ HideSpawnMenu ]
+  name: black market medical blueprint
+  description: A blueprint with a schematic of various illegal medical tools.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - SawAdvancedRecipe
+    - DefibrillatorSyndicateRecipe
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawHyposprays
+  categories: [ HideSpawnMenu ]
+  name: black market hyposprays blueprint
+  description: A blueprint with a schematic of various illegal hyposprays.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - SyndiHypoRecipe
+    - HypopenRecipe
+    
+#Melee
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawEnergyWeapons
+  categories: [ HideSpawnMenu ]
+  name: energy weapons blueprint
+  description: A blueprint with a schematic of various energy weapons.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - EnergyDaggerLoudRecipe
+    - EnergyDaggerRecipe
+    - EnergyCutlassRecipe
+    - EnergyShieldRecipe
+    - EnergySwordRecipe
+
+#Armors
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawWebVests
+  categories: [ HideSpawnMenu ]
+  name: webvest blueprint
+  description: A blueprint with a schematic of a web vest, and elite web vest.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - ClothingOuterVestWebRecipe
+    - ClothingOuterVestWebEliteRecipe
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawSpinelSuits
+  categories: [ HideSpawnMenu ]
+  name: spinel suit blueprint
+  description: A blueprint with a schematic of the spinel and old war suits.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - ClothingOuterHardsuitSyndieRecipe
+    - ClothingOuterHardsuitSyndieMedicRecipe
+    - ClothingOuterHardsuitSyndieEliteRecipe
+
+#Ammo
+
+- type: entity
+  parent: WFBaseBlueprintOutlaw
+  id: WFBlueprintOutlawAmmo
+  categories: [ HideSpawnMenu ]
+  name: outlaw ammo blueprint
+  description: A blueprint with a schematic of uranium and incindiary munitions.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - NFAmmunitionBoxPistol35Uranium
+    - NFAmmunitionBoxPistol45Uranium
+    - NFAmmunitionBoxRifle20Uranium
+    - NFAmmunitionBoxRifle30Uranium
+    - NFAmmunitionBoxShellShotgunUranium
+    - NFAmmunitionBoxPistol35Incendiary
+    - NFAmmunitionBoxPistol45Incendiary
+    - NFAmmunitionBoxRifle20Incendiary
+    - NFAmmunitionBoxRifle30Incendiary
+    - NFAmmunitionBoxShellShotgunIncendiary

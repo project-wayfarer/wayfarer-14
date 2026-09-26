@@ -22,12 +22,27 @@
   - type: Currency
     price:
       FrontierUplinkCoin: 1
-# Wayfarer: Add tag whitelist
+# Wayfarer: Make ZC insertable into things that need it for recipes
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CGPCredit: 1
+# Wayfarer: Add tag whitelist & ZekkeCredit
   - type: Tag
     tags:
     - WhitelistWallet
+    - ZekkeCredit
 # End Wayfarer
 
+- type: material
+  id: CGPCredit
+  stackEntity: FrontierUplinkCoin1
+  name: materials-credit
+  unit: materials-unit-credits
+  icon: { sprite: _NF/Objects/Specific/Security/frontieruplinkcoin.rsi, state: frontieruplinkcoin }
+  color: "#C0C0C0"
+  price: 1
+  
 - type: entity
   parent: FrontierUplinkCoin
   id: FrontierUplinkCoin1

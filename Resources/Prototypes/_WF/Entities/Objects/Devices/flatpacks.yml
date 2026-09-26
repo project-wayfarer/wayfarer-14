@@ -15,6 +15,15 @@
   components:
   - type: Flatpack
     entity: ShuttleGunPirateCannon
+    
+- type: entity
+  parent: [ BaseNFFlatpack, BaseBMContraband ]
+  id: ShuttleGunSvalinnLaserFlatpack
+  name: svalinn laser flatpack
+  description: A flatpack used for constructing a svalinn laser machine gun.
+  components:
+  - type: Flatpack
+    entity: ShuttleGunSvalinnMachineGun
 
 - type: entity
   parent: BaseNFFlatpack
