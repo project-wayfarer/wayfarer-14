@@ -15,10 +15,11 @@
     sprite: Objects/Consumable/Drinks/saketokkuri.rsi
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkOrangeCreamiceGlass
-  name: orange creamcicle glass
+#  name: orange creamcicle glass # wayfarer commented out: make inline with other metamorphic glasses
   description: Orangy, creamy goodness.
+  suffix: orange creamice # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -27,14 +28,16 @@
         reagents:
         - ReagentId: OrangeCreamice
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/orangecreamcicle.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/orangecreamcicle.rsi  # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkSilverjackGlass
-  name: silverjack glass
+#  name: silverjack glass # wayfarer commented out: make inline with other metamorphic glasses
   description: Reminds you of family.
+  suffix: silverjack # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -43,14 +46,16 @@
         reagents:
         - ReagentId: Silverjack
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/silverjack.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/silverjack.rsi
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkBrainbombGlass
-  name: brainbomb glass
+#  name: brainbomb glass # wayfarer commented out: make inline with other metamorphic glasses
   description: Toxic to about anything alive, especially your liver.
+  suffix: brainbomb # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -59,14 +64,16 @@
         reagents:
         - ReagentId: Brainbomb
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/brainbomb.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/brainbomb.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkClownBloodGlass
-  name: clown blood glass
+#  name: clown blood glass # wayfarer commented out: make inline with other metamorphic glasses
   description: Security Officers favorite drink after a long day.
+  suffix: clown blood # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -75,14 +82,16 @@
         reagents:
         - ReagentId: ClownBlood
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/clownblood.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/clownblood.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkCircusJuiceGlass
-  name: circus juice glass
+#  name: circus juice glass  # wayfarer commented out: make inline with other metamorphic glasses
   description: Honkmother would be proud.
+  suffix: circus juice # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -91,14 +100,16 @@
         reagents:
         - ReagentId: CircusJuice
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/circusjuice.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/circusjuice.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkSapoPicanteGlass
-  name: sapo picante glass
+#  name: sapo picante glass  # wayfarer commented out: make inline with other metamorphic glasses
   description: Tastes nothing like a toad.
+  suffix: sapo picante # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -107,14 +118,16 @@
         reagents:
         - ReagentId: SapoPicante
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/sapopicante.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/sapopicante.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkGraveyardGlass
-  name: graveyard glass
+#  name: graveyard glass  # wayfarer commented out: make inline with other metamorphic glasses
   description: For those shifts that never seem to end.
+  suffix: graveyard # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -123,14 +136,16 @@
         reagents:
         - ReagentId: Graveyard
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/graveyard.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/graveyard.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkAtomicPunchGlass
-  name: atomic punch glass
+#  name: atomic punch glass # wayfarer commented out: make inline with other metamorphic glasses
   description: Will NOT make you immune to bullets; Isotopes included!
+  suffix: atomic punch # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -139,14 +154,16 @@
         reagents:
         - ReagentId: AtomicPunch
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/atomicpunch.rsi
-    
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/atomicpunch.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
+
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkPinkDrinkGlass
-  name: pink drink glass
+#  name: pink drink glass # wayfarer commented out: make inline with other metamorphic glasses
   description: Entire civilizations have crumbled trying to decide if this drink really tastes like pink...
+  suffix: pink drink # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -155,14 +172,16 @@
         reagents:
         - ReagentId: PinkDrink
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/pinkdrink.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/pinkdrink.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkGlass # wayfarer drinkglassbase>drinkglass
   id: DrinkBubbleTeaGlass
-  name: bubble tea glass
+#  name: bubble tea glass # wayfarer commented out: make inline with other metamorphic glasses
   description: Big straw not included.
+  suffix: bubble tea # wayfarer
   components:
   - type: SolutionContainerManager
     solutions:
@@ -171,5 +190,6 @@
         reagents:
         - ReagentId: BubbleTea
           Quantity: 30
-  - type: Sprite
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/bubbletea.rsi
+  - type: Icon # wayfarer Sprite>Icon
+    sprite: _WF/Objects/Consumable/Drinks/bubbletea.rsi # wayfarer Nyanotrasen>_WF
+    state: icon # wayfarer

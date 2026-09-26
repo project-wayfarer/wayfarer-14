@@ -27,8 +27,11 @@
   flavor: orangecreamcicle
   color: "#efaa16"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/orangecreamcicle.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/orangecreamcicle.rsi  # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -47,8 +50,11 @@
   flavor: silverjack
   color: "#978647"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/silverjack.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/silverjack.rsi # Wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -67,8 +73,11 @@
   flavor: brainbomb
   color: "#6f7a2c"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/brainbomb.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/brainbomb.rsi # Wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -100,8 +109,11 @@
   flavor: funny
   color: "#94001c"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/clownblood.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/clownblood.rsi # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -120,8 +132,11 @@
   flavor: circusjuice
   color: "#c47872"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/circusjuice.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/circusjuice.rsi # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -143,8 +158,11 @@
   flavor: sapopicante
   color: "#c0501a"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/sapopicante.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/sapopicante.rsi # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -165,8 +183,11 @@
   flavor: graveyard
   color: "#4f1b1b"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/graveyard.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/graveyard.rsi # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:

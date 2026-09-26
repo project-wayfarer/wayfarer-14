@@ -767,7 +767,7 @@
         - !type:AdjustReagent
           reagent: NFZombieBiteToxin
           amount: -1
-        - !type:PopupMessage          
+        - !type:PopupMessage
           type: Local
           visualType: Medium
           messages: [ "generic-reagent-effect-nauseous" ]
@@ -781,7 +781,7 @@
           conditions:
           - !type:ReagentThreshold
             min: 5
-        
+
         # Frontier end
 
 - type: reagent
@@ -1327,6 +1327,12 @@
   physicalDesc: reagent-physical-desc-holy
   flavor: holy
   color: "#91C3F7"
+  metamorphicSprite: # wayfarer
+    sprite: _WF/Objects/Consumable/Drinks/flaskholywater.rsi # wayfarer
+    state: icon_empty # wayfarer
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:

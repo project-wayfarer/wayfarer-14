@@ -7,8 +7,11 @@
   flavor: atomicpunch
   color: "#d04949"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/atomicpunch.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/atomicpunch.rsi # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -27,8 +30,11 @@
   flavor: pinkdrink
   color: "#d04949"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/pinkdrink.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/pinkdrink.rsi # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
@@ -44,8 +50,11 @@
   flavor: bubbletea
   color: "#d2b18c"
   metamorphicSprite:
-    sprite: Nyanotrasen/Objects/Consumable/Drinks/bubbletea.rsi
-    state: icon
+    sprite: _WF/Objects/Consumable/Drinks/bubbletea.rsi # wayfarer Nyanotrasen>_WF
+    state: icon_empty # wayfarer icon>icon_empty
+  metamorphicMaxFillLevels: 4 # wayfarer
+  metamorphicFillBaseName: fill- # wayfarer
+  metamorphicChangeColor: false # wayfarer
   metabolisms:
     Drink:
       effects:
