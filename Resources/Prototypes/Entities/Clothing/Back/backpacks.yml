@@ -105,6 +105,8 @@
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/brigmedic.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: NFClothingBackpack # Frontier: ClothingBackpack<NFClothingBackpack

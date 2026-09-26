@@ -476,16 +476,16 @@
       color: blue
     - type: ItemTogglePointLight
     - type: Reflect
-      reflectProb: 0.95
+      reflectProb: 0.75 # Wayfarer: 0.95 < 0.75
       reflects:
         - Energy
     - type: Blocking
       passiveBlockModifier:
         coefficients:
-          Blunt: 1.0
-          Slash: 0.9
-          Piercing: 0.85
-          Heat: 0.6
+          Blunt: 1.2 # Wayfarer: 1.0 < 1.2
+          Slash: 0.75 # Wayfarer: 0.9 < 0.75
+          Piercing: 1.2 # Wayfarer: 0.85 < 1.2
+          Heat: 0.5 # Wayfarer 0.6 < 0.5
       activeBlockModifier:
         coefficients:
           Blunt: 1.2

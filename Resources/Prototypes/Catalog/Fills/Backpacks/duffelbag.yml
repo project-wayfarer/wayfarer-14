@@ -262,8 +262,9 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateHardsuitBundle
-  name: syndicate hardsuit bundle
-  description: "Contains the Syndicate's signature blood red hardsuit."
+  name: spinel hardsuit bundle # Wayfarer: Changed name
+  description: "Contains a spinel hardsuit."
+  # Wayfarer: Changed Description
   components:
   - type: StorageFill
     contents:
@@ -276,8 +277,9 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
-  name: syndicate elite hardsuit bundle
-  description: "Contains the Syndicate's elite hardsuit, which comes with some more stuff in it."
+  name: old ops bundle # Wayfarer: Changed name
+  description: "Contains an old-ops environmental hardsuit."
+  # Wayfarer: Changed Description
   components:
   - type: StorageFill
     contents:

@@ -158,19 +158,23 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdBronze
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.7
+  - type: StaminaResistance # Wayfarer
+    damageCoefficient: 0.8
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.65
-        Heat: 0.7
-        Radiation: 0.55
-        Caustic: 0.75
+        # Wayfarer Start - value tweaks
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.75
+        Radiation: 0.75
+        Caustic: 0.80
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.9
+    walkModifier: 1.0
+    sprintModifier: 1.0
+    # Wayfarer End
 
 - type: entity
   parent: ClothingOuterHardsuitNfsdBronze
@@ -228,7 +232,7 @@
   parent: [BaseCGPContraband, ClothingOuterHardsuitJuggernaut] # Wayfarer: BaseC2ContrabandUnredeemable<BaseCGPContraband
   id: ClothingOuterHardsuitNfsdExperimental
   name: CGP experimental combat suit
-  description: A very heavily armored CGP suit. This space proof marvel of engineering uses state of the art alloys to provide immense protection while sacrificing little mobility.
+  description: An Experimental CGP Combat Suit. It is fitted specifically to counter environmental threats while still providing a good degree of protection from conventional weaponry. # Wayfarer: Changed description
   components:
   - type: Sprite
     sprite: _WF/Clothing/OuterClothing/Hardsuits/CGP_experimental.rsi # Wayfarer: _NF/Clothing/OuterClothing/Hardsuits/nfsd_experimental.rsi < _WF/Clothing/OuterClothing/Hardsuits/CGP_experimental.rsi
@@ -241,18 +245,20 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.3
+  - type: FireProtection # Wayfarer
+    reduction: 0.70
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.3 # Wayfarer: 0.2<0.3
-        Slash: 0.3 # Wayfarer: 0.2<0.3
-        Piercing: 0.3 # Wayfarer: 0.2<0.3
-        Heat: 0.3 # Wayfarer: 0.2<0.3
-        Radiation: 0.3 # Wayfarer: 0.2<0.3
-        Caustic: 0.3 # Wayfarer: 0.2<0.3
+        Blunt: 0.6 # Wayfarer: 0.2<0.6
+        Slash: 0.6 # Wayfarer: 0.2<0.6
+        Piercing: 0.6 # Wayfarer: 0.2<0.6
+        Heat: 0.25 # Wayfarer: 0.2<0.25
+        Radiation: 0.2 # Wayfarer: 0.2<0.2
+        Caustic: 0.25 # Wayfarer: 0.2<0.25
   - type: ClothingSpeedModifier
-    walkModifier: 0.70
-    sprintModifier: 0.65
+    walkModifier: 0.80
+    sprintModifier: 0.80
   - type: FactionClothing
     faction: NanoTrasen
 
@@ -270,9 +276,9 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdCombat
   - type: ExplosionResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.5 # Wayfarer 0.4 < 0.5
   - type: StaminaResistance # Wayfarer
-    damageCoefficient: 0.80
+    damageCoefficient: 0.60
   - type: Armor
     modifiers:
       coefficients:
@@ -280,11 +286,11 @@
         Slash: 0.5
         Piercing: 0.5
         Heat: 0.50
-        Radiation: 0.4
+        Radiation: 0.5 # Wayfarer: 0.4 < 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.85
-    sprintModifier: 0.80 #Wayfarer: 0.75<0.80
+    sprintModifier: 0.85 #Wayfarer: 0.75<0.85
 
 #Security Command Hardsuit
 - type: entity
@@ -396,21 +402,22 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitPirateElite
   - type: ExplosionResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.25 # Wayfarer: 0.4 < 0.25
   - type: StaminaResistance # Wayfarer
-    damageCoefficient: 0.80
+    damageCoefficient: 0.60
   - type: Armor
     modifiers:
       coefficients:
+        # Wayfarer Start - Value tweaks
         Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.50
+        Slash: 0.6
+        Piercing: 0.65
+        Heat: 0.4
         Radiation: 0.4
         Caustic: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.85
-    sprintModifier: 0.75
+    sprintModifier: 0.85 # Wayfarer: 0.75 < 0.85
 
 #Rogue Suit
 - type: entity
@@ -460,10 +467,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Heat: 0.6
+        Blunt: 0.4 # Wayfarer: 0.6 < 0.4
+        Slash: 0.4 # Wayfarer: 0.6 < 0.4
+        Piercing: 0.4 # Wayfarer: 0.6 < 0.4
+        Heat: 0.7 # Wayfarer: 0.6 < 0.7
         Radiation: 0.5
         Caustic: 0.7
   - type: ClothingSpeedModifier

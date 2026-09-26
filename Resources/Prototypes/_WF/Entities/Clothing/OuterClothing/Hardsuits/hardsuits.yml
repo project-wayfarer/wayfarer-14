@@ -13,16 +13,18 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.60
+    damageCoefficient: 0.70
+  - type: StaminaResistance
+    damageCoefficient: 0.8 
   - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.70
         Slash: 0.70
-        Piercing: 0.70
-        Heat: 0.75
-        Radiation: 0.75
-        Caustic: 0.75
+        Piercing: 0.65
+        Heat: 0.65
+        Radiation: 0.80
+        Caustic: 0.80
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0

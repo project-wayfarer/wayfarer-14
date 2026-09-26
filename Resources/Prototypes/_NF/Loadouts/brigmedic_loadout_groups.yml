@@ -82,3 +82,25 @@
   - BrigmedicClothingBeltBrigmedicWebbing
   fallbacks:
   - BrigmedicClothingBeltBrigmedicWebbing
+
+# Wayfarer Start
+- type: loadoutGroup
+  id: WFBrigmedicBackpack
+  name: loadout-group-contractor-backpack
+  minLimit: 1
+  loadouts:
+  - WFClothingBackpackSatchelBrigmedic
+  - WFClothingBackpackBrigmedic
+  - WFClothingBackpackDuffelBrigmedic
+  - NfsdClothingBackpackNfsdBrown
+  - NfsdClothingBackpackSatchelNfsdBrown
+  - NfsdClothingBackpackDuffelNfsdBrown
+  - NfsdClothingBackpackMessengerNfsdBrown
+  - NfsdClothingBackpackNfsdCream
+  - NfsdClothingBackpackSatchelNfsdCream
+  - NfsdClothingBackpackDuffelNfsdCream
+  - NfsdClothingBackpackMessengerNfsdCream
+  - CGPClothingBackpackCGPCombat
+  fallbacks:
+  - NfsdClothingBackpackSatchelNfsdBrown
+# Wayfarer End
