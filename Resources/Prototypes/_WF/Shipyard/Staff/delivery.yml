@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+
+# Maintainer Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+- type: vessel
+  id: Delivery
+  parent: BaseVessel
+  name: SWS Delivery
+  description: A top-of-the line mail vessel for a crew following the most sacred tenet of postal services — delivery must complete.
+  price: 77000 # (59000+365*50)*1 ([appraise on init]+[size]*50)*[+1 primary service]
+  category: Medium
+  group: Sr
+  access: Mail
+  shuttlePath: /Maps/_WF/Shuttles/Staff/delivery.yml
+  guidebookPage: ShipyardDelivery
+  class:
+  - Civilian
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Delivery
+  mapName: 'Delivery'
+  mapPath: /Maps/_WF/Shuttles/Staff/delivery.yml
+  minPlayers: 0
+  stations:
+    Delivery:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Delivery {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

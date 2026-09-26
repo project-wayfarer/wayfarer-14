@@ -25,6 +25,7 @@ guide-entry-shipyard-mephit = Mephit
 guide-entry-shipyard-buckler = Buckler
 guide-entry-shipyard-buckler-vox = Buckler (Vox)
 guide-entry-shipyard-dagger = Dagger
+guide-entry-shipyard-delivery = Delivery
 guide-entry-shipyard-dioddef = Dioddef
 guide-entry-shipyard-downtownsuperstar = DowntownSuperstar
 guide-entry-shipyard-felix = Felix
