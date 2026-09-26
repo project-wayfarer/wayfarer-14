@@ -45,7 +45,7 @@
 #region DeltaV
 - type: entity
   id: NFWeaponPistolUniversal
-  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFramePistolNanotrasen ]
+  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFramePistolUniversal ]
   name: mk32 "Universal"
   description: The Mark 32 Offensive Handgun.
   components:

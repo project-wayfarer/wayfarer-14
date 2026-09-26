@@ -47,9 +47,10 @@
   components:
   - type: Gun
     minAngle: 3
-    maxAngle: 15
-    angleIncrease: 1.3
-    angleDecay: 4.7
+    maxAngle: 12 # Wayfarer: 15 < 12
+    angleIncrease: 0.8 # Wayfarer: 1.3 < 0.8
+    angleDecay: 5.0 # Wayfarer: 4.7 < 5.0
+    fireRate: 5.0 # Wayfarer
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-gorlex-steel-works
 

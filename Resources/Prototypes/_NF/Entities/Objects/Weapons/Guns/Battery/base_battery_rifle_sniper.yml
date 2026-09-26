@@ -58,10 +58,10 @@
   abstract: true
   components:
   - type: Gun
-    minAngle: 1.2
+    minAngle: 1 # Wayfarer: 1.2 < 1
     maxAngle: 6
     angleIncrease: 0.4
-    angleDecay: 1.4
+    angleDecay: 2 # Wayfarer: 1.4 < 2
     fireRate: 1
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions

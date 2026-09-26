@@ -46,3 +46,8 @@
     magState: mag
     steps: 4
     zeroVisible: true
+    # Wayfarer Start
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.7
+    # Wayfarer End

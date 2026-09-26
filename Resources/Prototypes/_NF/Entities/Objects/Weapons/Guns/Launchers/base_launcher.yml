@@ -12,6 +12,7 @@
     minAngle: -0 # Set to 0 because GunRequiresWield
     maxAngle: -0
   - type: Gun
+    projectileSpeed: 56
     minAngle: 1.4
     maxAngle: 7
     angleIncrease: 5.6
@@ -43,6 +44,12 @@
     fireRate: 0.7
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
+    # Wayfarer Start
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 10
+    pvsIncrease: 1
+    # Wayfarer End
 
 - type: entity
   abstract: true
@@ -117,8 +124,13 @@
         whitelist:
           tags:
             - NFTrackingDart
-            - NFCartridgeGrenade40mmEmp
-            - NFCartridgeGrenade40mmFlash
+            - Grenade
+            # Wayfarer Start
+            # - NFCartridgeGrenade40mmEmp
+            # - NFCartridgeGrenade40mmFlash
+            # - NFGrenadeBaton
+            # - WFGrenadeHEAT
+            # End Wayfarer
   - type: ChamberMagazineAmmoProvider
     autoCycle: false
     boltClosed: false

@@ -46,6 +46,18 @@
     fireRate: 3.4
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
+    
+- type: entity
+  abstract: true
+  parent: NFBaseWeaponFramePistolNanotrasen
+  id: NFBaseWeaponFramePistolUniversal
+  components:
+  - type: Gun
+    minAngle: 2.1
+    angleIncrease: 0.8
+    angleDecay: 3.6
+    fireRate: 3.5
+    
 
 - type: entity
   abstract: true
