@@ -236,7 +236,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: FaxMachine
-    name: "Edison Power Plant"
+    name: "Edison Shipyard" # Wayfarer: Edison Power Plant<Edison Shipyard
 
 - type: entity
   parent: [BaseStructureDisableToolUse, FaxMachineBase]

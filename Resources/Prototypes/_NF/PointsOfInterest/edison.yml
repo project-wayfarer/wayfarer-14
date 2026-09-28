@@ -11,12 +11,12 @@
 - type: pointOfInterest
   id: Edison
   parent: BasePOI
-  name: 'Edison Power Plant'
+  name: 'Edison Shipyard' # Wayfarer: Edison Power Plant<Edison Shipyard
   minimumDistance: 3650
   maximumDistance: 5400
   minimumClearance: 1000
   spawnGroup: Required
-  gridPath: /Maps/_NF/POI/edison.yml
+  gridPath: /Maps/_CS/POI/edison.yml # CS - Changed to new Edison Map
   addComponents:
   - type: IFF
     color: "#3737F8"
@@ -26,8 +26,8 @@
 
 - type: gameMap
   id: Edison
-  mapName: 'Edison Power Plant'
-  mapPath: /Maps/_NF/POI/edison.yml
+  mapName: 'Edison Shipyard' # Wayfarer: Edison Power Plant<Edison Shipyard
+  mapPath: /Maps/_CS/POI/edison.yml # CS - Changed to new Edison map
   minPlayers: 0
   stations:
     Edison:
@@ -37,7 +37,7 @@
         description: "The problems seemed impossible. But we were engineers, and engineers can do damn near anything." # NASA engineer quote
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Edison Power Plant'
+          mapNameTemplate: 'Edison Shipyard' # Wayfarer: Edison Power Plant<Edison Shipyard
         - type: ExtraStationInformation
           iconPath: /Textures/_NF/Interface/StationIcons/banner_engineering.png
           stationSubtext: frontier-lobby-edison-subtext
