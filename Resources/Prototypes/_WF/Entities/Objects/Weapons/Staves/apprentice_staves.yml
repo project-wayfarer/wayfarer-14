@@ -1,0 +1,46 @@
+- type: entity
+  parent: [ WeaponChargedStaffBase, WeaponInertStaffBase ]
+  id: WeaponChargedStaffWizardApprentice
+  name: apprentice-wizard practice staff
+  description: The best place to get a start in your esoteric career!
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Weapons/apprentice_staves.rsi
+    layers:
+    - state: base
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,4,0
+    sprite: _WF/Objects/Weapons/apprentice_staves.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Battery
+    maxCharge: 800
+    startingCharge: 0
+  - type: ProjectileBatteryAmmoProvider
+    proto: NFBulletLaserLow
+    fireCost: 60
+  - type: EnergyGun
+    fireModes:
+    - proto: NFBulletDisabler
+      fireCost: 60
+      name: disable
+      state: disabler
+    - proto: NFBulletLaserLow
+      fireCost: 60
+      name: kill
+      state: lethal
+  - type: Clothing
+    quickEquip: false
+    sprite: _WF/Objects/Weapons/apprentice_staves.rsi
+    slots:
+    - Back
+    - SuitStorage
+  - type: Construction
+    graph: CraftGraphWeaponChargedStaffWizardApprentice
+    node: FinishWeaponChargedStaffWizardApprentice
+    deconstructionTarget: null
