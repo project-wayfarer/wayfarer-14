@@ -170,3 +170,18 @@
   components:
   - type: Flatpack
     entity: SmartFridge
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: WFRadioBroadcastConsoleFlatpack
+  name: radio broadcast console flatpack
+  description: A flatpack used for constructing a radio broadcast console.
+  components:
+  - type: Flatpack
+    entity: WFRadioBroadcastConsole
+  - type: StaticPrice
+    price: 5000
+    vendPrice: 5000
+  - type: Sprite
+    layers:
+    - state: service_music
