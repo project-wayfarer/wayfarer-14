@@ -7,3 +7,5 @@ outlaw-objectives-note = Note: This is an extra layer on top of normal gameplay.
 outlaw-objectives-critical = Put me in critical condition
 outlaw-objectives-round-removal = Round remove me
 outlaw-objectives-theft = Steal a special item from me
+outlaw-objectives-ship-theft = Steal and sell my ship
+outlaw-objectives-ship-damage = Damage my ship

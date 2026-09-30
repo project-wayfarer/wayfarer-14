@@ -8,6 +8,8 @@ public enum OutlawObjectiveTrigger : byte
     Critical,
     Gibbed,
     ItemSold,
+    ShipSold,
+    ShipDamaged,
 }
 
 [Prototype]

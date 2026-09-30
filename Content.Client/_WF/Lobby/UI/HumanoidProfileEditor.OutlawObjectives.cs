@@ -20,10 +20,19 @@ public sealed partial class HumanoidProfileEditor
             if (Profile is null)
                 return;
 
-            Profile = chosen
-                ? Profile.WithTraitPreference(trait, _prototypeManager)
-                : Profile.WithoutTraitPreference(trait, _prototypeManager);
+            if (chosen)
+            {
+                foreach (var conflict in _prototypeManager.Index(trait).Conflicts)
+                    Profile = Profile.WithoutTraitPreference(conflict, _prototypeManager);
 
+                Profile = Profile.WithTraitPreference(trait, _prototypeManager);
+            }
+            else
+            {
+                Profile = Profile.WithoutTraitPreference(trait, _prototypeManager);
+            }
+
+            UpdateOutlawObjectivesSelection();
             SetDirty();
         };
     }

@@ -2,10 +2,14 @@
 # traits tab and doesn't contribute to trait limits. Put that trait's id in the objective's trait field.
 #
 # The current objective completion triggers are:
-#   Critical  Pays the outlaw responsible for the target reaching critical condition. Stops being
-#             listed once the target is dead.
-#   Gibbed    Pays the outlaw responsible for destroying the body.
-#   ItemSold  Pays when an outlaw sells the objective's item on a contraband pad.
+#   Critical     Pays the outlaw responsible for the target reaching critical condition. Stops being
+#                listed once the target is dead.
+#   Gibbed       Pays the outlaw responsible for destroying the body.
+#   ItemSold     Pays when an outlaw sells the objective's item on a contraband pad.
+#   ShipSold     Pays when an outlaw sells the target's ship with a forged deed at a console listed in
+#                the sector service settings. Waits in the pending pool until the target owns a ship.
+#   ShipDamaged  Pays once one outlaw has destroyed a percentage of the ship's anchored things
+#                with health (walls, windows, airlocks, thrusters, machines, furniture). Waits like ShipSold.
 # Anything else needs a new trigger added to the payout system.
 
 - type: traitCategory
@@ -18,6 +22,8 @@
   name: outlaw-objectives-critical
   description: outlaw-objectives-note
   hidden: true
+  conflicts:
+  - WFTraitOutlawRoundRemoval
 
 - type: trait
   id: WFTraitOutlawRoundRemoval
@@ -25,11 +31,27 @@
   name: outlaw-objectives-round-removal
   description: outlaw-objectives-note
   hidden: true
+  conflicts:
+  - WFTraitOutlawCritical
 
 - type: trait
   id: WFTraitOutlawTheft
   category: WFOutlawObjectives
   name: outlaw-objectives-theft
+  description: outlaw-objectives-note
+  hidden: true
+
+- type: trait
+  id: WFTraitOutlawShipTheft
+  category: WFOutlawObjectives
+  name: outlaw-objectives-ship-theft
+  description: outlaw-objectives-note
+  hidden: true
+
+- type: trait
+  id: WFTraitOutlawShipDamage
+  category: WFOutlawObjectives
+  name: outlaw-objectives-ship-damage
   description: outlaw-objectives-note
   hidden: true
 
@@ -61,6 +83,24 @@
   title: outlaw-objectives-theft-title
   description: outlaw-objectives-theft-description
 
+- type: outlawObjective
+  id: WFOutlawObjectiveShipTheft
+  rewardDC: 40
+  rewardSpesos: 400000
+  trigger: ShipSold
+  trait: WFTraitOutlawShipTheft
+  title: outlaw-objectives-ship-theft-title
+  description: outlaw-objectives-ship-theft-description
+
+- type: outlawObjective
+  id: WFOutlawObjectiveShipDamage
+  rewardDC: 25
+  rewardSpesos: 200000
+  trigger: ShipDamaged
+  trait: WFTraitOutlawShipDamage
+  title: outlaw-objectives-ship-damage-title
+  description: outlaw-objectives-ship-damage-description
+
 # Renamed after its owner when it spawns. turnInValues has to name the contraband pad's own currency
 # or the pad refuses to take it, and the zero is what stops the pad paying for it on top of the objective reward.
 - type: entity
@@ -80,3 +120,20 @@
     turnInValues:
       Doubloon: 0
     hideValues: true
+
+- type: entity
+  parent: BaseShipVoucher
+  id: WFForgedShipDeed
+  name: forged ship deed
+  description: A ship deed that is clearly falsified.
+  components:
+  - type: Sprite
+    layers:
+    - state: centcomm
+    - state: vouchercentcomm
+  - type: Item
+    heldPrefix: centcomm
+  - type: ShipyardVoucher
+    redemptionsLeft: 0
+    consoleType: BlackMarket
+  - type: ForgedDeed

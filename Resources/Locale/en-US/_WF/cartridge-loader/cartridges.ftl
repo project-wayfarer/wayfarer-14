@@ -8,6 +8,7 @@ outlaw-objectives-reward = [color=#a36b00]DC: {$chits}   Spesos: {$cash}[/color]
 outlaw-objectives-completed = Objective complete. You have been paid {$chits} DC and {$cash} spesos.
 outlaw-objectives-completed-wrap = [font size=14][bold]Black Market Jobs[/bold][/font][font size=12]
                                    {$message}[/font]
+outlaw-objectives-activated = A new job is available.
 
 outlaw-objectives-critical-title = [bold]Put {$target} in critical condition.[/bold]
 outlaw-objectives-critical-description = Teach them a lesson.
@@ -17,5 +18,13 @@ outlaw-objectives-round-removal-description = Destroy their body to ensure they 
 
 outlaw-objectives-theft-title = [bold]Steal {$target}'s personal data drive.[/bold]
 outlaw-objectives-theft-description = Sell it on the black market exchange pallet.
+
+outlaw-objectives-ship-theft-title = [bold]Steal {$target}'s ship.[/bold]
+outlaw-objectives-ship-theft-description = Forge a deed at its shuttle console, bring it to Perdition and sell it at the black market shipyard.
+
+outlaw-objectives-ship-damage-title = [bold]Damage {$target}'s ship.[/bold]
+outlaw-objectives-ship-damage-description = Destroy a small portion of the ship.
+
+outlaw-objectives-forge-deed-verb = Forge ship deed
 
 outlaw-objective-item-name = {$owner}'s data drive
