@@ -209,3 +209,17 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+# icebox
+- type: construction
+  id: IceBox
+  graph: IceBox
+  startNode: start
+  targetNode: icebox
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
