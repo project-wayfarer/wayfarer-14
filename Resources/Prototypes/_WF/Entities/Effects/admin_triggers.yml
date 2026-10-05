@@ -1,0 +1,41 @@
+﻿- type: entity
+  id: AdminInstantEffectCleanade
+  suffix: Cleanade
+  parent: AdminInstantEffectBase
+  components:
+  - type: SmokeOnTrigger
+    duration: 10
+    spreadAmount: 30
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceCleaner
+        Quantity: 50
+
+- type: entity
+  id: AdminInstantEffectLube
+  suffix: SpaceLube
+  parent: AdminInstantEffectBase
+  components:
+  - type: SmokeOnTrigger
+    duration: 5
+    spreadAmount: 15
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceLube
+        Quantity: 50
+
+- type: entity
+  id: AdminInstantEffectGlue
+  suffix: SpaceGlue
+  parent: AdminInstantEffectBase
+  components:
+  - type: SmokeOnTrigger
+    duration: 5
+    spreadAmount: 15
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceGlue
+        Quantity: 50
