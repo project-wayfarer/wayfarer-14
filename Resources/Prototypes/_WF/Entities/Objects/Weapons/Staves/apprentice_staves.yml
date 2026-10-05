@@ -1,7 +1,7 @@
 - type: entity
   parent: [ WeaponChargedStaffBase, WeaponInertStaffBase ]
   id: WeaponChargedStaffWizardApprentice
-  name: apprentice-wizard practice staff
+  name: apprentice wizard staff
   description: The best place to get a start in your esoteric career!
   components:
   - type: Sprite
@@ -9,7 +9,7 @@
     layers:
     - state: base
   - type: Item
-    size: Normal
+    size: Large
     shape:
       - 0,0,4,0
     sprite: _WF/Objects/Weapons/apprentice_staves.rsi
