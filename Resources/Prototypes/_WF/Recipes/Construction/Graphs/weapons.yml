@@ -1,0 +1,22 @@
+- type: constructionGraph
+  id: CraftGraphWeaponChargedStaffWizardApprentice
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: FinishWeaponChargedStaffWizardApprentice
+      steps:
+      - tag: CrystalShard
+        name: construction-graph-tag-crystal-shard
+        icon:
+          sprite: Objects/Materials/Shards/crystal.rsi
+          state: shard1
+        doAfter: 1
+      - material: WoodPlank
+        amount: 5
+        doAfter: 5
+      - material: Cloth
+        amount: 1
+        doAfter: 0.5
+  - node: FinishWeaponChargedStaffWizardApprentice
+    entity: WeaponChargedStaffWizardApprentice
