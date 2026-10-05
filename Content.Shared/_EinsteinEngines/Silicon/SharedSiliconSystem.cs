@@ -31,10 +31,10 @@ public sealed class SharedSiliconChargeSystem : EntitySystem
         if (args.Cancelled
             || !TryComp<PowerCellSlotComponent>(uid, out var cellSlotComp)
             || !_itemSlots.TryGetSlot(uid, cellSlotComp.CellSlotId, out var cellSlot)
-            || cellSlot != args.Slot || args.User != uid)
+            || cellSlot != args.Slot)
             return;
 
-        args.Cancelled = true;
+        //Wayfarer - Allows Siliccons to swap their own cells, to be more independent.
     }
 
     private void OnItemSlotEjectAttempt(EntityUid uid, SiliconComponent component, ref ItemSlotEjectAttemptEvent args)
@@ -42,10 +42,10 @@ public sealed class SharedSiliconChargeSystem : EntitySystem
         if (args.Cancelled
             || !TryComp<PowerCellSlotComponent>(uid, out var cellSlotComp)
             || !_itemSlots.TryGetSlot(uid, cellSlotComp.CellSlotId, out var cellSlot)
-            || cellSlot != args.Slot || args.User != uid)
+            || cellSlot != args.Slot)
             return;
 
-        args.Cancelled = true;
+        //Wayfarer - Allows Silicons to swap their own cells, to be more independent.
     }
 
     private void OnSiliconInit(EntityUid uid, SiliconComponent component, ComponentInit args)
