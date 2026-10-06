@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Maintainer Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Scrapper
+  parent: BaseVessel
+  name: Scrapper
+  description: Old rustbucket what was once a utilitarian salvaging shuttle.
+  price: 15000
+  category: Small
+  group: Scrap
+  shuttlePath: /Maps/_WF/Shuttles/Scrapyard/scrapper.yml
+  guidebookPage: Null
+  class:
+  - Scrapyard
+  engine:
+  - Biofuel
+
+- type: gameMap
+  id: Scrapper
+  mapName: 'Scrapper'
+  mapPath: /Maps/_WF/Shuttles/Scrapyard/scrapper.yml
+  minPlayers: 0
+  stations:
+    Scrapper:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Scrapper {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

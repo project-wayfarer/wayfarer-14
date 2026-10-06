@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Maintainer Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Reclaimer
+  parent: BaseVessel
+  name: SI Reclaimer
+  description: A refurbished utilitarian salvage shuttle.
+  price: 24000
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/reclaimer.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  engine:
+  - Biofuel
+
+- type: gameMap
+  id: Reclaimer
+  mapName: 'SI Reclaimer'
+  mapPath: /Maps/_WF/Shuttles/Civilian/reclaimer.yml
+  minPlayers: 0
+  stations:
+    Reclaimer:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Reclaimer {1}'
+        nameGenerator:
+          !type:MedicalNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
