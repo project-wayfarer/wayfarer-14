@@ -154,6 +154,22 @@
     radius: 1.5
     energy: 1.6
     color: "#c94242"
+  # Wayfarer
+  - type: LootScanner
+    updateInterval: 10m
+    loot:
+      components:
+      - Item
+      - EntityStorage
+      - GasCanister
+      - TradeCrate
+    ignoredContainers:
+    - machine_board
+    - machine_parts
+    - board
+    - light_bulb
+    - cell_slot
+  # Wayfarer End
 
 #region IFF
 - type: entity

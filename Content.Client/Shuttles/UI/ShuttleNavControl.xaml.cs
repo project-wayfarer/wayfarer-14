@@ -323,6 +323,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
             DrawGrid(handle, curGridToView, grid, labelColor);
             DrawDocks(handle, gUid, curGridToView);
+            DrawHullShipValue(handle, gUid, gridBody.LocalCenter, curGridToView, shouldDrawIFF); // Wayfarer
         }
 
         // Frontier: draw target

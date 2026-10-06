@@ -255,6 +255,7 @@ public sealed partial class ShuttleNavControl
                             }
                             
                             handle.DrawString(Font, (blip.UiPosition + labelOffset) * UIScale, labelText, fontScale * UIScale, labelColor);
+                            DrawShipValue(handle, blip, labelOffset, labelDimensions, fontScale, blipSize); // Wayfarer
                         }
 
                         // Draw coordinates on mouse over if enabled
@@ -267,7 +268,7 @@ public sealed partial class ShuttleNavControl
                                 X = blip.UiPosition.X > Width / 2f
                                     ? -coordDimensions.X - blipSize / 0.7f
                                     : blipSize,
-                                Y = coordDimensions.Y / 2
+                                Y = coordDimensions.Y / 2 + ShipValueCoordsShift(handle, blip, suppressInactiveEdgeLabel) // Wayfarer: Added ShipValueCoordsShift(handle, blip, suppressInactiveEdgeLabel)
                             };
                             handle.DrawString(Font, (blip.UiPosition + coordOffset) * UIScale, coordsText, 0.7f * UIScale, new Color(blip.Color.R * 0.8f, blip.Color.G * 0.8f, blip.Color.B * 0.8f, 0.5f));
                         }

@@ -1,4 +1,7 @@
 using Content.Shared.Shuttles.BUIStates;
+using Content.Client._WF.Shuttles;
+using Content.Shared._WF.Shuttles.Components;
+using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.Shuttles.UI;
 
@@ -8,10 +11,26 @@ public sealed partial class NavScreen
 
     private bool _autopilotEnabled;
 
+    private Button _lootScannerToggle = default!;
+
     private void WfInitialize()
     {
         // Autopilot button only enables - clicking it when already enabled does nothing
         AutopilotButton.OnPressed += _ => EnableAutopilot();
+
+        var shipValues = _entManager.System<ShipValueSystem>();
+        _lootScannerToggle = new Button
+        {
+            Text = Loc.GetString("loot-scanner-toggle"),
+            TextAlign = Label.AlignMode.Center,
+            ToggleMode = true,
+            Pressed = shipValues.Enabled,
+            Margin = new Thickness(0, 0, 0, 5),
+            Visible = false,
+        };
+        _lootScannerToggle.OnToggled += args => shipValues.Enabled = args.Pressed;
+        NavRadarSettingsButton.Parent!.AddChild(_lootScannerToggle);
+        _lootScannerToggle.SetPositionInParent(NavRadarSettingsButton.GetPositionInParent() + 1);
     }
 
     private void EnableAutopilot()
@@ -31,6 +50,8 @@ public sealed partial class NavScreen
     private void WfUpdateState(NavInterfaceState state)
     {
         _autopilotEnabled = state.AutopilotEnabled;
+
+        _lootScannerToggle.Visible = _entManager.HasComponent<LootScannerComponent>(_consoleEntity);
 
         // Always show autopilot button, but disable it if no autopilot server is available
         AutopilotButton.Visible = true;
