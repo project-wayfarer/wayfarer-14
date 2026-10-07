@@ -1,0 +1,45 @@
+- type: body
+  id: WFIPC
+  name: "ipc"
+  root: torso
+  slots:
+    head:
+      part: HeadWFIPC
+      connections:
+      - torso
+      organs:
+        brain: PositronicBrain
+        eyes: OrganWFIPCEyes
+    torso:
+      part: TorsoWFIPC
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      organs:
+        pump: OrganWFIPCPump
+    right arm:
+      part: RightArmWFIPC
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmWFIPC
+      connections:
+      - left hand
+    right hand:
+      part: RightHandWFIPC
+    left hand:
+      part: LeftHandWFIPC
+    right leg:
+      part: RightLegWFIPC
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegWFIPC
+      connections:
+      - left foot
+    right foot:
+      part: RightFootWFIPC
+    left foot:
+      part: LeftFootWFIPC

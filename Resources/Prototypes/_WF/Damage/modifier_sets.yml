@@ -16,3 +16,11 @@
     Bloodloss: 0.0
     Cellular: 0.0
     Rot: 0.0 #Wayfarer: Added Rot as a damage type for future use.
+
+- type: damageModifierSet
+  id: WFIPC
+  coefficients:
+    Poison: 0
+    Cold: 0.2
+    Heat: 2
+    Shock: 2.5
