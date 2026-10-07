@@ -4,9 +4,9 @@
   description: job-description-centcomoff
   playTimeTracker: JobCentralCommandOfficial
   setPreference: false
-  startingGear: CentcomGear
-  icon: "JobIconNanotrasen"
-  supervisors: job-supervisors-hos
+  startingGear: CentcomOfficialGear # Wayfarer: CentcomGear<CentcomOfficialGear
+  icon: "JobIconCentcomm" # Wayfarer: JobIconNanotrasen<JobIconCentcomm
+  supervisors: job-supervisors-centcom-official # Wayfarer: job-supervisors-hos<job-supervisors-centcom-official
   canBeAntag: false
   accessGroups:
   - AllAccess

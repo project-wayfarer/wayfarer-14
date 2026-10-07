@@ -13,3 +13,12 @@
     sprite: /Textures/_WF/Interface/Misc/job_icons.rsi
     state: wantedoutlaw
   jobName: job-name-nf-pirate-captain
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCentcomm
+  icon:
+    sprite: /Textures/_WF/Interface/Misc/job_icons.rsi
+    state: centcomm
+  jobName: job-name-centcomoff
+  allowSelection: false

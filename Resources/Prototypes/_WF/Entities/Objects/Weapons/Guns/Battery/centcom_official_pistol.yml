@@ -1,0 +1,47 @@
+- type: entity
+  id: CentcomOfficialPistol
+  parent: [ NFBaseWeaponFrameEnergyPistolNanotrasen, BaseCentcommContraband ]
+  name: CentComm laser pistol
+  description: A laser pistol of the highest quality, created for CentComm officials.
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Weapons/Guns/Battery/centcom_official_pistol.rsi
+  - type: Clothing
+    sprite: _WF/Objects/Weapons/Guns/Battery/centcom_official_pistol.rsi
+  - type: Gun
+    minAngle: 0.9
+    maxAngle: 1.8
+    angleIncrease: 0.45
+    angleDecay: 6
+    fireRate: 3.7
+    examineCaliber: gun-examine-hitscan-low
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: CentcomOfficialLaser
+    fireCost: 60
+  - type: Battery
+    maxCharge: 1680
+    startingCharge: 1680
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 33
+  - type: Tag
+    tags:
+    - Sidearm
+
+- type: hitscan
+  id: CentcomOfficialLaser
+  damage:
+    types:
+      Heat: 24
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_beam_heavy
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_heavy
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_beam_heavy
+  maxLength: 21

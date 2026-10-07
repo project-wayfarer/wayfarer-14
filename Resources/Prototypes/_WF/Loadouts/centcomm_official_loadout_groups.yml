@@ -1,0 +1,124 @@
+- type: loadoutGroup
+  id: CentcomOfficialHead
+  name: loadout-group-contractor-head
+  minLimit: 0
+  loadouts:
+  - CentcomOfficialHatCentcomcap
+  - CentcomOfficialHatCentcom
+  - CentcomOfficialHoodWinterCentcom
+  - CentcomOfficialHatCentcommIntern
+
+- type: loadoutGroup
+  id: CentcomOfficialJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - CentcomOfficialJumpsuitCentcomOfficial
+  - CentcomOfficialJumpsuitCentcomOfficer
+  - CentcomOfficialJumpsuitCentcomAgent
+  - CentcomOfficialJumpsuitCentcomFormal
+  - CentcomOfficialJumpskirtCentcomFormalDress
+  - CentcomOfficialJumpsuitCentcommIntern
+  - CentcomOfficialJumpsuitCentcomAdmiral
+  - CentcomOfficialAltJumpsuitCentcomOfficial
+  - CentcomOfficialJumpsuitCentcomOfficerBlack
+  - CentcomOfficialJumpskirtPencilCentcomOfficial
+  - CentcomOfficialJumpskirtCentcomOfficial
+  - CentcomOfficialJumpskirtCentcomOfficer
+  - CentcomOfficialJumpskirtDomesticFormalWear
+  - CentcomOfficialJumpskirtAdminFormalWear
+  - CentcomOfficialJumpskirtCargoFormalWear
+  - CentcomOfficialJumpskirtEngiFormalWear
+  - CentcomOfficialJumpskirtIntelFormalWear
+  - CentcomOfficialJumpskirtMedFormalWear
+  - CentcomOfficialJumpskirtResearchFormalWear
+  - CentcomOfficialJumpskirtSecurityFormalWear
+  - CentcomOfficialJumpskirtSpecialOpsFormalWear
+
+- type: loadoutGroup
+  id: CentcomOfficialOuterClothing
+  name: loadout-group-contractor-outerclothing
+  minLimit: 0
+  loadouts:
+  - CentcomOfficialArmorCentcommCarapace
+  - CentcomOfficialWinterCentcom
+  - CentcomOfficialArmoredWinterCoatCentComm
+  - CentcomOfficialLongcoatCentCommArmored
+  - CentcomOfficialVestWebEliteCentcomm
+  - CentcomOfficialCoatWardenCentcomm
+
+- type: loadoutGroup
+  id: CentcomOfficialNeck
+  name: loadout-group-contractor-neck
+  minLimit: 0
+  loadouts:
+  - CentcomOfficialCloakCentcom
+  - CentcomOfficialCloakCentcomAdmiral
+  - CentcomOfficialMantleCentcom
+  - CentcomOfficialScarfStripedCentcom
+
+- type: loadoutGroup
+  id: CentcomOfficialMask
+  name: loadout-group-contractor-face
+  minLimit: 0
+  loadouts:
+  - CentcomOfficialMaskGasCentcom
+
+- type: loadoutGroup
+  id: CentcomOfficialGlasses
+  name: loadout-group-contractor-glasses
+  minLimit: 0
+  loadouts:
+  - CentcomOfficialGlassesSunglasses
+  - CentcomOfficialGlassesCentComm
+  - CentcomOfficialGlassesCentCommPrescription
+  - CentcomOfficialGlassesJamjarCentComm
+  - CentcomOfficialHudCentComm
+
+- type: loadoutGroup
+  id: CentcomOfficialGloves
+  name: loadout-group-contractor-gloves
+  minLimit: 0
+  loadouts:
+  - CombatGloves
+  - ColorBlackGloves
+
+- type: loadoutGroup
+  id: CentcomOfficialShoes
+  name: loadout-group-contractor-shoes
+  loadouts:
+  - CombatBoots
+  - CentcomOfficialBootsWinterCentCom
+  - CentcomOfficialShoesLaceup
+
+- type: loadoutGroup
+  id: CentcomOfficialBackpack
+  name: loadout-group-contractor-backpack
+  loadouts:
+  - CentcomOfficialBackpackCentcom
+  - CentcomOfficialSatchelCentcom
+  - CentcomOfficialDuffelCentcom
+  - CentcomOfficialSatchelCentcomm
+
+- type: loadoutGroup
+  id: CentcomOfficialEars
+  name: loadout-group-contractor-ears
+  loadouts:
+  - CentcomOfficialHeadsetAltCentCom
+  - CentcomOfficialHeadsetCentCom
+  - CentcomOfficialHeadsetAltCentComCommon
+
+- type: loadoutGroup
+  id: CentcomOfficialBelt
+  name: loadout-group-contractor-belt
+  minLimit: 0
+  loadouts:
+  - CentcomOfficialFolderCentComClipboard
+  - CentcomOfficialVibrobladeSheath
+
+- type: loadoutGroup
+  id: CentcomOfficialSidearm
+  name: loadout-group-wayfarer-sidearm
+  minLimit: 0
+  loadouts:
+  - CentcomOfficialSidearmN1984
+  - CentcomOfficialSidearmPistol

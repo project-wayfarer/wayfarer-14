@@ -496,6 +496,7 @@
   name: command officer ID card
   components:
   - type: Sprite
+    sprite: _WF/Objects/Misc/centcomm_id_card.rsi # Wayfarer
     layers:
     - state: centcom
     - state: idcentcom
