@@ -185,3 +185,12 @@
   - type: Sprite
     layers:
     - state: service_music
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: SerialiserFlatpack
+  name: serialiser flatpack
+  description: A flatpack used for constructing a serialiser.
+  components:
+  - type: Flatpack
+    entity: Serialiser

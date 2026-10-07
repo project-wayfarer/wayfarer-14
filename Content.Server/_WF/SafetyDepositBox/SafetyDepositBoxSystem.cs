@@ -30,6 +30,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Text.Json;
 using YamlDotNet.RepresentationModel;
+using Content.Shared._WF.Serialiser;
 
 namespace Content.Server._WF.SafetyDepositBox;
 
@@ -484,6 +485,11 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
                     entityData["stackCount"] = stack.Count;
                     Log.Info($"Stored stack count: {stack.Count}");
                 }
+
+                if (TryComp<SerialNumberComponent>(item, out var serial))
+                {
+                    entityData["serial"] = serial.Serial;
+                }
                 
                 // Serialize to JSON
                 var json = JsonSerializer.Serialize(entityData);
@@ -851,6 +857,13 @@ public sealed class SafetyDepositBoxSystem : EntitySystem
                             Dirty(itemEntity, stack);
                             Log.Info($"Restored stack count: {stackCount}");
                         }
+                    }
+
+                    if (entityData.ContainsKey("serial"))
+                    {
+                        var serial = entityData["serial"].GetString();
+                        if (!string.IsNullOrEmpty(serial))
+                            EnsureComp<SerialNumberComponent>(itemEntity).Serial = serial;
                     }
                     
                     // Mark item as having been stored in a deposit box

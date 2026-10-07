@@ -17,6 +17,7 @@ using Robust.Shared.Prototypes;
 using Content.Server._NF.Cargo.Systems;
 using Content.Server.Hands.Systems;
 using Content.Server._WF.OutlawObjectives; // Wayfarer
+using Content.Shared._WF.Serialiser; // Wayfarer
 
 namespace Content.Server._NF.Contraband.Systems;
 
@@ -154,6 +155,11 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
 
                 if (_blacklistQuery.HasComponent(ent))
                     continue;
+
+                // Wayfarer
+                if (console.RewardType == "Doubloon" && HasComp<SerialNumberComponent>(ent))
+                    continue;
+                // Wayfarer End
 
                 if (TryComp<ContrabandComponent>(ent, out var comp))
                 {

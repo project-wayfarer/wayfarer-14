@@ -1,0 +1,49 @@
+- type: entity
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  id: Serialiser
+  name: serialiser
+  description: Etches a permanent serial number into an item.
+  components:
+  - type: Sprite
+    sprite: _WF/Structures/Machines/serialiser.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.SerialiserVisualLayers.Base"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+      enum.SerialiserVisuals.Running:
+        enum.SerialiserVisualLayers.Base:
+          True: { state: building }
+          False: { state: icon }
+  - type: WiresPanel
+  - type: WiresVisuals
+  - type: Machine
+    board: SerialiserCircuitboard
+  - type: AccessReader
+    access: [["Security"], ["Brig"]]
+  - type: Serialiser
+    delay: 3
+    prefix: CGP
+    workingSound: /Audio/Machines/cutter.ogg
+    denySound: /Audio/Machines/custom_deny.ogg
+    whitelist:
+      components:
+      - Gun
+      - Contraband
+      - Sharp
+      - Wieldable
+    blacklist:
+      components:
+      - Stack
+      - PirateBountyItem

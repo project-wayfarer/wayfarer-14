@@ -13,3 +13,18 @@
     whitelist:
       tags:
       - SecurityUplink
+
+- type: listing
+  id: UplinkCGPSerialiserFlatpack
+  name: uplink-cgp-serialiser-name
+  description: uplink-cgp-serialiser-desc
+  productEntity: SerialiserFlatpack
+  cost:
+    FrontierUplinkCoin: 5
+  categories:
+  - UplinkSecurityUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink

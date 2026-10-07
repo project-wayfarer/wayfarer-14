@@ -82,3 +82,20 @@
     stackRequirements:
       # Manipulator: 4 # Frontier
       Glass: 1
+
+- type: entity
+  id: SerialiserCircuitboard
+  parent: BaseMachineCircuitboard
+  name: serialiser machine board
+  description: A machine printed circuit board for a serialiser.
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: Serialiser
+    requirements:
+      Capacitor: 1
+      Manipulator: 1
+    stackRequirements:
+      Steel: 2
+      Cable: 1
