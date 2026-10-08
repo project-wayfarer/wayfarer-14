@@ -304,10 +304,10 @@
 
 #Syndicate
 - type: entity
-  parent: [NFClothingBackpack] # WF Removed Contraband
+  parent: [NFClothingBackpack] # Wayfarer: Removed Contraband
   id: ClothingBackpackSyndicate
-  name: syndicate backpack
-  description:
+  name: blackrose backpack # Wayfarer: Syndicate<blackrose
+  description: The same kind of backpack you wear, but with explosive resistant canvas to keep its contents safe.
   components:
   - type: Sprite
     sprite: Clothing/Back/Backpacks/syndicate.rsi

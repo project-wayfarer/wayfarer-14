@@ -103,7 +103,8 @@ stack-biomass = biomass
 stack-pyrotton = pyrotton
 stack-sharkminnow-tooth = sharkminnow tooth
 stack-goliath-hide = goliath hide
-stack-telecrystal = telecrystal
+# Wayfarer: Telecrystal<warpglass
+stack-telecrystal = warpglass
 stack-gold-ore = gold ore
 stack-rough-diamond = rough diamond
 stack-iron-ore = iron ore

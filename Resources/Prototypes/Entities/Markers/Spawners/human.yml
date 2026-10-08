@@ -1,5 +1,5 @@
 - type: entity
-  name: syndicate footsoldier spawner
+  name: operative footsoldier spawner # Wayfarer: Syndicate<Operative
   id: SpawnMobSyndicateFootSoldier
   parent: MarkerBase
   components:
@@ -26,7 +26,7 @@
     - MobSyndicateFootsoldier
 
 - type: entity
-  name: syndicate shuttle pilot spawner
+  name: operative shuttle pilot spawner # Wayfarer: Syndicate<Operative
   id: SpawnMobSyndicateFootsoldierPilot
   parent: SpawnMobSyndicateFootSoldier
   components:

@@ -17,8 +17,8 @@
 - type: entity
   parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
   id: ClothingUniformJumpsuitRecruitSyndie
-  name: syndicate recruit jumpsuit
-  description: A dubious, dark-grey jumpsuit. As if passengers weren't dubious enough already.
+  name: red-shirt recruit jumpsuit # Wayfarer: Syndicate<red-shirt
+  description: A dubious dark-grey jumpsuit with a red stripe, signifying your expendability. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/recruit_syndie.rsi
@@ -40,8 +40,8 @@
 - type: entity
   parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
   id: ClothingUniformJumpsuitRepairmanSyndie
-  name: syndicate repairman jumpsuit
-  description: Functional, fashionable, and badass. Nanotrasen's engineers wish they could look as good as this.
+  name: emergency repairman jumpsuit
+  description: Functional, fashionable, and all the hallmarks of a repairman on hazard pay. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/repairman_syndie.rsi
@@ -52,8 +52,8 @@
 - type: entity
   parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue # Wayfarer: Removed Contraband
   id: ClothingUniformJumpsuitParamedicSyndie
-  name: syndicate paramedic jumpsuit
-  description: For some reason, wearing this makes you feel like you're awfully close to violating the Geneva Convention.
+  name: ER paramedic jumpsuit # Wayfarer: Syndicate<ER
+  description: A cozy, functional jumpsuit that lets everyone know you're quick to respond to medical calls. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/paramedic_syndie.rsi
@@ -65,8 +65,8 @@
 - type: entity
   parent: [ ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue # Wayfarer: Removed Contraband
   id: ClothingUniformJumpsuitChiefEngineerSyndie
-  name: syndicate chief engineer jumpsuit
-  description: An evil-looking jumpsuit with a reflective vest & red undershirt. #TODO: Write a better description for this once Ship vs. Ship is real and actual player habits begin forming
+  name: hazard staff jumpsuit # Wayfarer: changed name
+  description: A snug red suit with a hi-vis vest and all the authority needed to warn others about the spaced dock nearby. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ce_syndie.rsi

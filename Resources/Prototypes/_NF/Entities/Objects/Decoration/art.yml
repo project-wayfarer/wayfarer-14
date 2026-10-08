@@ -944,7 +944,7 @@
 - type: entity
   parent: NFPosterRolledContraband
   id: NFPosterRolledContrabandSyndicateRecruitment
-  name: "Syndicate Recruitment"
+  name: "Coldlight Wolves, PMC" # Wayfarer: "Syndicate Recruitment"<"Coldlight Wolves, PMC"
   components:
   - type: NFWallmountable
     spawn: PosterContrabandSyndicateRecruitment
@@ -1120,7 +1120,7 @@
 - type: entity
   parent: NFPosterRolledContraband
   id: NFPosterRolledContrabandSyndicatePistol
-  name: "Syndicate Pistol"
+  name: "Covert Pistol" # Wayfarer: Syndicate<Covert
   components:
   - type: NFWallmountable
     spawn: PosterContrabandSyndicatePistol
@@ -1256,7 +1256,7 @@
 - type: entity
   parent: NFPosterRolledContraband
   id: NFPosterRolledContrabandFreeSyndicateEncryptionKey
-  name: "Free Syndicate Encryption Key"
+  name: "Black Market Encryption Key" # Wayfarer: Free Syndicate<Black Market
   components:
   - type: NFWallmountable
     spawn: PosterContrabandFreeSyndicateEncryptionKey
@@ -1336,7 +1336,7 @@
 - type: entity
   parent: NFPosterRolledContraband
   id: NFPosterRolledContrabandMoth
-  name: "Syndie Moth - Nuclear Operation"
+  name: "Safety Moth - Nuclear Operation" # Wayfarer: Syndie<Safety
   components:
   - type: NFWallmountable
     spawn: PosterContrabandMoth
@@ -1368,7 +1368,7 @@
 - type: entity
   parent: NFPosterRolledContraband
   id: NFPosterRolledContrabandInterdyne
-  name: "Interdyne Pharmaceutics: For the Health of Humankind"
+  name: "Genova Labs: Crisis Care, Evolved" # Wayfarer: changed name
   components:
   - type: NFWallmountable
     spawn: PosterContrabandInterdyne

@@ -91,8 +91,8 @@
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineSyndie
-  name: syndicate long range fax machine
-  suffix: Syndicate
+  name: covert long range fax machine # Wayfarer: Syndicate<Covert
+  suffix: Operative # Wayfarer: Syndicate<Operative
   components:
   - type: Sprite
     layers:

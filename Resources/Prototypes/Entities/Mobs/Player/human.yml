@@ -8,7 +8,7 @@
 - type: entity
   parent: MobHuman
   id: MobHumanSyndicateAgentBase
-  name: syndicate agent
+  name: operative agent # Wayfarer: Syndicate<Operative
   suffix: Human, Base
   components:
   - type: RandomHumanoidAppearance
@@ -26,7 +26,7 @@
 - type: entity
   parent: MobHumanSyndicateAgentBase
   id: MobHumanSyndicateAgent
-  name: syndicate agent
+  name: operative agent # Wayfarer: Syndicate<Operative
   suffix: Human, Traitor
   components:
   # make the player a traitor once its taken
@@ -36,7 +36,7 @@
 - type: entity
   parent: MobHumanSyndicateAgent
   id: MobHumanSyndicateAgentMedic
-  name: syndicate medic
+  name: operative combat medic # Wayfarer: Syndicate<Operative Combat
   components:
   - type: Loadout
     prototypes: [SyndicateReinforcementMedic]
@@ -45,7 +45,7 @@
 - type: entity
   parent: MobHumanSyndicateAgent
   id: MobHumanSyndicateAgentSpy
-  name: syndicate spy
+  name: covert spy # Wayfarer: Syndicate<Covert
   components:
   - type: Loadout
     prototypes: [SyndicateReinforcementSpy]
@@ -54,7 +54,7 @@
 - type: entity
   parent: MobHumanSyndicateAgent
   id: MobHumanSyndicateAgentThief
-  name: syndicate thief
+  name: covert thief # Wayfarer: Syndicate<covert
   components:
   - type: Loadout
     prototypes: [SyndicateReinforcementThief]

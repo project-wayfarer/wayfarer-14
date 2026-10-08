@@ -121,7 +121,7 @@
   - ClothingOuterHardsuitSyndie
   - ContrabandClothing
   id: ClothingOuterHardsuitSyndieEliteUnremoveable
-  name: syndicate hardsuit
+  name: old ops hardsuit # Wayfarer: Syndicate<Old Ops
   categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
@@ -135,7 +135,7 @@
   - ClothingOuterHardsuitSyndie
   - ContrabandClothing
   id: ClothingOuterHardsuitSyndieBloodRedUnremoveable
-  name: syndicate hardsuit
+  name: spinel hardsuit # Wayfarer: Syndicate<spinel
   categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
@@ -551,7 +551,7 @@
   parent: ClothingOuterHardsuitBaseNF
   id: ClothingOuterHardsuitNoble
   name: noble combat suit
-  description: What is your quarrel today oh brave hero? Do you seek a dragon? Maybe you pursue an ascended cultist? Or do you plan to put an end to the syndicates machinations? Whatever the job, the Noble has you.
+  description: What is your quarrel today oh brave hero? Do you seek a dragon? Maybe you pursue an ascended cultist? Or do you plan to put an end to the Coldlight Wolves' infiltration? Whatever the job, the Noble has you. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/noble.rsi

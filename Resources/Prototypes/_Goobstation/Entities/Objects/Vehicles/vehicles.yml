@@ -134,8 +134,8 @@
 - type: entity
   id: VehicleSyndicateSegway
   parent: VehicleSecway
-  name: syndicate segway
-  description: Be an enemy of the corporation, in style.
+  name: outlaw segway # Wayfarer: Syndicate<Outlaw
+  description: Ride along the fringes of society, in style. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Vehicles/syndicatesegway.rsi

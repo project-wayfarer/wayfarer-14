@@ -389,8 +389,8 @@
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineNukie
-  name: syndicate operative figure
-  description: A figurine depicting someone in a blood-red hardsuit, similar to what someone on a nuclear operative team might wear.
+  name: poser figure # Wayfarer: Syndicate Operative<Poser
+  description: A figurine depicting a total poser who missed the bus to their Carps & Crypts session. # Wayfarer: changed description
   components:
   - type: Sprite
     state: nukie
@@ -400,8 +400,8 @@
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineNukieElite
-  name: elite syndicate operative figure
-  description: A figurine depicting someone in an elite blood-red hardsuit, similar to what someone on a nuclear operative team might wear.
+  name: brooder figure # Wayfarer: elite syndicate operative<brooder
+  description: A figurine depicting a dark, brooding silhouette, similar to one you might see in the corner of the bar. # Wayfarer: changed description
   components:
   - type: Sprite
     state: nukie_elite
@@ -411,8 +411,8 @@
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineNukieCommander
-  name: syndicate operative commander figure
-  description: A figurine depicting someone in a beefed-up blood-red hardsuit, similar to what the commander of a nuclear operative team might wear.
+  name: larper figure # Wayfarer: Syndicate Operative Commander<Larper
+  description: A figurine depicting someone dedicated to the craft, dressing as one to lead the LARP. # Wayfarer: changed description
   components:
   - type: Sprite
     state: nukie_commander
@@ -422,8 +422,8 @@
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineFootsoldier
-  name: syndicate footsoldier figure
-  description: A figurine depicting the outfit of a syndicate footsoldier.
+  name: operative figure # Wayfarer: Syndicate Footsoldier<Operative
+  description: A figurine depicting the outfit of an operative. # Wayfarer: Syndicate Footsoldier<Operative
   components:
   - type: Sprite
     state: footsoldier

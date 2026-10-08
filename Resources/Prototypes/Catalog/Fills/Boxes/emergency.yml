@@ -254,7 +254,7 @@
   id: BoxSurvivalSyndicate
   name: extended-capacity survival box
   description: It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.
-  suffix: Syndicate
+  suffix: Operative #Wayfarer: Syndicate<Operative
   components:
   - type: StorageFill
     contents:
@@ -271,7 +271,7 @@
 - type: entity
   parent: BoxSurvivalSyndicate
   id: BoxSurvivalSyndicateNitrogen
-  suffix: Syndicate N2
+  suffix: Operative N2 #Wayfarer: Syndicate<Operative
   components:
   - type: StorageFill
     contents:

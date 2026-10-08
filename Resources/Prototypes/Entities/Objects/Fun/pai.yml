@@ -108,8 +108,8 @@
 - type: entity
   parent: [ PersonalAI, BaseBMContraband] # Frontier: Wayfarer<BaseBMContraband
   id: SyndicatePersonalAI
-  name: syndicate personal ai device
-  description: Your Syndicate pal who's fun to be with!
+  name: operative personal ai device # Wayfarer: Syndicate<Operative
+  description: Your Operative pal who's fun to be with! # Wayfarer: Syndicate<Operative
   components:
   - type: Sprite
     sprite: Objects/Fun/pai.rsi

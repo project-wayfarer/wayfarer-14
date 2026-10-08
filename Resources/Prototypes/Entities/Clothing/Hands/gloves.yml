@@ -538,8 +538,8 @@
 - type: entity
   parent: [ClothingHandsBase, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ClothingHandsKnuckleDustersSyndicate
-  name: plastitanium knuckle dusters # Wayfarer: syndicate knuckle dusters<plastitanium knuckle dusters
-  description: "Plastitanium knuckle dusters branded with the blood-red S. A real man beats someone to death with these."
+  name: spinel knuckle dusters # Wayfarer: syndicate knuckle dusters<plastitanium knuckle dusters # Wayfarer: plastitanium<Spinel
+  description: "Plastitanium knuckle dusters branded with a spinel-colored S. A real man beats someone to death with these." # Wayfarer: "the blood-red"<"a spinel-colored"
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/KnuckleDusters/syndicateknuckleduster.rsi

@@ -1,16 +1,20 @@
 - type: entity
-  name: telecrystal
+  name: warpglass
   parent: [BaseItem, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: Telecrystal
-  suffix: 20 TC
-  description: It seems to be pulsing with suspiciously enticing energies.
+  suffix: 20 WG # Wayfarer: TC<WG
+  description: Favored by smugglers, it feels unnaturally cold to the touch. # Wayfarer: changed description
   components:
   - type: Sprite
-    sprite: Objects/Specific/Syndicate/telecrystal.rsi
-    state: telecrystal
+    sprite: _WF/Objects/Specific/Outlaw/warpglass.rsi # Wayfarer: changed sprite
+    state: warpglass
   - type: Item
-    sprite: Objects/Specific/Syndicate/telecrystal.rsi
+    sprite: _WF/Objects/Specific/Outlaw/warpglass.rsi # Wayfarer: changed sprite
     size: Tiny
+  - type: PointLight
+    radius: 1.2
+    energy: 30
+    color: "#8099ff"
   - type: Stack
     count: 20
     stackType: Telecrystal
@@ -30,7 +34,7 @@
 - type: entity
   parent: Telecrystal
   id: Telecrystal1
-  suffix: 1 TC
+  suffix: 1 WG # Wayfarer: TC<WG
   components:
   - type: Stack
     count: 1
@@ -39,7 +43,7 @@
 - type: entity
   parent: Telecrystal
   id: Telecrystal2
-  suffix: 2 TC
+  suffix: 2 WG # Wayfarer: TC<WG
   components:
   - type: Stack
     count: 2
@@ -48,7 +52,7 @@
 - type: entity
   parent: Telecrystal
   id: Telecrystal5
-  suffix: 5 TC
+  suffix: 5 WG # Wayfarer: TC<WG
   components:
   - type: Stack
     count: 5
@@ -56,7 +60,7 @@
 - type: entity
   parent: Telecrystal
   id: Telecrystal10
-  suffix: 10 TC
+  suffix: 10 WG # Wayfarer: TC<WG
   components:
   - type: Stack
     count: 10
@@ -65,8 +69,8 @@
 - type: entity
   parent: [BaseItem, StorePresetUplink, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: BaseUplinkRadio
-  name: syndicate uplink
-  description: Suspiciously looking old radio...
+  name: contraband uplink # Wayfarer: Syndicate<Contraband
+  description: A suspicious looking old radio... # Wayfarer: changed description
   suffix: Empty
   components:
   - type: Sprite
@@ -89,7 +93,7 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio20TC
-  suffix: 20 TC
+  suffix: 20 WG
   components:
   - type: Store
     balance:
@@ -98,7 +102,7 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio25TC
-  suffix: 25 TC
+  suffix: 25 WG
   components:
   - type: Store
     balance:
@@ -108,7 +112,7 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio40TC
-  suffix: 40 TC, NukeOps
+  suffix: 40 WG, NukeOps
   components:
   - type: Store
     balance:
@@ -120,7 +124,7 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio60TC
-  suffix: 60 TC, LoneOps
+  suffix: 60 WG, LoneOps
   components:
   - type: Store
     balance:

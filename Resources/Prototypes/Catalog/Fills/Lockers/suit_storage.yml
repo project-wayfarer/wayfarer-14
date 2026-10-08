@@ -85,7 +85,7 @@
 - type: entity
   id: SuitStorageEVASyndicate
   parent: SuitStorageBase
-  suffix: Syndicate EVA
+  suffix: Spinel EVA # Wayfarer: Syndicate>Spinel
   components:
   - type: EntityTableContainerFill
     containers:
@@ -290,7 +290,7 @@
 - type: entity
   id: SuitStorageSyndie
   parent: SuitStorageBase
-  suffix: Syndicate Hardsuit
+  suffix: Spinel Hardsuit # Wayfarer: Syndicate>Spinel
   components:
   - type: EntityTableContainerFill
     containers:

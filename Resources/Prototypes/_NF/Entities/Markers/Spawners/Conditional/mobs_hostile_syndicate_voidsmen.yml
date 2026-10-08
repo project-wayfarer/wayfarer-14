@@ -1,5 +1,5 @@
 - type: entity
-  name: syndicate naval deckhand spawner
+  name: naval deckhand spawner # Wayfarer: Syndicate removed
   suffix: AI, Hostile, Voidsman
   id: SpawnMobSyndicateNavalDeckhandVoid
   parent: MarkerBase
@@ -21,7 +21,7 @@
       - MobSyndicateNavalDeckhandVoid
 
 - type: entity
-  name: syndicate naval engineer spawner
+  name: naval engineer spawner # Wayfarer: Syndicate removed
   suffix: AI, Hostile, Voidsman
   id: SpawnMobSyndicateNavalEngineerVoid
   parent: MarkerBase
@@ -45,7 +45,7 @@
       - MobSyndicateNavalEngineerVoid
 
 - type: entity
-  name: syndicate naval medic spawner
+  name: naval medic spawner # Wayfarer: Syndicate removed
   suffix: AI, Hostile, Voidsman
   id: SpawnMobSyndicateNavalMedicVoid
   parent: MarkerBase
@@ -69,7 +69,7 @@
       - MobSyndicateNavalMedicVoid
 
 - type: entity
-  name: syndicate naval operator spawner
+  name: naval operator spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalOperatorVoid
   parent: MarkerBase
   suffix: AI, Hostile, Voidsman
@@ -93,7 +93,7 @@
       - MobSyndicateNavalOperatorVoid
 
 - type: entity
-  name: syndicate naval second officer spawner
+  name: naval second officer spawner # Wayfarer: Syndicate removed
   suffix: AI, Hostile, Voidsman
   id: SpawnMobSyndicateNavalSecondOfficerVoid
   parent: MarkerBase
@@ -117,7 +117,7 @@
       - MobSyndicateNavalSecondOfficerVoid
 
 - type: entity
-  name: syndicate naval captain spawner
+  name: naval captain spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalCaptainVoid
   parent: MarkerBase
   suffix: AI, Hostile, Voidsman
@@ -141,7 +141,7 @@
       - MobSyndicateNavalCaptainVoid
 
 - type: entity
-  name: syndicate cleanbot spawner
+  name: stabby cleanbot spawner # Wayfarer: Syndicate<Stabby
   id: SpawnMobCleanBotSyndie
   parent: MarkerBase
   suffix: AI

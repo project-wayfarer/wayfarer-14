@@ -148,8 +148,8 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: RadioImplant
-  name: syndicate radio implant # Frontier: add syndicate
-  description: This implant grants access to the Syndicate channel without a headset.
+  name: coldlight radio implant # Frontier: add syndicate | # Wayfarer: Bashing Frontier in, "Syndicate"<"Coldlight"
+  description: This implant grants access to the Coldlight channel without a headset.
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
@@ -161,7 +161,7 @@
   parent: [ BaseSubdermalImplant, StorePresetUplink ]
   id: UplinkImplant
   name: uplink implant
-  description: This implant lets the user access a hidden Syndicate uplink at will.
+  description: This implant lets the user access a hidden contraband uplink at will. # Wayfarer: Syndicate<contraband
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
@@ -345,7 +345,7 @@
   parent: BaseSubdermalImplant
   id: DeathRattleImplant
   name: death rattle implant
-  description: This implant will inform the Syndicate radio channel should the user fall into critical condition or die.
+  description: This implant will inform the Coldlight radio channel should the user fall into critical condition or die. # Wayfarer: Syndicate<Coldlight
   categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant

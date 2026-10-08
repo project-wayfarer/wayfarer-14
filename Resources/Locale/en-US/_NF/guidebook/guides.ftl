@@ -49,7 +49,8 @@ guide-entry-expedition-explorers = Explorers
 guide-entry-expedition-mercenaries = Mercenaries
 guide-entry-expedition-gangers = Punks
 guide-entry-expedition-silicons = Rogue Silicons
-guide-entry-expedition-syndicate-naval-forces = Syndicate Naval Forces
+# Wayfarer: Syndicate<Operative
+guide-entry-expedition-syndicate-naval-forces = Operative Naval Forces
 guide-entry-expedition-xenos = Xenos
 
 # Civilian Shipyard entries

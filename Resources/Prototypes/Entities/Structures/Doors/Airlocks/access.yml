@@ -158,7 +158,7 @@
 - type: entity
   parent: AirlockExternal
   id: AirlockExternalSyndicateLocked
-  suffix: External, Syndicate, Locked
+  suffix: External, Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -530,7 +530,7 @@
 - type: entity
   parent: AirlockExternalGlass
   id: AirlockExternalGlassSyndicateLocked
-  suffix: External, Glass, Syndicate, Locked
+  suffix: External, Glass, Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -855,7 +855,7 @@
 - type: entity
   parent: AirlockSyndicateGlass
   id: AirlockSyndicateGlassLocked
-  suffix: Syndicate, Locked
+  suffix: Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -1118,7 +1118,7 @@
 - type: entity
   parent: AirlockSyndicate
   id: AirlockSyndicateLocked
-  suffix: Syndicate, Locked
+  suffix: Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -1157,7 +1157,7 @@
 - type: entity
   parent: AirlockShuttleSyndicate
   id: AirlockExternalShuttleSyndicateLocked
-  suffix: External, Docking, Syndicate, Locked
+  suffix: External, Docking, Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -1195,7 +1195,7 @@
 - type: entity
   parent: AirlockGlassShuttleSyndicate
   id: AirlockExternalGlassShuttleSyndicateLocked
-  suffix: Syndicate, Locked, Glass
+  suffix: Operative, Locked, Glass # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -1288,7 +1288,7 @@
 - type: entity
   parent: AirlockHatch
   id: AirlockHatchSyndicate
-  suffix: Syndicate, Locked
+  suffix: Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:

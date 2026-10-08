@@ -1424,7 +1424,7 @@
   parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseBMContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: BorgModuleOperative
   name: operative cyborg module
-  description: A module that comes with a crowbar, an Emag, an Access Breaker and a syndicate pinpointer.
+  description: A module that comes with a crowbar, an Emag, an Access Breaker and a scarlet pinpointer. # Wayfarer: Syndicate<Scarlet
   components:
     - type: Sprite
       layers:

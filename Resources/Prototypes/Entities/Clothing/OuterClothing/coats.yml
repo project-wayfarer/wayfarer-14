@@ -377,10 +377,10 @@
     sprite: Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
 
 - type: entity
-  parent: [ClothingOuterStorageBase] # WF Removed contraband
+  parent: [ClothingOuterStorageBase] # Wayfarer: Removed contraband
   id: ClothingOuterCoatSyndieCap
-  name: syndicate's coat
-  description: The syndicate's coat is made of durable fabric, with gilded patterns.
+  name: officer's coat # Wayfarer: Syndicate<Officer
+  description: The officer's coat is made of durable fabric, with gilded patterns. # Wayfarer: Syndicate<Officer
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
@@ -390,8 +390,8 @@
 - type: entity
   parent: [ClothingOuterCoatHoSTrench] # WF Removed contraband
   id: ClothingOuterCoatSyndieCapArmored
-  name: syndicate's armored coat
-  description: The syndicate's armored coat is made of durable fabric, with gilded patterns.
+  name: officer's armored coat # Wayfarer: Syndicate<Officer
+  description: The officer's armored coat is made of durable fabric, with gilded patterns. # Wayfarer: Syndicate<Officer
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi

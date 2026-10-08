@@ -96,8 +96,8 @@
 - type: entity
   parent: [BaseHardBomb, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SyndicateBomb
-  name: syndicate bomb
-  description: A bomb for Syndicate operatives and agents alike. The real deal, no more training, get to it!
+  name: tactical bomb # Wayfarer: Syndicate<Tactical
+  description: A bomb for operatives and agents alike. The real deal, no more training, get to it! # Wayfarer: changed description
   components:
     - type: Sprite
       sprite: Structures/Machines/bomb.rsi

@@ -246,9 +246,9 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons] # WF Removed Contraband
+  parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons] # Wayfarer: Removed Contraband
   id: ClothingEyesGlassesHiddenSecurity
-  suffix: Syndicate
+  suffix: Operative # Wayfarer: Syndicate<Operative
 
 - type: entity
   parent: [ClothingEyesHudMedical, ClothingHeadEyeBaseFlippable]

@@ -782,10 +782,10 @@
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable] # WF Removed contraband
+  parent: [ClothingOuterWinterCoatToggleable] # Wayfarer: Removed contraband
   id: ClothingOuterWinterSyndieCap
-  name: syndicate's winter coat
-  description: "The syndicate's winter coat is made of durable fabric, with gilded patterns, and coarse wool."
+  name: officer's winter longcoat # Wayfarer: changed name
+  description: "The officer's winter longcoat is made of durable fabric, with gilded patterns, and coarse wool." # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -807,26 +807,26 @@
 
 ##############################################################
 - type: entity
-  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable] # WF Removed contraband
+  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable] # Wayfarer: Removed contraband
   id: ClothingOuterWinterSyndieCapArmored
-  name: syndicate's armored winter coat
-  description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."
+  name: officer's armored winter longcoat # Wayfarer: changed name
+  description: "The officer's armored winter longcoat is made of durable fabric, with gilded patterns, and coarse wool." # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
-    - state: SYNDIE-ARMORED-icon #WF
+    - state: SYNDIE-ARMORED-icon # Wayfarer
   - type: Item
     inhandVisuals:
       left:
-      - state: SYNDIECAPARM-inhand-left #WF
+      - state: SYNDIECAPARM-inhand-left # Wayfarer
       right:
-      - state: SYNDIECAPARM-inhand-right #WF
+      - state: SYNDIECAPARM-inhand-right # Wayfarer
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
-      - state: SYNDIECAPARM-equipped-OUTERCLOTHING # WF
+      - state: SYNDIECAPARM-equipped-OUTERCLOTHING # Wayfarer
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSyndie
 ##############################################################
@@ -834,8 +834,8 @@
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable]
   id: ClothingOuterWinterSyndie
-  name: syndicate's winter coat
-  description: Insulated winter coat, looks like a merch from "Syndieland".
+  name: officer's winter coat # Wayfarer: Syndicate<Officer
+  description: An insulated winter coat that screams 'Officer'. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi

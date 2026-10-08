@@ -78,12 +78,13 @@
 - type: entity
   parent: PhoneInstrument
   id: PhoneInstrumentSyndicate
-  name: blood-red phone
-  description: For evil people to call their friends.
+  name: suspicious military radio # Wayfarer: changed name
+  description: A rimed over military radio, frozen to a single frequency. Who's on the other end? # Wayfarer: changed description
   components:
   - type: Sprite
-    sprite: Objects/Fun/Instruments/blood_red_phone.rsi
+    sprite: _WF/Objects/Fun/Instruments/suspicious_military_radio.rsi # Wayfarer: changed sprite
     state: icon
+    offset: "0.0, 0.2" # Wayfarer: So the antennae fit
   - type: Prayable
     sentMessage: prayer-popup-notify-syndicate-sent
     notificationPrefix: prayer-chat-notify-syndicate

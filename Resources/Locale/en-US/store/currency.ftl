@@ -7,7 +7,7 @@ store-currency-display-debugdollar = {$amount ->
     [one] Debug Dollar
     *[other] Debug Dollars
 }
-store-currency-display-telecrystal = TC
+store-currency-display-telecrystal = WG
 store-currency-display-stolen-essence = Stolen Essence
 store-currency-display-silicon-memory = Memory
 store-currency-display-wizcoin = Wiz€oin™

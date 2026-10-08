@@ -35,10 +35,10 @@
 
 #Syndicate EVA Helmet
 - type: entity
-  parent: [ClothingHeadEVAHelmetBase] # WF Removed Contraband
+  parent: [ClothingHeadEVAHelmetBase] # Wayfarer: Removed Contraband
   id: ClothingHeadHelmetSyndicate
-  name: syndicate EVA helmet
-  description: A simple, stylish EVA helmet. Designed for maximum humble space-badassery.
+  name: spinel EVA helmet # Wayfarer: Syndicate<Spinel
+  description: A simple, stylish EVA helmet. Designed for maximum humble space-faring. # Wayfarer: badassery<faring
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/eva_syndicate.rsi

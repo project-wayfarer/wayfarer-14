@@ -214,8 +214,8 @@
 - type: entity
   parent: BaseComputerShuttle
   id: ComputerShuttleSyndie
-  name: syndicate shuttle console
-  description: Used to pilot a syndicate shuttle.
+  name: operative shuttle console # Wayfarer: Syndicate<Operative
+  description: Used to pilot an operative shuttle. # Wayfarer: changed description
   categories: [ HideSpawnMenu ] # Frontier
   components:
   - type: Sprite
@@ -312,7 +312,7 @@
   parent: ComputerIFF
   id: ComputerIFFSyndicate
   name: IFF computer
-  suffix: Syndicate
+  suffix: Ghostcloak
   description: Allows you to control the IFF and stealth characteristics of this vessel.
   components:
   - type: IFFConsole
@@ -752,8 +752,8 @@
 - type: entity
   parent: ComputerComms
   id: SyndicateComputerComms
-  name: syndicate communications computer
-  description: A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.
+  name: raider communications computer # Wayfarer: Syndicate<Raider
+  description: A computer capable of remotely hacking into the communications systems of the sector. Using this to make an announcement will alert the sector to your presence. # Wayfarer: changed description
   components:
   - type: Sprite
     layers:

@@ -384,7 +384,7 @@ uplink-pirate-jetpack-desc = This jetpack hides your radar signature, allowing y
 uplink-pirate-shipyard-rcd-name = ShipYARRd RCD
 uplink-pirate-shipyard-rcd-desc = This special shipyard RCD has a modified catalog to better suit the freelancer aesthetic. Patch up holes in the hull, expand the ship... So many applications!
 
-# region Syndicate
+# region Operative
 uplink-emp-grenade-launcher-bundle-name = EMP China-Lake Bundle
 uplink-emp-grenade-launcher-bundle-desc = An old China-Lake grenade launcher bundled with 8 rounds of EMP.
 
@@ -405,5 +405,7 @@ uplink-pistol-magazine-cobra-desc = A loaded magazine for Cobra .45 pistol.
 uplink-speedloader-magnum-non-ap-name = .45 Pistol Speed Loader
 uplink-speedloader-magnum-non-ap-desc = A .45 pistol speed loader with 6 .45 pistol caliber rounds.
 
-uplink-syndicate-segway-name = Syndicate Segway
-uplink-syndicate-segway-desc = Move around in style without dirtying your blood red boots.
+# Wayfarer: Syndicate<Outlaw
+uplink-syndicate-segway-name = Outlaw Segway
+# Wayfarer: "Move around in style without dirtying your blood red boots."<"Ride along the fringes of society, in style."
+uplink-syndicate-segway-desc = Ride along the fringes of society, in style.

@@ -281,7 +281,7 @@
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsSyndicateAgent
-  suffix: SyndicateAgent, Locked
+  suffix: Operative, Locked
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]

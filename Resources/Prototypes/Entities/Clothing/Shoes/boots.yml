@@ -162,10 +162,10 @@
     sprite: Clothing/Shoes/Boots/winterbootssec.rsi
 
 - type: entity
-  parent: ClothingShoesBaseWinterBoots # WF Removed Contraband
+  parent: ClothingShoesBaseWinterBoots # Wayfarer: Removed Contraband
   id: ClothingShoesBootsWinterSyndicate
-  name: syndicate's winter boots
-  description: Durable heavy boots, looks like merch from "Syndieland".
+  name: officer's winter boots # Wayfarer: Syndicate<Officer
+  description: Durable heavy boots, for pacing along the bridge in style. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Boots/winterbootssyndicate.rsi

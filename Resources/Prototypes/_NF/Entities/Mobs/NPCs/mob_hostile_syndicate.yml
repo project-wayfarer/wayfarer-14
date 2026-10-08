@@ -9,7 +9,7 @@
   - MobHumanoidInvetory
   - MobHumanoidHostileAISimpleRanged
   id: MobSyndicateNavalBase
-  name: syndicate naval agent
+  name: naval agent # Wayfarer: Syndicate removed
   components:
   - type: Body
     prototype: HumanSyntheticOrgans # New set of synthetic organs grants faster removal of toxins from bloodstream
@@ -51,8 +51,8 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalDeckhandA
   categories: [ HideSpawnMenu ]
-  name: syndicate deckhand
-  description: Lowest ranking member of the Syndicate Naval Forces. Your regular "Johnny-on-the-spot" when it comes to menial tasks.
+  name: naval deckhand # Wayfarer: Syndicate<Naval
+  description: Lowest ranking member of the Naval Forces. Your regular "Johnny-on-the-spot" when it comes to menial tasks. # Wayfarer: Syndicate removed
   components:
     - type: Loadout
       prototypes:
@@ -104,8 +104,8 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalSaboteurA
   categories: [ HideSpawnMenu ]
-  name: syndicate saboteur
-  description: Specialist trained in the art of sabotaging NT shuttles and facilities. Equipped with EMP rounds, take caution.
+  name: naval saboteur # Wayfarer: Syndicate<Naval
+  description: Specialist trained in the art of sabotaging shuttles and facilities. Equipped with EMP rounds, take caution. # Wayfarer: NT removed
   components:
     - type: Loadout
       prototypes:
@@ -163,8 +163,8 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalCaptainA
   categories: [ HideSpawnMenu ]
-  name: syndicate captain
-  description: The executive officer in lieu of the commander, syndicate captains ensure operations onboard go smoothly. Equipped with a magnum revolver.
+  name: naval captain # Wayfarer: Syndicate<Naval
+  description: The executive officer in lieu of the commander, naval captains ensure operations onboard go smoothly. Equipped with a magnum revolver. # Wayfarer: Syndicate<Naval
   components:
     - type: Loadout
       prototypes:
@@ -220,8 +220,8 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalEngineerA
   categories: [ HideSpawnMenu ]
-  name: syndicate engineer
-  description: On a shuttle, the engineer has the annoying job of making sure absolutely everything is running correctly. Syndicate shuttles are no different.
+  name: naval engineer # Wayfarer: Syndicate<Naval
+  description: On a shuttle, the engineer has the annoying job of making sure absolutely everything is running correctly. Naval shuttles are no different. # Wayfarer: Syndicate<Naval
   components:
     - type: Loadout
       prototypes:
@@ -281,7 +281,7 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalMedicA
   categories: [ HideSpawnMenu ]
-  name: syndicate medic
+  name: naval medic # Wayfarer: Syndicate<Naval
   description: Medical specialist. Knows how to treat patients humanely and how to treat prisoners inhumanely. Uses darts laced with harmful chemicals - impedrezene or chloral hydrate.
   components:
     - type: Loadout
@@ -338,7 +338,7 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalSecondOfficerA
   categories: [ HideSpawnMenu ]
-  name: syndicate second officer
+  name: naval second officer # Wayfarer: Syndicate<Naval
   description: The captain's right hand is entrusted with relaying the captain's orders to the crew and ensuring they are carried out promptly. Carries a laser pistol for self-defense.
   components:
     - type: Loadout
@@ -393,7 +393,7 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalOperatorA
   categories: [ HideSpawnMenu ]
-  name: syndicate operative
+  name: naval operative # Wayfarer: Syndicate<Naval
   description: |-
    "Everything is a nail if you have a hammer." In this case, everything is a target because he has an SMG and an itchy trigger finger.
   components:
@@ -459,7 +459,7 @@
   parent: MobSyndicateNavalBase
   id: MobSyndicateNavalGrenadierA
   categories: [ HideSpawnMenu ]
-  name: syndicate grenadier
+  name: naval grenadier # Wayfarer: Syndicate<Naval
   description: |-
    "Huh? Say it louder! I can't hear you!" Equipped with the infamous China Lake, grenadiers have immense destructive capability, and should be priority targets.
   components:
@@ -519,7 +519,7 @@
 - type: entity
   parent: [MobStaminaSpecial, MobMovementSpeedModifierSpecial, MobSyndicateNavalBase, MobHumanoidHostileAISimpleMelee]
   id: MobSyndicateNavalMime
-  name: syndicate mime
+  name: naval mime # Wayfarer: Syndicate<Naval
   categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
@@ -537,7 +537,7 @@
   parent: [MobStaminaSpecial, MobSyndicateNavalBase]
   id: MobSyndicateNavalChemwarriorA
   categories: [ HideSpawnMenu ]
-  name: syndicate chemwarrior
+  name: naval chemwarrior # Wayfarer: Syndicate<Naval
   description: Carrying tanks filled with dangerous chemicals, chemwarriors attack their enemies with a noxious spray.
   components:
   - type: Loadout
@@ -601,8 +601,8 @@
   parent: [MobHostileBossBase, MobSyndicateNavalBase]
   id: MobSyndicateNavalCommanderA
   categories: [ HideSpawnMenu ]
-  name: syndicate commander
-  description: A regional commander of Syndicate operations, this officer holds ultimate local command and responsibility. Armed with an assault rifle and heavily armored.
+  name: naval commander # Wayfarer: Syndicate<Naval
+  description: A regional commander of Naval operations, this officer holds ultimate local command and responsibility. Armed with an assault rifle and heavily armored. # Wayfarer: Syndicate<Naval
   components:
   - type: Loadout
     prototypes:
@@ -662,7 +662,7 @@
 # region Void Troopers
 # Syndicate Captain, "armed" with Python
 - type: entity
-  name: syndicate captain
+  name: naval captain # Wayfarer: Syndicate<Naval
   parent: [MobMovementSpeedModifierEVARanged, MobSyndicateNavalCaptainA]
   id: MobSyndicateNavalCaptainVoid
   categories: [ HideSpawnMenu ]

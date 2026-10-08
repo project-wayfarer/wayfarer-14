@@ -491,8 +491,8 @@
 - type: entity
   parent: BaseItem
   id: BalloonSyn
-  name: syndie balloon
-  description: Handed out to the bravest souls who survived the "atomic twister" ride at Syndieland.
+  name: spinel balloon # Wayfarer: Syndicate<Spinel
+  description: Handed out to those who like to brood in the dark. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Fun/Balloons/syndicate.rsi
@@ -511,8 +511,8 @@
 - type: entity
   parent: BaseItem
   id: BalloonNT
-  name: nanotrasen balloon
-  description: Specially designed to inflict maximum psychological damage to Syndicate operatives.
+  name: blue balloon # Wayfarer: Nanotrasen<Blue
+  description: Specially designed to mark new spacers and welcome them to the sector with open arms. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Fun/Balloons/nanotrasen.rsi

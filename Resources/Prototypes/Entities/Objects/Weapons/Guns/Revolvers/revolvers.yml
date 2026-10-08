@@ -131,7 +131,7 @@
   name: Python
   parent: [BaseWeaponRevolver] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: Remove contraband
   id: WeaponRevolverPython
-  description: A powerful double-action revolver manufactured by the Syndicate. Loud and flashy, perfect for any agent looking to make a statement. Loads 6 rounds of .45 magnum.
+  description: A powerful double-action revolver. Loud and flashy, perfect for anyone looking to make a statement. Loads 6 rounds of .45 magnum. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi

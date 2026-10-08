@@ -1,5 +1,5 @@
 - type: entity
-  name: syndicate naval captain spawner
+  name: naval captain spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalCaptain
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -34,7 +34,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval engineer spawner
+  name: naval engineer spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalEngineer
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -67,7 +67,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval medic spawner
+  name: naval medic spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalMedic
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -102,7 +102,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval second officer spawner
+  name: naval second officer spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalSecondOfficer
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -137,7 +137,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval operator spawner
+  name: naval operator spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalOperator
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -172,7 +172,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval grenadier spawner
+  name: naval grenadier spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalGrenadier
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -205,7 +205,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval saboteur spawner
+  name: naval saboteur spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalSaboteur
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -253,7 +253,7 @@
       - MobExperimentationVictim
 
 - type: entity
-  name: syndicate naval commander spawner
+  name: naval commander spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalCommander
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -284,7 +284,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval deckhand spawner
+  name: naval deckhand spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalDeckhand
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -315,7 +315,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicat
+  name: bomb-a-cat # Wayfarer: Syndicat<Bomb-a-Cat
   id: SpawnMobCatSyndy
   parent: MarkerBase
   components:
@@ -330,7 +330,7 @@
       - MobCatSyndy
 
 - type: entity
-  name: syndicate naval mime spawner
+  name: naval mime spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalMime
   parent: MarkerBase
   suffix: AI, Hostile
@@ -356,7 +356,7 @@
       - MobSyndicateNavalMime
 
 - type: entity
-  name: syndicate naval chemwarrior spawner
+  name: naval chemwarrior spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalChemwarrior
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -391,7 +391,7 @@
     rareChance: 0.1
 
 - type: entity
-  name: syndicate naval horror spawner
+  name: naval horror spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalHorror
   parent: MarkerBase
   suffix: AI, Hostile, RND
@@ -432,7 +432,7 @@
 
 # Voidsmen
 - type: entity
-  name: syndicate naval harder mobs spawner
+  name: naval harder mobs spawner # Wayfarer: Syndicate removed
   id: SpawnMobSyndicateNavalHardVoid
   parent: MarkerBase
   suffix: AI, Hostile, RND (low), Void

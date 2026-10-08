@@ -267,7 +267,7 @@
   parent: [BaseMeleeWeaponEnergy] # Frontier: BaseMajorContraband<BaseC3PirateContraband # Wayfarer: Removed Contraband
   id: EnergyCutlass
   # Wayfarer Start
-  description: An exotic energy weapon. It's beam is stabilized, resulting in a less hot burn than the Energy Sword, but allowing for a sharper edge. Due to these modifications it is as of yet to be banned from the civilian market. 
+  description: An exotic energy weapon. It's beam is stabilized, resulting in a less hot burn than the Energy Sword, but allowing for a sharper edge. Due to these modifications it is as of yet to be banned from the civilian market.
   # Wayfarer End
   components:
   - type: ItemToggleMeleeWeapon
@@ -292,7 +292,7 @@
   name: double-bladed energy sword
   parent: [BaseMeleeWeaponEnergy, BaseMilitaryContraband] # Wayfarer: BaseSyndicateContraband<BaseMilitaryContraband
   id: EnergySwordDouble
-  description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
+  description: For when having just one blade on the energy sword was not enough. This can be stored in pockets. # Wayfarer: changed description
   components:
   - type: ItemToggle
     onUse: false # wielding events control it instead
@@ -407,13 +407,13 @@
   parent: EnergySword
   id: CyborgEnergySword
   suffix: For Borgs
-  description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Specially designed for syndicate cyborgs.
+  description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Specially designed for cyborgs. # Wayfarer: changed description
 
 - type: entity
   parent: EnergySwordDouble
   id: CyborgEnergySwordDouble # why is this invalid if ID is BorgEnergySwordDouble
   suffix: One-Handed, For Borgs
-  description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. Specially designed for syndicate cyborgs.
+  description: For when having just one blade on the energy sword was not enough. Specially designed for cyborgs. # Wayfarer: changed description
   components: # could add energy-draining like the L6C
   - type: Wieldable
     freeHandsRequired: 0 # because borg has no off-hand to wield with.  Without this, it will be unable to activate the esword

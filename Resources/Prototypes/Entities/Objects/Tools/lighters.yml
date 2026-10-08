@@ -324,8 +324,8 @@
 - type: entity
   parent: [BaseBrandedLighter, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SyndicateFlippo
-  name: Blood-red flippo
-  description: "A 'Valid' choice in lighters. Contains no copper."
+  name: scarlet flippo # Wayfarer: blood-red<Scarlet
+  description: A scarlet-plated flippo that produces a copper-fueled flame. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Tools/Lighters/syndielighter.rsi
@@ -419,8 +419,8 @@
 - type: entity
   parent: [BaseBrandedLighter, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: InterdyneFlippo
-  name: Interdyne Flippo
-  description: "A deep blue flippo lighter, decorated with the logo of Interdyne Pharmaceuticals' 'Gene Clean' clinics. Become the master of your own cigarette."
+  name: Genova Flippo # Wayfarer: Interdyne<Genova
+  description: A deep blue flippo lighter, bearing the genetic insignia of Genova Labs. Its flame holds an ethereal hue. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Tools/Lighters/interdyne.rsi

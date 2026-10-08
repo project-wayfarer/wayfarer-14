@@ -825,7 +825,7 @@
 - type: entity
   parent: [ BaseBMContraband, CrateGenericSteel ] # Frontier: Added BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: CrateSyndicate
-  name: Syndicate crate
+  name: suspicious crate # Wayfarer: Syndicate<Suspicious
   description: A dark steel crate with red bands and a letter S embossed on the front.
   components:
   - type: Icon

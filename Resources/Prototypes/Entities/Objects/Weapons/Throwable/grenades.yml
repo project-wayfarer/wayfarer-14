@@ -131,8 +131,8 @@
 #The explosive values for these are pretty god damn mediocre, but SS14's explosion system is hard to understand - this is a good enough approximation of how it was in SS13.
 #Ideally, there should be a weak radius around the bomb outside of its gibbing / spacing range capable of dealing fair damage to players / structures.
 - type: entity
-  name: syndicate minibomb
-  description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
+  name: tactical minibomb # Wayfarer: Syndicate<Tactical
+  description: Compact in size, devastating in power. Used to stow destruction and cause chaos. # Wayfarer: changed description
   parent: [GrenadeBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SyndieMiniBomb
   components:
@@ -620,8 +620,8 @@
       path: /Audio/Effects/countdown.ogg
 
 - type: entity
-  name: syndicate trickybomb
-  description: A syndicate-manufactured explosive used to make an excellent distraction.
+  name: tactical trickybomb # Wayfarer: Syndicate<Tactical
+  description: A mimicry of the minibomb, used to make an excellent distraction. # Wayfarer: changed description
   parent: [GrenadeDummy, BaseBMContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: SyndieTrickyBomb
   components:

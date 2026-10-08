@@ -130,7 +130,7 @@
 - type: entity
   id: BaseImplantOnlyImplanterSyndi
   parent: [BaseImplantOnlyImplanter, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
-  name: syndicate implanter
+  name: operative implanter # Wayfarer: Syndicate<Operative (yes I know this is abstract I just hate the syndicate >:( )
   description: A compact disposable syringe exclusively designed for the injection of subdermal implants. Make sure to scrub it with soap or a rag to remove residual DNA after use!
   abstract: true
   components:
@@ -216,7 +216,7 @@
 
 - type: entity
   id: RadioImplanter
-  name: syndicate radio implanter
+  name: associate's radio implanter # Wayfarer: Syndicate<Operative
   parent: BaseImplantOnlyImplanterSyndi
   components:
   - type: Implanter

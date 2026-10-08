@@ -307,8 +307,8 @@
 - type: entity
   id: BedsheetSyndie
   parent: [ BedsheetBase] # Wayfarer: Contra rating removed.
-  name: syndicate bedsheet
-  description: It has a syndicate emblem and it has an aura of evil.
+  name: royal-silk bedsheet # Wayfarer: Syndicate<royal-silk
+  description: It has an aura of regality and pride behind these fibers. # Wayfarer: changed description
   components:
   - type: Sprite
     state: sheetsyndie

@@ -2,7 +2,7 @@
 - type: entity
   id: NFSpawnMobWeaponTurretLaserSyndicate
   parent: MarkerBase
-  name: syndicate laser turret spawner
+  name: laser turret spawner # Wayfarer: Syndicate removed
   suffix: Hostile, Frontier
   components:
   - type: Sprite
@@ -17,7 +17,7 @@
 - type: entity
   id: SpawnMobWeaponTurretSyndicate
   parent: MarkerBase
-  name: syndicate ballistic turret spawner
+  name: ballistic turret spawner # Wayfarer: Syndicate removed
   suffix: Hostile, Frontier
   components:
   - type: Sprite

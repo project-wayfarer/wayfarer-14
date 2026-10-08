@@ -602,7 +602,7 @@
 - type: entity
   parent: [ClothingOuterHardsuitSyndie, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ClothingOuterHardsuitSyndieMedic
-  name: spinel medic hardsuit
+  name: spinel medic hardsuit # Wayfarer: blood-red<spinel
   description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations. Cut-resistant alloys provide substantial protection against infectious bites. # Frontier: "Cut-resistant alloys..." added to description.
   components:
   - type: Sprite
@@ -684,8 +684,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ClothingOuterHardsuitSyndieCommander
-  name: syndicate commander hardsuit
-  description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
+  name: spinel commander hardsuit # Wayfarer: Syndicate<Spinel
+  description: A bulked up version of the spinel hardsuit, purpose-built for the commander of an operative squad. Has significantly improved armor for those deadly front-lines firefights. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
@@ -776,7 +776,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2 # Wayfarer: 0.5 < 0.2
   - type: StaminaResistance # Wayfarer
-    damageCoefficient: 0.8 
+    damageCoefficient: 0.8
   - type: Armor
     modifiers:
       coefficients:
@@ -885,7 +885,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # Wayfarer
-    damageCoefficient: 0.8 
+    damageCoefficient: 0.8
   - type: Armor
     modifiers:
       coefficients:
