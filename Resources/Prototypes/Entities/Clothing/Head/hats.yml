@@ -845,10 +845,10 @@
     sprite: Clothing/Head/Hats/truckershat.rsi
 
 - type: entity
-  parent: [ClothingHeadBase] # WF Removed Contraband
+  parent: [ClothingHeadBase] # Wayfarer: Removed Contraband
   id: ClothingHeadPyjamaSyndicateBlack
-  name: syndicate black pyjama hat
-  description: For keeping that traitor head of yours warm.
+  name: black pyjama hat # Wayfarer: Removed Syndicate
+  description: For keeping that head of yours warm. # Wayfarer: Removed traitor
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/pyjamasyndicateblack.rsi
@@ -861,10 +861,10 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: [ClothingHeadBase] # WF Removed Contraband
+  parent: [ClothingHeadBase] # Wayfarer: Removed Contraband
   id: ClothingHeadPyjamaSyndicatePink
-  name: syndicate pink pyjama hat
-  description: For keeping that traitor head of yours warm.
+  name: pink pyjama hat # Wayfarer: Removed Syndicate
+  description: For keeping that head of yours warm. # Wayfarer: Removed traitor
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/pyjamasyndicatepink.rsi
@@ -877,10 +877,10 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: [ClothingHeadBase] # WF Removed Contraband
+  parent: [ClothingHeadBase] # Wayfarer: Removed Contraband
   id: ClothingHeadPyjamaSyndicateRed
-  name: syndicate red pyjama hat
-  description: For keeping that traitor head of yours warm.
+  name: spinel red pyjama hat # Wayfarer: Syndicate<spinel
+  description: For keeping that head of yours warm. # Wayfarer: Removed traitor
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/pyjamasyndicatered.rsi
@@ -1078,10 +1078,10 @@
         Caustic: 0.95
 
 - type: entity
-  parent: [ClothingHeadBase] # WF Removed Contraband
+  parent: [ClothingHeadBase] # Wayfarer: Removed Contraband
   id: ClothingHeadHatSyndie
-  name: syndicate hat
-  description: A souvenir hat from "Syndieland", their production has already been closed.
+  name: blackrose hat
+  description: A tactical hat made to rep a modern, sleek edge.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/syndiecap.rsi
@@ -1089,7 +1089,7 @@
     sprite: Clothing/Head/Hats/syndiecap.rsi
 
 - type: entity
-  parent: [ClothingHeadBase] # WF Removed Contraband
+  parent: [ClothingHeadBase] # Wayfarer: Removed Contraband
   id: ClothingHeadHatSyndieMAA
   name: master at arms hat
   description: Master at arms hat, looks intimidating, I doubt that you will like to communicate with its owner...

@@ -616,9 +616,9 @@
     # - 0,0,3,1 # Frontier: commented out
 
 - type: entity
-  parent: [CSClothingBeltStorageHolsterBase] # WF Removed Contraband # Coyote: NFClothingBeltStorageBase<CSClothingBeltStorageHolsterBase
+  parent: [CSClothingBeltStorageHolsterBase] # Wayfarer: Removed Contraband # Coyote: NFClothingBeltStorageBase<CSClothingBeltStorageHolsterBase
   id: ClothingBeltSyndieHolster
-  name: syndicate shoulder holster
+  name: crimson shoulder holster # Wayfarer: Syndicate<Crimson
   description: A deep shoulder holster capable of holding many types of ballistics.
   components:
   - type: Sprite

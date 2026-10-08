@@ -3,7 +3,7 @@
   abstract: true
   parent: NFBaseNpcLootBackpack
   id: NFBaseNpcLootPackSyndicate
-  name: syndicate naval operative bundle
+  name: naval operative bundle # Wayfarer: removed Syndicate
   components:
   - type: Sprite
     sprite: Clothing/Back/Duffels/syndicate.rsi
@@ -15,7 +15,7 @@
   abstract: true
   parent: NFBaseNpcLootBackpack
   id: NFBaseNpcLootPackSyndicateAlt
-  name: syndicate naval operative bundle
+  name: naval operative bundle # Wayfarer: removed Syndicate
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/color.rsi
@@ -54,7 +54,7 @@
   abstract: true
   parent: NFBaseNpcLootBelt
   id: NFBaseNpcLootBeltSyndicate
-  name: syndicate naval operative ammo pack
+  name: naval operative ammo pack # Wayfarer: removed Syndicate
   components:
   - type: Sprite
     sprite: Clothing/Belt/militarywebbing.rsi
@@ -66,7 +66,7 @@
   abstract: true
   parent: NFBaseNpcLootBelt
   id: NFBaseNpcLootBeltSyndicateAlt
-  name: syndicate naval operative ammo pack
+  name: naval operative ammo pack # Wayfarer: removed Syndicate
   components:
   - type: Sprite
     sprite: Clothing/Belt/syndieholster.rsi
@@ -79,7 +79,7 @@
   abstract: true
   parent: NFBaseNpcLootWallet
   id: NFBaseNpcLootWalletSyndicate
-  name: syndicate naval operative wallet
+  name: naval operative wallet # Wayfarer: removed Syndicate
   components:
   - type: Sprite
     sprite: _NF/Clothing/Wallet/leather.rsi

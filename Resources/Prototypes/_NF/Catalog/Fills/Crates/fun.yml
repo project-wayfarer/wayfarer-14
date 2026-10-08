@@ -88,8 +88,8 @@
 - type: entity
   id: NFCrateFunSyndicateSegway
   parent: CrateLivestock
-  name: Syndicate segway crate
-  description: A crate containing a two-wheeler that will help you escape from the security officers. Or not.
+  name: outlaw segway crate # Wayfarer: Syndicate<Outlaw
+  description: A crate containing a two-wheeler that will help you escape from the CGP. Or not. # Wayfarer: changed description
   components:
     - type: StorageFill
       contents:

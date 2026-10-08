@@ -138,8 +138,8 @@
 - type: entity
   parent: [Matchbox, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: GorlexMatchbox
-  name: Gorlex match box
-  description: "A pneumatic match box styled after the Gorlex Marauders' equipment. Contains 24 matches."
+  name: emergency match box
+  description: "A pneumatic match box for crises and emergencies. Contains 24 matches."
   components:
   - type: Sprite
     sprite: Objects/Tools/Lighters/gorlex.rsi

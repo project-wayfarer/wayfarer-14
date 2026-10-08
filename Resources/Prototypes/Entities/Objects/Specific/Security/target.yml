@@ -60,10 +60,10 @@
     state: target_h
 
 - type: entity
-  name: syndicate target
+  name: elite target # Wayfarer: Syndicate<Elite
   id: TargetSyndicate
   parent: BaseTarget
-  description: A shooting target. This one is a syndicate agent.
+  description: A shooting target. This one is an elite. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Specific/Security/target.rsi

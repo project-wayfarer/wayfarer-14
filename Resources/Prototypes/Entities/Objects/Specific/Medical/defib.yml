@@ -98,8 +98,8 @@
 - type: entity
   id: DefibrillatorSyndicate
   parent: [ DefibrillatorCompact, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
-  name: interdyne defibrillator
-  description: Doubles as a self-defense weapon against war-crime inclined tiders.
+  name: Genova defibrillator # Wayfarer: Interdyne<Genova
+  description: Doubles as a self-defense weapon against war-crime inclined Wayfarers. # Wayfarer: Tiders<Wayfarers
   components:
   - type: Sprite
     sprite: _Impstation/Objects/Specific/Medical/defibsyndi.rsi # Imp
@@ -119,7 +119,7 @@
         Blunt: 8
   - type: PowerCellDraw
     drawRate: 50
-    
+
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/Items/Defib/defib_zap.ogg

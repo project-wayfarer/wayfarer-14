@@ -148,7 +148,7 @@
   parent: [SoapSyndie, ScatteringGrenadeBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SlipocalypseClusterSoap
   name: slipocalypse clustersoap
-  description: Spreads small pieces of syndicate soap over an area upon landing on the floor.
+  description: Spreads small pieces of slippery soap over an area upon landing on the floor. # Wayfarer: changed description
   components:
   - type: WeaponCaseInsertable # Frontier
   - type: Sprite

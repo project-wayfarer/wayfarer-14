@@ -73,7 +73,7 @@
   name: viper
   parent: [BaseWeaponPistol] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: Removed contraband
   id: WeaponPistolViper
-  description: A common handgun illegally modified by the Syndicate. The Viper sports a selector switch between semi-auto and ‘rock and roll’. The standard sidearm for any soldier who fights under the three serpents. Feeds from .35 pistol magazines.
+  description: A common handgun illegally modified for Operative use. The Viper sports a selector switch between semi-auto and ‘rock and roll’, and feeds from .35 pistol magazines. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
@@ -143,7 +143,7 @@
   name: cobra
   parent: [ BaseWeaponPistol, BaseBMContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: WeaponPistolCobra
-  description: Integrally suppressed semi-automatic pistol used by the Syndicate, firing caseless subsonic rounds. Favored by any agent who likes to keep things quiet and leave no evidence behind. Feeds from .25 pistol magazines.
+  description: Integrally suppressed semi-automatic pistol used by Covert ops, firing caseless subsonic rounds. Favored by those who likes to keep things quiet and leave no evidence behind. Feeds from .25 pistol magazines. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/cobra.rsi

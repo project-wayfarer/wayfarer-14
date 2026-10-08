@@ -1,2 +1,4 @@
-uplink-hardsuit-syndie-medic-name = Syndicate Medic Hardsuit
-uplink-hardsuit-syndie-medic-desc = The Syndicate's armored blood-red hardsuit, adorned in medical markings, capable of space walks and bullet-resistant.
+# Wayfarer: Syndicate<Spinel
+uplink-hardsuit-syndie-medic-name = Spinel Medic Hardsuit
+# Wayfarer: Removed Syndicate Description
+uplink-hardsuit-syndie-medic-desc = A heavily armored and agile advanced hardsuit specifically designed for field medic operations. Cut-resistant alloys provide substantial protection against infectious bites.

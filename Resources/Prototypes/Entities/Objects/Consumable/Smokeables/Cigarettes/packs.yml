@@ -201,8 +201,8 @@
 - type: entity
   id: CigPackSyndicate
   parent: [CigPackBase, BaseBMContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContrabandNoValue<BaseBMContraband
-  name: Interdyne herbals packet
-  description: Elite cigarettes for elite syndicate agents. Infused with medicine for when you need to do more than calm your nerves.
+  name: Genovan Herbals packet # Wayfarer: Interdyne<Genovan
+  description: Elite cigarettes for elite smokers. Infused with medicine for when you need to do more than calm your nerves. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/syndicate.rsi

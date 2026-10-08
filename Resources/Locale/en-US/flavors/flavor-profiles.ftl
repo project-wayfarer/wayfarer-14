@@ -145,7 +145,8 @@ flavor-complex-mre-brownie = like a cheap brownie
 flavor-complex-fortune-cookie = like random chance
 flavor-complex-nutribrick = like you're operating in a jungle
 flavor-complex-cheap-noodles = like cheap noodles
-flavor-complex-syndi-cakes = like a hearty fruit cake
+# Wayfarer: "hearty"<"cold and edgy"
+flavor-complex-syndi-cakes = like a cold and edgy fruit cake
 flavor-complex-sus-jerky = like sus
 flavor-complex-boritos = like gaming
 flavor-complex-nachos = like nachos

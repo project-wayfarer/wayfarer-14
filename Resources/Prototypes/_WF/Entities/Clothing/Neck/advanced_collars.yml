@@ -152,8 +152,8 @@
 - type: entity
   parent: ClothingNeckAdvancedCollarBase
   id: ClothingNeckAdvancedCollarSyndi
-  name: advanced blood-red collar
-  description: A modular blood-red collar that can have various functional modules installed.
+  name: advanced scarlet collar # Wayfarer: Syndicate<Scarlet
+  description: A modular scarlet collar that can have various functional modules installed. # Wayfarer: Syndicate<Scarlet
   components:
     - type: Sprite
       sprite: Floof/Clothing/Neck/collar_syndi.rsi
@@ -243,7 +243,7 @@
         - shoes
         - jumpsuit
         - gloves
-      blockOthers: true # WF 
+      blockOthers: true # WF
 # WF Begin
 # Clothing Lock Module - prevents specific clothing slots from removal while worn
 - type: entity

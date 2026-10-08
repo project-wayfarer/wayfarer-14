@@ -782,8 +782,8 @@
 - type: entity
   parent: CSClothes
   id: CSClothesFormalRedDress
-  name: blood red formal dress
-  description: A blood red formal dress with a flowing skirt and fitted bodice. # Wayfarer
+  name: crimson formal dress # Wayfarer: Blood red<Crimson
+  description: A crimson formal dress with a flowing skirt and fitted bodice. # Wayfarer: changed description
   components:
   - type: Sprite
     overrideDir: South
@@ -3021,8 +3021,8 @@
 - type: entity
   parent: CSClothes
   id: CSClothesShortsRed
-  name: blood red breeches
-  description: A pair of blood red breeches. # Wayfarer
+  name: crimson breeches # Wayfarer: Blood red<crimson
+  description: A pair of crimson colored breeches. # Wayfarer: changed description
   components:
   - type: Sprite
     overrideDir: South

@@ -628,10 +628,10 @@
       sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase # WF Removed Contraband
+  parent: ClothingUniformSkirtBase # Wayfarer: Removed Contraband
   id: ClothingUniformJumpskirtSyndieFormalDress
-  name: syndicate formal dress
-  description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
+  name: scarlet formal dress # Wayfarer: Syndicate<Scarlet
+  description: Black denim overalls, scarlet wool sweater; the perfect autumn attire. # Wayfarer: changed description
   components:
     - type: Sprite
       sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi

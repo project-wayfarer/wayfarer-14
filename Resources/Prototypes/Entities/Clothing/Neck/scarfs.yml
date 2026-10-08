@@ -89,8 +89,8 @@
 - type: entity
   parent: [ ClothingScarfBase] # WF: Removed contraband
   id: ClothingNeckScarfStripedSyndieGreen
-  name: striped syndicate green scarf
-  description: A stylish striped syndicate green scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something.
+  name: striped arbor green scarf # Wayfarer: Syndicate<Arbor
+  description: A stylish striped arbor green scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something. # Wayfarer: Syndicate<Arbor
   components:
     - type: Sprite
       sprite: Clothing/Neck/Scarfs/syndiegreen.rsi
@@ -100,10 +100,10 @@
       price: 500
 
 - type: entity
-  parent: [ClothingScarfBase] # WF: Removed contraband
+  parent: [ClothingScarfBase] # Wayfarer: Removed contraband
   id: ClothingNeckScarfStripedSyndieRed
-  name: striped syndicate red scarf
-  description: A stylish striped syndicate red scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something.
+  name: striped spinel red scarf # Wayfarer: Syndicate<Spinel
+  description: A stylish striped spinel red scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something. # Wayfarer: Syndicate<Spinel
   components:
     - type: Sprite
       sprite: Clothing/Neck/Scarfs/syndiered.rsi

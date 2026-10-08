@@ -35,12 +35,14 @@ thief-backpack-category-chemistry-description =
     Includes: Storage implanter, DNA scrambler implanter,
     ephedrine bottle, syringe, empty shaker, and omega soap
 
-thief-backpack-category-syndie-name = Syndie Kit
+# Wayfarer: Syndicate<Old Operative
+thief-backpack-category-syndie-name = Old Operative Kit
+# Wayfarer: Removed Syndicate, Interdyne<Genova, "red crystals"<"crystals"
 thief-backpack-category-syndie-description =
     Trinkets from a disavowed past, or stolen from a careless agent?
     You've made some connections. Whiskey, echo...
-    Includes: An Emag, Access Breaker, Interdyne cigs, a Syndicate codeword,
-    a Radio Jammer, a lighter and some strange red crystals.
+    Includes: An Emag, Access Breaker, Genovan cigs, a codeword,
+    a Radio Jammer, a lighter and some strange crystals.
 
 thief-backpack-category-sleeper-name = Sleeper Kit
 thief-backpack-category-sleeper-description =

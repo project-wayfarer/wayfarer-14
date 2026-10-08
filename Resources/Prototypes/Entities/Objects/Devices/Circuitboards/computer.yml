@@ -424,8 +424,8 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SyndicateCommsComputerCircuitboard
-  name: syndicate communications computer board
-  description: A computer printed circuit board for a syndicate communications console.
+  name: raider communications computer board # Wayfarer: Syndicate<Raider
+  description: A computer printed circuit board for a raider communications console. # Wayfarer: Syndicate<Raider
   components:
     - type: Sprite
       state: cpu_syndicate
@@ -548,8 +548,8 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: SyndicateShuttleConsoleCircuitboard
-  name: syndicate shuttle console board
-  description: A computer printed circuit board for a syndicate shuttle console.
+  name: operative shuttle console board # Wayfarer: Syndicate<Operative
+  description: A computer printed circuit board for an operative shuttle console. # Wayfarer: Syndicate<Operative
   categories: [ HideSpawnMenu ] # Frontier
   components:
   - type: Sprite
@@ -586,7 +586,7 @@
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseBMContraband ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ComputerIFFSyndicateCircuitboard
-  name: syndicate IFF console board
+  name: Ghostcloak IFF console board # Wayfarer: Syndicate<Ghostcloak
   description: Allows you to control the IFF and stealth characteristics of this vessel.
   components:
     - type: Sprite

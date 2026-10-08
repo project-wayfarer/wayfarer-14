@@ -25,8 +25,8 @@
 - type: entity
   parent: [BaseItem, BaseBMContraband, RecyclableItemClothSmall] # Wayfarer: BaseSyndicateContraband<BaseBMContraband added RecyclableItemClothSmall
   id: SyndieHandyFlag
-  name: syndicate handheld flag
-  description: "For truly rebellious patriots. Death to NT!"
+  name: rebel handheld flag # Wayfarer: Syndicate<rebel
+  description: For the truly rebellious out there. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Objects/Misc/Handy_Flags/syndie_handy_flag.rsi

@@ -98,10 +98,11 @@
 - type: entity
   parent: PosterBase
   id: PosterContrabandSyndicateRecruitment
-  name: "Syndicate Recruitment"
-  description: "See the galaxy! Shatter corrupt megacorporations! Join today!"
+  name: "Coldlight Wolves, PMC" # Wayfarer: "Syndicate Recruitment"<"Coldlight Wolves, PMC"
+  description: "Fear the Wolves and the winter that follows them." # Wayfarer: changed description
   components:
   - type: Sprite
+    sprite: _WF/Structures/Wallmounts/posters.rsi # Wayfarer: changed sprite
     state: poster5_contraband
 
 - type: entity
@@ -305,8 +306,8 @@
 - type: entity
   parent: PosterBase
   id: PosterContrabandSyndicatePistol
-  name: "Syndicate Pistol"
-  description: "A poster advertising syndicate pistols as being 'classy as fuck'. It's covered in faded gang tags."
+  name: "Covert Pistol" # Wayfarer: Syndicate<Covert
+  description: "A poster advertising the wonders of a suppressor and its class, correlating the smoke from a suppressor being 'just as good as Genova Smokes'." # Wayfarer: changed description
   components:
   - type: Sprite
     state: poster28_contraband
@@ -458,8 +459,8 @@
 - type: entity
   parent: PosterBase
   id: PosterContrabandFreeSyndicateEncryptionKey
-  name: "Free Syndicate Encryption Key"
-  description: "A poster about traitors begging for more."
+  name: "Black Market Encryption Key" # Wayfarer: Free Syndicate<Black Market
+  description: "A poster advertising the open secret between Wayfarers and Outlaws for making illicit trades." # Wayfarer: changed description
   components:
   - type: Sprite
     state: poster46_contraband
@@ -541,7 +542,7 @@
   parent: PosterBase
   id: PosterContrabandRevolt
   name: "Revolt"
-  description: "Revolutionist propaganda, manufactured by the Syndicate."
+  description: "Rebellious propaganda, manufactured by the sore." # Wayfarer: changed description
   components:
   - type: Sprite
     state: poster56_contraband
@@ -549,8 +550,8 @@
 - type: entity
   parent: PosterBase
   id: PosterContrabandMoth
-  name: "Syndie Moth - Nuclear Operation"
-  description: "A Syndicate-commissioned poster that uses Syndie Moth™ to tell the viewer to keep the nuclear authentication disk unsecured. \"Peace was never an option!\" No good employee would listen to this nonsense."
+  name: "Safety Moth - Nuclear Operation" # Wayfarer: Syndie<Safety
+  description: "An old commissioned poster that portrays the Safety Moth™ in operative gear, telling the viewer to keep the nuclear authentication disk unsecured. \"Peace was never an option!\" The joke is atomic." # Wayfarer: changed description
   components:
     - type: Sprite
       state: poster57_contraband
@@ -576,19 +577,21 @@
 - type: entity
   parent: PosterBase
   id: PosterContrabandEnlistGorlex
-  name: "Enlist"
-  description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
+  name: "Rebel" # Wayfarer: Enlist<Rebel
+  description: "Break from the shackles! Chart your own course! Wear sick armor! Become an Outlaw today!" # Wayfarer: changed description
   components:
     - type: Sprite
+      sprite: _WF/Structures/Wallmounts/posters.rsi # Wayfarer: changed sprite
       state: poster60_contraband
 
 - type: entity
   parent: PosterBase
   id: PosterContrabandInterdyne
-  name: "Interdyne Pharmaceutics: For the Health of Humankind"
-  description: "An advertisement for Interdyne Pharmaceutics' GeneClean clinics. 'Become the master of your own body!'"
+  name: "Genova Labs: Crisis Care, Evolved" # Wayfarer: changed name
+  description: "An advertisement for Genova's experimental clinics. 'Become the master of your own body!'" # Wayfarer: changed description
   components:
     - type: Sprite
+      sprite: _WF/Structures/Wallmounts/posters.rsi # Wayfarer: changed sprite
       state: poster61_contraband
 
 - type: entity

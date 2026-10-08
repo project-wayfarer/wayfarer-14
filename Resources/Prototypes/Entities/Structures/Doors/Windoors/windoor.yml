@@ -494,7 +494,7 @@
 - type: entity
   parent: Windoor
   id: WindoorSyndicateLocked
-  suffix: Syndicate, Locked
+  suffix: Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -503,7 +503,7 @@
 - type: entity
   parent: WindoorSecure
   id: WindoorSecureSyndicateLocked
-  suffix: Syndicate, Locked
+  suffix: Operative, Locked # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -512,7 +512,7 @@
 - type: entity
   parent: WindoorPlasma
   id: PlasmaWindoorSyndicateLocked
-  suffix: Syndicate, Locked, Plasma
+  suffix: Operative, Locked, Plasma # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -521,7 +521,7 @@
 - type: entity
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureSyndicateLocked
-  suffix: Syndicate, Locked, Plasma
+  suffix: Operative, Locked, Plasma # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -530,7 +530,7 @@
 - type: entity
   parent: WindoorUranium
   id: UraniumWindoorSyndicateLocked
-  suffix: Syndicate, Locked, Uranium
+  suffix: Operative, Locked, Uranium # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:
@@ -539,7 +539,7 @@
 - type: entity
   parent: WindoorSecureUranium
   id: UraniumWindoorSecureSyndicateLocked
-  suffix: Syndicate, Locked, Uranium
+  suffix: Operative, Locked, Uranium # Wayfarer: Syndicate<Operative
   components:
   - type: ContainerFill
     containers:

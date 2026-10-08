@@ -517,8 +517,8 @@
 - type: entity
   parent: DrinkCanBaseFull
   id: DrinkNukieCan
-  name: Blood-red Brew can
-  description: A home-brewed drink made from the crazed minds at the Syndicate. Not recommended by doctors.
+  name: Scarlet Brew can # Wayfarer: changed name
+  description: A highly volatile energy drink known for its unhealthy inclusion of stimulants. Not recommended by doctors. # Wayfarer: changed description
   components:
   - type: SolutionContainerManager
     solutions:

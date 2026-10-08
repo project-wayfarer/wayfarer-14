@@ -433,10 +433,10 @@
         amount: 4
 
 - type: entity
-  name: syndicate encryption key box
+  name: coldlight encryption key box #Wayfarer: Syndicate<Coldlight
   parent: [BoxEncryptionKeyPassenger, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: BoxEncryptionKeySyndie
-  description: Two syndicate encryption keys for the price of one. Miniaturized for ease of use.
+  description: Two Coldlight encryption keys for the price of one. Miniaturized for ease of use. #Wayfarer: Syndicate<Coldlight
   components:
   - type: Item
     size: Normal

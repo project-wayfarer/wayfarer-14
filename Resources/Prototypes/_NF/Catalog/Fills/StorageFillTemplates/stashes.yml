@@ -470,7 +470,7 @@
 - type: entity
   abstract: true
   id: StorageFillStashContraband
-  suffix: Stash, Syndicate
+  suffix: Stash, Operative # Wayfarer: Syndicate<Operative
   components:
   - type: EntityTableContainerFill
     containers:

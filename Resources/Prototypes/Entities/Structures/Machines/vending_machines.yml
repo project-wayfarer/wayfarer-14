@@ -299,7 +299,7 @@
   parent: VendingMachineBooze
   id: VendingMachineBoozeSyndicate # syndie booze-o-mat for nukie outpost
   name: Bruise-O-Mat
-  description: A refurbished Booze-O-Mat for boosting operative morale. An imprint of a blood-red hardsuit is visible on one side, and the paint seems ashed off on the other side.
+  description: A refurbished Booze-O-Mat for boosting operative morale. The paint seems ashed off on the other side. # Wayfarer: changed description
   components:
   - type: VendingMachine
     pack: BoozeOMatInventory
@@ -1978,8 +1978,8 @@
 - type: entity
   parent: [BaseStructureDisableAnchoring, VendingMachine] # Frontier
   id: VendingMachineSyndieDrobe
-  name: SyndieDrobe
-  description: Wardrobe machine encoded by the syndicate, contains elite outfits for various operations.
+  name: SpinelDrobe # Wayfarer: Syndie<Spinel
+  description: Wardrobe machine stocked with various shades of red, contains elite outfits for various operations. # Wayfarer: changed description
   components:
   - type: VendingMachine
     pack: SyndieDrobeInventory
@@ -2249,8 +2249,8 @@
 - type: entity
   parent: VendingMachineChemicals
   id: VendingMachineChemicalsSyndicate
-  name: SyndieJuice
-  description: Not made with freshly squeezed syndies I hope.
+  name: Jailbroken ChemVend # Wayfarer: changed name
+  description: An ill-stocked ChemVend, jailbroken for more nefarious activities. # Wayfarer: changed description
   components:
   - type: VendingMachine
     pack: ChemVendInventorySyndicate

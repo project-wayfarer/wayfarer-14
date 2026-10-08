@@ -85,7 +85,7 @@
 
 - type: entity
   name: electrical toolbox
-  suffix: Syndicate, Turret
+  suffix: Operative, Turret # Wayfarer: Syndicate<Operative
   parent: [ToolboxElectrical, BaseBMContraband] # Frontier: added BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: ToolboxElectricalTurret
   description: A toolbox typically stocked with electrical gear.
@@ -132,7 +132,7 @@
   name: suspicious toolbox
   parent: [ToolboxBase, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: ToolboxSyndicate
-  description: A sinister looking toolbox filled with elite syndicate tools.
+  description: A sinister looking toolbox filled with dubiously legal tools. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: _Impstation/Objects/Tools/Toolboxes/toolbox_syn.rsi #imp edit

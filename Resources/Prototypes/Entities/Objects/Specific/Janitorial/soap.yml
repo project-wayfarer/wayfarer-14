@@ -118,7 +118,7 @@
   name: soap
   id: SoapSyndie
   parent: [Soap, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
-  description: An untrustworthy bar of soap. Smells of fear.
+  description: An untrustworthy bar of soap. Smells of sweat. # Wayfarer: fear<sweat
   components:
   - type: Sprite
     layers:
@@ -150,7 +150,7 @@
   id: SoapletSyndie
   categories: [ HideSpawnMenu ]
   parent: Soap
-  description: A tiny piece of syndicate soap.
+  description: A tiny piece of slippery soap. # Wayfarer: Syndicate<Slippery
   components:
   - type: Sprite
     layers:

@@ -120,8 +120,8 @@
 - type: entity
   parent: ReagentPacketBase
   id: ReagentContainerSyndicateTeaPouch
-  name: syndie tea pouch
-  description: A pouch of suspiciously spicy tea powder. Good for brewing... something!
+  name: sweet n' spicy tea pouch # Wayfarer: changed name
+  description: A pouch of sweet, spicy tea powder. Good for brewing tea! # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: _Mono/Objects/Consumable/Food/teabags.rsi

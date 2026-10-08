@@ -4,8 +4,8 @@
   id: NFWeaponLightMachineGunL6
   parent: [ NFBaseWeaponLightMachineGunChamber20, NFBaseWeaponFrameLightMachineGunGorlex ]
   name: GSW LMG-6
-  description: |-
-    A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. An illegal firearm often used by Syndicate agents.
+  description: |-  # Wayfarer: changed description
+    A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. An illegal firearm often used by the trigger happy.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/LMGs/l6.rsi
@@ -20,8 +20,8 @@
   id: NFWeaponLightMachineGunL6C
   parent: [ NFBaseWeaponFrameLightMachineGunGorlex ]
   name: cyborg GSW LMG-6
-  description: |-
-    A GSW LMG-6 for use by cyborgs. Creates rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges. An illegal firearm often used by Syndicate agents.
+  description: |- # Wayfarer: changed description
+    A GSW LMG-6 for use by cyborgs. Creates rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges. An illegal firearm often used by the trigger happy.
   components:
   - type: Gun
     examineCaliber: gun-examine-caliber-20

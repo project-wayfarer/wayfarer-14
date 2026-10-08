@@ -21,10 +21,10 @@
 
 #Syndicate EVA
 - type: entity
-  parent: ClothingOuterEVASuitBase # WF Removed Contraband
+  parent: ClothingOuterEVASuitBase # Wayfarer: Removed Contraband
   id: ClothingOuterEVASuitSyndicate
-  name: syndicate EVA suit
-  description: "Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'"
+  name: spinel EVA suit # Wayfarer: Syndicate<Spinel
+  description: "It's so red, people will notice you. Right?" # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_syndicate.rsi

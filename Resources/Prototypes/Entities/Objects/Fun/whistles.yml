@@ -45,7 +45,7 @@
   parent: BaseWhistle # Frontier: removed BaseMinorContraband
   id: SyndicateWhistle
   name: trench whistle
-  description: A whistle used by Syndicate commanders to draw attention. Avanti!
+  description: A whistle used by captains and commanders to draw attention. Avanti! # Wayfarer: changed description
   components:
   - type: Sprite
     state: trench

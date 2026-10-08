@@ -771,8 +771,8 @@
 - type: entity
   parent: [UnsensoredClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
   id: ClothingUniformJumpsuitPyjamaSyndicateBlack
-  name: black syndicate pyjamas
-  description: For those long nights in perma.
+  name: black flannel pyjamas # Wayfarer: Syndicate<Flannel
+  description: For those long nights in the coldest reaches of space. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicateblack.rsi
@@ -782,8 +782,8 @@
 - type: entity
   parent: [UnsensoredClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
   id: ClothingUniformJumpsuitPyjamaSyndicatePink
-  name: pink syndicate pyjamas
-  description: For those long nights in perma.
+  name: pink flannel pyjamas # Wayfarer: Syndicate<Flannel
+  description: For those long nights in the coldest reaches of space. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatepink.rsi
@@ -793,8 +793,8 @@
 - type: entity
   parent: [UnsensoredClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as parent
   id: ClothingUniformJumpsuitPyjamaSyndicateRed
-  name: red syndicate pyjamas
-  description: For those long nights in perma.
+  name: red flannel pyjamas # Wayfarer: Syndicate<Flannel
+  description: For those long nights in the coldest reaches of space. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
@@ -1158,8 +1158,8 @@
 - type: entity
   parent: [ClothingUniformBase] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added ContrabandClothing as a parent
   id: ClothingUniformJumpsuitSyndieFormal
-  name: syndicate formal suit
-  description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
+  name: scarlet formal suit # Wayfarer: Syndicate<scarlet
+  description: Black denim overalls, scarlet wool sweater; the perfect autumn attire. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/syndieformal.rsi

@@ -1482,7 +1482,7 @@
   id: MobBaseSyndicateMonkey
   parent: MobBaseAncestor
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
-  suffix: syndicate base
+  suffix: Operative Base # Wayfarer: Syndicate<Operative
   components:
     - type: NameIdentifier
       group: Monkey
@@ -1513,7 +1513,7 @@
 - type: entity
   id: MobMonkeySyndicateAgent
   parent: MobBaseSyndicateMonkey
-  suffix: syndicate agent
+  suffix: Operative # Wayfarer: Syndicate Agent<Operative
   components:
     # make the player a traitor once its taken
     - type: AutoTraitor
@@ -1661,7 +1661,7 @@
 - type: entity
   id: MobBaseSyndicateKobold
   parent: MobBaseKobold
-  suffix: syndicate base
+  suffix: Operative Base # Wayfarer: Syndicate<Operative
   components:
     - type: MobThresholds
       thresholds:
@@ -1677,7 +1677,7 @@
 - type: entity
   id: MobKoboldSyndicateAgent
   parent: MobBaseSyndicateKobold
-  suffix: syndicate agent
+  suffix: Operative # Wayfarer: Syndicate Agent<Operative
   components:
     # make the player a traitor once its taken
     - type: AutoTraitor
@@ -3154,7 +3154,7 @@
           Base: cat2_dead
 
 - type: entity
-  name: syndicat
+  name: bomb-a-cat # Wayfarer: Syndicat<Bomb-a-Cat
   id: MobCatSyndy
   parent: MobCatSpace
   description: Explosive kitten.

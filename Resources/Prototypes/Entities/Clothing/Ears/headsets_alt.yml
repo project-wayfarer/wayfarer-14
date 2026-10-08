@@ -122,10 +122,10 @@
     sprite: Clothing/Ears/Headsets/science.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt] # WF Removed Contraband
+  parent: [ClothingHeadsetAlt] # Wayfarer: Removed Contraband
   id: ClothingHeadsetAltSyndicate
-  name: blood-red over-ear headset
-  description: An updated, modular syndicate intercom that fits over the head and takes encryption keys. # Wayfarer - More slots, fix description. Removed: (there are 5 key slots.).
+  name: modern over-ear headset # Wayfarer: Syndicate<Modern
+  description: An updated, modular intercom that fits over the head and takes encryption keys. # Wayfarer: More slots, fix description. Removed: (there are 5 key slots.).
   components:
 #  - type: Headset # Frontier: Use 10 from base
 #  - type: EncryptionKeyHolder # Frontier: Use 10 from base
@@ -140,7 +140,7 @@
     sprite: Clothing/Ears/Headsets/syndicate.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt] # WF Removed Contraband
+  parent: [ClothingHeadsetAlt] # Wayfarer: Removed Contraband
   id: ClothingHeadsetAltFreelancer
   name: freelancer's over-ear headset
   components:

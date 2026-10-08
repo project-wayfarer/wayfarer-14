@@ -230,8 +230,8 @@
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseBMContraband, ContrabandClothing ] # Wayfarer: BaseSyndicateContraband<BaseBMContraband + ContrabandClothing
   id: ClothingOuterArmorRaid
-  name: coldlight raid suit # Wayfarer: syndicate<coldlight
-  description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Coldlight PMC's iconic blood-red color scheme, it does not protect its wearer from space. # Wayfarer: syndicate<coldlight
+  name: spinel raid suit # Wayfarer: syndicate<spinel
+  description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in a threatening color scheme, it does not protect its wearer from space. # Wayfarer: changed description
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi

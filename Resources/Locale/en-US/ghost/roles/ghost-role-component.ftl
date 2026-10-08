@@ -201,9 +201,11 @@ ghost-role-information-Death-Squad-name = Death Squad Operative
 ghost-role-information-Death-Squad-description = One of Nanotrasen's top internal affairs agents. Await orders from CentComm or an official.
 ghost-role-information-Death-Squad-rules = You are required to obey orders given by your superior, you are effectively their [color={role-type-familiar-color}][bold]{role-type-familiar-name}[/bold][/color].
 
-ghost-role-information-SyndiCat-name = SyndiCat
-ghost-role-information-SyndiCat-description = You're the faithful trained pet of nuclear operatives with a microbomb. Serve your master to the death!
-ghost-role-information-SyndiCat-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with the agent who summoned you.
+# Wayfarer: Syndicat<Bomb-a-Cat
+ghost-role-information-SyndiCat-name = Bomb-a-Cat
+# Wayfarer: changed description
+ghost-role-information-SyndiCat-description = You're the faithful trained pet with an explosive surprise. Serve your master to the death!
+ghost-role-information-SyndiCat-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with the operative who summoned you.
 
 ghost-role-information-Cak-name = Cak
 ghost-role-information-Cak-description = You are the chef's favorite child. You're a living cake cat.
@@ -259,8 +261,10 @@ ghost-role-information-derelict-medical-cyborg-description = You are a medical c
 ghost-role-information-derelict-mining-cyborg-name = Derelict Salvage Cyborg
 ghost-role-information-derelict-mining-cyborg-description = You are a salvage cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
 
-ghost-role-information-derelict-syndicate-assault-cyborg-name = Derelict Syndicate Assault Cyborg
-ghost-role-information-derelict-syndicate-assault-cyborg-description = You are an early model syndicate assault cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+# Wayfarer: Syndicate<Operative
+ghost-role-information-derelict-syndicate-assault-cyborg-name = Derelict Operative Assault Cyborg
+# Wayfarer: Syndicate<Operative
+ghost-role-information-derelict-syndicate-assault-cyborg-description = You are an early model operative assault cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
 
 ghost-role-information-security-name = Security
 ghost-role-information-security-description = You are part of a security task force, but seem to have found yourself in a strange situation...

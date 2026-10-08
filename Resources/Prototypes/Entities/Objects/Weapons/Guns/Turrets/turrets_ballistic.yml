@@ -1,7 +1,7 @@
 - type: entity
   parent: [BaseWeaponBallisticTurret, BaseBMContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Wayfarer: BaseC3SyndicateContraband<BaseBMContraband
   id: WeaponTurretSyndicate
-  suffix: Syndicate
+  suffix: Operative # Wayfarer: Syndicate<Operative
   components:
   - type: NpcFactionMember
     factions:
@@ -11,7 +11,7 @@
   parent: BaseWeaponBallisticTurret
   id: WeaponTurretSyndicateDisposable
   name: disposable ballistic turret
-  suffix: Syndicate, Disposable
+  suffix: Operative, Disposable # Wayfarer: Syndicate<Operative
   components:
   - type: NpcFactionMember
     factions:

@@ -1,8 +1,8 @@
 - type: entity
   id: CrateSyndicateSurplusBundle
   parent: [ CrateSyndicate, StorePresetUplink ] # Frontier: Removed BaseSyndicateContraband
-  name: Syndicate surplus crate
-  description: Contains 50 telecrystals worth of completely random Syndicate items. It can be useless junk or really good.
+  name: contraband surplus crate # Wayfarer: Syndicate>Contraband
+  description: Contains 50 Warpglass worth of completely random contraband items. It can be useless junk or really good. # Wayfarer: Telecrystals>Warpglass, Syndicate>Contraband
   components:
     - type: SurplusBundle
       totalPrice: 50
@@ -25,8 +25,8 @@
 - type: entity
   id: CrateSyndicateSuperSurplusBundle
   parent: [ CrateSyndicate, StorePresetUplink ] # Frontier: Removed BaseSyndicateContraband
-  name: Syndicate super surplus crate
-  description: Contains 125 telecrystals worth of completely random Syndicate items.
+  name: contraband super surplus crate # Wayfarer: Syndicate>Contraband
+  description: Contains 125 Warpglass worth of completely random contraband items. # Wayfarer: Telecrystal>Warpglass, Syndicate>Contraband
   components:
     - type: SurplusBundle
       totalPrice: 125

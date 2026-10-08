@@ -397,8 +397,8 @@
 - type: entity
   parent: [BaseBMContraband, Paper] # Wayfarer: BaseSyndicateContraband<BaseBMContraband # eat or burn your damn piece of paper damn thieves
   id: TraitorCodePaper
-  name: syndicate codeword
-  description: A leaked codeword to possibly get in touch with the Syndicate.
+  name: coldlight codeword # Wayfarer: Syndicate<Coldlight
+  description: A leaked codeword to possibly get in touch with the Coldlight Wolves. # Wayfarer: Syndicate<Coldlight Wolves
   categories: [ DoNotMap ]
   components:
   - type: TraitorCodePaper
@@ -406,8 +406,8 @@
 - type: entity
   parent: [Paper, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband
   id: AllTraitorCodesPaper
-  name: syndicate codewords registry
-  description: A registry of all active Syndicate codewords.
+  name: coldlight codewords registry # Wayfarer: Syndicate<Coldlight
+  description: A registry of all active Coldlight codewords. # Wayfarer: Syndicate<Coldlight
   suffix: Admeme
   components:
   - type: TraitorCodePaper

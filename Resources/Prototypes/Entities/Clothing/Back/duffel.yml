@@ -168,10 +168,10 @@
       sprite: Clothing/Back/Duffels/salvage.rsi
 
 - type: entity
-  parent: [NFClothingDuffel] # WF Removed Contraband
+  parent: [NFClothingDuffel] # Wayfarer: Removed Contraband
   id: ClothingBackpackDuffelSyndicate
-  name: syndicate duffel bag
-  description: A large duffel bag for holding various traitor goods.
+  name: blackrose duffel bag # Wayfarer: Syndicate<Blackrose
+  description: A large duffel bag for holding various goods, with explosive-resistant canvas keeping it secure. # Wayfarer: removed traitor
   components:
   - type: Sprite
     sprite: Clothing/Back/Duffels/syndicate.rsi
@@ -182,7 +182,7 @@
     - 0,0,8,4
 
 - type: entity
-  parent: [ ClothingBackpackDuffelSyndicate] # WF Removed Contraband
+  parent: [ ClothingBackpackDuffelSyndicate] # Wayfarer: Removed Contraband
   id: ClothingBackpackDuffelSyndicateBundle
   abstract: true
   components:
@@ -200,6 +200,8 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicate
   id: ClothingBackpackDuffelSyndicateAmmo
+  name: blackrose surplus duffel bag # Wayfarer: added name
+  description: Your ammunition is safe in this explosive-resistant bag. # Wayfarer: added description
   components:
     - type: Sprite
       sprite: Clothing/Back/Duffels/syndicate.rsi
@@ -220,6 +222,8 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicate
   id: ClothingBackpackDuffelSyndicateMedical
+  name: blackrose tac-med duffel bag # Wayfarer: added name
+  description: Not even a bomb will disturb your chemicals in this bag. # Wayfarer: added description
   components:
     - type: Sprite
       sprite: Clothing/Back/Duffels/syndicate.rsi

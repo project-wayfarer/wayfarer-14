@@ -13,7 +13,8 @@ chat-radio-science = Science
 chat-radio-security = Guard
 chat-radio-service = Service
 chat-radio-supply = Supply
-chat-radio-syndicate = Syndicate
+# Wayfarer: Syndicate<Coldlight
+chat-radio-syndicate = Coldlight
 chat-radio-freelance = Freelance
 
 # not headset but whatever

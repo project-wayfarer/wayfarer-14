@@ -41,7 +41,7 @@
 - type: entity
   parent: MobHostileThrowableWeapon
   id: DartSyndicateImpedrezene
-  name: syndicate impedrezene dart
+  name: impedrezene dart # Wayfarer: Syndicate removed
   description: Try not to prick yourself.
   categories: [ HideSpawnMenu ]
   components:
@@ -59,7 +59,7 @@
 - type: entity # 4 hits to KO a spaceman
   parent: DartSyndicateImpedrezene
   id: DartSyndicateTranquilizer
-  name: syndicate tranquilizer dart
+  name: tranquilizer dart # Wayfarer: Syndicate removed
   categories: [ HideSpawnMenu ]
   components:
   - type: SolutionContainerManager
