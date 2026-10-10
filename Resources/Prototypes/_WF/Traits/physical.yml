@@ -1,0 +1,19 @@
+- type: trait
+  id: Synthetic
+  name: trait-synth-name
+  description: trait-synth-desc
+  category: Quirks
+  cost: 2 # Wayfarer - increasing the cost, as it now gives a Radio channel
+  speciesBlacklist: # HardLight
+  - IPC
+  # Begin DeltaV Additions - blacklist IPCs
+  blacklist:
+    components:
+      - BorgChassis
+  # End DeltaV Additions - blacklist IPCs
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Synth
+  - !type:AddImplantsEffect
+    implants: [ RadioImplantBinary ]
