@@ -35,6 +35,7 @@
   - ShipyardDagger
   - ShipyardInfelix
   - ShipyardLooter
+  - ShipyardNadir
   - ShipyardPoppet
   - ShipyardVeliola
 
@@ -248,3 +249,8 @@
   id: ShipyardDelivery
   name: guide-entry-shipyard-delivery
   text: "/ServerInfo/_WF/Guidebook/Shipyard/StaffShipyard/Delivery.xml"
+
+- type: guideEntry
+  id: ShipyardNadir
+  name: guide-entry-shipyard-nadir
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Nadir.xml"

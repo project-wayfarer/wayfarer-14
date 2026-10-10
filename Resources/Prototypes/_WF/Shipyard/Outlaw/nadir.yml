@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+
+# Maintainer Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+- type: vessel
+  id: Nadir
+  parent: BaseVessel
+  name: Nadir
+  description: A premium "surveying" vessel. Full suite of amenities allows the crew to perform long "exploration" journeys without sacrificing comfort.
+  price: 93000 # (47000+488*50)*1.3 ([appraise on init]+[size]*50)*[+1 primary Outlaw; +0.15 sub-primary Ship Weapons; +0.15 primary Support]
+  category: Medium
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/nadir.yml
+  guidebookPage: ShipyardNadir
+  class:
+  - Pirate
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Nadir
+  mapName: 'Nadir'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/nadir.yml
+  minPlayers: 0
+  stations:
+    Nadir:
+      stationProto: StandardFrontierAntagVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Zenith {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
