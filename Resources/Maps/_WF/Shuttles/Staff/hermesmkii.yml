@@ -1385,13 +1385,6 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: ClothingBeltUtilityEngineering
-  entities:
-  - uid: 469
-    components:
-    - type: Transform
-      pos: 2.495659,-11.309887
-      parent: 1
 - proto: ClothingHeadHatHardhatBlue
   entities:
   - uid: 471
@@ -3434,6 +3427,20 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-16.5
+      parent: 1
+- proto: ToolboxElectricalFilled
+  entities:
+  - uid: 469
+    components:
+    - type: Transform
+      pos: 2.495659,-11.309887
+      parent: 1
+- proto: ToolboxMechanicalFilled
+  entities:
+  - uid: 4691
+    components:
+    - type: Transform
+      pos: 2.385659,-11.249887
       parent: 1
 - proto: VendingMachineMailVend
   entities:
