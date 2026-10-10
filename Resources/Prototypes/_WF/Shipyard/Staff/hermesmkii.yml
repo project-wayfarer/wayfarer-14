@@ -1,0 +1,43 @@
+# Original Hermes' license and credits
+# SPDX-FileCopyrightText: 2025 Avalon
+# SPDX-FileCopyrightText: 2025 Junerisms
+# SPDX-FileCopyrightText: 2025 Redrover1760
+#
+# SPDX-License-Identifier: MPL-2.0
+
+# MkII Maintainer Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+- type: vessel
+  id: HermesMkII
+  parent: BaseVessel
+  name: TPC Hermes MkII
+  description: Originally designed by The Pantheon Collective, the Hermes mail shuttle received a substantional redesign from Zekke engineers, adapting it to the sector's needs.
+  price: 43000 # (32781+200*50)*1 ([appraise on init]+[size]*50)*[+1 primary Service]
+  category: Small
+  group: Sr
+  access: Mail
+  shuttlePath: /Maps/_WF/Shuttles/Staff/hermesmkii.yml
+  guidebookPage: ShipyardHermesMkII
+  class:
+  - Civilian
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: HermesMkII
+  mapName: 'TPC Hermes MkII'
+  mapPath: /Maps/_WF/Shuttles/Staff/hermesmkii.yml
+  minPlayers: 0
+  stations:
+    HermesMkII:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Hermes MkII {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

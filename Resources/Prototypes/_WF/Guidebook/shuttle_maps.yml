@@ -371,3 +371,14 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: delivery
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapHermesMkII
+  name: "Hermes MkII"
+  description: "Detailed map of a Hermes MkII shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: hermesmkii
