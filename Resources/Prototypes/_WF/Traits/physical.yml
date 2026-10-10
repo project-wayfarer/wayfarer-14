@@ -1,0 +1,16 @@
+- type: trait
+  id: Synthetic
+  name: trait-synth-name
+  description: trait-synth-desc
+  category: Quirks
+  cost: 2 #increasing the cost, as it now gives a Radio channel
+  conditions:
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Synth
+  - !type:AddImplantsEffect
+    implants: [ RadioImplantBinary ]
