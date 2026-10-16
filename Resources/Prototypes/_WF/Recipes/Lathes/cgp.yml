@@ -87,6 +87,11 @@
     Plasteel: 500
     Cloth: 400
 
+- type: latheRecipe
+  id: ClothingWalletCGP
+  parent: NFBaseBootRecipe
+  result: ClothingWalletCGP
+
 # Clusterbang
 - type: latheRecipe
   id: WFClusterBang

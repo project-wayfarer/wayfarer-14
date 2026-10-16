@@ -14,3 +14,12 @@
   - WFJumpsuit # Wayfarer
   fallbacks:
   - ValetClothingUniformJumpsuitValet
+
+- type: loadoutGroup
+  id: ClothingWalletCGP
+  name: loadout-group-contractor-wallet
+  hidden: true # No point in showing this, it gets auto-selected.
+  loadouts:
+  - ClothingWalletCGP
+  fallbacks:
+  - ClothingWalletCGP

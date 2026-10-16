@@ -1,0 +1,25 @@
+- type: entity
+  parent: [ClothingWalletLeatherBrown ] # Wayfarer: Removed BaseC3ContrabandNoValue, ContrabandClothing
+  id: ClothingWalletCGP
+  name: CGP wallet
+  description: Blastproof wallet for the CGP. Holds cash, stamps, papers - but no donuts.
+  components:
+  - type: Sprite
+    layers:
+    - state: closed-arcadiawear
+      map: ["closeLayer"]
+    - state: open-arcadiawear
+      map: ["openLayer"]
+      visible: false
+    - state: closed-paper
+      map: ["closed-paper"]
+      visible: false
+    - state: closed-cash
+      map: ["closed-cash"]
+      visible: false
+    - state: closed-coin
+      map: ["closed-coin"]
+      visible: false
+  - type: ExplosionResistance #Item protection
+    damageCoefficient: 0
+    worn: false
