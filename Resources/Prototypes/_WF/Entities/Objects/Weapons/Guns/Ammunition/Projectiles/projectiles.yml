@@ -27,11 +27,15 @@
     layers:
     - state: grenade
   - type: ExplodeOnTrigger
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 25
   - type: Explosive
     explosionType: MicroBomb
-    maxIntensity: 2 # max 2 per tile
-    intensitySlope: 2
-    totalIntensity: 6 # 6 total damage to distribute over tiles
+    maxIntensity: 1 # max 2 per tile
+    intensitySlope: 1
+    totalIntensity: 1 # 6 total damage to distribute over tiles
     maxTileBreak: 1
   - type: PointLight
     radius: 3.5

@@ -121,16 +121,16 @@
     addComponentsLeaveGrid:
     - type: TimedDespawn
       lifetime: 15 # Wayfarer: 240<15
-    - type: PassiveDamage
-      allowedStates:
-      - Alive
-      damage:
-        types:
-          Cellular: 0.4
+#    - type: PassiveDamage # Wayfarer: stopped boss regen
+#      allowedStates:
+#      - Alive
+#      damage:
+#        types:
+#          Cellular: 0.4
     - type: Pacified
     removeComponentsReturnGrid:
     - type: TimedDespawn
-    - type: PassiveDamage
+#    - type: PassiveDamage # Wayfarer
     - type: Pacified
 
 - type: entity

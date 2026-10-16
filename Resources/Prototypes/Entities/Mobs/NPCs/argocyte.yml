@@ -468,3 +468,28 @@
       types:
         Blunt: 75
         Structural: 50
+  # Wayfarer Start
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+  - type: RadarConsole
+    maxRange: 512
+    followEntity: true
+    hideCoords: false
+    maxIffRange: null
+  - type: NightVision
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 1000
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+        Airloss: -1
+  # End Wayfarer

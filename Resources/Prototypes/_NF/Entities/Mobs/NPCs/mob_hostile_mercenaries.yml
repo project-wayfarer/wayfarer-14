@@ -500,16 +500,16 @@
       color: "#a9b6bd"
       shader: unshaded
   - type: BasicEntityAmmoProvider
-    proto: NFCartridgeRifle30Overpressure
+    proto: NFCartridgePistol45Overpressure # Wayfarer: NFCartridgeRifle30Overpressure>NFCartridgePistol45Overpressure
     capacity: 10
     count: 10
   - type: Gun
     showExamineText: false
     fireRate: 1
-    minAngle: 3
-    maxAngle: 20
-    angleIncrease: 3
-    angleDecay: 3
+    minAngle: 1 # Wayfarer: 3>1
+    maxAngle: 5 # Wayfarer: 20>5
+    angleIncrease: 1 # Wayfarer: 3>1
+    angleDecay: 0.5 # Wayfarer: 3>0.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -531,6 +531,40 @@
   - type: ActionGun
     action: ActionSideArmFan
     gunProto: GunSideArmFan
+  # Wayfarer Start
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      180: Critical
+      200: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      70: 0.7
+      140: 0.5
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+  - type: RadarConsole
+    maxRange: 512
+    followEntity: true
+    hideCoords: false
+    maxIffRange: null
+  - type: NightVision
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 180
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+        Airloss: -1
+  # End Wayfarer
 
 - type: entity
   id: GunSideArmFan

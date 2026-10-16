@@ -1250,6 +1250,7 @@
     maxIffRange: 256
     hideCoords: true
   - type: ComplexInteraction # Needed to interact with innate radar console
+  - type: NightVision # Wayfarer
 
 - type: entity
   parent:
@@ -1287,18 +1288,24 @@
       192: 0.5
   - type: BasicEntityAmmoProvider
     proto: WFOnestarRocketMini # WF Change - NFCartridgeRocketMini to WFOnestarRocketMini
-    capacity: 10
-    count: 10
+    capacity: 30 # Wayfarer: 10>30
+    count: 30 # Wayfarer: 10>30
+  # Wayfarer Start
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.5
+    rechargeSound:
+      path: /Audio/_NF/Effects/silence.ogg
+  # End Wayfarer
   - type: Gun
-    projectileSpeed: 10
+    projectileSpeed: 30 # Wayfarer 10>30
     showExamineText: false
-    fireRate: 1
-    minAngle: 30
-    maxAngle: 45
+    fireRate: 2.5 # Wayfarer: 1>2.5
+    minAngle: 5 # Wayfarer: 30>5
+    maxAngle: 10 # Wayfarer: 45>10
     selectedMode: FullAuto
     availableModes:
     - FullAuto
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/mateba.ogg # Wayfarer /Audio/Weapons/Guns/Gunshots/rpgfire.ogg>/Audio/Weapons/Guns/Gunshots/mateba.ogg
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
@@ -1327,6 +1334,7 @@
     maxIffRange: 256
     hideCoords: true
   - type: ComplexInteraction # Needed to interact with innate radar console
+  - type: NightVision # Wayfarer
 
 #region Asteroid
 ## Tier 1

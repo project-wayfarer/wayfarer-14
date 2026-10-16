@@ -241,6 +241,7 @@
   # Wayfarer: Xeno Buff
       types:
         Caustic: 4
+        Structural: 30
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -254,6 +255,7 @@
     followEntity: true
     hideCoords: false
     maxIffRange: null
+  - type: NightVision
   - type: Hands
     hands:
       hand_right:
@@ -263,6 +265,15 @@
     sortedHands:
     - hand_right
     - hand_left
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 500
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+        Airloss: -1
   # End Wayfarer
   - type: Fixtures
     fixtures:

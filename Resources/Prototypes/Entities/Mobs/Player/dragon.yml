@@ -218,21 +218,49 @@
       settings: default
   - type: SlowOnDamage
     speedModifierThresholds:
-      100: 0.7
+      175: 0.7 # Wayfarer: 100>175
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
-  # less meat spawned since it's a lot easier to kill
+      350: Dead # Wayfarer: 200>350
+  # less meat spawned since it's a lot easier to kill # more
   - type: Butcherable
     spawned:
     - id: FoodMeatDragon
-      amount: 3
+      amount: 6 # Wayfarer: 3>6
   # half damage, spread evenly
   - type: MeleeWeapon
     damage:
       groups:
-        Brute: 12
+        Brute: 19 # Wayfarer: 12>19
+  # Wayfarer Start
+      types:
+        Structural: 30
+
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+  - type: RadarConsole
+    maxRange: 512
+    followEntity: true
+    hideCoords: false
+    maxIffRange: null
+  - type: NightVision
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 350
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+        Airloss: -1
+  # End Wayfarer
 
 - type: entity
   parent: BaseAction

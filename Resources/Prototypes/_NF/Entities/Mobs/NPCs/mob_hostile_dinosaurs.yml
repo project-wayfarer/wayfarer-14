@@ -498,8 +498,8 @@
     animation: WeaponArcBite
     damage:
       types:
-        Slash: 15
-        Piercing: 10
+        Slash: 20 # Wayfarer: 15>20
+        Piercing: 20 # Wayfarer: 10>20
         Structural: 20
   - type: Butcherable
     spawned:
@@ -519,6 +519,31 @@
   - type: ActionGun
     action: ActionTRexRoar
     gunProto: TRexRoarGun
+  # Wayfarer Start
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+  - type: RadarConsole
+    maxRange: 512
+    followEntity: true
+    hideCoords: false
+    maxIffRange: null
+  - type: NightVision
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 360
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+        Airloss: -1
+  # End Wayfarer
 
 - type: entity
   id: TRexRoarGun
