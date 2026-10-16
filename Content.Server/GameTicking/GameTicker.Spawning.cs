@@ -18,6 +18,7 @@ using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
+using Content.Shared._Omu.Roles;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Map;
@@ -34,6 +35,7 @@ namespace Content.Server.GameTicking
 {
     public sealed partial class GameTicker
     {
+        [Dependency] private readonly JobAlternateTitleSystem _alternateTitles = default!; // Omu
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly SharedJobSystem _jobs = default!;
         [Dependency] private readonly AdminSystem _admin = default!;
@@ -295,6 +297,8 @@ namespace Content.Server.GameTicking
             var jobName = _jobs.MindTryGetJobName(newMind);
             _admin.UpdatePlayerList(player);
 
+            var announcedJobName = _alternateTitles.GetTitle(character, jobId) ?? jobName; // Omu
+
             if (lateJoin && !silent)
             {
                 if (jobPrototype.JoinNotifyCrew)
@@ -303,7 +307,7 @@ namespace Content.Server.GameTicking
                         Loc.GetString("latejoin-arrival-announcement-special",
                             ("character", MetaData(mob).EntityName),
                             ("entity", mob),
-                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))),
+                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(announcedJobName))), // Omu
                         Loc.GetString("latejoin-arrival-sender"),
                         playDefaultSound: false,
                         colorOverride: Color.Gold);
@@ -314,7 +318,7 @@ namespace Content.Server.GameTicking
                         Loc.GetString("latejoin-arrival-announcement",
                             ("character", MetaData(mob).EntityName),
                             ("entity", mob),
-                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))),
+                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(announcedJobName))), // Omu
                         Loc.GetString("latejoin-arrival-sender"),
                         playDefaultSound: false);
                 }

@@ -4,6 +4,12 @@
     <Label Name="TitleLabel"
            Margin="5 0"
            MouseFilter="Stop"/>
+    <!-- Omu start -->
+    <OptionButton Name="TitleOptions"
+                  Margin="5 0"
+                  SetWidth="220"
+                  Visible="False"/>
+    <!-- Omu end -->
 
     <!--21 was the height of OptionsContainer at the time that this button was added. So I am limiting the texture to 21x21-->
     <Control SetSize="21 21">

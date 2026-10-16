@@ -2,6 +2,7 @@ using Content.Server.Access.Components;
 using Content.Server.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
@@ -79,7 +80,8 @@ public sealed class PresetIdCardSystem : EntitySystem
 
         _accessSystem.SetAccessToJob(uid, job, extended);
 
-        _cardSystem.TryChangeJobTitle(uid, job.LocalizedName);
+        if (!TryComp<IdCardComponent>(uid, out var card) || card.LocalizedJobTitle == null) // Omu alternate title check.
+            _cardSystem.TryChangeJobTitle(uid, job.LocalizedName);
         _cardSystem.TryChangeJobDepartment(uid, job);
 
         if (_prototypeManager.TryIndex(job.Icon, out var jobIcon))

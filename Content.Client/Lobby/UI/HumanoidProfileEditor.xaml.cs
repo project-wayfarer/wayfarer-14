@@ -18,6 +18,7 @@ using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
+using Content.Shared._Omu.Roles;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
 using Content.Shared.Whitelist;
@@ -52,6 +53,7 @@ namespace Content.Client.Lobby.UI
         private readonly JobRequirementsManager _requirements;
         private readonly LobbyUIController _controller;
         private readonly SpriteSystem _sprite;
+        private readonly JobAlternateTitleSystem _alternateTitles; // Omu
 
         // CCvar.
         private int _maxNameLength;
@@ -134,6 +136,7 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
+            _alternateTitles = _entManager.System<JobAlternateTitleSystem>(); // Omu
 
             Traits.OnTraitsChanged += OnTraitsSelectionChanged; // Wayfarer
 
@@ -978,6 +981,29 @@ namespace Content.Client.Lobby.UI
                     var jobIcon = _prototypeManager.Index(job.Icon);
                     icon.Texture = _sprite.Frame0(jobIcon.Icon);
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                    // Omu start
+                    if (_alternateTitles.Enabled && _alternateTitles.TryGetTitles(job.ID, out var alternateTitles))
+                    {
+                        string? selectedTitle = null;
+                        if (Profile != null && Profile.JobAlternateTitles.TryGetValue(job.ID, out var savedTitle))
+                            selectedTitle = savedTitle;
+
+                        selector.SetupAlternateTitles(alternateTitles, selectedTitle);
+                        selector.OnAlternateTitleSelected += title =>
+                        {
+                            Profile = Profile?.WithJobAlternateTitle(job.ID, title);
+
+                            foreach (var (jobId, other) in _jobPriorities)
+                            {
+                                if (jobId == job.ID && other != selector)
+                                    other.SelectAlternateTitle(title);
+                            }
+
+                            SetDirty();
+                        };
+                    }
+                    // Omu end
 
                     if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
                     {

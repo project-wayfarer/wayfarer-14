@@ -826,6 +826,38 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("nf_library_book", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.JobAlternateTitle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("job_alternate_title_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AlternateTitle")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("alternate_title");
+
+                    b.Property<string>("JobName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("job_name");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_job_alternate_title");
+
+                    b.HasIndex("ProfileId", "JobName")
+                        .IsUnique();
+
+                    b.ToTable("job_alternate_title", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
                 {
                     b.Property<int>("Id")
@@ -2432,6 +2464,18 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Server");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.JobAlternateTitle", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("JobAlternateTitles")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_job_alternate_title_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.OwnsOne("Content.Server.Database.TypedHwid", "LastSeenHWId", b1 =>
@@ -2879,6 +2923,8 @@ namespace Content.Server.Database.Migrations.Postgres
             modelBuilder.Entity("Content.Server.Database.Profile", b =>
                 {
                     b.Navigation("Antags");
+
+                    b.Navigation("JobAlternateTitles");
 
                     b.Navigation("Jobs");
 

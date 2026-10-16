@@ -14,6 +14,7 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.PDA;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
+using Content.Shared._Omu.Roles;
 using Content.Shared.Roles;
 using Content.Shared.Station;
 using JetBrains.Annotations;
@@ -44,6 +45,7 @@ namespace Content.Server.Station.Systems;
 [PublicAPI]
 public sealed class StationSpawningSystem : SharedStationSpawningSystem
 {
+    [Dependency] private readonly JobAlternateTitleSystem _alternateTitles = default!; // Omu
     [Dependency] private readonly SharedAccessSystem _accessSystem = default!;
     [Dependency] private readonly ActorSystem _actors = default!;
     [Dependency] private readonly IdCardSystem _cardSystem = default!;
@@ -286,7 +288,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         if (prototype != null && TryComp(entity.Value, out MetaDataComponent? metaData))
         {
-            SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station);
+            SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station, profile); // Omu
         }
 
         DoJobSpecials(job, entity.Value);
@@ -312,7 +314,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <param name="characterName">Character name to use for the ID.</param>
     /// <param name="jobPrototype">Job prototype to use for the PDA and ID.</param>
     /// <param name="station">The station this player is being spawned on.</param>
-    public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station)
+    /// <param name="profile"> Humanoidcharacterprofile, used for multiple title names </param> // Omu
+    public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station,
+        HumanoidCharacterProfile? profile = null) // Omu
     {
         if (!InventorySystem.TryGetSlotEntity(entity, "id", out var idUid))
             return;
@@ -325,7 +329,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             return;
 
         _cardSystem.TryChangeFullName(cardId, characterName, card);
-        _cardSystem.TryChangeJobTitle(cardId, jobPrototype.LocalizedName, card);
+        _cardSystem.TryChangeJobTitle(cardId, _alternateTitles.GetTitle(profile, jobPrototype.ID) ?? jobPrototype.LocalizedName, card); // Omu
 
         if (_prototypeManager.TryIndex(jobPrototype.Icon, out var jobIcon))
             _cardSystem.TryChangeJobIcon(cardId, jobIcon, card);
