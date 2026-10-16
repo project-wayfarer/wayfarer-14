@@ -221,7 +221,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
                 // teleport us so we hit it
                 // this is cursed but i don't think there's a better way to force a collision here
-                _transformSystem.SetWorldPosition(uid, _transformSystem.GetWorldPosition(closestHit.HitEntity));
+                _transformSystem.SetWorldPosition(uid, closestHit.HitPos);
                 continue;
             }
         }
