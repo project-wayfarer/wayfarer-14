@@ -1,0 +1,13 @@
+- type: entity
+  abstract: true
+  parent: NFBaseWeaponRifleChamber
+  id: WFBaseWeaponRifleChamber45
+  components:
+  - type: Gun
+    examineCaliber: gun-examine-caliber-45
+  - type: BallisticAmmoProvider
+    capacity: 15
+    proto: NFCartridgePistol45
+    whitelist:
+      tags:
+      - NFCartridgePistol45

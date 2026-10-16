@@ -70,7 +70,7 @@
 #region Frontier
 - type: entity
   id: NFWeaponRifleRepeater
-  parent: [ NFBaseWeaponRifleChamber20, NFBaseWeaponFrameRifleFrontierGunsmith ]
+  parent: [ WFBaseWeaponRifleChamber45, NFBaseWeaponFrameRifleFrontierGunsmith ]  # Wayfarer: NFBaseWeaponRifleChamber20>WFBaseWeaponRifleChamber45
   name: N2524 pattern repeater
   description: A civilian grade lever action firearm, favored by space cowboys across the Frontier for its reliability.
   components:
@@ -79,7 +79,7 @@
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/repeater.rsi
   - type: BallisticAmmoProvider
-    capacity: 8
+    capacity: 12 # Wayfarer: 8>12
 
 - type: entity
   id: NFWeaponRifleSVS
