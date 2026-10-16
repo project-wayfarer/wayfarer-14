@@ -1,0 +1,12 @@
+# Used by the Synth trait to grant access to the Binary channel without a headset.
+- type: entity
+  parent: BaseSubdermalImplant
+  id: RadioImplantBinary
+  name: binary radio implant
+  description: This implant grants access to the Binary channel without a headset.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - Binary
