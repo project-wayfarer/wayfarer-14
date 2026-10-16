@@ -108,7 +108,7 @@
   suffix: Short
   components:
   - type: ExplosionResistance
-    damageCoefficient: 0.2
+    damageCoefficient: 0 # Wayfarer: 0.2>0
   - type: Sprite
     sprite: _NF/Objects/Storage/Cases/explosivescaseshort.rsi
   - type: Item

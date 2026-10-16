@@ -1,0 +1,27 @@
+- type: entity
+  id: WFPouchHardcase
+  name: hardcase
+  parent: [ BaseStorageItem, RecyclableItemSteelSmall ]
+  description: A reinforced plasteel hardcase for storing things you really don't want blown up.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: _WF/Objects/Storage/hardcase.rsi
+    state: hardcase
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: _NF/Objects/Storage/Pouches/pouch.rsi
+    slots: [ belt, pocket ]
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,1
+    blacklist:
+      components: [ Storage ]
+  - type: StaticPrice
+    price: 50
+  - type: Appearance
+  - type: ExplosionResistance
+    damageCoefficient: 0

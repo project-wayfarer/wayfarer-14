@@ -7,3 +7,12 @@
   id: WFToGoEmpty2
   parent: NFBaseBoxRecipe
   result: ToGoEmpty2
+
+- type: latheRecipe
+  id: WFPouchHardcase
+  result: WFPouchHardcase
+  completetime: 1
+  materials:
+    Plasteel: 400
+    Plastic: 100
+    Durathread: 100
