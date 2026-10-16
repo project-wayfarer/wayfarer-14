@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+# Maintainer Info
+# GitHub: Rellu225
+# Discord: zuma0050
+
+- type: vessel
+  id: Claimer
+  parent: BaseVesselAntag
+  name: SI Claimer
+  description: A small utilitarian salvage shuttle now with cannonball flavor.
+  price: 35000
+  category: Small
+  group: BlackMarket
+  shuttlePath: /Maps/_WF/Shuttles/Outlaw/claimer.yml
+  guidebookPage: Null
+  class:
+  - Pirate
+  engine:
+  - Biofuel
+
+- type: gameMap
+  id: Claimer
+  mapName: 'SI Claimer'
+  mapPath: /Maps/_WF/Shuttles/Outlaw/claimer.yml
+  minPlayers: 0
+  stations:
+    Claimer:
+      stationProto: StandardFrontierAntagVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Reclaimer {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: 
+         NFPirate: [ 0, 0 ]
