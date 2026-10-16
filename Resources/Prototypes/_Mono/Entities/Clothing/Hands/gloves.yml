@@ -9,6 +9,7 @@
   name: concussive gauntlets
   description: A pair of gauntlets designed for mining usage, delivering shocks to shatter anything in their path. Expensive and powerful
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: _Mono/Clothing/Hands/Gloves/concussive_gauntlets.rsi
     state: icon
@@ -27,7 +28,6 @@
   - type: Tag
     tags:
     - Pickaxe
-    - DepositBlacklist # Wayfarer
   - type: MiningGatheringHard
   - type: StaticPrice
     price: 2000 # Wayfarer: 15000<2000

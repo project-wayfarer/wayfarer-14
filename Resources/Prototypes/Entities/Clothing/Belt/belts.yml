@@ -538,6 +538,7 @@
   name: sabre sheath
   description: An ornate sheath designed to hold an officer's blade.
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Belt/sheath.rsi
     state: sheath

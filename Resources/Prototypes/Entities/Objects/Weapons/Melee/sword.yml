@@ -85,6 +85,7 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/_Goobstation/Items/handling/sabre_drop.ogg
+  - type: DepositBlacklist
   # Wayfarer End
   - type: Sprite
     sprite: Objects/Weapons/Melee/captain_sabre.rsi
@@ -148,6 +149,7 @@
   - type: Reflect
     reflectProb: 0.25
     spread: 70
+  - type: DepositBlacklist # Should be inherited by energy katana
     # End Wayfarer
   - type: Clothing
     sprite: Objects/Weapons/Melee/katana.rsi

@@ -18,11 +18,12 @@
       - Document
       - Paper
       - Write
-      - DepositWhitelist # Allows specific whitelisted items
       components:
       - Clothing
+      - DepositWhitelist
     blacklist:
       components:
+      - DepositBlacklist # SHOULD blacklist the item without obliterating tags
       - IdCard
       - Currency
       - Store
@@ -42,7 +43,6 @@
       - JawsOfLife  # Additional check for jaws of life
       - HudSecurity  # Prevents security/CGP HUDs
       - HudMedical  # Prevents medical HUDs (for CGP corpsman)
-      - DepositBlacklist  # Prevents specific blacklisted items
   - type: SafetyDepositBox
   - type: Appearance
   - type: Tag

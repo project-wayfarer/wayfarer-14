@@ -5,6 +5,7 @@
   description: A dark ink pen.
   id: PenExploding
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: WeaponCaseInsertable # Frontier
   - type: TimerTrigger
     delay: 4
@@ -26,13 +27,6 @@
     - Trigger
   - type: EmitSoundOnUse
     handle: false # don't want the sound to stop the explosion from triggering
-  # Wayfarer: Deposit blacklist tag, plus parent tags
-  - type: Tag
-    tags:
-    - DepositBlacklist
-    - Write
-    - Pen
-  # End Wayfarer
 
 - type: entity
   parent: [BaseItem, BaseBMContraband] # Wayfarer: BaseSyndicateContraband<BaseBMContraband

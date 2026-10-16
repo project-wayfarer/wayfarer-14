@@ -390,6 +390,7 @@
   name: gloves of the north star
   description: These gloves allow you to punch incredibly fast.
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Hands/Gloves/northstar.rsi
   - type: Clothing
@@ -423,7 +424,6 @@
     tags:
     - Kangaroo
     - WhitelistChameleon
-    - DepositBlacklist # Wayfarer
 
 - type: entity
   parent: [ClothingHandsBase, BaseMilitaryContraband] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable # Wayfarer: BaseC2ContrabandUnredeemable<BaseMilitaryContraband
@@ -463,6 +463,7 @@
   name: knuckle dusters
   description: "Cold plasteel knuckle dusters, makes your punches hit much harder."
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
     state: knuckleduster
@@ -483,7 +484,6 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
-    - DepositBlacklist # Wayfarer
 
 - type: entity
   parent: ClothingHandsKnuckleDusters #Craftable version of base knuckledusters # Frontier: BaseMinorContraband # Wayfarer: Removed Contraband
@@ -491,6 +491,7 @@
   name: brass knuckle dusters
   description: "Brass knuckle dusters, just like how they used to make em and still hit just as hard."
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Hands/Gloves/KnuckleDusters/brassknuckleduster.rsi
     state: brassknuckleduster
@@ -503,7 +504,6 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
-    - DepositBlacklist # Wayfarer
 #wayfarer: remove NT on dusters as well as nanotrasen on description
 - type: entity
   parent: ClothingHandsBase # Frontier: BaseGrandTheftContraband<BaseC1Contraband # Wayfarer: Removed Contraband
@@ -511,6 +511,7 @@
   name: QM's golden knuckle dusters
   description: "24karat gold infused with plasteel A true symbol of the Quartermaster's might."
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: _WF/Clothing/Hands/Gloves/KnuckleDusters/goldenknuckledusters.rsi  # Wayfarer: removed the NT on the sprite
     state: goldenknuckleduster
@@ -531,7 +532,6 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
-    - DepositBlacklist # Wayfarer
   - type: StealTarget
     stealGroup: ClothingHandsKnuckleDustersQM
 
@@ -541,6 +541,7 @@
   name: spinel knuckle dusters # Wayfarer: syndicate knuckle dusters<plastitanium knuckle dusters # Wayfarer: plastitanium<Spinel
   description: "Plastitanium knuckle dusters branded with a spinel-colored S. A real man beats someone to death with these." # Wayfarer: "the blood-red"<"a spinel-colored"
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Hands/Gloves/KnuckleDusters/syndicateknuckleduster.rsi
     state: syndicateknuckleduster
@@ -560,7 +561,6 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
-    - DepositBlacklist # Wayfarer
   - type: StaticPrice
     price: 2000
 
@@ -570,6 +570,7 @@
   id: ClothingHandsKnuckleDustersStun
   description: A pair of knuckle dusters combined with the tech of a stun baton. This makes beating tiders a whole lot easier.
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Hands/Gloves/KnuckleDusters/electricknuckleduster.rsi
     layers:
@@ -578,9 +579,6 @@
   - type: Clothing
     sprite: Clothing/Hands/Gloves/KnuckleDusters/electricknuckleduster.rsi
     equippedPrefix: on
-  - type: Tag # Wayfarer
-    tags: # Wayfarer
-    - DepositBlacklist # Wayfarer
   - type: Appearance
   - type: GenericVisualizer
     visuals:

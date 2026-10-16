@@ -7,6 +7,7 @@
   suffix: Empty
   abstract: true
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: _NF/Objects/Storage/Pouches/pouch.rsi
   - type: Item

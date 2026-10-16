@@ -16,10 +16,10 @@
   parent: BaseAdvancedPen
   abstract: true
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Tag
     tags:
     - Write
     - NFWriteIgnoreUnprotectedStamps # Weaker version of WriteIgnoreStamps
     - Pickaxe
     - Pen
-    - DepositBlacklist # Wayfarer

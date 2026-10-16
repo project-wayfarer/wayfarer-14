@@ -49,6 +49,7 @@
   name: advanced magboots
   description: State-of-the-art magnetic boots that do not slow down their wearer.
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
     state: icon
@@ -61,7 +62,6 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
-    - DepositBlacklist # Wayfarer
   - type: StaticPrice
     price: 200 # Frontier: 750<200
   - type: StealTarget
@@ -94,6 +94,7 @@
   name: red magboots # Wayfarer: blood-red<red
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: Sprite
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
     state: icon
@@ -102,9 +103,6 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
-  - type: Tag # Wayfarer
-    tags: # Wayfarer
-    - DepositBlacklist # Wayfarer
   - type: GasTank
     outputPressure: 42.6
     air:

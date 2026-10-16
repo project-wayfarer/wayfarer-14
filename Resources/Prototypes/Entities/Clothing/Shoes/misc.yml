@@ -165,9 +165,10 @@
   - type: ToggleClothing
     action: ActionToggleSpeedBoots
   - type: ClothingSpeedModifier
-    walkModifier: 1.25 #  WF
-    sprintModifier: 1.25 # WF
+    walkModifier: 1.25 # Wayfarer: 1.7>1.25
+    sprintModifier: 1.25 # Wayfarer: 1.7>1.25
     standing: true
+  - type: DepositBlacklist # Wayfarer
   - type: Appearance
   - type: GenericVisualizer
     visuals:

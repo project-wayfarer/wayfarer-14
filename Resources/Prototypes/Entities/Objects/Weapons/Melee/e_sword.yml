@@ -167,6 +167,7 @@
   suffix: E-Dagger
   description: 'A dark ink pen.'
   components:
+  - type: DepositBlacklist # Wayfarer
   - type: ItemToggle
     soundActivate:
       path: /Audio/Weapons/ebladeon.ogg
@@ -238,7 +239,6 @@
   - type: Tag
     tags:
     - Write
-    - DepositBlacklist # Wayfarer
   - type: Contraband # Frontier
     hideValues: true # Frontier
   - type: Reflect
