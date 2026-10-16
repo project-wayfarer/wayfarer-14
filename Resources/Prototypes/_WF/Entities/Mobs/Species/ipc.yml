@@ -1,0 +1,253 @@
+- type: entity
+  save: false
+  parent: [ MobAtmosExposed, MobFlammable, BaseMobSpecies ]
+  id: BaseMobIPC
+  name: Urist McPositronic
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: IPC
+  - type: Icon
+    sprite: _EE/Mobs/Species/IPC/parts.rsi
+    state: full
+  - type: Body
+    prototype: WFIPC
+    requiredLegs: 2
+  - type: Inventory
+    templateId: wfipc
+  - type: GuideHelp
+    guides:
+    - IPC
+
+  - type: Damageable
+    damageContainer: Silicon
+    damageModifierSet: WFIPC
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      119.999: Critical
+      120: Dead
+    stateAlertDict:
+      Alive: IPCHealth
+      Critical: IPCCrit
+      Dead: IPCDead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      90: 0.5
+      120: 0.3
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 10
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#DD8822"
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection: MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection: MetalLaserImpact
+  - type: ZombieImmune
+  - type: Blindable
+  - type: LightningTarget
+    priority: 1
+  - type: Repairable
+    damage:
+      types:
+        Blunt: -15
+        Slash: -15
+        Piercing: -15
+    fuelCost: 5
+    doAfterDelay: 3
+    selfRepairPenalty: 3
+  - type: RepairableEyes
+    whitelist:
+      tags:
+      - GlassSheet
+    delay: 3
+    selfRepairMultiplier: 3
+
+  - type: Temperature
+    heatDamageThreshold: 325
+    coldDamageThreshold: 260
+    coldDamage:
+      types:
+        Cold: 0.1
+    heatDamage:
+      types:
+        Heat: 3
+    atmosTemperatureTransferEfficiency: 0.05
+  - type: Flammable
+    damage:
+      types:
+        Heat: 0.75
+  - type: FireVisuals
+    alternateState: Standing
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+      Acidic: [ Touch ]
+
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 3
+  - type: MeleeWeapon
+    hidden: true
+    damage:
+      types:
+        Blunt: 6
+
+  - type: Speech
+    speechSounds: Pai
+  - type: Vocal
+    wilhelm: "/Audio/_EE/Voice/IPC/wilhelm.ogg"
+    sounds:
+      Male: IPCVoice
+      Female: IPCVoice
+      Unsexed: IPCVoice
+  - type: TypingIndicator
+    proto: robot
+  - type: Deathgasp
+    prototype: IPCDeathgasp
+    needsCritical: false
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - IPCEmotes
+
+  - type: SolutionContainerManager
+    solutions:
+      chemicals:
+        maxVol: 25
+
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+        locked: true
+  - type: Lock
+    locked: true
+    lockOnClick: false
+    unlockOnClick: false
+    lockTime: 5
+    unlockTime: 5
+  - type: ItemSlotsLock
+    slots:
+    - cell_slot
+  - type: PowerCellBody
+    updateInterval: 1
+    drainRate: 1.5
+    coldDrainReduction: 0.5
+    maxHeatMultiplier: 4
+    heatDrainCapDivisor: 240
+    comfortBandFraction: 0.5
+    overheatInterval: 5
+    overheatChanceDivisor: 5
+    overheatFireStacks: 1
+    chargeLevels: 10
+    speedModifierThresholds:
+      4: 1
+      3: 1
+      2: 0.8
+      1: 0.45
+      0: 0.1
+    batteryAlert: IPCBattery
+    noBatteryAlert: IPCBatteryNone
+    blockSelfCellAccess: true
+    canDrinkFromApc: true
+    drinkDelay: 1.5
+    drinkRange: 1.35
+    drinkAmount: 5000
+    drinkSound:
+      collection: sparks
+    drinkEffect: EffectSparks
+    drinkVerbIcon: /Textures/Interface/VerbIcons/smite.svg.192dpi.png
+
+  - type: RobotBody
+    canSleep: false
+    blockBedHealing: true
+    suicideDamageType: Shock
+    canReboot: true
+    rebootDelay: 1
+    rebootSound:
+      path: /Audio/_EE/Effects/Silicon/startup.ogg
+    rebootButtonSound:
+      path: /Audio/Machines/button.ogg
+    rebootFailSound:
+      collection: IPCBuzzSounds
+      params:
+        variation: 0.05
+    rebootVerbIcon: /Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png
+    dischargeWhenShockedDead: true
+    dischargeRange: 2
+    dischargeBolts: 4
+    buzzDamageFraction: 0.5
+    buzzCheckInterval: 2
+    buzzCooldown: 8
+    buzzSound:
+      collection: IPCBuzzSounds
+      params:
+        variation: 0.05
+    sparkEffect: EffectSparks
+    empShockDamage: 5
+    empShockTime: 3
+    keysFollowLock: true
+    warnOnPanelTamper: true
+    keySourceSlot: ears
+    repeatRepair: true
+
+  - type: EncryptionKeyHolder
+    keySlots: 13
+    examineWhileLocked: false
+    keysExtractionMethod: Cutting
+    keysUnlocked: false
+  - type: ActiveRadio
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+
+- type: entity
+  save: false
+  parent: BaseSpeciesDummy
+  id: WFMobIPCDummy
+  name: Urist McPositronic
+  categories: [ HideSpawnMenu ]
+  description: A dummy IPC meant to be used in character setup.
+  components:
+  - type: Icon
+    sprite: _EE/Mobs/Species/IPC/parts.rsi
+    state: full
+  - type: HumanoidAppearance
+    species: IPC
+  - type: Body
+    prototype: WFIPC
+    requiredLegs: 2
+  - type: Inventory
+    templateId: wfipc

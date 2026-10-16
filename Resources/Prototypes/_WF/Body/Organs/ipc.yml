@@ -1,0 +1,85 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseWFIPCOrgan
+  components:
+  - type: Sprite
+    sprite: _EE/Mobs/Species/IPC/organs.rsi
+  - type: Organ
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Oil
+          Quantity: 10
+
+- type: entity
+  parent: BaseWFIPCOrgan
+  id: OrganWFIPCEyes
+  name: robotic eyes
+  description: "01001001 00100000 01110011 01100101 01100101 00100000 01111001 01101111 01110101 00100001"
+  components:
+  - type: Sprite
+    layers:
+    - state: eyeball-l
+    - state: eyeball-r
+
+- type: entity
+  parent: BaseWFIPCOrgan
+  id: OrganWFIPCPump
+  name: micro pump
+  description: "A micro pump, used to circulate coolant."
+  components:
+  - type: Sprite
+    state: heart-on
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [ Human ]
+    groups: []
+
+- type: entity
+  parent: BaseWFIPCOrgan
+  id: OrganWFIPCStomach
+  name: IPC Bio-Generator
+  description: "A synthetic 'Stomach', that breaks down food and drink into usable biofuel and then energy"
+  components:
+  - type: Sprite
+    state: heart-on
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Stomach
+    carnivoreIndigestible:
+      tags:
+      - Fruit
+      - Vegetable
+      - Flower
+      - Ambrosia
+    herbivoreIndigestible:
+      tags:
+      - Meat
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [ Human ]
+    removeEmpty: true
+    groups:
+    - id: Food
+      skipEffects: true
+    - id: Drink
+      skipEffects: true
+    - id: Alcohol
+      skipEffects: true
+    - id: Medicine
+      skipEffects: true
+    - id: Narcotic
+      skipEffects: true
+    - id: Cryogenic
+      skipEffects: true
+    - id: Poison
+      skipEffects: true

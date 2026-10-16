@@ -1,0 +1,146 @@
+- type: species
+  id: IPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: WFMobIPC
+  sprites: MobWFIPCSprites
+  markingLimits: MobWFIPCMarkingLimits
+  dollPrototype: WFMobIPCDummy
+  skinColoration: Hues
+  minAge: 1
+  maxAge: 240
+  oldAge: 50
+  youngAge: 50
+  maleFirstNames: NamesIPCFirst
+  femaleFirstNames: NamesIPCFirst
+  lastNames: NamesIPCLast
+  naming: FirstDashLast
+  sexes:
+  - Unsexed
+  kind:
+  - BasicHumanlike
+  - BasicFurry
+  - BasicRobot
+
+- type: speciesBaseSprites
+  id: MobWFIPCSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
+    Head: MobWFIPCHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    Chest: MobWFIPCTorso
+    LArm: MobWFIPCLArm
+    RArm: MobWFIPCRArm
+    LHand: MobWFIPCLHand
+    RHand: MobWFIPCRHand
+    LLeg: MobWFIPCLLeg
+    RLeg: MobWFIPCRLeg
+    LFoot: MobWFIPCLFoot
+    RFoot: MobWFIPCRFoot
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    RArmExtension: MobHumanoidAnyMarking
+
+- type: markingPoints
+  id: MobWFIPCMarkingLimits
+  points:
+    Special:
+      points: 32
+      required: false
+    Head:
+      points: 32
+      required: true
+      defaultMarkings: [ MobIPCHeadDefault ]
+    Chest:
+      points: 32
+      required: true
+      defaultMarkings: [ MobIPCTorsoDefault ]
+    Legs:
+      points: 32
+      required: true
+      defaultMarkings: [ MobIPCLLegDefault, MobIPCLFootDefault, MobIPCRLegDefault, MobIPCRFootDefault ]
+    Arms:
+      points: 32
+      required: true
+      defaultMarkings: [ MobIPCLArmDefault, MobIPCLHandDefault, MobIPCRArmDefault, MobIPCRHandDefault ]
+    HeadSide:
+      points: 32
+      required: false
+    HeadTop:
+      points: 32
+      required: false
+    Snout:
+      points: 32
+      required: false
+    Hair:
+      points: 32
+      required: false
+    FacialHair:
+      points: 32
+      required: false
+    Tail:
+      points: 32
+      required: false
+    UndergarmentTop:
+      points: 32
+      required: false
+    UndergarmentBottom:
+      points: 32
+      required: false
+    Genital:
+      points: 32
+      required: false
+    Overlay:
+      points: 32
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobWFIPCHead
+
+- type: humanoidBaseSprite
+  id: MobWFIPCHeadMale
+
+- type: humanoidBaseSprite
+  id: MobWFIPCHeadFemale
+
+- type: humanoidBaseSprite
+  id: MobWFIPCTorso
+
+- type: humanoidBaseSprite
+  id: MobWFIPCTorsoMale
+
+- type: humanoidBaseSprite
+  id: MobWFIPCTorsoFemale
+
+- type: humanoidBaseSprite
+  id: MobWFIPCLArm
+
+- type: humanoidBaseSprite
+  id: MobWFIPCRArm
+
+- type: humanoidBaseSprite
+  id: MobWFIPCLHand
+
+- type: humanoidBaseSprite
+  id: MobWFIPCRHand
+
+- type: humanoidBaseSprite
+  id: MobWFIPCLLeg
+
+- type: humanoidBaseSprite
+  id: MobWFIPCRLeg
+
+- type: humanoidBaseSprite
+  id: MobWFIPCLFoot
+
+- type: humanoidBaseSprite
+  id: MobWFIPCRFoot

@@ -1,0 +1,111 @@
+- type: emote
+  id: IPCBoop
+  name: chat-emote-name-boop
+  category: Vocal
+  whitelist:
+    tags:
+    - IPCEmotes
+  chatMessages: [ "chat-emote-msg-boop" ]
+  chatTriggers:
+  - boops
+
+- type: emote
+  id: IPCWhirr
+  name: chat-emote-name-whirr
+  category: Vocal
+  whitelist:
+    tags:
+    - IPCEmotes
+  chatMessages: [ "chat-emote-msg-whirr" ]
+  chatTriggers:
+  - whirrs
+
+- type: emote
+  id: IPCLaugh
+  name: chat-emote-name-laugh
+  category: Vocal
+  whitelist:
+    tags:
+    - IPCEmotes
+  chatMessages: [ "chat-emote-msg-laugh" ]
+  chatTriggers:
+  - synlaughs
+
+- type: emote
+  id: IPCDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  whitelist:
+    tags:
+    - IPCEmotes
+  chatMessages: [ "chat-emote-msg-deathgasp-silicon" ]
+  chatTriggers:
+  - sdeathgasp
+
+- type: emoteSounds
+  id: IPCVoice
+  params:
+    variation: 0
+  sounds:
+    Scream:
+      path: /Audio/_EE/Voice/IPC/robot-scream.ogg
+      params:
+        variation: 0.125
+    Laugh:
+      path: /Audio/_EE/Voice/IPC/robot-laugh_3.ogg
+      params:
+        variation: 0.125
+    Chitter:
+      path: /Audio/Voice/Talk/pai.ogg
+    Squeak:
+      path: /Audio/Voice/Talk/pai.ogg
+    CatMeow:
+      collection: CatMeows
+      params:
+        variation: 0.125
+    CatHisses:
+      collection: CatHisses
+      params:
+        variation: 0.125
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+      params:
+        variation: 0.125
+    Sigh:
+      path: /Audio/Voice/Talk/pai.ogg
+      params:
+        variation: 0.125
+    Crying:
+      path: /Audio/_EE/Voice/IPC/cry_robot_1.ogg
+      params:
+        variation: 0.125
+    Whistle:
+      path: /Audio/_EE/Voice/IPC/pai_whistle.ogg
+      params:
+        variation: 0.125
+    RobotBeep:
+      path: /Audio/Effects/tesla_consume.ogg
+      params:
+        variation: 0.125
+    Honk:
+      path: /Audio/Items/bikehorn.ogg
+      params:
+        variation: 0.125
+    IPCBeep:
+      path: /Audio/_EE/Voice/IPC/beep_2000.ogg
+    IPCBuzz:
+      path: /Audio/Machines/buzz-sigh.ogg
+    IPCBuzz-Two:
+      path: /Audio/Machines/buzz-two.ogg
+    IPCChime:
+      path: /Audio/Effects/Cargo/ping.ogg
+    IPCPing:
+      path: /Audio/Effects/beep1.ogg
+      params:
+        variation: 0.125
+    IPCBoop:
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
+    IPCWhirr:
+      collection: IPCWhirrSounds
+    IPCLaugh:
+      path: /Audio/Voice/Silicon/syndieborg_laugh.ogg

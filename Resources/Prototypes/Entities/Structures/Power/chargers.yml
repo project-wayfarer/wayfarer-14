@@ -273,6 +273,7 @@
       components:
       - BorgChassis
       - Silicon # EE IPCs
+      - PowerCellBody # Wayfarer
   - type: Construction
     containers:
     - machine_parts
@@ -317,6 +318,7 @@
       components:
       - BorgChassis
       - Silicon # EE IPCs
+      - PowerCellBody # Wayfarer
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container

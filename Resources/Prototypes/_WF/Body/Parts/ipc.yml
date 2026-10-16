@@ -1,0 +1,90 @@
+- type: entity
+  abstract: true
+  parent: [ BaseItem, BasePart ]
+  id: PartWFIPC
+  name: "ipc body part"
+  components:
+  - type: Sprite
+    sprite: _EE/Mobs/Species/IPC/parts.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+
+- type: entity
+  parent: [ PartWFIPC, BaseTorso ]
+  id: TorsoWFIPC
+  name: "ipc torso"
+  components:
+  - type: Sprite
+    state: torso_m
+
+- type: entity
+  parent: [ PartWFIPC, BaseHead ]
+  id: HeadWFIPC
+  name: "ipc head"
+  components:
+  - type: Sprite
+    state: head_m
+
+- type: entity
+  parent: [ PartWFIPC, BaseLeftArm ]
+  id: LeftArmWFIPC
+  name: "left ipc arm"
+  components:
+  - type: Sprite
+    state: l_arm
+
+- type: entity
+  parent: [ PartWFIPC, BaseRightArm ]
+  id: RightArmWFIPC
+  name: "right ipc arm"
+  components:
+  - type: Sprite
+    state: r_arm
+
+- type: entity
+  parent: [ PartWFIPC, BaseLeftHand ]
+  id: LeftHandWFIPC
+  name: "left ipc hand"
+  components:
+  - type: Sprite
+    state: l_hand
+
+- type: entity
+  parent: [ PartWFIPC, BaseRightHand ]
+  id: RightHandWFIPC
+  name: "right ipc hand"
+  components:
+  - type: Sprite
+    state: r_hand
+
+- type: entity
+  parent: [ PartWFIPC, BaseLeftLeg ]
+  id: LeftLegWFIPC
+  name: "left ipc leg"
+  components:
+  - type: Sprite
+    state: l_leg
+
+- type: entity
+  parent: [ PartWFIPC, BaseRightLeg ]
+  id: RightLegWFIPC
+  name: "right ipc leg"
+  components:
+  - type: Sprite
+    state: r_leg
+
+- type: entity
+  parent: [ PartWFIPC, BaseLeftFoot ]
+  id: LeftFootWFIPC
+  name: "left ipc foot"
+  components:
+  - type: Sprite
+    state: l_foot
+
+- type: entity
+  parent: [ PartWFIPC, BaseRightFoot ]
+  id: RightFootWFIPC
+  name: "right ipc foot"
+  components:
+  - type: Sprite
+    state: r_foot
