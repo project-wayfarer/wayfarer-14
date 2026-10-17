@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: VVersengt
+# Discord: versengt
+
+# Maintainer Info
+# GitHub: VVersengt
+# Discord: versengt
+- type: vessel
+  id: knight
+  parent: BaseVessel
+  name: TI Knight
+  description: A heavily armored gunship sporting two frontal duster cannons. Features a brig, crew quaters and EVA access side docks. Manufactured for CGP by Telum Industries.
+  price: 77000
+  category: Medium
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_WF/Shuttles/Cgp/knight.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  - Fighter
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: knight
+  mapName: 'knight'
+  mapPath: /Maps/_WF/Shuttles/Cgp/knight.yml
+  minPlayers: 0
+  stations:
+    knight:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Knight {1}'
+        nameGenerator:
+          !type:CGPNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs: {}
