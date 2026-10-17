@@ -1,0 +1,36 @@
+<Document>
+  # FINCH-CLASS ROBOTICS SHUTTLE
+  <Box>
+    <GuideEntityEmbed Entity="ShuttleMapFinch" Caption=""/>
+  </Box>
+
+  [color=#a4885c]Ship Size:[/color] Small
+
+  [color=#a4885c]Recommended Crew:[/color] 1-2
+
+  [color=#a4885c]Power Gen Type:[/color] Plasma x1
+
+  # Shuttle Brief
+
+  The Finch is a mobile robotics lab designed to provide EMTs with a platform for rescuing and servicing silicon patients, with a limited capacity for treating organics. A great choice for a beginner roboticist, or those looking for a budget option.
+
+  # Technical Details
+
+  In standard configuration, the Finch has a power load of 16.4 kW. Disengaging navigational systems via the button inside the cockpit brings this number down to 6.0 kW.
+
+  The ship does not feature a SMES unit, and all power systems are routed to the APC located inside the engineering room.
+
+  The Finch is equipped with 6 thrusters: 2 rear-facing, 2 forward-facing and 2 side-facing (1 for each side).
+
+  # Useful Information
+
+  [textlink="Preflight checklist" link="PreflightChecklist"/]
+
+  [textlink="Guide to shuttle piloting" link="Piloting"/]
+
+  [textlink="Sector topology" link="SectorTopology"/]
+
+  [textlink="Guide to robotics" link="Robotics"/]
+  
+  [textlink="Guide to medicine" link="Medical"/]
+</Document>

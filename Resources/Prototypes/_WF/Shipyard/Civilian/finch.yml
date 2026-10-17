@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+
+# Maintainer Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+- type: vessel
+  id: Finch
+  parent: BaseVessel
+  name: SWS Finch
+  description: A small medical shuttle designed for rescue and service of silicon patients.Treatment of organics is possible, but limited.
+  price: 36000 # (25263+124*50)*1.15 ([appraise on init]+[size]*50)*[+1 primary medical; +0.15 sub-primary robotics]
+  category: Small
+  group: Medical
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/finch.yml
+  guidebookPage: ShipyardFinch
+  class:
+  - Medical
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Finch
+  mapName: 'Finch'
+  mapPath: /Maps/_WF/Shuttles/Civilian/finch.yml
+  minPlayers: 0
+  stations:
+    Finch:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Finch {1}'
+        nameGenerator:
+          !type:MedicalNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]

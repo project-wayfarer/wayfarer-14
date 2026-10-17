@@ -61,3 +61,4 @@ guide-entry-shipyard-zipper = Zipper
 guide-entry-shipyard-zenith = Zenith
 guide-entry-shipyard-nadir = Nadir
 guide-entry-shipyard-hermesmkii = Hermes MkII
+guide-entry-shipyard-finch = Finch

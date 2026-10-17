@@ -393,3 +393,14 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: hermesmkii
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapFinch
+  name: "Finch"
+  description: "Detailed map of a Finch shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: finch
