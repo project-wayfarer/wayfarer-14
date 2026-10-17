@@ -393,3 +393,14 @@
   - type: Sprite
     sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
     state: hermesmkii
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapToucan
+  name: "Toucan"
+  description: "Detailed map of a Toucan shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _WF/Guidebook/shuttle_maps/128x96.rsi
+    state: toucan

@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+
+# Maintainer Info
+# GitHub: CloudOfNeutronFlux
+# Discord: Vyuga
+- type: vessel
+  id: Toucan
+  parent: BaseVessel
+  name: SWS Toucan
+  description: A premium-class robotics-medical shuttle, equally specialized in both organic and synthetic care. Fully suited for extended shifts.
+  price:  94000 # (57227+301*50)*1.3 ([appraise on init]+[size]*50)*[+1 primary medical; +0.15 sub-primary chemistry +0.15 sub-primary robotics]
+  category: Medium
+  group: Medical
+  shuttlePath: /Maps/_WF/Shuttles/Civilian/toucan.yml
+  guidebookPage: ShipyardToucan
+  class:
+  - Medical
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Toucan
+  mapName: 'Toucan'
+  mapPath: /Maps/_WF/Shuttles/Civilian/toucan.yml
+  minPlayers: 0
+  stations:
+    Toucan:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Toucan {1}'
+        nameGenerator:
+          !type:MedicalNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          WayfarerInterview: [ 0, 0 ]
