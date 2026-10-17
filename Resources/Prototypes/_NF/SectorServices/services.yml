@@ -21,20 +21,20 @@
     accounts:
       Frontier:
         !type:SectorBankAccountInfo
-        balance: 8000
-        increasePerSecond: 1 # TODO: move to ~65K per hour (~18/s), about enough for minimum wage for Frontier employees
+        balance: 50000 # Wayfarer 8000<50000
+        increasePerSecond: 5 # Wayfarer 1<5; 18k/hr
       Nfsd:
         !type:SectorBankAccountInfo
-        balance: 8000
-        increasePerSecond: 25 # 90K per hour, will offset the "Loss" of the vault money
+        balance: 50000 # Wayfarer 8000<50000
+        increasePerSecond: 20 # Wayfarer 25<20; 72k/hr
       Medical:
         !type:SectorBankAccountInfo
-        balance: 8000
+        balance: 50000 # Wayfarer 8000<50000
         increasePerSecond: 6 # 21.6K per hour, a bit over for the DOC MOM's wage.
       Edison:
         !type:SectorBankAccountInfo
-        balance: 8000
-        increasePerSecond: 1 # A trickle - generate your own power to sell for stuff.
+        balance: 50000 # Wayfarer 8000<50000
+        increasePerSecond: 5 # Wayfarer 1<5; 18k/hr
 
 # A global source of character records (DNA, fingerprints, criminal records, etc.)
 - type: sectorService

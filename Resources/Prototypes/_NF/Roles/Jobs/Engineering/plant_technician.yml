@@ -3,6 +3,10 @@
   name: job-name-plant-technician
   description: job-description-plant-technician
   playTimeTracker: JobPlantTechnician
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWayfarer
+      time: 7200 # 2 hours as Wayfarer
   startingGear: PlantTechnicianGear
   alwaysUseSpawner: true
   icon: "JobIconPlantTechnician"
